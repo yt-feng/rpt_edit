@@ -1,0 +1,2189 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f7494ca527f155ec6dd75d125c978849a7082afabeb5c0ec1b630a5767f17968.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                395
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HEALTH CARE PAYERS, PROVIDERS, SYSTEMS & SERVICES"
+                    }
+                ]
+            },
+            "bbox": [
+                48,
+                430,
+                437,
+                448
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Transforming the Patient Access Center with AI"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                476,
+                718,
+                624
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Natasha Taylor, Matthew Huddle, MD, Luke Purcell, Ryan Shain, Scott Wilder, Kevin Fleming, and Michael Bernstein"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                656,
+                769,
+                695
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTICLE JULY 14, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                719,
+                239,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The access center is both the front door and the beating heart of a patient-centric health system. AI stands to transform how patient access centers function, but not in the way many executives imagine."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                796,
+                946,
+                857
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Consumers call, chat, and text with access center agents to schedule appointments; manage referrals; navigate authorization, billing, and insurance topics; and seek answers to a multitude of questions. Despite this heavy use, a substantial share of patient demands slips away at the"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                871,
+                952,
+                932
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                967,
+                250,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "access channel. Thousands of calls go unanswered or are abandoned due to long wait times, failed transfers, and limited after-hours coverage. Up to 40% of scheduling-related interactions go unresolved on first contact. Missed annual visits and vaccines are not systematically and proactively addressed, and specialty referrals are not aggressively tracked and converted."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                67,
+                946,
+                146
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI can perform many of these basic tasks and augment the work of human agents for more complex issues. Yet when system leaders consider deploying AI in access centers, they view it merely as a way to reduce costs and increase efficiency. This perspective overlooks a significant opportunity to use AI to reshape the access function from end to end—shifting it from a cost center to a revenue engine."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                159,
+                936,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Many of our clients are deploying AI to automate lower-complexity processes while reorienting hardworking human staff to high-value, high-impact consumer engagement. They understand that the access center of the future should be an AI-enabled platform to drive growth, manage consumer relationships, enable value-based care, and generate organizational intelligence. They also see the access center as a “proof case” for their broader enterprise AI ambitions."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                274,
+                946,
+                374
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Opportunities to Transform the Access Center"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                494,
+                819,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We see three key opportunities for systems to pursue when transforming access through AI. Automate routine scheduling and referral workflows. Augment human agents during complex interactions. Amplify access-related revenue generation strategies. (See Exhibit 1.) Systems that pursue these three complementary strategies in parallel will see the greatest return on their AI investment through improved consumer experience; easier access; improved navigation, quality, and outcomes; and financial upside. Let’s look closely at each of these actions."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                601,
+                942,
+                721
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Three Key Opportunities to Transform Access Centers with Agentic AI"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                43,
+                80,
+                728,
+                99
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3bb7a782ec6a9b606b4ddfaa2825f3788a96cb49536f949366c542ad1edb6277.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                127,
+                118,
+                175,
+                153
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Automate rote and routine scheduling processes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                158,
+                237,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI fully steers calls and chats from reaching a human agent, including routing to self-service channels (e.g., MyChart scheduling)"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                192,
+                242,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Example tasks:\nAppointment scheduling,\nconfirmation, modification, and\ncancellation"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                246,
+                225,
+                284
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Status requests for referrals, prior authorizations, and waitlists"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                290,
+                230,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Pre-appointment preparation, including arrival time and dietary restrictions"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                317,
+                230,
+                347
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "General inquiries and wayfinding (hours, location, parking, and visiting hours)"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                351,
+                228,
+                382
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/724d15d1d7c05319266f6d39e29b5afed0e1140c0941274cb77df2a620a5007e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                365,
+                122,
+                407,
+                154
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Augment human agents during complex interactions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                306,
+                158,
+                476,
+                183
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI enables a human agent before, during, and after a call to resolve a patient's issue in a complete and timely manner"
+                    }
+                ]
+            },
+            "bbox": [
+                296,
+                192,
+                476,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Example tasks: Call intent identification and patient identity verification"
+                    }
+                ]
+            },
+            "bbox": [
+                318,
+                244,
+                454,
+                275
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Patient information gathering (e.g., relevant health and appointment history)"
+                    }
+                ]
+            },
+            "bbox": [
+                316,
+                281,
+                457,
+                312
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Call guidance, next-best-action recommendation, and agent assist"
+                    }
+                ]
+            },
+            "bbox": [
+                314,
+                316,
+                459,
+                347
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Post-call support, including QA and individual-level training and upskilling"
+                    }
+                ]
+            },
+            "bbox": [
+                314,
+                351,
+                459,
+                382
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c71fc22642c77c2a2e00ff98f92a8b56995d91c02e0f254deb68fcd53de4f71c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                597,
+                121,
+                646,
+                154
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Amplify access-related revenue generation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                555,
+                158,
+                700,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI extracts signals from large, unstructured datasets to create an intelligence layer and generate “segment of one” patient insights"
+                    }
+                ]
+            },
+            "bbox": [
+                530,
+                192,
+                710,
+                235
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Example tasks: Proactive outreach on common care gaps (e.g., overdue screenings and annual visits)"
+                    }
+                ]
+            },
+            "bbox": [
+                547,
+                244,
+                696,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Referral management to stop patient leakage between front-door and specialty services"
+                    }
+                ]
+            },
+            "bbox": [
+                545,
+                290,
+                698,
+                321
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Automated follow-ups for dropped or unresolved calls to prevent lost demand"
+                    }
+                ]
+            },
+            "bbox": [
+                548,
+                325,
+                695,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Business intelligence generation (e.g., emergent demand drivers and supply mismatches)"
+                    }
+                ]
+            },
+            "bbox": [
+                545,
+                361,
+                696,
+                392
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                420,
+                146,
+                432
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Automate and fully contain end-to-end access workflows."
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                42,
+                466,
+                846,
+                535
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Across health systems, the interactions that consistently demonstrate the highest potential for end-to-end automation are appointment information and confirmation, scheduling and rescheduling, and cancellation, as well as requests for referral and authorization status and general wayfinding. These intents are high frequency, heavily scripted, have clear resolution pathways, require no clinical judgment—and they typically represent more than half of total inbound volume at large health systems. These are good targets for containment, in which AI manages the interactions independently, without human involvement."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                562,
+                929,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No single vendor currently provides a full, end-to-end solution virtual agent, and no single “best” approach will work for every health system: each has distinct benefits and limitations. (See Exhibit 2.) Options include vendor solutions such as Hyro, Sierra, Decagon, and Avaamo—or building a custom product with in-house tech talent."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                715,
+                946,
+                795
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                65,
+                107,
+                76
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4c71e40ebed9b8f94b9c465959983779ba1b58fcc9f6684f97a205a38b154f4e.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Buying vs. Building an AI-enabled Virtual Agent"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                43,
+                112,
+                728,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Selecting the right implementation approach for a virtual agent is one of the most consequential decisions a health system will make. Leaders must weigh several factors, including speed to value, long-term flexibility, ability to integrate with custom business logic, total cost of ownership, and any potential trade-offs. This analysis requires a granular understanding of access center interactions and consumer intents, clarity on the enterprise's overall level of AI ambition and long-term strategic roadmap, and detailed modeling of financial implications, including potentially uncertain variables like future token cost. The right solution depends on a health system's priorities, existing technology infrastructure, the complexity of its scheduling business logic, its tolerance for vendor dependency, and its internal product and engineering depth."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                418,
+                952,
+                596
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Augment and enable human agent efficiency and effectiveness."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                625,
+                759,
+                693
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While many patient access interactions can be automated, some will need escalation to a professional and well-trained human agent. Whether due to scheduling complexity, coordination of referrals and authorizations, sensitive topics, or consumer preference, about 40% to 50% of calls will still require human interaction in the near-term. For these calls, health systems should pursue agent-assist capabilities that augment the legacy tools that human agents have at their fingertips. Deploying AI tools that make every agent better, smarter, and faster at their jobs can drive meaningful enterprise value while maximizing job satisfaction for human agents."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                719,
+                936,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Among our clients, up to 60% of human agent time is currently spent on tasks that could be augmented by AI. Agent-assist tools can drive reductions in average handle time (AHT) by 30% to 40% and dramatically improve patient experience by freeing the agent to focus on empathic"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                873,
+                947,
+                933
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "listening and creative problem solving rather than basic knowledge retrieval. Agent-assist tools deliver value across all steps of a consumer interaction, including:"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                930,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Intent detection and identity verification. With or without a standalone virtual agent, a “narrow” agent-assist tool can confirm a patient’s reason for calling and conduct identity verification, handing off relevant context to the human agent."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                136,
+                893,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Patient information gathering. Patient history, prior call reasons, open care gaps, and suggested next best actions are identified and displayed by the AI tool before the agent speaks a word, eliminating the need for manual electronic health record (EHR) lookup."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                210,
+                880,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Call guidance and next best action. As the conversation unfolds, AI guidance surfaces relevant policy information, scheduling availability, and next-best-action recommendations, providing agents with real-time prompts to address queries instantly rather than placing callers on hold."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                285,
+                917,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Handoff. When a call must be transferred, AI summarizes the full interaction history so the receiving agent or clinic is fully briefed, eliminating the need for patients to repeat information and reducing the AHT premium that transferred calls typically carry."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                378,
+                912,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "After a call, AI auto-generates call summaries, in-basket messages, e-mails, and any required downstream tickets, reducing after-call work by up to 2 minutes per interaction. AI can also support QA and training by analyzing calls to identify systemic and individual-level performance hotspots, such as workflow inconsistencies and off-script messaging, and develop personalized training for agents. (See “Spotlight on Access Center Quality Assurance and Training.”)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                467,
+                939,
+                569
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "- Spotlight on Access Center Quality Assurance and Training"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                596,
+                858,
+                656
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "One of the most underutilized levers in access center management is quality assurance. Most health systems sample fewer than 5% of interactions for manual review, meaning most agent behavior—including compliance gaps, patient safety escalations, and coaching opportunities—goes unobserved."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                692,
+                797,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI fundamentally changes this paradigm. Automated QA capabilities can evaluate significantly more interactions and provide real-time data on quality, compliance, resolution, and consumer satisfaction to both agents and their managers. Importantly, the architecture used to automate human-agent QA can be used to evaluate virtual agents, enabling access center leaders to compare outcomes across channels and prioritize areas for improvement."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                791,
+                840,
+                910
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A robust AI-driven QA capability can feed directly into personalized training tools that human agents can use to improve performance. Rather than generic group training sessions, the AI identifies the specific call types and interaction phases where each individual agent underperforms and generates targeted learning plans with constructive feedback. With new “synthetic” calling capabilities, these learning plans can be used to develop mock calls that human agents can have with virtual, but highly realistic, callers, reinforcing training with real-world, human-to-AI conversations."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                67,
+                838,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Together, automated QA and personalized training co-pilots create a continuous improvement loop that compounds over time: better data on agent performance drives more targeted coaching, which in turn lifts performance and generates better outcomes."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                244,
+                833,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To get the most from AI augmentation, systems must have a detailed understanding of how agents spend their time and adopt a human-centered design approach to developing agent-assist tools. Introducing another tool or interface to an agent's workflow is only valuable if it addresses existing pain points, enables agents to better address patients' needs, and improves the overall consumer experience."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                464,
+                952,
+                565
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Amplify access-related revenue generation strategies."
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                636,
+                816,
+                717
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Reconceptualizing the patient access function as a dynamic growth engine means treating each call not as a low-value interaction to resolve quickly and inexpensively but as a demand signal to convert, a relationship to deepen, and a care gap to close. Key growth levers include:"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                741,
+                949,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Demand capture. AI-powered 24/7 coverage and automated follow-up on unanswered and unresolved calls converts demand currently lost to staffing limits, after-hours gaps, and failed callbacks."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                832,
+                934,
+                890
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Ancillary attachment. AI surfaces relevant imaging, lab, pharmacy, and preventive care opportunities in real time during every interaction, enabling agents to offer appropriate ancillary services, providing new opportunities to meet patient needs and helping patients access required services."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                910,
+                145
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Referral management. AI tracks referral status and triggers follow-up, reducing leakage within the network and improving closed-loop visibility for care teams (especially critical for high-margin commercial patients and specialty procedures)."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                159,
+                917,
+                221
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Proactive outreach. AI-powered outbound agents can engage patients who have known care gaps, overdue screenings, or post-discharge needs, converting latent demand into scheduled visits."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                235,
+                925,
+                293
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- “Segments of one”. AI can analyze a vast array of data to develop personalized, 360-degree patient profiles and create differentiated pathways for high-need and high-value patients, enabling systems to better guide patients to the appropriate level of care and provide enhanced service levels in strategically important service lines."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                307,
+                919,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For our clients, incorporating growth-related strategies into their roadmap increases the projected margin uplift of AI-driven access center optimization by 3–5x versus focusing on cost alone. It also provides consumers with a seamless access experience, supports providers in seeing more patients, and improves the timeliness and responsiveness of care."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                417,
+                951,
+                498
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Critical Enabler: Clinical Operations and Change Management"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                567,
+                750,
+                687
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology models, vendors, architecture, and infrastructure represent only about 30% of an AI transformation. People and change management account for 70%—but are often overlooked and underinvested."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                714,
+                949,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Attempting to transform the access function with AI will fail without active partnership from the clinical and operational teams who control the inputs that the technology needs to perform. At most health systems, the scheduling rules, booking constraints, visit type configurations, and provider-level directives that govern access are neither centrally managed, consistently documented, nor designed for scale. At the same time, health systems often have unique provider-and clinic-specific business logic that is not codified in any system of record—from shared Excel trackers to unwritten knowledge that agents learn over time."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                788,
+                954,
+                928
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Because AI will only be as good as the foundation upon which it is built, systems must codify the formal and informal business logic that sits with human agents, MAs, and providers into structured inputs for AI to consume. This is often one of the most challenging tasks we support our clients in undertaking. Executives and function leaders consistently underestimate the operational effort required to execute a successful AI-enabled access center transformation, including:"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                934,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Expansion of agent booking authority. In many systems, contact center agents are prohibited from booking directly into a significant share of visit types—not because the interactions are clinically complex, but because practices have historically preferred to control their own schedules. Relaxing these restrictions is one of the highest-leverage operational fixes available, and one that AI alone cannot unlock."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                216,
+                880,
+                315
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Accessibility of practices. Even with expanded booking permissions, human agents will need to contact clinics in certain instances. While there is often a phone number, e-mail, or EHR message channel available, clinics do not always answer calls, respond to messages, or address the needs of access center agents. Improving the clinic–access center relationship and committing to increased responsiveness is critical."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                328,
+                930,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Provider alert and exception management. Dynamic information, such as a provider on leave, a practice that has closed, or a change in insurance acceptance, is often currently communicated on an ad hoc basis. Operational teams must formalize how this information flows into the access center for new AI solutions to operate reliably."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                442,
+                909,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Template and visit type rationalization. Visit type mappings between what agents see and what lives in the EHR are frequently misaligned or incomplete. Rationalizing templates and establishing clean EHR-to-access center linkages is a prerequisite for reliable automation."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                536,
+                920,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Insurance rule documentation. Insurance acceptance rules are often missing, inconsistent, or buried in free text. Closing these gaps requires direct engagement with clinic managers and revenue cycle teams to ensure appropriate routing of patients to providers."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                609,
+                920,
+                670
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Health systems that underinvest in clinical and operational change management will see their AI capabilities and financial ROI underperform relative to its technical potential. The systems that succeed treat access center transformation as a cross-functional program of highest strategic importance, not an IT project akin to a vendor migration. Senior executive and clinical sponsorship, shoulder-to-shoulder engagement with practice leaders, and clear accountability for the operational changes that AI enablement require is critical."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                699,
+                949,
+                819
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A Call to Act—Now."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                890,
+                538,
+                928
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The access function is the primary interface between the system and its patients, the key channel to capture demand, and an underappreciated platform for growth. In an age of rapidly advancing AI, systems that view the technology as merely a means to reduce labor cost will quickly fall behind those that recognize it as tool to supercharge a key strategic asset."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                922,
+                146
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI capabilities are changing at breathtaking speed and scale. Systems must be prepared. Clear sequencing, strong governance, discipline to build required technical and organizational capabilities, and buy-in from clinical operations leaders are critical. The organizations that capture this value will be those who fund their journey through quick-win automation plays but don’t stop there. Instead, leaders that set their sights on transforming the access center as a means of growing and reaching patients in new ways will realize outsized value."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                160,
+                927,
+                280
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b6d4894b0c302c004baa09021d4181ddcb58ad2f76dd36332756caf2e20e72d8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                707,
+                356,
+                836,
+                380
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                103,
+                245,
+                143
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/524175f29e451cc74bdeeaada1fc882a66dccde7ca4d80a85e3ea4330409d3a7.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                67,
+                185,
+                220,
+                292
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d64c66b60737c580dedcbb4cc85b1665e0bd0be5da20fe51a71634cb0aa8388e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                69,
+                351,
+                220,
+                455
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f4f3deb9d98ea65a0d02d0b78f663449e821cd4a30e8adbf073f0006b854e538.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                69,
+                501,
+                218,
+                607
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/15259bdc7640a589b4dfbdefa9dd8f4b67befe8eaa3099623f8ae1aa9022b33c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Natasha Taylor"
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                653,
+                218,
+                760
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner\nDenver"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                225,
+                436,
+                268
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2c25259b36ce80a664f9e43c5625f03eaf91d416bae3060d9308bfa7059feb4a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Luke Purcell"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                272,
+                274,
+                288
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nNew York"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                388,
+                444,
+                420
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d3f9c637904491cb3d288f3fba895b35e0eeb8eaf446e8e87786963037764914.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Scott Wilder"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                424,
+                274,
+                441
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner Dallas"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                542,
+                446,
+                571
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/09d371746a3a3150edf56edc4c91181cad7e54b77c80a1fb070a6e6550c850f0.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Michael Bernstein"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                577,
+                274,
+                594
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Principal New York"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                696,
+                311,
+                726
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/03d798750c313e68b1b6afbc637962758dc61152a20d1e506379ac6f6d058242.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                731,
+                274,
+                747
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/14b6d4e26ae661b4b8cb1f77219b9c9be5151023bc1a3ce6cd040c8fc615c9ee.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                531,
+                187,
+                681,
+                293
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a60761b718790e6617ca0a5647fb7a039f0ed43553f6e62821e6bfb3141c481e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                277,
+                735,
+                294
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0e16dfb199d7dc7329871a7144d5ac58563c2c2264d6629667e197569fd04847.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                531,
+                349,
+                681,
+                455
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nNew York"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                243,
+                907,
+                272
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b87707d6c8fecb0c91deb5119bb9f2a96a7cb39682aacd032d8c9db0027790e5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                424,
+                735,
+                441
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b47398f404b0534378082d275a325058911b7155416d78f07e8ed31185fc9886.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                531,
+                501,
+                683,
+                606
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nChicago"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                388,
+                907,
+                420
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Kevin Fleming"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                705,
+                508,
+                868,
+                535
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Partner\nDenver"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                544,
+                767,
+                571
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a287a6623236a55b903c4b8a896b609af1471c4eaa39e44d67dec4b7d1b40849.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                577,
+                737,
+                594
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ABOUT BOSTON CONSULTING GROUP"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                102,
+                434,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                137,
+                951,
+                256
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ]
+]

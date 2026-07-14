@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_p9g7uzsb/pdfs/0001-BCG_Pressing-the-Throttle-Unlocking-India-s-Mining-and-Construct_0b8dffa3.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p9g7uzsb/pdfs/0002-BCG_Transforming-the-Patient-Access-Center-with-AI_acb93665.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

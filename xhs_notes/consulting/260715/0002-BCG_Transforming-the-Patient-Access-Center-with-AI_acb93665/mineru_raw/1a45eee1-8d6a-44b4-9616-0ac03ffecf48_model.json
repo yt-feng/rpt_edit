@@ -1,0 +1,4612 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.397
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.049,
+                0.431,
+                0.439,
+                0.449
+            ],
+            "angle": 0,
+            "content": "HEALTH CARE PAYERS, PROVIDERS, SYSTEMS & SERVICES",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.478,
+                0.719,
+                0.625
+            ],
+            "angle": 0,
+            "content": "Transforming the\nPatient Access Center\nwith AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.657,
+                0.77,
+                0.696
+            ],
+            "angle": 0,
+            "content": "By Natasha Taylor, Matthew Huddle, MD, Luke Purcell, Ryan Shain, Scott Wilder, Kevin Fleming, and Michael Bernstein",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.72,
+                0.24,
+                0.737
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 14, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.797,
+                0.947,
+                0.858
+            ],
+            "angle": 0,
+            "content": "The access center is both the front door and the beating heart of a patient-centric health system. AI stands to transform how patient access centers function, but not in the way many executives imagine.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.872,
+                0.953,
+                0.933
+            ],
+            "angle": 0,
+            "content": "Consumers call, chat, and text with access center agents to schedule appointments; manage referrals; navigate authorization, billing, and insurance topics; and seek answers to a multitude of questions. Despite this heavy use, a substantial share of patient demands slips away at the",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.432,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.474,
+                0.598,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.529,
+                0.721,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.58,
+                0.286,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.66,
+                0.767,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.678,
+                0.305,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.722,
+                0.237,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.799,
+                0.945,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.819,
+                0.93,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.84,
+                0.129,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.874,
+                0.906,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.895,
+                0.949,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.914,
+                0.889,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.068,
+                0.947,
+                0.147
+            ],
+            "angle": 0,
+            "content": "access channel. Thousands of calls go unanswered or are abandoned due to long wait times, failed transfers, and limited after-hours coverage. Up to 40% of scheduling-related interactions go unresolved on first contact. Missed annual visits and vaccines are not systematically and proactively addressed, and specialty referrals are not aggressively tracked and converted.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.16,
+                0.937,
+                0.261
+            ],
+            "angle": 0,
+            "content": "AI can perform many of these basic tasks and augment the work of human agents for more complex issues. Yet when system leaders consider deploying AI in access centers, they view it merely as a way to reduce costs and increase efficiency. This perspective overlooks a significant opportunity to use AI to reshape the access function from end to end—shifting it from a cost center to a revenue engine.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.275,
+                0.947,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Many of our clients are deploying AI to automate lower-complexity processes while reorienting hardworking human staff to high-value, high-impact consumer engagement. They understand that the access center of the future should be an AI-enabled platform to drive growth, manage consumer relationships, enable value-based care, and generate organizational intelligence. They also see the access center as a “proof case” for their broader enterprise AI ambitions.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.495,
+                0.821,
+                0.572
+            ],
+            "angle": 0,
+            "content": "Opportunities to Transform the\nAccess Center"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.602,
+                0.944,
+                0.722
+            ],
+            "angle": 0,
+            "content": "We see three key opportunities for systems to pursue when transforming access through AI. Automate routine scheduling and referral workflows. Augment human agents during complex interactions. Amplify access-related revenue generation strategies. (See Exhibit 1.) Systems that pursue these three complementary strategies in parallel will see the greatest return on their AI investment through improved consumer experience; easier access; improved navigation, quality, and outcomes; and financial upside. Let’s look closely at each of these actions.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.901,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.942,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.875,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.879,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.885,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.184,
+                0.91,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.931,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.904,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.244,
+                0.3,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.277,
+                0.923,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.296,
+                0.942,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.315,
+                0.873,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.338,
+                0.941,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.356,
+                0.841,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.495,
+                0.822,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.537,
+                0.388,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.604,
+                0.897,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.624,
+                0.912,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.644,
+                0.94,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.664,
+                0.93,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.683,
+                0.933,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.775,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.066,
+                0.109,
+                0.077
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.044,
+                0.081,
+                0.729,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Three Key Opportunities to Transform Access Centers with Agentic AI"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.128,
+                0.12,
+                0.176,
+                0.154
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.071,
+                0.159,
+                0.238,
+                0.183
+            ],
+            "angle": 0,
+            "content": "Automate rote and routine scheduling processes"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.193,
+                0.243,
+                0.235
+            ],
+            "angle": 0,
+            "content": "AI fully steers calls and chats from reaching a human agent, including routing to self-service channels (e.g., MyChart scheduling)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.247,
+                0.227,
+                0.285
+            ],
+            "angle": 0,
+            "content": "Example tasks:\nAppointment scheduling,\nconfirmation, modification, and\ncancellation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.073,
+                0.291,
+                0.232,
+                0.312
+            ],
+            "angle": 0,
+            "content": "Status requests for referrals, prior authorizations, and waitlists",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.318,
+                0.231,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Pre-appointment preparation, including arrival time and dietary restrictions",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.353,
+                0.23,
+                0.384
+            ],
+            "angle": 0,
+            "content": "General inquiries and wayfinding (hours, location, parking, and visiting hours)",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.367,
+                0.123,
+                0.409,
+                0.155
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.307,
+                0.159,
+                0.477,
+                0.184
+            ],
+            "angle": 0,
+            "content": "Augment human agents during complex interactions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.193,
+                0.478,
+                0.235
+            ],
+            "angle": 0,
+            "content": "AI enables a human agent before, during, and after a call to resolve a patient's issue in a complete and timely manner",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.319,
+                0.246,
+                0.456,
+                0.277
+            ],
+            "angle": 0,
+            "content": "Example tasks: Call intent identification and patient identity verification",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.318,
+                0.282,
+                0.459,
+                0.313
+            ],
+            "angle": 0,
+            "content": "Patient information gathering (e.g., relevant health and appointment history)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.315,
+                0.317,
+                0.46,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Call guidance, next-best-action recommendation, and agent assist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.315,
+                0.353,
+                0.46,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Post-call support, including QA and individual-level training and upskilling",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.599,
+                0.122,
+                0.647,
+                0.155
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.557,
+                0.159,
+                0.701,
+                0.183
+            ],
+            "angle": 0,
+            "content": "Amplify access-related revenue generation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.531,
+                0.193,
+                0.711,
+                0.236
+            ],
+            "angle": 0,
+            "content": "AI extracts signals from large, unstructured datasets to create an intelligence layer and generate “segment of one” patient insights",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.548,
+                0.246,
+                0.698,
+                0.286
+            ],
+            "angle": 0,
+            "content": "Example tasks: Proactive outreach on common care gaps (e.g., overdue screenings and annual visits)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.546,
+                0.291,
+                0.699,
+                0.322
+            ],
+            "angle": 0,
+            "content": "Referral management to stop patient leakage between front-door and specialty services",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.549,
+                0.326,
+                0.696,
+                0.357
+            ],
+            "angle": 0,
+            "content": "Automated follow-ups for dropped or unresolved calls to prevent lost demand",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.547,
+                0.362,
+                0.698,
+                0.393
+            ],
+            "angle": 0,
+            "content": "Business intelligence generation (e.g., emergent demand drivers and supply mismatches)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.422,
+                0.147,
+                0.434
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.467,
+                0.848,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Automate and fully contain end-to-end access workflows."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.563,
+                0.93,
+                0.704
+            ],
+            "angle": 0,
+            "content": "Across health systems, the interactions that consistently demonstrate the highest potential for end-to-end automation are appointment information and confirmation, scheduling and rescheduling, and cancellation, as well as requests for referral and authorization status and general wayfinding. These intents are high frequency, heavily scripted, have clear resolution pathways, require no clinical judgment—and they typically represent more than half of total inbound volume at large health systems. These are good targets for containment, in which AI manages the interactions independently, without human involvement.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.717,
+                0.947,
+                0.796
+            ],
+            "angle": 0,
+            "content": "No single vendor currently provides a full, end-to-end solution virtual agent, and no single “best” approach will work for every health system: each has distinct benefits and limitations. (See Exhibit 2.) Options include vendor solutions such as Hyro, Sierra, Decagon, and Avaamo—or building a custom product with in-house tech talent.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.727,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.16,
+                0.235,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.17,
+                0.217,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.195,
+                0.24,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.204,
+                0.24,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.214,
+                0.231,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.224,
+                0.218,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.248,
+                0.188,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.257,
+                0.208,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.265,
+                0.224,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.274,
+                0.18,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.292,
+                0.216,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.301,
+                0.228,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.32,
+                0.22,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.327,
+                0.229,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.338,
+                0.178,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.354,
+                0.227,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.364,
+                0.219,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.373,
+                0.184,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.161,
+                0.464,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.311,
+                0.171,
+                0.472,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.298,
+                0.193,
+                0.475,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.204,
+                0.477,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.213,
+                0.472,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.348,
+                0.223,
+                0.426,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.351,
+                0.248,
+                0.423,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.257,
+                0.452,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.266,
+                0.448,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.283,
+                0.455,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.332,
+                0.292,
+                0.443,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.34,
+                0.302,
+                0.436,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.319,
+                0.457,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.337,
+                0.328,
+                0.438,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.36,
+                0.338,
+                0.415,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.354,
+                0.457,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.363,
+                0.451,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.355,
+                0.372,
+                0.419,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.561,
+                0.16,
+                0.697,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.572,
+                0.171,
+                0.685,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.193,
+                0.698,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.533,
+                0.204,
+                0.71,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.213,
+                0.699,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.536,
+                0.222,
+                0.707,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.586,
+                0.247,
+                0.658,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.551,
+                0.257,
+                0.693,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.569,
+                0.266,
+                0.674,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.276,
+                0.687,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.292,
+                0.689,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.565,
+                0.301,
+                0.678,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.548,
+                0.31,
+                0.696,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.565,
+                0.328,
+                0.679,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.554,
+                0.338,
+                0.69,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.575,
+                0.346,
+                0.668,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.55,
+                0.364,
+                0.694,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.552,
+                0.374,
+                0.693,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.382,
+                0.677,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.425,
+                0.144,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.466,
+                0.85,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.503,
+                0.414,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.566,
+                0.926,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.587,
+                0.851,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.607,
+                0.893,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.625,
+                0.891,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.646,
+                0.899,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.666,
+                0.901,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.685,
+                0.695,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.718,
+                0.943,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.739,
+                0.884,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.758,
+                0.898,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.778,
+                0.526,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.082,
+                0.517,
+                0.102
+            ],
+            "angle": 0,
+            "content": "Buying vs. Building an AI-enabled Virtual Agent"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.114,
+                0.729,
+                0.378
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.419,
+                0.954,
+                0.598
+            ],
+            "angle": 0,
+            "content": "Selecting the right implementation approach for a virtual agent is one of the most consequential decisions a health system will make. Leaders must weigh several factors, including speed to value, long-term flexibility, ability to integrate with custom business logic, total cost of ownership, and any potential trade-offs. This analysis requires a granular understanding of access center interactions and consumer intents, clarity on the enterprise's overall level of AI ambition and long-term strategic roadmap, and detailed modeling of financial implications, including potentially uncertain variables like future token cost. The right solution depends on a health system's priorities, existing technology infrastructure, the complexity of its scheduling business logic, its tolerance for vendor dependency, and its internal product and engineering depth.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.626,
+                0.76,
+                0.694
+            ],
+            "angle": 0,
+            "content": "Augment and enable human agent efficiency and effectiveness."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.72,
+                0.937,
+                0.861
+            ],
+            "angle": 0,
+            "content": "While many patient access interactions can be automated, some will need escalation to a professional and well-trained human agent. Whether due to scheduling complexity, coordination of referrals and authorizations, sensitive topics, or consumer preference, about 40% to 50% of calls will still require human interaction in the near-term. For these calls, health systems should pursue agent-assist capabilities that augment the legacy tools that human agents have at their fingertips. Deploying AI tools that make every agent better, smarter, and faster at their jobs can drive meaningful enterprise value while maximizing job satisfaction for human agents.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.874,
+                0.948,
+                0.934
+            ],
+            "angle": 0,
+            "content": "Among our clients, up to 60% of human agent time is currently spent on tasks that could be augmented by AI. Agent-assist tools can drive reductions in average handle time (AHT) by 30% to 40% and dramatically improve patient experience by freeing the agent to focus on empathic",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.421,
+                0.941,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.44,
+                0.95,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.458,
+                0.923,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.48,
+                0.874,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.499,
+                0.913,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.519,
+                0.849,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.54,
+                0.904,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.56,
+                0.925,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.579,
+                0.88,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.623,
+                0.76,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.659,
+                0.616,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.723,
+                0.88,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.741,
+                0.933,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.762,
+                0.915,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.78,
+                0.93,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.802,
+                0.925,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.821,
+                0.925,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.84,
+                0.843,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.875,
+                0.892,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.895,
+                0.943,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.916,
+                0.898,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.931,
+                0.108
+            ],
+            "angle": 0,
+            "content": "listening and creative problem solving rather than basic knowledge retrieval. Agent-assist tools deliver value across all steps of a consumer interaction, including:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.137,
+                0.895,
+                0.197
+            ],
+            "angle": 0,
+            "content": "- Intent detection and identity verification. With or without a standalone virtual agent, a “narrow” agent-assist tool can confirm a patient’s reason for calling and conduct identity verification, handing off relevant context to the human agent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.211,
+                0.881,
+                0.272
+            ],
+            "angle": 0,
+            "content": "- Patient information gathering. Patient history, prior call reasons, open care gaps, and suggested next best actions are identified and displayed by the AI tool before the agent speaks a word, eliminating the need for manual electronic health record (EHR) lookup.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.286,
+                0.918,
+                0.364
+            ],
+            "angle": 0,
+            "content": "- Call guidance and next best action. As the conversation unfolds, AI guidance surfaces relevant policy information, scheduling availability, and next-best-action recommendations, providing agents with real-time prompts to address queries instantly rather than placing callers on hold.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.379,
+                0.913,
+                0.44
+            ],
+            "angle": 0,
+            "content": "- Handoff. When a call must be transferred, AI summarizes the full interaction history so the receiving agent or clinic is fully briefed, eliminating the need for patients to repeat information and reducing the AHT premium that transferred calls typically carry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.468,
+                0.941,
+                0.57
+            ],
+            "angle": 0,
+            "content": "After a call, AI auto-generates call summaries, in-basket messages, e-mails, and any required downstream tickets, reducing after-call work by up to 2 minutes per interaction. AI can also support QA and training by analyzing calls to identify systemic and individual-level performance hotspots, such as workflow inconsistencies and off-script messaging, and develop personalized training for agents. (See “Spotlight on Access Center Quality Assurance and Training.”)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.598,
+                0.86,
+                0.657
+            ],
+            "angle": 0,
+            "content": "- Spotlight on Access Center Quality Assurance and Training"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.693,
+                0.799,
+                0.773
+            ],
+            "angle": 0,
+            "content": "One of the most underutilized levers in access center management is quality assurance. Most health systems sample fewer than 5% of interactions for manual review, meaning most agent behavior—including compliance gaps, patient safety escalations, and coaching opportunities—goes unobserved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.792,
+                0.841,
+                0.911
+            ],
+            "angle": 0,
+            "content": "AI fundamentally changes this paradigm. Automated QA capabilities can evaluate significantly more interactions and provide real-time data on quality, compliance, resolution, and consumer satisfaction to both agents and their managers. Importantly, the architecture used to automate human-agent QA can be used to evaluate virtual agents, enabling access center leaders to compare outcomes across channels and prioritize areas for improvement.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.069,
+                0.928,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.659,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.139,
+                0.88,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.158,
+                0.89,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.177,
+                0.635,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.212,
+                0.869,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.233,
+                0.877,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.254,
+                0.871,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.288,
+                0.861,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.307,
+                0.915,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.328,
+                0.886,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.347,
+                0.212,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.381,
+                0.909,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.401,
+                0.831,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.42,
+                0.813,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.471,
+                0.903,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.491,
+                0.889,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.51,
+                0.937,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.53,
+                0.923,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.551,
+                0.839,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.599,
+                0.86,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.629,
+                0.23,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.695,
+                0.796,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.715,
+                0.765,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.735,
+                0.777,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.754,
+                0.78,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.794,
+                0.838,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.814,
+                0.835,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.833,
+                0.766,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.853,
+                0.815,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.872,
+                0.797,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.891,
+                0.587,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.068,
+                0.84,
+                0.226
+            ],
+            "angle": 0,
+            "content": "A robust AI-driven QA capability can feed directly into personalized training tools that human agents can use to improve performance. Rather than generic group training sessions, the AI identifies the specific call types and interaction phases where each individual agent underperforms and generates targeted learning plans with constructive feedback. With new “synthetic” calling capabilities, these learning plans can be used to develop mock calls that human agents can have with virtual, but highly realistic, callers, reinforcing training with real-world, human-to-AI conversations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.245,
+                0.834,
+                0.324
+            ],
+            "angle": 0,
+            "content": "Together, automated QA and personalized training co-pilots create a continuous improvement loop that compounds over time: better data on agent performance drives more targeted coaching, which in turn lifts performance and generates better outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.466,
+                0.953,
+                0.566
+            ],
+            "angle": 0,
+            "content": "To get the most from AI augmentation, systems must have a detailed understanding of how agents spend their time and adopt a human-centered design approach to developing agent-assist tools. Introducing another tool or interface to an agent's workflow is only valuable if it addresses existing pain points, enables agents to better address patients' needs, and improves the overall consumer experience.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.637,
+                0.817,
+                0.718
+            ],
+            "angle": 0,
+            "content": "Amplify access-related revenue generation strategies."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.743,
+                0.95,
+                0.804
+            ],
+            "angle": 0,
+            "content": "Reconceptualizing the patient access function as a dynamic growth engine means treating each call not as a low-value interaction to resolve quickly and inexpensively but as a demand signal to convert, a relationship to deepen, and a care gap to close. Key growth levers include:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.833,
+                0.935,
+                0.891
+            ],
+            "angle": 0,
+            "content": "- Demand capture. AI-powered 24/7 coverage and automated follow-up on unanswered and unresolved calls converts demand currently lost to staffing limits, after-hours gaps, and failed callbacks.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.069,
+                0.837,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.09,
+                0.817,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.109,
+                0.822,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.128,
+                0.791,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.148,
+                0.835,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.168,
+                0.814,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.189,
+                0.769,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.208,
+                0.34,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.246,
+                0.822,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.267,
+                0.829,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.286,
+                0.794,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.307,
+                0.244,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.469,
+                0.95,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.49,
+                0.938,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.509,
+                0.883,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.529,
+                0.938,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.549,
+                0.253,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.637,
+                0.818,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.679,
+                0.575,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.746,
+                0.935,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.766,
+                0.944,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.785,
+                0.829,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.836,
+                0.897,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.854,
+                0.932,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.875,
+                0.163,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.912,
+                0.146
+            ],
+            "angle": 0,
+            "content": "- Ancillary attachment. AI surfaces relevant imaging, lab, pharmacy, and preventive care opportunities in real time during every interaction, enabling agents to offer appropriate ancillary services, providing new opportunities to meet patient needs and helping patients access required services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.16,
+                0.918,
+                0.222
+            ],
+            "angle": 0,
+            "content": "- Referral management. AI tracks referral status and triggers follow-up, reducing leakage within the network and improving closed-loop visibility for care teams (especially critical for high-margin commercial patients and specialty procedures).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.236,
+                0.927,
+                0.294
+            ],
+            "angle": 0,
+            "content": "- Proactive outreach. AI-powered outbound agents can engage patients who have known care gaps, overdue screenings, or post-discharge needs, converting latent demand into scheduled visits.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.309,
+                0.92,
+                0.389
+            ],
+            "angle": 0,
+            "content": "- “Segments of one”. AI can analyze a vast array of data to develop personalized, 360-degree patient profiles and create differentiated pathways for high-need and high-value patients, enabling systems to better guide patients to the appropriate level of care and provide enhanced service levels in strategically important service lines.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.418,
+                0.952,
+                0.499
+            ],
+            "angle": 0,
+            "content": "For our clients, incorporating growth-related strategies into their roadmap increases the projected margin uplift of AI-driven access center optimization by 3–5x versus focusing on cost alone. It also provides consumers with a seamless access experience, supports providers in seeing more patients, and improves the timeliness and responsiveness of care.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.568,
+                0.752,
+                0.688
+            ],
+            "angle": 0,
+            "content": "The Critical Enabler: Clinical\nOperations and Change\nManagement"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.715,
+                0.951,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Technology models, vendors, architecture, and infrastructure represent only about 30% of an AI transformation. People and change management account for 70%—but are often overlooked and underinvested.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.789,
+                0.955,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Attempting to transform the access function with AI will fail without active partnership from the clinical and operational teams who control the inputs that the technology needs to perform. At most health systems, the scheduling rules, booking constraints, visit type configurations, and provider-level directives that govern access are neither centrally managed, consistently documented, nor designed for scale. At the same time, health systems often have unique provider-and clinic-specific business logic that is not codified in any system of record—from shared Excel trackers to unwritten knowledge that agents learn over time.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.068,
+                0.873,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.088,
+                0.877,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.109,
+                0.908,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.128,
+                0.3,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.162,
+                0.875,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.182,
+                0.914,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.203,
+                0.624,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.236,
+                0.923,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.257,
+                0.924,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.277,
+                0.123,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.311,
+                0.918,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.331,
+                0.892,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.352,
+                0.866,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.37,
+                0.659,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.421,
+                0.949,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.441,
+                0.911,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.46,
+                0.932,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.481,
+                0.662,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.567,
+                0.753,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.607,
+                0.632,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.648,
+                0.377,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.718,
+                0.926,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.737,
+                0.947,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.757,
+                0.185,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.792,
+                0.926,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.81,
+                0.924,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.83,
+                0.906,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.851,
+                0.857,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.87,
+                0.95,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.889,
+                0.936,
+                0.904
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.909,
+                0.609,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.935,
+                0.186
+            ],
+            "angle": 0,
+            "content": "Because AI will only be as good as the foundation upon which it is built, systems must codify the formal and informal business logic that sits with human agents, MAs, and providers into structured inputs for AI to consume. This is often one of the most challenging tasks we support our clients in undertaking. Executives and function leaders consistently underestimate the operational effort required to execute a successful AI-enabled access center transformation, including:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.217,
+                0.881,
+                0.316
+            ],
+            "angle": 0,
+            "content": "- Expansion of agent booking authority. In many systems, contact center agents are prohibited from booking directly into a significant share of visit types—not because the interactions are clinically complex, but because practices have historically preferred to control their own schedules. Relaxing these restrictions is one of the highest-leverage operational fixes available, and one that AI alone cannot unlock.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.329,
+                0.932,
+                0.429
+            ],
+            "angle": 0,
+            "content": "- Accessibility of practices. Even with expanded booking permissions, human agents will need to contact clinics in certain instances. While there is often a phone number, e-mail, or EHR message channel available, clinics do not always answer calls, respond to messages, or address the needs of access center agents. Improving the clinic–access center relationship and committing to increased responsiveness is critical.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.443,
+                0.91,
+                0.524
+            ],
+            "angle": 0,
+            "content": "- Provider alert and exception management. Dynamic information, such as a provider on leave, a practice that has closed, or a change in insurance acceptance, is often currently communicated on an ad hoc basis. Operational teams must formalize how this information flows into the access center for new AI solutions to operate reliably.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.537,
+                0.922,
+                0.597
+            ],
+            "angle": 0,
+            "content": "- Template and visit type rationalization. Visit type mappings between what agents see and what lives in the EHR are frequently misaligned or incomplete. Rationalizing templates and establishing clean EHR-to-access center linkages is a prerequisite for reliable automation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.611,
+                0.921,
+                0.671
+            ],
+            "angle": 0,
+            "content": "- Insurance rule documentation. Insurance acceptance rules are often missing, inconsistent, or buried in free text. Closing these gaps requires direct engagement with clinic managers and revenue cycle teams to ensure appropriate routing of patients to providers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.7,
+                0.951,
+                0.82
+            ],
+            "angle": 0,
+            "content": "Health systems that underinvest in clinical and operational change management will see their AI capabilities and financial ROI underperform relative to its technical potential. The systems that succeed treat access center transformation as a cross-functional program of highest strategic importance, not an IT project akin to a vendor migration. Senior executive and clinical sponsorship, shoulder-to-shoulder engagement with practice leaders, and clear accountability for the operational changes that AI enablement require is critical.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.891,
+                0.54,
+                0.929
+            ],
+            "angle": 0,
+            "content": "A Call to Act—Now."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.933,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.857,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.923,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.886,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.148,
+                0.905,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.167,
+                0.139,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.218,
+                0.84,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.239,
+                0.877,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.258,
+                0.875,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.278,
+                0.855,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.296,
+                0.668,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.331,
+                0.929,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.351,
+                0.906,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.372,
+                0.878,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.391,
+                0.912,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.41,
+                0.578,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.445,
+                0.881,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.466,
+                0.883,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.485,
+                0.905,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.504,
+                0.696,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.539,
+                0.918,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.558,
+                0.917,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.578,
+                0.907,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.613,
+                0.917,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.632,
+                0.895,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.652,
+                0.807,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.702,
+                0.948,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.723,
+                0.932,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.742,
+                0.912,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.763,
+                0.84,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.782,
+                0.944,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.801,
+                0.623,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.89,
+                0.54,
+                0.931
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.923,
+                0.147
+            ],
+            "angle": 0,
+            "content": "The access function is the primary interface between the system and its patients, the key channel to capture demand, and an underappreciated platform for growth. In an age of rapidly advancing AI, systems that view the technology as merely a means to reduce labor cost will quickly fall behind those that recognize it as tool to supercharge a key strategic asset.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.161,
+                0.929,
+                0.281
+            ],
+            "angle": 0,
+            "content": "AI capabilities are changing at breathtaking speed and scale. Systems must be prepared. Clear sequencing, strong governance, discipline to build required technical and organizational capabilities, and buy-in from clinical operations leaders are critical. The organizations that capture this value will be those who fund their journey through quick-win automation plays but don’t stop there. Instead, leaders that set their sights on transforming the access center as a means of growing and reaching patients in new ways will realize outsized value.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.068,
+                0.872,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.917,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.109,
+                0.89,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.842,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.926,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.183,
+                0.862,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.883,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.224,
+                0.914,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.242,
+                0.903,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.779,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.708,
+                0.357,
+                0.837,
+                0.381
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.104,
+                0.247,
+                0.144
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.186,
+                0.221,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.352,
+                0.221,
+                0.456
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.502,
+                0.22,
+                0.608
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.655,
+                0.22,
+                0.762
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.194,
+                0.413,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Natasha Taylor"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.227,
+                0.437,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nDenver",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.273,
+                0.275,
+                0.29
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.357,
+                0.385,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Luke Purcell"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.39,
+                0.446,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nNew York",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.425,
+                0.275,
+                0.442
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.51,
+                0.387,
+                0.534
+            ],
+            "angle": 0,
+            "content": "Scott Wilder"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.543,
+                0.447,
+                0.572
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner Dallas",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.578,
+                0.275,
+                0.595
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.664,
+                0.446,
+                0.687
+            ],
+            "angle": 0,
+            "content": "Michael Bernstein"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.697,
+                0.313,
+                0.727
+            ],
+            "angle": 0,
+            "content": "Principal New York",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.732,
+                0.275,
+                0.749
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.188,
+                0.682,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.278,
+                0.737,
+                0.295
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.35,
+                0.682,
+                0.456
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.244,
+                0.909,
+                0.273
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nNew York",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.425,
+                0.737,
+                0.442
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.502,
+                0.684,
+                0.607
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.39,
+                0.909,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nChicago",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.51,
+                0.87,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Kevin Fleming"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.545,
+                0.768,
+                0.573
+            ],
+            "angle": 0,
+            "content": "Partner\nDenver",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.578,
+                0.738,
+                0.595
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.23,
+                0.432,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.242,
+                0.301,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.255,
+                0.3,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.394,
+                0.442,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.407,
+                0.309,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.546,
+                0.442,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.56,
+                0.292,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.699,
+                0.309,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.714,
+                0.31,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.247,
+                0.905,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.26,
+                0.771,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.393,
+                0.905,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.406,
+                0.767,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.512,
+                0.866,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.546,
+                0.764,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.56,
+                0.764,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
