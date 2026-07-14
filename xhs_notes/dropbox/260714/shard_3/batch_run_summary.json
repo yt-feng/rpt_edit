@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 68,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-DB-BMW（BMWG.DE）Volume & pricing headwinds pressure Auto margin~Q2 preview-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_s6faknu4/pdfs/0001-16-DB-BMW-BMWG.DE-Volume - pricing headwinds pressure Auto margin-Q2 preview-260713.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-DB-European Luxury：2Q previews：Expectations reflecting a tepid luxury market-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_s6faknu4/pdfs/0002-17-DB-European Luxury-2Q previews-Expectations reflecting a tepid luxury market-260713.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-DB-CRO in 2Q26：Green， Green， Green-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_s6faknu4/pdfs/0003-18-DB-CRO in 2Q26-Green- Green- Green-260714.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-DB-Ferrari N.V（RACE.IM）'Price is not an issue'~Key takeaways from our Expert Call-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_s6faknu4/pdfs/0004-19-DB-Ferrari N.V-RACE.IM--Price is not an issue--Key takeaways from our Expert Call-260713.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-GS-ASMPT （0522.HK） TCB tool riding on AI infrastructure and advanced packaging trends； TP up to HK$206； Neutral-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_s6faknu4/pdfs/0005-20-GS-ASMPT -0522.HK- TCB tool riding on AI infrastructure and advanced packaging trends- TP up to HK-206- Neutral-260713.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

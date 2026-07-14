@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_s6faknu4/pdfs/0001-16-DB-BMW-BMWG.DE-Volume - pricing headwinds pressure Auto margin-Q2 preview-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s6faknu4/pdfs/0002-17-DB-European Luxury-2Q previews-Expectations reflecting a tepid luxury market-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s6faknu4/pdfs/0003-18-DB-CRO in 2Q26-Green- Green- Green-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s6faknu4/pdfs/0004-19-DB-Ferrari N.V-RACE.IM--Price is not an issue--Key takeaways from our Expert Call-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s6faknu4/pdfs/0005-20-GS-ASMPT -0522.HK- TCB tool riding on AI infrastructure and advanced packaging trends- TP up to HK-206- Neutral-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
