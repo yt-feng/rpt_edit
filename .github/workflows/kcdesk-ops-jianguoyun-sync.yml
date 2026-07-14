@@ -11,8 +11,13 @@ on:
         description: "Number of dates to sync, ending at target_date"
         required: true
         default: "3"
+  repository_dispatch:
+    types:
+      - kcdesk-ops-files-changed
   schedule:
-    # Hourly from 08:15 through 00:15 Beijing time. Each run backfills three days.
+    # Hourly fallback from 08:15 through 00:15 Beijing time. File discovery in
+    # the KC Desk Worker dispatches this workflow immediately when the admin
+    # snapshot gains a new operations video.
     - cron: "15 0-16 * * *"
 
 permissions:

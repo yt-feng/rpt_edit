@@ -192,10 +192,13 @@ const ADMIN_PICKS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks.json`;
 const ADMIN_WECHAT_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/wechat.json`;
 const ADMIN_ANALYTICS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/analytics.json`;
 const ADMIN_USERS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/users.json`;
+const ADMIN_OPS_MIRROR_STATE_KEY = `${ADMIN_SNAPSHOT_PREFIX}/ops-mirror.json`;
 const ADMIN_SNAPSHOT_FRESH_MS = 30 * 60 * 1000;
 const ADMIN_FILES_SNAPSHOT_FRESH_MS = 10 * 60 * 1000;
 const ADMIN_ANALYTICS_SNAPSHOT_FRESH_MS = 15 * 60 * 1000;
 const ADMIN_SNAPSHOT_VERSION = 1;
+const OPS_MIRROR_EVENT_TYPE = "kcdesk-ops-files-changed";
+const OPS_MIRROR_RETRY_MS = 5 * 60 * 1000;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -6275,6 +6278,94 @@ function adminFileKey(file) {
   return [file && file.type, file && file.repo, file && (file.path || file.id || file.name)].map((part) => String(part || "")).join(":");
 }
 
+function opsMirrorVideoFiles(files) {
+  const allowedGroups = new Set(["bbg-top", "bbg-show", "bbg-ark", "kc-entertain", "report-videos"]);
+  return (Array.isArray(files) ? files : []).filter((file) => {
+    const path = String(file && (file.path || file.name) || "");
+    return file && file.type === "file" && /\.mp4$/i.test(path) && allowedGroups.has(adminFileGroup(file));
+  });
+}
+
+async function opsMirrorFingerprint(files) {
+  const rows = opsMirrorVideoFiles(files)
+    .map((file) => [adminFileKey(file), Number(file.size_bytes || 0), String(file.date || "")].join(":"))
+    .sort();
+  return rows.length ? sha256Hex(rows.join("\n")) : "";
+}
+
+function opsMirrorStateAgeMs(state) {
+  const attempted = Date.parse(String(state && state.attempted_at || ""));
+  return Number.isFinite(attempted) ? Math.max(0, Date.now() - attempted) : Number.POSITIVE_INFINITY;
+}
+
+async function triggerOpsMirrorIfChanged(env, files) {
+  const token = cleanEnv(env.GH_DISPATCH_TOKEN);
+  const repo = githubRepo(env);
+  if (!token || token === "unconfigured" || !repo) return { status: "disabled" };
+  const videos = opsMirrorVideoFiles(files);
+  const fingerprint = await opsMirrorFingerprint(videos);
+  if (!fingerprint) return { status: "empty" };
+
+  const previous = await safeR2GetJson(env, ADMIN_OPS_MIRROR_STATE_KEY);
+  const sameFingerprint = String(previous && previous.fingerprint || "") === fingerprint;
+  if (sameFingerprint && String(previous && previous.status || "") === "dispatched") {
+    return { status: "unchanged", fingerprint, file_count: videos.length };
+  }
+  if (sameFingerprint && opsMirrorStateAgeMs(previous) < OPS_MIRROR_RETRY_MS) {
+    return { status: "cooldown", fingerprint, file_count: videos.length };
+  }
+
+  const attemptedAt = new Date().toISOString();
+  const pending = {
+    version: 1,
+    status: "dispatching",
+    fingerprint,
+    file_count: videos.length,
+    attempted_at: attemptedAt,
+    dispatched_at: String(previous && previous.dispatched_at || ""),
+  };
+  await r2PutJson(env, ADMIN_OPS_MIRROR_STATE_KEY, pending);
+
+  try {
+    const response = await fetchWithTimeout(`https://api.github.com/repos/${repo}/dispatches`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json",
+        "User-Agent": "kc-desk-notes-worker",
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+      body: JSON.stringify({
+        event_type: OPS_MIRROR_EVENT_TYPE,
+        client_payload: {
+          fingerprint,
+          file_count: videos.length,
+          detected_at: attemptedAt,
+        },
+      }),
+    }, GITHUB_API_TIMEOUT_MS);
+    if (!response.ok) {
+      const detail = await response.text().catch(() => "");
+      throw new Error(`GitHub dispatch ${response.status}: ${detail.slice(0, 160)}`);
+    }
+    const dispatched = {
+      ...pending,
+      status: "dispatched",
+      dispatched_at: new Date().toISOString(),
+    };
+    await r2PutJson(env, ADMIN_OPS_MIRROR_STATE_KEY, dispatched);
+    return dispatched;
+  } catch (error) {
+    await r2PutJson(env, ADMIN_OPS_MIRROR_STATE_KEY, {
+      ...pending,
+      status: "failed",
+      error: String(error && error.message || "Dispatch failed.").slice(0, 240),
+    }).catch(() => null);
+    throw error;
+  }
+}
+
 function groupAdminFiles(files) {
   const grouped = new Map();
   for (const file of Array.isArray(files) ? files : []) {
@@ -6341,11 +6432,13 @@ async function refreshAdminFilesSnapshot(env) {
     await r2PutJson(env, ADMIN_FILES_SNAPSHOT_KEY, retained);
     return retained;
   }
-  return writeAdminSnapshot(env, ADMIN_FILES_SNAPSHOT_KEY, { files: merged.files }, {
+  const snapshot = await writeAdminSnapshot(env, ADMIN_FILES_SNAPSHOT_KEY, { files: merged.files }, {
     attempted_at: new Date().toISOString(),
     partial: merged.stale_groups.length > 0,
     stale_groups: merged.stale_groups,
   });
+  await triggerOpsMirrorIfChanged(env, merged.files).catch(() => null);
+  return snapshot;
 }
 
 function refreshAdminFilesSnapshotOnce(env) {
@@ -8320,15 +8413,27 @@ export default {
     }
 
     if (pathname === "/health") {
-      const [filesSnapshot, analyticsSnapshot] = await Promise.all([
+      const [filesSnapshot, analyticsSnapshot, opsMirrorState] = await Promise.all([
         safeR2GetJson(env, ADMIN_FILES_SNAPSHOT_KEY),
         safeR2GetJson(env, ADMIN_ANALYTICS_SNAPSHOT_KEY),
+        safeR2GetJson(env, ADMIN_OPS_MIRROR_STATE_KEY),
       ]);
       return jsonResponse(request, env, 200, {
         ok: true,
         dashboard_cache: {
           files: adminSnapshotStatus(filesSnapshot, ADMIN_FILES_SNAPSHOT_FRESH_MS),
           analytics: adminSnapshotStatus(analyticsSnapshot, ADMIN_ANALYTICS_SNAPSHOT_FRESH_MS),
+        },
+        ops_mirror: opsMirrorState ? {
+          status: String(opsMirrorState.status || "unknown"),
+          file_count: Number(opsMirrorState.file_count || 0),
+          attempted_at: String(opsMirrorState.attempted_at || ""),
+          dispatched_at: String(opsMirrorState.dispatched_at || ""),
+        } : {
+          status: "waiting",
+          file_count: 0,
+          attempted_at: "",
+          dispatched_at: "",
         },
       });
     }
