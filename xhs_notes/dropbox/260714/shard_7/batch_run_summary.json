@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 68,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-GS-Raising TPs of SG Micro and Ruijie on growing AI data center； Ruijie to Neutral on fair valuation-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tkn7im9h/pdfs/0001-36-GS-Raising TPs of SG Micro and Ruijie on growing AI data center- Ruijie to Neutral on fair valuation-260713.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-JPM-China Quant Strategy：Expensive leadership is starting to look fragile；hedge with low vol，high quality yielders-260712.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tkn7im9h/pdfs/0002-37-JPM-China Quant Strategy-Expensive leadership is starting to look fragile-hedge with low vol-high quality yielders-260712.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-JPM-Hon. Precision（7769.TW） 2Q26 revenue solid beat； robust demand across ASICs， CPUs， Tesla and China； SEMICON TW demos； OW-260712.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tkn7im9h/pdfs/0003-38-JPM-Hon. Precision-7769.TW- 2Q26 revenue solid beat- robust demand across ASICs- CPUs- Tesla and China- SEMICON TW demos- OW-260712.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-JPM-China technology：Key takeaways from China AI PCB tour： AI upcycle intact， capacity and execution matter-260712.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tkn7im9h/pdfs/0004-39-JPM-China technology-Key takeaways from China AI PCB tour- AI upcycle intact- capacity and execution matter-260712.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-JPM-JPM FX Positioning Monitor：First evidence of yen short covering； USD CNY downside demand ebbs-260712.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tkn7im9h/pdfs/0005-40-JPM-JPM FX Positioning Monitor-First evidence of yen short covering- USD CNY downside demand ebbs-260712.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

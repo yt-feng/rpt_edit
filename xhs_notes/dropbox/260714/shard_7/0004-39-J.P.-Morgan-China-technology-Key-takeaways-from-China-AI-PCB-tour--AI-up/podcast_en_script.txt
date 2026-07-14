@@ -1,0 +1,22 @@
+EN_A: So, you just got back from a PCB tour in China’s Greater Bay Area. What was the single biggest takeaway from all those meetings?
+EN_B: The biggest one is that the AI-driven PCB upcycle is very much intact. But the real differentiator now isn’t just getting the order — it’s about capacity and execution. Who can actually deliver at scale with high quality.
+EN_A: So the report is really trying to answer: can the supply chain keep up with the pace of AI chip evolution, and who wins?
+EN_B: Exactly. Take Nvidia’s Vera Rubin platform. It’s already moving into mass production, and new vendors are joining. But the report argues that doesn’t automatically mean market share loss for the incumbents. The final share depends on scaled delivery — yield stability, material readiness, capacity, and speed.
+EN_A: So even with new entrants, the old guard isn’t necessarily losing out?
+EN_B: Right. The key insight is that market share follows quality volume delivery. If you can’t consistently ship large volumes of defect-free boards, initial allocation means nothing.
+EN_A: And beyond Vera Rubin, what other demand drivers are emerging?
+EN_B: Optical module upgrades, especially moving to 1.6T and higher speeds, plus the potential adoption of CoWoP designs, are creating meaningful demand for a specific process called mSAP. Multiple PCB makers are adding capacity for this, but again, the winners will be determined by yield and delivery capability.
+EN_A: Sounds like a winner-takes-most dynamic.
+EN_B: It’s similar, but the report doesn’t fully conclude that. It emphasizes that execution is the separating factor. There’s also a wildcard: domestic AI infrastructure buildout in China. The report suggests this could bring incremental demand for high-end AI PCBs starting in 2027.
+EN_A: What about the upstream materials side? There’s been a lot of talk about CCL price pressure.
+EN_B: The report highlights a really interesting bifurcation. For high-end CCL used in AI, supply is manageable and price increases are limited. Customers prioritize supply assurance and are willing to renegotiate. But for low-end CCL, it’s a completely different story — tight supply and much sharper price hikes.
+EN_A: So what does that mean for different PCB makers?
+EN_B: PCB makers with stable access to high-end CCL and good yields can defend their margins. But those exposed to consumer electronics or automotive, using low-end CCL, are facing severe margin pressure. They have less ability to pass on cost increases.
+EN_A: Are there any big questions the report leaves open?
+EN_B: Yes. It mentions Nvidia’s Kyber NVL144 architecture is still under testing, with bottlenecks like backplane complexity and warpage control. The report says even if Kyber is delayed, the impact on the 2028 TAM is manageable, but it doesn’t fully explore that risk. Also, the timing and scale of the domestic AI infrastructure buildout is only touched on with a preliminary view — no detailed quantification.
+EN_A: So if a listener wants to understand the Kyber delay scenarios or the domestic buildout math, they need the full report?
+EN_B: Exactly. This report is a great industry snapshot with clear trend signals and key variables. But the deeper scenario analysis and detailed forecasts are in the full document.
+EN_A: How can our audience get access to that?
+EN_B: They can join our community or reach out to us directly for the full report. It includes company-specific valuations and risk analysis that we didn’t have time to cover today.
+EN_A: Great. Thanks for breaking it all down.
+EN_B: Thanks for having me. Talk to you next time.

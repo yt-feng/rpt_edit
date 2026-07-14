@@ -1,0 +1,2259 @@
+[
+    {
+        "type": "text",
+        "text": "GC TECH",
+        "bbox": [
+            107,
+            64,
+            181,
+            82
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Raising TPs of SG Micro and Ruijie on growing AI data center; Ruijie to Neutral on fair valuation",
+        "text_level": 1,
+        "bbox": [
+            107,
+            90,
+            839,
+            143
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We remain positive on the AI infrastructure upcycle, and identify SG Micro and Ruijie as well exposed to the trend. We updated our Global Server TAM in late Jun (report link), where estimates for AI servers implied AI chips were raised by 14% / 22% / 14% in 2026E-28E and China CSPs' AI capex was raised by 37% / 44% / 55% in 2026E-28E, reflecting our positive view on the ongoing AI infrastructure upcycle. SG Micro as a local leader in analog IC, expanding analog IC toward AI data centers (e.g. AI servers, optical modules); Ruijie as a local leader in whitebox switch, riding on China CSP's AI capex upcycle and growing Supernodes. With this, we raise our estimates and TPs for both SG Micro (to Rmb143 from Rmb96.1) and Ruijie (to Rmb120.5 from Rmb 83.4). We also downgrade Ruijie to Neutral (from Buy) on fair valuation; shares are trading near its historical average on 12m fwd P/E and TP implied PEG of 1.5x is within peers' range from 0.9x to 1.7x.",
+        "bbox": [
+            76,
+            210,
+            699,
+            429
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1: China CSP capex trend",
+        "bbox": [
+            80,
+            443,
+            308,
+            460
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9f454630f34fc6f81b0f74dc356d131994aca3699cbbec28c202f46121f91995.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Data include Bytedance, Tencent, Alibaba, Baidu. We calculate Bytedance (private) relevant operating metrics by analyzing the industry and companies that our China Internet team cover, and then extrapolate them to Bytedance.",
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "bbox": [
+            86,
+            465,
+            478,
+            654
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Allen Chang  \n+852-2978-2930 |  \nallen.k.chang@gs.com  \nGS (Asia) L.L.C.",
+        "bbox": [
+            720,
+            212,
+            854,
+            255
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Verena Jeng\n+852-2978-1681 | verena.jeng@gs.com\nGS (Asia) L.L.C.",
+        "bbox": [
+            718,
+            259,
+            913,
+            292
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ting Song +852-2978-6466 | ting.song@gs.com GS (Asia) L.L.C.",
+        "bbox": [
+            718,
+            296,
+            903,
+            331
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Yifan Hu  \n+852-2978-0996 | yifan.hu@gs.com  \nGS (Asia) L.L.C.",
+        "bbox": [
+            718,
+            335,
+            898,
+            370
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "SG Micro (300661.SZ, Neutral): PMIC / Signal chain to ride on AI trend; TP up to Rmb143",
+        "text_level": 2,
+        "bbox": [
+            78,
+            749,
+            679,
+            798
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We remain constructive on SG Micro's PMIC (Power Management IC) / Signal chain products expansion to AI data center, riding on AI infrastructure upcycle, dollar content increase and product mix upgrade. The company currently offers 200+ SKUs for data center clients, and we expect the product portfolio to continue to expand with dollar content increase to meet clients' needs in AI data center. We raise our 12m TP to Rmb143 with net income up by 1% / 5% / 9% in 2026E-28E. Our TP implied 2027E P/E is up to 61x from 43.2x previously, reflecting stronger forward year earnings growth and sector re-rating on the growing AI trend. Maintain Neutral on fair valuation.",
+        "bbox": [
+            78,
+            821,
+            676,
+            840
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            3,
+            297,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research 13 July 2026 | 6:18PM HKT",
+        "bbox": [
+            715,
+            5,
+            919,
+            45
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.",
+        "bbox": [
+            76,
+            878,
+            916,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            267,
+            40,
+            918,
+            167
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "PMIC / Signal chain toward AI data center: The analog IC market for networking and computing market is expected to grow at a 16% CAGR in 2026-2030 to Rmb133bn by 2030, per Frost & Sullivan. SG Micro provides high-power DC/DC converters, multi-phase DC/DC controllers and DrMOS to enable efficient, high-current and fast-transient power delivery for data center transmission, supported by company's products with extreme efficiency and robust thermal performance.",
+        "bbox": [
+            269,
+            176,
+            898,
+            286
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 2: Analog IC market for networking / computing market is expected to grow at a 16% CAGR in 2026-2030 to Rmb133bn by 2030",
+        "bbox": [
+            271,
+            301,
+            681,
+            345
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/908d81ade216a5caaeb246f3129b977e80171bcf351e488dcb3eacfd7693bfdb.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Frost & Sullivan, China Semiconductor Industry Association"
+        ],
+        "bbox": [
+            281,
+            357,
+            681,
+            534
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Earnings revision: We revise up our earnings by 1%/5%/9% in 2026-28E for SG Micro mainly on higher revenues and higher GM. The higher revenues are on higher analog IC for AI servers and optical modules, riding on AI infrastructure upcycle and dollar content increase. The higher GM by 0.2ppts/0.4ppts in 2027E / 2028E is on better product mix.",
+        "bbox": [
+            269,
+            580,
+            916,
+            654
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/108e3eb23f350c6ca7d8845e65a3dcc7ba0ca3051eb8a8c33b3e75d3b9b70be7.jpg",
+        "table_caption": [
+            "Exhibit 3: Earnings revision"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td><td colspan=\"3\">2028E</td></tr><tr><td>(Rmb mn)</td><td>New</td><td>Old</td><td>Diff</td><td>New</td><td>Old</td><td>Diff</td><td>New</td><td>Old</td><td>Diff</td></tr><tr><td>Revenue</td><td>5,118</td><td>5,100</td><td>0.4%</td><td>6,753</td><td>6,621</td><td>2%</td><td>8,705</td><td>8,313</td><td>5%</td></tr><tr><td>Gross profit</td><td>2,617</td><td>2,608</td><td>0.4%</td><td>3,453</td><td>3,385</td><td>2%</td><td>4,453</td><td>4,252</td><td>5%</td></tr><tr><td>Operating income</td><td>950</td><td>940</td><td>1%</td><td>1,525</td><td>1,457</td><td>5%</td><td>2,193</td><td>2,008</td><td>9%</td></tr><tr><td>Net income</td><td>890</td><td>881</td><td>1%</td><td>1,439</td><td>1,376</td><td>5%</td><td>1,927</td><td>1,766</td><td>9%</td></tr><tr><td>EPS</td><td>1.44</td><td>1.42</td><td>1%</td><td>2.33</td><td>2.22</td><td>5%</td><td>3.11</td><td>2.85</td><td>9%</td></tr><tr><td>Margins</td><td colspan=\"3\"></td><td colspan=\"3\"></td><td colspan=\"3\"></td></tr><tr><td>Gross margin</td><td>51.1%</td><td>51.1%</td><td>0ppts</td><td>51.1%</td><td>51.1%</td><td>0ppts</td><td>51.2%</td><td>51.1%</td><td>0ppts</td></tr><tr><td>Operating margin</td><td>18.6%</td><td>18.4%</td><td>0.1ppts</td><td>22.6%</td><td>22.0%</td><td>0.6ppts</td><td>25.2%</td><td>24.1%</td><td>1ppts</td></tr><tr><td>Net margin</td><td>17.4%</td><td>17.3%</td><td>0.1ppts</td><td>21.3%</td><td>20.8%</td><td>0.5ppts</td><td>22.1%</td><td>21.2%</td><td>0.9ppts</td></tr></table>",
+        "bbox": [
+            279,
+            687,
+            906,
+            825
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "GS vs. Bloomberg consensus: Our earnings estimates is $5\\%$ / $18\\%$ higher than Bloomberg consensus in 2026 / 2027 mainly on higher revenues and lower Opex ratio. The higher revenues reflect our positive view on SG Micro's analog IC expanding to AI data center, and the better opex ratio is on improving operating efficiency under",
+        "bbox": [
+            269,
+            852,
+            898,
+            925
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            186,
+            20
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            953,
+            158,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            905,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "growing revenues scale.",
+        "bbox": [
+            271,
+            41,
+            447,
+            56
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/238863c90437eae564b2e5aa183b6c3e41a01ebd89136c9bbb553e12bfe2e398.jpg",
+        "table_caption": [
+            "Exhibit 4: GS estimates vs. Bloomberg consensus"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">(Rmb mn)</td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td></tr><tr><td>GS</td><td>BBG</td><td>Diff</td><td>GS</td><td>BBG</td><td>Diff</td></tr><tr><td>Revenue</td><td>5,118</td><td>4,982</td><td>3%</td><td>6,753</td><td>6,259</td><td>8%</td></tr><tr><td>Gross profit</td><td>2,617</td><td>2,547</td><td>3%</td><td>3,453</td><td>3,217</td><td>7%</td></tr><tr><td>Operating income</td><td>950</td><td>845</td><td>12%</td><td>1,525</td><td>1,298</td><td>17%</td></tr><tr><td>Net income</td><td>890</td><td>850</td><td>5%</td><td>1,439</td><td>1,221</td><td>18%</td></tr><tr><td>Margins</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Gross margin</td><td>51.1%</td><td>51.1%</td><td>0ppts</td><td>51.1%</td><td>51.4%</td><td>-0.3ppts</td></tr><tr><td>Operating margin</td><td>18.6%</td><td>17.0%</td><td>1.6ppts</td><td>22.6%</td><td>20.7%</td><td>1.8ppts</td></tr><tr><td>Net margin</td><td>17.4%</td><td>17.1%</td><td>0.3ppts</td><td>21.3%</td><td>19.5%</td><td>1.8ppts</td></tr></table>",
+        "bbox": [
+            277,
+            92,
+            686,
+            200
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Valuation: We change our valuation methodology from a near-term P/E to a discounted 2030E P/E to capture the long-term growth opportunities and consistent to our other China Semis coverage. Our 12-month target price moves to Rmb143 (vs. previously at Rmb96.1). Our target P/E multiple of 36.5x is based on the correlation between peers' P/E vs. the sum of forward year NI growth (27% in 2031E) and OPM (27% in 2031E). Applying the 36.5x target P/E to our 2030E EPS and discounting it back to 2027E with a COE of 10.2%, we arrive at Rmb143. Maintain Neutral.",
+        "bbox": [
+            269,
+            225,
+            913,
+            352
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/fd95479dce7d6d1af06a7577e8b9fe80bc6748c9c65dd40ba4eff4f198c04e7f.jpg",
+        "table_caption": [
+            "Exhibit 5: SG Micro discounted P/E"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(Rmb mn)</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td></tr><tr><td></td><td colspan=\"2\">TWS / smart devices</td><td colspan=\"2\">Industrial/ Automotive</td><td colspan=\"6\">Data center/ Humanoid robot</td></tr><tr><td>Revenue</td><td>3,188</td><td>3,121</td><td>3,347</td><td>3,894</td><td>5,118</td><td>6,753</td><td>8,705</td><td>11,142</td><td>14,039</td><td>17,409</td></tr><tr><td>PMIC</td><td>1,995</td><td>1,904</td><td>2,182</td><td>2,423</td><td>2,871</td><td>3,497</td><td>4,265</td><td>5,416</td><td>6,878</td><td>8,736</td></tr><tr><td>Signal chain</td><td>1,193</td><td>1,218</td><td>1,165</td><td>1,471</td><td>2,247</td><td>3,255</td><td>4,440</td><td>5,726</td><td>7,161</td><td>8,673</td></tr><tr><td>Revenue YoY</td><td>42%</td><td>-2%</td><td>7%</td><td>16%</td><td>31%</td><td>32%</td><td>29%</td><td>28%</td><td>26%</td><td>24%</td></tr><tr><td>PMIC</td><td>30%</td><td>-5%</td><td>15%</td><td>11%</td><td>18%</td><td>22%</td><td>22%</td><td>27%</td><td>27%</td><td>27%</td></tr><tr><td>Signal chain</td><td>68%</td><td>2%</td><td>-4%</td><td>26%</td><td>53%</td><td>45%</td><td>36%</td><td>29%</td><td>25%</td><td>21%</td></tr><tr><td>GM</td><td>59.0%</td><td>41.6%</td><td>51.5%</td><td>49.2%</td><td>51.1%</td><td>51.1%</td><td>51.2%</td><td>51.4%</td><td>51.6%</td><td>51.8%</td></tr><tr><td>PMIC</td><td>55.4%</td><td>31.7%</td><td>47.8%</td><td>43.8%</td><td>50.1%</td><td>49.8%</td><td>49.7%</td><td>49.9%</td><td>50.1%</td><td>50.3%</td></tr><tr><td>Signal chain</td><td>64.9%</td><td>57.0%</td><td>58.3%</td><td>58.2%</td><td>52.4%</td><td>52.6%</td><td>52.6%</td><td>52.8%</td><td>53.0%</td><td>53.2%</td></tr><tr><td>GP</td><td>1,880</td><td>1,297</td><td>1,722</td><td>1,917</td><td>2,617</td><td>3,453</td><td>4,453</td><td>5,724</td><td>7,238</td><td>9,005</td></tr><tr><td>OP</td><td>991</td><td>258</td><td>499</td><td>474</td><td>950</td><td>1,525</td><td>2,193</td><td>2,864</td><td>3,677</td><td>4,658</td></tr><tr><td>OPM</td><td>31.1%</td><td>8.3%</td><td>14.9%</td><td>12.2%</td><td>18.6%</td><td>22.6%</td><td>25.2%</td><td>25.7%</td><td>26.2%</td><td>26.8%</td></tr><tr><td>Pretax profit</td><td>921</td><td>254</td><td>484</td><td>481</td><td>898</td><td>1,551</td><td>2,210</td><td>2,881</td><td>3,694</td><td>4,675</td></tr><tr><td>Net profit</td><td>874</td><td>281</td><td>500</td><td>478</td><td>890</td><td>1,439</td><td>1,927</td><td>2,532</td><td>3,247</td><td>4,111</td></tr><tr><td>YoY</td><td>25%</td><td>-68%</td><td>78%</td><td>-4%</td><td>86%</td><td>62%</td><td>34%</td><td>31%</td><td>28%</td><td>27%</td></tr><tr><td>EPS (Rmb)</td><td>1.88</td><td>0.46</td><td>0.82</td><td>0.88</td><td>1.44</td><td>2.33</td><td>3.11</td><td>4.10</td><td>5.25</td><td>6.65</td></tr><tr><td>YoY</td><td>23%</td><td>-75%</td><td>77%</td><td>9%</td><td>63%</td><td>62%</td><td>34%</td><td>32%</td><td>28%</td><td>27%</td></tr><tr><td>2030 Target P/E</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>36.5</td><td></td></tr><tr><td>12M target price (Rmb)</td><td></td><td></td><td></td><td></td><td></td><td>143</td><td></td><td></td><td></td><td></td></tr><tr><td>TP implied P/E</td><td></td><td></td><td></td><td></td><td></td><td></td><td>61</td><td>46</td><td>35</td><td></td></tr></table>",
+        "bbox": [
+            91,
+            385,
+            903,
+            636
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/6a56224ddb439b47015412eae6fe347a3e23f2fff1694271293cdefc29c03561.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td colspan=\"2\">COE assumption</td></tr><tr><td>Beta</td><td>1.2</td></tr><tr><td>Risk free</td><td>3%</td></tr><tr><td>Market risk premium</td><td>6%</td></tr><tr><td>COE</td><td>10.2%</td></tr></table>",
+        "bbox": [
+            91,
+            643,
+            290,
+            703
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            953,
+            158,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            905,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b98038421a0301ea56ab788f03e78cf0ae33db117633aa7a677cb1bbbaea9b36.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: SG Micro 12M forward P/E"
+        ],
+        "chart_footnote": [
+            "Source: Eikon Datastream"
+        ],
+        "bbox": [
+            279,
+            70,
+            681,
+            268
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/367879b6cb90222771ce2bf7c24a3720fa652a063c64fc311ebdb94acee24a09.jpg",
+        "table_caption": [
+            "Exhibit 7: SG Micro P&L Summary",
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(Rmb m)</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Revenue</td><td>790</td><td>1,029</td><td>982</td><td>1,097</td><td>1,098</td><td>1,197</td><td>1,303</td><td>1,520</td><td>2,238</td><td>3,188</td><td>2,616</td><td>3,347</td><td>3,898</td><td>5,118</td><td>6,753</td><td>8,705</td></tr><tr><td>Gross profit</td><td>387</td><td>525</td><td>500</td><td>574</td><td>567</td><td>611</td><td>664</td><td>775</td><td>1,242</td><td>1,880</td><td>1,297</td><td>1,723</td><td>1,986</td><td>2,617</td><td>3,453</td><td>4,453</td></tr><tr><td>Operating expense</td><td>(341)</td><td>(366)</td><td>(415)</td><td>(320)</td><td>(402)</td><td>(418)</td><td>(446)</td><td>(402)</td><td>(580)</td><td>(889)</td><td>(1,040)</td><td>(1,223)</td><td>(1,442)</td><td>(1,667)</td><td>(1,928)</td><td>(2,261)</td></tr><tr><td>Operating income</td><td>46</td><td>159</td><td>84</td><td>254</td><td>165</td><td>194</td><td>218</td><td>373</td><td>662</td><td>991</td><td>258</td><td>499</td><td>543</td><td>950</td><td>1,525</td><td>2,193</td></tr><tr><td>Pre tax profit</td><td>68</td><td>157</td><td>112</td><td>212</td><td>124</td><td>190</td><td>214</td><td>371</td><td>739</td><td>921</td><td>254</td><td>485</td><td>550</td><td>898</td><td>1,551</td><td>2,210</td></tr><tr><td>Net income</td><td>60</td><td>141</td><td>142</td><td>204</td><td>124</td><td>188</td><td>212</td><td>367</td><td>699</td><td>874</td><td>281</td><td>500</td><td>547</td><td>890</td><td>1,439</td><td>1,927</td></tr><tr><td>EPS (Rmb)</td><td>0.10</td><td>0.23</td><td>0.23</td><td>0.33</td><td>0.20</td><td>0.30</td><td>0.34</td><td>0.59</td><td>1.53</td><td>1.88</td><td>0.46</td><td>0.82</td><td>0.88</td><td>1.44</td><td>2.33</td><td>3.11</td></tr><tr><td>Margins / ratio</td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"8\"></td></tr><tr><td>Gross margin</td><td>49.1%</td><td>51.0%</td><td>50.9%</td><td>52.3%</td><td>51.6%</td><td>51.1%</td><td>51.0%</td><td>51.0%</td><td>55.5%</td><td>59.0%</td><td>49.6%</td><td>51.5%</td><td>50.9%</td><td>51.1%</td><td>51.1%</td><td>51.2%</td></tr><tr><td>Opex ratio</td><td>-43.2%</td><td>-35.6%</td><td>-42.3%</td><td>-29.1%</td><td>-36.6%</td><td>-34.9%</td><td>-34.2%</td><td>-26.4%</td><td>-25.9%</td><td>-27.9%</td><td>-39.8%</td><td>-36.5%</td><td>-37.0%</td><td>-32.6%</td><td>-28.6%</td><td>-26.0%</td></tr><tr><td>Operating margin</td><td>5.9%</td><td>15.4%</td><td>8.6%</td><td>23.2%</td><td>15.1%</td><td>16.2%</td><td>16.7%</td><td>24.5%</td><td>29.6%</td><td>31.1%</td><td>9.8%</td><td>14.9%</td><td>13.9%</td><td>18.6%</td><td>22.6%</td><td>25.2%</td></tr><tr><td>Net margin</td><td>7.6%</td><td>13.7%</td><td>14.5%</td><td>18.6%</td><td>11.3%</td><td>15.7%</td><td>16.3%</td><td>24.1%</td><td>31.2%</td><td>27.4%</td><td>10.7%</td><td>14.9%</td><td>14.0%</td><td>17.4%</td><td>21.3%</td><td>22.1%</td></tr><tr><td>QoQ</td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"8\"></td></tr><tr><td>Revenue</td><td>-12%</td><td>30%</td><td>-5%</td><td>12%</td><td>0%</td><td>9%</td><td>9%</td><td>17%</td><td rowspan=\"6\" colspan=\"8\"></td></tr><tr><td>Gross profit</td><td>-13%</td><td>36%</td><td>-5%</td><td>15%</td><td>-1%</td><td>8%</td><td>9%</td><td>17%</td></tr><tr><td>Operating income</td><td>-67%</td><td>243%</td><td>-47%</td><td>202%</td><td>-35%</td><td>17%</td><td>13%</td><td>71%</td></tr><tr><td>Pre tax profit</td><td>-55%</td><td>130%</td><td>-29%</td><td>89%</td><td>-41%</td><td>52%</td><td>13%</td><td>73%</td></tr><tr><td>Net income</td><td>-72%</td><td>136%</td><td>1%</td><td>43%</td><td>-39%</td><td>52%</td><td>13%</td><td>73%</td></tr><tr><td>EPS</td><td>-72%</td><td>135%</td><td>1%</td><td>43%</td><td>-39%</td><td>52%</td><td>13%</td><td>73%</td></tr><tr><td>YoY</td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"8\"></td></tr><tr><td>Revenue</td><td>8%</td><td>21%</td><td>13%</td><td>22%</td><td>39%</td><td>16%</td><td>33%</td><td>39%</td><td>87%</td><td>42%</td><td>-18%</td><td>28%</td><td>16%</td><td>31%</td><td>32%</td><td>29%</td></tr><tr><td>Gross profit</td><td>1%</td><td>19%</td><td>11%</td><td>28%</td><td>46%</td><td>16%</td><td>33%</td><td>35%</td><td>113%</td><td>51%</td><td>-31%</td><td>33%</td><td>15%</td><td>32%</td><td>32%</td><td>29%</td></tr><tr><td>Operating income</td><td>-48%</td><td>10%</td><td>-32%</td><td>79%</td><td>257%</td><td>22%</td><td>159%</td><td>47%</td><td>152%</td><td>50%</td><td>-74%</td><td>94%</td><td>9%</td><td>75%</td><td>61%</td><td>44%</td></tr><tr><td>Pre tax profit</td><td>1%</td><td>11%</td><td>-8%</td><td>39%</td><td>82%</td><td>20%</td><td>91%</td><td>75%</td><td>146%</td><td>25%</td><td>-72%</td><td>91%</td><td>13%</td><td>63%</td><td>73%</td><td>42%</td></tr><tr><td>Net income</td><td>10%</td><td>14%</td><td>34%</td><td>-5%</td><td>107%</td><td>33%</td><td>49%</td><td>80%</td><td>142%</td><td>25%</td><td>-68%</td><td>78%</td><td>9%</td><td>63%</td><td>62%</td><td>34%</td></tr><tr><td>EPS</td><td>9%</td><td>12%</td><td>33%</td><td>-6%</td><td>105%</td><td>33%</td><td>48%</td><td>80%</td><td>139%</td><td>23%</td><td>-75%</td><td>77%</td><td>9%</td><td>63%</td><td>62%</td><td>34%</td></tr></table>",
+        "bbox": [
+            89,
+            329,
+            903,
+            590
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/6bf223cb9855635f4ac3d70a1c9c16347d9afbce724d33a8f33fe48d84fe9ecc.jpg",
+        "table_caption": [
+            "Exhibit 8: SG Micro's Balance sheet and Cash flow statement"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Rmb mn</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"7\">Cash flow statement</td></tr><tr><td>Net income</td><td>281</td><td>500</td><td>547</td><td>890</td><td>1,439</td><td>1,927</td></tr><tr><td>D&amp;A add-back</td><td>76</td><td>96</td><td>120</td><td>132</td><td>150</td><td>173</td></tr><tr><td>Minorities add-back</td><td>(11)</td><td>(9)</td><td>(13)</td><td>(4)</td><td>(4)</td><td>(4)</td></tr><tr><td>Net(inc)/dec working capital</td><td>(278)</td><td>(278)</td><td>(329)</td><td>(455)</td><td>(572)</td><td>(771)</td></tr><tr><td>Other operating cash flow</td><td>103</td><td>240</td><td>141</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash flow from operations</td><td>171</td><td>549</td><td>466</td><td>563</td><td>1,013</td><td>1,325</td></tr><tr><td>Capital expenditures</td><td>(233)</td><td>(240)</td><td>(256)</td><td>(281)</td><td>(308)</td><td>(338)</td></tr><tr><td>(Acquisitions)/divestitures</td><td>0</td><td>0</td><td>(254)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Others</td><td>(317)</td><td>(1,023)</td><td>46</td><td>3</td><td>3</td><td>3</td></tr><tr><td>Cash flow from investments</td><td>(550)</td><td>(1,264)</td><td>(465)</td><td>(278)</td><td>(305)</td><td>(335)</td></tr><tr><td>Dividend paid (common &amp; pref)</td><td>(108)</td><td>(48)</td><td>(98)</td><td>(202)</td><td>(326)</td><td>(437)</td></tr><tr><td>Inc/(dec) in debt</td><td>0</td><td>90</td><td>319</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Share repurchase/issue</td><td>1</td><td>4</td><td>147</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other financing cash flows</td><td>146</td><td>167</td><td>17</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash flow from financing</td><td>39</td><td>214</td><td>385</td><td>(202)</td><td>(326)</td><td>(437)</td></tr><tr><td>Total cash flow</td><td>(340)</td><td>(500)</td><td>386</td><td>83</td><td>382</td><td>553</td></tr><tr><td>Free cash flow</td><td>(63)</td><td>309</td><td>210</td><td>282</td><td>705</td><td>987</td></tr></table>",
+        "bbox": [
+            279,
+            72,
+            906,
+            326
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/99c30e624f1854d856e133bfe253c69a3d8c4293975b2628cd9a7da71cf722c7.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Rmb mn</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Balance sheet</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Cash &amp; equivalent</td><td>1,325</td><td>815</td><td>1,226</td><td>1,309</td><td>1,691</td><td>2,244</td></tr><tr><td>Net receivables</td><td>166</td><td>233</td><td>363</td><td>405</td><td>553</td><td>737</td></tr><tr><td>Inventory</td><td>901</td><td>1,165</td><td>1,448</td><td>1,997</td><td>2,584</td><td>3,365</td></tr><tr><td>Other current asset</td><td>855</td><td>1,478</td><td>1,562</td><td>1,562</td><td>1,562</td><td>1,562</td></tr><tr><td>Total current assets</td><td>3,248</td><td>3,691</td><td>4,598</td><td>5,273</td><td>6,390</td><td>7,907</td></tr><tr><td>Net PP&amp;E</td><td>346</td><td>546</td><td>539</td><td>715</td><td>887</td><td>1,060</td></tr><tr><td>Net intangibles</td><td>46</td><td>65</td><td>98</td><td>69</td><td>51</td><td>40</td></tr><tr><td>Total investments</td><td>423</td><td>508</td><td>555</td><td>555</td><td>555</td><td>555</td></tr><tr><td>Other long-term assets</td><td>643</td><td>961</td><td>1,163</td><td>1,163</td><td>1,163</td><td>1,163</td></tr><tr><td>Total assets</td><td>4,707</td><td>5,771</td><td>6,954</td><td>7,774</td><td>9,047</td><td>10,726</td></tr><tr><td>Account payables</td><td>264</td><td>316</td><td>401</td><td>537</td><td>700</td><td>894</td></tr><tr><td>Short-term debt</td><td>0</td><td>56</td><td>342</td><td>342</td><td>342</td><td>342</td></tr><tr><td>Other current liabilities</td><td>355</td><td>497</td><td>489</td><td>489</td><td>489</td><td>489</td></tr><tr><td>Total current liabilities</td><td>619</td><td>869</td><td>1,232</td><td>1,368</td><td>1,532</td><td>1,725</td></tr><tr><td>Long-term debt</td><td>0</td><td>34</td><td>67</td><td>67</td><td>67</td><td>67</td></tr><tr><td>Other long-term liabilities</td><td>244</td><td>269</td><td>327</td><td>327</td><td>327</td><td>327</td></tr><tr><td>Total long-term liabilities</td><td>244</td><td>303</td><td>395</td><td>395</td><td>395</td><td>395</td></tr><tr><td>Total liabilities</td><td>863</td><td>1,172</td><td>1,627</td><td>1,763</td><td>1,926</td><td>2,120</td></tr><tr><td>Total common equity</td><td>3,851</td><td>4,609</td><td>5,294</td><td>5,983</td><td>7,095</td><td>8,584</td></tr></table>",
+        "bbox": [
+            279,
+            332,
+            908,
+            612
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Price Target Risks and Methodology - SG Micro",
+        "text_level": 2,
+        "bbox": [
+            271,
+            652,
+            624,
+            669
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Valuation methodology: We are Neutral rated on SG Micro with a 12-month target price of Rmb143, which is based on 36.5x 2030E P/E (discounted back to 2027E at a $10.2\\%$ CoE). Our target P/E is derived from a correlation between peers's P/E to the sum of NI YoY and OPM.",
+        "bbox": [
+            269,
+            670,
+            913,
+            741
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Upside / Downside risks: 1) stronger / weaker demand for smartphones and consumer electronics; 2) faster / slower progress in launching new products and expanding into new markets; and 3) less / more severe competition from domestic peers.",
+        "bbox": [
+            269,
+            753,
+            911,
+            807
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Ruijie (301165.SZ): Data center switch to drive growth ahead; 2Q26 guidance beat; TP to Rmb120.5 but downgrade to Neutral on fair valuation",
+        "bbox": [
+            76,
+            837,
+            916,
+            885
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "2Q26 net income midpoint guidance is at Rmb552m (60% YoY, 349% QoQ), or 155%",
+        "bbox": [
+            271,
+            910,
+            888,
+            927
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            953,
+            160,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            905,
+            954,
+            916,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "higher than our estimate, reflecting the strong growth of data center switch along with operational efficiency improvements. We remain positive on Ruijie's leading position in the data center switch market, and expect its net income to grow at a $42\\%$ CAGR in 2026E-28E, driven by:",
+        "bbox": [
+            269,
+            40,
+            903,
+            112
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "China CSPs' AI capex uptrend: We updated our Global Server TAM in late Jun (report link), where AI servers implied AI chips were raised by $14\\%$ / $22\\%$ / $14\\%$ in 2026E-28E and China CSPs' AI capex is raised by $37\\%$ / $44\\%$ / $55\\%$ in 2026E-28E. We expect Ruijie to ride on the growing AI capex and Supernode trend in China.",
+        "bbox": [
+            271,
+            123,
+            897,
+            201
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Sub-brand launched for SMB clients: Ruijie launched its sub-brand, Cybrey, in Apr 2026 (link), focusing on global SMB clients. We expect rising AI adoption in enterprise clients, which should drive Ruijie's SMB switch shipments and Ruijie's profitability, as it contains a higher margin than data center switch.",
+        "bbox": [
+            271,
+            207,
+            906,
+            283
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We factor in Ruijie's 2Q26 net income guidance and raise our estimates (15-25%) and 12M TP to Rmb120.5 (from Rmb83.4). We downgrade the shares to Neutral (from Buy) on fair valuation; the stock is currently trading at a 55x 2027E P/E vs. our new TP implied at 60x 2027E P/E, reflecting that positives are largely priced in. With 10% implied upside on our revised TP vs. 43% for our coverage, we are Neutral on Ruijie. Since initiating coverage with the stock on our Buy list on August 14, 2025, the shares are up 51% vs. the CSI 300's 17%.",
+        "bbox": [
+            269,
+            296,
+            918,
+            421
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/1da10c510ba03ad1a743729dbf828be7c260ec416dca56544b7e58272167d8bb.jpg",
+        "table_caption": [
+            "Exhibit 9: 2Q26 net income guidance (Rmb in mns)"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>2Q26 guidance</td><td>High</td><td>Low</td><td>Mid</td><td>1Q26</td><td>QoQ</td><td>2Q25</td><td>YoY</td><td>Gse.</td><td>Act / GS</td></tr><tr><td>Net income</td><td>627</td><td>477</td><td>552</td><td>123</td><td>349%</td><td>345</td><td>60%</td><td>216</td><td>155%</td></tr></table>",
+        "bbox": [
+            272,
+            456,
+            913,
+            483
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Earnings revision: We factor in Ruijie's 2Q26 net income guidance and raise our 202E6-30E net incomes by $15\\%$ / $25\\%$ / $23\\%$ / $22\\%$ / $18\\%$ , mainly on higher revenues and lower opex ratios. We revise up our 2026E-30E revenues, mainly on higher data center and SMB switch shipments, supported by China CSPs' cloud capex uptrend and Ruijie's new sub-brand targeting global SMB clients. Our 2026E-30E GMs are revised down on rising contribution from data center white box switch, which carries a lower margin than other product lines. Our 2026E-30E opex ratios are revised down to reflect operational efficiency improvements as switch shipments ramp up and revenue scales up.",
+        "bbox": [
+            269,
+            510,
+            911,
+            673
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/af18f3a573d1dca96e8cd3ed3d321c32da954733faf15d930122c917b56aed7b.jpg",
+        "table_caption": [
+            "Exhibit 10: Earnings revision"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Rmb mn</td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td><td colspan=\"3\">2028E</td><td colspan=\"3\">2029E</td><td colspan=\"3\">2030E</td></tr><tr><td>Old</td><td>New</td><td>Chg</td><td>Old</td><td>New</td><td>Chg</td><td>Old</td><td>New</td><td>Chg</td><td>Old</td><td>New</td><td>Chg</td><td>Old</td><td>New</td><td>Chg</td></tr><tr><td>Revenue</td><td>18,099</td><td>19,281</td><td>7%</td><td>24,954</td><td>28,926</td><td>16%</td><td>30,291</td><td>35,594</td><td>18%</td><td>35,927</td><td>42,402</td><td>18%</td><td>42,879</td><td>50,867</td><td>19%</td></tr><tr><td>GP</td><td>6,084</td><td>6,382</td><td>5%</td><td>7,507</td><td>8,656</td><td>15%</td><td>8,845</td><td>10,250</td><td>16%</td><td>10,211</td><td>11,891</td><td>16%</td><td>11,853</td><td>13,736</td><td>16%</td></tr><tr><td>OP</td><td>1,271</td><td>1,464</td><td>15%</td><td>1,940</td><td>2,435</td><td>26%</td><td>2,617</td><td>3,238</td><td>24%</td><td>3,119</td><td>3,812</td><td>22%</td><td>3,799</td><td>4,482</td><td>18%</td></tr><tr><td>Net income</td><td>1,201</td><td>1,385</td><td>15%</td><td>1,784</td><td>2,227</td><td>25%</td><td>2,263</td><td>2,788</td><td>23%</td><td>2,699</td><td>3,288</td><td>22%</td><td>3,283</td><td>3,861</td><td>18%</td></tr><tr><td>Margins</td><td colspan=\"3\"></td><td colspan=\"3\"></td><td colspan=\"3\"></td><td colspan=\"3\"></td><td colspan=\"3\"></td></tr><tr><td>GM</td><td>33.6%</td><td>33.1%</td><td></td><td>30.1%</td><td>29.9%</td><td></td><td>29.2%</td><td>28.8%</td><td></td><td>28.4%</td><td>28.0%</td><td></td><td>27.6%</td><td>27.0%</td><td></td></tr><tr><td>OPM</td><td>7.0%</td><td>7.6%</td><td></td><td>7.8%</td><td>8.4%</td><td></td><td>8.6%</td><td>9.1%</td><td></td><td>8.7%</td><td>9.0%</td><td></td><td>8.9%</td><td>8.8%</td><td></td></tr><tr><td>NM</td><td>6.6%</td><td>7.2%</td><td></td><td>7.2%</td><td>7.7%</td><td></td><td>7.5%</td><td>7.8%</td><td></td><td>7.5%</td><td>7.8%</td><td></td><td>7.7%</td><td>7.6%</td><td></td></tr></table>",
+        "bbox": [
+            81,
+            708,
+            913,
+            819
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            906,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/a9eb31dbc0a0f3b04164d124c2e0c0f79691b57cab217ac8938a935d350be138.jpg",
+        "table_caption": [
+            "Exhibit 11: Revenue/GM changes by product"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Rev (Rmb m)</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>GM</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>NEW</td><td>19,281</td><td>28,926</td><td>35,594</td><td>42,402</td><td>50,867</td><td>NEW</td><td>33.1%</td><td>29.9%</td><td>28.8%</td><td>28.0%</td><td>27.0%</td></tr><tr><td>Data center switch</td><td>11,608</td><td>19,928</td><td>25,715</td><td>31,783</td><td>39,356</td><td>Data center switch</td><td>24.9%</td><td>23.2%</td><td>22.7%</td><td>22.5%</td><td>21.9%</td></tr><tr><td>SMB switch</td><td>3,018</td><td>3,610</td><td>3,798</td><td>3,910</td><td>4,117</td><td>SMB switch</td><td>44.8%</td><td>44.0%</td><td>43.8%</td><td>43.6%</td><td>43.6%</td></tr><tr><td>AP, enterprise</td><td>1,288</td><td>1,681</td><td>2,134</td><td>2,466</td><td>2,869</td><td>AP, enterprise</td><td>47.5%</td><td>47.3%</td><td>47.3%</td><td>47.3%</td><td>47.3%</td></tr><tr><td>AP, SMB</td><td>1,270</td><td>1,451</td><td>1,493</td><td>1,568</td><td>1,599</td><td>AP, SMB</td><td>44.0%</td><td>43.8%</td><td>43.7%</td><td>43.6%</td><td>43.6%</td></tr><tr><td>Controller</td><td>123</td><td>127</td><td>136</td><td>145</td><td>156</td><td>Controller</td><td>39.8%</td><td>39.7%</td><td>39.6%</td><td>39.6%</td><td>39.6%</td></tr><tr><td>Router</td><td>66</td><td>85</td><td>122</td><td>159</td><td>196</td><td>Router</td><td>52.8%</td><td>52.8%</td><td>53.0%</td><td>53.0%</td><td>53.0%</td></tr><tr><td>Cyber security</td><td>513</td><td>533</td><td>554</td><td>576</td><td>598</td><td>Cyber security</td><td>59.5%</td><td>59.5%</td><td>59.6%</td><td>60.0%</td><td>60.0%</td></tr><tr><td>Cloud desktop</td><td>670</td><td>783</td><td>915</td><td>1,070</td><td>1,251</td><td>Cloud desktop</td><td>31.0%</td><td>31.0%</td><td>31.0%</td><td>31.0%</td><td>31.0%</td></tr><tr><td>Others</td><td>727</td><td>727</td><td>727</td><td>727</td><td>727</td><td>Others</td><td>51.8%</td><td>50.0%</td><td>50.0%</td><td>50.0%</td><td>50.0%</td></tr><tr><td>OLD</td><td>18,099</td><td>24,954</td><td>30,291</td><td>35,927</td><td>42,879</td><td>OLD</td><td>33.6%</td><td>30.1%</td><td>29.2%</td><td>28.4%</td><td>27.6%</td></tr><tr><td>Data center switch</td><td>10,425</td><td>16,311</td><td>20,904</td><td>25,830</td><td>31,972</td><td>Data center switch</td><td>24.8%</td><td>22.4%</td><td>22.3%</td><td>22.1%</td><td>21.9%</td></tr><tr><td>SMB switch</td><td>3,018</td><td>3,256</td><td>3,307</td><td>3,386</td><td>3,513</td><td>SMB switch</td><td>44.8%</td><td>43.0%</td><td>43.2%</td><td>43.3%</td><td>43.5%</td></tr><tr><td>AP, enterprise</td><td>1,288</td><td>1,681</td><td>2,134</td><td>2,466</td><td>2,869</td><td>AP, enterprise</td><td>47.5%</td><td>47.3%</td><td>47.3%</td><td>47.3%</td><td>47.3%</td></tr><tr><td>AP, SMB</td><td>1,270</td><td>1,451</td><td>1,493</td><td>1,588</td><td>1,599</td><td>AP, SMB</td><td>44.0%</td><td>43.8%</td><td>43.7%</td><td>43.6%</td><td>43.6%</td></tr><tr><td rowspan=\"2\">Controller</td><td rowspan=\"2\">123</td><td rowspan=\"2\">127</td><td rowspan=\"2\">136</td><td rowspan=\"2\">145</td><td rowspan=\"2\">156</td><td rowspan=\"2\">Controller</td><td rowspan=\"2\">39.8%</td><td rowspan=\"2\">39.7%</td><td rowspan=\"2\">39.6%</td><td rowspan=\"2\">39.6%</td><td rowspan=\"2\">39.6%</td></tr><tr></tr><tr><td>Router</td><td>66</td><td>85</td><td>122</td><td>159</td><td>196</td><td>Router</td><td>52.8%</td><td>52.8%</td><td>53.0%</td><td>53.0%</td><td>53.0%</td></tr><tr><td>Cyber security</td><td>513</td><td>533</td><td>554</td><td>576</td><td>598</td><td>Cyber security</td><td>59.5%</td><td>59.5%</td><td>59 .6%</td><td>60.0%</td><td>60.0%</td></tr><tr><td>Cloud desktop</td><td>670</td><td>783</td><td>915</td><td>1,070</td><td>1,251</td><td>Cloud desktop</td><td>31.0%</td><td>31.0%</td><td>31.0%</td><td>31.0%</td><td>31.0%</td></tr><tr><td>Others</td><td>727</td><td>727</td><td>727</td><td>727</td><td>72</td><td></td><td>51.8%</td><td>50.0%</td><td>50.0%</td><td>50.0%</td><td>50.0%</td></tr><tr><td>CHG</td><td>7%</td><td>16%</td><td>18%</td><td>18%</td><td>19%</td><td>CHG (New - Old)</td><td>-0.5%</td><td>-0.2%</td><td>-0.4%</td><td>-0.4%</td><td>-0.6%</td></tr><tr><td>Data center switch</td><td>11%</td><td>22%</td><td>23%</td><td>23%</td><td>23%</td><td>Data center switch</td><td>0.0%</td><td>0.8%</td><td>0.4%</td><td>0.4%</td><td>0.0%</td></tr><tr><td>SMB switch</td><td>0%</td><td>11%</td><td>15%</td><td>15%</td><td>17%</td><td>SMB switch</td><td>0.0%</td><td>1.0%</td><td>0.6%</td><td>0.3%</td><td>0.1%</td></tr><tr><td>AP, enterprise</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>AP, enterprise</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>AP, SMB</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>AP, SMB</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Controller</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>Controller</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Router</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>Router</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Cyber security</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>Cyber security</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Cloud desktop</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>Cloud desktop</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Others</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>Others</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr></table>",
+        "bbox": [
+            80,
+            69,
+            915,
+            428
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GSe vs. Bloomberg consensus: Our 2026E revenue is largely in line with consensus, while 2027E revenue is $22\\%$ higher, reflecting our more positive view on Ruijie's switch shipments ahead. Our 2026E-27E GMs are lower than consensus, considering the rising contribution from data center white box switch would weigh on the margin. Our 2026E-27E opex ratio lower than consensus, mainly on the higher revenue scale. Overall, our 2026E net income is in line with consensus, while 2027E net income is $9\\%$ higher.",
+        "bbox": [
+            269,
+            452,
+            916,
+            561
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/97fd9def7ed7f603c35c801f8d78442bea50ebe0b29dda90c82ed2cfa87156a0.jpg",
+        "table_caption": [
+            "Exhibit 12: GSe vs. Bloomberg consensus"
+        ],
+        "table_footnote": [
+            "Source: GS Global Investment Research, Bloomberg"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Rmb mn</td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td></tr><tr><td>GS</td><td>BBG</td><td>Diff %</td><td>GS</td><td>BBG</td><td>Diff %</td></tr><tr><td>Revenue</td><td>19,281</td><td>18,795</td><td>3%</td><td>28,926</td><td>23,788</td><td>22%</td></tr><tr><td>GP</td><td>6,382</td><td>6,637</td><td>-4%</td><td>8,656</td><td>8,006</td><td>8%</td></tr><tr><td>OP</td><td>1,464</td><td>1,710</td><td>-14%</td><td>2,435</td><td>2,439</td><td>0%</td></tr><tr><td>Net income</td><td>1,385</td><td>1,431</td><td>-3%</td><td>2,227</td><td>2,050</td><td>9%</td></tr><tr><td>Margins</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GM</td><td>33.1%</td><td>35.3%</td><td></td><td>29.9%</td><td>33.7%</td><td></td></tr><tr><td>OPM</td><td>7.6%</td><td>9.1%</td><td></td><td>8.4%</td><td>10.3%</td><td></td></tr><tr><td>NM</td><td>7.2%</td><td>7.6%</td><td></td><td>7.7%</td><td>8.6%</td><td></td></tr></table>",
+        "bbox": [
+            272,
+            594,
+            689,
+            720
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Valuation: We continue to derive our 12M TP based on a near-term P/E, our 2027E target P/E is updated to 60x (vs. 52x previously) mainly on higher 2027E-28E net income growth, still based on a peers' correlation between forward year trading P/E and net income growth. With our updated target P/E and earnings estimates, our 12M TP is raised to Rmb120.5 (vs. Rmb83.4 previously). Our new target P/E of 60x is around the company's historical avg. +1std. forward trading P/E at 60x. Our TP implied PEG of 1.5x is within peers' range from 0.9x to 1.7x. With 10% potential upside, we downgrade Ruijie shares to Neutral.",
+        "bbox": [
+            267,
+            745,
+            913,
+            889
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            953,
+            158,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            905,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ab3e7974479c853d1750e5dc3cef307d5a6a3ed50076d4f14d3739db0d7619e3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 13: Target P/E is derived from peers 2027E P/E and 2027-28E avg. EPS YoY"
+        ],
+        "chart_footnote": [
+            "Source: Company data, GS Global Investment Research, Refinitiv Eikon"
+        ],
+        "bbox": [
+            84,
+            90,
+            483,
+            278
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ca08991b713010090f5aa76614dbd2b8e085b8ffdc2a24b0014b4339d1ecc3fe.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 14: Ruijie 12M forward P/E"
+        ],
+        "chart_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "bbox": [
+            513,
+            83,
+            911,
+            281
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/fb3ede3b0b6b7481721499a806c0369c3ddd566201edcf62362038919590931e.jpg",
+        "table_caption": [
+            "Exhibit 15: Ruijie and peers' PEG"
+        ],
+        "table_footnote": [
+            "NC = not covered."
+        ],
+        "table_body": "<table><tr><td>Company</td><td>Ruijie</td><td>UNIS</td><td>Accelink</td><td>HP</td><td>ZTE</td><td>Dell</td></tr><tr><td>Ticker</td><td>301165.SZ</td><td>000938.SZ</td><td>002281.SZ</td><td>HPQ</td><td>0763.HK</td><td>DELL</td></tr><tr><td>Rating</td><td>Buy</td><td>Neutral</td><td>NC</td><td>Sell</td><td>Neutral</td><td>Buy</td></tr><tr><td>2027E P/E</td><td>60</td><td>23</td><td>90</td><td>8</td><td>11</td><td>18</td></tr><tr><td>2027-28ENI YoY</td><td>40%</td><td>0.2</td><td>52%</td><td>6%</td><td>13%</td><td>16%</td></tr><tr><td>PEG</td><td>1.5</td><td>1.3</td><td>1.7</td><td>1.4</td><td>0.9</td><td>1.1</td></tr></table>",
+        "bbox": [
+            81,
+            349,
+            913,
+            425
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Source: Company data, GS Global Investment Research, Refinitiv Eikon",
+        "bbox": [
+            78,
+            455,
+            504,
+            468
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/7cbeac55426d393a66d6d9548d8276f8fa121ed4a432d4af6901027396a6200b.jpg",
+        "table_caption": [
+            "Exhibit 16: Ruijie P&L summary"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Rmb m</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td colspan=\"5\">Income statement</td><td colspan=\"4\"></td><td colspan=\"9\"></td></tr><tr><td>Revenues</td><td>2,536</td><td>4,113</td><td>4,031</td><td>3,636</td><td>2,999</td><td>5,341</td><td>5,372</td><td>5,569</td><td>11,326</td><td>11,542</td><td>11,699</td><td>14,316</td><td>19,281</td><td>28,926</td><td>35,594</td><td>42,402</td><td>50,867</td></tr><tr><td>GP</td><td>951</td><td>1,256</td><td>1,433</td><td>1,439</td><td>1,071</td><td>1,593</td><td>1,816</td><td>1,903</td><td>4,492</td><td>4,430</td><td>4,518</td><td>5,079</td><td>6,382</td><td>8,656</td><td>10,250</td><td>11,891</td><td>13,736</td></tr><tr><td>OP</td><td>54</td><td>374</td><td>200</td><td>47</td><td>151</td><td>577</td><td>351</td><td>385</td><td>140</td><td>(78)</td><td>128</td><td>675</td><td>1,464</td><td>2,435</td><td>3,238</td><td>3,812</td><td>4,482</td></tr><tr><td>Net income</td><td>107</td><td>345</td><td>228</td><td>16</td><td>123</td><td>552</td><td>339</td><td>371</td><td>552</td><td>401</td><td>574</td><td>696</td><td>1,385</td><td>2,227</td><td>2,788</td><td>3,288</td><td>3,861</td></tr><tr><td>EPS (Rmb)</td><td>0.19</td><td>0.43</td><td>0.29</td><td>0.02</td><td>0.15</td><td>0.50</td><td>0.30</td><td>0.33</td><td>1.10</td><td>0.71</td><td>1.01</td><td>0.93</td><td>1.29</td><td>2.00</td><td>2.50</td><td>2.95</td><td>3.47</td></tr><tr><td colspan=\"5\">Margins</td><td colspan=\"4\"></td><td colspan=\"9\"></td></tr><tr><td>GM</td><td>37.5%</td><td>30.5%</td><td>35.6%</td><td>39.6%</td><td>35.7%</td><td>29.8%</td><td>33.8%</td><td>34.2%</td><td>39.7%</td><td>38.4%</td><td>38.6%</td><td>35.5%</td><td>33.1%</td><td>29.9%</td><td>28.8%</td><td>28.0%</td><td>27.0%</td></tr><tr><td>OPM</td><td>2.1%</td><td>9.1%</td><td>5.0%</td><td>1.3%</td><td>5.0%</td><td>10.8%</td><td>6.5%</td><td>6.9%</td><td>1.2%</td><td>-0.7%</td><td>1.1%</td><td>4.7%</td><td>7.6%</td><td>8.4%</td><td>9.1%</td><td>9.0%</td><td>8.8%</td></tr><tr><td>NM</td><td>4.2%</td><td>8.4%</td><td>5.7%</td><td>0.4%</td><td>4.1%</td><td>10.3%</td><td>6.3%</td><td>6.7%</td><td>4.9%</td><td>3.5%</td><td>4.9%</td><td>4.9%</td><td>7.2%</td><td>7.7%</td><td>7.8%</td><td>7.8%</td><td>7.6%</td></tr><tr><td colspan=\"5\">Ratios</td><td colspan=\"4\"></td><td colspan=\"9\"></td></tr><tr><td>Opex ratio</td><td>35.3%</td><td>21.5%</td><td>30.6%</td><td>38.3%</td><td>30.6%</td><td>19.0%</td><td>27.3%</td><td>27.3%</td><td>38.4%</td><td>39.1%</td><td>37.5%</td><td>30.8%</td><td>25.5%</td><td>21.5%</td><td>19.7%</td><td>19.1%</td><td>18.2%</td></tr><tr><td>Tax rate</td><td>-30.6%</td><td>14.7%</td><td>16.4%</td><td>75.8%</td><td>2.4%</td><td>6.0%</td><td>6.0%</td><td>6.0%</td><td>-30.7%</td><td>-158.3%</td><td>-41.6%</td><td>15.6%</td><td>5.7%</td><td>10.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td></tr><tr><td colspan=\"5\">YoY</td><td colspan=\"4\"></td><td colspan=\"9\"></td></tr><tr><td>Revenues</td><td>18%</td><td>42%</td><td>21%</td><td>9%</td><td>18%</td><td>30%</td><td>33%</td><td>53%</td><td>23%</td><td>2%</td><td>1%</td><td>22%</td><td>35%</td><td>50%</td><td>23%</td><td>19%</td><td>20%</td></tr><tr><td>GP</td><td>15%</td><td>27%</td><td>24%</td><td>-7%</td><td>13%</td><td>27%</td><td>27%</td><td>32%</td><td>31%</td><td>-1%</td><td>2%</td><td>12%</td><td>26%</td><td>36%</td><td>18%</td><td>16%</td><td>16%</td></tr><tr><td>OP</td><td>na</td><td>465%</td><td>-5%</td><td>na</td><td>178%</td><td>54%</td><td>76%</td><td>722%</td><td>-18%</td><td>na</td><td>na</td><td>428%</td><td>117%</td><td>66%</td><td>33%</td><td>18%</td><td>18%</td></tr><tr><td>Net income</td><td>4544%</td><td>128%</td><td>-11%</td><td>-90%</td><td>15%</td><td>60%</td><td>48%</td><td>2233%</td><td>20%</td><td>-27%</td><td>43%</td><td>21%</td><td>99%</td><td>61%</td><td>25%</td><td>18%</td><td>17%</td></tr><tr><td colspan=\"5\">QoQ</td><td colspan=\"4\"></td><td colspan=\"9\"></td></tr><tr><td>Revenues</td><td>-24%</td><td>62%</td><td>-2%</td><td>-10%</td><td>-18%</td><td>78%</td><td>1%</td><td>4%</td><td rowspan=\"4\" colspan=\"9\"></td></tr><tr><td>GP</td><td>-38%</td><td>32%</td><td>14%</td><td>0%</td><td>-26%</td><td>49%</td><td>14%</td><td>5%</td></tr><tr><td>OP</td><td>-302%</td><td>587%</td><td>-46%</td><td>-77%</td><td>223%</td><td>281%</td><td>-39%</td><td>10%</td></tr><tr><td>Net income</td><td>-34%</td><td>221%</td><td>-34%</td><td>-93%</td><td>673%</td><td>349%</td><td>-39%</td><td>10%</td></tr></table>",
+        "bbox": [
+            80,
+            501,
+            915,
+            723
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/da935eee48a57a4f7dab3b154d957e95ea49e97c6693c826f02115cbd96eeb7b.jpg",
+        "table_caption": [
+            "Exhibit 17: Ruijie's balance sheet"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Rmb m</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td colspan=\"9\">Balance Sheet</td></tr><tr><td>Cash and equivalents</td><td>2,298</td><td>1,407</td><td>2,526</td><td>3,574</td><td>4,138</td><td>5,622</td><td>6,262</td><td>8,686</td></tr><tr><td>Accounts receivable</td><td>1,352</td><td>1,895</td><td>1,979</td><td>2,934</td><td>3,406</td><td>4,396</td><td>4,898</td><td>5,694</td></tr><tr><td>Inventory</td><td>2,875</td><td>3,367</td><td>2,960</td><td>4,108</td><td>5,332</td><td>5,778</td><td>6,761</td><td>7,481</td></tr><tr><td>Other current assets</td><td>108</td><td>315</td><td>422</td><td>422</td><td>422</td><td>422</td><td>422</td><td>422</td></tr><tr><td>Current assets</td><td>6,633</td><td>6,984</td><td>7,886</td><td>11,038</td><td>13,298</td><td>16,216</td><td>18,343</td><td>22,282</td></tr><tr><td>Net PP&amp;E/Fixed assets</td><td>493</td><td>502</td><td>460</td><td>622</td><td>767</td><td>881</td><td>987</td><td>1,082</td></tr><tr><td>Net intangibles</td><td>16</td><td>53</td><td>506</td><td>431</td><td>366</td><td>311</td><td>264</td><td>225</td></tr><tr><td>Other long-term assets</td><td>1,223</td><td>1,964</td><td>1,372</td><td>1,372</td><td>1,372</td><td>1,372</td><td>1,372</td><td>1,372</td></tr><tr><td>Non-current assets</td><td>1,731</td><td>2,519</td><td>2,338</td><td>2,425</td><td>2,504</td><td>2,563</td><td>2,623</td><td>2,678</td></tr><tr><td>Total assets</td><td>8,364</td><td>9,503</td><td>10,224</td><td>13,462</td><td>15,802</td><td>18,780</td><td>20,966</td><td>24,961</td></tr><tr><td>Accounts payable</td><td>1,285</td><td>1,433</td><td>1,597</td><td>4,057</td><td>5,383</td><td>7,116</td><td>7,931</td><td>10,380</td></tr><tr><td>Short-term debt</td><td>1,840</td><td>2,359</td><td>2,235</td><td>2,458</td><td>2,581</td><td>2,710</td><td>2,765</td><td>2,765</td></tr><tr><td>Other current liabilities</td><td>767</td><td>1,025</td><td>1,329</td><td>1,329</td><td>1,329</td><td>1,329</td><td>1,329</td><td>1,329</td></tr><tr><td>Current liabilities</td><td>3,892</td><td>4,817</td><td>5,161</td><td>7,845</td><td>9,294</td><td>11,155</td><td>12,025</td><td>14,474</td></tr><tr><td>Long-term debt</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other long-term liabilities</td><td>187</td><td>111</td><td>74</td><td>74</td><td>74</td><td>74</td><td>74</td><td>74</td></tr><tr><td>Non-current liabilities</td><td>187</td><td>111</td><td>74</td><td>74</td><td>74</td><td>74</td><td>74</td><td>74</td></tr><tr><td>Total liabilities</td><td>4,080</td><td>4,929</td><td>5,235</td><td>7,919</td><td>9,367</td><td>11,229</td><td>12,099</td><td>14,548</td></tr><tr><td>Common stock</td><td>568</td><td>568</td><td>795</td><td>795</td><td>795</td><td>795</td><td>795</td><td>795</td></tr><tr><td>Retained earnings</td><td>1,470</td><td>1,725</td><td>2,076</td><td>2,630</td><td>3,522</td><td>4,638</td><td>5,954</td><td>7,499</td></tr><tr><td>Other common equity</td><td>2,247</td><td>2,282</td><td>2,118</td><td>2,118</td><td>2,118</td><td>2,118</td><td>2,118</td><td>2,118</td></tr><tr><td>Total common equity</td><td>4,285</td><td>4,575</td><td>4,989</td><td>5,544</td><td>6,435</td><td>7,551</td><td>8,867</td><td>10,413</td></tr><tr><td>Minority interest</td><td>-</td><td>-</td><td>-</td><td>(0)</td><td>(0)</td><td>(0)</td><td>(0)</td><td>(0)</td></tr><tr><td>Total equity</td><td>4,285</td><td>4,575</td><td>4,989</td><td>5,544</td><td>6,435</td><td>7,551</td><td>8,867</td><td>10,413</td></tr><tr><td>BVPS</td><td>7.58</td><td>8.05</td><td>6.66</td><td>5.15</td><td>5.78</td><td>6.78</td><td>7.96</td><td>9.35</td></tr><tr><td colspan=\"9\">Cash conversion cycle</td></tr><tr><td>Account receivable days</td><td>32</td><td>51</td><td>49</td><td>47</td><td>40</td><td>40</td><td>40</td><td>38</td></tr><tr><td>Inventory days</td><td>153</td><td>159</td><td>125</td><td>100</td><td>85</td><td>80</td><td>75</td><td>70</td></tr><tr><td>Net payable days</td><td>51</td><td>69</td><td>60</td><td>80</td><td>85</td><td>90</td><td>90</td><td>90</td></tr><tr><td>Cash conversion cycle</td><td>134</td><td>140</td><td>115</td><td>67</td><td>40</td><td>30</td><td>25</td><td>18</td></tr><tr><td colspan=\"9\">Ratios</td></tr><tr><td>ROE (common equity)</td><td>9%</td><td>13%</td><td>15%</td><td>26%</td><td>37%</td><td>40%</td><td>40%</td><td>40%</td></tr><tr><td>ROA</td><td>5%</td><td>6%</td><td>7%</td><td>12%</td><td>15%</td><td>16%</td><td>17%</td><td>17%</td></tr><tr><td>Net debt to total equity</td><td>-11%</td><td>21%</td><td>-6%</td><td>-20%</td><td>-24%</td><td>-39%</td><td>-39%</td><td>-57%</td></tr><tr><td>Net cash per share (Rmb)</td><td>0.81</td><td>(1.68)</td><td>0.39</td><td>1.04</td><td>1.40</td><td>2.61</td><td>3.14</td><td>5.32</td></tr><tr><td>Total liabilities to total assets</td><td>49%</td><td>52%</td><td>51%</td><td>59%</td><td>59%</td><td>60%</td><td>58%</td><td>58%</td></tr><tr><td colspan=\"9\">Dupont analysis</td></tr><tr><td>Asset turnover</td><td>1.4</td><td>1.3</td><td>1.5</td><td>1.6</td><td>2.0</td><td>2.1</td><td>2.1</td><td>2.2</td></tr><tr><td>Leverage (assets to equity)</td><td>1.9</td><td>2.0</td><td>2.1</td><td>2.2</td><td>2.4</td><td>2.5</td><td>2.4</td><td>2.4</td></tr><tr><td>Net margin</td><td>3%</td><td>5%</td><td>5%</td><td>7%</td><td>8%</td><td>8%</td><td>8%</td><td>8%</td></tr><tr><td>ROE (total equity)</td><td>9%</td><td>13%</td><td>15%</td><td>26%</td><td>37%</td><td>40%</td><td>40%</td><td>40%</td></tr><tr><td>ROA</td><td>5%</td><td>6%</td><td>7%</td><td>12%</td><td>15%</td><td>16%</td><td>17%</td><td>17%</td></tr><tr><td>CROCI (EDBITA/total equity)</td><td>1%</td><td>5%</td><td>17%</td><td>29%</td><td>40%</td><td>45%</td><td>45%</td><td>44%</td></tr></table>",
+        "bbox": [
+            78,
+            70,
+            913,
+            767
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            160,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            905,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/0c4fb048e0b3440c43225b2efa1b067a60a84124ea8219ab6d33958fdf0c9093.jpg",
+        "table_caption": [
+            "Exhibit 18: Ruijie's cash flow statement"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Rmb m</td><td>2023</td><td>2024</td><td>2025E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td colspan=\"9\">Cash flow statement</td></tr><tr><td>Net income</td><td>401</td><td>574</td><td>696</td><td>1,385</td><td>2,227</td><td>2,788</td><td>3,288</td><td>3,861</td></tr><tr><td>Minority interest add-back</td><td>-</td><td>-</td><td>-</td><td>(0)</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Depreciation and amortization add-back</td><td>99</td><td>100</td><td>166</td><td>145</td><td>152</td><td>155</td><td>152</td><td>148</td></tr><tr><td>(Increase)/decrease in working capital</td><td>121</td><td>(888)</td><td>488</td><td>357</td><td>(370)</td><td>297</td><td>(670)</td><td>934</td></tr><tr><td>Other operating cash flow items</td><td>247</td><td>433</td><td>477</td><td>(0)</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash flow from operating</td><td>869</td><td>219</td><td>1,828</td><td>1,886</td><td>2,008</td><td>3,240</td><td>2,770</td><td>4,944</td></tr><tr><td>Capital expenditure</td><td>(310)</td><td>(485)</td><td>(249)</td><td>(231)</td><td>(231)</td><td>(214)</td><td>(212)</td><td>(203)</td></tr><tr><td>Other investment cash flow items</td><td>(94)</td><td>(584)</td><td>(254)</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash flow from investing</td><td>(404)</td><td>(1,070)</td><td>(503)</td><td>(231)</td><td>(231)</td><td>(214)</td><td>(212)</td><td>(203)</td></tr><tr><td>Dividends paid</td><td>(473)</td><td>(346)</td><td>(365)</td><td>(831)</td><td>(1,335)</td><td>(1,672)</td><td>(1,972)</td><td>(2,316)</td></tr><tr><td>Change in common stock</td><td>-</td><td>-</td><td>227</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Increase/(decrease) in short-term debt</td><td>202</td><td>519</td><td>(125)</td><td>223</td><td>123</td><td>129</td><td>54</td><td>-</td></tr><tr><td>Increase/(decrease) in long-term debt</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other financing cash flow items</td><td>(852)</td><td>(523)</td><td>(170)</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash flow from financing</td><td>(1,123)</td><td>(349)</td><td>(432)</td><td>(607)</td><td>(1,212)</td><td>(1,543)</td><td>(1,918)</td><td>(2,316)</td></tr><tr><td>Net change in cash</td><td>(643)</td><td>(892)</td><td>1,119</td><td>1,048</td><td>564</td><td>1,483</td><td>640</td><td>2,424</td></tr><tr><td>FCF</td><td>558</td><td>(266)</td><td>1,579</td><td>1,655</td><td>1,777</td><td>3,026</td><td>2,558</td><td>4,740</td></tr><tr><td colspan=\"9\">Ratio</td></tr><tr><td>Capex to revenue</td><td>3%</td><td>4%</td><td>2%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td></tr></table>",
+        "bbox": [
+            80,
+            70,
+            913,
+            372
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Upside / downside risks:",
+        "text_level": 2,
+        "bbox": [
+            271,
+            400,
+            464,
+            416
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Higher- / lower-than-expected China Cloud capex: China Cloud capex expansion is one of the main drivers for Ruijie's data center switch business. If the China Cloud capex is higher / lower than expected, it could result in upside / downside risks to our Ruijie forecasts.",
+        "bbox": [
+            271,
+            429,
+            910,
+            504
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Faster- / slower-than-expected product migration: We model the product migration towards switch with higher speed (e.g. 800G and above) to bring an ASP uptrend and drive Ruijie's revenue growth. If the product migration is faster / slower than expected, it could result in upside / downside risks to our revenue forecasts.",
+        "bbox": [
+            271,
+            512,
+            911,
+            588
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Milder- / fiercer-than-expected pricing competition: Data center switch is a fragmented market, and Ruijie is facing pricing competition from both local and global peers. If the pricing competition among data center switch suppliers is milder / fiercer than expected, it could result in upside / downside risks to our profitability forecasts.",
+        "bbox": [
+            271,
+            594,
+            911,
+            689
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Ruijie is a leading ICT equipment supplier in China, offering data center switch, SMB switch, access point, cyber security products, cloud desktop, etc. We expect Ruijie to leverage its accumulated experiences in white box data center switch and ride on China's Cloud capex expansion, and the rising market demand for high-end switch (high-speed, liquid-cooled, supporting LPO / CPO optical transceivers) which also supports the company's growth due to its higher ASP. The company's forward trading P/E is close to our 2027E target P/E, reflecting the positives are largely priced in. We have a Neutral rating on Ruijie.",
+        "bbox": [
+            269,
+            703,
+            915,
+            847
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Valuation: We derive our 12M TP of Rmb120.5 based on a target P/E multiple of 60x 2027E EPS. Our target P/E of 60x is derived from the correlation between P/E and EPS growth of Ruijie's peers, based on Ruijie's 2027E-28E EPS YoY growth.",
+        "bbox": [
+            269,
+            40,
+            898,
+            95
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Key risks: Higher / lower-than-expected China Cloud capex; Faster / slower-than-expected product migration; Milder / fiercer-than-expected pricing competition.",
+        "bbox": [
+            269,
+            105,
+            864,
+            160
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            898,
+            954,
+            916,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            40,
+            253,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            82,
+            138,
+            98
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "We, Allen Chang, Verena Jeng, Ting Song and Yifan Hu, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+        "bbox": [
+            76,
+            104,
+            910,
+            140
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            145,
+            887,
+            158
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Allen Chang GS (Asia) L.L.C., Verena Jeng GS (Asia) L.L.C., Ting Song GS (Asia) L.L.C., Yifan Hu GS (Asia) L.L.C..",
+        "bbox": [
+            78,
+            163,
+            911,
+            187
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            193,
+            897,
+            216
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile",
+        "text_level": 2,
+        "bbox": [
+            80,
+            229,
+            207,
+            242
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+        "bbox": [
+            76,
+            241,
+            916,
+            300
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+        "bbox": [
+            76,
+            304,
+            908,
+            372
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+        "bbox": [
+            78,
+            378,
+            911,
+            403
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+        "bbox": [
+            78,
+            407,
+            704,
+            421
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank",
+        "text_level": 2,
+        "bbox": [
+            80,
+            432,
+            163,
+            446
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+        "bbox": [
+            76,
+            445,
+            911,
+            514
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Quantum",
+        "text_level": 2,
+        "bbox": [
+            80,
+            526,
+            156,
+            540
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+        "bbox": [
+            78,
+            538,
+            890,
+            563
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            574,
+            169,
+            589
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Rating and pricing information",
+        "text_level": 2,
+        "bbox": [
+            80,
+            594,
+            310,
+            607
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Dell Technologies Inc. (Buy, \\$434.97), HP Inc. (Sell, \\$24.22), UNIS (Neutral, Rmb38.41) and ZTE (H) (Neutral, HK\\$25.70)",
+        "bbox": [
+            78,
+            607,
+            735,
+            620
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The rating(s) for Ruijie Networks and SG Micro is/are relative to the other companies in its/their coverage universe: AAC, ACM Research, AMEC, ASMPT, AVC, AccoTest, Anji Micro, Asus, Auras, BOE, BYDE, Biren, CR Micro, Cambricon, Chenbro, China Mobile (HK), China Telecom, China Tower Corp., China Unicom, Chinasoft Intl, Compal, Desay SV, E Ink, E-Town Semis, EHang, Empyrean, Eoptolink, FOCI, Fositek, Foxconn Industrial Internet, Gigabyte, Gigadevice, Glodon Co., HTC Corp., Hikvision, Hon Hai, Horizon Robotics, Hua Hong, Huace Navigation, Huaqin Co.(A), Huaqin Co.(H), Hwatsing, InnoScience, Innolight, Inspur, Insta360, Inventec, JCET, Kematek, King Slide, Kingdee, Kingsoft Office, LandMark, Largan, Lenovo, Lingyi, Maxscend, Meitu, MetaX, Mitac, Montage (A), Montage (H), NAURA, NSIG, Nexchip, OmniVision, Pegatron, Pony AI Inc. (ADR), Pony AI Inc. (H), Quanta, RoboTechnik, Ruijie Networks, SG Micro, SICC, SMIC (A), SMIC (H), SZS, Sangfor, SenseTime, Shengyi Tech, Shennan Circuits, StarPower, Sunny Optical, TFC Optical, Thundersoft, Tongyu Communication, Transsion, UMT, UNIS, VPEC, Vanchip, VeriSilicon, Victory Giant, WNC, WUS, WeRide, Wistron, Wiwynn, YJ Semitech, YOFC, Yonyou, ZTE (A), ZTE (H), iFlytek",
+        "bbox": [
+            76,
+            625,
+            911,
+            727
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Company-specific regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            739,
+            387,
+            753
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.",
+        "bbox": [
+            78,
+            752,
+            903,
+            776
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "GS beneficially owned 1% or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the month end preceding this report: SG Micro (Rmb124.25)",
+        "bbox": [
+            78,
+            781,
+            885,
+            806
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Ruijie Networks (Rmb103.61) and SG Micro (Rmb124.25)",
+        "bbox": [
+            78,
+            810,
+            913,
+            834
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "GS had an investment banking services client relationship during the past 12 months with: Ruijie Networks (Rmb103.61) and SG Micro (Rmb124.25)",
+        "bbox": [
+            78,
+            840,
+            888,
+            864
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships",
+        "text_level": 2,
+        "bbox": [
+            78,
+            876,
+            503,
+            890
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "GS Investment Research global Equity coverage universe",
+        "bbox": [
+            78,
+            890,
+            465,
+            901
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/deb6d0fefbc6b85a2f8f35068757b9a5af35e971898822835dcb1bd1b3e055ba.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Price targets shown in table(s) are unadjusted for corporate actions."
+        ],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>30-Apr-26</td><td>96.10</td><td>91.94</td><td>09-Jun-26</td><td>83.40</td><td>59.10</td></tr><tr><td>26-Oct-25</td><td>84.00</td><td>78.19</td><td>23-Oct-25</td><td>129.00</td><td>54.79</td></tr><tr><td>01-Sep-25</td><td>87.00</td><td>77.46</td><td>02-Sep-25</td><td>134.00</td><td>65.39</td></tr><tr><td>26-Jun-25</td><td>78.30</td><td>72.51</td><td>22-Aug-25</td><td>103.10</td><td>64.39</td></tr><tr><td>24-Nov-24</td><td>102.70</td><td>66.00</td><td>14-Aug-25</td><td>90.70</td><td>48.19</td></tr><tr><td>12-Nov-24</td><td>118.50</td><td>73.35</td><td></td><td></td><td></td></tr><tr><td>08-Oct-24</td><td>117.60</td><td>87.69</td><td></td><td></td><td></td></tr><tr><td>11-Jul-24</td><td>102.60</td><td>59.23</td><td></td><td></td><td></td></tr><tr><td>28-Jun-24</td><td>102.90</td><td>63.68</td><td></td><td></td><td></td></tr><tr><td>06-Feb-24</td><td>90.00</td><td>51.42</td><td></td><td></td><td></td></tr><tr><td>01-Jan-24</td><td>104.00</td><td>68.47</td><td></td><td></td><td></td></tr><tr><td>09-Nov-23</td><td>107.00</td><td>69.37</td><td></td><td></td><td></td></tr><tr><td>14-Aug-23</td><td>115.00</td><td>67.32</td><td></td><td></td><td></td></tr><tr><td>20-Jul-23</td><td>131.00</td><td>64.75</td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            76,
+            472,
+            764,
+            695
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/a9b0c5cb4dfdd7222ac6fd32c6c5b849d7944d1a02522737b1d9ec8a917019b1.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>59%</td><td>43%</td></tr></table>",
+        "bbox": [
+            78,
+            41,
+            759,
+            92
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "As of July 1, 2026, GS Global Investment Research had investment ratings on 3,104 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+        "bbox": [
+            76,
+            103,
+            915,
+            163
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Price target and rating history chart(s)",
+        "text_level": 2,
+        "bbox": [
+            78,
+            172,
+            367,
+            190
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/373b67b166cb856d19b8561e14500a6d38ba51ef60ee25ce1522348b951db88d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "bbox": [
+            83,
+            200,
+            478,
+            394
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/093f7380a058735cf8616577adac84dd69888c9d1f5db47b6059273ffa9e968e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "bbox": [
+            513,
+            201,
+            908,
+            394
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Target price history table(s)",
+        "text_level": 2,
+        "bbox": [
+            78,
+            441,
+            290,
+            456
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "SG Micro (300661.SZ)",
+        "bbox": [
+            78,
+            459,
+            233,
+            474
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Ruijie Networks (301165.SZ)",
+        "bbox": [
+            457,
+            459,
+            658,
+            473
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            731,
+            253,
+            747
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            750,
+            517,
+            765
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            78,
+            763,
+            908,
+            811
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            76,
+            815,
+            915,
+            896
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            78,
+            905,
+            911,
+            934
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            898,
+            954,
+            918,
+            967
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            80,
+            954,
+            160,
+            967
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            76,
+            40,
+            913,
+            341
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            78,
+            341,
+            916,
+            554
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            78,
+            558,
+            910,
+            638
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            76,
+            643,
+            916,
+            701
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions",
+        "text_level": 2,
+        "bbox": [
+            78,
+            712,
+            452,
+            726
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+        "bbox": [
+            76,
+            725,
+            919,
+            806
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+        "bbox": [
+            76,
+            810,
+            893,
+            846
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            78,
+            851,
+            781,
+            876
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+        "bbox": [
+            78,
+            880,
+            901,
+            927
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            76,
+            40,
+            913,
+            99
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            78,
+            110,
+            352,
+            123
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            122,
+            918,
+            247
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            251,
+            880,
+            277
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            78,
+            281,
+            905,
+            327
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            340,
+            230,
+            354
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            78,
+            353,
+            915,
+            411
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            78,
+            415,
+            915,
+            451
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            78,
+            456,
+            916,
+            492
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+        "bbox": [
+            76,
+            496,
+            916,
+            554
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            76,
+            560,
+            892,
+            584
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            78,
+            589,
+            916,
+            612
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            78,
+            618,
+            913,
+            643
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            76,
+            647,
+            918,
+            717
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            76,
+            722,
+            906,
+            780
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            76,
+            784,
+            905,
+            887
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            76,
+            891,
+            898,
+            927
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            7,
+            918,
+            21
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            898,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            78,
+            40,
+            691,
+            54
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            59,
+            888,
+            83
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            80,
+            89,
+            220,
+            101
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            76,
+            107,
+            913,
+            187
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "GC Tech",
+        "bbox": [
+            859,
+            9,
+            918,
+            21
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 15
+    }
+]

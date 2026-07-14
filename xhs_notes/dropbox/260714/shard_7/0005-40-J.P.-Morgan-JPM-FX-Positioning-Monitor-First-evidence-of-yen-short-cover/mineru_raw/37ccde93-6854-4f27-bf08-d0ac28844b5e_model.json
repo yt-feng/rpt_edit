@@ -1,0 +1,4507 @@
+[
+    [
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.004,
+                0.565,
+                0.098,
+                0.882
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.135,
+                0.023,
+                0.346,
+                0.062
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.691,
+                0.027,
+                0.865,
+                0.055
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.135,
+                0.109,
+                0.566,
+                0.137
+            ],
+            "angle": 0,
+            "content": "JPM FX Positioning Monitor"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.134,
+                0.145,
+                0.581,
+                0.185
+            ],
+            "angle": 0,
+            "content": "First evidence of yen short covering; USD/CNY downside demand ebbs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.205,
+                0.675,
+                0.355
+            ],
+            "angle": 0,
+            "content": "- First signs of yen short-covering. Following Japanese officials' comments about potential GPIF portfolio adjustments, we observed +2.5-sigma net USD/JPY put demand on Friday (Figure 1). In the options space at least, that 1d USD/JPY downside figure screens as the largest such flow since August 2025, just before the resumption of Fed easing in September. While we are skeptical that this may ultimately reverse the structural JPY depreciation trend (see here), this nevertheless represents the first signs of yen-short deleveraging, and more positioning adjustments could follow. Figure 2 shows a distribution of USD/JPY put strikes transacted on Friday, which observed a median of 159.75 and the lower \\(10^{\\text{th}}\\) percentile at 156.0.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.691,
+                0.205,
+                0.829,
+                0.222
+            ],
+            "angle": 0,
+            "content": "Global FX Strategy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.689,
+                0.223,
+                0.853,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com\nKunj J Padh\n(1-212) 834-5108\nkunj.padh@jpmchase.com\nJPM Securities LLC",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.358,
+                0.666,
+                0.447
+            ],
+            "angle": 0,
+            "content": "- There is still a considerable yen short-base in the market, though it's not stretched. We had recently estimated overall USD/JPY length as high as +1.5-sigma when averaging across options and futures data, which has now fallen to +1.1-sigma (yen shorts in futures were reduced in the week prior to the GPIF news) (Figure 3). That still ranks in the shorter tier of global FX positioning across our metrics (Figure 4), albeit less than EUR & CHF at this juncture.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.135,
+                0.454,
+                0.522,
+                0.482
+            ],
+            "angle": 0,
+            "content": "Figure 1: USD/JPY downside on Friday saw the largest demand since Aug '25"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.136,
+                0.484,
+                0.454,
+                0.498
+            ],
+            "angle": 0,
+            "content": "1d USD/JPY net options flow (calls less puts, notionals) (z-score)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.138,
+                0.491,
+                0.519,
+                0.696
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.135,
+                0.696,
+                0.365,
+                0.71
+            ],
+            "angle": 0,
+            "content": "Source: JPM, DTCC, Bloomberg Finance L.P."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.531,
+                0.454,
+                0.92,
+                0.482
+            ],
+            "angle": 0,
+            "content": "Figure 2: Fresh USD/JPY strikes still mostly concentrated in upper 150s, but some evident below 156"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.532,
+                0.484,
+                0.772,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Histogram of USD/JPY puts, by strike for July 10"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.535,
+                0.489,
+                0.919,
+                0.691
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.532,
+                0.696,
+                0.762,
+                0.71
+            ],
+            "angle": 0,
+            "content": "Source: JPM, DTCC, Bloomberg Finance L.P."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.135,
+                0.935,
+                0.581,
+                0.954
+            ],
+            "angle": 0,
+            "content": "See page 5 for analyst certification and important disclosures."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.11,
+                0.563,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.147,
+                0.577,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.167,
+                0.362,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.209,
+                0.662,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.224,
+                0.661,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.238,
+                0.672,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.252,
+                0.663,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.267,
+                0.662,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.281,
+                0.662,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.297,
+                0.662,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.311,
+                0.662,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.325,
+                0.662,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.34,
+                0.382,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.692,
+                0.205,
+                0.829,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.692,
+                0.226,
+                0.815,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.24,
+                0.782,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.254,
+                0.849,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.692,
+                0.268,
+                0.775,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.692,
+                0.281,
+                0.783,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.295,
+                0.829,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.306,
+                0.831,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.359,
+                0.664,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.375,
+                0.661,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.389,
+                0.662,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.404,
+                0.661,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.418,
+                0.661,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.434,
+                0.652,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.069,
+                0.055,
+                0.232,
+                0.09
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.055,
+                0.479,
+                0.08
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.069,
+                0.148,
+                0.489,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Figure 3: USD/JPY longs are not stretched and are off the highs - but are still material"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.07,
+                0.178,
+                0.455,
+                0.193
+            ],
+            "angle": 0,
+            "content": "Avg and range of USD/JPY net positioning (avg of futures & 10wk options flow)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.079,
+                0.201,
+                0.485,
+                0.425
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.069,
+                0.432,
+                0.33,
+                0.446
+            ],
+            "angle": 0,
+            "content": "Source: JPM, CFTC, DTCC, Bloomberg Finance L.P."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.497,
+                0.148,
+                0.918,
+                0.191
+            ],
+            "angle": 0,
+            "content": "Figure 4: JPY screens generally short, albeit less so than some G10 peers\nCurrent positioning across metrics (avg of futures, options & EM Client Survey scores, where applicable). 3Y z-score"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.502,
+                0.191,
+                0.918,
+                0.412
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.498,
+                0.432,
+                0.837,
+                0.447
+            ],
+            "angle": 0,
+            "content": "Source: JPM, CFTC, DTCC, EM Client Survey, Bloomberg Finance L.P."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.463,
+                0.671,
+                0.655
+            ],
+            "angle": 0,
+            "content": "- Appetite for USD/CNY downside has markedly cooled. Really since Liberation Day, USD/CNY put volume has outpaced call volume as the market turned broadly short - a stark pivot from the persistent USD/CNY long bias from 2022-2024. That downside USD/CNY demand crescendoed in put options flow metrics in the first quarter of 2026, and more recently has been followed lower by alternative measures of CNY positioning (Figure 6). But now, that demand is ebbing - as evidenced by Figure 5 which shows the balance of USD/CNY calls and puts turning more neutral. To be sure, this doesn't screen as a wholesale capitulation of USD/CNY shorts, and we haven't seen the market turn decisively long even on short-term windows. It also remains the case that USD/CNY volumes remain understandably quite modest compared to the aforementioned 2022-2024 period (Figure 7) for various macro and geopolitical reasons. This is notable as well in the context of some other USD/Asia downside demand over the last week (TWD, KRW - Figure 8).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.069,
+                0.662,
+                0.375,
+                0.695
+            ],
+            "angle": 0,
+            "content": "Figure 5: USD/CNY downside demand has cooled... USD/CNY net options flow (calls less puts, notionals) (z-score)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.075,
+                0.704,
+                0.485,
+                0.914
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.07,
+                0.918,
+                0.3,
+                0.931
+            ],
+            "angle": 0,
+            "content": "Source: JPM, DTCC, Bloomberg Finance L.P."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.498,
+                0.662,
+                0.918,
+                0.691
+            ],
+            "angle": 0,
+            "content": "Figure 6: ...but hasn't flipped long as yet (CNY options positioning signals have recently led others)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.506,
+                0.707,
+                0.916,
+                0.915
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.498,
+                0.918,
+                0.807,
+                0.931
+            ],
+            "angle": 0,
+            "content": "Source: JPM, DTCC, EM Client Survey, Bloomberg Finance L.P."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.083,
+                0.965
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.465,
+                0.661,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.48,
+                0.663,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.495,
+                0.662,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.509,
+                0.662,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.523,
+                0.662,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.539,
+                0.665,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.554,
+                0.663,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.568,
+                0.663,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.583,
+                0.662,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.597,
+                0.662,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.612,
+                0.669,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.627,
+                0.661,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.641,
+                0.173,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.07,
+                0.642,
+                0.376,
+                0.657
+            ],
+            "angle": 0,
+            "content": "USD/COP net options flow (calls less puts, notionals) (z-score)"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.055,
+                0.231,
+                0.09
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.055,
+                0.479,
+                0.08
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.069,
+                0.148,
+                0.489,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Figure 7: USD/CNY volumes still remain quite muted by historical standards, however"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.178,
+                0.309,
+                0.193
+            ],
+            "angle": 0,
+            "content": "Total transactions by option type, 1m rolling sum"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.079,
+                0.199,
+                0.486,
+                0.483
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.069,
+                0.5,
+                0.299,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Source: JPM, DTCC, Bloomberg Finance L.P."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.498,
+                0.147,
+                0.918,
+                0.204
+            ],
+            "angle": 0,
+            "content": "Figure 8: More muted USD/CNY downside has transpired despite USD/KRW and USD/TWD put demand over the last week\nNet USD/XXX options flow (positive implies USD calls, negative implies USD puts) (z-score)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.502,
+                0.201,
+                0.908,
+                0.498
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.499,
+                0.5,
+                0.727,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Source: JPM, DTCC, Bloomberg Finance L.P."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.53,
+                0.667,
+                0.606
+            ],
+            "angle": 0,
+            "content": "- After strong USD/COP topside demand throughout May, USD/COP put demand emerged in the last week of June. Figure 9 shows USD/COP options flow, pointing to a strong inversion from calls to puts recently. Most of that flow was concentrated in late June (+3-sigma USD/COP put demand) and has been neutral since, but nevertheless still points to some positioning clean-up.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.613,
+                0.489,
+                0.641
+            ],
+            "angle": 0,
+            "content": "Figure 9: USD/COP downside emerged strongly end-June, after a period of topside",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.071,
+                0.644,
+                0.488,
+                0.862
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.07,
+                0.867,
+                0.299,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Source: JPM, DTCC, Bloomberg Finance L.P."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.953,
+                0.929,
+                0.965
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.533,
+                0.662,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.547,
+                0.665,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.563,
+                0.662,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.577,
+                0.662,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.593,
+                0.335,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.615,
+                0.486,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.628,
+                0.132,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.231,
+                0.089
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.056,
+                0.478,
+                0.079
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.077
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.07,
+                0.15,
+                0.415,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Recent JPM FX Positioning Monitors"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.182,
+                0.291,
+                0.197
+            ],
+            "angle": 0,
+            "content": "• Dollar length rising, 26 June",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.202,
+                0.381,
+                0.217
+            ],
+            "angle": 0,
+            "content": "• USD/CHF topside demand spikes, 22 June",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.222,
+                0.446,
+                0.237
+            ],
+            "angle": 0,
+            "content": "• Futures positioning says US exceptionalism, 14 June",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.082,
+                0.964
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.15,
+                0.414,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.184,
+                0.286,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.204,
+                0.376,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.223,
+                0.443,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.231,
+                0.09
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.056,
+                0.478,
+                0.08
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.927,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.071,
+                0.148,
+                0.147,
+                0.162
+            ],
+            "angle": 0,
+            "content": "Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.194,
+                0.926,
+                0.297
+            ],
+            "angle": 0,
+            "content": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.302,
+                0.902,
+                0.331
+            ],
+            "angle": 0,
+            "content": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.335,
+                0.917,
+                0.387
+            ],
+            "angle": 0,
+            "content": "Company-Specific Disclosures: Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.07,
+                0.393,
+                0.337,
+                0.407
+            ],
+            "angle": 0,
+            "content": "History of Investment Recommendations:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.405,
+                0.877,
+                0.434
+            ],
+            "angle": 0,
+            "content": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.438,
+                0.92,
+                0.467
+            ],
+            "angle": 0,
+            "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.07,
+                0.472,
+                0.201,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Other Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.518,
+                0.898,
+                0.533
+            ],
+            "angle": 0,
+            "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.538,
+                0.923,
+                0.566
+            ],
+            "angle": 0,
+            "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.57,
+                0.919,
+                0.598
+            ],
+            "angle": 0,
+            "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.603,
+                0.925,
+                0.657
+            ],
+            "angle": 0,
+            "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.661,
+                0.894,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.694,
+                0.898,
+                0.722
+            ],
+            "angle": 0,
+            "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.727,
+                0.927,
+                0.805
+            ],
+            "angle": 0,
+            "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.81,
+                0.915,
+                0.863
+            ],
+            "angle": 0,
+            "content": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.861,
+                0.901,
+                0.889
+            ],
+            "angle": 0,
+            "content": "https://www.finra.org/sites/default/files/2020-08/Security_Futures_Risk_Disclosure_Statement_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.894,
+                0.927,
+                0.934
+            ],
+            "angle": 0,
+            "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.953,
+                0.929,
+                0.965
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.15,
+                0.145,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.196,
+                0.918,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.209,
+                0.908,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.221,
+                0.875,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.234,
+                0.885,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.247,
+                0.896,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.259,
+                0.922,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.272,
+                0.882,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.284,
+                0.309,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.305,
+                0.899,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.317,
+                0.898,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.337,
+                0.916,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.35,
+                0.718,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.362,
+                0.898,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.375,
+                0.121,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.395,
+                0.335,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.408,
+                0.874,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.42,
+                0.851,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.441,
+                0.915,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.454,
+                0.724,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.473,
+                0.198,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.519,
+                0.896,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.54,
+                0.919,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.553,
+                0.749,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.571,
+                0.916,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.585,
+                0.443,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.605,
+                0.922,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.618,
+                0.919,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.63,
+                0.922,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.644,
+                0.655,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.661,
+                0.89,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.676,
+                0.835,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.696,
+                0.895,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.709,
+                0.296,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.73,
+                0.925,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.742,
+                0.916,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.754,
+                0.911,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.767,
+                0.916,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.78,
+                0.916,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.793,
+                0.124,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.813,
+                0.9,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.825,
+                0.858,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.838,
+                0.912,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.85,
+                0.295,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.862,
+                0.896,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.875,
+                0.234,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.896,
+                0.878,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.909,
+                0.922,
+                0.918
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.922,
+                0.54,
+                0.931
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.069,
+                0.056,
+                0.232,
+                0.09
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.056,
+                0.479,
+                0.079
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.927,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.928,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.194,
+                0.929,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.315,
+                0.508,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.327,
+                0.898,
+                0.355
+            ],
+            "angle": 0,
+            "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (\"BCRA\"- Central Bank of Argentina) and Comisión Nacional de Valores (\"CNV\"- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.36,
+                0.929,
+                0.49
+            ],
+            "angle": 0,
+            "content": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.495,
+                0.906,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.527,
+                0.922,
+                0.567
+            ],
+            "angle": 0,
+            "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.572,
+                0.59,
+                0.587
+            ],
+            "angle": 0,
+            "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.593,
+                0.875,
+                0.62
+            ],
+            "angle": 0,
+            "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.625,
+                0.918,
+                0.679
+            ],
+            "angle": 0,
+            "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.684,
+                0.911,
+                0.737
+            ],
+            "angle": 0,
+            "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.742,
+                0.925,
+                0.846
+            ],
+            "angle": 0,
+            "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.85,
+                0.929,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.082,
+                0.965
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.151,
+                0.922,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.164,
+                0.925,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.176,
+                0.725,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.196,
+                0.923,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.209,
+                0.922,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.221,
+                0.913,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.234,
+                0.903,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.247,
+                0.912,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.259,
+                0.9,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.272,
+                0.902,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.285,
+                0.924,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.297,
+                0.783,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.318,
+                0.505,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.327,
+                0.895,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.342,
+                0.845,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.361,
+                0.868,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.374,
+                0.911,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.387,
+                0.908,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.4,
+                0.925,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.412,
+                0.908,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.425,
+                0.911,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.437,
+                0.913,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.449,
+                0.924,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.463,
+                0.9,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.476,
+                0.564,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.495,
+                0.902,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.507,
+                0.711,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.528,
+                0.908,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.541,
+                0.918,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.554,
+                0.331,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.574,
+                0.586,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.594,
+                0.872,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.608,
+                0.128,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.628,
+                0.888,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.64,
+                0.894,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.653,
+                0.913,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.666,
+                0.495,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.685,
+                0.889,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.699,
+                0.894,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.711,
+                0.907,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.723,
+                0.399,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.744,
+                0.921,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.756,
+                0.906,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.769,
+                0.871,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.782,
+                0.905,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.795,
+                0.906,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.807,
+                0.902,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.82,
+                0.879,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.831,
+                0.604,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.852,
+                0.906,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.865,
+                0.906,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.878,
+                0.926,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.89,
+                0.887,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.903,
+                0.919,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.916,
+                0.619,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.069,
+                0.056,
+                0.232,
+                0.089
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.056,
+                0.479,
+                0.079
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.928,
+                0.315
+            ],
+            "angle": 0,
+            "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.32,
+                0.911,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.353,
+                0.927,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.41,
+                0.924,
+                0.439
+            ],
+            "angle": 0,
+            "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.443,
+                0.916,
+                0.472
+            ],
+            "angle": 0,
+            "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.476,
+                0.919,
+                0.517
+            ],
+            "angle": 0,
+            "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.521,
+                0.895,
+                0.562
+            ],
+            "angle": 0,
+            "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.567,
+                0.925,
+                0.596
+            ],
+            "angle": 0,
+            "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.6,
+                0.928,
+                0.704
+            ],
+            "angle": 0,
+            "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.708,
+                0.916,
+                0.737
+            ],
+            "angle": 0,
+            "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.741,
+                0.928,
+                0.871
+            ],
+            "angle": 0,
+            "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.875,
+                0.928,
+                0.916
+            ],
+            "angle": 0,
+            "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.92,
+                0.894,
+                0.936
+            ],
+            "angle": 0,
+            "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.953,
+                0.928,
+                0.964
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.15,
+                0.922,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.163,
+                0.921,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.175,
+                0.915,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.188,
+                0.922,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.2,
+                0.914,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.212,
+                0.882,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.225,
+                0.901,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.237,
+                0.922,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.251,
+                0.905,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.264,
+                0.915,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.276,
+                0.922,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.29,
+                0.916,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.3,
+                0.725,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.32,
+                0.908,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.335,
+                0.205,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.355,
+                0.894,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.368,
+                0.922,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.38,
+                0.919,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.392,
+                0.491,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.414,
+                0.921,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.426,
+                0.112,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.444,
+                0.913,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.459,
+                0.875,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.48,
+                0.915,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.49,
+                0.874,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.503,
+                0.68,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.524,
+                0.885,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.537,
+                0.89,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.55,
+                0.268,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.57,
+                0.906,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.582,
+                0.922,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.602,
+                0.881,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.613,
+                0.901,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.628,
+                0.922,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.64,
+                0.92,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.653,
+                0.904,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.666,
+                0.922,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.678,
+                0.881,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.691,
+                0.248,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.71,
+                0.912,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.724,
+                0.724,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.744,
+                0.906,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.756,
+                0.888,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.769,
+                0.869,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.782,
+                0.919,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.794,
+                0.902,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.807,
+                0.887,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.82,
+                0.925,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.833,
+                0.888,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.844,
+                0.913,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.858,
+                0.244,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.879,
+                0.925,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.89,
+                0.907,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.903,
+                0.586,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.921,
+                0.89,
+                0.935
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.231,
+                0.089
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.056,
+                0.479,
+                0.079
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.148,
+                0.93,
+                0.277
+            ],
+            "angle": 0,
+            "content": "authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.282,
+                0.916,
+                0.31
+            ],
+            "angle": 0,
+            "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.315,
+                0.931,
+                0.748
+            ],
+            "angle": 0,
+            "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.752,
+                0.926,
+                0.856
+            ],
+            "angle": 0,
+            "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.86,
+                0.924,
+                0.926
+            ],
+            "angle": 0,
+            "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.082,
+                0.964
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.149,
+                0.92,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.162,
+                0.899,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.175,
+                0.893,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.187,
+                0.912,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.2,
+                0.928,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.213,
+                0.908,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.225,
+                0.872,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.237,
+                0.921,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.25,
+                0.908,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.264,
+                0.55,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.284,
+                0.912,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.297,
+                0.845,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.317,
+                0.889,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.33,
+                0.916,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.341,
+                0.925,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.355,
+                0.899,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.368,
+                0.925,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.38,
+                0.913,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.393,
+                0.874,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.405,
+                0.918,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.419,
+                0.925,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.43,
+                0.922,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.443,
+                0.922,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.456,
+                0.866,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.469,
+                0.889,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.481,
+                0.895,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.494,
+                0.874,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.506,
+                0.91,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.52,
+                0.912,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.532,
+                0.911,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.544,
+                0.898,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.557,
+                0.891,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.57,
+                0.922,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.582,
+                0.919,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.595,
+                0.916,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.608,
+                0.922,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.62,
+                0.924,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.633,
+                0.904,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.645,
+                0.916,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.658,
+                0.922,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.67,
+                0.899,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.683,
+                0.874,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.696,
+                0.925,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.709,
+                0.879,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.722,
+                0.925,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.733,
+                0.241,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.753,
+                0.892,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.764,
+                0.872,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.778,
+                0.853,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.791,
+                0.891,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.804,
+                0.922,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.817,
+                0.894,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.83,
+                0.911,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.842,
+                0.536,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.863,
+                0.922,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.874,
+                0.901,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.887,
+                0.889,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.9,
+                0.909,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.912,
+                0.453,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.231,
+                0.09
+            ],
+            "angle": 0,
+            "content": "Patrick R Locke AC\n(1-212) 834-4254\npatrick.r.locke@jpmchase.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.056,
+                0.479,
+                0.079
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n12 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.927,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.148,
+                0.919,
+                0.226
+            ],
+            "angle": 0,
+            "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.231,
+                0.351,
+                0.246
+            ],
+            "angle": 0,
+            "content": "\"Other Disclosures\" last revised July 04, 2026."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.069,
+                0.256,
+                0.924,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.315,
+                0.308,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Completed 12 Jul 2026 02:40 PM EDT"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.676,
+                0.315,
+                0.928,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Disseminated 12 Jul 2026 02:40 PM EDT"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.953,
+                0.928,
+                0.965
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ]
+]
