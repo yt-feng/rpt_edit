@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_41b90mi_/pdfs/0001-66-NOM-Tencent Holdings-0700.HK-2Q26F- margin likely under pressure on AI investment-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_41b90mi_/pdfs/0002-67-NOM-USD CNY fix model-Projection-6.7914-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_41b90mi_/pdfs/0003-68-NOM-Unisplendour Corporation-000938-Time to revisit China-s AI value chain winners-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
