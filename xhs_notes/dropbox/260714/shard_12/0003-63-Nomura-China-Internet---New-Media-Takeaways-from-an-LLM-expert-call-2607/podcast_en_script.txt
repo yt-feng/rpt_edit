@@ -1,0 +1,28 @@
+EN_A: So I just read a really interesting report from a global investment bank about China's large language model industry. And it makes this claim that open source is not an open playbook. What does that actually mean?
+EN_B: Great question. The report is essentially saying that even when a company like DeepSeek open-sources its model weights and some code, the real magic—the system-level optimizations that make it run efficiently—stays proprietary.
+EN_A: So open source is just the surface. The real competitive advantage is hidden.
+EN_B: Exactly. The report highlights that DeepSeek has significantly lower inference costs compared to other models with similar capabilities. And importantly, other companies can't easily replicate this cost advantage, even when they use the same open-source model on the same hardware.
+EN_A: Why can't they replicate it? If the model is open source and the hardware is the same, shouldn't the performance be similar?
+EN_B: It comes down to system-level optimizations. DeepSeek has made proprietary improvements in cache efficiency, latency, and hardware utilization. So when cloud providers like Tencent or Alibaba deploy the same open-source model, DeepSeek's own deployment still runs more efficiently and costs less.
+EN_A: So the moat isn't the model itself. It's the operational efficiency.
+EN_B: Right. And the report also points out that Chinese AI labs aren't guaranteed to keep open-sourcing their frontier models. For example, Alibaba's latest flagship model, Qwen 3.6 Max, was launched as a closed-source product.
+EN_A: That brings up another key point from the report: the bifurcation of LLM pricing. Basic models and advanced models are going in completely different directions.
+EN_B: Yes. Basic models are becoming commoditized. Switching costs are low, so vendors have to keep cutting prices to attract customers. They're basically loss leaders.
+EN_A: But advanced models are a different story.
+EN_B: Exactly. Once an advanced model is deeply integrated into an enterprise's workflow, switching becomes incredibly expensive and time-consuming. So vendors actually have pricing power and can charge a premium.
+EN_A: So the headline narrative of price deflation is misleading.
+EN_B: Completely. Vendors use basic models to acquire customers and then make their real money on advanced, customized models for strategic clients.
+EN_A: What about enterprise adoption? The report segments customers into two groups.
+EN_B: Yes. Government and state-owned enterprises prioritize data security and local deployment. They prefer domestic hardware. Private enterprises, on the other hand, are driven by ROI. They want to see a clear return on their AI investment within 12 to 18 months.
+EN_A: Which verticals have the most commercial potential?
+EN_B: Financial services is seen as the most attractive. They have proprietary data and a high willingness to pay. Other high-potential areas include office productivity, coding, manufacturing, healthcare, and legal.
+EN_A: Coding is singled out as strategically important.
+EN_B: Right. The report sees coding capabilities as the foundation for broader agentic AI and robotics. The expert cited GLM-5.2 as the leading coding model in China right now.
+EN_A: The report also touches on hardware constraints. Tight supply of Nvidia chips is creating an opening for domestic alternatives.
+EN_B: Yes. Prices for premium Nvidia chips have risen sharply, while domestic chips, though also more expensive, offer increasingly attractive economics for inference workloads.
+EN_A: That's an important context. But the report's most intriguing claim is still that open source is not an open playbook. What does it leave unanswered?
+EN_B: The report identifies DeepSeek's cost advantage, but it doesn't fully explain what those system-level optimizations are. Is it algorithmic innovation, engineering efficiency, or a combination of both? That still needs to be verified.
+EN_A: So for the full technical picture, you'd need to read the complete report.
+EN_B: Absolutely. And the report also hints at a future business model where the model is free, but the service and optimization are what you pay for.
+EN_A: That's a fascinating idea. If listeners want to get the full report or join our community for deeper discussion, check the show notes.
+EN_B: And stay tuned for our next episode, where we'll dive into the next key variable for China's AI industry.

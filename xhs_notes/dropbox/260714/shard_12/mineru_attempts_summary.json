@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_6g_84w1a/pdfs/0001-61-MS-Tesla Inc-TSLA.US-2Q26 Preview- Show Us the Bots-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6g_84w1a/pdfs/0002-62-NOM-China Internet - New Media-Takeaways from a short drama platform expert call-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6g_84w1a/pdfs/0003-63-NOM-China Internet - New Media-Takeaways from an LLM expert call-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6g_84w1a/pdfs/0004-64-NOM-FX Insights-Strong inflows into US equity funds continue in July-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6g_84w1a/pdfs/0005-65-NOM-JD.com-JD.US-2Q26F preview-resilient earnings-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
