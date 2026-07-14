@@ -344,6 +344,22 @@
     "bcg:https://www.bcg.com/publications/2026/how-to-improve-defense-aviation-mission-readiness": {
       "first_seen": "2026-07-13",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-pressing-the-throttle": {
+      "first_seen": "2026-07-14",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/measuring-incrementality-in-next-best-action-programs": {
+      "first_seen": "2026-07-14",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-four-pillars-cios-can-use-to-scale-agentic-ai": {
+      "first_seen": "2026-07-14",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/transforming-patient-access-centers-with-ai": {
+      "first_seen": "2026-07-14",
+      "status": "downloaded"
     }
   }
 }
