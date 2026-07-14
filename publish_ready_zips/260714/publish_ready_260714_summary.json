@@ -1,0 +1,257 @@
+{
+  "created_at_utc": "2026-07-14T23:35:43.322778+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260714",
+  "output_dir": "publish_ready_zips/260714",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 14,
+  "skipped_shards": [],
+  "total_files": 1328,
+  "total_renamed_markdown_count": 340,
+  "total_raw_file_bytes": 205979196,
+  "zip_count": 3,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260714/publish_ready_260714_part001.zip",
+      "size_bytes": 87064569,
+      "file_count": 614,
+      "renamed_markdown_count": 150,
+      "raw_file_bytes": 94042787,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_11",
+        "shard_12",
+        "shard_13",
+        "shard_2"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260714/publish_ready_260714_part002.zip",
+      "size_bytes": 88625998,
+      "file_count": 594,
+      "renamed_markdown_count": 155,
+      "raw_file_bytes": 94087174,
+      "shards": [
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260714/publish_ready_260714_part003.zip",
+      "size_bytes": 16322526,
+      "file_count": 120,
+      "renamed_markdown_count": 35,
+      "raw_file_bytes": 17849235,
+      "shards": [
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16242288,
+      "reports": [
+        "0001-01-Bernstein-Asia-Semiconductors-and-Equipment---Global-Memory-Taiwan-Semic",
+        "0002-02-Barclays-European-Luxury-Goods---Specialty-Retail-The-Luxury-Data-Handbo",
+        "0003-03-Bernstein-China-Pharma---Biotech--2Q-1H26-earnings-preview-amid-anti-cor",
+        "0004-04-Bernstein-European-Airlines--Ryanair-Rising--Part-V.-Deep-dives-on-unit-",
+        "0005-05-Bernstein-Delta-Air-Lines-Inc-DAL.US-Delta-Air-Lines--DAL--2Q26--Taking-"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 25183881,
+      "reports": [
+        "0001-06-Bernstein-European-Automobiles---Components-Global-Tyres--Pressure-Monit",
+        "0002-07-Bernstein-Korea-Internet---Global-AI-infrastructure-Naver--What-s--50bn-",
+        "0003-08-Bernstein-Japan-Consumer-and-Semiconductors-Physical-AI-meets-the-conven",
+        "0004-09-Bernstein-European-Food---HPC--Beauty-remains-resilient-in-WE-Scanner-wh",
+        "0005-10-Bofa-Global-Fund-Manager-Survey-Pain-trades-duration--dividend--defensiv"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10754722,
+      "reports": [
+        "0001-51-Morgan-Stanley-FX-Positioning-Indicates-Investors-Remained-Net-Long-DXY-",
+        "0002-52-Morgan-Stanley-Implications-of-Japanese-OEM-New-Auto-Sales-in-China--Jun",
+        "0003-53-Morgan-Stanley-Inflation-without-Reflation-260712",
+        "0004-54-Morgan-Stanley-Hygon-Information-Technology-Co.--Ltd.-688041-Sugon-8000-",
+        "0005-55-Morgan-Stanley-Semiconductors---North-America-Weekly-NVDA-road-show-feed"
+      ]
+    },
+    {
+      "shard": "shard_11",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17153023,
+      "reports": [
+        "0001-56-Morgan-Stanley-Mercedes-Benz-Group-AG-MBGn.DE-Moving-East-to-keep-leadin",
+        "0002-57-Morgan-Stanley-Nanya-Technology-Corp.-2408.TW-Niche-DRAM-Upcycle-May-Ext",
+        "0003-58-Morgan-Stanley-Technology---Global-Semiconductors-The-Analog-Playbook-2Q",
+        "0004-59-Morgan-Stanley-TSMC-2330.TW-US-investor-feedback-into-the-print--keep-OW",
+        "0005-60-Morgan-Stanley-Technology---North-America-Bringing-More-Light-to-Scale-U"
+      ]
+    },
+    {
+      "shard": "shard_12",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11551843,
+      "reports": [
+        "0001-61-Morgan-Stanley-Tesla-Inc-TSLA.US-2Q26-Preview--Show-Us-the-Bots-260713",
+        "0002-62-Nomura-China-Internet---New-Media-Takeaways-from-a-short-drama-platform-",
+        "0003-63-Nomura-China-Internet---New-Media-Takeaways-from-an-LLM-expert-call-2607",
+        "0004-64-Nomura-FX-Insights-Strong-inflows-into-US-equity-funds-continue-in-July-",
+        "0005-65-Nomura-JD.com-JD.US-2Q26F-preview-resilient-earnings-260713"
+      ]
+    },
+    {
+      "shard": "shard_13",
+      "report_count": 3,
+      "file_count": 57,
+      "renamed_markdown_count": 15,
+      "raw_file_bytes": 8708958,
+      "reports": [
+        "0001-66-Nomura-Tencent-Holdings-0700.HK-2Q26F--margin-likely-under-pressure-on-A",
+        "0002-67-Nomura-USD-CNY-fix-model-Projection-6.7914-260714",
+        "0003-68-Nomura-Unisplendour-Corporation-000938-Time-to-revisit-China-s-AI-value-"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11934171,
+      "reports": [
+        "0001-11-Bernstein-SAP-SE-SAP.GR-2Q26-preview-S-4-migration-reality-vs-AI-narrati",
+        "0002-12-Bernstein-Payments--Processors---IT-Services-FISV-FIS-GPN-What-is-the--t",
+        "0003-13-CITI-Taiwan-Electronic-Components---Equipment-Investor-Feedback-and-Key-",
+        "0004-14-CITI-China-Auto-Manufacturers-10-Figures--10-Trends--Jun-26-Summary--260",
+        "0005-15-CITI-China-Hongqiao--1378.HK--1H26-Preliminary-Profit-After-Tax--39--YoY"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18485730,
+      "reports": [
+        "0001-16-Deutsche-Bank-BMW-BMWG.DE-Volume---pricing-headwinds-pressure-Auto-margi",
+        "0002-17-Deutsche-Bank-European-Luxury-2Q-previews-Expectations-reflecting-a-tepi",
+        "0003-18-Deutsche-Bank-CRO-in-2Q26-Green--Green--Green-260714",
+        "0004-19-Deutsche-Bank-Ferrari-N.V-RACE.IM--Price-is-not-an-issue--Key-takeaways-",
+        "0005-20-Goldman-Sachs-ASMPT--0522.HK--TCB-tool-riding-on-AI-infrastructure-and-a"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13542215,
+      "reports": [
+        "0001-21-Goldman-Sachs-CHINA-EDUCATION-JUN-26-TRACKER-MOE-student-demographics-up",
+        "0002-22-Goldman-Sachs-China-Grid-Tech--2Q26-preview--Sieyuan-pre-announced-2Q26-",
+        "0003-23-Goldman-Sachs-China-Brokers---Asset-Managers--Strong-2Q-earnings-as-expe",
+        "0004-24-Goldman-Sachs-Chacha-Food-Co.--002557--Profit-alert--2Q26-NI-better-than",
+        "0005-25-Goldman-Sachs-China-Mobile--HK.US---0941.HK---AI-Data-Center-visit--AI-f"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18589777,
+      "reports": [
+        "0001-26-Goldman-Sachs-China-Property-Weekly-Wrap-Week-28-Wrap-Sequential-volume-",
+        "0002-27-Goldman-Sachs-China-Pet-Food-Monthly--Jun-2026--sales-moderated-in-2Q26-",
+        "0003-28-Goldman-Sachs-Japan-Transportation-Shipbuilding-Travel--Investor-visit-f",
+        "0004-29-Goldman-Sachs-JAPAN-MACHINERY--CONSTRUCTION--Preferences-based-on-simple",
+        "0005-30-Goldman-Sachs-Global-Weekly-Kickstart-US-and-Energy-outperform-amid-resu"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12863853,
+      "reports": [
+        "0001-31-Goldman-Sachs-Oil-Comment--Gulf-Exports--Short-Term-Uncertainty--Long-Te",
+        "0002-32-Goldman-Sachs-Largan--3008.TW-CPO-lens-in-progress-High-end-handset-lens",
+        "0003-33-Goldman-Sachs-NIO-INC.--NIO.US-9866.HK--Industry-leading-growth---premiu",
+        "0004-34-J.P.-Morgan-China-Artificial-Intelligence-Capital-accelerates-race--Zhip",
+        "0005-35-Goldman-Sachs-Shennan-Circuits--002916---AI-PCB-capacity-expansion-ridin"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11746709,
+      "reports": [
+        "0001-36-Goldman-Sachs-Raising-TPs-of-SG-Micro-and-Ruijie-on-growing-AI-data-cent",
+        "0002-37-J.P.-Morgan-China-Quant-Strategy-Expensive-leadership-is-starting-to-loo",
+        "0003-38-J.P.-Morgan-Hon.-Precision-7769.TW--2Q26-revenue-solid-beat--robust-dema",
+        "0004-39-J.P.-Morgan-China-technology-Key-takeaways-from-China-AI-PCB-tour--AI-up",
+        "0005-40-J.P.-Morgan-JPM-FX-Positioning-Monitor-First-evidence-of-yen-short-cover"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16853285,
+      "reports": [
+        "0001-41-J.P.-Morgan-Nanya-Technology-2408.TW-2Q26-a-slight-beat--rising-server-m",
+        "0002-42-JPM-Asia-Technology-Asian-investor-marketing-feedback-on-memory-Korea-te",
+        "0003-43-Jefferies-Tesla--Inc.-TSLA.US--Raising-estimates-again-260712",
+        "0004-44-Morgan-Stanley-Apple--Inc-AAPL.US-Higher-Prices-Begets-Higher-Earnings-2",
+        "0005-45-Jefferies-Shopify-SHOP.US-Agentic-Commerce-Winner-with-New-Near-Term-Tai"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12368741,
+      "reports": [
+        "0001-46-Morgan-Stanley-Bilibili-Inc-BILI.US-2026-Investor-Day-Takeaways-260712",
+        "0002-47-Morgan-Stanley-Asia---Asia-Pacific-Three-Actionable-Ideas-260712",
+        "0003-48-Morgan-Stanley-Baidu-Inc-BIDU.US-2Q26-Preview--AI-Investments-to-Weigh-o",
+        "0004-49-Morgan-Stanley-China-Autos---Shared-Mobility-June-EV-pricing-EV-majors-h",
+        "0005-50-Morgan-Stanley-Broadcom-Inc.-AVGO.US-In-Defense-of-AVGO-s-ASIC-Share-260"
+      ]
+    }
+  ]
+}
