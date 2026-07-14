@@ -1,0 +1,103 @@
+ZH_A: 最近有一份关于韩国互联网巨头Naver的研报，标题很有意思，叫“What‘s $50bn between friends？”。这50亿美元背后到底藏着什么故事？
+
+ZH_B: 简单说，Naver做了一个非常突然的转向，从一家搜索和内容公司，突然大举押注AI基础设施，也就是所谓的“neocloud”模式。
+
+ZH_A: 等一下，neocloud是什么？这和传统的云计算有什么区别？
+
+ZH_B: 传统云像AWS，先建好平台再等客户。Neocloud更像CoreWeave，直接为GPU算力建工厂，用项目融资和长期合同锁定回报。
+
+ZH_A: 那Naver为什么要这么做？它又不是一家基础设施公司。
+
+ZH_B: 这正是报告的核心。Naver不是从零开始。它拥有深厚的搜索技术，还有独特的韩语AI资产，这些东西其他公司很难复制。
+
+ZH_A: 所以它是在用neocloud的框架，去建一个更大的东西？
+
+ZH_B: 对。报告认为，Naver的表面看起来像CoreWeave，但它的终局更像另一家公司Nebius，目标是成为一个区域性的AI平台，整合软件、主权AI和全栈服务。
+
+ZH_A: 这意味着什么？对投资者来说，Naver和CoreWeave的估值逻辑应该不一样？
+
+ZH_B: 完全不一样。Neocloud赚的是算力租赁的钱，而Naver想的是，通过基础设施去撬动搜索、企业服务和整个韩国的AI生态。
+
+ZH_A: 那这个50亿美元的野心怎么落地？毕竟建AI工厂非常烧钱。
+
+ZH_B: 关键就在这里。报告指出，Naver不会自己掏全部的钱。它会用SPV，也就是特殊目的公司，把资本开支转移给基础设施投资者。
+
+ZH_A: 那谁来提供算力和技术？
+
+ZH_B: 芯片来自英伟达这样的供应商，模型来自AI公司，需求来自大客户。Naver坐在中间，不是出钱的人，而是整个生态的调度者。
+
+ZH_A: 这听起来像是一个三方合作的故事。那现在最大的风险是什么？
+
+ZH_B: 风险已经从“战略对不对”变成了“能不能执行”。而且还有一个关键问题没有完全展开：谁愿意真正站出来支持这个计划？
+
+ZH_A: 你是说，Naver需要找到愿意签长期合同的锚定客户？
+
+ZH_B: 没错。没有这些客户，再好的战略也只是纸上谈兵。报告里提到，Naver最近已经和芯片公司、大模型公司见面了，但具体的合作细节，还需要在完整报告里继续看。
+
+ZH_A: 还有一个很有意思的点，报告提到韩国政府也在推AI基础设施，这有什么影响？
+
+ZH_B: 韩国政府有一个8.4吉瓦的AI基础设施计划，Naver规划中的1吉瓦项目正好被定位成“主权AI基础设施”。这意味着政策支持会改善融资可见性，降低电力和容量风险。
+
+ZH_A: 所以Naver的故事不仅仅是商业故事，还是一个国家战略故事？
+
+ZH_B: 是的。这也是为什么报告认为，应该把Naver看作一个战略AI平台，而不是一个单纯的GPU基础设施公司。
+
+ZH_A: 那如果我想了解更多，比如具体的估值模型，或者哪些合作伙伴可能参与，去哪里看？
+
+ZH_B: 完整报告里还有详细的财务预测、估值对比，以及关于比特币矿工转型AI基础设施的独立分析。这些内容我们这次没有展开，但非常值得一看。
+
+ZH_A: 好的，如果想获取完整报告，或者加入我们的讨论社群，可以查看节目简介。感谢收听，我们下期再见。
+
+ZH_B: 下期见。
+
+EN_A: So there is this new report on Naver, the Korean internet giant. And the title is pretty intriguing: “What’s $50 billion between friends?” What is that about?
+
+EN_B: It is about Naver’s sudden pivot into the neocloud space. The company is no longer just a search and content play. It is now trying to build AI infrastructure at scale.
+
+EN_A: Neocloud? Can you break that down for us?
+
+EN_B: Think of it this way. Traditional cloud providers like AWS build a platform first and then wait for customers. Neoclouds like CoreWeave build GPU factories first, using project financing and long-term contracts to secure returns.
+
+EN_A: So why would Naver, a company known for search and online content, suddenly want to build GPU factories?
+
+EN_B: That is exactly the question the report answers. Naver is not starting from scratch. It has deep search expertise and unique Korean language AI assets that are hard to replicate.
+
+EN_A: So it is using the neocloud model to build something bigger?
+
+EN_B: Exactly. The report argues that Naver looks like CoreWeave today, but its endgame is closer to a company like Nebius. It wants to become a regional AI platform, integrating infrastructure with software, sovereign AI, and enterprise services.
+
+EN_A: That changes the valuation story, right? You cannot just compare it to a pure GPU rental business.
+
+EN_B: Right. A neocloud makes money by renting out compute. Naver wants to use that infrastructure to power its search, its enterprise products, and eventually the entire Korean AI ecosystem.
+
+EN_A: But building AI factories is incredibly capital intensive. How does Naver plan to fund this $50 billion ambition?
+
+EN_B: That is the clever part. Naver will not fund it all by itself. It will use special purpose vehicles, or SPVs, to offload the capital expenditure to infrastructure investors.
+
+EN_A: So who provides the chips and the demand?
+
+EN_B: Chips from NVIDIA, models from AI companies, and demand from big enterprise customers. Naver sits in the middle, orchestrating the whole stack, not just writing the checks.
+
+EN_A: So the risk is no longer about strategy. It is about execution.
+
+EN_B: Exactly. And one big question the report does not fully answer yet is: who will step in as anchor tenants? Who will sign those long-term contracts?
+
+EN_A: The report mentions Naver has been meeting with chip and LLM players. But no concrete names yet?
+
+EN_B: Right. That is one of the open questions that the full report explores further. And there is another layer to this story.
+
+EN_A: What is that?
+
+EN_B: The Korean government has an 8.4 gigawatt AI infrastructure initiative. Naver’s planned 1 gigawatt buildout is being positioned as sovereign AI infrastructure. That gives it policy support and reduces execution risks around power and permits.
+
+EN_A: So this is not just a corporate story. It is a national AI story as well.
+
+EN_B: Exactly. That is why the report argues that Naver should be valued as a strategic AI platform, not just a capital-intensive GPU builder.
+
+EN_A: If our listeners want to dig deeper into the valuation models or the potential partners, where can they find the full report?
+
+EN_B: The full report includes detailed financial forecasts, valuation comps, and a separate analysis on how Bitcoin miners are pivoting into AI infrastructure. We did not cover that part today, but it is well worth a read.
+
+EN_A: Great. You can find the full report and join our discussion community through the link in the show notes. Thanks for listening, and see you next time.
+
+EN_B: See you.

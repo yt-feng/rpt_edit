@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_s9ydnw6n/pdfs/0001-06-Bernstein-European Automobiles - Components-Global Tyres- Pressure Monitor -Q2 2026 Preview- -This remains a sector to own-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s9ydnw6n/pdfs/0002-07-Bernstein-Korea Internet - Global AI infrastructure-Naver- What-s -50bn between friends- Thoughts on neocloud funding- strategy-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s9ydnw6n/pdfs/0003-08-Bernstein-Japan Consumer and Semiconductors-Physical AI meets the convenience store-from retail king to AI testbed- why SoftBank- KDDI- Itochu- and Mitsubishi all w.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s9ydnw6n/pdfs/0004-09-Bernstein-European Food - HPC- Beauty remains resilient in WE Scanner while Food and Consumer Health slow-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s9ydnw6n/pdfs/0005-10-Bofa-Global Fund Manager Survey Pain trades-duration- dividend- defensives-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
