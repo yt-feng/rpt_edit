@@ -308,7 +308,9 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 
 坚果云运营镜像：
 
-- `.github/workflows/kcdesk-ops-jianguoyun-sync.yml` 每小时在北京时间 08:15 至次日 00:15 运行，并回补最近 3 天。
+- Worker 每次成功写入“每日文件”快照后，会对运营视频清单计算稳定指纹；指纹变化时立即发送 `kcdesk-ops-files-changed` 事件，触发坚果云同步。
+- 触发状态持久化在 R2 `_account/admin-snapshots/ops-mirror.json`。同一清单只触发一次；失败后冷却 5 分钟再重试，不会拖慢或清空管理后台。
+- `.github/workflows/kcdesk-ops-jianguoyun-sync.yml` 接收上述事件立即运行；同时每小时在北京时间 08:15 至次日 00:15 兜底运行，并回补最近 3 天。
 - `scripts/sync_ops_videos_to_jianguoyun.py` 从运营后台可见的视频源发现文件，上传到 `/我的坚果云/KCdesk/Ops/YYYY-MM-DD/<类型>/`。
 - 镜像类型包括 `BBG Show`、`BBG Top Videos`、`ARK Invest`、`报告视频`、`KC娱乐`；管理员专属的“站内视频”不进入运营镜像。
 - 上传按远端文件大小幂等跳过；同目录同名文件自动加短 hash，避免覆盖。
