@@ -1,0 +1,62 @@
+Found 68 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g9g2hi8n/pdfs/0001-11-Bernstein-SAP SE-SAP.GR-2Q26 preview-S 4 migration reality vs AI narrative-260713.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g9g2hi8n/pdfs/0002-12-Bernstein-Payments- Processors - IT Services FISV-FIS-GPN-What is the -true- multiple--260713.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g9g2hi8n/pdfs/0003-13-CITI-Taiwan Electronic Components - Equipment-Investor Feedback and Key Questions Post BBU Sector Report and Dynapack Initiation-260712.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g9g2hi8n/pdfs/0004-14-CITI-China Auto Manufacturers 10 Figures- 10 Trends -Jun-26 Summary--260712.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g9g2hi8n/pdfs/0005-15-CITI-China Hongqiao -1378.HK- 1H26 Preliminary Profit After Tax -39- YoY- Slight Beat- Maintain Top Pick-260712.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=9deb75d9-4ed5-4eff-b743-2efc7909ab8b
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:291: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset baeae7e8ce8427111c2f843803c49fd090bd371f22ecb21ee4fde8b37e8b1062.jpg: score=-100;too_small:398x251
+Skip non-chart visual asset c6505f64bfb87e9f7c6e66ebeaf4c0b02f7aa8daeae144939137e931cad3a93c.jpg: score=-1;odd_ratio:5.69,edge:0.15
+Skip non-chart visual asset 2db7fc3cf76b5a242eeb3757279aa2a7b2ed4f541f92a31ce1d6e9aaf6bb3ff0.jpg: score=-100;too_small:96x93
+Skip non-chart visual asset d40687056bbce4f7bdadc99a8b9775e3217982643392688b062179f2314a627e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,contrast
+Skip non-chart visual asset 836be96d12c0e24940028bcb3ccb280f4a94fa8a552b31d3cab536d254033b33.jpg: score=0;square_without_chart_hint,edge:0.44,large
+Skip non-chart visual asset fb977be76b86b65bbbf6165e689d9d9ef1a9e45f111fa09dd571e6d81ee93f7c.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 2498d1177a71686ad740f42d81a10d40a22240e5cfc1cf492d540e82c9d882bf.jpg: score=1;odd_ratio:4.99,edge:0.21,contrast,large
+Skip non-chart visual asset 89106effcf21ebc6e001b50d68ee581f5d7df03292f4101b689b7bca7ebc3f8f.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 4908cfbb1df5e281bfa538a74430358a2b7b936afd9e794e4e7ca8c203a9801d.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 284c16b51f5a37343f8152b324c83d1f4ad143e31090771bffbdabd8f1368766.jpg: score=0;square_without_chart_hint,edge:0.43,large
+Skip non-chart visual asset ea056645c4b6ed2b73e05b20cd2559e9bb909cb505e15265ece9bef6c5a4aa37.jpg: score=-100;too_small:1334x126
+Skip non-chart visual asset bb0790d86c95fd630ddedc73cb98973e7eec59dc944946ec07f0931da8cde932.jpg: score=-100;too_small:462x131
+Skip non-chart visual asset 402f9a0afda59b4453bfcf11c5804b221c80caea2812b22d9bf1bf222d208844.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.14,contrast
+Skip non-chart visual asset 994870c154d90d8f9e064af1a28e459838e1deed8fae28b5d3b763b29ac2f6df.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,contrast
+Skip non-chart visual asset e82adea6155319c96656d4a6042bc83af6ba259b583956bec089495d4a158247.jpg: score=-100;too_small:93x93
+Skip non-chart visual asset 32a1f9dbc6d94507ec658b7ec69d760b0b62c1c92623857a22db4a0ec054d2a4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,contrast
+Skip non-chart visual asset e86ea8aeaf360b9fdca7196cb558a2a1867f665d9664db0e09054e72ae6e3ee5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,contrast
+Skip non-chart visual asset 1474afe5fcd9c49a45d23de9b5f3f54fffdc848ad4ac510ca497ca6842388236.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.14,contrast
+Skip non-chart visual asset 543400e93d7c40c4ee0bc798a7165de8a004b93df3237d2e5abc8d21d954cb09.jpg: score=0;odd_ratio:5.44,edge:0.31,contrast
+Skip non-chart visual asset 7a831e3a2dffc8b3a5bf1cfe269c42b67e08084a07a5d5c817a5782879082df1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,contrast
+Skip non-chart visual asset ec5849c2ecce23813f7dd548063945d1f388ce7ec1ca86dad217a050ee7586b6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.11,contrast
+Skip non-chart visual asset ebe1c057829b9e26f8053299cffcc243b10dd389834c2eba7e769c4039a59989.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.13,contrast
+Skip non-chart visual asset 2ed13a5b7052f037141a34924a9d8783b7875a97efbfacd409322858b827fffd.jpg: score=-100;too_small:90x89
+Skip non-chart visual asset 548263c33fddfe3198951147e93e647aa6c954093482a90b88c5063b0fb27441.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,contrast
+Skip non-chart visual asset 0c3316d247da15f95037d8c326a95d79daf7f472d3630957cab4553185b45a63.jpg: score=1;odd_ratio:4.97,edge:0.24,contrast,large
+Skip non-chart visual asset f4c3c8e7610183ff43829ac95cf83e774d7f75ecb6d7fde4615bd48db9e7fc30.jpg: score=-100;too_small:90x93
+Skip non-chart visual asset 8e9fe21823c71b169e0939bcaa76decd067f8de66dd420a649bad49e08bbf058.jpg: score=-100;too_small:1304x101
+Skip non-chart visual asset 60f5dcc5d608dbb7c6c91e0ec0bd49216c58235486abe7a3dd7ceb9a2916d624.jpg: score=1;chart_ratio
+Skip non-chart visual asset ed23d926b9a8199959989a7e075ba4c9e46fcf5135225ed0757bcff835918048.jpg: score=-100;too_small:1431x176
+Skip non-chart visual asset def98fa83601c82f9863f28b92f993fc6bd6f2da0d0151f5b750966c5581ff05.jpg: score=-100;too_small:376x64
+Skip non-chart visual asset 03ab4792ca9605ca5d3c766d1f5f6a02d2dbef8ef5688f60f46c5b557bb7cf53.jpg: score=-100;too_small:365x103
+Skip non-chart visual asset a21c1c0b7f6d45921c64607a079a8544742a7c5fd4449d4bce82359fd483d1d1.jpg: score=-100;too_small:368x106
+Skip non-chart visual asset 76f5da8b305ade4c5dcc9e2ba9a8dda2399d3c404734ac4da82a071b217385fe.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.55,large
+Skip non-chart visual asset 8b058c55697e670df73903a01a710c9578aa936fc1bd19f3466767282968eaf6.jpg: score=-100;too_small:1401x82
+Skip non-chart visual asset ad69c6f005ac4f3da8dd382fc12da1041dec4de06a1a66a2640ae370a8984332.jpg: score=-100;too_small:1401x173
+Skip non-chart visual asset c74646e3dc2c14b1df75c923f0e692b51f776e34a509cf2d484552ee8f098714.jpg: score=-100;too_small:912x131
+Skip non-chart visual asset b45b959fc22b6227df21660ab7ca5f9954b832cd6c75e3a075a59b4329b7efa7.jpg: score=-100;too_small:1401x168
+Skip non-chart visual asset d27c2126066409acb1cb56610ed965648d211eec740013fcb501f61ba7c56c3e.jpg: score=-100;too_small:1401x168
+Skip non-chart visual asset 22c8748b8e0027759cc7c6b336202c3f0217cf47eaff002e932c2b6838816dfc.jpg: score=-100;too_small:1429x145
+Skip non-chart visual asset 69e19234e167a1df19c0cfa623498b1fe294707d60777de6b7521a521e7574ed.jpg: score=-100;too_small:368x134
+Skip non-chart visual asset 36e1087838f3fd5a62f9472d06a7eefc0dfe8dd84c34334b5caf8faffc8e2a40.jpg: score=-100;too_small:428x124
+Skip non-chart visual asset 235d6a15405d786f810ab2d0717b6f62a83eb222eeab0689361d25b43ee2143d.jpg: score=-100;too_small:365x132
+Skip non-chart visual asset e19a1de4d194a7b5e2e58b8c1dc25b7ef7d4b9af78921edc45a7f6ce3d23985b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.60,large
+Skip non-chart visual asset 7cbab027ed8979c0e246bafd2fa25111effd0e4f9dd349dcf7a614549c8965cb.jpg: score=-100;too_small:426x123
+Skip non-chart visual asset 6aa8fe5a4bcc887e0629bb60a8f36663d9f80e60b6ef273cf91e412792d3a97b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,contrast
+Skip non-chart visual asset 8880242c3fd0688c897a371692664994d98008e6f844ad7ae769a001d3938c2b.jpg: score=-100;too_small:1429x149
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260714/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
