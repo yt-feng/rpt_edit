@@ -1860,6 +1860,14 @@
     "adb:1158776": {
       "first_seen": "2026-07-13",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1367.htm": {
+      "first_seen": "2026-07-14",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull128.htm": {
+      "first_seen": "2026-07-14",
+      "status": "downloaded"
     }
   }
 }
