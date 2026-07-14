@@ -1,0 +1,41 @@
+{
+  "date_folder": "260715",
+  "max_reports": "all",
+  "selected_count": 2,
+  "successful_count": 2,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260715/0001-BIS_AI-disruption-in-private-credit-exposure-to-software-firms-i_421d5674",
+      "title": "国际清算银行：AI冲击下私人信贷对软件公司敞口",
+      "source_title": "0001-BIS_AI-disruption-in-private-credit-exposure-to-software-firms-i_421d5674",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 3,
+      "institution_name": "国际清算银行",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260715/01-0001-BIS_AI-disruption-in-private-credit-exposure-to-software-firms-i_421d5674",
+      "pdf_path": "kc_translated_reports/institutions/260715/01-0001-BIS_AI-disruption-in-private-credit-exposure-to-software-firms-i_421d5674/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260715/0002-BIS_The-AI-investment-race_ae7c0af2",
+      "title": "国际清算银行：AI投资竞赛-过度研究达社会最优1.5倍",
+      "source_title": "0002-BIS_The-AI-investment-race_ae7c0af2",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 14,
+      "institution_name": "国际清算银行",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260715/02-0002-BIS_The-AI-investment-race_ae7c0af2",
+      "pdf_path": "kc_translated_reports/institutions/260715/02-0002-BIS_The-AI-investment-race_ae7c0af2/kc_translated_report_02.pdf"
+    }
+  ]
+}
