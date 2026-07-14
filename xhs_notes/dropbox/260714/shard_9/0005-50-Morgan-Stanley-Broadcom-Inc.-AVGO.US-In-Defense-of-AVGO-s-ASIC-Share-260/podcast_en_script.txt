@@ -1,0 +1,20 @@
+EN_A: So, there has been a lot of noise about MediaTek potentially eating into Broadcom's share of the Google TPU. What is this report actually trying to tell us?
+EN_B: The big takeaway is that the market is likely overreacting. The report argues Broadcom will keep roughly 80% of the TPU business, not the 50% or less that some supply chain checks are suggesting.
+EN_A: So the core question is whether MediaTek's entry is a real disruption or just noise?
+EN_B: Exactly. The report's logic is that MediaTek's involvement is real, but turning that into a "Broadcom is doomed" narrative is premature. The market is extrapolating a new supplier's participation into an extreme share loss story.
+EN_A: What are the key insights that back this up?
+EN_B: First, supply chain advantages. Broadcom has locked-in HBM supply at favorable prices. If MediaTek buys HBM on the open market, it could actually be more expensive. And on the packaging side, MediaTek's path for 2nm chips using EMIB is still unproven, while CoWoS is the reliable fallback.
+EN_A: So the cost advantage might not be as big as people think?
+EN_B: Right. Google wants MediaTek to cut costs, but if you can't save on HBM and packaging, that advantage shrinks a lot.
+EN_A: What is the second key point?
+EN_B: The difficulty of replacing a scaled platform. It is one thing for MediaTek to tape out a chip, but a completely different challenge to have it run reliably across Google's massive TPU pods, secure all the supply, and pass system-level qualification. That bar is incredibly high.
+EN_A: So the report is saying the market underestimates Broadcom's moat in a scaled deployment.
+EN_B: Exactly. And interestingly, the report points out that MediaTek's own long-term goal is only 15-20% share in the ASIC market. That actually aligns with Broadcom keeping around 80%.
+EN_A: What are the risks or open questions the report leaves for the full version?
+EN_B: The report is honest about what could change its mind. If MediaTek's silicon turns out to be way more performant than expected, or if they secure competitive HBM supply, or if EMIB becomes reliable for a 2nm ramp, then the risk to Broadcom increases.
+EN_A: So those are the conditions to watch.
+EN_B: Yes. For now, the report sees MediaTek as a second-source diversification story, not a structural threat. But those are the key milestones that need to be proven.
+EN_A: Got it. If our listeners want to dive deeper into the full report, like Broadcom's other new customer ramps or the specific valuation model, where can they find it?
+EN_B: The full report has all of that. It covers the new ASIC programs ramping in the second half of 2027 and their outlook for fiscal year 2028. Those are the really critical details.
+EN_A: Great. If you want access to that full report, make sure to follow our channel or join our community for more deep dives. Thanks for the insights.
+EN_B: Thanks for having me. Talk to you next time.

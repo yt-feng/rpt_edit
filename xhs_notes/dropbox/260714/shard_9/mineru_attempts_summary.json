@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_1dy20b60/pdfs/0001-46-MS-Bilibili Inc-BILI.US-2026 Investor Day Takeaways-260712.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1dy20b60/pdfs/0002-47-MS-Asia - Asia Pacific Three Actionable Ideas-260712.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1dy20b60/pdfs/0003-48-MS-Baidu Inc-BIDU.US-2Q26 Preview- AI Investments to Weigh on Core OP-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1dy20b60/pdfs/0004-49-MS-China Autos - Shared Mobility-June EV pricing-EV majors held the line with new launches mitigating incumbent discounts-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1dy20b60/pdfs/0005-50-MS-Broadcom Inc.-AVGO.US-In Defense of AVGO-s ASIC Share-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
