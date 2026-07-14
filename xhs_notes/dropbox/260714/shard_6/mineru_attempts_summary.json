@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_odzrl9lx/pdfs/0001-31-GS-Oil Comment- Gulf Exports- Short-Term Uncertainty- Long-Term Pipeline Hedge-260712.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_odzrl9lx/pdfs/0002-32-GS-Largan -3008.TW-CPO lens in progress-High-end handset lens to ramp up in 3Q26-Buy-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_odzrl9lx/pdfs/0003-33-GS-NIO INC. -NIO.US 9866.HK- Industry-leading growth - premium margin profile with attractive valuation- upgrade to Buy from Neutral-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_odzrl9lx/pdfs/0004-34-JPM-China Artificial Intelligence-Capital accelerates race- Zhipu -OW- PT to HK-2400 on higher ARR visibility- MiniMax -N- needs stronger model validation.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_odzrl9lx/pdfs/0005-35-GS-Shennan Circuits -002916-- AI PCB capacity expansion riding on strong demand- 2Q26 NI guided at 44--67- YoY- in line- Buy-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
