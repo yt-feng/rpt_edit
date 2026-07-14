@@ -1,0 +1,538 @@
+<table><tr><td colspan="2">Daniel Yen, CFA</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Daniel.Yen@morganstanley.com</td><td>+886 2 2730-2863</td></tr></table>
+
+July 13, 2026 05:59 PM GMT
+
+TSMC | Asia Pacific
+
+# US investor feedback into the print; keep OW
+
+We sense gross margin expectations are a bit high, but confidence remains in AI semi revenue growth. Foundry competition is likely to be the key debate on the earnings call.
+
+After marketing in the US the week before TSMC's 7/16 print, we have gathered updated investor expectations and key questions for the earnings call.
+
+TSMC buyside expectations for 3Q26 guidance and capex: 3Q26 buyside revenue expectations are up 10% Q/Q in USD; full-year revenue raised to mid-30% Y/Y; 3Q26 gross margin at around 69%-70% (flat to up Q/Q) on 2H26 wafer price hikes. 2026 capex guidance may rise above US\$56bn, and a 3-year capex outlook (2026-28) could be provided, which could be above US\$200bn. See Exhibit 1 for updated preview tables, as several brokers also updated numbers into the print.
+
+We are more aggressive on revenue, but less on gross margin: We expect 3Q26 revenue up 10%-15% Q/Q in USD and full-year revenue rising to high-30% Y/Y (close to 40% Y/Y), as smartphone wafers continue to shift to AI CPU/GPU/ASIC/ Networking production. We expect a rise of 5-year AI semi revenue CAGR to 70% (from mid-high 50s%), mainly on higher memory costs contributing to recent cloud capex hikes. It remains to be seen whether TSMC will include AI CPU and networking chips in its AI semi revenue definition. We see 3Q gross margin around 67%-68% (flat Q/Q) given overseas fab and 2nm dilution. We expect 2026 capex guidance at US\$56bn. We also expect 3-year capex (2026-28) could total US \$206bn; however, management may not provide that guidance (we asked last quarter).
+
+Our thoughts on TSMC stock: Based on our meetings with roughly 30–40 investors, most still see further room for memory to re-rate and for earnings estimates to rise, even as they weigh DRAM competition from China's CXMT. We therefore expect TSMC's re-rate to proceed gradually, despite the stock trading at just 17x 2027e EPS against a 32% 2025-28e revenue CAGR. Gross margin expectations climbing to 70% concern us somewhat, but we view this as a buying opportunity, particularly on dips. Upcoming ASML earnings (EUV allocation) and global CSP capex updates should serve as other key catalysts for TSMC.
+
+## In our preview note, we highlighted three questions for management:
+
+\- How will TSMC address competition with Samsung Foundry (strong memory profits) and Intel Foundry (US policy support)?
+
+\- Can TSMC hike wafer prices in 2027 and further improve gross margin?
+
+\- “Memory cost impact on demand” – does TSMC see that in foundry orders?
+
+MS TAIWAN LIMITED+
+
+<table><tr><td colspan="2">Charlie Chan</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Charlie.Chan@morganstanley.com</td><td>+886 2 2730-1725</td></tr></table>
+
+<table><tr><td colspan="2">Daisy Dai, CFA</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Daisy.Dai@morganstanley.com</td><td>+852 2848-7310</td></tr></table>
+
+<table><tr><td colspan="2">Lucas Wang</td></tr><tr><td>Research Associate</td><td></td></tr><tr><td>Lucas.Wang@morganstanley.com</td><td>+886 2 2730-2875</td></tr></table>
+
+![](images/f816c36cdf6bb5cf1500cfaed9ff03c8f95ca3ccb1255428322c7e11c7d289a1.jpg)
+
+## TSMC (2330.TW, 2330 TT)
+
+Greater China Technology Semiconductors | Taiwan
+
+<table><tr><td>Stock Rating</td><td>Overweight</td></tr><tr><td>Industry View</td><td>Attractive</td></tr><tr><td>Price target</td><td>NT$2,888.00</td></tr><tr><td>Up/downside to price target (%)</td><td>18</td></tr><tr><td>Shr price, close (Jul 13, 2026)</td><td>NT$2,440.00</td></tr><tr><td>Mkt cap, curr (mn)</td><td>NT$63,264,271</td></tr><tr><td>Avg daily trading value (mn)</td><td>NT$64,230</td></tr></table>
+
+<table><tr><td>Fiscal Year Ending</td><td>12/25</td><td>12/26e</td><td>12/27e</td><td>12/28e</td></tr><tr><td>EPS (NT$)**</td><td>66.25</td><td>107.56</td><td>143.01</td><td>177.30</td></tr><tr><td>Prior EPS (NT$)**</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>EPS (NT$)§</td><td>64.56</td><td>99.97</td><td>129.74</td><td>164.77</td></tr><tr><td>ModelWare net inc (NT $ bn)</td><td>1,718</td><td>2,778</td><td>3,708</td><td>4,597</td></tr><tr><td>P/E</td><td>23.4</td><td>22.8</td><td>17.1</td><td>13.8</td></tr><tr><td>Div yld (%)</td><td>1.4</td><td>1.1</td><td>1.4</td><td>1.8</td></tr></table>
+
+Unless otherwise noted, all metrics are based on MS ModelWare framework
+\*\* = Based on consensus methodology
+§ = Consensus data is provided by Refinitiv Estimates
+e = MS estimates
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## What else do US investors care about?
+
+Some tech specialists also care about 2027-28 capex trends and 2027 EUV allocation, which could define 2028 global 2nm foundry supply and competition. Intel EMIB/EMIB-T's competition with TSMC's CoWoS was another main topic, on which we also tried to get management's thoughts last quarter. Investors are curious about whether TSMC's customers can change wafer applications freely (e.g., from smartphone to AI; from end-customer A to B). We think these are cross-checks for US semicap and ASIC design names.
+
+## 2Q26 earnings and 3Q26 guidance preview
+
+TSMC will be hosting its 2Q26 earnings call on July 16. We expect 2Q26 gross margin to be in line with the guidance from strong AI and peripheral demand. Our gross margin estimate of 67.4% is at the higher end of the guidance range of 65.5-67.5%.
+
+Looking ahead to 3Q26, we forecast revenue to rise in the low-to-mid-teens range Q/Q, driven by strong demand across both 3nm and 2nm products – including Rubin, TPU, CPU, networking, and others. We expect margins to improve further Q/Q on better utilization rates, but potentially offset by higher costs and depreciation.
+
+Exhibit 1: 2Q26 earnings and 3Q26 guidance preview
+
+<table><tr><td></td><td colspan="4">2Q26</td><td colspan="3">3Q26</td></tr><tr><td>(NT$ bn)</td><td>Guidance</td><td>Preliminary</td><td>MS Est.</td><td>Consensus</td><td>Guidance</td><td>MS Est.</td><td>Consensus</td></tr><tr><td>Revenue</td><td>US$39.0 - 40.2bn</td><td></td><td>1,267</td><td>1,265</td><td></td><td>1,436</td><td>1,382</td></tr><tr><td>Q/Q</td><td>+10% at mid-point in USD</td><td></td><td></td><td>11.5%</td><td></td><td></td><td>9.3%</td></tr><tr><td>Y/Y</td><td></td><td></td><td></td><td>35.4%</td><td></td><td></td><td>39.6%</td></tr><tr><td>GM (%)</td><td>65.5% - 67.5%</td><td></td><td>67.4%</td><td>67.1%</td><td></td><td>67.5%</td><td>66.2%</td></tr><tr><td>OpM (%)</td><td>56.0% - 58.0%</td><td></td><td>59.8%</td><td>58.5%</td><td></td><td>60.3%</td><td>57.8%</td></tr><tr><td>EPS (NT$)</td><td></td><td></td><td>25.08</td><td>24.02</td><td></td><td>29.21</td><td>26.98</td></tr></table>
+
+Source: Company Data, FactSet, MS estimates
+
+## Fundamental themes
+
+## Non-AI demand – China's smartphone chip inventory correction begins, but the impact on TSMC should be limited
+
+In 1Q26, inventory days across the semiconductor industry piled up as strong AI and peripheral demand pushed the supply chain higher. Some consumer and non-AI customers also refrained from cutting orders given tight capacity throughout the supply chain and potential price hikes from foundries in 2H26/2027. However, we believe it's time for these non-AI customers – especially in smartphones and PCs – to address rising BOM costs by either cutting orders or passing through the incremental costs. Even so, we expect the impact on TSMC to be relatively small, as TSMC's consumer customers concentrate mostly on the higher end, where passing through costs should prove easier. In addition, high-end PCs and smartphones typically consume TSMC's leading-edge capacity, which other AI demand can readily absorb once wafer capacity is released.
+
+Apple is evidence of hiking prices to end customers – see Apple, Inc.: As Expected, Apple Is Raising Product Pricing (25 Jun 2026) by Erik Woodring) – but also keeping the same wafer demand at TSMC according to our checks. But for Chinese smartphones, we are seeing shipments tracking at down 20% Y/Y, vs. our previous assumption of down 15% Y/Y, see our MediaTek report. We expect leading-edge wafer capacity (5nm and below) could be quickly backfilled by AI demand.
+
+Exhibit 2: Semi supply chain days of inventory piled up in 1Q26  
+![](images/bf90b9a18621eee9bbae39431a18dbfdb9a5d1d737544ffdba9e71486ce07e44.jpg)  
+Source: FactSet, MS
+
+## TSMC still leads in technology roadmap as well as logic density
+
+TSMC maintains a technology leadership position through consistent execution of its process roadmap and industry-leading logic density. Its successful transition to 3nm and expected leadership at 2nm have outpaced Intel (covered by Joseph Moore) foundry and Samsung foundry in manufacturing execution and yield. This technology advantage enables superior performance, power efficiency, and area scaling, making TSMC the preferred foundry for leading AI and high-performance computing chip designers. Our
+
+industry checks and the logic density comparison suggest that Intel's 18A is catching up to TSMC's N3E in performance, while Samsung's SF2 (2nm) is catching up to TSMC's N3P.
+
+Exhibit 3: Logic roadmap comparison between TSMC, Intel, and Samsung foundry
+
+<table><tr><td>CY</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td><td>2016</td><td>2017</td><td>2018</td><td>2019</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025e</td><td>2026e</td></tr><tr><td>Intel</td><td></td><td>22nm FinFET</td><td></td><td>14nm FinFET</td><td></td><td></td><td></td><td></td><td>10nm FinFET 10nm</td><td></td><td>Intel 7 FinFET</td><td></td><td>Intel 4 (EUV) 7nm</td><td>Intel 3 5nm</td><td>Intel 20A 5nm</td><td></td></tr><tr><td>TSMC</td><td>28nm</td><td></td><td></td><td>20nm</td><td>16nm FinFET 16nm+ FinFET</td><td colspan="2">10nm FinFET 12nm 22nm</td><td>7nm</td><td>7nm 7nm+ (EUV)</td><td>5nm 6nm</td><td>5nm Pro 4nm</td><td>3nm FinFET N3e</td><td></td><td></td><td>2nm GAA</td><td>1.6nm GAA</td></tr><tr><td>Samsung</td><td>32nm</td><td>28nm</td><td></td><td></td><td>14nm FinFET 28FDS</td><td colspan="2">10nm FinFET 28FDS-RF</td><td>8nm 14nm LPU</td><td>7nm (EUV) 28FDS-eMRAM</td><td>5nm 18FDS</td><td>4nm 3nm GAA</td><td></td><td></td><td></td><td>2nm GAA</td><td></td></tr></table>
+
+Source: Company data, MS
+
+Exhibit 4: Logic density comparison between TSMC and Samsung foundry  
+![](images/6e7e0dad06817db2ac597ad8d4ede44b935b28de87d3117769f261f6a0e2db11.jpg)  
+Source: Company data, MS
+
+Exhibit 5: Logic density comparison between TSMC and Intel foundry  
+![](images/85a9c53934539a45162c75b343af71ee01f8cabbadad3cd124f70362602c2858.jpg)  
+Source: Company data, MS
+
+Our industry checks suggest that ASML's priority is based on the historical demand and partnership, suggesting that TSMC is still the largest customer of EUV shipments. In that case, TSMC should still possess good pricing power and hike its leading-edge prices 5%-10% in 2027, to reflect its value to customers as well as margin improvement.
+
+Exhibit 6: TSMC – wafer pricing trend  
+![](images/a6c7a25a6f915efa31bc65ef61a4f84bcb290900a6683f0a78f7dcfa3bb73e14.jpg)  
+Source: Company data, MS (e) estimates
+
+Exhibit 7: TSMC's GM and depreciation trends – 60% should be the floor  
+![](images/8580aee7a2e28d5b2294a157f735bf75feeadf8cb91065f8d8dd050e7370919a.jpg)  
+Source: Company data, MS (e) estimates
+
+# TSMC's 2026-28 Foundry Floorplan – similar to our bottom-up demand analysis
+
+## During its symposium, TSMC also revealed strong capacity growth in 2nm and 3nm while 5nm is declining
+
+Similar to our demand forecast, TSMC has also suggested very strong capacity needs for both 2nm and 3nm starting from 2026e, suggesting a capacity CAGR of 70% from 2026e to 2028e for N2. TSMC also implied that 5nm capacity will decline from 2027, also in line with our demand forecast for 5nm to decline after Blackwell migrates to Rubin on 3nm. Separately, advanced packaging capacity expansion should still be the key focus area for TSMC in 2027, including but not limited to CoWoS and SolC, for which we now expect capacity to reach 200kwpm and 70kwpm, respectively, by 2027.
+
+Exhibit 8: TSMC – our estimate of 2nm customer demand breakdown  
+![](images/c29006966dc51f445c34958adfccf9b7d75428c58e25c393144c2e33f0861fec.jpg)  
+Source: MS estimates
+
+Exhibit 9: TSMC suggests that N2 capacity can achieve a 70% CAGR from 2026-2028e  
+![](images/89c35465251077d3e423b57edec8502a42b8e5f25ec751f77c9468b0e47d6b4b.jpg)  
+Source: TSMC
+
+Exhibit 10: TSMC – our estimate of 3nm customer demand breakdown  
+![](images/e5452e3b615a52dafdbb4019adfce64547eab16ad233261e8436196c22caf18f.jpg)  
+Source: MS estimates
+
+Exhibit 11: TSMC – 4nm and 5nm customer demand breakdown  
+![](images/ae529b3ac4688d6d53fb6d0559d09507f6633c55aa8dff1ca767929273167253.jpg)  
+Source: MS estimates
+
+Exhibit 12:
+
+TSMC indicates that N5 capacity will drop in 2027 while N3 capacity should keep increasing, similar to our demand forecast
+
+![](images/fe91ba9dda82a262ba56c57fe0ab4df03b58fb1ffb1c09123afd63ffdcd04389.jpg)
+
+Exhibit 13: Our estimate of CoWoS supply capacity breakdown (by year-end)  
+![](images/2f7542f152a0c12e7e481ef27ef4dd672e533d45540d4cb419f9a047f1851090.jpg)  
+Source: MS estimates
+
+Exhibit 14: MSe TSMC SolC supply capacity breakdown (by year-end)  
+TSMC SolC Supply Capacity Breakdown (By Year End)  
+![](images/c1f46e8f9602e1a0cdee50f71addb3fa3bcfafd68b7288d136d6d7007e3975ad.jpg)  
+Source: MS estimates
+
+Exhibit 15:  
+TSMC is also addressing strong advanced packaging capacity build  
+![](images/789dafc38c8421e6aa552dc61306a1c96e93bc2eefd36aa360fe126d9ede8bb8.jpg)  
+Source: MS estimates
+
+## TSMC's capex is tracking at US\$75bn in 2027
+
+Over the past quarter, we observed strong demand for TSMC leading-edge capacity, and TSMC continues to pull in capacity builds or convert N5 to N3. In Greater China Semiconductors: The Foundry Floorplan: Raise TSMC's 2027e and 2028e Capex (9 Mar 2026), we noted that TSMC is pulling in the whole process of building capacity in both Taiwan and Arizona, including laying the foundations, preparing clean rooms, moving in tools, and ramping up production. Our industry checks also suggest that TSMC is changing the floorplan for some of the leading-edge nodes. For example, it is changing the initial 3nm capacity floorplan in Tainan to 2nm, as well as changing the fab number from Fab18 P10-12 to Fab22 P7-9. Therefore, our latest expectations for TSMC's 2027 and 2028 capex are US\$75bn each.
+
+We note again the news that TSMC has decided to migrate the process for the Japanese Kumamoto fab P2 from the initial 6nm/7nm to the more advanced 3nm given the upcoming strong demand for 3nm process. Our checks suggest that it is also accelerating the capacity conversion from 5nm to 3nm in Taiwan, echoing our view that 3nm capacity is in severe shortage. We thus expect TSMC to expand 3nm front-end capacity >180kwpm by 2026 and grow to >200kwpm by 2028.
+
+Since the geometry below 3nm should also enjoy strong demand, our checks suggest 2nm/1.6nm capacity buildup to nearly 100kwpm by end-2026, 150-170kwpm in 2027, and >200kwpm in 2028. While 1.4nm should start to pull in tools in 2027 and ramp up the majority in 2028, 1.0nm is likely to have small capacity in Tainan in 2029.
+
+Exhibit 16: TSMC fab roadmap
+
+<table><tr><td rowspan="2">Node</td><td rowspan="2">Location</td><td rowspan="2">Fab</td><td colspan="5">Capacity</td></tr><tr><td>2025</td><td>2026</td><td>2027</td><td>2028</td><td>2029</td></tr><tr><td rowspan="3">N3</td><td>Tainan</td><td>F18 - P4/P5/P6/P8/P9</td><td>110k</td><td>160-170k</td><td></td><td></td><td></td></tr><tr><td>Arizona</td><td>F21 - P2</td><td></td><td>20k</td><td></td><td></td><td></td></tr><tr><td>Japan</td><td>F23 - P2</td><td></td><td></td><td></td><td>15k</td><td></td></tr><tr><td>Total</td><td></td><td></td><td>110k</td><td>180-190k</td><td>190k</td><td>200-205k</td><td></td></tr><tr><td rowspan="4">N2/A16</td><td>HsinChu</td><td>F20 - P1/P2</td><td>20k</td><td>30k</td><td></td><td></td><td></td></tr><tr><td>Tainan</td><td>F22 - P7/P8/P9</td><td></td><td></td><td>40-50k</td><td>60k</td><td></td></tr><tr><td>KaoHsiung</td><td>F22 - P1/P2/P3/P4/P5/P6</td><td>25k</td><td>60k</td><td>80-90k</td><td>100k</td><td></td></tr><tr><td>Arizona</td><td>F21 - P3/P4/P5/P6</td><td></td><td></td><td></td><td>20k</td><td></td></tr><tr><td>Total</td><td></td><td></td><td>45k</td><td>90-100k</td><td>150-170k</td><td>210k</td><td></td></tr><tr><td>A14</td><td>HsinChu</td><td>F20 - P3/P4</td><td></td><td></td><td>10-20k</td><td>30-40k</td><td>40k</td></tr><tr><td>A14/A13/A12</td><td>Taichung</td><td>F25 - P1/P2/P3/P4</td><td></td><td></td><td>10-20k</td><td>30-40k</td><td>80k</td></tr><tr><td>Total</td><td></td><td></td><td></td><td></td><td>20-40k</td><td>60-80k</td><td>120k</td></tr><tr><td>A10</td><td>Tainan</td><td>F26 - P1/P2/P3/P4</td><td></td><td></td><td></td><td></td><td>5k</td></tr><tr><td>N40/28/22/12</td><td>Japan</td><td>F23 - P1</td><td>25k</td><td></td><td></td><td></td><td></td></tr><tr><td>N28/16</td><td>Germany</td><td>F24</td><td></td><td></td><td>5k</td><td>40k</td><td></td></tr></table>
+
+Source: MS estimates
+
+Exhibit 17: TSMC Fab details
+
+<table><tr><td>Front-end Plant</td><td>Location</td><td>Focused Technology</td></tr><tr><td>F18 - P4/P5/P6/P8/P9</td><td>Tainan</td><td>N3</td></tr><tr><td>F20 - P1/P2/P3/P4</td><td>HsinChu</td><td>N2/A14</td></tr><tr><td>F21 - P2</td><td>Arizona</td><td>N3</td></tr><tr><td>F22 - P1/P2/P3/P5/P6</td><td>KaoHsiung</td><td>N2</td></tr><tr><td>F22 - P7/P8/P9</td><td>Tainan</td><td>N2</td></tr><tr><td>F22 - P4</td><td>KaoHsiung</td><td>A16</td></tr><tr><td>F23 - P2</td><td>Kumamoto</td><td>N3</td></tr><tr><td>F25 - P1/P2/P3/P4</td><td>Taichung</td><td>A14</td></tr><tr><td>F26 - P1/P2/P3/P4</td><td>Tainan</td><td>A10</td></tr></table>
+
+Source: MS estimates
+
+Exhibit 18: TSMC shares its Arizona Fab P2 tool move-in in 2H26, in line with our 20kwpm capacity addition for 3nm
+
+Global Manufacturing Footprint – US (Arizona)
+- P1 already in production and P2 tool move-in planned in 2H26
+- 3 new phases, P3, P4, and AP1
+
+![](images/902bb849fd2b74755adaec06a53e7d5c22a64ae39f0f43c1ccf6c1f409c3f265.jpg)  
+Source: TSMC
+
+Exhibit 19: TSMC leads the capex for the whole industry  
+![](images/0240e8c5b41bda307a8146ddd3adf07ef58bc5b2fdbc7d97d49d95bdbe597497.jpg)  
+Source: Company Data, MS estimates
+
+Exhibit 20: TSMC's capex intensity should drop significantly as a result of robust revenue growth  
+![](images/32156e9be0fdf67047149d8a9f8a130f4412551583702d99951f79959f535c4d.jpg)  
+Source: Company Data, MS estimates
+
+## Price Target remains NT\$2,888
+
+Our price target NT\$2,888 is mostly driven by our earnings estimate revisions. It implies 20x P/E based on our new 2027e EPS. TSMC stock is trading at 16x our 2027 EPS estimate, near its NTM average P/E of 16.5x since 2018. At this level we find the stock attractive.
+
+We continue to derive our 12-month price target (base case scenario) using the residual income valuation methodology. All of our key assumptions remain unchanged, including a cost of equity of 9.2% (beta of 1.2, risk premium of 6.0%, risk-free rate of 2.0%), intermediate growth rate of 10.5%, and terminal growth rate of 4%.
+
+Exhibit 21: TSMC: Residual income model
+
+<table><tr><td></td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td><td>2031e</td><td>2032e</td><td>2033e</td><td>2034e</td><td>2035e</td><td>2036e</td><td>2037e</td></tr><tr><td>Total Equity</td><td>7,708,211</td><td>10,664,359</td><td>14,302,169</td><td>17,553,385</td><td>21,145,978</td><td>25,115,794</td><td>29,502,440</td><td>34,349,684</td><td>39,705,889</td><td>45,624,495</td><td>52,164,555</td><td>59,391,321</td></tr><tr><td>Net Profit</td><td>2,789,152</td><td>3,708,187</td><td>4,597,307</td><td>5,080,025</td><td>5,613,427</td><td>6,202,837</td><td>6,854,135</td><td>7,573,819</td><td>8,369,070</td><td>9,247,822</td><td>10,218,844</td><td>11,291,822</td></tr><tr><td>ROAE</td><td>42.4%</td><td>40.4%</td><td>36.8%</td><td>31.9%</td><td>29.0%</td><td>26.8%</td><td>25.1%</td><td>23.7%</td><td>22.6%</td><td>21.7%</td><td>20.9%</td><td>20.2%</td></tr><tr><td>Residual Income</td><td>1,810,763</td><td>2,402,384</td><td>2,946,324</td><td>3,245,752</td><td>3,477,402</td><td>3,725,129</td><td>3,992,994</td><td>4,284,639</td><td>4,603,591</td><td>4,953,442</td><td>5,337,961</td><td>5,761,181</td></tr><tr><td>Spread</td><td>33.2%</td><td>31.2%</td><td>27.6%</td><td>22.7%</td><td>19.8%</td><td>17.6%</td><td>15.9%</td><td>14.5%</td><td>13.4%</td><td>12.5%</td><td>11.7%</td><td>11.0%</td></tr><tr><td>Ending Equity Capital</td><td>7,708,211</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Forecast Period</td><td>23,410,607</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Continuing Value</td><td>43,761,530</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity Value</td><td>74,880,348</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>No. of Shares</td><td>25,930</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Projected Price (NT$)</td><td>2,888</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: Company data, MS (e) estimates
+
+Exhibit 22: TSMC's one-year forward P/E: valuation does not appear stretched as a key AI semi enabler  
+![](images/c93cab74ce2c01c8487142cb27bb0e9deaf5f3467081405aa3a4825892f31a87.jpg)  
+Source: Company data, FactSet, MS
+
+Exhibit 23: TSMC - P/B vs. ROE  
+![](images/5fb6955a5afdd5c060bbe742095d0a9d301c21f1294b3e2a069cfc421bbcdc6e.jpg)  
+Source: Company data, Refinitiv, MS
+
+Exhibit 24: TSMC: Quarterly financials
+
+<table><tr><td>(NT$ mn)</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26e</td><td>3Q26e</td><td>4Q26e</td><td>2023</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Total Revenues</td><td>839,254</td><td>933,792</td><td>989,918</td><td>1,046,090</td><td>1,134,103</td><td>1,266,623</td><td>1,435,872</td><td>1,524,342</td><td>2,161,736</td><td>2,894,308</td><td>3,809,054</td><td>5,360,940</td><td>7,132,285</td><td>8,787,896</td></tr><tr><td>Sequential Change</td><td>-3.4%</td><td>11.3%</td><td>6.0%</td><td>5.7%</td><td>8.4%</td><td>11.7%</td><td>13.4%</td><td>6.2%</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Change vs Year Ago</td><td>41.6%</td><td>38.6%</td><td>30.3%</td><td>20.5%</td><td>35.1%</td><td>35.6%</td><td>45.0%</td><td>45.7%</td><td>-4.5%</td><td>33.9%</td><td>31.6%</td><td>40.7%</td><td>33.0%</td><td>23.2%</td></tr><tr><td>Cost of Sales</td><td>(345,859)</td><td>(386,423)</td><td>(401,375)</td><td>(394,103)</td><td>(394,103)</td><td>(412,358)</td><td>(466,301)</td><td>(489,442)</td><td>(986,625)</td><td>(1,269,954)</td><td>(1,527,760)</td><td>(1,762,204)</td><td>(2,281,067)</td><td>(2,764,094)</td></tr><tr><td>Percent of Revenues</td><td>41.2%</td><td>41.4%</td><td>40.5%</td><td>37.7%</td><td>34.8%</td><td>32.6%</td><td>32.5%</td><td>32.1%</td><td>45.6%</td><td>43.9%</td><td>40.1%</td><td>32.9%</td><td>32.0%</td><td>31.5%</td></tr><tr><td>Gross Profit</td><td>493,395</td><td>547,369</td><td>588,543</td><td>651,987</td><td>751,295</td><td>854,265</td><td>969,571</td><td>1,034,900</td><td>1,175,111</td><td>1,624,354</td><td>2,281,295</td><td>3,598,737</td><td>4,851,218</td><td>6,023,802</td></tr><tr><td>Gross Margin</td><td>58.8%</td><td>58.6%</td><td>59.5%</td><td>62.3%</td><td>66.2%</td><td>67.4%</td><td>67.5%</td><td>67.9%</td><td>54.4%</td><td>56.1%</td><td>59.9%</td><td>67.1%</td><td>68.0%</td><td>68.5%</td></tr><tr><td>Total Opex</td><td>(86,314)</td><td>(83,946)</td><td>(87,858)</td><td>(87,084)</td><td>(92,329)</td><td>(96,667)</td><td>(104,250)</td><td>(109,122)</td><td>(253,645)</td><td>(302,301)</td><td>(345,202)</td><td>(402,369)</td><td>(567,502)</td><td>(667,637)</td></tr><tr><td>Percent of Revenues</td><td>10.3%</td><td>9.0%</td><td>8.9%</td><td>8.3%</td><td>8.1%</td><td>7.6%</td><td>7.3%</td><td>7.2%</td><td>11.7%</td><td>10.4%</td><td>9.1%</td><td>7.5%</td><td>8.0%</td><td>7.6%</td></tr><tr><td>R&amp;D</td><td>(56,547)</td><td>(61,280)</td><td>(63,742)</td><td>(64,858)</td><td>(67,757)</td><td>(69,857)</td><td>(73,857)</td><td>(76,857)</td><td>(182,370)</td><td>(204,182)</td><td>(246,427)</td><td>(288,327)</td><td>(356,300)</td><td>(404,000)</td></tr><tr><td>Percent of Revenues</td><td>6.7%</td><td>6.6%</td><td>6.4%</td><td>6.2%</td><td>6.0%</td><td>5.5%</td><td>5.1%</td><td>5.0%</td><td>8.4%</td><td>7.1%</td><td>6.5%</td><td>5.4%</td><td>5.0%</td><td>4.6%</td></tr><tr><td>SG&amp;A</td><td>(29,767)</td><td>(22,666)</td><td>(24,116)</td><td>(22,227)</td><td>(24,573)</td><td>(26,811)</td><td>(30,393)</td><td>(32,266)</td><td>(71,275)</td><td>(98,119)</td><td>(98,775)</td><td>(114,042)</td><td>(211,202)</td><td>(263,637)</td></tr><tr><td>Sequential Change</td><td>1.1%</td><td>-23.9%</td><td>6.4%</td><td>-7.8%</td><td>10.6%</td><td>9.1%</td><td>13.4%</td><td>6.2%</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Change vs Year Ago</td><td>53.6%</td><td>-3.6%</td><td>-6.5%</td><td>-24.5%</td><td>-17.4%</td><td>18.3%</td><td>26.0%</td><td>45.2%</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Operating Income</td><td>407,081</td><td>463,424</td><td>500,685</td><td>564,902</td><td>658,966</td><td>757,598</td><td>865,321</td><td>925,777</td><td>921,466</td><td>1,322,053</td><td>1,936,092</td><td>3,196,368</td><td>4,283,717</td><td>5,356,165</td></tr><tr><td>Percent of Revenues</td><td>48.5%</td><td>49.6%</td><td>50.6%</td><td>54.0%</td><td>58.1%</td><td>59.8%</td><td>60.3%</td><td>60.7%</td><td>42.6%</td><td>45.7%</td><td>50.8%</td><td>59.6%</td><td>60.1%</td><td>60.9%</td></tr><tr><td>Non-operating Income(Loss)</td><td>23,815</td><td>29,612</td><td>24,684</td><td>27,461</td><td>28,834</td><td>25,862</td><td>25,862</td><td>25,862</td><td>57,706</td><td>83,786</td><td>105,571</td><td>106,420</td><td>103,449</td><td>99,449</td></tr><tr><td>Profit Before Taxes</td><td>430,895</td><td>493,035</td><td>525,369</td><td>592,363</td><td>687,800</td><td>783,460</td><td>891,184</td><td>951,640</td><td>979,171</td><td>1,405,839</td><td>2,041,663</td><td>3,302,788</td><td>4,387,166</td><td>5,455,614</td></tr><tr><td>Percent of Revenues</td><td>51.3%</td><td>52.8%</td><td>53.1%</td><td>56.6%</td><td>60.6%</td><td>61.9%</td><td>62.1%</td><td>62.4%</td><td>45.3%</td><td>48.6%</td><td>53.6%</td><td>61.6%</td><td>61.5%</td><td>62.1%</td></tr><tr><td>Taxes</td><td>(70,163)</td><td>(95,542)</td><td>(73,614)</td><td>(86,948)</td><td>(114,998)</td><td>(133,188)</td><td>(133,678)</td><td>(142,746)</td><td>(141,404)</td><td>(233,407)</td><td>(326,266)</td><td>(524,610)</td><td>(678,978)</td><td>(858,307)</td></tr><tr><td>Tax Rate</td><td>16.3%</td><td>19.4%</td><td>14.0%</td><td>14.7%</td><td>16.7%</td><td>17.0%</td><td>15.0%</td><td>15.0%</td><td>14.4%</td><td>16.6%</td><td>16.0%</td><td>15.9%</td><td>15.5%</td><td>15.7%</td></tr><tr><td>Net Income, Cont Ops</td><td>360,733</td><td>397,493</td><td>451,755</td><td>505,415</td><td>572,801</td><td>650,272</td><td>757,506</td><td>808,894</td><td>837,768</td><td>1,172,432</td><td>1,715,397</td><td>2,778,178</td><td>3,708,187</td><td>4,597,307</td></tr><tr><td>Minority Interest</td><td>831</td><td>780</td><td>546</td><td>329</td><td>(322)</td><td>0</td><td>0</td><td>0</td><td>730</td><td>836</td><td>2,486</td><td>(322)</td><td>0</td><td>0</td></tr><tr><td>Reported Income (TW GAAP)</td><td>361,564</td><td>398,273</td><td>452,301</td><td>505,744</td><td>572,480</td><td>650,272</td><td>757,506</td><td>808,894</td><td>838,498</td><td>1,173,268</td><td>1,717,883</td><td>2,789,152</td><td>3,708,187</td><td>4,597,307</td></tr><tr><td>Percent of Revenues</td><td>43.1%</td><td>42.7%</td><td>45.7%</td><td>48.3%</td><td>50.5%</td><td>51.3%</td><td>52.8%</td><td>53.1%</td><td>38.8%</td><td>40.5%</td><td>45.1%</td><td>52.0%</td><td>52.0%</td><td>52.3%</td></tr><tr><td>Change vs Year Ago</td><td>60.3%</td><td>60.7%</td><td>39.1%</td><td>35.0%</td><td>58.3%</td><td>63.3%</td><td>67.5%</td><td>59.9%</td><td>-17.5%</td><td>39.9%</td><td>46.4%</td><td>62.4%</td><td>33.0%</td><td>24.0%</td></tr><tr><td>Reported EPS (NT$, TW GAAP)</td><td>13.94</td><td>15.36</td><td>17.44</td><td>19.50</td><td>22.08</td><td>25.08</td><td>29.21</td><td>31.20</td><td>32.34</td><td>45.25</td><td>66.25</td><td>107.56</td><td>143.01</td><td>177.30</td></tr><tr><td>Basic shares (mn units)</td><td>25,927</td><td>25,928</td><td>25,929</td><td>25,928</td><td>25,930</td><td>25,930</td><td>25,930</td><td>25,930</td><td>25,929</td><td>25,928</td><td>25,928</td><td>25,930</td><td>25,930</td><td>25,930</td></tr></table>
+
+Source: Company data, MS (e) estimates
+
+Source: Refinitiv, MS
+
+## Risk Reward – TSMC (2330.TW)
+
+Expect 2026 revenue and capex guidance to be raised
+
+## PRICE TARGET NT\$2,888.00
+
+Base case, residual income model. Key assumptions: a cost of equity of 9.2% (beta of 1.2, risk-free rate of 2.0% and risk premium of 6.0%), an intermediate growth rate of 10.5%, and a terminal growth rate of 4.0%.
+
+<table><tr><td rowspan="3">Consensus Price Target Distribution</td><td rowspan="3">NT$480.00</td><td>NT$2,706.38</td><td>NT$3,800.00</td></tr><tr><td colspan="2">MS PT</td></tr><tr><td>Mean</td><td>MS Estimates</td></tr><tr><td colspan="4">Source: Refinitiv, MS</td></tr></table>
+
+## RISK REWARD CHART
+
+![](images/81a91a19acf79de2fa9f90e35f504dd67afde8fc0544ef2253504035a644a8ea.jpg)  
+Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target  
+Source: Refinitiv, MS
+
+## OVERWEIGHT THESIS
+
+■ Reflecting robust AI capex guidance from Meta and Microsoft, TSMC remains our Top Pick.
+
+\- Our estimates reflect TSMC's strong profitability and another year of close to $40\%$ Y/Y revenue growth seen for 2026.
+- Part of that can be contributed by China's AI GPU market through Nvidia.
+
+■ Reflecting increased bargaining power, long-term margin expansion, and sustainable AI semi demand, we expect the stock to re-rate to our implied 2027e target P/E of 20x.
+
+![](images/32dd548ac3e3cb785242249aff0c37d62b62e50081f49ce800c77dbf1e936ee8.jpg)
+
+## Risk Reward Themes
+
+<table><tr><td>New Data Era:</td><td>Positive</td></tr><tr><td>Pricing Power:</td><td>Positive</td></tr><tr><td>Secular Growth:</td><td>Positive</td></tr></table>
+
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## 24x 2027e EPS
+
+NT\$3,480.00
+
+TSMC dominates foundry services: 1) Breakthrough in EUV tech and materials accelerates node migration to 3nm and beyond. 2) Intel outsources its server CPU production to TSMC sooner than expected. 3) Intel or Samsung exits leading-edge foundry business. 4) New tech megatrends such as 6G or AI drive global semi revenue growth and increase demand for leading edge nodes. 5) Cost per transistor decreases further along with node migration.
+
+BASE CASE
+
+## 20x 2027e EPS
+
+NT\$2,888.00
+
+Leading position in leading-edge logic foundry services with some gross margin expansion: 1) Global semi revenue CAGR is sustained in the high single digits in 2025-28. 2) TSMC continues to lead in market share in 16nm, 7nm, 5nm, 3nm, and 2nm. 3) It continues to observe robust AI-related demand. 4) Cost per transistor does not decrease meaningfully in 3nm and 2nm, while capex per k is more demanding than for 7nm and 5nm.
+
+## BEAR CASE
+
+NT\$1,590.00
+
+## 11x 2027e EPS
+
+TSMC's dominance in foundry business erodes: 1) Global ex-memory semi revenue growth is weaker than expected in 2025-28. 2) Declining trailing-edge market share causes revenue shortfall. 3) Intel's contribution is weaker than expected. Intel and/or Samsung successfully develop leading-edge process technology. 4) Intel's foundry business execution proves successful and weighs on TSMC with order competition. 5) Demand for 2nm is less than expected given high transistor cost for foundry customers.
+
+![](images/928f270aa96021f5872be57dd2f3f385365c9136c2653d0d4ce8404ac795df4a.jpg)
+
+## Risk Reward – TSMC (2330.TW)
+
+## KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>Dec 2025</td><td>Dec 2026e</td><td>Dec 2027e</td><td>Dec 2028e</td></tr><tr><td>Revenue from 5nm Geometry (NT$, mn)</td><td>1,179,907</td><td>1,282,106</td><td>1,118,627</td><td>1,111,915</td></tr><tr><td>Revenue from 10/7nm Geometry (NT$, mn)</td><td>459,258</td><td>514,285</td><td>525,849</td><td>523,809</td></tr><tr><td>Revenue from 16/20nm Geometry (NT$, mn)</td><td>220,027</td><td>289,383</td><td>318,988</td><td>336,404</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+\- Moore's Law migration (chip scaling) and alternative technologies
+
+\- Capex intensity - cost of building leading-edge foundry capacity
+
+\- Bargaining power with key equipment vendors
+
+• Transistor cost for customers
+
+• ROI for leading-edge foundry
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/fe0e7ac1cbcd230629a8a561a8205bb47fdd9c0018cb9896f36e0cfb1ae64627.jpg)  
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+\- TSMC charges large customers more to keep its gross margin above 56% in the long term.
+
+\- AI semi demand grows more significantly than expected, while TSMC maintains high market share in leading-edge foundry business.
+
+\- Outsourcing from Intel CPU increases in 2025-27.
+
+## RISKS TO DOWNSIDE
+
+• Inventory correction occurs in 2026.
+
+\- Demand for leading edge technologies weakens.
+
+• Costs of overseas fabs grow significantly.
+
+## OWNERSHIP POSITIONING
+
+<table><tr><td>Inst. Owners, % Active</td><td>75.9%</td></tr></table>
+
+Source: Refinitiv, MS
+
+MS ESTIMATES VS. CONSENSUS  
+![](images/b972a25bf38f0b2195e845bd9e7521b7b60f7346911238d23498a3485c52fb3c.jpg)  
+◆ Mean ◆ MS Estimates  
+Source: Refinitiv, MS
+
+## Financial summary
+
+<table><tr><td colspan="6">Income Statement, 2024-2028e, Year End Dec</td></tr><tr><td>(NT$ mn)</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Revenue</td><td>2,894,308</td><td>3,809,054</td><td>5,360,940</td><td>7,132,285</td><td>8,787,896</td></tr><tr><td>YoY Growth</td><td>33.9%</td><td>31.6%</td><td>40.7%</td><td>33.0%</td><td>23.2%</td></tr><tr><td>Gross Profit b/f dep</td><td>2,247,086</td><td>2,924,670</td><td>4,317,109</td><td>5,826,339</td><td>7,366,380</td></tr><tr><td>Less: COGS</td><td>(1,269,954)</td><td>(1,527,760)</td><td>(1,762,204)</td><td>(2,281,067)</td><td>(2,764,094)</td></tr><tr><td>Variable costs</td><td>(647,221)</td><td>(884,384)</td><td>(1,043,831)</td><td>(1,305,946)</td><td>(1,421,517)</td></tr><tr><td>Depreciation &amp; amort</td><td>(622,733)</td><td>(643,376)</td><td>(718,373)</td><td>(975,121)</td><td>(1,342,578)</td></tr><tr><td>Gross profit</td><td>1,624,354</td><td>2,281,295</td><td>3,598,737</td><td>4,851,218</td><td>6,023,802</td></tr><tr><td>% margin</td><td>56.1%</td><td>59.9%</td><td>67.1%</td><td>68.0%</td><td>68.5%</td></tr><tr><td>YoY Growth</td><td>38.2%</td><td>40.4%</td><td>57.7%</td><td>34.8%</td><td>24.2%</td></tr><tr><td>Operating Expenses:</td><td>(302,301)</td><td>(345,202)</td><td>(402,369)</td><td>(567,502)</td><td>(667,637)</td></tr><tr><td>R&amp;D</td><td>(204,182)</td><td>(246,427)</td><td>(288,327)</td><td>(356,300)</td><td>(404,000)</td></tr><tr><td>Sales and Marketing</td><td>(13,144)</td><td>(16,918)</td><td>(20,871)</td><td>(35,661)</td><td>(43,939)</td></tr><tr><td>General and Admin</td><td>(84,975)</td><td>(81,857)</td><td>(93,171)</td><td>(175,540)</td><td>(219,697)</td></tr><tr><td>Operating Profit</td><td>1,322,053</td><td>1,936,092</td><td>3,196,368</td><td>4,283,717</td><td>5,356,165</td></tr><tr><td>% margin</td><td>45.7%</td><td>50.8%</td><td>59.6%</td><td>60.1%</td><td>60.9%</td></tr><tr><td>YoY Growth</td><td>43.5%</td><td>46.4%</td><td>65.1%</td><td>34.0%</td><td>25.0%</td></tr><tr><td>Non-Operating Income</td><td>83,786</td><td>105,571</td><td>106,420</td><td>103,449</td><td>99,449</td></tr><tr><td>Pretax Profit</td><td>1,405,839</td><td>2,041,663</td><td>3,302,788</td><td>4,387,166</td><td>5,455,614</td></tr><tr><td>% margin</td><td>48.6%</td><td>53.6%</td><td>61.6%</td><td>61.5%</td><td>62.1%</td></tr><tr><td>Tax</td><td>(233,407)</td><td>(326,266)</td><td>(524,610)</td><td>(678,978)</td><td>(858,307)</td></tr><tr><td>Reported net Income</td><td>1,173,268</td><td>1,717,883</td><td>2,789,152</td><td>3,708,187</td><td>4,597,307</td></tr><tr><td>Reported EPS (NT$)</td><td>45.25</td><td>66.25</td><td>107.56</td><td>143.01</td><td>177.30</td></tr><tr><td>EPS for consensus (NT$)</td><td>45.25</td><td>66.25</td><td>107.56</td><td>143.01</td><td>177.30</td></tr></table>
+
+Balance Sheet, 2024-2028e, Year End Dec
+
+<table><tr><td>(NT$ mn)</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Cash &amp; Equivalent</td><td>2,127,627</td><td>2,767,856</td><td>3,955,283</td><td>5,400,591</td><td>7,938,665</td></tr><tr><td>MarketableSecurity</td><td>294,393</td><td>300,738</td><td>347,964</td><td>347,964</td><td>347,964</td></tr><tr><td>A/R &amp; N/R</td><td>272,088</td><td>281,791</td><td>432,146</td><td>563,084</td><td>672,923</td></tr><tr><td>Inventories</td><td>287,869</td><td>288,109</td><td>371,283</td><td>473,147</td><td>561,970</td></tr><tr><td>Other Current Ass.</td><td>106,376</td><td>178,635</td><td>207,452</td><td>207,452</td><td>207,452</td></tr><tr><td>Total current assets</td><td>3,088,352</td><td>3,817,131</td><td>5,314,129</td><td>6,992,239</td><td>9,728,975</td></tr><tr><td>Long-term Investment</td><td>149,040</td><td>172,370</td><td>166,567</td><td>166,567</td><td>166,567</td></tr><tr><td>Total fixed assets</td><td>3,234,980</td><td>3,691,841</td><td>4,696,400</td><td>6,005,818</td><td>6,934,253</td></tr><tr><td>Total other assets</td><td>219,565</td><td>251,682</td><td>274,192</td><td>274,192</td><td>274,192</td></tr><tr><td>Total Assets</td><td>6,691,938</td><td>7,933,024</td><td>10,451,287</td><td>13,438,815</td><td>17,103,986</td></tr><tr><td>A/P &amp; N/P</td><td>74,227</td><td>84,330</td><td>114,372</td><td>145,751</td><td>173,112</td></tr><tr><td>Accrued Expenses</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other Payable</td><td>531,377</td><td>630,217</td><td>754,314</td><td>754,314</td><td>754,314</td></tr><tr><td>Curr. of L-T Debt</td><td>59,858</td><td>136,926</td><td>156,242</td><td>156,242</td><td>156,242</td></tr><tr><td>Other Curr. Liab.</td><td>599,064</td><td>606,547</td><td>703,842</td><td>703,842</td><td>703,842</td></tr><tr><td>Total Current Liab.</td><td>1,264,525</td><td>1,458,019</td><td>1,728,769</td><td>1,760,148</td><td>1,787,509</td></tr><tr><td>L-T Liabilities</td><td>926,605</td><td>856,228</td><td>860,026</td><td>860,026</td><td>860,026</td></tr><tr><td>Total Other L-T Liab</td><td>177,233</td><td>157,982</td><td>154,281</td><td>154,281</td><td>154,281</td></tr><tr><td>Total Liabilities</td><td>2,368,362</td><td>2,472,229</td><td>2,743,077</td><td>2,774,455</td><td>2,801,817</td></tr><tr><td>Common Stocks</td><td>259,327</td><td>259,325</td><td>259,324</td><td>259,324</td><td>259,324</td></tr><tr><td>Preferred Stocks</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Capital Reserve</td><td>73,261</td><td>73,446</td><td>73,666</td><td>73,666</td><td>73,666</td></tr><tr><td>Retained earnings</td><td>3,955,957</td><td>5,086,825</td><td>7,333,792</td><td>10,289,941</td><td>13,927,751</td></tr><tr><td>Treasury Stock</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Minority Equity</td><td>35,031</td><td>41,199</td><td>41,429</td><td>41,429</td><td>41,429</td></tr><tr><td>Total Equity</td><td>4,323,576</td><td>5,460,795</td><td>7,708,211</td><td>10,664,359</td><td>14,302,169</td></tr><tr><td>Total Liab. &amp; Equity</td><td>6,691,938</td><td>7,933,024</td><td>10,451,287</td><td>13,438,815</td><td>17,103,986</td></tr></table>
+
+Cash Flow Statement, 2024-2028e, Year End Dec
+
+<table><tr><td colspan="6">Key Ratios, 2024-2026e</td></tr><tr><td></td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td colspan="6">Return (%)</td></tr><tr><td>ROAA</td><td>19%</td><td>23%</td><td>30%</td><td>31%</td><td>30%</td></tr><tr><td>ROAE</td><td>30%</td><td>35%</td><td>43%</td><td>41%</td><td>37%</td></tr><tr><td>OP. ATO</td><td>0.7x</td><td>0.7x</td><td>0.8x</td><td>1.0x</td><td>0.9x</td></tr><tr><td colspan="6">Gearing (x)</td></tr><tr><td>Net Debt/ Equity</td><td>-0.33x</td><td>-0.38x</td><td>-0.43x</td><td>-0.44x</td><td>-0.51x</td></tr><tr><td>Current Ratio</td><td>2.4x</td><td>2.6x</td><td>3.1x</td><td>4.0x</td><td>5.4x</td></tr><tr><td>Quick Ratio</td><td>1.9x</td><td>2.1x</td><td>2.5x</td><td>3.4x</td><td>4.8x</td></tr><tr><td colspan="6">Operating Cycle</td></tr><tr><td>AR/NR Turnover (days)</td><td>29</td><td>26</td><td>24</td><td>25</td><td>25</td></tr><tr><td>Inventory Turnover (days)</td><td>76</td><td>68</td><td>67</td><td>67</td><td>67</td></tr><tr><td>AP Turnover (days)</td><td>19</td><td>19</td><td>20</td><td>21</td><td>21</td></tr><tr><td>Cash Conversion (days)</td><td>87</td><td>75</td><td>71</td><td>71</td><td>72</td></tr></table>
+
+e = MS Estimates
+Source: Company Data, MS
+
+<table><tr><td>(NT$ mn)</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Net Income Current</td><td>1,173,268</td><td>1,717,883</td><td>2,789,152</td><td>3,708,187</td><td>4,597,307</td></tr><tr><td>Depreciation</td><td>662,797</td><td>688,096</td><td>778,692</td><td>1,026,443</td><td>1,413,240</td></tr><tr><td>Net Investment Losses (Gains)</td><td>8,205</td><td>8,083</td><td>5,115</td><td>0</td><td>0</td></tr><tr><td>Decrease (Increase) in Working Capital</td><td>20,896</td><td>(17,144)</td><td>(37,121)</td><td>(201,423)</td><td>(171,301)</td></tr><tr><td>Others</td><td>(38,988)</td><td>(121,942)</td><td>(121,402)</td><td>0</td><td>0</td></tr><tr><td>Cash Flow-Operating</td><td>1,826,177</td><td>2,274,976</td><td>3,414,436</td><td>4,533,207</td><td>5,839,246</td></tr><tr><td>(Purchase) of FA</td><td>(956,007)</td><td>(1,272,411)</td><td>(1,705,726)</td><td>(2,335,860)</td><td>(2,341,675)</td></tr><tr><td>Sale of Fix Asset</td><td>895</td><td>797</td><td>1,813</td><td>0</td><td>0</td></tr><tr><td>(Purchase)L-T Inv.</td><td>(3,739)</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Others</td><td>94,008</td><td>127,220</td><td>(7,904)</td><td>0</td><td>0</td></tr><tr><td>Cash Flow-Inv.</td><td>(864,843)</td><td>(1,144,393)</td><td>(1,711,817)</td><td>(2,335,860)</td><td>(2,341,675)</td></tr><tr><td>Inc(Dec)-S-T Debt</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Inc(Dec) L-T Debt</td><td>28,601</td><td>7,948</td><td>1,630</td><td>0</td><td>0</td></tr><tr><td>Dividend Paid</td><td>(363,055)</td><td>(466,779)</td><td>(570,513)</td><td>(752,039)</td><td>(959,498)</td></tr><tr><td>Dir.&amp;Emp.Bonus</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Others</td><td>(11,847)</td><td>18,486</td><td>8,122</td><td>0</td><td>0</td></tr><tr><td>Cash Flow-Financing</td><td>(346,301)</td><td>(440,345)</td><td>(560,761)</td><td>(752,039)</td><td>(959,498)</td></tr><tr><td>Change in Cash</td><td>662,199</td><td>640,229</td><td>1,187,427</td><td>1,445,308</td><td>2,538,074</td></tr><tr><td>Net cash/(debt), b/f</td><td>1,465,428</td><td>2,127,627</td><td>2,767,856</td><td>3,955,283</td><td>5,400,591</td></tr><tr><td>Net cash/(debt), c/f</td><td>2,127,627</td><td>2,767,856</td><td>3,955,283</td><td>5,400,591</td><td>7,938,665</td></tr></table>
+
+MS is acting as exclusive financial advisor to AP Grange Holdings, LLC (“AP Grange”) in relation to a definitive agreement with Intel Corporation (“Intel”), for Intel to repurchase the 49% equity interest in the joint venture related to Intel’s Fab 34 in Ireland not held by Intel, as announced on April 1, 2026. The transaction is subject to customary closing conditions. AP Grange has agreed to pay fees to MS for its financial advisory services. Please refer to the notes at the end of this report.
+
+MS is acting as financial advisor to Grail, Inc. ("Grail") in connection with the proposed strategic collaboration with Samsung C&T and Samsung Electronics, to bring Grail's Galleri multi-cancer early detection test to key Asian markets, as announced on October 16, 2025. The proposed transaction is subject to final execution of definitive collaboration agreements between the parties, as well as customary closing conditions and regulatory approvals. Please refer to the notes at the end of this report.
+
+## Risk Reward Reference links
+
+1. View explanation of Options Probabilities methodology -
+
+Options\_Probabilities\_Exhibit\_Link.pdf
+
+2. View descriptions of Risk Rewards Themes - RR\_Themes\_Exhibit\_Link.pdf
+
+3. View explanation of regional hierarchies - GEG\_Exhibit\_Link.pdf
+
+4. View explanation of Theme/Exposure methodology -
+
+ESG\_Sustainable\_Solutions\_External\_Link.pdf
+
+5. View explanation of HERS methodology - ESG\_HERS\_External\_Link.pdf
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Charlie Chan; Daisy Dai, CFA; Daniel Yen, CFA.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of June 30, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: ACM Research Inc, Advanced Micro-Fabrication Equipment Inc, Advanced Wireless Semiconductor Co, Alchip Technologies Ltd, AllRing Tech Co., AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMPT Ltd, Cambricon Technology Corporation, Dosilicon Co Ltd, FOCI Fiber Optic Communications Inc, GigaDevice Semiconductor Beijing Inc, GlobalWafers Co Ltd, Gudeng Precision, Hangzhou Silan Microelectronics Co. Ltd., King Yuan Electronics Co Ltd, Macronix International Co Ltd, MediaTek, Montage Technology Co Ltd, Parade Technologies Ltd, Phison Electronics Corp, Powerchip Semiconductor Manufacturing Co, SG Micro Corp., Shanghai Fudan Microelectronics, Silergy Corp., Silicon Motion, TSMC, UMC, Unigroup Guoxin Microelectronics Co Ltd, Vanguard International Semiconductor, WIN Semiconductors Corp, Winbond Electronics Corp, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Alchip Technologies Ltd, Montage Technology Co Ltd, Powerchip Semiconductor Manufacturing Co.
+
+Within the last 12 months, MS has received compensation for investment banking services from ASMPT Ltd, Montage Technology Co Ltd, Powerchip Semiconductor Manufacturing Co.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Advanced Micro-Fabrication Equipment Inc, Alchip Technologies Ltd, AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMedia Technology Inc, ASMPT Ltd, Aspeed Technology, Espressif Systems, GigaDevice Semiconductor Beijing Inc, GlobalWafers Co Ltd, Gudeng Precision, Himax Technologies Inc, Hua Hong Semiconductor Ltd, Iluvatar CoreX Semiconductor Co., Ltd., Innoscience, King Yuan Electronics Co Ltd, Macronix International Co Ltd, MediaTek, MetaX Integrated Circuits, Montage Technology Co Ltd, Novatek, Phison Electronics Corp, Powerchip Semiconductor Manufacturing Co, Realtek Semiconductor, SG Micro Corp., Shenzhen Longsys Electronics Co Ltd, SICC Co Ltd, Silergy Corp., Silicon Motion, TSMC, UMC, Universal Scientific Ind. (Shanghai), Vanguard International Semiconductor, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from ASE Technology Holding Co. Ltd., King Yuan Electronics Co Ltd, MediaTek, Nanya Technology Corp., Novatek, Nuvoton Technology Corporation, Realtek Semiconductor, Silicon Motion, SMIC, TSMC, UMC, Universal Scientific Ind. (Shanghai), Winbond Electronics Corp, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Advanced Micro-Fabrication Equipment Inc, Alchip Technologies Ltd, AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMedia Technology Inc, ASMPT Ltd, Aspeed Technology, Espressif Systems, GigaDevice Semiconductor Beijing Inc, GlobalWafers Co Ltd, Gudeng Precision, Himax Technologies Inc, Hua Hong Semiconductor Ltd, Iluvatar CoreX Semiconductor Co., Ltd., Innoscience, King Yuan Electronics Co Ltd, Macronix International Co Ltd, MediaTek, MetaX Integrated Circuits, Montage Technology Co Ltd, Novatek, Phison Electronics Corp, Powerchip Semiconductor Manufacturing Co, Realtek Semiconductor, SG Micro Corp., Shenzhen Longsys Electronics Co Ltd, SICC Co Ltd, Silergy Corp., Silicon Motion, TSMC, UMC, Universal Scientific Ind. (Shanghai), Vanguard International Semiconductor, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: ASE Technology Holding Co. Ltd., King Yuan Electronics Co Ltd, MediaTek, Montage Technology Co Ltd, Nanya Technology Corp., Novatek, Nuvoton Technology Corporation, Realtek Semiconductor, Silicon Motion, SMIC, TSMC, UMC, Universal Scientific Ind. (Shanghai), Winbond Electronics Corp, WT Microelectronics Co. Ltd..
+
+MS & Co. LLC makes a market in the securities of ACM Research Inc, Himax Technologies Inc, Silicon Motion.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+(as of June 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Stock Price, Price Target and Rating History (See Rating Definitions)
+
+TSMC (2330.TW) - As of 07/13/26 GMT in TWD  
+Industry : Greater China Technology Semiconductors  
+![](images/bda3adc3d85d77e49bdf349e73140d445a821add65123c8d1105aab1c47349bc.jpg)  
+Stock Rating History: 7/1/21 : E/I; 10/12/21 : E/C; 2/7/22 : 0/C; 10/4/22 : 0/A; 2/22/23 : 0/I; 7/7/23 : 0/A; 7/21/24 : 0/I; 7/14/25 : 0/A
+
+Price Target History: 6/18/21 : 580; 1/3/22 : 618; 1/13/22 : 648; 2/7/22 : 780; 9/23/22 : 720; 12/14/22 : 700; 4/20/23 : 680;
+
+6/12/23 : 710; 7/7/23 : 718; 12/4/23 : 688; 1/18/24 : 698; 2/14/24 : 758; 3/8/24 : 850; 3/22/24 : 860; 5/8/24 : 928; 6/6/24 : 980;
+
+6/18/24 : 1080; 7/8/24 : 1180; 7/18/24 : 1220; 9/24/24 : 1280; 10/17/24 : 1330; 12/16/24 : 1388; 4/11/25 : 1288; 7/17/25 : 1388;
+
+9/30/25 : 1588; 10/16/25 : 1688; 12/18/25 : 1888; 1/14/26 : 1988; 1/16/26 : 2088; 3/9/26 : 2288; 4/17/26 : 2588; 6/29/26 : 2888
+
+Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)
+
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)
+
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)
+
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)
+
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.
+
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research.
+
+MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital
+
+Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of ASMPT Ltd, Hua Hong Semiconductor Ltd, Montage Technology Co Ltd listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+INDUSTRY COVERAGE: Greater China Technology Semiconductors
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (07/13/2026)</td></tr><tr><td colspan="3">Charlie Chan</td></tr><tr><td>ACM Research Inc (ACMR.O)</td><td>O (03/07/2023)</td><td>US$103.00</td></tr><tr><td>Advanced Micro-Fabrication Equipment Inc (688012.SS)</td><td>O (11/06/2023)</td><td>Rmb408.60</td></tr><tr><td>Advanced Wireless Semiconductor Co (8086.TWO)</td><td>U (07/14/2025)</td><td>NT$135.00</td></tr><tr><td>Alchip Technologies Ltd (3661.TW)</td><td>O (05/14/2021)</td><td>NT$4,135.00</td></tr><tr><td>ASE Technology Holding Co. Ltd. (3711.TW)</td><td>O (09/15/2024)</td><td>NT$670.00</td></tr><tr><td>Cambricon Technology Corporation (688256.SS)</td><td>O (04/27/2026)</td><td>Rmb1,390.00</td></tr><tr><td>Global Unichip Corp (3443.TW)</td><td>O (06/24/2026)</td><td>NT$4,270.00</td></tr><tr><td>GlobalWafers Co Ltd (6488.TWO)</td><td>E (05/19/2026)</td><td>NT$1,485.00</td></tr><tr><td>Gudeng Precision (3680.TWO)</td><td>O (11/25/2025)</td><td>NT$523.00</td></tr><tr><td>Hua Hong Semiconductor Ltd (1347.HK)</td><td>E (03/12/2026)</td><td>HK$172.30</td></tr><tr><td>Iluvatar CoreX Semiconductor Co., Ltd. (9903.HK)</td><td>O (04/27/2026)</td><td>HK$480.00</td></tr><tr><td>King Yuan Electronics Co Ltd (2449.TW)</td><td>O (03/03/2023)</td><td>NT$307.00</td></tr><tr><td>Maxscend Microelectronics Co Ltd (300782.SZ)</td><td>U (01/11/2021)</td><td>Rmb87.95</td></tr><tr><td>MediaTek (2454.TW)</td><td>O (11/28/2025)</td><td>NT$3,825.00</td></tr><tr><td>MetaX Integrated Circuits (688802.SS)</td><td>E (04/27/2026)</td><td>Rmb972.86</td></tr><tr><td>Nanya Technology Corp. (2408.TW)</td><td>O (05/28/2026)</td><td>NT$423.00</td></tr><tr><td>NAURA Technology Group Co Ltd (002371.SZ)</td><td>O (11/06/2023)</td><td>Rmb764.30</td></tr><tr><td>OmniVision Integrated Circuits Group Inc (603501.SS)</td><td>E (11/17/2025)</td><td>Rmb102.49</td></tr><tr><td>Phison Electronics Corp (8299.TWO)</td><td>E (02/25/2026)</td><td>NT$2,170.00</td></tr><tr><td>SG Micro Corp. (300661.SZ)</td><td>E (11/03/2025)</td><td>Rmb116.26</td></tr><tr><td>Silergy Corp. (6415.TW)</td><td>U (05/19/2026)</td><td>NT$524.00</td></tr><tr><td>SMIC (0981.HK)</td><td>O (10/21/2025)</td><td>HK$78.35</td></tr><tr><td>TSMC (2330.TW)</td><td>O (02/07/2022)</td><td>NT$2,440.00</td></tr><tr><td>UMC (2303.TW)</td><td>O (05/19/2026)</td><td>NT$153.50</td></tr><tr><td>Vanguard International Semiconductor (5347.TWO)</td><td>E (01/14/2026)</td><td>NT$178.50</td></tr><tr><td>WIN Semiconductors Corp (3105.TWO)</td><td>U (07/14/2025)</td><td>NT$403.00</td></tr><tr><td colspan="3">Daisy Dai, CFA</td></tr><tr><td>ASMPT Ltd (0522.HK)</td><td>O (07/24/2025)</td><td>HK$185.40</td></tr><tr><td>China Resources Microelectronics Limited (688396.SS)</td><td>U (03/02/2026)</td><td>Rmb77.60</td></tr><tr><td>Empyrean Technology Co Ltd (301269.SZ)</td><td>E (01/17/2025)</td><td>Rmb119.83</td></tr><tr><td>Hangzhou Silan Microelectronics Co. Ltd. (600460.SS)</td><td>U (08/25/2025)</td><td>Rmb41.93</td></tr><tr><td>Hygon Information Technology Co., Ltd. (688041.SS)</td><td>O (07/03/2026)</td><td>Rmb345.00</td></tr><tr><td>Innoscience (2577.HK)</td><td>E (10/13/2025)</td><td>HK$49.38</td></tr><tr><td>JCET Group Co Ltd (600584.SS)</td><td>E (01/16/2026)</td><td>Rmb99.05</td></tr><tr><td>Shanghai Fudan Microelectronics (1385.HK)</td><td>O (03/07/2025)</td><td>HK$29.38</td></tr><tr><td>SICC Co Ltd (688234.SS)</td><td>O (03/20/2026)</td><td>Rmb138.59</td></tr><tr><td>StarPower Semiconductor Ltd (603290.SS)</td><td>E (05/14/2026)</td><td>Rmb116.99</td></tr><tr><td>Unigroup Guoxin Microelectronics Co Ltd (002049.SZ)</td><td>U (01/10/2023)</td><td>Rmb81.74</td></tr><tr><td>Universal Scientific Ind. (Shanghai) (601231.SS)</td><td>O (11/05/2025)</td><td>Rmb27.80</td></tr><tr><td>Yangjie Technology (300373.SZ)</td><td>O (06/10/2022)</td><td>Rmb113.31</td></tr><tr><td colspan="3">Daniel Yen, CFA</td></tr><tr><td>AP Memory Technology Corp (6531.TW)</td><td>O (07/11/2025)</td><td>NT$893.00</td></tr><tr><td>ASMedia Technology Inc (5269.TW)</td><td>U (10/03/2025)</td><td>NT$1,510.00</td></tr><tr><td>Aspeed Technology (5274.TWO)</td><td>O (06/09/2025)</td><td>NT$13,520.00</td></tr><tr><td>Egis Technology Inc (6462.TWO)</td><td>E (01/28/2026)</td><td>NT$107.00</td></tr><tr><td>Elan Microelectronics Corp (2458.TW)</td><td>O (10/03/2025)</td><td>NT$183.00</td></tr><tr><td>Espressif Systems (688018.SS)</td><td>O (05/15/2023)</td><td>Rmb125.80</td></tr><tr><td>GigaDevice Semiconductor Beijing Inc (603986.SS)</td><td>O (05/15/2025)</td><td>Rmb550.80</td></tr><tr><td>Macronix International Co Ltd (2337.TW)</td><td>O (09/18/2025)</td><td>NT$138.00</td></tr><tr><td>Montage Technology Co Ltd (6809.HK)</td><td>O (03/18/2026)</td><td>HK$332.20</td></tr><tr><td>Montage Technology Co Ltd (688008.SS)</td><td>O (03/18/2026)</td><td>Rmb252.79</td></tr><tr><td>Novatek (3034.TW)</td><td>U (02/04/2026)</td><td>NT$467.50</td></tr><tr><td>Nuvoton Technology Corporation (4919.TW)</td><td>U (11/10/2025)</td><td>NT$163.50</td></tr><tr><td>Parade Technologies Ltd (4966.TWO)</td><td>O (05/27/2026)</td><td>NT$647.00</td></tr><tr><td>Powerchip Semiconductor Manufacturing Co (6770.TW)</td><td>O (10/27/2025)</td><td>NT$69.00</td></tr><tr><td>Realtek Semiconductor (2379.TW)</td><td>E (01/30/2026)</td><td>NT$756.00</td></tr><tr><td>Shenzhen Goodix Technology Co Ltd (603160.SS)</td><td>U (07/14/2025)</td><td>Rmb55.63</td></tr><tr><td>Winbond Electronics Corp (2344.TW)</td><td>O (05/28/2026)</td><td>NT$167.00</td></tr><tr><td>WPG Holdings (3702.TW)</td><td>O (03/16/2026)</td><td>NT$117.00</td></tr><tr><td>WT Microelectronics Co. Ltd. (3036.TW)</td><td>O (01/27/2026)</td><td>NT$211.00</td></tr><tr><td colspan="3">Duan Liu</td></tr><tr><td>Dosilicon Co Ltd (688110.SS)</td><td>U (09/06/2024)</td><td>Rmb154.15</td></tr><tr><td>Shenzhen Longsys Electronics Co Ltd (301308.SZ)</td><td>E (02/25/2026)</td><td>Rmb522.04</td></tr><tr><td colspan="3">Tiffany Yeh</td></tr><tr><td>AllRing Tech Co. (6187.TWO)</td><td>O (09/23/2025)</td><td>NT$1,035.00</td></tr><tr><td>FOCI Fiber Optic Communications Inc (3363.TWO)</td><td>O (01/15/2025)</td><td>NT$601.00</td></tr><tr><td>Himax Technologies Inc (HIMX.O)</td><td>E (02/04/2026)</td><td>US$15.23</td></tr><tr><td>Hon Precision (7769.TW)</td><td>O (04/17/2026)</td><td>NT$6,705.00</td></tr><tr><td>MPI Corporation (6223.TWO)</td><td>O (04/17/2026)</td><td>NT$6,640.00</td></tr><tr><td>Silicon Motion (SIMO.O)</td><td>O (05/06/2024)</td><td>US$326.35</td></tr><tr><td>WinWay Technology Co Ltd (6515.TW)</td><td>O (04/17/2026)</td><td>NT$7,375.00</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+## © 2026 MS

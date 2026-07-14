@@ -1,0 +1,89 @@
+ZH_A: 今天我们聊一份来自某外资投行的重磅研报，标题叫做“为扩展网络引入更多光”。这个标题听起来就很技术。我想先问你一个最直接的问题：这份报告到底在说什么？
+
+ZH_B: 它在讲一个非常大的趋势。AI 训练集群内部，GPU 之间需要高速互联，这个市场到 2030 年预计会达到 700 亿美元，比一年前的预测翻了四倍多。
+
+ZH_A: 700 亿？翻四倍？为什么一年之间变化这么大？
+
+ZH_B: 核心原因是集群规模在急剧膨胀。去年大家讨论的还是 8 个 GPU 互联，或者一个机柜 72 个 GPU。但到了下一代架构，像 Nvidia 的 Vera Rubin，一个集群可以到 144 个 GPU，Rubin Ultra 是 576 个，而 Feynman 甚至可能超过 1000 个。
+
+ZH_A: 所以集群越大，需要的互联设备和线缆就越多，市场自然就膨胀了。那这里面最大的技术争论是什么？
+
+ZH_B: 就是“铜缆”到底还能用多久。目前机柜内部主要用铜，因为它便宜、功耗低、延迟也低。但随着信号速度越来越快，铜缆的物理极限正在逼近。
+
+ZH_A: 铜的极限？这好像是行业里一个老话题了。
+
+ZH_B: 对，铜缆的“葬礼”已经被推迟了好几次。每次都说要死，但每次又有新技术把它救回来，比如更先进的信号处理芯片、新的调制方式。但这次不一样了。
+
+ZH_A: 为什么这次不一样？
+
+ZH_B: 因为集群正在从单机柜走向多机柜互联。当你要连接几百甚至上千个 GPU 时，铜缆的传输距离和信号质量就撑不住了。这时就需要光，也就是光纤互联。
+
+ZH_A: 所以关键转折点就是“多机柜互联”。那这份报告判断，光什么时候会大规模进入这个领域？
+
+ZH_B: 他们预计 2028 年会有小规模采用，但真正有意义的普及要到 2029 年及以后。而且不是所有公司都会同步走，Nvidia 会领先，其他公司会慢一到两年。
+
+ZH_A: 那这对哪些公司是利好？报告里有提到具体的受益方吗？
+
+ZH_B: 当然。比如做测试设备的 Keysight，因为架构越多样，需要测试的东西就越多。还有几家光学公司，像 Coherent、Lumentum、Corning，它们会是光进入扩展网络后最直接的受益者。Nvidia 本身也是首选标的。
+
+ZH_A: 听起来逻辑很清晰。但这份报告有没有留下一些没有完全解答的问题？
+
+ZH_B: 有，而且很重要。第一个是，铜缆的寿命到底还能延长多久？Broadcom 就认为他们还能用更先进的芯片把铜缆的传输距离推到 6 米以上，这跟 Nvidia 推光的路线图是有冲突的。
+
+ZH_A: 这确实是个关键分歧。那第二个呢？
+
+ZH_B: 第二个是，像 AWS 的 Trainium 和 Google 的 TPU，它们的光互联时间表还很不确定。尤其是 Google，它的架构跟别人完全不同，用的是光路交换机，这可能让它对 CPO 的需求大大推迟。
+
+ZH_A: 所以整个行业并不是一个统一的路线图。
+
+ZH_B: 没错。这份报告的价值就在于，它详细拆解了每一种技术路径和每一家公司的节奏，而不是简单地告诉你“光会赢”或“铜会赢”。
+
+ZH_A: 那如果听众想看到更完整的分析，比如具体的公司评级、时间表、以及每一代架构的详细数据，该去哪里看？
+
+ZH_B: 完整报告里有几十页的详细分析，包括我们刚才提到的所有悬念的展开。建议大家去阅读原报告。
+
+ZH_A: 好的，今天先聊到这里。我们下期再见。
+
+EN_A: Today we are digging into a very detailed research report from a global investment bank. It is called “Bringing More Light to Scale-Up Networks.” The title alone sounds like a big shift is coming. So what is the main thesis here?
+
+EN_B: The report argues that the market for connecting AI accelerators inside a cluster is going to explode. They estimate it will reach 70 billion dollars by 2030. That is more than four times what they predicted just a year ago.
+
+EN_A: Four times? That is a massive revision. What changed so quickly?
+
+EN_B: The main driver is that AI clusters are getting much bigger. Last year, people were talking about connecting 8 GPUs or maybe 72 GPUs in a single rack. Now with Nvidia’s Vera Rubin, you are looking at 144 GPUs in a cluster. Rubin Ultra goes to 576. And Feynman could go over 1,000.
+
+EN_A: So bigger clusters mean more cables and more networking gear. That makes sense. But what is the big technical debate inside this report?
+
+EN_B: It is all about copper versus optics. Right now, inside a rack, copper is the preferred medium. It is cheap, low power, and low latency. But as data rates go higher, copper starts to hit a physical wall.
+
+EN_A: People have been talking about the “copper wall” for years though. Hasn’t copper been saved multiple times by new technology?
+
+EN_B: Exactly. The funeral for copper has been delayed again and again. Better signal processing, new modulation schemes, improved connectors. But this time, the problem is different.
+
+EN_A: How so?
+
+EN_B: Because clusters are moving from single-rack designs to multi-rack architectures. When you need to connect hundreds or even thousands of GPUs across multiple racks, copper simply cannot maintain signal quality over those longer distances. That is when you need optics.
+
+EN_A: So the tipping point is multi-rack connectivity. When does the report expect optics to really enter the scale-up market?
+
+EN_B: They see small adoption starting in 2028. But meaningful volume will not come until 2029 and beyond. And not everyone moves at the same pace. Nvidia is expected to lead, while other players will follow one to two years later.
+
+EN_A: That sounds like a clear roadmap. But are there any big questions the report does not fully answer?
+
+EN_B: Yes, two important ones. First, how much longer can copper really survive? Broadcom believes they can push copper reach beyond six meters with next-generation chips. That directly challenges Nvidia’s push toward optics.
+
+EN_A: That is a real point of tension. What is the second question?
+
+EN_B: The timing for other ecosystems like AWS Trainium and Google TPU is still uncertain. Google in particular uses a completely different architecture with optical circuit switches. That could delay their need for co-packaged optics significantly.
+
+EN_A: So the industry is not moving in lockstep.
+
+EN_B: Exactly. The real value of this report is that it breaks down each technology path and each company’s timeline. It does not just say optics wins or copper wins. It shows you the nuance.
+
+EN_A: If listeners want to see the full analysis, including specific ratings and detailed timelines, where should they go?
+
+EN_B: The full report has dozens of pages with all the details, including the open questions we just mentioned. You should definitely read the original.
+
+EN_A: Great. That is all for today. Thanks for joining us.
+
+EN_B: Thank you.

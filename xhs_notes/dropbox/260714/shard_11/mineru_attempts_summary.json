@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_xvnzxwy3/pdfs/0001-56-MS-Mercedes-Benz Group AG-MBGn.DE-Moving East to keep leading on automobile manufacturing-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xvnzxwy3/pdfs/0002-57-MS-Nanya Technology Corp.-2408.TW-Niche DRAM Upcycle May Extend to 2028- OW-260712.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xvnzxwy3/pdfs/0003-58-MS-Technology - Global Semiconductors The Analog Playbook-2Q26 800v dynamics in play-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xvnzxwy3/pdfs/0004-59-MS-TSMC-2330.TW-US investor feedback into the print- keep OW-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xvnzxwy3/pdfs/0005-60-MS-Technology - North America Bringing More Light to Scale-Up Networks-An Updated Scale-Up Primer-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
