@@ -1,0 +1,4237 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        143,
+                        214,
+                        158
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                143,
+                                214,
+                                158
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        143,
+                                        214,
+                                        158
+                                    ],
+                                    "type": "text",
+                                    "content": "Negotiating Group on Rules"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        149,
+                        191,
+                        444,
+                        206
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                149,
+                                191,
+                                444,
+                                206
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        149,
+                                        191,
+                                        444,
+                                        206
+                                    ],
+                                    "type": "text",
+                                    "content": "NEGOTIATING GROUP ON RULES - FISHERIES SUBSIDIES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        166,
+                        215,
+                        428,
+                        239
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                166,
+                                215,
+                                428,
+                                239
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        166,
+                                        215,
+                                        428,
+                                        239
+                                    ],
+                                    "type": "text",
+                                    "content": "REPORT BY THE CHAIR, H.E. MR. LESLIE RAMSAMMY TO THE NEGOTIATING GROUP ON RULES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        268,
+                        255,
+                        326,
+                        268
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                268,
+                                255,
+                                326,
+                                268
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        268,
+                                        255,
+                                        326,
+                                        268
+                                    ],
+                                    "type": "text",
+                                    "content": "8 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        284,
+                        525,
+                        375
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                284,
+                                525,
+                                375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        284,
+                                        525,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": "Good morning, colleagues, and welcome to our last meeting before the summer break. Before we begin, I would like to share a small milestone that is particularly meaningful to me and to the delegation of Guyana. Last Sunday, 5 July, Guyana marked the 60 "
+                                },
+                                {
+                                    "bbox": [
+                                        67,
+                                        284,
+                                        525,
+                                        375
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{th}"
+                                },
+                                {
+                                    "bbox": [
+                                        67,
+                                        284,
+                                        525,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": " anniversary of its accession as a Contracting Party to the GATT. Guyana joined the GATT just over two months after gaining independence, reflecting an early and deliberate commitment to the principles of the multilateral trading system. I felt compelled to share this occasion because it is a source of pride for me and my country. The decision to join the GATT at such an important moment in our nation's history demonstrated a clear belief in international cooperation and rules-based trade."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        384,
+                        525,
+                        430
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                384,
+                                525,
+                                430
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        384,
+                                        525,
+                                        430
+                                    ],
+                                    "type": "text",
+                                    "content": "As we gather here today, I hope that this anniversary serves as a reminder of the enduring value of the multilateral trading system and inspires us in our ongoing efforts to advance the fisheries subsidies negotiations, demonstrating once again how cooperation, commitment and collective action can deliver meaningful outcomes."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        439,
+                        525,
+                        486
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                439,
+                                525,
+                                486
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        439,
+                                        525,
+                                        486
+                                    ],
+                                    "type": "text",
+                                    "content": "The objective of this meeting is for me to report back on the NGR's activities since April and to announce my plans for the NGR for the remainder of this year, beginning in September. A communication on the first Fish Week was circulated yesterday, and I trust Members have had an opportunity to review it."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        495,
+                        525,
+                        530
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                495,
+                                525,
+                                530
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        495,
+                                        525,
+                                        530
+                                    ],
+                                    "type": "text",
+                                    "content": "You will recall that the Ministerial Decision adopted at MC14 directed us to continue to engage constructively in these negotiations, based on the progress made since MC12, with a view to achieving comprehensive disciplines on fisheries subsidies by MC15."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        539,
+                        525,
+                        565
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                539,
+                                525,
+                                565
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        539,
+                                        525,
+                                        565
+                                    ],
+                                    "type": "text",
+                                    "content": "As a first step in this process, on 29 April, I circulated a high-level Work Plan outlining how I intended to organize and facilitate our work over the course of this year. I think we are off to a good start."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        573,
+                        525,
+                        598
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                573,
+                                525,
+                                598
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        573,
+                                        525,
+                                        598
+                                    ],
+                                    "type": "text",
+                                    "content": "We have held two information sessions: one on the history of the negotiations on 28 May and another on data on fisheries and fisheries subsidies on 25 June."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        608,
+                        525,
+                        666
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                608,
+                                525,
+                                666
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        608,
+                                        525,
+                                        666
+                                    ],
+                                    "type": "text",
+                                    "content": "The session on the history of negotiations highlighted the tremendous work of the NGR over the 25 years of these negotiations. What became apparent from the invited speakers' presentations is that the same set of core issues has remained at the centre of these negotiations for many years. These issues have been thoroughly analysed from different angles, revisited, and discussed across a range of proposals and meeting configurations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        674,
+                        525,
+                        721
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                674,
+                                525,
+                                721
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        674,
+                                        525,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": "As I stated in my remarks at the end of that session, one could say that much of the substance needed to address Members' concerns is already on the table. Therefore, the challenge that is now before us may be less about identifying entirely new elements, and more about finding the right balance and combination of existing ideas that can help us find common ground."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        729,
+                        525,
+                        766
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                729,
+                                525,
+                                766
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        729,
+                                        525,
+                                        766
+                                    ],
+                                    "type": "text",
+                                    "content": "The session on data was a useful reminder that a comprehensive global dataset on fisheries subsidies is still lacking, and that closing this information gap will depend upon Members collectively providing timely and accurate notifications to the WTO."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        64,
+                        46,
+                        126,
+                        104
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                46,
+                                126,
+                                104
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64,
+                                        46,
+                                        126,
+                                        104
+                                    ],
+                                    "type": "text",
+                                    "content": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        133,
+                        58,
+                        257,
+                        91
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                133,
+                                58,
+                                257,
+                                91
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        133,
+                                        58,
+                                        257,
+                                        91
+                                    ],
+                                    "type": "text",
+                                    "content": "WORLD TRADE\nORGANIZATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        469,
+                        58,
+                        524,
+                        71
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                469,
+                                58,
+                                524,
+                                71
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        469,
+                                        58,
+                                        524,
+                                        71
+                                    ],
+                                    "type": "text",
+                                    "content": "TN/RL/40"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "bbox": [
+                        463,
+                        101,
+                        524,
+                        115
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                463,
+                                101,
+                                524,
+                                115
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        463,
+                                        101,
+                                        524,
+                                        115
+                                    ],
+                                    "type": "text",
+                                    "content": "10 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        70,
+                        123,
+                        119,
+                        136
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                123,
+                                119,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        123,
+                                        119,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "(26-4930)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        475,
+                        123,
+                        525,
+                        136
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                475,
+                                123,
+                                525,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        475,
+                                        123,
+                                        525,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "Page: 1/4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        143,
+                        214,
+                        158
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                143,
+                                214,
+                                158
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        143,
+                                        214,
+                                        158
+                                    ],
+                                    "type": "text",
+                                    "content": "Negotiating Group on Rules"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        149,
+                        191,
+                        444,
+                        206
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                149,
+                                191,
+                                444,
+                                206
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        149,
+                                        191,
+                                        444,
+                                        206
+                                    ],
+                                    "type": "text",
+                                    "content": "NEGOTIATING GROUP ON RULES - FISHERIES SUBSIDIES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        166,
+                        215,
+                        428,
+                        239
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                166,
+                                215,
+                                428,
+                                239
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        166,
+                                        215,
+                                        428,
+                                        239
+                                    ],
+                                    "type": "text",
+                                    "content": "REPORT BY THE CHAIR, H.E. MR. LESLIE RAMSAMMY TO THE NEGOTIATING GROUP ON RULES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        268,
+                        255,
+                        326,
+                        268
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                268,
+                                255,
+                                326,
+                                268
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        268,
+                                        255,
+                                        326,
+                                        268
+                                    ],
+                                    "type": "text",
+                                    "content": "8 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        284,
+                        525,
+                        375
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                284,
+                                525,
+                                375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        284,
+                                        525,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": "Good morning, colleagues, and welcome to our last meeting before the summer break. Before we begin, I would like to share a small milestone that is particularly meaningful to me and to the delegation of Guyana. Last Sunday, 5 July, Guyana marked the 60 "
+                                },
+                                {
+                                    "bbox": [
+                                        67,
+                                        284,
+                                        525,
+                                        375
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{th}"
+                                },
+                                {
+                                    "bbox": [
+                                        67,
+                                        284,
+                                        525,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": " anniversary of its accession as a Contracting Party to the GATT. Guyana joined the GATT just over two months after gaining independence, reflecting an early and deliberate commitment to the principles of the multilateral trading system. I felt compelled to share this occasion because it is a source of pride for me and my country. The decision to join the GATT at such an important moment in our nation's history demonstrated a clear belief in international cooperation and rules-based trade."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        384,
+                        525,
+                        430
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                384,
+                                525,
+                                430
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        384,
+                                        525,
+                                        430
+                                    ],
+                                    "type": "text",
+                                    "content": "As we gather here today, I hope that this anniversary serves as a reminder of the enduring value of the multilateral trading system and inspires us in our ongoing efforts to advance the fisheries subsidies negotiations, demonstrating once again how cooperation, commitment and collective action can deliver meaningful outcomes."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        439,
+                        525,
+                        486
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                439,
+                                525,
+                                486
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        439,
+                                        525,
+                                        486
+                                    ],
+                                    "type": "text",
+                                    "content": "The objective of this meeting is for me to report back on the NGR's activities since April and to announce my plans for the NGR for the remainder of this year, beginning in September. A communication on the first Fish Week was circulated yesterday, and I trust Members have had an opportunity to review it."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        495,
+                        525,
+                        530
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                495,
+                                525,
+                                530
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        495,
+                                        525,
+                                        530
+                                    ],
+                                    "type": "text",
+                                    "content": "You will recall that the Ministerial Decision adopted at MC14 directed us to continue to engage constructively in these negotiations, based on the progress made since MC12, with a view to achieving comprehensive disciplines on fisheries subsidies by MC15."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        539,
+                        525,
+                        565
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                539,
+                                525,
+                                565
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        539,
+                                        525,
+                                        565
+                                    ],
+                                    "type": "text",
+                                    "content": "As a first step in this process, on 29 April, I circulated a high-level Work Plan outlining how I intended to organize and facilitate our work over the course of this year. I think we are off to a good start."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        573,
+                        525,
+                        598
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                573,
+                                525,
+                                598
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        573,
+                                        525,
+                                        598
+                                    ],
+                                    "type": "text",
+                                    "content": "We have held two information sessions: one on the history of the negotiations on 28 May and another on data on fisheries and fisheries subsidies on 25 June."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        608,
+                        525,
+                        666
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                608,
+                                525,
+                                666
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        608,
+                                        525,
+                                        666
+                                    ],
+                                    "type": "text",
+                                    "content": "The session on the history of negotiations highlighted the tremendous work of the NGR over the 25 years of these negotiations. What became apparent from the invited speakers' presentations is that the same set of core issues has remained at the centre of these negotiations for many years. These issues have been thoroughly analysed from different angles, revisited, and discussed across a range of proposals and meeting configurations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        674,
+                        525,
+                        721
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                674,
+                                525,
+                                721
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        674,
+                                        525,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": "As I stated in my remarks at the end of that session, one could say that much of the substance needed to address Members' concerns is already on the table. Therefore, the challenge that is now before us may be less about identifying entirely new elements, and more about finding the right balance and combination of existing ideas that can help us find common ground."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        729,
+                        525,
+                        766
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                729,
+                                525,
+                                766
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        729,
+                                        525,
+                                        766
+                                    ],
+                                    "type": "text",
+                                    "content": "The session on data was a useful reminder that a comprehensive global dataset on fisheries subsidies is still lacking, and that closing this information gap will depend upon Members collectively providing timely and accurate notifications to the WTO."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        67,
+                        84,
+                        525,
+                        109
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                84,
+                                525,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        84,
+                                        525,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "Importantly, the session also highlighted that fish stocks continue to decline, underscoring the urgent need to advance our work and deliver meaningful outcomes."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        118,
+                        525,
+                        164
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                118,
+                                525,
+                                164
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        118,
+                                        525,
+                                        164
+                                    ],
+                                    "type": "text",
+                                    "content": "Last week, on 2 July, the NGR also held a thematic session when Indonesia presented its communication in document RD/TN/RL/194. Indonesia explained the views and positions set out in its communication, and Members had an opportunity to exchange views and engage with Indonesia on the elements contained in that document."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        174,
+                        525,
+                        198
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                174,
+                                525,
+                                198
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        174,
+                                        525,
+                                        198
+                                    ],
+                                    "type": "text",
+                                    "content": "I would like to once again thank the Indonesian delegation and its representatives from capital for its informative presentation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        208,
+                        525,
+                        243
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                208,
+                                525,
+                                243
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        208,
+                                        525,
+                                        243
+                                    ],
+                                    "type": "text",
+                                    "content": "All three sessions were very lively and well attended, and I appreciated the candid and constructive engagement of Members throughout. The feedback that I have received so far from Members has been very positive."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        253,
+                        525,
+                        276
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                253,
+                                525,
+                                276
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        253,
+                                        525,
+                                        276
+                                    ],
+                                    "type": "text",
+                                    "content": "Overall, my sense is that these three sessions have helped to create positive momentum, which I would like to harness and build on as we move forward."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        286,
+                        525,
+                        354
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                286,
+                                525,
+                                354
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        286,
+                                        525,
+                                        354
+                                    ],
+                                    "type": "text",
+                                    "content": "But this is just the beginning. At this stage, it is important that we turn our attention to the coming months. As mentioned in the Work Plan, I intend to convene three Fish Weeks after the summer break to explore Members' views on what could form the basis and foundation for our negotiations commencing in 2027. My aim is that, by December, we will have developed a shared understanding of the framework for those negotiations and the path to be pursued as we, hopefully, begin to focus our work on negotiating a text."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        364,
+                        524,
+                        388
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                364,
+                                524,
+                                388
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        364,
+                                        524,
+                                        388
+                                    ],
+                                    "type": "text",
+                                    "content": "As I have already noted, Ministers at MC14 directed us to build on the progress made since MC12. One major question before us is: what is that \"progress\"?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        397,
+                        525,
+                        444
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                397,
+                                525,
+                                444
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        397,
+                                        525,
+                                        444
+                                    ],
+                                    "type": "text",
+                                    "content": "What we know is that, in addition to adopting the AFS, Ministers at MC12 directed the NGR to continue negotiations based on the outstanding issues in documents WT/MIN(21)/W/5 and WT/MIN(22)/W/20. Similarly, we also know that this work led to various iterations of a negotiating text, which were produced and intensively debated and discussed both before and after MC13."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        454,
+                        525,
+                        487
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                454,
+                                525,
+                                487
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        454,
+                                        525,
+                                        487
+                                    ],
+                                    "type": "text",
+                                    "content": "I am sure that Members will have different perspectives on what \"progress\" means and where it has been achieved. And it is essential that the NGR now begins to hear and explore the full range of views."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        498,
+                        525,
+                        523
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                498,
+                                525,
+                                523
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        498,
+                                        525,
+                                        523
+                                    ],
+                                    "type": "text",
+                                    "content": "To this end, I intend to start our work by asking Members to elaborate what they consider to be the \"progress\" achieved since MC12 that should form the basis of our continued negotiations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        532,
+                        525,
+                        600
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                532,
+                                525,
+                                600
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        532,
+                                        525,
+                                        600
+                                    ],
+                                    "type": "text",
+                                    "content": "You will have seen my communication detailing and convening our first Fish Week. I would like to underline that, at this juncture, our focus should be on taking a first step in a process that should, in due course, lead us towards the conclusion of our negotiations. This is not the moment for decision-making. Rather, it is an opportunity for Members to brainstorm together, and this is why I request you to come prepared for genuine exchanges aimed at establishing some common ground to guide our work going forward."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        609,
+                        525,
+                        655
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                609,
+                                525,
+                                655
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        609,
+                                        525,
+                                        655
+                                    ],
+                                    "type": "text",
+                                    "content": "To this end, I have scheduled an opening HoDs meeting at the beginning of the week and a closing HoDs meeting at the end of the week. The days in between will be dedicated to thematic sessions focused on the question I just outlined, as well as time for bilateral consultations and meetings in other configurations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        665,
+                        525,
+                        689
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                665,
+                                525,
+                                689
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        665,
+                                        525,
+                                        689
+                                    ],
+                                    "type": "text",
+                                    "content": "As mentioned, the details of these sessions were circulated yesterday. An outline of what we will pursue in Fish Weeks 2 and 3 will be circulated in due course as we make progress."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        699,
+                        525,
+                        745
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                699,
+                                525,
+                                745
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        699,
+                                        525,
+                                        745
+                                    ],
+                                    "type": "text",
+                                    "content": "I would like to take this opportunity to encourage all Members, and in particular those considering new approaches, to put forward their ideas in concrete terms already ahead of Fish Week 1, in the form of papers or proposals that can be discussed openly by the full membership. Only by listening to each other and engaging in frank exchanges we will be able to reach our common goal."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        755,
+                        524,
+                        768
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                755,
+                                524,
+                                768
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        755,
+                                        524,
+                                        768
+                                    ],
+                                    "type": "text",
+                                    "content": "This concludes my report and my explanation of the next steps. I look forward to hearing your views."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        273,
+                        35,
+                        320,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                273,
+                                35,
+                                320,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        273,
+                                        35,
+                                        320,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "TN/RL/40"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        291,
+                        58,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                291,
+                                58,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        291,
+                                        58,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        67,
+                        84,
+                        525,
+                        109
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                84,
+                                525,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        84,
+                                        525,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "Importantly, the session also highlighted that fish stocks continue to decline, underscoring the urgent need to advance our work and deliver meaningful outcomes."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        118,
+                        525,
+                        164
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                118,
+                                525,
+                                164
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        118,
+                                        525,
+                                        164
+                                    ],
+                                    "type": "text",
+                                    "content": "Last week, on 2 July, the NGR also held a thematic session when Indonesia presented its communication in document RD/TN/RL/194. Indonesia explained the views and positions set out in its communication, and Members had an opportunity to exchange views and engage with Indonesia on the elements contained in that document."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        174,
+                        525,
+                        198
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                174,
+                                525,
+                                198
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        174,
+                                        525,
+                                        198
+                                    ],
+                                    "type": "text",
+                                    "content": "I would like to once again thank the Indonesian delegation and its representatives from capital for its informative presentation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        208,
+                        525,
+                        243
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                208,
+                                525,
+                                243
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        208,
+                                        525,
+                                        243
+                                    ],
+                                    "type": "text",
+                                    "content": "All three sessions were very lively and well attended, and I appreciated the candid and constructive engagement of Members throughout. The feedback that I have received so far from Members has been very positive."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        253,
+                        525,
+                        276
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                253,
+                                525,
+                                276
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        253,
+                                        525,
+                                        276
+                                    ],
+                                    "type": "text",
+                                    "content": "Overall, my sense is that these three sessions have helped to create positive momentum, which I would like to harness and build on as we move forward."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        286,
+                        525,
+                        354
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                286,
+                                525,
+                                354
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        286,
+                                        525,
+                                        354
+                                    ],
+                                    "type": "text",
+                                    "content": "But this is just the beginning. At this stage, it is important that we turn our attention to the coming months. As mentioned in the Work Plan, I intend to convene three Fish Weeks after the summer break to explore Members' views on what could form the basis and foundation for our negotiations commencing in 2027. My aim is that, by December, we will have developed a shared understanding of the framework for those negotiations and the path to be pursued as we, hopefully, begin to focus our work on negotiating a text."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        364,
+                        524,
+                        388
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                364,
+                                524,
+                                388
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        364,
+                                        524,
+                                        388
+                                    ],
+                                    "type": "text",
+                                    "content": "As I have already noted, Ministers at MC14 directed us to build on the progress made since MC12. One major question before us is: what is that \"progress\"?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        397,
+                        525,
+                        444
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                397,
+                                525,
+                                444
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        397,
+                                        525,
+                                        444
+                                    ],
+                                    "type": "text",
+                                    "content": "What we know is that, in addition to adopting the AFS, Ministers at MC12 directed the NGR to continue negotiations based on the outstanding issues in documents WT/MIN(21)/W/5 and WT/MIN(22)/W/20. Similarly, we also know that this work led to various iterations of a negotiating text, which were produced and intensively debated and discussed both before and after MC13."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        454,
+                        525,
+                        487
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                454,
+                                525,
+                                487
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        454,
+                                        525,
+                                        487
+                                    ],
+                                    "type": "text",
+                                    "content": "I am sure that Members will have different perspectives on what \"progress\" means and where it has been achieved. And it is essential that the NGR now begins to hear and explore the full range of views."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        498,
+                        525,
+                        523
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                498,
+                                525,
+                                523
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        498,
+                                        525,
+                                        523
+                                    ],
+                                    "type": "text",
+                                    "content": "To this end, I intend to start our work by asking Members to elaborate what they consider to be the \"progress\" achieved since MC12 that should form the basis of our continued negotiations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        532,
+                        525,
+                        600
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                532,
+                                525,
+                                600
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        532,
+                                        525,
+                                        600
+                                    ],
+                                    "type": "text",
+                                    "content": "You will have seen my communication detailing and convening our first Fish Week. I would like to underline that, at this juncture, our focus should be on taking a first step in a process that should, in due course, lead us towards the conclusion of our negotiations. This is not the moment for decision-making. Rather, it is an opportunity for Members to brainstorm together, and this is why I request you to come prepared for genuine exchanges aimed at establishing some common ground to guide our work going forward."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        609,
+                        525,
+                        655
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                609,
+                                525,
+                                655
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        609,
+                                        525,
+                                        655
+                                    ],
+                                    "type": "text",
+                                    "content": "To this end, I have scheduled an opening HoDs meeting at the beginning of the week and a closing HoDs meeting at the end of the week. The days in between will be dedicated to thematic sessions focused on the question I just outlined, as well as time for bilateral consultations and meetings in other configurations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        665,
+                        525,
+                        689
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                665,
+                                525,
+                                689
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        665,
+                                        525,
+                                        689
+                                    ],
+                                    "type": "text",
+                                    "content": "As mentioned, the details of these sessions were circulated yesterday. An outline of what we will pursue in Fish Weeks 2 and 3 will be circulated in due course as we make progress."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        699,
+                        525,
+                        745
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                699,
+                                525,
+                                745
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        699,
+                                        525,
+                                        745
+                                    ],
+                                    "type": "text",
+                                    "content": "I would like to take this opportunity to encourage all Members, and in particular those considering new approaches, to put forward their ideas in concrete terms already ahead of Fish Week 1, in the form of papers or proposals that can be discussed openly by the full membership. Only by listening to each other and engaging in frank exchanges we will be able to reach our common goal."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        755,
+                        524,
+                        768
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                755,
+                                524,
+                                768
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        755,
+                                        524,
+                                        768
+                                    ],
+                                    "type": "text",
+                                    "content": "This concludes my report and my explanation of the next steps. I look forward to hearing your views."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        84,
+                        505,
+                        96
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                84,
+                                505,
+                                96
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        84,
+                                        505,
+                                        96
+                                    ],
+                                    "type": "text",
+                                    "content": "And in that regard, I would now like to open the floor. Thank you very much. The floor is open."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        252,
+                        107,
+                        342,
+                        120
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                252,
+                                107,
+                                342,
+                                120
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        252,
+                                        107,
+                                        342,
+                                        120
+                                    ],
+                                    "type": "text",
+                                    "content": "[floor to Members]"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        69,
+                        130,
+                        141,
+                        142
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                130,
+                                141,
+                                142
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        130,
+                                        141,
+                                        142
+                                    ],
+                                    "type": "text",
+                                    "content": "CONCLUSION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        153,
+                        238,
+                        166
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                153,
+                                238,
+                                166
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        153,
+                                        238,
+                                        166
+                                    ],
+                                    "type": "text",
+                                    "content": "Thank you all for your interventions."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        176,
+                        525,
+                        232
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                176,
+                                525,
+                                232
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        176,
+                                        525,
+                                        232
+                                    ],
+                                    "type": "text",
+                                    "content": "I will be circulating my transparency report from this morning. Note that the programme for Fish Week 2 will depend on the outcome of Fish Week 1 and will be circulated thereafter. Once again, I can only encourage you to reflect on the way forward during the summer break and, for those of you who think you can bring something new to advance the negotiations, to put your ideas on paper. We should all be prepared for an open and incisive discussion in September."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        243,
+                        525,
+                        266
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                243,
+                                525,
+                                266
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        243,
+                                        525,
+                                        266
+                                    ],
+                                    "type": "text",
+                                    "content": "It will be remiss of me were I not to attempt to give some clarification and to respond to some of the observations made."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        277,
+                        245,
+                        289
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                277,
+                                245,
+                                289
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        277,
+                                        245,
+                                        289
+                                    ],
+                                    "type": "text",
+                                    "content": "Deadlines for Members' Proposals"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        86,
+                        300,
+                        443,
+                        312
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                300,
+                                443,
+                                312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        300,
+                                        443,
+                                        312
+                                    ],
+                                    "type": "text",
+                                    "content": "- There are no specific deadlines for the submission of Members' proposals."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        318,
+                        524,
+                        353
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                318,
+                                524,
+                                353
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        318,
+                                        524,
+                                        353
+                                    ],
+                                    "type": "text",
+                                    "content": "- However, if Members wish their proposals to receive thorough consideration and allow sufficient time for review and engagement by others, they are encouraged to circulate them as early as possible."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        363,
+                        182,
+                        375
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                363,
+                                182,
+                                375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        363,
+                                        182,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": "Fish Week 1 Sessions"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        86,
+                        386,
+                        524,
+                        411
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                386,
+                                524,
+                                411
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        386,
+                                        524,
+                                        411
+                                    ],
+                                    "type": "text",
+                                    "content": "- All thematic sessions and Heads of Delegation meetings scheduled during Fish Week 1 will be open to all Members."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        416,
+                        524,
+                        439
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                416,
+                                524,
+                                439
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        416,
+                                        524,
+                                        439
+                                    ],
+                                    "type": "text",
+                                    "content": "- This approach is intended to promote transparency, inclusiveness, and broad participation in the discussions."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        445,
+                        525,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                445,
+                                525,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        445,
+                                        525,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "- It is my hope that Members will use all the sessions to interact with each other. Hence, I have provided focused questions to facilitate such discussions. Those are not written in stone and will not be the only ones in our process."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        489,
+                        295,
+                        502
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                489,
+                                295,
+                                502
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        489,
+                                        295,
+                                        502
+                                    ],
+                                    "type": "text",
+                                    "content": "Special and Differential Treatment Sessions"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        86,
+                        513,
+                        524,
+                        536
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                513,
+                                524,
+                                536
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        513,
+                                        524,
+                                        536
+                                    ],
+                                    "type": "text",
+                                    "content": "- A dedicated morning session will be reserved for discussions on Special and Differential Treatment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        543,
+                        524,
+                        577
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                543,
+                                524,
+                                577
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        543,
+                                        524,
+                                        577
+                                    ],
+                                    "type": "text",
+                                    "content": "- We all know that S&DT is very important and an integral part of these negotiations. Discussions on S&DT are therefore expected to continue throughout the process as negotiations progress."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        587,
+                        288,
+                        599
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                587,
+                                288,
+                                599
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        587,
+                                        288,
+                                        599
+                                    ],
+                                    "type": "text",
+                                    "content": "Member-Specific Sessions and Side Events"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        87,
+                        611,
+                        505,
+                        623
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                87,
+                                611,
+                                505,
+                                623
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        611,
+                                        505,
+                                        623
+                                    ],
+                                    "type": "text",
+                                    "content": "- The programme allocates significant time for \"consultations in different configurations\"."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        88,
+                        629,
+                        388,
+                        641
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                629,
+                                388,
+                                641
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        629,
+                                        388,
+                                        641
+                                    ],
+                                    "type": "text",
+                                    "content": "• These time slots provide Members with flexibility to organize:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        123,
+                        646,
+                        231,
+                        657
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                123,
+                                646,
+                                231,
+                                657
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        646,
+                                        231,
+                                        657
+                                    ],
+                                    "type": "text",
+                                    "content": "○ Bilateral meetings;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        123,
+                        657,
+                        350,
+                        668
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                123,
+                                657,
+                                350,
+                                668
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        657,
+                                        350,
+                                        668
+                                    ],
+                                    "type": "text",
+                                    "content": "○ Member-specific discussions or sessions; and"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 22,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        123,
+                        669,
+                        201,
+                        679
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                123,
+                                669,
+                                201,
+                                679
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        669,
+                                        201,
+                                        679
+                                    ],
+                                    "type": "text",
+                                    "content": "- Side events."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        686,
+                        524,
+                        709
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                87,
+                                686,
+                                524,
+                                709
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        686,
+                                        524,
+                                        709
+                                    ],
+                                    "type": "text",
+                                    "content": "- Members are encouraged to make use of these opportunities to advance discussions and engage with interested delegations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 24,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        719,
+                        525,
+                        754
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                719,
+                                525,
+                                754
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        719,
+                                        525,
+                                        754
+                                    ],
+                                    "type": "text",
+                                    "content": "I want to assure you I am listening. I heard those Members who passionately spoke about doing the same thing and expect different results. At the same time, I heard Members who caution us not to throw the baby out with the bathwater. That will be our challenge: how not to do the same thing"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        274,
+                        35,
+                        320,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                274,
+                                35,
+                                320,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        274,
+                                        35,
+                                        320,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "TN/RL/40"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        292,
+                        58,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                292,
+                                58,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        292,
+                                        58,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        84,
+                        505,
+                        96
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                84,
+                                505,
+                                96
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        84,
+                                        505,
+                                        96
+                                    ],
+                                    "type": "text",
+                                    "content": "And in that regard, I would now like to open the floor. Thank you very much. The floor is open."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        252,
+                        107,
+                        342,
+                        120
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                252,
+                                107,
+                                342,
+                                120
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        252,
+                                        107,
+                                        342,
+                                        120
+                                    ],
+                                    "type": "text",
+                                    "content": "[floor to Members]"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        69,
+                        130,
+                        141,
+                        142
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                130,
+                                141,
+                                142
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        130,
+                                        141,
+                                        142
+                                    ],
+                                    "type": "text",
+                                    "content": "CONCLUSION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        153,
+                        238,
+                        166
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                153,
+                                238,
+                                166
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        153,
+                                        238,
+                                        166
+                                    ],
+                                    "type": "text",
+                                    "content": "Thank you all for your interventions."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        176,
+                        525,
+                        232
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                176,
+                                525,
+                                232
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        176,
+                                        525,
+                                        232
+                                    ],
+                                    "type": "text",
+                                    "content": "I will be circulating my transparency report from this morning. Note that the programme for Fish Week 2 will depend on the outcome of Fish Week 1 and will be circulated thereafter. Once again, I can only encourage you to reflect on the way forward during the summer break and, for those of you who think you can bring something new to advance the negotiations, to put your ideas on paper. We should all be prepared for an open and incisive discussion in September."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        243,
+                        525,
+                        266
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                243,
+                                525,
+                                266
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        243,
+                                        525,
+                                        266
+                                    ],
+                                    "type": "text",
+                                    "content": "It will be remiss of me were I not to attempt to give some clarification and to respond to some of the observations made."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        277,
+                        245,
+                        289
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                277,
+                                245,
+                                289
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        277,
+                                        245,
+                                        289
+                                    ],
+                                    "type": "text",
+                                    "content": "Deadlines for Members' Proposals"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        86,
+                        300,
+                        443,
+                        312
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                300,
+                                443,
+                                312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        300,
+                                        443,
+                                        312
+                                    ],
+                                    "type": "text",
+                                    "content": "- There are no specific deadlines for the submission of Members' proposals."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        318,
+                        524,
+                        353
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                318,
+                                524,
+                                353
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        318,
+                                        524,
+                                        353
+                                    ],
+                                    "type": "text",
+                                    "content": "- However, if Members wish their proposals to receive thorough consideration and allow sufficient time for review and engagement by others, they are encouraged to circulate them as early as possible."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        363,
+                        182,
+                        375
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                363,
+                                182,
+                                375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        363,
+                                        182,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": "Fish Week 1 Sessions"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        86,
+                        386,
+                        524,
+                        411
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                386,
+                                524,
+                                411
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        386,
+                                        524,
+                                        411
+                                    ],
+                                    "type": "text",
+                                    "content": "- All thematic sessions and Heads of Delegation meetings scheduled during Fish Week 1 will be open to all Members."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        416,
+                        524,
+                        439
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                416,
+                                524,
+                                439
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        416,
+                                        524,
+                                        439
+                                    ],
+                                    "type": "text",
+                                    "content": "- This approach is intended to promote transparency, inclusiveness, and broad participation in the discussions."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        445,
+                        525,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                445,
+                                525,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        445,
+                                        525,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "- It is my hope that Members will use all the sessions to interact with each other. Hence, I have provided focused questions to facilitate such discussions. Those are not written in stone and will not be the only ones in our process."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        489,
+                        295,
+                        502
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                489,
+                                295,
+                                502
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        489,
+                                        295,
+                                        502
+                                    ],
+                                    "type": "text",
+                                    "content": "Special and Differential Treatment Sessions"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        86,
+                        513,
+                        524,
+                        536
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                513,
+                                524,
+                                536
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        513,
+                                        524,
+                                        536
+                                    ],
+                                    "type": "text",
+                                    "content": "- A dedicated morning session will be reserved for discussions on Special and Differential Treatment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        543,
+                        524,
+                        577
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                543,
+                                524,
+                                577
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        543,
+                                        524,
+                                        577
+                                    ],
+                                    "type": "text",
+                                    "content": "- We all know that S&DT is very important and an integral part of these negotiations. Discussions on S&DT are therefore expected to continue throughout the process as negotiations progress."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        587,
+                        288,
+                        599
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                587,
+                                288,
+                                599
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        587,
+                                        288,
+                                        599
+                                    ],
+                                    "type": "text",
+                                    "content": "Member-Specific Sessions and Side Events"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        87,
+                        611,
+                        505,
+                        623
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                87,
+                                611,
+                                505,
+                                623
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        611,
+                                        505,
+                                        623
+                                    ],
+                                    "type": "text",
+                                    "content": "- The programme allocates significant time for \"consultations in different configurations\"."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        88,
+                        629,
+                        388,
+                        641
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                629,
+                                388,
+                                641
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        629,
+                                        388,
+                                        641
+                                    ],
+                                    "type": "text",
+                                    "content": "• These time slots provide Members with flexibility to organize:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        123,
+                        646,
+                        231,
+                        657
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                123,
+                                646,
+                                231,
+                                657
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        646,
+                                        231,
+                                        657
+                                    ],
+                                    "type": "text",
+                                    "content": "○ Bilateral meetings;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        123,
+                        657,
+                        350,
+                        668
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                123,
+                                657,
+                                350,
+                                668
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        657,
+                                        350,
+                                        668
+                                    ],
+                                    "type": "text",
+                                    "content": "○ Member-specific discussions or sessions; and"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 22,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        123,
+                        669,
+                        201,
+                        679
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                123,
+                                669,
+                                201,
+                                679
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        669,
+                                        201,
+                                        679
+                                    ],
+                                    "type": "text",
+                                    "content": "- Side events."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        686,
+                        524,
+                        709
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                87,
+                                686,
+                                524,
+                                709
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        686,
+                                        524,
+                                        709
+                                    ],
+                                    "type": "text",
+                                    "content": "- Members are encouraged to make use of these opportunities to advance discussions and engage with interested delegations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 24,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        719,
+                        525,
+                        754
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                719,
+                                525,
+                                754
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        719,
+                                        525,
+                                        754
+                                    ],
+                                    "type": "text",
+                                    "content": "I want to assure you I am listening. I heard those Members who passionately spoke about doing the same thing and expect different results. At the same time, I heard Members who caution us not to throw the baby out with the bathwater. That will be our challenge: how not to do the same thing"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                68,
+                                84,
+                                524,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        84,
+                                        524,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "over and over but at the same time not to disregard the substantive amount of issues we agree on and that could serve as the basis for expanding agreements.",
+                                    "cross_page": true
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        84,
+                        524,
+                        109
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                84,
+                                524,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        84,
+                                        524,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "over and over but at the same time not to disregard the substantive amount of issues we agree on and that could serve as the basis for expanding agreements."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        118,
+                        525,
+                        208
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                118,
+                                525,
+                                208
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        118,
+                                        525,
+                                        208
+                                    ],
+                                    "type": "text",
+                                    "content": "I do hear the Members cautioning us that the world is not perfect, and we should not expect a perfect agreement. In the pursuit of perfection, we find an excuse for paralysis. I hear these things, and we will try our best to balance all these cautionary warnings. The road to success is not a smooth one. One overriding topic that came up again is that we all embrace and accept that we must have an agreement. It is critical that we do. We all embrace that and we are on the same page, on the same road, on the same journey. We all believe that it is possible to achieve an agreement, and we all believe that the elements are already on the table, that we have to find a way of preserving our national interests, while at the same time working together for a better world."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        217,
+                        320,
+                        230
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                217,
+                                320,
+                                230
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        217,
+                                        320,
+                                        230
+                                    ],
+                                    "type": "text",
+                                    "content": "I thank you all for being here, and I will see you soon."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        274,
+                        35,
+                        320,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                274,
+                                35,
+                                320,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        274,
+                                        35,
+                                        320,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "TN/RL/40"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        292,
+                        58,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                292,
+                                58,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        292,
+                                        58,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        84,
+                        524,
+                        109
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 2,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        68,
+                        118,
+                        525,
+                        208
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                118,
+                                525,
+                                208
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        118,
+                                        525,
+                                        208
+                                    ],
+                                    "type": "text",
+                                    "content": "I do hear the Members cautioning us that the world is not perfect, and we should not expect a perfect agreement. In the pursuit of perfection, we find an excuse for paralysis. I hear these things, and we will try our best to balance all these cautionary warnings. The road to success is not a smooth one. One overriding topic that came up again is that we all embrace and accept that we must have an agreement. It is critical that we do. We all embrace that and we are on the same page, on the same road, on the same journey. We all believe that it is possible to achieve an agreement, and we all believe that the elements are already on the table, that we have to find a way of preserving our national interests, while at the same time working together for a better world."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        217,
+                        320,
+                        230
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                217,
+                                320,
+                                230
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        217,
+                                        320,
+                                        230
+                                    ],
+                                    "type": "text",
+                                    "content": "I thank you all for being here, and I will see you soon."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

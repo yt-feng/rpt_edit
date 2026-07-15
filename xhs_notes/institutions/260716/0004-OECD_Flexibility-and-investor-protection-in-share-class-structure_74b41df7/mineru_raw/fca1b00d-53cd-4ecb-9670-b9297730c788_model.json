@@ -1,0 +1,5070 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.037,
+                0.057,
+                0.196,
+                0.096
+            ],
+            "angle": 0,
+            "content": "OECD\nBETTER POLICIES FOR BETTER LIVES"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.303,
+                0.043,
+                0.733,
+                0.106
+            ],
+            "angle": 0,
+            "content": "Policy Brief"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.124,
+                0.184,
+                0.792,
+                0.262
+            ],
+            "angle": 0,
+            "content": "Flexibility and investor protection in share class structures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.779,
+                0.31,
+                0.869,
+                0.327
+            ],
+            "angle": 0,
+            "content": "15 July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.337,
+                0.294,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Key messages"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.382,
+                0.881,
+                0.431
+            ],
+            "angle": 0,
+            "content": "- The one-share-one-vote model links voting power to economic ownership and has been the traditional approach to shareholder voting. However, flexible voting structures have deep historical roots and are increasingly accepted across many jurisdictions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.433,
+                0.881,
+                0.48
+            ],
+            "angle": 0,
+            "content": "- Global regulatory trends show growing flexibility: most jurisdictions allow non-voting shares and 60% permit shares with multiple-voting power. Regulatory competition and the need to attract innovative companies to public markets have influenced this shift.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.483,
+                0.881,
+                0.546
+            ],
+            "angle": 0,
+            "content": "- Flexible equity structures can support capital market development, innovation and long-term growth. However, they may also amplify governance risks that already exist in companies with a single share class, such as entrenchment and tunneling, particularly in jurisdictions where minority shareholder protection is less developed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.548,
+                0.745,
+                0.565
+            ],
+            "angle": 0,
+            "content": "- Safeguards can help balance flexibility with investor protection, including by:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.17,
+                0.567,
+                0.881,
+                0.599
+            ],
+            "angle": 0,
+            "content": "o supporting disclosure requirements by controlling shareholders, majority-abuse clauses and oversight of related-party transactions",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.17,
+                0.602,
+                0.88,
+                0.633
+            ],
+            "angle": 0,
+            "content": "moderating controlling shareholders' rights, for example through sunset clauses for multiple-voting shares",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.17,
+                0.636,
+                0.88,
+                0.667
+            ],
+            "angle": 0,
+            "content": "- protecting low- or non-voting shareholders, for example through qualified majority approval in matters affecting their enhanced economic rights.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.67,
+                0.882,
+                0.765
+            ],
+            "angle": 0,
+            "content": "- Flexible equity structures vary in design but share a common objective: enabling companies to tailor control and equity structures to their ownership profiles and strategic needs. Divergent rules may foster disparate approaches among jurisdictions on issues such as multiple-voting and non-voting shares. Policymakers may want to consider regulatory frameworks focused on transparency, fairness and safeguards, rather than promoting specific capital structures. This can support market attractiveness and efficiency while protecting investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.797,
+                0.284,
+                0.815
+            ],
+            "angle": 0,
+            "content": "What's the issue?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.83,
+                0.894,
+                0.879
+            ],
+            "angle": 0,
+            "content": "The debate over the one-share-one-vote model versus more flexible equity structures raises a fundamental policy question: should voting power strictly follow equity ownership, or can deviations from this principle improve corporate performance, capital formation and market outcomes?",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.926,
+                0.687,
+                0.941
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.185,
+                0.792,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.228,
+                0.538,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.779,
+                0.312,
+                0.868,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.336,
+                0.295,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.383,
+                0.88,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.398,
+                0.878,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.415,
+                0.709,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.434,
+                0.878,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.449,
+                0.88,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.465,
+                0.661,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.484,
+                0.878,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.499,
+                0.878,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.515,
+                0.878,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.53,
+                0.542,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.546,
+                0.745,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.571,
+                0.189,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.199,
+                0.567,
+                0.88,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.584,
+                0.486,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.604,
+                0.196,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.2,
+                0.602,
+                0.878,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.201,
+                0.617,
+                0.306,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.637,
+                0.878,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.201,
+                0.652,
+                0.588,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.671,
+                0.879,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.687,
+                0.88,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.702,
+                0.879,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.717,
+                0.879,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.734,
+                0.878,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.748,
+                0.732,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.798,
+                0.28,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.832,
+                0.89,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.847,
+                0.89,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.863,
+                0.77,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.075,
+                0.894,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.895,
+                0.188
+            ],
+            "angle": 0,
+            "content": "The one-share-one-vote model entails that voting power is proportional to economic ownership. Under this model, shareholders who bear the economic risk of the residual value of a company's cashflows exercise a corresponding degree of control. This corporate governance structure has been often associated with alignment of voting power with economic interest among investors, transparency in decision making and the mitigation of agency problems between controlling and minority shareholders.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.193,
+                0.895,
+                0.303
+            ],
+            "angle": 0,
+            "content": "Differentiated voting structures are not new. The French Code de Commerce of 1807 already allowed exceptions (Ventoruzzo, 2015[1]). Over time, however, many jurisdictions moved in the opposite direction, tightening rules or banning such structures altogether. In the United States, for example, the New York Stock Exchange barred dual-class share companies from 1940 to 1986, covering both multiple-voting and non-voting shares. Similar restrictions appeared elsewhere, driven by concerns that unequal voting rights could undermine shareholder protections and corporate accountability (Ghezzi, Mosca and Passador, 2022[2]; Hopt and Kals, 2024[3]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.308,
+                0.895,
+                0.434
+            ],
+            "angle": 0,
+            "content": "In recent years, however, a growing number of jurisdictions have moved away from strict adherence to the one-share-one-vote principle and have embraced more flexible equity structures. These arrangements are an expression of contractual freedom in corporate law, allowing companies to tailor their governance and control structures to company-specific characteristics, ownership profiles or strategic needs. The G20/OECD Principles of Corporate Governance acknowledge that companies may issue different classes of shares, as long as shareholders within each class are treated equally, that the use of such structures is disclosed, and that any changes in economic or voting rights are subject to approval by those classes of shares that are negatively affected (OECD, 2023[4])",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.439,
+                0.895,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Evidence from the OECD Corporate Governance Factbook 2025 suggests that such flexibility is widespread: no less than \\(90\\%\\) of jurisdictions allow companies to issue shares with no voting rights (except for limited items). Ninety-two per cent also permit listed companies to issue shares with preferential rights to dividends, with some jurisdictions limiting them to a certain percentage of the equity capital (Figure 1). In addition, \\(60\\%\\) of jurisdictions now allow companies to issue shares with different voting power, up from \\(44\\%\\) in 2020 (Figure 2). Examples of countries that have recently updated their regulatory frameworks to permit shares with multiple-voting rights include the People's Republic of China, Ireland, Mexico and Saudi Arabia (OECD, 2025[5]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.569,
+                0.895,
+                0.634
+            ],
+            "angle": 0,
+            "content": "More flexible equity capital structures, including non-voting shares and multiple-voting rights, are increasingly used by publicly traded companies in several markets. Since the early 2000s, a growing number of new listed companies, particularly in innovation-driven sectors, have adopted differentiated voting structures at the time of their initial public offerings (Tallarita, 2024[6]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.638,
+                0.895,
+                0.701
+            ],
+            "angle": 0,
+            "content": "Policymakers may want to also consider which safeguards can effectively manage the governance risks that unequal voting structures may enhance. The challenge is to increase market efficiency by encouraging competitiveness, flexibility and market access while maintaining investor protection, accountability, and trust.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.688,
+                0.929
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.11,
+                0.891,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.125,
+                0.891,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.141,
+                0.889,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.158,
+                0.889,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.174,
+                0.711,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.195,
+                0.891,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.21,
+                0.889,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.226,
+                0.891,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.241,
+                0.891,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.257,
+                0.889,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.271,
+                0.889,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.288,
+                0.342,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.31,
+                0.889,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.324,
+                0.891,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.341,
+                0.891,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.357,
+                0.889,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.371,
+                0.892,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.387,
+                0.889,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.403,
+                0.891,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.417,
+                0.57,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.439,
+                0.891,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.455,
+                0.891,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.47,
+                0.891,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.486,
+                0.889,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.501,
+                0.891,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.516,
+                0.891,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.533,
+                0.891,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.548,
+                0.286,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.57,
+                0.891,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.586,
+                0.891,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.602,
+                0.891,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.617,
+                0.671,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.64,
+                0.889,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.655,
+                0.891,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.671,
+                0.889,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.687,
+                0.147,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.075,
+                0.894,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 3"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.107,
+                0.582,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Figure 1. Issuance of shares with limited or no voting rights"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.179,
+                0.146,
+                0.83,
+                0.437
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.104,
+                0.449,
+                0.894,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Note: Based on 52 jurisdictions. For the category “Issuing shares with no voting rights except for limited items” data are presented for the 51 jurisdictions which specify whether the category is allowed or not. For the category “Issuing shares without voting rights and with preferential rights to dividends” data are presented for 51 jurisdictions which specify whether the category is allowed or not for the category “Issuing shares without voting rights and without preferential rights to dividends” data are presented for the 40 jurisdictions that specify whether the category is allowed or not."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.514,
+                0.704,
+                0.53
+            ],
+            "angle": 0,
+            "content": "Source: OECD (2025[5]), OECD Corporate Governance Factbook 2025, https://doi.org/10.1787/f4f43735-en.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.556,
+                0.836,
+                0.574
+            ],
+            "angle": 0,
+            "content": "Potential benefits and risks associated with different share class structures"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.59,
+                0.881,
+                0.608
+            ],
+            "angle": 0,
+            "content": "What are the potential benefits of flexible equity structures and multiple-voting shares?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.618,
+                0.895,
+                0.728
+            ],
+            "angle": 0,
+            "content": "An important argument in favour of flexible equity structures such as multiple-voting rights shares is for cases where founders may generate value in retaining strategic control after listing to preserve their long-term vision for the company. In sectors like tech or life sciences, founders' expertise and vision are often critical assets, and retaining control can help secure their time commitment to the company and strategic continuity. As long as the value created by their vision and expertise surpasses any risks or losses created by the misalignment of interests caused by the differentiated voting rights, such an equity structure could maximise the value of the company.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.734,
+                0.894,
+                0.86
+            ],
+            "angle": 0,
+            "content": "A second, related but more pragmatic, argument concerns situations in which the value created by the vision and expertise of a company's controlling shareholder may be uncertain, yet investors may still be willing to invest in a company with a multiple-voting share structure. This may be the case where the valuation discount associated with the misalignment of interests created by such rights is sufficiently large (Cremers, Lauterbach and Pajuste, 2018[7]), or where the company offers meaningful diversification benefits to investors. In these circumstances, allowing multiple-voting shares may be even beneficial for the economy as a whole as more companies would be encouraged to access public markets rather than remaining private or delaying their initial public offerings (Anderson et al., 2024[8]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.864,
+                0.894,
+                0.897
+            ],
+            "angle": 0,
+            "content": "Empirical evidence suggests that these governance arrangements may be associated with higher levels of innovative activity. For example, dual-class share structures are associated with greater corporate risk-",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.688,
+                0.93
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.193,
+                0.515,
+                0.241,
+                0.529
+            ],
+            "latex": "",
+            "score": 0.5353
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.388,
+                0.796,
+                0.446,
+                0.811
+            ],
+            "latex": "",
+            "score": 0.5028
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.516,
+                0.192,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.241,
+                0.517,
+                0.699,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.557,
+                0.833,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.591,
+                0.876,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.619,
+                0.891,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.636,
+                0.891,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.652,
+                0.889,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.666,
+                0.891,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.682,
+                0.891,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.698,
+                0.891,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.713,
+                0.421,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.734,
+                0.89,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.751,
+                0.889,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.767,
+                0.89,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.78,
+                0.89,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.797,
+                0.381,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.446,
+                0.797,
+                0.89,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.812,
+                0.891,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.829,
+                0.89,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.843,
+                0.715,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.867,
+                0.889,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.882,
+                0.891,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.076,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 4"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.895,
+                0.188
+            ],
+            "angle": 0,
+            "content": "taking, such as a higher propensity to engage in mergers and acquisitions (M&A) compared to single class firms (Kim, 2023[9]). Further, research also finds positive association with innovation such as patent output, patent citations and the breadth of industries affected by patented technologies. While such structures may be associated with lower firm valuation on average, increased innovation may partly offset these effects (Baran, Forst and Via, 2018[10]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.202,
+                0.893,
+                0.219
+            ],
+            "angle": 0,
+            "content": "What are the potential risks and governance concerns associated with these structures?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.23,
+                0.895,
+                0.293
+            ],
+            "angle": 0,
+            "content": "Unequal voting rights, as well as low-vote or non-voting shareholders (e.g. preference shares), may raise the risk of decisions that disadvantage minority shareholders. This divergence may weaken the alignment between risk-bearing and control, increasing agency costs and raising concerns about the equitable treatment of shareholders.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.298,
+                0.895,
+                0.378
+            ],
+            "angle": 0,
+            "content": "Such structures may also lead to entrenchment of controlling shareholders holding less than half of the shares. Research highlights how the costs of entrenchment tend to rise as companies mature and founder-related benefits diminish (Bebchuk and Kastiel, 2017[11]). Empirical evidence also shows that firms with dual-class or multiple-voting rights structures may trade at a valuation discount, particularly when the gap between control and ownership is large or persistent (Cremers, Lauterbach and Pajuste, 2018[7]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.383,
+                0.894,
+                0.463
+            ],
+            "angle": 0,
+            "content": "Another dimension of the debate relates to the complexity and diversity of flexible equity structures. Variations such as multiple-voting rights shares, loyalty or tenure shares can all significantly affect the degree of control. However, while they may all allow for a minority of equity owners to have corporate controlling power, they do so in different ways, potentially increasing the analytical costs of an investor understanding the specific equity capital structure when deciding how to value its shares.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.467,
+                0.894,
+                0.531
+            ],
+            "angle": 0,
+            "content": "In light of the above, overly restrictive regimes may discourage founder-led companies from going public, potentially affecting the attractiveness and competitiveness of public capital markets. These considerations underline the need for carefully calibrated regulatory frameworks that address governance risks while avoiding unintended market distortions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.556,
+                0.456,
+                0.574
+            ],
+            "angle": 0,
+            "content": "A range of flexible equity structures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.588,
+                0.895,
+                0.652
+            ],
+            "angle": 0,
+            "content": "Flexible equity structures encompass a range of mechanisms that depart from the one-share-one-vote principle by allowing voting power to differ from economic ownership. These arrangements vary in design but often share a common objective: enabling companies to tailor control and equity structures to their specific ownership profiles and strategic needs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.658,
+                0.895,
+                0.752
+            ],
+            "angle": 0,
+            "content": "The most considered form are multiple-voting rights shares, under which companies issue at least two classes of shares with different voting rights. Typically, founders or early-stage investors hold shares with enhanced voting power, while public investors hold shares with lower voting rights. Variations of this model include super-voting shares, which may carry significantly higher voting power, often combined with safeguards such as transfer restrictions for the super-voting shares or automatic conversion into ordinary shares upon sale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.757,
+                0.896,
+                0.898
+            ],
+            "angle": 0,
+            "content": "Another approach is the use of loyalty or tenure voting rights, under which shareholders who hold their shares for a specified period are granted additional voting power. Belgium, France, Italy and Spain allow loyalty share schemes for listed companies with a minimum holding period of two years and a standard double-voting ratio. In France and Italy, higher multipliers are also permitted (OECD, 2025[5]). Unlike dual-class structures, which concentrate control in specific shareholders, loyalty voting rights are generally available to all shareholders and lapse upon transfer of shares with the intention of encouraging long-term ownership. The OECD Corporate Governance Factbook shows that the share of jurisdictions that allow multiple-voting rights or fractional shares rose from \\(44\\%\\) in 2020 to \\(60\\%\\) in 2024 (Figure 2). This number includes also jurisdictions that only allow loyalty voting rights (OECD, 2025[5]).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.688,
+                0.93
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.111,
+                0.889,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.126,
+                0.888,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.141,
+                0.891,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.156,
+                0.891,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.174,
+                0.342,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.203,
+                0.889,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.231,
+                0.891,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.247,
+                0.891,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.263,
+                0.889,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.278,
+                0.304,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.3,
+                0.889,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.315,
+                0.891,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.33,
+                0.891,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.348,
+                0.889,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.362,
+                0.859,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.383,
+                0.89,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.4,
+                0.888,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.416,
+                0.889,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.431,
+                0.89,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.448,
+                0.77,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.468,
+                0.889,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.485,
+                0.889,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.5,
+                0.889,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.517,
+                0.399,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.558,
+                0.452,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.59,
+                0.891,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.605,
+                0.889,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.62,
+                0.891,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.637,
+                0.461,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.658,
+                0.891,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.675,
+                0.891,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.69,
+                0.891,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.706,
+                0.889,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.721,
+                0.891,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.737,
+                0.241,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.759,
+                0.89,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.773,
+                0.891,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.79,
+                0.889,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.805,
+                0.891,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.821,
+                0.889,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.836,
+                0.891,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.852,
+                0.89,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.867,
+                0.892,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.883,
+                0.684,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.075,
+                0.894,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 5"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.107,
+                0.759,
+                0.126
+            ],
+            "angle": 0,
+            "content": "Figure 2. Issuance of shares with a different number of votes per share, 2020-2024"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.143,
+                0.138,
+                0.883,
+                0.363
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.392,
+                0.517,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Note: The data are for 52 jurisdictions in 2024, 49 in 2022 and 50 in 2020."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.405,
+                0.703,
+                0.42
+            ],
+            "angle": 0,
+            "content": "Source: OECD (2025[5]), OECD Corporate Governance Factbook 2025, https://doi.org/10.1787/f4f43735-en."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.441,
+                0.894,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Companies may also issue non-voting or low-voting shares. These shares offer stronger economic rights, such as priority or fixed dividends, while offering limited or no influence over corporate decisions. The OECD Corporate Governance Factbook shows that 92% of jurisdictions permit such preference shares, up from 73% in 2014. Some jurisdictions impose a share capital limit for these shares. For instance, three countries (France, Korea, Romania) allow them only up to 25% of the share capital, nine countries allow them up to 50%, and Czechia allows them up to 90% (Figure 1) (OECD, 2025[5]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.54,
+                0.894,
+                0.635
+            ],
+            "angle": 0,
+            "content": "Compared with multiple-voting rights structures, non-voting or low-voting shares are more widely allowed by jurisdictions as shown above. Owners of preference shares may be more focused on the enhanced economic rights that are generally provided through their dividends, rather than on control. However, as multiple-voting structures, non-voting or low-voting shares may also generate similar governance concerns related to the divergence between share ownership and related economic rights versus control rights (Tallarita, 2024[6]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.64,
+                0.391,
+                0.657
+            ],
+            "angle": 0,
+            "content": "The following examples illustrate this:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.663,
+                0.894,
+                0.71
+            ],
+            "angle": 0,
+            "content": "- In company A, shareholders holding 100 shares with ten votes each would control the company if the ordinary shareholders owned 900 shares with only one vote each. The owners of the multiple-voting shares would have 53% of the votes, and only 10% of the equity share.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.713,
+                0.894,
+                0.776
+            ],
+            "angle": 0,
+            "content": "- In company B, shareholders holding 100 ordinary shares with one vote each would also control the company if the preferential shareholders owned 900 shares. The owners of the ordinary shares would have 100% of the votes, and, just like the owners of multiple-voting shares in company A, only 10% of the equity share.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.782,
+                0.894,
+                0.83
+            ],
+            "angle": 0,
+            "content": "What is also interesting is how limits to the number of votes per share or the ratio of preferred shares over all shares established by some jurisdictions can be easily circumvented in practice, considering flexibility in economic rights for preferred shares:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.835,
+                0.894,
+                0.883
+            ],
+            "angle": 0,
+            "content": "- In company C, incorporated in a jurisdiction that allows preference shares only up to 25% of the share capital, shareholders holding 100 ordinary shares with one vote each would also control the company if the preferential shareholders owned 33 shares in conformance with the threshold. The",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.688,
+                0.93
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.442,
+                0.89,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.458,
+                0.89,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.473,
+                0.89,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.489,
+                0.891,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.505,
+                0.89,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.52,
+                0.707,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.543,
+                0.89,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.558,
+                0.891,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.575,
+                0.89,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.589,
+                0.89,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.605,
+                0.888,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.62,
+                0.243,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.642,
+                0.388,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.664,
+                0.891,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.681,
+                0.891,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.695,
+                0.743,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.714,
+                0.889,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.73,
+                0.889,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.744,
+                0.889,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.761,
+                0.381,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.783,
+                0.889,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.799,
+                0.888,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.816,
+                0.4,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.838,
+                0.889,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.853,
+                0.889,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.868,
+                0.889,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.875,
+                0.076,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.16,
+                0.108,
+                0.895,
+                0.171
+            ],
+            "angle": 0,
+            "content": "owners of the ordinary shares would have 100% of the votes, and just like the owners of multiple- and ordinary voting shares in companies A and B, would receive only 10% of dividends, if preferential shareholders were provided with a high enough dividend ratio (in this case, 27 times) to obtain the same outcome.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.198,
+                0.622,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Differences in timing of adoption of voting structures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.23,
+                0.894,
+                0.278
+            ],
+            "angle": 0,
+            "content": "Regulatory frameworks differ significantly in their treatment of when flexible voting rights structures may be introduced, particularly distinguishing between arrangements established at the time of the initial public offering and those introduced after a company is listed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.283,
+                0.895,
+                0.486
+            ],
+            "angle": 0,
+            "content": "In some jurisdictions that permit multiple-voting rights structures, classes with multiple votes must be established prior to the initial public offering and disclosed at listing (OECD, 2025[5]). This approach reflects the principle that investors should be able to assess and price the governance structure when deciding whether to participate in the offering. Markets such as Hong Kong (China), Singapore, the United Kingdom, and the United States follow this model, allowing differentiated voting rights at listing but generally restricting, or placing significant regulatory burdens on the introduction of new or modified structures once a company is public (OECD, 2025[5]). As part of the European Listing Act, which came into force in December 2024, the EU approved the Multiple-Vote Share Structures Directive to be implemented by December 2026. This EU Directive establishes common rules on multiple-vote share structures for companies seeking admission to trading of their shares on multilateral trading facilities (MTFs), where those companies do not already have shares admitted to trading on an MTF or a regulated market, while leaving it to member countries to adopt safeguards for shareholders without multiple-voting rights (articles 1 and 4).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.492,
+                0.895,
+                0.617
+            ],
+            "angle": 0,
+            "content": "By contrast, the issuance of multiple-voting shares after listing is often restricted or subject to strict approval requirements. Such changes may dilute the voting power of existing shareholders who invested under a different governance structure, raising concerns about fairness and investor protection if shareholders do not have the right to block the issuance of multiple-voting shares. An important exception concerns loyalty or tenure-based voting rights, which can typically be introduced after listing, as they apply equally to all shareholders and reward long-term ownership rather than nominally privileging a specific group. For example, in Spain, loyalty shares can be introduced with a qualified majority, and the provision must be renewed every five years (OECD, 2025[5]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.622,
+                0.895,
+                0.701
+            ],
+            "angle": 0,
+            "content": "This distinction has become a key dimension of corporate governance policy. Multiple-voting rights structures may be considered more acceptable at the initial public offering stage, as investors may, for instance, voluntarily choose to preserve commitment and the long-term vision of founders. By contrast, introducing or expanding such structures after listing may be more contentious, notably if it is done without the explicit consent of all investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.706,
+                0.895,
+                0.786
+            ],
+            "angle": 0,
+            "content": "In recent years, there has been a trend towards greater flexibility at the initial public offering stage, driven in part by regulatory competition among jurisdictions seeking to enhance the attractiveness of their markets. At the same time, ongoing policy and academic discussions emphasise the need to balance the potential benefits of deviations from the one-share-one-vote model with the risks associated with the separation of voting rights from economic ownership.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.811,
+                0.834,
+                0.829
+            ],
+            "angle": 0,
+            "content": "Safeguards and regulatory design across different equity capital structures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.843,
+                0.895,
+                0.89
+            ],
+            "angle": 0,
+            "content": "The use of flexible equity capital structures, whether through multiple-voting rights or non-voting shares, raises important questions about how to mitigate governance risks while preserving their potential benefits. When such frameworks are allowed, regulatory frameworks therefore typically combine flexibility with a",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.688,
+                0.93
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.109,
+                0.892,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.125,
+                0.892,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.141,
+                0.89,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.158,
+                0.377,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.198,
+                0.619,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.231,
+                0.891,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.248,
+                0.89,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.263,
+                0.516,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.285,
+                0.891,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.3,
+                0.891,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.315,
+                0.891,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.331,
+                0.889,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.346,
+                0.889,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.361,
+                0.891,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.377,
+                0.891,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.392,
+                0.889,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.408,
+                0.891,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.424,
+                0.891,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.439,
+                0.891,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.454,
+                0.891,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.469,
+                0.175,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.493,
+                0.891,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.509,
+                0.889,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.524,
+                0.889,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.538,
+                0.891,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.554,
+                0.891,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.571,
+                0.891,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.585,
+                0.891,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.6,
+                0.423,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.622,
+                0.891,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.639,
+                0.889,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.654,
+                0.889,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.67,
+                0.891,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.686,
+                0.368,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.707,
+                0.891,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.723,
+                0.891,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.739,
+                0.889,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.755,
+                0.889,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.771,
+                0.501,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.812,
+                0.831,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.844,
+                0.889,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.86,
+                0.889,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.875,
+                0.889,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.075,
+                0.893,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 7"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.893,
+                0.141
+            ],
+            "angle": 0,
+            "content": "range of safeguards aimed at limiting the separation between control and economic ownership and protecting minority investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.147,
+                0.895,
+                0.242
+            ],
+            "angle": 0,
+            "content": "For multiple-voting rights structures, safeguards primarily focus on addressing the risks of entrenchment and the long-term divergence between control and ownership. One example of such a safeguard is the use of sunset clauses, which automatically eliminate or convert enhanced voting rights after a specified period or triggering event. As noted also above, research suggests that the advantages of these voting structures tend to diminish over time, while associated costs, such as agency problems, increase as controllers reduce their economic stake without giving up control (Bebchuk and Kastiel, 2017[11]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.247,
+                0.492,
+                0.263
+            ],
+            "angle": 0,
+            "content": "Sunset clauses may take different forms, including:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.269,
+                0.635,
+                0.284
+            ],
+            "angle": 0,
+            "content": "• time-based sunsets (e.g. 5-10 years after initial public offering)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.288,
+                0.62,
+                0.303
+            ],
+            "angle": 0,
+            "content": "• event-based sunsets (e.g. departure or death of the founder)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.307,
+                0.894,
+                0.354
+            ],
+            "angle": 0,
+            "content": "- ownership-based sunsets, where multiple-voting rights lapse once the controlling shareholder's economic stake falls below a specified threshold or when enhanced voting rights granted on the basis of an individual shareholder's specific characteristics are transferred to another shareholder.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.361,
+                0.895,
+                0.47
+            ],
+            "angle": 0,
+            "content": "Another example of a safeguard is an event-based or resolution-specific voting sterilisation, which aims to temporarily neutralise multiple-voting right structures for exceptional corporate decisions. In Italy, a 2026 Italian reform introduced such limitations on both multiple-voting and loyalty shares for specific general meeting resolutions, which can have significant implications for minority shareholders. Specifically, multiple-voting and loyalty shares are temporarily neutralised for resolutions such as M&A transactions, leading to delisting, cross-border seat transfers or transferring of listing to an alternative market, which therefore require approval under the one-share-one-vote principle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.476,
+                0.894,
+                0.509
+            ],
+            "angle": 0,
+            "content": "For loyalty shares, some jurisdictions require periodic renewal of loyalty voting rights through shareholder approval, ensuring that such mechanisms remain subject to ongoing investor consent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.513,
+                0.894,
+                0.561
+            ],
+            "angle": 0,
+            "content": "Jurisdictions often rely on a broader set of policies with the goal of protecting minority shareholders. These include voting ratio caps, which limit the voting power of individual shareholders, and transfer restrictions on multiple-voting shares.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.567,
+                0.895,
+                0.677
+            ],
+            "angle": 0,
+            "content": "For example, in Denmark, Finland, Norway and Sweden, the long-standing use of multiple-voting shares is combined with strong minority shareholder rights to mitigate potential risks (Eckbo, Paone and Urheim, 2011[12]) (Lekvall, 2019[13]). In these Nordic countries, corporate law provides strong protection for investors holding non-multiple-voting shares through a combination of safeguards, including: a robust principle of equal and fair treatment, qualified majority requirements for major decisions, high transparency standards, shareholder pre-emption rights, and meaningful minority rights such as to request minimum dividends, appoint minority auditors, or seek special examinations (Svenskt Näringsliv, 2023[14]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.683,
+                0.894,
+                0.761
+            ],
+            "angle": 0,
+            "content": "Safeguards for non-voting and low-voting shares, including preference shares, focus on protecting investors who have limited or no governance influence. These mechanisms typically rely more on contractual and economic protections than on voting rights. A key safeguard is the use of class approval rights, whereby holders of such shares must approve changes that directly affect their rights, such as dividend entitlements or liquidation preferences. Additional safeguards include:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.767,
+                0.894,
+                0.798
+            ],
+            "angle": 0,
+            "content": "- priority to receive fixed dividends or cumulative dividend rights if dividends are not received in a specific year",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.801,
+                0.849,
+                0.817
+            ],
+            "angle": 0,
+            "content": "- clear disclosure of share class rights, including voting limitations and economic entitlements",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.82,
+                0.892,
+                0.852
+            ],
+            "angle": 0,
+            "content": "- conversion or contingency rights, allowing shares to gain voting rights in certain circumstances (e.g. non-payment of dividends)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.855,
+                0.408,
+                0.87
+            ],
+            "angle": 0,
+            "content": "• right to elect one board member",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.687,
+                0.929
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.111,
+                0.889,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.127,
+                0.322,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.149,
+                0.891,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.163,
+                0.891,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.18,
+                0.889,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.195,
+                0.891,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.21,
+                0.889,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.227,
+                0.824,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.248,
+                0.488,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.27,
+                0.631,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.294,
+                0.146,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.29,
+                0.616,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.308,
+                0.891,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.324,
+                0.889,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.339,
+                0.889,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.363,
+                0.889,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.378,
+                0.891,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.392,
+                0.891,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.409,
+                0.888,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.424,
+                0.889,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.439,
+                0.889,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.456,
+                0.6,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.478,
+                0.89,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.494,
+                0.744,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.516,
+                0.89,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.532,
+                0.889,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.548,
+                0.299,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.569,
+                0.891,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.585,
+                0.889,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.601,
+                0.889,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.615,
+                0.891,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.63,
+                0.891,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.646,
+                0.889,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.661,
+                0.741,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.684,
+                0.89,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.699,
+                0.891,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.716,
+                0.89,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.732,
+                0.89,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.747,
+                0.692,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.768,
+                0.891,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.784,
+                0.259,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.802,
+                0.845,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.803,
+                0.165,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.822,
+                0.889,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.838,
+                0.402,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.857,
+                0.404,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.876,
+                0.076,
+                0.893,
+                0.09
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.109,
+                0.894,
+                0.14
+            ],
+            "angle": 0,
+            "content": "- share capital limits, which restrict the proportion of non-voting shares in total equity capital to prevent excessive dilution of voting rights.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.147,
+                0.895,
+                0.225
+            ],
+            "angle": 0,
+            "content": "As these instruments are more widely accepted across jurisdictions (OECD, 2025[5]), the key policy concern is less about concentration of control and more about protecting investors with reduced governance rights. Policymakers must also consider circumvention risks, as limits on multiple-voting rights may prompt firms to adopt alternative tools, such as non-voting shares, as an alternative to preserve control (Bebchuk and Kastiel, 2017[11]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.231,
+                0.894,
+                0.295
+            ],
+            "angle": 0,
+            "content": "Overall, the design of safeguards reflects a broader policy objective: to balance flexibility in equity capital structures with investor protection and market confidence. As a result, policymakers increasingly focus not only on whether such structures should be permitted, but also on how safeguards can be calibrated across instruments to achieve consistent outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.112,
+                0.31,
+                0.768,
+                0.36
+            ],
+            "angle": 0,
+            "content": "What issues policymakers and other stakeholders may consider?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.382,
+                0.881,
+                0.46
+            ],
+            "angle": 0,
+            "content": "- The increasing use of flexible equity capital structures, including multiple-voting rights and non-voting shares, highlights the need for carefully calibrated regulatory frameworks that balance flexibility with investor protection ensuring that their use supports capital market development and innovation. Rather than focusing solely on whether such structures should be permitted, the debate is increasingly centred on how they are designed and implemented.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.463,
+                0.881,
+                0.572
+            ],
+            "angle": 0,
+            "content": "- The effective protection of minority shareholders in companies with different classes of shares benefits from requirements or recommendations applicable to good corporate governance also seen in companies with only ordinary shares, such as the transparency of ownership structures and oversight of related-party transactions. For example, policymakers may consider the role of clear and effective disclosure of different share class structures, including where and how such information is presented to investors, such as in prospectuses, regulatory filings, corporate governance reports, or company websites.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.574,
+                0.881,
+                0.652
+            ],
+            "angle": 0,
+            "content": "- Policymakers and companies may consider allowing the post-IPO adoption of multiple-voting rights only with safeguards ensuring the approval of shareholders whose rights may be affected. They may also consider time- or event-based safeguards, such as sunset clauses or periodic shareholder approval, to address the potentially decreasing benefits of founder control as companies mature.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.655,
+                0.881,
+                0.748
+            ],
+            "angle": 0,
+            "content": "- Additional safeguards may help balance flexibility with investor protection, such as those directly connected to the rights of low- or non-voting shareholders, for example by requiring a qualified majority of shareholders in a class in matters affecting their enhanced economic rights. Development and dissemination of guidance on responsible founder practices may also help respect contractual freedom while identifying good practices to protect investors and mitigate risks of abuse of controlling power.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.752,
+                0.881,
+                0.829
+            ],
+            "angle": 0,
+            "content": "- Policymakers may also consider reducing the risk of regulatory arbitrage between different capital structures. For instance, minority shareholders in companies with multiple-voting rights and those in companies with non-voting shares but no multiple-voting rights may face very similar risks. Policymakers may therefore wish to assess whether comparable protections are available in both cases.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.687,
+                0.929
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.11,
+                0.891,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.125,
+                0.475,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.147,
+                0.891,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.163,
+                0.891,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.18,
+                0.891,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.195,
+                0.891,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.209,
+                0.343,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.232,
+                0.891,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.248,
+                0.89,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.264,
+                0.89,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.28,
+                0.439,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.308,
+                0.766,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.113,
+                0.335,
+                0.238,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.383,
+                0.878,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.398,
+                0.878,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.413,
+                0.88,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.429,
+                0.878,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.444,
+                0.761,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.463,
+                0.88,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.478,
+                0.88,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.495,
+                0.88,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.509,
+                0.88,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.525,
+                0.88,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.541,
+                0.878,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.556,
+                0.492,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.575,
+                0.88,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.59,
+                0.878,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.605,
+                0.878,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.622,
+                0.878,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.638,
+                0.318,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.654,
+                0.878,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.671,
+                0.878,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.687,
+                0.878,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.701,
+                0.878,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.718,
+                0.878,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.734,
+                0.434,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.753,
+                0.88,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.768,
+                0.88,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.783,
+                0.878,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.799,
+                0.878,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.815,
+                0.349,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 9"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.109,
+                0.221,
+                0.127
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.145,
+                0.796,
+                0.177
+            ],
+            "angle": 0,
+            "content": "Anderson, R. et al. (2024), Control risk premium: Dual-class shares, family ownership, and minority investor returns, https://onlinelibrary.wiley.com/doi/10.1111/fima.12481."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.187,
+                0.794,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Baran, L., A. Forst and M. Via (2018), How Dual Class Share Structures Affect Innovation, https://clsbluesky.law.columbia.edu/2018/07/16/how-dual-class-share-structures-affect-innovation/."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.244,
+                0.839,
+                0.291
+            ],
+            "angle": 0,
+            "content": "Bebchuk, L. and K. Kastiel (2017), “The untenable case for perpetual dual-class stocks”, Virginia Law Review, Vol. 103/4, https://virginialawreview.org/wp-content/uploads/2020/12/Bebchuk%20&%20Kastiel_Book.pdf."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.301,
+                0.76,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Cremers, M., B. Lauterbach and A. Pajuste (2018), The Life-Cycle of Dual Class Firm Valuations, https://www.ecqi.global/sites/default/files/The%20Life-Cycle%20of%20Dual%20Class%20Firm%20Valuations-%20Paper.pdf."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.358,
+                0.796,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Eckbo, B., G. Paone and R. Urheim (2011), Efficiency of Share-Voting Systems: Report on Sweden, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1651582."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.4,
+                0.893,
+                0.446
+            ],
+            "angle": 0,
+            "content": "Ghezzi, F., C. Mosca and M. Passador (2022), “Rereading the “One Share, One Vote” Principle: [2] Is It Also a Matter of Competition?”, The University of Chicago Business Law Review, Vol. 1, pp. 157-193."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.457,
+                0.894,
+                0.489
+            ],
+            "angle": 0,
+            "content": "Hopt, K. and S. Kals (2024), Multiple-voting shares in Europe - A comparative law and economic analysis, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4887591. [3]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.498,
+                0.785,
+                0.531
+            ],
+            "angle": 0,
+            "content": "Kim, S. (2023), “Dual-class share structure and firm risks”, Pacific-Basin Finance Journal, https://www.sciencedirect.com/science/article/pii/S0927538X23001506?via%3Dihub."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.54,
+                0.893,
+                0.588
+            ],
+            "angle": 0,
+            "content": "Lekvall, P. (2019), The Swedish Corporate Governance Model, [13] https://bolagsstyrning.se/Userfiles/Publikationer/Artiklar_och_presentationer/Eng/the_swedish_corporate_governance_model - article_in_the_iod_2019.pdf."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.596,
+                0.894,
+                0.629
+            ],
+            "angle": 0,
+            "content": "OECD (2025), OECD Corporate Governance Factbook 2025, OECD Publishing, Paris, [5] https://doi.org/10.1787/f4f43735-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.638,
+                0.893,
+                0.67
+            ],
+            "angle": 0,
+            "content": "OECD (2023), G20/OECD Principles of Corporate Governance 2023, OECD Publishing, Paris, [4] https://doi.org/10.1787/ed750b30-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.68,
+                0.892,
+                0.743
+            ],
+            "angle": 0,
+            "content": "Svenskt Näringsliv (2023), Dual class share structures with differentiated voting rights, https://www.svensktnaringsliv.se/bilder_och_dokument/evagop_final-february-2023-dual-class-share-structurespdf_1195673.html/FINAL+February+2023+Dual+class+share+structures_1.pdf. [14]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.752,
+                0.779,
+                0.799
+            ],
+            "angle": 0,
+            "content": "Tallarita, R. (2024), “Dual-Class Contracting”, The Journal of Corporation Law, Vol. 49:5, pp. 971-1041, https://jcl.law.uiowa.edu/sites/jcl.law.uiowa.edu/files/2024-09/Tallarita_Final.pdf."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.809,
+                0.823,
+                0.856
+            ],
+            "angle": 0,
+            "content": "Ventoruzzo, M. (2015), “The Disappearing Taboo of Multiple Voting Shares: Regulatory Responses to the Migration of Chrysler-Fiat”, Vol. 288/Law Working Paper, https://www.ecgi.global/sites/default/files/working_papers/documents/SSRN-id2574236.pdf."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.688,
+                0.929
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.111,
+                0.218,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.859,
+                0.075,
+                0.894,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 10"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.109,
+                0.188,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Contact"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.143,
+                0.353,
+                0.157
+            ],
+            "angle": 0,
+            "content": "corporategovernance@oecd.org"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.193,
+                0.893,
+                0.221
+            ],
+            "angle": 0,
+            "content": "This work is issued under the responsibility of the Secretary-General of the OECD, and does not necessarily reflect the official views of OECD Member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.227,
+                0.893,
+                0.255
+            ],
+            "angle": 0,
+            "content": "This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.26,
+                0.894,
+                0.301
+            ],
+            "angle": 0,
+            "content": "The statistical data for Israel are supplied by and under the responsibility of the relevant Israeli authorities. The use of such data by the OECD is without prejudice to the status of the Golan Heights, East Jerusalem and Israeli settlements in the West Bank under the terms of international law.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.327,
+                0.209,
+                0.34
+            ],
+            "angle": 0,
+            "content": "© OECD 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.107,
+                0.349,
+                0.195,
+                0.373
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.203,
+                0.361,
+                0.495,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.378,
+                0.892,
+                0.405
+            ],
+            "angle": 0,
+            "content": "This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.408,
+                0.36,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Attribution – you must cite the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.424,
+                0.894,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of original work should be considered valid.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.467,
+                0.894,
+                0.507
+            ],
+            "angle": 0,
+            "content": "Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.51,
+                0.892,
+                0.537
+            ],
+            "angle": 0,
+            "content": "Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.54,
+                0.892,
+                0.566
+            ],
+            "angle": 0,
+            "content": "You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.569,
+                0.894,
+                0.609
+            ],
+            "angle": 0,
+            "content": "Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.687,
+                0.929
+            ],
+            "angle": 0,
+            "content": "FLEXIBILITY AND INVESTOR PROTECTION IN SHARE CLASS STRUCTURES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.195,
+                0.891,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.208,
+                0.414,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.228,
+                0.891,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.241,
+                0.887,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.262,
+                0.891,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.275,
+                0.889,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.287,
+                0.468,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.328,
+                0.207,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.208,
+                0.363,
+                0.49,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.38,
+                0.889,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.392,
+                0.738,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.409,
+                0.357,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.426,
+                0.891,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.44,
+                0.889,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.452,
+                0.222,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.469,
+                0.891,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.481,
+                0.89,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.494,
+                0.491,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.511,
+                0.89,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.525,
+                0.716,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.54,
+                0.889,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.555,
+                0.315,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.571,
+                0.891,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.584,
+                0.889,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.596,
+                0.194,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

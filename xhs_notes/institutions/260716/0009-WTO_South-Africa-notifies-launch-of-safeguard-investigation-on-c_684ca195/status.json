@@ -1,0 +1,23 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_8s_uknet/pdfs/0009-WTO_South-Africa-notifies-launch-of-safeguard-investigation-on-c_684ca195.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界贸易组织",
+  "cover_short_title": "南非启动冷轧钢保障措",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界贸易组织：南非对冷轧钢发起保障措施调查",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

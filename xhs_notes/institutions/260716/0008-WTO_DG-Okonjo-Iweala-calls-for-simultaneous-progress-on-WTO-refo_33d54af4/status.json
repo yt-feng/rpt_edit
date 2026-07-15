@@ -1,0 +1,18 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_8s_uknet/pdfs/0008-WTO_DG-Okonjo-Iweala-calls-for-simultaneous-progress-on-WTO-refo_33d54af4.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界贸易组织",
+  "cover_short_title": "全球渔业补贴谈判，卡",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界贸易组织：世界贸易组织总干事呼吁WTO改革同步推进",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

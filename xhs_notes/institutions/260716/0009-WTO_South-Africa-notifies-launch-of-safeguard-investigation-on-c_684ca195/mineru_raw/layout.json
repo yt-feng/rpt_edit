@@ -1,0 +1,2790 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        462,
+                        101,
+                        524,
+                        115
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                462,
+                                101,
+                                524,
+                                115
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        462,
+                                        101,
+                                        524,
+                                        115
+                                    ],
+                                    "type": "text",
+                                    "content": "15 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        123,
+                        120,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                123,
+                                120,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        123,
+                                        120,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "(26-5102)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        475,
+                        123,
+                        525,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                475,
+                                123,
+                                525,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        475,
+                                        123,
+                                        525,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "Page: 1/3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        143,
+                        205,
+                        157
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                143,
+                                205,
+                                157
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        143,
+                                        205,
+                                        157
+                                    ],
+                                    "type": "text",
+                                    "content": "Committee on Safeguards"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        445,
+                        143,
+                        524,
+                        157
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                445,
+                                143,
+                                524,
+                                157
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        445,
+                                        143,
+                                        524,
+                                        157
+                                    ],
+                                    "type": "text",
+                                    "content": "Original: English"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        140,
+                        191,
+                        453,
+                        227
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                140,
+                                191,
+                                453,
+                                227
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        140,
+                                        191,
+                                        453,
+                                        227
+                                    ],
+                                    "type": "text",
+                                    "content": "NOTIFICATION UNDER ARTICLE 12.1(A) OF THE AGREEMENT ON SAFEGUARDS ON INITIATION OF AN INVESTIGATION AND THE REASONS FOR IT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        266,
+                        238,
+                        327,
+                        250
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                266,
+                                238,
+                                327,
+                                250
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        266,
+                                        238,
+                                        327,
+                                        250
+                                    ],
+                                    "type": "text",
+                                    "content": "SOUTH AFRICA"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        193,
+                        266,
+                        401,
+                        279
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                193,
+                                266,
+                                401,
+                                279
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        193,
+                                        266,
+                                        401,
+                                        279
+                                    ],
+                                    "type": "text",
+                                    "content": "Certain cold-rolled products of iron and steel"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        295,
+                        525,
+                        319
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                295,
+                                525,
+                                319
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        295,
+                                        525,
+                                        319
+                                    ],
+                                    "type": "text",
+                                    "content": "The following communication, dated and received on 14 July 2026, is being circulated at the request of the delegation of South Africa."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        364,
+                        525,
+                        421
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                364,
+                                525,
+                                421
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        364,
+                                        525,
+                                        421
+                                    ],
+                                    "type": "text",
+                                    "content": "Pursuant to Article 12.1(a) of the Agreement on Safeguards, South Africa hereby gives notification of the initiation of a safeguard investigation on the imports of flat-rolled products of iron, non-alloy steel or other alloy steel (not including stainless steel), whether in coils or not in coils, (including products cut-to-length and 'narrow strip'), not further worked than cold-rolled (cold-reduced), not clad, plated or coated (herewith referred to as cold-rolled products)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        430,
+                        333,
+                        444
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                430,
+                                333,
+                                444
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        430,
+                                        333,
+                                        444
+                                    ],
+                                    "type": "text",
+                                    "content": "1. The date when the investigation was initiated"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        454,
+                        525,
+                        478
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                454,
+                                525,
+                                478
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        454,
+                                        525,
+                                        478
+                                    ],
+                                    "type": "text",
+                                    "content": "The investigation was initiated on 10 July 2026. The notice of initiation by the investigating authority was published through Notice 416 of 2026 in Government Gazette No 54970 on 10 July 2026. "
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        454,
+                                        525,
+                                        478
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        487,
+                        304,
+                        501
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                487,
+                                304,
+                                501
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        487,
+                                        304,
+                                        501
+                                    ],
+                                    "type": "text",
+                                    "content": "2. The product subject to the investigation"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        510,
+                        525,
+                        567
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                510,
+                                525,
+                                567
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        510,
+                                        525,
+                                        567
+                                    ],
+                                    "type": "text",
+                                    "content": "The subject product is described as flat-rolled products of iron, non-alloy steel or other alloy steel (not including stainless steel), whether in coils or not in coils, (including products cut-to-length and 'narrow strip'), not further worked than cold-rolled (cold-reduced), not clad, plated or coated, imported under tariff subheading 7209.15, 7209.16, 7209.17, 7209.18, 7209.25, 7209.26, 7209.27, 7209.90, 7211.23, 7211.29, 7211.90 and 7225.50."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        577,
+                        331,
+                        590
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                577,
+                                331,
+                                590
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        577,
+                                        331,
+                                        590
+                                    ],
+                                    "type": "text",
+                                    "content": "3. The reasons for the initiation of investigation"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        67,
+                        600,
+                        525,
+                        634
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                600,
+                                525,
+                                634
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        600,
+                                        525,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": "The application was lodged by ArcelorMittal South Africa Ltd (\"AMSA\" or the \"Applicant\"). They are the only producer of the subject product in the SACU region and therefore constitute 100% of the SACU domestic production of the subject product."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        645,
+                        525,
+                        680
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                645,
+                                525,
+                                680
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        645,
+                                        525,
+                                        680
+                                    ],
+                                    "type": "text",
+                                    "content": "The claim is that the subject product is being imported into the SACU market in such increasing quantities in absolute terms and relative to SACU production and under such conditions, to be causing serious injury to the SACU industry."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        689,
+                        525,
+                        724
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                689,
+                                525,
+                                724
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        689,
+                                        525,
+                                        724
+                                    ],
+                                    "type": "text",
+                                    "content": "The Commission found that the applicant submitted prima facie information to indicate that the volumes of cold-rolled products increased sharply both in absolute terms and relative to domestic production in the 2024 (01 January 2024 to 31 December 2024) period."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        64,
+                        46,
+                        126,
+                        104
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                46,
+                                126,
+                                104
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64,
+                                        46,
+                                        126,
+                                        104
+                                    ],
+                                    "type": "text",
+                                    "content": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        132,
+                        58,
+                        257,
+                        91
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                132,
+                                58,
+                                257,
+                                91
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        132,
+                                        58,
+                                        257,
+                                        91
+                                    ],
+                                    "type": "text",
+                                    "content": "WORLD TRADE\nORGANIZATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        423,
+                        58,
+                        524,
+                        71
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                423,
+                                58,
+                                524,
+                                71
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        423,
+                                        58,
+                                        524,
+                                        71
+                                    ],
+                                    "type": "text",
+                                    "content": "G/SG/N/6/ZAF/14"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        748,
+                        521,
+                        771
+                    ],
+                    "type": "page_footnote",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                748,
+                                521,
+                                771
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        748,
+                                        521,
+                                        771
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        748,
+                                        521,
+                                        771
+                                    ],
+                                    "type": "text",
+                                    "content": "  A copy of the notice of initiation has also been submitted electronically and is available to government representatives. To consult it, please contact Ms Anne Richards of the Rules Division (anne.richards@wto.org)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        462,
+                        101,
+                        524,
+                        115
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                462,
+                                101,
+                                524,
+                                115
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        462,
+                                        101,
+                                        524,
+                                        115
+                                    ],
+                                    "type": "text",
+                                    "content": "15 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        123,
+                        120,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                123,
+                                120,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        123,
+                                        120,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "(26-5102)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        475,
+                        123,
+                        525,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                475,
+                                123,
+                                525,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        475,
+                                        123,
+                                        525,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "Page: 1/3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        143,
+                        205,
+                        157
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                143,
+                                205,
+                                157
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        143,
+                                        205,
+                                        157
+                                    ],
+                                    "type": "text",
+                                    "content": "Committee on Safeguards"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        445,
+                        143,
+                        524,
+                        157
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                445,
+                                143,
+                                524,
+                                157
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        445,
+                                        143,
+                                        524,
+                                        157
+                                    ],
+                                    "type": "text",
+                                    "content": "Original: English"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        140,
+                        191,
+                        453,
+                        227
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                140,
+                                191,
+                                453,
+                                227
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        140,
+                                        191,
+                                        453,
+                                        227
+                                    ],
+                                    "type": "text",
+                                    "content": "NOTIFICATION UNDER ARTICLE 12.1(A) OF THE AGREEMENT ON SAFEGUARDS ON INITIATION OF AN INVESTIGATION AND THE REASONS FOR IT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        266,
+                        238,
+                        327,
+                        250
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                266,
+                                238,
+                                327,
+                                250
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        266,
+                                        238,
+                                        327,
+                                        250
+                                    ],
+                                    "type": "text",
+                                    "content": "SOUTH AFRICA"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        193,
+                        266,
+                        401,
+                        279
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                193,
+                                266,
+                                401,
+                                279
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        193,
+                                        266,
+                                        401,
+                                        279
+                                    ],
+                                    "type": "text",
+                                    "content": "Certain cold-rolled products of iron and steel"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        295,
+                        525,
+                        319
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                295,
+                                525,
+                                319
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        295,
+                                        525,
+                                        319
+                                    ],
+                                    "type": "text",
+                                    "content": "The following communication, dated and received on 14 July 2026, is being circulated at the request of the delegation of South Africa."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        364,
+                        525,
+                        421
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                364,
+                                525,
+                                421
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        364,
+                                        525,
+                                        421
+                                    ],
+                                    "type": "text",
+                                    "content": "Pursuant to Article 12.1(a) of the Agreement on Safeguards, South Africa hereby gives notification of the initiation of a safeguard investigation on the imports of flat-rolled products of iron, non-alloy steel or other alloy steel (not including stainless steel), whether in coils or not in coils, (including products cut-to-length and 'narrow strip'), not further worked than cold-rolled (cold-reduced), not clad, plated or coated (herewith referred to as cold-rolled products)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        430,
+                        333,
+                        444
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                430,
+                                333,
+                                444
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        430,
+                                        333,
+                                        444
+                                    ],
+                                    "type": "text",
+                                    "content": "1. The date when the investigation was initiated"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        454,
+                        525,
+                        478
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                454,
+                                525,
+                                478
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        454,
+                                        525,
+                                        478
+                                    ],
+                                    "type": "text",
+                                    "content": "The investigation was initiated on 10 July 2026. The notice of initiation by the investigating authority was published through Notice 416 of 2026 in Government Gazette No 54970 on 10 July 2026. "
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        454,
+                                        525,
+                                        478
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        487,
+                        304,
+                        501
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                487,
+                                304,
+                                501
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        487,
+                                        304,
+                                        501
+                                    ],
+                                    "type": "text",
+                                    "content": "2. The product subject to the investigation"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        510,
+                        525,
+                        567
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                510,
+                                525,
+                                567
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        510,
+                                        525,
+                                        567
+                                    ],
+                                    "type": "text",
+                                    "content": "The subject product is described as flat-rolled products of iron, non-alloy steel or other alloy steel (not including stainless steel), whether in coils or not in coils, (including products cut-to-length and 'narrow strip'), not further worked than cold-rolled (cold-reduced), not clad, plated or coated, imported under tariff subheading 7209.15, 7209.16, 7209.17, 7209.18, 7209.25, 7209.26, 7209.27, 7209.90, 7211.23, 7211.29, 7211.90 and 7225.50."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        577,
+                        331,
+                        590
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                577,
+                                331,
+                                590
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        577,
+                                        331,
+                                        590
+                                    ],
+                                    "type": "text",
+                                    "content": "3. The reasons for the initiation of investigation"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        67,
+                        600,
+                        525,
+                        634
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                600,
+                                525,
+                                634
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        600,
+                                        525,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": "The application was lodged by ArcelorMittal South Africa Ltd (\"AMSA\" or the \"Applicant\"). They are the only producer of the subject product in the SACU region and therefore constitute 100% of the SACU domestic production of the subject product."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        645,
+                        525,
+                        680
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                645,
+                                525,
+                                680
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        645,
+                                        525,
+                                        680
+                                    ],
+                                    "type": "text",
+                                    "content": "The claim is that the subject product is being imported into the SACU market in such increasing quantities in absolute terms and relative to SACU production and under such conditions, to be causing serious injury to the SACU industry."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        689,
+                        525,
+                        724
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                689,
+                                525,
+                                724
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        689,
+                                        525,
+                                        724
+                                    ],
+                                    "type": "text",
+                                    "content": "The Commission found that the applicant submitted prima facie information to indicate that the volumes of cold-rolled products increased sharply both in absolute terms and relative to domestic production in the 2024 (01 January 2024 to 31 December 2024) period."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        84,
+                        223,
+                        96
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                84,
+                                223,
+                                96
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        84,
+                                        223,
+                                        96
+                                    ],
+                                    "type": "text",
+                                    "content": "Serious injury and causal link"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        107,
+                        525,
+                        132
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                107,
+                                525,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        107,
+                                        525,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "The period of investigation for data evaluation for the purposes of determining the allegation of serious injury is 1 January 2023 to 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        141,
+                        525,
+                        176
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                141,
+                                525,
+                                176
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        141,
+                                        525,
+                                        176
+                                    ],
+                                    "type": "text",
+                                    "content": "The injury analysis relates to information submitted by ArcelorMittal South Africa Limited (AMSA), which represents 100% of the SACU production of the like or directly competitive products and therefore constitutes a major proportion of the total domestic production."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        185,
+                        525,
+                        221
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                185,
+                                525,
+                                221
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        185,
+                                        525,
+                                        221
+                                    ],
+                                    "type": "text",
+                                    "content": "The Applicant submitted prima facie evidence indicating that it is experiencing serious injury during the period of investigation, primarily in the form of a decline in sales volumes, decline in market share and decline in profitability which further shifted to sustained losses."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        230,
+                        524,
+                        255
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                230,
+                                524,
+                                255
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        230,
+                                        524,
+                                        255
+                                    ],
+                                    "type": "text",
+                                    "content": "The Applicant submitted additional information in support of its claim of serious injury, including, amongst other factors, evidence relating to price effects."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        264,
+                        525,
+                        311
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                264,
+                                525,
+                                311
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        264,
+                                        525,
+                                        311
+                                    ],
+                                    "type": "text",
+                                    "content": "On this basis, the Commission found that the Applicant submitted prima facie evidence that the SACU industry was suffering serious injury. Furthermore, the evidence indicates a causal link between the surge in imports resulting from the unforeseen developments, and the serious injury experienced by the domestic industry."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        320,
+                        205,
+                        333
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                320,
+                                205,
+                                333
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        320,
+                                        205,
+                                        333
+                                    ],
+                                    "type": "text",
+                                    "content": "Unforeseen developments"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        343,
+                        525,
+                        378
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                343,
+                                525,
+                                378
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        343,
+                                        525,
+                                        378
+                                    ],
+                                    "type": "text",
+                                    "content": "The Applicant submitted that a confluence of events forms the basis of the unforeseen developments that support the application. In summary, the Applicant stated that during the Uruguay Round of negotiations, South Africa did not foresee the following events:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        388,
+                        525,
+                        434
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                388,
+                                525,
+                                434
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        388,
+                                        525,
+                                        434
+                                    ],
+                                    "type": "text",
+                                    "content": "There is a persistent global oversupply and weak demand in cold-rolled steel. The persistent global oversupply of cold rolled steel, exacerbated by continuing investments in cold-rolling capacity, and weakening demand in major world markets has resulted in significant excess production and export capacity that is being diverted to more open markets, such as SACU."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        444,
+                        524,
+                        467
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                444,
+                                524,
+                                467
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        444,
+                                        524,
+                                        467
+                                    ],
+                                    "type": "text",
+                                    "content": "Major global economies are imposing trade remedies and tariff barriers, restricting traditional cold-rolled steel exports."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        477,
+                        525,
+                        502
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                477,
+                                525,
+                                502
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        477,
+                                        525,
+                                        502
+                                    ],
+                                    "type": "text",
+                                    "content": "As a direct consequence, trade flows are being diverted towards more open markets with lower tariff protection, including SACU."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        511,
+                        525,
+                        546
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                511,
+                                525,
+                                546
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        511,
+                                        525,
+                                        546
+                                    ],
+                                    "type": "text",
+                                    "content": "Accordingly, the Applicant submits that these developments constitute unforeseen developments within the meaning of Article XIX of GATT 1994, which have fundamentally altered global trade patterns and contributed directly to the surge in imports into the SACU market."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        555,
+                        525,
+                        580
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                555,
+                                525,
+                                580
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        555,
+                                        525,
+                                        580
+                                    ],
+                                    "type": "text",
+                                    "content": "On this basis, the Commission considered that the information submitted by the Applicant constitutes unforeseen developments within the meaning of Article XIX of GATT 1994."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        590,
+                        202,
+                        602
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                590,
+                                202,
+                                602
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        590,
+                                        202,
+                                        602
+                                    ],
+                                    "type": "text",
+                                    "content": "4. Further information"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        613,
+                        524,
+                        636
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                613,
+                                524,
+                                636
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        613,
+                                        524,
+                                        636
+                                    ],
+                                    "type": "text",
+                                    "content": "Interested parties must make themselves known and provide comments within a period of 20 days after the initiation of the investigation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        647,
+                        525,
+                        725
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                647,
+                                525,
+                                725
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        647,
+                                        525,
+                                        725
+                                    ],
+                                    "type": "text",
+                                    "content": "Any information which the interested parties may wish to submit in writing and any request for a hearing before the Commission that they may wish to put forward should be submitted within 20 days following the initiation of this investigation to the Directorate: Trade Remedies II, at the following address: The DTI Campus, 77 Meintjies Street, Sunnyside Pretoria, Block Uuzaji, Ground Floor, tel.: +27 12 394 3688, or directly to the investigating officers, Mr. Siphumelele E. Mkwanazi at email address: emkwanazi@itac.org.za or Mr. Neo Motshoane at email address: nmotshoane@itac.org.za."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        735,
+                        525,
+                        770
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                735,
+                                525,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        735,
+                                        525,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "If part of the information provided is of a confidential nature, the party concerned should give grounds to justify confidentiality and furnish public summaries of such information, which should be as detailed as possible. In instances where a public summary cannot be provided a sworn statement"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        254,
+                        35,
+                        340,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                254,
+                                35,
+                                340,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        254,
+                                        35,
+                                        340,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "G/SG/N/6/ZAF/14"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        292,
+                        58,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                292,
+                                58,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        292,
+                                        58,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        84,
+                        223,
+                        96
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                84,
+                                223,
+                                96
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        84,
+                                        223,
+                                        96
+                                    ],
+                                    "type": "text",
+                                    "content": "Serious injury and causal link"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        107,
+                        525,
+                        132
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                107,
+                                525,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        107,
+                                        525,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "The period of investigation for data evaluation for the purposes of determining the allegation of serious injury is 1 January 2023 to 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        141,
+                        525,
+                        176
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                141,
+                                525,
+                                176
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        141,
+                                        525,
+                                        176
+                                    ],
+                                    "type": "text",
+                                    "content": "The injury analysis relates to information submitted by ArcelorMittal South Africa Limited (AMSA), which represents 100% of the SACU production of the like or directly competitive products and therefore constitutes a major proportion of the total domestic production."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        185,
+                        525,
+                        221
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                185,
+                                525,
+                                221
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        185,
+                                        525,
+                                        221
+                                    ],
+                                    "type": "text",
+                                    "content": "The Applicant submitted prima facie evidence indicating that it is experiencing serious injury during the period of investigation, primarily in the form of a decline in sales volumes, decline in market share and decline in profitability which further shifted to sustained losses."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        230,
+                        524,
+                        255
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                230,
+                                524,
+                                255
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        230,
+                                        524,
+                                        255
+                                    ],
+                                    "type": "text",
+                                    "content": "The Applicant submitted additional information in support of its claim of serious injury, including, amongst other factors, evidence relating to price effects."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        264,
+                        525,
+                        311
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                264,
+                                525,
+                                311
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        264,
+                                        525,
+                                        311
+                                    ],
+                                    "type": "text",
+                                    "content": "On this basis, the Commission found that the Applicant submitted prima facie evidence that the SACU industry was suffering serious injury. Furthermore, the evidence indicates a causal link between the surge in imports resulting from the unforeseen developments, and the serious injury experienced by the domestic industry."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        320,
+                        205,
+                        333
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                320,
+                                205,
+                                333
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        320,
+                                        205,
+                                        333
+                                    ],
+                                    "type": "text",
+                                    "content": "Unforeseen developments"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        343,
+                        525,
+                        378
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                343,
+                                525,
+                                378
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        343,
+                                        525,
+                                        378
+                                    ],
+                                    "type": "text",
+                                    "content": "The Applicant submitted that a confluence of events forms the basis of the unforeseen developments that support the application. In summary, the Applicant stated that during the Uruguay Round of negotiations, South Africa did not foresee the following events:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        388,
+                        525,
+                        434
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                388,
+                                525,
+                                434
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        388,
+                                        525,
+                                        434
+                                    ],
+                                    "type": "text",
+                                    "content": "There is a persistent global oversupply and weak demand in cold-rolled steel. The persistent global oversupply of cold rolled steel, exacerbated by continuing investments in cold-rolling capacity, and weakening demand in major world markets has resulted in significant excess production and export capacity that is being diverted to more open markets, such as SACU."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        444,
+                        524,
+                        467
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                444,
+                                524,
+                                467
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        444,
+                                        524,
+                                        467
+                                    ],
+                                    "type": "text",
+                                    "content": "Major global economies are imposing trade remedies and tariff barriers, restricting traditional cold-rolled steel exports."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        477,
+                        525,
+                        502
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                477,
+                                525,
+                                502
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        477,
+                                        525,
+                                        502
+                                    ],
+                                    "type": "text",
+                                    "content": "As a direct consequence, trade flows are being diverted towards more open markets with lower tariff protection, including SACU."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        511,
+                        525,
+                        546
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                511,
+                                525,
+                                546
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        511,
+                                        525,
+                                        546
+                                    ],
+                                    "type": "text",
+                                    "content": "Accordingly, the Applicant submits that these developments constitute unforeseen developments within the meaning of Article XIX of GATT 1994, which have fundamentally altered global trade patterns and contributed directly to the surge in imports into the SACU market."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        555,
+                        525,
+                        580
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                555,
+                                525,
+                                580
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        555,
+                                        525,
+                                        580
+                                    ],
+                                    "type": "text",
+                                    "content": "On this basis, the Commission considered that the information submitted by the Applicant constitutes unforeseen developments within the meaning of Article XIX of GATT 1994."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        590,
+                        202,
+                        602
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                590,
+                                202,
+                                602
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        590,
+                                        202,
+                                        602
+                                    ],
+                                    "type": "text",
+                                    "content": "4. Further information"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        613,
+                        524,
+                        636
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                613,
+                                524,
+                                636
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        613,
+                                        524,
+                                        636
+                                    ],
+                                    "type": "text",
+                                    "content": "Interested parties must make themselves known and provide comments within a period of 20 days after the initiation of the investigation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        647,
+                        525,
+                        725
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                647,
+                                525,
+                                725
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        647,
+                                        525,
+                                        725
+                                    ],
+                                    "type": "text",
+                                    "content": "Any information which the interested parties may wish to submit in writing and any request for a hearing before the Commission that they may wish to put forward should be submitted within 20 days following the initiation of this investigation to the Directorate: Trade Remedies II, at the following address: The DTI Campus, 77 Meintjies Street, Sunnyside Pretoria, Block Uuzaji, Ground Floor, tel.: +27 12 394 3688, or directly to the investigating officers, Mr. Siphumelele E. Mkwanazi at email address: emkwanazi@itac.org.za or Mr. Neo Motshoane at email address: nmotshoane@itac.org.za."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        735,
+                        525,
+                        770
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                735,
+                                525,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        735,
+                                        525,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "If part of the information provided is of a confidential nature, the party concerned should give grounds to justify confidentiality and furnish public summaries of such information, which should be as detailed as possible. In instances where a public summary cannot be provided a sworn statement"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                68,
+                                84,
+                                525,
+                                131
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        84,
+                                        525,
+                                        131
+                                    ],
+                                    "type": "text",
+                                    "content": "must be provided stating the reasons why the information cannot be summarized. This requirement is designed to secure transparency and due access by all the parties to the information relating to this investigation. If the summaries are not duly provided and in the absence of just cause, ITAC may disregard the information deemed to be confidential",
+                                    "cross_page": true
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        84,
+                        525,
+                        131
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                84,
+                                525,
+                                131
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        84,
+                                        525,
+                                        131
+                                    ],
+                                    "type": "text",
+                                    "content": "must be provided stating the reasons why the information cannot be summarized. This requirement is designed to secure transparency and due access by all the parties to the information relating to this investigation. If the summaries are not duly provided and in the absence of just cause, ITAC may disregard the information deemed to be confidential"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        254,
+                        35,
+                        339,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                254,
+                                35,
+                                339,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        254,
+                                        35,
+                                        339,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "G/SG/N/6/ZAF/14"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        292,
+                        58,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                292,
+                                58,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        292,
+                                        58,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        84,
+                        525,
+                        131
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 2,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

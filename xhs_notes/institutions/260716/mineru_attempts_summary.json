@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_8s_uknet/pdfs/0006-OECD_OECD-Economic-Surveys-United-Kingdom-2026_a5ac2ef2.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_8s_uknet/pdfs/0007-OECD_The-spectrum-of-regulatory-models-and-its-application-to-the_fd765d39.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_8s_uknet/pdfs/0008-WTO_DG-Okonjo-Iweala-calls-for-simultaneous-progress-on-WTO-refo_33d54af4.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_8s_uknet/pdfs/0009-WTO_South-Africa-notifies-launch-of-safeguard-investigation-on-c_684ca195.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
