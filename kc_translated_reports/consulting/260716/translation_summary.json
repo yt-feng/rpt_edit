@@ -1,0 +1,56 @@
+{
+  "date_folder": "260716",
+  "max_reports": "all",
+  "selected_count": 3,
+  "successful_count": 3,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260716/0001-BCG_Built-on-Scale-Turning-to-Science_ebd53304",
+      "title": "波士顿咨询：印度制药创新从规模转向科学",
+      "source_title": "0001-BCG_Built-on-Scale-Turning-to-Science_ebd53304",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 18,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260716/01-0001-BCG_Built-on-Scale-Turning-to-Science_ebd53304",
+      "pdf_path": "kc_translated_reports/consulting/260716/01-0001-BCG_Built-on-Scale-Turning-to-Science_ebd53304/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260716/0002-BCG_Industrial-Products-Makers-Chart-a-New-Path-to-Digital_2cfd865a",
+      "title": "波士顿咨询：工业设备商数字化新路径",
+      "source_title": "0002-BCG_Industrial-Products-Makers-Chart-a-New-Path-to-Digital_2cfd865a",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 4,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260716/02-0002-BCG_Industrial-Products-Makers-Chart-a-New-Path-to-Digital_2cfd865a",
+      "pdf_path": "kc_translated_reports/consulting/260716/02-0002-BCG_Industrial-Products-Makers-Chart-a-New-Path-to-Digital_2cfd865a/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260716/0003-BCG_Putting-AI-to-Work-in-Energy-Trading_c7700e76",
+      "title": "波士顿咨询：AI应用于能源交易，EBIT可增30%-70%",
+      "source_title": "0003-BCG_Putting-AI-to-Work-in-Energy-Trading_c7700e76",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 3,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260716/03-0003-BCG_Putting-AI-to-Work-in-Energy-Trading_c7700e76",
+      "pdf_path": "kc_translated_reports/consulting/260716/03-0003-BCG_Putting-AI-to-Work-in-Energy-Trading_c7700e76/kc_translated_report_03.pdf"
+    }
+  ]
+}
