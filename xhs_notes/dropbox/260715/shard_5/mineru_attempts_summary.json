@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0001-26-GS-Kingmed -603882-- 1H26 prelim NP beat- Launching new equity incentive plan- Buy-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0002-27-GS-Japan- CPI Base-Year Revision- Jan-Jun 2026 Inflation Rate to be Revised Up- Likely to Exert Downward Pressure on Future Inflation Rates-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0003-28-GS-Mitsubishi Heavy Industries -7011.T-- NVIDIA AI DC collaboration report- strategically positive- maintain Buy-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0004-29-GS-Mercedes-Benz Group AG -MBGn.DE- 2Q26 preview-Trimming estimates on softer China profitability- 2Q Cars margin still within guidance-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0005-30-GS-MedTech - HCIT- 2Q26 Chart Pack Preview- Mixed Fundamental Picture Meets Discounted Valuations-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

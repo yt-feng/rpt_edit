@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 87,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-Kingmed （603882）： 1H26 prelim NP beat； Launching new equity incentive plan； Buy-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0001-26-GS-Kingmed -603882-- 1H26 prelim NP beat- Launching new equity incentive plan- Buy-260714.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-GS-Japan： CPI Base~Year Revision： Jan~Jun 2026 Inflation Rate to be Revised Up， Likely to Exert Downward Pressure on Future Inflation Rates-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0002-27-GS-Japan- CPI Base-Year Revision- Jan-Jun 2026 Inflation Rate to be Revised Up- Likely to Exert Downward Pressure on Future Inflation Rates-260714.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-GS-Mitsubishi Heavy Industries （7011.T）： NVIDIA AI DC collaboration report； strategically positive， maintain Buy-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0003-28-GS-Mitsubishi Heavy Industries -7011.T-- NVIDIA AI DC collaboration report- strategically positive- maintain Buy-260715.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-Mercedes~Benz Group AG （MBGn.DE） 2Q26 preview：Trimming estimates on softer China profitability； 2Q Cars margin still within guidance-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0004-29-GS-Mercedes-Benz Group AG -MBGn.DE- 2Q26 preview-Trimming estimates on softer China profitability- 2Q Cars margin still within guidance-260714.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-MedTech & HCIT： 2Q26 Chart Pack Preview： Mixed Fundamental Picture Meets Discounted Valuations-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_akfjxjxx/pdfs/0005-30-GS-MedTech - HCIT- 2Q26 Chart Pack Preview- Mixed Fundamental Picture Meets Discounted Valuations-260714.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
