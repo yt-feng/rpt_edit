@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_o6u4x312/pdfs/0001-66-MS-Netflix Inc-NFLX.US-We-ve Seen This Movie Before - Reiterate OW-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o6u4x312/pdfs/0002-67-MS-Short Term Summer Correction in the AI Rally-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o6u4x312/pdfs/0003-68-MS-TSMC-2330.TW-Earnings preview and catalysts for 2Q26 analyst meeting-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o6u4x312/pdfs/0004-69-MS-TCL Corp.-000100-2Q26 Preliminary Net Profit Beat-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o6u4x312/pdfs/0005-70-MS-Zhejiang Sanhua Intelligent Controls-002050-2Q26 Preview- Revenue Better than Feared-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
