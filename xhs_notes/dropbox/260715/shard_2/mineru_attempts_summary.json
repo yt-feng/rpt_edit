@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_y7l6lupj/pdfs/0001-11-DB-FX Special Report-Where-s fair value for EUR CNY--260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7l6lupj/pdfs/0002-12-DB-The Rise of the RMB Financing Ecosystem-From Panda and Dim Sum Bonds to Deeper Capital Markets-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7l6lupj/pdfs/0003-13-GS-Baidu.com Inc. -BIDU.US-2Q26 preview- Cloud momentum to sustain with improving margin- Elevated AI investment in 2H- Not Rated-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7l6lupj/pdfs/0004-14-GS-CHINA COSMETICS 2Q 1H26 Preview- Growth fueled while margins mixed with online trending lower- Eyeing 2H new initiatives- Buy MGP Giant Forest Cabin Jahwa-2.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7l6lupj/pdfs/0005-15-GS-Americas Life Sciences Tools - Diagnostics- 2Q26 Earnings Preview- GS Tools Tracker and China Stimulus Tracker Updates-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
