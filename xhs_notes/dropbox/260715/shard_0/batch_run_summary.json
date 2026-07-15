@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 87,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bernstein-Americas Energy & Transition Americas Power & Energy Transition： Paying for speed vs. scale ~ The BTM FTM BYOG Framework for BE， FRVO， and ORA's Hyperscaler Dea.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y0kejb9u/pdfs/0001-01-Bernstein-Americas Energy - Transition Americas Power - Energy Transition- Paying for speed vs. scale - The BTM FTM BYOG Framework for BE- FRVO- and ORA-s Hyperscaler Dea.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bernstein-Payments， Processors & IT Services：FISV， FIS， GPN： What is the 'true' multiple？-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y0kejb9u/pdfs/0002-02-Bernstein-Payments- Processors - IT Services-FISV- FIS- GPN- What is the -true- multiple--260714.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-Bernstein-Eli Lilly & Co（LLY.US）GLP~1 Market Model two ways... digging into TRx channel dynamics & longer~term TAM penetration-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y0kejb9u/pdfs/0003-03-Bernstein-Eli Lilly - Co-LLY.US-GLP-1 Market Model two ways... digging into TRx channel dynamics - longer-term TAM penetration-260714.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-BofA-Switching Trends：1Q26 Switching Trends： AI switching drives strength；Campus steadily improving-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y0kejb9u/pdfs/0004-04-BofA-Switching Trends-1Q26 Switching Trends- AI switching drives strength-Campus steadily improving-260714.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-BofA-Global Equity Volatility Insights：Stock vs index vol at 90s Dotcom extremes-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y0kejb9u/pdfs/0005-05-BofA-Global Equity Volatility Insights-Stock vs index vol at 90s Dotcom extremes-260714.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
