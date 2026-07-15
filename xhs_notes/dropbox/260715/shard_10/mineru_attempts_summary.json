@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_81k2m703/pdfs/0001-51-MS-Asia Summer School- Hong Kong China Insurance-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_81k2m703/pdfs/0002-52-MS-CNGR Advanced Material Co.- Ltd-2579.HK-2Q26 Beat- Benefits from battery materials volume growth and nickel ore resources-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_81k2m703/pdfs/0003-53-MS-Asia Summer School- Korea Renaissance- Structural Positives vs. Technical Obstacles-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_81k2m703/pdfs/0004-54-MS-Chemicals- Industry Reshuffling also Gaining Steam amid an AI-driven Market-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_81k2m703/pdfs/0005-55-MS-China Property - Asia Pacific-Weekly Database Tracker -28-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
