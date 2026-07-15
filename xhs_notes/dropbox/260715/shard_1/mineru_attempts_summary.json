@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_4xi9l3np/pdfs/0001-06-Bernstein-Walmart Inc-WMT.US-Walmart -WMT-- Price investment fear overdone- omni-channel profitability supports upside-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4xi9l3np/pdfs/0002-07-CITI-Shengyi Technology -600183- Preliminary 1H26 Profit Alert Beats Citi Expectation-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4xi9l3np/pdfs/0003-08-CITI-Estun -002747- Fundamentals Improve But Share Price Seems Overshooting-Maintain Sell-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4xi9l3np/pdfs/0004-09-BofA-Tech Hardware-Asia Pacific-The essence of FAU-alignment and automation-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4xi9l3np/pdfs/0005-10-CITI-WUS Printed Circuit -002463- 2Q26 NP Guidance Beat-260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
