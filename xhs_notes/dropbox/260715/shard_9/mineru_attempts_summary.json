@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_i8d7klw9/pdfs/0001-46-JPM-Technology - Semiconductor Technical Materials-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_i8d7klw9/pdfs/0002-47-JPM-Taiwan PCB- CCL and Substrate-Change in AI HDI leadership- for now-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_i8d7klw9/pdfs/0003-48-JPM-TSMC-2330.TW-2Q26 sales reaching high-end of guidance- GM likely to beat-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_i8d7klw9/pdfs/0004-49-JEF-PCB CCL Update- New Prelim Results from Some Key Local Names-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_i8d7klw9/pdfs/0005-50-MS-ASML Holding NV - Europe Notable Beat and Raise-260715.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

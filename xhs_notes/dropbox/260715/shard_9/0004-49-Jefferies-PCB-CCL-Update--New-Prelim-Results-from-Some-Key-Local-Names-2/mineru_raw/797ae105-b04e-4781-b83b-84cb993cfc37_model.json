@@ -1,0 +1,4458 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.077,
+                0.058,
+                0.284,
+                0.097
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.077,
+                0.117,
+                0.382,
+                0.142
+            ],
+            "angle": 0,
+            "content": "China (PRC) | Technology"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.112,
+                0.921,
+                0.141
+            ],
+            "angle": 0,
+            "content": "Equity Research\nJuly 13, 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.076,
+                0.159,
+                0.589,
+                0.204
+            ],
+            "angle": 0,
+            "content": "PCB/CCL Update: New Prelim Results from Some Key Local Names"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.214,
+                0.628,
+                0.336
+            ],
+            "angle": 0,
+            "content": "We update some new major PCB players prelim results, including WUS/Shennan/SYE all delivering much stronger NP growth vs other non-AI players. We also include CCL's results, which saw surged NP especially for low-end players ramping up from low bases. Among our coverages, WUS/Sytech beat both sellside/buyside cons, while the progress of next gen material/spec upgrade (e.g. M9/10, PTFE, CoWoP etc.) is crucial for sustained structural growth in dollar content.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.35,
+                0.629,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Update on several new preliminary results. Following our earlier note (Link) on analyzing the earnings performance for different types of PCB players, we have another update (summarized in Table 2 on next page) given there are multiple key names announcing their 1H26 prelim results. Basically, the AI players with high exposure to high-end products (WUS, Shennan, SYE) continue to deliver strong YoY growth in Q2 NP with solid QoQ ramp, echoing our earlier view on 1) robust order pipelines fulfilled by continued capacity expansion, and 2) limited impact on rising materials cost for these types of names. For WUS, its Q2 NP of ~Rmb1.7bn (at mid-pt) beat sellside cons by 10%, which is also higher than buyside cons of <Rmb1.6bn driven by strong AI-related demand and improved profitability especially in Thailand factory (already achieved break-even in Q2). Shennan/SYE's Q2 NP also beat sellside cons, which at least met buyide cons based on our understanding. For most the remaining names, we see the pressure from both supply/demand is just going on. For example, Redboard saw notable YoY/QoQ NP drop in Q2 (using adj.NP here to exclude a material one-off item) due to limited AI exposure, despite its capabilities in mSAP/SAP-related products. Moving into 2H26, we expect AI PCB names to continue outperforming non-AI names in earnings quality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.571,
+                0.629,
+                0.855
+            ],
+            "angle": 0,
+            "content": "CCL players are on fire; Sustainability remains to be tested. We now also include the earnings of major CCL players in this earnings analysis (exclude Kingboard Laminates as of now given it reports in semi-annual basis), as many of them also have announced the prelim results. Unlike PCB names, low-end CCL players are experiencing significant NP/profitability rebound driven by both lifting utilization rate and ASP as results of 1) smooth pass-through of rising upstream materials price hike thank to more concentrated landscape, 2) supply tightness of conventional CCL due to capacity shift toward high-end products by leading globally vendors, and 3) some pull-in orders amidst lean downstream inventory levels. Sytech's Q2 NP of ~Rmb2bn largely beat sellside cons by 40%, which should also be even higher than some aggressive buyside expectations in our view. As the most leading local high-end CCL vendor (though its current AI exposure is also limited), although Sytech's NP growth rate seems not as exciting as other names, we do note the latter are ramping up from low bases (all <5% NPM in 1H25 vs Sytech >10%). For conventional CCL names, we think the supply/demand and pricing dynamics of upstream raw materials are critical for continuous monitoring. For high-end/AI CCL (e.g. Sytech and other global players) as well as PCB names, we consider the progress of next gen material/spec upgrade is crucial, given we only see limited adoption of M9 in this year due to the immature supply chain. We believe any breakthrough in the commercialization of leading-edge solutions (e.g. M9/10, PTFE, CoWoP etc.) in the next few quarters will boost investor confidence regarding sustained structural growth in PCB/CCL's dollar content in the coming years.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.658,
+                0.167,
+                0.898,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Table 1 - China PCB/CCL Earnings Summary (Condensed)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.661,
+                0.189,
+                0.906,
+                0.497
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Company</td><td rowspan=\"2\">Mkt Cap (Rmb bn)</td><td colspan=\"2\">Net Profit (YoY)</td></tr><tr><td>1Q26</td><td>2Q26</td></tr><tr><td colspan=\"4\">Major PCB Maker</td></tr><tr><td>Founder</td><td>55</td><td>195%</td><td>260%</td></tr><tr><td>SYE</td><td>103</td><td>122%</td><td>101%</td></tr><tr><td>Fastprint</td><td>70</td><td>100%</td><td></td></tr><tr><td>Jove</td><td>31</td><td>89%</td><td></td></tr><tr><td>Shennan</td><td>290</td><td>73%</td><td>55%</td></tr><tr><td>Delton</td><td>83</td><td>63%</td><td>108%</td></tr><tr><td>WUS</td><td>249</td><td>63%</td><td>82%</td></tr><tr><td>Victory Giant</td><td>267</td><td>40%</td><td></td></tr><tr><td>Sunshine</td><td>11</td><td>22%</td><td>-14%</td></tr><tr><td>Redboard</td><td>69</td><td>12%</td><td>-20%</td></tr><tr><td>Avary</td><td>228</td><td>-5%</td><td></td></tr><tr><td>CEE</td><td>11</td><td>-17%</td><td></td></tr><tr><td>Goworld</td><td>11</td><td>-21%</td><td></td></tr><tr><td>Kinwong</td><td>69</td><td>-28%</td><td></td></tr><tr><td>Kingshine</td><td>37</td><td>-56%</td><td></td></tr><tr><td>Ellington</td><td>11</td><td>-68%</td><td></td></tr><tr><td>Welgao</td><td>10</td><td>-70%</td><td></td></tr><tr><td>Suntak</td><td>22</td><td>-72%</td><td></td></tr><tr><td>Olympic</td><td>30</td><td>-80%</td><td>-77%</td></tr><tr><td>Aoshikang</td><td>17</td><td>-84%</td><td>-14%</td></tr><tr><td>Bomin</td><td>13</td><td>-140%</td><td>-461%</td></tr><tr><td>Dynamic</td><td>35</td><td>-234%</td><td></td></tr><tr><td colspan=\"4\">Major CCL Maker</td></tr><tr><td>Goldenmax</td><td>70</td><td>764%</td><td>1116%</td></tr><tr><td>Nanya</td><td>78</td><td>611%</td><td></td></tr><tr><td>Baoding</td><td>23</td><td>268%</td><td>1618%</td></tr><tr><td>Sytech</td><td>363</td><td>105%</td><td>136%</td></tr><tr><td>Wazam</td><td>28</td><td>68%</td><td>514%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.66,
+                0.498,
+                0.831,
+                0.508
+            ],
+            "angle": 0,
+            "content": "Source: Company data, FactSet, JEF"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.658,
+                0.788,
+                0.81,
+                0.801
+            ],
+            "angle": 0,
+            "content": "Jacky He * | Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.658,
+                0.801,
+                0.846,
+                0.813
+            ],
+            "angle": 0,
+            "content": "+852 3743 8084 | jacky.he@JEF.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.658,
+                0.817,
+                0.846,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Edison Lee, CFA * | Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.658,
+                0.829,
+                0.85,
+                0.841
+            ],
+            "angle": 0,
+            "content": "852 3743 8009 | edison.lee@JEF.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.658,
+                0.845,
+                0.822,
+                0.858
+            ],
+            "angle": 0,
+            "content": "Nick Cheng * | Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.659,
+                0.858,
+                0.859,
+                0.87
+            ],
+            "angle": 0,
+            "content": "+852 3743 8750 | nick.cheng@JEF.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.659,
+                0.874,
+                0.807,
+                0.887
+            ],
+            "angle": 0,
+            "content": "Matt Ma * | Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.658,
+                0.886,
+                0.843,
+                0.899
+            ],
+            "angle": 0,
+            "content": "852 3767 1109 | matt.ma@JEF.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.658,
+                0.903,
+                0.888,
+                0.927
+            ],
+            "angle": 0,
+            "content": "Annie Ping, CFA, FRM * | Equity Associate +852 3767 1273 | annie.ping@JEF.com",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.076,
+                0.941,
+                0.752,
+                0.963
+            ],
+            "angle": 0,
+            "content": "Please see analyst certifications, important disclosure information, and information regarding the status of non-US analysts on pages 3 - 7 of this report.  \n* JEF Hong Kong Limited"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.162,
+                0.586,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.182,
+                0.362,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.216,
+                0.624,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.233,
+                0.625,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.251,
+                0.623,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.267,
+                0.625,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.285,
+                0.625,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.303,
+                0.625,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.319,
+                0.409,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.353,
+                0.624,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.367,
+                0.625,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.381,
+                0.625,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.395,
+                0.623,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.409,
+                0.625,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.423,
+                0.625,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.437,
+                0.625,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.451,
+                0.624,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.464,
+                0.623,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.479,
+                0.625,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.493,
+                0.624,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.507,
+                0.624,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.522,
+                0.623,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.535,
+                0.625,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.55,
+                0.475,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.573,
+                0.623,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.588,
+                0.625,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.602,
+                0.624,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.616,
+                0.624,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.629,
+                0.625,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.644,
+                0.625,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.658,
+                0.625,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.671,
+                0.625,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.686,
+                0.624,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.701,
+                0.625,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.713,
+                0.625,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.729,
+                0.624,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.743,
+                0.623,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.756,
+                0.623,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.771,
+                0.624,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.785,
+                0.624,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.798,
+                0.624,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.812,
+                0.623,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.826,
+                0.624,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.842,
+                0.117,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.789,
+                0.808,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.658,
+                0.802,
+                0.845,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.817,
+                0.845,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.658,
+                0.83,
+                0.849,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.846,
+                0.82,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.858,
+                0.857,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.875,
+                0.805,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.887,
+                0.842,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.904,
+                0.887,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.916,
+                0.854,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.039,
+                0.217,
+                0.066
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.817,
+                0.04,
+                0.923,
+                0.083
+            ],
+            "angle": 0,
+            "content": "Technology\nEquity Research\nJuly 13, 2026"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.079,
+                0.139,
+                0.317,
+                0.153
+            ],
+            "angle": 0,
+            "content": "Table 2 - China PCB/CCL Earnings Summary"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.081,
+                0.151,
+                0.905,
+                0.907
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Company</td><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Mkt Cap (Rmb bn)</td><td colspan=\"4\">Net Profit (Rmb m)</td><td colspan=\"2\">Net Profit (YoY)</td></tr><tr><td>1Q25</td><td>2Q25</td><td>1Q26</td><td>2Q26</td><td>1Q26</td><td>2Q26</td></tr><tr><td colspan=\"9\">Major PCB Maker</td></tr><tr><td>Founder</td><td>600601 CH</td><td>55</td><td>78</td><td>94</td><td>232</td><td>338</td><td>195%</td><td>260%</td></tr><tr><td>SYE</td><td>688183 CH</td><td>103</td><td>200</td><td>330</td><td>445</td><td>665</td><td>122%</td><td>101%</td></tr><tr><td>Fastprint</td><td>002436 CH</td><td>70</td><td>9</td><td>19</td><td>19</td><td></td><td>100%</td><td></td></tr><tr><td>Jove</td><td>300814 CH</td><td>31</td><td>10</td><td>7</td><td>19</td><td></td><td>89%</td><td></td></tr><tr><td>Shennan</td><td>002916 CH</td><td>290</td><td>491</td><td>869</td><td>850</td><td>1,350</td><td>73%</td><td>55%</td></tr><tr><td>Delton</td><td>001389 CH</td><td>83</td><td>240</td><td>251</td><td>393</td><td>522</td><td>63%</td><td>108%</td></tr><tr><td>WUS</td><td>002463 CH</td><td>249</td><td>762</td><td>920</td><td>1,242</td><td>1,673</td><td>63%</td><td>82%</td></tr><tr><td>Victory Giant</td><td>300476 CH</td><td>267</td><td>921</td><td>1,222</td><td>1,288</td><td></td><td>40%</td><td></td></tr><tr><td>Sunshine</td><td>300739 CH</td><td>11</td><td>12</td><td>29</td><td>15</td><td>25</td><td>22%</td><td>-14%</td></tr><tr><td>Redboard*</td><td>603459 CH</td><td>69</td><td>105</td><td>128</td><td>117</td><td>103</td><td>12%</td><td>-20%</td></tr><tr><td>Avary</td><td>002938 CH</td><td>228</td><td>488</td><td>745</td><td>463</td><td></td><td>-5%</td><td></td></tr><tr><td>CEE</td><td>002579 CH</td><td>11</td><td>7</td><td>12</td><td>6</td><td></td><td>-17%</td><td></td></tr><tr><td>Goworld</td><td>000823 CH</td><td>11</td><td>42</td><td>73</td><td>33</td><td></td><td>-21%</td><td></td></tr><tr><td>Kinwong</td><td>603228 CH</td><td>69</td><td>325</td><td>325</td><td>233</td><td></td><td>-28%</td><td></td></tr><tr><td>Kingshine</td><td>300903 CH</td><td>37</td><td>(33)</td><td>(29)</td><td>(52)</td><td></td><td>-56%</td><td></td></tr><tr><td>Ellington</td><td>603328 CH</td><td>11</td><td>116</td><td>144</td><td>38</td><td></td><td>-68%</td><td></td></tr><tr><td>Welgao</td><td>301251 CH</td><td>10</td><td>22</td><td>23</td><td>7</td><td></td><td>-70%</td><td></td></tr><tr><td>Suntak</td><td>002815 CH</td><td>22</td><td>115</td><td>106</td><td>32</td><td></td><td>-72%</td><td></td></tr><tr><td>Olympic</td><td>603920 CH</td><td>30</td><td>180</td><td>204</td><td>37</td><td>47</td><td>-80%</td><td>-77%</td></tr><tr><td>Aoshikang</td><td>002913 CH</td><td>17</td><td>112</td><td>84</td><td>17</td><td>72</td><td>-84%</td><td>-14%</td></tr><tr><td>Bomin</td><td>603936 CH</td><td>13</td><td>27</td><td>11</td><td>(11)</td><td>(38)</td><td>-140%</td><td>-461%</td></tr><tr><td>Dynamic</td><td>603175 CH</td><td>35</td><td>72</td><td>87</td><td>(96)</td><td></td><td>-234%</td><td></td></tr><tr><td colspan=\"9\">Major CCL Maker</td></tr><tr><td>Goldenmax</td><td>002636 CH</td><td>70</td><td>23</td><td>47</td><td>202</td><td>573</td><td>764%</td><td>1116%</td></tr><tr><td>Nanya</td><td>688519 CH</td><td>78</td><td>21</td><td>66</td><td>150</td><td></td><td>611%</td><td></td></tr><tr><td>Baoding</td><td>002552 CH</td><td>23</td><td>18</td><td>4</td><td>66</td><td>69</td><td>268%</td><td>1618%</td></tr><tr><td>Sytech</td><td>600183 CH</td><td>363</td><td>564</td><td>863</td><td>1,158</td><td>2,040</td><td>105%</td><td>136%</td></tr><tr><td>Wazam</td><td>603186 CH</td><td>28</td><td>18</td><td>24</td><td>31</td><td>149</td><td>68%</td><td>514%</td></tr><tr><td colspan=\"9\">Other PCB Maker</td></tr><tr><td>Printronics</td><td>002134 CH</td><td>7</td><td>1</td><td>6</td><td>12</td><td>32</td><td>2187%</td><td>422%</td></tr><tr><td>Edadoc</td><td>301366 CH</td><td>9</td><td>(7)</td><td>11</td><td>12</td><td></td><td>273%</td><td></td></tr><tr><td>DSBJ</td><td>002384 CH</td><td>444</td><td>456</td><td>302</td><td>1,110</td><td></td><td>143%</td><td></td></tr><tr><td>King Brother</td><td>301041 CH</td><td>3</td><td>(2)</td><td>6</td><td>(0)</td><td></td><td>93%</td><td></td></tr><tr><td>Allfavor</td><td>300964 CH</td><td>7</td><td>10</td><td>11</td><td>12</td><td>28</td><td>15%</td><td>152%</td></tr><tr><td>Sihui Fuji</td><td>300852 CH</td><td>9</td><td>29</td><td>47</td><td>29</td><td></td><td>3%</td><td></td></tr><tr><td>Aohong</td><td>605058 CH</td><td>4</td><td>37</td><td>44</td><td>33</td><td></td><td>-10%</td><td></td></tr><tr><td>Xunjiexing</td><td>688655 CH</td><td>5</td><td>(5)</td><td>2</td><td>(5)</td><td></td><td>-10%</td><td></td></tr><tr><td>Q&amp;D</td><td>301628 CH</td><td>7</td><td>26</td><td>32</td><td>23</td><td></td><td>-15%</td><td></td></tr><tr><td>Mankun</td><td>301132 CH</td><td>4</td><td>28</td><td>35</td><td>18</td><td></td><td>-36%</td><td></td></tr><tr><td>Camelot</td><td>301282 CH</td><td>6</td><td>16</td><td>37</td><td>9</td><td></td><td>-43%</td><td></td></tr><tr><td>Xiehe</td><td>605258 CH</td><td>2</td><td>12</td><td>17</td><td>5</td><td></td><td>-57%</td><td></td></tr><tr><td>Champion</td><td>603386 CH</td><td>5</td><td>15</td><td>23</td><td>(20)</td><td>11</td><td>-235%</td><td>-50%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.078,
+                0.908,
+                0.25,
+                0.919
+            ],
+            "angle": 0,
+            "content": "Source: Company data, FactSet, JEF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.077,
+                0.948,
+                0.412,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 3 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.91,
+                0.948,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.039,
+                0.216,
+                0.066
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.04,
+                0.922,
+                0.083
+            ],
+            "angle": 0,
+            "content": "Technology\nEquity Research\nJuly 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.14,
+                0.861,
+                0.154
+            ],
+            "angle": 0,
+            "content": "We would like to thank Connie Yan, employee of Evalueserve Inc., for providing research support services to our preparation of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.164,
+                0.312,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Company Valuation/Risks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.187,
+                0.921,
+                0.215
+            ],
+            "angle": 0,
+            "content": "For Important Disclosure information on companies recommended in this report, please visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action or call 212.284.2300.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.246,
+                0.265,
+                0.261
+            ],
+            "angle": 0,
+            "content": "Analyst Certification:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.262,
+                0.923,
+                0.299
+            ],
+            "angle": 0,
+            "content": "I, Jacky He, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.299,
+                0.923,
+                0.336
+            ],
+            "angle": 0,
+            "content": "I, Edison Lee, CFA, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.337,
+                0.923,
+                0.374
+            ],
+            "angle": 0,
+            "content": "I, Nick Cheng, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.375,
+                0.922,
+                0.411
+            ],
+            "angle": 0,
+            "content": "I, Matt Ma, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.412,
+                0.923,
+                0.449
+            ],
+            "angle": 0,
+            "content": "I, Annie Ping, CFA, FRM, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.449,
+                0.923,
+                0.537
+            ],
+            "angle": 0,
+            "content": "Registration of non-US analysts: Jacky He is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. Registration of non-US analysts: Edison Lee, CFA is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.537,
+                0.923,
+                0.662
+            ],
+            "angle": 0,
+            "content": "Registration of non-US analysts: Nick Cheng is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. Registration of non-US analysts: Matt Ma is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. Registration of non-US analysts: Annie Ping, CFA, FRM is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.661,
+                0.923,
+                0.713
+            ],
+            "angle": 0,
+            "content": "As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.729,
+                0.413,
+                0.745
+            ],
+            "angle": 0,
+            "content": "Investment Recommendation Record"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.746,
+                0.282,
+                0.758
+            ],
+            "angle": 0,
+            "content": "(Article 3(1)e and Article 7 of MAR)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.758,
+                0.504,
+                0.784
+            ],
+            "angle": 0,
+            "content": "Recommendation Published July 13, 2026 11:56 A.M.\nRecommendation Distributed July 13, 2026 11:56 A.M.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.801,
+                0.351,
+                0.818
+            ],
+            "angle": 0,
+            "content": "Company Specific Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.824,
+                0.921,
+                0.852
+            ],
+            "angle": 0,
+            "content": "For Important Disclosure information on companies recommended in this report, please visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action or call 212.284.2300.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.872,
+                0.363,
+                0.888
+            ],
+            "angle": 0,
+            "content": "Explanation of JEF Ratings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.889,
+                0.896,
+                0.915
+            ],
+            "angle": 0,
+            "content": "Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period. Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.077,
+                0.948,
+                0.412,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 3 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.91,
+                0.949,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.142,
+                0.858,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.166,
+                0.309,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.19,
+                0.918,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.204,
+                0.364,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.247,
+                0.262,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.263,
+                0.92,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.277,
+                0.919,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.289,
+                0.263,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.302,
+                0.919,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.315,
+                0.919,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.326,
+                0.296,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.339,
+                0.919,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.351,
+                0.919,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.364,
+                0.263,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.376,
+                0.918,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.389,
+                0.918,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.401,
+                0.262,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.414,
+                0.918,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.427,
+                0.919,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.438,
+                0.31,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.451,
+                0.919,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.463,
+                0.919,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.475,
+                0.918,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.488,
+                0.917,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.501,
+                0.919,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.513,
+                0.917,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.526,
+                0.184,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.539,
+                0.919,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.552,
+                0.919,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.563,
+                0.918,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.576,
+                0.919,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.589,
+                0.919,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.602,
+                0.918,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.614,
+                0.918,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.626,
+                0.918,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.638,
+                0.918,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.651,
+                0.183,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.663,
+                0.919,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.675,
+                0.919,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.687,
+                0.918,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.701,
+                0.478,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.732,
+                0.409,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.748,
+                0.278,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.759,
+                0.237,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.76,
+                0.5,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.773,
+                0.242,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.773,
+                0.501,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.802,
+                0.348,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.825,
+                0.917,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.84,
+                0.363,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.874,
+                0.36,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.891,
+                0.83,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.902,
+                0.892,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.039,
+                0.216,
+                0.066
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.817,
+                0.04,
+                0.923,
+                0.083
+            ],
+            "angle": 0,
+            "content": "Technology\nEquity Research\nJuly 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.14,
+                0.923,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below $10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.215,
+                0.922,
+                0.239
+            ],
+            "angle": 0,
+            "content": "NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.24,
+                0.515,
+                0.253
+            ],
+            "angle": 0,
+            "content": "CS - Coverage Suspended. JEF has suspended coverage of this company.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.253,
+                0.397,
+                0.265
+            ],
+            "angle": 0,
+            "content": "NC - Not covered. JEF does not cover this company.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.265,
+                0.922,
+                0.29
+            ],
+            "angle": 0,
+            "content": "Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.29,
+                0.922,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.326,
+                0.287,
+                0.342
+            ],
+            "angle": 0,
+            "content": "Valuation Methodology"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.342,
+                0.923,
+                0.406
+            ],
+            "angle": 0,
+            "content": "JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.405,
+                0.228,
+                0.417
+            ],
+            "angle": 0,
+            "content": "JEF Franchise Picks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.416,
+                0.924,
+                0.507
+            ],
+            "angle": 0,
+            "content": "JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a 15% stop loss, and the remainder will have a 20% stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.516,
+                0.622,
+                0.532
+            ],
+            "angle": 0,
+            "content": "Risks which may impede the achievement of our Price Target"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.532,
+                0.924,
+                0.659
+            ],
+            "angle": 0,
+            "content": "This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.667,
+                0.464,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Other Companies Mentioned in This Report"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.684,
+                0.485,
+                0.696
+            ],
+            "angle": 0,
+            "content": "• Avary Holding (Shenzhen) Co., Ltd. (002938 CH: CNY98.47, BUY)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.696,
+                0.502,
+                0.708
+            ],
+            "angle": 0,
+            "content": "• Delton Technology (Guangzhou) Inc. (001389 CH: CNY175.26, BUY)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.708,
+                0.453,
+                0.721
+            ],
+            "angle": 0,
+            "content": "• Shengyi Technology Co Ltd (600183 CH: CNY149.39, BUY)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.721,
+                0.411,
+                0.734
+            ],
+            "angle": 0,
+            "content": "• WUS Printed Circuit (002463 CH: CNY129.44, BUY)",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.078,
+                0.757,
+                0.92,
+                0.861
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"3\">Distribution of Ratings</td><td colspan=\"2\">IB Serv./Past12 Mos.</td><td colspan=\"2\">JIL Mkt Serv./Past12 Mos.</td></tr><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2233</td><td>62.57%</td><td>386</td><td>17.29%</td><td>110</td><td>4.93%</td></tr><tr><td>HOLD</td><td>1173</td><td>32.87%</td><td>95</td><td>8.10%</td><td>16</td><td>1.36%</td></tr><tr><td>UNDERPERFORM</td><td>163</td><td>4.57%</td><td>1</td><td>0.61%</td><td>1</td><td>0.61%</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.077,
+                0.948,
+                0.412,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 3 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.911,
+                0.949,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.143,
+                0.917,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.155,
+                0.92,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.167,
+                0.92,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.18,
+                0.919,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.192,
+                0.919,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.204,
+                0.157,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.216,
+                0.918,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.23,
+                0.175,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.242,
+                0.513,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.254,
+                0.394,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.266,
+                0.918,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.279,
+                0.533,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.292,
+                0.918,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.304,
+                0.343,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.325,
+                0.285,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.344,
+                0.919,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.357,
+                0.919,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.369,
+                0.919,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.382,
+                0.919,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.394,
+                0.287,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.407,
+                0.224,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.419,
+                0.919,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.431,
+                0.919,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.444,
+                0.918,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.457,
+                0.918,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.469,
+                0.919,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.481,
+                0.918,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.494,
+                0.85,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.516,
+                0.62,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.533,
+                0.918,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.546,
+                0.919,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.558,
+                0.919,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.572,
+                0.919,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.584,
+                0.919,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.597,
+                0.918,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.609,
+                0.919,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.621,
+                0.919,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.633,
+                0.919,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.646,
+                0.674,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.669,
+                0.461,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.686,
+                0.48,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.698,
+                0.498,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.711,
+                0.449,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.723,
+                0.406,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.039,
+                0.216,
+                0.066
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.04,
+                0.922,
+                0.083
+            ],
+            "angle": 0,
+            "content": "Technology\nEquity Research\nJuly 13, 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.16,
+                0.321,
+                0.177
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosure"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.187,
+                0.244,
+                0.199
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.199,
+                0.922,
+                0.261
+            ],
+            "angle": 0,
+            "content": "JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. (\"JEF\") companies:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.262,
+                0.922,
+                0.286
+            ],
+            "angle": 0,
+            "content": "United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.287,
+                0.923,
+                0.324
+            ],
+            "angle": 0,
+            "content": "Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.324,
+                0.922,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.412,
+                0.921,
+                0.437
+            ],
+            "angle": 0,
+            "content": "United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.437,
+                0.921,
+                0.462
+            ],
+            "angle": 0,
+            "content": "Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.462,
+                0.922,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.487,
+                0.921,
+                0.512
+            ],
+            "angle": 0,
+            "content": "Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.512,
+                0.922,
+                0.549
+            ],
+            "angle": 0,
+            "content": "Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.549,
+                0.923,
+                0.612
+            ],
+            "angle": 0,
+            "content": "India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.612,
+                0.922,
+                0.636
+            ],
+            "angle": 0,
+            "content": "Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.637,
+                0.922,
+                0.661
+            ],
+            "angle": 0,
+            "content": "Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.662,
+                0.923,
+                0.777
+            ],
+            "angle": 0,
+            "content": "This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC (\"JRS\"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as \"JEF\". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.786,
+                0.923,
+                0.887
+            ],
+            "angle": 0,
+            "content": "If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited (\"JIL\") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under \"company specific disclosures\".",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.886,
+                0.923,
+                0.938
+            ],
+            "angle": 0,
+            "content": "For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a \"permitted client\" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.077,
+                0.948,
+                0.412,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 3 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.911,
+                0.949,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.162,
+                0.319,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.189,
+                0.24,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.201,
+                0.918,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.213,
+                0.92,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.227,
+                0.898,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.239,
+                0.918,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.251,
+                0.146,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.263,
+                0.92,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.277,
+                0.531,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.289,
+                0.919,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.301,
+                0.919,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.314,
+                0.292,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.325,
+                0.92,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.339,
+                0.918,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.352,
+                0.92,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.363,
+                0.918,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.376,
+                0.917,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.387,
+                0.918,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.401,
+                0.426,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.413,
+                0.918,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.426,
+                0.804,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.437,
+                0.918,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.451,
+                0.614,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.464,
+                0.92,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.476,
+                0.679,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.489,
+                0.919,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.501,
+                0.374,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.514,
+                0.918,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.527,
+                0.918,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.538,
+                0.321,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.551,
+                0.919,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.564,
+                0.919,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.576,
+                0.919,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.589,
+                0.919,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.602,
+                0.525,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.614,
+                0.918,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.626,
+                0.451,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.638,
+                0.918,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.651,
+                0.636,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.664,
+                0.919,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.676,
+                0.919,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.687,
+                0.918,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.701,
+                0.919,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.714,
+                0.919,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.726,
+                0.918,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.737,
+                0.918,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.751,
+                0.919,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.764,
+                0.651,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.789,
+                0.917,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.8,
+                0.919,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.814,
+                0.919,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.826,
+                0.918,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.839,
+                0.918,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.852,
+                0.918,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.864,
+                0.919,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.876,
+                0.425,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.888,
+                0.92,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.901,
+                0.92,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.913,
+                0.918,
+                0.92
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.926,
+                0.92,
+                0.935
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.039,
+                0.217,
+                0.066
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.817,
+                0.04,
+                0.923,
+                0.082
+            ],
+            "angle": 0,
+            "content": "Technology\nEquity Research\nJuly 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.141,
+                0.924,
+                0.49
+            ],
+            "angle": 0,
+            "content": "herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited (\"JSL\") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China (\"PRC\"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the \"Corporations Act\"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.49,
+                0.924,
+                0.64
+            ],
+            "angle": 0,
+            "content": "This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.639,
+                0.923,
+                0.714
+            ],
+            "angle": 0,
+            "content": "By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.714,
+                0.923,
+                0.752
+            ],
+            "angle": 0,
+            "content": "The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.752,
+                0.923,
+                0.789
+            ],
+            "angle": 0,
+            "content": "This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.789,
+                0.923,
+                0.827
+            ],
+            "angle": 0,
+            "content": "This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.826,
+                0.924,
+                0.915
+            ],
+            "angle": 0,
+            "content": "This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.077,
+                0.948,
+                0.412,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 3 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.911,
+                0.949,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.142,
+                0.918,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.155,
+                0.919,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.167,
+                0.919,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.179,
+                0.917,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.191,
+                0.919,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.204,
+                0.918,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.217,
+                0.918,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.229,
+                0.919,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.242,
+                0.917,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.255,
+                0.918,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.267,
+                0.918,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.279,
+                0.918,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.292,
+                0.919,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.304,
+                0.919,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.317,
+                0.919,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.33,
+                0.919,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.342,
+                0.919,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.354,
+                0.918,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.367,
+                0.919,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.379,
+                0.919,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.392,
+                0.918,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.404,
+                0.918,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.417,
+                0.919,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.43,
+                0.918,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.442,
+                0.919,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.454,
+                0.918,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.466,
+                0.919,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.479,
+                0.566,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.491,
+                0.919,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.504,
+                0.919,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.516,
+                0.919,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.529,
+                0.918,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.542,
+                0.918,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.553,
+                0.918,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.566,
+                0.918,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.579,
+                0.919,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.592,
+                0.918,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.604,
+                0.918,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.616,
+                0.918,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.629,
+                0.232,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.642,
+                0.919,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.654,
+                0.918,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.667,
+                0.919,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.679,
+                0.919,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.692,
+                0.917,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.703,
+                0.502,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.717,
+                0.918,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.729,
+                0.919,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.742,
+                0.34,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.754,
+                0.92,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.767,
+                0.919,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.778,
+                0.304,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.79,
+                0.918,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.804,
+                0.919,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.815,
+                0.657,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.829,
+                0.919,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.841,
+                0.918,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.853,
+                0.919,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.865,
+                0.919,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.879,
+                0.917,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.891,
+                0.917,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.903,
+                0.918,
+                0.912
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.039,
+                0.217,
+                0.066
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.04,
+                0.922,
+                0.083
+            ],
+            "angle": 0,
+            "content": "Technology\nEquity Research\nJuly 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.141,
+                0.923,
+                0.178
+            ],
+            "angle": 0,
+            "content": "ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.178,
+                0.923,
+                0.254
+            ],
+            "angle": 0,
+            "content": "JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.253,
+                0.923,
+                0.29
+            ],
+            "angle": 0,
+            "content": "For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.29,
+                0.177,
+                0.303
+            ],
+            "angle": 0,
+            "content": "© 2026 JEF",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.078,
+                0.948,
+                0.412,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 3 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.911,
+                0.949,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.142,
+                0.918,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.156,
+                0.919,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.168,
+                0.674,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.18,
+                0.919,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.192,
+                0.919,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.204,
+                0.92,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.218,
+                0.918,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.23,
+                0.916,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.242,
+                0.743,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.255,
+                0.919,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.267,
+                0.917,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.279,
+                0.337,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.292,
+                0.174,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
