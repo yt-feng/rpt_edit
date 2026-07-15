@@ -1868,6 +1868,46 @@
     "bis:https://www.bis.org/publ/bisbull128.htm": {
       "first_seen": "2026-07-14",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1368.htm": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/oecd-economic-surveys-united-kingdom-2026_aa997c6e-en.html": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/mne-responses-to-the-global-minimum-tax_0bc9aac9-en.html": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/adaptive-communal-space-in-cities_17581d7b-en.html": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/the-spectrum-of-regulatory-models-and-its-application-to-the-digital-economy_b7456763-en.html": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/energy-savings-insurance-implementation-roadmap-of-india_14441d8b-en.html": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/flexibility-and-investor-protection-in-share-class-structures_49a978ad-en.html": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_zaf_14jul26_456_e.htm": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/gc_14jul26_457_e.htm": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/acc_09jul26_455_e.htm": {
+      "first_seen": "2026-07-15",
+      "status": "no_pdf"
     }
   }
 }
