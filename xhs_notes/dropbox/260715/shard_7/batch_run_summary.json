@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 87,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-GS-South Korea Automobiles： US June auto pricing update for HMC and Kia-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dbk5fadl/pdfs/0001-36-GS-South Korea Automobiles- US June auto pricing update for HMC and Kia-260715.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-HSBC-TSMC （2330.TT）Buy： Increasing capex pressure to drive long~term growth-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dbk5fadl/pdfs/0002-37-HSBC-TSMC -2330.TT-Buy- Increasing capex pressure to drive long-term growth-260713.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-GS-Wuliangye Yibin （000858）： Preliminary Results： 1H26 NP at c.50% of 1H24 level likely on continued de~stocking； Sell-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dbk5fadl/pdfs/0003-38-GS-Wuliangye Yibin -000858-- Preliminary Results- 1H26 NP at c.50- of 1H24 level likely on continued de-stocking- Sell-260715.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-JPM-2026 Summer Chemicals， Agriculture & Packaging Outlook-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dbk5fadl/pdfs/0004-39-JPM-2026 Summer Chemicals- Agriculture - Packaging Outlook-260713.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-JPM-ASML 2Q26 First Take-3Q and 2026 guidance substantially higher. Large capacity increases guided mean ‘28 earnings potential is dramatically above consensus-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dbk5fadl/pdfs/0005-40-JPM-ASML 2Q26 First Take-3Q and 2026 guidance substantially higher. Large capacity increases guided mean -28 earnings potential is dramatically above consensus-260715.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
