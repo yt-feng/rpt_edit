@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260716/0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/mineru_raw/images/a13b1500417bf650415d0908f7111cc352acb68db06a8b09b084c7e2caa533d0.jpg",
+    "path": "kc_translated_reports/institutions/260716/03-0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.10,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260716/0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/mineru_raw/images/b75978955d4e73255191e1b80b9f991767cdcbfe4d6775e715624460ad4cb9d3.jpg",
+    "path": "kc_translated_reports/institutions/260716/03-0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.29,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260716/0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/mineru_raw/images/ff9d49511b2b83c7f7791b35445337914c53a9d663a253861e44b42c5fe01719.jpg",
+    "path": "kc_translated_reports/institutions/260716/03-0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.23,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260716/0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/mineru_raw/images/546d308c0fcfd3000fcd295f577ba6125a3a60c33c6177f52ebaa7c35d6aec83.jpg",
+    "path": "kc_translated_reports/institutions/260716/03-0003-OECD_Energy-savings-insurance-implementation-roadmap-of-India_22cc416a/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.17,contrast,large"
+  }
+]
