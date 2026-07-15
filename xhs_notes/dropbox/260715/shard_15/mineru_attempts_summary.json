@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__w691582/pdfs/0001-76-NOM-Shengyi Technology-600183-Price hike and product upgrade drive solid 1H26 performance...-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__w691582/pdfs/0002-77-NOM-Semiconductor packaging industry update-Packaging substrate shipments up 36- y-y-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__w691582/pdfs/0003-78-NOM-Shengyi Electronics-688183-Solid 1H26 profit alert reaffirms upward trend-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__w691582/pdfs/0004-79-NOM-YOFC-6869.HK-A beat in 2Q26 earnings reflecting solid price hike-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__w691582/pdfs/0005-80-NOM-USD CNY fix model-Projection- 6.7681-260715.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
