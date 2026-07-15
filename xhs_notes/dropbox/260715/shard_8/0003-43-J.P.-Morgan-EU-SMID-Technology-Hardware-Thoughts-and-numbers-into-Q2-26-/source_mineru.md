@@ -1,0 +1,468 @@
+# EU SMID Technology Hardware
+
+## Thoughts and numbers into Q2'26 earnings season: Continue to prefer SemiCap over Semi Devices
+
+\- End-market backdrop will continue to be mixed: AI and the associated infrastructure/data center build-out continues to be a mixed blessing for the EU SMID Tech names, with direct benefits (from increased WFE, growth in Optical), but growing indirect headwinds, specifically rising DRAM and NAND prices. Semi-Cap exposed names (COTN, IFCN) should be able to report accelerating momentum at Q2'26 results and we expect increasing visibility as WFE grows and looks well supported further out (JPMe WFE growth of $28\% / 29\% / 16\%$ in CY26/27/28, here). The risk of higher DRAM and other Memory costs resulting in demand/volume destruction (or even supply constraints) is likely to be more acute at Q2 results with price increases becoming more visible. This issue is most relevant for Consumer-exposed companies where the end-market is most sensitive to such price increases. On Automotive, we expect the slow improvement to continue in Q2 and through the end of the year with destocking largely ended, but, we recognise that an upcycle is still to take hold in Auto's. On a reported basis, currency headwinds should be easing in Q2 and, given current trends, should flip to become a mild tailwind in the second half for EUR and CHF reporters.
+
+\- Where we are constructive: Overall, we prefer Semi-Cap names over Semi Devices into Q2 reporting, where we continue to see upside to consensus forecasts across our covered names (AIXA, COTN, IFCN). On Aixtron (OW), we expect to see another strong quarter of orders as the optical build-out continues. Importantly, we expect Optoelectronic order activity to diversify as Asian customers become a larger part of the mix. Positive commentary on GaN (not necessarily orders) should also be helpful in supporting the next leg of growth. Comet (OW) should be able to report strong orders and growing consignment stock (also a forward indicator). Mid-term guidance looks very conservative/outdated (we don’t expect an update), but we do see significant room for estimates to increase. We note that even with the significant share price performance of the Semi-Cap group year to date that on JPM forecasts, these Semi-Cap names are trading broadly in-line with 10-year median multiples.
+
+\- Where we are cautious: The EU SMID Semi Devices group has a relatively high exposure to Consumer, and limited direct exposure to the AI stack, which generally leaves us cautious on this group. In particular, we are cautious on Nordic Semiconductor (N) which has a high exposure to Consumer electronics ( $\sim 60\%$ ) and gross margins may see pressure from higher testing and packaging costs, as well as Memory (which is an input to some Nordic systems) while forecasts look full while the shares trade ahead of historic average multiples. Soitec (N) has a more divergent performance within the group but on balance we are cautious given valuation which is rich versus long-term history. Silicon Photonics should continue to post rapid growth (supported by adoption in optical infrastructure) but we see material downside risk to the core Mobile business which still represents $\sim 50\%$ of revenues (given mobile handset contraction and continued elevated inventory at Soitec customers).
+
+European Tech Hardware & Payments
+
+Craig A McDowell AC (44-20) 7742-4576 craig.mcdowell@JPM.com
+
+Sandeep Deshpande (44-20) 7134-5276 sandeep.s.deshpande@JPM.com
+
+Anthony Girard (44-20) 3493-6469 anthony.girard@JPM.com JPM Securities plc
+
+Specialist Sales contact details:
+
+Scott Silver - Specialist Sales - European TMT (44-20) 7134-0412 scott.silver@JPM.com
+
+EU SMID Tech, reporting calendar:
+
+Tue 28 July: Soitec (N, aft. mkt.)
+
+Wed 29 July: Melexis (N)
+
+Thu 30 July: Aixtron (OW), Inficon (OW)
+
+Fri 31 July: Comet (OW)
+
+Tue 4 Aug.: ams-OSRAM (OW)
+
+Thu 6 Aug.: Nordic Semi. (N)
+
+Wed 19 Aug.: Sensirion (N)
+
+See page 12 for analyst certification and important disclosures, including non-US analyst disclosures.
+
+Aixtron (OW, PT €70,0)
+
+Recent JPM research
+
+Remain Overweight: Full revenue and earnings potential still coming into view (17 June)
+
+Takeaways from investor meeting (8 June)
+
+Read-across round-up Q1'26: Positive commentary across Optical and Power end-markets (11 May)
+
+## Aixtron
+
+Table 1: Aixtron, Q2'26 and Q3'26 consensus comparison € million
+
+<table><tr><td rowspan="2"></td><td colspan="3">Q2&#x27;26</td><td colspan="2">Q2&#x27;25</td><td colspan="2">Q1&#x27;26</td><td colspan="3">Q3&#x27;26</td></tr><tr><td>JPMe</td><td>BBG Cons</td><td>Diff.</td><td>Act.</td><td>Y/Y (JPMe)</td><td>Act.</td><td>Q/Q (JPMe)</td><td>JPMe</td><td>BBG Cons</td><td>Diff.</td></tr><tr><td>Orders</td><td>197.1</td><td>179.9</td><td>9.6%</td><td>118.5</td><td>66.3%</td><td>171.4</td><td>15.0%</td><td>187.3</td><td>180.9</td><td>3.5%</td></tr><tr><td>Revenue</td><td>112.0</td><td>121.1</td><td>-7.5%</td><td>137.4</td><td>-18.5%</td><td>59.4</td><td>88.5%</td><td>176.3</td><td>169.4</td><td>4.1%</td></tr><tr><td>Gross profit</td><td>45.4</td><td>49.1</td><td>-7.6%</td><td>55.7</td><td>-18.6%</td><td>10.8</td><td>320.0%</td><td>77.6</td><td>74.7</td><td>3.8%</td></tr><tr><td>Gross margin</td><td>40.5%</td><td>40.5%</td><td>-2 bps</td><td>40.6%</td><td>-5 bps</td><td>18.2%</td><td>+2232 bps</td><td>44.0%</td><td>44.1%</td><td>-362 bps</td></tr><tr><td>EBIT</td><td>11.4</td><td>16.1</td><td>-29.6%</td><td>23.6</td><td>-51.8%</td><td>(22.3)</td><td>-150.9%</td><td>45.5</td><td>42.0</td><td>8.3%</td></tr><tr><td>EBIT margin</td><td>10.1%</td><td>13.3%</td><td>-318 bps</td><td>17.1%</td><td>-700 bps</td><td>-37.5%</td><td>+4768 bps</td><td>25.8%</td><td>24.8%</td><td>-1468 bps</td></tr><tr><td>Net profit</td><td>9.9</td><td>13.6</td><td>-27.4%</td><td>19.2</td><td></td><td>(21.9)</td><td></td><td>36.2</td><td>33.3</td><td>8.5%</td></tr><tr><td>EPS (dil.)</td><td>0.08</td><td>0.12</td><td>-31.4%</td><td>0.17</td><td></td><td>(0.19)</td><td></td><td>0.29</td><td>0.29</td><td>2.3%</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P. (awaiting company collated consensus)  
+Reporting date: Thursday 30 July  
+Q2'26 guide: Revenue of €110m +/- €10m, no guidance on profitability  
+FY26 guide (JPM/cons): Revenue of €560m +/-€30m (€587m/€574m); Gross Margin \~42% (42.2%/41.9%); EBIT margin 17-20% (19.6%/19.0%)
+
+## JPM thoughts into the quarter
+
+We expect another strong order quarter for Aixtron, led by Optoelectronics. For the past two quarters, optoelectronic orders have been driven by North American and European customers; however, we expect that this should begin to diversify with a greater share coming from Asian customers. Note, for certain countries (particularly China), Aixtron only reports orders when it has also received the corresponding export license. Power segments are likely to remain subdued in Q2, but read-across from Power IDMs suggests a pick-up in GaN and SiC content in data-centre power applications, which should support equipment placements in 2027 and beyond. Some have questioned whether there is scope for a further 2026 guidance raise, we think the likelihood of this is low, given lead times (\~5-9 months). There is no guidance on Q2 profitability, but we forecast a step up in operating margin through the year following the revenue line (which we expect to be Q4 weighted), while currency is trending to be more supportive in the second half.
+
+## Key watch points
+
+\- Orders will be the key number in the report and, in particular, whether Aixtron is seeing elongation of the order book (in particular in Optoelectronics), adding to confidence in 2027-2028 revenue estimates
+
+\- Commentary on GaN customers, including current utilisation levels and production capacity roadmaps in anticipation of accelerating end-market demand
+
+\- Operating leverage and earnings potential have become topics and we look for management commentary on opex progression as the company enters a period of high growth
+
+ams-OSRAM (OW, PT 24.40 CHF)
+
+Recent JPM research
+
+Update into Q2'26: Base business and balance sheet improving, growing credibility on future growth drivers (24 June)
+
+Takeaways from London TMT Conference 2026 (22 May)
+
+Upgrade to OW: AI Photonic + Smart Glasses upside, solid base business, deleveraging supports sentiment (19 May)
+
+## ams-OSRAM
+
+Table 2: ams-OSRAM, Q2'26 and Q3'26 consensus comparison € million
+
+<table><tr><td rowspan="2"></td><td colspan="3">Q2&#x27;26</td><td colspan="4">Actual</td><td colspan="3">Q3&#x27;26</td></tr><tr><td>JPMe</td><td>Vara</td><td>Diff</td><td>Q1&#x27;26</td><td>Q/Q JPMe</td><td>Q2&#x27;25</td><td>Y/Y JPMe</td><td>JPMe</td><td>Vara</td><td>Diff</td></tr><tr><td>Revenue</td><td>770.5</td><td>782.1</td><td>-1%</td><td>795.0</td><td>-3%</td><td>774.0</td><td>-0%</td><td>832.0</td><td>795.5</td><td>+5%</td></tr><tr><td>OS</td><td>359.0</td><td>375.0</td><td>-4%</td><td>327.0</td><td>+10%</td><td>343.5</td><td>+4%</td><td>383.3</td><td>402.6</td><td>-5%</td></tr><tr><td>CSA</td><td>239.0</td><td>229.8</td><td>+4%</td><td>224.0</td><td>+7%</td><td>238.5</td><td>+0%</td><td>250.9</td><td>224.7</td><td>+12%</td></tr><tr><td>L&amp;S</td><td>172.6</td><td>182.3</td><td>-5%</td><td>244.0</td><td>-29%</td><td>192.0</td><td>-10%</td><td>197.9</td><td>183.3</td><td>+8%</td></tr><tr><td>Adj. EBITDA</td><td>128.4</td><td>125.1</td><td>+3%</td><td>135.0</td><td>-5%</td><td>150.8</td><td>-15%</td><td>141.9</td><td>134.4</td><td>+6%</td></tr><tr><td>OS</td><td>68.9</td><td>87.0</td><td></td><td>55.0</td><td>+25%</td><td>78.7</td><td>-12%</td><td>85.1</td><td>87.0</td><td></td></tr><tr><td>CSA</td><td>40.1</td><td>46.0</td><td></td><td>24.0</td><td>+67%</td><td>42.9</td><td>-6%</td><td>30.1</td><td>46.0</td><td></td></tr><tr><td>L&amp;S</td><td>19.3</td><td>23.9</td><td></td><td>56.0</td><td>-65%</td><td>29.2</td><td>-34%</td><td>26.7</td><td>23.9</td><td></td></tr><tr><td>Adj. EBITDA margin</td><td>16.7%</td><td>16.0%</td><td>+67 bps</td><td>17.0%</td><td>-32 bps</td><td>19.5%</td><td>-282 bps</td><td>17.1%</td><td>16.9%</td><td>+18 bps</td></tr><tr><td>OS</td><td>19.2%</td><td></td><td></td><td>16.8%</td><td></td><td>22.9%</td><td></td><td>22.2%</td><td></td><td></td></tr><tr><td>CSA</td><td>16.8%</td><td></td><td></td><td>10.7%</td><td></td><td>18.0%</td><td></td><td>12.0%</td><td></td><td></td></tr><tr><td>L&amp;S</td><td>11.2%</td><td></td><td></td><td>23.0%</td><td></td><td>15.2%</td><td></td><td>13.5%</td><td></td><td></td></tr><tr><td>Adj. EBIT</td><td>52.4</td><td>42.9</td><td>+22%</td><td>45.0</td><td>+16%</td><td>73.8</td><td>-29%</td><td>65.9</td><td>48.4</td><td>+36%</td></tr><tr><td>Margin</td><td>6.8%</td><td>5.5%</td><td>+129 bps</td><td>5.7%</td><td>+114 bps</td><td>9.5%</td><td>-273 bps</td><td>7.9%</td><td>6.1%</td><td>+184 bps</td></tr><tr><td>Adj. EPS</td><td>-0.11</td><td>-0.23</td><td>-51%</td><td>-0.73</td><td>-84%</td><td>0.23</td><td>-149%</td><td>0.08</td><td>-0.19</td><td>-141%</td></tr></table>
+
+Source: JPM estimates, Vara consensus (post-Q1'26 report).
+
+Q2'26 guide: Revenue of €725m-825m, Adj. EBITDA margin of 14.0-17.0%
+FY26 guide (JPM/Cons): n/a
+
+## JPM thoughts into the quarter
+
+Reported numbers for Q2 and Q3 are choppy given the various perimeter changes as well as currency moves (note, the Non-Optical Sensor disposal to Infineon closed on 1 July 2027). For Q3'26, we forecast $4.1\%$ organic growth $(y/y)$ with a $-6.5\%$ impact from M&A and $0\%$ impact from currency (which may see upside if the EUR rate continues its trend); this leaves us ahead of consensus for Q3'26. From our discussions, it feels like investors are willing to look through the next few quarters of noise around portfolio changes given the improving balance sheet position and free cash flow, as well as new growth opportunities (Smart Glass, AI Photonics). Recent high-profile hires to lead the Optical Interconnect business (here), add credibility to the Micro-LED technology and potentially indicate a more meaningful industry partnership (still unnamed following announcement at Q1'26 results).
+
+## Key watch points
+
+\- The AI Photonics opportunity is likely to be the main focus for investors; however, we don't think that management will be in a position to provide much ‘new news’ compared to Q1'26 results (7 May), although a comment on the recent hire would be helpful.
+
+\- We view Consumer (\~20-25% of ams-Osram's revenue) as the most challenging end-market, given the flow through of memory pricing into consumer electronics; commentary on the consumer order book trends and visibility will be important.
+
+\- Kulim II continues to be a question mark and concern for investors, particularly in a market where semiconductor companies are seeking clean-room capacity (investors are questioning why it hasn't already been disposed of).
+
+Comet (OW, 500 CHF)
+
+Recent JPM research
+
+Remain Overweight: Earnings upside with relatively undemanding multiple (22 June)
+
+Initiate at OW: Rising market tide and self-help supports multi-year growth (17 March)
+
+## Comet
+
+Table 3: Comet, H1'26 and H2'26 consensus comparison  
+CHF million
+
+<table><tr><td></td><td>H1&#x27;26JPMe</td><td>Cons</td><td>Diff.</td><td>H1&#x27;25Actual</td><td>y/y (JPMe)</td><td>H2&#x27;25Actual</td><td>H/H (JPMe)</td><td>H2&#x27;26JPMe</td><td>Cons</td><td>Diff.</td><td>FY&#x27;26JPMe</td><td>Cons</td><td>Diff.</td></tr><tr><td colspan="14">PCT</td></tr><tr><td>Revenue</td><td>147.7</td><td>155.3</td><td>-4.9%</td><td>134.3</td><td>10.0%</td><td>122.8</td><td>20.2%</td><td>188.1</td><td>192.2</td><td>-2.1%</td><td>335.8</td><td>192.2</td><td>74.7%</td></tr><tr><td>Organic growth, y/y</td><td>17.0%</td><td></td><td></td><td>46.5%</td><td></td><td>-13.4%</td><td></td><td>55.7%</td><td></td><td></td><td>35.5%</td><td></td><td></td></tr><tr><td>Adj. EBITDA</td><td>26.6</td><td>27.7</td><td>-3.9%</td><td>21.2</td><td>25.7%</td><td>19.3</td><td>38.1%</td><td>51.2</td><td>43.9</td><td>16.5%</td><td>77.8</td><td>43.9</td><td>77.0%</td></tr><tr><td>Margin, %</td><td>18.0%</td><td>17.8%</td><td></td><td>15.8%</td><td></td><td>15.7%</td><td></td><td>27.2%</td><td>22.9%</td><td></td><td>23.2%</td><td>22.9%</td><td></td></tr><tr><td colspan="14">IXS</td></tr><tr><td>Revenue</td><td>50.1</td><td>52.3</td><td>-4.1%</td><td>48.7</td><td>3.0%</td><td>62.1</td><td>-19.3%</td><td>72.3</td><td>66.0</td><td>9.6%</td><td>122.5</td><td>66.0</td><td>85.7%</td></tr><tr><td>Organic growth, y/y</td><td>8.0%</td><td></td><td></td><td>-9.8%</td><td></td><td>6.8%</td><td></td><td>17.8%</td><td></td><td></td><td>13.5%</td><td></td><td></td></tr><tr><td>Adj. EBITDA</td><td>0.5</td><td>-0.4</td><td>-235.7%</td><td>-7.5</td><td>-106.7%</td><td>0.0</td><td>12437.4%</td><td>-3.4</td><td>-2.6</td><td>28.9%</td><td>-2.9</td><td>-2.6</td><td>9.6%</td></tr><tr><td>Margin, %</td><td>1.0%</td><td>-0.7%</td><td></td><td>-15.4%</td><td></td><td>0.0%</td><td></td><td>-4.7%</td><td>-4.0%</td><td></td><td>-2.3%</td><td>-4.0%</td><td></td></tr><tr><td colspan="14">IXM</td></tr><tr><td>Revenue</td><td>49.4</td><td>39.7</td><td>24.3%</td><td>48.4</td><td>2.0%</td><td>50.7</td><td>-2.6%</td><td>55.2</td><td>57.2</td><td>-3.6%</td><td>104.5</td><td>57.2</td><td>82.7%</td></tr><tr><td>Organic growth, y/y</td><td>8.0%</td><td></td><td></td><td>6.9%</td><td></td><td>10.5%</td><td></td><td>10.0%</td><td></td><td></td><td>9.0%</td><td></td><td></td></tr><tr><td>Adj. EBITDA</td><td>8.5</td><td>7.3</td><td>15.6%</td><td>8.3</td><td>2.0%</td><td>7.4</td><td>14.0%</td><td>10.5</td><td>11.1</td><td>-5.1%</td><td>19.0</td><td>11.1</td><td>71.4%</td></tr><tr><td>Margin, %</td><td>17.2%</td><td>18.5%</td><td></td><td>17.2%</td><td></td><td>14.7%</td><td></td><td>19.1%</td><td>19.4%</td><td></td><td>18.2%</td><td>19.4%</td><td></td></tr><tr><td colspan="14">Group</td></tr><tr><td>Revenue</td><td>243.0</td><td>249.0</td><td>-2.4%</td><td>227.2</td><td>7.0%</td><td>229.9</td><td>5.7%</td><td>309.4</td><td>311.0</td><td>-0.5%</td><td>552.4</td><td>556.3</td><td>-0.7%</td></tr><tr><td>Organic growth, y/y</td><td>13.4%</td><td></td><td></td><td>23.2%</td><td></td><td>-4.4%</td><td></td><td>36.6%</td><td></td><td></td><td>25.1%</td><td></td><td></td></tr><tr><td>Reported growth, y/y</td><td>7.0%</td><td></td><td></td><td>20.0%</td><td></td><td>-5.8%</td><td></td><td>34.6%</td><td></td><td></td><td>20.9%</td><td></td><td></td></tr><tr><td>Adj. EBITDA</td><td>34.0</td><td>32.1</td><td>5.7%</td><td>20.7</td><td>64.1%</td><td>25.6</td><td>32.6%</td><td>57.8</td><td>52.9</td><td>9.1%</td><td>91.8</td><td>82.8</td><td>10.8%</td></tr><tr><td>Margin, %</td><td>14.0%</td><td>12.9%</td><td></td><td>9.1%</td><td></td><td>11.1%</td><td></td><td>18.7%</td><td>17.0%</td><td></td><td>16.6%</td><td>14.9%</td><td></td></tr><tr><td>Reported EBITDA</td><td>26.0</td><td></td><td></td><td>20.7</td><td>25.4%</td><td>25.6</td><td>1.4%</td><td>50.8</td><td></td><td></td><td>76.8</td><td></td><td></td></tr><tr><td>Margin, %</td><td>10.7%</td><td></td><td></td><td>9.1%</td><td></td><td>11.1%</td><td></td><td>16.4%</td><td></td><td></td><td>13.9%</td><td></td><td></td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P. (awaiting company collated consensus).
+
+Reporting date: Friday 31 July
+
+H1'26 guide: n/a
+
+FY26 guide (JPM/Cons): Revenue to be “significantly above 2025” (CHF 457m) (552.4m/556.3m) and Adj. EBITDA margin “significantly above 2025” (10.1%) excluding \~3pp of margin dilution from one-offs related to the ramp of the Penang site and efficiency program. Note that it is unclear in Bloomberg consensus how respondents have dealt with the one-offs (company consensus is to explicitly break this out).
+
+## JPM thoughts into the quarter
+
+At H1'26 results, we expect that management will provide quantified guidance for FY26 (following on from qualitative guidance issued in March). Latest Bloomberg consensus suggests the market understands that growth will be H2 weighted, which is consistent with our latest discussions with the company, while improving currency should support both revenue growth and margin (USD CHF rate trending towards $\sim 0.81$ vs. $\sim 0.78$ when management last communicated to the market). The assumptions behind the mid-term guidance issued in November 2025 are looking increasingly conservative (as a reminder, guidance assumed $\sim 6\%$ WFE CAGR and 0.70 USD CHF rate), and midterm estimates could see meaningful upside, based on latest WFE forecasts. We doubt management will provide updated guidance ranges, but expect them at least to provide commentary that existing ranges can be exceeded meaningfully.
+
+## Key watch points
+
+\- We expect orders to continue their positive trend (Q1'26 +22% y/y); however, we will also look for colour on consignment stock build-up which is not included in orders but is a leading indicator of future revenue growth.
+
+\- An important part of the investment thesis is the adoption of Synertia, allowing market share gain in RF Power Generation and diversification of exposure beyond historical strength in NAND; management commentary around these points will be important for the shares.
+
+Inficon (OW, 200 CHF)
+
+Recent JPM research
+
+Remain Overweight: Earnings upside with relatively undemanding multiple (21 June)
+
+Q1'26 recap: Results and guidance raise supportive of Overweight thesis (26 April)
+
+Initiating at OW: Beneficiary of WFE upcycle, with potential upside to Revenue and Earnings forecasts (31 March)
+
+## Inficon
+
+Table 4: Inficon, Q2'26 and Q3'26 consensus comparison \$ million
+
+<table><tr><td rowspan="2"></td><td colspan="3">Q2&#x27;26</td><td colspan="4">Actual</td><td colspan="3">Q3&#x27;26</td></tr><tr><td>JPMe</td><td>Cons</td><td>Diff.</td><td>PY (Q2&#x27;25)</td><td>Y/Y (JPMe)</td><td>PQ (Q1&#x27;26)</td><td>Y/Y (JPMe)</td><td>JPMe</td><td>Cons</td><td>Diff.</td></tr><tr><td>Semi &amp; Vac. Coating</td><td>99.8</td><td></td><td></td><td>82.1</td><td>21.5%</td><td>95.0</td><td>5.0%</td><td>106.2</td><td></td><td></td></tr><tr><td>General Vacuum</td><td>46.5</td><td></td><td></td><td>42.3</td><td>10.0%</td><td>48.2</td><td>-3.5%</td><td>46.7</td><td></td><td></td></tr><tr><td>Refrig., AC, Auto.</td><td>34.9</td><td></td><td></td><td>36.1</td><td>-3.4%</td><td>34.7</td><td>0.5%</td><td>34.9</td><td></td><td></td></tr><tr><td>Security &amp; Energy</td><td>7.0</td><td></td><td></td><td>6.9</td><td>1.1%</td><td>3.1</td><td>125.0%</td><td>9.3</td><td></td><td></td></tr><tr><td>Total revenue</td><td>188.1</td><td>188.3</td><td>-0.1%</td><td>167.4</td><td>12.4%</td><td>181.0</td><td>3.9%</td><td>197.1</td><td>188.8</td><td>4.4%</td></tr><tr><td>Gross Profit</td><td>87.0</td><td>86.1</td><td>1.0%</td><td>72.1</td><td>20.7%</td><td>83.1</td><td>4.7%</td><td>92.6</td><td>87.5</td><td>5.8%</td></tr><tr><td>Gross Margin</td><td>46.3%</td><td>45.7%</td><td>+52 bps</td><td>43.1%</td><td>+318 bps</td><td>45.9%</td><td>+34 bps</td><td>47.0%</td><td>46.3%</td><td>+63 bps</td></tr><tr><td>R&amp;D expense</td><td>(15.6)</td><td></td><td></td><td>(13.9)</td><td>12.5%</td><td>(15.4)</td><td>1.5%</td><td>(15.8)</td><td></td><td></td></tr><tr><td>SG&amp;A expense</td><td>(34.3)</td><td></td><td></td><td>(32.9)</td><td>4.2%</td><td>(38.3)</td><td>-10.5%</td><td>(34.8)</td><td></td><td></td></tr><tr><td>Operating Profit</td><td>37.1</td><td>36.1</td><td>2.7%</td><td>25.3</td><td>46.6%</td><td>29.4</td><td>26.2%</td><td>41.9</td><td>38.1</td><td>10.1%</td></tr><tr><td>Operating Margin</td><td>19.7%</td><td>19.2%</td><td>+55 bps</td><td>15.1%</td><td>+460 bps</td><td>16.2%</td><td>+348 bps</td><td>21.3%</td><td>20.2%</td><td>+110 bps</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Reporting date: Thursday 30 July
+
+Q2'26 guide: n/a
+
+FY26 guide (JPM/Cons): Revenue of \$710m-750m (777m/758m) and Operating Profit margin of 18-20% (20.3%/19.3%)
+
+## JPM thoughts into the quarter
+
+Although 2026 guidance was upgraded at Q1'26 (24 April), we see room for further raises at Q2 results. Historically, Inficon has grown in line with WFE in the upcycle, given its high exposure to spares and services (which increases with fab utilisation) and also rising content growth (given increasing sophistication of processes), and we expect that this will be the case in 2026-2028. On the other hand, the non-semi's business should see continued momentum supported by annualising price increases, as well as an improving solar industry (which was flagged as a risk to 2026). Management were relatively relaxed on the risk of stocking in the strong General Vacuum performance in Q1'26. As a USD reporter with a large EUR and CHF cost base, the trend in exchange rates is likely to be supportive to margin in the second half.
+
+## Key watch points
+
+\- We expect that investors will be seeking confirmation and detail on Inficon's capacity and ability to service the surge in demand in its semiconductor division.
+
+\- Inficon will be a user of memory in some of its components, and given the surge in prices we expect some gross margin pressure; we expect commentary on impact and mitigation.
+
+Melexis (N, €74.0)
+
+Recent JPM research
+
+Takeaways from London TMT Conference 2026 (21 May)
+
+Inventory Review 1Q26: Sector is in a sweet spot with normal levels of overall inventory, though it is well below seasonal in the key distribution segment (15 May)
+
+## Melexis
+
+Table 5: Melexis, Q2'26 and Q3'26 consensus comparison € million
+
+<table><tr><td rowspan="2"></td><td colspan="3">Q2&#x27;26</td><td colspan="4">Actual</td><td colspan="3">Q3&#x27;26</td></tr><tr><td>JPMe</td><td>Cons</td><td>Diff.</td><td>Q1&#x27;26</td><td>Q/Q JPMe</td><td>Q2&#x27;25</td><td>Y/Y JPMe</td><td>JPMe</td><td>Co. Cons</td><td>Diff.</td></tr><tr><td>Sales</td><td>214.9</td><td>211.6</td><td>1.6%</td><td>202.1</td><td>6.3%</td><td>211.6</td><td>1.6%</td><td>223.6</td><td>218.9</td><td>2.2%</td></tr><tr><td>CC growth</td><td>3.1%</td><td></td><td></td><td>5.9%</td><td></td><td>-11.9%</td><td></td><td>3.9%</td><td></td><td></td></tr><tr><td>Reported growth</td><td>1.6%</td><td></td><td></td><td>1.9%</td><td></td><td>-13.9%</td><td></td><td>3.9%</td><td></td><td></td></tr><tr><td>Gross profit</td><td>86.6</td><td>85.1</td><td>1.8%</td><td>80.6</td><td>7.4%</td><td>82.6</td><td>4.9%</td><td>91.0</td><td>89.1</td><td>2.2%</td></tr><tr><td>Gross margin</td><td>40.3%</td><td>40.2%</td><td>+11 bps</td><td>39.9%</td><td>+41 bps</td><td>39.0%</td><td>+126 bps</td><td>40.7%</td><td>40.7%</td><td>+1 bps</td></tr><tr><td>EBIT</td><td>38.3</td><td>37.2</td><td>3.1%</td><td>33.2</td><td>15.5%</td><td>35.7</td><td>7.5%</td><td>42.7</td><td>40.7</td><td>5.1%</td></tr><tr><td>EBIT margin</td><td>17.8%</td><td>17.6%</td><td>+28 bps</td><td>16.4%</td><td>+141 bps</td><td>16.8%</td><td>+98 bps</td><td>19.1%</td><td>18.6%</td><td>+53 bps</td></tr><tr><td>Net profit</td><td>29.9</td><td>29.3</td><td>2.4%</td><td>23.1</td><td>29.6%</td><td>37.8</td><td>-20.8%</td><td>33.6</td><td>32.3</td><td>4.1%</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P. (awaiting company-collated consensus).
+
+Reporting date: Wednesday 29 July
+
+H1'26 guide (JPM/Cons): Revenue “around the same level as the previous year” (€410m) (417m/414m), gross profit margin \~40% (40.1%/40.0%) and Operating Margin \~17% (17.1%/17.0%) – this guidance assumed EUR/USD of 1.17.
+
+H2'26 guide (JPM/Cons): "Sales in the second half of 2026 are expected to grow compared to the first half of 2026" (H2/H1 growth: +6.6%/+7.3%)
+
+## JPM thoughts into the quarter
+
+We think Melexis should be able to achieve the conservative guidance issued for H1 revenue (flat year-on-year), with destocking largely coming to an end (consistent with commentary from other Auto-exposed Semi suppliers). For H2, we think there is low risk of a meaningful upgrade to guidance on an underlying basis, although currency moves should be supportive in H2. Automotive end-market growth remains subdued and we don't think that OEMs or Tier 1s will be aggressively restocking in this context. Additionally, given their product portfolio, we do not think that Melexis can raise prices to the same extent as other Auto Semi peers (i.e. Melexis's portfolio will not enjoy the same spillover effect from AI demand as Infineon).
+
+## Key watch points
+
+\- Visibility on H2 pick-up: previously this was predicated on an end of destocking/low inventory levels and improving order activity, and confidence on growth returning to HSD% levels
+
+\- Gross margins are improving with volume but there are growing headwinds (namely, higher packaging and testing costs, annualising gold prices, higher labour costs); management commentary on moving parts and trajectory to target ( $\sim 45\%$ ) would be welcome.
+
+\- Commentary on exposure to AI data center (motor drivers for cooling fans and pressure sensors for liquid cooling systems), which could be supportive of growth expectations.
+
+# Nordic Semiconductor
+
+Nordic Semiconductor (N, 165 NKr)
+
+Recent JPM research
+
+Takeaways from London TMT Conference 2026 (21 May)
+
+Q1'26 recap: Signs of continued good growth, but risks and valuation leave us Neutral (29 April)
+
+Table 6: Nordic Semiconductor, Q2'26 and Q3'26 consensus comparison \$ million
+
+<table><tr><td rowspan="2"></td><td colspan="3">Q2&#x27;26</td><td colspan="2">Q2&#x27;25</td><td colspan="2">Q1&#x27;26</td><td colspan="3">Q3&#x27;26</td></tr><tr><td>JPMe</td><td>Cons</td><td>Diff.</td><td>Actual</td><td>y/y JPMe</td><td>Actual</td><td>q/q JPMe</td><td>JPMe</td><td>Co. cons</td><td>Diff.</td></tr><tr><td>Revenue</td><td>213.3</td><td>212.9</td><td>+0.2%</td><td>164.1</td><td>+30.0%</td><td>192.4</td><td>+10.8%</td><td>230.2</td><td>225.2</td><td>+2.2%</td></tr><tr><td>Gross profit</td><td>111.0</td><td>110.6</td><td>+0.4%</td><td>83.2</td><td>+33.5%</td><td>100.3</td><td>+10.7%</td><td>119.4</td><td>116.9</td><td>+2.1%</td></tr><tr><td>Gross margin</td><td>52.1%</td><td>52.0%</td><td>+9 bps</td><td>50.7%</td><td>+135 bps</td><td>52.1%</td><td>-6 bps</td><td>51.9%</td><td>51.9%</td><td>-8 bps</td></tr><tr><td>Opex</td><td>-80.3</td><td>-77.2</td><td>+4.1%</td><td>-62.4</td><td>+28.8%</td><td>-79.0</td><td>+1.7%</td><td>-79.6</td><td>-79.9</td><td></td></tr><tr><td>EBITDA</td><td>30.7</td><td>33.4</td><td>-8.2%</td><td>20.8</td><td>+47.6%</td><td>21.3</td><td>+44.4%</td><td>39.8</td><td>37.1</td><td>+7.4%</td></tr><tr><td>EBITDA margin</td><td>14.4%</td><td>15.7%</td><td>-132 bps</td><td>12.7%</td><td>+172 bps</td><td>11.0%</td><td>+334 bps</td><td>17.3%</td><td>16.5%</td><td>+82 bps</td></tr><tr><td>D&amp;A</td><td>-11.4</td><td>-12.8</td><td></td><td>-9.4</td><td>+21.7%</td><td>-11.2</td><td>+2.0%</td><td>-11.6</td><td>-12.4</td><td></td></tr><tr><td>EBIT</td><td>19.3</td><td>20.6</td><td>-6.3%</td><td>11.4</td><td>+68.8%</td><td>10.1</td><td>+91.2%</td><td>28.2</td><td>24.6</td><td>+14.2%</td></tr><tr><td>EBIT margin</td><td>9.0%</td><td>9.7%</td><td>-63 bps</td><td>7.0%</td><td>+208 bps</td><td>5.2%</td><td>+380 bps</td><td>12.2%</td><td>10.9%</td><td>+128 bps</td></tr><tr><td>Net profit</td><td>14.3</td><td>15.4</td><td>-7.1%</td><td>10.1</td><td>+40.8%</td><td>10.6</td><td>+34.3%</td><td>21.2</td><td>18.5</td><td>+14.8%</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Reporting date: Thursday 6 August
+
+Q2'26 guide: Revenue of \$200-220m with gross margin >50%
+
+FY26 guide (JPM/Cons): n/a
+
+## JPM thoughts into the quarter
+
+We expect Nordic to comfortably hit Q2 revenue guidance issued on 29 April (it has consistently beaten its own revenue guidance for last six quarters) and, also, gross margin guide (given the annualising of the Memfault acquisition). Looking forward, we are more cautious on both revenue and profitability. On revenue, following elevated activity in H1'26 (which management noted included a degree of stocking) we expect to see some softening of the consumer electronics end-market (given flow-through of Memory pricing), although Industrial & Healthcare should be more robust. Positively for Nordic, the annual report indicates that stocking at distributors is low (Rebate Liabilities are historically low as a percentage of sales). We expect some pressure on gross margin as higher testing and packaging costs flow through the P&L as well as a Memory (which is an input cost to some Nordic products); however, we expect some offset with mix and selective pricing. Currency headwinds at the EBITDA level should ease into H2.
+
+## Key watch points
+
+\- Forward-looking commentary on orders, particularly for Consumer customers where volumes are likely to be more vulnerable to DRAM-related price rises.
+
+\- Gross margins have benefitted from the annualisation of the Memfault acquisition, but, looking forward, headwinds look to be growing from raising testing and memory costs (consensus forecasts gross margins stabilise $>52\%$ ).
+
+Sensirion (N, 80 CHF)
+
+Recent JPM research
+
+CMD review: Helpful deep-dive on future growth drivers across the business (15 April)
+
+## Sensirion
+
+Table 7: Sensirion, Q2'26 and Q3'26 consensus comparison CHF million
+
+<table><tr><td rowspan="2"></td><td colspan="3">H1&#x27;26</td><td colspan="2">H2&#x27;25</td><td colspan="2">H1&#x27;25</td><td colspan="3">H2&#x27;26</td></tr><tr><td>JPMe</td><td>Cons</td><td>Diff. (%)</td><td>Actual</td><td>H/H JPMe</td><td>Actual</td><td>Y/Y JPMe</td><td>JPMe</td><td>Cons</td><td>Diff. (%)</td></tr><tr><td>Revenue</td><td>171.1</td><td>170.0</td><td>0.6%</td><td>157.8</td><td>8.4%</td><td>184.5</td><td>-7.3%</td><td>175.3</td><td>174.0</td><td>0.8%</td></tr><tr><td>Gross profit</td><td>89.0</td><td>89.5</td><td>-0.6%</td><td>84.2</td><td>5.7%</td><td>95.0</td><td>-6.4%</td><td>90.8</td><td>91.4</td><td>-0.6%</td></tr><tr><td>margin (%)</td><td>52.0%</td><td>52.7%</td><td>-65 bps</td><td>53.3%</td><td>-133 bps</td><td>51.5%</td><td>50 bps</td><td>51.8%</td><td>52.5%</td><td>-70 bps</td></tr><tr><td>Adj. EBIT</td><td>16.8</td><td>18.0</td><td>-6.4%</td><td>16.5</td><td>2.1%</td><td>26.3</td><td>-35.9%</td><td>19.5</td><td>19.5</td><td>-0.2%</td></tr><tr><td>margin (%)</td><td>9.8%</td><td>10.6%</td><td>-74 bps</td><td>10.5%</td><td>-61 bps</td><td>14.2%</td><td>-438 bps</td><td>11.1%</td><td>11.2%</td><td>-11 bps</td></tr><tr><td>Adj. EBITDA</td><td>27.5</td><td>28.7</td><td>-4.1%</td><td>30.5</td><td>-9.9%</td><td>36.5</td><td>-24.6%</td><td>30.1</td><td>30.3</td><td>-0.5%</td></tr><tr><td>margin (%)</td><td>16.1%</td><td>16.9%</td><td>-79 bps</td><td>19.3%</td><td>-327 bps</td><td>19.8%</td><td>-369 bps</td><td>17.2%</td><td>17.4%</td><td>-22 bps</td></tr><tr><td>Adj. Net Income</td><td>13.8</td><td>13.8</td><td>0.2%</td><td>9.7</td><td>42.9%</td><td>10.4</td><td>32.5%</td><td>16.1</td><td>16.1</td><td>0.0%</td></tr><tr><td>Adj. EPS (dil.)</td><td>0.89</td><td>0.89</td><td>-0.6%</td><td>0.62</td><td>42.9%</td><td>0.67</td><td>32.2%</td><td>1.03</td><td>1.03</td><td>0.1%</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Reporting date: Wednesday 19 August
+
+## H1'26 guide: n/a
+
+FY26 guide (JPM/Cons): Revenue of CHF 335m-360m (346m/349m) with EBITDA margins in the “mid-to-high teens” (16.6%/18.0%)
+
+## JPM thoughts into the quarter
+
+Following a very strong 2025, Sensirion set 2026 revenue growth guidance below the mid-term range (low-to-mid teen%), which was partly due to currency (with the headwind easing), but also reflecting the elevated base. We see Sensirion's end-markets as little different compared to when guidance was issued in March and confirmed with the April Capital Markets Day (Sensirion has a relatively small Consumer exposure). Gross margin is likely to be an area of risk given rising input costs (wafer, foundry, packaging, testing) as we move into an upcycle.
+
+## Key watch points
+
+\- Traction in new applications and growth opportunities (including A3 testing, optical methane testing, etc.).
+
+\- Commentary on forward gross margin trends given rising wafer, foundry, packaging and testing costs
+
+Soitec (N, €92.0)
+
+Recent JPM research
+
+Deeper Mobile trough likely to offset any SiPho upside: Stay Neutral (8 July)
+
+Q4'FY26 review: Results well negotiated, SiPho opportunity continues to drive the shares (2 June)
+
+## Soitec
+
+Table 8: Soitec, Q1'F27 and Q2'F27 consensus comparison € million
+
+<table><tr><td rowspan="2"></td><td colspan="3">Q1&#x27;27</td><td colspan="2">Q4&#x27;26</td><td colspan="2">Q1&#x27;26</td><td colspan="3">Q2&#x27;27</td></tr><tr><td>JPMe</td><td>Cons</td><td>Diff.</td><td>Actual</td><td>Q/Q (JPMe)</td><td>Actual</td><td>Y/Y (JPMe)</td><td>JPMe</td><td>Cons</td><td>Diff.</td></tr><tr><td>Mobile Communications</td><td>38.7</td><td>44</td><td>-12%</td><td>100</td><td>-61%</td><td>43</td><td>-10%</td><td>63.8</td><td>69</td><td>-7%</td></tr><tr><td>CC growth</td><td>-8.0%</td><td></td><td></td><td>-52%</td><td></td><td>-7%</td><td></td><td></td><td></td><td></td></tr><tr><td>Automobile &amp; Industrial</td><td>12.4</td><td>7</td><td>76%</td><td>38</td><td>-68%</td><td>5</td><td>147%</td><td>13.5</td><td>12</td><td>13%</td></tr><tr><td>CC growth</td><td>150%</td><td></td><td></td><td>-12%</td><td></td><td>-81%</td><td></td><td></td><td></td><td></td></tr><tr><td>Edge &amp; Cloud AI</td><td>54.3</td><td>54</td><td>1%</td><td>64</td><td>-15%</td><td>44</td><td>24%</td><td>66.3</td><td>62</td><td>7%</td></tr><tr><td>CC growth</td><td>28.0%</td><td></td><td></td><td>6%</td><td></td><td>13%</td><td></td><td></td><td></td><td></td></tr><tr><td>Total Revenue</td><td>105.4</td><td>103</td><td>2%</td><td>202</td><td>-48%</td><td>92</td><td>15%</td><td>143.7</td><td>146</td><td>-2%</td></tr><tr><td>CC growth</td><td>17.8%</td><td>16.5%</td><td>+130 bps</td><td>-36%</td><td></td><td>-16%</td><td></td><td>5%</td><td>8%</td><td></td></tr><tr><td>Currency impact</td><td>-3.3%</td><td></td><td></td><td>-3%</td><td></td><td>-4%</td><td></td><td>-2%</td><td></td><td></td></tr><tr><td>Perimeter change</td><td>0.0%</td><td></td><td></td><td>0%</td><td></td><td>-3%</td><td></td><td>0%</td><td></td><td></td></tr><tr><td>Reported Y/Y growth</td><td>14.6%</td><td>12.0%</td><td>+255 bps</td><td>-2%</td><td></td><td>-23%</td><td></td><td>3%</td><td>5%</td><td></td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Reporting date: Tuesday 28 July (after market)
+Q1'F27 guide: \~15% organic revenue growth
+FY27 guide (JPM/Cons): n/a
+
+## JPM thoughts into the quarter
+
+Similar to consensus, we are slightly ahead of company guidance for Q1 organic growth, reflecting the view that new management have set achievable guidance as they seek to rebuild investor credibility. We expect that management will continue to guide just one quarter ahead on revenue (given low visibility due to high channel inventory), and provide only indicative commentary on margin or profitability (with loading trajectory an important factor). For Q2 and into the remainder of FY27, we continue to see diverging trends between Mobile Communications and Edge & Cloud AI (Photonics-SOI), the net effect leaves us below consensus on full year revenue.
+
+## Key watch points
+
+\- Indication of terms of long-term supply agreements signed with Photonic SOI customers.
+
+\- Indication of qualification process for Photonics SOI customers, and yields being achieved.
+
+\- Impact on RF-SOI channel inventory digestion from mobile phone market declines.
+
+# Valuation, consensus comparison and performance
+
+Table 9: EU SMID Technology, coverage valuation metrics
+
+<table><tr><td rowspan="2"></td><td colspan="3">Market Cap.</td><td rowspan="2">JPM Rating</td><td colspan="3">EV / EBITDA</td><td colspan="3">EV / EBIT</td><td colspan="3">P / E</td></tr><tr><td>Ticker</td><td>US$m</td><td>EURm</td><td>FY26</td><td>FY27</td><td>FY28</td><td>FY26</td><td>FY27</td><td>FY28</td><td>FY26</td><td>FY27</td><td>FY28</td></tr><tr><td colspan="14">Semi-Cap</td></tr><tr><td>Aixtron</td><td>AIXA GY</td><td>5,665</td><td>4,959</td><td>OW</td><td>34.5</td><td>19.4</td><td>11.8</td><td>40.8</td><td>21.4</td><td>12.6</td><td>53.3</td><td>27.3</td><td>16.5</td></tr><tr><td>Comet</td><td>COTN SW</td><td>3,793</td><td>3,320</td><td>OW</td><td>33.4</td><td>19.0</td><td>14.5</td><td>56.7</td><td>22.2</td><td>16.4</td><td>52.0</td><td>27.3</td><td>20.0</td></tr><tr><td>Inficon</td><td>IFCN SW</td><td>5,090</td><td>4,456</td><td>OW</td><td>27.8</td><td>20.2</td><td>17.2</td><td>31.7</td><td>22.3</td><td>18.7</td><td>39.9</td><td>27.8</td><td>23.2</td></tr><tr><td colspan="14">Semi Devices</td></tr><tr><td>ams-Osram</td><td>AMS SW</td><td>2,312</td><td>2,024</td><td>OW</td><td>7.0</td><td>6.4</td><td>5.7</td><td>15.4</td><td>12.9</td><td>10.5</td><td>112.6</td><td>18.9</td><td>13.0</td></tr><tr><td>Melexis</td><td>MELE BB</td><td>3,475</td><td>3,042</td><td>N</td><td>15.6</td><td>13.8</td><td>12.4</td><td>21.0</td><td>17.5</td><td>15.2</td><td>24.9</td><td>20.6</td><td>17.8</td></tr><tr><td>Nordic Semiconductor</td><td>NOD NO</td><td>3,385</td><td>2,963</td><td>N</td><td>28.4</td><td>19.0</td><td>12.9</td><td>47.3</td><td>26.4</td><td>16.0</td><td>60.5</td><td>36.0</td><td>21.7</td></tr><tr><td>Sensirion</td><td>SENS SW</td><td>1,423</td><td>1,246</td><td>N</td><td>18.6</td><td>16.1</td><td>13.5</td><td>30.0</td><td>24.0</td><td>18.9</td><td>38.4</td><td>30.9</td><td>24.2</td></tr><tr><td colspan="14">Substrates</td></tr><tr><td>Soitec</td><td>SOI FP</td><td>4,007</td><td>3,508</td><td>N</td><td>23.2</td><td>27.1</td><td>18.8</td><td>277.8</td><td>-1,185.4</td><td>61.3</td><td>-50.8</td><td>-166.2</td><td>107.8</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Table 10: EU SMID Technology, coverage performance
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Ticker</td><td colspan="2">Market Cap.</td><td rowspan="2">JPM Rating</td><td rowspan="2" colspan="2">Current Share Price</td><td rowspan="2">JPM Price tgt.</td><td rowspan="2">Diff. vs. JPM</td><td colspan="4">Share price performance</td></tr><tr><td>US$m</td><td>EURm</td><td>1 mo.</td><td>3 mo.</td><td>6 mo.</td><td>YTD</td></tr><tr><td colspan="13">Semi-Cap</td></tr><tr><td>Aixtron</td><td>AIXA GY</td><td>5,665</td><td>4,959</td><td>OW</td><td>EUR</td><td>43.7</td><td>70.0</td><td>60%</td><td>-23%</td><td>19%</td><td>118%</td><td>153%</td></tr><tr><td>Comet</td><td>COTN SW</td><td>3,793</td><td>3,320</td><td>OW</td><td>CHF</td><td>395</td><td>500</td><td>27%</td><td>4%</td><td>40%</td><td>66%</td><td>76%</td></tr><tr><td>Inficon</td><td>IFCN SW</td><td>5,090</td><td>4,456</td><td>OW</td><td>CHF</td><td>169</td><td>200</td><td>19%</td><td>-1%</td><td>47%</td><td>60%</td><td>71%</td></tr><tr><td colspan="13">Semi Devices</td></tr><tr><td>ams-Osram</td><td>AMS SW</td><td>2,312</td><td>2,024</td><td>OW</td><td>CHF</td><td>18.8</td><td>24.4</td><td>30%</td><td>2%</td><td>81%</td><td>128%</td><td>139%</td></tr><tr><td>Melexis</td><td>MELE BB</td><td>3,475</td><td>3,042</td><td>N</td><td>EUR</td><td>75.3</td><td>67.0</td><td>-11%</td><td>-7%</td><td>32%</td><td>20%</td><td>31%</td></tr><tr><td>Nordic Semiconductor</td><td>NOD NO</td><td>3,385</td><td>2,963</td><td>N</td><td>NOK</td><td>166</td><td>165</td><td>0%</td><td>-12%</td><td>1%</td><td>20%</td><td>24%</td></tr><tr><td>Sensirion</td><td>SENS SW</td><td>1,423</td><td>1,246</td><td>N</td><td>CHF</td><td>74</td><td>80</td><td>8%</td><td>-6%</td><td>13%</td><td>24%</td><td>20%</td></tr><tr><td colspan="13">Substrates</td></tr><tr><td>Soitec</td><td>SOI FP</td><td>4,007</td><td>3,508</td><td>N</td><td>EUR</td><td>98.1</td><td>92.0</td><td>-6%</td><td>-29%</td><td>52%</td><td>246%</td><td>323%</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Table 11: EU SMID Technology, JPMe vs. Bloomberg consensus comparison
+
+<table><tr><td rowspan="2"></td><td colspan="2">Market Cap.</td><td>JPM Rating</td><td rowspan="2">Sales FY26</td><td rowspan="2">FY27</td><td colspan="4">EBITDA</td><td colspan="3">EBIT</td><td colspan="3">EPS</td></tr><tr><td>Ticker</td><td>US$m</td><td>EURm</td><td>FY28</td><td>FY26</td><td>FY27</td><td>FY28</td><td>FY26</td><td>FY27</td><td>FY28</td><td>FY26</td><td>FY27</td><td>FY28</td></tr><tr><td colspan="16">Semi-Cap</td></tr><tr><td>Aixtron</td><td>AIXA GY</td><td>5,665</td><td>4,959</td><td>OW</td><td>2%</td><td>6%</td><td>21%</td><td>6%</td><td>15%</td><td>50%</td><td>6%</td><td>14%</td><td>50%</td><td>12%</td><td>24%</td></tr><tr><td>Comet</td><td>COTN SW</td><td>3,793</td><td>3,320</td><td>OW</td><td>-1%</td><td>1%</td><td>1%</td><td>9%</td><td>9%</td><td>7%</td><td>-9%</td><td>14%</td><td>10%</td><td>13%</td><td>17%</td></tr><tr><td>Inficon</td><td>IFCN SW</td><td>5,090</td><td>4,456</td><td>OW</td><td>2%</td><td>5%</td><td>6%</td><td>7%</td><td>18%</td><td>19%</td><td>8%</td><td>21%</td><td>23%</td><td>11%</td><td>24%</td></tr><tr><td colspan="16">Semi Devices</td></tr><tr><td>ams-Osram</td><td>AMS SW</td><td>2,312</td><td>2,024</td><td>OW</td><td>0%</td><td>0%</td><td>1%</td><td>15%</td><td>8%</td><td>7%</td><td>14%</td><td>7%</td><td>2%</td><td>-126%</td><td>67%</td></tr><tr><td>Melexis</td><td>MELE BB</td><td>3,475</td><td>3,042</td><td>N</td><td>0%</td><td>-2%</td><td>-4%</td><td>1%</td><td>-5%</td><td>-6%</td><td>2%</td><td>-2%</td><td>-5%</td><td>1%</td><td>-6%</td></tr><tr><td>Nordic Semiconductor</td><td>NOD NO</td><td>3,385</td><td>2,963</td><td>N</td><td>0%</td><td>0%</td><td>4%</td><td>-5%</td><td>-5%</td><td>6%</td><td>-1%</td><td>-1%</td><td>11%</td><td>8%</td><td>-1%</td></tr><tr><td>Sensirion</td><td>SENS SW</td><td>1,423</td><td>1,246</td><td>N</td><td>-1%</td><td>2%</td><td>6%</td><td>-7%</td><td>-3%</td><td>4%</td><td>-15%</td><td>1%</td><td>15%</td><td>5%</td><td>11%</td></tr><tr><td colspan="16">Substrates</td></tr><tr><td>Soitec</td><td>SOI FP</td><td>4,007</td><td>3,508</td><td>N</td><td>-1%</td><td>-5%</td><td>-6%</td><td>3%</td><td>-18%</td><td>-23%</td><td>-134%</td><td>-127%</td><td>-39%</td><td>-1%</td><td>291%</td></tr></table>
+
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Figure 1: EU SMID coverage, current P/E (JPMe) vs. historic range 10 year range (2016-2026)  
+![](images/55f0da5427d23dee5c93cca9885779e54bfede2f8bbdf40acc59380d30ff6934.jpg)  
+Source: JPM estimates, Bloomberg Finance L.P.1
+
+Figure 2: EU SMID coverage, current P/E (JPMe) vs. historic median 10 year range (2016-2026)  
+![](images/2fc8fc50fe89234d9b34e52bb8050b1e08f0aac92615323d105a606e7f336361.jpg)  
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Figure 3: EU SMID coverage, current EV/EBITDA (JPMe) vs. historic range 10 year range (2016-2026)  
+![](images/5080f465941f03154d335fec12f232145eae08c3a15739e5041fe360e6f2a4c5.jpg)  
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Figure 4: EU SMID coverage, current EV/EBITDA (JPMe) vs. historic median 10 year range (2016-2026)  
+![](images/0307aa3f5a7f5ec5a9ae4a086a14dd53e048de6bae86965d40f32a733437843d.jpg)  
+Source: JPM estimates, Bloomberg Finance L.P.
+
+Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.
+
+All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.
+
+## Important Disclosures
+
+Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.
+
+## Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:
+
+JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.
+
+Coverage Universe: McDowell, Craig A: Aixtron (AIXGn.DE), Comet Holding (COTNE.S), Inficon (IFCN.S), Melexis (MLXS.BR), Nexi (NEXII.MI), Nordic Semiconductor (NOD.OL), Sensirion (SENSI.S), Soitec (SOIT.PA), Wise (WSE), Wise Plc (WISEa.L), Worldline (WLN.PA), ams-Osram (AMS.S)
+
+JPM Equity Research Ratings Distribution, as of July 04, 2026
+
+<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>
+
+\*Please note that the percentages may not add to 100% because of rounding.
+
+\*\*Percentage of subject companies within each of the "buy," "hold" and "sell" categories for which JPM has provided investment banking services within the previous 12 months.
+
+For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.
+
+Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.
+
+## History of Investment Recommendations:
+
+A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.
+
+Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.
+
+Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+## Other Disclosures
+
+JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.
+
+UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.
+
+All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.
+
+Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).
+
+JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.
+
+Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.
+
+The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.
+
+Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.
+
+Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or
+
+https://www.finra.org/sites/default/files/2020-08/Security\_Futures\_Risk\_Disclosure\_Statement\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.
+
+Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\_offered\_rates
+
+Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.
+
+Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one
+
+legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.
+
+Legal Entities Disclosures and Country-/Region-Specific Disclosures:
+
+Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina ("BCRA"- Central Bank of Argentina) and Comisión Nacional de Valores ("CNV"- Argentinian Securities Commission - ALYC y AN Integral N°51).
+
+Australia: JPM Securities Australia Limited ("JPMSAL") (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to "wholesale clients" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.
+
+Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.
+
+Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.
+
+Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.
+
+China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.
+
+Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.
+
+Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.
+
+European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.
+
+Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.
+
+India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh
+
+K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.
+
+Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).
+
+Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.
+
+Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.
+
+Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.
+
+Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).
+
+New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to "wholesale clients" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.
+
+Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.
+
+Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.
+
+South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).
+
+Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.
+
+Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.
+
+UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as "UK relevant persons". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.
+
+U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.
+
+General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised July 04, 2026.
+
+Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.
+
+Completed 13 Jul 2026 06:26 PM BST
+
+Disseminated 14 Jul 2026 12:15 AM BST
