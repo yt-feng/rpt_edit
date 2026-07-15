@@ -1,0 +1,24 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260714/shard_2/0004-14-CITI-China-Auto-Manufacturers-10-Figures--10-Trends--Jun-26-Summary--260",
+  "title": "花旗：中国汽车制造商10张图表10大趋势6月总结",
+  "source_title": "0004-14-CITI-China Auto Manufacturers 10 Figures- 10 Trends -Jun-26 Summary--260712",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_32.pdf",
+  "figure_count": 7,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}
