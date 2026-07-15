@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8eqq0si6/pdfs/0001-16-GS-CHINA NEW ENERGY VEHICLE WEEKLY CHARTBOOK-2026 Week 28 - PV retail yoy decline narrowed- Nio Leapmotor XPeng order improved wow-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8eqq0si6/pdfs/0002-17-GS-China Property- Building Materials-Stabilizing TAM and strategic pivots to seize renovation demand key to support growth valuation recovery- Buy Yuhong and.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8eqq0si6/pdfs/0003-18-GS-China- China-s 15th FYP for Expanding Consumption - Supply-Side Push- Demand-Side Constraints-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8eqq0si6/pdfs/0004-19-GS-China- Trade growth accelerated further in June-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8eqq0si6/pdfs/0005-20-GS-GC TECH-eVTOL use cases in expansion with solid policy support- EHang down to Neutral on fair valuation-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
