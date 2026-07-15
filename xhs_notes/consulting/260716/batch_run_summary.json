@@ -1,0 +1,41 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 3,
+  "pdf_count_before_skip": 3,
+  "pdf_count": 3,
+  "generated_report_count": 3,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Built-on-Scale-Turning-to-Science_ebd53304.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4k01olxl/pdfs/0001-BCG_Built-on-Scale-Turning-to-Science_ebd53304.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Industrial-Products-Makers-Chart-a-New-Path-to-Digital_2cfd865a.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4k01olxl/pdfs/0002-BCG_Industrial-Products-Makers-Chart-a-New-Path-to-Digital_2cfd865a.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Putting-AI-to-Work-in-Energy-Trading_c7700e76.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4k01olxl/pdfs/0003-BCG_Putting-AI-to-Work-in-Energy-Trading_c7700e76.pdf",
+          "stable_index": "3"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

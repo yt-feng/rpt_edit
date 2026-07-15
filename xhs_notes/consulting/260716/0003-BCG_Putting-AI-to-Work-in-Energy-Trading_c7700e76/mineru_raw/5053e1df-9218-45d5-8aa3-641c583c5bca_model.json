@@ -1,0 +1,4818 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                0.999,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.431,
+                0.123,
+                0.45
+            ],
+            "angle": 0,
+            "content": "ENERGY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.724,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Putting AI to Work in\nEnergy Trading"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.607,
+                0.748,
+                0.646
+            ],
+            "angle": 0,
+            "content": "By Wade Barnes, Sébastien Rexhausen, Antti Belt, Matthew Abel, Smith Sangiambut, and Anna Temple",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.669,
+                0.362,
+                0.687
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 15, 2026 15 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.748,
+                0.952,
+                0.829
+            ],
+            "angle": 0,
+            "content": "Energy trading will not be transformed by a single AI solution. Electric power, pipeline gas, liquefied natural gas, physical liquids, and financial energy trading operate at different tempos, with different constraints, data structures, workflows, and sources of advantage. As AI moves from pilots into live trading workflows, those differences matter more than ever.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.841,
+                0.918,
+                0.923
+            ],
+            "angle": 0,
+            "content": "The implication is clear: build a common AI foundation, but tailor deployment by commodity, workflow, and AI capability. (See “Four AI Capabilities.”) In power and financial energy trading, where markets are more quantitative, most value comes from predictive AI, optimization, automation, and risk analytics. In pipeline gas, LNG, and liquids—more physical and logistics-",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.434,
+                0.122,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.476,
+                0.727,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.528,
+                0.539,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.61,
+                0.744,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.628,
+                0.189,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.673,
+                0.357,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.75,
+                0.881,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.77,
+                0.923,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.79,
+                0.946,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.811,
+                0.733,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.845,
+                0.901,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.864,
+                0.91,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.885,
+                0.866,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.904,
+                0.912,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.928,
+                0.108
+            ],
+            "angle": 0,
+            "content": "heavy markets—the larger opportunity lies in using agentic AI to turn operational, contractual, and approval-heavy work into structured, controlled execution.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.138,
+                0.399,
+                0.166
+            ],
+            "angle": 0,
+            "content": "- Four AI Capabilities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.203,
+                0.533,
+                0.223
+            ],
+            "angle": 0,
+            "content": "In this article, AI encompasses four capabilities:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.253,
+                0.802,
+                0.293
+            ],
+            "angle": 0,
+            "content": "- Numerical analytics and optimization techniques that identify feasible or optimal decisions under physical, commercial, risk, or logistical constraints",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.307,
+                0.783,
+                0.367
+            ],
+            "angle": 0,
+            "content": "- Predictive AI and machine learning models that learn from historical and real-time data to forecast prices, flows, exposures, volatility, outages, anomalies, or operational conditions",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.381,
+                0.796,
+                0.44
+            ],
+            "angle": 0,
+            "content": "- Generative AI, including large language models, that interpret, summarize, generate, and transform text, code, documents, and other unstructured information",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.456,
+                0.82,
+                0.516
+            ],
+            "angle": 0,
+            "content": "- Agentic AI systems that combine models, data, tools, and workflow orchestration logic so they can observe conditions, plan next steps, operate systems, prepare actions, and escalate exceptions under human supervision",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.545,
+                0.842,
+                0.664
+            ],
+            "angle": 0,
+            "content": "Numerical optimization and predictive AI have been used in trading for years. The newer opportunity is GenAI and agentic AI, especially where trading teams rely on fragmented documents, emails, approvals, broker messages, inputs from energy trading and risk management systems, credit checks, risk workflows, and manual handoffs. The practical question is not “Where can AI replace traders?” but “Which type of AI belongs in which workflow, and how should it be governed?”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.683,
+                0.806,
+                0.723
+            ],
+            "angle": 0,
+            "content": "Although not the focus of this article, the data layer and data architecture that support AI capabilities are critical enablers that should not be overlooked.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.87,
+                0.952,
+                0.93
+            ],
+            "angle": 0,
+            "content": "While straightforward in concept, this is demanding in practice. Data integrity, governance, and model discipline must be standardized across the organization without undermining the ability of traders and analysts to innovate. Across all markets, the goal is not to replace existing systems",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.071,
+                0.925,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.627,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.139,
+                0.396,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.205,
+                0.529,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.255,
+                0.785,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.274,
+                0.797,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.308,
+                0.78,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.328,
+                0.74,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.348,
+                0.447,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.382,
+                0.792,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.402,
+                0.764,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.424,
+                0.215,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.458,
+                0.722,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.477,
+                0.808,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.498,
+                0.814,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.548,
+                0.839,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.567,
+                0.814,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.587,
+                0.788,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.606,
+                0.825,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.626,
+                0.818,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.646,
+                0.832,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.684,
+                0.802,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.705,
+                0.776,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.871,
+                0.922,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.893,
+                0.946,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.91,
+                0.928,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.106
+            ],
+            "angle": 0,
+            "content": "but to build an intelligent layer that helps teams operate them faster, more safely, and with better control.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.179,
+                0.569,
+                0.217
+            ],
+            "angle": 0,
+            "content": "The Sources of Value"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.245,
+                0.943,
+                0.305
+            ],
+            "angle": 0,
+            "content": "BCG's analyses indicate that the value at stake is substantial. For example, oil and gas companies taking full advantage of AI could deliver incremental profits equal to as much as \\(30\\%\\) to \\(70\\%\\) of EBIT over five years.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.319,
+                0.956,
+                0.42
+            ],
+            "angle": 0,
+            "content": "This estimate is not trading specific, because AI will drive increases across energy value chains in fundamentally interconnected ways. Yet it illustrates the scale of value unlocked when AI is embedded into core business workflows rather than treated as a standalone tool. In trading, the same principle applies: the most incremental value is captured when AI improves margin, control, speed, and cycle time across the transaction life cycle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.434,
+                0.875,
+                0.474
+            ],
+            "angle": 0,
+            "content": "Trading organizations are deploying AI to pursue this value in multiple ways, including the following:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.503,
+                0.929,
+                0.622
+            ],
+            "angle": 0,
+            "content": "- Rewiring Process-Heavy Workflows. Much of the near-term value will come from applying AI to workflows that support trading: onboarding products and counterparties, checking credit and completing know-your-customer processes, securing approvals, confirming transactions, reconciling breaks, and managing exceptions. These workflows are often manual, fragmented, and heavily reliant on controls. GenAI can interpret the information; agents can move the work forward.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.637,
+                0.899,
+                0.716
+            ],
+            "angle": 0,
+            "content": "- Improving Commercial Decision Making. Predictive AI, machine learning, numerical analysis, and optimization can improve forecasts, exposures, dispatch, hedging, execution timing, and asset optimization decisions. This is the value pool most directly tied to front-office margin, but it is not the only one.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.731,
+                0.887,
+                0.829
+            ],
+            "angle": 0,
+            "content": "- Turning Fragmented Information Into Competitive Edge. Proprietary advantage increasingly comes from using messy information faster and better. Broker messages, contracts, plant-level or unit-level operational notices, shipping documents, and market color become valuable only with context and when converted into signals, decisions, or controlled workflow actions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.844,
+                0.917,
+                0.924
+            ],
+            "angle": 0,
+            "content": "- Strengthening Controls. AI can detect anomalies and breaks, explain P&L movements, and monitor trading limits in real time. It can also support the valuation of complex originated transactions, streamline middle-office reviews, and improve audit quality and coverage. The prize is not just lower cost. It is fewer errors, faster resolution, and less margin leakage.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.952,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.089,
+                0.12,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.178,
+                0.568,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.246,
+                0.849,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.267,
+                0.938,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.288,
+                0.326,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.32,
+                0.946,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.342,
+                0.892,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.362,
+                0.932,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.382,
+                0.953,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.401,
+                0.552,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.434,
+                0.872,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.454,
+                0.139,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.506,
+                0.923,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.525,
+                0.91,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.544,
+                0.923,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.564,
+                0.82,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.584,
+                0.92,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.605,
+                0.283,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.638,
+                0.848,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.658,
+                0.896,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.678,
+                0.892,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.698,
+                0.43,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.732,
+                0.826,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.753,
+                0.86,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.772,
+                0.883,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.791,
+                0.874,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.81,
+                0.33,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.847,
+                0.913,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.865,
+                0.898,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.886,
+                0.91,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.906,
+                0.871,
+                0.92
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.924,
+                0.147
+            ],
+            "angle": 0,
+            "content": "- Accelerating Technology Delivery. AI can help accelerate the build-out of data pipelines, testing and back testing, enhancements to commodity trading and risk management systems, and model documentation. The value arises from faster conversion of trading ideas into governed production capabilities, not generic coding productivity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.177,
+                0.955,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Impact concentrates where AI sits directly in the flow of work. A better forecast creates value only if the trading desk can act on it. A document summary creates value only if it accelerates an approval, reduces an error, or moves a transaction forward. A model output creates value only if it is connected to decision rights, controls, and systems of record.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.27,
+                0.956,
+                0.37
+            ],
+            "angle": 0,
+            "content": "This is where agentic AI changes the operating model. Agents do not simply produce recommendations; they help execute the work around the recommendation, often facilitated by AI orchestrators. They retrieve information, check rules, prepare actions, route approvals, and escalate exceptions. The goal is less repetitive work, tighter controls, and faster execution on the basis of human judgment—not the replacement of traders or the systems they use.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.44,
+                0.836,
+                0.522
+            ],
+            "angle": 0,
+            "content": "The New Infrastructure Layer: Agents Operating Existing Tools"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.547,
+                0.949,
+                0.666
+            ],
+            "angle": 0,
+            "content": "To make this practical, firms need a trading IT architecture that connects AI to existing systems rather than bypassing them. Trading firms have plenty of tools. The problem is that people still spend too much time moving between them: copying data, chasing approvals, reconciling entries, and proving controls. The next step is not another standalone tool but an AI agent layer that can operate across trading, risk, operations, credit, compliance, and technology workflows with clear controls.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.68,
+                0.945,
+                0.8
+            ],
+            "angle": 0,
+            "content": "Architecturally, the separation of roles matters. Existing trading platforms remain the systems of record. Shared AI platform services provide the models, retrieval capabilities, and risk policies and limits that agents can access on demand. Agents then become the orchestration layer between users and systems: they prepare actions, route approvals, update records where permitted, and escalate exceptions under human supervision. (See Exhibit 1.) This makes AI practical without requiring firms to replace the core trading stack.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.887,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.091,
+                0.852,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.109,
+                0.92,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.129,
+                0.712,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.178,
+                0.95,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.198,
+                0.897,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.218,
+                0.946,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.239,
+                0.632,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.273,
+                0.822,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.292,
+                0.953,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.313,
+                0.887,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.332,
+                0.943,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.353,
+                0.816,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.437,
+                0.796,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.481,
+                0.835,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.549,
+                0.924,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.569,
+                0.923,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.589,
+                0.944,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.609,
+                0.941,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.628,
+                0.933,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.648,
+                0.131,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.683,
+                0.941,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.912,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.723,
+                0.884,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.742,
+                0.874,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.762,
+                0.897,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.779,
+                0.652,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.065,
+                0.109,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.082,
+                0.661,
+                0.119
+            ],
+            "angle": 0,
+            "content": "Agents Create an Intelligent Operating Layer Across the Energy Trading IT Stack",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.13,
+                0.727,
+                0.362
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.372,
+                0.147,
+                0.385
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.42,
+                0.95,
+                0.519
+            ],
+            "angle": 0,
+            "content": "Consider a broker-to-book workflow. An agent reads a broker's trading message, extracts the key terms, checks whether the product and counterparty are approved, prepares the trade entry, runs basic risk and credit checks, routes it for approval, and drafts the confirmation. In cargo operations, an agent could spot a missing document, a scheduling conflict at a terminal, or rising demurrage costs before margin is lost.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.533,
+                0.913,
+                0.614
+            ],
+            "angle": 0,
+            "content": "This changes the operating model. Traders and operators spend less time navigating multiple disparate systems and more time supervising decisions. Firms will need clear rules for what agents can do on their own, where they can only prepare actions, where human approval is required, and how every step is recorded for accountability.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.733,
+                0.851,
+                0.854
+            ],
+            "angle": 0,
+            "content": "Adoption Is Uneven, with\nLeaders in Integrated Workflows\nPulling Ahead"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.879,
+                0.933,
+                0.92
+            ],
+            "angle": 0,
+            "content": "Adoption varies across markets, but AI is not advancing along a single path. Power, pipeline gas, and financial energy trading are generally further along in predictive AI, optimization, and",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.083,
+                0.658,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.102,
+                0.211,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.421,
+                0.938,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.442,
+                0.946,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.462,
+                0.853,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.482,
+                0.94,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.5,
+                0.401,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.536,
+                0.909,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.555,
+                0.892,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.575,
+                0.886,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.595,
+                0.59,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.731,
+                0.676,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.772,
+                0.854,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.812,
+                0.4,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.882,
+                0.93,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.903,
+                0.873,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.943,
+                0.166
+            ],
+            "angle": 0,
+            "content": "automation because they have longer histories of quantitative analytics and repeatable decision loops. LNG and physical liquids often have more opportunities to apply GenAI and agentic AI because their pain points relate to the work supporting trading rather than generating signals. The real divide is between firms embedding AI into integrated workflows and firms still running isolated pilots.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.18,
+                0.927,
+                0.281
+            ],
+            "angle": 0,
+            "content": "A recent BCG survey highlighted differences in adoption among trading organizations in power, pipeline gas, and physical liquids—the markets for which directly comparable benchmark data exists. (See Exhibit 2.) Power and pipeline gas traders lead in adoption, reflecting the fundamentally numeric nature of their work. (The survey covered automation, analytics, and advanced AI use cases; it should not be read as a GenAI or an agentic-AI maturity ranking.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.312,
+                0.111,
+                0.326
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.329,
+                0.724,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Power and Pipeline Gas Traders Lead Physical Liquids in AI Adoption",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.355,
+                0.667,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Respondents reporting deployment of automation, analytics, or advanced AI in their organizations (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.377,
+                0.721,
+                0.615
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.628,
+                0.289,
+                0.64
+            ],
+            "angle": 0,
+            "content": "Source: BCG power and gas trading survey, 2024–2026."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.675,
+                0.953,
+                0.853
+            ],
+            "angle": 0,
+            "content": "Adoption patterns across markets are not simply a matter of digital maturity or budget allocation. They also reflect differences in the data and architecture investments required to make AI usable at scale—and the fact that early adopters building these foundations have an advantage that competitors cannot quickly replicate. Across markets, AI returns depend not only on model quality but also on whether firms have created decision-grade data, integrated workflows, and technical architectures that allow insights to move into action reliably. In practice, firms are using AI agents to validate, clean, and structure high-volume operational data so that errors and anomalies in live data feeds do not propagate into models responsible for commercial decision making.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.867,
+                0.939,
+                0.926
+            ],
+            "angle": 0,
+            "content": "These investments matter because advances in AI trading are cumulative. Firms that invest earlier in data models, system integration, and workflow-oriented architecture can deploy use cases faster, scale them more safely, and improve them over time as more decisions run through",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.941,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.088,
+                0.906,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.107,
+                0.921,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.921,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.148,
+                0.185,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.921,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.924,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.828,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.242,
+                0.895,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.882,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.315,
+                0.108,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.331,
+                0.721,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.676,
+                0.952,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.696,
+                0.947,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.714,
+                0.914,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.735,
+                0.892,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.755,
+                0.908,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.774,
+                0.949,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.796,
+                0.878,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.814,
+                0.929,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.834,
+                0.122,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.869,
+                0.894,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.888,
+                0.91,
+                0.904
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.909,
+                0.932,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.933,
+                0.128
+            ],
+            "angle": 0,
+            "content": "the system. Laggards find it hard to catch up quickly. In addition to investing in technology, firms must harmonize data definitions, integrate trading and operational platforms, and implement control frameworks that allow AI outputs to be trusted in live commercial decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.141,
+                0.943,
+                0.201
+            ],
+            "angle": 0,
+            "content": "Once that foundation is in place, the sources of value differ by commodity. In some markets, the analytical engine matters most. In others, the bigger prize lies in orchestrating workflows around documents, approvals, operations, and controls.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.272,
+                0.815,
+                0.354
+            ],
+            "angle": 0,
+            "content": "AI Creates Commodity-Specific Advantages"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.379,
+                0.88,
+                0.419
+            ],
+            "angle": 0,
+            "content": "Building a durable advantage starts with understanding how AI creates an edge in specific commodities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.433,
+                0.946,
+                0.554
+            ],
+            "angle": 0,
+            "content": "Power: Improving Decision Speed, Risk Management, and Portfolio Control. In electric-power markets, advantage comes from turning forecasts, constraints, and risk signals into disciplined action across hundreds or thousands of trading, dispatch, scheduling, and portfolio decisions. These markets are granular, subject to constraints, and highly time sensitive: transmission limits, nodal or zonal pricing, congestion, outages, load forecasts, and intermittent availability of renewable energy can create opportunities and risks that change quickly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.566,
+                0.956,
+                0.667
+            ],
+            "angle": 0,
+            "content": "The main applications of AI are predictive AI, numerical optimization, and automation, rather than GenAI and agents. Many desks already have credible congestion, pricing, dispatch, and load-forecasting models. The differentiator is embedding those models into live workflows to refresh exposures quickly, route alerts to the right people, control approvals, and enable trading, risk, and scheduling teams to act at market speed without losing discipline.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.68,
+                0.947,
+                0.761
+            ],
+            "angle": 0,
+            "content": "GenAI and agents are more relevant in adjacent workflows, including P&L explanation, risk decomposition, product onboarding, portfolio monitoring, market rule interpretation, and exception escalation. An agent might summarize why P&L moved, identify which assets or constraints drove the change, prepare a risk commentary, or route a limit exception for approval.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.774,
+                0.95,
+                0.875
+            ],
+            "angle": 0,
+            "content": "More advanced tools, such as AI-empowered digital twins of optimization systems or autonomous decision support tools, are not yet the main source of value in most power markets. They are, however, gaining traction in parts of Europe where hydro portfolios and similar complex optimization problems make them more relevant. In those settings, AI can help evaluate asset constraints, optionality, and dispatch choices across a wider range of scenarios.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.888,
+                0.955,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Pipeline Gas: Enhancing Operational Intelligence. In pipeline gas markets, advantage is shaped less by trading speed than by the ability to read a changing physical system. Pipeline constraints,",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.929,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.913,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.822,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.143,
+                0.93,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.939,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.183,
+                0.494,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.269,
+                0.815,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.312,
+                0.336,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.381,
+                0.876,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.402,
+                0.171,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.436,
+                0.926,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.455,
+                0.923,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.475,
+                0.906,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.496,
+                0.94,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.514,
+                0.876,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.534,
+                0.727,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.57,
+                0.95,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.589,
+                0.901,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.608,
+                0.924,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.628,
+                0.952,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.648,
+                0.659,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.682,
+                0.886,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.703,
+                0.868,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.721,
+                0.872,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.743,
+                0.941,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.776,
+                0.946,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.796,
+                0.907,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.815,
+                0.853,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.835,
+                0.924,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.856,
+                0.78,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.891,
+                0.932,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.91,
+                0.949,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.928,
+                0.107
+            ],
+            "angle": 0,
+            "content": "storage levels, nominations, and maintenance events continually reshape regional supply and demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.122,
+                0.945,
+                0.182
+            ],
+            "angle": 0,
+            "content": "The core AI use case is operational intelligence. Predictive models and optimization tools can translate physical system changes into better storage, basis or locational spread, transport, and hedging decisions before those shifts are fully reflected in price.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.196,
+                0.95,
+                0.275
+            ],
+            "angle": 0,
+            "content": "GenAI and agents matter most where operational information is fragmented. An agent can read a pipeline or transmission system operator notice, interpret a nomination update, identify affected positions, check contract rights, and route an exception to the right trader, scheduler, or risk owner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.291,
+                0.95,
+                0.371
+            ],
+            "angle": 0,
+            "content": "The goal is not to replace the tools that gas desks already use. It is to add an agent layer across scheduling platforms, energy trading and risk management platforms, risk systems, and communications channels so teams can act faster, reconcile less, and preserve control. The main barrier is usually not model sophistication but the quality and consistency of operational data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.383,
+                0.92,
+                0.465
+            ],
+            "angle": 0,
+            "content": "LNG: Evaluating Options. LNG trading has distinct economic logic and time horizons. Margin depends on where each cargo can go, under what terms, at what cost, and with what hedge. Arbitrage opportunities can look attractive on the screen but disappear once freight, terminal access, credit, and contractual limits are considered.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.478,
+                0.956,
+                0.539
+            ],
+            "angle": 0,
+            "content": "Predictive models and optimization tools help traders evaluate cargo options faster and more systematically. They can compare routing, timing, freight, storage, and hedge alternatives so desks can capture value before spreads or capacity windows move.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.552,
+                0.955,
+                0.633
+            ],
+            "angle": 0,
+            "content": "Optimization models serve distinct purposes across time horizons. Over the long term, they simulate a range of price scenarios to quantify the intrinsic and extrinsic value of supply, demand, and logistics positions. Over the short term, they are deployed to commercially optimize annual delivery programs, shipping schedules, and trading opportunities on a portfolio basis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.646,
+                0.878,
+                0.727
+            ],
+            "angle": 0,
+            "content": "GenAI and AI agents are especially relevant because LNG relies heavily on contracts and approvals. An AI agent can interpret terms of sales and purchase agreements, surface destination or volume flexibility, prepare approval materials, test whether a diversion is permissible, and route exceptions to the right owner before execution slows.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.74,
+                0.956,
+                0.801
+            ],
+            "angle": 0,
+            "content": "The biggest challenge is fragmentation. Contract terms, cargo schedules, vessel status, approvals, and risk positions often sit in different systems. The frontrunners build a portfolio view across those elements and use AI to move from optionality analysis to controlled execution.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.814,
+                0.939,
+                0.894
+            ],
+            "angle": 0,
+            "content": "Physical Liquids: Managing Cargo Optionality, Risk, and Operations. In physical liquids—crude oil, refined products, and natural-gas liquids—value creation depends heavily on identifying options and executing effectively. Cargo timing, blending, inventory, product specifications, and contract terms often matter as much as price direction.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.924,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.129,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.911,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.145,
+                0.938,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.162,
+                0.638,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.197,
+                0.946,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.218,
+                0.945,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.239,
+                0.891,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.259,
+                0.108,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.292,
+                0.927,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.313,
+                0.858,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.331,
+                0.946,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.352,
+                0.92,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.386,
+                0.9,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.405,
+                0.883,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.426,
+                0.915,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.446,
+                0.534,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.478,
+                0.915,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.499,
+                0.953,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.52,
+                0.609,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.555,
+                0.892,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.574,
+                0.952,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.593,
+                0.93,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.613,
+                0.835,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.648,
+                0.874,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.668,
+                0.843,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.687,
+                0.855,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.708,
+                0.753,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.741,
+                0.953,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.762,
+                0.913,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.78,
+                0.835,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.816,
+                0.934,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.836,
+                0.894,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.855,
+                0.924,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.875,
+                0.56,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.168
+            ],
+            "angle": 0,
+            "content": "These markets are less suited to pure algorithmic trading than power or financial markets. The bigger near-term prize is gaining visibility into what can move, when it can move, under which specifications, and with which approvals. That same visibility can also help identify cargoes at risk of becoming distressed, allowing owners to intervene sooner or other market participants to recognize opportunities to capitalize on before they become widely apparent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.18,
+                0.933,
+                0.242
+            ],
+            "angle": 0,
+            "content": "GenAI and agents can turn messy communication into a controlled workflow. A broker message becomes a structured trade entry. An unapproved product or counterparty becomes an exception. A missing document or demurrage risk reaches the right owner before value is lost.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.255,
+                0.956,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Predictive models and optimization still matter, especially for refinery slates, blending economics, inventory positioning, logistics, and contract optionality. But the edge in physical liquids comes from connecting commercial decisions with operations, risk, credit, and logistics—not from faster directional trading alone.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.348,
+                0.955,
+                0.449
+            ],
+            "angle": 0,
+            "content": "Financial Energy Trading: Optimizing Signals, Research, and Controls. In financial energy trading, value creation depends on converting information into risk-adjusted positions quickly and consistently. These markets are deep and transparent, so advantage rarely stems from data access alone. It comes from knowing which signals matter now and sizing positions with discipline.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.463,
+                0.949,
+                0.543
+            ],
+            "angle": 0,
+            "content": "The most relevant AI applications are predictive AI, numerical analysis, and optimization. Models can combine market structure, price behavior, positioning, macro indicators, and proprietary physical signals to classify conditions and identify higher-conviction opportunities. Execution tools can then help optimize order placement and manage market impact.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.556,
+                0.908,
+                0.635
+            ],
+            "angle": 0,
+            "content": "GenAI and agents are more useful in supporting the trading workflow than in generating the underlying signal. They can summarize market developments, accelerate research and back-testing, draft risk commentary, support model documentation, and route approvals or limit exceptions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.649,
+                0.94,
+                0.731
+            ],
+            "angle": 0,
+            "content": "The main risk is false precision. Financial markets generate enormous amounts of data, so weak AI models can overfit to patterns that do not persist. The firms advancing fastest link research, execution, and risk into a single loop: rapid experimentation, disciplined controls, regime detection, and fast feedback on trading-signal quality and performance.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.8,
+                0.74,
+                0.881
+            ],
+            "angle": 0,
+            "content": "Standardize the Foundation,\nTailor the Edge"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.919,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.901,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.95,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.9,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.148,
+                0.766,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.929,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.203,
+                0.854,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.224,
+                0.912,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.257,
+                0.953,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.277,
+                0.922,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.297,
+                0.946,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.316,
+                0.281,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.349,
+                0.881,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.371,
+                0.949,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.391,
+                0.901,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.41,
+                0.857,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.431,
+                0.142,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.464,
+                0.947,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.485,
+                0.897,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.506,
+                0.902,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.525,
+                0.739,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.559,
+                0.894,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.579,
+                0.904,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.597,
+                0.884,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.617,
+                0.156,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.652,
+                0.936,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.671,
+                0.925,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.693,
+                0.867,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.711,
+                0.709,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.798,
+                0.737,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.838,
+                0.426,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.947,
+                0.146
+            ],
+            "angle": 0,
+            "content": "Although these markets should monetize AI differently, they all require the same foundation: trusted data, disciplined governance, and integrated workflows. Without that foundation, even strong models remain disconnected from the decisions that move risk, optimize assets, and drive financial results.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.161,
+                0.956,
+                0.261
+            ],
+            "angle": 0,
+            "content": "Firms that have already built decision-grade data, linked core trading and operational systems, and embedded controls into workflows can deploy AI use cases faster, scale them more safely, and improve them over time. Firms starting from fragmented architectures face a slower and more expensive path because each new use case must overcome the same underlying data and integration gaps.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.275,
+                0.952,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Some AI capabilities are already becoming table stakes. Coding copilots, generic forecasting, document summarization, and basic automation will improve productivity, but they will not create a sustained advantage on their own. A durable edge will come from the capabilities that are harder to build and replicate: proprietary data, commodity-specific models, redesigned workflows, and controls that allow AI to move work safely from insight to action.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.388,
+                0.953,
+                0.487
+            ],
+            "angle": 0,
+            "content": "The most effective starting points vary by commodity but share three characteristics: a clearly defined value pool, a workflow that repeats frequently enough to improve over time, and data that can be made sufficiently reliable to support decision making. (See Exhibit 3.) By prioritizing these entry points, firms can embed AI into the decisions that matter most for generating returns in each market.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.069,
+                0.9,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.91,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.942,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.13,
+                0.203,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.922,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.183,
+                0.918,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.953,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.224,
+                0.88,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.244,
+                0.204,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.277,
+                0.905,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.298,
+                0.949,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.317,
+                0.891,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.337,
+                0.944,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.356,
+                0.682,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.391,
+                0.914,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.409,
+                0.95,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.43,
+                0.946,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.45,
+                0.91,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.47,
+                0.168,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.065,
+                0.528,
+                0.103
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3 High-Value Entry Points for AI in Energy Trading"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.044,
+                0.118,
+                0.728,
+                0.472
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.483,
+                0.147,
+                0.496
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.568,
+                0.925,
+                0.648
+            ],
+            "angle": 0,
+            "content": "As volatility and operational complexity rise, AI is becoming central to how energy-trading organizations compete. But the edge will not come from applying a generic model across every market or replacing the systems traders use today. It will come from embedding the right AI capabilities into the workflows that move decisions into action.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.661,
+                0.914,
+                0.762
+            ],
+            "angle": 0,
+            "content": "Leaders will build an intelligent operating layer across existing tools. Predictive AI and optimization will sharpen the market view. GenAI will make unstructured information usable. Agents will move work through systems with controls and escalation. The compounding advantage is simple: better data improves models; better workflows create cleaner feedback; cleaner feedback makes the next trade faster, safer, and more valuable.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.775,
+                0.9,
+                0.816
+            ],
+            "angle": 0,
+            "content": "The authors thank the following colleagues for their contributions to this article: Johannes Große, Sönke Lorenz, Martin Elxnath, Jay Barnard, and Stephanie Bachas-Daunert.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.57,
+                0.878,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.59,
+                0.922,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.61,
+                0.889,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.629,
+                0.63,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.663,
+                0.844,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.683,
+                0.905,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.854,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.723,
+                0.909,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.743,
+                0.708,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.778,
+                0.895,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.798,
+                0.611,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.104,
+                0.247,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.186,
+                0.221,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.36,
+                0.221,
+                0.467
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.207,
+                0.394,
+                0.229
+            ],
+            "angle": 0,
+            "content": "Wade Barnes"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.239,
+                0.445,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nDenver"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.273,
+                0.275,
+                0.29
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.364,
+                0.355,
+                0.387
+            ],
+            "angle": 0,
+            "content": "Antti Belt"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.397,
+                0.446,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; BCG Institute Fellow Helsinki",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.443,
+                0.275,
+                0.46
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.534,
+                0.186,
+                0.683,
+                0.295
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.361,
+                0.684,
+                0.466
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.189,
+                0.83,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Sébastien\nRexhausen"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.289,
+                0.737,
+                0.306
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.245,
+                0.9,
+                0.285
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nCologne",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.365,
+                0.864,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Matthew Abel"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.397,
+                0.9,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nPerth"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.443,
+                0.737,
+                0.46
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.515,
+                0.219,
+                0.621
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.555,
+                0.448,
+                0.586
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nSingapore",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.522,
+                0.453,
+                0.546
+            ],
+            "angle": 0,
+            "content": "Smith Sangiambut"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.59,
+                0.275,
+                0.606
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.534,
+                0.512,
+                0.684,
+                0.62
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.518,
+                0.86,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Anna Temple"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.596,
+                0.737,
+                0.612
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.55,
+                0.92,
+                0.592
+            ],
+            "angle": 0,
+            "content": "Associate Director, Commodity Trading & Optimization\nHouston",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.708,
+                0.436,
+                0.727
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.742,
+                0.952,
+                0.864
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.102,
+                0.247,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.366,
+                0.353,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.4,
+                0.433,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.412,
+                0.441,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.425,
+                0.301,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.19,
+                0.818,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.212,
+                0.829,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.246,
+                0.896,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.258,
+                0.763,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.271,
+                0.765,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.366,
+                0.863,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.558,
+                0.442,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.572,
+                0.313,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.525,
+                0.449,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.518,
+                0.857,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.554,
+                0.915,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.565,
+                0.866,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.578,
+                0.766,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.71,
+                0.432,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.745,
+                0.95,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.766,
+                0.9,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.785,
+                0.905,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.805,
+                0.912,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.825,
+                0.933,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.843,
+                0.593,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

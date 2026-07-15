@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_4k01olxl/pdfs/0001-BCG_Built-on-Scale-Turning-to-Science_ebd53304.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4k01olxl/pdfs/0002-BCG_Industrial-Products-Makers-Chart-a-New-Path-to-Digital_2cfd865a.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4k01olxl/pdfs/0003-BCG_Putting-AI-to-Work-in-Energy-Trading_c7700e76.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
