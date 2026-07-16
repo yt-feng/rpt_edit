@@ -1,0 +1,125 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_o5z1p2ns/pdfs/0004-24-DB-Thematic Research-What-s the pain threshold- when will higher oil prices drive a bigger selloff--260714.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "DB",
+  "cover_short_title": "油价涨多少，市场才会",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "危机->扰动 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融条件->资金条件 x1",
+    "股票市场|股市->市场 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "DB：DB主题研究，油价疼痛阈值与市场抛售",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-24-DB-Thematic Research-What-s the pain threshold- when will higher oil prices drive a bigger selloff--260714.pdf",
+    "cleaned_source_title": "DB-Thematic Research-What-s the pain threshold- when will higher oil prices drive a bigger selloff",
+    "institution_name": "DB",
+    "required_terms": [],
+    "deterministic_fallback": "DB：ThematicResearchWhats",
+    "raw_candidates": [
+      "DB主题研究：油价疼痛阈值与市场抛售",
+      "DB：油价需达110美元才触发市场抛售",
+      "DB：当前油价86美元，远未到110美元抛售阈值"
+    ],
+    "cleaned_candidates": [
+      "DB：DB主题研究，油价疼痛阈值与市场抛售",
+      "DB：油价需达110美元才触发市场抛售",
+      "DB：当前油价86美元，远未到110美元抛售阈值",
+      "DB：ThematicResearchWhats"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "DB：油价需达110美元才触发市场抛售",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "DB：当前油价86美元，远未到110美元抛售阈值",
+        "reasons": [
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "DB：ThematicResearchWhats",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "DB：DB主题研究，油价疼痛阈值与市场抛售",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "DB：DB主题研究，油价疼痛阈值与市场抛售"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "476",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

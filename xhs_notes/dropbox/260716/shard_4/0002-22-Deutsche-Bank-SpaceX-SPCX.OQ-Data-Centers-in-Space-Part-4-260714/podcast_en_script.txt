@@ -1,0 +1,22 @@
+EN_A: So there is this report that sounds like science fiction — data centers in space. But it says the physics actually checks out. Is that for real?
+EN_B: The big takeaway is that the physics is not the problem. The real challenge is cost and scale. And the report argues that one company, through extreme vertical integration, could make orbital data centers cost-competitive with terrestrial ones by the early 2030s.
+EN_A: So the real question this report is trying to answer is not if it's possible, but when it becomes economically viable?
+EN_B: Exactly. It builds a detailed cost model, from 2027 all the way to the early 2030s, showing how that cost gap narrows step by step.
+EN_A: Let's dive into the first big insight. The report talks about optical lasers instead of traditional radio spectrum. What's the key difference?
+EN_B: The key is that these AI satellites, like the AI1, will use laser links to talk to each other, not radio waves. This makes the constellation itself essentially spectrum-free. You don't need to fight for the same frequencies that 5G or Wi-Fi use.
+EN_A: That sounds like a huge advantage. But what about getting the data back down to Earth?
+EN_B: That's the catch. All that data eventually has to funnel through Starlink's ground gateways. So the report looks at how SpaceX is using higher frequency bands like E-band and V-band, not for consumer dishes, but for these high-capacity backhaul links.
+EN_A: Okay, that makes sense. What about power? How do you keep a giant AI computer running in space?
+EN_B: The report spends a lot of time on solar cells. Right now, the best ones use materials like gallium and germanium, which are heavily concentrated in one country. So SpaceX is building its own solar factory in Texas, starting with simpler silicon cells. But the report hints that a new type of cell called HJT could be a game-changer in a few years.
+EN_A: What about the really futuristic stuff, like perovskite?
+EN_B: It mentions perovskite as a potential future technology, because it's lightweight and can be printed. But the report leaves a cliffhanger: it says SpaceX probably won't use it for the first AI1 satellites because they can't get the equipment in time.
+EN_A: Interesting. Now, the third big piece is about heat. How do you cool a 120-kilowatt AI chip in a vacuum?
+EN_B: This is a massive engineering challenge. Most satellites use passive radiators, but that won't cut it here. The AI1 satellite will use an active liquid-cooled radiator, which is basically a pumped fluid loop. The report says SpaceX will be the first to mass-produce this kind of design.
+EN_A: And what about compute density? The report mentions a target of 100 kilowatts per ton.
+EN_B: Right. The AI1 will start at about 70 kilowatts per ton, which means each Starship launch can deploy about 6 megawatts of compute. The report assumes this density improves over time, reaching the 100 kilowatt target with the AI3 satellite.
+EN_A: So the path seems pretty clear, but there have to be some unanswered questions.
+EN_B: Absolutely. The report itself flags a few. For example, what happens when a GPU fails in space? The report just says the satellite will run at lower power, but it doesn't fully explore the maintenance strategy or the reliability data.
+EN_A: That's a big one. Any other cliffhangers?
+EN_B: Another is the solar cell supply chain. It talks about HJT and perovskite, but the report leaves it open which exact technology SpaceX will eventually adopt, and how fast alternatives from other countries might develop.
+EN_A: So the real value of this report is the cost model, not a final answer. If listeners want to see that full Excel model or read about the regulatory changes in spectrum allocation, where can they find it?
+EN_B: They should read the full report, which includes all the assumptions, data tables, and detailed sources. You can find the download link in our member community.

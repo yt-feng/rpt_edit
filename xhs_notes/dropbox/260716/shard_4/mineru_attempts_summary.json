@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_o5z1p2ns/pdfs/0001-21-DB-Horizon Robotics-9660.HK-HSD V2.0 Demonstrates Exceptional Precision and Strategic Maneuvering-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o5z1p2ns/pdfs/0002-22-DB-SpaceX-SPCX.OQ-Data Centers in Space Part 4-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o5z1p2ns/pdfs/0003-23-DB-Tesla Inc.-TSLA.OQ-2Q26 Preview-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o5z1p2ns/pdfs/0004-24-DB-Thematic Research-What-s the pain threshold- when will higher oil prices drive a bigger selloff--260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o5z1p2ns/pdfs/0005-25-GS-ASML Holding -ASML.AS-- Strong customer commitments support capacity plans- with pricing flexibility and mix shift driving margin-260716.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
