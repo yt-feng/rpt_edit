@@ -45,9 +45,8 @@ except Exception:  # pragma: no cover
 
 from wechat_title_optimizer import (
     build_filename_title_translation_prompt,
-    choose_filename_anchored_title,
+    decide_filename_anchored_title,
     extract_title_candidates,
-    filename_title_fallback,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
 from wechat_article_quality import (
@@ -954,10 +953,9 @@ def wechat_title_from_filename(
     translated_md: str,
     institution_name: str,
     args: argparse.Namespace,
-) -> str:
-    fallback = filename_title_fallback(source_filename, institution_name)
+) -> tuple[str, dict[str, Any]]:
     if not getattr(args, "title_refine", True):
-        return fallback
+        return decide_filename_anchored_title([], source_filename, institution_name)
     article_excerpt = normalize_space(re.sub(r"[#>*`!\\[\\]()]+", " ", translated_md))[:1800]
     prompt = build_filename_title_translation_prompt(source_filename, institution_name, article_excerpt)
     try:
@@ -972,7 +970,7 @@ def wechat_title_from_filename(
     except Exception as exc:
         log(f"  Filename-anchored title fine-tuning failed, using deterministic filename fallback: {exc}")
         candidates = []
-    return choose_filename_anchored_title(
+    return decide_filename_anchored_title(
         candidates,
         source_filename,
         institution_name,
@@ -1203,8 +1201,14 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     else:
         translated_md = translate_markdown(clean_md, args)
     translated_md, stock_changes = sanitize_wechat_stock_language(translated_md)
-    display_title = wechat_title_from_filename(source_title, translated_md, institution_name, args)
+    display_title, title_decision = wechat_title_from_filename(
+        source_title,
+        translated_md,
+        institution_name,
+        args,
+    )
     display_title, title_stock_changes = sanitize_wechat_stock_language(display_title, strict_wording=False)
+    title_decision["final_title_after_wording_guard"] = display_title
     translated_md = replace_first_heading(translated_md, display_title)
     translated_md, stock_changes_after_title = sanitize_wechat_stock_language(
         translated_md,
@@ -1221,6 +1225,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "title": display_title,
         "source_title": source_title,
         "wechat_title_source": "source_filename_weighted_finetune",
+        "wechat_title_decision": title_decision,
         "source_clean": "source_clean.md",
         "translated_markdown": "translated.md",
         "pdf": output_pdf.name,

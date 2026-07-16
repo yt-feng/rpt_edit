@@ -46,6 +46,55 @@ TITLE_NOISE_RE = re.compile(
     re.I,
 )
 TITLE_ABSTRACT_RE = re.compile(r"(?:结构性变量|二阶影响|再定价框架|核心框架|底层逻辑|长期主义)")
+GENERIC_FILENAME_TITLE_LABELS = (
+    "研究笔记",
+    "行业观察",
+    "研究观察",
+    "报告观察",
+    "观察笔记",
+    "专题观察",
+    "公司观察",
+    "研报解读",
+    "报告解读",
+)
+GENERIC_FILENAME_TITLE_LABEL_RE = re.compile(
+    rf"^(?:(?:{'|'.join(map(re.escape, GENERIC_FILENAME_TITLE_LABELS))}|观察)"
+    r"\s*[：:，,、;；\-—]+\s*)+"
+)
+SOURCE_DOCUMENT_TYPE_RE = re.compile(
+    r"(?<![A-Za-z])(?:research|quick|flash|company|industry|sector)\s+"
+    r"(?:note|update|view|watch|observation|insights?)(?![A-Za-z])",
+    re.I,
+)
+REQUIRED_ACRONYM_EXCLUSIONS = {
+    "BOFA",
+    "BARC",
+    "CITI",
+    "CORP",
+    "DAILY",
+    "DB",
+    "FLASH",
+    "GS",
+    "HSBC",
+    "INC",
+    "JEF",
+    "JPM",
+    "LTD",
+    "MS",
+    "NOM",
+    "NOTE",
+    "PDF",
+    "PLC",
+    "PREVIEW",
+    "QUICK",
+    "REPORT",
+    "RESEARCH",
+    "REVIEW",
+    "SHARED",
+    "UBS",
+    "UPDATE",
+    "WEEKLY",
+}
 
 BIG_NAME_TERMS = [
     "高盛",
@@ -560,6 +609,7 @@ def clean_wechat_title(
         if cleaned.strip("：:，, ") == canonicalize_institution_title_name(institution_name):
             cleaned = f"{canonicalize_institution_title_name(institution_name)}：公司情况更新"
     cleaned = remove_redundant_title_aliases(cleaned)
+    cleaned = remove_generic_filename_title_labels(cleaned)
     cleaned = limit_title_colons(cleaned)
     return truncate_chars(cleaned, max_chars).strip("：: -—")
 
@@ -575,6 +625,33 @@ def strip_source_filename_noise(source_filename: str) -> str:
     cleaned = re.sub(r"(?i)(?:^|[-_\s])shared(?=$|[-_\s])", "-", cleaned)
     cleaned = re.sub(r"[-_]{4,}", "---", cleaned)
     return cleaned.strip(" -_")
+
+
+def remove_source_document_type_noise(value: str) -> str:
+    """Drop filename labels that describe the document, not its subject."""
+    cleaned = SOURCE_DOCUMENT_TYPE_RE.sub(" ", value or "")
+    cleaned = re.sub(r"\s*([：:，,、;；\-—])\s*(?=[：:，,、;；\-—])", r"\1", cleaned)
+    cleaned = re.sub(r"(?:^|\s)[：:，,、;；\-—]+\s*", "-", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned)
+    return cleaned.strip(" -_：:，,、;；—")
+
+
+def remove_generic_filename_title_labels(title: str) -> str:
+    """Remove vacuous translated labels while preserving the actual subject."""
+    cleaned = normalize_space(title).replace(":", "：")
+    prefix = ""
+    body = cleaned
+    if "：" in cleaned:
+        head, tail = cleaned.split("：", 1)
+        if len(head) <= 14:
+            prefix = f"{head.strip()}："
+            body = tail.strip()
+    original_body = body
+    body = GENERIC_FILENAME_TITLE_LABEL_RE.sub("", body).strip(" ，,、;；：:—-")
+    body = re.sub(r"(?:的)?(?:观察笔记|研究笔记)$", "", body).strip(" ，,、;；：:—-")
+    if len(re.sub(r"\s+", "", body)) < 4:
+        body = original_body
+    return f"{prefix}{body}".strip("：: -—")
 
 
 def filename_institution_aliases(institution_name: str) -> list[str]:
@@ -647,6 +724,7 @@ def clean_filename_wechat_title(title: str, institution_name: str = "", max_char
         cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
         cleaned = ensure_title_has_institution_local(cleaned, institution_name)
     cleaned = remove_redundant_title_aliases(cleaned)
+    cleaned = remove_generic_filename_title_labels(cleaned)
     cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
     if "：" in cleaned:
         head, tail = cleaned.split("：", 1)
@@ -660,6 +738,7 @@ def clean_filename_wechat_title(title: str, institution_name: str = "", max_char
 
 def filename_title_fallback(source_filename: str, institution_name: str = "", max_chars: int = 35) -> str:
     body = strip_filename_institution_prefix(source_filename, institution_name)
+    body = remove_source_document_type_noise(body)
     body = translate_filename_terms_fallback(body)
     if not body:
         body = "报告更新"
@@ -707,6 +786,59 @@ def _numeric_title_tokens(value: str) -> set[str]:
     return set(re.findall(r"(?<![A-Za-z0-9])\d+(?:\.\d+)?", value or ""))
 
 
+def required_filename_terms(source_filename: str, institution_name: str = "") -> list[str]:
+    """Return technical acronyms that the Chinese title must keep verbatim."""
+    body = strip_filename_institution_prefix(source_filename, institution_name)
+    terms: list[str] = []
+    for token in re.findall(r"(?<![A-Za-z0-9])([A-Z]{2,8})(?![A-Za-z0-9])", body):
+        upper = token.upper()
+        if upper in REQUIRED_ACRONYM_EXCLUSIONS or upper in terms:
+            continue
+        terms.append(upper)
+    return terms[:8]
+
+
+def missing_required_filename_terms(candidate: str, required_terms: list[str]) -> list[str]:
+    haystack = (candidate or "").upper()
+    return [term for term in required_terms if term.upper() not in haystack]
+
+
+def ensure_required_filename_terms(
+    candidate: str,
+    required_terms: list[str],
+    institution_name: str = "",
+    max_chars: int = 35,
+) -> str:
+    """Repair a fallback deterministically when truncation omitted an acronym."""
+    if not missing_required_filename_terms(candidate, required_terms):
+        return candidate
+    prefix = ""
+    body = candidate
+    if "：" in candidate:
+        head, body = candidate.split("：", 1)
+        prefix = f"{head}："
+    for term in required_terms:
+        body = re.sub(re.escape(term), "", body, flags=re.I)
+    term_block = "与".join(required_terms)
+    tail_budget = max(0, max_chars - len(prefix) - len(term_block))
+    tail = fit_filename_title(body.strip(" ，,、;；：:—-"), tail_budget) if tail_budget else ""
+    rebuilt = f"{prefix}{term_block}{tail}"
+    return clean_filename_wechat_title(rebuilt, institution_name, max_chars=max_chars)
+
+
+def _contrarian_additions_supported(candidate: str, anchor: str, evidence: str) -> bool:
+    added = [term for term in CONTRARIAN_TERMS if term in candidate and term not in anchor]
+    for term in added:
+        if term in evidence:
+            continue
+        if term == "反而" and re.search(r"(?:但|却|然而|不升反降|不降反升)", evidence):
+            continue
+        if term in {"不是", "而是"} and re.search(r"不是.{1,30}而是", evidence):
+            continue
+        return False
+    return True
+
+
 def filename_title_additions_are_supported(
     candidate: str,
     anchor: str,
@@ -718,32 +850,54 @@ def filename_title_additions_are_supported(
     if not added_numbers.issubset(_numeric_title_tokens(evidence)):
         return False
     added_names = [term for term in BIG_NAME_TERMS if term in candidate and term not in anchor]
-    return all(term.lower() in evidence.lower() for term in added_names)
+    if not all(term.lower() in evidence.lower() for term in added_names):
+        return False
+    return _contrarian_additions_supported(candidate, anchor, evidence)
 
 
-def choose_filename_anchored_title(
+def _title_hook_signals(candidate: str, anchor: str) -> dict[str, list[str]]:
+    return {
+        "added_numbers": sorted(_numeric_title_tokens(candidate) - _numeric_title_tokens(anchor)),
+        "added_contrarian_terms": [
+            term for term in CONTRARIAN_TERMS if term in candidate and term not in anchor
+        ],
+        "added_big_names": [term for term in BIG_NAME_TERMS if term in candidate and term not in anchor],
+    }
+
+
+def decide_filename_anchored_title(
     candidates: list[str],
     source_filename: str,
     institution_name: str = "",
     max_chars: int = 35,
     evidence_text: str = "",
-) -> str:
-    """Let hooks improve a title only when filename semantics remain dominant."""
+) -> tuple[str, dict[str, Any]]:
+    """Select a title and return an auditable record of every deterministic gate."""
+    required_terms = required_filename_terms(source_filename, institution_name)
     fallback = filename_title_fallback(source_filename, institution_name, max_chars=max_chars)
+    fallback = ensure_required_filename_terms(
+        fallback,
+        required_terms,
+        institution_name,
+        max_chars=max_chars,
+    )
     faithful_raw = candidates[0] if candidates else fallback
-    anchor = finalize_filename_wechat_title(
+    faithful = finalize_filename_wechat_title(
         faithful_raw,
         source_filename,
         institution_name,
         max_chars=max_chars,
     )
+    faithful_missing = missing_required_filename_terms(faithful, required_terms)
+    anchor = fallback if faithful_missing else faithful
+
     pool: list[str] = []
-    for raw in [anchor, *candidates[1:], fallback]:
+    for raw in [anchor, *candidates, fallback]:
         cleaned = finalize_filename_wechat_title(raw, source_filename, institution_name, max_chars=max_chars)
         if cleaned and cleaned not in pool:
             pool.append(cleaned)
     if not pool:
-        return fallback
+        pool = [fallback]
 
     anchor_segments = [
         segment
@@ -754,35 +908,87 @@ def choose_filename_anchored_title(
     def preserves_each_segment(candidate: str) -> bool:
         return all(filename_anchor_coverage(candidate, segment) >= 0.30 for segment in anchor_segments)
 
-    eligible = [
-        candidate
-        for candidate in pool
-        if filename_anchor_coverage(candidate, anchor) >= 0.72
-        and preserves_each_segment(candidate)
-        and filename_title_additions_are_supported(
-            candidate,
-            anchor,
-            source_filename,
-            evidence_text,
-        )
-    ] or [anchor]
+    coverage_threshold = 0.62 if required_terms else 0.72
+    eligible: list[str] = []
+    rejected: list[dict[str, Any]] = []
+    for candidate in pool:
+        reasons: list[str] = []
+        missing_terms = missing_required_filename_terms(candidate, required_terms)
+        coverage = filename_anchor_coverage(candidate, anchor)
+        if missing_terms:
+            reasons.append("missing_required_terms=" + ",".join(missing_terms))
+        if coverage < coverage_threshold:
+            reasons.append(f"anchor_coverage={coverage:.2f}")
+        if not preserves_each_segment(candidate):
+            reasons.append("missing_anchor_segment")
+        if not filename_title_additions_are_supported(candidate, anchor, source_filename, evidence_text):
+            reasons.append("unsupported_hook_addition")
+        if reasons:
+            rejected.append({"title": candidate, "reasons": reasons})
+        else:
+            eligible.append(candidate)
+    if not eligible:
+        eligible = [anchor]
 
     def anchored_score(candidate: str) -> tuple[float, int]:
         coverage = filename_anchor_coverage(candidate, anchor)
-        hook_hits = sum(1 for term in CONTRARIAN_TERMS if term in candidate)
-        added_big_names = sum(1 for term in BIG_NAME_TERMS if term in candidate and term not in anchor)
-        data_bonus = 3 if re.search(r"(?:\d+(?:\.\d+)?%?|20\d{2}|Q[1-4])", candidate) else 0
+        signals = _title_hook_signals(candidate, anchor)
+        data_bonus = min(len(signals["added_numbers"]), 2) * 12
+        contrast_bonus = min(len(signals["added_contrarian_terms"]), 2) * 9
+        name_bonus = min(len(signals["added_big_names"]), 2) * 5
+        existing_data_bonus = 3 if re.search(r"(?:\d+(?:\.\d+)?%?|20\d{2}|Q[1-4])", candidate) else 0
         length_bonus = 4 if 18 <= len(candidate) <= 35 else 1
-        score = (
-            coverage * 80
-            + min(hook_hits, 2) * 6
-            + min(added_big_names, 2) * 5
-            + data_bonus
-            + length_bonus
-        )
+        score = coverage * 55 + data_bonus + contrast_bonus + name_bonus + existing_data_bonus + length_bonus
         return score, -pool.index(candidate)
 
-    return max(eligible, key=anchored_score)
+    selected = max(eligible, key=anchored_score)
+    signals = _title_hook_signals(selected, anchor)
+    if selected != anchor and any(signals.values()):
+        selection_reason = "supported_hook"
+    elif faithful_missing and selected == fallback:
+        selection_reason = "fallback_missing_required_terms"
+    elif candidates:
+        selection_reason = "faithful_filename_anchor"
+    else:
+        selection_reason = "deterministic_fallback"
+    decision = {
+        "source_filename": source_filename,
+        "cleaned_source_title": strip_source_filename_noise(source_filename),
+        "institution_name": institution_name,
+        "required_terms": required_terms,
+        "deterministic_fallback": fallback,
+        "raw_candidates": candidates,
+        "cleaned_candidates": pool,
+        "faithful_candidate_missing_terms": faithful_missing,
+        "rejected_candidates": rejected,
+        "selected_title": selected,
+        "selection_reason": selection_reason,
+        "hook_signals": signals,
+        "removed_generic_labels": [
+            label
+            for label in GENERIC_FILENAME_TITLE_LABELS
+            if any(label in raw for raw in candidates) and label not in selected
+        ],
+    }
+    return selected, decision
+
+
+def choose_filename_anchored_title(
+    candidates: list[str],
+    source_filename: str,
+    institution_name: str = "",
+    max_chars: int = 35,
+    evidence_text: str = "",
+) -> str:
+    """Let hooks improve a title only when filename semantics remain dominant."""
+    selected, _decision = decide_filename_anchored_title(
+        candidates,
+        source_filename,
+        institution_name,
+        max_chars=max_chars,
+        evidence_text=evidence_text,
+    )
+    return selected
 
 
 def parse_title_candidates(raw: str) -> list[str]:
@@ -929,6 +1135,18 @@ def build_filename_title_translation_prompt(
 ) -> str:
     cleaned_filename = strip_source_filename_noise(source_filename)
     filename_body = strip_filename_institution_prefix(cleaned_filename, institution_name)
+    required_terms = required_filename_terms(source_filename, institution_name)
+    hook_snippets = []
+    for clause in re.split(r"[。！？!?；;\n]+", normalize_space(article_excerpt)):
+        clause = clause.strip(" ，,")
+        if not clause:
+            continue
+        has_data = re.search(r"(?:\d+(?:\.\d+)?%?|20\d{2}|Q[1-4]|同比|环比)", clause)
+        has_contrast = any(term in clause for term in CONTRARIAN_TERMS) or re.search(r"(?:但|却|然而)", clause)
+        if has_data or has_contrast:
+            hook_snippets.append(clause[:90])
+        if len(hook_snippets) >= 5:
+            break
     return f"""
 你是微信公众号标题编辑。原始 PDF 文件名标题是最高权重的语义底稿；正文摘录只能用于补充文件名已经指向的数据节点、反常识差异或人物钩子，不能重新概括一篇与文件名不同的标题。
 
@@ -937,17 +1155,23 @@ def build_filename_title_translation_prompt(
 2. 删除文件扩展名、开头归档编号和末尾发布日期；不要删除文件名中的主题、地区、公司、数据或判断。
 3. 已识别机构必须写中文名，并放在唯一的中文冒号前。不要保留英文机构简称。
 4. 第一个候选是忠实中文底稿：按原文件名顺序翻译，允许为自然中文调整词序，但不能另选角度。
-5. 第二个候选优先补充正文摘录中明确出现的数据节点；第三个候选优先补充明确的反常识差异、大机构或知名人物。没有可靠钩子时，直接重复忠实底稿，严禁编造。
+5. 第二个候选优先补充正文摘录中明确出现的数据节点；第三个候选优先补充明确的反常识差异、大机构或知名人物。只要下方“可用钩子证据”非空，至少一个增强版必须把其中最锐利、最易懂的一项写进标题；没有可靠钩子时才重复忠实底稿，严禁编造。
 6. 两个增强版仍必须保留底稿中的地区/对象、主题和核心判断；钩子只能补充或锐化，不能替换文件名命题。
 7. 原文件名如果包含“主标题：副标题”或明显的双层结构，中文标题使用“主标题-副标题”；不要生成第二个冒号。
 8. 尽量控制在 20-35 个字符。过长时只能压缩“报告、更新、研究”等文体词或使用更短的直译，不能截断句子，不能另选角度。
-9. 常用专有名词和缩写可保留，例如 AI、GDP、CPI、GPU；其余普通英文应译成简体中文。
-10. 不要输出“报告指出、报告认为、核心观点、关键要点、研报速览”等正文概括措辞。
+9. 下方“必须原样保留的技术词”每一个都必须出现在三个候选中，不能漏掉。例如原名是“PCB CCL update”，不得写成只有“CCL更新”，必须同时保留 PCB 和 CCL。
+10. Research note、quick note、industry update、sector view 只是文档类型，不是读者关心的主题。不要翻成“研究笔记、行业观察、研究观察、观察笔记”；直接从真正的对象和结论开始。
+11. 常用专有名词和缩写可保留，例如 AI、GDP、CPI、GPU；其余普通英文应译成简体中文。
+12. 不要输出“报告指出、报告认为、核心观点、关键要点、研报速览”等正文概括措辞。
 
 已识别机构：{institution_name or "未知"}
 原始文件名：{source_filename}
 去除编号和日期后的文件名：{cleaned_filename}
 待翻译的文件名正文：{filename_body or cleaned_filename}
+必须原样保留的技术词：{"、".join(required_terms) or "无"}
+
+可用钩子证据（只可从这里选，不得改数字或扩大含义）：
+{chr(10).join(f"- {item}" for item in hook_snippets) or "无"}
 
 正文第一段摘录（只用于验证数据或反常识钩子，不能替代文件名命题）：
 {article_excerpt[:1800] or "无"}

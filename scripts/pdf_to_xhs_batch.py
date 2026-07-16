@@ -33,9 +33,8 @@ except Exception:  # pragma: no cover
 
 from wechat_title_optimizer import (
     build_filename_title_translation_prompt,
-    choose_filename_anchored_title,
+    decide_filename_anchored_title,
     extract_title_candidates,
-    filename_title_fallback,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
 from wechat_article_quality import (
@@ -637,10 +636,9 @@ def wechat_title_from_filename(
     wechat_article: str,
     institution_name: str,
     args: argparse.Namespace,
-) -> str:
-    fallback = filename_title_fallback(source_filename, institution_name)
+) -> tuple[str, dict[str, Any]]:
     if not getattr(args, "wechat_title_refine", True):
-        return fallback
+        return decide_filename_anchored_title([], source_filename, institution_name)
     article_excerpt = re.sub(r"\s+", " ", re.sub(r"[#>*`!\\[\\]()]+", " ", wechat_article)).strip()[:1800]
     prompt = build_filename_title_translation_prompt(source_filename, institution_name, article_excerpt)
     try:
@@ -655,7 +653,7 @@ def wechat_title_from_filename(
     except Exception as exc:
         print(f"Filename-anchored title fine-tuning failed for {source_filename[:80]}: {exc}", flush=True)
         candidates = []
-    return choose_filename_anchored_title(
+    return decide_filename_anchored_title(
         candidates,
         source_filename,
         institution_name,
@@ -875,16 +873,23 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     if quality_changes:
         status["wechat_editorial_guard_changes"] = quality_changes[:40]
     wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
-    refined_wechat_title = wechat_title_from_filename(pdf_path.name, wechat_article, institution_name, args)
+    refined_wechat_title, title_decision = wechat_title_from_filename(
+        pdf_path.name,
+        wechat_article,
+        institution_name,
+        args,
+    )
     refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(
         refined_wechat_title,
         strict_wording=False,
     )
     if title_stock_changes:
         status["wechat_title_stock_language_sanitized"] = title_stock_changes[:20]
+    title_decision["final_title_after_wording_guard"] = refined_wechat_title
     wechat_article = replace_first_markdown_heading(wechat_article, refined_wechat_title)
     status["wechat_title"] = refined_wechat_title
     status["wechat_title_source"] = "source_filename_weighted_finetune"
+    status["wechat_title_decision"] = title_decision
     wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
     wechat_article, stock_changes_after_images = sanitize_wechat_stock_language(
         wechat_article,

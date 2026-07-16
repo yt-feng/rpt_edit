@@ -61,6 +61,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     verify_draft_get,
     wechat_title_policy_skip_reason,
     write_json,
+    write_wechat_title_log,
 )
 
 from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
@@ -149,17 +150,22 @@ def read_json(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
-def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> str:
+def xhs_raw_article_title(markdown: str, fallback: str) -> str:
     for raw in markdown.splitlines():
         line = raw.strip()
         if line.startswith("#"):
             title = re.sub(r"^#{1,6}\s*", "", line).strip()
             if title:
-                return sharpen_wechat_title(ensure_title_has_institution(title, institution_name), institution_name)
-    return sharpen_wechat_title(ensure_title_has_institution(fallback, institution_name), institution_name)
+                return title
+    return fallback
 
 
-def xhs_article_title_metadata(report_dir: Path) -> dict[str, str]:
+def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> str:
+    raw_title = xhs_raw_article_title(markdown, fallback)
+    return sharpen_wechat_title(ensure_title_has_institution(raw_title, institution_name), institution_name)
+
+
+def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
     markdown_path = report_dir / "wechat_article.md"
     markdown, stock_changes = sanitize_wechat_stock_language(
         clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore")),
@@ -174,14 +180,17 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, str]:
         markdown[:1200],
     )
     source_report_name = source_report_name_from_xhs_dir(report_dir)
+    raw_title = xhs_raw_article_title(markdown, report_dir.name)
     title = xhs_article_title(markdown, report_dir.name, institution_name)
     return {
         "report_dir": str(report_dir),
         "wechat_markdown": str(markdown_path),
         "title": title,
         "wechat_title": title,
+        "raw_title": raw_title,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "title_decision": status.get("wechat_title_decision", {}),
         "generation_failure_reason": generation_failure_skip_reason(markdown),
     }
 
@@ -306,8 +315,10 @@ def build_article(
         markdown[:1200],
     )
     source_report_name = source_report_name_from_xhs_dir(report_dir)
+    raw_title = xhs_raw_article_title(markdown, report_dir.name)
     title = xhs_article_title(markdown, report_dir.name, institution_name)
     wechat_title = title
+    title_decision = status.get("wechat_title_decision", {})
 
     image_urls: dict[str, str] = {}
     uploaded_images: list[dict[str, str]] = []
@@ -451,9 +462,11 @@ def build_article(
         "wechat_markdown": str(markdown_path),
         "title": truncate_chars(title, DISPLAY_TITLE_MAX_CHARS),
         "wechat_title": wechat_title,
+        "raw_title": raw_title,
         "digest": digest_from_markdown(markdown),
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "title_decision": title_decision,
         "article": article,
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
@@ -519,6 +532,12 @@ def main() -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     if not selected:
         summary_path = output_dir / "wechat_draft_summary.json"
+        title_log_path = write_wechat_title_log(
+            output_dir,
+            date_dir.name,
+            "xhs_notes/dropbox",
+            [],
+        )
         summary = {
             "date_folder": date_dir.name,
             "source": "xhs_notes/dropbox",
@@ -532,6 +551,7 @@ def main() -> int:
             "draft_count": 0,
             "status": "skipped_no_xhs_wechat_articles",
             "message": f"No xhs report articles selected from {date_dir}",
+            "title_log": str(title_log_path),
             "drafts": [],
             "articles": [],
         }
@@ -559,6 +579,13 @@ def main() -> int:
 
     if not selected:
         summary_path = output_dir / "wechat_draft_summary.json"
+        title_log_path = write_wechat_title_log(
+            output_dir,
+            date_dir.name,
+            "xhs_notes/dropbox",
+            [],
+            skipped_title_policy,
+        )
         summary = {
             "date_folder": date_dir.name,
             "source": "xhs_notes/dropbox",
@@ -572,6 +599,7 @@ def main() -> int:
             "draft_count": 0,
             "status": "skipped_title_policy",
             "message": f"All selected xhs report articles were blocked by WeChat title policy from {date_dir}",
+            "title_log": str(title_log_path),
             "drafts": [],
             "articles": [],
         }
@@ -683,6 +711,13 @@ def main() -> int:
     for group in chunked(built_articles, args.articles_per_draft):
         create_draft(group)
 
+    title_log_path = write_wechat_title_log(
+        output_dir,
+        date_dir.name,
+        "xhs_notes/dropbox",
+        built_articles,
+        skipped_title_policy,
+    )
     summary = {
         "date_folder": date_dir.name,
         "source": "xhs_notes/dropbox",
@@ -702,6 +737,7 @@ def main() -> int:
         "max_inline_images": args.max_inline_images,
         "body_hook": args.body_hook,
         "trailing_image": str(trailing_image_path) if trailing_image_path else "",
+        "title_log": str(title_log_path),
         "drafts": drafts,
         "articles": [
             {

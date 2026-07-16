@@ -2234,7 +2234,7 @@ def translated_article_title_metadata(
     report_dir: Path,
     markdown: str | None = None,
     status: dict[str, Any] | list[Any] | None = None,
-) -> dict[str, str]:
+) -> dict[str, Any]:
     if markdown is None:
         markdown = (report_dir / "translated.md").read_text(encoding="utf-8", errors="ignore")
     if status is None:
@@ -2259,6 +2259,7 @@ def translated_article_title_metadata(
         "header_title": header_title,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "title_decision": status.get("wechat_title_decision", {}) if isinstance(status, dict) else {},
     }
 
 
@@ -2286,6 +2287,7 @@ def build_article(
     title = title_metadata["title"]
     wechat_title = title_metadata["wechat_title"]
     header_title = title_metadata["header_title"]
+    title_decision = title_metadata["title_decision"]
     figure_paths = load_figure_paths(report_dir)
 
     tokens = []
@@ -2420,6 +2422,7 @@ def build_article(
         "digest": digest,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "title_decision": title_decision,
         "article": article,
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
@@ -2438,6 +2441,63 @@ def chunked(items: list[Any], size: int) -> list[list[Any]]:
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def write_wechat_title_log(
+    output_dir: Path,
+    date_folder: str,
+    source: str,
+    articles: list[dict[str, Any]],
+    skipped: list[dict[str, Any]] | None = None,
+) -> Path:
+    """Persist one compact, auditable title ledger beside each daily draft summary."""
+    entries: list[dict[str, Any]] = []
+
+    def append_entry(item: dict[str, Any], uploaded: bool) -> None:
+        entries.append({
+            "source_report_name": item.get("source_report_name", ""),
+            "institution_name": item.get("institution_name", ""),
+            "title_before_upload": item.get("raw_title") or item.get("title", ""),
+            "final_wechat_title": item.get("wechat_title") or item.get("title", ""),
+            "uploaded": uploaded,
+            "skip_reason": item.get("skip_reason", ""),
+            "report_dir": item.get("report_dir", ""),
+            "generation_decision": item.get("title_decision", {}),
+        })
+
+    for item in articles:
+        append_entry(item, True)
+    for item in skipped or []:
+        append_entry(item, False)
+    payload = {
+        "schema_version": 1,
+        "date_folder": date_folder,
+        "source": source,
+        "generated_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "article_count": len(entries),
+        "uploaded_count": sum(1 for entry in entries if entry["uploaded"]),
+        "articles": entries,
+    }
+    path = output_dir / "wechat_title_log.json"
+    write_json(path, payload)
+    summary_path = os.getenv("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        lines = [
+            f"## WeChat title log: {source} / {date_folder}",
+            "",
+            "| Source report | Final title | Decision |",
+            "|---|---|---|",
+        ]
+        for entry in entries:
+            decision = entry.get("generation_decision") or {}
+            report_name = str(entry["source_report_name"]).replace("|", "\\|")[:90]
+            final_title = str(entry["final_wechat_title"]).replace("|", "\\|")
+            reason = str(decision.get("selection_reason") or entry.get("skip_reason") or "upload_cleanup")
+            lines.append(f"| {report_name} | {final_title} | {reason} |")
+        with open(summary_path, "a", encoding="utf-8") as handle:
+            handle.write("\n".join(lines) + "\n")
+    log(f"Wrote title log: {path}")
+    return path
 
 
 def is_article_size_error(exc: WeChatError) -> bool:
@@ -2571,6 +2631,13 @@ def main() -> int:
             else f"All selected translated reports were blocked by WeChat title policy from {date_dir}"
         )
         summary_path = output_dir / "wechat_draft_summary.json"
+        title_log_path = write_wechat_title_log(
+            output_dir,
+            date_dir.name,
+            str(root),
+            [],
+            skipped_title_policy,
+        )
         summary = {
             "date_folder": date_dir.name,
             "dry_run": args.dry_run,
@@ -2585,6 +2652,7 @@ def main() -> int:
             "draft_count": 0,
             "status": status,
             "message": message,
+            "title_log": str(title_log_path),
             "drafts": [],
             "articles": [],
         }
@@ -2734,6 +2802,13 @@ def main() -> int:
     for group in chunked(built_articles, args.articles_per_draft):
         create_draft(group)
 
+    title_log_path = write_wechat_title_log(
+        output_dir,
+        date_dir.name,
+        str(root),
+        built_articles,
+        skipped_title_policy,
+    )
     summary = {
         "date_folder": date_dir.name,
         "dry_run": args.dry_run,
@@ -2758,6 +2833,7 @@ def main() -> int:
         "draft_delay_seconds": args.draft_delay_seconds,
         "draft_verify_delay_seconds": args.draft_verify_delay_seconds,
         "trailing_image": str(trailing_image_path) if trailing_image_path else "",
+        "title_log": str(title_log_path),
         "drafts": drafts,
         "articles": [
             {
