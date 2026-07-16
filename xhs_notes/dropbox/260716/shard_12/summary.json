@@ -1,0 +1,425 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7jzbmqkv/pdfs/0001-61-MS-China Materials-June Trade Data- Aluminium Exports Continue to Rise-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月出口数据：铝创新",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国材料-6月贸易数据-铝材出口继续上升",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-61-MS-China Materials-June Trade Data- Aluminium Exports Continue to Rise-260714.pdf",
+      "cleaned_source_title": "MS-China Materials-June Trade Data- Aluminium Exports Continue to Rise",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国MaterialsJune贸易Data",
+      "raw_candidates": [
+        "中国材料-6月贸易数据-铝材出口继续上升",
+        "中国材料-6月铝材出口71.1万吨创历史新高",
+        "中国材料-6月铝材出口创纪录但套利窗口收窄"
+      ],
+      "cleaned_candidates": [
+        "MS：中国材料-6月贸易数据-铝材出口继续上升",
+        "MS：中国材料-6月铝材出口71.1万吨创历史新高",
+        "MS：中国材料-6月铝材出口创纪录但套利窗口收窄",
+        "MS：中国MaterialsJune贸易Data"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "MS：中国材料-6月铝材出口71.1万吨创历史新高",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国材料-6月铝材出口创纪录但套利窗口收窄",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国MaterialsJune贸易Data",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国材料-6月贸易数据-铝材出口继续上升",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "MS：中国材料-6月贸易数据-铝材出口继续上升"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7jzbmqkv/pdfs/0002-62-MS-China Equity Strategy-China HK Flows and Positioning Monthly Tracker - June 2026-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月外资流出加速，国",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "基金->产品 x3",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "基金经理->组合负责人 x1",
+      "基金->产品 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x2",
+      "基金->产品 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x4",
+      "sanitize_wechat_stock_line",
+      "基金经理->组合负责人 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "股票|个股->公司 x1",
+      "基金经理->组合负责人 x1",
+      "sanitize_wechat_stock_line",
+      "基金经理->组合负责人 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国Equity策略中国HKFlows和P",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-62-MS-China Equity Strategy-China HK Flows and Positioning Monthly Tracker - June 2026-260714.pdf",
+      "cleaned_source_title": "MS-China Equity Strategy-China HK Flows and Positioning Monthly Tracker - June 2026",
+      "institution_name": "MS",
+      "required_terms": [
+        "HK"
+      ],
+      "deterministic_fallback": "MS：中国Equity策略中国HKFlows和P",
+      "raw_candidates": [
+        "中国权益策略-中国香港资金流与仓位月度追踪",
+        "外资流出36亿美元创年内第三高，国内资金接住卖盘",
+        "外资撤退国内资金加码，中国权益市场定价权切换"
+      ],
+      "cleaned_candidates": [
+        "MS：中国Equity策略中国HKFlows和P",
+        "MS：中国权益策略-中国香港资金流与仓位月度追踪",
+        "MS：外资流出36亿美元创年内第三高，国内资金接住卖盘",
+        "MS：外资撤退国内资金加码，中国权益市场定价权切换"
+      ],
+      "faithful_candidate_missing_terms": [
+        "HK"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "MS：中国权益策略-中国香港资金流与仓位月度追踪",
+          "reasons": [
+            "missing_required_terms=HK",
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：外资流出36亿美元创年内第三高，国内资金接住卖盘",
+          "reasons": [
+            "missing_required_terms=HK",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：外资撤退国内资金加码，中国权益市场定价权切换",
+          "reasons": [
+            "missing_required_terms=HK",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国Equity策略中国HKFlows和P",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "MS：中国Equity策略中国HKFlows和P"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7jzbmqkv/pdfs/0003-63-MS-China Economics-June Trade-Tech Leads-the Rest Catch Up-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月贸易数据：科技领",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国经济学-六月贸易-科技引领，其余追赶",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-63-MS-China Economics-June Trade-Tech Leads-the Rest Catch Up-260714.pdf",
+      "cleaned_source_title": "MS-China Economics-June Trade-Tech Leads-the Rest Catch Up",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国EconomicsJune贸易Tech",
+      "raw_candidates": [
+        "中国经济学-六月贸易-科技引领，其余追赶",
+        "中国经济学-六月贸易-科技引领，其余追赶-出口增27%进口增36%",
+        "中国经济学-六月贸易-科技引领，其余追赶-非科技出口增速从11.2%跳升至19.8%"
+      ],
+      "cleaned_candidates": [
+        "MS：中国经济学-六月贸易-科技引领，其余追赶",
+        "MS：中国经济学六月贸易科技引领",
+        "MS：中国EconomicsJune贸易Tech"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "MS：中国经济学六月贸易科技引领",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国EconomicsJune贸易Tech",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国经济学-六月贸易-科技引领，其余追赶",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "MS：中国经济学-六月贸易-科技引领，其余追赶"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7jzbmqkv/pdfs/0004-64-MS-China Steel Exports-June - flat sequentially- still lower on the year-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "欧洲钢铁格局变了，中",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国钢铁出口，6月环比持平，同比仍低",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-64-MS-China Steel Exports-June - flat sequentially- still lower on the year-260714.pdf",
+      "cleaned_source_title": "MS-China Steel Exports-June - flat sequentially- still lower on the year",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国SteelExportsJunefla",
+      "raw_candidates": [
+        "中国钢铁出口：6月环比持平，同比仍低",
+        "中国钢铁出口：6月环比持平，同比仍低，欧洲定价权转移",
+        "中国钢铁出口：6月环比持平，同比仍低，欧洲钢厂获定价权"
+      ],
+      "cleaned_candidates": [
+        "MS：中国钢铁出口，6月环比持平，同比仍低",
+        "MS：中国钢铁出口，6月环比持平，同比仍低，欧洲定价权转移",
+        "MS：中国钢铁出口，6月环比持平，同比仍低，欧洲钢厂获定价权",
+        "MS：中国SteelExportsJunefla"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "MS：中国SteelExportsJunefla",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国钢铁出口，6月环比持平，同比仍低",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "MS：中国钢铁出口，6月环比持平，同比仍低"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7jzbmqkv/pdfs/0005-65-MS-China Shenhua Energy-1088.HK-Preliminary 2Q26 earnings better than expected-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "中国神华中报超预期，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投行->国际机构 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国Shenhua能源1088.HKPreliminary",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-65-MS-China Shenhua Energy-1088.HK-Preliminary 2Q26 earnings better than expected-260714.pdf",
+      "cleaned_source_title": "MS-China Shenhua Energy-1088.HK-Preliminary 2Q26 earnings better than expected",
+      "institution_name": "MS",
+      "required_terms": [
+        "HK"
+      ],
+      "deterministic_fallback": "MS：中国Shenhua能源1088.HKPreliminary",
+      "raw_candidates": [
+        "中国神华2Q26初步盈利优于预期",
+        "中国神华2Q26盈利超预期-净利润同比增23%-51%",
+        "中国神华2Q26盈利超预期-资产注入未完全对冲周期影响"
+      ],
+      "cleaned_candidates": [
+        "MS：中国Shenhua能源1088.HKPreliminary",
+        "MS：中国神华2Q26初步盈利优于预期",
+        "MS：中国神华2Q26盈利超预期-净利润同比增23%-51%",
+        "MS：中国神华2Q26盈利超预期-资产注入未完全对冲周期影响"
+      ],
+      "faithful_candidate_missing_terms": [
+        "HK"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "MS：中国神华2Q26初步盈利优于预期",
+          "reasons": [
+            "missing_required_terms=HK",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国神华2Q26盈利超预期-净利润同比增23%-51%",
+          "reasons": [
+            "missing_required_terms=HK",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国神华2Q26盈利超预期-资产注入未完全对冲周期影响",
+          "reasons": [
+            "missing_required_terms=HK",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国Shenhua能源1088.HKPreliminary",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "MS：中国Shenhua能源1088.HKPreliminary"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
