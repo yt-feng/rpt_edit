@@ -1,0 +1,71 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260717/0003-OECD_A-second-career-in-teaching_e83562f5",
+  "title": "经合组织：0003OECDAsecondcareeri",
+  "source_title": "0003-OECD_A-second-career-in-teaching_e83562f5",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-OECD_A-second-career-in-teaching_e83562f5",
+    "cleaned_source_title": "0003-OECD_A-second-career-in-teaching_e83562f5",
+    "institution_name": "经合组织",
+    "required_terms": [
+      "OECD"
+    ],
+    "deterministic_fallback": "经合组织：0003OECDAsecondcareeri",
+    "raw_candidates": [
+      "经合组织：教师第二职业浪潮",
+      "经合组织：28万教师第二职业-年龄更大动机更内在",
+      "经合组织：第二职业教师-非退而求其次，课堂管理是挑战"
+    ],
+    "cleaned_candidates": [
+      "经合组织：0003OECDAsecondcareeri",
+      "经合组织：教师第二职业浪潮",
+      "经合组织：28万教师第二职业-年龄更大动机更内在",
+      "经合组织：第二职业教师-非退而求其次，课堂管理是挑战"
+    ],
+    "faithful_candidate_missing_terms": [
+      "OECD"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "经合组织：教师第二职业浪潮",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：28万教师第二职业-年龄更大动机更内在",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：第二职业教师-非退而求其次，课堂管理是挑战",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：0003OECDAsecondcareeri",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "经合组织：0003OECDAsecondcareeri"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 17,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

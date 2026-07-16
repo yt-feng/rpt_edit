@@ -1,0 +1,71 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260717/0005-OECD_Bridging-the-Gaps-for-Sustainable-Development_d45a4963",
+  "title": "经合组织：0005OECDBridgingtheGap",
+  "source_title": "0005-OECD_Bridging-the-Gaps-for-Sustainable-Development_d45a4963",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-OECD_Bridging-the-Gaps-for-Sustainable-Development_d45a4963",
+    "cleaned_source_title": "0005-OECD_Bridging-the-Gaps-for-Sustainable-Development_d45a4963",
+    "institution_name": "经合组织",
+    "required_terms": [
+      "OECD"
+    ],
+    "deterministic_fallback": "经合组织：0005OECDBridgingtheGap",
+    "raw_candidates": [
+      "经合组织：弥合可持续发展差距",
+      "经合组织：仅36%的SDG子目标进展正轨",
+      "经合组织：治理碎片化拖慢可持续发展目标"
+    ],
+    "cleaned_candidates": [
+      "经合组织：0005OECDBridgingtheGap",
+      "经合组织：弥合可持续发展差距",
+      "经合组织：仅36%的SDG子目标进展正轨",
+      "经合组织：治理碎片化拖慢可持续发展目标"
+    ],
+    "faithful_candidate_missing_terms": [
+      "OECD"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "经合组织：弥合可持续发展差距",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：仅36%的SDG子目标进展正轨",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：治理碎片化拖慢可持续发展目标",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：0005OECDBridgingtheGap",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "经合组织：0005OECDBridgingtheGap"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_05.pdf",
+  "figure_count": 1,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

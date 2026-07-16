@@ -1,0 +1,642 @@
+# Business Climate, Economic Complexity, and Performance at the Provincial Level in Viet Nam
+
+The ADB Economics Working Paper Series presents research in progress to elicit comments and encourage debate on development issues in Asia and the Pacific. The views expressed are those of the authors and do not necessarily reflect the views and policies of ADB or its Board of Governors or the governments they represent.
+
+
+6 ADB Avenue, Mandaluyong City, 1550 Metro Manila, Philippines
+www.adb.org
+
+Some rights reserved. Published in 2026.
+
+Publication Stock No. WPS260325-2
+DOI: http://dx.doi.org/10.22617/WPS260325-2
+
+The views expressed in this publication are those of the authors and do not necessarily reflect the views and policies of the Asian Development Bank (ADB) or its Board of Governors or the governments they represent.
+
+ADB does not guarantee the accuracy of the data included in this publication and accepts no responsibility for any consequence of their use. The mention of specific companies or products of manufacturers does not imply that they are endorsed or recommended by ADB in preference to others of a similar nature that are not mentioned.
+
+By making any designation of or reference to a particular territory or geographic area in this document, ADB does not intend to make any judgments as to the legal or other status of any territory or area.
+
+This publication is available under the Creative Commons Attribution 3.0 IGO license (CC BY 3.0 IGO) https://creativecommons.org/licenses/by/3.0/igo/. By using the content of this publication, you agree to be bound by the terms of this license. For attribution, translations, adaptations, and permissions, please read the provisions and terms of use at https://www.adb.org/terms-use#openaccess.
+
+
+Corrigenda to ADB publications may be found at http://www.adb.org/publications/corrigenda.
+
+## Notes:
+
+In this publication, “\$” refers to United States dollars.
+ADB recognizes “China” as the People’s Republic of China, “Vietnam” as Viet Nam, and “Hanoi” as Ha Noi.
+
+## ABSTRACT
+
+This study explores the impact of subnational institutions on Viet Nam's provincial manufacturing sector, comparing foreign-invested and domestic firms using a two-step difference GMM model with data from 63 provinces (2006–2020). Results show that changes in subnational institutions, measured by the Provincial Competitiveness Index, have little effect on economic complexity, revenues, employment, productivity, or firm size. Unexpectedly, weaker governance in areas like land access, transparency and legal institutions sometimes leads to better performance. This weak connection persists across all samples, periods, controls, and estimation methods, likely due to the dominance of foreign-invested companies and their limited interaction with local firms, which impacts overall firm development.
+
+Keywords: FDI, provincial competitiveness index, business climate, economic complexity, manufacturing performance
+
+JEL codes: F63, L53, O12, O25
+
+## 1. INTRODUCTION
+
+This paper examines how local institutions and policies—proxied by the Provincial Competitiveness Index (PCI)—influence the development and performance of foreign-invested enterprises and domestic firms in Viet Nam's manufacturing sector. Institutions and policies nationally and provincially have to some extent been designed to attract inflows of foreign direct investment (FDI), and earlier research has confirmed that the local business environment is one of the determinants of FDI inflows in Vietnamese provinces (Meyer and Nguyen 2005, Doan and Lin 2016; Esiyok and Ugur 2017; Do, Nguyen, and Thanh 2025). Provinces with higher PCI scores tend to receive more FDI.
+
+It has also been shown that the local business environment is partly shaped by active lobbying from foreign-invested enterprises (Malesky 2004, 2008). However, although foreign-invested enterprises that have already entered the host country have primarily carried out the lobbying of local decisionmakers, not much is known about how incumbent foreign-invested enterprises respond to institutional and policy reforms provincially. Both the general debate and the academic literature on FDI and host country institutions have instead assumed that “good” institutions will not only attract FDI, but also ensure that the foreign-invested enterprises are competitive, generate more jobs (and tax revenue) over time, and upgrade their activities from simple assembly to more complex activities with higher value added. Empirical evidence on whether this assumption is correct is scarce: earlier research has rarely examined how the operations of foreign-invested enterprises—rather than their entry decisions—are influenced by the local business environment. This research gap motivates the question “Do subnational institutions, proxied by the PCI, explain differences across provinces in the performance of foreign-invested enterprises?”
+
+A closely connected research question is related to how local firms are influenced by institutions and policies that are partly designed to attract FDI and also influenced by lobbying from foreign-invested enterprises with strong connections to policymakers (Malesky 2008, 2009). This is particularly relevant for the case of Viet Nam, where observers have complained that policies seem to focus more on attracting FDI inflows than supporting the development of the domestic private sector and their opportunities to benefit from FDI inflows (Kokko, Nestor, and Le 2023). Viet Nam's domestic private sector is relatively weak, although the number of private firms has grown rapidly over the past decades. The domestic private sector's share of formal sector employment and revenues was about $30\%$ in the year 2000, peaked at $50\%$ around 2010, but fell back to $40\%$ in 2020. The average number of employees in private domestic manufacturing firms fell from 54 to 32 over the same period. Simultaneously, foreign-invested enterprises increased their shares of employment and revenue from about 10% in 2000 to 20% in 2010 and 30% in 2020, and account now for the bulk of manufacturing output in modern sectors, such as electronics machinery, and motor vehicles (Thong, Kokko, and Hakkala 2025). Hence, given the strong emphasis on FDI attraction in Vietnamese provincial policy and the potential bias in institutions and policies in favor of foreign-invested enterprises, it is unclear how domestic firms are affected by the local business environment. Are cross-provincial differences in growth and upgrading in domestic firms explained by the same institutional variables that supposedly influence the behavior of foreign-invested enterprises?
+
+To answer these research questions, we have constructed a panel data set for 2006–2020 including information on the provincial business environment and the operations of foreign-owned and domestic manufacturing firms across Viet Nam's 63 provinces, as defined before the administrative reform in 2025 which reduced them to 28 provinces and 6 cities. The data is available at the industry, province, and ownership group level. Hence, we know how the foreign-invested enterprises in specific provinces and industries developed, but not how the performance of individual firms changed over time. The development of foreign-invested enterprises and local firms is proxied by several alternative dependent variables based on aggregated data from annual enterprises censuses carried out by the National Statistics Office.
+
+Our analysis used economic complexity as a measure of firm performance. The economic complexity indicators are calculated separately for foreign-invested enterprises and domestic firms and aggregated to the provincial level. They are based on four-digit product complexity scores provided by Harvard's Growth Lab, which have been transposed to the three-digit industry classifications used in Viet Nam. The value for an industry's Economic Complexity Index (ECI) is the average product complexity score for the products manufactured by that industry. A province's economic complexity score is the revenue-weighted average economic complexity score of the manufacturing industries represented in the province. The other dependent variables in our analysis are the average revenue, employment, productivity, and firm size of the relevant firm groups. The core explanatory variables are based on Viet Nam's Provincial Competitiveness Index (PCI), which has been collected since 2005. In addition to the aggregate PCI score, we use 10 of its subindices measuring specific dimensions of the province's business environment and economic governance. To avoid problems caused by changes in methodology and survey questions, we focus on time-consistent variables that highlight changes in provincial institutional quality over time (Malesky, Pham, and Phan 2025).
+
+Using a two-step Difference GMM panel data model, we find notable differences between the effects of provincial institutions on foreign-invested enterprises and domestic firms. In our estimations for foreign-invested enterprises, there are few significant coefficients, and no clear indications that institutional reforms and stronger local business environments explain differences in economic performance across provinces. Differences in the growth patterns across provinces for domestic firms are also weakly connected to the subnational institutional characteristics proxied by the PCI and its sub-indexes. The same holds for the sub-set of private domestic firms (i.e., excluding firms with state or collective ownership): few of the proxies for provincial institutions record significant coefficients in our GMM estimations, and even fewer have the expected effects—in fact, several estimations indicate that private employment growth is faster in provinces where improvements in transparency and legal institutions are slower.
+
+Our interpretation of the results is that many of the operational decisions in foreign-invested enterprises are made with reference to events outside the Vietnamese province where the enterprise is located. These decisions are likely to be driven by strategic considerations related to production costs, developments in foreign markets, and changes in other parts of the global value chain in which the FIE participates. Domestic firms, on the other hand, are more firmly rooted in the local business environment, and should therefore be more sensitive to the specific policies and conditions in the local market. The fact that they do not seem to be strongly impacted by ongoing institutional reforms could indicate that reform processes are too closely linked to the interests of current and prospective foreign investors to matter to private domestic firms, or that Viet Nam's private firms have developed ways to survive even in weak institutional environments. It is also possible that institutional reforms do not generate quick responses among private firms—if firms respond slowly and gradually to reforms, it will be difficult to capture their responses in studies where the province/industry/ownership group is the unit of analysis.
+
+A tentative policy conclusion is that local authorities should focus more on the needs and concerns of domestic enterprises in policy design and institutional reform. It is likely that foreign-invested enterprises will welcome—and lobby in favor of—reforms that reduce uncertainty, risk, and operational costs, but it is uncertain whether any such policies are impactful enough to balance other operational or strategic determinants. To the extent that provincial authorities feel the need to accede to the reform requirement of foreign-invested enterprises, it is necessary to ensure that the reforms will be beneficial also for private domestic firms (Blomström and Kokko 2003).
+
+In the paper, section 2 discusses related literature and surveys existing studies of the links between FDI and subnational institutions in Viet Nam. Section 3 presents the data and estimation model. Section 4 presents results and section 5 concludes with plausible explanations for the findings and outlines policy implications.
+
+## 2. LITERATURE REVIEW
+
+## 2.1. Institutions and Economic Growth
+
+The importance of institutions for economic growth and development is well established (North 1990; Rodrik, Subramanian, and Trebbi 2004; Acemoglu, Johnson, and Robinson 2001; 2002; 2005; Williamson 2009; Hall and Jones 1999). Strong institutions reduce risk and transaction costs and provide incentives for investment, innovation, and entrepreneurship by establishing transparent rules and regulations, protecting property rights, enforcing contracts, and facilitating the accumulation and diffusion of knowledge. Formal institutions are intimately connected to policies. Policies largely reflect institutions, but policy innovations may change institutions over time. As Rodrik, Subramanian, and Trebbi (2004) argue, if institutions are seen as a stock variable, policy is the related flow variable.
+
+However, formal institutions, which are designed through political processes and enforced by regulatory authorities, do not automatically generate successful development. They are most successful when they are embedded in supporting informal institutions that are made up by unwritten norms, conventions, and social practices—often rooted in history, culture, and development level—that constrain the behavior and interactions of individuals (Williamson 2009; Chemin 2009). This link makes it difficult to transfer successful formal institutions between locations.
+
+It is often assumed that formal institutions are uniform within countries, but there are at least two reasons to expect subnational diversity. First, institutional rules established centrally, at the national level, are not always easy to replicate outside the center (Ostrom 2010; Dai et al. 2025). Implementation and enforcement will vary depending on the local context, local informal institutions, and the specific interests of local stakeholders (Williamson 2009; Gertler 2010: Pintar and Scherngell, 2022). Second, national institutions embody only part of the formal standards, rules, and regulations influencing people's lives, such as constitutional rights and obligations, civil and criminal law, national taxation, regulation of entry, and national defense (Djankov et al., 2002; Giacomelli and Menon 2017: Pintar and Scherngell, 2022). The governance of other areas, such as healthcare, education, and local infrastructure is often delegated (within set boundaries) to subnational institutions (Dai et al. 2025: Pintar and Scherngell, 2022).
+
+Regional development research emphasizes that growth is tightly linked to a location's industrial structure (Porter 2003). Industries emerge and persist where essential inputs and institutional needs can be reliably met (Bustos and Yildirim 2022). While some inputs are sourced externally, many others—such as secure access to land and property rights, regulatory compliance, infrastructure, skilled labor, finance, and worker amenities—must be provided locally. The supply of these local inputs partly depends on the quality of subnational institutions (Nee and Opper 2010). Locations with stronger institutions will be able to develop stronger capabilities that allow local firms to grow faster and produce more sophisticated products, underpinning higher productivity and living standards.
+
+## 2.2. Institutions and FDI
+
+The links between institutional quality and FDI inflows have been discussed at length. Numerous studies have shown that strong institutions are positively correlated with inward FDI nationally (Wei 2000; Globerman and Shapiro 2002; Bénassy-Quéré, Coupet, and Mayer 2007; Sabir, Rafique, and Abbas 2019; Andersen, Kett, and von Uexkull, 2017). Some of the institutions highlighted in these studies are stable political regimes, effective protection of property rights, transparent and predictable regulation, and low corruption. However, Daude and Stein (2007), who analyzed the determinants of FDI in 152 host countries in a gravity framework, argue that not all institutional dimensions will be equally important for FDI. While they found robust and significant positive effects of government effectiveness and regulatory quality on FDI, other institutional indicators, including voice and accountability, political stability, and lack of violence were often not significant. Bénassy-Quéré, Coupet, and Mayer (2007) find that bureaucratic efficiency, low corruption, and strong financial institutions are important determinants of inward FDI, while weak capital concentration and employment protection have insignificant or even negative effects. FDI is attracted by institutions that reduce costs and risk and raise productivity prospects but repelled by poor institutions that generate additional costs or uncertainty to foreign investors. Hence, instead of using broad aggregated indices of institutional quality, analysis should focus on the effects of specific institutions and policies (Daude and Stein 2007; Bénassy-Quéré et al. 2007; Hayat 2019).
+
+In addition to the general institutional framework, many countries have introduced policies to attract FDI. For instance, many countries have established specialized investment promotion agencies to reduce the information and transaction costs for foreign investors (Abamu 2019,
+
+Capik 2019). Evidence is mixed on the effects of FDI incentives. While they may impact choice of investment location for enterprises that have already decided to invest abroad, results are confounded because the competition between different potential host countries tends to inflate subsidy amounts and distort competition (Head, Ries, and Swenson 1999; Blomström and Kokko 2003; Munongo, Akanbi, and Robinson 2017; Slattery and Zidar 2020; Cuervo-Cazurra, Silva-Rêgo, and Figueira 2022). Establishment of special economic zones is another focused measure to attract FDI. By offering a more transparent regulatory environment, access to necessary infrastructure, and various incentives in the form of tax and import duty exemptions, zones can at least partially compensate for weakness in a host country's general business environment (Farole and Akinci 2011; World Bank 2017; Hakkala 2026; Wang 2013).
+
+## 2.3. Subnational Institutions and FDI
+
+Special economic zones are subnational units with rules and regulations different from those in adjacent locations, but there are also other subnational institutions that differ across the provinces and regions of countries. Several studies have explored how these subnational institutions are linked to FDI, with a focus on location choice for new entrants (see Jain, Kothari, and Kumar 2016; Aggarwal, 2019; Kim and Aguilera 2016; NielsenAsmussen, and Weatherall 2017; Batschauer da Cruz, Eliete Floriani, and Amal 2022; Asian Development Bank, 2015). As a framework for the analysis, Meyer and Nguyen (2005) suggest subnational institutions are likely to influence foreign investors' location choices together with two other sets of variables. First, from the literature on economic agglomeration (Marshall 1920, Krugman 1991, Venables, 1996), we know that new entrants can benefit from locating in the proximity of other firms in the same industry, including other foreign-invested enterprises (see also Alfaro and Chen 2014). Hence, the existing distribution of FDI is likely to influence new investors. Second, referring to the OLI model, firm internationalization requires traditional location advantages, such as factor endowments, favorable factor costs, attractive markets, and physical infrastructure (Dunning 1980; Narula and Dunning 2000; Dunning 2000). Institutions can weaken or strengthen existing locational advantages but is it unclear to what extent they can fully compensate for missing advantages.
+
+Several empirical studies examine the links between subnational institutions and FDI. Among the early studies, Friedman, Gerlowski, and Silberman (1996) and Bobonis and Shatz (2007) examine the inflow of FDI to the United States and find that investment promotion has positive effects and that labor and capital subsidies seem to be unrelated to FDI inflows. Mudambi and Navarra (2003) find that political variables have an impact FDI inflows in Italy once other location factors related to infrastructure and factor endowments are accounted for. Similarly, Cordero and
+
+Miller (2019) report that the tenure of political parties (at the provincial level) influences inflows of FDI to Mexico. Most studies of subnational institutions and FDI location have focused on the People's Republic of China (PRC), where the country's gradual economic reforms have created wide variation in subnational institutions. For example, Du, Lu, and Tao (2008) analyze the investment decisions of US multinationals that established presence in the PRC 1993–2001 and find that they preferred provinces and regions with stronger protection of intellectual property rights, less government intervention in business, less corruption, and better contract enforcement. Li and Park (2006) and Sethi, Judge, and Sun (2011) present similar findings: PRC provinces with more outward-oriented policies, faster privatization, and stronger legal development attract more FDI, although agglomeration effects—clustering of FDI in a location—could partly compensate for institutional weaknesses. Study of Belkhodja, Mohiuddin, and Karuranga (2017) shows that FDI location choice is sensitive both on the endowment conditions in different regions or economic zones in China and also on the country of origin of the FDI.
+
+## 2.4. Subnational Institutions and FDI in Viet Nam
+
+Several contributions examine the impact of subnational institutions on inflows of FDI to Viet Nam's provinces. The earliest published analysis is Andréosso-O'Callaghan and Joyce (2000), who explores the determinants of licensed FDI in 61 provinces in 1988–1998. Apart from standard indicators of locational advantage (market size, infrastructure, human capital) and proxies for Southern and Coastal provinces, their regression analysis included proxies for policy incentives and local governance. All variables record positive coefficients, but provincial policy incentives seem to have modest effects in comparison with the standard location advantages and the proxy for governance quality.
+
+One problem in Andréosso-O'Callaghan and Joyce (2000) is their narrow definition of subnational institutions. In addition, they do not pay much attention to agglomeration effects and patterns of past FDI. Other contributors address these issues. Pham (2002) studies licensed and implemented FDI in 53 provinces in 1988–1998 and confirms that infrastructure, human capital, and provincial income levels are significant determinants of provincial FDI inflows but could not find significant impact of provincial tax incentives on licensed FDI. Anwar and Nguyen (2010) study 1996–2005 in a panel data model with 61 provinces and highlight the endogenous relationship between FDI and provincial economic growth. They find that an increase in FDI raises a province's economic growth rate, which in turn attracts more FDI, but that this agglomeration effect was mainly seen in the more developed regions of the country.
+
+In another early contribution, Meyer and Nguyen (2005) examine how the institutional environment influences FDI inflows and the mode of entry of foreign investors. They focus on two dimensions of institutions: to what extent did local institutions provide access to scarce resources, and to what extent were local assets and business networks controlled by incumbents with the power to influence the institutional environment to their own benefit. The two proxies they use to capture these institutional dimensions are area used for industrial zones (which provided access to scarce real estate) and share of state-owned enterprises (SOEs) in domestic provincial output (reflecting policy bias toward state enterprises). The expected impact of industrial zones was positive, and of SOE presence negative. The results from negative binomial regressions with the cumulative number of FDI projects in 2000 as the dependent variable showed that industrial zones (and most of the control variables for traditional location advantages) had the expected positive effect while the SOE share was insignificant. One reason could be that Vietnamese state enterprises were rarely in direct competition with foreign-invested enterprises: at the time, most SOEs focused on the local market while foreign-invested enterprises were highly export oriented.
+
+Later studies of the links between subnational institutions and FDI inflows can be divided into three groups. The first group includes contributions covering all (or almost all) Vietnamese provinces, often with the institutional measures drawn from the PCI, which measures the quality of provincial governance and the business environment. We employ this data set in our own analysis, which motivates a closer look at earlier findings. A second group looks more closely at agglomeration and spatial spillovers, noting that provinces are to some extent influenced by their neighbors. The third group of studies is motivated by large regional differences across the country and looks at subnational institutions in specific regions, such as the Northwest or the Central coast 1. Appendix 1 summarizes the results of these studies. 2
+
+The first group includes five contributions covering different time spans during 2006–2019, applying different estimation models (although all use panel data), different dependent variables, and various indicators of subnational institutions. In four of five cases, these indicators were drawn from PCI data sets: Nguyen (2016) and Minh (2019) focus on the aggregate PCI score, Doan and Lin (2016) use nine subindices of the PCI, and Ngo, Dao, and Nguyen (2018) use both variants. The latter is the outlier, proxying the quality of local institutions (and local macroeconomic stability)
+
+with the provincial budget balance. Overall, the results confirm the importance of traditional location advantages and suggest that higher PCI scores attract inward FDI, although Nguyen (2018) finds positive and significant effects only on the number of new FDI projects rather than the value of new FDI capital. This could indicate that smaller FDI projects depend more on the quality of provincial institutions, while large projects may be able to negotiate separate incentive packages that make them less dependent on the general business environment. Among the separate PCI subindices, business support services are most strongly correlated with FDI inflows—the other subindices were generally insignificant.
+
+The first analysis including spatial spillovers is Hoang and Goujon (2014), who examine all 63 Vietnamese provinces over 2001–2006 and 2007–2010. Their main proxies for subnational institutions are the designation of the province as a “key economic area” or “open economic zone”. They also use the number of industrial zones as an indicator of provincial policy objectives. They find all three to be positively and significantly related to FDI inflows: in particular, they find clear benefits of being an open economic zone after 2007, when Viet Nam joined the World Trade Organization. There were also signs of spatial spillovers, suggesting FDI was drawn not only to provinces with the strongest locational advantages but also to their neighbors. Esiyok and Ugur (2017) look at a shorter period (2006–2009) and find a positive impact of aggregate PCI on FDI and strong impact of locational advantages, both in home and adjacent provinces, but no spatial spillovers of institutional quality. Hoang et al. (2022) focus on nine provinces in Central Viet Nam in 2009–2016 and found that FDI was attracted not only by local resources but also human capital in adjacent provinces. Subnational institutions are proxied with nine PCI subindices. Legal institutions appear to attract FDI, but the estimated effects of time costs and business support services are contrary to expectations: FDI flows are higher in provinces with high time costs and weak business support services.
+
+The findings from the third group of studies, which examined specific Vietnamese regions, are mixed. Bon (2015) looks separately at Southern, Northern, and Central provinces 2005–2012 and found a significant positive effect of the aggregate PCI score in the first two regions, but not in the Central provinces. Hoa, Thu, and Duc (2021) focus on the Northwestern provinces in 2010–2019 using two of the PCI subindices, entry costs and business support services: business support services have the expected positive impact on FDI inflows, but the coefficient of entry costs was positive and significant, which is counterintuitive. Do et al. (2025) study 11 provinces in the Red River Delta 2009–2023 and use four of the PCI subindices—time costs, informal charges, proactivity, and legal institutions. There was no significant effect of legal institutions, but the three other proxies had the expected coefficients: high time costs and informal charges deterred foreign investors whereas proactive provincial governments attracted FDI.
+
+Summarizing these Vietnamese studies on the impact of subnational institutions on FDI inflows, locational advantages and agglomeration effects are generally strong and it seems that the overall quality of provincial institutions, proxied by the aggregate PCI score, also matters. However, not all subindices of PCI have significant effects, and even those that do record significant effects in some estimations may be insignificant in others. In some cases, estimated effects, such as the positive coefficients for entry costs and time costs in some estimations, are counterintuitive. This suggests that the effects of subnational institutions are perhaps not constant across provinces and over time, or that their impacts are sometimes of marginal importance in comparison to national institutions.
+
+## 2.5. Impact of FDI on Subnational Institutions
+
+At the same time as local institutions and policies influence FDI inflows, FDI is also likely to impact local institutions. The impact of FDI on local politics was a prominent part of the $dependencia$ school's analysis of the effects of FDI in Latin America in the 1970 and 1980, when it was widely thought that foreign multinational enterprises sought to distort local policies for their own benefits (Moran 1974, Blomström and Hettne 1987). These views contributed to the region's skeptical views of FDI until the 1990s. More recently, perspectives on the role of FDI as a determinant of local institutional development have become more positive. For example, Malesky (2009) argues that foreign investors' lobbying efforts influenced reform choices and speeded up economic recovery in 27 European and Central Asian transition economies during 1991–2004. He identifies two mechanisms for influence. First, the broad experience of policies and policy outcomes that foreign investors brought to countries with limited experience of market economics were welcomed by local reform-oriented policymakers (see also Luo 2001). Second, the foreign investors had strong bargaining power in negotiations with the state—the threat of leaving if the host country did not carry out necessary reforms was arguably credible (see Olarreaga 1999).
+
+Malesky (2008) proposes a third, subnational mechanism. He argues that the bargaining power of provincial leaders in Vietnamese provinces with strong FDI inflows improved and allowed them to act more autonomously in their relations with central authorities: For example, they could carry out local reform experiments that went further than the centrally promulgated nationwide policies. Dang (2013) and Malesky (2004) provide further evidence to support the conclusion that foreign-invested enterprises can influence both provincial and national policies in their host countries. They also note that foreign-invested enterprises generally act jointly, channeling their views to local policymakers through industry associations, chambers of commerce, or foreign representations, to maximize their bargaining power (although individual foreign-invested enterprises are sometimes so large that they can exert substantial pressure on policymakers on their own).
+
+## 2.6. Institutions, FDI, and Local Firms
+
+A general conclusion from this discussion is that differences across subnational institutions have impact on where in a country inflows of FDI will be located, at the same time as the entry and presence of foreign-invested enterprises may influence the character of the institutions and policies in their host locations. Although direct evidence is scarce, there is also an assumption that subnational institutions will influence how foreign-invested enterprises operate, perform, and interact with local authorities, suppliers, competitors, and customers (Zhou, Delios, and Yang 2002; Chan, Makino, and Isobe 2010; Hutzschenreuter, Matt, and Kleindienst 2020). In addition, subnational institutions are expected to have an impact on the performance of local firms.
+
+However, only a few contributions look at the impact of provincial institutions on local enterprises in Viet Nam. Tran, Grafton, and Kompas (2009) examine how institutional reforms in Viet Nam influence the economic performance of domestic firms. Using PCI data from 2006 and firm-level survey data from 2005, they find significant effects of both PCI and some of its subindices on firm productivity. Among the subindices, business services, land access and security of land tenure, and labor training had positive and significant effects on firm performance. Legal institutions and a variable combining entry costs and time costs did not have any significant impact, which the authors interpret as a sign of weakness in the judiciary system and insufficient administrative reforms to reduce transaction costs. Overall, they conclude that institutions matter for the development of the private sector and that inefficient governance was an important obstacle to the further development of the non-state business sector. Yet, the lack of time dimension in the analysis limits the value of the contribution.
+
+Malesky and Taussig (2009) examine how provincial institutions influence the decision of small-scale entrepreneurs to move from the informal sector into the formal sector. They find that firms in provinces with a higher PCI score are more likely to establish their initial operations in the formal rather than the informal sector. Those firms that start their operations in the informal sector move faster to the formal sector if they are in provinces with stronger institutions. Disaggregating the PCI into its 10 subindices, they find significant effects only of land access and legal institutions. Their interpretation is that these institutional dimensions mainly reflect the strength of property rights.
+
+Malesky, McCulloch, and Nhat (2015) examines how the private investment decisions of a panel of enterprises in 2006–2010 are related to the quality of local governance, proxied by the PCI and its subindices. Overall, the panel included nearly 350,000 observations. Looking first at the effects of the unweighted PCI variable, they find that it was not significant in any of their estimations. Turning to the subindices, all but one registered insignificant coefficients—the exception was transparency, which had a robust and significant impact on investment in all their estimations, irrespective of estimation method. In addition, transparency seemed to promote investment by foreign-invested enterprises as well as private domestic firms. The authors concluded that transparency and access to information had a critical role in reducing the risks associated with investments—without access to information about opportunities investors would not know where to invest, and without basic legal and regulatory information they would not want to invest because of high uncertainty and risk. In addition, they hypothesized that transparency might encourage investment by reducing the need for personal connections and inside information. In their discussion, they also highlighted what they did not find: there was no evidence for a systematic causal relationship between the other PCI subindices and private investment.
+
+Apart from Malesky, McCulloch, and Nhat (2015), who were able to differentiate between effects on foreign and domestic firms, we have not been able to identify other earlier studies that have examined whether institutional reforms have the same effects on foreign-owned and domestic enterprises. However, referring to Hymer (1976) and Zaheer (1995), Malesky, McCulloch, and Nhat (2015) note that foreign and domestic firms may be expected to respond differently to changes in institutions and that formal economic governance institutions may be more important for foreign-invested enterprises because of their “liability of foreignness”. Our analysis addresses this research gap.
+
+## 3. DATA AND EMPIRICAL MODEL
+
+The empirical analysis examines the impact of subnational institutions on the operations of foreign-owned and domestic manufacturing firms across Viet Nam's 63 provinces for 2006–2020 using information on revenue, employment, average firm size, and industry. The provincial competitive index and its components (Malesky 2005, 2017) are used as proxies of subnational institutions.
+
+## 3.1. Enterprise Survey Data
+
+This study uses raw census data for from 2006 to 2020 from Viet Nam's National Statistical Office.3 The dataset exhibits considerable inconsistencies across years in various aspects, including variable coding, classification systems, and inclusion of additional items. Notably, the data span three different versions of Viet Nam's Standard Industrial Classification (VSIC): the 2006–2016 data use VSIC 2007 (equivalent to International Standard Industrial Classification [ISIC] Rev. 4), and data from 2017 onward use VSIC 2018 (equivalent to ISIC Rev. 5). To ensure consistency, we harmonized all sector classifications to VSIC 2018 at the 4-digit level, creating a unified dataset for the entire 2006–2020 period.
+
+Firm ownership classifications are not consistent throughout the all-year period, reflecting changes in laws, regulations, and the judgment of survey administrators. To ensure comparability over time, the ownership types were consolidated into five categories based on the nature of ownership and trends in firm distribution over the years:
+
+\- Foreign-invested enterprises: Foreign-invested enterprises with 100% foreign ownership.
+
+\- Joint ventures: Firms jointly owned by Vietnamese entities (government, cooperatives, or individuals) and foreign entities, regardless of ownership share distribution.
+
+\- SOEs\_100: Wholly state-owned enterprises in which the Vietnamese government (at either the central or local level) holds 100% ownership.
+
+\- SOEs<100: State-owned enterprises in which the government holds less than 100% ownership. This group primarily consists of former SOEs\_100 that underwent partial privatization. The number of firms and the state's ownership share in this group vary considerably over time.
+
+\- Private: Domestic private firms fully owned by Vietnamese private entities. This category includes joint-stock companies, limited liability companies (single or multiple member), cooperatives, and collective enterprises.
+
+We excluded observations missing key variables such as revenue, labor, ownership code, sector code, or province code. We also removed entries with implausible values (e.g., negative or extremely high revenue or labor figures). We also selected only firms with employment of 2 people or above and annual revenue above one billion Vietnamese dong. After cleaning, the dataset used in this study includes more than 4.78 million observations. The dataset at province and firm ownership groups are then aggregated.
+
+## 3.2. The Economic Complexity Index
+
+Among the regressors, we focus on measures of institutional quality and institutional change based on information from the PCI with some changes in data and coverage over the years. In addition, we use the size of the province (proxied by provincial population) and its development level (proxied by provincial per capita income, gross regional domestic product or GRDP) as external instruments in two-step Difference-GMM estimations. Most of these variables are conventional, but the following sections will provide brief descriptions of the Economic Complexity Index and the PCI.
+
+The product space model (Hidalgo et al. 2007; Hidalgo and Hausmann 2009; Hausmann et al., 2014) introduced the concepts of product space, product relatedness, and product complexity. Product space maps the relatedness between products based on observations of how common it is that they are jointly exported with revealed comparative advantages. The assumption is that closely related products rely on similar resources, skills, capabilities, and institutional conditions (Hausmann and Hidalgo 2011; van Dam and Frenken 2022; Frenken, Neffke, and Van Dam, 2023; Balland et al. 2022). Many countries have the skills and capabilities for successful export of less complex (or ubiquitous) products, but the most complex products are rare and can only be exported by only a few countries with very wide knowledge and capabilities. Hence, the portfolio of products that a country manages to export with revealed comparative advantages reflects both the physical resources and the knowledge, skills, and institutional environment needed to become a successful exporter.
+
+The economic complexity of a country or region reflects the weighted average complexity of its export portfolio. A country's economic complexity is highly correlated with its per capita income level and economic growth rate (Hidalgo and Hausmann 2009; Hausmann et al. 2014; Hidalgo 2021). Empirical studies show that institutional quality is a determinant of economic complexity (Zhu and Fu 2013; Vu 2022), although are notably heterogeneous in how different institutional dimensions contribute to economic complexity (Hoang and Chu 2023; Nguyen, Schinckus, and Su 2023). In high-income countries, voice and accountability seem to be more important, while government effectiveness and regulatory quality have a stronger impact on economic complexity in middle-income countries.
+
+Several recent contributions have explored economic complexity at subnational levels and found substantial differences across provinces and regions within the same country (Pérez-Balsalobre, Llano Verduras, and Díaz-Lanchas 2019; Török, Benedek, and Gómez-Zaldívar 2022; Pinheiro et al. 2025). Moreover, studies have found links between economic complexity, per capita income levels, and economic growth at the subnational level: economic complexity is a strong predictor of local economic growth and inequality (Poncet and Starosta de Waldemar 2012; Bahrami et al., 2023; Coniglio, Lagravinese, and Vurchio 2016; Chávez, Mosqueda, and Gómez-Zaldívar 2017; Buccellato and Corò 2020; Turco and Maggioni 2022; Hartmann and Pinheiro. 2024).
+
+With disaggregated data on firm-level exports at the provincial level, it would be straightforward to calculate provincial economic complexity measures following the methodology proposed by Hidalgo and Hausmann (2009) and Hausmann et al. (2014). However, such disaggregated export data are not available in Viet Nam. We have therefore calculated production-based economic complexity indices for Vietnamese provinces and firm groups. To this end, we use product complexity measures from Hausmann et al. (2014) (compiled by Harvard's Growth Lab), which are calculated from export data covering most countries at the four-digit level. We use the average global complexity of exported products in the period 2017–2020 as our base, instead of annual data. The reason is that the technical complexity of products at the global level is relatively stable, so that use of a fixed index ensures that the variation of provincial economic complexity measures reflect the variation in output proportions and the improvement in the economic performance of Vietnamese provinces rather than changes in the estimated complexity of individual products.
+
+Several steps are needed for our calculation of the economic complexity of Vietnamese provinces. The first step is to concord the standard product codes classified by the Harmonized System (HS) at the four-digit level, which are presented in international trade statistics and used to calculate product complexity, to the ISIC at the three-digit level. Then, we use census data from the Vietnam Enterprise Surveys from the National Statistics Office as weights to calculate the Economic Complexity Index of Vietnamese provinces.
+
+There are three different versions of the VSIC in the dataset over the study period. Data from 2000 to 2005 are based on VSIC Rev.1993 (equivalent to ISIC. Rev.3.1), data from 2006 to 2017 use VSIC Rev.2007 (equivalent to ISIC Rev.4), and calculations from 2018 and forward use Rev.2018 (equivalent to ISIC Rev.5). We concorded the classification of data for 2001–2005 using
+
+VSIC Rev.1993 to the VSIC Rev.2007, and then to VSIC Rev.20184, to ensure that the classification over the study period is consistent. We then concorded 5 HS-2017 at the four-digit level to VSIC Rev.2018 at the three-digit-level, which implies that each manufacturing subsector (classified by VSIC) consists of several different products or product lines, although they are not all supplied to the global market by Viet Nam.
+
+After converting HS92 four-digit level data to ISIC Rev.5 (equivalent to VSIC 2018) three-digit level data, we define the Industrial Complexity Index as the average PCI of the products included in each subsector of the manufacturing industry, as follows:
+
+$$
+I C I _ {i} = \frac {1}{P} \sum_ {p} ^ {P} P C I _ {i p}\tag{1}
+$$
+
+The sub-index i denotes the three-digit industry at the ISIC Rev.5 level and p (ranging from 1 to P) denotes the product at the HS92 four-digit level included in the industry.
+
+The Economic Complexity Index value of each province (region) $r \left( ECI_{r} \right)$ is then calculated as follows:
+
+$$
+E C I _ {r, t} = \frac {1}{P} \sum_ {i} ^ {i} \left. R _ {i, t} ^ {r} \right/ _ {R _ {r, t} ^ {V N}} I C I _ {i}\tag{2}
+$$
+
+In equation (2), $R_{i}^{r}$ is the revenue of province (region) r in industry i and $R_{r}^{VN}$ is total revenue of province r.
+
+Figure 1 illustrates the changes in the ECI of Viet Nam's 63 provinces between 2006 and 2020. Although there is an overall increase in economic complexity, there are also provinces where average economic complexity has diminished, in particular between 2013 and 2020.
+
+Figure 1 reflects the provincial development of the ECI for all firms, including foreign-invested enterprises as well as domestic firms. These data hide significant differences in the performance and development of the two groups of firms. Figure 2 illustrates the changes in ECI separately for foreign-invested enterprises and domestic Vietnamese firms for the whole manufacturing sector. The gap in ECI between the two groups of firms is notable. While foreign-invested enterprises have gradually shifted into more complex products and industries, domestic firms have not been able to upgrade their activities during 2006–2020. As a result, foreign-invested enterprises and local firms are largely operating in different industries with different technology and skill requirements, competitive conditions, and target markets. It is also likely that there are differences in which institutional reforms and policies are most relevant for these two groups of firms. Understanding whether this heterogeneity leads foreign-invested enterprises and domestic firms to respond differently to the institutional environment at the provincial level is one of the motivations for this analysis.
+
+Figure 1: ECI of 63 Provinces and Cities 2006, 2013, and 2020
+
+[[KC_IMAGE_001]]
+
+ECI = economic competitiveness index.
+Source: Authors' calculations.
+
+Figure 2: ECI of Foreign-Invested Enterprises and Domestic Vietnamese Firms, 2006–2020
+
+[[KC_IMAGE_002]]
+
+ECI = economic competitiveness index, FIE = foreign invested enterprise.
+Source: Authors' calculations.
+
+## 3.3. Provincial Competitiveness Index
+
+Since 2005, the Vietnam Chamber of Commerce and Industry and United States Agency for International Development have performed annual enterprise surveys and ranked provinces based on their business environment and economic governance, aiming to promote private sector development (Malesky, Pham, and Phan 2025). The resulting Provincial Competitiveness Index (PCI) is intended to explain why some parts of the country perform better than others in terms of private sector dynamism, job creation, and economic growth, and to promote institutional reform in those provinces that record weaker performance. In addition, the PCI has become a marketing tool for attracting FDI (Malesky 2007).
+
+The aggregate PCI scores and the ranking of provinces are constructed in three steps: collecting raw data inputs (i.e., indicators) from surveys and secondary data sources, constructing subindices reflecting performance in 10 governance domains, and aggregating weighted values of the subindices to calculate the aggregate PCI score.
+
+The raw data used to calculate the PCI include information from annual enterprise surveys measuring the business community's perceptions of the local business environment and official policies (soft data), and information from public sources such as statistical yearbooks, interviews with third parties (e.g., state-owned banks and real estate firms), and business associations (hard data). The PCI aims to compare provincial economic governance against best practices already found in Viet Nam rather than against some idealized standard (Malesky 2005). Each indicator from the survey has therefore been standardized to a 10-point scale, where the best and worst performing provinces are awarded scores of 10 and 1, respectively. The average value of each indicator (either weighted or simple) belonging to a governance domain is then used to create the relevant sub-index for that domain. Weighted averages are used to integrate “hard data” into four subindices including Land Access and Security of Tenure, SOE Bias, Labor Training, and Legal Institutions. A range of core indicators and the 10 subindices are presented in Appendix 2.
+
+The unweighted aggregate PCI is calculated by a simple summation of the 10 subindices, which may yield a maximum score of 100 points. The PCI development team argues that the unweighted PCI is simple but less appropriate as a policy tool, because some subindices are more important than others for private sector development. A weighted PCI has therefore been developed to reflect the actual contributions of the different domains to private sector development (see Malesky,2005).
+
+Hundreds of soft and hard data indicators are used to calculate the 10 subindices every year. However, the specific survey questions and data sources have changed over time, which makes it hard to compare the published PCI scores for different years. However, 41 of the core indicators have been used consistently since 2006 (Malesky et al. 2017). Our analysis focuses on these indicators to calculate time consistent subindices.
+
+Figure 3, the weighted PCI of Vietnamese provinces for 2006, 2013, and 2020, presents an overall pattern of improvement in the business environment of most provinces, reflecting the increase of the PCI over years. Also notable, the variance in PCI between provinces has diminished over time.
+
+Figure 3: Aggregate PCI of 63 Provinces and Cities 2006, 2013, and 2020
+
+[[KC_IMAGE_003]]
+
+PCI = provincial competitiveness index.
+Source: Authors' calculations.
+
+Table 1 summarizes the balanced panel data used in this study. Provincial per capita income is proxied with the ratio of the province's annual Gross Regional Domestic Product (GRDP) to provincial population. Both GRDP and population are obtained from the National Statistics Office. The GRDP data are deflated using the 2010 consumption price index. In the estimations, we use the natural logarithm (ln) of population and GDPR per capita as external instruments in the two-step Difference GMM estimation.
+
+Table 1: Data and Descriptive Statistics
+
+
+GDP = gross domestic product, PCI = provincial competitiveness index, SOE = state-owned enterprise. Source: Authors' calculations.
+
+## 3.4. Model specification
+
+Our econometric analysis investigates the impact of changes in the local business climate, proxied by the subindices of PCI, on the performance of foreign-invested enterprises and domestic firms. The four firm groups we examine are all firms, foreign-invested enterprises, domestic firms, and domestic private firms. We start with a dynamic panel model defined as follows:
+
+$$
+y _ {r, t} = \alpha y _ {r, t - 1} + \beta X _ {r, t} ^ {\prime} + \mu_ {r} + \varepsilon_ {r, t}\tag{3}
+$$
+
+where
+
+\- $y_{r,t}$ is the performance outcome in year $t$ for the relevant firm group in province $r$
+
+\- $y_{r,t-1}$ is the lagged dependent variable (captures persistence)
+
+\- $\mathbf{X}_{r,t}$ is a set of PCI variables (including weighted PCI and its time-consistent subindices)
+
+• $\alpha$ and $\beta$ are vectors of estimated coefficients
+
+\- $\mu_{r}$ is a time-invariant province (or province-category) fixed effect
+
+• $\varepsilon_{r,t}$ is the idiosyncratic error term.
+
+To cover a wide range of possible outcomes, we use five alternative measures for the performance indicator $(y_{r,t})$ :
+
+i. ECI of the relevant firm group calculated as in equation (2),
+
+ii. revenue, which is the natural log of the aggregate revenue of the relevant firm group,
+
+iii. employment, which is the aggregate employment of the firm group,
+
+iv. productivity, which is proxied by the ratio of revenue to employment in the firm group, and
+
+v. firm size, which is proxied by the average revenue of the firms of the firm group.
+
+PCI represents the Provincial Competitiveness Index or its different components. The reason for adding the lag of the dependent variable among the regressors is that previous studies have found performance measures such as ECI and revenue to be highly persistent (Chu 2020, Hoang and Chu 2023).
+
+## 3.5. Model Selection
+
+We have tested different estimation models for the dynamic panel specification in equation (3), including two-way fixed effects (FE) and Generalized Method of Moments (GMM) with lagged dependent variables. The statistics of the different estimation models are presented in Table 2. Across all specifications, the lagged dependent variable is positive and highly significant, indicating strong persistence in firm performance, suggesting that our dynamic panel specification in equation (3) is appropriate.
+
+Although we have estimated both FE and GMM models, the results discussed below will refer to GMM estimations (Arellano and Bond 1991; Wooldridge 2010): the FE estimation results have been dropped because of the concern that fixed-effects estimators with lagged dependent variables may be biased in dynamic panels (Nickell 1981). 6 The choice between System-GMM and Difference-GMM models is based on specification tests (AR(2), Hansen/Sargan) and parameter plausibility. In several outcomes, System-GMM produces implausibly high persistence or fails overidentification tests, which is consistent with concerns about invalid moment conditions (Blundell and Bond 1998; Roodman 2009). As shown in Table 2, system-GMM estimates produce coefficients of lagged variables that in several cases exceed unity, implying explosive or non-stationary dynamics that are difficult to reconcile with the observed evolution of firm performance. In addition, System-GMM models frequently fail Hansen/Sargan tests, suggesting invalid instrument sets. Difference-GMM models generally pass second-order autocorrelation tests and overidentification tests.
+
+Hence, we use the Difference-GMM estimator (Arellano–Bond 1991) where the dependent variable is first-differenced to remove fixed effects. Lagged levels of the dependent and PCI variables (t-2) are used as instruments, and the log of population and income are added as exogenous instruments.
+
+Table 2: Diagnostics for Model Selection
+
+
+ECI = economic competitiveness index, FE = fixed effect model, Diff-GMM = difference generalized method of moments, Ln = natural logarithm, PCI = provincial competitiveness index, Sys-GMM = system generalized method of moment.
+Source: Authors' calculations.
+
+The Difference-GMM specification removing fixed effects by first-differencing is estimated as follows:
+
+$$
+\Delta y _ {r, t} = \alpha \Delta y _ {r, t - 1} + \beta^ {\prime} \Delta X _ {r, t} + \Delta \varepsilon_ {r, t}\tag{4}
+$$
+
+where $\Delta y_{r,t} = y_{r,t} - y_{r,t - 1}$
+
+## 4. RESULTS
+
+## 4.1. Main results
+
+We first use the two-step Difference-GMM approach to estimate baseline models following equation (4) for all our five dependent variables, using weighted and unweighted PCI and each of its subindices separately as our institutional proxies. By construction, the expected effects of all PCI-variables are positive (Malesky, Pham, and Phan 2025). Across all estimations, the lagged dependent variables are significant at the 1% level and most coefficients are in the range 0.6 to 0.9, confirming the dynamic nature of firm performance and supporting the use of Difference-GMM. AR(2) and Hansen-p values are above 10%, indicating that there is no second-order serial correlation and no over-identifying restriction, and that the selected instruments are valid.
+
+The first main results are shown in Table 3, which focuses on weighted and unweighted PCI from annual PCI reports. These variables are not fully comparable over time, since new questions have periodically been added to the PCI survey. Earlier cross-section studies have shown that the level of PCI is relatively highly correlated with various indicators of economic development (Malesky 2005; Malesky, Pham, and Phan 2025), and the simple correlations between our performance measures and the PCI scores are also high (see Appendix 3), but we could only find partial evidence that changes in aggregate PCI scores have a direct impact on the performance of the Vietnamese manufacturing sector. Unweighted PCI records significant positive coefficients when revenue or employment are used to proxy performance, but not when ECI, productivity, or firm size are used as dependent variables. Weighted PCI is only significant when employment is the dependent variable. A similar pattern is found when the individual PCI subindices are entered separately into the Difference-GMM estimations (see Appendix 4). The separate PCI subindices are significant with the expected sign in only 5 of 50 estimations. In addition, in some cases the estimated coefficients are significant but contrary to expectations. For convenience, significant coefficients of key variables with expected effects are shown in green, while significant coefficients with the “wrong” sign are in shown in red.
+
+Table 3: Weighted and Unweighted PCI Scores and Firm Performance, All Firm Groups, 2006–2020.
+
+
+ECI = economic competitiveness index, PCI = provincial competitiveness index.
+Note: Difference-GMM with robust standard errors. \*, \*\*, and \*\*\* indicate significance at the 10%, 5%, and 1% level, respectively.
+Source: Authors' calculations.
+
+Table 4 presents estimations with the time-consistent subindices of PCI that we constructed using the data set provided by Malesky, Pham and Phan (2025), where survey questions remain unchanged throughout the whole period 2006–2020. This makes it possible to see whether improvement in provincial institutions (as proxied by the time-consistent subindices) are directly linked to performance improvements in the Vietnamese manufacturing sector. The top panel of the table presents results for “all firm” groups in the manufacturing sector, the second panel focuses on foreign-invested enterprises, and the third panel looks at domestic firms. The columns distinguish between our five dependent variables ECI, revenue, employment, productivity, and firm size.
+
+All 10 PCI subindices are included simultaneously in the estimations. Because several subindices are moderately correlated (see Appendix 3), multicollinearity could potentially affect coefficient precision. To assess this, we have computed variance inflation factors (from fixed-effects regressions that include all PCI subindices). All variance inflation factor values are below 2.8, well under commonly used thresholds of 5–10 (Greene 2012; Baltagi, 2013), indicating that multicollinearity is not likely to be a serious concern and that all subindices can be included jointly in the Difference-GMM specifications.
+
+
+Table 4: PCI Subindices and Firm Performance, All Firm Groups, Foreign-Invested Enterprises, and Domestic Private Firms 2006–2020
+ECI = economic competitiveness index, PCI = provincial competitiveness index.
+Note: Difference GMM with robust standard errors. \*, \*\*, and \*\*\* indicate significance at the 10%, 5%, and 1% level, respectively. Source: Authors' calculations.
+
+There are several notable results in Table 4. First, looking across the three groups of firms, there are some differences in how subnational institutions impact foreign-invested enterprises and domestic firms. The estimation results for “all firm” groups therefore seem to be confounded by the heterogeneity between foreign and domestic enterprises.
+
+Second, only a few of the PCI subindices have significant coefficients in the estimations for foreign-invested enterprises, but most of them are contrary to our expectations. Instead, some of the statistically significant results indicate that foreign-invested enterprises performed better in provinces that undertook slower reforms related to land access, transparency, rime costs, and business support services. Only labor training (for productivity), and legal institutions (for revenue) have significant effects in line with expectations. These relatively weak results may be surprising considering the two-way links between subnational institutions and FDI in Viet Nam (Malesky 2004, 2008), but one possible explanation could be the strong export orientation of FDI in Viet Nam. Earlier studies have shown that provincial institutional reforms are important for the location decisions of foreign-invested enterprises (Doan and Lin 2016; Do, Nguyen, and Thanh 2025) and it is reasonable to assume that reforms will reduce the operational costs and raise the profits also of incumbent foreign-invested enterprises. However, strategic decisions about adjustments in the product portfolio and scale of operations often depend on conditions in export markets and may have to be coordinated with other links in the global value chains in which foreign-invested enterprises participate. This suggests that major changes in operations are made relatively rarely and that strategic decisions about new investments (or divestments) are likely to be based on comparisons with alternative production locations in other countries rather than other provinces in Viet Nam.
+
+Third, the impact of institutional reform on the group Domestic firms appears to be equally weak as that on foreign-invested enterprises. The only significant coefficient estimates with the expected sign are for legal institutions on productivity and firm size (positive). At the same time, there are counterintuitive negative and significant coefficients for entry costs (productivity and firm size), transparency (revenue and employment), time costs (ECI), SOE and large firm bias (firm size), and legal institutions (employment). At the same time, the great majority of institutional indicators do not appear to have any significant impact. The lack of a robust positive relationship between institutional change and the performance of domestic firms is troublesome, since the establishment of the PCI was based on the assumption that careful monitoring of the strength of the business environment would encourage institutional reform and that the provincial business environment is important for private sector development (Malesky 2005).
+
+There is support for the hypothesis that foreign-invested enterprises and domestic firms react differently to institutional reforms in Vietnamese provinces—the only common findings are the counterintuitive negative coefficients for time Costs in the ECI estimation and transparency in the revenue and employment estimations—but further conclusions about the absence of effects of institutional reform on manufacturing performance should be made with caution. One problem could be that omitted variables or heterogeneity across provinces and firm groups distort the results presented in Table 4. Our dataset allows us to look more closely at some of the possible explanations for the apparent irrelevance of institutional quality. To avoid premature conclusions, we have therefore extended our analysis with several robustness tests to examine whether adjustments to the sample of firms, provinces, and time periods reveal significant relations between institutions and firm performance that are not visible in the baseline estimations presented above.
+
+## 4.2. Extensions and robustness tests
+
+The first adjustment concerns the firm category domestic firms. In our dataset, this subsample of enterprises comprises not only private domestic firms, but also firms with state ownership, cooperatives, and joint ventures. Overall, wholly or partly state-owned firms accounted for about 45% of the revenue of all domestic firms (Thong et al 2025). Given their direct connections with national and provincial authorities, it is possible that SOEs—whether wholly or minority-owned by the state—are less sensitive to weaknesses in the formal institutional environment, and perhaps also less responsive to institutional reforms aiming to strengthen the conditions for private enterprise. Dropping firms with registered state ownership or collective ownership might therefore provide a better picture of how institutions impact the private sector.
+
+Table 5 presents estimations for a subsample made up of Domestic Private firms only. These estimations can be compared with the results from the third panel of Table 4 (Domestic firms). Overall, the omission of wholly or partly state-owned firms does not seem to improve the estimation results. There are only two statistically significant and positive coefficient estimates—for the impact of Legal institutions on Productivity and Firm size—and these were found also in the group Domestic firms. Most of the statistically significant and negative coefficients for Entry costs, Transparency, SOE bias, and Legal institutions were also found in the Domestic firms sample. In other words, the Vietnamese private sector’s responses to local institutional reforms seem to be similar to those of the actors included in the category Domestic firms.
+
+Table 5: PCI Subindices and Firm Performance, Private Domestic Firms, 2006–2020
+
+
+ECI = economic competitiveness index, ECI = economic competitiveness index, GMM = generalized method of moments, PCI = provincial competitiveness index, SOE = state-owned enterprise.
+Note: Difference GMM with robust standard errors. \*, \*\*, and \*\*\* indicate significance at the 10%, 5%, and 1% level, respectively. Source: Authors' calculation.
+
+There are several other reasons why the results in Tables 4 and 5 might fail to capture the links between provincial institutional reform and manufacturing performance. One explanation could be that FDI has an impact on the quality of provincial institutions, as discussed by Malesky (2004, 2008, 2009), and that this quality difference is not directly reflected in the PCI and its subindices. Hence, the links between provincial institutions and firm performance may differ depending on the province's success in attracting FDI. Provincial authorities in locations with high levels of FDI may have developed more efficient practices for communicating with and supporting the enterprise sector, resulting in a stronger relationship between PCI subindices and our various performance indicators. To explore this hypothesis, we have carried out estimations where the sample has been split depending on the revenue generated by the foreign-invested enterprises in the province.
+
+It is also likely the differences across provinces in their ability to attract FDI during the early stages of Viet Nam's economic reform process—as well as their ability to nurture private enterprise—were related to geography, culture, history, and other factors that may influence the informal institutions that matter for both policy making and entrepreneurship (North 1994). As Williamson (2009) argues, formal institutions are most effective when supported by strong informal institutions. To examine the impact of informal institutions, we have conducted separate estimations for provinces in southern and northern Viet Nam. We hypothesize that the influence of market-oriented institutions may be relatively stronger in southern provinces, while differences across regions may reflect variations in historical economic structures.
+
+Time could be another confounding factor. To examine whether the impact of institutional quality has changed over time, we have split the sample chronologically and looked separately at the two time periods 2006–2013 and 2014–2020. The hypothesis is that private sector development has gradually become more important as a policy goal, at the same time as opportunities for institutional learning have improved as less successful provinces have gradually learned about the effects of different subnational institutions and policies from more successful provinces. Thanks to these opportunities for learning and concerted efforts by ambitious provincial leaders to improve the local business climate, it is possible that the links between subnational institutional reform and firm behavior have become stronger during the period 2014–2020.
+
+In our baseline estimations, we lagged the PCI indicators by 1 year to account for the fact that firms do not react instantaneously to institutional reform. This may still be problematic if some reforms require a longer response and adjustment period. To test whether this is the case, we have estimated all models using 3-year averages rather than annual data. Finally, results may vary across industries depending on their technological characteristics—it is possible that more technology-intensive industries depend to a greater degree on a supportive business environment. To test for this, we have categorized the Vietnamese two-digit manufacturing industries into four groups depending on their R&D investments—high, medium-high, medium, and medium-low R&D intensity (none of the manufacturing industries have low R&D intensity, see Galindo-Rueda and Verder 2016)—and estimated our model separately for each of these.
+
+The findings from these robustness tests are presented in Appendixes 5–7. Although Table 5 did not reveal any major differences between the ownership categories domestic firms and domestic private firms, we have included only the latter (together with the categories “all firm” groups and foreign-invested enterprises) in the robustness tests. SOEs are dropped with reference to the argument that the PCI was established to direct attention to the business climate for the private sector. Appendix 5 focuses on weighted PCI while Appendix 6 includes all 10 PCI subindices. Both tables summarize results for subsamples defined by each province’s initial success in attracting FDI (with total revenue from foreign-invested enterprises in high-FDI provinces above the provincial median value in 2006), the province’s geographic location (South and North), and period (2006–2013 vs. 2014–2020). By construction, the size of subsamples varies: the largest difference is between the high-FDI subsample (312 observations) and the low-FDI subsample (507 observations). The two tables also include estimations where annual data are compressed into three-year averages (which reduces the total number of observations to 189). Appendix 7 summarizes the results for subsamples based on OECD’s four R&D intensity measures. The number of observations in these subsamples ranges between 308 (for foreign-invested enterprises in high-R&D industries) and 819 (for domestic private firms in medium-low R&D industries).
+
+Despite the large number of estimations included in Appendixes 5–7, it is easy to summarize some of the main findings. A first observation is that very few of the PCI indicators have significant effects in any of the subsamples and when there are significant effects they often come with the wrong sign. In other words, none of the subsamples generate results that are notably better than those in Tables 4 and 5. Appendix 5 shows that weighted PCI is significant in only six of the 105 estimations for subsamples divided according to FDI inflows, geography, or time. The split-sample estimations in Appendix 6 are based on the 10 time-consistent PCI subindices. Only 16 of the 1,050 estimated coefficients are positive and significant, confirming hypotheses about the favorable impact of provincial institutional reform on manufacturing performance. The number of negative and significant coefficients is much higher, at 48, suggesting that manufacturing performance is better when reforms are slower. In Appendix 7, industries are classified according to their R&D intensity (high, medium-high, medium, and medium-low) and equation (4) is estimated separately for each technology category and ownership group. Only 37 of the 600 estimated coefficients for PCI indicators are significant, and only 13 of these have the “correct” sign with respect to our expectations.
+
+Second, it is hard to find any clear patterns across estimations. The few coefficients that were significant in Tables 4 and 5 are not robust across the subsamples in Appendixes 5–7, at the same time as the new significant coefficients that emerge in the estimations are scattered across variables and subsamples. While the positive significant coefficients in Appendix 6 are mainly found for subindices labor training and legal institutions, the negative coefficients are more common for land access, transparency, time costs, and SOE bias. In Appendix 7, significant coefficients are mainly found in the medium R&D and medium-low R&D industries. Moreover, many of the coefficients that are significant in the subsamples including all firm groups are not significant for either foreign-invested enterprises or domestic private firms. A reasonable conclusion from the sensitivity tests is that the weak signs of differences in how sub-national institutions impact foreign-invested enterprises and domestic private firms remain, but there are few other robust findings.
+
+In further analysis (detail results not included here but available on request), we have explored additional robustness tests. For example, instead of using the time-consistent subindices of PCI, we have used the subindices from annual PCI reports, which have periodically been revised to include new questions and indicators. Overall results remain qualitatively unchanged when these indices are used, although the small set of significant coefficients does not remain unchanged. To account for the diversity in development levels across Vietnamese provinces, we have followed earlier studies on the impact of subnational institutions in Viet Nam and dropped the least developed mountainous and peripheral provinces where manufacturing FDI is small and domestic firms remain weak. Results have not improved notably. We have also made separate estimations for the six traditional Vietnamese regions, which comprise the North Central and Central Coast, Red River Delta, Northern Midlands and Mountainous region, Central Highlands, Southeast, and the Mekong Delta. In relative terms, results are marginally stronger for the Red River Delta and the South-East, but many coefficients with the “wrong” sign remain. To test whether findings are robust to omitted variables, we have added a further policy-related variable to estimations using two-way fixed effects models. This is the area covered by licensed special economic zones divided by the area of the province, which has been significant for FDI attraction (Meyer and Nguyen 2005: Hoang and Goujon 2014; Chien and Zhang 2012). The hypothesis is that provinces with more focus on special economic zones also have more business-friendly policies. The SEZ variable is sometimes significant but often with the wrong sign; other variables are not affected much.
+
+Overall, the robustness tests confirm the finding that changes in the PCI and its subindices have had limited direct impact on the short-term performance of foreign-invested enterprises and Domestic Private firms in Vietnamese manufacturing. Hence, marginal policy reforms at the provincial level cannot explain cross-provincial differences in short-term performance of the ownership groups in Vietnamese manufacturing. Since this conclusion contradicts common expectations, earlier research findings (Tran et al. 2009; Malesky and Taussig 2009; Malesky, McCulloch, and Nhat 2015), and the observation that industrial performance is relatively highly correlated with the quality level of subnational institutions, it is appropriate to focus the concluding discussion on possible explanations for why our panel data results are weaker.
+
+## 5. CONCLUSION
+
+Although several earlier contributions have discussed the impact of subnational institutions on the Viet Nam's economy, they have generally focused on explaining the entry and location decisions of foreign firms (see section 2). Few earlier studies have examined how the institutional environment affects the behavior of incumbent foreign-invested enterprises, and few studies (aside from Tran, Grafton, and Kompas 2009, Malesky and Taussig 2009; and Malesky, McCulloch, and Nhat 2015) have focused on how subnational institutions influence domestic firms. In this paper, we have examined the effects of provincial institutional reform, proxied by changes in the PCI and its subindices, on the performance of foreign-invested enterprises and domestic firms in the Vietnamese manufacturing sector in a Difference-GMM model covering all of Viet Nam's 63 provinces and regions during 2006–2020.
+
+Several preliminary conclusions can be drawn from the estimations presented in Tables 3–5. First, we find that foreign-invested enterprises and private domestic firms in the manufacturing sector do not always respond in the same way to subnational reforms. In most of our estimations, the two groups of firms seem to be impacted by different institutional proxies, and when the same institutional variable is significant for both groups the signs of coefficients are sometimes different. The differences extend also to the estimated effects of control variables. The findings are likely to reflect underlying differences in the resources, capabilities, and strategies of foreign and domestic enterprises. This should be a concern for Viet Nam's provincial policymakers, who will need to decide which of the firm groups they should prioritize. Given the dominance of foreign-invested enterprises in many modern industries and the relatively weak development of Viet Nam's domestic private sector (Thong et al. 2025), there are strong arguments to focus on domestic enterprises as a base for sustainable investment and to reduce dependence on foreign investors. While rising wages and geopolitical considerations may eventually motivate foreign-invested enterprises to look for new investment destinations outside Viet Nam, domestic firms are more likely to stay and adjust to changing economic and geopolitical circumstances.
+
+Second, although Viet Nam's subnational institutions have been strongly influenced by the competition for FDI inflows—and to some extent shaped by the lobbying efforts of foreign investors, chambers of commerce, industry associations, and foreign representations (Malesky 2004, 2008, 2009)—it does not seem that the performance of the foreign-invested enterprises have been strongly affected by the institutional reforms they arguably contributed to. Changes in provincial institutions do not seem to have any clear effects on changes in the economic complexity of the products manufactured by foreign-invested enterprises. The links between provincial institutions and our other indicators of performance related to revenue growth, employment growth, productivity growth, and firm size are also weak.
+
+These findings are not unreasonable. Many of the foreign-invested enterprises in Viet Nam are integrated into global value chains and production networks and have specific roles in these networks—to produce components to be used as inputs in other enterprises or to manufacture goods for sale in developed countries using inputs provided by other participants in the value chain. It is not likely that gradual changes in local policies and institutions will lead to strong responses. Decisions about the scale of production and the product portfolio in export-oriented foreign-invested enterprises must be coordinated with other links in the value chain or matched with demand conditions in export markets. This does not reduce the incentives for foreign-invested enterprises to lobby for better policies in their Vietnamese host provinces, since improved institutional conditions probably translate into lower costs and higher profits, but the short-term impacts on their growth and expansion may be limited.
+
+Third, domestic private firms are more strongly rooted in the local institutional environment and should therefore be more sensitive to changes in policies, but our results indicate that the links between provincial institutional reform and firm performance are almost as weak for domestic firms as for foreign-invested enterprises. Few of the proxies for provincial institutional reform have significant effects on the performance of the Domestic private firm group—in our estimations, the positive and significant coefficients have primarily been linked to labor training and legal institutions—but the number of significant negative coefficients, which contradict our expectations, is larger. These weak results are not easily explained, and we have carried out a number of extensions and robustness tests to examine if adjustments to the sample of firms, provinces, and time periods could reveal additional significant results that are not visible in our baseline estimations. However, the findings for the ownership group domestic private firms remain confusing and do not indicate any strong links from provincial institutional reform to growth and upgrading in the short term.
+
+A possible problem in the Vietnamese institutional setting—and an explanation for the weak link between provincial policies and private domestic firms’ responses—could be the strong influence of foreign-invested enterprises on policy formulation and institutional reform mentioned above. If policies are mainly formulated to meet the demands from the stakeholders behind foreign-invested enterprises, it is uncertain what impacts these policies will have on private Vietnamese firms, which are typically much smaller than foreign-invested enterprises and produce goods that are significantly less complex than those manufactured by foreign-invested enterprises (Nguyen et al. 2025). The risk is that if domestic firms cannot use the existing policy framework to their advantage, the cost is not only going to be measured in lost potential but also in lost competitiveness in comparison with foreign-invested enterprises.
+
+An obvious policy conclusion is a recommendation to Vietnamese provincial authorities to focus more on the needs and concerns of domestic enterprises in their policy design and institutional reform. This does not imply that provincial authorities should reduce their efforts to provide an attractive business environment for potential foreign investors. However, if and when provincial authorities introduce reforms and policies to meet the needs of foreign-invested enterprises, there is need to ensure that the reforms will also benefit the domestic private sector. This should not only aim to support local industry in their competition with foreign-invested enterprises, but also improve the chances that local firms will qualify as suppliers and subcontractors to foreign-invested enterprises and manage to benefit from the potential spillovers of technology and skills that are linked to inflows of FDI (Blomström and Kokko 2003; Kokko, Nestor, and Le 2023)
+
+The analysis also has some weaknesses that should be recognized. None of the key variables included in the estimations reported above have robust and consistent effects, and both the sign and significance level of many coefficients are sensitive to changes in the provincial samples. This is likely to mean that there are omitted variables that influence growth and upgrading. The most obvious candidate is institutional change and policy reform at the central level: various reforms affecting the entire economy—including World Trade Organization membership, bilateral and regional trade agreements, SOE reform, financial market reform, new enterprise laws, and so forth—have generated strong economic growth over the past 2 decades. Even provinces with relatively weak local business climate have benefited from these policy reforms. A possible hypothesis for future research is that subnational institutions may be overshadowed by higher-level institutions in transitions economies like Viet Nam, where fundamental policy reforms—such as increasing market orientation and trade liberalization—contribute to capital inflows and rapid economic growth throughout the economy.
+
+In addition to the international determinants of FIE decisions, it is likely that differences in the linkages between foreign-invested enterprises and domestic private firms, as well as differences in the role of state-owned enterprises across provinces and industries, will have some impact on how firms respond to policies and institutional reforms. The possibility that spatial spillovers affect the findings has been noted in the literature (Hoang and Goujon 2014; Esiyok and Ugur 2017; Hoang et al. 2022), and it may distort some of our results. Firm heterogeneity will also influence responses to policies and institutional reforms, as larger and more resource-rich enterprises are better positioned to take advantage of new opportunities. Studies using firm-level data will be valuable to extend and deepen the analysis to processes of this type.
+
+Another challenge is the time gap between policy changes and firm responses. In the estimations, policy changes have been assumed to result in quick responses in terms of revenue growth and upgrading. In some situations, responses may be slower, and firms may prefer to wait to reduce exposure to political risk. We have tried to address this by experimenting with longer lags, but results have not improved. At the same time, policy reforms rarely come as surprises. The dialogue between firms, industry associations, and various levels of government provides insights that allow well-connected firms to respond quickly to new opportunities and challenges. Here, it is likely that differences between large and small firms will be important, further highlighting the need for firm-level data.
+
+Furthermore, the convergence in PCI over time (Figure 3) makes it increasingly difficult to distinguish differences across provinces. It is likely that some provinces that initially recorded weaker performance on growth and upgrading have focused more heavily on institutional reform. As these lagging provinces have caught up with the first movers, the differences in provincial institutional quality have narrowed, at least on paper. However, it is difficult to transplant successful institutions from the context where they have been successful to new settings (Williamson 2009). Formal institutions need to be supported by informal institutions, which often change slowly and which often have an impact on how formal institutions are implemented. Hence, it is likely that there will be differences between provinces that record the same PCI score depending on how long the most advanced policies and institutions have been in force: the provinces recording the more fundamental reforms may actually exhibit relatively weak economic performance. This also highlights the importance of locational advantages and agglomeration effects that are difficult to fully capture in econometric analysis: the differences in provincial performance would not disappear even if all Vietnamese provinces eventually managed to introduce identical formal institutions based on best practice evidence. To better understand these dynamics, studies linking informal institutions to formal institutional reform and its impacts on different categories of firms would be valuable. To the best of our knowledge, there are no such studies for Viet Nam yet.
+
+Finally, it is possible that results are weak because of another problem related to high level of aggregation of the data available for this analysis. A challenge with data at the ownership group level is that we cannot distinguish newcomers from incumbent firms—instead, we see the combined effect of firms' responses at the intensive and extensive margins. A policy reform could encourage the entry or establishment of new enterprises as well as adjustments in the behavior of already existing firms. Although an improvement in institutional quality would normally be expected to benefit both types of firms, it is possible to envision cases where impacts would differ, e.g., because new firms receive more generous support or because the entry of new firms cuts into the market shares of incumbents. This could potentially explain some of the findings where slower reform in terms of Land access and Transparency generates better performance. Ideally, the analysis of provincial policy reforms should therefore be based on firm-level data where such industry dynamics can be detected.
+
+## REFERENCES
+
+Abamu, B. 2019. “Introducing Investment Promotion: A Marketing Approach to Attracting Foreign Direct Investment.” International Journal of Marketing Studies 11 (4).
+
+Acemoglu, D., S. Johnson, and J. A. Robinson. 2001. “The Colonial Origins of Comparative Development.” American Economic Review 91 (5): 1369–1401.
+
+Acemoglu, D., S. Johnson, and J. A. Robinson. 2002. “Reversal of Fortune: Geography and Institutions in the Making of the Modern World Income Distribution.” Quarterly Journal of Economics 117 (4): 1231–1294.
+
+Acemoglu, D., S. Johnson, and J. A. Robinson. 2005. “Institutions as a Fundamental Cause of Long-Run Growth.” In Handbook of Economic Growth, vol. 1, 385–472. Elsevier.
+
+Arellano, M., and Bond, S. 1991. “Some Tests of Specification for Panel Data: Monte Carlo Evidence and an Application to Employment Equations.” Review of Economic Studies 58(2): 277-297.
+
+Asian Development Bank (ADB). 2015. Asian Economic Integration Report 2015: How Can Special Economic Zones Catalyze Economic Development? Asian Development Bank.
+
+Aggarwal, A. 2019. “SEZs and Economic Transformation: Towards a Developmental Approach.” Transnational Corporations Journal 26 (2): 27–47.
+
+Alfaro, L., and M. X. Chen. 2014. “The Global Agglomeration of Multinational Firms.” Journal of International Economics 94 (2): 263–276.
+
+Andersen, M. R., B. R. Kett, and E. von Uexkull. 2017. “Corporate Tax Incentives and FDI in Developing Countries.” In Global Investment Competitiveness Report 2017/2018: Foreign Investor Perspectives and Policy Implications. World Bank.
+
+Andréosso-O'Callaghan, B., and J. Joyce. 2000. "The Distribution of Foreign Direct Investment in Vietnam: An Analysis of Its Determinants." In The European Union and ASEAN: Trade and Investment Issues, edited by R. Strange, J. Slater, and C. Molteni. Macmillan.
+
+Anwar, S., and L. P. Nguyen. 2010. “Foreign Direct Investment and Economic Growth in Vietnam.” Asia Pacific Business Review 16 (1–2): 183–202.
+
+Bahrami, F., B. Shahmoradi, J. Noori, E. Turkina, and H. Bahrami. 2023. “Economic Complexity and the Dynamics of Regional Competitiveness: A Systematic Review.” Competitiveness Review: An International Business Journal 33 (4): 711–744.
+
+Balland, P. A., T. Broekel, D. Diodato, E. Giuliani, R. Hausmann, N. O'Clery, and D. Rigby. 2022.
+
+Baltagi, B. H. 2013. Econometric Analysis of Panel Data. 5th ed. Wiley.
+
+Batschauer da Cruz, C. B., D. Eliete Floriani, and M. Amal. 2022. “The OLI Paradigm as a Comprehensive Model of FDI Determinants: A Sub-National Approach.” International Journal of Emerging Markets 17 (1): 145–176.
+
+Belkhodja, O., M. Mohiuddin, and E. Karuranga. 2017. “The Determinants of FDI Location Choice in China: A Discrete-Choice Analysis.” Applied Economics 49 (13): 1241–1254.
+
+Bénassy-Quéré, A., M. Coupet, and T. Mayer. 2007. “Institutional Determinants of Foreign Direct Investment.” World Economy 30 (5): 764–782.
+
+Blomström, M., and B. Hettne. 1987. Development Theory in Transition: The Dependency Debate and Beyond: Third World Responses. Zed Ltd.
+
+Blomström, M., and A. Kokko. 2003. “The Economics of Foreign Direct Investment Incentives.” In Foreign Direct Investment in the Real and Financial Sector of Industrial Countries. Springer.
+
+Blundell, R., and Bond, S. 1998. Initial Conditions and Moment Restrictions in Dynamic Panel Data Models. Journal of Econometrics 87 (1): 115-143.
+
+Bobonis, G. J., and Shatz, H. J. 2007. Agglomeration, Adjustment, and State Policies in the Location of Foreign Direct Investment in the United States. Review of Economics and Statistics 89 (1): 30-43.
+
+Bon, N. V. 2017. “Effects of Institutional Quality on FDI in Provinces of Vietnam: Empirical Evidence Based on Differenced Panel GMM.” Journal of Economic Development 22 (3): 26–45.
+
+Buccellato, T., and G. Corò. 2020. “Relatedness, Economic Complexity and Convergence across European Regions.” In Capitalism, Global Change and Sustainable Development, edited by L. Paganetto. Springer.
+
+Bustos, S., and M. A. Yildirim. 2022. “Production Ability and Economic Growth.” Research Policy 51 (8): 104153.
+
+Capik, P. 2019. Foreign Investment Promotion. Springer International Publishing.
+
+Chan, C. M., S. Makino, and T. Isobe. 2010. “Does Subnational Region Matter? Foreign Affiliate Performance in the United States and China.” Strategic Management Journal 31 (11): 1226–1243.
+
+Chávez, J. C., M. T. Mosqueda, and M. Gómez-Zaldívar. 2017. “Economic Complexity and Regional Growth Performance: Evidence from the Mexican Economy.” Review of Regional Studies 47 (2): 201–219.
+
+Chemin, M. 2009. “The Impact of the Judiciary on Entrepreneurship: Evaluation of a Court-Speed Reform in India.” Journal of Public Economics 93 (1–2): 114–125.
+
+Chien, N. D., and K. Zhang. 2012. “FDI of Vietnam: Two-Way Linkages between FDI and GDP, Competition among Provinces and Effects of Laws.” iBusiness 4 (2): 157–163.
+
+Chu, L. K. 2020. “The Effects of Financial Development on Economic Sophistication: Evidence from Panel Data.” Applied Economics Letters 27 (15): 1260–1263.
+
+Coniglio, N. D., R. Lagravinese, and D. Vurchio. 2016. “Production Sophisticatedness and Growth: Evidence from Italian Provinces before and during the Crisis, 1997–2013.” Cambridge Journal of Regions, Economy and Society 9 (2): 423–442.
+
+Cordero, A. M., and S. R. Miller. 2019. “Political Party Tenure and MNE Location Choices.” Journal of International Business Studies 50 (6): 973–997.
+
+Cuervo-Cazurra, A., B. Silva-Rêgo, and A. Figueira. 2022. “Financial and Fiscal Incentives and Inward Foreign Direct Investment: When Quality Institutions Substitute Incentives.” Journal of International Business Policy 5 (4): 417–443.
+
+Dai, L., M. A. Hitt, C. Huo, and C. M. Chan. 2025. “Institutional Topography: A Review of Subnational Institutions.” Journal of Management 51 (1): 464–494.
+
+Dang, D. A. 2013. “How Foreign Direct Investment Promote Institutional Quality: Evidence from Vietnam.” Journal of Comparative Economics 41 (4): 1054–1072.
+
+Daude, C., and Stein, E. (2007). The Quality of Institutions and Foreign Direct Investment. Economics and Politics, 19(3), 317-344.
+
+Djankov, S., R. La Porta, F. Lopez-de-Silanes, and A. Shleifer. 2002. “Regulation of Entry.” Quarterly Journal of Economics 117 (1): 1–37.
+
+Do, H. T., D. D. Nguyen, and T. T. M. Thanh. 2025. “The Impact of Provincial-Level Institutional Quality on Attracting Foreign Direct Investment in the Red River Delta Provinces.” International Journal of Innovative Research and Scientific Studies 8 (4): 123–133.
+
+Doan, T. T. H., and J. Y. Lin. 2016. “Provincial Governance and Foreign Direct Investment in Vietnam: An Empirical Study at Sub-Nation Level.” International Journal of Business and Applied Social Science 2 (5): 1–11.
+
+Du, J., Y. Lu, and Z. Tao. 2008. “Economic Institutions and FDI Location Choice: Evidence from US Multinationals in China.” Journal of Comparative Economics 36 (3): 412–429.
+
+Du, J., Lu, Y., and Tao, Z. 2012. Institutions and FDI Location Choice: The Role of Cultural Distances. Journal of Asian Economics 23 (3): 210-223.
+
+Dunning, J. H. 1980. “Toward an Eclectic Theory of International Production: Some Empirical Tests.” Journal of International Business Studies 11 (1): 9–31.
+
+Dunning, J. H. 2000. “The Eclectic Paradigm as an Envelope for Economic and Business Theories of MNE Activity.” International Business Review 9 (2): 163–190.
+
+Esiyok, B., and M. Ugur. 2017. “A Spatial Regression Approach to FDI in Vietnam: Province-Level Evidence.” The Singapore Economic Review 62 (2): 459–481.
+
+Farole, T., and G. Akinci, eds. 2011. Special Economic Zones: Progress, Emerging Challenges, and Future Directions. World Bank.
+
+Frenken, K., Neffke, F., and Van Dam, A. 2023. Capabilities, Institutions and Regional Economic Development: A Proposed Synthesis. Cambridge Journal of Regions, Economy and Society 16 (3): 405-416.
+
+Friedman, J., D. A. Gerlowski, and J. Silberman. 1996. “Foreign Direct Investment: The Factors Affecting the Location of Foreign Branch Plants in the United States.” Global Finance Journal 7 (2): 209–222.
+
+Galindo-Rueda, F., and F. Verger. 2016. OECD Taxonomy of Economic Activities Based on R&D Intensity. OECD Science, Technology and Industry Working Papers 2016/04. OECD.
+
+Gertler, M. S. 2010. “Rules of the Game: The Place of Institutions in Regional Economic Change.” Regional Studies 44 (1): 1–15.
+
+Giacomelli, S., and C. Menon. 2017. “Does Weak Contract Enforcement Affect Firm Size? Evidence from the Neighbour’s Court.” Journal of Economic Geography 17 (6): 1251–1282.
+
+Globerman, S., and D. Shapiro. 2002. “Global Foreign Direct Investment Flows: The Role of Governance Infrastructure.” World Development 30 (11): 1899–1919.
+
+Greene, W. 2012. Econometric Analysis. 7th ed. Prentice Hall.
+
+Hakkala, K. N. 2026. The Role of Special Economic Zones in Shaping Viet Nam's Local Business Environment. ADB Economics Working Paper Series No. 848. Asian Development Bank.
+
+Hall, R. E., and C. I. Jones. 1999. “Why Do Some Countries Produce So Much More Output per Worker than Others?” Quarterly Journal of Economics 114 (1): 83–116.
+
+Hartmann, D., and F. L. Pinheiro. 2024. “Economic Complexity and Inequality at the National and Regional Levels.” In Routledge International Handbook of Complexity Economics, edited by P. Chen, W. Elsner, and A. Pyka. Routledge.
+
+Hausmann, R., and Hidalgo, C. A. 2011. “The Network Structure of Economic Output.” Journal of Economic Growth 16 (4): 309-342.
+
+Hausmann, R., C. A. Hidalgo, S. Bustos, M. Coscia, A. Simoes, M. A. Yildirim, et al. 2014. The Atlas of Economic Complexity: Mapping Paths to Prosperity. MIT Press.
+
+Hayat, A. 2019. “Foreign Direct Investments, Institutional Quality, and Economic Growth.” The Journal of International Trade and Economic Development 28 (5): 561–579.
+
+Head, C. K., J. C. Ries, and D. L. Swenson. 1999. “Attracting Foreign Manufacturing: Investment Promotion and Agglomeration.” Regional Science and Urban Economics 29 (2): 197–218.
+
+Hidalgo, C. A. 2021. “Economic Complexity Theory and Applications.” Nature Reviews Physics 3(2): 92-113.
+
+Hidalgo, C. A., and Hausmann, R. 2009. The Building Blocks of Economic Complexity. Proceedings of the National Academy of Sciences 106 (26): 10570–10575.
+
+
+Hoa, P. T., H. N. T. Thu, and D. N. Duc. 2021. “Factors Affecting the Attraction of Foreign Direct Investment: A Study in Northwest of Vietnam.” Accounting 7 (6): 1257–1264.
+
+Hoang, D. P., and L. K. Chu. 2023. “Progression to Higher Economic Complexity: The Role of Institutions.” Journal of the Knowledge Economy 14 (4): 4339–4366.
+
+Hoang, H. H., and M. Goujon. 2014. “Determinants of Foreign Direct Investment in Vietnamese Provinces: A Spatial Econometric Analysis.” Post-Communist Economies 26 (1): 103–121.
+
+Hoang, H. H., C. M. Huynh, N. M. H. Duong, and N. H. Chau. 2022. “Determinants of Foreign Direct Investment in Southern Central Coast of Vietnam: A Spatial Econometric Analysis.” Economic Change and Restructuring 55 (1): 285–310.
+
+Hu, A. G. 2007. “Technology Parks and Regional Economic Growth in China.” Research Policy 36 (1): 76–87.
+
+Hutzschenreuter, T., T. Matt, and I. Kleindienst. 2020. “Going Subnational: A Literature Review and Research Agenda.” Journal of World Business 55 (4): 101076.
+
+Hymer, S. H. 1976. The International Operations of National Firms: A Study of Direct Foreign Investment. MIT Press.
+
+Jain, N. K., T. Kothari, and V. Kumar. 2016. “Location Choice Research: Proposing New Agenda.” Management International Review 56 (3): 303–324.
+
+Kim, J. U., and R. V. Aguilera. 2016. “Foreign Location Choice: Review and Extensions.” International Journal of Management Reviews 18 (2): 133–159.
+
+Kokko, A., C. Nestor, and H. V. Le. 2023. “FDI in Vietnam: Policies, Effects, and Linkages to the Local Economy.” In Vietnam: Navigating a Rapidly Changing Economy, Society, and Political Order, edited by D. H. Perkins and K. B. Ljunggren. Harvard University Asia Center Publications.
+
+Krugman, P. R. 1991. Geography and Trade. MIT Press.
+
+Li, S., and S. H. Park. 2006. “Determinants of Locations of Foreign Direct Investment in China.” Management and Organization Review 2 (1): 95–119.
+
+Luo, Y. 2001. “Toward a Cooperative View of MNC-Host Government Relations: Building Blocks and Performance Implications.” Journal of International Business Studies 32 (3): 401–419.
+
+Marshall, A. 1920. Industrial Organization, Continued. The Concentration of Specialized Industries in Particular Localities. In Principles of Economics, 222-231. Palgrave Macmillan UK.
+
+Malesky, E. J. 2004. “Push, Pull, and Reinforcing: The Channels of FDI Influence on Provincial Governance in Vietnam.” In Beyond Hanoi: Local Government in Vietnam, edited by B. J. T. Kerkvliet and D. G. Marr. Singapore: Institute of Southeast Asian Studies.
+
+Malesky, E. J. 2005. The Vietnam Provincial Competitiveness Index 2005. VNCI Policy Paper No. 4. Vietnam Competitiveness Initiative.
+
+Malesky, E. J. 2007. “Provincial Governance and Foreign Direct Investment in Vietnam.” Mimeo. Graduate School of International Relations and Pacific Studies, University of California–San Diego.
+
+Malesky, E. J. 2008. “Straight Ahead on Red: How Foreign Direct Investment Empowers Subnational Leaders.” The Journal of Politics 70 (1): 97–119.
+
+Malesky, E. J. 2009. “Foreign Direct Investors as Agents of Economic Transition: An Instrumental Variables Analysis.” Quarterly Journal of Political Science 4 (1): 59–85.
+
+Malesky, E. J., Pham, N. T., and Phan, T. N. 2017. Vietnam Provincial Competitiveness Index. PCI, US-AID's Vietnam Competitive Initiative, Hanoi, Vietnam.
+
+Malesky, E., N. McCulloch, and N. D. Nhat. 2015. “The Impact of Governance and Transparency on Firm Investment in Vietnam.” Economics of Transition 23 (4): 677–715.
+
+Malesky, E. J., N. T. Pham, and T. N. Phan. 2025. The Vietnam Provincial Competitiveness Index and Provincial Green Index Report: Promoting a Business-Enabling and Environmentally Friendly Investment Climate. 2024 Final Report. Hanoi: Vietnam Chamber of Commerce and Industry.
+
+Malesky, E. J., and M. Taussig. 2009. “Out of the Gray: The Impact of Provincial Institutions on Business Formalization in Vietnam.” Journal of East Asian Studies 9 (2): 249–290.
+
+Meyer, K. E., and H. V. Nguyen. 2005. “Foreign Investment Strategies and Sub-National Institutions in Emerging Markets: Evidence from Vietnam.” Journal of Management Studies 42 (1): 63–93.
+
+Minh, C. H. 2019. “Institutional Quality and Foreign Direct Investment Inflows: The Case of Vietnam.” Asian Economic and Financial Review 9 (5): 630–641.
+
+Moran, T. 1974. Multinational Corporations and the Politics of Dependence: Copper in Chile. Princeton University Press.
+
+Mudambi, R., and P. Navarra. 2003. “Political Tradition, Political Risk and Foreign Direct Investment in Italy.” MIR: Management International Review 43 (3): 247–265.
+
+Munongo, S., O. A. Akanbi, and Z. Robinson. 2017. “Do Tax Incentives Matter for Investment? A Literature Review.” Business and Economic Horizons 13 (2): 152–168.
+
+Narula, R., and J. H. Dunning. 2000. “Industrial Development, Globalization and Multinational Enterprises: New Realities for Developing Countries.” Oxford Development Studies 28 (2): 141–167.
+
+Nee, V., and S. Opper. 2010. “Political Capital in a Market Economy.” Social Forces 88 (5): 2105–2132.
+
+Ngo, M. N., H. H. Cao, L. N. Nguyen, and T. N. Nguyen. 2020. “Determinants of Foreign Direct Investment: Evidence from Vietnam.” The Journal of Asian Finance, Economics and Business 7 (6): 173–183.
+
+Ngo, V. D., T. B. T. Dao, and N. T. Nguyen. 2018. “Economic and Non-Economic Determinants of FDI Inflows in Vietnam: A Sub-National Analysis.” Post-Communist Economies 30 (5): 693–712.
+
+Nguyen T.T., A. Kokko, K. Nilsson Hakkala 2025. A descriptive analysis of firm development in Vietnam between 2000 and 2020, unpublished.
+
+Nguyen, C. P., C. Schinckus, and T. D. Su. 2023. “Determinants of Economic Complexity: A Global Evidence of Economic Integration, Institutions, and Internet Usage.” Journal of the Knowledge Economy 14 (4): 4195–4215.
+
+Nguyen, T. N. A. 2016. “Regional Determinants of FDI Location in Vietnam.” Journal of Economics and Development 18 (1): 19–37.
+
+
+Nielsen, B. B., C. G. Asmussen, and C. D. Weatherall. 2017. “The Location Choice of Foreign Direct Investments: Empirical Evidence and Methodological Challenges.” Journal of World Business 52 (1): 62–82.
+
+North, D. C. 1990. Institutions, Institutional Change and Economic Performance. Cambridge: Cambridge University Press.
+
+North, D. C. 1994. “Economic Performance through Time.” The American Economic Review 84(3): 359–368.
+
+Olarreaga, M. 1999. “Endogenous Tariffs in the Presence of Foreign Capital.” Journal of Economic Integration 14 (4): 606–624.
+
+Ostrom, E. 2010. “Beyond Markets and States: Polycentric Governance of Complex Economic Systems.” American Economic Review 100 (3): 641–672.
+
+Pérez-Balsalobre, S., C. Llano Verduras, and J. Díaz-Lanchas. 2019. Measuring Subnational Economic Complexity: An Application with Spanish Data. JRC Working Papers on Territorial Modelling and Analysis No. 05/2019. European Commission, Joint Research Centre.
+
+Porter, M. 2003. "The Economic Performance of Regions." Regional Studies 37 (6-7): 545-546.
+
+Pham, H. M. 2002. “Regional Economic Development and Foreign Direct Investment Flows in Vietnam, 1988–98.” Journal of the Asia Pacific Economy 7 (2): 182–202.
+
+Pinheiro, F. L., P. A. Balland, R. Boschma, and D. Hartmann. 2025. “The Dark Side of the Geography of Innovation: Relatedness, Complexity and Regional Inequality in Europe.” Regional Studies 59 (1): 2106362.
+
+Pintar, N., and T. Scherngell. 2022. “The Complex Nature of Regional Knowledge Production: Evidence on European Regions.” Research Policy 51 (8): 104170.
+
+Poncet, S., and F. Starosta de Waldemar. 2012. Export Upgrading and Growth: The Prerequisite of Domestic Embeddedness. FERDI Working Paper No. 57. Fondation Pour Les Etudes Et Recherches Sur Le Développement International.
+
+Rodrik, D., A. Subramanian, and F. Trebbi. 2004. “Institutions Rule: The Primacy of Institutions over Geography and Integration in Economic Development.” Journal of Economic Growth 9 (2): 131–165.
+
+Roodman, D. 2009. A Note on the Theme of Too Many Instruments. Oxford Bulletin of Economics and Statistics 71 (1): 135-158.
+
+Sabir, S., A. Rafique, and K. Abbas. 2019. “Institutions and FDI: Evidence from Developed and Developing Countries.” Financial Innovation 5 (1): 1–20.
+
+Sethi, D., W. Q. Judge, and Q. Sun. 2011. “FDI Distribution within China: An Integrative Conceptual Framework for Analyzing Intra-Country FDI Variations.” Asia Pacific Journal of Management 28 (2): 325–352.
+
+Slattery, C., and O. Zidar. 2020. "Evaluating State and Local Business Incentives." Journal of Economic Perspectives 34 (2): 90–118.
+
+Steven, L., In, S.K, S. M., and Feng, Z. Package "concordance" in R. https://cran.r-project.org/web/packages/concordance/concordance.pdf
+
+Thong, T. N., A. Kokko, and K. N. Hakkala. 2025. A Descriptive Analysis of Firm Development in Vietnam Between 2000 and 2020. ADB Working Paper. Asian Development Bank.
+
+Török, I., J. Benedek, and M. Gómez-Zaldívar. 2022. “Quantifying Subnational Economic Complexity: Evidence from Romania.” Sustainability 14 (17): 10586.
+
+Tran, T. B., R. Q. Grafton, and T. Kompas. 2009. “Institutions Matter: The Case of Vietnam.” The Journal of Socio-Economics 38 (1): 1–12.
+
+Thong, T.N, Kokko A., Nguyen, T.H.D, Trang, P.T.T, Thang, T.T. 2025. A New Approach to Identifying Productive Capacity Gaps Between Firm Groups. Working paper.
+
+Turco, A. L., and D. Maggioni. 2022. “The Knowledge and Skill Content of Production Complexity.” Research Policy 51 (8): 104059.
+
+Van Dam, A., and Frenken, K. 2022. Variety, Complexity and Economic Development. Research Policy 51(8): 103949.
+
+Venables, A. J. 1996. “Equilibrium Locations of Vertically Linked Industries.” International Economic Review 37 (2): 341–359.
+
+Vu, T. V. 2022. “Does Institutional Quality Foster Economic Complexity? The Fundamental Drivers of Productive Capabilities.” Empirical Economics 63 (3): 1571–1604.
+
+Wang, J. 2013. “The Economic Impact of Special Economic Zones: Evidence from Chinese Municipalities.” Journal of Development Economics 101: 133–147.
+
+Wei, S. J. 2000. "How Taxing Is Corruption on International Investors?" Review of Economics and Statistics 82 (1): 1–11.
+
+Williamson, C. R. 2009. “Informal Institutions Rule: Institutional Arrangements and Economic Performance.” Public Choice 139 (3): 371–387.
+
+Wooldridge, J. M. 2010. Econometric Analysis of Cross Section and Panel Data. 2nd ed. Cambridge, MA: MIT Press.
+
+World Bank. 2017. Special Economic Zones: An Operational Review of Their Impacts. Washington, DC: World Bank.
+
+Zaheer, S. 1995. “Overcoming the Liability of Foreignness.” Academy of Management Journal 38(2): 341–363.
+
+Zhou, C., A. Delios, and J. Y. Yang. 2002. “Locational Determinants of Japanese FDI in China.” Asia Pacific Journal of Management 19 (1): 63–86.
+
+Zhu, S., and X. Fu. 2013. "Drivers of Export Upgrading." World Development 51: 221–233.
+
+Zhu, S., and R. Li. 2017. “Economic Complexity, Human Capital and Economic Growth: Empirical Research Based on Cross-Country Panel Data.” Applied Economics 49 (38): 3815–3828.
+
+## Business Climate, Economic Complexity, and Performance at the Provincial Level in Viet Nam
+
+This study investigates how subnational institutions impact the manufacturing sector in Viet Nam, comparing foreign-invested and domestic firms. Using data from 63 provinces, results reveal that institutional changes—measured by the Provincial Competitiveness Index—have little effect on economic complexity, revenues, employment, or productivity. Surprisingly, weaker governance in certain areas sometimes correlates with better firm outcomes. The weak relationship between institutions and firm performance is attributed to the dominance of foreign-invested companies and their limited engagement with local firms.
+
+## About the Asian Development Bank
+
+ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Working with its members and partners to solve complex challenges together, ADB harnesses innovative financial tools and strategic partnerships to transform lives, build quality infrastructure, and safeguard our planet. Founded in 1966, ADB is owned by 69 members—50 from the region.

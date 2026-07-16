@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260717/0004-OECD_Artificial-intelligence-and-open-finance_be99bf39/mineru_raw/images/0b938cf724795f17e13eef3bb10645e8312d58f2ccc43aeaf0936d0d353b9df5.jpg",
+    "path": "kc_translated_reports/institutions/260717/04-0004-OECD_Artificial-intelligence-and-open-finance_be99bf39/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.33,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260717/0004-OECD_Artificial-intelligence-and-open-finance_be99bf39/mineru_raw/images/c8a3301bd6e2c3cfdd516b717788591acb39df44cf6d9cc778792a104f9f70c5.jpg",
+    "path": "kc_translated_reports/institutions/260717/04-0004-OECD_Artificial-intelligence-and-open-finance_be99bf39/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.26,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260717/0004-OECD_Artificial-intelligence-and-open-finance_be99bf39/mineru_raw/images/eef81967da86595b05da3c1fd81905d3cd6d5abc8c8be4482f76589f0fcf7a13.jpg",
+    "path": "kc_translated_reports/institutions/260717/04-0004-OECD_Artificial-intelligence-and-open-finance_be99bf39/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.31,large"
+  }
+]
