@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0001-86-NOM-Asia Insights-Many AeJ central banks sold USD in June following the FOMC-s perceived hawkishness-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0002-87-MS-Yili Industrial-600887-1H26 On Track- Raw Milk Supply-Demand Improving-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0003-88-UBS-China Battery Materials-Hungary battery supply chain investment risk assessment-Expert call takeaway-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0004-89-UBS-China Chemical New Materials Sector-Price hikes are the potential catalysts for MLCC electronic gas wet chemicals in H226-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0005-90-NOM-FX Insights-Thoughts on USD-260715.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

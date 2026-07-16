@@ -1,0 +1,428 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0001-86-NOM-Asia Insights-Many AeJ central banks sold USD in June following the FOMC-s perceived hawkishness-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "亚洲央行6月都在悄悄",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济体->地区 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：NOM亚洲洞察，多家亚洲央行6月跟随FOMC偏鹰立场卖出USD",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-86-NOM-Asia Insights-Many AeJ central banks sold USD in June following the FOMC-s perceived hawkishness-260714.pdf",
+      "cleaned_source_title": "NOM-Asia Insights-Many AeJ central banks sold USD in June following the FOMC-s perceived hawkishness",
+      "institution_name": "NOM",
+      "required_terms": [
+        "USD",
+        "FOMC"
+      ],
+      "deterministic_fallback": "NOM：USD与FOMCAsiaInsightsManyAeJcentr",
+      "raw_candidates": [
+        "NOM亚洲洞察：多家亚洲央行6月跟随FOMC偏鹰立场卖出USD",
+        "NOM亚洲洞察：6月亚洲央行卖出USD规模分化，韩印泰三国最受关注",
+        "NOM亚洲洞察：韩元贬值2.9%央行反买USD，亚洲央行6月干预现反常分化"
+      ],
+      "cleaned_candidates": [
+        "NOM：NOM亚洲洞察，多家亚洲央行6月跟随FOMC偏鹰立场卖出USD",
+        "NOM：NOM亚洲洞察，6月亚洲央行卖出USD规模分化，韩印泰三国最受关注",
+        "NOM：NOM亚洲洞察，韩元贬值2.9%央行反买USD",
+        "NOM：USD与FOMCAsiaInsightsManyAeJcentr"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "NOM：NOM亚洲洞察，6月亚洲央行卖出USD规模分化，韩印泰三国最受关注",
+          "reasons": [
+            "missing_required_terms=FOMC",
+            "anchor_coverage=0.44"
+          ]
+        },
+        {
+          "title": "NOM：NOM亚洲洞察，韩元贬值2.9%央行反买USD",
+          "reasons": [
+            "missing_required_terms=FOMC",
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：USD与FOMCAsiaInsightsManyAeJcentr",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：NOM亚洲洞察，多家亚洲央行6月跟随FOMC偏鹰立场卖出USD",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "NOM：NOM亚洲洞察，多家亚洲央行6月跟随FOMC偏鹰立场卖出USD"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0002-87-MS-Yili Industrial-600887-1H26 On Track- Raw Milk Supply-Demand Improving-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "伊利半年报解读",
+    "cover_subtitle": "原奶供需接近平衡，促销压力缓解",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：伊利股份1H26符合预期-原奶供需改善",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-87-MS-Yili Industrial-600887-1H26 On Track- Raw Milk Supply-Demand Improving-260714.pdf",
+      "cleaned_source_title": "MS-Yili Industrial-600887-1H26 On Track- Raw Milk Supply-Demand Improving",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：YiliIndustrial6008871H26",
+      "raw_candidates": [
+        "伊利股份1H26符合预期-原奶供需改善",
+        "伊利股份1H26符合预期-原奶供需接近平衡",
+        "伊利股份1H26符合预期-原奶供需接近平衡，竞争格局重塑"
+      ],
+      "cleaned_candidates": [
+        "MS：伊利股份1H26符合预期-原奶供需改善",
+        "MS：伊利股份1H26符合预期-原奶供需接近平衡",
+        "MS：伊利股份1H26符合预期-原奶供需接近平衡，竞争格局重塑",
+        "MS：YiliIndustrial6008871H26"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "MS：YiliIndustrial6008871H26",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：伊利股份1H26符合预期-原奶供需改善",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "MS：伊利股份1H26符合预期-原奶供需改善"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0003-88-UBS-China Battery Materials-Hungary battery supply chain investment risk assessment-Expert call takeaway-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "匈牙利电池投资：新规",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "UBS：中国电池材料-匈牙利电池供应链投资风险评估-专家电话会议要点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-88-UBS-China Battery Materials-Hungary battery supply chain investment risk assessment-Expert call takeaway-260714.pdf",
+      "cleaned_source_title": "UBS-China Battery Materials-Hungary battery supply chain investment risk assessment-Expert call takeaway",
+      "institution_name": "UBS",
+      "required_terms": [],
+      "deterministic_fallback": "UBS：中国BatteryMaterialsHungarybattery",
+      "raw_candidates": [
+        "中国电池材料-匈牙利电池供应链投资风险评估-专家电话会议要点",
+        "中国电池材料匈牙利投资：存量风险可控，增量窗口收窄",
+        "中国电池材料匈牙利投资：新产能窗口收窄，环保合规成硬门槛"
+      ],
+      "cleaned_candidates": [
+        "UBS：中国电池材料-匈牙利电池供应链投资风险评估-专家电话会议要点",
+        "UBS：中国电池材料匈牙利投资，存量风险可控，增量窗口收窄",
+        "UBS：中国电池材料匈牙利投资，新产能窗口收窄，环保合规成硬门槛",
+        "UBS：中国BatteryMaterialsHungarybattery"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "UBS：中国电池材料匈牙利投资，存量风险可控，增量窗口收窄",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：中国电池材料匈牙利投资，新产能窗口收窄，环保合规成硬门槛",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：中国BatteryMaterialsHungarybattery",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "UBS：中国电池材料-匈牙利电池供应链投资风险评估-专家电话会议要点",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "UBS：中国电池材料-匈牙利电池供应链投资风险评估-专家电话会议要点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0004-89-UBS-China Chemical New Materials Sector-Price hikes are the potential catalysts for MLCC electronic gas wet chemicals in H226-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "MLCC材料涨价，谁",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "UBS：中国化工新材料-MLCC涨价是H2催化剂",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-89-UBS-China Chemical New Materials Sector-Price hikes are the potential catalysts for MLCC electronic gas wet chemicals in H226-260714.pdf",
+      "cleaned_source_title": "UBS-China Chemical New Materials Sector-Price hikes are the potential catalysts for MLCC electronic gas wet chemicals in H226",
+      "institution_name": "UBS",
+      "required_terms": [
+        "MLCC"
+      ],
+      "deterministic_fallback": "UBS：MLCC中国ChemicalNewMaterialsSe",
+      "raw_candidates": [
+        "UBS：中国化工新材料-MLCC涨价是H2催化剂",
+        "UBS：MLCC材料涨价弹性高于器件-中国化工新材料H2催化剂",
+        "UBS：MLCC涨价链利润不均-材料环节比器件更值得关注"
+      ],
+      "cleaned_candidates": [
+        "UBS：中国化工新材料-MLCC涨价是H2催化剂",
+        "UBS：MLCC材料涨价弹性高于器件-中国化工新材料H2催化剂",
+        "UBS：MLCC涨价链利润不均-材料环节比器件更值得关注",
+        "UBS：MLCC中国ChemicalNewMaterialsSe"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "UBS：MLCC涨价链利润不均-材料环节比器件更值得关注",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：MLCC中国ChemicalNewMaterialsSe",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "UBS：中国化工新材料-MLCC涨价是H2催化剂",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "UBS：中国化工新材料-MLCC涨价是H2催化剂"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__60x70oj/pdfs/0005-90-NOM-FX Insights-Thoughts on USD-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "美元真的到拐点了？盯",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济体->地区 x1",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：FXInsightsThoughtsonUSD",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-90-NOM-FX Insights-Thoughts on USD-260715.pdf",
+      "cleaned_source_title": "NOM-FX Insights-Thoughts on USD",
+      "institution_name": "NOM",
+      "required_terms": [
+        "FX",
+        "USD"
+      ],
+      "deterministic_fallback": "NOM：FXInsightsThoughtsonUSD",
+      "raw_candidates": [
+        "NOMFX洞察-对美元的思考",
+        "NOMFX洞察-美元拐点未到，三个变量决定方向",
+        "NOMFX洞察-美元拐点未到，6月核心CPI环比0%低于预期"
+      ],
+      "cleaned_candidates": [
+        "NOM：FXInsightsThoughtsonUSD",
+        "NOM：NOMFX洞察-对美元的思考",
+        "NOM：NOMFX洞察-美元拐点未到，三个变量决定方向",
+        "NOM：NOMFX洞察-美元拐点未到，6月核心CPI环比0%低于预期"
+      ],
+      "faithful_candidate_missing_terms": [
+        "USD"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "NOM：NOMFX洞察-对美元的思考",
+          "reasons": [
+            "missing_required_terms=USD",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：NOMFX洞察-美元拐点未到，三个变量决定方向",
+          "reasons": [
+            "missing_required_terms=USD",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：NOMFX洞察-美元拐点未到，6月核心CPI环比0%低于预期",
+          "reasons": [
+            "missing_required_terms=USD",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：FXInsightsThoughtsonUSD",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "NOM：FXInsightsThoughtsonUSD"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
