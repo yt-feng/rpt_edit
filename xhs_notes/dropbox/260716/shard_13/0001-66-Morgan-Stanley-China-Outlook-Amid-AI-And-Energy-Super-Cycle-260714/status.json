@@ -1,0 +1,96 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0001-66-MS-China Outlook Amid AI And Energy Super Cycle-260714.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "中国AI+能源双周期",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "通缩->价格变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：中国AI与能源双超级周期，出口份额料升至16.5%",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-66-MS-China Outlook Amid AI And Energy Super Cycle-260714.pdf",
+    "cleaned_source_title": "MS-China Outlook Amid AI And Energy Super Cycle",
+    "institution_name": "MS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "MS：中国展望AmidAI和能源SuperCycle",
+    "raw_candidates": [
+      "中国AI与能源超级周期展望",
+      "中国AI与能源双超级周期：出口份额料升至16.5%",
+      "中国AI与能源超级周期：宏观K型分化加深"
+    ],
+    "cleaned_candidates": [
+      "MS：中国AI与能源超级周期展望",
+      "MS：中国AI与能源双超级周期，出口份额料升至16.5%",
+      "MS：中国AI与能源超级周期，宏观K型分化加深",
+      "MS：中国展望AmidAI和能源SuperCycle"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "MS：中国展望AmidAI和能源SuperCycle",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      }
+    ],
+    "selected_title": "MS：中国AI与能源双超级周期，出口份额料升至16.5%",
+    "selection_reason": "supported_hook",
+    "hook_signals": {
+      "added_numbers": [
+        "16.5"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "MS：中国AI与能源双超级周期，出口份额料升至16.5%"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "445",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

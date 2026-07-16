@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0001-66-MS-China Outlook Amid AI And Energy Super Cycle-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0002-67-MS-China Yangtze Power Co.-600900-SG NDR Key Takeaways-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0003-68-MS-Greater China Technology Hardware-Monthly Databook- No change for 3Q iPhone iPad builds-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0004-69-MS-China Tourism Group Duty Free-1880.HK-2Q26 preliminary results- sequentially weaker as expected-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0005-70-MS-Haier Smart Home Co Ltd-600690-Operational Update- Improvement in 2Q26- China-s Trend in 3Q26 Key to Watch-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

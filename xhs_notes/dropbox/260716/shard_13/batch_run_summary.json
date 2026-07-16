@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 99,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 13,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/66-MS-China Outlook Amid AI And Energy Super Cycle-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0001-66-MS-China Outlook Amid AI And Energy Super Cycle-260714.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/67-MS-China Yangtze Power Co.（600900）SG NDR Key Takeaways-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0002-67-MS-China Yangtze Power Co.-600900-SG NDR Key Takeaways-260714.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/68-MS-Greater China Technology Hardware：Monthly Databook： No change for 3Q iPhone iPad builds-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0003-68-MS-Greater China Technology Hardware-Monthly Databook- No change for 3Q iPhone iPad builds-260714.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/69-MS-China Tourism Group Duty Free（1880.HK）2Q26 preliminary results： sequentially weaker as expected-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0004-69-MS-China Tourism Group Duty Free-1880.HK-2Q26 preliminary results- sequentially weaker as expected-260714.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/70-MS-Haier Smart Home Co Ltd（600690）Operational Update： Improvement in 2Q26； China's Trend in 3Q26 Key to Watch-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0005-70-MS-Haier Smart Home Co Ltd-600690-Operational Update- Improvement in 2Q26- China-s Trend in 3Q26 Key to Watch-260714.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

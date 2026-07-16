@@ -1,0 +1,91 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qpfw2h74/pdfs/0005-70-MS-Haier Smart Home Co Ltd-600690-Operational Update- Improvement in 2Q26- China-s Trend in 3Q26 Key to Watch-260714.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "海尔Q2回暖，下半年",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：海尔智家运营更新，二季度改善，三季度中国趋势是关键",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-70-MS-Haier Smart Home Co Ltd-600690-Operational Update- Improvement in 2Q26- China-s Trend in 3Q26 Key to Watch-260714.pdf",
+    "cleaned_source_title": "MS-Haier Smart Home Co Ltd-600690-Operational Update- Improvement in 2Q26- China-s Trend in 3Q26 Key to Watch",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：HaierSmartHomeCoLtd600690",
+    "raw_candidates": [
+      "海尔智家运营更新：二季度改善，三季度中国趋势是关键",
+      "海尔智家：二季度中国空调双位数增长，三季度趋势成关键变量",
+      "海尔智家：最困难季度或已过去，三季度中国市场走向才是真正变量"
+    ],
+    "cleaned_candidates": [
+      "MS：海尔智家运营更新，二季度改善，三季度中国趋势是关键",
+      "MS：海尔智家，二季度中国空调双位数增长，三季度趋势成关键变量",
+      "MS：海尔智家，最困难季度或已过去",
+      "MS：HaierSmartHomeCoLtd600690"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "MS：海尔智家，二季度中国空调双位数增长，三季度趋势成关键变量",
+        "reasons": [
+          "anchor_coverage=0.48"
+        ]
+      },
+      {
+        "title": "MS：海尔智家，最困难季度或已过去",
+        "reasons": [
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：HaierSmartHomeCoLtd600690",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：海尔智家运营更新，二季度改善，三季度中国趋势是关键",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "MS：海尔智家运营更新，二季度改善，三季度中国趋势是关键"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "561",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
