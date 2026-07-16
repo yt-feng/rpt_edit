@@ -1,0 +1,73 @@
+{
+  "date_folder": "260717",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 1,
+  "selected_count": 1,
+  "include_institutions": [],
+  "institution_filtered_count": 0,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "image_upload_delay_seconds": 3.0,
+  "article_delay_seconds": 12.0,
+  "draft_delay_seconds": 90.0,
+  "draft_verify_delay_seconds": 8.0,
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "title_log": "wechat_drafts/ark/260717/wechat_title_log.json",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit82oSmGCkNU1tTFrPoP2SSB0LwQjGacXbE-J8g2wJ3Ax7",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 1,
+      "payload_bytes": 7115,
+      "payload": "wechat_drafts/ark/260717/draft_payload_01.json",
+      "titles": [
+        "木头姐ARK：ARK，创业成本下降美国初创企业年增550万"
+      ],
+      "wechat_titles": [
+        "木头姐ARK：ARK，创业成本下降美国初创企业年增550万"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 1,
+        "expected_article_count": 1,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ¨å¤´å§ARKï¼ARKï¼åä¸ææ¬ä¸éç¾å½ååä¼ä¸å¹´å¢550ä¸"
+        ],
+        "create_time": 1784245628,
+        "update_time": 1784245628
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "木头姐ARK：ARK，创业成本下降美国初创企业年增550万",
+      "wechat_title": "木头姐ARK：ARK，创业成本下降美国初创企业年增550万",
+      "header_title": "创业成本下降-美国初创企业年增550万，线上化消除了地理约束",
+      "digest": "ARK，创业成本下降-美国初创企业年增550万，线上化消除了地理约束。",
+      "institution_name": "",
+      "source_report_name": "ARK The-Falling-Cost-Of-Entrepreneurship 97ff517988ef0dc0",
+      "report_dir": "kc_translated_reports/ark/260717/01-0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+      "content_chars": 4494,
+      "content_bytes": 6564,
+      "visible_text_chars": 888,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260717/_assets/article_01_cover.jpg"
+    }
+  ]
+}

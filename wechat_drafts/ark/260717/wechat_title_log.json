@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "date_folder": "260717",
+  "source": "kc_translated_reports/ark",
+  "generated_at_utc": "2026-07-16T23:47:17Z",
+  "article_count": 1,
+  "uploaded_count": 1,
+  "articles": [
+    {
+      "source_report_name": "ARK The-Falling-Cost-Of-Entrepreneurship 97ff517988ef0dc0",
+      "institution_name": "",
+      "title_before_upload": "木头姐ARK：ARK，创业成本下降美国初创企业年增550万",
+      "final_wechat_title": "木头姐ARK：ARK，创业成本下降美国初创企业年增550万",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/ark/260717/01-0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+      "generation_decision": {
+        "source_filename": "0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+        "cleaned_source_title": "0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+        "institution_name": "木头姐ARK",
+        "required_terms": [
+          "ARK"
+        ],
+        "deterministic_fallback": "木头姐ARK：0001ARKTheFallingCos",
+        "raw_candidates": [
+          "ARK：创业成本下降",
+          "ARK：创业成本下降-美国初创企业年增550万",
+          "ARK：创业成本下降-AI让1-2人完成5-10人工作"
+        ],
+        "cleaned_candidates": [
+          "木头姐ARK：ARK，创业成本下降",
+          "木头姐ARK：ARK，创业成本下降-美国初创企业年增550万",
+          "木头姐ARK：ARK，创业成本下降AI让12人完成510人工作",
+          "木头姐ARK：0001ARKTheFallingCos"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "rejected_candidates": [
+          {
+            "title": "木头姐ARK：ARK，创业成本下降AI让12人完成510人工作",
+            "reasons": [
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "木头姐ARK：0001ARKTheFallingCos",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "木头姐ARK：ARK，创业成本下降-美国初创企业年增550万",
+        "selection_reason": "supported_hook",
+        "hook_signals": {
+          "added_numbers": [
+            "550"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "final_title_after_wording_guard": "木头姐ARK：ARK，创业成本下降-美国初创企业年增550万"
+      }
+    }
+  ]
+}
