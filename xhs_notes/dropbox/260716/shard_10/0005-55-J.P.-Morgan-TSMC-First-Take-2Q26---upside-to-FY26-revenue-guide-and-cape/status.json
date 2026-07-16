@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__fmb753i/pdfs/0005-55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations-260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "台积电2026：营收",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "恶化->出现变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：TSMCFirstTake2Q26upsidetoFY26",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations-260716.pdf",
+    "cleaned_source_title": "JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations",
+    "institution_name": "JPM",
+    "required_terms": [
+      "TSMC"
+    ],
+    "deterministic_fallback": "JPM：TSMCFirstTake2Q26upsidetoFY26",
+    "raw_candidates": [
+      "台积电2Q26快评：营收指引与资本支出上调，毛利率略低于预期",
+      "台积电2Q26：营收指引上修至40%以上，资本支出600-640亿美元，毛利率67.7%低于预期",
+      "台积电2Q26：毛利率焦虑被夸大，营业利润率首破60%，营收指引上修至40%以上"
+    ],
+    "cleaned_candidates": [
+      "JPM：TSMCFirstTake2Q26upsidetoFY26",
+      "JPM：台积电2Q26快评，营收指引与资本支出上调，毛利率略低于预期",
+      "JPM：台积电2Q26，营收指引上修至40%以上，资本支出600",
+      "JPM：台积电2Q26，毛利率焦虑被夸大，营业利润率首破60%"
+    ],
+    "faithful_candidate_missing_terms": [
+      "TSMC"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "JPM：台积电2Q26快评，营收指引与资本支出上调，毛利率略低于预期",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：台积电2Q26，营收指引上修至40%以上，资本支出600",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：台积电2Q26，毛利率焦虑被夸大，营业利润率首破60%",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：TSMCFirstTake2Q26upsidetoFY26",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "JPM：TSMCFirstTake2Q26upsidetoFY26"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "471",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 99,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 10,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/51-JPM-JCDecaux（JCDX.PA） Solid Trading in Europe， Middle East Stabilization， and Incremental World Cup Revenues ~ A Setup for Further Upgrades； Placing on Positi.pdf",
+          "batch_file": "/tmp/pdf_batch_001__fmb753i/pdfs/0001-51-JPM-JCDecaux-JCDX.PA- Solid Trading in Europe- Middle East Stabilization- and Incremental World Cup Revenues - A Setup for Further Upgrades- Placing on Positi.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/52-JPM-Long Term Strategy：Which equity income strategy long~term investors should adopt？-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001__fmb753i/pdfs/0002-52-JPM-Long Term Strategy-Which equity income strategy long-term investors should adopt--260714.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/53-JPM-Johnson & Johnson（JNJ.US）2Q Takeaways： Numbers Moving Higher with Pharma Offsetting Slower Start for Medtech-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001__fmb753i/pdfs/0003-53-JPM-Johnson - Johnson-JNJ.US-2Q Takeaways- Numbers Moving Higher with Pharma Offsetting Slower Start for Medtech-260715.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/54-JPM-Property Data Monitor：Mainland China： Real~time secondary sales moderated； HK： Link REIT starts buyback-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001__fmb753i/pdfs/0004-54-JPM-Property Data Monitor-Mainland China- Real-time secondary sales moderated- HK- Link REIT starts buyback-260714.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex; GMs slightly lower than market expectations-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001__fmb753i/pdfs/0005-55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations-260716.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

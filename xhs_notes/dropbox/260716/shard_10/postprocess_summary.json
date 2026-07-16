@@ -1,0 +1,483 @@
+[
+  {
+    "item": "0001-51-J.P.-Morgan-JCDecaux-JCDX.PA--Solid-Trading-in-Europe--Middle-East-Stabi",
+    "source_pdf": "/tmp/pdf_batch_001__fmb753i/pdfs/0001-51-JPM-JCDecaux-JCDX.PA- Solid Trading in Europe- Middle East Stabilization- and Incremental World Cup Revenues - A Setup for Further Upgrades- Placing on Positi.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "户外广告的转折点，来",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：JCDecauxJCDX.PASolidTr",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-51-JPM-JCDecaux-JCDX.PA- Solid Trading in Europe- Middle East Stabilization- and Incremental World Cup Revenues - A Setup for Further Upgrades- Placing on Positi.pdf",
+      "cleaned_source_title": "JPM-JCDecaux-JCDX.PA- Solid Trading in Europe- Middle East Stabilization- and Incremental World Cup Revenues - A Setup for Further Upgrades- Placing on Positi",
+      "institution_name": "JPM",
+      "required_terms": [
+        "JCDX",
+        "PA"
+      ],
+      "deterministic_fallback": "JPM：JCDecauxJCDX.PASolidTr",
+      "raw_candidates": [
+        "德高欧洲交易稳健-中东企稳-世界杯增量收入-进一步上调空间-列入正面观察",
+        "德高数字化占比突破50%-中东修复-世界杯增量-上半年营业利润预期超市场3%",
+        "德高中国外所有区域改善-中东好于预期-世界杯催化-三重力量驱动上行周期"
+      ],
+      "cleaned_candidates": [
+        "JPM：JCDecauxJCDX.PASolidTr",
+        "JPM：德高欧洲交易稳健中东企稳世界杯增量收入进一步上调空间列入正面",
+        "JPM：德高数字化占比突破50%中东修复世界杯增量上半年营业利润预期",
+        "JPM：德高中国外所有区域改善中东好于预期世界杯催化三重力量驱动上行"
+      ],
+      "faithful_candidate_missing_terms": [
+        "JCDX",
+        "PA"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "JPM：德高欧洲交易稳健中东企稳世界杯增量收入进一步上调空间列入正面",
+          "reasons": [
+            "missing_required_terms=JCDX,PA",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：德高数字化占比突破50%中东修复世界杯增量上半年营业利润预期",
+          "reasons": [
+            "missing_required_terms=JCDX,PA",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：德高中国外所有区域改善中东好于预期世界杯催化三重力量驱动上行",
+          "reasons": [
+            "missing_required_terms=JCDX,PA",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：JCDecauxJCDX.PASolidTr",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：JCDecauxJCDX.PASolidTr"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-52-J.P.-Morgan-Long-Term-Strategy-Which-equity-income-strategy-long-term-in",
+    "source_pdf": "/tmp/pdf_batch_001__fmb753i/pdfs/0002-52-JPM-Long Term Strategy-Which equity income strategy long-term investors should adopt--260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "红利策略，该升级了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "不好|不行->需要继续观察 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：长期策略，长期投资者应采纳哪种权益收入策略",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-52-JPM-Long Term Strategy-Which equity income strategy long-term investors should adopt--260714.pdf",
+      "cleaned_source_title": "JPM-Long Term Strategy-Which equity income strategy long-term investors should adopt",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LongTerm策略Whichequityincome策略",
+      "raw_candidates": [
+        "长期策略：长期投资者应采纳哪种权益收入策略",
+        "JPM：股息因子相关性骤降，长期投资者需告别高股息迷信",
+        "JPM：未来十年股息策略需转向股息增长，告别高股息迷信"
+      ],
+      "cleaned_candidates": [
+        "JPM：长期策略，长期投资者应采纳哪种权益收入策略",
+        "JPM：股息因子相关性骤降，长期投资者需告别高股息迷信",
+        "JPM：未来十年股息策略需转向股息增长，告别高股息迷信",
+        "JPM：LongTerm策略Whichequityincome策略"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "JPM：股息因子相关性骤降，长期投资者需告别高股息迷信",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：未来十年股息策略需转向股息增长，告别高股息迷信",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：LongTerm策略Whichequityincome策略",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：长期策略，长期投资者应采纳哪种权益收入策略",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：长期策略，长期投资者应采纳哪种权益收入策略"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-53-J.P.-Morgan-Johnson---Johnson-JNJ.US-2Q-Takeaways--Numbers-Moving-Higher",
+    "source_pdf": "/tmp/pdf_batch_001__fmb753i/pdfs/0003-53-JPM-Johnson - Johnson-JNJ.US-2Q Takeaways- Numbers Moving Higher with Pharma Offsetting Slower Start for Medtech-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "强生二季度：药好卖，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：JohnsonJohnsonJNJ.US2Q",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-53-JPM-Johnson - Johnson-JNJ.US-2Q Takeaways- Numbers Moving Higher with Pharma Offsetting Slower Start for Medtech-260715.pdf",
+      "cleaned_source_title": "JPM-Johnson - Johnson-JNJ.US-2Q Takeaways- Numbers Moving Higher with Pharma Offsetting Slower Start for Medtech",
+      "institution_name": "JPM",
+      "required_terms": [
+        "JNJ",
+        "US"
+      ],
+      "deterministic_fallback": "JPM：JohnsonJohnsonJNJ.US2Q",
+      "raw_candidates": [
+        "强生2Q总结：药械增速分化，口服新药接棒生物药",
+        "强生2Q总结：Icotyde患者超1万，商业保险覆盖50%",
+        "强生2Q总结：口服新药接棒生物药，MedTech心血管逆风"
+      ],
+      "cleaned_candidates": [
+        "JPM：JohnsonJohnsonJNJ.US2Q",
+        "JPM：强生2Q总结，药械增速分化，口服新药接棒生物药",
+        "JPM：强生2Q总结，Icotyde患者超1万，商业保险覆盖50%",
+        "JPM：强生2Q总结，口服新药接棒生物药，MedTech心血管逆风"
+      ],
+      "faithful_candidate_missing_terms": [
+        "JNJ",
+        "US"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "JPM：强生2Q总结，药械增速分化，口服新药接棒生物药",
+          "reasons": [
+            "missing_required_terms=JNJ,US",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：强生2Q总结，Icotyde患者超1万，商业保险覆盖50%",
+          "reasons": [
+            "missing_required_terms=JNJ,US",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：强生2Q总结，口服新药接棒生物药，MedTech心血管逆风",
+          "reasons": [
+            "missing_required_terms=JNJ,US",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：JohnsonJohnsonJNJ.US2Q",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：JohnsonJohnsonJNJ.US2Q"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-54-J.P.-Morgan-Property-Data-Monitor-Mainland-China--Real-time-secondary-sa",
+    "source_pdf": "/tmp/pdf_batch_001__fmb753i/pdfs/0004-54-JPM-Property Data Monitor-Mainland China- Real-time secondary sales moderated- HK- Link REIT starts buyback-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "二手房热度在降，但一",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：HK与REIT地产DataMonitorMainland中国",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-54-JPM-Property Data Monitor-Mainland China- Real-time secondary sales moderated- HK- Link REIT starts buyback-260714.pdf",
+      "cleaned_source_title": "JPM-Property Data Monitor-Mainland China- Real-time secondary sales moderated- HK- Link REIT starts buyback",
+      "institution_name": "JPM",
+      "required_terms": [
+        "HK",
+        "REIT"
+      ],
+      "deterministic_fallback": "JPM：HK与REIT地产DataMonitorMainland中国",
+      "raw_candidates": [
+        "内地二手房量价走向关键平衡点-香港领展启动回购"
+      ],
+      "cleaned_candidates": [
+        "JPM：HK与REIT地产DataMonitorMainland中国",
+        "JPM：内地二手房量价走向关键平衡点-香港领展启动回购"
+      ],
+      "faithful_candidate_missing_terms": [
+        "HK",
+        "REIT"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "JPM：内地二手房量价走向关键平衡点-香港领展启动回购",
+          "reasons": [
+            "missing_required_terms=HK,REIT",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：HK与REIT地产DataMonitorMainland中国",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：HK与REIT地产DataMonitorMainland中国"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-55-J.P.-Morgan-TSMC-First-Take-2Q26---upside-to-FY26-revenue-guide-and-cape",
+    "source_pdf": "/tmp/pdf_batch_001__fmb753i/pdfs/0005-55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "台积电2026：营收",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：TSMCFirstTake2Q26upsidetoFY26",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations-260716.pdf",
+      "cleaned_source_title": "JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations",
+      "institution_name": "JPM",
+      "required_terms": [
+        "TSMC"
+      ],
+      "deterministic_fallback": "JPM：TSMCFirstTake2Q26upsidetoFY26",
+      "raw_candidates": [
+        "台积电2Q26快评：营收指引与资本支出上调，毛利率略低于预期",
+        "台积电2Q26：营收指引上修至40%以上，资本支出600-640亿美元，毛利率67.7%低于预期",
+        "台积电2Q26：毛利率焦虑被夸大，营业利润率首破60%，营收指引上修至40%以上"
+      ],
+      "cleaned_candidates": [
+        "JPM：TSMCFirstTake2Q26upsidetoFY26",
+        "JPM：台积电2Q26快评，营收指引与资本支出上调，毛利率略低于预期",
+        "JPM：台积电2Q26，营收指引上修至40%以上，资本支出600",
+        "JPM：台积电2Q26，毛利率焦虑被夸大，营业利润率首破60%"
+      ],
+      "faithful_candidate_missing_terms": [
+        "TSMC"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "JPM：台积电2Q26快评，营收指引与资本支出上调，毛利率略低于预期",
+          "reasons": [
+            "missing_required_terms=TSMC",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：台积电2Q26，营收指引上修至40%以上，资本支出600",
+          "reasons": [
+            "missing_required_terms=TSMC",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：台积电2Q26，毛利率焦虑被夸大，营业利润率首破60%",
+          "reasons": [
+            "missing_required_terms=TSMC",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：TSMCFirstTake2Q26upsidetoFY26",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：TSMCFirstTake2Q26upsidetoFY26"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
