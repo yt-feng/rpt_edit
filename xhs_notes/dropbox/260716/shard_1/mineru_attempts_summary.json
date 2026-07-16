@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_1spo1ldt/pdfs/0001-06-Bernstein-U.S. Restaurants-Best of Times- Worst of Times- US Restaurants-A Tale of Two Diners-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1spo1ldt/pdfs/0002-07-BofA-Largan Precision-3008.TT-Upgrade to Buy-compelling CPO-driven valuation and earnings upcycle from 2028E-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1spo1ldt/pdfs/0003-08-BofA-Electronics-Thailand-Thailand rides the 800VDC AI wave-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1spo1ldt/pdfs/0004-09-BofA-Asia Fund Manager Survey-Fed headwinds vs. AI tailwinds-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1spo1ldt/pdfs/0005-10-CITI-Dongshan Precision-002384-2Q26 Adj- NP Guidance In-line-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

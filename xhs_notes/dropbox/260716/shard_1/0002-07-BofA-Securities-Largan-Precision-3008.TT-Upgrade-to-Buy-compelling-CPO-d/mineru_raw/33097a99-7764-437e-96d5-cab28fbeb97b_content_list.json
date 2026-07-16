@@ -1,0 +1,2580 @@
+[
+    {
+        "type": "text",
+        "text": "Largan Precision",
+        "bbox": [
+            37,
+            65,
+            251,
+            90
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Upgrade to Buy: compelling CPO-driven valuation and earnings upcycle from 2028E",
+        "text_level": 1,
+        "bbox": [
+            35,
+            104,
+            637,
+            160
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Rating Change: BUY | PO: 5,600 TWD | Price: 4,345 TWD",
+        "bbox": [
+            35,
+            162,
+            388,
+            178
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Upgrade to Buy: Stronger long-term upside from CPO",
+        "text_level": 2,
+        "bbox": [
+            37,
+            199,
+            573,
+            218
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We upgrade Largan to Buy from Neutral on strong revenue/earnings upside from 2028E, led by its potential share gain at FA/FAU for CPO switches. We raise Largan's 2026-28E earnings by 1-13%, and lift our PO to NT\\$5,600 (25x 2028E P/E) from NT\\$2,900 (16x 2H26-1H27E P/E). We use 2028E to capture CPO's volume take-off, and our 25x target multiple is at its historical peak P/E, matches with last round's earnings upcycle. Given CPO is still at an early stage while optical interconnect is a long-term upcycle, we note the market is willing to look beyond 2028. Thus, we use SOTP for a sanity check on CPO's value into 2030, and derive a value of NT\\$5,641 per share by applying 30x P/E on CPO business (base case: 30% share at FA in Exhibit 9 and Exhibit 4).",
+        "bbox": [
+            35,
+            218,
+            624,
+            357
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CPO to drive 5-10% EPS upside in 2028E, 60%+ in 2030E",
+        "text_level": 2,
+        "bbox": [
+            35,
+            364,
+            614,
+            383
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We are more confident on Largan entering Nvidia's CPO supply chain. According to mgmt., Largan is engaging with more than one customer, progressing through certification (coming months), and capacity expansion (pilot line by 3Q26-end). Although Largan has no track record in datacom, we see edge is in high-precision optic alignment via automation and its partnership with CPO ecosystem (see FAU sector report). Our analysis shows 2028E EPS could see $5 - 10\\%$ upside vs 2026E from FA, assuming $20 - 30\\%$ share and $30 - 40\\%$ net margin (Exhibit 7). Into 2030E, under a bear/base/bull case analysis, earnings could expand by $24\\% / 63\\% / 184\\%$ vs 2028E, respectively (Exhibit 9).",
+        "bbox": [
+            35,
+            383,
+            624,
+            508
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Resilient smartphone business with iPhone spec upgrade",
+        "text_level": 2,
+        "bbox": [
+            37,
+            516,
+            607,
+            534
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Although the overall smartphone supply chain is under pressure amid memory price hikes, we view Largan as more resilient on iPhone's multi-year spec upgrade cycle and its leading position. We expect variable aperture on the Pro series to drive 30-50% main camera ASP upside in 2H26, while Largan should continue to benefit from rising MP or higher lens count in main/periscope cam into 2027-28.",
+        "bbox": [
+            35,
+            535,
+            624,
+            613
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/f0dc45b8cce00e3c287fbdcd9d8fb57b881e94a84b890e52f5c0259d451597fe.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "\\* For full definitions of iQmethod $^{SM}$ measures, see page 10."
+        ],
+        "table_body": "<table><tr><td>Estimates (Dec) (NT$)</td><td>2024A</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Net Income (Adjusted - mn)</td><td>25,915</td><td>21,275</td><td>25,049</td><td>26,929</td><td>30,226</td></tr><tr><td>EPS</td><td>191.2</td><td>156.9</td><td>184.8</td><td>198.6</td><td>223.0</td></tr><tr><td>EPS Change (YoY)</td><td>44.8%</td><td>-17.9%</td><td>17.7%</td><td>7.5%</td><td>12.2%</td></tr><tr><td>Consensus EPS (Visible Alpha)</td><td></td><td></td><td>186.93</td><td>205.34</td><td>220.05</td></tr><tr><td>Dividend / Share</td><td>97.5</td><td>80.0</td><td>94.2</td><td>101.3</td><td>113.7</td></tr><tr><td>Free Cash Flow / Share</td><td>153.2</td><td>103.0</td><td>179.2</td><td>214.4</td><td>244.6</td></tr><tr><td>Valuation (Dec)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>P/E</td><td>22.7x</td><td>27.7x</td><td>23.5x</td><td>21.9x</td><td>19.5x</td></tr><tr><td>Dividend Yield</td><td>2.2%</td><td>1.8%</td><td>2.2%</td><td>2.3%</td><td>2.6%</td></tr><tr><td>EV / EBITDA*</td><td>14.7x</td><td>14.2x</td><td>13.0x</td><td>11.7x</td><td>10.5x</td></tr><tr><td>Free Cash Flow Yield*</td><td>3.5%</td><td>2.3%</td><td>4.1%</td><td>4.9%</td><td>5.5%</td></tr></table>",
+        "bbox": [
+            42,
+            619,
+            620,
+            780
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This research report provides general information only. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or other persons without the express written consent of BofA.",
+        "bbox": [
+            35,
+            815,
+            596,
+            851
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": ">> Employed by a non-US affiliate of BofAS and is not registered/qualified as a research analyst under the FINRA rules.",
+        "bbox": [
+            37,
+            849,
+            578,
+            875
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Refer to \"Other Important Disclosures\" for information on certain BofA entities that take responsibility for the information herein in particular jurisdictions.",
+        "bbox": [
+            37,
+            873,
+            591,
+            896
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+        "bbox": [
+            37,
+            896,
+            566,
+            943
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Refer to important disclosures on page 11 to 13. Analyst Certification on page 8. Price Objective Basis/Risk on page 8. 12993351",
+        "bbox": [
+            37,
+            941,
+            598,
+            965
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "14 July 2026",
+        "text_level": 2,
+        "bbox": [
+            704,
+            199,
+            787,
+            214
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Equity",
+        "bbox": [
+            704,
+            219,
+            753,
+            236
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key Changes",
+        "text_level": 2,
+        "bbox": [
+            712,
+            257,
+            792,
+            272
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/27c2f4aad3bc3d17ae65e26a2fd677c903fbe8a08732b81a57613fa03bbb9703.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(NT$)</td><td>Previous</td><td>Current</td></tr><tr><td>Inv. Opinion</td><td>B-2-7</td><td>B-1-7</td></tr><tr><td>Inv. Rating</td><td>NEUTRAL</td><td>BUY</td></tr><tr><td>Price Obj.</td><td>2,900.00</td><td>5,600.00</td></tr><tr><td>2026E Rev (m)</td><td>64,699.9</td><td>67,599.2</td></tr><tr><td>2027E Rev (m)</td><td>67,560.1</td><td>73,749.0</td></tr><tr><td>2028E Rev (m)</td><td>68,798.3</td><td>79,192.9</td></tr><tr><td>2026E EPS</td><td>183.80</td><td>184.77</td></tr><tr><td>2027E EPS</td><td>194.32</td><td>198.64</td></tr><tr><td>2028E EPS</td><td>196.54</td><td>222.96</td></tr></table>",
+        "bbox": [
+            710,
+            276,
+            950,
+            428
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Robert Cheng >>\nResearch Analyst\nBofA (Taiwan)\nrobert.cheng@bofa.com",
+        "bbox": [
+            702,
+            445,
+            826,
+            487
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Katherine Zhu >>\nResearch Analyst\nBofA (Hong Kong)\nkexin.zhu@bofa.com",
+        "bbox": [
+            702,
+            489,
+            836,
+            531
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Doris Kao >>\nResearch Analyst\nBofA (Taiwan)\ndoris.kao@bofa.com",
+        "bbox": [
+            704,
+            535,
+            818,
+            575
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Stock Data",
+        "text_level": 2,
+        "bbox": [
+            704,
+            612,
+            772,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/dfae3168dd9de86b13c28c9bfe024fcb71f1f0d4cd1d8d04d88535fcb61649e6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Price</td><td>4,345 TWD</td></tr><tr><td>Price Objective</td><td>5,600 TWD</td></tr><tr><td>Date Established</td><td>14-Jul-2026</td></tr><tr><td>Investment Opinion</td><td>B-1-7</td></tr><tr><td>52-Week Range</td><td>2,020 TWD-5,360 TWD</td></tr><tr><td>Mrkt Val / Shares Out (mn)</td><td>18,308 USD / 135.6</td></tr><tr><td>Market Value (mn)</td><td>589,039 TWD</td></tr><tr><td>Average Daily Value (mn)</td><td>374.45 USD</td></tr><tr><td>Free Float</td><td>58.1%</td></tr><tr><td>BofA Ticker / Exchange</td><td>LGANF / TAI</td></tr><tr><td>Bloomberg / Reuters</td><td>3008 TT / 3008.TW</td></tr><tr><td>ROE (2026E)</td><td>12.6%</td></tr><tr><td>Net Dbt to Eqty (Dec-2025A)</td><td>-68.8%</td></tr></table>",
+        "bbox": [
+            702,
+            633,
+            957,
+            832
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "For acronyms, please refer to Exhibit 11",
+        "bbox": [
+            702,
+            854,
+            952,
+            885
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Accessible version",
+        "bbox": [
+            37,
+            5,
+            130,
+            18
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            20,
+            281,
+            37
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BofA",
+        "bbox": [
+            684,
+            15,
+            903,
+            36
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            910,
+            7,
+            968,
+            35
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/018c982bbc72ad262273d22b0d78f9cb8f8238f93962bad923e05b0240c6039a.jpg",
+        "table_caption": [
+            "Key Cash Flow Statement Data",
+            "iQprofile $^{SM}$ Largan Precision"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Key Income Statement Data (Dec)</td><td>2024A</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"6\">(NT$ Millions)</td></tr><tr><td>Sales</td><td>59,458</td><td>61,148</td><td>67,599</td><td>73,749</td><td>79,193</td></tr><tr><td>Gross Profit</td><td>31,209</td><td>30,837</td><td>33,434</td><td>36,862</td><td>41,180</td></tr><tr><td>Sell General &amp; Admin Expense</td><td>(1,930)</td><td>(1,985)</td><td>(2,050)</td><td>(2,185)</td><td>(2,304)</td></tr><tr><td>Operating Profit</td><td>24,033</td><td>23,558</td><td>25,663</td><td>28,646</td><td>32,563</td></tr><tr><td>Net Interest &amp; Other Income</td><td>8,142</td><td>2,342</td><td>4,426</td><td>3,998</td><td>3,998</td></tr><tr><td>Associates</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>Pretax Income</td><td>32,174</td><td>25,900</td><td>30,088</td><td>32,644</td><td>36,561</td></tr><tr><td>Tax (expense) / Benefit</td><td>(5,963)</td><td>(4,340)</td><td>(4,829)</td><td>(5,504)</td><td>(6,124)</td></tr><tr><td>Net Income (Adjusted)</td><td>25,915</td><td>21,275</td><td>25,049</td><td>26,929</td><td>30,226</td></tr><tr><td>Average Fully Diluted Shares Outstanding</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td></tr></table>",
+        "bbox": [
+            37,
+            89,
+            627,
+            253
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/023ca9ea89cb22a31cb4b4ae9b5a09d3a39159c9308cf3f89f87cb39d1e57522.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Net Income</td><td>25,915</td><td>21,275</td><td>25,049</td><td>26,929</td><td>30,226</td></tr><tr><td>Depreciation &amp; Amortization</td><td>6,230</td><td>7,732</td><td>8,577</td><td>9,217</td><td>9,697</td></tr><tr><td>Change in Working Capital</td><td>(943)</td><td>(1,208)</td><td>(1,709)</td><td>(1,534)</td><td>(1,270)</td></tr><tr><td>Deferred Taxation Charge</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>Other Adjustments, Net</td><td>376</td><td>(1,719)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash Flow from Operations</td><td>31,579</td><td>26,080</td><td>31,916</td><td>34,612</td><td>38,653</td></tr><tr><td>Capital Expenditure</td><td>(11,126)</td><td>(12,338)</td><td>(8,000)</td><td>(6,000)</td><td>(6,000)</td></tr><tr><td>(Acquisition) / Disposal of Investments</td><td>(7,374)</td><td>(1,704)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other Cash Inflow / (Outflow)</td><td>2,434</td><td>4,805</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash Flow from Investing</td><td>(16,066)</td><td>(9,236)</td><td>(8,000)</td><td>(6,000)</td><td>(6,000)</td></tr><tr><td>Shares Issue / (Repurchase)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cost of Dividends Paid</td><td>(10,811)</td><td>(11,412)</td><td>(10,677)</td><td>(12,577)</td><td>(13,521)</td></tr><tr><td>Cash Flow from Financing</td><td>(10,764)</td><td>(13,458)</td><td>(10,677)</td><td>(12,650)</td><td>(13,524)</td></tr><tr><td>Free Cash Flow</td><td>20,453</td><td>13,743</td><td>23,916</td><td>28,612</td><td>32,653</td></tr><tr><td>Net Debt</td><td>(123,416)</td><td>(131,295)</td><td>(144,534)</td><td>(160,568)</td><td>(179,700)</td></tr><tr><td>Change in Net Debt</td><td>(5,956)</td><td>(2,496)</td><td>(13,239)</td><td>(15,963)</td><td>(19,132)</td></tr></table>",
+        "bbox": [
+            40,
+            268,
+            627,
+            476
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/6bf82b4ab3d36f580c10c096ccea61983338dd2c2e4bf59f32670aff3e575622.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Property, Plant &amp; Equipment</td><td>46,936</td><td>51,472</td><td>51,117</td><td>48,121</td><td>44,646</td></tr><tr><td>Other Non-Current Assets</td><td>23,827</td><td>15,029</td><td>14,808</td><td>14,586</td><td>14,365</td></tr><tr><td>Trade Receivables</td><td>10,360</td><td>10,462</td><td>14,816</td><td>16,164</td><td>17,357</td></tr><tr><td>Cash &amp; Equivalents</td><td>123,620</td><td>131,295</td><td>144,534</td><td>160,568</td><td>179,700</td></tr><tr><td>Other Current Assets</td><td>11,784</td><td>12,529</td><td>11,432</td><td>11,879</td><td>12,064</td></tr><tr><td>Total Assets</td><td>216,527</td><td>220,787</td><td>236,706</td><td>251,319</td><td>268,132</td></tr><tr><td>Long-Term Debt</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other Non-Current Liabilities</td><td>561</td><td>171</td><td>171</td><td>171</td><td>171</td></tr><tr><td>Short-Term Debt</td><td>203</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other Current Liabilities</td><td>30,375</td><td>29,749</td><td>31,297</td><td>31,558</td><td>31,666</td></tr><tr><td>Total Liabilities</td><td>31,139</td><td>29,919</td><td>31,467</td><td>31,728</td><td>31,836</td></tr><tr><td>Total Equity</td><td>185,388</td><td>190,868</td><td>205,239</td><td>219,591</td><td>236,296</td></tr><tr><td>Total Equity &amp; Liabilities</td><td>216,527</td><td>220,787</td><td>236,706</td><td>251,319</td><td>268,132</td></tr></table>",
+        "bbox": [
+            39,
+            487,
+            627,
+            657
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/b156ee89eba711f527c47a898c7ed418300a4db7f7e395b48195cb9a37951bf4.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"6\">iQmethodSM - Bus Performance*</td></tr><tr><td>Return On Capital Employed</td><td>13.2%</td><td>12.3%</td><td>12.6%</td><td>12.8%</td><td>13.3%</td></tr><tr><td>Return On Equity</td><td>14.8%</td><td>11.3%</td><td>12.6%</td><td>12.7%</td><td>13.3%</td></tr><tr><td>Operating Margin</td><td>40.4%</td><td>38.5%</td><td>38.0%</td><td>38.8%</td><td>41.1%</td></tr><tr><td>EBITDA Margin</td><td>50.9%</td><td>51.2%</td><td>50.7%</td><td>51.3%</td><td>53.4%</td></tr></table>",
+        "bbox": [
+            39,
+            662,
+            625,
+            728
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/10183bc7af102a6ccf724330c3f6e768386ba6d214e2932581968e6312f7465d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Cash Realization Ratio</td><td>1.2x</td><td>1.2x</td><td>1.3x</td><td>1.3x</td><td>1.3x</td></tr><tr><td>Asset Replacement Ratio</td><td>1.8x</td><td>1.6x</td><td>0.9x</td><td>0.7x</td><td>0.6x</td></tr><tr><td>Tax Rate (Reported)</td><td>18.5%</td><td>16.8%</td><td>16.0%</td><td>16.9%</td><td>16.8%</td></tr><tr><td>Net Debt-to-Equity Ratio</td><td>-66.6%</td><td>-68.8%</td><td>-70.4%</td><td>-73.1%</td><td>-76.0%</td></tr><tr><td>Interest Cover</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td></tr></table>",
+        "bbox": [
+            40,
+            743,
+            625,
+            809
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Key Metrics",
+        "text_level": 2,
+        "bbox": [
+            37,
+            814,
+            104,
+            827
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\* For full definitions of IQmethod $^{SM}$ measures, see page 10.",
+        "bbox": [
+            37,
+            827,
+            282,
+            840
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Company Sector",
+        "text_level": 2,
+        "bbox": [
+            679,
+            95,
+            803,
+            113
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Industrials/Multi-Industry",
+        "bbox": [
+            681,
+            114,
+            808,
+            128
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Company Description",
+        "text_level": 2,
+        "bbox": [
+            666,
+            157,
+            803,
+            172
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Largan, established in 1987, is based in Tai Chung, Taiwan. The company is Taiwan's leading optical lens manufacturer for digital imaging products. These include digital cameras, mobile phone cameras, projectors, and MFPs.",
+        "bbox": [
+            665,
+            172,
+            950,
+            234
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Investment Rationale",
+        "text_level": 2,
+        "bbox": [
+            666,
+            258,
+            803,
+            273
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We have a Buy rating on Largan, eyeing rising visibility on potential CPO project gains. We believe CPO will drive a valuation re-rating and potential earning upside from 2028E. Besides, legacy business should stay resilient thanks to iPhone's multi-year spec upgrade cycle.",
+        "bbox": [
+            666,
+            276,
+            955,
+            352
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Stock Data",
+        "text_level": 2,
+        "bbox": [
+            666,
+            414,
+            736,
+            429
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Price to Book Value 2.9x",
+        "bbox": [
+            666,
+            436,
+            955,
+            450
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            23,
+            161,
+            34
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            37,
+            953,
+            50,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            91,
+            952,
+            267,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Upgrade to Buy: stronger long-term upside from CPO",
+        "text_level": 2,
+        "bbox": [
+            37,
+            60,
+            570,
+            79
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We upgrade Largan to Buy from Neutral on strong revenue/earnings upside from 2028E, led by its potential share gain at FA/FAU for CPO switches. Meanwhile, the legacy business should remain resilient, thanks to iPhone's multi-year camera upgrade cycle. We raise Largan's 2026-28E earnings by $1 - 13\\%$ to reflect potential upside from CPO and a solid Apple business.",
+        "bbox": [
+            35,
+            79,
+            627,
+            156
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We lift our PO to NT\\$5,600 (25x 2028E P/E) from NT\\$2,900 (16x 2H26-1H27E P/E). We use 2028E to capture CPO's volume take-off, and our 25x target multiple is at its historical peak P/E, matching last round's earnings upcycle.",
+        "bbox": [
+            35,
+            164,
+            622,
+            212
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We note the market is confident that optical interconnect will be a long-term upcycle, and we believe investors tend to be willing to look beyond 2028 to see the long-term upside potential from CPO. If CPO switches can reach a certain scale into 2028-30E, our analysis shows a stronger earnings upcycle for Largan vs the smartphone camera upcycle in 2016-18. Thus, emerging CPO/FAU suppliers in Greater China tend to trade at a high P/E of 29x 2028E on average. We also use SOTP valuation for a sanity check on CPO's long-term value, and we derive a value per share of NT\\$5,641 by applying 30x 2030E P/E on CPO business (base case: 30% share at FA).",
+        "bbox": [
+            35,
+            219,
+            625,
+            340
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/622cd59b4bfbfcfa758b445a6e36e9912a80c060c73974b4a5caed5364a059fc.jpg",
+        "table_caption": [
+            "Exhibit 1: We lift 2026-28E earnings estimates by 1-13%\nEarnings estimate changes, 2026-28E"
+        ],
+        "table_footnote": [
+            "Source: BofA Global Research estimates",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">(NT$mn)</td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td><td colspan=\"3\">2028E</td></tr><tr><td>New</td><td>Old</td><td>Diff (%)</td><td>New</td><td>Old</td><td>Diff (%)</td><td>New</td><td>Old</td><td>Diff (%)</td></tr><tr><td>Total sales</td><td>67,599</td><td>64,700</td><td>4.5</td><td>73,749</td><td>67,560</td><td>9.2</td><td>79,193</td><td>68,798</td><td>15.1</td></tr><tr><td>Gross Profit</td><td>33,434</td><td>32,878</td><td>1.7</td><td>36,862</td><td>35,211</td><td>4.7</td><td>41,180</td><td>35,748</td><td>15.2</td></tr><tr><td>Gross margin</td><td>49.5%</td><td>50.8%</td><td>-1.4</td><td>50.0%</td><td>52.1%</td><td>-2.1</td><td>52.0%</td><td>52.0%</td><td>0.0</td></tr><tr><td>Operating income</td><td>25,663</td><td>25,468</td><td>0.8</td><td>28,646</td><td>27,646</td><td>3.6</td><td>32,563</td><td>27,997</td><td>16.3</td></tr><tr><td>Operating margin</td><td>38.0%</td><td>39.4%</td><td>-1.4</td><td>38.8%</td><td>40.9%</td><td>-2.1</td><td>41.1%</td><td>40.7%</td><td>0.4</td></tr><tr><td>Pretax income</td><td>30,088</td><td>29,943</td><td>0.5</td><td>32,644</td><td>31,645</td><td>3.2</td><td>36,561</td><td>31,995</td><td>14.3</td></tr><tr><td>Pretax margin</td><td>44.5%</td><td>46.3%</td><td>-1.8</td><td>44.3%</td><td>46.8%</td><td>-2.6</td><td>46.2%</td><td>46.5%</td><td>-0.3</td></tr><tr><td>Net income</td><td>25,049</td><td>24,917</td><td>0.5</td><td>26,929</td><td>26,343</td><td>2.2</td><td>30,226</td><td>26,645</td><td>13.4</td></tr><tr><td>Net margin</td><td>37.1%</td><td>38.5%</td><td>-1.5</td><td>36.5%</td><td>39.0%</td><td>-2.5</td><td>38.2%</td><td>38.7%</td><td>-0.6</td></tr><tr><td>EPS (NT$)</td><td>184.8</td><td>183.8</td><td>0.5</td><td>198.6</td><td>194.3</td><td>2.2</td><td>223.0</td><td>196.5</td><td>13.4</td></tr></table>",
+        "bbox": [
+            52,
+            383,
+            957,
+            540
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/18c1a0d84ba4158a5f90566a01f881a5029736fe9bebe34189b8e54d54264de5.jpg",
+        "table_caption": [
+            "Exhibit 2: Our 2026-28E earnings are largely in line with consensus\nBofAe vs. consensus, 2026-28E"
+        ],
+        "table_footnote": [
+            "Source: BofA Global Research estimates, Bloomberg consensus",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">(NT$mn)</td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td><td colspan=\"3\">2028E</td></tr><tr><td>BofAe</td><td>Consensus</td><td>Diff (%)</td><td>BofAe</td><td>Consensus</td><td>Diff (%)</td><td>BofAe</td><td>Consensus</td><td>Diff (%)</td></tr><tr><td>Total sales</td><td>67,599</td><td>66,318</td><td>1.9</td><td>73,749</td><td>71,653</td><td>2.9</td><td>79,193</td><td>79,957</td><td>-1.0</td></tr><tr><td>Gross profit</td><td>33,434</td><td>33,427</td><td>0.0</td><td>36,862</td><td>37,120</td><td>-0.7</td><td>41,180</td><td>42,145</td><td>-2.3</td></tr><tr><td>Gross margin</td><td>49.5%</td><td>50.4%</td><td>-0.9</td><td>50.0%</td><td>51.8%</td><td>-1.8</td><td>52.0%</td><td>52.7%</td><td>-0.7</td></tr><tr><td>Operating profit</td><td>25,663</td><td>25,814</td><td>-0.6</td><td>28,646</td><td>28,962</td><td>-1.1</td><td>32,563</td><td>32,687</td><td>-0.4</td></tr><tr><td>Operating margin</td><td>38.0%</td><td>38.9%</td><td>-1.0</td><td>38.8%</td><td>40.4%</td><td>-1.6</td><td>41.1%</td><td>40.9%</td><td>0.2</td></tr><tr><td>Pretax income</td><td>30,088</td><td>30,414</td><td>-1.1</td><td>32,644</td><td>33,574</td><td>-2.8</td><td>36,561</td><td>37,731</td><td>-3.1</td></tr><tr><td>Pretax margin</td><td>44.5%</td><td>45.9%</td><td>-1.4</td><td>44.3%</td><td>46.9%</td><td>-2.6</td><td>46.2%</td><td>47.2%</td><td>-1.0</td></tr><tr><td>Net income</td><td>25,049</td><td>24,811</td><td>1.0</td><td>26,929</td><td>27,102</td><td>-0.6</td><td>30,226</td><td>30,219</td><td>0.0</td></tr><tr><td>Net margin</td><td>37.1%</td><td>37.4%</td><td>-0.4</td><td>36.5%</td><td>37.8%</td><td>-1.3</td><td>38.2%</td><td>37.8%</td><td>0.4</td></tr><tr><td>EPS (NT$)</td><td>184.8</td><td>183.0</td><td>1.0</td><td>198.6</td><td>199.9</td><td>-0.6</td><td>223.0</td><td>222.9</td><td>0.0</td></tr></table>",
+        "bbox": [
+            53,
+            628,
+            957,
+            784
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            953,
+            954,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            37,
+            946,
+            81,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            741,
+            952,
+            918,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/696370c3fa479706b64fc59cc75d64c40fa6adb3242b646bcf2bc7ceb32430e6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3: The stock trades at 20x 1-year forward P/E, above +1SD Largan's 1-year forward P/E with -1/+1 standard deviation"
+        ],
+        "chart_footnote": [
+            "Source: BofA Global Research",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "bbox": [
+            55,
+            104,
+            459,
+            314
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 4: We drive a value per share of NT\\$5,641 by applying 30x P/E on CPO business' EPS in 2030",
+        "text_level": 2,
+        "bbox": [
+            539,
+            63,
+            947,
+            93
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SOTP valuation for sanity check of CPO's long-term contribution",
+        "bbox": [
+            540,
+            93,
+            906,
+            108
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/fdd592fd82ca6911a12fb1f0d8dcdd42db62c244caf776077578ffdcb238179b.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: BofA Global Research estimates; Note: apply $14\\%$ cost of equity for CPO business when discounting back to 2028E, and $14\\%$ is at Largan's historical median cost of equity",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td colspan=\"2\">SOTP Sumber check</td></tr><tr><td>Legacy business</td><td>2026E</td></tr><tr><td>EPS</td><td>185</td></tr><tr><td>P/E</td><td>13</td></tr><tr><td>Value per share</td><td>2,402</td></tr><tr><td>CPO</td><td>2030E</td></tr><tr><td>EPS</td><td>140</td></tr><tr><td>P/E</td><td>30</td></tr><tr><td>Value per share</td><td>4,210</td></tr><tr><td>Value per share discount back to 2028E</td><td>3,239</td></tr><tr><td>Total value per share</td><td>5,641</td></tr><tr><td>Implied P/E on 2028E EPS</td><td>25</td></tr></table>",
+        "bbox": [
+            540,
+            122,
+            955,
+            292
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/ae7dad45640b903353637baa67d4be29b8ebc9b1168e762d28983ad8f0c6e40f.jpg",
+        "table_caption": [
+            "Exhibit 5: CPO supply chain is trading at 28x P/E on 2028E EPS Valuation comparison"
+        ],
+        "table_footnote": [
+            "Source: BofA Global Research estimates, Bloomberg consensus for uncovered companies",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td colspan=\"2\"></td><td>Share</td><td>Mkt cap</td><td colspan=\"3\">EPS (LC)</td><td>EPS CAGR</td><td colspan=\"3\">P/E (X)</td><td rowspan=\"2\">PEG27E/26-28E EPS</td><td colspan=\"2\">P/B (X)</td><td colspan=\"2\">Div. yield (%)</td><td colspan=\"2\">ROE (%)</td><td colspan=\"2\">EV/EBITDA</td></tr><tr><td>Ticker</td><td>Company</td><td>price (LC)</td><td>(US$mn)</td><td>26E</td><td>27E</td><td>28E</td><td>26-28E</td><td>26E</td><td>27E</td><td>28E</td><td>26E</td><td>27E</td><td>26E</td><td>27E</td><td>26E</td><td>27E</td><td>26E</td><td>27E</td></tr><tr><td>3008 TT</td><td>Largan</td><td>4,345</td><td>18,007</td><td>188</td><td>202</td><td>226</td><td>10%</td><td>23.1</td><td>21.5</td><td>19.2</td><td>2.2</td><td>2.8</td><td>2.6</td><td>2.2</td><td>2.3</td><td>12.9</td><td>12.9</td><td>13.0</td><td>11.7</td></tr><tr><td colspan=\"20\">Smartphone optic supply chain</td></tr><tr><td>3406 TT</td><td>Genius</td><td>609</td><td>2,132</td><td>32.1</td><td>32.9</td><td>31.9</td><td>0%</td><td>19.0</td><td>18.5</td><td>19.1</td><td>-71.8</td><td>2.4</td><td>2.3</td><td>2.5</td><td>2.5</td><td>13.2</td><td>12.6</td><td>7.5</td><td>7.5</td></tr><tr><td>2382 HK</td><td>Sunny Optical</td><td>55.1</td><td>7,576</td><td>3.52</td><td>4.27</td><td>4.84</td><td>17%</td><td>13.5</td><td>11.2</td><td>9.8</td><td>0.6</td><td>1.6</td><td>1.4</td><td>1.5</td><td>1.8</td><td>12.4</td><td>13.6</td><td>8.4</td><td>7.5</td></tr><tr><td>2018 HK</td><td>AAC</td><td>38.2</td><td>5,683</td><td>2.35</td><td>2.76</td><td>n.a.</td><td>n.m.</td><td>14.1</td><td>12.0</td><td>n.a.</td><td>n.m.</td><td>1.5</td><td>1.3</td><td>1.1</td><td>1.3</td><td>10.9</td><td>11.7</td><td>6.5</td><td>5.7</td></tr><tr><td colspan=\"7\">Average</td><td>9%</td><td>15.5</td><td>13.9</td><td>14.5</td><td>-35.6</td><td>1.8</td><td>1.7</td><td>1.7</td><td>1.9</td><td>12.2</td><td>12.6</td><td>7.5</td><td>6.9</td></tr><tr><td colspan=\"20\">CPO supply chain</td></tr><tr><td>3363 TT</td><td>FOCI</td><td>608</td><td>2,111</td><td>0.22</td><td>17.1</td><td>48.9</td><td>1407%</td><td>2772</td><td>34.9</td><td>12.2</td><td>0.0</td><td>27.0</td><td>15.9</td><td>0.1</td><td>0.2</td><td>-1.8</td><td>55.0</td><td>n.a</td><td>n.a</td></tr><tr><td>3163 TT</td><td>Browave</td><td>746</td><td>1,867</td><td>7.57</td><td>13.8</td><td>19.8</td><td>62%</td><td>98.3</td><td>53.7</td><td>37.7</td><td>0.9</td><td>18.9</td><td>n.a</td><td>0.5</td><td>0.8</td><td>19.1</td><td>35.4</td><td>n.a</td><td>n.a</td></tr><tr><td>LITE US</td><td>Lumentum</td><td>802</td><td>62,396</td><td>8.41</td><td>18.7</td><td>28.0</td><td>82%</td><td>82.5</td><td>37.2</td><td>24.8</td><td>0.5</td><td>15.2</td><td>10.0</td><td>0.0</td><td>0.0</td><td>33.7</td><td>43.7</td><td>52.5</td><td>23.5</td></tr><tr><td>GLW US</td><td>Corning Inc.</td><td>191</td><td>163,977</td><td>3.30</td><td>5.00</td><td>6.50</td><td>40%</td><td>57.8</td><td>38.2</td><td>29.4</td><td>0.9</td><td>12.3</td><td>10.1</td><td>0.6</td><td>0.6</td><td>22.9</td><td>29.5</td><td>31.6</td><td>23.4</td></tr><tr><td colspan=\"7\">Average</td><td>328%</td><td>618</td><td>43.3</td><td>28.2</td><td>0.7</td><td>21.6</td><td>15.3</td><td>0.3</td><td>0.5</td><td>24.3</td><td>43.2</td><td>49.6</td><td>29.1</td></tr></table>",
+        "bbox": [
+            53,
+            391,
+            955,
+            585
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "CPO-driven earnings upcycle from 2028E",
+        "text_level": 2,
+        "bbox": [
+            37,
+            628,
+            450,
+            647
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We are more confident on Largan entering Nvidia's CPO supply chain, given more concrete project engagement. According to mgmt., Largan is engaging with more than one customer, progressing through certification (coming months), and capacity expansion (pilot line by 3Q26-end). Despite its limited track record in datacom, we see Largan's edge in its high-precision alignment via automation, which are the two key bottlenecks faced by the supply chain.",
+        "bbox": [
+            35,
+            648,
+            612,
+            739
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We note that earnings contribution should be limited in 2026-27E as CPO should see volume expansion only from 2028-29E. However, once it reaches a good scale, CPO could drive a compelling earnings upcycle for Largan, even stronger than the smartphone camera upgrade cycle in 2016-18. Based on our in-house estimates, Nvidia CPO switches are likely to see 14k/52k/190k units of shipment in 2026/27/28E. Our analysis shows that, if Largan only supplies FA, EPS in 2028E could see 5-10% upside vs the 2026E level, assuming 20-30% share and 30-40% net margin. If Largan is able to expand its offering to FAU with its own PMLA, EPS in 2028E could see 12-23% upside vs 2026E level, assuming 20-30% share and 40-50% net margin.",
+        "bbox": [
+            35,
+            748,
+            624,
+            886
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We highlight that investors tend to believe optical interconnection is a multi-year upcycle, with technology eventually migrating to NPO/CPO/OIO in the longer term. Thus, we believe the market is willing to look beyond 2028 to capture the potential contribution. Thus, we conduct a bear/base/bull case analysis for earnings upside potential into 2030E:",
+        "bbox": [
+            35,
+            893,
+            625,
+            925
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            39,
+            953,
+            50,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            81,
+            952,
+            258,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            35,
+            59,
+            573,
+            104
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Base case: Largan still supplies FA with 30% market share, ASP is at US\\$30 (for 1.6T equivalent OE), and net margin is around 40%. Under this scenario, earnings could see another 63% upside vs 2028E.",
+        "bbox": [
+            70,
+            114,
+            607,
+            161
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Bear case: Largan still supplies FA but market share is relatively low at 15%, ASP is at the same level as our base case and net margin is lower at 30% due to smaller scale. Under this scenario, earnings could see 24% upside vs 2028E.",
+        "bbox": [
+            71,
+            169,
+            622,
+            215
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Bull case: Largan expands its offering to FAU with its in-house PMLA and ASP expands to US\\$60. If Largan is able to hold a strong market share at 35% and a solid net margin of 50% (large scale, good yield), earnings could expand by 184% vs 2028E.",
+        "bbox": [
+            71,
+            224,
+            619,
+            285
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 6: Revenue in 2028E could see 6-9% upside (vs 2026E) from FA, assuming 20-30% share\nScenario analysis on revenue upside from FA and FAU, 2028E vs 2026E\nAssumption: 190k units of Nvidia CPO switch in 2028",
+        "bbox": [
+            52,
+            295,
+            612,
+            337
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/3f3c62c2ba9aadd74bac54381805f2547076869c96e0d631394b8d1488f6a2e3.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: BofA Global Research estimates",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\" colspan=\"2\">Revenue upside,2028E vs 2026E</td><td colspan=\"5\">Market share</td></tr><tr><td>10%</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td></tr><tr><td>FA</td><td>$45</td><td>3%</td><td>6%</td><td>9%</td><td>13%</td><td>16%</td></tr><tr><td>FAU (+PMLA)</td><td>$80</td><td>6%</td><td>11%</td><td>17%</td><td>22%</td><td>28%</td></tr></table>",
+        "bbox": [
+            53,
+            343,
+            630,
+            396
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 7: EPS in 2028E could see 5-10% upside (vs 2026E) from FA, assuming 20-30% share and 30-40% net margin",
+        "text_level": 2,
+        "bbox": [
+            53,
+            450,
+            617,
+            479
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Scenario analysis on EPS upside from FA, 2028E vs 2026E\nAssumption: (1) 190k units of Nvidia CPO switch in 2028, (2) US\\$45 ASP (for 1.6T equivalent OE)",
+        "bbox": [
+            53,
+            479,
+            573,
+            508
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/22c518c3ccba9ff6d18192319ac8a5583cc111d7bf652f49eab8a59714798b53.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: BofA Global Research estimates",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\" colspan=\"2\">EPS upside from FA,2028E vs 2026E</td><td colspan=\"5\">Market share</td></tr><tr><td>10%</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td></tr><tr><td rowspan=\"3\">Net margin</td><td>30%</td><td>3%</td><td>5%</td><td>8%</td><td>10%</td><td>13%</td></tr><tr><td>35%</td><td>3%</td><td>6%</td><td>9%</td><td>12%</td><td>15%</td></tr><tr><td>40%</td><td>3%</td><td>7%</td><td>10%</td><td>14%</td><td>17%</td></tr></table>",
+        "bbox": [
+            53,
+            513,
+            630,
+            579
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 8: EPS in 2028E could see 12-23% upside (vs 2026E) from FAU, assuming 20-30% share and 40-50% net margin",
+        "text_level": 2,
+        "bbox": [
+            53,
+            633,
+            609,
+            662
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Scenario analysis on EPS upside from FAU (include in-house PMLA), 2028E vs 2026E\nAssumption: (1) 190k units of Nvidia CPO switch in 2028, (2) US\\$80 ASP (for 1.6T equivalent OE)",
+        "bbox": [
+            53,
+            662,
+            573,
+            690
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/cc0a77d152dcf3a3a94661bdd299afdbe98a5e43514655c3ee7d6f6c62c474e4.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: BofA Global Research estimates",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\" colspan=\"2\">EPS upside from FAU,2028E vs 2026E</td><td colspan=\"5\">Market share</td></tr><tr><td>10%</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td></tr><tr><td></td><td>40%</td><td>6%</td><td>12%</td><td>18%</td><td>25%</td><td>31%</td></tr><tr><td>Net margin</td><td>45%</td><td>7%</td><td>14%</td><td>21%</td><td>28%</td><td>35%</td></tr><tr><td></td><td>50%</td><td>8%</td><td>15%</td><td>23%</td><td>31%</td><td>38%</td></tr></table>",
+        "bbox": [
+            53,
+            696,
+            629,
+            761
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 9: Into 2030E, our base case shows Largan could see another 63% earnings expansion vs 2028E",
+        "text_level": 2,
+        "bbox": [
+            53,
+            816,
+            625,
+            845
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Long-term Bull/Base/Bear case analysis on CPO business (2030E)\nAssumption: 1.4mn units of Nvidia CPO switch in 2030",
+        "bbox": [
+            53,
+            845,
+            424,
+            875
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/baadfee2c89fd6995ca48f1e051c28f691190852e9f2aa5eec78400f0a28654b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Bear</td><td>Base</td><td>Bull</td></tr><tr><td>Offering</td><td>FA</td><td>FA</td><td>FAU with own PMLA</td></tr><tr><td>Market share</td><td>15%</td><td>30%</td><td>35%</td></tr></table>",
+        "bbox": [
+            53,
+            880,
+            624,
+            921
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            39,
+            946,
+            81,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            741,
+            952,
+            918,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            944,
+            953,
+            954,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 9: Into 2030E, our base case shows Largan could see another $63\\%$ earnings expansion vs 2028E",
+        "text_level": 2,
+        "bbox": [
+            53,
+            61,
+            625,
+            90
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Long-term Bull/Base/Bear case analysis on CPO business (2030E)",
+        "bbox": [
+            53,
+            90,
+            424,
+            104
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Assumption: 1.4mn units of Nvidia CPO switch in 2030",
+        "bbox": [
+            53,
+            104,
+            369,
+            119
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/2171ad01ba060c16a77d68e81a936143f4a8f80fb5481625fab77b2aa4c22ca8.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: BofA Global Research estimates",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td></td><td>Bear</td><td>Base</td><td>Bull</td></tr><tr><td>ASP for 1.6T equivalent OE (USD)</td><td>30</td><td>30</td><td>60</td></tr><tr><td>Revenue (NT$mn)</td><td>23,779</td><td>47,558</td><td>110,969</td></tr><tr><td>Revenue upside vs 2028E</td><td>30%</td><td>60%</td><td>140%</td></tr><tr><td>Net margin</td><td>30%</td><td>40%</td><td>50%</td></tr><tr><td>Net income (NT$mn)</td><td>7,134</td><td>19,023</td><td>55,484</td></tr><tr><td>EPS (NT$)</td><td>53</td><td>140</td><td>409</td></tr><tr><td>Net income upside vs 2028E</td><td>24%</td><td>63%</td><td>184%</td></tr></table>",
+        "bbox": [
+            53,
+            125,
+            625,
+            241
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/25e3dcfc21240fa3ba2b73d8bae86d166822b2675ccc9ab2bd459dab06074061.jpg",
+        "table_caption": [
+            "Exhibit 10: We model 10% earnings CAGR in 2025-28E"
+        ],
+        "table_footnote": [
+            "Source: Company data, BofA Global Research estimates. P: preliminary",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td>NT$mn</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26P</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Sales</td><td>14,579</td><td>11,673</td><td>17,677</td><td>17,219</td><td>15,544</td><td>13,665</td><td>19,266</td><td>19,125</td><td>16,962</td><td>14,381</td><td>21,092</td><td>21,313</td><td>61,148</td><td>67,599</td><td>73,749</td><td>79,193</td></tr><tr><td>COGS</td><td>6,615</td><td>5,413</td><td>9,325</td><td>8,958</td><td>7,865</td><td>6,913</td><td>9,826</td><td>9,562</td><td>8,515</td><td>7,277</td><td>10,652</td><td>10,444</td><td>30,311</td><td>34,165</td><td>36,887</td><td>38,013</td></tr><tr><td>Gross profit</td><td>7,965</td><td>6,260</td><td>8,352</td><td>8,260</td><td>7,680</td><td>6,752</td><td>9,440</td><td>9,562</td><td>8,447</td><td>7,104</td><td>10,441</td><td>10,870</td><td>30,837</td><td>33,434</td><td>36,862</td><td>41,180</td></tr><tr><td>Operating expenses</td><td>1,878</td><td>1,381</td><td>2,088</td><td>1,932</td><td>1,867</td><td>1,604</td><td>2,216</td><td>2,085</td><td>1,968</td><td>1,711</td><td>2,278</td><td>2,259</td><td>7,279</td><td>7,771</td><td>8,216</td><td>8,617</td></tr><tr><td>SG&amp;A</td><td>530</td><td>395</td><td>549</td><td>512</td><td>466</td><td>451</td><td>578</td><td>555</td><td>509</td><td>489</td><td>591</td><td>597</td><td>1,985</td><td>2,050</td><td>2,185</td><td>2,304</td></tr><tr><td>R&amp;D</td><td>1,348</td><td>986</td><td>1,539</td><td>1,420</td><td>1,401</td><td>1,153</td><td>1,638</td><td>1,530</td><td>1,459</td><td>1,222</td><td>1,687</td><td>1,662</td><td>5,293</td><td>5,722</td><td>6,031</td><td>6,313</td></tr><tr><td>Operating profit</td><td>6,086</td><td>4,879</td><td>6,265</td><td>6,329</td><td>5,812</td><td>5,148</td><td>7,225</td><td>7,478</td><td>6,480</td><td>5,393</td><td>8,163</td><td>8,611</td><td>23,558</td><td>25,663</td><td>28,646</td><td>32,563</td></tr><tr><td>Pretax income</td><td>7,716</td><td>1,794</td><td>8,155</td><td>8,236</td><td>7,288</td><td>6,099</td><td>8,224</td><td>8,477</td><td>7,479</td><td>6,392</td><td>9,162</td><td>9,610</td><td>25,900</td><td>30,088</td><td>32,644</td><td>36,561</td></tr><tr><td>Net income</td><td>6,443</td><td>1,032</td><td>7,080</td><td>6,720</td><td>6,123</td><td>4,670</td><td>7,102</td><td>7,153</td><td>6,305</td><td>4,869</td><td>7,735</td><td>8,020</td><td>21,275</td><td>25,049</td><td>26,929</td><td>30,226</td></tr><tr><td>EPS (NT$)</td><td>47.5</td><td>7.6</td><td>52.2</td><td>49.6</td><td>45.2</td><td>34.4</td><td>52.4</td><td>52.8</td><td>46.5</td><td>35.9</td><td>57.1</td><td>59.2</td><td>156.9</td><td>184.8</td><td>198.6</td><td>223.0</td></tr><tr><td>Margin</td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"4\"></td></tr><tr><td>Gross margin</td><td>54.6%</td><td>53.6%</td><td>47.2%</td><td>48.0%</td><td>49.4%</td><td>49.4%</td><td>49.0%</td><td>50.0%</td><td>49.8%</td><td>49.4%</td><td>49.5%</td><td>51.0%</td><td>50.4%</td><td>49.5%</td><td>50.0%</td><td>52.0%</td></tr><tr><td>Operating margin</td><td>41.7%</td><td>41.8%</td><td>35.4%</td><td>36.8%</td><td>37.4%</td><td>37.7%</td><td>37.5%</td><td>39.1%</td><td>38.2%</td><td>37.5%</td><td>38.7%</td><td>40.4%</td><td>38.5%</td><td>38.0%</td><td>38.8%</td><td>41.1%</td></tr><tr><td>Pretax margin</td><td>52.9%</td><td>15.4%</td><td>46.1%</td><td>47.8%</td><td>46.9%</td><td>44.6%</td><td>42.7%</td><td>44.3%</td><td>44.1%</td><td>44.5%</td><td>43.4%</td><td>45.1%</td><td>42.4%</td><td>44.5%</td><td>44.3%</td><td>46.2%</td></tr><tr><td>Net margin</td><td>44.2%</td><td>8.8%</td><td>40.1%</td><td>39.0%</td><td>39.4%</td><td>34.2%</td><td>36.9%</td><td>37.4%</td><td>37.2%</td><td>33.9%</td><td>36.7%</td><td>37.6%</td><td>34.8%</td><td>37.1%</td><td>36.5%</td><td>38.2%</td></tr><tr><td>QoQ</td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"4\"></td></tr><tr><td>Sales</td><td>-20%</td><td>-20%</td><td>51%</td><td>-3%</td><td>-10%</td><td>-12%</td><td>41%</td><td>-1%</td><td>-11%</td><td>-15%</td><td>47%</td><td>1%</td><td rowspan=\"5\" colspan=\"4\"></td></tr><tr><td>Gross profit</td><td>-26%</td><td>-21%</td><td>33%</td><td>-1%</td><td>-7%</td><td>-12%</td><td>40%</td><td>1%</td><td>-12%</td><td>-16%</td><td>47%</td><td>4%</td></tr><tr><td>Operating profit</td><td>-27%</td><td>-20%</td><td>28%</td><td>1%</td><td>-8%</td><td>-11%</td><td>40%</td><td>4%</td><td>-13%</td><td>-17%</td><td>51%</td><td>5%</td></tr><tr><td>Pre-tax profit</td><td>-30%</td><td>-77%</td><td>NM</td><td>1%</td><td>-12%</td><td>-16%</td><td>35%</td><td>3%</td><td>-12%</td><td>-15%</td><td>43%</td><td>5%</td></tr><tr><td>Net profit</td><td>-26%</td><td>-84%</td><td>NM</td><td>-5%</td><td>-9%</td><td>-24%</td><td>52%</td><td>1%</td><td>-12%</td><td>-23%</td><td>59%</td><td>4%</td></tr><tr><td>YoY</td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"4\"></td><td colspan=\"4\"></td></tr><tr><td>Sales</td><td>29%</td><td>6%</td><td>-7%</td><td>-5%</td><td>7%</td><td>17%</td><td>9%</td><td>11%</td><td>9%</td><td>5%</td><td>9%</td><td>11%</td><td>3%</td><td>11%</td><td>9%</td><td>7%</td></tr><tr><td>Gross profit</td><td>43%</td><td>18%</td><td>-12%</td><td>-24%</td><td>-4%</td><td>8%</td><td>13%</td><td>16%</td><td>10%</td><td>5%</td><td>11%</td><td>14%</td><td>-1%</td><td>8%</td><td>10%</td><td>12%</td></tr><tr><td>Operating profit</td><td>54%</td><td>25%</td><td>-20%</td><td>-24%</td><td>-5%</td><td>6%</td><td>15%</td><td>18%</td><td>11%</td><td>5%</td><td>13%</td><td>15%</td><td>-2%</td><td>9%</td><td>12%</td><td>14%</td></tr><tr><td>Pre-tax profit</td><td>4%</td><td>-69%</td><td>4%</td><td>-26%</td><td>-6%</td><td>NM</td><td>1%</td><td>3%</td><td>3%</td><td>5%</td><td>11%</td><td>13%</td><td>-20%</td><td>16%</td><td>8%</td><td>12%</td></tr><tr><td>Net profit</td><td>5%</td><td>-77%</td><td>7%</td><td>-23%</td><td>-5%</td><td>NM</td><td>0%</td><td>6%</td><td>3%</td><td>4%</td><td>9%</td><td>12%</td><td>-18%</td><td>18%</td><td>8%</td><td>12%</td></tr></table>",
+        "bbox": [
+            52,
+            328,
+            955,
+            691
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 11: Summary of acronyms used in this report Acronym",
+        "text_level": 2,
+        "bbox": [
+            53,
+            746,
+            362,
+            773
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/860b984c3a5890cc3248fd901154b3b4c292331dd232c6df20ebd05ac3cfdd60.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Acronym</td></tr><tr><td>AI</td><td>Artificial Intelligence</td></tr><tr><td>ASP</td><td>Average Selling Price</td></tr><tr><td>BOM</td><td>Bill of Materials</td></tr><tr><td>CPO</td><td>Co-packed Optics</td></tr><tr><td>ELS</td><td>External Laser source</td></tr><tr><td>FA</td><td>Fiber Array</td></tr><tr><td>FAU</td><td>Fiber Array Unit</td></tr><tr><td>dFAU</td><td>Detachable Fiber Array Unit</td></tr><tr><td>MPO</td><td>Multi-fiber Push-On</td></tr><tr><td>MMC</td><td>Multiport Modular Connector</td></tr></table>",
+        "bbox": [
+            52,
+            787,
+            630,
+            924
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            161,
+            42
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            39,
+            953,
+            50,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            81,
+            952,
+            258,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/f05577fde2a6ab7cc48662f6840474dd7ff0bdf7052888ba3289fc2466b89c0c.jpg",
+        "table_caption": [
+            "Exhibit 11: Summary of acronyms used in this report\nAcronym"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Acronym</td></tr><tr><td>MT</td><td>Mechanical Transfer</td></tr><tr><td>NPO</td><td>Near-packaged Optics</td></tr><tr><td>OE</td><td>Optical Engine</td></tr><tr><td>PIC</td><td>Photonic Integrated Circuit</td></tr><tr><td>PCB</td><td>Printed Circuit Board</td></tr></table>",
+        "bbox": [
+            53,
+            95,
+            630,
+            172
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Source: BofA Global Research",
+        "bbox": [
+            55,
+            176,
+            183,
+            186
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            519,
+            186,
+            629,
+            199
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            942,
+            953,
+            954,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            161,
+            42
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            39,
+            946,
+            81,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            741,
+            952,
+            918,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Price objective basis & risk",
+        "text_level": 2,
+        "bbox": [
+            37,
+            64,
+            315,
+            83
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Largan Precision (LGANF)",
+        "text_level": 2,
+        "bbox": [
+            37,
+            90,
+            230,
+            104
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our PO of NT\\$5,600 is based on 25x 2028E P/E. 25x is at Largan's historical peak P/E during last earnings upcycle. We believe CPO take-off from 2028 will drive another new multi-year earnings upcycle for Largan, which justifying our valuation multiple.",
+        "bbox": [
+            35,
+            106,
+            619,
+            154
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Downside risks are: 1) weaker than expected end-demand, which leads to pressured topline and margin on lower utilization rate, 2) more intense competition from Greater China competitors including Sunny Optical, Genius and AAC, 3) slower than expected spec upgrade, and 4) slower than expected progress at CPO.",
+        "bbox": [
+            35,
+            167,
+            611,
+            229
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Upside risks are: 1) better than expected end demand and faster than expected spec upgrade, 2) higher than expected ASP and market on competitors' inferior execution, 3) eased competition from key peers, and 4) faster than expected progress at CPO.",
+        "bbox": [
+            35,
+            242,
+            616,
+            290
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            37,
+            305,
+            248,
+            324
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "I, Robert Cheng, hereby certify that the views expressed in this research report accurately reflect my personal views about the subject securities and issuers. I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report.",
+        "bbox": [
+            35,
+            329,
+            614,
+            391
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Special Disclosures",
+        "text_level": 2,
+        "bbox": [
+            37,
+            414,
+            233,
+            433
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Information on securities which are listed on the exchanges where ML Securities (Taiwan) Limited is not permitted to trade or solicit trades for clients is for informational purposes only and is not a recommendation or a solicitation to trade such securities. ML Securities (Taiwan) Limited will not execute transactions for nor accept orders from clients to trade such securities. Foreign investment in Taiwan securities is regulated and restricted. Currently, foreign investment in Taiwan securities is permitted by investment through: (1) global depository receipts, (2) convertible bonds, (3) mutual funds issued offshore of Taiwan, and (4) a special foreign institutional investors (FINIs) and foreign individual investors (FIDIs) program supervised by the Taiwan SFB whereunder FINIs/FIDIs may apply for investment ID to invest in Taiwan securities by registration with Taiwan Stock Exchange. FINIs will additionally need consent from the foreign exchange authority, ie, the Central Bank of China. In addition to the limitations above, various industry-specific percentage-based limitations on foreign ownership of Taiwan companies (and in some cases prohibitions) may apply. Investments are subject to exchange rate and currency conversion restrictions and risks. Dividends and interest earned by foreign investors' Taiwan securities/instruments are generally subject to a 20% withholding tax. Ordinary shares are not available to ML private client accounts in the U.S.",
+        "bbox": [
+            35,
+            436,
+            625,
+            727
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This report is distributed in Taiwan by BofA (Taiwan) Limited, which is regulated by the Taiwan SFB.",
+        "bbox": [
+            35,
+            734,
+            598,
+            767
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/03a2e5e11cffc0969865d21b9a1ec6aa6381a1c33199d63255f31253c0e76c48.jpg",
+        "table_caption": [
+            "APR - Technology Hardware Coverage Cluster"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td>BUY</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>AAC Technologies</td><td>AACAF</td><td>2018 HK</td><td>Katherine Zhu</td></tr><tr><td></td><td>Asia Vital Components</td><td>AVMPF</td><td>3017 TT</td><td>Doris Kao</td></tr><tr><td></td><td>BizLink</td><td>BIZLF</td><td>3665 TT</td><td>Doris Kao</td></tr><tr><td></td><td>BOE Technology Group Co., Ltd</td><td>XCJQF</td><td>000725 CH</td><td>Brad Lin</td></tr><tr><td></td><td>Chenbro</td><td>CEOMF</td><td>8210 TT</td><td>Doris Kao</td></tr><tr><td></td><td>Cowell</td><td>CWLLF</td><td>1415 HK</td><td>Katherine Zhu</td></tr><tr><td></td><td>Crystal-Optech</td><td>XMKAF</td><td>002273 CH</td><td>Katherine Zhu</td></tr></table>",
+        "bbox": [
+            37,
+            795,
+            955,
+            922
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            39,
+            953,
+            50,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            81,
+            952,
+            258,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/62425bbf15ca59dd29f608b6cf4661e2b328a7a15ea68e486f2d24323613a294.jpg",
+        "table_caption": [
+            "APR - Technology Hardware Coverage Cluster"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td></td><td>Delta Electronics Inc.</td><td>DLTEF</td><td>2308 TT</td><td>Robert Cheng</td></tr><tr><td></td><td>Duksan Neolux</td><td>XDSXF</td><td>213420 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Dynamic Holding</td><td>XLHCF</td><td>3715 TT</td><td>Mike Yang</td></tr><tr><td></td><td>E Ink Holdings</td><td>PVWIF</td><td>8069 TT</td><td>Doris Kao</td></tr><tr><td></td><td>Elite Material</td><td>ETMCF</td><td>2383 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Foxconn Industrial Internet</td><td>XDAZF</td><td>601138 CH</td><td>Robert Cheng</td></tr><tr><td></td><td>Goertek</td><td>XGKCF</td><td>002241 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>Gold Circuit</td><td>GOCCF</td><td>2368 TT</td><td>Doris Kao</td></tr><tr><td></td><td>Hana Microelectronics</td><td>XHNNF</td><td>HANA TB</td><td>Suppapong lemkongaek, CFA, CMT</td></tr><tr><td></td><td>Hon Hai Precision Industry</td><td>HNHAF</td><td>2317 TT</td><td>Robert Cheng</td></tr><tr><td></td><td>Huaqin</td><td>XHUAF</td><td>603296 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>Huaqin</td><td>XPEZF</td><td>3296 HK</td><td>Katherine Zhu</td></tr><tr><td></td><td>ISU Petasys</td><td>IPTYF</td><td>007660 KS</td><td>Matt Shin</td></tr><tr><td></td><td>Jentech</td><td>XVFSF</td><td>3653 TT</td><td>Doris Kao</td></tr><tr><td></td><td>King Slide</td><td>KGSLF</td><td>2059 TT</td><td>Doris Kao</td></tr><tr><td></td><td>Kinsus</td><td>KNSUF</td><td>3189 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Largan Precision</td><td>LGANF</td><td>3008 TT</td><td>Robert Cheng</td></tr><tr><td></td><td>Lens Tech</td><td>XLTVF</td><td>6613 HK</td><td>Katherine Zhu</td></tr><tr><td></td><td>LG CNS</td><td>XLGLF</td><td>064400 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>LG Electronics</td><td>LGEAF</td><td>066570 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>LG Innotek</td><td>XLGQF</td><td>011070 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Lotes</td><td>ZYZTF</td><td>3533 TT</td><td>Doris Kao</td></tr><tr><td></td><td>Luxshare</td><td>XNJQF</td><td>002475 CH</td><td>Robert Cheng</td></tr><tr><td></td><td>Netweb Technologies</td><td>XNTZF</td><td>NETWEB IN</td><td>Jatin Kalra, CFA</td></tr><tr><td></td><td>NYPCB</td><td>NANYF</td><td>8046 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Quanta Computer</td><td>QUCPF</td><td>2382 TT</td><td>Robert Cheng</td></tr><tr><td></td><td>Samsung Electro-Mechanics</td><td>SMSGF</td><td>009150 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Samsung SDI</td><td>SSDIF</td><td>006400 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Samsung SDS</td><td>XWPBF</td><td>018260 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Shennan Circuits</td><td>XAMKF</td><td>002916 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>Taiwan Union Technology Corporation</td><td>TWUNF</td><td>6274 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Unimicron</td><td>UMCRF</td><td>3037 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Universal Display</td><td>OLED</td><td>OLED US</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Victory Giant</td><td>XENEF</td><td>300476 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>Wistron</td><td>WICOF</td><td>3231 TT</td><td>Doris Kao</td></tr><tr><td></td><td>Wiwynn</td><td>XWIQF</td><td>6669 TT</td><td>Robert Cheng</td></tr><tr><td></td><td>Xiaomi Corporation</td><td>XIACF</td><td>1810 HK</td><td>Robert Cheng</td></tr><tr><td></td><td>Yageo</td><td>YGEQF</td><td>2327 TT</td><td>Robert Cheng</td></tr><tr><td></td><td>Zhen Ding Tech</td><td>XFAGF</td><td>4958 TT</td><td>Doris Kao</td></tr><tr><td></td><td>Zhongji Innolight</td><td>XZICF</td><td>300308 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>ZTE Corporation</td><td>SHZZF</td><td>000063 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>ZTE Corporation</td><td>ZTCOF</td><td>763 HK</td><td>Katherine Zhu</td></tr></table>",
+        "bbox": [
+            39,
+            79,
+            955,
+            627
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/863e38952ceb0e375260912a80c50c7350bb6bb062a8dcd2ac3dc6d992390e1a.jpg",
+        "table_caption": [
+            "NEUTRAL"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Advantech</td><td>ADTEF</td><td>2395 TT</td><td>Robert Cheng</td></tr><tr><td>Asustek</td><td>AKCPF</td><td>2357 TT</td><td>Robert Cheng</td></tr><tr><td>AU Optronics</td><td>AUOTF</td><td>2409 TT</td><td>Brad Lin</td></tr><tr><td>AU Optronics</td><td>AUOTY</td><td>AUOTY US</td><td>Brad Lin</td></tr><tr><td>Auras Technology</td><td>AUTCF</td><td>3324 TT</td><td>Doris Kao</td></tr><tr><td>BYD Electronic</td><td>BYDIF</td><td>285 HK</td><td>Katherine Zhu</td></tr><tr><td>DS Precision</td><td>XBASF</td><td>002384 CH</td><td>Katherine Zhu</td></tr><tr><td>Innolux Corporation</td><td>CMLXY</td><td>3481 TT</td><td>Brad Lin</td></tr><tr><td>Lenovo Group</td><td>LNVGF</td><td>992 HK</td><td>Robert Cheng</td></tr><tr><td>Lenovo Group</td><td>LNVGY</td><td>LNVGY US</td><td>Robert Cheng</td></tr><tr><td>Lite-On Tech</td><td>LOTZF</td><td>2301 TT</td><td>Doris Kao</td></tr><tr><td>Sunny Optical</td><td>SNPTF</td><td>2382 HK</td><td>Katherine Zhu</td></tr><tr><td>TCL Technology Group Corp</td><td>XTOOF</td><td>000100 CH</td><td>Brad Lin</td></tr></table>",
+        "bbox": [
+            40,
+            643,
+            955,
+            810
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/711cbb9c61b95638550b173627d93f0beee0ece96198c261184d57ff942387a5.jpg",
+        "table_caption": [
+            "UNDERPERFORM"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Acer</td><td>ASIYF</td><td>2353 TT</td><td>Robert Cheng</td></tr><tr><td>Catcher Tech</td><td>CHERF</td><td>2474 TT</td><td>Robert Cheng</td></tr><tr><td>Compal Electron</td><td>XLCPF</td><td>2324 TT</td><td>Doris Kao</td></tr><tr><td>Delta Electronics (Thailand)</td><td>XLETF</td><td>DELTA TB</td><td>Suppapong lemkongaek, CFA, CMT</td></tr><tr><td>Everwin Precision</td><td>XSHZF</td><td>300115 CH</td><td>Katherine Zhu</td></tr><tr><td>Genius Electronic Optical</td><td>GNSEF</td><td>3406 TT</td><td>Robert Cheng</td></tr><tr><td>Lens Tech</td><td>XLTGF</td><td>300433 CH</td><td>Katherine Zhu</td></tr></table>",
+        "bbox": [
+            40,
+            827,
+            955,
+            916
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            39,
+            946,
+            81,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            741,
+            952,
+            918,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            942,
+            953,
+            955,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "APR - Technology Hardware Coverage Cluster",
+        "text_level": 2,
+        "bbox": [
+            37,
+            61,
+            277,
+            75
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/7c5874ff0bfaa5e062983e1aaa8e321e63dd185b511151edbee89a04fc78d06d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td></td><td>LG Display</td><td>LPHLF</td><td>034220 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>LG Display-ADR</td><td>LPL</td><td>LPL US</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Lianchuang Electronic</td><td>XWOFF</td><td>002036 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>Pegatron</td><td>PGTRF</td><td>4938 TT</td><td>Robert Cheng</td></tr><tr><td></td><td>Sanan Opto</td><td>XEQYF</td><td>600703 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>Seoul Semiconductor</td><td>SLSOF</td><td>046890 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Shengyi</td><td>DGUNF</td><td>600183 CH</td><td>Mike Yang</td></tr><tr><td></td><td>Sunway Communications</td><td>XWSVF</td><td>300136 CH</td><td>Katherine Zhu</td></tr><tr><td></td><td>Tianma</td><td>XVZLF</td><td>000050 CH</td><td>Brad Lin</td></tr><tr><td></td><td>Transsion</td><td>XCINF</td><td>688036 CH</td><td>Robert Cheng</td></tr></table>",
+        "bbox": [
+            39,
+            80,
+            954,
+            222
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "$iQ_{method}^{SM}$ Measures Definitions",
+        "text_level": 2,
+        "bbox": [
+            37,
+            261,
+            315,
+            279
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Business Performance\nReturn On Capital Employed",
+        "bbox": [
+            37,
+            291,
+            178,
+            319
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Return On Equity\nOperating Margin\nEarnings Growth\nFree Cash Flow",
+        "bbox": [
+            37,
+            330,
+            127,
+            381
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Quality of Earnings",
+        "text_level": 2,
+        "bbox": [
+            37,
+            387,
+            142,
+            400
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Cash Realization Ratio\nAsset Replacement Ratio\nTax Rate\nNet Debt-To-Equity Ratio\nInterest Cover",
+        "bbox": [
+            37,
+            401,
+            163,
+            465
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Valuation Toolkit",
+        "text_level": 2,
+        "bbox": [
+            37,
+            469,
+            133,
+            482
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Price / Earnings Ratio\nPrice / Book Value\nDividend Yield\nFree Cash Flow Yield\nEnterprise Value / Sales",
+        "bbox": [
+            37,
+            484,
+            155,
+            549
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Numerator\nNOPAT = (EBIT + Interest Income) × (1 - Tax Rate) + Goodwill Amortization",
+        "bbox": [
+            214,
+            291,
+            571,
+            319
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Net Income\nOperating Profit\nExpected 5 Year CAGR From Latest Actual\nCash Flow From Operations – Total Capex",
+        "bbox": [
+            214,
+            330,
+            421,
+            383
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Numerator",
+        "text_level": 2,
+        "bbox": [
+            215,
+            387,
+            277,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Cash Flow From Operations\nCapex\nTax Charge\nNet Debt = Total Debt - Cash & Equivalents\nEBIT",
+        "bbox": [
+            215,
+            398,
+            428,
+            464
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Numerator",
+        "text_level": 2,
+        "bbox": [
+            215,
+            470,
+            277,
+            482
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Current Share Price\nCurrent Share Price\nAnnualised Declared Cash Dividend\nCash Flow From Operations – Total Capex\nEV = Current Share Price × Current Shares + Minority Equity + Net Debt +\nOther LT Liabilities\nEnterprise Value",
+        "bbox": [
+            215,
+            484,
+            560,
+            571
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Denominator",
+        "text_level": 2,
+        "bbox": [
+            583,
+            291,
+            658,
+            304
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Total Assets – Current Liabilities + ST Debt + Accumulated Goodwill\nAmortization\nShareholders' Equity\nSales\nN/A\nN/A",
+        "bbox": [
+            581,
+            304,
+            908,
+            381
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Denominator",
+        "text_level": 2,
+        "bbox": [
+            583,
+            387,
+            656,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Net Income\nDepreciation\nPre-Tax Income\nTotal Equity\nInterest Expense",
+        "bbox": [
+            583,
+            401,
+            669,
+            465
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Denominator",
+        "text_level": 2,
+        "bbox": [
+            583,
+            469,
+            658,
+            482
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Diluted Earnings Per Share (Basis As Specified)\nShareholders' Equity / Current Basic Shares\nCurrent Share Price\nMarket Cap = Current Share Price × Current Basic Shares\nSales",
+        "bbox": [
+            583,
+            483,
+            852,
+            547
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Basic EBIT + Depreciation + Amortization",
+        "text_level": 2,
+        "bbox": [
+            581,
+            559,
+            781,
+            571
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "EV / EBITDA",
+        "text_level": 2,
+        "bbox": [
+            37,
+            559,
+            101,
+            571
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "iQmethod $^{SM}$ is the set of BofA Global Research standard measures that serve to maintain global consistency under three broad headings: Business Performance, Quality of Earnings, and validations. The key features of iQmethod are: A consistently structured, detailed, and transparent methodology. Guidelines to maximize the effectiveness of the comparative valuation process, and to identify some common pitfalls.\n\niQdatabase $^{®}$ is our real-time global research database that is sourced directly from our equity analysts' earnings models and includes forecasted as well as historical data for income statements, balance sheets, and cash flow statements for companies covered by BofA Global Research.",
+        "bbox": [
+            37,
+            571,
+            937,
+            618
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "iQprofile $^{SM}$ , iQmethod $^{SM}$ are service marks of BofA Corporation. iQdatabase $^{®}$ is a registered service mark of BofA Corporation.",
+        "bbox": [
+            37,
+            619,
+            571,
+            631
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            40,
+            953,
+            58,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            81,
+            952,
+            258,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/966fa4d724bf796c2d1d56e3d6caed3db8a0a241fe8d4548881ca6c2bb764135.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Investment rating</td><td>Total return expectation (within 12-month period of date of initial rating)</td><td>Ratings dispersion guidelines for coverage cluster $^{R2}$ </td></tr><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>",
+        "bbox": [
+            40,
+            670,
+            937,
+            738
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            40,
+            59,
+            202,
+            80
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            40,
+            85,
+            263,
+            103
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/272b7e3061ae19dba1d9a6eee753ee8872091beec03768e3922ed5a19b4cc963.jpg",
+        "content": "",
+        "chart_caption": [
+            "Largan Precision (LGANF) Price Chart"
+        ],
+        "chart_footnote": [
+            "B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating"
+        ],
+        "bbox": [
+            68,
+            131,
+            924,
+            323
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Investment Opinion System is contained at the end of the report under the heading \"Fundamental Equity Opinion Key\". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report.",
+        "bbox": [
+            37,
+            340,
+            954,
+            376
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Equity Investment Rating Distribution: Industrials/Multi-Industry Group (as of 30 Jun 2026)",
+        "bbox": [
+            39,
+            388,
+            514,
+            402
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/04598190e31331fbb5e0a3be4acf9501514ae83e2ab0e5e28aacb476c0475c1d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>68</td><td>62.39%</td><td>Buy</td><td>36</td><td>52.94%</td></tr><tr><td>Hold</td><td>15</td><td>13.76%</td><td>Hold</td><td>7</td><td>46.67%</td></tr><tr><td>Sell</td><td>26</td><td>23.85%</td><td>Sell</td><td>12</td><td>46.15%</td></tr></table>",
+        "bbox": [
+            40,
+            407,
+            954,
+            460
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Equity Investment Rating Distribution: Global Group (as of 30 Jun 2026)",
+        "bbox": [
+            40,
+            463,
+            413,
+            476
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/795ea54d8294de00092e1e7503fa450f636d5164583c194b09aed68d1062f1d2.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "$^{R1}$ Issuers that were investment banking clients of BofA or one of its affiliates within the past 12 months. For purposes of this Investment Rating Distribution, the coverage universe includes only stocks. A stock rated Neutral is included as a Hold, and a stock rated Underperform is included as a Sell."
+        ],
+        "table_body": "<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>1987</td><td>56.11%</td><td>Buy</td><td>1190</td><td>59.89%</td></tr><tr><td>Hold</td><td>797</td><td>22.51%</td><td>Hold</td><td>496</td><td>62.23%</td></tr><tr><td>Sell</td><td>757</td><td>21.38%</td><td>Sell</td><td>391</td><td>51.65%</td></tr></table>",
+        "bbox": [
+            40,
+            479,
+            954,
+            534
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation).",
+        "bbox": [
+            37,
+            564,
+            950,
+            669
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$^{R2}$ Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock.",
+        "bbox": [
+            39,
+            739,
+            939,
+            795
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Price Charts for the securities referenced in this research report are available on the Price Charts website, or call 1-800-MERRILL to have them mailed.",
+        "bbox": [
+            37,
+            804,
+            751,
+            816
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In the US, retail sales and/or distribution of this report may be made only in states where these securities are exempt from registration or have been qualified for sale: Largan Precision. The country in which this issuer is organized has certain laws or regulations that limit or restrict ownership of the issuer's shares by nationals of other countries: Largan Precision. BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.",
+        "bbox": [
+            37,
+            815,
+            913,
+            876
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Other Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            40,
+            890,
+            326,
+            907
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel",
+        "bbox": [
+            37,
+            911,
+            915,
+            925
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            40,
+            32,
+            165,
+            42
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            40,
+            946,
+            84,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            743,
+            952,
+            919,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            937,
+            953,
+            955,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "expenses from the issuer for such visits.",
+        "bbox": [
+            40,
+            60,
+            235,
+            71
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.",
+        "bbox": [
+            37,
+            71,
+            947,
+            117
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.",
+        "bbox": [
+            39,
+            117,
+            918,
+            128
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.",
+        "bbox": [
+            39,
+            138,
+            947,
+            161
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments.",
+        "bbox": [
+            39,
+            161,
+            808,
+            172
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Refer to BofA Global Research policies relating to conflicts of interest.",
+        "bbox": [
+            40,
+            172,
+            372,
+            183
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\"BofA\" includes BofA, Inc. (\"BofAS\") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. \"BofA\" is a global brand for BofA Global Research.",
+        "bbox": [
+            39,
+            183,
+            946,
+            217
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:",
+        "bbox": [
+            40,
+            217,
+            573,
+            229
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "BofAS and/or BofA, Pierce, Fenner & Smith Incorporated (\"MLPF&S\") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA (\"BofASE\") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASDisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.",
+        "bbox": [
+            39,
+            228,
+            955,
+            604
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.",
+        "bbox": [
+            39,
+            604,
+            957,
+            686
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "General Investment Related Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            40,
+            684,
+            246,
+            695
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA.",
+        "bbox": [
+            40,
+            694,
+            947,
+            718
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This report may be used or reproduced or quoted in any manner. Whatever in terms of the press of any other person without the express written consent for both securities. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.",
+        "bbox": [
+            39,
+            715,
+            939,
+            809
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.",
+        "bbox": [
+            37,
+            809,
+            954,
+            888
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may",
+        "bbox": [
+            37,
+            888,
+            946,
+            924
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            40,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            40,
+            953,
+            60,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            84,
+            953,
+            259,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            913,
+            946,
+            955,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "be more or less positive than a stock's fundamental equity rating.",
+        "bbox": [
+            40,
+            60,
+            354,
+            71
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to \"short\" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting \"shortselling\" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.",
+        "bbox": [
+            39,
+            71,
+            937,
+            106
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.",
+        "bbox": [
+            40,
+            106,
+            923,
+            128
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time hold a trading position (long or short) in the securities and financial instruments discussed in this report.\nBofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.",
+        "bbox": [
+            40,
+            128,
+            950,
+            244
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Copyright and General Information:",
+        "text_level": 2,
+        "bbox": [
+            40,
+            243,
+            220,
+            253
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.",
+        "bbox": [
+            39,
+            253,
+            955,
+            368
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.",
+        "bbox": [
+            40,
+            367,
+            950,
+            458
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.",
+        "bbox": [
+            40,
+            458,
+            944,
+            503
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.",
+        "bbox": [
+            40,
+            503,
+            929,
+            526
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.",
+        "bbox": [
+            40,
+            526,
+            939,
+            549
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This",
+        "bbox": [
+            40,
+            549,
+            901,
+            560
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.",
+        "bbox": [
+            39,
+            561,
+            947,
+            607
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.",
+        "bbox": [
+            40,
+            606,
+            942,
+            638
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Subject to the quiet period applicable under laws of the various jurisdictions in which we distribute research reports and other legal and BofA policy-related restrictions on the publication of research reports, fundamental equity reports are produced on a regular basis as necessary to keep the investment recommendation current.",
+        "bbox": [
+            40,
+            640,
+            918,
+            662
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.",
+        "bbox": [
+            40,
+            662,
+            918,
+            685
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.",
+        "bbox": [
+            40,
+            685,
+            944,
+            732
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            40,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            40,
+            946,
+            84,
+            965
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            937,
+            953,
+            957,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Largan Precision | 14 July 2026",
+        "bbox": [
+            743,
+            953,
+            921,
+            965
+        ],
+        "page_idx": 12
+    }
+]
