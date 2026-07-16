@@ -1,0 +1,102 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qfyr5gxm/pdfs/0004-79-MS-TSMC - Asia Pacific 2026 revenue and capex guidance raised again- OW-260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "台积电法说：2026",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：TSMC与OWAsiaPacific2026revenue",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-79-MS-TSMC - Asia Pacific 2026 revenue and capex guidance raised again- OW-260716.pdf",
+    "cleaned_source_title": "MS-TSMC - Asia Pacific 2026 revenue and capex guidance raised again- OW",
+    "institution_name": "MS",
+    "required_terms": [
+      "TSMC",
+      "OW"
+    ],
+    "deterministic_fallback": "MS：TSMC与OWAsiaPacific2026revenue",
+    "raw_candidates": [
+      "台积电：亚太2026年营收与资本支出指引再上调-OW",
+      "台积电：亚太2026年营收指引上调至高于40%，资本支出升至600-640亿美元",
+      "台积电：亚太2026年营收指引再上调，AI需求加速超预期"
+    ],
+    "cleaned_candidates": [
+      "MS：TSMC与OWAsiaPacific2026revenue",
+      "MS：台积电，亚太2026年营收与资本支出指引再上调-OW",
+      "MS：台积电，亚太2026年营收指引上调至高于40%",
+      "MS：台积电，亚太2026年营收指引再上调，AI需求加速超预期"
+    ],
+    "faithful_candidate_missing_terms": [
+      "TSMC"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "MS：台积电，亚太2026年营收与资本支出指引再上调-OW",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：台积电，亚太2026年营收指引上调至高于40%",
+        "reasons": [
+          "missing_required_terms=TSMC,OW",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：台积电，亚太2026年营收指引再上调，AI需求加速超预期",
+        "reasons": [
+          "missing_required_terms=TSMC,OW",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment",
+          "unsupported_hook_addition"
+        ]
+      }
+    ],
+    "selected_title": "MS：TSMC与OWAsiaPacific2026revenue",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "MS：TSMC与OWAsiaPacific2026revenue"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "518",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

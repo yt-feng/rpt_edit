@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_qfyr5gxm/pdfs/0001-76-MS-Microsoft-MSFT.US-2Q26 CIO Survey Takeaways - GenAI Leadership Position Remains Clear-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qfyr5gxm/pdfs/0002-77-MS-Power Struggle- AI- Data Centers - Local Backlash-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qfyr5gxm/pdfs/0003-78-MS-Q2-26 Preview-Following 2H Volumes into 2027-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qfyr5gxm/pdfs/0004-79-MS-TSMC - Asia Pacific 2026 revenue and capex guidance raised again- OW-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qfyr5gxm/pdfs/0005-80-MS-Shenzhen Capchem Technology Co Ltd-300037-Riding on the Semiconductor Materials Upcycle- Upgrade to OW-260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

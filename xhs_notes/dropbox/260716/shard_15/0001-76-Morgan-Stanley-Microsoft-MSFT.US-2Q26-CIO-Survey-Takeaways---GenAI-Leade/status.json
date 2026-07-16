@@ -1,0 +1,88 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qfyr5gxm/pdfs/0001-76-MS-Microsoft-MSFT.US-2Q26 CIO Survey Takeaways - GenAI Leadership Position Remains Clear-260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "微软的AI霸主地位，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：微软MSFT.US，2Q26CIO调查要点",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-76-MS-Microsoft-MSFT.US-2Q26 CIO Survey Takeaways - GenAI Leadership Position Remains Clear-260716.pdf",
+    "cleaned_source_title": "MS-Microsoft-MSFT.US-2Q26 CIO Survey Takeaways - GenAI Leadership Position Remains Clear",
+    "institution_name": "MS",
+    "required_terms": [
+      "MSFT",
+      "US",
+      "CIO"
+    ],
+    "deterministic_fallback": "MS：MSFT与US与CIOMicrosoft.2Q26C",
+    "raw_candidates": [
+      "微软MSFT.US:2Q26 CIO调查要点-GenAI领导地位依然明确",
+      "微软MSFT.US:2Q26 CIO调查显示GenAI领导力转化为预算增长",
+      "微软MSFT.US:2Q26 CIO调查:GenAI领导力推动IT预算加速至+7.6%"
+    ],
+    "cleaned_candidates": [
+      "MS：微软MSFT.US，2Q26CIO调查要点",
+      "MS：微软MSFT.US",
+      "MS：微软MSFT.US，2Q26CIO调查",
+      "MS：MSFT与US与CIOMicrosoft.2Q26C"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "MS：微软MSFT.US",
+        "reasons": [
+          "missing_required_terms=CIO",
+          "anchor_coverage=0.39",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：MSFT与US与CIOMicrosoft.2Q26C",
+        "reasons": [
+          "anchor_coverage=0.56"
+        ]
+      }
+    ],
+    "selected_title": "MS：微软MSFT.US，2Q26CIO调查要点",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "MS：微软MSFT.US，2Q26CIO调查要点"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "556",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
