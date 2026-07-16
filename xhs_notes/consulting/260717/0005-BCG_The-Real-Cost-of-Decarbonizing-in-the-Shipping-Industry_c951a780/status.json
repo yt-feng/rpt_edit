@@ -1,0 +1,90 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "航运绿色转型，谁在买",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "世界经济论坛->WEF x1",
+    "投资->研究 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：0005BCGTheRealCostofD",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780.pdf",
+    "cleaned_source_title": "0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780",
+    "institution_name": "波士顿咨询",
+    "required_terms": [
+      "BCG"
+    ],
+    "deterministic_fallback": "波士顿咨询：0005BCGTheRealCostofD",
+    "raw_candidates": [
+      "波士顿咨询：航运脱碳的真实成本",
+      "波士顿咨询：航运脱碳真实成本-货主愿付溢价年增30%",
+      "波士顿咨询：航运脱碳真实成本-80%客户愿付但仅不到一半有预算"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：0005BCGTheRealCostofD",
+      "波士顿咨询：航运脱碳的真实成本",
+      "波士顿咨询：航运脱碳真实成本-货主愿付溢价年增30%",
+      "波士顿咨询：航运脱碳真实成本-80%客户愿付但仅不到一半有预算"
+    ],
+    "faithful_candidate_missing_terms": [
+      "BCG"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：航运脱碳的真实成本",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：航运脱碳真实成本-货主愿付溢价年增30%",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：航运脱碳真实成本-80%客户愿付但仅不到一半有预算",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：0005BCGTheRealCostofD",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "波士顿咨询：0005BCGTheRealCostofD"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

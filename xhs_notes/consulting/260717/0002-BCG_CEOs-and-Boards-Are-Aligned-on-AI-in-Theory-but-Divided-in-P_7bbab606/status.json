@@ -1,0 +1,83 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "CEO跟董事会，谁在",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606.pdf",
+    "cleaned_source_title": "0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606",
+    "institution_name": "波士顿咨询",
+    "required_terms": [
+      "BCG",
+      "AI"
+    ],
+    "deterministic_fallback": "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+    "raw_candidates": [
+      "BCG：CEO与董事会在AI上理论一致实践分裂",
+      "BCG：75%董事会高估AI知识，CEO与董事会在AI上理论一致实践分裂",
+      "BCG：60%CEO称董事会因FOMO催促AI转型，理论一致实践分裂"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂",
+      "波士顿咨询：BCG，75%董事会高估AI知识",
+      "波士顿咨询：BCG，60%CEO称董事会因FOMO催促AI转型",
+      "波士顿咨询：BCG与AI0002CEOs和BoardsAre"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：BCG，75%董事会高估AI知识",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：BCG，60%CEO称董事会因FOMO催促AI转型",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

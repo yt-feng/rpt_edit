@@ -1,0 +1,92 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "CMO 角色正在被 ",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a.pdf",
+    "cleaned_source_title": "0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a",
+    "institution_name": "波士顿咨询",
+    "required_terms": [
+      "BCG",
+      "AI",
+      "CMO"
+    ],
+    "deterministic_fallback": "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+    "raw_candidates": [
+      "波士顿咨询：AI代理让CMO角色更重要",
+      "波士顿咨询：96%CMO相信AI转型，仅31%进入执行",
+      "波士顿咨询：AI代理选品牌不看广告，看硬指标"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+      "波士顿咨询：AI代理让CMO角色更重要",
+      "波士顿咨询：96%CMO相信AI转型，仅31%进入执行",
+      "波士顿咨询：AI代理选品牌不看广告，看硬指标"
+    ],
+    "faithful_candidate_missing_terms": [
+      "BCG"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：AI代理让CMO角色更重要",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：96%CMO相信AI转型，仅31%进入执行",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：AI代理选品牌不看广告，看硬指标",
+        "reasons": [
+          "missing_required_terms=BCG,CMO",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "波士顿咨询：BCG与AI与CMO0001AgenticWillM"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

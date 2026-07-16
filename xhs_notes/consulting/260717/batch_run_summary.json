@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 5,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_How-Boards-and-CEOs-Can-Build-a-Shared-AI-Vision_964d119e.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0003-BCG_How-Boards-and-CEOs-Can-Build-a-Shared-AI-Vision_964d119e.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

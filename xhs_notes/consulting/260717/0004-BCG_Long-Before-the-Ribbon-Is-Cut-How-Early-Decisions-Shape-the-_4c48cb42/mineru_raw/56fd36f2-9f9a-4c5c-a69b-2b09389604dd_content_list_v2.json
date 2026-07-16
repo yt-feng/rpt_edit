@@ -1,0 +1,3384 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Long Before The Ribbon Is Cut"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                53,
+                47,
+                623,
+                146
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How Early Decisions Shape The Fate Of Large-Scale Projects"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                168,
+                569,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "May 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                255,
+                139,
+                269
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Devanshu Mathur, Andrea Nogara, Dr. Nuno Couto, Richard El Cheikh, Mawadda Abdan"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                268,
+                734,
+                286
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Generated using Runway and Figma"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                948,
+                240,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                52,
+                149,
+                82
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we work closely with clients to embrace a transformational approach aimed at benefiting all stakeholders—empowering organizations to grow, build sustainable competitive advantage, and drive positive societal impact."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                123,
+                482,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our diverse, global teams bring deep industry and functional expertise and a range of perspectives that question the status quo and spark change. BCG delivers solutions through leading-edge management consulting, technology and design, and corporate and digital ventures. We work in a uniquely collaborative model across the firm and throughout all levels of the client organization, fueled by the goal of helping our clients thrive and enabling them to make the world a better place."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                273,
+                482,
+                424
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Contents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                40,
+                289,
+                76
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "01 Unprecedented Scale, Unforgiving Expectations"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                149,
+                442,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "02 Where Operational Risk Is Formed"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                235,
+                426,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "03 Four Case Studies: How Operational Planning Shapes Performance"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                322,
+                425,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Case Study #1: FIFA World Cup Qatar 2022"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                414,
+                416,
+                453
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Case Study #2: Expo 2020 Dubai"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                458,
+                423,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Case Study #3: Istanbul Airport"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                485,
+                416,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Case Study #4: Fontainebleau Las Vegas"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                511,
+                403,
+                549
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "04 BCG's Asset Ops360: How to Redefine Operational Viability in Capital Programs"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                149,
+                937,
+                233
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Unprecedented Scale, Unforgiving Expectations"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                57,
+                38,
+                697,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The world has never built like this before."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                158,
+                356,
+                174
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Capital and infrastructure investments now operate at a multitrillion-dollar scale. In 2026, it's estimated that the transport, energy, industrial, and residential sectors will attract over $7 trillion in combined capital investment. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " And according to the 2025 Global CAPEX Survey from the Boston Consulting Group (BCG), 94% of large-scale project owners (those that spend at least $5B annually) expect to maintain or increase their investments over the next 12 months. At the same time, 54% of respondents in that same survey report that post-FID delivery challenges have intensified over the past year. Saudi Arabia alone, under Vision 2030, is deploying more than $1 trillion in capital expenditures for large-scale projects. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                187,
+                480,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yet the most striking shift is not scale. It is expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                387,
+                458,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Assets are now expected to perform from day one. Revenue must ramp up rapidly. The tolerance for disruption, whether political, financial, or reputational, is minimal. The margin for underperformance has disappeared."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                416,
+                485,
+                475
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Still, the record of large-scale projects has struggled to meet these demands. Only around 1 in 12 projects is delivered on time and on budget, with cost overruns averaging over  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "60\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of the initial budget. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Schedule slippage often reaches one to two years. Berlin's Brandenburg Airport, for example, opened more than nine years behind schedule and over €4 billion above its original budget. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                487,
+                455,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Under pressure to recover time and money, developers often compress testing, training, and commissioning. Operational teams are mobilized late. Systems are exposed under live conditions, shifting risk directly into operations."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                159,
+                942,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The consequences are severe. Congestion, system failures, safety incidents, reputational damage, regulatory scrutiny, and prolonged stabilization efforts follow."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                230,
+                937,
+                275
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These breakdowns are often framed as execution failures at project delivery. Yet the fact that they occur consistently across sectors and geographies suggests something deeper. Failure is rarely created just before the opening. It is embedded earlier — in design trade-offs, sequencing priorities, and governance choices made long before the first guest arrives."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                287,
+                941,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper shifts the lens upstream. It examines large-scale projects across their lifecycles to understand how operational risk is formed, compounded, and ultimately revealed under live conditions. Rather than treating opening day as the starting point of failure, we investigate how early decisions shape operational performance well before launch."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                401,
+                919,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This lens also underpins BCG's ongoing work in embedding operational viability earlier in the lifecycle of large-capital projects."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                516,
+                905,
+                562
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2f1ea3c2f37c3975d03262c1fb948f46a93195e94c3c98f2c305085932298220.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                57,
+                640,
+                937,
+                813
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 2025, Global CAPEX Survey, The Boston Consulting Group."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                860,
+                413,
+                873
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Bent Flyvbjerg and Dan Gardner, 2023, \"How Big Things Get Done,\" Penguin Random House."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                892,
+                606,
+                904
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Maya El Hachem, Juan Ferrer, Sophia Frempong and Igor Vukovic, 2025, \"Megaprojects: One Trillion in CAPEX Creating One Million Future Jobs,\" Boston Consulting Group, July 8."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                871,
+                939,
+                894
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Kate Connolly, 2020, “We were a laughing stock”: Berlin airport finally finished as Covid bites,” The Guardian, October 7."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                904,
+                754,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                947,
+                919,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                941,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Project lifecycle"
+                    }
+                ]
+            },
+            "bbox": [
+                431,
+                896,
+                571,
+                914
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Where Operational Risk Is Formed"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                36,
+                926,
+                76
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Operational risk does not begin on opening day. It starts during strategy definition, when early assumptions about demand, operating models, and performance targets are set."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                116,
+                487,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As a project moves into design and construction, those assumptions are translated into fixed layouts, capacities, and system interfaces. Flexibility narrows. Decisions become structural. By the time a project reaches testing and delivery, budget and schedule pressure have compressed readiness activities, as illustrated in Exhibit 1."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                173,
+                484,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Once a project enters live operations, accumulated risk materializes quickly and at scale. Operational teams shift from execution to containment. Manual interventions replace automation. Procedural workarounds substitute for system reliability. Extraordinary effort becomes the norm."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                273,
+                468,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                116,
+                936,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At this point, these conditions are expensive to manage, difficult to unwind, and highly visible to regulators, stakeholders, and, most importantly, the public. The implication is clear: The operational lens cannot be applied at delivery alone. Instead, it must be embedded earlier — at strategy, design, and construction — where risk takes root and is locked into the system."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                173,
+                942,
+                275
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                330,
+                144,
+                344
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Where Operational Risk Really Begins"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                351,
+                544,
+                376
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3e6b283bf7a43853823225f4b3cd86df9be1974f55e5d19c300b9b22d76f8dee.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Testing & delivery Go-live (Ops start)"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                403,
+                942,
+                896
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                233,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                946,
+                919,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                942,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Four Case Studies: How Operational Planning Shapes Performance"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                36,
+                727,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To understand how early operational choices shape real-world outcomes, we examine four large-scale projects that made fundamentally different governance and planning decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                216,
+                457,
+                275
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. FIFA World Cup Qatar 2022 (Qatar): This project embedded operational considerations from strategy through construction. Design decisions reflected operating realities, resulting in stable and controlled operations."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                287,
+                450,
+                361
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Expo 2020 Dubai (The United Arab Emirates): This project institutionalized a detailed concept of operations (ConOps) and accountability model, led by the chief"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                373,
+                482,
+                418
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "operating officer (COO), early in the lifecycle. When COVID-19 disrupted core assumptions, the pre-established structure enabled rapid adaptation."
+                    }
+                ]
+            },
+            "bbox": [
+                524,
+                216,
+                902,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Istanbul Airport (Turkey): Constrained by extreme timelines, this project entered operations before construction was complete. Once the project was public, operational strain surfaced immediately."
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                273,
+                912,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Fontainebleau Las Vegas (The United States): This project faced multiple strategic resets. As a result, a new operating model was imposed on legacy infrastructure. Redesign, construction, and activation timelines got compressed. And initial operations became strained."
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                344,
+                939,
+                418
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/305ed0796c8e1b61703495628b0a8846f3596cf2c273fac9089d5e27bb178c0e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                58,
+                456,
+                937,
+                910
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                947,
+                919,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                942,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Case Study #1: FIFA World Cup Qatar 2022"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                47,
+                786,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                115,
+                147,
+                131
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FIFA World Cup Qatar 2022: Operations Designed Early, and Thus Delivered at Scale"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                53,
+                136,
+                766,
+                191
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/28c9c0f8acae8bee090f63c2371f0e7d57edd38821bd3024f0270e5885473433.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                215,
+                942,
+                444
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Qatar 2022 stands as one of the most operationally successful mega events in history. Unlike prior World Cups that were awarded to countries with existing infrastructure, Qatar won the 2010 bid based on ambition: 65 percent of the country's infrastructure did not yet exist."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                487,
+                484,
+                562
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategy: From the outset, the World Cup was embedded within Qatar's National Vision 2030. In 2012, a 'Supreme Committee' was established as an integrated delivery authority, responsible for delivering the Cup while aligning the project with the country's national development agenda. Infrastructure, urban planning, transport, and security were coordinated a decade before kickoff, turning the event into a national operating program."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                573,
+                478,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Design: By 2015, Qatar had built a tournament demand model simulating up to 3.5 million people and daily movements by 800,000.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The model simulated full match-day demand across flights, accommodations, the metro, highways, fan zones, and stadiums. Real-time dashboards visualized pressure points hour by hour. When thresholds were breached, capacity and routing were adjusted — not after kickoff, but years before."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                702,
+                470,
+                819
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In parallel, operational capability was being built. The Josoor Institute, created with the SDA Bocconi School of Management in 2013, trained future World Cup leaders through courses and live roles at FIFA World Cup Brazil 2014, UEFA Euro 2016, and FIFA World Cup Russia 2018.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Operator readiness began nearly a decade before opening, well beyond standard event timelines."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                486,
+                936,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Construction and Testing: Continuous simulations informed design and translated directly into construction. Each newly completed stadium hosted live events as operational trials. In 2017, the Amir Cup final was used to test new World Cup venues; this test revealed entry-gate compression and post-match metro surges. In 2019, the FIFA Club World Cup ran full FIFA procedures; this test revealed gaps in transport coordination and accreditation. In 2021, the FIFA Arab Cup replicated a condensed World Cup across all eight stadiums; this test revealed peak departure congestion and fan-zone overflow patterns."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                602,
+                932,
+                762
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Testing drove correction. Gate sequences were redesigned. Metro capacity was extended. Escalation protocols were tightened. Transport routing was recalibrated. As a result, operational viability was confirmed well before the event's official start."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                772,
+                936,
+                819
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                942,
+                958
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "5. Justus Bonza, Ben Craze, Knut Haase, Martin Halligan, Matthes Koch, and Tobias Vlček, 2024, “Controlling the Transport Demand of the FIFA World Cup 2022 in Qatar,” Research Gate, January."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                882,
+                939,
+                904
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "6. FIFA, 2023, “Josoor Institute: Workforce Development,” FIFA World Cup Qatar 2022 Sustainability Report."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                903,
+                673,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                947,
+                919,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                53,
+                43,
+                475,
+                74
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Operational Start: The contrast with prior tournaments was clear: Brazil 2014 began with metro systems that were late and untested. Russia 2018 faced food-supply disruptions on opening day. Qatar 2022, on the other hand, was fully commissioned at launch."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                87,
+                473,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The economics reflected this readiness. Whereas Brazil generated 4,826 million in total FIFA revenue,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{7}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and Russia brought in 6,421 million,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{8}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Qatar delivered 7,568 million,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{9}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " the highest revenue in World Cup history."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                43,
+                937,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Qatar 2022 succeeded not because it performed well at delivery. It succeeded because operational viability was designed, tested, and proven over a 10-year horizon."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                116,
+                914,
+                161
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1658f18fef4ee733870888946657c0be55dc9d636b17ec49aa537f41e3e670c5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                58,
+                199,
+                937,
+                840
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "7. FIFA, 2015, “2014 FIFA World Cup Brazil Financial Overview,” FIFA Financial Report 2014."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                881,
+                588,
+                895
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "8. FIFA, 2019, “2018 FIFA World Cup Russia Financial Overview,” FIFA Financial Report 2018."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                894,
+                596,
+                904
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "9. FIFA, 2023, “2019–2022 Cycle in Review: 2022 Financial Highlights,” FIFA Annual Report 2022."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                904,
+                610,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                947,
+                919,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                941,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Case Study #2: Expo 2020 Dubai"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                48,
+                608,
+                76
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                115,
+                137,
+                131
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Expo 2020 Dubai: Built to Adapt, Resilient Under Shock"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                137,
+                751,
+                162
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/38f7c9fb53e560770b0184e8c90ea5ca8c11347c968bb54a0f68324591f78969.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                186,
+                941,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Expo 2020 Dubai delivered a six-month mega event under unprecedented disruption. But such resilience did not emerge during a crisis; it was engineered years earlier through a robust operating model."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                458,
+                477,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategy: As early as 2015, the organizing committee developed a detailed end-to-end Concept of Operations (ConOps). This ConOps defined how the Expo would function on day one, day 100, and day 180. Every service line (security, venue management, food and beverage, retail, transport, etc.) was assigned ownership, service levels, escalation pathways, and cost parameters. Operational accountability was centralized under a COO-led governance model. As a result, ConOps became the reference against which every scope decision, capacity threshold, and trade-off was tested."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                530,
+                480,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Design: Initial forecasts projected 25 million visitors, supported by over 30,000 volunteers.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  These projections were translated into service levels and capacity thresholds. In 2016, ConOps helped detail customer journeys and map arrival, screening, circulation, dwell time, and exit flows. Assumptions were converted into quantifiable requirements: gate capacity, clinic sizing, staffing ratios, payment infrastructure, and overnight reset operations."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                702,
+                482,
+                819
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Construction and Testing: As delivery progressed, ConOps governed sequencing, interfaces, and adjacencies. Full end-to-end rehearsals could only begin once venues and teams were mobilized, which happened as early as 2019. In parallel, simulations and scenario testing stress-tested crowd surges, emergency response, and command escalation under peak conditions."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                458,
+                936,
+                562
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Then COVID-19 fundamentally altered every operating assumption and projection. International arrivals dropped. Health screening became mandatory. Density thresholds were reduced. Workforce availability fluctuated."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                573,
+                934,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "But because ConOps had already done so much work — defining everything from service levels and ownership to escalation pathways and capacity baselines — the system did not require redesign. It merely needed recalibration."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                645,
+                932,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Health controls were inserted into existing entry flows. Crowd limits were adjusted against established thresholds. Staffing models were resized within predefined role structures."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                715,
+                936,
+                775
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The operating logic remained stable; only the parameters changed."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                787,
+                842,
+                819
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                941,
+                958
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "10. 2022, “Over 24 million visits as Expo 2020 Dubai connects minds and creates the future,” Expo 2020 Dubai Official Website, Dubai."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                902,
+                813,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                947,
+                919,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Operational Start: The Expo opened to the public in 2021, operating continuously for six months. Transport to the Expo was integrated with Dubai's Roads and Transport Authority (RTA) through dedicated buses and metro services. A centralized control room unified security, police, fire services, and transport authorities under real-time command oversight."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                43,
+                487,
+                146
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite global travel disruption and fluctuating capacity restrictions, the Expo welcomed over 24 million visits. The lesson: operational resilience must be engineered early. When disruption reshapes demand and constraints, a defined operating architecture absorbs the shock. The system flexes without losing control."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                43,
+                929,
+                133
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/e25f2f4a8d6e7c02c9003fc02b3d08d4423d30302f355f05bca0e3b5443e76ee.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                58,
+                183,
+                937,
+                910
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                339,
+                946,
+                912,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                948,
+                941,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Case Study #3: Istanbul Airport"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                47,
+                600,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Istanbul Airport: Rushed Into Operation, Breakdowns When Going Live"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                136,
+                815,
+                192
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c2865da5003aee052abb12441b6ffa5725af98ce2a73c72db3545257997349de.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                215,
+                941,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Istanbul Airport, an \\$11.7 billion large-scale project, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{11}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " entered operations while construction, commissioning, and system integration were still ongoing."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                486,
+                455,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategy: In 2014, the Turkish government launched the project to position Istanbul as a global aviation hub. Atatürk Airport had reached capacity and demand was rising sharply. Strategic decisions about scale and ambition were set centrally and moved rapidly into design. The airport was designed for an initial capacity of 90 million passengers annually, with long-term expansion to 200 million, positioning it among the largest hubs in Europe."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                545,
+                487,
+                663
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Design: This ambition translated into exceptional complexity. For example, a typical large airport operates fewer than 3,000 airfield ground lights; Istanbul was designed for approximately 35,000. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{12}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " What's more, such complexity required coordination with airlines, ground handlers, and Eurocontrol. Finally, the launch date of 2018 compressed development cycles. As construction progressed, key operational interdependencies continued to evolve."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                673,
+                465,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Construction: Construction progressed while aspects of the design were still being finalized. Layout revisions were incorporated while construction proceeded on site. With limited flexibility to pause or resequence, momentum and deadlines took precedence over operational alignment."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                816,
+                475,
+                846
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                486,
+                932,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Testing and Delivery: In October 2018, Phase 1 operations started even as additional runways, terminal capacity, and expansion phases remained under development as part of the broader master plan. Mandatory technical commissioning was completed, but without full operational rehearsals. Large portions of the terminal remained unfinished, so the airport initially handled only 20–30 flights per day."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                544,
+                924,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The results were predictable: Passenger satisfaction plummeted. Problems emerged in access, circulation, baggage handling, routing, and facility readiness. The Airport Operational Database (AODB) was not fully stabilized; airlines and ground handlers operated across separate systems, thus exposing data misalignment under live conditions. Operational coordination was subsequently consolidated under an Airport Operations Control Centre (AOCC), providing unified oversight across airlines, ground handlers, and airport systems."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                673,
+                937,
+                820
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "11. 2018, “Erdogan opens new ‘Istanbul airport,’ Turkey’s biggest,” Reuters, October 29.\n12. 2017, “ADB Safegate To Create Most Intelligent Airfield At Istanbul Airport,” Aviation Week."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                891,
+                594,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                948,
+                942,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                339,
+                946,
+                912,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Operational Start: In April 2019, all flights were transferred from Atatürk to Istanbul Airport. Operational strain became visible immediately: Flights arrived without luggage. Layout inefficiencies, incomplete moving walkways, and extended taxi time added to the strain. Basic services lagged expectations. With no metro connection in place, access relied entirely on road transport, thus creating congestion and missed flights. Negative media coverage exacerbated the situation."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                43,
+                475,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In March 2020, the COVID-19 pandemic brought a sharp drop in traffic, slowing operations until 2022. This period of reduced demand provided time to continue developing infrastructure and stabilize operations. Over time, operators stabilized performance. Today, the airport handles approximately 80 million passengers annually."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                187,
+                465,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                43,
+                927,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The lesson is structural: Istanbul Airport did not fail at opening; it absorbed operational risk that had accumulated across earlier phases. The cost of embedding operations late was paid in public."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                116,
+                939,
+                175
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9ab5cb5f45de5c83aa892267fa910f81c40a2e9c87718875fb19cea79fcd6833.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                58,
+                256,
+                939,
+                910
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                339,
+                946,
+                912,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                948,
+                942,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Case Study #4: Fontainebleau Las Vegas"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                47,
+                757,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fontainebleau Las Vegas: Dormant for a Decade. Operational Strain at Restart"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                137,
+                914,
+                190
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/844a9b1a4cd77ddaa5b1fd3ef3ec2cd0cd7a56d6c49728aea774dd5b5dec6dc8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                215,
+                941,
+                443
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "After nearly two decades of interruption and ownership changes, Fontainebleau Las Vegas opened in December 2023 as a \\$3.7 billion "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{13}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " integrated resort. Its eventual launch was not the continuation of a linear development cycle, but the culmination of multiple resets resulting from multiple ownership changes. The project illustrates how a change in project vision, executed on partially completed infrastructure, jeopardizes the successful launch and operations of a large development project."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                486,
+                467,
+                620
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategy: The project was initially launched in 2006 under Fontainebleau Development, with the ambition to introduce modern luxury to Las Vegas. The program combined hospitality, gaming, retail, food and beverage, and residential condos. Located about three kilometers north of the Strip, the thesis was product-led: A unique resort would compensate for the distance from core footfall in the Vegas Strip."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                629,
+                463,
+                747
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Construction began in 2007. However, during the 2008 financial crisis, the developer filed for Chapter 11. At that stage, the core structure was largely complete, but interior works, back-of-house areas, and life-safety systems were unfinished."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                758,
+                480,
+                832
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The project then changed ownership three times:"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                486,
+                868,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1 In 2009, after bankruptcy, the project was sold and remained dormant."
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                514,
+                912,
+                546
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2 In 2017, new ownership relaunched the asset as “The Drew Las Vegas,” pivoting toward a convention-led gaming resort."
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                558,
+                870,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3 In 2021, after COVID-19, Fontainebleau Development reacquired the property and positioned it as a luxury integrated resort."
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                615,
+                932,
+                661
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Design: Initial design proceeded conventionally. However, a changing vision led to continuous adjustments to the design despite construction progress. Design decisions were constrained by existing structures and previously installed systems."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                673,
+                932,
+                747
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For example, a substantial redesign was required in 2021 to align the core and shell with updated luxury positioning and new code requirements. Residential condo layouts were reconfigured into hospitality rooms. Public spaces and the back of house were modernized after years of dormancy."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                758,
+                932,
+                847
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                947,
+                941,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "13. Matt Villano, 2023, “Fontainebleau opens $3.7-billion Las Vegas Strip hotel,” CNN Travel, October 25."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                903,
+                648,
+                917
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                233,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                339,
+                946,
+                912,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Construction and Testing: When Fontainebleau Development repurchased the asset in 2021, it set the goal to open by 2023. As a result, timelines were compressed, and design, construction, and operational readiness efforts proceeded concurrently."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                43,
+                485,
+                118
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Once construction was finalized, the project team had less than two months to get up and running. During this period, they onboarded and trained more than 6,500 team members while simultaneously resolving last-minute issues (including incidents such as pipe failures during testing). Unsurprisingly, full operational readiness was not achieved before opening day."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                130,
+                480,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Operational Start: After 16 years of development, Fontainebleau Las Vegas debuted on December 13, 2023. Despite a grand opening that featured celebrities, early operations struggled. The property underperformed"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                244,
+                475,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "against targets, with visible underutilization in both the hotel and gaming facets. Within months of opening, workforce and executive turnover occurred, including layoffs of dozens of table-game dealers.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{14}"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                43,
+                912,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Guests left mixed reviews of the resort. While some praised the design and quality of the amenities, others criticized inconsistent service and poor value for money. Guests also reported long internal walking distances (due to the layout configuration). And reports showed discrepancies in check-in times and room assignments as well as housekeeping inconsistencies."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                116,
+                941,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fontainebleau Las Vegas shows what happens when multiple changes are made to an asset's vision and strategy: Operational struggles materialize at every turn. Morale suffers. Underperformance is inevitable."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                230,
+                922,
+                290
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/efb5dcef0a2f211755312540cf2c39077616d185770c901e74cec5c3df4e81c2.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "14. David Danzis, 2025, “More employee cuts on Las Vegas Strip as casino lays off ‘dozens’ of dealers,” Las Vegas Review Journal, May 28."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                356,
+                939,
+                863
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                339,
+                947,
+                912,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                948,
+                941,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG's Asset Ops360: How to Redefine Operational Viability in Capital Programs"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                36,
+                821,
+                170
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The pattern across these four cases is consistent. Projects that perform from day one are not better managed at launch. They are better designed from the start."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                216,
+                477,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Qatar 2022 did not succeed because its operations team was exceptional on opening day. It succeeded because operational viability was treated as a design parameter for over a decade. Expo 2020 did not absorb a global pandemic through improvisation. It absorbed it through a governance architecture that was already in place. Where projects have struggled, the failure was rarely created at delivery. The risk accumulated earlier — in strategy and design — and was simply revealed when operations began."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                273,
+                465,
+                419
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The implication is structural, not cultural. Operational viability cannot be bolted on at the end. It must be embedded at every stage, from strategy through construction, where assumptions are set, trade-offs are made, and flexibility is either preserved or lost."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                430,
+                448,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yet in most large-scale programs today, this does not happen. Operational viability is treated as an implicit outcome rather than an explicit requirement. By the time issues surface, scope is frozen, layouts are locked, and systems are built. Flexibility is gone. Recovery is expensive. And the cost is paid in public."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                516,
+                482,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This is the gap that BCG's Asset Ops360 is designed to close."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                216,
+                887,
+                246
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Asset Ops360 is a structured diagnostic framework that embeds the operational lens across the full project lifecycle. It evaluates viability simultaneously across three dimensions: every stage of development from strategic definition through completion; every operational component of the asset; and every key function that must contribute at the right moment. Together, these dimensions produce a quantified viability profile, making risk visible at every point in the lifecycle."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                259,
+                929,
+                391
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In practice, this means three things that traditional project governance does not provide: assumptions are stress-tested before they become commitments, gaps are surfaced at the stage when closing them is still cheap, and intervention shifts from opening day to the design table, where it belongs."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                401,
+                931,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The leaders who delivered Qatar 2022 and Expo 2020 understood this intuitively. They built operational thinking into the earliest conversations, and it showed when the ribbon was cut. For those overseeing the next generation of large-scale projects, BCG's Asset Ops360 offers a way to make that discipline systematic, transferable, and measurable. The question is not whether to apply it. It is how early."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                502,
+                929,
+                619
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/84245d7f31eefbce512d06212249ff48a7c4b61afa2471d514cebd3286cdf3a0.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                58,
+                653,
+                939,
+                910
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                233,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                339,
+                947,
+                912,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                948,
+                941,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "About the Authors"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                39,
+                522,
+                76
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f88c54892ee4e71ab49a156b6795a787bbaeb79347c43c046dca581e298c248e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                111,
+                223,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Devanshu Mathur is a Managing Director and Partner in BCG's Middle East office. He is a core member of the Travel, Cities & Infrastructure practice, specializing in tourism, megaprojects and entertainment destinations, including theme parks and water parks. You may contact him by email at Mathur.Devanshu@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                244,
+                472,
+                332
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/8c842c661421039fc62604e7e1da4727db5313b4e14d4163b1cc5cf05e73fe8d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                367,
+                223,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dr. Nuno Couto is a Partner in BCG's Middle East office and a core member of the Travel, Cities & Infrastructure practice. He specializes in large-scale entertainment and luxury hospitality developments. You may contact him by email at Couto.Nuno@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                502,
+                485,
+                576
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ab7e09386b54c0357709d5d37e2ec61193a7700e228e90bd8cc928c7a3e5780a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                57,
+                608,
+                223,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mawadda Abdan is an Associate in the firm's Middle East office. She has worked on various projects supporting regional transformation, with a focus on megaprojects and transportation. You may contact her by email at Abdan.Mawadda@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                745,
+                475,
+                818
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "For Further Contact"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                870,
+                263,
+                889
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you would like to discuss this report, please contact the authors."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                901,
+                534,
+                917
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4561df51b6f172aad8f571408b97499a3c4bfd849914fc331c97f716d3511774.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                510,
+                111,
+                678,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Andrea Nogara is a Managing Director and Partner in BCG's Middle East office. He is a core member of the Industrial Goods practice and has extensive experience across construction and automotive industries. You may contact him by email at Nogara.Andrea@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                244,
+                919,
+                319
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4bcf6c9b5a069f56c5cafd7e9e194b4966be5f12887d64a286ec6ec778134452.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                510,
+                365,
+                677,
+                483
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Richard El Cheikh is a Consultant in the firm's Middle East office. He has worked on various projects supporting Saudi Arabia's transformation, with a focus on megaprojects across the Kingdom. You may contact him by email at Elcheikh.Richard@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                502,
+                941,
+                576
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                233,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "LONG BEFORE THE RIBBON IS CUT: HOW EARLY DECISIONS SHAPE THE FATE OF LARGE-SCALE PROJECTS"
+                    }
+                ]
+            },
+            "bbox": [
+                339,
+                946,
+                912,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                948,
+                942,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                49,
+                152,
+                83
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Facebook, and X (formerly Twitter)."
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                844,
+                484,
+                928
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "© Boston Consulting Group 2026. All rights reserved. 5/26"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                944,
+                477,
+                961
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/80361b454fc872cbbed09c128725fa0302401b7398f9f64f1d50ab3abe60cdbf.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                976
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Generated using Runway and Figma"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                948,
+                240,
+                960
+            ]
+        }
+    ]
+]

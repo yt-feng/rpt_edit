@@ -1,0 +1,107 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "大型项目成败，在剪彩",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：0004BCGLongBeforetheR",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42.pdf",
+    "cleaned_source_title": "0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42",
+    "institution_name": "波士顿咨询",
+    "required_terms": [
+      "BCG"
+    ],
+    "deterministic_fallback": "波士顿咨询：0004BCGLongBeforetheR",
+    "raw_candidates": [
+      "波士顿咨询：大型项目失败根源在剪彩前",
+      "波士顿咨询：94%项目维持投入，仅十二分之一按时交付",
+      "波士顿咨询：54%项目交付恶化，根源在开业前已锁定"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：0004BCGLongBeforetheR",
+      "波士顿咨询：大型项目失败根源在剪彩前",
+      "波士顿咨询：94%项目维持投入，仅十二分之一按时交付",
+      "波士顿咨询：54%项目交付恶化，根源在开业前已锁定"
+    ],
+    "faithful_candidate_missing_terms": [
+      "BCG"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：大型项目失败根源在剪彩前",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：94%项目维持投入，仅十二分之一按时交付",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：54%项目交付恶化，根源在开业前已锁定",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：0004BCGLongBeforetheR",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "波士顿咨询：0004BCGLongBeforetheR"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

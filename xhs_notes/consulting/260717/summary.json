@@ -1,0 +1,455 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "CMO 角色正在被 ",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "金融机构->机构 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a.pdf",
+      "cleaned_source_title": "0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "BCG",
+        "AI",
+        "CMO"
+      ],
+      "deterministic_fallback": "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+      "raw_candidates": [
+        "波士顿咨询：AI代理让CMO角色更重要",
+        "波士顿咨询：96%CMO相信AI转型，仅31%进入执行",
+        "波士顿咨询：AI代理选品牌不看广告，看硬指标"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+        "波士顿咨询：AI代理让CMO角色更重要",
+        "波士顿咨询：96%CMO相信AI转型，仅31%进入执行",
+        "波士顿咨询：AI代理选品牌不看广告，看硬指标"
+      ],
+      "faithful_candidate_missing_terms": [
+        "BCG"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：AI代理让CMO角色更重要",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：96%CMO相信AI转型，仅31%进入执行",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI代理选品牌不看广告，看硬指标",
+          "reasons": [
+            "missing_required_terms=BCG,CMO",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：BCG与AI与CMO0001AgenticWillM",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "波士顿咨询：BCG与AI与CMO0001AgenticWillM"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "CEO跟董事会，谁在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606.pdf",
+      "cleaned_source_title": "0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "BCG",
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+      "raw_candidates": [
+        "BCG：CEO与董事会在AI上理论一致实践分裂",
+        "BCG：75%董事会高估AI知识，CEO与董事会在AI上理论一致实践分裂",
+        "BCG：60%CEO称董事会因FOMO催促AI转型，理论一致实践分裂"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂",
+        "波士顿咨询：BCG，75%董事会高估AI知识",
+        "波士顿咨询：BCG，60%CEO称董事会因FOMO催促AI转型",
+        "波士顿咨询：BCG与AI0002CEOs和BoardsAre"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：BCG，75%董事会高估AI知识",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：BCG，60%CEO称董事会因FOMO催促AI转型",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "波士顿咨询：BCG，CEO与董事会在AI上理论一致实践分裂"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0003-BCG_How-Boards-and-CEOs-Can-Build-a-Shared-AI-Vision_964d119e.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "CEO和董事会，AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：BCG与AI0003HowBoards和CEOs",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-BCG_How-Boards-and-CEOs-Can-Build-a-Shared-AI-Vision_964d119e.pdf",
+      "cleaned_source_title": "0003-BCG_How-Boards-and-CEOs-Can-Build-a--AI-Vision_964d119e",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "BCG",
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：BCG与AI0003HowBoards和CEOs",
+      "raw_candidates": [
+        "波士顿咨询：董事会与CEO如何构建AI共识",
+        "波士顿咨询：董事会与CEO的AI共识卡在速度与规模之间",
+        "波士顿咨询：董事会担心CEO推进AI不够果断，CEO却觉得被拖慢"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：BCG与AI0003HowBoards和CEOs",
+        "波士顿咨询：董事会与CEO如何构建AI共识",
+        "波士顿咨询：董事会与CEO的AI共识卡在速度与规模之间",
+        "波士顿咨询：董事会担心CEO推进AI不够果断，CEO却觉得被拖慢"
+      ],
+      "faithful_candidate_missing_terms": [
+        "BCG"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：董事会与CEO如何构建AI共识",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：董事会与CEO的AI共识卡在速度与规模之间",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：董事会担心CEO推进AI不够果断，CEO却觉得被拖慢",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：BCG与AI0003HowBoards和CEOs",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "波士顿咨询：BCG与AI0003HowBoards和CEOs"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "大型项目成败，在剪彩",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x3",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：0004BCGLongBeforetheR",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42.pdf",
+      "cleaned_source_title": "0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "BCG"
+      ],
+      "deterministic_fallback": "波士顿咨询：0004BCGLongBeforetheR",
+      "raw_candidates": [
+        "波士顿咨询：大型项目失败根源在剪彩前",
+        "波士顿咨询：94%项目维持投入，仅十二分之一按时交付",
+        "波士顿咨询：54%项目交付恶化，根源在开业前已锁定"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：0004BCGLongBeforetheR",
+        "波士顿咨询：大型项目失败根源在剪彩前",
+        "波士顿咨询：94%项目维持投入，仅十二分之一按时交付",
+        "波士顿咨询：54%项目交付恶化，根源在开业前已锁定"
+      ],
+      "faithful_candidate_missing_terms": [
+        "BCG"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：大型项目失败根源在剪彩前",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：94%项目维持投入，仅十二分之一按时交付",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：54%项目交付恶化，根源在开业前已锁定",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：0004BCGLongBeforetheR",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "波士顿咨询：0004BCGLongBeforetheR"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "航运绿色转型，谁在买",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "世界经济论坛->WEF x1",
+      "投资->研究 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：0005BCGTheRealCostofD",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780.pdf",
+      "cleaned_source_title": "0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "BCG"
+      ],
+      "deterministic_fallback": "波士顿咨询：0005BCGTheRealCostofD",
+      "raw_candidates": [
+        "波士顿咨询：航运脱碳的真实成本",
+        "波士顿咨询：航运脱碳真实成本-货主愿付溢价年增30%",
+        "波士顿咨询：航运脱碳真实成本-80%客户愿付但仅不到一半有预算"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：0005BCGTheRealCostofD",
+        "波士顿咨询：航运脱碳的真实成本",
+        "波士顿咨询：航运脱碳真实成本-货主愿付溢价年增30%",
+        "波士顿咨询：航运脱碳真实成本-80%客户愿付但仅不到一半有预算"
+      ],
+      "faithful_candidate_missing_terms": [
+        "BCG"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：航运脱碳的真实成本",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：航运脱碳真实成本-货主愿付溢价年增30%",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：航运脱碳真实成本-80%客户愿付但仅不到一半有预算",
+          "reasons": [
+            "missing_required_terms=BCG",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：0005BCGTheRealCostofD",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "波士顿咨询：0005BCGTheRealCostofD"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

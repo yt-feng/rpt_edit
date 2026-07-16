@@ -1,0 +1,674 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/385192395f9cb8f5c7d3a35d89030f6a059e1cd2308019e85ccff4722f144ad3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                395
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTIFICIAL INTELLIGENCE"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                430,
+                230,
+                449
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How Boards and CEOs Can Build a Shared AI Vision"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                476,
+                754,
+                624
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Judith Wallenstein"
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                656,
+                225,
+                675
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTICLE JULY 16, 2026 5 MIN READ"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                699,
+                351,
+                718
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There are few topics on which boards and CEOs are better aligned than the urgency of deploying AI in the right way. They agree there's a real risk of moving too late. And they agree there's a danger of investing a lot of money in the wrong areas, losing time and effort in unscalable pilots and use cases, and ending up with no measurable competitive advantage."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                777,
+                941,
+                859
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where boards and CEOs often diverge, however, is over the speed, scale, and measurable business impact that AI realistically can be expected to deliver. In our experience, for every board that believes its CEO doesn't push the company's AI agenda decisively enough, there's a CEO who feels their AI ambitions are slowed down by the board."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                872,
+                952,
+                913
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                967,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                40,
+                67,
+                954,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A certain amount of tension is to be expected, of course, given the different roles boards and CEOs play in AI transformation. The board is concerned with providing sound oversight, not with monitoring day-to-day operations, while the CEO is often knee-deep in executing the transformation—indeed, BCG’s research shows that CEOs are increasingly shaping the AI agenda for their companies, and many feel pressure to show measurable P&L impact from it."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                121,
+                951,
+                222
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "But with the technology evolving at a breakneck pace and winners already separating themselves from the pack, it’s essential for boards and CEOs to move in lockstep on AI. Here are three moves boards can make now to ensure they share an aligned AI vision and ambition with the CEO."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                235,
+                954,
+                294
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Coinvest in Gaining AI Literacy and Hands-On Experience"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                322,
+                760,
+                392
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boards should join efforts by CEOs and executive teams to build their own practical AI skillsets. Many boards have hired AI coaches; some members are also joining executives in “personal productivity sessions” to familiarize themselves with the latest AI tools. By building simple solutions, directors can achieve the baseline AI literacy that can prove useful in providing proper oversight."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                418,
+                944,
+                517
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At one such session we helped organize, a participant showed how she used off-the-shelf tools to build a “second brain” that scans her inbox, provides context to difficult customer requests, and keeps her time management aligned with her most important priorities and objectives. To help prepare for presentations, she designed a “virtual boss” that would challenge her with the typical questions and concerns her CEO might raise. She also leverages these tools to gameplan different scenarios, including low-likelihood, highly disruptive scenarios that her team would usually not invest time in during the strategic planning process."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                531,
+                947,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The annual board and executive trips many companies have on their corporate calendars offer another opportunity to gain hands-on experience with AI. BCG recently curated such a trip for a board and executive team that were keen to learn about humanoid robots; in addition to their onsite agenda, board members used their downtime to experiment with the practical AI tools available in that market, such as by ordering tea with their phones and having it delivered by a drone."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                684,
+                930,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The purpose of such joint learning opportunities is not to directly influence the company's AI strategy. Rather, it is to gain a shared understanding of how fast the technology is moving—and the degree of behavioral change that AI requires across the entire organization."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                818,
+                925,
+                879
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Get a Frontline View of AI Deployments in the Company—and an Honest Assessment of Capabilities"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                66,
+                856,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The daily, on-the-ground challenges of AI implementation can't always be understood from a 30,000-foot view. Accordingly, many boards have moved beyond relying solely on presentations by the CEO or CIO. Instead, they have arranged comprehensive immersion opportunities that allow board members to see firsthand where and how AI is deployed within the company and learn from frontline employees about their trials and successes with the technology."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                197,
+                954,
+                296
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Increasingly, boards are also pressing management for very sober reviews of the company's AI capabilities. They're asking the leadership team to explain how the organization is measuring the impact of the AI deployments undertaken so far and to detail its priorities for closing critical gaps—including those involving cybersecurity and AI risk. The spirit of this dialogue is critical: neither the board nor the executive team can expect all AI initiatives to be successful, but a clear view of the company's current state is essential for both parties."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                310,
+                949,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Board members will also benefit from a candid discussion on the competitive environment. Are we lagging behind our competitors, keeping pace, or are we leading? What mistakes have been made, and are we learning from them? What will it take for the company to achieve lasting advantage from AI, and is leadership contemplating new strategies to get there?"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                443,
+                929,
+                524
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Explore the Next Frontier of AI with Practitioners Across Industries"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                550,
+                772,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Whether gathering for monthly meetings, dinners, or offsite retreats, boards should seek broader perspectives beyond the hyperscalers, tech gurus, and entrepreneurs they typically hear from. Directors can tap their extensive contacts to invite AI practitioners from a variety of industries to share their knowledge on the technological state of the art, how frontrunners are already creating measurable competitive advantage, and what’s on the horizon."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                646,
+                952,
+                747
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boards also can learn more about the challenges AI practitioners have faced in their own industries, the successes they’ve achieved and the moves that went wrong, and how they are developing the right talent for this journey."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                760,
+                900,
+                821
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Alignment between the board and CEO has always been critical. But with AI technology progressing rapidly and the stakes mounting, investing deliberately in creating a common vision has never been more important."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                870,
+                937,
+                929
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By building genuine AI fluency, gaining an unvarnished view of where the company stands, and learning from practitioners on the front lines of the technology, boards can ensure they are true partners to the CEO—equipped to ask the right questions, push with confidence, and govern with the kind of informed conviction that AI transformation demands."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                949,
+                146
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                218,
+                245,
+                255
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f07ac33269166571578c2d8f8c559c78a3eada488f76f598a4e45556cfd6479d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                99,
+                300,
+                217,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Judith Wallenstein"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                303,
+                444,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner; Global Lead, CEO Advisory\nMunich"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                335,
+                436,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "#"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                394,
+                274,
+                409
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ABOUT BOSTON CONSULTING GROUP"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                506,
+                434,
+                524
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                539,
+                951,
+                661
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                971,
+                954,
+                982
+            ]
+        }
+    ]
+]

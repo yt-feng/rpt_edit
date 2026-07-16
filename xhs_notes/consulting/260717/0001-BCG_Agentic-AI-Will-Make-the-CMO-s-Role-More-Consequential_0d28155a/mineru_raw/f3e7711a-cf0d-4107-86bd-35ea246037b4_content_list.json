@@ -1,0 +1,1233 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/9ade8831c01d75bf59c24821e4eb1e79551cf99d4991d20638526cbfa4fb606c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            392
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MARKETING AND SALES",
+        "bbox": [
+            50,
+            431,
+            218,
+            448
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI Will Make the CMO's Role More Consequential",
+        "text_level": 1,
+        "bbox": [
+            40,
+            476,
+            715,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Ravi Dhar, Jon Iwata, Jennie Liu, Lauren Taylor, and Janet Balis",
+        "bbox": [
+            40,
+            656,
+            582,
+            675
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTICLE JULY 16, 2026 15 MIN READ",
+        "bbox": [
+            40,
+            700,
+            361,
+            717
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Customers are increasingly turning to AI to discover products, evaluate options, make purchasing decisions, and complete transactions. These applications of AI mark the beginning of agentic commerce, where traditional commerce shifts to a model in which AI agents become additional and active participants in customers' journey from intent to purchase.",
+        "bbox": [
+            38,
+            778,
+            949,
+            859
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "As AI increasingly intermediates between brands and customers, companies must increasingly account for two decision makers: humans and the AI models and interfaces that influence their choices. Through their AI interactions, customers not only reveal intent as they would in a search query but also their underlying motivations, goals, and preferences. For marketers, this dynamic creates a new class of customer intelligence that extends beyond traditional data sources and can help companies sharpen their value proposition. It also creates a new imperative to market to both AI and humans.",
+        "bbox": [
+            40,
+            872,
+            944,
+            933
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            967,
+            250,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            40,
+            67,
+            937,
+            146
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Unquestionably, AI raises the bar for end-to-end brand stewardship. AI systems can instantly aggregate and evaluate reviews, complaints, service interactions, and other signals from across the web, making gaps between a brand's promise and customers' experiences far more visible. As AI increasingly mediates decisions, brands must ensure that what they say, what they do, and what customers experience remain consistently aligned at scale.",
+        "bbox": [
+            40,
+            159,
+            954,
+            261
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "CMOs who ensure that the brand promise is aligned and accountable with brand performance will be well positioned to drive significant growth. However, few are prepared to seize this opportunity today. CEOs already question marketing's contribution to growth: only 14% of CEOs and CFOs consider their CMO highly effective at driving market growth, according to Gartner. Even so, with CMOs now investing heavily in AI, they have an opportunity to demonstrate marketing's strategic value. In BCG's annual survey of nearly 300 global CMOs, 96% say AI is driving end-to-end transformation of their function, though only about a third have moved beyond the basics. (See Exhibit 1.)",
+        "bbox": [
+            40,
+            273,
+            949,
+            432
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 1",
+        "text_level": 2,
+        "bbox": [
+            43,
+            464,
+            109,
+            479
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Although $96\\%$ of CMOs Believe AI Is Driving End-to-End Marketing Transformation, Only $31\\%$ Have Made Agentic Execution a Reality",
+        "bbox": [
+            40,
+            480,
+            700,
+            520
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Pressure $(\\%)$",
+        "bbox": [
+            43,
+            537,
+            121,
+            551
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "94% of CMOs highlight increased expectations",
+        "bbox": [
+            45,
+            557,
+            237,
+            581
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b8216b73e5ea18d52605cec986cfcce8b0ff39ee7cd24c8c562f2a2fe81d3d8a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Question: How have your CEO's/executive team's expectations changed over the past two years?",
+            "Belief $(\\%)$",
+            "96% of CMOs agree GenAI is driving significant transformation"
+        ],
+        "bbox": [
+            43,
+            588,
+            247,
+            747
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c95f65983c756f7f6d0ae31fab31bcd94ba32f27febd8c972859246c33b84b1a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Question: To what extent do you agree with the following statement: \"The adoption of generative AI in marketing is driving significant end-to-end transformation within our organization, including redesigning organization structures and re-engineering processes.\"",
+            "Reality $(\\%)$",
+            "31% of CMOs have reached true agentic execution"
+        ],
+        "bbox": [
+            260,
+            583,
+            478,
+            753
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6836e0189122074e182c99eb3efe762261a90131d416dfbe68b73d04b1306a47.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Question: In the areas where generative AI is deployed today, how would you best describe its role?",
+            "Source: BCG CMO Survey 2026, n = 283."
+        ],
+        "bbox": [
+            489,
+            640,
+            725,
+            785
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "While much of today's AI investment is aimed at making marketing more efficient, the larger opportunity is to make AI-driven marketing a powerful growth engine. To capture that opportunity,",
+        "bbox": [
+            40,
+            887,
+            954,
+            928
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Brand Stewardship: From Narrative to Promise—Performance Alignment",
+        "text_level": 1,
+        "bbox": [
+            40,
+            266,
+            673,
+            386
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "When CMOs think about AI-driven discovery, they often focus first on visibility. They publish fact-based content, structure product data, and expose APIs so agents can “see” the brand. But being visible to AI is different from being credibly recommended by AI. AI agents do more than find brands; they evaluate them. They assess brands’ trustworthiness, compare alternatives, and make recommendations to consumers based on observable performance, not just persuasive messaging.",
+        "bbox": [
+            40,
+            413,
+            949,
+            533
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Thus, AI's role goes far beyond just answering the question the user asks. According to research from Profound, nearly half of responses from major AI platforms contain unsolicited information, such as additional rationale, comparisons, and recommendations that were never requested by the user. The competition is not just for brands to be included in the answer, but to be the option the AI chooses to endorse.",
+        "bbox": [
+            40,
+            546,
+            942,
+            645
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For this reason, brand promise and brand performance must be fully aligned. The brand promise articulates emotional and functional benefits that distinguish a company from its competitors. Brand performance, by contrast, is how that promise is actually delivered through the product and the end-to-end customer experience across pricing, availability, fulfillment, service, and resolution. CMOs and marketers are typically responsible for defining and stewarding the brand promise, but they have historically not had full responsibility for brand performance. While narrative, storytelling, and positioning are important, they cannot bridge the gap between what customers expect and what the organization consistently delivers.",
+        "bbox": [
+            40,
+            659,
+            954,
+            819
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI agents make these gaps far more visible. Agents can assess performance through data sources, such as service outcomes, product availability, pricing integrity, and customer reviews, then compare alternatives in real time. A financial services company may position itself on trust, for example, but if AI agents find a pattern of complaints about high claim rejection rates, slow",
+        "bbox": [
+            40,
+            833,
+            947,
+            913
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "CMOs will need to rethink three core pillars of modern marketing and bring them together more holistically: brand stewardship, market and customer intelligence, and customer experience. Reimagining and integrating these capabilities using AI will be essential to drive growth in the agentic era.",
+        "bbox": [
+            40,
+            66,
+            937,
+            146
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "resolution times, or excessive documentation requirements, the brand's operational reality undermines its promise.",
+        "bbox": [
+            40,
+            67,
+            892,
+            105
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The same APIs and structured data feeds that make a brand findable will increasingly make its performance measurable—both within the company and against its competitors. This information may have a salutary effect on both brand promise and performance. The work of defining the brand promise becomes more rigorous, grounded in what the company can demonstrably deliver and where it is genuinely differentiated from competitors, rather than what it claims. Where gaps exist, CMOs will have stronger evidence to collaborate across product, operations, and service functions in order to successfully close these gaps. In this environment, brand stewardship becomes a discipline of ensuring that what the company says, what it does, and what customers experience remain consistently aligned at scale.",
+        "bbox": [
+            40,
+            121,
+            939,
+            300
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For CMOs, these are the implications:",
+        "bbox": [
+            42,
+            313,
+            398,
+            332
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Assess your brand the way AI agents will. Monitor how AI agents compare, rank, and recommend your offerings to identify where the brand promise breaks down and where competitors are gaining advantages.",
+        "bbox": [
+            40,
+            363,
+            873,
+            423
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Ensure your brand has a clearly differentiated and defensible brand promise. Clearly define what makes your brand superior and ensure the evidence supporting that claim is accessible to both customers and AI agents.",
+        "bbox": [
+            40,
+            437,
+            930,
+            497
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Integrate operational performance into marketing decisions. Systematically incorporate real-time signals, such as pricing integrity and customer satisfaction, into marketing decisions across paid media, owned media, and earned media teams.",
+        "bbox": [
+            40,
+            512,
+            902,
+            571
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Establish cross-enterprise governance to close promise-performance gaps. Establish shared metrics, joint accountability, regular reviews, and new incentives to ensure delivery fulfills the brand promise consistently over time.",
+        "bbox": [
+            40,
+            586,
+            902,
+            645
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Market and Customer Intelligence: From Insight to Enterprise Value Creation",
+        "text_level": 1,
+        "bbox": [
+            40,
+            715,
+            735,
+            834
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Theodore Levitt famously observed that customers don't want a quarter-inch drill; they want a quarter-inch hole. Despite that insight, the data most marketers use has remained stubbornly stuck at the drill level, tracking categories and clicks rather than the outcomes customers are trying to achieve.",
+        "bbox": [
+            40,
+            862,
+            914,
+            902
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            40,
+            67,
+            914,
+            107
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Agents change that. When interacting with AI systems, people typically provide far richer context than they ever would in a search query. They express intent, needs, preferences, and tradeoffs. “Plan my ten-day anniversary celebration trip in Italy and remember I am pescatarian.” “Help me get a better deal on my utility payments since I am saving for retirement and my children are in college already.” These interactions reveal what customers are actually trying to accomplish by pinpointing their underlying needs rather than just product categories.",
+        "bbox": [
+            40,
+            121,
+            952,
+            242
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "This creates two fundamental shifts. Because AI systems respond by combining products, services, and recommendations from multiple categories to address these expressed needs, they also reveal patterns of co-mingled demand that traditional research rarely uncovers. What appears as separate markets through the lens of products often emerges as a single customer outcome through the lens of intent. Competition now extends beyond traditional product silos as different technologies compete to meet the same underlying need.",
+        "bbox": [
+            40,
+            255,
+            949,
+            374
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "What's more, consumers are using AI to help make decisions further upstream. Google's data on AI Mode shows that queries are now triple the length of traditional searches, and the fastest-growing query type contains decision-oriented language, such as “which one” and “which of.” (See Exhibit 2.) Consumers aren't just researching with AI; they're using AI to augment decision-making. The battle for influence is now won or lost across a fragmented decision journey that increasingly runs through channels the brand does not own or control.",
+        "bbox": [
+            40,
+            387,
+            954,
+            507
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 2",
+        "text_level": 2,
+        "bbox": [
+            43,
+            538,
+            109,
+            552
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c2a6aac85ab6b69bf82272ac5a8a8a9137e6f8a55a722b8812b741f15a60d1b.jpg",
+        "image_caption": [
+            "Agentic AI Prompts Unlock Richer Customer Intelligence than Traditional Keyword Search"
+        ],
+        "image_footnote": [
+            "Source: Google AI Mode U.S. Insights (2026); BCG analysis."
+        ],
+        "content": "",
+        "bbox": [
+            42,
+            605,
+            728,
+            857
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "What's new isn't simply more data. It's a fundamentally different type of customer intelligence that reveals both cross-category competitive dynamics and the contextual factors driving customer choices. When marketers can see the greater context around customer intent and decision making, they can identify where existing offerings fail to meet customer needs and where new value can be created. These insights inform not only positioning and go-to-market strategy but also product development, bundling, partnerships, and new business models. This new intelligence can directly influence what the company builds, not just how it markets what it already sells.",
+        "bbox": [
+            40,
+            67,
+            951,
+            225
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Yet many companies have a customer-shaped hole at the center of their strategy, not because of a lack of data but because they lack the organizational wiring to translate consumer intelligence into decisions. BCG research shows a familiar set of barriers: siloed data and teams, disconnected incentives, technology gaps, and intelligence that reaches decision makers too late to matter.",
+        "bbox": [
+            40,
+            240,
+            954,
+            319
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "With agentic AI data, marketing can become the system through which customer intent directly informs enterprise decision-making. For perhaps the first time, the customer can have a true seat at the table through continuously updated signals that shape what the organization builds, delivers, and prioritizes.",
+        "bbox": [
+            40,
+            332,
+            944,
+            412
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "For CMOs, these are the implications:",
+        "bbox": [
+            43,
+            426,
+            398,
+            447
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Build a new market intelligence capability around customer jobs-to-be-done. Broaden the focus of marketing to track customer queries and needs that can inform R&D and operations adjustments.",
+        "bbox": [
+            40,
+            476,
+            929,
+            536
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Translate customer intent into enterprise strategy. Use these insights to design offering bundles, forge cross-category partnerships, and participate in ecosystems that address broader customer outcomes.",
+        "bbox": [
+            40,
+            551,
+            897,
+            609
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Move marketing upstream. Leverage new intelligence to identify unmet needs, operational gaps, and adjacent opportunities that can shape new products, services, and business models aligned with the outcomes customers are seeking—both within the enterprise and through external partnerships.",
+        "bbox": [
+            40,
+            625,
+            915,
+            705
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Reinvent your intelligence-to-action process. Many organizations capture enterprise data but fail to act on it. Use AI tools to democratize access to customer intelligence, synthesize customer insights, and connect decision makers across the enterprise to a shared view of customer needs.",
+        "bbox": [
+            40,
+            720,
+            917,
+            797
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Customer Experience: Rethinking the Architecture of the Attention Economy",
+        "text_level": 1,
+        "bbox": [
+            42,
+            66,
+            873,
+            187
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For the past two decades, marketing has been built around the logic of the “attention economy.” In this setting, companies compete to appear at the top of search results, reach consumers through advertising as they consume or stream, and refine customer journeys and behavioral nudges to capture attention and drive action. These practices share a common assumption: a human is on the other end, with a short attention span, limited patience for complexity, and susceptibility to well-crafted framing.",
+        "bbox": [
+            40,
+            212,
+            934,
+            332
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "That assumption no longer holds uniformly. The customer influence pathway is still nonlinear, but it is increasingly agent-mediated or agent-enhanced, and the dynamic between people and AI varies by customer, market, and moment of demand.",
+        "bbox": [
+            40,
+            346,
+            949,
+            407
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BCG research underscores the scale of this shift: 43% of consumer journeys are now research-led, meaning consumers enter without a predetermined brand choice and actively compare products across an expanding ecosystem of touchpoints, from social media to AI-generated responses. The average consumer now encounters more than 15 touchpoints before purchasing, up from roughly 5 a decade ago. And among consumers who use AI tools in their research, 85% rank them among their top five most influential touchpoints in the purchase decision, on par with social media and significantly ahead of traditional media. BCG’s Global Consumer Radar shows overall GenAI usage up 40% in just over a year, with shopping-related use—including research into and recommendations for brands, products, and services—among the fastest-growing applications. (See Exhibit 3.)",
+        "bbox": [
+            40,
+            420,
+            949,
+            619
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Consumers Are Using GenAI to Make Brand Choices—and the Trend Is Accelerating",
+        "text_level": 2,
+        "bbox": [
+            42,
+            80,
+            720,
+            118
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "% of consumers who have used GenAI tools for specific purposes",
+        "bbox": [
+            42,
+            134,
+            420,
+            148
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2ab0a52cc6cdc2028aac6fbc8b536d0a3a936046bcbf7df80f11c47cccfce095.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG Global Consumer Radar Wave 6 (April 2026) n=12,117; markets covered are US, UK, India, China, Japan, France, Mexico, Brazil, and Germany. BCG Global Consumer Radar Wave 3 (February 2025) n=7,286; markets covered are US, UK, India, China, Japan, France, Brazil, and Germany. Questions used: T3. Which of the following statements apply to you regarding GenAI tools? T4. How have you personally used GenAI tools (e.g., ChatGPT, Microsoft Copilot, Google Gemini)?"
+        ],
+        "bbox": [
+            43,
+            159,
+            727,
+            353
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "As AI takes on a larger role in evaluating and recommending options, marketers face a new question: Who exactly are we designing for? When customers are making decisions on their own, traditional marketing strengths apply: clear value propositions, behavioral insights, and the trust that comes from a consistent brand experience. However, when decisions are heavily influenced by AI, evidence that the brand consistently delivers on its promise becomes increasingly important, with AI agents evaluating and comparing that evidence at a scale no human can match. In many cases, a customer and agent are working together, with the customer forming a view while the agent informs and tests it in real time. Each configuration demands different thinking.",
+        "bbox": [
+            40,
+            439,
+            942,
+            615
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In a world where AI increasingly mediates and expedites human decisions, many CMOs are also asking whether they should develop and deploy their own customer-facing agents. The temptation is real. A proprietary agent generates intelligence that belongs to the brand, not a third-party platform, and gives the brand control of the experience at the moment of interaction. But what makes an agent attractive to a brand does not necessarily make it attractive to a customer.",
+        "bbox": [
+            40,
+            630,
+            952,
+            731
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Customers making decisions across multiple categories will have more trust in agents that can compare options broadly rather than those tied to a single provider. Customers seeking neutral guidance may be skeptical of an agent with a stake in the outcome. Branded agents are most likely to earn genuine customer preference in categories where trust and privacy matter deeply, or long-term relationships create meaningful advantages. A bank that knows a customer's financial history, for example, may be well positioned to provide advice that a general-purpose agent cannot. For most companies, the strategic question is whether they have already earned the kind of relationship that would make customers want to start there.",
+        "bbox": [
+            40,
+            744,
+            954,
+            903
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "For CMOs, these are the implications:",
+        "bbox": [
+            42,
+            67,
+            398,
+            87
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Map how your customers interact with AI agents. Build the analytical capability to understand what customers delegate, what they decide themselves, and what they do in collaboration—by product category, decision type, and customer segment.",
+        "bbox": [
+            40,
+            117,
+            880,
+            175
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Redesign customer influence pathways for agent mediation. Adapt the sequence, timing, and content of the customer journey, designing for human attention where customers are the decision makers and for machine evaluation where agents shape decisions. The two influence pathways—humans and agents—must always be considered in parallel.",
+        "bbox": [
+            40,
+            191,
+            929,
+            271
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Measure outcomes with agents. Track visibility, evaluation, and credibility with AI agents through monitoring share of mentions for relevant needs, share of citations, recommendation rates, and other emerging indicators of agent-mediated influence.",
+        "bbox": [
+            40,
+            285,
+            932,
+            344
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Consider whether and how to deploy a branded agent. The formidable technical, financial, and competitive implications, including the risk of disintermediating existing channels and relationships, make this a decision that warrants careful deliberation at the highest levels of the enterprise. Key contributions of the CMO include determining whether the brand has earned the trust and relationship depth that would make customers genuinely prefer a branded agent over a neutral alternative. Further, if an agent is deployed, CMOs can help determine how to best design it to reflect its role as a trusted decision maker or key influencer in augmented decision-making.",
+        "bbox": [
+            40,
+            357,
+            925,
+            518
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Building the Marketing Operating Model for the Agentic Era",
+        "text_level": 1,
+        "bbox": [
+            42,
+            587,
+            873,
+            667
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "None of the opportunities discussed above can be executed effectively within the existing operating models for marketing, and none is an end in itself. Paid, owned, and earned often sit in different parts of the marketing structure and beg to be reimagined to capitalize on these new dynamics. The purpose of any redesign is to unlock the power of new data and turn it into growth. The larger opportunity lies in redesigning how the business operates: how work is organized, how people and AI share responsibility, how opportunities flow across functions, and how performance is defined and measured.",
+        "bbox": [
+            40,
+            695,
+            954,
+            832
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The marketing organizations best positioned to win in the agentic era are those that have deliberately redesigned their operating models to turn AI-enabled marketing intelligence into profitable growth. That means moving from channel-based structures optimized for campaign execution to intelligence-led operating models where insight flows seamlessly across functional areas to enable smart handoffs in decisions focused on the singular outcome of growth. The aim is to direct scarce resources—people and budget—toward the areas where value is created more effectively and efficiently.",
+        "bbox": [
+            40,
+            847,
+            939,
+            928
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            40,
+            67,
+            954,
+            126
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Imperative and Opportunity",
+        "text_level": 2,
+        "bbox": [
+            40,
+            197,
+            742,
+            240
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Most CMOs, like most business leaders, are currently focused on applying AI to improve productivity. That goal is necessary and challenging in its own right, but it is not where the greatest opportunity lies.",
+        "bbox": [
+            40,
+            263,
+            877,
+            325
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The interaction between customers and AI will generate a new class of data that is richer and more revealing than anything traditional marketing analytics has produced. For CMOs who move quickly, this data becomes a strategic advantage that can be used to build stronger brands, identify where new value can be created, and design experiences that better serve customers.",
+        "bbox": [
+            40,
+            338,
+            942,
+            420
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In doing so, they can establish marketing as essential to enterprise strategy. It becomes not only the function that shapes how the company goes to market but also a critical source of insight into what the company brings to market and how it should compete. The CMOs who seize this opportunity will play a critical role in defining the agentic era.",
+        "bbox": [
+            40,
+            432,
+            951,
+            513
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The authors thank Katie Ioas and Rob Derow at BCG for their research, perspectives, and other work that went into producing this article.",
+        "bbox": [
+            40,
+            526,
+            952,
+            565
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            934,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            43,
+            103,
+            245,
+            142
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Ravi Dhar",
+        "text_level": 2,
+        "bbox": [
+            69,
+            187,
+            183,
+            211
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "George Rogers Clark Professor of Management and Marketing; Director of the Yale Center for Customer Insights and Co-Faculty Leader, Yale Program on Stakeholder Innovation and Management",
+        "bbox": [
+            67,
+            219,
+            427,
+            275
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Jennie Liu",
+        "text_level": 2,
+        "bbox": [
+            67,
+            363,
+            186,
+            388
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Lecturer in the Practice of Management at the Yale School of Management; Executive Director, Yale Center for Customer Insights",
+        "bbox": [
+            67,
+            397,
+            449,
+            439
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Janet Balis",
+        "text_level": 2,
+        "bbox": [
+            69,
+            502,
+            190,
+            525
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner\nNew York",
+        "bbox": [
+            67,
+            533,
+            271,
+            565
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Jon Iwata",
+        "text_level": 2,
+        "bbox": [
+            530,
+            202,
+            641,
+            225
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Lecturer in the Practice of Management, Yale School of Management; Practice Leader, Yale Program on Stakeholder Innovation & Management; former IBM Senior Vice President and Chief Brand Officer",
+        "bbox": [
+            530,
+            234,
+            912,
+            288
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Lauren Taylor",
+        "text_level": 2,
+        "bbox": [
+            537,
+            350,
+            688,
+            374
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner; Global Leader, Center for Customer Insight\nDallas",
+        "bbox": [
+            531,
+            382,
+            883,
+            423
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/f7979fd750fe6b121310567c32a32585ff1bbeec1e6f5e0a311446eb3b7fc70b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            533,
+            428,
+            563,
+            445
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            40,
+            681,
+            436,
+            701
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+        "bbox": [
+            40,
+            715,
+            952,
+            837
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            934,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 10
+    }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0001-BCG_Agentic-AI-Will-Make-the-CMO-s-Role-More-Consequential_0d28155a.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0003-BCG_How-Boards-and-CEOs-Can-Build-a-Shared-AI-Vision_964d119e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0004-BCG_Long-Before-the-Ribbon-Is-Cut-How-Early-Decisions-Shape-the-_4c48cb42.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hes_1xjo/pdfs/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,4017 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.082,
+                0.714,
+                0.103
+            ],
+            "angle": 0,
+            "content": "SPLIT DECISIONS: THE BCG CEOS AND BOARDS SURVEY",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.119,
+                0.813,
+                0.292
+            ],
+            "angle": 0,
+            "content": "CEOs and Boards Are\nAligned on AI in Theory,\nbut Divided in Practice",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.108,
+                0.316,
+                0.19,
+                0.33
+            ],
+            "angle": 0,
+            "content": "May 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.081,
+                0.713,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.115,
+                0.745,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.177,
+                0.808,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.241,
+                0.784,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.315,
+                0.19,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.001,
+                0.0,
+                1.0,
+                0.341
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.389,
+                0.846,
+                0.5
+            ],
+            "angle": 0,
+            "content": "At first glance, CEOs and boards appear to agree on how AI should be governed, implemented, and valued. Look closer, however, and you'll see critical gaps that could hinder a successful AI transformation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.531,
+                0.489,
+                0.591
+            ],
+            "angle": 0,
+            "content": "In this first edition of Split Decisions: The BCG CEOs and Boards Survey, responses from 625 leaders around the world reveal five areas where chief executives and their boards of directors diverge on AI:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.603,
+                0.385,
+                0.634
+            ],
+            "angle": 0,
+            "content": "- CEOs worry that AI hype may be distorting boardroom judgment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.646,
+                0.415,
+                0.676
+            ],
+            "angle": 0,
+            "content": "- Boards are confident in their AI understanding, but CEOs are less convinced.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.688,
+                0.443,
+                0.72
+            ],
+            "angle": 0,
+            "content": "- Boards favor faster AI implementation, while CEOs are more measured about the pace of change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.731,
+                0.426,
+                0.776
+            ],
+            "angle": 0,
+            "content": "- Both sides agree the executive team should lead on AI, yet CEOs appear to bear an outsize share of the responsibility.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.788,
+                0.377,
+                0.818
+            ],
+            "angle": 0,
+            "content": "- CEOs see AI ROI as a bigger factor in their performance evaluation than boards do.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.831,
+                0.487,
+                0.877
+            ],
+            "angle": 0,
+            "content": "At a moment when clear, coordinated leadership is essential, these fault lines could create tension in the boardroom. Explore our findings in greater detail in the following pages.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.549,
+                0.562,
+                0.641,
+                0.651
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.544,
+                0.682,
+                0.715,
+                0.706
+            ],
+            "angle": 0,
+            "content": "Methodology"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.543,
+                0.717,
+                0.877,
+                0.834
+            ],
+            "angle": 0,
+            "content": "The inaugural Split Decisions: The BCG CEOs and Boards Survey focused on AI and surveyed 351 CEOs and 274 board members of leading companies (with $100 million or more in annual revenue). Of the respondents, 44% were US-based. Further, 76% of respondents represented private companies and 24% represented public companies.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.948,
+                0.234,
+                0.96
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.485,
+                0.947,
+                0.92,
+                0.961
+            ],
+            "angle": 0,
+            "content": "CEOS AND BOARDS ARE ALIGNED ON AI IN THEORY, BUT DIVIDED IN PRACTICE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.931,
+                0.949,
+                0.942,
+                0.96
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.389,
+                0.78,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.419,
+                0.842,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.447,
+                0.762,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.476,
+                0.426,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.533,
+                0.457,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.548,
+                0.485,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.562,
+                0.472,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.575,
+                0.221,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.605,
+                0.381,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.618,
+                0.232,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.648,
+                0.412,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.662,
+                0.284,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.691,
+                0.438,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.704,
+                0.406,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.061,
+                0.734,
+                0.423,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.748,
+                0.418,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.761,
+                0.22,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.791,
+                0.372,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.804,
+                0.359,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.833,
+                0.483,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.848,
+                0.446,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.861,
+                0.473,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.68,
+                0.716,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.545,
+                0.718,
+                0.831,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.732,
+                0.861,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.546,
+                0.746,
+                0.866,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.761,
+                0.854,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.776,
+                0.872,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.79,
+                0.81,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.804,
+                0.865,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.545,
+                0.818,
+                0.835,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.046,
+                0.447,
+                0.148
+            ],
+            "angle": 0,
+            "content": "CEOs Say AI\nHype Is Distorting\nBoardroom Judgment"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.138,
+                0.225,
+                0.407,
+                0.245
+            ],
+            "angle": 0,
+            "content": "CEOS WISH BOARDS WOULD ..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.138,
+                0.252,
+                0.415,
+                0.37
+            ],
+            "angle": 0,
+            "content": "“... stop watching the fake business news in the media on what AI can do and how quickly it can become reality.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.138,
+                0.412,
+                0.45,
+                0.485
+            ],
+            "angle": 0,
+            "content": "“... take an informed, realistic view opposed to a headline-driven understanding.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.138,
+                0.528,
+                0.458,
+                0.599
+            ],
+            "angle": 0,
+            "content": "“... become more educated on what is currently available versus the marketing hype.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.138,
+                0.643,
+                0.44,
+                0.759
+            ],
+            "angle": 0,
+            "content": "“... be more informed on the basics to have balanced opinions on the upside and potential downside of AI adoption.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.045,
+                0.943,
+                0.162
+            ],
+            "angle": 0,
+            "content": "When asked what they wish their boards would do differently regarding AI, more than half of CEOs said boards need to better understand the gap between headline AI hype and reality. Simultaneously, boards felt that CEOs need to do a better job selling them on their AI strategy. In our survey, many write-in comments emphasized the need for more proactive communication regarding CEOs' vision for AI.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.539,
+                0.226,
+                0.807,
+                0.245
+            ],
+            "angle": 0,
+            "content": "BOARDS WISH CEOS WOULD ..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.537,
+                0.252,
+                0.794,
+                0.346
+            ],
+            "angle": 0,
+            "content": "“... bring to the board more insights into the business cases for AI in our organization.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.536,
+                0.39,
+                0.836,
+                0.438
+            ],
+            "angle": 0,
+            "content": "“... be more bullish on the transformational potential.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.537,
+                0.483,
+                0.817,
+                0.622
+            ],
+            "angle": 0,
+            "content": "“... lay out a clearer vision for the executive board to relate to, one where the new technologies would feature more strongly as transformation enablers.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.537,
+                0.666,
+                0.852,
+                0.826
+            ],
+            "angle": 0,
+            "content": "“... use more imagination going forward. Do not only take into account what is possible today, but dream for the future and be ready to completely change the business model.”",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.861,
+                0.154,
+                0.938
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.831,
+                0.87,
+                0.948,
+                0.928
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.947,
+                0.235,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.485,
+                0.947,
+                0.92,
+                0.961
+            ],
+            "angle": 0,
+            "content": "CEOS AND BOARDS ARE ALIGNED ON AI IN THEORY, BUT DIVIDED IN PRACTICE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.93,
+                0.948,
+                0.943,
+                0.96
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.045,
+                0.286,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.08,
+                0.386,
+                0.112
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.113,
+                0.446,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.225,
+                0.406,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.256,
+                0.353,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.278,
+                0.41,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.3,
+                0.375,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.322,
+                0.412,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.344,
+                0.313,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.415,
+                0.447,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.438,
+                0.438,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.459,
+                0.377,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.53,
+                0.455,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.552,
+                0.416,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.574,
+                0.438,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.644,
+                0.395,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.667,
+                0.436,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.69,
+                0.385,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.713,
+                0.419,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.735,
+                0.279,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.646,
+                0.151,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.047,
+                0.873,
+                0.059
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.062,
+                0.94,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.076,
+                0.912,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.09,
+                0.909,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.104,
+                0.934,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.119,
+                0.934,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.133,
+                0.928,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.147,
+                0.559,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.538,
+                0.225,
+                0.807,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.257,
+                0.55,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.254,
+                0.762,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.277,
+                0.775,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.301,
+                0.79,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.324,
+                0.728,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.533,
+                0.39,
+                0.811,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.54,
+                0.415,
+                0.831,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.484,
+                0.809,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.507,
+                0.811,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.53,
+                0.795,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.552,
+                0.796,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.574,
+                0.8,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.597,
+                0.804,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.798,
+                0.6,
+                0.808,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.568,
+                0.668,
+                0.802,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.544,
+                0.69,
+                0.822,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.544,
+                0.714,
+                0.805,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.735,
+                0.849,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.757,
+                0.819,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.781,
+                0.782,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.803,
+                0.72,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.046,
+                0.412,
+                0.177
+            ],
+            "angle": 0,
+            "content": "Boards Think They Know AI. CEOs Challenge That Self-Assessment."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.044,
+                0.936,
+                0.135
+            ],
+            "angle": 0,
+            "content": "While 75% of board members believe their AI knowledge is on par with or more advanced than that of their peers, CEOs have a different perspective. More than one-third of CEOs believe boards overestimate the human capabilities AI can replace, and nearly 40% say boards lack an informed view of how AI is reshaping growth strategy.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.056,
+                0.255,
+                0.32,
+                0.275
+            ],
+            "angle": 0,
+            "content": "We asked CEOs if they agree:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.049,
+                0.28,
+                0.476,
+                0.344
+            ],
+            "angle": 0,
+            "content": "\"My board overestimates what AI can replace rather than seeing where AI can realistically augment human expertise.\"",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.054,
+                0.363,
+                0.483,
+                0.604
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.057,
+                0.623,
+                0.518,
+                0.638
+            ],
+            "angle": 0,
+            "content": "Source: Split Decisions: The BCG CEOs and Boards Survey, March 2026 (n = 625)."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.508,
+                0.256,
+                0.672,
+                0.274
+            ],
+            "angle": 0,
+            "content": "We asked boards:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.502,
+                0.28,
+                0.869,
+                0.342
+            ],
+            "angle": 0,
+            "content": "\"How would you assess the level of AI understanding in your current board position?\"",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.503,
+                0.363,
+                0.938,
+                0.603
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.14,
+                0.717,
+                0.406,
+                0.734
+            ],
+            "angle": 0,
+            "content": "CEOS WISH BOARDS WOULD ..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.741,
+                0.453,
+                0.834
+            ],
+            "angle": 0,
+            "content": "“... become literate fast and maintain an active interest in this space, which will allow board members to ask better questions of me and challenge me better, too.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.54,
+                0.717,
+                0.807,
+                0.734
+            ],
+            "angle": 0,
+            "content": "BOARDS WISH CEOS WOULD ...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.536,
+                0.741,
+                0.856,
+                0.797
+            ],
+            "angle": 0,
+            "content": "“... look for opportunities to leverage AI to improve the efficiency of the organization.”",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.861,
+                0.154,
+                0.938
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.831,
+                0.87,
+                0.949,
+                0.928
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.947,
+                0.235,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.485,
+                0.947,
+                0.92,
+                0.961
+            ],
+            "angle": 0,
+            "content": "CEOS AND BOARDS ARE ALIGNED ON AI IN THEORY, BUT DIVIDED IN PRACTICE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.93,
+                0.949,
+                0.943,
+                0.96
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.461,
+                0.624,
+                0.513,
+                0.637
+            ],
+            "latex": "",
+            "score": 0.5383
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.044,
+                0.404,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.081,
+                0.334,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.113,
+                0.413,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.148,
+                0.273,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.047,
+                0.933,
+                0.058
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.062,
+                0.904,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.076,
+                0.928,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.09,
+                0.926,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.105,
+                0.872,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.118,
+                0.896,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.257,
+                0.316,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.282,
+                0.44,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.303,
+                0.473,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.323,
+                0.466,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.257,
+                0.667,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.505,
+                0.281,
+                0.866,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.303,
+                0.858,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.323,
+                0.681,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.717,
+                0.406,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.742,
+                0.374,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.761,
+                0.429,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.779,
+                0.39,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.796,
+                0.449,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.814,
+                0.432,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.539,
+                0.717,
+                0.807,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.537,
+                0.742,
+                0.771,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.76,
+                0.852,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.778,
+                0.712,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.046,
+                0.439,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Limited AI\nUnderstanding Leads\nto Board FOMO"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.045,
+                0.94,
+                0.221
+            ],
+            "angle": 0,
+            "content": "Approximately \\(60\\%\\) of CEOs believe their boards are rushing AI transformation. What's more, our data suggests that lower levels of self-assessed AI understanding may be fueling board FOMO (fear of missing out). Board members with less confidence in their AI knowledge are more likely to believe their organizations are moving too slowly, indicating that uncertainty is translating into a heightened sense of urgency. At the same time, our research finds that frustration with the pace of adoption is highest in those who have a more permissive view on governance, underscoring a growing tension between the desire for speed and the need for oversight.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.048,
+                0.284,
+                0.322,
+                0.352
+            ],
+            "angle": 0,
+            "content": "We asked CEOs if they agree: \"My board is rushing AI transformation.\""
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.05,
+                0.367,
+                0.483,
+                0.624
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.659,
+                0.522,
+                0.675
+            ],
+            "angle": 0,
+            "content": "Source: Split Decisions: The BCG CEOs and Boards Survey, March 2026 (n = 625)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.742,
+                0.406,
+                0.759
+            ],
+            "angle": 0,
+            "content": "CEOS WISH BOARDS WOULD ...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.136,
+                0.767,
+                0.355,
+                0.805
+            ],
+            "angle": 0,
+            "content": "“... be more cautious and deliberate.”",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.514,
+                0.285,
+                0.68,
+                0.304
+            ],
+            "angle": 0,
+            "content": "We asked boards:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.31,
+                0.912,
+                0.353
+            ],
+            "angle": 0,
+            "content": "“What is your attitude about the pace of AI adoption in your organization?”",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.515,
+                0.371,
+                0.84,
+                0.645
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.54,
+                0.742,
+                0.806,
+                0.759
+            ],
+            "angle": 0,
+            "content": "BOARDS WISH CEOS WOULD ..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.536,
+                0.767,
+                0.804,
+                0.823
+            ],
+            "angle": 0,
+            "content": "“... push the organization to be more aggressive in looking for opportunities.”",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.861,
+                0.154,
+                0.938
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.832,
+                0.87,
+                0.949,
+                0.928
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.947,
+                0.235,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.485,
+                0.947,
+                0.92,
+                0.961
+            ],
+            "angle": 0,
+            "content": "CEOS AND BOARDS ARE ALIGNED ON AI IN THEORY, BUT DIVIDED IN PRACTICE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.931,
+                0.949,
+                0.943,
+                0.96
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.046,
+                0.255,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.08,
+                0.438,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.114,
+                0.339,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.047,
+                0.887,
+                0.059
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.062,
+                0.933,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.076,
+                0.932,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.09,
+                0.932,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.105,
+                0.925,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.118,
+                0.885,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.133,
+                0.93,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.147,
+                0.937,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.162,
+                0.91,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.177,
+                0.868,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.19,
+                0.904,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.205,
+                0.754,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.741,
+                0.406,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.767,
+                0.352,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.785,
+                0.245,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.287,
+                0.676,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.311,
+                0.905,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.332,
+                0.909,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.539,
+                0.741,
+                0.807,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.539,
+                0.768,
+                0.802,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.787,
+                0.801,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.537,
+                0.805,
+                0.664,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.053,
+                0.045,
+                0.481,
+                0.214
+            ],
+            "angle": 0,
+            "content": "AI Should Be Led by the\nExecutive Leadership\nTeam, Boards and\nCEOs Say. But CEOs Do\nthe Heavy Lifting."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.045,
+                0.942,
+                0.206
+            ],
+            "angle": 0,
+            "content": "The majority of board members and chief executives agree that AI strategy should belong with the executive leadership team, but in practice CEOs still take the lead. According to 47% of CEOs, they are heading up AI implementation, with 39% of board members reporting the same. What's more, fewer than 10% of both boards and CEOs believe that AI strategy should be led by a chief AI officer, reinforcing the position that all C-suite roles—such as the chief marketing officer, chief people officer, and chief transformation officer—have a role to play in AI implementation.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.059,
+                0.283,
+                0.159,
+                0.302
+            ],
+            "angle": 0,
+            "content": "We asked:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.052,
+                0.307,
+                0.686,
+                0.351
+            ],
+            "angle": 0,
+            "content": "“Who should be ultimately accountable vs. who actually sets your organization’s AI-related strategic business decisions?”",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.058,
+                0.359,
+                0.322,
+                0.622
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.057,
+                0.637,
+                0.524,
+                0.653
+            ],
+            "angle": 0,
+            "content": "Source: Split Decisions: The BCG CEOs and Boards Survey, March 2026 (n = 625)."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.386,
+                0.36,
+                0.909,
+                0.622
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.14,
+                0.734,
+                0.406,
+                0.751
+            ],
+            "angle": 0,
+            "content": "CEOS WISH BOARDS WOULD ..."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.136,
+                0.76,
+                0.418,
+                0.815
+            ],
+            "angle": 0,
+            "content": "“... get support from external advisors when we do not have the right competency in house.”"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.54,
+                0.734,
+                0.806,
+                0.751
+            ],
+            "angle": 0,
+            "content": "BOARDS WISH CEOS WOULD ..."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.536,
+                0.76,
+                0.857,
+                0.833
+            ],
+            "angle": 0,
+            "content": "“... get a stronger baseline understanding of what [should be done] and how and take a leadership role within the executive team.”"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.861,
+                0.154,
+                0.938
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.832,
+                0.87,
+                0.948,
+                0.928
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.947,
+                0.235,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.485,
+                0.947,
+                0.92,
+                0.961
+            ],
+            "angle": 0,
+            "content": "CEOS AND BOARDS ARE ALIGNED ON AI IN THEORY, BUT DIVIDED IN PRACTICE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.931,
+                0.949,
+                0.943,
+                0.96
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.045,
+                0.482,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.079,
+                0.428,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.114,
+                0.382,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.147,
+                0.469,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.18,
+                0.37,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.047,
+                0.936,
+                0.059
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.062,
+                0.863,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.077,
+                0.917,
+                0.087
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.091,
+                0.87,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.105,
+                0.938,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.12,
+                0.913,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.134,
+                0.915,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.148,
+                0.898,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.162,
+                0.916,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.175,
+                0.914,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.191,
+                0.652,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.286,
+                0.157,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.31,
+                0.678,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.33,
+                0.683,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.047,
+                0.448,
+                0.177
+            ],
+            "angle": 0,
+            "content": "CEOs Put More\nWeight on AI in Their\nPerformance Reviews\nThan Boards Do"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.055,
+                0.254,
+                0.157,
+                0.273
+            ],
+            "angle": 0,
+            "content": "We asked:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.049,
+                0.278,
+                0.444,
+                0.345
+            ],
+            "angle": 0,
+            "content": "“What percentage of a CEO’s performance evaluation depends on consistently hitting AI ROI goals?”",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.053,
+                0.587,
+                0.521,
+                0.603
+            ],
+            "angle": 0,
+            "content": "Source: Split Decisions: The BCG CEOs and Boards Survey, March 2026 (n = 625)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.045,
+                0.942,
+                0.134
+            ],
+            "angle": 0,
+            "content": "Despite growing pressure to deliver on AI, boards think that only about a quarter of a CEO's performance review pivots on meeting AI ROI goals. CEOs, however, believe that more than a third of their performance is tied to AI outcomes. This suggests a gap between perceived expectations and formal accountability.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.5,
+                0.277,
+                0.674,
+                0.569
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.722,
+                0.332,
+                0.9,
+                0.57
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.138,
+                0.681,
+                0.409,
+                0.701
+            ],
+            "angle": 0,
+            "content": "CEOS WISH BOARDS WOULD ..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.707,
+                0.417,
+                0.746
+            ],
+            "angle": 0,
+            "content": "“... recognize the time and effort required for transformation.”",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.539,
+                0.681,
+                0.808,
+                0.7
+            ],
+            "angle": 0,
+            "content": "BOARDS WISH CEOS WOULD ..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.535,
+                0.707,
+                0.843,
+                0.835
+            ],
+            "angle": 0,
+            "content": "“... maintain focus on the business, customers, and partners. Don’t get pressured into the perception that you’re falling behind and make rash decisions or apply pressure that incentivizes your team to make rash decisions.”",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.056,
+                0.861,
+                0.154,
+                0.938
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.831,
+                0.87,
+                0.949,
+                0.928
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.947,
+                0.235,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.485,
+                0.947,
+                0.92,
+                0.961
+            ],
+            "angle": 0,
+            "content": "CEOS AND BOARDS ARE ALIGNED ON AI IN THEORY, BUT DIVIDED IN PRACTICE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.93,
+                0.948,
+                0.943,
+                0.96
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.464,
+                0.588,
+                0.517,
+                0.602
+            ],
+            "latex": "",
+            "score": 0.5576
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.047,
+                0.331,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.081,
+                0.447,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.114,
+                0.446,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.147,
+                0.351,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.257,
+                0.152,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.052,
+                0.28,
+                0.357,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.303,
+                0.439,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.323,
+                0.417,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.048,
+                0.939,
+                0.059
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.062,
+                0.932,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.076,
+                0.937,
+                0.087
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.091,
+                0.915,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.105,
+                0.92,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.119,
+                0.67,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.68,
+                0.408,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.135,
+                0.708,
+                0.415,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.727,
+                0.391,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.539,
+                0.682,
+                0.808,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.708,
+                0.831,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.727,
+                0.838,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.745,
+                0.826,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.762,
+                0.842,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.544,
+                0.781,
+                0.809,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.799,
+                0.807,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.54,
+                0.815,
+                0.677,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.053,
+                0.251,
+                0.932,
+                0.572
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.046,
+                0.429,
+                0.146
+            ],
+            "angle": 0,
+            "content": "AI Literacy Is Now\na Must-Have Skill for\nBoard Membership"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.056,
+                0.254,
+                0.159,
+                0.273
+            ],
+            "angle": 0,
+            "content": "We asked:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.277,
+                0.393,
+                0.448
+            ],
+            "angle": 0,
+            "content": "“Should prospective board members be required to demonstrate an understanding of how AI can reshape the organization’s industry, even if they are not being considered for their technological expertise?”",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.054,
+                0.587,
+                0.523,
+                0.603
+            ],
+            "angle": 0,
+            "content": "Source: Split Decisions: The BCG CEOs and Boards Survey, March 2026 (n = 625)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.749,
+                0.406,
+                0.767
+            ],
+            "angle": 0,
+            "content": "CEOS WISH BOARDS WOULD ...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.777,
+                0.386,
+                0.832
+            ],
+            "angle": 0,
+            "content": "“... give up one board seat or add one with experience in transformative AI.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.045,
+                0.942,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Given the apparent disconnect between CEOs and boards on crucial AI issues, it’s no surprise that AI literacy is rapidly becoming a baseline expectation for board membership, not a differentiator. We found that 79% of CEOs and 80% of board members believe that prospective members should be required to demonstrate a measurable understanding of how AI can reshape their industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.681,
+                0.294,
+                0.931,
+                0.57
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.539,
+                0.749,
+                0.807,
+                0.767
+            ],
+            "angle": 0,
+            "content": "BOARDS WISH CEOS WOULD ...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.535,
+                0.776,
+                0.827,
+                0.832
+            ],
+            "angle": 0,
+            "content": "“... dedicate more board member resources while running the day-to-day business.”",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.861,
+                0.154,
+                0.937
+            ],
+            "angle": 0,
+            "content": "#"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.831,
+                0.87,
+                0.949,
+                0.928
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.057,
+                0.947,
+                0.235,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.485,
+                0.947,
+                0.92,
+                0.961
+            ],
+            "angle": 0,
+            "content": "CEOS AND BOARDS ARE ALIGNED ON AI IN THEORY, BUT DIVIDED IN PRACTICE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.93,
+                0.948,
+                0.943,
+                0.96
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.046,
+                0.392,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.081,
+                0.427,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.113,
+                0.398,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.257,
+                0.155,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.28,
+                0.331,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.301,
+                0.316,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.321,
+                0.388,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.343,
+                0.339,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.061,
+                0.364,
+                0.385,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.385,
+                0.374,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.404,
+                0.294,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.425,
+                0.179,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.748,
+                0.406,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.778,
+                0.385,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.795,
+                0.378,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.813,
+                0.304,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.047,
+                0.924,
+                0.059
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.061,
+                0.938,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.077,
+                0.914,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.091,
+                0.937,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.105,
+                0.924,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.119,
+                0.937,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.133,
+                0.756,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.538,
+                0.748,
+                0.807,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.538,
+                0.778,
+                0.742,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.795,
+                0.824,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.542,
+                0.812,
+                0.752,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.053,
+                0.151,
+                0.083
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.124,
+                0.483,
+                0.259
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we work closely with clients to embrace a transformational approach aimed at benefiting all stakeholders—empowering organizations to grow, build sustainable competitive advantage, and drive positive societal impact.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.274,
+                0.484,
+                0.425
+            ],
+            "angle": 0,
+            "content": "Our diverse, global teams bring deep industry and functional expertise and a range of perspectives that question the status quo and spark change. BCG delivers solutions through leading-edge management consulting, technology and design, and corporate and digital ventures. We work in a uniquely collaborative model across the firm and throughout all levels of the client organization, fueled by the goal of helping our clients thrive and enabling them to make the world a better place.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.846,
+                0.459,
+                0.929
+            ],
+            "angle": 0,
+            "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Facebook, and X.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.056,
+                0.945,
+                0.476,
+                0.962
+            ],
+            "angle": 0,
+            "content": "© Boston Consulting Group 2026. All rights reserved. 5/26"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.05,
+                0.154,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.125,
+                0.482,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.142,
+                0.474,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.159,
+                0.473,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.176,
+                0.465,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.192,
+                0.48,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.209,
+                0.478,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.225,
+                0.432,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.242,
+                0.387,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.275,
+                0.483,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.292,
+                0.454,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.309,
+                0.433,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.325,
+                0.476,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.342,
+                0.464,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.358,
+                0.44,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.376,
+                0.462,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.391,
+                0.475,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.409,
+                0.278,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.846,
+                0.459,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.864,
+                0.449,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.88,
+                0.45,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.896,
+                0.452,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.914,
+                0.325,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    []
+]

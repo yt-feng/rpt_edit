@@ -1,0 +1,4306 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.001,
+                1.0,
+                0.393
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.22,
+                0.449
+            ],
+            "angle": 0,
+            "content": "MARKETING AND SALES",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.717,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Agentic AI Will Make the CMO's Role More Consequential"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.657,
+                0.584,
+                0.676
+            ],
+            "angle": 0,
+            "content": "By Ravi Dhar, Jon Iwata, Jennie Liu, Lauren Taylor, and Janet Balis",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.701,
+                0.362,
+                0.718
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 16, 2026 15 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.779,
+                0.951,
+                0.86
+            ],
+            "angle": 0,
+            "content": "Customers are increasingly turning to AI to discover products, evaluate options, make purchasing decisions, and complete transactions. These applications of AI mark the beginning of agentic commerce, where traditional commerce shifts to a model in which AI agents become additional and active participants in customers' journey from intent to purchase.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.873,
+                0.946,
+                0.934
+            ],
+            "angle": 0,
+            "content": "As AI increasingly intermediates between brands and customers, companies must increasingly account for two decision makers: humans and the AI models and interfaces that influence their choices. Through their AI interactions, customers not only reveal intent as they would in a search",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.436,
+                0.215,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.478,
+                0.719,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.529,
+                0.716,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.578,
+                0.5,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.661,
+                0.579,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.358,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.782,
+                0.948,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.801,
+                0.907,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.823,
+                0.921,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.84,
+                0.695,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.875,
+                0.924,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.895,
+                0.924,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.915,
+                0.94,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.938,
+                0.147
+            ],
+            "angle": 0,
+            "content": "query but also their underlying motivations, goals, and preferences. For marketers, this dynamic creates a new class of customer intelligence that extends beyond traditional data sources and can help companies sharpen their value proposition. It also creates a new imperative to market to both AI and humans.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.16,
+                0.956,
+                0.262
+            ],
+            "angle": 0,
+            "content": "Unquestionably, AI raises the bar for end-to-end brand stewardship. AI systems can instantly aggregate and evaluate reviews, complaints, service interactions, and other signals from across the web, making gaps between a brand's promise and customers' experiences far more visible. As AI increasingly mediates decisions, brands must ensure that what they say, what they do, and what customers experience remain consistently aligned at scale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.274,
+                0.95,
+                0.434
+            ],
+            "angle": 0,
+            "content": "CMOs who ensure that the brand promise is aligned and accountable with brand performance will be well positioned to drive significant growth. However, few are prepared to seize this opportunity today. CEOs already question marketing's contribution to growth: only 14% of CEOs and CFOs consider their CMO highly effective at driving market growth, according to Gartner. Even so, with CMOs now investing heavily in AI, they have an opportunity to demonstrate marketing's strategic value. In BCG's annual survey of nearly 300 global CMOs, 96% say AI is driving end-to-end transformation of their function, though only about a third have moved beyond the basics. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.465,
+                0.111,
+                0.48
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.481,
+                0.701,
+                0.521
+            ],
+            "angle": 0,
+            "content": "Although \\(96\\%\\) of CMOs Believe AI Is Driving End-to-End Marketing Transformation, Only \\(31\\%\\) Have Made Agentic Execution a Reality",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.538,
+                0.122,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Pressure \\((\\%)\\)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.047,
+                0.558,
+                0.239,
+                0.582
+            ],
+            "angle": 0,
+            "content": "94% of CMOs highlight increased expectations"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.589,
+                0.249,
+                0.749
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.766,
+                0.228,
+                0.796
+            ],
+            "angle": 0,
+            "content": "Question: How have your CEO's/executive team's expectations changed over the past two years?"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.263,
+                0.538,
+                0.322,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Belief \\((\\%)\\)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.263,
+                0.559,
+                0.47,
+                0.582
+            ],
+            "angle": 0,
+            "content": "96% of CMOs agree GenAI is driving significant transformation"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.261,
+                0.584,
+                0.479,
+                0.755
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.26,
+                0.766,
+                0.474,
+                0.821
+            ],
+            "angle": 0,
+            "content": "Question: To what extent do you agree with the following statement: \"The adoption of generative AI in marketing is driving significant end-to-end transformation within our organization, including redesigning organization structures and re-engineering processes.\""
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.488,
+                0.538,
+                0.554,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Reality \\((\\%)\\)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.491,
+                0.559,
+                0.677,
+                0.582
+            ],
+            "angle": 0,
+            "content": "31% of CMOs have reached true agentic execution"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.491,
+                0.641,
+                0.727,
+                0.786
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.487,
+                0.8,
+                0.722,
+                0.822
+            ],
+            "angle": 0,
+            "content": "Question: In the areas where generative AI is deployed today, how would you best describe its role?"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.842,
+                0.227,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Source: BCG CMO Survey 2026, n = 283."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.888,
+                0.955,
+                0.929
+            ],
+            "angle": 0,
+            "content": "While much of today's AI investment is aimed at making marketing more efficient, the larger opportunity is to make AI-driven marketing a powerful growth engine. To capture that opportunity,",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.93,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.091,
+                0.922,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.108,
+                0.933,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.263,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.908,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.182,
+                0.927,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.203,
+                0.95,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.222,
+                0.953,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.242,
+                0.598,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.277,
+                0.917,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.298,
+                0.866,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.316,
+                0.93,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.335,
+                0.947,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.357,
+                0.933,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.375,
+                0.929,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.917,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.416,
+                0.185,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.469,
+                0.107,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.483,
+                0.697,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.502,
+                0.685,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.891,
+                0.897,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.91,
+                0.949,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.041,
+                0.067,
+                0.938,
+                0.147
+            ],
+            "angle": 0,
+            "content": "CMOs will need to rethink three core pillars of modern marketing and bring them together more holistically: brand stewardship, market and customer intelligence, and customer experience. Reimagining and integrating these capabilities using AI will be essential to drive growth in the agentic era."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.267,
+                0.674,
+                0.387
+            ],
+            "angle": 0,
+            "content": "Brand Stewardship: From Narrative to Promise—Performance Alignment"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.414,
+                0.951,
+                0.534
+            ],
+            "angle": 0,
+            "content": "When CMOs think about AI-driven discovery, they often focus first on visibility. They publish fact-based content, structure product data, and expose APIs so agents can “see” the brand. But being visible to AI is different from being credibly recommended by AI. AI agents do more than find brands; they evaluate them. They assess brands’ trustworthiness, compare alternatives, and make recommendations to consumers based on observable performance, not just persuasive messaging.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.548,
+                0.943,
+                0.646
+            ],
+            "angle": 0,
+            "content": "Thus, AI's role goes far beyond just answering the question the user asks. According to research from Profound, nearly half of responses from major AI platforms contain unsolicited information, such as additional rationale, comparisons, and recommendations that were never requested by the user. The competition is not just for brands to be included in the answer, but to be the option the AI chooses to endorse.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.66,
+                0.956,
+                0.82
+            ],
+            "angle": 0,
+            "content": "For this reason, brand promise and brand performance must be fully aligned. The brand promise articulates emotional and functional benefits that distinguish a company from its competitors. Brand performance, by contrast, is how that promise is actually delivered through the product and the end-to-end customer experience across pricing, availability, fulfillment, service, and resolution. CMOs and marketers are typically responsible for defining and stewarding the brand promise, but they have historically not had full responsibility for brand performance. While narrative, storytelling, and positioning are important, they cannot bridge the gap between what customers expect and what the organization consistently delivers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.834,
+                0.949,
+                0.914
+            ],
+            "angle": 0,
+            "content": "AI agents make these gaps far more visible. Agents can assess performance through data sources, such as service outcomes, product availability, pricing integrity, and customer reviews, then compare alternatives in real time. A financial services company may position itself on trust, for example, but if AI agents find a pattern of complaints about high claim rejection rates, slow",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.265,
+                0.675,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.307,
+                0.618,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.346,
+                0.645,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.416,
+                0.939,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.435,
+                0.948,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.456,
+                0.901,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.475,
+                0.901,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.495,
+                0.912,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.516,
+                0.151,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.551,
+                0.924,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.569,
+                0.938,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.589,
+                0.927,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.61,
+                0.932,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.628,
+                0.292,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.663,
+                0.938,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.683,
+                0.921,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.704,
+                0.953,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.723,
+                0.855,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.743,
+                0.937,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.761,
+                0.886,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.782,
+                0.926,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.8,
+                0.662,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.836,
+                0.873,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.855,
+                0.918,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.875,
+                0.943,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.894,
+                0.92,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.893,
+                0.107
+            ],
+            "angle": 0,
+            "content": "resolution times, or excessive documentation requirements, the brand's operational reality undermines its promise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.122,
+                0.941,
+                0.301
+            ],
+            "angle": 0,
+            "content": "The same APIs and structured data feeds that make a brand findable will increasingly make its performance measurable—both within the company and against its competitors. This information may have a salutary effect on both brand promise and performance. The work of defining the brand promise becomes more rigorous, grounded in what the company can demonstrably deliver and where it is genuinely differentiated from competitors, rather than what it claims. Where gaps exist, CMOs will have stronger evidence to collaborate across product, operations, and service functions in order to successfully close these gaps. In this environment, brand stewardship becomes a discipline of ensuring that what the company says, what it does, and what customers experience remain consistently aligned at scale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.314,
+                0.399,
+                0.333
+            ],
+            "angle": 0,
+            "content": "For CMOs, these are the implications:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.364,
+                0.874,
+                0.424
+            ],
+            "angle": 0,
+            "content": "- Assess your brand the way AI agents will. Monitor how AI agents compare, rank, and recommend your offerings to identify where the brand promise breaks down and where competitors are gaining advantages.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.438,
+                0.931,
+                0.498
+            ],
+            "angle": 0,
+            "content": "- Ensure your brand has a clearly differentiated and defensible brand promise. Clearly define what makes your brand superior and ensure the evidence supporting that claim is accessible to both customers and AI agents.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.513,
+                0.904,
+                0.572
+            ],
+            "angle": 0,
+            "content": "- Integrate operational performance into marketing decisions. Systematically incorporate real-time signals, such as pricing integrity and customer satisfaction, into marketing decisions across paid media, owned media, and earned media teams.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.587,
+                0.904,
+                0.646
+            ],
+            "angle": 0,
+            "content": "- Establish cross-enterprise governance to close promise-performance gaps. Establish shared metrics, joint accountability, regular reviews, and new incentives to ensure delivery fulfills the brand promise consistently over time.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.717,
+                0.736,
+                0.835
+            ],
+            "angle": 0,
+            "content": "Market and Customer\nIntelligence: From Insight to\nEnterprise Value Creation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.863,
+                0.915,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Theodore Levitt famously observed that customers don't want a quarter-inch drill; they want a quarter-inch hole. Despite that insight, the data most marketers use has remained stubbornly",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.889,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.272,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.123,
+                0.924,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.144,
+                0.84,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.164,
+                0.903,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.184,
+                0.852,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.939,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.222,
+                0.904,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.932,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.262,
+                0.919,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.282,
+                0.688,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.316,
+                0.395,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.367,
+                0.848,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.385,
+                0.869,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.405,
+                0.405,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.924,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.46,
+                0.928,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.48,
+                0.376,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.516,
+                0.9,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.535,
+                0.843,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.554,
+                0.704,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.588,
+                0.869,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.609,
+                0.9,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.628,
+                0.52,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.716,
+                0.585,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.756,
+                0.734,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.796,
+                0.689,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.865,
+                0.908,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.885,
+                0.91,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.915,
+                0.108
+            ],
+            "angle": 0,
+            "content": "stuck at the drill level, tracking categories and clicks rather than the outcomes customers are trying to achieve.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.122,
+                0.953,
+                0.243
+            ],
+            "angle": 0,
+            "content": "Agents change that. When interacting with AI systems, people typically provide far richer context than they ever would in a search query. They express intent, needs, preferences, and tradeoffs. “Plan my ten-day anniversary celebration trip in Italy and remember I am pescatarian.” “Help me get a better deal on my utility payments since I am saving for retirement and my children are in college already.” These interactions reveal what customers are actually trying to accomplish by pinpointing their underlying needs rather than just product categories.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.256,
+                0.95,
+                0.375
+            ],
+            "angle": 0,
+            "content": "This creates two fundamental shifts. Because AI systems respond by combining products, services, and recommendations from multiple categories to address these expressed needs, they also reveal patterns of co-mingled demand that traditional research rarely uncovers. What appears as separate markets through the lens of products often emerges as a single customer outcome through the lens of intent. Competition now extends beyond traditional product silos as different technologies compete to meet the same underlying need.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.388,
+                0.955,
+                0.508
+            ],
+            "angle": 0,
+            "content": "What's more, consumers are using AI to help make decisions further upstream. Google's data on AI Mode shows that queries are now triple the length of traditional searches, and the fastest-growing query type contains decision-oriented language, such as “which one” and “which of.” (See Exhibit 2.) Consumers aren't just researching with AI; they're using AI to augment decision-making. The battle for influence is now won or lost across a fragmented decision journey that increasingly runs through channels the brand does not own or control.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.539,
+                0.111,
+                0.553
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.042,
+                0.556,
+                0.648,
+                0.595
+            ],
+            "angle": 0,
+            "content": "Agentic AI Prompts Unlock Richer Customer Intelligence than Traditional Keyword Search"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.043,
+                0.606,
+                0.73,
+                0.858
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.875,
+                0.309,
+                0.888
+            ],
+            "angle": 0,
+            "content": "Source: Google AI Mode U.S. Insights (2026); BCG analysis."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.911,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.091,
+                0.205,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.941,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.145,
+                0.92,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.162,
+                0.949,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.927,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.926,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.698,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.257,
+                0.876,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.278,
+                0.943,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.297,
+                0.885,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.316,
+                0.923,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.942,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.357,
+                0.666,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.389,
+                0.935,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.41,
+                0.904,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.431,
+                0.941,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.449,
+                0.949,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.469,
+                0.943,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.489,
+                0.581,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.542,
+                0.108,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.952,
+                0.226
+            ],
+            "angle": 0,
+            "content": "What's new isn't simply more data. It's a fundamentally different type of customer intelligence that reveals both cross-category competitive dynamics and the contextual factors driving customer choices. When marketers can see the greater context around customer intent and decision making, they can identify where existing offerings fail to meet customer needs and where new value can be created. These insights inform not only positioning and go-to-market strategy but also product development, bundling, partnerships, and new business models. This new intelligence can directly influence what the company builds, not just how it markets what it already sells.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.241,
+                0.956,
+                0.32
+            ],
+            "angle": 0,
+            "content": "Yet many companies have a customer-shaped hole at the center of their strategy, not because of a lack of data but because they lack the organizational wiring to translate consumer intelligence into decisions. BCG research shows a familiar set of barriers: siloed data and teams, disconnected incentives, technology gaps, and intelligence that reaches decision makers too late to matter.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.334,
+                0.946,
+                0.413
+            ],
+            "angle": 0,
+            "content": "With agentic AI data, marketing can become the system through which customer intent directly informs enterprise decision-making. For perhaps the first time, the customer can have a true seat at the table through continuously updated signals that shape what the organization builds, delivers, and prioritizes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.428,
+                0.399,
+                0.448
+            ],
+            "angle": 0,
+            "content": "For CMOs, these are the implications:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.478,
+                0.93,
+                0.537
+            ],
+            "angle": 0,
+            "content": "- Build a new market intelligence capability around customer jobs-to-be-done. Broaden the focus of marketing to track customer queries and needs that can inform R&D and operations adjustments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.552,
+                0.898,
+                0.611
+            ],
+            "angle": 0,
+            "content": "- Translate customer intent into enterprise strategy. Use these insights to design offering bundles, forge cross-category partnerships, and participate in ecosystems that address broader customer outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.626,
+                0.917,
+                0.706
+            ],
+            "angle": 0,
+            "content": "- Move marketing upstream. Leverage new intelligence to identify unmet needs, operational gaps, and adjacent opportunities that can shape new products, services, and business models aligned with the outcomes customers are seeking—both within the enterprise and through external partnerships.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.721,
+                0.918,
+                0.798
+            ],
+            "angle": 0,
+            "content": "- Reinvent your intelligence-to-action process. Many organizations capture enterprise data but fail to act on it. Use AI tools to democratize access to customer intelligence, synthesize customer insights, and connect decision makers across the enterprise to a shared view of customer needs.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.92,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.872,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.898,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.128,
+                0.949,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.147,
+                0.927,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.168,
+                0.887,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.887,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.206,
+                0.174,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.243,
+                0.952,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.261,
+                0.925,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.281,
+                0.95,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.302,
+                0.911,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.335,
+                0.921,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.356,
+                0.943,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.375,
+                0.886,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.267,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.431,
+                0.396,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.48,
+                0.915,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.499,
+                0.926,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.52,
+                0.191,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.553,
+                0.895,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.574,
+                0.875,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.594,
+                0.335,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.629,
+                0.915,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.649,
+                0.863,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.668,
+                0.902,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.687,
+                0.351,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.723,
+                0.912,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.742,
+                0.914,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.762,
+                0.897,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.782,
+                0.223,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.067,
+                0.875,
+                0.188
+            ],
+            "angle": 0,
+            "content": "Customer Experience: Rethinking the Architecture of the Attention Economy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.213,
+                0.936,
+                0.333
+            ],
+            "angle": 0,
+            "content": "For the past two decades, marketing has been built around the logic of the “attention economy.” In this setting, companies compete to appear at the top of search results, reach consumers through advertising as they consume or stream, and refine customer journeys and behavioral nudges to capture attention and drive action. These practices share a common assumption: a human is on the other end, with a short attention span, limited patience for complexity, and susceptibility to well-crafted framing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.347,
+                0.95,
+                0.408
+            ],
+            "angle": 0,
+            "content": "That assumption no longer holds uniformly. The customer influence pathway is still nonlinear, but it is increasingly agent-mediated or agent-enhanced, and the dynamic between people and AI varies by customer, market, and moment of demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.421,
+                0.95,
+                0.62
+            ],
+            "angle": 0,
+            "content": "BCG research underscores the scale of this shift: 43% of consumer journeys are now research-led, meaning consumers enter without a predetermined brand choice and actively compare products across an expanding ecosystem of touchpoints, from social media to AI-generated responses. The average consumer now encounters more than 15 touchpoints before purchasing, up from roughly 5 a decade ago. And among consumers who use AI tools in their research, 85% rank them among their top five most influential touchpoints in the purchase decision, on par with social media and significantly ahead of traditional media. BCG’s Global Consumer Radar shows overall GenAI usage up 40% in just over a year, with shopping-related use—including research into and recommendations for brands, products, and services—among the fastest-growing applications. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.066,
+                0.878,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.108,
+                0.85,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.145,
+                0.284,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.215,
+                0.932,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.236,
+                0.891,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.255,
+                0.904,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.274,
+                0.91,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.294,
+                0.892,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.313,
+                0.391,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.348,
+                0.949,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.369,
+                0.91,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.389,
+                0.532,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.423,
+                0.945,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.442,
+                0.941,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.463,
+                0.947,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.482,
+                0.942,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.501,
+                0.936,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.521,
+                0.938,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.54,
+                0.895,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.561,
+                0.862,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.581,
+                0.924,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.602,
+                0.185,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.081,
+                0.721,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Consumers Are Using GenAI to Make Brand Choices—and the Trend Is Accelerating"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.135,
+                0.421,
+                0.149
+            ],
+            "angle": 0,
+            "content": "% of consumers who have used GenAI tools for specific purposes"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.045,
+                0.16,
+                0.728,
+                0.354
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.368,
+                0.725,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Sources: BCG Global Consumer Radar Wave 6 (April 2026) n=12,117; markets covered are US, UK, India, China, Japan, France, Mexico, Brazil, and Germany. BCG Global Consumer Radar Wave 3 (February 2025) n=7,286; markets covered are US, UK, India, China, Japan, France, Brazil, and Germany. Questions used: T3. Which of the following statements apply to you regarding GenAI tools? T4. How have you personally used GenAI tools (e.g., ChatGPT, Microsoft Copilot, Google Gemini)?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.44,
+                0.944,
+                0.617
+            ],
+            "angle": 0,
+            "content": "As AI takes on a larger role in evaluating and recommending options, marketers face a new question: Who exactly are we designing for? When customers are making decisions on their own, traditional marketing strengths apply: clear value propositions, behavioral insights, and the trust that comes from a consistent brand experience. However, when decisions are heavily influenced by AI, evidence that the brand consistently delivers on its promise becomes increasingly important, with AI agents evaluating and comparing that evidence at a scale no human can match. In many cases, a customer and agent are working together, with the customer forming a view while the agent informs and tests it in real time. Each configuration demands different thinking.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.631,
+                0.953,
+                0.732
+            ],
+            "angle": 0,
+            "content": "In a world where AI increasingly mediates and expedites human decisions, many CMOs are also asking whether they should develop and deploy their own customer-facing agents. The temptation is real. A proprietary agent generates intelligence that belongs to the brand, not a third-party platform, and gives the brand control of the experience at the moment of interaction. But what makes an agent attractive to a brand does not necessarily make it attractive to a customer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.745,
+                0.956,
+                0.904
+            ],
+            "angle": 0,
+            "content": "Customers making decisions across multiple categories will have more trust in agents that can compare options broadly rather than those tied to a single provider. Customers seeking neutral guidance may be skeptical of an agent with a stake in the outcome. Branded agents are most likely to earn genuine customer preference in categories where trust and privacy matter deeply, or long-term relationships create meaningful advantages. A bank that knows a customer's financial history, for example, may be well positioned to provide advice that a general-purpose agent cannot. For most companies, the strategic question is whether they have already earned the kind of relationship that would make customers want to start there.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.717,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.101,
+                0.191,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.442,
+                0.891,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.461,
+                0.936,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.481,
+                0.942,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.5,
+                0.936,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.519,
+                0.866,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.54,
+                0.891,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.56,
+                0.919,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.579,
+                0.89,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.598,
+                0.128,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.634,
+                0.932,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.654,
+                0.949,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.673,
+                0.906,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.693,
+                0.92,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.713,
+                0.893,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.748,
+                0.924,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.767,
+                0.927,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.787,
+                0.908,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.808,
+                0.933,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.827,
+                0.878,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.844,
+                0.916,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.866,
+                0.952,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.885,
+                0.671,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.068,
+                0.399,
+                0.088
+            ],
+            "angle": 0,
+            "content": "For CMOs, these are the implications:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.118,
+                0.882,
+                0.177
+            ],
+            "angle": 0,
+            "content": "- Map how your customers interact with AI agents. Build the analytical capability to understand what customers delegate, what they decide themselves, and what they do in collaboration—by product category, decision type, and customer segment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.192,
+                0.93,
+                0.272
+            ],
+            "angle": 0,
+            "content": "- Redesign customer influence pathways for agent mediation. Adapt the sequence, timing, and content of the customer journey, designing for human attention where customers are the decision makers and for machine evaluation where agents shape decisions. The two influence pathways—humans and agents—must always be considered in parallel.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.286,
+                0.933,
+                0.346
+            ],
+            "angle": 0,
+            "content": "- Measure outcomes with agents. Track visibility, evaluation, and credibility with AI agents through monitoring share of mentions for relevant needs, share of citations, recommendation rates, and other emerging indicators of agent-mediated influence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.359,
+                0.927,
+                0.519
+            ],
+            "angle": 0,
+            "content": "- Consider whether and how to deploy a branded agent. The formidable technical, financial, and competitive implications, including the risk of disintermediating existing channels and relationships, make this a decision that warrants careful deliberation at the highest levels of the enterprise. Key contributions of the CMO include determining whether the brand has earned the trust and relationship depth that would make customers genuinely prefer a branded agent over a neutral alternative. Further, if an agent is deployed, CMOs can help determine how to best design it to reflect its role as a trusted decision maker or key influencer in augmented decision-making.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.588,
+                0.874,
+                0.668
+            ],
+            "angle": 0,
+            "content": "Building the Marketing Operating Model for the Agentic Era"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.696,
+                0.956,
+                0.833
+            ],
+            "angle": 0,
+            "content": "None of the opportunities discussed above can be executed effectively within the existing operating models for marketing, and none is an end in itself. Paid, owned, and earned often sit in different parts of the marketing structure and beg to be reimagined to capitalize on these new dynamics. The purpose of any redesign is to unlock the power of new data and turn it into growth. The larger opportunity lies in redesigning how the business operates: how work is organized, how people and AI share responsibility, how opportunities flow across functions, and how performance is defined and measured.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.848,
+                0.94,
+                0.929
+            ],
+            "angle": 0,
+            "content": "The marketing organizations best positioned to win in the agentic era are those that have deliberately redesigned their operating models to turn AI-enabled marketing intelligence into profitable growth. That means moving from channel-based structures optimized for campaign execution to intelligence-led operating models where insight flows seamlessly across functional",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.396,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.12,
+                0.839,
+                0.135
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.139,
+                0.877,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.158,
+                0.757,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.192,
+                0.901,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.213,
+                0.926,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.233,
+                0.842,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.254,
+                0.831,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.287,
+                0.889,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.308,
+                0.929,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.327,
+                0.672,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.362,
+                0.91,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.381,
+                0.906,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.401,
+                0.921,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.421,
+                0.888,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.441,
+                0.872,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.461,
+                0.891,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.481,
+                0.841,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.5,
+                0.455,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.586,
+                0.874,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.628,
+                0.687,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.697,
+                0.878,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.718,
+                0.935,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.735,
+                0.919,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.757,
+                0.943,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.777,
+                0.94,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.796,
+                0.952,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.815,
+                0.279,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.851,
+                0.872,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.87,
+                0.913,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.89,
+                0.909,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.91,
+                0.934,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.127
+            ],
+            "angle": 0,
+            "content": "areas to enable smart handoffs in decisions focused on the singular outcome of growth. The aim is to direct scarce resources—people and budget—toward the areas where value is created more effectively and efficiently.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.198,
+                0.743,
+                0.241
+            ],
+            "angle": 0,
+            "content": "Imperative and Opportunity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.265,
+                0.878,
+                0.326
+            ],
+            "angle": 0,
+            "content": "Most CMOs, like most business leaders, are currently focused on applying AI to improve productivity. That goal is necessary and challenging in its own right, but it is not where the greatest opportunity lies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.34,
+                0.943,
+                0.421
+            ],
+            "angle": 0,
+            "content": "The interaction between customers and AI will generate a new class of data that is richer and more revealing than anything traditional marketing analytics has produced. For CMOs who move quickly, this data becomes a strategic advantage that can be used to build stronger brands, identify where new value can be created, and design experiences that better serve customers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.434,
+                0.952,
+                0.514
+            ],
+            "angle": 0,
+            "content": "In doing so, they can establish marketing as essential to enterprise strategy. It becomes not only the function that shapes how the company goes to market but also a critical source of insight into what the company brings to market and how it should compete. The CMOs who seize this opportunity will play a critical role in defining the agentic era.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.527,
+                0.953,
+                0.567
+            ],
+            "angle": 0,
+            "content": "The authors thank Katie Ioas and Rob Derow at BCG for their research, perspectives, and other work that went into producing this article.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.068,
+                0.952,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.926,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.283,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.197,
+                0.742,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.267,
+                0.864,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.287,
+                0.874,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.307,
+                0.283,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.341,
+                0.91,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.362,
+                0.939,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.383,
+                0.889,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.402,
+                0.915,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.435,
+                0.943,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.455,
+                0.949,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.475,
+                0.869,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.495,
+                0.615,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.529,
+                0.95,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.55,
+                0.261,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.104,
+                0.247,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.07,
+                0.188,
+                0.185,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Ravi Dhar"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.221,
+                0.428,
+                0.276
+            ],
+            "angle": 0,
+            "content": "George Rogers Clark Professor of Management and Marketing; Director of the Yale Center for Customer Insights and Co-Faculty Leader, Yale Program on Stakeholder Innovation and Management",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.365,
+                0.187,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Jennie Liu"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.398,
+                0.451,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Lecturer in the Practice of Management at the Yale School of Management; Executive Director, Yale Center for Customer Insights",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.07,
+                0.503,
+                0.191,
+                0.526
+            ],
+            "angle": 0,
+            "content": "Janet Balis"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.534,
+                0.272,
+                0.567
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nNew York",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.531,
+                0.203,
+                0.642,
+                0.227
+            ],
+            "angle": 0,
+            "content": "Jon Iwata"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.531,
+                0.235,
+                0.913,
+                0.29
+            ],
+            "angle": 0,
+            "content": "Lecturer in the Practice of Management, Yale School of Management; Practice Leader, Yale Program on Stakeholder Innovation & Management; former IBM Senior Vice President and Chief Brand Officer",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.538,
+                0.351,
+                0.689,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Lauren Taylor"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.532,
+                0.383,
+                0.885,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; Global Leader, Center for Customer Insight\nDallas",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.535,
+                0.429,
+                0.564,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.682,
+                0.437,
+                0.702
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.717,
+                0.953,
+                0.838
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.189,
+                0.182,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.225,
+                0.417,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.237,
+                0.422,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.249,
+                0.394,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.261,
+                0.356,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.367,
+                0.185,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.401,
+                0.421,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.414,
+                0.447,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.425,
+                0.216,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.505,
+                0.188,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.538,
+                0.269,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.554,
+                0.135,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.531,
+                0.205,
+                0.642,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.537,
+                0.239,
+                0.907,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.537,
+                0.251,
+                0.859,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.536,
+                0.261,
+                0.886,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.536,
+                0.274,
+                0.845,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.537,
+                0.353,
+                0.685,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.537,
+                0.387,
+                0.879,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.535,
+                0.398,
+                0.722,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.536,
+                0.411,
+                0.582,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.685,
+                0.433,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.72,
+                0.949,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.739,
+                0.901,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.759,
+                0.904,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.779,
+                0.912,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.798,
+                0.933,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.818,
+                0.594,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
