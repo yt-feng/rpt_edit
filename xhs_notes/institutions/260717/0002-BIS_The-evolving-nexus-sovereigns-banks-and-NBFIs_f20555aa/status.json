@@ -1,0 +1,123 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_t5c99mcs/pdfs/0002-BIS_The-evolving-nexus-sovereigns-banks-and-NBFIs_f20555aa.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "国际清算银行",
+  "cover_short_title": "主权-银行“死亡螺旋",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "金融->资金 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "危机->扰动 x2",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "金融->资金 x2",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "国际清算银行：0002BISTheevolvingne",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BIS_The-evolving-nexus-sovereigns-banks-and-NBFIs_f20555aa.pdf",
+    "cleaned_source_title": "0002-BIS_The-evolving-nexus-sovereigns-banks-and-NBFIs_f20555aa",
+    "institution_name": "国际清算银行",
+    "required_terms": [
+      "BIS"
+    ],
+    "deterministic_fallback": "国际清算银行：0002BISTheevolvingne",
+    "raw_candidates": [
+      "国际清算银行：主权-银行-非银三角重塑不确定性传导链条",
+      "国际清算银行：2016年后非银敞口成主权不确定性传导新渠道",
+      "国际清算银行：流动性资产越多银行反而更脆弱-非银杠杆放大主权风险"
+    ],
+    "cleaned_candidates": [
+      "国际清算银行：0002BISTheevolvingne",
+      "国际清算银行：主权-银行-非银三角重塑不确定性传导链条",
+      "国际清算银行：2016年后非银敞口成主权不确定性传导新渠道",
+      "国际清算银行：流动性资产越多银行反而更脆弱-非银杠杆放大主权风险"
+    ],
+    "faithful_candidate_missing_terms": [
+      "BIS"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "国际清算银行：主权-银行-非银三角重塑不确定性传导链条",
+        "reasons": [
+          "missing_required_terms=BIS",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "国际清算银行：2016年后非银敞口成主权不确定性传导新渠道",
+        "reasons": [
+          "missing_required_terms=BIS",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "国际清算银行：流动性资产越多银行反而更脆弱-非银杠杆放大主权风险",
+        "reasons": [
+          "missing_required_terms=BIS",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "国际清算银行：0002BISTheevolvingne",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "国际清算银行：0002BISTheevolvingne"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

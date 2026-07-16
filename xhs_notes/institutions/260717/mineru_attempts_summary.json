@@ -1,0 +1,46 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 1,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_ajnvtrjb/pdfs/0006-OECD_Enforcement-data-of-the-OECD-Anti-Bribery-Convention-1999-20_a8cdf6ec.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_ajnvtrjb/pdfs/0007-OECD_Environmental-Tax-Policy-Review-of-Romania_c14720d6.pdf",
+        "state": "failed",
+        "error": "number of pages exceeds limit (200 pages), please split the file and try again"
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_ajnvtrjb/pdfs/0008-WTO_TBT-Committee-reviews-emerging-technology-standards-adopts-i_f9745ea6.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 2,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 1,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_ajnvtrjb/pdfs/0007-OECD_Environmental-Tax-Policy-Review-of-Romania_c14720d6.pdf",
+        "state": "failed",
+        "error": "number of pages exceeds limit (200 pages), please split the file and try again"
+      }
+    ]
+  }
+]

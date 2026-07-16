@@ -1,0 +1,120 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_t5c99mcs/pdfs/0004-OECD_Artificial-intelligence-and-open-finance_be99bf39.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "AI遇上开放金融，1",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x2",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "金融->资金 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x4",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1"
+  ],
+  "wechat_title": "经合组织：0004OECD人工智能和openfinancebe99bf",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-OECD_Artificial-intelligence-and-open-finance_be99bf39.pdf",
+    "cleaned_source_title": "0004-OECD_Artificial-intelligence-and-open-finance_be99bf39",
+    "institution_name": "经合组织",
+    "required_terms": [
+      "OECD"
+    ],
+    "deterministic_fallback": "经合组织：0004OECD人工智能和openfinancebe99bf",
+    "raw_candidates": [
+      "经合组织：AI与开放资金的相互强化",
+      "经合组织：AI与开放资金相互强化，数据治理规则重塑",
+      "经合组织：AI与开放资金交叉放大不确定性，催生权衡"
+    ],
+    "cleaned_candidates": [
+      "经合组织：0004OECD人工智能和openfinancebe99bf",
+      "经合组织：AI与开放资金的相互强化",
+      "经合组织：AI与开放资金相互强化，数据治理规则重塑",
+      "经合组织：AI与开放资金交叉放大不确定性，催生权衡"
+    ],
+    "faithful_candidate_missing_terms": [
+      "OECD"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "经合组织：AI与开放资金的相互强化",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：AI与开放资金相互强化，数据治理规则重塑",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：AI与开放资金交叉放大不确定性，催生权衡",
+        "reasons": [
+          "missing_required_terms=OECD",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：0004OECD人工智能和openfinancebe99bf",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "经合组织：0004OECD人工智能和openfinancebe99bf"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

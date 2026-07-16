@@ -1,0 +1,81 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_ajnvtrjb/pdfs/0008-WTO_TBT-Committee-reviews-emerging-technology-standards-adopts-i_f9745ea6.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界贸易组织",
+  "cover_short_title": "全球贸易新规密集出台",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界贸易组织：0008WTOTBTCommitteer",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0008-WTO_TBT-Committee-reviews-emerging-technology-standards-adopts-i_f9745ea6.pdf",
+    "cleaned_source_title": "0008-WTO_TBT-Committee-reviews-emerging-technology-standards-adopts-i_f9745ea6",
+    "institution_name": "世界贸易组织",
+    "required_terms": [
+      "WTO",
+      "TBT"
+    ],
+    "deterministic_fallback": "世界贸易组织：0008WTOTBTCommitteer",
+    "raw_candidates": [
+      "世界贸易组织WTO-TBT委员会审议新兴技术标准并采纳决议",
+      "世界贸易组织WTO-TBT委员会：17项新贸易关切中超半数指向欧盟法规",
+      "世界贸易组织WTO-TBT委员会：合规成本正替代关税成为主要贸易壁垒"
+    ],
+    "cleaned_candidates": [
+      "世界贸易组织：0008WTOTBTCommitteer",
+      "世界贸易组织：世界贸易组织WTO",
+      "世界贸易组织：世界贸易组织WTO-TBT委员会"
+    ],
+    "faithful_candidate_missing_terms": [
+      "TBT"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "世界贸易组织：世界贸易组织WTO",
+        "reasons": [
+          "missing_required_terms=TBT",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界贸易组织：世界贸易组织WTO-TBT委员会",
+        "reasons": [
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界贸易组织：0008WTOTBTCommitteer",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "世界贸易组织：0008WTOTBTCommitteer"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

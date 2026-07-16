@@ -1,0 +1,1601 @@
+# Bridging the Gaps for Sustainable Development
+
+Coherent Policies for Water, Energy, Industry and Cities
+
+![](images/b8ddb9a856a5330d3e587fe8b15ad6627d992c8645fb72d56c4315005ea1796d.jpg)
+
+# Bridging the Gaps for Sustainable Development
+
+COHERENT POLICIES FOR WATER, ENERGY,
+INDUSTRY AND CITIES
+
+ISBN 978-92-64-32741-2 (print)
+ISBN 978-92-64-42233-9 (PDF)
+ISBN 978-92-64-77452-0 (HTML)
+
+Photo credits: Cover © Sergey Novikov/Shutterstock.com.
+
+Corrigenda to OECD publications may be found at: https://www.oecd.org/en/publications/support/corrigenda.html.
+© OECD 2026
+
+![](images/a1ec5cab3db1c885899b3a2f28d3d852f7a750e65822586c3b57fdaf3f80ae84.jpg)
+
+## Attribution 4.0 International (CC BY 4.0)
+
+This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).
+
+Attribution – you must cite the work.
+
+Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of the original work should be considered valid.
+
+Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.
+
+Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.
+
+You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.
+
+Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.
+
+# Foreword
+
+The world is approaching a critical moment for achieving the Sustainable Development Goals. With only four years remaining until 2030, progress lags behind global commitments in areas such as water, energy, industry and urban development where challenges are increasingly and more visibly interconnected. Climate pressures, resource constraints, digital transformation and geopolitical tensions create effects that cross sectors and borders. At the same time, tighter and less predictable international funding makes fragmented responses more costly. No single policy field can address these pressures alone. Faster progress will depend on governance systems that can support coherent and co-ordinated action across levels of government.
+
+This report is the OECD's contribution to the 2026 United Nations High Level Political Forum (HLPF) on Sustainable Development. The Forum will focus on transformative, equitable, innovative and co-ordinated action to advance the 2030 Agenda. It will review progress on SDG 6 (Clean Water and Sanitation), SDG 7 (Affordable and Clean Energy), SDG 9 (Industry, Innovation and Infrastructure), SDG 11 (Sustainable Cities and Communities), and SDG 17 (Partnerships for the Goals). The report examines how fragmented policies across water, energy, industry and urban development slow progress on these Goals. It identifies practical ways to improve policy coherence, strengthen institutional co-ordination and support integrated implementation. It also highlights governance practices and policy tools that can help countries move towards faster and more integrated action that reflect the interconnected nature of the 2030 Agenda.
+
+As countries look beyond 2030, global discussions such as the Pact for the Future and the Beyond 2030 dialogue reinforce the need for governance systems that can anticipate risks, manage complex interactions across policy areas and support more effective international co-operation. Governments are operating under tighter fiscal constraints, declining public trust and increasing expectations to deliver green and digital transitions, which have highlighted persistent gaps between long-term strategies and day-to-day implementation. At the same time, climate change, biodiversity loss and pollution are set to intensify, making fragmented responses increasingly costly and ineffective and underscoring the need to balance environmental, economic and social objectives. Meeting these challenges will require institutions with clear roles and responsibilities that can co-ordinate planning, ensure accountability and maintain alignment across government. Policy coherence is becoming an essential capability for shaping the next phase of sustainable development, strengthening consistent decision making and enabling more effective collective action on shared risks.
+
+Through standards, country reviews, data and monitoring frameworks and peer learning platforms, the OECD supports policy coherence for sustainable development with analysis that helps governments coordinate action at national and international levels. This report draws on that experience. It also reflects the outcomes of regional consultations, including the United Nations Regional Forums on Sustainable Development, carried out in preparation for the 2026 HLPF. The objective is to support Member States and the United Nations system in promoting coherent, widely shared and forward-looking approaches to sustainable development.
+
+Bridging the Gaps for Sustainable Development is designed as a practical resource for policymakers. It aims to help governments align strategies, strengthen institutions and deliver integrated solutions at scale.
+
+# Acknowledgements
+
+This report was prepared by the Global Partnerships, Inclusion and Justice Division (GPIJ), under the direction of Tatyana Teplova, Head of Division.
+
+The report was drafted by Ernesto Soria Morales, Simon Callewaert and Elise Desplanques. Several OECD Directorates contributed to its preparation, including the Centre for Entrepreneurship, SMEs, Regions and Cities (CFE), the Centre for Tax Policy and Administration (CTP), the Directorate for Financial and Enterprise Affairs (DAF), the Development Co-operation Directorate (DCD), the Environment Directorate (ENV), the Directorate for Science, Technology and Innovation (STI), and the Trade and Agriculture Directorate (TAD).
+
+The report benefited from analytical, drafting and review inputs from OECD experts across these Directorates, including Géraldine Aang, Rashad Abelson, Fares Al Hussami, Andrew Blazey, Marcos Díaz Ramírez, Kathleen Dominique, Andres Fuentes Hutfilter, Sara Fyson, Hubertus Gay, Silvia Gavornikova, Lorenze Gross, Guillaume Gruère, Alice Holt, Renwick Irvine, Yuko Ishibashi, Eugenie Joseph, Przemysław Kowalski, Laura Kuusela, Carina Lindberg, Javier López González, Luca Maiotti, Fiona May, Stefano Marta, Benjamin Michel, Mariana Mirabile, Walid Oueslati, Santhosh Persaud, Clodagh Power, Stephan Raes, Kilian Raiser, Mikaela Rambali, Dorian Revillon, Oriana Romano, Deger Saygin, Juliette Schleich, Silvia Sorescu, Kurt Van Dender, Yola Thuerer, Supriya Trivedi, and Eva Zandonella.
+
+The draft report was shared with the OECD Network of National Focal Points for Policy Coherence for Sustainable Development (PCSD), composed of national SDG co-ordinators and senior officials responsible for SDG implementation, and benefited from feedback received through the consultation process.
+
+The analysis presented in the report was further informed by OECD-led regional consultations conducted between February and April 2026 through the UN Regional Forums on Sustainable Development, including those hosted by UNECE, UNECA and ESCAP.
+
+The report benefited from editorial assistance from Andrea Uhrhammer. It was prepared for publication and laid out by Ciara Muller.
+
+## Table of contents
+
+Foreword 3   
+Acknowledgements 4   
+Abbreviations and acronyms 7   
+Executive Summary 10   
+1 A call for coherence: Co-ordinated action for a sustainable future 12   
+1.1. Why coherence and co-ordinated action matter for the 2030 Agenda 13   
+1.2. Systemic interlinkages across water, energy, industry and cities for coherent action 16   
+1.3. Key systemic incoherences slowing progress on SDGs 6, 7, 9, 11 and 17 30   
+1.4. Turning interlinkages into impact 31   
+References 32   
+2 Maximising impact through integrated policy action 38   
+2.1. Unlocking synergies across economic, social and environmental goals 39   
+2.2. Trade-offs: How to balance competing policy objectives 46   
+2.3. Getting a grip on transboundary impacts 50   
+References 54   
+3 Strengthening capacities for coherent and co-ordinated action 59   
+3.1. Institutional conditions for embedding policy coherence 61   
+3.2. Governance tools for aligning policies and managing trade-offs in practice 72   
+References 84   
+4 A Policy Coherence Agenda for Transformative Action 87   
+Five strategic pillars for action 88   
+Figures   
+Figure 1.1. Interlinkages between SDG 11 (Sustainable Cities and Communities) and Other SDGs 25   
+Boxes   
+Box 2.1. Key messages for integrated policy action 39   
+Box 2.2. Local pathways to policy coherence 41   
+Box 2.3. Integrated urban policies linking SDG 11 to other SDGs 43
+
+Box 2.4. The role of Country Platforms in achieving SDG7 45  
+Box 2.5. Aligning urban development with sustainability: lessons from Hamburg and Mexico City 48  
+Box 2.6. Examples of policy tools and instruments to mitigate cost, close capacity gaps, and manage transboundary impacts 52  
+Box 3.1. Key governance messages 61  
+Box 3.2. A national water strategy with strategic long-term vision that supports policy coherence (Germany) 64  
+Box 3.3. National policy coherence with OECD–EU Support (Austria + Italy) 65  
+Box 3.4. Strengthening policy coherence through CoG screening and quality assurance (Romania) 67  
+Box 3.5. Strengthening the internal structure for SDG co-ordination (Portugal) 68  
+Box 3.6. Promoting communication on multi-stakeholder issues (India + Morocco) 69  
+Box 3.7. Greening public administration as a lever for leadership and resilience 70  
+Box 3.8 Promoting policy coherence through city-to-city partnerships (Canada + Netherlands) 71  
+Box 3.9. Tools to identify cross-sectoral and transboundary impacts early in the policy cycle (Mongolia + Sri Lanka) 73  
+Box 3.10. AI for governance functions (Canada + Korea) 75  
+Box 3.11. SDG budget alignment (Spain) 77  
+Box 3.12. Leveraging digital governance and fiscal tools to strengthen coherence (Korea) 78  
+Box 3.13. Embedding SDG priorities in regulatory design (Luxembourg) 80  
+Box 3.14. Monitoring spillovers (Switzerland + Netherlands) 82  
+Box 3.15. Integrated sustainability assessment as a governance tool for policy coherence (Finland) 83
+
+## Abbreviations and acronyms
+
+<table><tr><td>AI</td><td>Artificial intelligence</td></tr><tr><td>APRM</td><td>African Peer Review Mechanism</td></tr><tr><td>AU</td><td>African Union</td></tr><tr><td>CCUS</td><td>Carbon capture, utilisation and storage</td></tr><tr><td>CO2</td><td>Carbon dioxide</td></tr><tr><td>CoG</td><td>Centre of Government</td></tr><tr><td>CRM</td><td>Critical raw materials</td></tr><tr><td>DRR</td><td>Disaster risk reduction</td></tr><tr><td>EBRD</td><td>European Bank for Reconstruction and Development</td></tr><tr><td>EC</td><td>European Commission</td></tr><tr><td>ECB</td><td>European Central Bank</td></tr><tr><td>EMDEs</td><td>Emerging markets and developing economies</td></tr><tr><td>ESG</td><td>Environmental, social and governance</td></tr><tr><td>EU</td><td>European Union</td></tr><tr><td>FAO</td><td>Food and Agriculture Organization</td></tr><tr><td>FfD</td><td>Financing for Development</td></tr><tr><td>G20</td><td>Group of Twenty</td></tr><tr><td>GCF</td><td>Green Climate Fund</td></tr><tr><td>GHG</td><td>Greenhouse gases</td></tr><tr><td>GVCs</td><td>Global value chains</td></tr><tr><td>HLPF</td><td>High-Level Political Forum (on Sustainable Development)</td></tr><tr><td>ICT</td><td>Information and communication technologies</td></tr><tr><td>IEA</td><td>International Energy Agency</td></tr><tr><td>IFCMA</td><td>Inclusive Forum on Carbon Mitigation Approaches</td></tr><tr><td>ILO</td><td>International Labour Organization</td></tr><tr><td>IMF</td><td>International Monetary Fund</td></tr><tr><td>IMO</td><td>International Maritime Organization</td></tr><tr><td>IPCC</td><td>Intergovernmental Panel on Climate Change</td></tr><tr><td>IPU</td><td>Inter-Parliamentary Union</td></tr><tr><td>ITU</td><td>International Telecommunication Union</td></tr><tr><td>JETP</td><td>Just Energy Transition Partnership</td></tr><tr><td>LVC</td><td>Land value capture</td></tr><tr><td>MENA</td><td>Middle East and North Africa</td></tr><tr><td>Mt</td><td>Million tonnes / megatonnes</td></tr><tr><td>NDC</td><td>Nationally Determined Contribution</td></tr><tr><td>NUP</td><td>National urban policy</td></tr><tr><td>ODA</td><td>Official development assistance</td></tr><tr><td>PCSD</td><td>Policy Coherence for Sustainable Development</td></tr><tr><td>PPP</td><td>Public–private partnership</td></tr><tr><td>RBC</td><td>Responsible business conduct</td></tr><tr><td>RIA</td><td>Regulatory impact assessment</td></tr><tr><td>SDGs</td><td>Sustainable Development Goals</td></tr><tr><td>SMEs</td><td>Small and medium-sized enterprises</td></tr><tr><td>STI</td><td>Science, technology and innovation</td></tr><tr><td>UN</td><td>United Nations</td></tr><tr><td>UNAIDS</td><td>Joint United Nations Programme on HIV/AIDS</td></tr><tr><td>UNCTAD</td><td>United Nations Conference on Trade and Development</td></tr><tr><td>UNDP</td><td>United Nations Development Programme</td></tr><tr><td>UNEP</td><td>United Nations Environment Programme</td></tr><tr><td>UNESCO</td><td>United Nations Educational, Scientific and Cultural Organization</td></tr><tr><td>UNFCCC</td><td>United Nations Framework Convention on Climate Change</td></tr><tr><td>UNGA</td><td>United Nations General Assembly</td></tr><tr><td>UN-Habitat</td><td>United Nations Human Settlements Programme</td></tr><tr><td>UNHCR</td><td>United Nations Refugee Agency</td></tr><tr><td>UNICEF</td><td>United Nations Children’s Fund</td></tr><tr><td>UNIDO</td><td>United Nations Industrial Development Organization</td></tr><tr><td>UNSD</td><td>United Nations Statistics Division</td></tr><tr><td>UNWTO</td><td>United Nations Tourism Organization</td></tr><tr><td>USD</td><td>United States dollar</td></tr><tr><td>WB</td><td>World Bank</td></tr><tr><td>WHO</td><td>World Health Organization</td></tr><tr><td>WIPO</td><td>World Intellectual Property Organization</td></tr><tr><td>WMO</td><td>World Meteorological Organization</td></tr><tr><td>WTO</td><td>World Trade Organization</td></tr></table>
+
+# Executive Summary
+
+Countries are falling short on achieving the Sustainable Development Goals (SDGs) ahead of the 2030 target date. New policy solutions and boosting investment can help, but another lever is crucial for success: reducing governance fragmentation. With SDGs 6, 7, 9, 11 and 17 up for review in 2026, this report provides an analysis of the current state of policy coherence in water, energy, industry and urban development policies, and sets out a framework to improve coherence, co-ordination and resilience.
+
+## A call for coherence
+
+This OECD analysis, relying on concrete country experiences around the world, shows that fragmented governance is a central cause of the slow and uneven progress on the SDGs under review. Water security remains threatened by declining freshwater ecosystems and climate driven variability, as well as rising demand from agriculture, industry and cities. While energy access continues to improve globally and renewables' costs decline, structural financing gaps remain significant barriers to the transition. Industrial emissions keep rising, and cities face persistent environmental, infrastructure and governance challenges, including poor air quality, congestion, inefficient and unsustainable land use and growing exposure to climate risks. These challenges are interconnected, yet policies to address them often evolve in isolation.
+
+Fragmented action creates three fundamental, multiplier effects that amplify pressures across systems. First, it reduces the effectiveness of reforms when gains in one system generate pressures elsewhere. Second, it raises costs when closely linked decisions such as those on infrastructure, spatial planning, regulation and investment sequencing are not aligned. Third, it weakens fairness, since poorly co-ordinated policies tend to amplify burdens on low-income households and small firms.
+
+## Aligning policies and governance to accelerate progress
+
+Still, significant opportunities exist to accelerate progress on the SDGs under review when countries adopt integrated approaches. These opportunities include circular economy policies that integrate urban waste and water management with industrial innovation and energy efficiency. They also include nature-based solutions that can reduce flood and drought risk, expand green space, support biodiversity and reduce cooling needs in cities. Integrated water and energy planning can reduce long term costs and help secure water intensive energy systems. Aligning land use, housing and mobility can reduce emissions and improve access to services.
+
+Integrated urban policy is essential to achieving the SDGs, as it enables cities to address complex, interlinked challenges through co-ordinated actions. Cities are making progress on many SDGs, but performance remains uneven across goals. Between 2017 and 2022, cities improved on average in 8 of the 13 goals with available data. By aligning plans and interventions across various key sectors of urban development, such as housing, transport, energy, and digital infrastructure, as well as across levels of government, integrated urban policy can help maximise synergies and reduce policy fragmentation.
+
+Integrated strategies have been identified that reinforce the goals under review when they are scaled beyond pilots, even if they remain limited because enabling frameworks are often missing. These include standards, funding mechanisms, data systems and co-ordination processes that align sectoral decisions. Long term planning frameworks help align action on SDG 6, SDG 7, SDG 9 and SDG 11 with national visions for sustainability. At the same time, trade-offs are common and need to be made visible and managed. Energy expansion can increase water stress, urban renewal can raise affordability concerns, and industrial transitions can create cost pressures for firms. Addressing these tensions requires coherent approaches that align planning, budgeting, regulation, procurement and evaluation so that policies support the same objectives and reinforce one another. This, in turn, requires sustained investment in data, skills and institutional capacity at all levels of government.
+
+## A policy coherence agenda for transformative action
+
+This report also provides a forward-looking agenda that reflects emerging challenges and the growing urgency to accelerate action. It identifies five priority areas where governments can strengthen policy coherence: from integrating it into everyday decision making to empowering Centres of Government to resolve trade-offs to designing investment and innovation strategies to deliver results across multiple SDGs.
+
+The analysis presented in this report confirms that coherence is crucial in determining the effectiveness and resilience of public policy across water, energy, industry and cities. Coherent approaches help governments align investments with long term national objectives, manage trade-offs in ways that are fair and transparent, reduce exposure to environmental and economic risks and ensure that reforms deliver benefits across multiple goals at the same time. Countries that strengthen coherence are better placed to accelerate progress on the SDGs and to navigate the complex transitions that extend beyond 2030.
+
+# A call for coherence: Co-ordinated action for a sustainable future
+
+Global progress on the Sustainable Development Goals (SDGs) is stalling, despite significant ambition, knowledge and policy action. This mainly stems from governance systems that remain structurally ill-equipped to manage linkages across the SDGs - particularly those under review in 2026 focused on water, energy, industry and cities. As climate shocks, water stress, energy transitions, industrial transformation, and rapid urbanisation intensify, policies designed and implemented in silos increasingly undermine one another. This chapter sets the context of the situation and issues a call for coherence to better manage interactions across water, energy, industry, and cities to ensure SDG delivery. Drawing on OECD analysis, the chapter first explains why coherence matters and why it often fails in practice, then illustrates how coherence works in practice through systemic interlinkages across the SDGs under review in 2026.
+
+This Chapter provides the analytical foundation for the report by framing the coherence challenge as a central constraint on achieving the 2030 Agenda. As climate, resource and urban pressures intensify, fragmented or siloed policy responses are creating systemic risks and inefficiencies.
+
+The chapter is organised in three parts:
+
+\- The first part, “A Call for Coherence,” explains why coherence matters for sustainable development – particularly for those under review by the 2026 High-Level Political Forum (HLPF) – and why fragmented responses persist despite growing recognition of interlinkages. It introduces Policy Coherence for Sustainable Development (PCSD) as a governance capability, highlights political and institutional barriers that keep coherence aspirational, and situates these challenges within global trends and international commitments calling for integrated approaches.
+
+\- The second part, “Systemic interlinkages across water, energy, industry and cities for coherent action,” explores how interdependencies among these domains shape SDG outcomes. It analyses resource flows, infrastructure choices, and governance arrangements to show how fragmentation amplifies costs and risks, and why integrated approaches are essential to unlock synergies, manage trade-offs and strengthen resilience.
+
+\- The third, “Key systemic incoherences slowing progress on SDGs 6, 7, 9, 11 and 17” zooms in on specific impacts that incoherent implementation of policy is causing in the underperformance within these five key SDGs.
+
+The analysis in this chapter underscores that coherence is not a normative aspiration, but a key condition for designing strategies that are co-ordinated, durable, and capable of managing systemic risks across sectors and borders. Fragmented policy frameworks generate misaligned incentives, cross-sectoral spillovers and investment lock-ins that weaken long-term sustainability.
+
+## 1.1. Why coherence and co-ordinated action matter for the 2030 Agenda
+
+## Global SDG progress: A critical low point
+
+Global progress on the SDGs has reached a critical low point. Only around 36% of targets are on track or making moderate progress, while 48% show insufficient progress and 15% are regressing (United Nations, 2026[1]). Across OECD countries, only 11 of 114 measurable targets have been achieved, and just 28 are close to being met by 2030 (OECD, 2025[2]). These figures indicate systemic weaknesses in policy design and implementation. Although policies are in place, their lack of alignment prevents them from generating cumulative progress at scale. Climate shocks, pandemics, and geopolitical fragmentation further widen these gaps. Modelling exercises, for example, indicate that unco-ordinated climate and resource policies can reduce long-term growth prospects and increase exposure to systemic risks (OECD, 2022[3]).
+
+Regional SDG assessments confirm that progress remains fragmented and insufficiently cumulative. In Africa, progress has been recorded on 12 of the 17 SDGs, yet current trajectories remain inadequate to achieve the Goals by 2030 (ECA, 2026[4]). In Latin America and the Caribbean, only $19\%$ of SDG targets are on track to be met by 2030, while $42\%$ are progressing too slowly and $39\%$ have stalled or regressed relative to the 2015 baseline (ECLAC, 2026[5]). In Asia and the Pacific, the region is not on track to achieve any of the 17 SDGs, and $88\%$ of measurable targets are expected to be missed by 2030, with only 14 targets currently on track (ESCAP, 2026[6]). In the UNECE region, despite comparatively strong institutional capacity, only around $15\%$ of SDG targets are on track, with particularly weak performance on sustainable cities, consumption and production, climate action and partnerships (UNECE, 2026[7]). Across regions, weak alignment between policy domains, financing frameworks and levels of government limits the translation of sectoral advances into sustained, system-wide progress.
+
+In particular, there are significant gaps in the implementation of the SDGs under review in 2026. For example, despite global electricity access reaching 92% of the population, and internet connectivity growing to 68% by 2024, progress on SDGs 6, 7, 9, 11, and 17 remains uneven and insufficient (United Nations, 2025[8]). For SDG 6 (Clean water and sanitation), 2.1 billion people lack safely managed drinking water, 3.4 billion lack safely managed sanitation, only 56% of wastewater is treated, and freshwater ecosystems continue to deteriorate. Under SDG 7 (Affordable and clean energy), while electricity access is high, 645 million people remain unserved, 85% of them in sub-Saharan Africa, and 2.1 billion still rely on polluting cooking fuels. SDG 9 (Industry, innovation and infrastructure) faces structural challenges: global manufacturing employment declined from 14.3% in 2015 to 13.7% in 2024, while industrial $\mathrm{CO}_{2}$ emissions from fuel combustion reached 37.6 billion tonnes in 2024, and digital divides persist, especially outside high-income regions. For SDG 11 (Sustainable cities and communities), an estimated 1.16 billion people live in slums, only half of urban residents have convenient access to public transport, and affordable, climate-resilient infrastructure investment falls far short. Finally, the enabling environment for SDG 17 (Partnerships for the Goals) has deteriorated: ODA fell to USD 174.3 billion in 2025, down $23.1\%$ from 2024 (OECD, 2026[9]), while the external debt of low- and middle-income countries reached USD 8.4 trillion in 2024 and the annual financing gap for developing countries remains around USD 4 trillion. (United Nations, 2026[1]) (DESA, 2025[10]) (United Nations, 2025[8]).
+
+Cities are making progress on many SDGs, but performance remains uneven across goals. Between 2017 and 2022, cities improved on average in 8 of the 13 goals with available data – most notably in SDGs 11 (Sustainable cities and communities), 14 (Life below water) and 17 (Partnerships for the goals), driven by better Internet speed, stronger coastal protection and cleaner air. In contrast, cities have stalled or regressed on SDGs 8 (Decent work and economic growth), 12 (Responsible consumption and production) and 13 (Climate action). Most cities remain far from the 2030 suggested end values. As of 2022, 11% of cities in OECD countries had not reached any of the suggested SDG end values, and no city had achieved more than 5 (OECD, 2024). These disparities across essential services, infrastructure, finance and partnerships underline the need for more integrated, placed-based and transformative policy approaches, supported by strengthened multilateral co-operation and co-ordinated action.
+
+## Why fragmented responses fail
+
+These implementation gaps reveal a structural challenge. Fragmented policy responses fail to match the systemic nature of the 2030 Agenda. Without integrated strategies that align different targets, the 2030 Agenda and SDGs will remain out of reach. Continued SDG underperformance stems from a mismatch between the systemic nature of today's challenges and the fragmented policy responses applied across policy areas, despite clear interactions among them. OECD analysis shows that decision making frameworks across countries remain largely siloed, with focus on individual sectors rather than managing system-wide interactions. Consequently, these arrangements often result in policy incoherence, rather than policy inaction, where advancements in one area undermine outcomes in another.
+
+The report's guiding question in turn is how can national and sub-national governments design and implement coherent policies across SDGs, including those under review by the 2026 HLPF? In a world marked by climate shocks, pandemics, geopolitical fragmentation, and supply chain disruptions, PCSD has become a foundational enabler of the 2030 Agenda, allowing governments to navigate complexity and respond to interconnected crises with integrated, forward-looking solutions.
+
+## Policy coherence, a boost for sustainable development
+
+The urgency of this report's contribution is underscored by recent global trends. The financing gap for developing countries has widened to USD 4 trillion annually, representing a $60\%$ increase since 2015, driven by rising climate-related costs and mounting debt burdens (OECD, 2025[11]). At the same time, current national pledges remain insufficient to meet the Paris Agreement targets, and progress on net-zero pathways has slowed since 2021 (UNFCCC, 2025[12]). OECD analysis confirms this slowdown. Among 52 assessed countries, only 30 have adopted legally binding net-zero pledges, covering just 17.7% of country-based global greenhouse gas emissions, while emissions would need to fall by around 63% by 2035 to keep the 1.5°C goal within reach. Climate policy expansion increased by only 1% in 2024, reinforcing signs of stalled momentum since 2021 (OECD, 2025[13]). These dynamics intersect with the accelerating triple planetary crisis – climate change, biodiversity loss, and pollution – which are mutually reinforcing and expose the limitations of fragmented policy responses (OECD, 2025[14]). International processes increasingly reflect this shift by calling for coherence through concrete commitments and frameworks. The outcomes of several recent global processes, including the UN Summit of the Future (2024), the Sevilla Conference on Financing for Development (2025), the UN Social Summit (2025) and the COP30 (Belém, 2025), suggest a growing consensus that fragmented responses are insufficient and that coherence across sectors, governance levels, and financing systems is indispensable for achieving the 2030 Agenda (United Nations, 2024[15]) (DESA, 2025[16]) (UNFCCC, 2025[17]). The theme of the 2026 High-Level Political Forum – “Transformative, equitable, innovative and co-ordinated actions for the 2030 Agenda” – captures the essence of the challenge ahead. Achieving this ambition requires coherence as the foundation for transformative action.
+
+PCSD, as articulated in the OECD Recommendation on Policy Coherence for Sustainable Development (OECD, 2019[18]), refers to a governance capability that enables governments to anticipate interactions across policies, manage trade-offs, and align objectives across sectors, levels of government, and time horizons. The Recommendation calls on countries to strengthen whole-of-government co-ordination, adopt long-term strategic visions, and consider transboundary and intergenerational impacts. Importantly, policy coherence does not eliminate tensions between objectives, but makes them explicit and governable, helping governments sequence reforms, manage distributional impacts, and sustain policy outcomes over time.
+
+In practice, sustainable development policymaking increasingly involves tensions between affordability and decarbonisation, speed and participation, local impacts and global benefits. Such competing objectives cannot be addressed through technical co-ordination alone, as this can undermine legitimacy and policy durability. Managing these tensions requires the capacity to clarify priorities, identify distributional effects (winners and losers), and design sequencing or compensation mechanisms that maintain political and social support.
+
+Coherence further requires aligning policies across interconnected sectors such as water, energy, industry, and urban development to maximise synergies and manage trade-offs, while ensuring that national objectives translate into coherent actions across levels of government. It also depends on effective partnerships that engage government, business, and civil society to develop and implement integrated solutions. Given the cross-border effects of many domestic policy decisions, enhancing coherence also implies a strong role for international co-operation and co-ordinated.
+
+Effective multi-level governance is central to policy coherence, as cities and regions are responsible for a substantial share of SDG-relevant policies and investments and play a key role in implementation. In OECD countries, subnational governments account for almost 60% of public investment and close to 40% of public expenditure, including a substantial share of climate-related investment, and around two-thirds of SDG targets cannot be achieved without effective engagement at local and regional levels. Coherence therefore requires strong vertical co-ordination to align national objectives with local delivery capacities and timelines (OECD, 2020[19]).
+
+Finally, coherence depends on a forward-looking assessment of long-term and intergenerational impacts, as many policy decisions – particularly in infrastructure and land use – shape sustainable development pathways for decades. Infrastructure assets often have lifecycles of 30 to 100 years, meaning that investment choices made today influence climate and development trajectories far into the future (OECD, 2020[20]). Persistent under-investment in areas such as water infrastructure weakens resilience, raises long-term economic and fiscal costs, and increases exposure to climate-related risks such as floods and droughts (OECD, 2025[21]). As drought risk becomes more frequent, severe and prolonged across regions, short-term responses are increasingly insufficient, and delayed investment amplifies cumulative impacts across sectors and generations (OECD, 2025[22]). Assessing these long-term impacts helps ensure that current decisions do not lock in unsustainable outcomes or constrain future generations.
+
+Addressing transboundary impacts and global spillovers
+
+Among these dimensions, coherence entails considering the consequences of policy decisions beyond borders. In an interconnected global economy, decisions taken domestically often have significant impacts elsewhere, making international co-operation and co-ordinated action essential. Many of the most pressing challenges – especially those related to the SDGs under review by the 2026 HLPF – such as water scarcity, energy transitions, industrial decarbonisation, and urbanisation are shaped by global flows of resources, including trade, finance, technology, and environmental flows. As a result, policies implemented in one country can generate significant spillovers that affect other countries' ability to achieve the SDGs. These spillovers may be positive or negative, depending on policy design and the degree of international coordination (OECD/EC-JRC, 2021[23]).
+
+For example, fossil fuel subsidies may lower domestic energy costs but exacerbate global climate risks; carbon-intensive production in one region can undermine competitiveness and decarbonisation efforts in others; poorly managed upstream water resources can threaten access and resilience downstream; and unco-ordinated carbon pricing can lead to carbon leakage. Conversely, greater alignment among countries can accelerate the diffusion of renewable energy technologies and other clean innovations.
+
+Global value chains are an engine of economic growth and development, but they are also associated with adverse impacts on people and planet, usually spanning jurisdictions. In OECD countries, companies account for around 85% of technology investment, and globally, approximately 70% of trade takes place within global value chains (OECD, 2025[24]). Policies on sustainable supply chains and responsible business conduct (RBC) seek to mitigate adverse transboundary impacts — yet their implementation can in turn generate their own challenges, including sharing compliance costs, risk of market fragmentation, and uneven effects across trading partners. As a result, regulatory choices made in one jurisdiction can significantly shape production practices, investment decisions and market access conditions elsewhere. Together, these examples show why transboundary impacts cannot be treated as an “external” add-on to domestic policy.
+
+## 1.2. Systemic interlinkages across water, energy, industry and cities for coherent action
+
+Sustainable development is inherently systemic. The SDGs under review at the 2026 HLPF – SDG 6 (Clean Water and Sanitation), SDG 7 (Affordable and Clean Energy), SDG 9 (Industry, Innovation and Infrastructure), SDG 11 (Sustainable Cities and Communities), and SDG 17 (Partnerships for the Goals) – are deeply interdependent, and progress in one area often depends on decisions made in another. Yet policies in these domains are frequently designed and implemented in isolation, creating inefficient investment patterns, contradictory incentives, avoidable risks and missed opportunities for sustainability and resilience. This report’s focus is on achieving policy coherence across water, energy, industry, and urban development through an emphasis on their systemic interactions. Moving beyond separate policy silos requires recognising the multiple intersections in resource use, infrastructure planning, and governance.
+
+Urbanisation illustrates the systemic interlinkages across water, energy, industry and cities. Decisions on land use, infrastructure and service provision in cities shape resource demand, emissions and exposure to climate risks, with implications that extend beyond urban boundaries. Where urban development is not aligned with water and energy planning, costs and vulnerabilities can increase, particularly under conditions of climate stress (OECD, 2017[25]) (Botta, Griffiths and Kato, 2022[26]). These dynamics are explored in greater detail in the discussion on SDG 11, which examines how integrated urban policies can better manage these interdependencies and align local action with national and global sustainability goals.
+
+Industrial development provides a further illustration of these interdependencies. Industrial strategies interact with energy systems, innovation policies and urban development, shaping emissions trajectories, competitiveness and long-term investment pathways. Without alignment between industrial policy, clean-energy transitions and STI frameworks, economies risk reinforcing unsustainable pathways. These issues are examined in the section on SDG 9, which focuses on how policy coherence can link industrial transformation, innovation and decarbonisation while managing uncertainty and systemic risks.
+
+## Socio-economic drivers of the triple planetary crisis and the coherence gap
+
+Environmental pressures compound the coherence challenge. Climate change, biodiversity loss and pollution form a triple planetary crisis that continues to intensify under current policies. These interconnected crises are driven by shared socio-economic trends and drivers, such as resource demand and population growth, and they interact in ways that amplify systemic risks. Climate change is projected to become the main driver of biodiversity loss by 2050, while nitrogen and plastic pollution continue to rise, further degrading ecosystems and human health (OECD, 2025[14]). Fragmented responses risk shifting environmental burdens across sectors, territories or lifecycle stages, illustrating a common failure mode of policy fragmentation, where policies designed in isolation, unintentionally exacerbate pressures elsewhere.
+
+This dynamic is directly relevant to the SDGs under review at the 2026 HLPF. Progress on climate mitigation, resource efficiency, industrial transformation and sustainable urban development is increasingly shaped by how well policies manage interactions across systems rather than by sector-specific advances alone. Where these interactions are not anticipated, well-intended measures can generate new trade-offs, increase transition costs or undermine long-term resilience.
+
+Data shows that integrated approaches that align climate, biodiversity and pollution policies can reduce the risk of burden-shifting, improve resource allocation and strengthen resilience and equity, while also supporting public trust in transition pathways (OECD, 2025[14]). The mechanisms through which integrated policy packages can unlock synergies and make trade-offs explicit are examined in detail in Chapter 2.
+
+At the same time, the effectiveness of integrated approaches depends on governance arrangements that can translate strategic objectives into co-ordinated action across sectors, levels of government and borders. Domestic policy choices are embedded in global systems, and their impacts increasingly extend beyond national boundaries through trade, investment, resource use and emissions. Managing these transboundary effects, as well as aligning sectoral and territorial action, requires robust institutional frameworks, clear decision authority and accountability mechanisms, as set out in the OECD Recommendation on PCSD (OECD, 2019[18]). These governance conditions are examined in Chapter 3.
+
+## Water and sanitation for all (SDG 6)
+
+Access to safe water and sanitation (SDG 6) remains elusive for far too many. Lack of access increasingly is caused by systemic failures and governance constraints, rather than just infrastructure gaps. Despite global commitments, 2.2 billion people still lack safely managed drinking water, 3.4 billion lack safely managed sanitation, and 1.7 billion have no basic hygiene services at home (DESA, 2025[10]). OECD analysis shows that meeting global water-security needs would require annual investments of around USD 1 trillion (OECD, 2022[27]), while current financial levels fall far short with water-related ODA at only USD 8.5 billion (3.1% of total ODA) (OECD, 2024[28]). As a result, water-related risks are intensifying and increasingly systemic, thus having implications for fiscal stability, economic resilience, and social equity (OECD, 2025[21]).
+
+Yet, progress on SDG 6 is frequently constrained less by technical solutions than by governance fragmentation and weak enforcement across sectors and jurisdictions. Responsibility for water, land use, energy, agriculture and infrastructure is often fragmented across ministries, agencies and levels of government, with unclear mandates and weak co-ordination mechanisms. An OECD survey of 48 cities found that fragmentation of tasks and the absence of a strategic cross-sector vision were the most frequently cited governance challenges, followed by unbalanced powers among authorities and weak legislative co-ordination (OECD, 2016[29]).
+
+These gaps highlight a central coherence challenge. Water security often depends on decisions taken in other sectors and levels of government, while financing and management remains fragmented and – in many cases – disconnected from risk reduction and long-term service sustainability. A related challenge is conflicting incentives and unaligned public policy choices. These can range from land-use and agricultural policies that contribute to increase runoff and pollution, to infrastructure decisions that lock in exposure to droughts and floods that disproportionately affect vulnerable groups and widening territorial inequalities.
+
+Building resilience and addressing incoherence calls for sequenced investment pathways that can explicitly manage trade-offs across different users (e.g., households, agriculture, energy, and industry) and anticipate climate variability and fluctuations in demand. Integrated water resource management, when combined with forward-looking investment strategies, can therefore enhance coherence across infrastructure and urban development while building long-term resilience, equity and reduction in costly lock-in by aligning water, land-use, energy and infrastructure decisions. Rather than just additional investment, these arrangements require institutional mechanisms that clarify mandates, align planning and budgeting, and enable arbitration of allocation decisions across sectors and basins.
+
+The 2015 OECD Principles on Water Governance underline that water policy cannot be effective if it is designed in isolation (OECD, 2015[30]). Principle 3 calls for greater policy coherence through effective cross-sectoral co-ordination, especially between water and the environment, health, energy, agriculture, industry, spatial planning and land use. In practice, however, water-related responsibilities are often fragmented across ministries, agencies and levels of government, resulting in conflicting objectives and siloed approaches. In response, several countries are moving towards a whole-of-water approach that connects blue and green water, rivers and oceans, while also going “beyond water” by linking governance with ecosystems, biodiversity and climate objectives.
+
+OECD work on water governance (OECD, 2025[31]) and the blue economy (OECD, 2024[32]) shows that stronger policy coherence can support improved protection of freshwater ecosystems and biodiversity, including endangered species, while also improving water quality and water-use efficiency. These benefits can include reduced exposure to hazardous chemicals, lower nutrient pollution, more efficient agricultural water use, and better allocation of water across sectors. Form a water governance perspective, cross-sectoral co-ordination and multilateral co-operation can improve data and information gathering, knowledge sharing, monitoring and evaluation, and risk assessment. They can also support more coherent policies to manage water-related risks, including droughts, floods and pollution, while strengthening stakeholder engagement and institutional capacity. In this context, inter-ministerial bodies, co-ordinating committees or integrated planning frameworks play a critical role by providing institutional spaces to reconcile competing objectives and support collective decision making. Governance complexity illustrates the systemic nature of these challenges. In many contexts, water management frameworks are based on outdated legislation and involve numerous institutions with overlapping mandates. While multi-stakeholder platforms and basin-level initiatives have improved dialogue, fragmented responsibilities often hinder integrated approaches and strategic decision making across sectors (OECD, 2023[33]) (OECD, 2024[34]). Legacy regulatory frameworks and rigid allocation regimes further complicate efforts to manage trade-offs.
+
+In some cases, water rights have historically been defined in ways that limit flexibility to prioritise human consumption or ecological flows during periods of scarcity. (OECD, 2024[34]). Addressing this complexity calls for legal and institutional frameworks that clearly specify the allocation of roles and responsibilities across all levels of government and water-related institutions, as well as mechanisms for multi-level co-operation among users and levels of government.
+
+## Water and the spatial planning nexus (SDGs 6, 11 and 14)
+
+Spatial planning, land use and building density are high-leverage drivers of water security outcomes and a recurrent source of incoherence between SDGs 6 and 11. Zoning rules and urban expansion patterns influence stormwater runoff, groundwater recharge, and exposure to water-related risks. Yet many planning processes still overlook hydrological functions and long-term water security. Without co-ordination between urban development and water policies, impervious surfaces multiply, exacerbating flood risk and degrading natural systems (OECD, 2016[29]).
+
+Integrated spatial and water planning can strengthen resilience, particularly in fast-growing cities and coastal zones. A “whole-of-water” approach aligns water supply, sanitation, wastewater treatment, and land-use planning with coastal and marine management (OECD (2024[32]). Land-based pollution, untreated wastewater and stormwater runoff all impact estuaries and oceans, threatening biodiversity and blue economy sectors. Nature-based solutions, such as wetlands or floodplains, can cost-effectively reduce flood and drought risks by enhancing natural water retention, while also delivering co-benefits for biodiversity, carbon sinks, public health and recreation when integrated into spatial planning frameworks (OECD, 2020[35]).
+
+## Water and energy interdependencies (SDG 6 and SDG 7)
+
+Water and energy systems are deeply interconnected. Around 15% of global freshwater withdrawals are linked to energy generation, especially cooling of thermal power plants, extraction of fossil fuels, and irrigation of biofuel crops. At the same time, water utilities are highly energy-intensive, requiring significant electricity for abstraction, pumping, and treatment. This dependence increases with alternative sources such as desalination or reuse (OECD, 2016[29]).
+
+Lack of water availability is increasingly becoming a critical constraint for sustainable development. In many contexts, energy systems that rely heavily on water-dependent generation or storage – such as hydropower – are becoming more vulnerable to climate-driven variability in precipitation and river flows (OECD, 2023[33]) Prolonged droughts and declined reservoir levels have shown how these dependencies can undermine energy security and resilience (OECD, 2024[34]). This highlights a core coherence challenge, as energy security strategies that rely on water-dependent generation or storage are increasingly exposed to hydrological variability, underscoring the need for integrated approaches across water and energy systems.
+
+The transition to cleaner energy sources may also create new pressures on water systems. In some contexts, emerging green hydrogen strategies rely on large volumes of water for electrolysis, often in regions already facing water stress. This can increase demand for energy-intensive desalination and requires careful management of brine and other residuals (OECD, 2024[34]). Coherence therefore calls for systemic water-stress screening of energy investments and clear rules for managing local trade-offs.
+
+## Water-Energy-Food nexus and industrial value chain linkages (SDGs 2, 7, 9 and 12)
+
+Water-agriculture interactions lie at the core of the water-energy-food (WEF) nexus, generating trade-offs that shape resource allocation, pollution pressures and impacts along value chains. Agriculture remains the largest consumer of water globally and a major source of nutrient pollution. Excessive or inappropriate fertiliser and pesticide use can lead to nitrate and phosphate contamination, undermining water quality and ecosystem health. Certain subsidies can exacerbate over-abstraction or unsustainable practices. OECD analysis of the water-energy nexus shows that such pressures are further amplified where irrigation, agricultural processing and energy supply systems are poorly co-ordinated, allowing inefficiencies and resource conflicts to propagate along agri-food value chains. Co-operative arrangements between cities and farmers, such as those developed in the Paris hinterland, show how upstream-downstream collaboration can reduce agricultural pressures on water resources and improve water quality (OECD, 2016[29]).
+
+Industrial water use and wastewater management also pose challenges, particularly in cities where inadequate wastewater treatment leads to chemical effluents polluting rivers and aquifers. While the WEF nexus highlights direct biophysical linkages between water, energy and food, OECD work shows that industry acts as a key transmission channel through which these interdependencies materialise along value chains, linking water and energy use in food processing, materials production and infrastructure systems. Water reuse and circular approaches can help reduce the demand for freshwater and thus support competitiveness, although they require appropriate standards, monitoring and enforcement to avoid shifting risks elsewhere. The city of Milan is piloting integrated approaches that link water and solid waste management under its “Smart Water Resource Management” initiative (OECD, 2024[32]).
+
+In many contexts, pressures on water resources increasingly arise from the combined effects of agricultural production, energy use and industrial activities, as these systems are tightly interconnected along value chains. The green transition is also increasing demand for critical minerals such as lithium and copper, while extraction processes often rely on water-intensive methods that can strain local resources and affect fragile ecosystems. (OECD, 2024[34]). OECD analysis on strengthening the water-energy nexus highlights that weak co-ordination across these systems can undermine the resilience and competitiveness of industrial and agri-food value chains, reinforcing the need to align industrial transformation and agricultural strategies with robust water governance.
+
+## Affordable, reliable, sustainable and modern energy for all (SDG7)
+
+Energy is the backbone of sustainable development, yet the global energy transition remains uneven and far too slow to meet the Paris Agreement and SDG 7 targets. Electricity access now reaches $92\%$ of the world's population, yet 655 million people still lack energy, and over two billion people rely on polluting fuels and technologies for cooking (IEA, 2025[36]) (United Nations, 2026[1]). In parallel, energy-related $\mathrm{CO}_{2}$ emissions reached a record 37.8 gigatonnes in 2024, driven by continued reliance on fossil fuels and slow deployment of clean technologies (IEA, 2025[37]). These shortfalls cut across sectors and borders.
+
+While renewable energy capacity continues to expand – global installed capacity per capita hit 478 watts in 2023 – progress remains insufficient to meet 2030 targets, due in part to highly uneven investment (IEA, 2025 $^{[36]}$ ). Thus, the challenge is not only to ensure investment quality and sequencing, but also to mobilise sufficient investment levels since grids, storage, permitting and financing often fail to keep pace. As a result, new clean capacity does not always translate into reliable and affordable energy services.
+
+## Energy access and its ripple effects across systems
+
+Despite progress, large gaps remain in access to modern energy services. Most people without electricity live in Sub-Saharan Africa, and clean cooking solutions are still out of reach for billions across the world (IEA, 2025[36]). Decentralised renewable technologies such as mini-grids and solar home systems have driven recent gains, providing more than half of new connections in Sub-Saharan Africa between 2020 and 2022. Still, affordability barriers and financial constraints continue to slow adoption, affecting health, education and productivity, and reinforcing inequalities.
+
+Energy reliability also shapes water and sanitation services, health systems and urban resilience. Without dependable power, water utilities cannot operate effectively, hospitals face cold-chain challenges and cities struggle with rising cooling needs and air pollution. Integrated planning that combines energy with transport, housing and land use can deliver multiple benefits, improving access to services and reducing vulnerability to climate risks (OECD, 2024[38]).
+
+## Investment and technology choices shaping industrial and urban futures
+
+Global energy-related emissions remain high, while the share of renewables in total energy consumption is still below what is needed to meet climate goals (IEA, 2025[37]). Industrial electrification, process efficiency and low-emission heat sources, along with demand-side measures in buildings and transport, are essential to curb costs and emissions. Meanwhile, policymakers increasingly confront difficult trade-offs including affordability versus rapid decarbonisation, speed of deployment versus system stability, and technology pathways that may increase water or material pressures if not assessed holistically.
+
+Investment is growing but uneven. Global energy investment is projected to reach around USD 3.3 trillion in 2025, with USD 2.2 trillion expected to flow into clean energy technologies (IEA, 2025[39]). Yet financing gaps and high capital costs in emerging economies risk delaying technology diffusion and limiting participation in clean technology value chains. International public flows for clean energy in these economies rose to 21.6 billion USD in 2023 but remain far below requirements (IEA, 2025[36]). Closing this gap will require a coherent set of measures that bring together project-preparation capacity, blended finance, regulatory predictability and reforms to grids and permitting systems.
+
+Urban decisions have system-wide effects. Distributed renewables and storage, combined with efficient building codes and public transport, can reduce grid stress and improve air quality. Conversely, unmanaged electrification of vehicles and cooling can strain networks and widen inequalities. Data from OECD regions shows that aligning energy, transport and land use improves accessibility, mitigates climate risks and enhances productivity (OECD, 2024[38]).
+
+## Cross-border dynamics driving coherent transitions
+
+Energy transitions are often shaped by cross-border interdependencies, where domestic policy choices on energy supply, pricing and decarbonisation interact with regional markets, global value chains and shared climate risks. This makes international co-ordination a prerequisite for coherent and effective transitions. Yet fossil fuels still supply more than 80% of global energy demand (IEA, 2025[39]). Developing countries face persistent financing gaps that heighten exposure to energy insecurity and price volatility. A resilient and coherent transition increasingly relies on the ability of power systems to integrate variable renewables, scale up storage solutions, and maintain affordability for vulnerable households. Climate change amplifies these risks, as extreme weather events disrupt energy infrastructure and supply chains. These interdependencies mean that issues such as cross-border electricity trade, global fuel markets and carbon leakage require coherent and co-ordinated international policies that align energy security, decarbonisation and equity objectives, supported by sequenced investment and social protection measures.
+
+Cross-border impacts increasingly shape domestic options. Carbon leakage risks and border carbon adjustments influence industrial location, electricity trade and emissions accounting. Dialogue and interoperability - shared approaches to carbon-intensity measurement, grid standards and market rules - are needed to preserve development prospects and sustain ambition. Regional market integration through grid interconnections, shared balancing capacity and comparable carbon-intensity methods can lower costs and improve reliability, especially for smaller systems integrating variable renewables.
+
+## Resilient infrastructure, inclusive and sustainable industrialisation and innovation (SDG9)
+
+Infrastructure and industry remain central to economic development, productivity growth and job creation. At the same time, they are major sources of environmental pressure and deeply embedded in energy, water and urban systems. Advancing SDG 9 therefore depends not only on scaling investment and innovation, but on the coherence of policies that shape industrial transformation, infrastructure planning and technology deployment.
+
+## Twin transitions in infrastructure and industry: opportunities and risks
+
+Infrastructure and industry remain cornerstones of economic development, yet their transformation depends on the twin green and digital transitions. These transitions can reinforce productivity, resilience and environmental performance, but they can also generate new risks if policies are misaligned. Global investment needs for sustainable infrastructure exceed USD 3 trillion annually, with the largest financing gaps in emerging and developing economies (DESA, 2025[10]). OECD estimates indicate that delivering climate-compatible infrastructure will require annual investments of USD 6.9 trillion by 2030, with local and regional governments responsible for nearly $69\%$ of climate-significant public investment in OECD countries (OECD, 2024[40]).
+
+At the same time, industry sector accounts for as much as 40% of the total global energy related- $CO_{2}$ emissions with steel, cement and chemicals production representing the lion's share (OECD, 2023[41]). Heavy industry remains one of the largest sources of global emissions, and without coherent policies that link industrial development with decarbonisation objectives, investments risk perpetuating carbon-intensive and outdated technologies. Climate-related disruptions to transport, energy and water networks further expose the vulnerability of existing systems (OECD, 2024[42]). These sectors are deeply embedded in and dependent on large-scale infrastructure systems, including transport, energy, water and digital networks, which shape both their emissions profile and their capacity to transform.
+
+Against this backdrop, the central challenge is enhancing coherence across infrastructure, industrial, digital and climate policies. When these policies are not aligned, unresolved trade-offs between cost, speed, competitiveness and resilience wind up slowing both industrial transformation and infrastructure modernisation. Co-ordinated approaches, such as combining industrial innovation with renewable energy deployment and carbon capture solutions, are essential to accelerate net-zero transitions while maintaining competitiveness (OECD, 2024[43]) (OECD, 2025[44]).
+
+Advancing SDG 9 depends on integrated strategies and decision frameworks that link infrastructure planning with clean energy deployment, circular economy approaches, innovation policies and climate resilience objectives. The OECD Recommendation on Digital Technologies and the Environment provides a system-wide framework to harness digital technologies for environmental objectives while managing life-cycle footprints in energy, materials and e-waste (OECD, 2025[45]). OECD analysis indicates that climate-related disruptions to energy, transport and digital networks are increasingly exposing vulnerabilities in existing infrastructure and industrial systems, with implications for both productivity and resilience.
+
+At the same time, the rapid evolution of STI introduces new uncertainties and governance dilemmas. While STI remains essential for addressing global challenges (OECD, 2025[46]) and breakthroughs offer transformative opportunities for climate action, resilience and growth (OECD, 2024[47]), fragmented policy frameworks can limit their impact and create new environmental, economic, digital and social trade-offs. In practice, STI frameworks often fail to align research investment, industrial strategies, education and skills systems, and international co-operation.
+
+Strengthening policy coherence in this area therefore depends on better connecting STI priorities with investment, regulation and skills policies across ministries and levels of government. In practice, coherence requires embedding these linkages in planning, procurement, budgeting and regulation, rather than treating industrial, innovation and climate strategies as parallel agendas
+
+## Financing and pathways for industrial transformation
+
+It is more urgent than ever to mobilise finance and investment for industry decarbonisation in emerging markets and developing economies (EMDEs). A joint OECD-IEA study released at COP30 estimates that three-quarters of global investment in near-zero emission technologies for steel and cement would need flow to EMDEs to align with a net-zero pathway, with investment needs in near-zero emission technologies in these two sectors alone exceeding USD 500 billion globally over the next decade (OECD/IEA, 2025[48]). The core constraints are not only capital availability, but risk allocation, revenue uncertainty and weak project pipelines, stressing the need for blended finance, risk mitigation instruments, revenue stabilisation mechanisms, and the mainstreaming of industry decarbonisation into development finance strategies.
+
+Closing cost gaps between conventional and low-carbon industrial technologies requires a combination of instruments tailored to technology maturity and local conditions. For instance, a recent OECD-South Africa partnership applied the OECD Framework for Industry's Net-Zero Transition to the steel sector (OECD, 2022[49]), identifying detailed solutions for financing decarbonisation. This confronts a central SDG 9 trade-off, where without targeted support and predictable demand signals, firms may delay investment, locking in higher emissions and future adjustment costs. While incremental upgrades to electric arc furnaces were found to be economically viable, more transformative shifts, such as hydrogen-based direct reduced iron (DRI) or carbon capture, were $26 - 42\%$ more expensive than traditional production routes. Further work is underway in Egypt (low-carbon hydrogen), Indonesia (steel and textiles), and Thailand (plastics and petrochemicals) to identify feasible decarbonisation pathways and improve investment conditions. Portugal is seeking to reduce emissions through improvement in maritime infrastructure such as developing green ports and attracting environmentally conscious shipping companies (OECD, 2025[50]).
+
+Sector dynamics condition both pace and geography of investment. Analysis of steel markets highlights how excess capacity and uneven demand compress margins and can crowd out green investment even as producers publish decarbonisation roadmaps (OECD, 2025[51]). At the same time, it is important to ensure that financial support for SDG 9 does not unduly lead to non-market-conform steel capacity growth that exacerbates the current steel excess capacity crisis (OECD, 2026[52]). Maritime value-chain data points to rising orders for alternative-fuel-ready vessels and energy-saving technologies. But it also reveals bottlenecks in retrofits, fuel infrastructure and specialised capabilities, reinforcing the need to align shipbuilding innovation, port infrastructure and fuel supply (OECD, 2025[53]).
+
+## Coherence through standards, data and market frameworks
+
+Ensuring coherence across standards, data systems and market frameworks will determine whether digitalisation and decarbonisation reinforce competitiveness, resilience and inclusion. Coherent frameworks are needed to connect standards, data and finance across the twin transitions of digitalisation and decarbonisation. Recent assessments confirm that earlier guidance remains relevant, but highlight the need for updates in four areas: measurement systems to track environmental impacts, exposures and vulnerabilities in a consistent manner; circularity principles to reduce resource use and waste; green procurement practices to leverage public purchasing power; and whole-of-government co-ordination so that digital and climate policies are aligned across ministries and levels of government (OECD, 2024[54]). Data also points to the importance of comparable metrics and transparent reporting, enabling countries to monitor progress and avoid shifting environmental burdens from one sector or jurisdiction to another, undermining SDG 9 outcomes.
+
+The environmental profile of data-intensive technologies increasingly influences industrial and infrastructure policy. OECD work on measuring the environmental impacts of artificial intelligence compute and applications calls for common metrics that capture direct impacts from hardware, electricity and water use, as well as indirect effects through AI applications and behaviour (OECD, 2022[55]). These metrics help manage trade-offs between AI-enabled efficiency gains and rising resource demand, thus enabling policymakers and firms to scale AI-enabled optimisation of energy systems, plants and logistics while maintaining credible pathways to net-zero industry.
+
+Market conditions are as decisive as technology readiness. Analysis of steel markets shows how growing overcapacity and non-market support can depress utilisation and prices, complicating investment in near-zero routes and creating risks of capital misallocation (OECD, 2025[51]). Strengthened international transparency on support measures complement domestic technology, infrastructure and skills policies, helping ensure decarbonisation investment is not undermined by persistent market distortions (OECD, 2025[51]).
+
+International STI co-operation has becoming increasingly important for addressing key global issues such as climate change, food security and global health. Such co-operation supports innovation, enables economies of scale and creates fairer incentives for investment. However, policy coherence frequently falters in practice, as national R&D priorities, fragmented funding rules and intellectual property arrangements limit alignment and cross-border effectiveness. OECD analysis also shows how rising geopolitical tensions and security concerns are creating new barriers to knowledge exchange and technology transfer (OECD, 2023[56]). Dedicated multilateral initiatives, such as international climate clubs, have emerged to address free-rider problems and promote reciprocity (IEA, 2023[57]).
+
+## Sustainable cities and communities (SDG 11)
+
+## Cities as engines of sustainable development
+
+Cities are central to achieving sustainable development. They concentrate economic activity and innovation, but face mounting challenges from rapid urbanisation, climate risks, and social inequalities. By 2050, nearly 5 billion people will live in cities, up from 3.5 billion in 2015, requiring massive investment in infrastructure and resilience (OECD, 2023[58]). Urban areas already account for two-thirds of global energy demand and up to $70\%$ of greenhouse gas emissions (OECD, 2020[59]), making cities central to climate mitigation efforts. However, in many high-income cities, consumption-based emissions embedded in imported goods and services far exceed location-based emissions. Local climate strategies often focus primarily on territorial emissions, overlooking this global footprint. This creates a gap between ambition and impact and can weaken coherence between urban policy, trade and broader sustainability objectives.
+
+The policy levers for advancing SDG 11 also drive progress on related goals such as SDG 6 (water and sanitation), SDG 7 (clean energy), SDG 9 (infrastructure and industry), and SDG 13 (climate action). Housing and land use policies, for example, are deeply interconnected with energy demand, emissions, and affordability. When urban expansion occurs without integrated planning (e.g. for water, sanitation and energy) cities can face long-term costs, health risks and inequality. These systemic interlinkages are illustrated in Figure 1.1, which maps the multiple connections between SDG 11 targets and other SDGs. Conversely, dense urban development, when well aligned with sustainable mobility and energy-efficient buildings, can reduce emissions and energy costs, and support widely shared growth.
+
+Figure 1.1. Interlinkages between SDG 11 (Sustainable Cities and Communities) and Other SDGs  
+![](images/293c4ebab20af53472a2a27c6024a6d87f9b2ca68ffaf15723849738f7f7308d.jpg)  
+Note: The figure provides a conceptual overview of selected interlinkages between SDG 11 targets and other SDGs. It is illustrative rather than exhaustive and does not imply causal relationships or the magnitude of impacts.
+Source: Adapted from OECD analysis.
+
+## Mobility and emissions: a growing challenge
+
+Transport remains a major source of emissions. Across OECD countries, it represents 23% of greenhouse gas emissions, with road transport responsible for 88%. Despite growing interest in sustainable mobility, 73% of workers in functional urban areas commute by car, while only 20% use low-carbon alternatives such as walking, cycling, or public transport. Capital cities perform better, with 38% of commutes via sustainable modes, but car dependency remains dominant (OECD, 2024[38]) (OECD, 2021[60]). Globally, transport accounts for 23% of energy-related $\mathrm{CO}_{2}$ emissions, and its share could rise to 40% by 2030.
+
+Persistent car dependency reflects misaligned incentives and fragmented planning, where transport infrastructure, land-use decisions and pricing policies are developed separately. Recent OECD analysis highlights that car dependency is not primarily the result of individual travel preferences but of structural features of mobility systems that reinforce private vehicle use over time. Road expansion that induces additional traffic, spatial development patterns that increase travel distances, and the erosion of active and shared transport options interact to create reinforcing dynamics that lock systems into high levels of car use and emissions (OECD, 2021[60]). These feedbacks make private vehicles the most convenient option for many trips and limit the effectiveness of technological solutions alone, underscoring the need for system-level policies that reshape mobility demand and strengthen alternatives to driving, such as road space reallocation and the improvement and connection of active and shared transport modes (OECD, 2021[60]). Under current trends, emissions may increase by $60\%$ by 2050, driven by surging demand for mobility as passenger transport is projected to more than double and freight demand to grow 2.6 times by mid-century. Meeting this challenge will require annual infrastructure investments of 1.6-1.7% of global GDP, alongside accelerated electrification and modal shifts toward public transport, cycling, and walking (ITF, 2023[61]) (ITF, 2024[62]). According to the IPCC, demand-side measures and behavioural changes – including modal shifts towards active and shared transport modes - could reduce global greenhouse-gas emissions by 40–70% by 2050, provided that supportive infrastructure, policies and social conditions enable shifts in consumption patterns and mobility behaviour (IPCC, 2022[63]).
+
+## Spatial inequalities and access gaps
+
+Access to services and green spaces is uneven both within OECD countries and globally. In OECD functional urban areas, 76% of residents in urban centres can walk to a primary school or childcare facility within 15 minutes, compared to 36% in suburban areas. Moreover, one in four residents lacks access to green spaces within 400 metres of their home, and 36% of older adults cannot walk to a pharmacy, highlighting spatial inequalities in service provision (OECD, 2024[38]). Globally, disparities are even more pronounced, only half of the world's urban population had convenient access to public transport in 2022. The share of green spaces in urban areas worldwide declined from 19.5% in 1990 to 13.9% in 2020, reducing natural resilience and quality of life (UN-Habitat, 2024[64]). OECD analysis also underscores that the allocation of urban space plays a central role in shaping mobility patterns. Historically, a large share of street space has been dedicated to traffic lanes and car parking, creating structural advantages for private vehicle use while limiting the competitiveness of public transport and active modes. Reallocating road and parking space toward wider pavements, cycling infrastructure and priority for public transport is identified as a high-leverage intervention to reduce car dependency and support more accessible, low-emission urban systems (OECD, 2021[60]).
+
+These access gaps are not coincidental but reflect fragmented spatial, housing and transport policies, often compounded by informal development and affordability constraints. With 1.12 billion people living in slums or informal settlements, and up to 3 billion struggling to afford housing (UN-HABITAT/OECD, 2024[65]), there is an urgency for integrated urban strategies that prioritise accessibility, affordability, and environmental sustainability.
+
+## Bridging governance gaps and aligning incentives for sustainable urban development
+
+Urban development intersects critically with energy and water systems, where land-use decisions at the local level directly influence climate exposure and resource demand (OECD, 2023[66]). For example, the "urban heat island" effect, where cities are significantly warmer than surrounding rural areas, drives rising demand for indoor cooling and intensifies energy use. This challenge opens opportunities for enhancing policy coherence, since building regulations, zoning rules and urban design standards can help cities to reduce emissions, manage water runoff and improve health outcomes at the same time.
+
+Coherent infrastructure planning must also account for territorial interdependencies. Local actions can shift risks to neighbouring areas, such as building dykes or diverting water flows, as upstream flood protection can increase downstream exposure if not aligned with catchment-wide strategies. Co-ordinated urban planning is therefore essential to ensure that water, land use and climate adaptation decisions are mutually reinforcing across jurisdictions (OECD, 2023[66]).
+
+Governance gaps and incentive misalignments often undermine local efforts to enhance sustainability (OECD, 2023[66]). Local decision makers may prioritise short-term economic returns, such as expanding sealed surfaces or accelerating real estate developments, over long-term resilience, especially when municipal revenues are tied to land conversion. In some cases, the expectation that national governments will fund post-disaster recovery reduces incentives for local investment in preventive infrastructure. National regulatory frameworks can also limit local innovation. For instance, public procurement frameworks in some countries continue to favour conventional grey infrastructure and short-term cost criteria, constraining municipalities' ability to adopt nature-based solutions (NbS) and delaying the scaling up of green infrastructure (OECD, 2021[67]). Strengthening urban governance will therefore require realigning financial incentives, regulatory tools and accountability mechanisms to support place-based, forward-looking strategies.
+
+## The Global Partnership for Sustainable Development (SDG 17) as the driver of co-ordinated and coherent action
+
+SDG 17 – Revitalise the Global Partnership for Sustainable Development – sits at the heart of the 2030 Agenda, providing the conditions that enable progress across all other goals. Its mechanisms – financing, science, technology and innovation (STI), trade, capacity building, policy coherence, partnerships, and data – form an integrated set of means of implementation. They will help determine whether countries can accelerate transitions in water, energy, industry and urban systems, which are deeply interconnected. As highlighted earlier in this chapter, energy choices influence water demand; industrial strategies shape urban growth; and all depend on coherent governance and predictable financing. SDG 17 is the structural anchor for integrated implementation, making systemic interlinkages explicit and actionable.
+
+Global efforts, however, remain insufficient. Only a limited share of SDG 17 targets are on track, with several indicators – including domestic revenue mobilisation, debt sustainability, and statistical capacity – having deteriorated since 2015 (UNSD, 2024[68]) (United Nations, 2024[69]). Progress on technology transfer and data availability is uneven, leaving critical gaps in the infrastructure of global partnership. These gaps matter because they undermine the connective framework of the 2030 Agenda. Without robust financial flows, interoperable data systems and widely accessible technology diffusion, any sectoral gains will merely be isolated achievements as systemic resilience remains elusive. This section examines SDG 17 through the lens of its means of implementation, highlighting how each element interacts with others to shape coherent and integrated outcomes. It explores why weaknesses in these interlinkages remain a binding constraint on achieving the SDG under HLPF review in 2026 (6, 7, 9 and 11).
+
+## Domestic and external resources as coupled flows
+
+Analysis shows that domestic resource mobilisation (DRM) and external finance can move together. Stable, predictable and efficient revenue systems – underpinned by broad tax bases, effective tax administration and compliance – strengthen fiscal credibility, lower risks and improve access to concessional and private capital, while external flows depend on countries' capacity to co-finance, implement and maintain public investment (OECD, 2025[11]) (UNSD, 2024[68]). At the same time, global financing needs have grown faster than available resources: financing needs increased by 36% between 2015 and 2022, compared with 22% rise in resources, placing the SDG financing gap on a trajectory to reach USD 6.4 trillion by 2030 in the absence of reforms (OECD, 2025[11]). These pressures are compounded by tighter global financial conditions, as governments refinance maturing debt at higher interest rates while facing raising investment needs for grid modernisation, water resilience and industrial retrofits (OECD, 2024[70]). In this context, fiscal capacity and policy coherence shape whether financing can be mobilised at scale through integrated investment programmes or remains fragmented across standalone projects with higher total system costs (OECD, 2025[11]).
+
+The coherence challenge arises when decisions about fiscal policy, debt-management and resource mobilisation are disconnected from integrated investment planning. In such contexts, budget cycles, debt operations and external finance pipelines tend to optimise within institutional and policy silos rather than at system level, raising delivery risks and increasing the overall cost of transition pathways.
+
+## Science, technology and innovation access
+
+STI policy determines the pace and breadth with which solutions – grid balancing, industrial electrification, water reuse and digital planning – diffuse across sectors. It works best when direct R&D support, fiscal instruments and mission-oriented programmes are paired with enabling framework policies and long-term investment (OECD, 2025[71]). Even as international STI co-operation and roadmaps connect domestic capabilities to global networks, uneven digital connectivity continues to constrain absorptive capacity in utilities, firms and municipalities (UNSD, 2024[68]). Where STI roll-out is not synchronised with tariff reform, standards, procurement and skills, technologies land in misaligned regulatory environments, slowing uptake and limiting the system-wide gains expected from integrated deployment (OECD, 2025[71]).
+
+The coherence gap emerges because STI policies often evolve in isolation from pricing, procurement and regulatory frameworks, and without consistent links to financing constraints and skills strategies, producing deployment without integration, slower diffusion and missed scale economies across energy, water, industry and cities.
+
+## Trade openness and facilitation
+
+Trade policy and facilitation directly shape the cost, timeliness and reliability of inputs critical to participation in international trade, with OECD monitoring pointing to steady facilitation progress but persistent implementation gaps and rising fragmentation risks (OECD, 2025[72]). OECD Trade Facilitation Indicators (TFIs) across 163 economies show advances in transparency and domestic border agency co-operation, but continued challenges in automation of documents and processes, appeal systems and cross-border agency co-operation. These shortfalls raise trade costs and delivery uncertainty for stakeholders across the entirety of supply chains (OECD, 2025[72]). On the services side, the Services Trade Restrictiveness Index finds regulatory barriers remained high in 2025, and new restrictions outweighed the effect of liberalisation across many of the 22 sectors tracked in 51 countries; restrictions in digital trade, cross-border data and telecommunications constrain the installation, operation and maintenance arrangements that underpin clean-tech deployment and water-smart industrial retrofits (OECD, 2026[73]). Ambitious services reforms could save up to USD 1.6 trillion in trade costs annually. Such savings highlight the efficiency gains than can be achieved by reducing frictions that slow diffusion of enabling services and technologies (OECD, 2026[73]).
+
+Macro conditions compound these frictions. The latest OECD outlook links higher tariffs and policy uncertainty to softer global trade and investment, with global GDP growth projected around 2.9% in 2025 if mid-year tariff settings persist, thereby raising financing costs and delaying integrated projects (OECD, 2025[74]). In parallel, the SDG financing gap continues to widen (OECD, 2025[11]). Aligning Aid for Trade (USD 51.1 billion in 2022) with trade facilitation priorities (automation tools, risk management systems, inter-agency co-operation), as well as with services market opening, can improve procurement reliability and bankability across sectors (OECD/WTO, 2024[75]) (OECD, 2025[72]).
+
+Coherence challenges arise when trade reforms and sectoral strategies do not converge. Misalignments between customs procedures, data and licensing regimes, and infrastructure timelines, creates delays and inefficiencies. Aid for Trade and infrastructure finance are also often disconnected from services market reforms and trade facilitation reforms, creating regulatory and delivery frictions. These gaps persist even as countries face macroeconomic headwinds and the widening financing gap demand tighter policy integration (OECD, 2025[72]) (OECD, 2025[76]) (OECD, 2025[11]).
+
+## Strengthening coherence through partnerships and governance frameworks
+
+As the SDG dedicated to means of implementation, SDG 17 plays a central role in enabling integrated action across the 2030 Agenda. Beyond finance, trade and technology, it explicitly recognises policy coherence and partnerships as core mechanisms for delivering results across sectors and levels of government.
+
+PCSD provides a practical framework for operationalising this role by helping governments strengthening existing mechanisms to manage cross-sectoral interactions and align long-term objectives with day-to-day decision making. By connecting long-term strategic visions, budget structures, sectoral mandates and multi-level governance arrangements, PCSD helps ensure that actions taken in one policy domain do not undermine outcomes in others (OECD, 2021[77]). The updated global methodology for SDG indicator 17.14.1 on PCSD further reinforces this role, demonstrating that coherence can be assessed, monitored and compared across countries through a common framework spanning political commitment, coordination mechanisms and financing for coherence (UNEP, 2025[78]).
+
+Recent reporting under SDG indicator 17.14.1 shows that institutional mechanisms to support PCSD are now widely in place, but often remain only partially developed. While political commitment and long-term vision are relatively advanced, implementation gaps persist in areas such as whole-of-government coordination, stakeholder engagement and impact assessment. This underscores the importance of strengthening partnerships and governance arrangements as part of SDG 17's means of implementation.
+
+Partnerships extend this architecture by translating coherence frameworks into collective action. Multi-stakeholder partnerships bring together governments, subnational authorities, the private sector and civil society around shared priorities, enabling integrated investment pathways (UNSD, 2024[68]) and joint problem-solving that no single actor can deliver alone. In this sense, partnerships function as delivery vehicles for SDG 17, linking policy coherence with implementation on the ground.
+
+Where these mechanisms are weak, a coherence gap emerges. Institutional arrangements often continue to reward siloed delivery with co-ordination bodies lacking authority, budget frameworks failing to incentivise joint outcomes, and partial vertical alignment allowing sectoral decisions to undercut integrated trajectories. These shortcomings limit the effectiveness of partnerships and weaken accountability for cross-cutting results.
+
+Addressing this gap requires strengthening the governance foundations that underpin SDG 17. Clear mandates, aligned incentives and shared accountability frameworks are essential to ensure that partnerships reinforce, rather than fragment, policy action. Robust impact assessment, international dialogue and, where appropriate, support for partner countries affected by major policy shifts are also critical to managing cross-border effects and sustaining trust. These governance conditions are examined in more detail in Chapter 3, which focuses on how governments can embed coherence systematically across institutions and policy processes.
+
+## Data and measurement feedback loops
+
+Data under SDG 17 supply feedback loops for adaptive governance, allowing for baseline assessments for integrated measurement, and midpoint reviews showing persistent gaps in statistical capacity and indicator coverage despite improvements in connectivity (UNSD, 2024[68]). Interoperable systems are necessary to observe cross-resource dynamics – load curves, water flows, industrial processes and urban demand – so that sequencing and resource allocation can adjust in real time; where these systems are absent, interlinkages are invisible and policy responses risk reinforcing fragmentation (UNSD, 2024[68]).
+
+The coherence weakness lies in fragmented statistical systems that cannot provide integrated solutions for adaptive governance. Under-financed and disconnected data infrastructures limit interoperability across ministries and levels of government, constraining adjustments to tariffs, investment phasing and regulatory design across water, energy, industry and cities.
+
+## Systemic risks from coherence gaps
+
+When these mechanisms are weak, gaps in coherence amplify systemic risks and undermine progress across SDGs. Weak connections across SDG 17's means of implementation – finance, trade, STI, policy coherence, partnerships and data – remain the main constraint on accelerating progress in water (SDG 6), energy (SDG 7), industry and infrastructure (SDG 9) and sustainable cities (SDG 11). Financing needs are rising faster than resources, while debt pressures make multi-sector investment harder to sequence. Trade facilitation gains coexist with regulatory barriers that slow delivery of clean technologies, while higher tariffs and policy uncertainty add cost and risk to integrated programmes. STI diffusion is uneven where deployment is not aligned with pricing and procurement, and data gaps mean governments cannot see or manage cross-system dynamics. Closing these gaps is essential to achieve efficiency (lower system costs and avoided lock-ins), resilience (adaptive capability aftershocks) and inclusion (fair access to benefits) across the SDGs.
+
+By contrast, when finance, trade, STI, policy coherence and data operate as a connected system, integrated programmes in cities and industrial regions deliver more predictable outcomes at lower risk and cost.
+
+## 1.3. Key systemic incoherences slowing progress on SDGs 6, 7, 9, 11 and 17
+
+Water, energy, industry and cities are deeply connected. Yet major gaps in policies, incentives and governance still pull these systems in different directions. These incoherences create higher costs, weaken resilience and slow progress on SDGs 6, 7, 9, 11 and 17. The following are five major areas of incoherence.
+
+## Water-energy-industry pressures reinforcing one another
+
+Energy production already uses around 15% of global freshwater withdrawals, yet new clean-energy technologies such as green hydrogen, desalination and thermal cooling are being planned in water-stressed regions. Water systems depend heavily on energy for pumping and treatment, increasing operating costs as climate shocks intensify. The rapid expansion of digital infrastructure adds new pressure. AI-related water withdrawals could reach 4.4-6.6 billion m $^{3}$ by 2027.
+
+## Uncoordinated urban development drives higher emissions and water risks
+
+Many cities expand without aligning housing, land use, transport and water planning. This fuels sprawl, higher car use and greater exposure to floods and heat. Only about half of urban residents worldwide have convenient access to public transport, and around 1.1 billion people live in slums or informal settlements, where water and sanitation services are weakest. Urban green space continues to shrink, from 19.5% in 1990 to 13.9% in 2020, reducing cities' ability to manage heat and stormwater.
+
+## Industrial and digital transitions are not aligned with sustainability goals
+
+Heavy industries still produce more than 30% of global $CO_{2}$ emissions. Without tighter links to clean energy and circular-economy policies, industrial support can lock in carbon- and resource-intensive pathways. Digitalisation brings both opportunities and risks. While it can improve efficiency, data centres and AI systems significantly increase energy and water demand, yet often remain outside core environmental planning.
+
+## Finance and regulation remain siloed, blocking integrated solutions
+
+Many regulatory and budgeting systems still evaluate projects sector by sector, overlooking benefits that cut across systems, such as combining water reuse with energy recovery. Global investment is not keeping pace with needs. In emerging and developing economies, clean-energy investment must triple to USD 2.2-2.8 trillion annually, while ODA fell by $6.1\%$ in 2024 and by a further $23.1\%$ in 2025, with additional declines projected in 2026 (OECD, 2026[9]). These gaps limit countries' ability to build pipelines of integrated, cost-effective projects.
+
+## Cross-border spillovers that weaken domestic policy outcomes
+
+Climate policy remains uneven. Only 42% of global emissions face any carbon price, and effective carbon rates in road transport are more than four times higher than in industry and buildings, on average. Cross-border impacts, such as carbon leakage, supply-chain risks, and uneven due-diligence requirements can weaken competitiveness and push compliance costs onto suppliers with limited capacity. The SDG financing gap of about USD 4 trillion per year and debt service of USD 1.4 trillion in 2023 limit the ability of many countries to manage these spillovers or invest in long-term solutions.
+
+Addressing these incoherences will enable countries to replace fragmented, sector-by-sector responses with integrated solutions that deliver efficiency gains, build resilience and advance inclusion across SDGs 6, 7, 9, 11 and 17.
+
+## 1.4. Turning interlinkages into impact
+
+This chapter has shown that the coherence gap is not a marginal issue but a systemic constraint on SDG delivery. Fragmented responses amplify costs, lock in unsustainable pathways and erode trust; while integrated approaches unlock synergies across water, energy, industry and cities, reduce systemic risks and strengthen resilience. Coherence requires anticipating interactions and aligning decisions across these domains.
+
+Water security depends on energy choices and land-use planning; clean energy transitions shape industrial competitiveness and material demand; and urban development influences resource flows, emissions and exposure to climate risks. At the same time, domestic strategies cannot succeed in isolation. Global partnerships, interoperable standards and financing mechanisms are essential to manage transboundary spillovers, mobilise resources and accelerate technology diffusion. Without these elements, progress in one area will continue to undermine outcomes in another, slowing the 2030 Agenda and increasing vulnerability to shocks.
+
+Building on this diagnostic, Chapter 2 moves from principle to practice. It sets out how integrated policy packages across water, energy, industry and cities can operationalise coherence (Section 2.1), how to make trade-offs visible and governable (Section 2.2), and how to integrate transboundary impacts into day-to-day policy design (Section 2.3).
+
+## References
+
+Botta, E., M. Griffiths and T. Kato (2022), “Benefits of regional co-operation on the energy-waterland use nexus transformation in Central Asia”, OECD Green Growth Papers, No. 2022/01, OECD Publishing, Paris, https://doi.org/10.1787/7fce36c-en.
+
+DESA (2025), The Sustainable Development Goals Report 2025, United Nations, New York, https://unstats.un.org/sdgs/report/2025/.
+
+DESA, U. (2025), Outcome Document of the Fourth International Conference on Financing for Development, United Nations, Sevilla, https://financing.desa.un.org. [16]
+
+ECA (2026), Summary of the Report on African Progress towards Achieving the Goals of the 2030 Agenda and Agenda 2063, United Nations Economic Commission for Africa, Addis Ababa. [4]
+
+ECLAC (2026), The 2030 Agenda in Latin America and the Caribbean: Accelerating Implementation in a New Era of Uncertainty and Geopolitical Fragmentation (LC/FDS.9/3), United Nations Economic Commission for Latin America and the Caribbean, Santiago.
+
+ESCAP (2026), Asia and the Pacific SDG Progress Report 2026, United Nations Economic and Social Commission for Asia and the Pacific, Bangkok. [6]
+
+IEA (2025), Global Energy Review 2025, IEA, Paris, https://www.iea.org/reports/global-energy-review-2025 (accessed on 19 November 2025). [37]
+
+IEA (2025), Tracking SDG7: The Energy Progress Report, 2025, IEA, Paris, https://www.iea.org/reports/tracking-sdg7-the-energy-progress-report-2025.
+
+IEA (2025), World Energy Investment 2025, IEA, Paris, https://www.iea.org/reports/world-energy-investment-2025 (accessed on 19 November 2025). [39]
+
+IEA (2023), World Energy Outlook 2023, IEA, Paris, https://www.iea.org/reports/world-energy-outlook-2023. [57]
+
+IPCC (2022), “Climate Change 2022: Mitigation of Climate Change. Summary for Policymakers”, [63] http://www.ipcc.ch.
+
+ITF (2024), Decarbonising Transport initiative, https://www.itf-oecd.org/decarbonising-transport [62] (accessed on 19 November 2025).
+
+ITF (2023), ITF Transport Outlook 2023, OECD Publishing, Paris, https://doi.org/10.1787/b6cc9ad5-en (accessed on 19 November 2025).
+
+OECD (2026), OECD Services Trade Restrictiveness Index 2026: Policy Trends, OECD Publishing, Paris, https://doi.org/10.1787/db87d74e-en. [73]
+
+OECD (2026), OECD Steel Outlook 2026, OECD Publishing, Paris, https://doi.org/10.1787/99ab9b0c-en (accessed on 30 June 2026). [52]
+
+OECD (2026), Preliminary official development assistance levels in 2025: Detailed Summary [9] Note, DCD(2026)8, OECD.
+
+OECD (2025), Embedding Water-related Risks in Financial Stability Frameworks, OECD Studies on Water, OECD Publishing, Paris, https://doi.org/10.1787/ee1757f9-en.
+
+OECD (2025), Environmental Outlook on the Triple Planetary Crisis: Stakes, Evolution and Policy Linkages, OECD Publishing, https://doi.org/10.1787/257ffbb6-en (accessed on 27 November 2025).
+
+OECD (2025), Global Drought Outlook: Trends, Impacts and Policies to Adapt to a Drier World,, OECD Publishing, Paris, https://doi.org/10.1787/d492583a-en (accessed on 18 April 2026).
+
+OECD (2025), Global Outlook on Financing for Sustainable Development 2025: Towards a More Resilient and Inclusive Architecture, OECD Publishing, Paris, https://doi.org/10.1787/753d5368-en.
+
+OECD (2025), Implementing the OECD Framework for Industry's Net-Zero Transition in South Africa: Decarbonising the Iron and Steel Sector, Green Finance and Investment, OECD Publishing, Paris, https://doi.org/10.1787/841540e8-en.
+
+OECD (2025), Improving Policy Coherence for Portugal's Ocean Economy: A Strategic Plan for Natural Resources, Safety and Maritime Resources, OECD Publishing, Paris, https://doi.org/10.1787/0b539499-en.
+
+OECD (2025), OECD Declaration on Transformative Science, Technology and Innovation Policies for a Sustainable and Inclusive Future, OECD/LEGAL/0501, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0501.
+
+OECD (2025), OECD Economic Outlook, Volume 2025 Issue 1: Tackling Uncertainty, Reviving Growth, OECD Publishing, Paris, https://doi.org/10.1787/83363382-en. [74]
+
+OECD (2025), OECD Science, Technology and Innovation Outlook 2025: Driving Change in a Shifting Landscape, OECD Publishing, Paris, https://doi.org/10.1787/5fe57b90-en. [71]
+
+OECD (2025), OECD Services Trade Restrictiveness Index: Policy Trends up to 2025, OECD Publishing, Paris, https://doi.org/10.1787/9953845b-en. [76]
+
+OECD (2025), OECD Steel Outlook 2025, OECD Publishing, Paris, https://doi.org/10.1787/28b61a5e-en.
+
+OECD (2025), OECD Trade Facilitation Indicators: Monitoring Policies Up to 2025, OECD Publishing, Paris, https://doi.org/10.1787/fd6f27dc-en. [72]
+
+OECD (2025), Recommendation of the Council on Digital Technologies and the Environment, OECD/LEGAL/0380, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0380. [45]
+
+OECD (2025), Supporting businesses in trade partner countries to meet social and environmental due diligence standards, OECD Business and Finance Policy Papers, No. 88, OECD Publishing, Paris, https://doi.org/10.1787/63c6be24-en.
+
+OECD (2025), Ten years of the OECD Water Governance Initiative, OECD Centre for Entrepreneurship, SMEs, Regions and Cities (CFE), https://www.oecd.org/en/about/programmes/oecd-water-governance-initiative.html (accessed on 7 April 2026).
+
+OECD (2025), The Climate Action Monitor 2025, OECD Publishing, Paris, https://doi.org/10.1787/1819c631-en.
+
+OECD (2025), The OECD Hub on Sustainable Development Goals, https://www.oecd.org/en/data/dashboards/the-oecd-hub-on-sustainable-development-goals.html.
+
+OECD (2025), The Role of Shipbuilding in Maritime Decarbonisation: Impacts of Technology Developments and Policy Measures, OECD Publishing, Paris, https://doi.org/10.1787/0c8362c0-en.
+
+OECD (2024), “OECD Agenda for Transformative Science, Technology and Innovation Policies”, OECD Science, Technology and Industry Policy Papers, No. 164, OECD Publishing, Paris, https://doi.org/10.1787/ba2aaf7b-en.
+
+OECD (2024), Global Debt Report 2024: Bond Markets in a High-Debt Environment, OECD Publishing, Paris, https://doi.org/10.1787/91844ea2-en.
+
+OECD (2024), “Green industrial policies for the net-zero transition”, OECD Net Zero+ Policy Papers, No. 2, OECD Publishing, Paris, https://doi.org/10.1787/ccc326d3-en.
+
+OECD (2024), Infrastructure for a Climate-Resilient Future, OECD Publisher, Paris, https://doi.org/10.1787/a74a45b0-en.
+
+OECD (2024), Massive investment is needed in sustainable infrastructure to build climate change resilience, https://www.oecd.org/en/about/news/press-releases/2024/04/massive-investment-is-needed-in-sustainable-infrastructure-to-build-climate-change-resilience.html. [40]
+
+OECD (2024), OECD Environmental Performance Reviews: Chile 2024, OECD Environmental Performance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/5bc65d36-en. [34]
+
+OECD (2024), OECD Regions and Cities at a Glance 2024, OECD Publishing, Paris, https://doi.org/10.1787/f42db3bf-en (accessed on 19 November 2025).
+
+OECD (2024), “Review of relevance of the OECD Recommendation on ICTs and the Environment”, OECD Digital Economy Papers, No. 370, OECD Publishing, Paris, https://doi.org/10.1787/216766c6-en.
+
+OECD (2024), The Blue Economy in Cities and Regions: A Territorial Approach, OECD Urban Studies, OECD Publishing, Paris, https://doi.org/10.1787/bd929b7d-en. [32]
+
+OECD (2024), UN and OECD to closely align global work in water and sanitation, OECD, https://www.oecd.org/en/about/news/press-releases/2024/11/un-and-oecd-to-closely-align-global-work-in-water-and-sanitation.html (accessed on 19 November 2025).
+
+OECD (2023), “Climate adaptation: Why local governments cannot do it alone”, OECD Environment Policy Papers, No. 38, OECD Publishing, Paris, https://doi.org/10.1787/be90ac30-en.
+
+OECD (2023), Financing Cities of Tomorrow: G20/OECD Report for the G20 Infrastructure Working Group under the Indian Presidency, OECD Publishing, Paris, https://doi.org/10.1787/51bd124a-en (accessed on 19 November 2025).
+
+OECD (2023), OECD Environmental Performance Reviews: Costa Rica 2023, OECD Environmental Performance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/ec94fd4e-en.
+
+OECD (2023), OECD work in support of industrial decarbonisation, OECD Publishing, Paris, https://doi.org/10.1787/cd589e4f-en (accessed on 8 April 2026).
+
+OECD (2023), Science, Technology and Innovation Outlook 2023: Enabling Transitions in Times of Disruption, OECD Publishing, Paris, https://doi.org/10.1787/0b55736e-en. [56]
+
+OECD (2022), “Measuring the environmental impacts of artificial intelligence compute and applications: The AI footprint”, OECD Digital Economy Papers, No. 341, OECD Publishing, Paris, https://doi.org/10.1787/7babf571-en.
+
+OECD (2022), Environment-Economy Modelling and Outlooks, https://www.oecd.org/en/topics/environment-economy-modelling-and-outlooks.html.
+
+OECD (2022), Financing a Water Secure Future, OECD Publishing, Paris, https://doi.org/10.1787/a2ecb261-en (accessed on 19 November 2025).
+
+OECD (2022), Framework for industry's net-zero transition: Developing financing solutions in emerging and developing economies", OECD Environment Policy Papers, No. 32, https://doi.org/10.1787/0c5e2bac-en.
+
+OECD (2021), Implementing the OECD Recommendation on Policy Coherence for Sustainable Development: Guidance Notem COM/DCD/DAC/GOV/PGC(2021)1, http://www.oecd.org/about/publishing/corrigenda.htm. (accessed on 18 February 2022).
+
+OECD (2021), Scaling up Nature-based Solutions to Tackle Water-related Climate Risks: Insights from Mexico and the United Kingdom, OECD Publishing, Paris, https://doi.org/10.1787/736638c8-en (accessed on 19 April 2026).
+
+OECD (2021), Transport Strategies for Net-Zero Systems by Design, OECD Publishing, Paris, [60] https://doi.org/10.1787/0a20f779-en.
+
+OECD (2020), A Territorial Approach to the Sustainable Development Goals: Synthesis report, OECD Urban Policy Reviews, OECD Publishing, Paris, https://doi.org/10.1787/e86fa715-en (accessed on 23 November 2020).
+
+OECD (2020), Green Infrastructure in the Decade for Delivery: Assessing Institutional Investment,, Green Finance and Investment, OECD Publishing, Paris, https://doi.org/10.1787/f51f9256-en.
+
+OECD (2020), Nature-based solutions for adapting to water-related climate risks, OECD Environment Policy Papers, No. 21, OECD Publishing, Paris, https://doi.org/10.1787/2257873d-en (accessed on 18 April 2026).
+
+OECD (2020), The Circular Economy in Cities and Regions: Synthesis Report, OECD Urban Studies, OECD Publishing, Paris, https://doi.org/10.1787/10ac6ae4-en. [59]
+
+OECD (2019), Recommendation of the Council on Policy Coherence for Sustainable Development, OECD/LEGAL/0381, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0381 (accessed on 1 July 2020).
+
+OECD (2017), The Land-Water-Energy Nexus: Biophysical and Economic Consequences, OECD Publishing, Paris, https://doi.org/10.1787/9789264279360-en.
+
+OECD (2016), Water Governance in Cities, OECD Studies on Water, OECD Publishing, Paris, https://doi.org/10.1787/9789264251090-en.
+
+OECD (2015), OECD Principles on Water Governance, OECD, Paris, http://www.oecd.org/cfe/regional-policy/OECD-Principles-on-Water-Governance-brochure.pdf (accessed on 13 November 2017).
+
+OECD/EC-JRC (2021), Understanding the Spillovers and Transboundary Impacts of Public Policies: Implementing the 2030 Agenda for More Resilient Societies, OECD Publishing, Paris/European Union, Brussels, https://doi.org/10.1787/862c0db7-en.
+
+OECD/IEA (2025), Support for decarbonising heavy industry in emerging markets and developing economies: Where we stand, where we need to go and how to get there, OECD Publishing, Paris, https://doi.org/10.1787/7787cde0-en.
+
+OECD/WTO (2024), Aid for Trade at a Glance 2024, OECD Publishing, Paris, https://doi.org/10.1787/7a4e356a-en.
+
+UNECE (2026), Sustainable Development in the UNECE Region: Trends and Actions in 2026, United Nations Economic Commission for Europe, Geneva.
+
+UNEP (2025), “Indicator 17.14.1 overview: Measuring policy coherence”, https://www.unep.org/topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-17-0 (accessed on 9 January 2026).
+
+UNFCCC (2025), COP30 Action Agenda and Belém Declaration, United Nations Framework Convention on Climate Change, Belém, https://unfccc.int/cop30. [17]
+
+UNFCCC (2025), COP30 Outcomes and Decisions, United Nations Framework Convention on Climate Change, Belém, https://unfccc.int/cop30. [12]
+
+UN-Habitat (2024), World Cities Report 2024: Cities and Climate Action, UN-Habitat, Nairobi, [64] https://unhabitat.org/world-cities-report-2024-cities-and-climate-action (accessed on 19 November 2025).
+
+UN-HABITAT/OECD (2024), Global State of National Urban Policy 2024: Building Resilience and Promoting Adequate, Inclusive and Sustainable Housing, UNON Publishing, Nairobi, https://unhabitat.org/global-state-of-national-urban-policy-202 (accessed on 19 November 2025).
+
+United Nations (2026), Progress towards the Sustainable Development Goals: Report of the Secretary-General, United Nations, New York, https://hlpf.un.org/sites/default/files/2026-06/SG%20Progress%20Report%202026\_1.pdf (accessed on 11 June 2026).
+
+United Nations (2025), 2026 HLPF thematic review concept note: SDGs 6, 7, 9, 11 and 17, UN [8] Department of Economic and Social Affairs, New York, https://sdgs.un.org/sites/default/files/2025-12/2026%20HLPF%20thematic%20review%20concept%20note%204th%20Dec\_0.pdf (accessed on 7 January 2026).
+
+United Nations (2024), Financing for Sustainable Development Report 2024: Financing for Development at a Crossroads, Inter-agency Task Force on Financing for Development, United Nations, New York, https://financing.desa.un.org/iatf/report/financing-sustainable-development-report-2024.
+
+United Nations (2024), Pact for the Future, UN General Assembly Resolution A/RES/79/1, New York, https://www.un.org/en/summit-of-the-future/pact-for-the-future. [15]
+
+UNSD (2024), The Sustainable Development Goals Extended Report 2024: SDG 17, United Nations Statistics Division, https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report\_Goal-17.pdf (accessed on 9 January 2026).
+
+![](images/4fc1c1765cc2837a750f18adf251642f751c8f548445f07f85c148d63126d38e.jpg)
+
+# Maximising impact through integrated policy action
+
+Closing the gaps in implementing the SDGs requires a transformative change in how governments plan, finance and deliver policies. This Chapter shows the potential of integrated policy approaches to convert systemic interdependencies across water, energy, industry and cities into measurable gains in efficiency, resilience and inclusion. It focuses on three high-impact pathways: circular economy strategies, clean energy and industrial transitions, and nature-based solutions. The chapter also highlights the constraints that routinely block coherence in practice and outlines how governments can manage trade-offs through sequencing, compensation and transparent accountability. Finally, it shows the importance of addressing transboundary impacts in making progress on the SDGs.
+
+Delivering on the SDGs requires more than incremental improvements. It demands policies that function together rather than in isolation. To this end, this chapter focuses on how integrated policy action across water, energy, industry and cities can strengthen resilience and accelerate the implementation of the SDGs. Maximising impact means aligning decisions on infrastructure, resource use, innovation and territorial development to unlock synergies and reduce systemic risks, while making distributional risks explicit, including who bears costs and who benefits. The key messages from this analysis are summarised in Box 2.1.
+
+This chapter directly responds to Chapter 1's call for coherence as a governance imperative. Whereas Chapter 1 explained why fragmentation persists and where systemic interlinkages bind SDG delivery, Chapter 2 focuses on how governments can sequence regulation, investment and incentives to convert interdependencies into measurable gains in efficiency, resilience and inclusion. It applies these requirements to concrete policy domains and integrated approaches. It focuses on addressing three main questions:
+
+• Where are the highest-return cross-sector synergies?
+
+• What are the binding trade-offs, and who bears costs?
+
+\- When do spillovers undermine domestic progress, and how can we manage them?
+
+## Box 2.1. Key messages for integrated policy action
+
+\- Integrated action multiplies impact. Aligning decisions across water, energy, industry and cities unlocks synergies that can simultaneously advance climate, resilience and inclusion goals. Fragmented approaches amplify costs and social tensions.
+
+\- High-impact levers exist. Circular economy strategies, nature-based solutions, integrated urban planning and innovation ecosystems can deliver systemic benefits when embedded in coherent policy packages.
+
+\- System-level alignment is decisive. Planning, budgeting, and investment frameworks must work together across levels of government and sectors to scale solutions.
+
+\- Digitalisation and innovation are double-edged. They enable efficiency and resilience, but also strain resources that require proactive governance.
+
+\- Trade-offs are inevitable but governable. Transparent sequencing, compensation and fairness measures sustain legitimacy.
+
+\- Global interconnectedness matters. Domestic progress depends on managing transboundary spillovers and aligning standards internationally.
+
+## 2.1. Unlocking synergies across economic, social and environmental goals
+
+As shown in Chapter 1, the ability to manage interdependencies across water, energy, industry and cities has become a decisive factor for accelerating SDG progress. These domains are deeply interconnected through shared infrastructure, resource flows and investment choices, making coherence a requirement for effective and durable strategies. This section aims to highlight the highest-return cross-sector synergies and explores how coherent approaches – such as circular economy practices, nature-based solutions and strategic use of STI – can simultaneously advance water security, energy access, industrial innovation, and sustainable urban development. By leveraging these intersections, governments can reduce costs, accelerate technology diffusion, strengthen resilience and deliver social and environmental benefits. This section also highlights what's needed to move from pilots to scale, including aligned regulation, coherent procurement practices, bankable investment pipelines, and multi-level co-ordination that clarifies responsibilities and funding. Drawing on OECD analysis and country experiences, the section illustrates practical ways to turn systemic interdependencies into opportunities for widely shared and sustainable growth.
+
+## Local and regional circular economy strategies
+
+The circular economy offers a compelling framework to advance environmental, industrial, and territorial development objectives in tandem (OECD, 2025[1]). By promoting resource efficiency and reducing material waste, circular approaches can reinforce decarbonisation strategies, stimulate green innovation, and reduce dependence on fragile supply chains. Yet there is a coherence challenge in the disconnect between the treatment of circularity as a waste policy, while industrial incentives, construction standards and procurement rules continue to favour linear production and consumption. To unlock these benefits, governments need to embed circular principles beyond waste management into mainstream economic and urban policies.
+
+At the local and regional levels, integrated circular economy strategies are increasingly being used to support sustainable urban development, clean energy transitions and industrial upgrading (OECD, 2022[2]). Cities and regions are aligning spatial planning, infrastructure investment, and public procurement with circular goals to generate synergies across mobility, construction, housing and digital services. In Zuid-Holland (Netherlands) for instance, the regional government aligned its energy and industrial decarbonisation goals by embedding circular economy principles in sectoral policies, supporting innovation and employment while reducing emissions (see Box 2.2).
+
+Some subnational authorities are embedding circular design principles in construction, expanding reuse and repair infrastructures, or integrating circular targets into sustainable procurement strategies. These place-based approaches demonstrate how multi-level governance, coupled with local experimentation, can turn systemic sustainability challenges into engines of regional competitiveness.
+
+To scale such approaches, the elements of policy packages could include regulatory standards (e.g. circular design requirements in building codes and product rules), demand signals (e.g., green public procurement and performance-based contracting), enabling infrastructure (e.g., reuse/repair networks, secondary materials marketplaces), and support for SMEs to manage compliance costs and avoid exclusion from public markets.
+
+Water and wastewater management also illustrate the potential of circular approaches to reinforce resource security and resilience. Integrated strategies that link water reuse, energy recovery and waste-to-resource solutions can improve cost-efficiency, reduce environmental impact and create co-benefits across sectors. In Mar del Plata (Argentina), a cross-sector sanitation strategy was developed and aligned with broader urban development and tourism priorities, showing how circular water policy can advance multiple territorial goals simultaneously (see Box 2.2). Meanwhile, Singapore and Hong Kong have expanded desalination, reuse and efficiency measures to secure water supplies while reducing the energy intensity of water services.
+
+Cities are experimenting with mechanisms to improve water-energy planning. Budapest has introduced joint regulatory instruments, while Barcelona, Hong Kong and Singapore invest in water supply solutions that reduce energy intensity. The rapid uptake of generative artificial intelligence (AI) in water utilities also shows promise, improving monitoring, leak detection, and disaster preparedness. However, AI is energy-and water-intensive itself. Estimated global water withdrawals for AI could reach 4.4 to 6.6 billion m $^{3}$ by 2027 (Ren, 2023 $^{[3]}$ ). These trends illustrate both the opportunities and emerging trade-offs of digitalisation, reinforcing the need for integrated governance that anticipates environmental footprints while leveraging innovation for resilience.
+
+More broadly, the SDGs offer a unifying framework for governments to align social, economic and environmental priorities. Cities and regions that anchor their development strategies in the SDGs are better equipped to manage trade-offs and seize synergies. Kitakyushu (Japan), for instance, used the SDGs as a strategic lens to align industrial transition with clean energy goals and youth employment initiatives, demonstrating how integrated planning supports social inclusion and green growth (see Box 2.2). This example shows that the success of this approach depends on the translation of SDGs into decision systems, such as budgeting tags, procurement criteria and outcome indicators, rather than remaining high-level statements. These integrated strategies reflect a growing recognition that successful green transitions must be not only technically feasible but widely shared and territorially balanced.
+
+## Box 2.2. Local pathways to policy coherence
+
+Since 2020, the Province of Zuid-Holland (The Netherlands) has promoted a co-ordinated transition across industry and energy by incorporating circular economy principles into sectoral policy. Through its Clean Energy for Everyone programme (2020–2023) and the development of an integrated energy and industry strategy (2024), the province aligned its decarbonisation objectives, including a 49% emissions reduction target for 2030, with resource efficiency and industrial transformation efforts. This approach enabled the province to advance waste-to-energy projects and stimulate circular industrial practices, reinforcing climate commitments while supporting innovation, competitiveness and employment (OECD, 2024[4])
+
+From 2014 to 2018, the city of Mar del Plata (Argentina) implemented a co-ordinated Sanitation Plan jointly developed by the municipal water utility OSSE and the national sanitation authority ENOHSA. Designed to operate beyond electoral cycles, the plan guided major investments, including a new wastewater treatment plant (2018) and a submarine outfall (2014), that were largely financed by national resources. The strategy linked coastal water quality improvements with urban development and key economic priorities such as tourism. By consolidating multi-level governance and technical coherence, Mar del Plata restored compliance with water quality standards and safeguarded an essential economic sector, offering a model that could inform similar efforts in other coastal cities (OECD, 2024[5]).
+
+Kitakyushu (Japan) shows how the SDGs can be used as a framework to generate synergies between industrial transitions, clean energy, and socio-economic inclusion. Once a heavy manufacturing hub, the city has shifted its development model toward sustainability by prioritising renewable energy, the circular economy and low-carbon innovation. The SDGs help Kitakyushu make explicit connections between environmental objectives and social and economic outcomes, supporting initiatives such as offshore wind power development, ecotourism and cultural industries. These sectors not only advance climate and environmental goals but also create opportunities for young people, promote job creation and strengthen social cohesion, including through intergenerational engagement and gender equality (OECD, 2022[2]).
+
+Source: (OECD, 2024[5]) (OECD, 2022[2]) (OECD, 2024[4]).
+
+## Nature-based and nexus approaches for resilient infrastructure and ecosystems
+
+Chapter 1 highlighted that fragmented responses to the triple planetary crisis often shift risks across domains. Embedding nature-based and nexus approaches into core planning processes offers a way to counter this dynamic by creating integrated solutions that deliver resilience and efficiency together.
+
+Nature-based solutions (NbS) offer a powerful lever for policy coherence, advancing economic, environmental and social goals simultaneously (OECD, 2021[6]). In urban contexts, NbS such as green spaces, tree cover and green roofs help reduce the urban heat island effect and lower energy demand for cooling (SDG 7), while also enhancing water retention and stormwater management (SDG 6). Yet, the implementation of NbS is often under-delivered, given that benefits accrue across sectors and overtime, while costs sit in a single budget and maintenance responsibilities are unclear, thus calling for appraisal methods that value co-benefits, procurement rules that treat NbS as core infrastructure, and long-term stewardship arrangements before integrating NbS.
+
+Combining NbS with traditional infrastructure creates cost-effective resilience solutions. Hybrid approaches, such as wetland and mangrove restoration, can buffer coastal communities from storm surges and erosion, often outperforming single-purpose grey infrastructure (SDGs 9 and 13). These “low-regret” strategies deliver long-term environmental dividends, such as biodiversity restoration, carbon sequestration and avoided emissions, even in the absence of extreme events. They provide adaptive capacity without the sunk costs or rigidity of capital-intensive assets (OECD, 2020[7]) (OECD, 2021[6]). Key trade-offs usually tend to include land availability and opportunity costs, distributional impacts (e.g., who gains access to green amenities), and the need to fund operation and maintenance, all of which must be managed through governance and financing design.
+
+Proactive ecosystem management can deliver a ‘triple dividend’ of resilience by generating economic, environmental and social benefits even outside of crisis periods (OECD, 2025[8]). Drought risk, for example, can be reduced through agroforestry and natural water retention systems that improve soil health, store carbon and buffer agricultural livelihoods (SDGs 2, 6, 13). Improving irrigation efficiency could reduce global water withdrawals by up to 76%, while also lowering energy use for pumping and treatment. Similarly, shifting from wildfire suppression to prevention – including Indigenous practices like cultural burning – reduces fire intensity, protects carbon stocks and restores ecosystem integrity, while integrating social equity and resilience goals (SDGs 11, 15). Practical realisation of these gains however depends on the reorientation of planning, financing and land-use incentives toward prevention rather than post-disaster reconstruction.
+
+While NbS offer powerful levers for resilience, they are most effective when integrated into broader resource planning frameworks. A water-energy-land nexus perspective complements NbS by ensuring that investments are sequenced to maximise benefits across sectors and minimise conflicts among users. OECD work in Central Asia shows how cross-sector governance and financing mechanisms can align energy, agriculture and urban water decisions, strengthen resilience and foster regional co-operation. In that region, basin-level water-energy-land initiatives are improving cross-sector co-ordination, reducing drought risk and preventing conflicts between agriculture, cities and power systems. (Kato, 2025[9]). Embedding such approaches into country platforms and transition finance strategies can accelerate high-impact projects across energy, water, industry and cities.
+
+## Embedding disaster risk reduction into integrated policy
+
+Escalating climate hazards combined with continued greenhouse gas emissions are amplifying vulnerabilities across water, energy, industry and urban systems. These risks are systemic: floods disrupt energy supply chains, droughts undermine industrial operations, and urban heatwaves strain infrastructure and health systems. As climate change alters hazard patterns, the boundaries between climate adaptation and disaster risk reduction are increasingly blurred, making fragmented responses more costly and less effective (OECD, 2020[10]). Embedding disaster resilience in infrastructure governance and investment decisions is critical to safeguard lives and sustain economic development (OECD, 2024[11]) (OECD, 2025[12]). Resilience must be treated as a core governance principle This means integrating risk assessments into planning, budgeting and regulatory frameworks to ensure that infrastructure and public services remain functional under stress.
+
+Disaster risk reduction (DRR) is fundamentally a governance challenge. Fragmented mandates and siloed sectoral policies often lead to trade-offs. For example, energy expansion without considering water stress, or rapid urban growth without resilient drainage and land-use planning. Coherent policy frameworks align objectives across sectors, embed risk-informed standards and link resilience with climate adaptation and social protection. By promoting whole-of-government and whole-of-society approaches, policy coherence reduces duplication, optimises resource allocation and accelerates progress on SDGs 6, 7, 9 and 11. Integrating DRR into fiscal and regulatory instruments, such as green budgeting, procurement and performance evaluation, ensures that resilience is embedded throughout the policy cycle, reducing exposure to shocks and safeguarding investments (OECD/FAO, 2021[13]) (OECD, 2024[11]).
+
+## Integrated urban strategies to unlock synergies across SDGs
+
+Unlocking the full potential of cities to advance the SDGs requires integrated urban strategies that bridge sectoral divides and align urban development with environmental, social and economic goals. This means embracing integrated urban strategies that align housing, land use, infrastructure, digitalisation and environmental objectives within shared planning and investment frameworks (see Box 2.3). National Urban Policies and multi-level governance frameworks are essential to foster co-ordination between national and local actors. Digital innovation, spatial planning and nature-based solutions can also improve resilience, reduce emissions, and enhance liveability. Cities that take a place-based approach and engage local stakeholders are better positioned to manage trade-offs and unlock synergies across the SDGs.
+
+## Box 2.3. Integrated urban policies linking SDG 11 to other SDGs
+
+Housing energy efficiency in France shows how coherent urban, energy and social policies can deliver simultaneous gains for climate mitigation, affordability and well-being. Buildings represent a major share of energy consumption, and rising heating and cooling needs place a disproportionate burden on lower income households. France's Climate and Resilience Act strengthened thermal regulations for new buildings and introduced lifecycle carbon requirements, while complementary grants, subsidies and advisory services support the renovation of existing dwellings. This integrated approach reduces emissions and energy use, lowers household energy bills, improves indoor air quality and stimulates local employment through renovation activity. (OECD, 2025[1])
+
+Japan's use of transit-oriented development (TOD) shows how integrated transport planning can reduce emissions, strengthen public health and improve urban liveability. The TOD model links rail infrastructure with land use, economic development and community well-being, creating dense, mixed-use neighbourhoods around stations that reduce reliance on private cars. By concentrating housing, jobs and services within walking distance of high-quality public transport, Japanese cities such as Osaka, have eased congestion, lowered air pollution and reduced road accidents, while improving access to services and amenities for vulnerable groups such as the elderly. (OECD, 2025[1])
+
+Germany's smart city programme illustrates how digital infrastructure can support integrated urban development, climate adaptation and improved public services. Through more than EUR 820 million invested in 73 Model Projects Smart Cities, the federal government promotes digital tools that strengthen municipal planning, enhance service delivery and expand access to real-time data. The programme requires open-source solutions, enabling cities to share applications and reduce dependence on specific providers, which supports resilience and accelerates learning across municipalities. Digital platforms developed under the initiative also improve the early detection of environmental and climate-related risks, while also helping cities streamline administrative processes and engage residents more effectively. (OECD, 2025[1])
+
+Source: (OECD, 2025[1]).
+
+These examples illustrate how coherent urban strategies can deliver multiple SDG outcomes simultaneously, linking climate mitigation, affordability, health and inclusion. Integrated urban strategies demonstrate how place-based approaches can unlock synergies across housing, mobility, energy and digitalisation. Yet scaling these solutions depends on innovation ecosystems that provide the technologies, data and capabilities to make integration feasible.
+
+## Science, technology and innovation as enablers of synergy
+
+Science, technology and innovation (STI) are key drivers of transformative solutions that can unlock synergies across sectors and accelerate progress on multiple SDGs (OECD, 2025[14]). By linking technological progress with regulatory, fiscal and skills frameworks, STI can ensure innovation accelerates integration rather than amplifies resource and equity risks. Strategic public investments in STI – particularly in energy, infrastructure, circular economy and nature-based technologies – can generate positive spillovers for water security, industrial upgrading, health, and climate resilience. Innovations in battery storage, smart grids, hydrogen, and digital water systems, for example, support both decarbonisation and widely accessible service delivery. However, these gains are not automatic, as they depend on policy coherence that links R&D funding to enabling regulation, skills strategies and procurement that create demand and accelerate diffusion, while managing emerging risks.
+
+STI systems also face trade-offs, such as resource intensity, digital environmental impacts, or equity gaps in access to innovation. Integrated governance mechanisms, foresight tools and open science can help manage these tensions. The OECD Recommendation on Digital Technologies and the Environment [OECD/LEGAL/0380] (OECD, 2025[15]) offers a global framework to promote environmentally sustainable digital transitions, while broader STI policy alignment, across borders, sectors and stakeholders, can amplify the positive impacts of innovation.
+
+Realising this agenda requires common metrics for digital footprints (energy, water, materials and e-waste), mission-oriented strategies with cross-ministerial governance, and safeguards that broaden participation and reduce widening inequities in access to innovation. Strengthening open science, safeguarding research security, and building international STI partnerships with wide participation will be essential to ensure all countries can help to shape and benefit from transformative innovation. To maximise the positive impacts of innovation STI must be embedded into broader systems of planning, finance and regulation.
+
+## Systemic levers for aligning infrastructure, finance and regulation
+
+Coherent action on SDGs 6, 7, 9 and 11 also depends on aligning systems-level levers that shape how governments plan, spend and regulate. The latest OECD Environmental Outlook (OECD, 2025[16]) identifies six strategic levers to accelerate progress on the “triple planetary crisis” of climate change, biodiversity loss and pollution. These include leveraging existing national planning, budgeting and reporting frameworks to better reflect cross-cutting interlinkages; aligning public and private financing to target synergies across water, energy, industry and land systems; addressing key gaps in research, data and assessment to improve understanding of system interactions; and advancing circular economy approaches across material use, energy policy and food systems. Applied in combination, these levers can help governments move from fragmented interventions to integrated strategies that reduce resource intensity while ensuring that the benefits and costs of transitions are managed fairly.
+
+Mobilising finance for clean energy transitions in emerging and developing economies (EMDEs) is critical to achieving SDG7 and related goals. As developing countries confront rising energy demands, limited fiscal space, and climate-related vulnerabilities, collaborative platforms that bring together governments, development partners and private investors are critical to scale solutions (OECD, 2025[17]). These platforms can help align energy transition goals with industrial, social and environmental priorities, and provide a structure for mobilising private investment, policy reform, and technical assistance. Box 2.4 highlights how country platforms are evolving to support energy access, decarbonisation and much needed transitions in emerging and developing economies. Still, platforms are not substitutes for concessional finance or domestic reforms, and their effectiveness depends on clear governance, credible transition plans and accountability for results.
+
+## Box 2.4. The role of Country Platforms in achieving SDG7
+
+Clean energy investment in emerging markets and developing economies (EMDEs) is central to meeting affordable, reliable, sustainable and modern energy access? goals (SDG7). To supply growing energy demand in ways that align with the Paris Agreement goal, annual investment in clean energy in EMDEs will need to triple to USD 2.2-2.8 trillion per year by the early 2030s (IEA and IFC 2023). The largest step-up, in absolute terms, is required for energy efficiency, which needs to grow 7.5 times globally between 2025 and 2030 (IRENA 2025).
+
+In a context of shrinking official development assistance (ODA) – ODA declined by 6.1% in 2024 and by a further 23.1% in 2025 (OECD, 2026[18]) – dedicated country platforms to clean energy and decarbonisation of other sectors could facilitate aid efficiency and private finance mobilisation. Country platforms are partnerships initiated and owned by a country to bring together key stakeholders, including bilateral donors, multilateral development banks, other development finance institutions, international organisations, industry associations, private sector and civil society, to support its transition pathway. They were promoted by key actors and international fora, including the G7, the Brazilian G20 and COP30 Presidency.
+
+Just Energy Transition Partnerships (JETPs) established in South Africa, Indonesia, Senegal and Vietnam, along with other country platforms such as Egypt's Nexus of Food, Water & Energy (NWFE) Program, Bangladesh's Climate and Development Platform and Türkiye's Industrial Decarbonisation Investment Platform (TIDIP) have provided a testing ground for such multi-stakeholder collaboration.
+
+Establishment of new country platforms are being underway across a multitude of EMDEs facilitated by the Green Climate Fund (GCF). Country platforms have evolved across successive generations and tend to cover a broader set of issues (food security, poverty, biodiversity, water and resilience etc.). The current models under discussion aim to reconcile ecological transition challenges and development goals though a new governance mechanism.
+
+The OECD, and its Clean Energy Finance and Investment Mobilisation (CEFIM) programme, offers a unique blend of policy support, technical assistance, capacity building and stakeholder engagement to help countries mobilise finance for clean energy transitions and industry transformation. It has successfully supported several platforms and engaged new initiatives. The CEFIM programme is country demand-driven and adapts to country platforms needs and modalities, in alignment with national strategies and enhanced country ownership. This illustrates how, through the pursuit of country platforms' success, international actors can contribute to SDG7's global targets on renewable energy, energy efficiency and universal access, as well as the SDG9's sustainability industrialisation goals.
+
+## Local business communities as drivers of climate neutral transformation
+
+Reaching climate neutrality requires economic transformations of unprecedented scale and speed. Adopting a place-based, regional economic approach can make the most of economic opportunities while avoiding costs and risks. Achieving such transformations requires working closely with local business communities, harnessing their incentives to adapt business models in line with climate neutrality objectives.
+
+Businesses can already identify profitable opportunities, notably by optimising low-cost renewable energy and coupling it with end-use applications across different sectors, taking advantage of declining electrification costs. Many of these opportunities remain underexploited because they are insufficiently visible, span multiple sectors, or require collective action, rather than isolated firm-level decisions.
+
+Businesses also face significant risks from investments that may become “stranded assets” as economies transition toward climate neutrality. Such “stranded assets” can raise the overall cost of the transition and undermine competitiveness. Anticipating and avoiding these risks is therefore a key condition for cost-effective and durable economic transformation.
+
+Bringing the business perspective into climate action broadens the range of actors supporting the transition, which is essential given the scale and pace of required change. Engagement with local business communities can also strengthen public policymaking by fostering co-operation, reducing resistance to reform and improving understanding of business constraints and incentives in climate change mitigation. This in turn can reinforce and accelerate public and private action.
+
+To make climate neutrality economically viable, local economic contexts need to be taken into account. Placed-based approaches help develop locally suitable alternatives to carbon-intensive production, that sector-specific and place-neutral policies, including carbon pricing alone, are often unable to deliver. This is particularly the case where zero-carbon alternatives depend on shared infrastructure, skills and knowledge, and therefore require collective action with a strong local dimension.
+
+Early and co-ordinated action by local business communities can avoid unnecessary costs from stranded investments and generate wellbeing co-benefits that strengthen regional comparative advantage. This includes making better use of low-cost renewables, including through prosumption, improving energy efficiency in buildings, including by addressing skills bottleneck, and responding to challenges and opportunities in transport and industry. Such approaches can also reveal local potential for hydrogen hubs and accelerate the adoption of circular economy practices. Overall, these experiences illustrate that a regional perspective and co-ordinated business action are critical to achieving climate neutrality while supporting economic prosperity (OECD, 2024[19]).
+
+Closing the financing gap for industrial transformation is essential not only for reducing emissions but also to improve coherence across water, energy and industry systems. OECD work has supported the development of practical tools to help governments and partners close the financing gap. The 2025 Climate Club Financial Toolkit (OECD/Climate Club, 2025[20]) compiles economic, de-risking and financing instruments to support industrial decarbonisation, supported by case studies showcasing enabling conditions for the adoption of low-carbon technologies, as well as initial economic assessments in hard-to-abate sectors. The OECD has also developed the Mapping of Financial and Technical assistance for Industry Decarbonisation in EMDEs. This Mapping provides evidence-based trends on the level and the characteristics of the international assistance provided to EMDEs to support industry decarbonisation, as well as key areas for action to increase the impact of this assistance. These insights are contributing to the implementation of the Belém Declaration on Global Green Industrialisation and the Roadmap of the COP30 Working Group on Green Industry for EMDEs, which aim to align industrial development with climate, competitiveness and equity goals. The value of such tools lies in how they help governments select instruments to improve market conditions, institutional capacity and development priorities.
+
+## 2.2. Trade-offs: How to balance competing policy objectives
+
+The real test of integrated policy action lies in how it handles hard trade-offs. Progress on the SDGs often stalls not because ambition is lacking, but because policies fail to reconcile competing objectives: such as, industrial competitiveness versus decarbonisation, urban growth versus water security, affordability versus sustainability. Coherence helps manage these tensions more effectively by making them visible and governable through clear prioritisation, transparent identification of who bears costs and who benefits, and the use of sequencing and compensation to maintain political and social support. As highlighted in Chapter 1, coherence is not about avoiding conflict, but about structuring it. This section analyses the binding trade-offs and who bears costs, focusing on concrete policy solutions that transform these tensions into opportunities. These include industrial strategies that drive net-zero innovation without sacrificing jobs, land-use and housing policies that curb sprawl while improving affordability, fiscal and regulatory tools that align incentives for resource efficiency, and investment frameworks that embed environmental and social standards. Drawing on OECD analysis and country experience, this section shows how smart policy design and coherence can turn trade-offs into levers for sustainable growth.
+
+## Spatial planning for sustainable and resilient cities
+
+Urban land use, housing, transport and energy are interlinked policy domains where trade-offs often arise. Affordable housing programmes, when implemented without sufficient co-ordination, can lead to urban sprawl, increased car dependency and higher emissions. In contrast, co-ordinated metropolitan governance can support integrated solutions that balance access, sustainability and economic opportunity (see Box 2.5).
+
+Fiscal instruments can reinforce these outcomes. Tax policy can also support efficient land use and reduce sprawl (OECD, 2022[21]). Recurrent taxes on immovable property raise the cost of holding vacant or underdeveloped land, encouraging its more productive use, particularly at the urban fringe. Taxes on land alone, rather than on buildings or improvements, are a comparatively efficient form of taxation that minimise distortions to land-use and investment decisions. In contrast, taxes on real estate transactions may reduce mobility and distort the location decisions of households. Yet these reforms create distributional impacts and require enabling conditions such as up-to-date property valuations, strong land registries and local fiscal autonomy to be effective. (OECD, 2021[22]).
+
+National Urban Policies (NUPs) can play a pivotal role in resolving these tensions (OECD, 2020[23]). By aligning sectoral decisions, across housing, transport, energy and the environment, with local realities and national sustainability goals, NUPs help embed climate and resilience objectives into city design. Yet these mechanisms often underperform as a result of weak cross-ministerial mandates, fragmented funding streams and limited implementation capacity at local level. In many OECD countries, past housing programmes were implemented without transport co-ordination, leading to urban periphery development disconnected from jobs and services. Integrated planning frameworks are needed to avoid locking in unsustainable growth paths. Fiscal tools such as land value capture (LVC) can help align development with sustainability outcomes (OECD/Lincoln Institute of Land Policy, PKU-Lincoln Institute Center, 2022[24]). When new infrastructure or zoning decisions raise land values, LVC instruments can ensure that some of this value is reinvested in public goods such as transport or green infrastructure. LVC can help finance nature-based solutions, which often face financing challenges due to limited direct revenue streams. Well-designed LVC schemes can help offset the opportunity cost of preserving green spaces, while promoting equity and long-term resilience.
+
+Box 2.5. Aligning urban development with sustainability: lessons from Hamburg and Mexico City
+
+Urban regions are often hotspots of trade-offs between housing affordability, transport accessibility, environmental protection and climate goals. Experiences from OECD countries highlight how coordinated governance across metropolitan areas can help mitigate these tensions.
+
+In Mexico City (Mexico), more than 40% of residents commute across municipal boundaries daily, and two-thirds of GHG emissions originate outside the city's administrative borders. Fragmented governance makes it difficult to align housing, transport, and climate policies across this sprawling region. Yet addressing these challenges at the metropolitan scale, rather than through city-specific strategies alone, has proven more effective for improving both inclusion and sustainability.
+
+The Hamburg Metropolitan Region (Germany) illustrates the benefits of integrated governance. The region encompasses more than 1,100 municipalities across four federal states, with 350,000 out of 760,000 daily commuters arriving from outside the city. Metropolitan co-ordination has enabled more compact development, improved public transport, and supported economic productivity while reducing emissions and congestion.
+
+These examples underscore the need for strong national frameworks, such as National Urban Policies, that incentivise and enable co-operation across jurisdictions, while aligning infrastructure investment, land-use regulation, and climate goals.
+
+Source: (OECD, 2015[25]); (OECD, 2019[26]).
+
+OECD Environmental Performance Reviews (EPRs) and thematic studies provide evidence-based analysis on how countries address policy coherence to reconcile economic and environmental objectives across water, energy and industry, among others. They identify misalignments, such environmentally-harmful subsidies, including energy price support, that undermine environmental goals and are often fiscally costly and socially unfair. EPRs also identify policies that amplify exposure and vulnerability to climate risks, including certain forestry and agriculture policies and inadequate land use planning. Recent EPRs of countries such as Colombia (OECD, 2026[27]), Sweden (OECD, 2025[28]), Japan (OECD, 2025[29]), Germany (OECD, 2023[30]) and Chile (OECD, 2024[31]) have documented how fiscal, regulatory and planning reforms can help reconcile environmental and economic priorities. Key recommendations include phasing out environmentally-harmful subsidies, including support for fossil fuels, strengthening carbon pricing, improving the management of protected areas and linking agricultural support to environmental objectives.
+
+Regulatory tools, in particular, play a critical role in managing trade-offs: spatial planning instruments, licensing rules and risk-based regulations can align private investment with climate adaptation goals. For instance, new OECD work on wildfire (OECD, 2023[32]) and drought risk management (OECD, 2025[8]) shows how governance and regulation can mitigate tensions between land-based sectors and long-term environmental resilience.
+
+Regulatory instruments can also play a pivotal role in aligning urban development with sustainability. Examples such as green roofs, solar mandates and urban greening illustrate how regulatory tools can deliver multiple benefits when integrated into planning frameworks. For example, San Francisco's "Better Roofs Ordinance" mandates solar panels or green roofs on new buildings to reduce energy use and stormwater runoff. Tokyo requires urban greenery to mitigate heat and enhance flood resilience, an example of nature-based solutions (NbS) which deliver both environmental and health benefits.
+
+## Aligning investment and business practices with sustainability
+
+Beyond spatial and infrastructure policies, governments can also address trade-offs by creating an environment for aligning private investment with sustainability considerations. This includes the frameworks that guide businesses, financiers and investors across the infrastructure lifecycle. From financing and planning to construction and operations, businesses are central actors in delivering the infrastructure needed for sustainable cities, clean energy transitions, and resilient economies. The OECD Guidelines for Multinational Enterprises on Responsible Business Conduct (RBC) (OECD, 2023[33]) set global expectations for businesses to identify, prevent and mitigate environmental and social risks in their operations and global value chains. Under the OECD Recommendation on Common Approaches (OECD, 2025[34]), Adherents, through their export credit agencies in the OECD Export Credits Group, are expected to promote awareness of the MNE Guidelines and consider statements issued by National Contact Points (NCPs) at the conclusion of specific instance procedures. Integrating RBC into infrastructure policies, public-private partnerships and procurement systems can help governments and firms align incentives and strengthen accountability, helping to maximise infrastructure contributions to the SDGs and avoiding harm. Recent OECD research in Southeast Asia (OECD, 2025[35]) including, Thailand (OECD, 2024[36]), the Philippines (OECD, 2024[37]), and Indonesia (OECD, 2024[38]) has shown how policy frameworks, including legal requirements for stakeholder engagement, can support better outcomes across the SDGs.
+
+OECD work on Foreign Direct Investment (FDI) further highlights the complexity of investment-related trade-offs. The FDI Qualities Indicators Visualisation Platform, developed under the FfD4 Sevilla Platform for Action, presents country-level data on the impacts of FDI across key SDG dimensions. For instance, foreign firms in developing economies employ 9% more women than domestic firms, yet these jobs are often concentrated in low-wage, low-mobility sectors. Foreign investors are 70% more energy-efficient, thanks to access to cleaner technologies, but also emit 16% more CO $_{2}$ per unit of output, reflecting sectoral concentration in more polluting activities (OECD, 2022 $^{[39]}$ ). Addressing these tensions requires coherent policy frameworks that align investment incentives with national development strategies, support domestic capability-building, and promote higher-quality FDI (OECD, 2024 $^{[40]}$ ).
+
+In emerging sectors such as critical raw materials (CRM), where global demand is surging, the push for traceability should enhance responsible business conduct, rather than become an end in itself. A joint OECD/IEA roadmap sets out how traceability frameworks can foster sustainability and market integrity when supported by effective governance and international co-operation (OECD/IEA, 2025[41]). Current efforts to ensure a reliable supply of CRM are leading to increased foreign investment in industry and infrastructure, including in jurisdictions that present significant risks of corruption, conflict, insecurity and human rights violations (OECD, 2025[42]). Indeed, given the geographical concentration of CRM production and processing, the secure supply of transition minerals cannot rely solely on investment in low-risk environments. This can create a series of high-stakes trade-offs where efforts to accelerate transition supply chains are contributing to environmental harm, social conflict and loss of trust. Companies sourcing minerals from areas with higher risk profiles are expected to so in a way that mitigates, not overlooks, these risks. RBC allows balancing such trade-offs. The OECD Due Diligence Guidance for Responsible Supply Chains of Minerals (OECD, 2023[43]; OECD, 2016[44]) provides a globally recognised framework to help companies engage responsibly in high-risk areas.
+
+RBC standards also apply to institutional investors (OECD, 2017[45]). However, many environmental, social and governance (ESG) data and ratings are not sufficient to assess sustainability efforts and performance of investee companies (OECD, 2025[46]). ESG rating products diverge significantly in available and comparable metrics, often relying on self-reported input-based data. This results in inconsistent coverage of key topics creating confusion for users, limiting meaningful performance evaluation, and increasing the risk of greenwashing and capital misallocation.
+
+## Digital and innovation policies for sustainability
+
+Technology and innovation are key drivers of sustainable development, yet their deployment can exacerbate existing tensions if environmental and social impacts are not adequately managed. Anticipating and managing the environmental footprint of STI and digitalisation is therefore critical to achieving coherent, long-term sustainability. While technological progress increases productivity, connectivity and growth, it also contributes to climate change, biodiversity loss and inequality. Many innovation pathways remain carbon- and resource-intensive, and rapid digitalisation is placing increasing pressure on energy and water systems. Coherence gaps often arise because digital strategies, industrial policies and environmental regulations evolve separately, leaving risks – such as e-waste, rebound effects and the environmental impacts of digital infrastructure – overlooked or misunderstood.
+
+The OECD Recommendation on Digital Technologies and the Environment [OECD/LEGAL/0380] (OECD, 2025[15]) recognises that digital technologies can both support and undermine environmental goals. While digital tools offer solutions for clean energy, resource efficiency and sustainable mobility, they also drive demand for critical raw materials, generate growing volumes of e-waste, and increase emissions through energy-intensive applications such as data centres and AI systems. Rebound effects, where efficiency gains lead to increased overall consumption, are well documented, especially in consumer behaviour (OECD, 2024[47]). Therefore, implementing the Recommendation on the ground should go beyond voluntary initiatives and requires clear measurable targets and standards for digital footprints, procurement and infrastructure planning.
+
+Supply chains for ICT infrastructure are global and complex, contributing to environmental degradation at each stage, from raw material extraction to transport, manufacturing, and disposal. OECD work highlights growing concerns around the water and energy footprint of digital technologies. This is particularly troubling in drought-prone regions where semiconductor and data centre operations face increasing disruption (OECD, 2025[14]), which create a dual coherence challenge between mitigating environmental footprints while also reducing exposure to climate-related supply disruptions.
+
+Digital infrastructure poses many of the same concerns. For example, environmental impacts in AI value chains arise at multiple stages, including the energy- and water-intensive operation of data centres, the material footprint and eventual e-waste associated with specialised hardware used to train and deploy AI systems (OECD, 2022[48]). If not managed properly, the construction and operation of data centres may also have an impact on community relations, local energy prices and water availability (Mozur, Satariano and Rodriguez Mega, 2025[49]). These issues are explicitly recognised in OECD instruments. The OECD Recommendation on Artificial Intelligence calls for AI to support “beneficial outcomes for people and the planet,” emphasising the need to understand and reduce environmental impacts across the lifecycle of AI systems (OECD, 2025[50]).
+
+Similarly, the OECD Guidelines for Multinational Enterprises on Responsible Business Conduct require companies to identify, prevent, and mitigate adverse environmental impacts linked to their operations, products, and services, including those arising in AI value chains (OECD, 2023[33]). Recent OECD due diligence guidance for responsible AI clarifies how enterprises should apply risk-based environmental due diligence throughout the AI value chain, from suppliers of compute and data, to developers and downstream users, ensuring that environmental risks are addressed coherently alongside other RBC expectations (OECD, 2026[51]).
+
+## 2.3. Getting a grip on transboundary impacts
+
+The OECD Recommendation on Policy Coherence for Sustainable Development calls for systematic assessment and management of transboundary impacts (OECD, 2019[52]). This is not only a matter of fairness, but of effectiveness. Without the right policies that factor in cross-border impacts, domestic gains risk being offset by negative externalities abroad, slowing global progress. OECD analyses highlight how greater transparency and alignment – through instruments such as effective carbon rates, border adjustment mechanisms, and due diligence standards – can reduce harmful spillovers and foster a level playing field for climate and sustainability action.
+
+Addressing transboundary impacts is essential for three main reasons:
+
+\- Global interconnectedness: SDG progress in one country is increasingly influenced by actions elsewhere.
+
+\- Risk mitigation: incoherent policies pose systemic risks, from supply chain disruptions to environmental degradation.
+
+\- Scaling positive impacts: International co-operation can amplify positive spillovers – such as technology diffusion, investment flows, and shared innovation – that accelerate progress for all.
+
+This section explores policy instruments to manage transboundary effects, drawing on OECD tools and country experiences. It highlights policies and frameworks for aligning carbon pricing, managing cross-border water and energy systems, and promoting responsible business conduct through global supply chains.
+
+## Coordinating climate mitigation across borders
+
+Carbon intensity metrics are increasingly central to the design of international mitigation efforts, including border carbon adjustments and product standards. These metrics reflect emissions per unit of production, facilitating cross-border comparability. Their effectiveness depend on robust monitoring, reporting and verification systems as well as on international co-operation to ensure consistent methodologies and data quality across jurisdictions.
+
+Beyond metrics, carbon pricing instruments translate mitigation objectives into economy-wide incentives, but their application remains uneven. The OECD Effective Carbon Rates indicator (OECD, 2025[53]) tracks the combined cost applied to $\mathrm{CO}_{2}$ emissions from energy use, including carbon taxes, emissions trading systems and fuel excise taxes. As of 2025, carbon pricing instruments are in place in more than 50 countries, yet large disparities remain. Only $42\%$ of global emissions face a positive carbon rate, and effective prices vary widely across sectors, with rates in road transport more than four times higher than in industry or buildings, on average. These asymmetries raise equity and efficiency concerns, particularly for countries with limited administrative capacity or economic diversification (OECD, 2024[54]).
+
+To support countries with navigating cross-border effects, the OECD has developed a range of analytical tools and databases. The Carbon Pricing and Energy Taxation series (OECD, n.d.[55]) provides comparative data on pricing instruments and energy use across countries. A separate database tracks corporate income tax incentives across more than 70 countries. The Tax Policy Reforms series (OECD, 2025[56]) tracks global trends in tax policy, including in carbon taxation and green tax reform.
+
+In addition to these tools, the Inclusive Forum on Carbon Mitigation Approaches (IFCMA) provides a multilateral platform to help governments better understand the combined global effects of different mitigation policies. Bringing together more than 60 members and additional participating countries, the IFCMA fosters dialogue, transparency and trust outside formal negotiation settings, supported by shared data and analytical frameworks. By improving understanding of national mitigation approaches, the Forum helps reduce risks of negative cross border impacts such as carbon leakage or trade distortions, while identifying opportunities for innovation, cost savings and shared benefits from the climate transition. Its work includes dedicated workstreams on carbon intensity metrics, addressing challenges related to product level emissions measurement and interoperability of monitoring, reporting and verification systems (OECD, 2025[57]), and on spillovers, which analyse how domestic mitigation policies generate cross border economic, technological and policy effects (OECD, 2026[58]).
+
+## The benefits of responsible business conduct for all
+
+To maximise positive spillovers and manage transboundary effects, international co-operation on due diligence policy is essential. The OECD Inclusive Platform on Due Diligence Policy Co-operation provides a forum for policymakers to exchange experience, reduce regulatory fragmentation and promote greater alignment around key concepts, reporting expectations and supervisory approaches. OECD analysis highlights several design features that can help reconcile ambition with feasibility. These include embedding proportionality and flexibility in due diligence requirements, introducing phase-in and transition periods, consulting with trade partners, and streamlining reporting obligations to avoid cumulative and conflicting expectations cascading through supply chains.
+
+Complementary policy instruments are also critical to support effective implementation (see Box 2.6). Financial and technical assistance, such as sustainable supply chain finance, targeted loans, premium payments and Aid for Trade programmes, can help suppliers upgrade production processes, improve environmental and social performance, and strengthen risk management capabilities. Capacity-building measures, including help desks, guidance, training, peer learning and digital tools, can further enable firms in partner countries to meet regulatory expectations.
+
+## Box 2.6. Examples of policy tools and instruments to mitigate cost, close capacity gaps, and manage transboundary impacts
+
+To mitigate costs and provide financial support to enable environmental and social performance of businesses in trade partner countries, several financial support measures have been rolled out. A range of financial instruments are used to support suppliers and SMEs in meeting due diligence expectations. These include loans, supply chain finance and premium payments designed to upgrade production processes, improve sustainability performance, and strengthen ESG risk management. These instruments can also help manage transboundary impacts arising from trade, investment and regulatory spillovers.
+
+\- Sustainable Supply Chain Finance (SSCF): Development finance institutions provide guarantees, loans and technical support to local banks and SMEs to upgrade equipment, reduce environmental footprints and improve data tracking. The Asian Development Bank's Trade and Supply Chain Finance Programme has supported USD 57 billion in trade since 2009, across 45,500 transactions, 60% SME-related.
+
+\- SME and smallholder loans: Development banks and central banks are supporting sustainability transitions at the supplier level. Examples include the ESG First Fund (KfW) for SMEs in global supply chains, and Brazil's Green Rural Bureau, which incentivises sustainable agricultural practices and compliance with environmental safeguards.
+
+\- Official development assistance (ODA): Aid for Trade mobilises ODA to strengthen private sector capacity, infrastructure and regulatory readiness in partner countries, including for compliance with new due diligence requirements. Since 2005, it has channelled USD 648 billion in cumulative support. RBC-related ODA constitutes a small share of Aid for Trade, though actual levels may be underreported.
+
+\- Officially supported export credits: Export credit agencies can help manage transboundary impacts by applying ambitious environmental and social due diligence mechanisms when providing export credit support.
+
+While many of these approaches are nascent, the introduction of due diligence legislation and closer co-operation between RBC and development and trade policy areas provide opportunity for further scaling.
+
+Source: (OECD, 2025[59]).
+
+## Science, technology and innovation co-operation
+
+STI co-operation offers another avenue to manage transboundary challenges, accelerate progress, and build global resilience. Scientific discovery and innovation are embedded in a global ecosystem reliant on cross-border knowledge flows, shared infrastructure and collaborative research.
+
+For global action to be both effective and equitable STI policies should foster positive international collaboration. Strengthening the capabilities of low- and middle-income countries to engage as equal partners in global research and decision making are essential. This should include aligning capacity-building efforts with local transformation needs and research systems, such as through shared infrastructure and platforms. Greater alignment of national STI priorities, supported by cross-country information sharing, joint funding calls and harmonised research strategies, can reduce duplication, improve resilience, and amplify the impact of global research.
+
+Expanding open science and global knowledge-sharing has become a critical lever for widely accessible STI co-operation. Broader access to research outputs – while balancing public, private and community interests – can strengthen participation and accelerate innovation across borders. At the same time, growing concerns about research security and integrity are reshaping governance approaches. Analysis highlights a coherence trade-off: overly restrictive controls risk slowing diffusion and widening capability gaps, while weak safeguards can erode trust and create vulnerabilities. Proportionate risk-based frameworks are therefore emerging to protect freedom of inquiry while maintaining openness, illustrating how policy designers increasingly seek to reconcile openness with security rather than prioritising one at the expense of the other.
+
+The global diffusion of STI-based solutions increasingly depends on coherent policy frameworks that harmonise standards, regulatory signals and voluntary norms across jurisdictions to help reduce fragmentation and enable cross-border interoperability and scaling. Recent analysis points to the central role of integrated policy instruments – combining formal regulation with soft law tools – in shaping predictable market conditions for emerging technologies and widening diffusion beyond frontier clusters. In practice, this includes open science and flexible research-infrastructure governance that allows facilities to operate together towards shared goals, coupled with proportionate, risk-based research-security frameworks co-designed with scientists, industry and public authorities to safeguard openness without chilling collaboration (OECD, 2025[14]).
+
+To translate these frameworks into market outcomes, whole-of-government co-ordination is pivotal. Country experiences illustrate how centres of government leverage policy experimentation – regulatory sandboxes, strategic foresight and strategic-intelligence systems – to align innovation incentives with market-shaping rules, synchronising STI priorities with diffusion strategies. Ecosystem approaches that span entire value chains and create “convergence spaces” for interdisciplinary work (e.g. synthetic biology, neurotechnology, quantum and earth observation), further accelerate standardisation, interoperability and cross-border uptake. These mechanisms help bridge gaps between STI, trade, investment and sectoral agendas, accelerating innovation and improving access to transformative technologies internationally (OECD, 2025[14]).
+
+## Transboundary sustainability risks of digitalisation
+
+Digitalisation can reinforce or undermine sustainability goals across borders. Initiatives such as the UN-supported Coalition for Digital Environmental Sustainability (CODES) are helping reorient digital innovation and governance toward addressing the triple planetary crisis of climate change, biodiversity loss, and pollution (OECD, 2024[47]). The OECD Recommendation on Digital Technologies and the Environment [OECD/LEGAL/0380] (OECD, 2025[15]) provides a comprehensive policy framework to align digitalisation with environmental sustainability, calling for coherent governance, sustainable procurement, and international co-operation. By fostering collaboration on digital standards, open data and education, these efforts can help ensure that digitalisation contributes to environmental goals.
+
+## References
+
+Kato, T. (2025), “Strengthening the water-energy nexus for a climate resilient Central Asia”, OECD Green Growth Papers, No. 2025/02, OECD Publishing, Paris, https://doi.org/10.1787/632162c2-en.
+
+Mozur, P., A. Satariano and E. Rodriguez Mega (2025), From Mexico to Ireland, Fury Mounts Over a Global A.I. Frenzy, NY Times, https://www.sej.org/headlines/mexico-ireland-fury-mounts-over-global-ai-frenzy.
+
+OECD (2026), “Analysing the international spillovers of climate change mitigation policies: A methodological framework”, Inclusive Forum on Carbon Mitigation Approaches Papers. No. 10, OECD Publishing, Paris, https://doi.org/10.1787/923bba3a-en.
+
+OECD (2026), OECD Due Diligence Guidance for Responsible AI, OECD Publishing, Paris, [51] https://doi.org/10.1787/41671712-en.
+
+OECD (2026), OECD Environmental Performance Reviews: Colombia 2026, OECD Environmental Performance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/968398f7-en.
+
+OECD (2026), Preliminary official development assistance levels in 2025: Detailed Summary [18] Note, DCD(2026)8, OECD.
+
+OECD (2025), “Integrated urban policy to achieve the SDGs”, OECD Regional Development Papers, No. 179, OECD Publishing, Paris, https://doi.org/10.1787/ada07311-en. [1]
+
+OECD (2025), “Supporting businesses in trade partner countries to meet social and environmental due diligence standards”, OECD Business and Finance Policy Papers, No. 88, OECD Publishing, Paris, https://doi.org/10.1787/63c6be24-en.
+
+OECD (2025), “Towards interoperable carbon intensity metrics: Assessing monitoring, reporting and verification systems”, Inclusive Forum on Carbon Mitigation Approaches Papers, No. 9, OECD Publishing, Paris, https://doi.org/10.1787/b185bcfa-en (accessed on 9 April 2026).
+
+OECD (2025), Behind ESG ratings: Unpacking sustainability metrics, OECD Publishing, Paris, [46] https://doi.org/10.1787/3f055f0c-en.
+
+OECD (2025), Effective Carbon Rates 2025: Recent Trends in Taxes on Energy Use and Carbon Pricing, OECD Series on Carbon Pricing and Energy Taxation, OECD Publishing, Paris, https://doi.org/10.1787/a5a5d71f-en.
+
+[53]
+
+OECD (2025), Environmental and social impacts across industry sectors, OECD Publishing, Paris, https://doi.org/10.1787/dd39761c-en.
+
+[42]
+
+OECD (2025), Environmental Outlook on the Triple Planetary Crisis: Stakes, Evolution and Policy Linkages, OECD Environmental Outlook, OECD Publishing, Paris, https://doi.org/10.1787/257ffbb6-en.
+
+[16]
+
+OECD (2025), Global Drought Outlook: Trends, Impacts and Policies to Adapt to a Drier World, OECD Publishing, Paris, https://doi.org/10.1787/d492583a-en.
+
+[8]
+
+OECD (2025), Global Outlook on Financing for Sustainable Development 2025: Towards a More Resilient and Inclusive Architecture, OECD Publishing, Paris, https://doi.org/10.1787/753d5368-en.
+
+[17]
+
+OECD (2025), Government at a Glance 2025, OECD Publishing, Paris, https://doi.org/10.1787/0efd0bcd-en.
+
+[12]
+
+OECD (2025), OECD Environmental Performance Reviews: Japan 2025, OECD Environmental Performance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/583cab4c-en.
+
+[59]
+
+OECD (2025), OECD Environmental Performance Reviews: Sweden 2025, OECD Environmental Performance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/91dcc109-en.
+
+[28]
+
+OECD (2025), OECD Science, Technology and Innovation Outlook 2025: Driving Change in a Shifting Landscape, OECD Publishing, Paris, https://doi.org/10.1787/5fe57b90-en.
+
+[14]
+
+OECD (2025), Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449, https://legalinstruments.oecd.org/en/instruments/oecd-legal-0449 (accessed on 30 December 2025).
+
+[50]
+
+OECD (2025), Recommendation of the Council on Common Approaches for Officially Supported Export Credits and Environmental and Social Due Diligence (The “Common Approaches”), OECD/LEGAL/0393, https://legalinstruments.oecd.org/public/doc/280/280.en.pdf.
+
+[34]
+
+OECD (2025), Recommendation of the Council on Digital Technologies and the Environment, OECD/LEGAL/0380, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0380.
+
+[15]
+
+OECD (2025), “Stakeholder engagement for sustainable infrastructure in Southeast Asia”, OECD Business and Finance Policy Papers, No. 94, OECD Publishing, Paris, https://doi.org/10.1787/c932a5be-en.
+
+[35]
+
+OECD (2025), Tax Policy Reforms 2025: OECD and Selected Partner Economies, OECD Publishing, Paris, https://doi.org/10.1787/de648d27-en.
+
+[56]
+
+OECD (2024), “Review of relevance of the OECD Recommendation on ICTs and the Environment”, OECD Digital Economy Papers, No. 370, OECD Publishing, Paris, https://doi.org/10.1787/216766c6-en.
+
+[47]
+
+OECD (2024), “A Handbook of What Works: Solutions for the local implementation of the OECD Principles on Water Governance”, OECD Regional Development Papers, No. 72, OECD Publishing, Paris, https://doi.org/10.1787/bf54627e-en.
+
+OECD (2024), FDI Qualities Review of Tunisia: Boosting Productivity and Creating Better Jobs, OECD Publishing, Paris, https://doi.org/10.1787/d8a28bca-en.
+
+OECD (2024), Infrastructure for a Climate-Resilient Future, OECD Publishing, Paris, https://doi.org/10.1787/a74a45b0-en.
+
+OECD (2024), OECD Environmental Performance Reviews: Chile 2024, OECD Environmental Performance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/5bc65d36-en.
+
+OECD (2024), Pricing Greenhouse Gas Emissions 2024: Gearing Up to Bring Emissions Down, OECD Series on Carbon Pricing and Energy Taxation, OECD Publishing, Paris, https://doi.org/10.1787/b44c74e6-en.
+
+OECD (2024), Reaching Climate Neutrality for the Hamburg Economy by 2040, OECD Regional Development Studies, OECD Publishing, Paris, https://doi.org/10.1787/e1e44672-en. [19]
+
+OECD (2024), “Responsible business conduct for sustainable infrastructure in Indonesia”, OECD Business and Finance Policy Papers, No. 67, OECD Publishing, Paris, https://doi.org/10.1787/979472ba-en.
+
+OECD (2024), “Responsible business conduct for sustainable infrastructure in Thailand”, OECD Business and Finance Policy Papers, No. 65, OECD Publishing, Paris, https://doi.org/10.1787/f22e8b78-en.
+
+OECD (2024), “Responsible business conduct for sustainable infrastructure in the Philippines”, [37] OECD Business and Finance Policy Papers, No. 66, OECD Publishing, Paris, https://doi.org/10.1787/2d648d86-en.
+
+OECD (2024), “The Circular Economy in Zuid-Holland, Netherlands”, OECD Regional Development Papers, No. 70, OECD Publishing, Paris, https://doi.org/10.1787/d568d66e-en. [4]
+
+OECD (2023), Guidelines for Multinational Enterprises on Responsible Business Conduct, OECD Publishing, Paris, https://doi.org/10.1787/81f92357-en. [33]
+
+OECD (2023), OECD Briefing Note: Responsible is reliable, OECD Publishing, Paris, [43] https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/due-diligence-guidance-for-responsible-business-conduct/Responsible\_is\_Reliable.pdf.
+
+OECD (2023), OECD Environmental Performance Reviews: Germany 2023, OECD Environmental Performance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/f26da7da-en.
+
+OECD (2023), Taming Wildfires in the Context of Climate Change, OECD Publishing, Paris, [32] https://doi.org/10.1787/dd00c367-en.
+
+OECD (2022), “Measuring the environmental impacts of artificial intelligence compute and applications: The AI footprint”, OECD Digital Economy Papers, No. 341, OECD Publishing, Paris, https://doi.org/10.1787/7babf571-en.
+
+OECD (2022), FDI Qualities Policy Toolkit, OECD Publishing, Paris, https://doi.org/10.1787/7ba74100-en.
+
+[39]
+
+OECD (2022), Housing Taxation in OECD Countries, OECD Tax Policy Studies, No. 29, OECD Publishing, Paris, https://doi.org/10.1787/03dfe007-en.
+
+[21]
+
+OECD (2022), “OECD toolkit for a territorial approach to the SDGs”, OECD Regional Development Papers, No. 33, OECD Publishing, Paris, https://doi.org/10.1787/2913bae2-en (accessed on 7 April 2025).
+
+[2]
+
+OECD (2021), “Strengthening adaptation-mitigation linkages for a low-carbon, climate-resilient future”, OECD Environment Policy Papers, No. 23, OECD Publishing, Paris, https://doi.org/10.1787/6d79ff6a-en.
+
+[6]
+
+OECD (2021), Measuring Effective Taxation of Housing: Building the Foundations for Policy Reform.
+
+[22]
+
+OECD (2020), Common Ground Between the Paris Agreement and the Sendai Framework : Climate Change Adaptation and Disaster Risk Reduction, OECD Publishing, Paris, https://doi.org/10.1787/3edc8d09-en (accessed on 19 April 2026).
+
+[10]
+
+OECD (2020), Managing Environmental and Energy Transitions for Regions and Cities, OECD Publishing, Paris, https://doi.org/10.1787/f0c6621f-en.
+
+[23]
+
+OECD (2020), Nature-based solutions for adapting to water-related climate risks, OECD Environment Policy Papers, No. 21, OECD Publishing, Paris, https://doi.org/10.1787/2257873d-en (accessed on 18 April 2026).
+
+[7]
+
+OECD (2019), OECD Territorial Reviews: Hamburg Metropolitan Region, Germany, OECD Territorial Reviews, OECD Publishing, Paris, https://doi.org/10.1787/29afa27f-en.
+
+[26]
+
+OECD (2019), Recommendation of the Council on Policy Coherence for Sustainable Development, OECD/LEGAL/0381, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0381 (accessed on 1 July 2020).
+
+[52]
+
+OECD (2017), Responsible business conduct for institutional investors: Key considerations for due diligence under the OECD Guidelines for Multinational Enterprises, OECD Publishing, Paris, https://doi.org/10.1787/8b9e240a-en.
+
+[45]
+
+OECD (2016), OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas: Third Edition, OECD Publishing, Paris, https://doi.org/10.1787/9789264252479-en.
+
+[44]
+
+OECD (2015), OECD Territorial Reviews: Valle de México, Mexico, OECD Territorial Reviews, OECD Publishing, Paris, https://doi.org/10.1787/9789264245174-en.
+
+[25]
+
+OECD (n.d.), Taxing Energy Use, https://doi.org/10.1787/efde7a25-en.
+
+[55]
+
+OECD/Climate Club (2025), Climate Club Financial Toolkit: Economic, De-risking and Financing Instruments for Industry Decarbonisation, OECD Publishing, Paris, https://doi.org/10.1787/cba1a515-en.
+
+[20]
+
+OECD/FAO (2021), Building Agricultural Resilience to Natural Hazard-induced Disasters: [13] Insights from Country Case Studies, OECD Publishing, Paris, https://doi.org/10.1787/49eefdd7-en.
+
+OECD/IEA (2025), The role of traceability in critical mineral supply chains, OECD Publishing, Paris, https://doi.org/10.1787/edb0a451-en. [41]
+
+OECD/Lincoln Institute of Land Policy, PKU-Lincoln Institute Center (2022), Global Compendium of Land Value Capture Policies, OECD Regional Development Studies, OECD Publishing, Paris, https://doi.org/10.1787/4f9559ee-en.
+
+Ren, S. (2023), How much water does AI consume? The public deserves to know, [3] https://oecd.ai/en/wonk/how-much-water-does-ai-consume.
+
+![](images/ff10dfd7316c143fce49c75c92da520c60402b7f8f39ba816db34e510f34a51d.jpg)
+
+# Strengthening capacities for coherent and co-ordinated action
+
+Strengthening key governance levers is essential for embedding policy coherence and managing systemic interlinkages across water, energy, industry and urban systems. Chapter 3 focuses on the institutional conditions and tools to minimise and manage incoherences helping to surface trade-offs, assign decision ownership, and link choices to budgets, regulation, procurement and performance dialogue. The chapter highlights practical levers to anticipate interlinkages, govern trade-offs and mitigate transboundary impacts. Drawing on OECD analysis and country experiences, the chapter provides actionable recommendations to guide institutional reforms and policy design that accelerate SDG progress while ensuring resilience and accountability.
+
+The convergence of global crises and the deep interconnectedness of economies and societies demand governance systems that can manage complexity and foster co-ordinated action. As discussed throughout the report, water scarcity and pollution, energy insecurity, carbon-intensive industrial processes, and rapid urbanisation are deeply interconnected. Pressures on water resources affect energy production and industrial operations, while energy transitions in turn influence infrastructure investment and urban planning. These systemic linkages can amplify risks and trade-offs, such as affordability versus decarbonisation, or urban growth versus water security. This is why governance responses can no longer afford to be fragmented. Instead, integrated, forward-looking strategies are needed with PCSD functioning as a practical means that aligns decisions across systems and enables more effective delivery of the SDGs.
+
+PCSD is not just a principle, it is a practical tool for policy efficiency, effectiveness and impact. In today's context of fiscal consolidation and tight budgets, coherence is crucial in helping governments do more with less. By breaking down silos, cutting duplication and aligning priorities, PCSD reduces wasteful spending, ensuring that scarce resources are directed toward the most impactful reforms. It also modernises public administration by streamlining co-ordination and reducing bureaucratic burden, which is key to improving delivery capacity and public trust. Coherence embeds a whole-of-government approach to ensure that sectoral strategies, from climate and energy to industry and urban development, reinforce each other rather than compete, unlocking synergies and mitigating trade-offs.
+
+Fragmented governance, however, remains a major barrier to coherence, generating inefficiencies, contradictory incentives and negative spillovers, including across water, energy, industry, and urban systems. Chapter 1 explained why and how fragmentation persists through recurring governance patterns, such as misaligned mandates and unclear authority to arbitrate trade-offs. Chapter 2 illustrated how integrated policy packages, such as circular economy strategies, nature-based solutions and innovation ecosystems, can unlock synergies, manage trade-offs and address transboundary impacts. It is clear that governments need to go beyond identifying interactions across policy areas, and rather make trade-offs explicit, clarify who bears costs and who benefits, and require a feasible response at clear decision points.
+
+This chapter focuses on how governments can operationalise policy coherence in practice, turning the challenges and solutions identified in Chapters 1 and 2 into actionable governance approaches. It also identifies the institutional conditions and tools needed to make such approaches durable and scalable, address coherence gaps, and move from ad hoc co-ordination to systemic action aligned with the 2026 HLPF review, the OECD Recommendation on Policy Coherence for Sustainable Development (OECD, 2019[1]), and the OECD's Governing Green framework (OECD, 2025[2]).
+
+## Box 3.1. Key governance messages
+
+\- Coherence as a governance capability. Clear mandates, whole-of-government co-ordination, Centre of Government (CoG) leadership, and clear decision rights and routines are essential to manage systemic interdependencies across water, energy, industry and cities.
+
+\- Institutional anchoring for long-term delivery. Legal frameworks, medium-term planning and expenditure frameworks, as well as annual budget ceilings, multi-level co-ordination and stakeholder engagement, can translate long-term strategic visions into sustained action across electoral cycles.
+
+\- Tools that convert ambition into decisions. Strategic foresight, sustainable public procurement, and good regulatory practices (GRPs), including strengthened regulatory impact assessment (RIA), operationalise coherence by anticipating interlinkages, sequencing reforms and aligning short-term measures with long-term objectives in the policy areas under review.
+
+\- Actionable analysis. Monitoring systems should move beyond reporting to provide actionable insights, including spillover analysis and transboundary impact tracking. This requires routine follow-up of implemented measures to verify that outcomes remain aligned with original policy objectives, so that domestic decisions consistently reinforce global sustainability goals.
+
+\- Digital and AI as enablers. Digital and AI technologies can enhance coherence when adopted responsibly and aligned with OECD standards. There is a strong potential to use these tools to improve forecasting, targeting, audit selection, or scenario testing.
+
+## 3.1. Institutional conditions for embedding policy coherence
+
+As highlighted in Chapters 1 and 2, many sustainability challenges stem from fragmented long-term strategies that fail to account for interdependencies across water, energy, industry and urban systems. Strengthening strategic planning frameworks is therefore a foundational step to translate the integrated diagnosis of systemic risks and trade-offs into coherent policy direction for SDGs 6 (Clean Water and Sanitation), 7 (Affordable and Clean Energy), 9 (Industry, Innovation and Infrastructure) and 11 (Sustainable Cities and Communities). In practical terms, this would mean treating issues such as water security, energy transition, industrial competitiveness and urban development as a linked system rather than separate sector agendas. A forward-looking vision helps governments to anticipate ripple effects, including how choices about energy affect water security or how urban expansion influences industrial competitiveness. This can ensure that short-term decisions remain consistent with long-term sustainability objectives.
+
+This section sets out the institutional conditions that make coherence operational in day-to-day government decisions. Integrated policy action begins with foundations that enable governments to manage complexity, align priorities across sectors and levels of government, and embed coherence into core governance processes where choices are made, and resources are allocated. It focuses on enabling conditions that anchor coherence in planning, budgeting, implementation and monitoring, which are essential for governing linkages among water, energy, industry and cities. It also covers the role of coherence in anticipating and mitigating negative spillovers and transboundary impacts. Drawing on OECD principles and country experience, the section highlights how mandates, incentives, co-ordination arrangements and accountability routines can shift coherence from a mere principle to a routine practice that shapes decisions.
+
+## Long-term vision for sustainable development
+
+Accelerating progress on the SDGs requires more than short-term measures. It demands a strategic outlook that anticipates future challenges and opportunities and aligns near-term choices with long-term wellbeing. National sustainable development strategies often provide this anchor, enabling governments to balance immediate priorities with the needs of future generations. For example, economic growth and industrial competitiveness can create jobs in the short term, but they must be pursued in ways that safeguard public health, preserve natural resources, and maintain ecosystem stability over time.
+
+A coherent long-term vision is essential for steering sustainable development. Because the SDGs are cross-cutting, decisions in one area, can shape outcomes far beyond their immediate domain. A forward-looking national vision for sustainability provides the framework for anticipating these interactions and aligning short-term decisions with long-term objectives. An example of how a long-term, cross-sectoral vision can anchor policy coherence in practice, particularly in water management, is presented in Box 3.2.
+
+Long-term visions also help anticipate and mitigate transboundary impacts, such as those arising from investments in renewable technology or water resource management. Large-scale deployment of renewable energy technologies can create global supply chain pressures for critical minerals, influencing environmental and social conditions in resource-exporting countries, which could in turn be amplified by industrial policy choices (e.g., domestic manufacturing requirements, industrial electrification) and by urban infrastructure demand for clean power, transport and buildings. Across the OECD, long-term visions are widely used as an anchor for policy coherence. Twenty-two countries (representing 85% of respondents to the OECD survey on PCSD) developed a strategic long-term vision in the last five years, providing a framework for coherent action across sectors (OECD, 2024[3]). These visions are reflected in national sustainable development strategies, 2030 Agenda implementation plans, and sectoral plans. For example, Greece has adopted a series of National Action Plans and Strategies that mainstream the principle of leaving no one behind in public policies and reforms, with targeted measures for future generations. Similarly, Finland institutionalised foresight at the Prime Minister's Office, preparing a “Report on the Future” each parliamentary term to guide intergenerational policy choices (OECD, 2024[3]).
+
+Turning long-term visions into actionable strategies requires governance tools that anticipate uncertainty and systemic interdependencies. Linking these tools with institutional conditions ensures that visions are not static statements but adaptive strategies capable of navigating complexity and volatility. This connection is critical for managing trade-offs across water, energy, industry and urban systems and for aligning short-term decisions with long-term sustainability objectives.
+
+The effectiveness of a long-term vision depends on enabling conditions within the governance system – contextual factors that determine whether visions remain aspirational or translate into sustained action. These conditions include:
+
+\- Securing high-level commitment for coherence. Endorsement through legislation, cabinet decisions or council approval signals that long-term objectives should guide decisions across ministries and agencies. This type of commitment does more than set a vision, elevating sustainable development beyond sectoral interests and short political cycles. Such commitment also encourages private sector engagement and investment in sustainable infrastructure by providing predictability in policy direction. It also indicates that public procurement and budgeting will align with sustainability goals, creating demand for green products and services and opening opportunities for public-private partnerships. For example, Portugal adopted a Resolution of the Council of Ministers (2023) to, among other subjects, institutionalise PCSD within the Presidency, reinforcing that all ministries must integrate sustainability into planning (OECD, 2024[3]). This helps create a clear framework for private investors in renewable energy and circular economy sectors and support investment planning across renewable energy, water services efficiency, circular industry and sustainable urban infrastructure. Similarly, Japan's SDG Promotion Headquarters provides a whole-of-government platform to align policies with the SDGs and mobilise resources for transformative investments (OECD, 2024[3]). Namibia's pursuit of PCSD is guided by its Vision 2030, which is operationalised through a series of five-year national development plans that are aligned with global and continental frameworks (APRM-OECD, 2025[4]).
+
+\- Ensuring stability beyond political cycles. Because the SDGs are not legally binding, they are vulnerable to shifts in political priorities. Institutionalising long-term strategic visions through legal frameworks, medium-term expenditure plans, and formal review cycles helps maintain continuity and predictability for investors and stakeholders. This stability is critical for sectors with long investment horizons, such as water infrastructure, clean energy systems, industrial decarbonisation, and urban development, where projects often span decades and require consistent policy signals to avoid costly lock-ins. In Belgium, the federal Act of 5 May 1997 establishes a legal framework mandating a stable and continuous cycle of five-year Federal Plans for Sustainable Development, which include actions and measures to meet European and international commitments, and align with Belgium’s federal Long-Term Vision (LTV) for Sustainable Development to 2050. Italy’s PCSD NAP explicitly aims to “outlive electoral cycles” by embedding coherence into planning and budgeting processes (OECD, 2024[3]). Establishing mechanisms such as futures funds, or ombudsperson for future generations can help sustain commitment. Dedicated working groups can periodically update the vision to reflect emerging priorities.
+
+\- Breaking silos. Integrated governance structures, such as inter-ministerial committees and focal points networks enable governments to identify and resolve short- and long-term policy conflicts early. This is critical, for example, for managing water-energy linkages (SDGs 6 and 7), aligning industrial growth with climate goals (SDG 9), and coordinating urban planning with infrastructure development (SDG 11). Such a whole-of-government vision for sustainable development also helps strengthen coherence between domestic and external policies. Switzerland's formal consultation processes across federal departments institutionalise coherence by requiring systematic review of all major decisions, embedding long-term sustainability considerations into the country's federal governance culture (OECD, 2024[3]).
+
+\- Engaging society. Achieving the SGDs requires a whole-of-society approach. Public consultations, particularly with marginalised groups, can strengthen legitimacy, reduce risks of unintended impacts and build broad-based support for implementation. Well-designed participatory processes help ensure equitable access to water and energy services (SDGs 6 and 7), support informed planning for housing and mobility in cities (SDG 11), and increase social acceptance of industrial transitions (SDG 9). Such engagement also foster trust and partnerships (SDG 17) and helps manage place-based trade-offs (e.g., industrial siting near urban areas, water allocation between households and industry, and energy affordability in cities). Greece’s National Action Plans were developed through dialogue with vulnerable groups and integrate human rights and gender equality into long-term strategies, ensuring that sustainability policies address social inclusion. Ireland’s National Stakeholder Fora provide structured engagement with civil society, creating a platform for diverse voices to influence long-term national SDG priorities. Japan’s SDG Roundtable brings together government, business, and civil society to shape national priorities (OECD, 2024[3]).
+
+## Box 3.2. A national water strategy with strategic long-term vision that supports policy coherence (Germany)
+
+Germany's National Water Strategy (NWS) provides a long-term plan for addressing the complex and interlinked issue of water management. The NWS sets out how Germany will ensure the provision of high-quality and affordable drinking water up to the period of 2050 through a focus on ten strategic issues. From mitigating the risks caused by pollutants to the development of water infrastructure, these strategic issues were selected to tackle challenges and implement solutions across sectors and action areas. By addressing water-related issues measures across all relevant sectors – including agriculture and nature conservation, administration and transport, urban development and industry – the NWS plays a key role in advancing policy coherence through a “Water in All Policies” approach.
+
+The NWS's cross-sectoral approach was facilitated by active whole-of-government and stakeholder engagement. For the first time, all relevant stakeholders were involved in the development of the Strategy: the federal-, state-, and local governments, the water industry, all water-using economic sectors, associations, experts and citizens. For example, the NWS was developed in close co-operation with other relevant ministries and was also partly based on the results of a two-year National Water Dialogue that included the participation of citizens. By adapting the Strategy to the expertise and experience of its users, the real-world application and effectiveness of the strategy is increased. Furthermore, these efforts work to ensure the necessary broad-based commitment to a shared long-term vision.
+
+Source: (Federal Ministry for the Environment, Nature Conservation, Nuclear Safety and Consumer Protection, 2023[5]).
+
+## Strengthening whole-of-government co-ordination
+
+The SDGs represent a highly intersectoral agenda that cuts across ministries, areas of activity and levels of government. Water management influences energy production and industrial processes; energy policies shape urban development; industrial strategies affect land use, air quality, and biodiversity. National policies also have global repercussions through transboundary impacts on climate, biodiversity, food systems, and energy. These interdependencies mean that fragmented governance can lead to costly lock-ins – such as energy transitions that strain water resources or urban expansion that undermines climate goals. Whole-of-government co-ordination is therefore essential to align strategies across these systems, manage trade-offs (e.g., affordability versus decarbonisation, urban growth versus water security), and leverage synergies, (such as linking clean energy deployment with industrial innovation or integrating nature-based solutions into urban planning). National policies must anticipate transboundary impacts on climate, biodiversity, food systems, and energy security. Box 3.3 illustrates how country efforts, supported by OECD and the EU, are strengthening institutional conditions for PCSD to deliver integrated outcomes in key SDG areas.
+
+## Box 3.3. National policy coherence with OECD–EU Support (Austria + Italy)
+
+Countries are advancing PCSD with OECD expertise and EU collaboration. Under the EU's Technical Support Instrument, the OECD is implementing targeted projects that combine diagnostics, capacity building and reform support to help governments embed PCSD principles in governance systems and accelerate the 2030 Agenda.
+
+OECD Scans assess national frameworks in light of the OECD Council Recommendation on PCSD, focusing on political commitment, institutional mechanisms and tools to manage policy interactions. Findings inform tailored reforms and capacity-building within broader support projects, with examples in multiple countries, including Slovakia, Belgium, Ireland and Portugal.
+
+Among the notable cases is Austria using the Scan to strengthen coherence in development policy, align budgeting with SDG commitments and improve inter-ministerial co-ordination to generate efficiency gains in the public administration. The Scan also supports ongoing reform efforts to improve institutional frameworks and capacities across the public service.
+
+Italy, meanwhile, is applying PCSD tools to support more coherent policymaking in four regions (Piemonte, Marche, Puglia, Sardegna), integrating sustainability into regional planning and EU funding programmes and better coordinating efforts on sustainable development across government levels.
+
+## Defining roles and responsibilities
+
+Clear roles and responsibilities are critical to avoid that ambitious, cross-cutting agendas don't fall through gaps between policy silos. Many countries designate a lead institution, often at the Centre of Government (CoG), to co-ordinate SDG implementation and ensure alignment across ministries. Others establish councils or committees for sustainable development to maintain engagement and momentum. While specialised bodies can raise visibility, integrating SDG co-ordination into existing CoG structures avoids unnecessary bureaucracy, strengthens political traction and can help clarify decision rights on the needed revisions and arbitrate between often-competing objectives (see below). These measures help anchor sustainable development at the core of government decision making, including decisions that cut across priority areas).
+
+In South Africa, the Policy and Research Services branch in the Presidency is mandated to ensure policy coherence and facilitate policy co-ordination of the implementation of the government's programme of action, and the National Development Plan integrates the SDGs into national policies. The German government has defined institutional roles that cover a significant range of PCSD functions: the State Secretaries' Committee for Sustainable Development, for example, is responsible for coordinating sustainable development policies across ministries and ensuring policy coherence, while the Parliamentary Advisory Council on Sustainable Development provides oversight and ensures that sustainability principles are integrated into legislative processes. In Egypt, the Supreme Council of Energy was established to formulate policies, co-ordinate between stakeholders, and oversee the implementation of the national energy strategy (World Economic Forum, n.d.[6]).
+
+## Driving coherence through institutional leadership and the centre of government
+
+Coherence requires institutional leadership that moves beyond information-sharing to embed sustainability into the operational fabric of government, setting clear expectations for how decisions are made, including surfacing trade-offs and proposing feasible implementation packages. This also means aligning organisational culture and day-to-day practices with strategic objectives, ensuring that coherence is not only understood conceptually, but enacted across all levels of administration.
+
+In this context, the CoG plays a pivotal role in translating whole-of-government-government ambitions for sustainable development into coherent and actionable policy outcomes (OECD, 2024[7]). As the institutional locus responsible for supporting executive decision making, coordinating across ministries and arbitrating -ordinating across ministries and arbitrating trade-offs, CoGs are uniquely positioned to manage the systemic interdependencies that characterise the SDGs. In most OECD countries, CoGs act as gatekeepers for cabinet processes, reviewing draft strategies, legislation and major policy proposals to ensure alignment with government priorities and to reduce the risk of fragmented or contradictory measures. This crosscutting oversight function is particularly critical where decisions in water, energy, industry or urban development generate spillovers across sectors, territories or borders (see Box 3.4).
+
+OECD surveys underscore the centrality of the CoG in this role. Around 92% of CoGs identify leading cross-cutting and whole-cutting and whole-of-government priorities as a core responsibility, reflecting their mandate to look beyond sectoral silos and balance competing objectives (OECD, 2023[8]). In the context of the 2030 Agenda, CoGs increasingly steward SDG implementation by embedding sustainability objectives into cabinet procedures, strategic planning cycles and policy quality standards. Integrating SDG co-ordination into existing CoG functions, rather than creating parallel structures, strengthens political ownership, reduces administrative duplication and helps ensure that long-term sustainability objectives are consistently driven through the public administration including to line ministries responsible for water, energy, industry, transport, housing and urban development.
+
+Many CoGs issue policy development guidance, templates and coherence checks that require line ministries to assess cross-sectoral impacts and alignment with national priorities early in the policy cycle. When supported with analytical capacity, these tools enhance the CoG's ability to identify inconsistencies, surface trade-offs and arbitrate between competing policy objectives, for example, across water allocation, energy affordability, industrial competitiveness and urban liveability. CoGs also deploy a range of institutional mechanisms to operationalise policy coherence. These include permanent or time-bound inter-ministerial committees, strategic foresight units, innovation labs, expert advisory groups and structured stakeholder dialogues. Such mechanisms help build a shared understanding of interlinkages, enable collective problem-solving and create formal spaces to examine cross-cutting challenges.
+
+International experience also highlights important design and implementation challenges. The proliferation of committees or taskforces without clear mandates, decision making rights or review mechanisms can dilute accountability and increase administrative burden. In the absence of clear mandates, countries may introduce overlapping sustainability strategies or create co-ordination bodies without enforcement power, leading to duplication, policy fatigue, or even contradictory measures (e.g. fossil fuel subsidies alongside green investment incentives). Similarly, CoGs may face constraints where authority is not matched by analytical resources, or where responsibility for SDG co-ordination is located in institutions with limited leverage over economic or sectoral policies. Effective CoG leadership for policy coherence therefore depends on aligning mandates, authority and capacity, and on prioritising a limited number of high impact co-ordination mechanisms that are embedded in core government processes.
+
+Ultimately, the strength of the CoG lies not only in its formal position, but in its ability to connect institutions, tools and incentives across government (OECD, 2024[7]). CoGs provide the institutional backbone for integrated policy action. This stewardship role is essential for moving from fragmented responses toward coherent strategies that manage trade-offs, leverage synergies and ensure that domestic policy choices contribute to sustainable development outcomes at home and globally, including across SDGs 6 (Clean Water and Sanitation), 7 (Affordable and Clean Energy), 9 (Industry, Innovation and Infrastructure) and 11 (Sustainable Cities and Communities). If required, the CoG could convene a resolution process, assign a decision owner, and ensure the agreed corrective action is reflected in a range of decision points and government tools, such as budgets, regulations, procurement and performance reviews.
+
+## Box 3.4. Strengthening policy coherence through CoG screening and quality assurance (Romania)
+
+Romania provides an example of how Centre of Governments can operationalise the OECD Recommendation on Policy Coherence for Sustainable Development through institutionalised screening and quality-assurance mechanisms embedded in core decision making processes.
+
+The General Secretariat of the Government (GSG) performs an upstream review of draft strategies, legislation and policy proposals prior to cabinet consideration. This function serves as a policy-coherence screening mechanism, assessing alignment with whole-of-government priorities, the Government Programme and existing strategic commitments. Where proposals fail to meet basic coherence requirements, they may be returned for redesign, enabling early correction of inconsistencies before political decisions are taken.
+
+This role has been reinforced through Government Decision No. 379/2022, which mandates the centre of government to assess consistency, complementarities and potential contradictions across sectoral and intersectoral strategies. The approach supports early identification of synergies and trade-offs and reduces risks of fragmentation arising from parallel strategies, overlapping co-ordination bodies or externally driven initiatives.
+
+Such centre-of-government screening functions are particularly critical for policy areas with strong systemic interlinkages, including water (SDG 6), energy (SDG 7), industry and infrastructure (SDG 9) and cities (SDG 11). Romania’s experience illustrates how embedding coherence checks within existing cabinet routines strengthens the centre of government’s capacity to support integrated, sustainable policy outcomes.
+
+Source: (OECD, 2023[9]).
+
+## Equipping coordinating bodies with mandates, analytical capacity and resources
+
+Turning systemic consideration from aspiration into practice depends on governance conditions that embed this responsibility into decision making. Clear mandates backed by legal frameworks are critical: they make coherence a requirement rather than an option, and signal predictability to stakeholders. Spain's legislation on development co-operation explicitly requires consideration of transboundary impacts, while Korea's Framework Act on Sustainable Development stipulates that national development must not undermine environmental or social justice abroad.
+
+However, mandates alone are insufficient. Systematic consideration must be supported by robust systems that make interlinkages visible and actionable. Interoperable data platforms and integrated indicator frameworks enable administrations to track spillovers, anticipate externalities and inform coherence checks early in the policy cycle. In practical terms, this may mean connecting datasets and indicators across water (e.g., availability, quality), energy (e.g., demand peaks, grid constraints), industry (e.g., emissions and supply chains) and cities (e.g., land use, housing, mobility), so decision makers can see trade-offs and synergies.
+
+A coherent approach to the SDGs also depends on the wider policy-development capacity of the public administration, particularly coordinating bodies. CoGs in many OECD countries increasingly invest in capability-building initiatives such as competency frameworks, policy-quality standards, inter-ministerial training, and communities of practice. By equipping coordinating bodies with the skills to navigate complexity and work across sectors, governments can better embed SDG considerations into routine policy processes. This is critical for anticipating and managing systemic interactions. Examples include ensuring that energy infrastructure planning accounts for water availability, industrial decarbonisation aligns with innovation and circular economy strategies, and urban development integrates resilient transport and housing systems. Country experiences show how equipping coordinating bodies with strong mandates and analytical capacity can operationalise coherence across sectors. Portugal's PLANAPP provides a compelling example (see Box 3.5).
+
+## Box 3.5. Strengthening the internal structure for SDG co-ordination (Portugal)
+
+PLANAPP – the Centre for Planning and Evaluation of Public Policies – is a state body based within Portugal’s Centre of Government, responsible for steering strategic planning, delivering forward-looking policy analysis, and coordinating SDG implementation.
+
+PLANAPP's co-ordination role is strengthened by several elements:
+
+\- High-level mandate: Under the Council of Ministers Resolution no. 5/2023, PLANAPP is tasked with mapping and monitoring planning and other public policy instruments that contribute to the implementation of the SDGs, with a view to ensuring coherence across sectors, including water management, clean energy, industrial innovation, and urban development.
+
+\- Interministerial network: PLANAPP co-ordinates REPLAN, an interministerial network that strengthens co-operation and knowledge-sharing in the field of strategic planning and foresight. The network promotes capacity building, the exchange of good practices, and the harmonisation of planning procedures and instruments across government. REPLAN contributes to the development of studies, policy evaluation models and monitoring metrics, and supports alignment between sectoral policies and cross-cutting strategies and planning instruments. This includes reviewing their internal consistency and mobilising multi-sectoral teams.
+
+\- National Roadmap for Sustainable Development 2030 (RNDS 2030): Although Portugal does not yet have a formally approved national sustainable development strategy, the RNDS 2030 – co-ordinated by PLANAPP – has already been presented to stakeholders. It was designed to accelerate implementation of the 2030 Agenda through two strategic components: (i) a Commitment to Sustainable Development and (ii) a Plan for Policy Coherence for Sustainable Development. In monitoring terms, the Roadmap foresees a shift from an approach relying primarily on Statistics Portugal's (INE) global SDG indicator list towards a tailored panel of targets and indicators adapted to the national context. Responsibilities are assigned for each target, with an annual reporting to Parliament and relevant consultative bodies.
+
+\- Whole-of-government / whole-of-society dimension: The RNDS 2030 explicitly adopts both a whole-of-government and a whole-of-society approach, with REPLAN playing a central role in its implementation and monitoring. Planned outputs – notably the RNDS 2030 Progress Report and SDG monitoring products – are intended not only for government actors, but also for Parliament, consultative bodies, local administration, organised civil society, citizens and other relevant stakeholders.
+
+\- Anticipatory governance: “Portugal 2050: Scenarios and Vision” is a forward-looking project by REPLAN that aims to build a long-term strategic vision for the country.
+
+Source: (Centre for Planning and Evaluation of Public Policies, n.d.[10]).
+
+## Strengthening communication and information flows
+
+Effective whole-of-government co-ordination requires robust communication channels that enable timely sharing of information, insights, and emerging policy signals across ministries and agencies. These channels are critical for identifying and managing systemic interdependencies. By creating structured forums, through formal committees, focal-point networks, innovation labs, inter-ministerial briefings or even informal exchanges, governments can identify cross-sectoral impacts early, anticipate trade-offs, and design integrated solutions.
+
+## Box 3.6. Promoting communication on multi-stakeholder issues (India + Morocco)
+
+Since 2012, India has been organising India Water Week as a platform for dialogue, innovation, and knowledge-sharing. Each edition focuses on a specific water-related issue, providing policymakers, experts and industry leaders with the opportunity to present solutions and explore cooperative strategies. The 8 $^{th}$ edition was held in 2024 under the theme “Partnerships and Co-operation for Inclusive Water Development and Management”.
+
+Morocco engages in an integrated and co-ordinated approach to the management of water resources. In addition to the ‘Higher Council for Water and Climate’ (Conseil Supérieur de l'Eau et du Climat), these efforts have been reinforced by the Conseils de Bassins, which constitute a regional forum for discussion and consultation on water issues.
+
+Source: (Government of India, 2025[11]); (The Kingdom of Morocco, 2020[12]).
+
+Recent analysis underscores the importance of transparency, digital platforms and open communication to build coherence. Digital government initiatives – such as interoperability platforms, shared policy dashboards, and open-data portals – provide essential infrastructure for cross-departmental dialogue and joint analysis, laying the foundation for decision making (OECD, 2025[13]). Moreover, governments exhibiting higher levels of openness and participation tend to have stronger co-ordination outcomes and higher public trust in their institutions. For water, energy, industry and cities decision points, this can mean agreeing on simple data-sharing protocols and minimum shared datasets, so that each public actor works from a consistent basis.
+
+By complementing institutional co-ordination mechanisms with transparent information flows and digital infrastructure, governments also enhance the legitimacy and responsiveness of their SDG implementation across sectors. This can support integrated planning for infrastructure investments, innovation strategies, and resilience measures, ensuring that policies reinforce each other rather than create costly lock-ins, for example, by synchronising water and energy infrastructure upgrades with industrial siting decisions and city expansion plans.
+
+## Building capacity across the public service
+
+Building capacity within administrations is essential to ensure that institutional reforms and accountability mechanisms are supported by the technical expertise needed to manage interlinkages across SDGs, including on water, energy, industry and urban systems. Engagement can be limited by a lack of awareness of sustainable development interdependencies across ministries. For example, ministries may not see sustainable development as part of their core mandate, making them less likely to apply coherence tools or consider impacts beyond their sector. Equally, public servants may lack the technical skills or knowledge to integrate cross-sectoral agendas or the SDGs into their areas of work. Governments can also strengthen these capabilities by embedding sustainability directly within public administration practices, ensuring that government operations themselves reflect the objectives they promote externally (see Box 3.7).
+
+Capacity building efforts, such as competency frameworks, have been designed to target cross-disciplinary knowledge or skills, and can facilitate coherence in policymaking. Poland, with the support of the EU and the OECD, has developed a capacity building programme on SDG implementation, including targeted modules on policy coherence for sustainable development, which is available online to all central-level civil servants. Malta is embarking on a similar project. Belgium has acted to address such issues through a major awareness and information campaign on the SDGs that includes an exhaustive inventory of existing tools for implementing the SDGs across various public services and organisations.
+
+## Box 3.7. Greening public administration as a lever for leadership and resilience
+
+Public administrations play a central role in advancing sustainability by embedding environmental considerations into their own operations. By greening internal practices, such as buildings, mobility, procurement and service delivery, governments can align day-to-day administrative activities with national climate objectives, while demonstrating credibility and leadership in the green transition.
+
+Evidence across OECD countries shows that such reforms can also strengthen resilience and reduce operational costs, for example through energy-efficient buildings, renewable energy use, low-carbon mobility and circular resource management. However, these initiatives are most effective when supported by clear mandates, institutional leadership and monitoring systems that embed sustainability across ministries and agencies.
+
+Several OECD countries illustrate how greening public administration can operationalise sustainability commitments while strengthening the resilience of government operations.
+
+\- France: The Ecological Transformation Plan for Eco-responsible Public Services sets measurable targets to reduce emissions and energy consumption across state operations, while providing training and monitoring tools to embed sustainability across the public sector.
+
+\- Canada: Through its Greening Government Strategy, federal departments track emissions from buildings and fleets, conduct climate-risk assessments and report annually on environmental performance to support net-zero government operations.
+
+Source: (OECD, forthcoming[14]).
+
+## Ensuring vertical co-ordination with subnational levels
+
+Multilevel governance arrangements that ensure vertical coherence are essential to accelerate SDG progress and tackle complex challenges. Global agreements, for example, set shared trajectories, while national governments align fiscal and industrial policies, and local authorities manage land use, water systems, and transport. Local governments – responsible for 55% of public investment in OECD countries – are pivotal for SDGs 6, 7, 9 and 11, as they deliver water and sanitation services, energy infrastructure, housing, and urban mobility. As highlighted in Chapter 1, it is estimated that 65% of SDG targets cannot be achieved without active engagement of subnational governments, making vertical co-ordination a cornerstone of coherent implementation, including clarification of delivery responsibilities, financing, and decision rights.
+
+OECD countries are embedding this principle through national sustainable development strategies, local monitoring systems, and formal mechanisms such as interterritorial commissions and participation of local authorities in national SDG councils. Italy offers a notable example: regions are localising the National Action Plan on PCSD and aligning their Regional Sustainable Development Strategies with the National Sustainable Development Strategy, as well as international and EU-level frameworks. The Piemonte Region is developing a permanent Laboratory for PCSD, a co-design process that brings together regional departments, agencies, and experts to integrate coherence into planning and investment decisions (OECD, 2024[3]).
+
+Beyond vertical co-ordination, multi-level and multi-stakeholder partnerships, such as city-to-city partnerships and decentralised development co-operation (DDC) are emerging as critical vehicles for advancing SDG 17 at the local level. Such initiatives are helping to align local delivery models with national priorities in priority areas (e.g., service affordability and procurement practices) (OECD, 2023[15]). These partnerships foster mutual learning between local and regional governments from OECD and partner countries, enabling knowledge exchange and peer-to-peer capacity building in areas such as local governance, water management (SDG 6), and waste services (SDG 12). Unlike traditional technical assistance, modern DDC increasingly operates on principles of reciprocity and mutual benefit, leveraging the comparative strengths of subnational governments to co-create local solutions.
+
+Recent trends underscore the growing importance of these partnerships. Between 2015 and 2023, overall volumes of DDC increased by more than 60%, reflecting growing demand and recognition of its added value. DDC now spans a wide range of urban development sectors, from education and health to governance and civil society (OECD, 2023[15]).
+
+National governments and development co-operation agencies can play a vital enabling role. By connecting supply and demand, supporting capacity development, and fostering policy coherence between decentralised efforts and national strategies, they can reduce fragmentation and strengthen alignment between municipal initiatives and national and partner-country strategies. This includes clarifying roles across levels of government, supporting pipeline development and quality assurance, and creating incentives for coherence, such as co-financing linked to agreed priorities, shared results frameworks, and learning loops (Box 3.8)
+
+## Box 3.8 Promoting policy coherence through city-to-city partnerships (Canada + Netherlands)
+
+The G20 Rome High-level Principles on city-to-city partnerships for localising the SDGs cited multi-level governance and policy coherence as a cornerstone of effective city-to-city partnerships (OECD, 2023[15]). National governments and development co-operation agencies can strengthen coherence by enabling subnational expertise to respond to demand, and by aligning decentralised initiatives with national development and SDG strategies.
+
+Global Affairs Canada provides co-financing through the Federation of Canadian Municipalities, supporting municipal-to-municipal partnerships that strengthen local governance capacity and service delivery.
+
+Elsewhere, national governments are strengthening engagement with associations and networks that co-ordinate subnational governments to better reach large numbers of small actors, such as in the Netherlands, where VNG International and the Ministry of Foreign Affairs have strengthened their partnership on DDC.
+
+Aligning city-to-city partnerships with national and partner-country priorities can help reduce fragmentation and improve sustainability beyond project cycles, including through shared objectives, predictable financing arrangements, and monitoring of results.
+
+Source: (OECD, 2023[15]).
+
+Ongoing OECD work aims to strengthen the evidence base on how DDC contributes to local governance and SDG outcomes. Preliminary findings provide the first quantitative evidence of associations between DDC ODA – ODA channelled through subnational governments – and SDG outcomes in partner regions and cities, notably in regional income growth and the expansion of urban green areas. They also point to improvements in local governance in OECD regions and cities, including gains in institutional quality and perceived impartiality. In addition, qualitative evidence from the OECD Impact Survey highlights the importance of the non-financial dimension of DDC, with OECD regions and cities reporting benefits in access to new knowledge and innovation and strengthened institutional capacity. The new global community of practice on decentralised development co-operation, anchored in the OECD Roundtable on Cities and Regions for the SDGs and the Seville Platform for Action (SPA), will connect national governments, regions and cities from OECD and partner countries. The platform aims to enable regular exchanges, lesson-sharing, and peer learning across a growing ecosystem of decentralised actors, contributing to more coherent and impactful local development co-operation.
+
+## Linking institutional conditions with governance tools
+
+Institutional conditions provide the backbone for coherent and co-ordinated policymaking, ensuring that long-term visions, legal mandates, and whole-of-government co-ordination are firmly in place. Yet these foundations alone cannot deliver the integrated outcomes required by the 2030 Agenda. International collaboration can play a pivotal role in strengthening governance levers. Governance tools, analysed in the next section, if applied consistently, enable administrations to anticipate interlinkages, manage trade-offs, and prevent lock-ins (e.g., energy investments that intensify water stress or industrial policies that increase urban pollution).
+
+Formal co-ordination structures or mandates are not always sufficient to overcome entrenched silos, competing incentives, or capacity gaps across ministries and levels of government. Addressing these constraints may require gradual reforms, dedicated capacity-building, and sustained political commitment. Ensuring realistic timelines and prioritising early wins can help build momentum and demonstrate the value of integrated approaches.
+
+## 3.2. Governance tools for aligning policies and managing trade-offs in practice
+
+Building on the institutional foundations outlined in section 3.1, this section turns to the practical governance instruments that operationalise coherence in day-to-day policymaking. Once these foundations are in place, governments can deploy a range of practical tools that anticipate systemic risks, align resources with integrated priorities, and ensure accountability for outcomes across water, energy, industry and urban systems. Organised into three functional clusters, this section explores: (i) anticipatory governance tools that help manage uncertainty and interdependencies; (ii) resource alignment instruments that steer investments toward integrated outcomes; and (iii) regulatory and accountability frameworks that make trade-offs and transboundary spillovers visible and governable. By integrating these instruments into planning and implementation processes, countries can strengthen resilience, improve resource efficiency, and ensure that policies across water, energy, industry, and urban systems contribute to widely shared and sustainable development. OECD analysis and country experiences illustrate how these tools can be adapted to different institutional contexts and capacity levels.
+
+To make the most of these tools, governments first need to understand where policy interactions occur, and how they may amplify or undermine each other. This requires practical ways to identify cross-sectoral and transboundary impacts early in the policy cycle (Box 3.9).
+
+Box 3.9. Tools to identify cross-sectoral and transboundary impacts early in the policy cycle (Mongolia + Sri Lanka)
+
+Countries are increasingly combining structured qualitative approaches with footprint-based and supply-chain analyses to surface synergies, trade-offs and spillovers at the outset of policy design.
+
+In one example, cross-impact matrices allow governments to use structured scoring exercises to assess how progress on one objective affects others (positively or negatively). Policies or SDG targets are paired and assessed using a qualitative scale ranging from strong constraints to strong reinforcement. This helps identify where sectoral actions (e.g., energy policy, industrial transition, water security, or urban development) may amplify benefits or generate risks elsewhere. Workshops with ministries and stakeholders support interpretation and justification of the scores.
+
+Mongolia and Sri Lanka applied this method in national SDG planning processes. Mexico (Monterrey Metropolitan Area) used interaction scoring to analyse how state-level climate goals interact with metropolitan transport, water and air-quality priorities, including vertical spillovers.
+
+Source: (Hernández-Orozco and Maestre, 2026[16]); (SEI, 2021[17]).
+
+## Anticipatory governance: managing uncertainty and systemic risks
+
+OECD analysis finds that systemic risks – such as climate shocks, resource scarcity, and technological disruptions – often emerge gradually and interact across sectors. Anticipatory governance tools, including strategic foresight and AI-enabled risk management, enable administrations to stress-test policies against multiple scenarios, identify cascading impacts, and prepare for discontinuities. By embedding foresight into planning and budget cycles, governments can ensure that decisions on energy infrastructure, water management, industrial innovation, and urban development remain robust and aligned with long-term sustainability objectives.
+
+## Anticipating risks and shaping coherent SDG pathways
+
+Short-term political cycles and siloed planning processes undermine coherence by narrowing policy horizons and reinforcing sectoral logics. Strategic foresight helps overcome this by identifying emerging risks and opportunities early, and supporting integrated planning across sectors and timelines. As highlighted in Chapters 1 and 2, major sustainability trade-offs often emerge over time rather than at the point of decision. Strategic foresight helps governments surface these future tensions early and test policy choices against multiple risk pathways.
+
+Strategic foresight is increasingly central to coherent, future-ready policymaking. It enables administrations to think systematically about alternative plausible futures, challenge assumptions, and prepare for discontinuities. This is particularly relevant for water, energy, industry and urban systems. In times of heightened uncertainty and interdependence, foresight helps to stress-testing policies against shocks, cascading impacts and deep uncertainties that conventional models struggle to capture (OECD, 2025[18]).
+
+Recent OECD guidance proposes a practical five-step foresight process – from scanning and exploring disruptions (e.g., climate hazards or supply-chain disruptions) to building scenarios, stress-testing strategies, and translating insights into actionable plans, accompanied by explicit inclusion of transboundary channels (e.g., critical mineral supply chains or cross-border water impacts) and identification of early mitigation options (OECD, 2025[18]).
+
+Governments are also beginning to use AI-enabled scanning and analysis to broaden inputs and accelerate scenario design, while addressing reliability, transparency and bias challenges to ensure AI strengthens rather than distorts foresight practice (The World Economic Forum/OECD, 2025[19]).
+
+To make foresight a governance lever, OECD practice highlights four institutional conditions: diversity of perspectives (to surface blind spots), independence (to challenge the status quo), high-level champions (to protect the function and secure use), and embedding into core processes (strategy, budget cycles, regulation, performance dialogues). When these conditions are in place, foresight can inform priority setting, align long-term trajectories with annual budgeting and RIAs, and support whole-of-government stewardship, especially from the centre of government (OECD, 2025[18])
+
+Countries are increasingly using foresight to inform strategies that accelerate progress on interconnected goals. Finland applies scenario-based stress tests to energy transition plans, ensuring investment pathways remain resilient under different climate and technology futures (Government of Finland. Prime Minister's Office, 2025[20]). Italy uses foresight in integrated urban policy to anticipate demographic and infrastructure challenges and guide long-term strategies for housing, transport and green infrastructure (OECD, 2025[21]).
+
+Operational value emerges when foresight is translated into concrete decisions. Scenarios can guide capital allocation for clean energy and circular industry, stress-tests can inform regulatory design for high-emission sectors, and horizon scans can feed centre-of-government dialogues to anticipate spillovers rather than react to them. Embedding these linkages into budgeting and evaluation frameworks is a best practice for strengthening coherence and resilience across the policy cycle (OECD, 2023[22]).
+
+## Harnessing AI to strengthen governance
+
+Artificial intelligence (AI) is becoming a strategic enabler for governments, improving productivity, responsiveness and accountability across the policy cycle. OECD analysis of 200 use cases shows AI is increasingly applied in areas critical for sustainable development, including water and climate resilience, energy transition, industrial innovation and infrastructure, and urban policy. It provides the potential to strengthen coherence across these areas by improving the timeliness and granularity of information used to manage interdependencies and trade-offs. These applications range from predictive analytics and scenario simulation to anomaly detection and participatory planning, helping administrations anticipate risks, optimise resources and engage citizens in shaping future sustainable development pathways (OECD, 2025[23]).
+
+Extreme weather and resource pressures demand foresight and agility. AI-driven predictive models are helping governments move from reactive responses to proactive planning. Canada's wildfire prediction system, for example, uses historical and real-time data to anticipate fire risks and guide emergency preparedness. Belgium applies AI to forecast slippery road conditions, enabling timely winter maintenance and reducing accidents (OECD, 2025[23]).
+
+AI is also reshaping how governments manage complex transitions in energy and industry. Korea's dBrain+ platform integrates real-time fiscal and economic data with AI analytics to support risk-based budgeting and investment sequencing. In public integrity systems, Portugal uses AI to prioritise audits in procurement, while Chile applies large language models to detect irregularities (OECD, 2025[23]). These tools safeguard resources and improve the enabling environment for clean energy and industrial decarbonisation, critical for coherent long-term planning.
+
+Urban policy is another area where AI is making governance more participatory and adaptive. Helsinki's UrbanistAI tool generates visualisations of alternative planning scenarios, helping stakeholders weigh trade-offs and build consensus on compact, low-carbon development. Digital assistants such as France's Albert and the UK's Caddy improve access to regulatory and service information, while open-source platforms like Polis enable large-scale deliberation and clustering of citizen inputs (OECD, 2025[23]). These innovations illustrate how AI can help cities design for resilience and inclusion in an era of rapid change (Box 3.10), including decisions that affect energy demand, water service requirements and infrastructure investment needs.
+
+## Box 3.10. AI for governance functions (Canada + Korea)
+
+The OECD highlights three main priorities for governments seeking to scale AI responsibly. Invest in enablers: Build strong data foundations, interoperable digital infrastructure and workforce capabilities. Link AI initiatives to budgeting, procurement and performance frameworks so insights inform real decisions. Embed guardrails: Apply risk-based policies, transparency and accountability mechanisms across the AI lifecycle. Align with the OECD AI Recommendation and adopt privacy-enhancing technologies to enable safe data-sharing. Strengthen engagement: Use user-centred design and structured participation to address exclusion risks and algorithmic aversion. Prioritise high-benefit, lower-risk applications—such as predictive hazard analytics and integrity tools—while measuring outcomes and iterating for scale.
+
+There are multiple examples of how governments are operationalising AI to anticipate risks, optimise decisions and design with citizens, turning data into actionable insights for better governance.
+
+\- Canada: AI wildfire prediction anticipates risks and optimises emergency response, reducing disaster impacts and improving resource allocation.
+
+\- Korea: dBrain+ uses AI to analyse real-time fiscal data, supporting risk-based decision making in public financial management and investment planning.
+
+Source: (OECD, 2025[23]); (OECD, 2025[24]).
+
+AI offers governments a powerful lever to anticipate shocks, optimise resource allocation and support sustainable development pathways, but only if adoption is strategic and trustworthy. Moving beyond pilots to mainstream AI in budgeting, regulatory delivery and urban planning can connect long-term trajectories with annual decisions, strengthen centre-of-government stewardship and improve coherence across water, energy, industry and cities. The challenge is clear: start where capacity and data are strongest, mitigate risks early, and scale responsibly to deliver public value.
+
+## Aligning resources for integrated policy outcomes
+
+Budgeting is a central lever for coherence, as we've seen how green budgeting integrates environmental and social objectives into fiscal frameworks, aligning resources with cross-sectoral priorities. Public budgets and procurement represent some of the most powerful governance levers for shaping sustainability trajectories. OECD analysis shows that fiscal choices influence whether countries accelerate green transitions or lock in unsustainable patterns. Green budgeting moves beyond descriptive tagging to alignment checks that test consistency with SDG objectives, while green public procurement uses purchasing power to stimulate markets for low-carbon and resource-efficient solutions. Together, these instruments help governments connect resource decisions across priority areas and steer investments toward integrated outcomes; this can include linking clean energy deployment with industrial decarbonisation, ensuring water and sanitation investments keep pace with urban growth and embedding circular economy principles in urban infrastructure.
+
+## Leveraging public procurement for cross-sectoral coherence
+
+Public procurement is a powerful governance lever for advancing sustainable development. Globally, governments spend approximately 12-14 % of GDP – equivalent to around USD 11 trillion annually – on public contracts (Bosio and S. Djankov, 2020[25]), while OECD countries average 12 % of GDP and 30 % of public expenditure (OECD, 2025[13]). This scale gives governments significant influence over markets and the ability to shape sustainability outcomes in sectors where public and private actions intersect, such as water services and resource management (e.g., treatment, networks, leakage reduction), clean energy transitions (grids, renewables, efficiency), industrial innovation and decarbonisation (low-carbon materials, circularity), and urban development (housing, transport, public space). All these spheres are critical to accelerate progress on SDGs 6, 7, 9, 11 and 17. By embedding sustainability criteria into procurement processes, governments can align short-term purchasing decisions with long-term objectives and stimulate demand for low-carbon technologies and resource-efficient solutions (OECD, 2024[26]). Procurement must function as a strategic governance tool rather than a transactional process. OECD analysis shows that impact is greatest when procurement is embedded in broader frameworks that promote coherence (OECD, 2024[26]). National strategies in Portugal and France mandate green criteria in tenders, linking procurement to climate and circular economy goals. Co-ordinated platforms, such as those in Sweden, where procurement authorities and environmental agencies jointly guide climate-aligned purchasing, and in Italy, where procurement is integrated into the National Sustainable Development Strategy, help reconcile environmental objectives with market realities. (OECD, 2024[26]).
+
+Country experiences illustrate how governance arrangements translate into practice. In Greece, procurement for river restoration and electric bus fleets linked water management with clean urban mobility. Italy piloted innovative water management solutions to strengthen infrastructure resilience and resource efficiency. Portugal embedded circular economy principles into regional procurement strategies, promoting industrial transformation and waste reduction (OECD, 2024[26]). Similarly, experiences in the United Kingdom and Mexico show how adapting public procurement and funding frameworks has enabled the scaling-up of nature-based solutions for flood and water risk management, linking ecosystem restoration with infrastructure resilience and land-use planning (OECD, 2021[27]). These examples demonstrate how procurement can operationalise systemic linkages across water, energy, industry and urban systems, turning purchasing power into a driver of coherent, cross-sectoral progress.
+
+## Strategic use of the budgeting process
+
+Public budgets can shape the trajectory of sustainable development and investments across water, energy, industry, and urban systems. By determining where resources flow, budgets influence whether countries can strengthen resilience. Recent OECD analysis underscores that fiscal choices remain available for achieving environmental protection goals, and that the way budgets are structured can either amplify trade-offs or unlock synergies that deliver multiple SDG benefits simultaneously (OECD, 2025[13]) (OECD, 2024[28]).
+
+The strategic use of budgeting is therefore critical. While many OECD countries have introduced green budgeting instruments, the use of the instruments is broadening to include spending reviews and investment approvals. The moved recognises that to be effective, green budgeting needs to move beyond budget tagging to clear alignment tests that flag measures inconsistent with agreed trajectories (OECD, 2024[28]). The adoption of green budgeting instruments should also examine whether medium-term budgets are consistent with key sustainability objectives.
+
+Spain's approach, summarised in Box 3.11, demonstrates how embedding SDG alignment in the legal framework of the budget process can turn fiscal governance into a driver of integrated policymaking. Ghana is another country committed to generating and using data to guide policy decisions and budget allocations, publishing an annual SDG Budget and Expenditure Report. Ghana's budget is also linked to indicators in the 2063 Agenda for Africa (APRM-OECD, 2025[4]).
+
+## Box 3.11. SDG budget alignment (Spain)
+
+Spain has institutionalised SDG alignment within its budget process through a legal requirement under Article 37.2(d) of the General Budget Law. Each year, the government submits a report to Parliament assessing how the General State Budget contributes to the Sustainable Development Goals. This mechanism obliges ministries to analyse their spending programmes against SDG targets, creating a structured basis for transparency and accountability.
+
+Recent reforms have strengthened the approach. In 2023, Spain expanded the analysis to include ecological transition, ensuring that climate objectives are tracked alongside social and economic priorities. This evolution signals a shift from compliance towards integration: the alignment report is no longer a static annex, but a tool to gauge how fiscal choices advance sustainability. By embedding SDG considerations in the legal framework and linking them to parliamentary scrutiny, Spain demonstrates how budgeting can become a lever for coherence across sectors and levels of government.
+
+Source: (OECD, 2024[3]).
+
+Embedding these practices in the core budget cycle – rather than in parallel reporting – can strengthen accountability and improve the credibility of fiscal frameworks. It also responds to persistent gaps identified in governance assessments related to limited enforceability of coherence measures, insufficient technical capacity and weak consideration of transboundary impacts (OECD, 2024[3]). By linking alignment checks to budget negotiations, and publishing the results alongside fiscal documentation, governments can achieve more clarity between strategic objectives and resource allocation.
+
+Governance arrangements are critical to making this work (OECD, 2024[28]). Experiences from OECD member countries show that green budgeting is most effective when ministries of finance collaborate closely with environment and sectoral ministries. When analytical outputs feed directly into ceilings, spending reviews and investment planning, it can help resolve cross-sector trade-offs. Linking budgeting to other governance tools, such as regulatory impact assessments, strategic foresight and green procurement, further enhances coherence (OECD, 2025[13]). These connections allow governments to manage trade-offs holistically, and to align fiscal decisions with broader policy objectives.
+
+Improving the quality of budgeting tools is indispensable. Current classifications capture the primary purpose of spending but often overlook secondary environmental impacts (positive or negative) or cumulative effects across sectors. Strengthening analytical capacity within finance ministries and line agencies is equally important, as is investing in skills and guidance to ensure that sustainability considerations become a routine part of fiscal decision making (OECD, 2024[29]). These steps would not only enhance domestic policy coherence but also help governments anticipate and mitigate transboundary effects – an area where progress remains limited despite its centrality to the 2030 Agenda (OECD, 2024[3]).
+
+The strategic use of budgeting does not stand alone. Its effectiveness depends on integration with complementary instruments that enable adaptive policymaking. Strategic foresight can inform budget choices by anticipating long-term risks and opportunities, while regulatory impact assessments provide information on the systemic effects of policies beyond their primary objectives. Green public procurement reinforces these efforts by aligning market incentives with sustainability goals. Together, these tools create a governance ecosystem where fiscal decisions, regulatory frameworks and investment strategies converge to deliver coherent, forward-looking outcomes across sectors and levels of government to help align water investments with energy and industrial transitions, and ensure cities can deliver housing, mobility and resilient services consistent with national targets (Box 3.12).
+
+## Box 3.12. Leveraging digital governance and fiscal tools to strengthen coherence (Korea)
+
+Korea illustrates how integrated governance and digital innovation can enhance policy coherence and support progress toward the SDGs. The government has institutionalised whole-of-government coordination through strong CoG leadership, complemented by advanced digital platforms that enable real-time information sharing across ministries. Korea's integrated digital budget and accounting platform, dBrain, links planning, execution and performance data, allowing decision makers to assess trade-offs and align fiscal choices with sustainability objectives.
+
+Korea has also embedded green budgeting practices into its fiscal framework, moving beyond descriptive tagging toward alignment checks that assess consistency with greenhouse gas reduction targets and long-term sustainability objectives. These measures are reinforced by green public procurement standards, which steer markets toward low-carbon solutions in infrastructure and urban development.
+
+Finally, Korea's governance of emerging risks demonstrates how risk-informed approaches can be mainstreamed across sectors. Scenario-based analysis and AI-enabled risk sensing are integrated into disaster risk management, supporting anticipatory planning and safeguarding investments in critical infrastructure.
+
+Source: (OECD, 2025[30]); (OECD, 2024[29]); (OECD, 2025[13]); (OECD, 2025[31]).
+
+## Regulatory and accountability frameworks for governing trade-offs and spillovers
+
+Regulatory frameworks and accountability mechanisms are essential for managing policy interactions across interconnected systems. This is clearly the case for water, energy, industry and cities, where decisions on infrastructure, markets, standards and permits routinely create cross-sector effects and long-lived lock-ins.
+
+Good regulatory practices (GRPs) are powerful tools for policy design, providing governments with a coherent set of mechanisms, including regulatory impact assessment, stakeholder engagement, and the monitoring and evaluation of regulations, to integrate economic, social and environmental considerations across the policy cycle. Applied together, these practices help policymakers identify trade-offs, manage spillovers and align domestic regulatory choices with broader sustainability goals.
+
+Regulatory impact assessment (RIA) is one of the most important instruments within this toolkit. By embedding sustainability considerations into ex ante assessments, RIAs can make trade-offs and spillovers more visible, for example, water stress from energy projects or emissions embodied in global supply chains. This enables governments to anticipate unintended consequences, assess the costs and benefits of different options, and align decisions with global sustainability goals. Consultation with affected stakeholders is a critical part of this process, ensuring that diverse perspectives inform policy outcomes (OECD, 2020[32]).
+
+## Leveraging regulatory impact assessments
+
+Regulation is a cornerstone of sustainable development. It shapes outcomes in critical systems such as energy, water, transport and telecommunications, which underpin economic activity, social well-being and environmental sustainability. These systems are undergoing rapid transformation, driven by climate objectives, technological innovation and evolving market structures (OECD, 2025[33]). Decisions on issues such as energy decarbonisation, infrastructure investment or market regulation increasingly need to be taken amid uncertain conditions, while managing complex interactions between economic, social and environmental objectives.
+
+Given the interconnected and global nature of the SDGs, regulatory decisions also have implications beyond national borders and over the long term, including for SDGs 6, 7, 9 and 11, as regulatory choices in one domain (e.g., energy market rules) can shift risks and costs across the others. This makes it essential for regulatory frameworks to anticipate cross-sectoral linkages, manage trade-offs and consider potential transboundary impacts, ensuring that domestic regulatory choices support sustainable development objectives in an integrated and coherent manner.
+
+Regulatory impact assessment (RIA) is a critical governance tool for strengthening decision making and improving the quality of regulation (OECD, 2025[33]). RIAs can help governments identify likely effects on sustainable development, compare alternative policy options and balance economic, social and environmental objectives (OECD, 2025[13]). When applied systematically, RIAs make trade-offs explicit and help ground decisions, supporting regulation that is transparent, balanced and aligned with both national and international sustainability goals, including the SDGs and the Paris Agreement.
+
+The 2025 OECD Regulatory Policy Outlook (OECD, 2025[34]) shows that while most OECD countries formally require environmental and social considerations as part of their RIA frameworks, implementation remains uneven. Few countries conduct granular assessments of key sustainability dimensions, such as biodiversity, and greenhouse gas emissions or extreme-weather resilience. Embedding these dimensions into RIA processes – and equipping regulators with the data, tools and capacity to do so – is essential to ensure that regulations support integrated and forward-looking policy objectives.
+
+Despite progress, structured RIA processes that systematically inform regulatory design remain uneven across countries (OECD, 2025[34]). In many countries, RIA still focuses on short-term economic efficiency, overlooking environmental and social dimensions and too often failing to anticipate spillovers beyond national borders. Strengthening RIAs to better serve SDG considerations thereby requires three shifts:
+
+\- First, expand the scope and alignment of impact assessments by explicitly linking RIA to national SDG strategies and sustainability objectives, as already piloted in several OECD countries (see Box 3.13) (OECD, 2023[35]). To be effective, especially for proposals with material distributional impacts (for households, SMEs, workers or regions and municipalities), RIAs should include mitigation options, feasible design alternatives, sequencing options, and proposed safeguards or compensation measures, and clarify how these connect to budgeting and delivery.
+
+\- Second, strengthen the monitoring of regulatory impacts over time, particularly for long-term and transboundary effects in high-emission sectors. This connects to the broader GRP framework: ex-post review of regulations is essential to determine whether they are delivering expected sustainability outcomes and to identify unintended consequences requiring course correction.
+
+\- Third, invest in the enabling conditions needed to operationalise these ambitions: granular sectoral data, interoperable systems, analytical capacity, clear institutional mandates, and robust regulatory oversight bodies with the authority and resources to ensure that assessments are conducted thoroughly and from the earliest stages of the policy process. Without these foundations, RIAs risk becoming procedural checklists rather than strategic tools for policy coherence across water infrastructure, energy markets, industrial transition pathways and city development.
+
+Good regulatory practices, of which RIA is a central instrument, support more coherent and balanced regulation by ensuring effective implementation and monitoring across the policy cycle. RIA in particular strengthens informed decision making by making trade-offs explicit, engaging stakeholders and promoting transparency. When applied effectively within a broader GRP framework, these tools can help align regulatory outcomes with environmental and economic goals, for example, balancing affordability with decarbonisation or resource efficiency (OECD, 2023[35]). However, OECD reviews highlight persistent challenges: limited technical capacity, fragmented mandates and insufficient integration of RIAs into broader governance frameworks (OECD, 2024[3]). Box 3.13, illustrates how Luxembourg's Sustainability Check embeds these principles into the legislative process, moving RIAs beyond economic analysis toward integrated assessments of sustainable development impacts.
+
+## Box 3.13. Embedding SDG priorities in regulatory design (Luxembourg)
+
+Luxembourg has taken a proactive step to integrate sustainable development into its regulatory process through the introduction of the Sustainability Check. Since June 2023, this tool has been mandatory for all draft legislation, requiring ministries to assess proposed laws against national sustainable development priorities. The Check covers economic, social and environmental dimensions, ensuring that regulatory proposals are examined for their contribution to long-term goals.
+
+What makes this approach noteworthy is its timing and scope. By embedding the Sustainability Check at the earliest stage of legislative drafting, Luxembourg ensures that sustainability considerations influence regulatory design before decisions are finalised. The tool also promotes ownership among ministries by making them responsible for assessing coherence with the National Plan for Sustainable Development. This creates a feedback loop between regulatory choices and national SDG commitments, reinforcing transparency and accountability.
+
+Crucially, the launch of the sustainability check was paired with specific training for civil servants. Although still evolving, the Sustainability Check illustrates how RIAs can move beyond narrow economic analysis to become a governance lever for integrated policymaking. It demonstrates that even a relatively simple mechanism, when anchored in legal requirements and linked to national strategies, can help governments anticipate trade-offs, manage cross-sectoral impacts and align regulation with the SDGs.
+
+Source: (OECD, 2024[3]).
+
+RIAs are most effective when connected to complementary instruments. Strategic foresight can help anticipate future regulatory challenges and strengthen policy coherence, while green procurement and performance budgeting reinforce incentives for sustainable outcomes. Together, these tools create an integrated governance ecosystem where regulation, fiscal policy and investment strategies work in concert to deliver coherent, forward-looking results across sectors and levels of government.
+
+Periodic ex-post reviews of regulations are essential to ensure that laws and policies remain fit for purpose as technology, environmental conditions and societal needs evolve. Such reviews help determine whether regulations are delivering expected sustainability outcomes, identify unintended consequences, and support continuous improvement. Embedding sustainability criteria into these reviews allows governments to adjust course where needed and ensure that regulatory frameworks continue to promote long-term SDG objectives.
+
+## The role of monitoring and evaluation
+
+Without interoperable data, interlinkages and spillovers can remain invisible, limiting the possibility to influence choices on budgets, regulation or delivery. Robust monitoring, reporting and evaluation (MRE) systems are the backbone of coherent and sustainable policymaking. They translate strategic intent into clear policy objectives, measurable outcomes and performance information, reveal whether policies, programmes and investments are delivering as intended, and provide early warnings when course corrections are needed. Recent OECD analysis emphasises that, in an era of fiscal limits and heightened expectations, performance information must become routine for cabinet and center-of-government action (OECD, 2025[13]). This is particularly relevant for SDG implementation, where outcomes depend on coordinated actions across multiple sectors and levels of government, unfold over long horizons, and often generate effects across borders.
+
+The latest OECD report on the implementation of the OECD Recommendation on PCSD (OECD, 2024[3]) confirms that many countries collect SDG data and indicators, yet few systematically monitor transboundary impacts or embed coherence tests in evaluation routines. These gaps weaken the feedback loop on decisions (OECD, 2024[3]), including the impacts transmitted through energy and industrial supply chains, traded emissions, and/or shared water and ecosystem systems.
+
+To move from reporting to decision making, OECD guidance highlights three pillars for effective monitoring and evaluation systems: institutionalisation, quality, and use. Institutionalisation anchors mandates and roles; quality sets standards for methods and data; use ensures that findings inform strategy, budgeting, regulation and delivery. The OECD Recommendation on Public Policy Evaluation [OECD/LEGAL/0478] and its implementation toolkit articulates these pillars and positions evaluation as a shared responsibility across government levels, integrating monitoring data, ex ante and ex post evaluations, and performance audits to drive learning and accountability (OECD, 2022[36]).
+
+Beyond institutional mandates and oversight, effective coherence depends on the ability to translate monitoring data into actionable insight. For example, performance dialogues could routinely include a distributional analysis, such as affordability and access, service reliability, and place-based impacts (e.g., regional employment effects of industrial transition). This approach can help develop responses from the coherence reforms (e.g., policy adjustment, targeted support, or revised sequencing).
+
+Countries should aim to combine interoperable digital platforms, integrated indicator frameworks, methodological standards and clear links with decision points, including budget negotiations, regulatory reviews, risk assessments and proportionate approaches to compliance, to ensure that monitoring systems are both robust and administratively feasible. Such an approach allows for tracking progress, aggregating results across sectors, diffusing strategic objectives throughout the public administration, and simplifying the regulatory landscape by identifying and reducing unnecessary burdens on citizens and businesses (OECD, 2025[13]). Importantly, integrating spillover analysis (even using proportionate qualitative methods where data is scarce) into monitoring frameworks and evaluation guidance, especially when linked to decision points (e.g., spending reviews), can help administrations anticipate externalities, trigger corrective action, and align domestic decisions with global sustainability objectives (OECD, 2024[3]).
+
+## Box 3.14. Monitoring spillovers (Switzerland + Netherlands)
+
+Countries are increasingly integrating spillover analysis into SDG monitoring systems to capture how domestic policies and consumption patterns affect sustainability beyond their borders. These approaches focus on areas such as resource use, emissions embodied in trade, financial flows, and social impacts – topics that are central to global progress on water, energy, industry, cities and partnerships.
+
+## Switzerland (MONET 2030)
+
+Switzerland's MONET 2030 system includes a dedicated spillover dashboard that tracks indicators such as material footprint, greenhouse gas emissions linked to consumption, and remittances. Each indicator is presented with trend analysis and target-direction comparisons, making externalities visible and actionable for policy and parliamentary debate.
+
+## The Netherlands (Monitor of Well-being & SDGs)
+
+The Dutch system introduces an “elsewhere” dimension alongside “here and now” and “later.” This lens explicitly measures how Dutch consumption and trade affect well-being in other countries. Among the ways it is carried out is through imported emissions or resource depletion. Results are published annually on Accountability Day, ensuring that international impacts are discussed in Parliament together with domestic performance.
+
+By embedding spillover dashboards, “elsewhere” lenses and other indicators into official monitoring systems, governments can move beyond static reporting to dynamic tools that inform evaluation and decision making. These practices help identify trade-offs, anticipate externalities and strengthen policy coherence for sustainable development.
+
+Sources: (Federal Statistical Office (FSO) Switzerland, 2025[37]); (CBS, 2025[38]).
+
+Monitoring and evaluation have the strongest impact when embedded in structured work routines (OECD, 2024[7]). Regular, data-driven review meetings create predictable rhythms for assessing progress, challenging assumptions and coordinating action. Integrating holistic sustainability assessments into governance frameworks has become essential for achieving the SDGs. These assessments go beyond traditional monitoring by combining quantitative indicators with foresight and systemic analysis, enabling governments to anticipate risks, identify synergies and manage trade-offs across sectors. By linking strategic planning and investment decisions, integrated approaches help administrations move from fragmented reporting to adaptive policymaking. They provide a structured basis for aligning priorities such as energy security, biodiversity protection and resource efficiency, ensuring that short-term actions remain consistent with long-term sustainability objectives (OECD, 2024[3]).
+
+## Box 3.15. Integrated sustainability assessment as a governance tool for policy coherence (Finland)
+
+Finland's Prime Minister's Office led the 2025 Sustainability Assessment, an innovative governance instrument for embedding policy coherence into decision making. The assessment builds on a five-dimensional framework: security and democracy, social and health sustainability, economic resilience, ecological sustainability, and human capital. It combines trend analysis with a forward-looking lens to identify systemic risks and opportunities for the coming decade. Drawing on quantitative indicators across 35 sub-areas, expert judgement, and extensive stakeholder consultation the process produced 42 actionable measures across eight thematic areas.
+
+This approach connects sectors such as energy, biodiversity and digitalisation, aligning the forest-based bioeconomy with biodiversity protection, and promoting circular economy solutions. The PMO's leadership ensured cross-ministerial collaboration, strong institutional ownership and effective communication of key findings.
+
+The process relied on strong networks across ministries, research institutes and other stakeholders, further proof that policy coherence requires institutional collaboration. Explicit consideration of how results feed into strategies and investment priorities ensured that the assessment influenced real policy choices.
+
+Lessons from Finland underline that integrated sustainability assessments are most effective when they combine robust data with foresight, foster cross-sectoral collaboration and embed clear pathways for influencing decisions. By institutionalising these practices, governments can turn monitoring and evaluation into a governance lever for coherence and adaptive policymaking.
+
+Source: (Finnish Government, 2025[39]).
+
+## Embedding coherence across governance processes
+
+For government tools to deliver impact, they need to be integrated into core governance processes that include cabinet submissions, budget circulars and spending reviews. This can allow governments to move from general commitments to decisions that can hold politically, when trade-offs are surfaced early, and an explicit package is agreed before policies are locked in through budgets and other key decisions.
+
+Translating coherence tools into impact demands political leadership, coalition-building, and a realistic reform trajectory. Governments often face resistance from established bureaucratic practices, capacity gaps at the working level, and incentive misalignments that discourage cross-sectoral collaboration. Sequencing reforms strategically can help overcome these barriers: for example, starting with budgeting or procurement reforms help link directly to service delivery to build early momentum and stakeholder buy-in, such as improving water-network investment planning, accelerating clean and reliable energy infrastructure, procuring low-carbon public transport, or upgrading public buildings and facilities.
+
+Importantly, coherence reforms can shift resources, discretion and visibility across ministries and levels of government. The resulting perceived loss of autonomy added procedural burden, or short-term cost exposure could in turn generate resistance among stakeholders. To advance such reforms, it's important to secure a finance ministry and/or CoG alliance to link coherence requirement to resource allocation and delivery, possibly starting with sectors where benefits are easy to demonstrate (e.g., cost savings or service reliability).
+
+Strengthening governance for coherence frameworks requires whole-of-government approaches, clear mandates, open and transparent decision making and enforceable accountability mechanisms. Multi-stakeholder platforms and cross-sector partnerships can align priorities, mobilise resources and foster innovation, but require sustained financing, clear responsibilities and follow-through to be effective. International co-operation is equally critical to address transboundary impacts, such as carbon leakage, supply-chain disruptions and shared resource management.
+
+## References
+
+APRM-OECD (2025), Assessment of Policy Coherence for accelerating sustainable development and Agenda 2063 in Africa, APRM, https://aprm.au.int/en/documents/2025-07-18/assessment-policy-coherence-accelerating-sustainable-development (accessed on 31 December 2025).
+
+Bosio, E. and S. Djankov (2020), How large is public procurement?, World Bank Blogs, https://blogs.worldbank.org/en/developmenttalk/how-large-public-procurement.
+
+CBS (2025), Monitor of Inclusive and Sustainable Well-being and the SDGs 2025, https://www.cbs.nl/en-gb/visualisations/monitor-of-well-being-and-the-sustainable-development-goals (accessed on 30 December 2025).
+
+Centre for Planning and Evaluation of Public Policies (n.d.), PLANAPP Presentation, https://planapp.gov.pt/planapp-presentation/ (accessed on January 2026).
+
+Federal Ministry for the Environment, Nature Conservation, Nuclear Safety and Consumer Protection (2023), National Water Strategy. [5]
+
+Federal Statistical Office (FSO) Switzerland (2025), MONET 2030 indicator system, [37] https://www.bfs.admin.ch/bfs/en/home/statistics/sustainable-development/monet-2030.html (accessed on 30 December 2025).
+
+Finnish Government (2025), Views on the state of Finland Sustainability assessment 2025 English summary, Finnish Government. Prime Minister's Office, Helsinki. [39]
+
+Government of Finland. Prime Minister's Office (2025), Government Report on the Future. [20]
+
+Government of India (2025), India: Volunatry National Report, [11] https://hlpf.un.org/sites/default/files/vnrs/2025/VNR%202025%20India%20Report\_0.pdf.
+
+Hernández-Orozco, E. and D. Maestre (2026), “Geographic SDG spillovers: how state-level policies influence the metropolitan level in Monterrey.”, Stockholm Environment Institute. [16]
+
+OECD (2025), Applying regulatory impact assessment at regulatory authorities: A methodology for assessing the economic, social and environmental impacts of regulation, OECD Publishing, Paris, https://doi.org/10.1787/0b5ea522-en. [33]
+
+OECD (2025), Digital Government Review of Korea: Harnessing Digital and Data to Transform Government, OECD Digital Government Studies, OECD Publishing, Paris, https://doi.org/10.1787/9defc197-en. [30]
+
+OECD (2025), “Governing for the green transition”, OECD Net Zero+ Policy Papers, No. 13, OECD Publishing, Paris, https://doi.org/10.1787/5b0aa7d0-en (accessed on 20 November 2025).
+
+OECD (2025), Governing with Artificial Intelligence: The State of Play and Way Forward in Core Government Functions, OECD Publishing, Paris, https://doi.org/10.1787/795de142-en.
+
+OECD (2025), Government at a Glance 2025, OECD Publishing, Paris, https://doi.org/10.1787/0efd0bcd-en.
+
+OECD (2025), Integrated urban policy to achieve the SDGs, OECD Regional Development Papers, No. 179, OECD Publishing, Paris, https://doi.org/10.1787/ada07311-en.
+
+OECD (2025), Managing Emerging Critical Risks: Case Studies and Cross-Country Synthesis [31] Report, OECD Publishing, Paris, https://doi.org/10.1787/1f9858ea-en.
+
+OECD (2025), OECD Regulatory Policy Outlook 2025, OECD Publishing, Paris, https://doi.org/10.1787/56b60e39-en.
+
+OECD (2025), Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449, https://legalinstruments.oecd.org/en/instruments/oecd-legal-0449 (accessed on 30 December 2025).
+
+OECD (2025), Strategic Foresight Toolkit for Resilient Public Policy: A Comprehensive Foresight Methodology to Support Sustainable and Future-Ready Public Policy, OECD Publishing, Paris, https://doi.org/10.1787/bcdd9304-en.
+
+OECD (2024), Beyond green tagging: How can public budgeting support climate goals?, OECD Papers on Budgeting, No. 2024/06, OECD Publishing, Paris, https://doi.org/10.1787/b154d49b-en.
+
+OECD (2024), Green Budgeting in OECD Countries 2024, OECD Publishing, Paris, https://doi.org/10.1787/9aea61f0-en.
+
+OECD (2024), Harnessing Public Procurement for the Green Transition: Good Practices in OECD Countries, OECD Public Governance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/e551f448-en. [26]
+
+OECD (2024), Steering from the Centre of Government in Times of Complexity: Compendium of Practices, OECD Publishing, Paris, https://doi.org/10.1787/69b1f129-en.
+
+OECD (2024), Unleashing Policy Coherence to Achieve the SDGs: An Assessment of Governance Mechanisms, OECD Publishing, Paris, https://doi.org/10.1787/a1c8dbf8-en. [3]
+
+OECD (2023), “Coherence and co-ordination at the centre of government in Romania”, OECD [9] Public Governance Policy Papers, No. 34, OECD Publishing, Paris, https://doi.org/10.1787/3feaa33e-en.
+
+OECD (2023), Better regulation for the green transition", OECD Public Governance Policy Papers, No. 40, OECD Publishing, Paris, https://doi.org/10.1787/c91a04bc-en. [35]
+
+OECD (2023), “Decentralised development co-operation: A global policy toolkit and guidance for practitioners”, OECD Regional Development Papers, No. 46, OECD Publishing, Paris, https://doi.org/10.1787/3cb22851-en.
+
+OECD (2023), Government at a Glance 2023, OECD Publishing, Paris, https://doi.org/10.1787/3d5c5d31-en.
+
+OECD (2022), Recommendation of the Council on Public Policy Evaluation, OECD/LEGAL/0478, [36] https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0478.
+
+OECD (2021), Scaling up Nature-based Solutions to Tackle Water-related Climate Risks: [27] Insights from Mexico and the United Kingdom, OECD Publishing, Paris, https://doi.org/10.1787/736638c8-en (accessed on 19 April 2026).
+
+OECD (2020), Regulatory Impact Assessment, OECD Best Practice Principles for Regulatory Policy, OECD Publishing, Paris, https://doi.org/10.1787/7a9638cb-en. [32]
+
+OECD (2019), Recommendation of the Council on Policy Coherence for Sustainable Development, OECD/LEGAL/0381, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0381 (accessed on 1 July 2020).
+
+OECD (forthcoming), Greening public administration and services in OECD countries: driving the green transition within the public sector. [14]
+
+SEI (2021), SDG Synergies, https://www.sei.org/tools/sdg-synergies/. [17]
+
+The Kingdom of Morocco (2020), Voluntary National Review 2020, [12] https://hlpf.un.org/sites/default/files/vnrs/2021/26406VNR\_2020\_Morocco\_Report\_French.pdf
+
+The World Economic Forum/OECD (2025), AI in Strategic Foresight: Reshaping Anticipatory Governance, The World Economic Forum, Cologny, https://doi.org/10.1787/aa573076-en. [19]
+
+World Economic Forum (n.d.), Playbook of Colutions: Egypt, https://initiatives.weforum.org/playbook-of-solutions/egypt-country-platform (accessed on January 2026).
+
+![](images/34f2785b863f43e156afd9ef27c7f7a29b2f800c674e57da4a9a2264bbf3e4b7.jpg)
+
+# A Policy Coherence Agenda for Transformative Action
+
+Countries face rising complexity and tightening constraints as the 2030 SDG target date nears. This chapter presents a forward-looking priority agenda to help governments strengthen policy coherence for water, energy, industry, and sustainable cities. Supported by partnerships that enable co-ordinated responses, these strategic pillars help policymakers anticipate interlinkages, manage trade-offs fairly and address transboundary impacts. The agenda provides a roadmap for whole-of-government and whole-of-society approaches that can accelerate progress to better meet 2030 objectives, while establishing governance systems for more resilient and sustainable development for decades to come.
+
+## Five strategic pillars for action
+
+With less than four years left to achieve the 2030 Agenda, governments face tighter fiscal space, mounting climate pressures and rapidly evolving technological and geopolitical contexts. These challenges underscore the need for governance systems capable of working across traditional boundaries, anticipating cross-border risks, and responding to interlinkages between water, energy, industry and cities.
+
+These pressures underscore the need for governance capabilities that improve the quality of decision making, connect long-term strategies with day-to-day implementation and strengthen transparency and accountability. Although countries are modernising budgeting, regulation and public management practices, there remain gaps between ambition and implementation and challenges in ensuring that policy measures reinforce one another.
+
+The five strategic pillars presented in this chapter can help enable governments to strengthen coherence and respond to the interconnected nature of sustainable development. The recommendations build on OECD analysis and country experience, offering feasible pathways to scale up efforts in a time of uncertainty and accelerating change.
+
+## 1. Embed coherence in everyday government decisions
+
+Governments increasingly operate in systems where policy decisions about water, energy, industry and cities influence one another in ways that are often overlooked in sector-specific approaches. Embedding coherence into routine decision making supports more predictable trajectories, reduces contradictory measures and strengthens the capacity to anticipate trade-offs to minimise costs. This pillar focuses on the mechanisms that bring cross-sectoral considerations into daily practice of designing and implementing policies, budgets and regulations. Key recommendations include:
+
+\- Integrate cross-sector and cross-border analysis into major strategies, legislative proposals and investment plans. This helps policymakers identify how actions in one domain may affect water security, energy transitions, industrial competitiveness or urban resilience, enabling earlier adjustments that reduce long-term costs. Strengthening this analysis accelerates progress on SDGs 6, 7, 9 and 11 by making interdependencies visible at the outset.
+
+\- Use National Urban Policies (NUPs) to leverage the strong synergies with multiple SDGs to ensure that urban policies take a cross-sectoral approach and promote coherence among policy areas. Such NUPs should promote the integration of sectoral policies, such as housing, transport, digitalisation and smart city initiatives, among others, by: establishing shared vision and goals; providing institutional co-ordination mechanisms; aligning funding and investment strategies; and enabling data sharing. Duplication of strategies, programmes and actions leads to inefficiencies in the use of resources and unintended negative consequences. Urban policy integration can enhance complementary effects and coherence across the urban policy system through strategic use of policy planning tools (e.g. the budget process and public procurement).
+
+\- Require decision makers to document potential benefits, risks, distributional effects and proposed mitigation options before proposals advance to political approval. Exploring distributional effects supports fairer and more durable transitions, particularly in areas such as water pricing, energy affordability and land use. By clarifying who is affected and how, governments can sustain political support for reforms critical to SDGs 6, 7 and 11.
+
+\- Introduce budget alignment tests to assess consistency with long-term sustainability and resilience goals. Alignment tests help avoid financing measures that inadvertently undermine clean energy transitions, water resilience or urban sustainability. They reinforce SDG 17 by improving co-ordination across financial and sectoral ministries.
+
+\- Use proportionate approaches to strengthen regulatory impact assessment to include long-term, environmental, social and transboundary effects. Proportionate methods help ensure that water, energy, urban and industrial proposals receive appropriate scrutiny without creating unnecessary administrative burden. This promotes progress on SDGs 6, 7 and 11 by reducing risks of harmful lock-in effects.
+
+\- Use public procurement strategically to support resilience, resource efficiency and the circular economy. Aligning procurement with climate and resource goals can shift markets toward cleaner technologies and more efficient infrastructure solutions. This directly accelerates SDGs 9 and 11 while easing pressures on water and energy systems (SDGs 6 and 7).
+
+## 2. Strengthen institutions that manage trade-offs and sustain long-term direction
+
+Enhancing policy coherence requires institutions that can navigate competing demands and maintain objectives across political cycles. Many of the critical decisions for sustainable development, from energy systems and water allocation to urban development and industrial pathways, involve trade-offs that cannot be managed through information-sharing alone. This pillar addresses the institutional capabilities needed to arbitrate trade-offs, co-ordinate across levels of government and ensure continuity in long-term transition strategies. Key recommendations include:
+
+\- Reinforce the role of centres of government in ensuring alignment across sectors. This enables governments to reconcile competing objectives in water, energy, industry and cities through consistent oversight. Strengthening this function supports SDG 17 by improving whole-of-government co-ordination.
+
+\- Enable centres of government to convene co-ordination or resolution discussions when ministries hold conflicting positions. Structured mechanisms for managing divergence help prevent delays and encourage integrated planning in areas essential to SDGs 6, 7, 9 and 11.
+
+\- Anchor strategic plans in medium-term expenditure frameworks and scheduled reviews. Doing so protects investments in water infrastructure, clean energy and sustainable cities from short-term shifts in priorities. This strengthens progress on SDGs 6, 7 and 11 by providing greater policy and financing certainty.
+
+\- Establish vertical co-ordination mechanisms linking national objectives with subnational implementation. Effective implementation in cities, regions and water basins depends on clarity and alignment across levels of government. Voluntary national and local reviews (VNRs and VLRs) can serve as structured vehicles for fostering this vertical co-ordination: when linked to one another, they facilitate multi-level dialogue, support lesson learning, create shared ownership of the SDGs, and provide channels through which local governments, civil society and the private sector can contribute to monitoring and evaluation. Improved vertical coherence accelerates progress on SDG 11 and supports SDGs 6 and 7 by reducing inconsistencies between local service delivery and national goals.
+
+\- Clarify mandates, financing roles and delivery responsibilities across government levels. Clear roles help reduce duplication, close capacity gaps and ensure coherent delivery of integrated solutions. This contributes to consistent progress across SDGs 6, 7, 9 and 11.
+
+\- Link coherence assessments and implementation progress to performance dialogues. Embedding coherence into performance monitoring supports accountability for cross-sector results and strengthens SDG 17 by reinforcing shared responsibility.
+
+## 3. Mobilise investment and innovation for system-wide transformation
+
+Meeting the scale of transitions required in energy systems, water management, industrial processes and urban development will require investment strategies that work across sectors, supported by innovation ecosystems that can accelerate the diffusion of solutions. Transformative change depends on mobilising finance at scale and aligning innovation with sustainability objectives. Key recommendations include:
+
+\- Strengthen financing frameworks using blended finance, risk-sharing instruments and targeted guarantees that are applied transparently and based on value-for-money principles. Such approaches help address barriers that limit investment in water resilience, clean energy, industrial decarbonisation and sustainable urban infrastructure. Strengthening investment conditions supports SDGs 6, 7, 9 and 11.
+
+\- Establish integrated project preparation facilities. Well-designed, cross-sector project pipelines increase bankability, support project design with an integrated perspective on impacts and risks, and reduce delays in implementation. This directly accelerates integrated action across SDGs 6, 7, 9 and 11.
+
+\- Leverage city-to-city partnerships and decentralised development co-operation to unlock access to financial resources for sustainable development. City-to-city partnerships can help catalyse financial flows for sustainable development by enhancing subnational financing capacity and expertise, improving access to funding and financial planning, promoting local economic development to expand the tax base and strengthening local governance, thereby creating a conducive investment environment.
+
+\- Improve the reliability and comparability of sustainability disclosures to support informed investment decisions. Better data reinforces investor confidence and channels finance toward climate-resilient and resource-efficient technologies, advancing SDGs 7, 9 and 11.
+
+\- Link innovation funding to regulation, skills and procurement frameworks. Aligning these levers ensures that technological progress supports sustainable and resilient transitions rather than creating new risks. This is particularly relevant for SDGs 7, 9 and 11.
+
+\- Improve measurement and transparency of the environmental footprint of digital and AI systems. Better understanding of resource implications helps guide responsible digitalisation and prevents added stress on water and energy systems, supporting SDGs 6 and 7.
+
+\- Expand the use of real-time and interoperable data platforms for adaptive planning. Enhanced data integration strengthens the ability to respond to emerging pressures in water management, energy systems and cities, supporting SDGs 6, 7 and 11.
+
+## 4. Address impacts and global spillovers
+
+System-wide transitions inevitably generate uneven impacts across households, workers, firms and regions, and may create cross-border spillovers. Addressing these impacts directly can enhance fairness, maintain political support and prevent unintended consequences in partner countries. Key recommendations include:
+
+\- Conduct assessments for reforms in pricing, land use and industrial transition. Understanding who is affected enables governments to design fairer policies for water, energy and urban reforms. This strengthens SDG 11's focus on resilient and equitable communities and reduces resistance to changes necessary for SDGs 6 and 7.
+
+\- Design proportionate compliance pathways for sustainability and due-diligence requirements. Tailored pathways help small firms and suppliers participate in sustainable value chains. This strengthens SDG 9 and SDG 17 by making global supply chains more resilient and broadly accessible.
+
+\- Provide technical assistance, supplier development support and access to sustainable finance. Supporting firms in meeting environmental and social standards helps reduce bottlenecks in sustainable procurement and investment. This advances SDGs 9 and 17 while indirectly supporting SDGs 6 and 7.
+
+\- Assess transboundary impacts of domestic policies and integrate findings into design. Such assessments help avoid unintended harm to ecosystems, markets or communities abroad. This strengthens SDG 17 and ensures domestic actions align with global goals across SDGs 6, 7, 9 and 11.
+
+\- Engage partner countries where domestic measures risk cross-border impacts. Dialogue builds trust and supports coherent regional and global transitions. This reinforces SDG 17 and smooths the implementation of measures relevant to SDGs 6, 7 and 9.
+
+## 5. Build adaptive and future-ready governance systems
+
+As climate and technological disruptions intensify, governance systems must be equipped to anticipate uncertainty, learn from experience and adjust course. Anticipatory governance supports both immediate SDG delivery and the long-term resilience needed for transitions beyond 2030. Key recommendations include:
+
+\- Institutionalise scenario analysis across planning, budgeting and regulation. Scenario testing helps ensure infrastructure and policy choices remain viable under shifting conditions. This supports resilience in SDGs 6, 7 and 11.
+
+\- Embed coherence tools in budget cycles, procurement and regulatory design. Integrating coherence checks at the right stages ensures decisions consider long-term sustainability and cross-sector interactions. This advances SDGs 6, 7, 9 and 11.
+
+\- Conduct ex-post evaluations to adjust course and strengthen learning. Regular review allows governments to correct misalignments in areas such as energy planning, water allocation and land use. This improves performance across all SDGs under review.
+
+\- Strengthen multi-stakeholder engagement. Engaging youth, Indigenous peoples, cities, civil society and businesses supports inclusion and shared ownership of transitions. This directly advances SDGs 11 and 17.
+
+\- Invest in workforce capabilities and integrated data systems. Better analytical, digital and collaborative skills help public administrations navigate complex transitions. This strengthens SDG 17 and enhances cross-sector delivery of SDGs 6, 7, 9 and 11.
+
+\- Reinforce international mechanisms for coherence. Shared indicators and co-operation platforms support more consistent approaches to transboundary impacts and sustainable financing. This strengthens SDG 17 while supporting aligned action on SDGs 6, 7, 9 and 11.
+
+# Bridging the Gaps for Sustainable Development
+
+Coherent Policies for Water, Energy, Industry and Cities
+
+Progress on sustainable development is slowing as pressures linked to climate change, resource constraints, urbanisation and economic uncertainty increasingly intersect. At the same time, governments face tighter fiscal conditions and declining official development assistance, making fragmented policies on water, energy, industry and cities increasingly costly. When policies are designed and delivered in isolation, they weaken impact, increase trade-offs and generate spillovers that undermine results at home and abroad.
+
+This report examines how disconnected policies are constraining progress on the Sustainable Development Goals and why more coherent action is essential in the current global context. Drawing on OECD analysis and country experience, it shows how better alignment across sectors and levels of government can help governments manage trade offs, reduce systemic risks and address cross border spillovers, while making more effective use of limited public resources.
+
+The report is aimed at policymakers, practitioners and stakeholders working on sustainable development, climate action, infrastructure and urban policy. It highlights how policy coherence for sustainable development supports clearer prioritisation, better sequencing of action and stronger alignment of decisions over time, helping governments deliver more effective and credible public action towards 2030 and beyond.
