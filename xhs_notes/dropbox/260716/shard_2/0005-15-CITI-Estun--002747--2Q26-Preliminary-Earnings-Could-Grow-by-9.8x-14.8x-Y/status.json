@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_5ho9gqft/pdfs/0005-15-CITI-Estun -002747- 2Q26 Preliminary Earnings Could Grow by 9.8x-14.8x YoY to Rmb52mn82mn from a Low Base-260714.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "这只机器人公司，利润",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Citi：Citi埃斯顿2Q26初步盈利同比增9.814.8倍至5200820",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-15-CITI-Estun -002747- 2Q26 Preliminary Earnings Could Grow by 9.8x-14.8x YoY to Rmb52mn82mn from a Low Base-260714.pdf",
+    "cleaned_source_title": "CITI-Estun -002747- 2Q26 Preliminary Earnings Could Grow by 9.8x-14.8x YoY to Rmb52mn82mn from a Low Base",
+    "institution_name": "Citi",
+    "required_terms": [],
+    "deterministic_fallback": "Citi：Estun002747",
+    "raw_candidates": [
+      "Citi-埃斯顿2Q26初步盈利同比增9.8-14.8倍至5200-8200万元",
+      "Citi-埃斯顿2Q26盈利暴增9.8-14.8倍，六成来自一次性收益",
+      "Citi-埃斯顿2Q26盈利增9.8-14.8倍，Citi拆解：六成非经常性"
+    ],
+    "cleaned_candidates": [
+      "Citi：Citi埃斯顿2Q26初步盈利同比增9.814.8倍至5200820",
+      "Citi：埃斯顿2Q26盈利暴增9.8-14.8倍，六成来自一次性收益",
+      "Citi：埃斯顿2Q26盈利增9.8-14.8倍，Citi拆解，六成非经常性",
+      "Citi：Estun002747"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "Citi：埃斯顿2Q26盈利暴增9.8-14.8倍，六成来自一次性收益",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "Citi：埃斯顿2Q26盈利增9.8-14.8倍，Citi拆解，六成非经常性",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "Citi：Estun002747",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：Citi埃斯顿2Q26初步盈利同比增9.814.8倍至5200820",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "Citi：Citi埃斯顿2Q26初步盈利同比增9.814.8倍至5200820"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "650",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
