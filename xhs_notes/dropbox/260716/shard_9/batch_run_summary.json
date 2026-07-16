@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 99,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 9,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/46-JPM-China Renewables：Fundamental opportunities into 2Q print-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxxsmyfg/pdfs/0001-46-JPM-China Renewables-Fundamental opportunities into 2Q print-260714.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/47-JPM-China Power Infrastructure Solid State Transformers ~ Expert Call Takeaways-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxxsmyfg/pdfs/0002-47-JPM-China Power Infrastructure Solid State Transformers - Expert Call Takeaways-260714.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/48-JPM-China Insurance：Profit alerts lift EPS hopes， but dividends decide the trade； prefer Ping An~H-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxxsmyfg/pdfs/0003-48-JPM-China Insurance-Profit alerts lift EPS hopes- but dividends decide the trade- prefer Ping An-H-260714.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/49-JPM-China： Trade resilient， but hard to sustain growth alone-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxxsmyfg/pdfs/0004-49-JPM-China- Trade resilient- but hard to sustain growth alone-260714.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/50-JPM-Flows & Liquidity The need for deleveraging-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxxsmyfg/pdfs/0005-50-JPM-Flows - Liquidity The need for deleveraging-260715.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

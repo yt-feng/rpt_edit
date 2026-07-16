@@ -1,0 +1,2404 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This material is neither intended to be distributed to Mainland China investors nor to provide securities investment consultancy services within the territory of Mainland China. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                47,
+                908,
+                76
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Power Infrastructure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                133,
+                122,
+                550,
+                148
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Solid State Transformers – Expert Call Takeaways"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                133,
+                157,
+                611,
+                178
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We hosted an expert call yesterday on the development of solid state transformers (SST) and high-voltage direct current (HVDC) with the following takeaways: the expert views SST as a potentially important long-term upgrade path for data center (DC) power architecture, given benefits in efficiency, footprint and intelligent/bidirectional power dispatch, but believes commercialization remains early due to immature standards, limited reliability validation, 'good-enough' HVDC alternatives, and a lack of proven use cases. He believes near-term adoption will be more likely centered on EV charging, high-energy industrial, renewables+storage, and microgrids, with a broad DC rollout unlikely before 2028. On the value proposition, SSTs can lift end-to-end efficiency by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5+"
+                    },
+                    {
+                        "type": "text",
+                        "content": " percentage points vs a line-frequency transformer plus uninterruptible power supply (UPS) chain (typically  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "<90\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") and reduce power equipment volume to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sim 1/5 - 1/10"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", while enabling software-defined power management and power-compute coordination. The expert characterized 800V HVDC as an interim architecture that keeps the front-end line-frequency transformer but moves downstream distribution to 800V DC, with UPS, HVDC and SST approaches likely to coexist for 5-10 years, depending on chip power density and DC efficiency targets. Commercial traction is still limited: one electrical equipment company cited  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sim 100 - 200"
+                    },
+                    {
+                        "type": "text",
+                        "content": " North America units, and China XD has four units of overseas orders, but broader DC-scale orders remain scarce. See Table 1 for valuation comps of companies with SST exposure, and Figure 1 for the illustrative diagram."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                219,
+                666,
+                522
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- SST outlook: benefits and adoption timing: The expert believes SST offer advantages (energy efficiency, smaller footprint, smarter and bidirectional energy dispatch) and could become a key upgrade path for DC power architectures long term, but commercialization is still early due to immature standards, limited reliability validation, ‘good-enough’ HVDC alternatives, and scarce proven use cases. He believes near-term adoption is more likely in EV charging, high-energy industrial, renewables+storage and microgrids, with large-scale DC rollout unlikely before 2028."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                526,
+                666,
+                647
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- SST value proposition vs line-frequency transformers: The expert noted SSTs offer clear advantages over traditional line-frequency transformers in efficiency, footprint and energy dispatch, making them attractive for next-generation AI DC and integrated energy systems. 1) A conventional supply chain built around a line-frequency transformer plus UPS typically delivers less than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "90\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " end-to-end efficiency, while an SST-based approach can lift total system efficiency by more than 5 percentage points, reducing losses, heat and operating costs. 2) In AIDC facilities where transformers and power distribution equipment are taking up more space, SST solutions can cut equipment volume to roughly one-fifth to one-tenth of traditional setups, releasing valuable floor area and supporting higher power density. 3) Unlike traditional transformers that mainly provide one-way power output with limited controllability, SSTs enable software-defined power management and coordination between power supply and computing loads, aligning with smarter DC designs. 4) SSTs can act as an energy router with bidirectional power flow, supporting multi-energy complementarity across wind, solar and storage, while traditional transformers are largely one-directional converters."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                651,
+                666,
+                909
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Power Equipment and Utilities"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                219,
+                906,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                238,
+                844,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Vento Suen  \n(852) 2800-8546  \nvento.suen@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                281,
+                839,
+                322
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Alan Hon  \n(852) 2800-8573  \nalan.hon@JPM.com  \nJPM Securities (Asia Pacific) Limited/ JPM Broking (Hong Kong) Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                687,
+                323,
+                942,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See page 4 for analyst certification and important disclosures, including non-US analyst disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                932,
+                852,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                135,
+                2,
+                344,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                6,
+                897,
+                34
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 800V HVDC architecture: interim approach and evolution path: The expert believes that the 800V HVDC architecture is best viewed as a transitional pathway. It typically retains the conventional line-frequency transformer on the front end, while shifting the downstream distribution to 800V DC to improve overall system efficiency by reducing conversion losses and current-related inefficiencies. Looking ahead, if SST mature, they could replace the traditional transformer entirely and deliver 800V DC directly, enabling a more efficient end-to-end power conversion chain. Over the next five to ten years, traditional UPS-based architecture, 800V HVDC solutions, and SST-based approaches are expected to coexist. Which design ultimately prevails will depend on the trajectory of chip power consumption and rack power density, as well as each data center's efficiency targets and tolerance for adopting newer power technologies."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                131,
+                665,
+                296
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Commercial traction: early signs and current limitations: The expert believes that SST commercialization remains at an early stage. An electrical equipment company has indicated it has secured roughly 100-200 units of orders in North America, which is a notable proof point, while China XD has won four units of overseas orders. Apart from these, there is still limited evidence of clear, sizable commercial orders specifically for data center deployments. More than 20 companies in China have already announced SST products, and over 30 more are in pre-release, yet most remain in development and lack true mass-production capability. Overseas players such as Eaton (ETN US, NR) have also announced products, but the expert hasn't seen widely referenced commercialization cases. Overall, meaningful large-scale SST adoption is more likely after 2028, when the market may enter a small-batch, scaled commercial phase; until then, deployments are expected to focus on pilots, niche scenarios, and operational learning."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                301,
+                666,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Commercialization constraints: standards, validation, and economics: The expert believes that SST commercialization is constrained by four main factors. First, there is a lack of finalized specifications and standards, and the broader data center supply chain still lacks unified product standards, which delays both vendor roadmaps and owner investment decisions. Second, reliability validation remains insufficient: data centers require extremely high power availability, but operating data and long-duration field proof for SSTs are still limited, making owners reluctant to approve large-scale deployments. Third, today's 800V HVDC solutions are ‘good enough’ for current needs, meaning that SSTs can be seen as over-engineered in some use cases and therefore harder to justify economically or operationally. Fourth, rising silicon carbide device prices are putting upward pressure on system costs; however, cost is not viewed as the primary blocker. The more fundamental issue is the limited willingness among owners to pilot SSTs at scale, given uncertain standards, incomplete reliability evidence, and an unclear set of near-term applications where SSTs deliver uniquely compelling benefits."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                485,
+                666,
+                696
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Vendor landscape: positioning and key differentiators: Among SST vendors, the expert believes that Delta Electronics (2308 TT, covered by Albert Hung, OW) is generally viewed as a first-tier player, having started R&D earliest and achieved the strongest industry recognition, with its key edge coming from early deployments and accumulated operating data. Some other Chinese players may also stand out, including Sungrow (see note for Sungrow's launch of SST products by our China renewable analyst). Sifang Automation (601126 CH, NC) has a utility-grid background and practical experience in PV-storage-DC architectures, with relatively advanced industrialization, and is exploring cooperation with a leading US DC electrical equipment supplier, aiming to leverage the partner's North American channel presence while it works toward the necessary certifications, according to the expert. Overall, domestic vendors are not clearly disadvantaged on the hardware front; the larger gap is access to real deployments and operating data, where Delta leads."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                700,
+                666,
+                896
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                950,
+                81,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4e60e0caf4582835de369a6b23cc620df9fee84195dc5ce7cced4e38dfcd91ec.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "415 VAC Distribution - Today"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Table 1: Companies with SST exposure"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P. (consensus estimates for not covered [NC] names), JPM estimates. Priced as of 14 Jul 2026."
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">JPM rating</td><td rowspan=\"2\">Share price (LC)</td><td rowspan=\"2\">Mkt Cap (USDm)</td><td rowspan=\"2\">Daily liquidity (USDm)</td><td colspan=\"2\">PE (x)</td><td colspan=\"2\">P/BV (x)</td><td colspan=\"2\">ROE (%)</td><td colspan=\"2\">EV/EBITDA (x)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td colspan=\"14\">Mainland China</td></tr><tr><td>Qingdao TGOOD</td><td>300001 CH</td><td>OW</td><td>30.5</td><td>4,747</td><td>197.9</td><td>20.8</td><td>17.0</td><td>3.3</td><td>2.8</td><td>16.8</td><td>17.8</td><td>14.2</td><td>12.3</td></tr><tr><td>Sungrow</td><td>300274 CH</td><td>OW</td><td>101.5</td><td>31,026</td><td>1,711.7</td><td>13.8</td><td>11.4</td><td>3.5</td><td>2.8</td><td>26.7</td><td>25.6</td><td>10.9</td><td>9.1</td></tr><tr><td>China XD</td><td>601179 CH</td><td>NC</td><td>12.1</td><td>9,129</td><td>472.1</td><td>39.7</td><td>32.3</td><td>2.5</td><td>2.4</td><td>6.5</td><td>7.6</td><td>21.0</td><td>18.1</td></tr><tr><td>Sifang Automation</td><td>601126 CH</td><td>NC</td><td>49.8</td><td>6,113</td><td>323.6</td><td>42.2</td><td>36.0</td><td>7.7</td><td>7.0</td><td>18.7</td><td>20.0</td><td>32.7</td><td>27.7</td></tr><tr><td>Sinexcel Electric</td><td>300693 CH</td><td>NC</td><td>36.9</td><td>1,704</td><td>143.8</td><td>19.3</td><td>15.5</td><td>4.3</td><td>3.5</td><td>24.4</td><td>24.8</td><td>15.5</td><td>12.4</td></tr><tr><td>Eaglerise Electric</td><td>002922 CH</td><td>NC</td><td>25.9</td><td>1,615</td><td>148.5</td><td>22.9</td><td>15.1</td><td>2.6</td><td>2.4</td><td>11.9</td><td>16.4</td><td>14.5</td><td>10.8</td></tr><tr><td colspan=\"14\">Korea</td></tr><tr><td>LS Electric</td><td>010120 KS</td><td>N</td><td>176,800</td><td>17,856</td><td>474.3</td><td>52.2</td><td>37.6</td><td>10.6</td><td>8.7</td><td>22.2</td><td>25.4</td><td>31.1</td><td>23.0</td></tr><tr><td>Hyosung Heavy</td><td>298040 KS</td><td>OW</td><td>2,522,000</td><td>15,815</td><td>220.6</td><td>29.6</td><td>20.7</td><td>7.6</td><td>5.7</td><td>29.2</td><td>31.6</td><td>21.1</td><td>15.0</td></tr><tr><td colspan=\"14\">Others</td></tr><tr><td>GE Vernova</td><td>GEV US</td><td>OW</td><td>1,042.6</td><td>280,167</td><td>2,893.7</td><td>31.3</td><td>38.2</td><td>16.4</td><td>12.0</td><td>39.8</td><td>36.1</td><td>43.2</td><td>26.8</td></tr><tr><td>ABB</td><td>ABBN SW</td><td>N</td><td>83.8</td><td>187,851</td><td>241.0</td><td>33.2</td><td>32.2</td><td>11.0</td><td>9.2</td><td>33.8</td><td>31.0</td><td>21.7</td><td>21.0</td></tr><tr><td>Schneider Electric</td><td>SU FP</td><td>OW</td><td>268.6</td><td>176,607</td><td>297.1</td><td>25.1</td><td>21.6</td><td>5.6</td><td>5.0</td><td>24.0</td><td>25.0</td><td>17.0</td><td>14.8</td></tr><tr><td>Eaton</td><td>ETN US</td><td>NR</td><td>402.9</td><td>156,427</td><td>1,045.5</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td></tr><tr><td>Delta Electronics</td><td>2308 TT</td><td>OW</td><td>1,800.0</td><td>145,209</td><td>833.8</td><td>40.3</td><td>26.5</td><td>12.8</td><td>9.8</td><td>31.8</td><td>36.9</td><td>25.2</td><td>17.1</td></tr><tr><td>Vertiv</td><td>VRT US</td><td>NR</td><td>305.9</td><td>117,487</td><td>1,979.3</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td></tr><tr><td>Enphase Energy</td><td>ENPH US</td><td>N</td><td>43.1</td><td>5,675</td><td>381.1</td><td>22.5</td><td>20.4</td><td>4.3</td><td>3.5</td><td>20.9</td><td>18.9</td><td>16.7</td><td>15.5</td></tr><tr><td>SolarEdge</td><td>SEDG US</td><td>N</td><td>52.1</td><td>3,170</td><td>197.1</td><td>179.8</td><td>23.4</td><td>5.7</td><td>3.9</td><td>3.6</td><td>20.1</td><td>45.5</td><td>15.8</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                71,
+                147,
+                926,
+                392
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3243cd590cf1165e5a23b76c3140cdf25dbed494215410ef1a036568c5be097f.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: Datacenter architecture over time"
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NVIDIA."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                465,
+                926,
+                829
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                220,
+                69
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies Discussed in This Report (all prices in this report as of market close on 14 July 2026, unless otherwise indicated) Delta Electronics, Inc.(2308.TW/NT$1,855.00/OW), Sungrow - A(300274.SZ/Rmb108.00[13 July 2026]/OW)"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                129,
+                905,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                185,
+                924,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                296,
+                901,
+                325
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                329,
+                230,
+                345
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to Delta Electronics, Inc., Sungrow - A or related entities."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                367,
+                913,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: Delta Electronics, Inc., Sungrow - A or related entities."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                400,
+                926,
+                425
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: Delta Electronics, Inc. or related entities."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                429,
+                915,
+                456
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: Delta Electronics, Inc. or related entities."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                459,
+                890,
+                487
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from Delta Electronics, Inc., Sungrow - A or related entities."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                490,
+                893,
+                518
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from Delta Electronics, Inc. or related entities."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                520,
+                910,
+                548
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Debt Position: JPM may hold a position in the debt securities of Delta Electronics, Inc., Sungrow - A or related entities, if any."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                550,
+                875,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                575,
+                926,
+                655
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/404eaae753d3218b265e7dfbef5fd60e60fbcb8d1e49254852a640055f9b5395.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Delta Electronics, Inc. (2308.TW, 2308 TT) Price Chart"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Jan 29, 2001. All share prices are as of market close on the previous business day."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                682,
+                602,
+                896
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/12828cbf99c5ab7705c59ebfaa1f5f2d13a04d0eab28f53ecfc76222bea9fabe.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date</td><td>Rating</td><td>Price (NT$)</td><td>Price Target (NT$)</td></tr><tr><td>02-Aug-23</td><td>OW</td><td>372.50</td><td>430</td></tr><tr><td>01-Nov-23</td><td>OW</td><td>290.50</td><td>350</td></tr><tr><td>21-Jun-24</td><td>OW</td><td>369.50</td><td>430</td></tr><tr><td>01-Aug-24</td><td>OW</td><td>414.50</td><td>470</td></tr><tr><td>25-Mar-25</td><td>OW</td><td>392.00</td><td>500</td></tr><tr><td>01-May-25</td><td>OW</td><td>333.50</td><td>490</td></tr><tr><td>20-Jul-25</td><td>OW</td><td>509.00</td><td>630</td></tr><tr><td>01-Aug-25</td><td>OW</td><td>567.00</td><td>680</td></tr><tr><td>11-Sep-25</td><td>OW</td><td>837.00</td><td>1,000</td></tr><tr><td>15-Oct-25</td><td>OW</td><td>992.00</td><td>1,188</td></tr><tr><td>21-Jan-26</td><td>OW</td><td>1130.00</td><td>1,400</td></tr><tr><td>27-Feb-26</td><td>OW</td><td>1430.00</td><td>1,700</td></tr><tr><td>27-Apr-26</td><td>OW</td><td>2075.00</td><td>2,600</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                607,
+                658,
+                926,
+                874
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6afc31e3e234583a80d71b5b6daf167bf658dbd937ff26937596a8aed98f809a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Sungrow - A (300274.SZ, 300274 CH) Price Chart"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Jun 07, 2021. All share prices are as of market close on the previous business day."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                150,
+                601,
+                367
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d358e1ee7fa42783a178bac509690263364bf845a95fdf8a594b272b7ba0fd9e.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period. JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated"
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Rating</td><td>Price (Rmb)</td><td>Price Target (Rmb)</td></tr><tr><td>06-Sep-23</td><td>OW</td><td>70.93</td><td>96</td></tr><tr><td>03-Nov-23</td><td>OW</td><td>57.36</td><td>93</td></tr><tr><td>08-Dec-23</td><td>N</td><td>56.79</td><td>61</td></tr><tr><td>10-Mar-24</td><td>OW</td><td>71.00</td><td>83</td></tr><tr><td>21-Mar-24</td><td>OW</td><td>74.98</td><td>84.5</td></tr><tr><td>03-May-24</td><td>OW</td><td>73.82</td><td>85</td></tr><tr><td>03-Sep-24</td><td>OW</td><td>75.98</td><td>93</td></tr><tr><td>15-Oct-24</td><td>OW</td><td>96.75</td><td>123</td></tr><tr><td>07-Nov-24</td><td>OW</td><td>94.12</td><td>114</td></tr><tr><td>09-Apr-25</td><td>N</td><td>55.71</td><td>60</td></tr><tr><td>27-Apr-25</td><td>N</td><td>58.82</td><td>63</td></tr><tr><td>26-Aug-25</td><td>N</td><td>102.60</td><td>84</td></tr><tr><td>05-Nov-25</td><td>OW</td><td>187.19</td><td>240</td></tr><tr><td>30-Nov-25</td><td>OW</td><td>182.90</td><td>250</td></tr><tr><td>01-Apr-26</td><td>OW</td><td>150.76</td><td>212</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                607,
+                126,
+                926,
+                372
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                430,
+                638,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                443,
+                926,
+                615
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Coverage Universe: Tsui, Stephen T: CK Infrastructure (1038.HK), CLP Holdings (0002) (0002.HK), China Gas Holdings (0384.HK), China Resources Gas (1193.HK), China Resources Power (0836.HK), ENN Energy (2688.HK), ENN Natural Gas – A (600803.SS), HD Hyundai Electric (267260.KS), Hangzhou Oxygen (002430.SZ), Hong Kong & China Gas (0003.HK), Huaming Equipment - A (002270.SZ), Huaneng Power - H (0902.HK), Hyosung Heavy Industries (298040.KS), Kunlun Energy (0135.HK), LS Electric (010120.KS), Nari Technology - A (600406.SS), Power Assets (0006.HK), Qingdao TGOOD Electric (300001.SZ), Sieyuan Electric - A (002028.SZ), Wasion Holdings Ltd - H (3393.HK), Xuji Electric - A (000400.SZ)"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                618,
+                919,
+                699
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0150dc5c5c3f4dbd99ad259f516f0a01b82693109297130c3398f3a195dc5e2c.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "JPM Equity Research Ratings Distribution, as of July 04, 2026"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "*Please note that the percentages may not add to 100% because of rounding."
+                    }
+                ],
+                "html": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                68,
+                727,
+                926,
+                805
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "**Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                825,
+                867,
+                850
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                849,
+                919,
+                887
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your J.P."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                901,
+                916,
+                931
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                34,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Morgan representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                129,
+                908,
+                183
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "History of Investment Recommendations:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                189,
+                336,
+                203
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                202,
+                877,
+                230
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                234,
+                918,
+                264
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                269,
+                913,
+                323
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                327,
+                200,
+                343
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                375,
+                897,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                394,
+                923,
+                425
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                429,
+                892,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                476,
+                918,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                509,
+                924,
+                563
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                567,
+                893,
+                598
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                602,
+                898,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                634,
+                926,
+                714
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                721,
+                915,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "https://www.finra.org/sites/default/files/2020-08/Security_Futures_Risk_Disclosure_Statement_2020.pdf for a copy of the Security Futures Risk Disclosure Statement."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                772,
+                900,
+                800
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                806,
+                926,
+                847
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                852,
+                926,
+                894
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                898,
+                926,
+                927
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                66,
+                130,
+                928,
+                223
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                227,
+                508,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (\"BCRA\"- Central Bank of Argentina) and Comisión Nacional de Valores (\"CNV\"- Argentinian Securities Commission - ALYC y AN Integral N°51)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                240,
+                898,
+                269
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Australia: JPM Securities Australia Limited (\"JPMSAL\") (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                274,
+                929,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                411,
+                906,
+                440
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                443,
+                921,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                490,
+                589,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                510,
+                875,
+                539
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                545,
+                918,
+                600
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                603,
+                911,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                663,
+                924,
+                770
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                774,
+                928,
+                855
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website:"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                859,
+                928,
+                927
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                129,
+                926,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                240,
+                911,
+                269
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                274,
+                926,
+                327
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                332,
+                924,
+                361
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                367,
+                916,
+                394
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                400,
+                919,
+                442
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                446,
+                895,
+                487
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                492,
+                924,
+                522
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                526,
+                926,
+                632
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                637,
+                915,
+                665
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                670,
+                926,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                807,
+                928,
+                849
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA's policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                854,
+                929,
+                935
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                66,
+                130,
+                926,
+                197
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                202,
+                915,
+                230
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                234,
+                931,
+                676
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                682,
+                926,
+                788
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                792,
+                923,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                864,
+                919,
+                932
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                504,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Completed 14 Jul 2026 03:03 PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                234,
+                310,
+                251
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Tsui, CFA AC (852) 2800-8592 stephen.tsui@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                220,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Equity Research 14 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                34,
+                504,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Rights Reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                129,
+                176,
+                145
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "\"Other Disclosures\" last revised July 04, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                149,
+                349,
+                165
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                175,
+                924,
+                230
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Disseminated 14 Jul 2026 03:05 PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                674,
+                234,
+                928,
+                250
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                950,
+                89,
+                963
+            ]
+        }
+    ]
+]
