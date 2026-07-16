@@ -1,0 +1,32 @@
+EN_A: We are looking at a fascinating report today about data center and networking equipment. It claims the Ethernet market could quadruple over the next decade. Is that realistic?
+EN_B: That is exactly what the report says. A global investment bank hosted an expert from 650 Group, and they expect the Ethernet switch market to go from about 50 billion dollars in 2025 to over 200 billion by 2035.
+EN_A: Two hundred billion? That is a huge jump. What is driving this? Is it all AI?
+EN_B: AI is a big part of it, but the report makes it clear that it is not just about AI. The key is that networking is capturing a larger share of total data center infrastructure spending.
+EN_A: So what does that mean in plain terms? Networking gear becomes more important?
+EN_B: Exactly. The report highlights that both in scale-out networks, which connect racks, and scale-up networks, which connect GPUs directly, networking is getting a bigger piece of the pie. Plus, enterprises are spending heavily to modernize their campus networks.
+EN_A: Scale-out and scale-up. Those sound technical. Can you break that down?
+EN_B: Sure. Scale-out is about connecting servers within a data center, rack to rack. Scale-up is about connecting GPUs directly to each other. Right now, Ethernet dominates scale-out, but the report expects it to make inroads into scale-up, competing with NVLink from Nvidia.
+EN_A: So Ethernet wants to be the standard for all AI connections, not just server-to-server?
+EN_B: That is the bet. As more companies build their own accelerators, Ethernet could become the common language that ties everything together.
+EN_A: Does this growth happen overnight, or is there a delay?
+EN_B: The report stresses that networking demand will lag behind the current boom in compute demand. Data center operators are still figuring out how much interconnect they actually need.
+EN_A: So the AI spending we see today will translate into networking spending later?
+EN_B: Exactly. And that lag means growth could accelerate into next year. The report expects the Ethernet data center market to grow about 40 percent year-over-year in 2026.
+EN_A: Forty percent is already impressive. What else is driving this, besides AI?
+EN_B: Campus networking is a sleeper hit. It traditionally grew at about twice the rate of GDP, but now it is expected to grow at four times GDP.
+EN_A: Why the sudden jump?
+EN_B: Two reasons. First, companies are allocating more IT budget due to concerns about supply chain security. Second, there is a massive refresh cycle. Old Cisco switches, for example, are reaching end-of-support next year.
+EN_A: So forced upgrades. What about traditional servers? Does the report cover that?
+EN_B: Yes, and it is a big deal. The report raised its traditional server forecasts for 2026 to 2030 by an average of 31 percent. It now sees the market reaching 164 billion dollars by 2030.
+EN_A: How does server growth tie into networking?
+EN_B: It is all about AI agents. These agents are interacting more intensely with databases and application layers, which requires more compute power. And when you upgrade compute, you have to upgrade the network to handle the higher core density.
+EN_A: So more compute means more network traffic, which means better networking gear is needed?
+EN_B: Exactly. The report expects traditional data centers to upgrade to 400 to 800 gigabit systems to support this.
+EN_A: It sounds like the whole chain is accelerating. Are there any questions the report leaves open?
+EN_B: Yes, a few. For example, while Ethernet's move into scale-up networking is promising, the report does not fully answer how fast it can replace NVLink. That depends on technology and ecosystem development.
+EN_A: So that is a key悬念 for listeners who want to dig deeper?
+EN_B: Absolutely. Also, whether campus networking demand can sustain that four-times-GDP growth rate needs more data. The full report explores these nuances in much more detail.
+EN_A: Great. So if someone wants to read the full report and explore those open questions, what should they do?
+EN_B: Join our community. We share deep dives like this every week. The link is in the show notes.
+EN_A: Thanks for listening. See you next time.
+EN_B: See you.
