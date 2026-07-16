@@ -1,0 +1,459 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0001-16-CITI-Shennan Circuit -002916-1H26 Preliminary Results In-line- Stock Preference of KBL - Shengyi - Shennan Amid Material Cost Inflation-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "AI-PCB 链，谁",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：KBLShennanCircuit0029161H26",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-CITI-Shennan Circuit -002916-1H26 Preliminary Results In-line- Stock Preference of KBL - Shengyi - Shennan Amid Material Cost Inflation-260714.pdf",
+      "cleaned_source_title": "CITI-Shennan Circuit -002916-1H26 Preliminary Results In-line- Stock Preference of KBL - Shengyi - Shennan Amid Material Cost Inflation",
+      "institution_name": "Citi",
+      "required_terms": [
+        "KBL"
+      ],
+      "deterministic_fallback": "Citi：KBLShennanCircuit0029161H26",
+      "raw_candidates": [
+        "深南电路1H26初步业绩符合预期-Citi偏好KBL生益科技深南 amid材料成本通胀",
+        "深南电路1H26净利增54%-69%仍跑输上游-Citi偏好KBL生益科技",
+        "深南电路1H26业绩符合预期但利润向上游集中-Citi偏好KBL生益科技"
+      ],
+      "cleaned_candidates": [
+        "Citi：KBLShennanCircuit0029161H26",
+        "Citi：深南电路1H26初步业绩符合预期",
+        "Citi：深南电路1H26净利增54%-69%仍跑输上游",
+        "Citi：深南电路1H26业绩符合预期但利润向上游集中"
+      ],
+      "faithful_candidate_missing_terms": [
+        "KBL"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "Citi：深南电路1H26初步业绩符合预期",
+          "reasons": [
+            "missing_required_terms=KBL",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：深南电路1H26净利增54%-69%仍跑输上游",
+          "reasons": [
+            "missing_required_terms=KBL",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：深南电路1H26业绩符合预期但利润向上游集中",
+          "reasons": [
+            "missing_required_terms=KBL",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：KBLShennanCircuit0029161H26",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "Citi：KBLShennanCircuit0029161H26"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0002-17-DB-European Software - IT Services-Do numbers even matter anymore--260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "SAP的AI故事，现",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x2",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：欧洲软件与IT服务，数字本身已不重要",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-DB-European Software - IT Services-Do numbers even matter anymore--260714.pdf",
+      "cleaned_source_title": "DB-European Software - IT Services-Do numbers even matter anymore",
+      "institution_name": "DB",
+      "required_terms": [
+        "IT"
+      ],
+      "deterministic_fallback": "DB：European软件ITServicesD",
+      "raw_candidates": [
+        "欧洲软件与IT服务：数字本身已不重要",
+        "欧洲软件与IT服务：AI叙事取代业绩成为定价核心",
+        "欧洲软件与IT服务：DB称2027年才是AI财务建模转折点"
+      ],
+      "cleaned_candidates": [
+        "DB：欧洲软件与IT服务，数字本身已不重要",
+        "DB：欧洲软件与IT服务，AI叙事取代业绩成为定价核心",
+        "DB：欧洲软件与IT服务",
+        "DB：European软件ITServicesD"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "DB：欧洲软件与IT服务，AI叙事取代业绩成为定价核心",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：欧洲软件与IT服务",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：European软件ITServicesD",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：欧洲软件与IT服务，数字本身已不重要",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "DB：欧洲软件与IT服务，数字本身已不重要"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0003-18-CITI-South Korea Semiconductors-Solid Memory Fundamentals Prove Resilient Despite Market Concern-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "存储芯片没那么悲观",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：韩国半导体-存储基本面在市场担忧中展现韧性",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-CITI-South Korea Semiconductors-Solid Memory Fundamentals Prove Resilient Despite Market Concern-260714.pdf",
+      "cleaned_source_title": "CITI-South Korea Semiconductors-Solid Memory Fundamentals Prove Resilient Despite Market Concern",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：SouthKorea半导体SolidMemory",
+      "raw_candidates": [
+        "韩国半导体-存储基本面在市场担忧中展现韧性",
+        "韩国半导体-存储基本面韧性：LTA冲击2027年才体现",
+        "韩国半导体-Citi：HBM价格2027年仍涨70%，市场担忧过度"
+      ],
+      "cleaned_candidates": [
+        "Citi：韩国半导体-存储基本面在市场担忧中展现韧性",
+        "Citi：韩国半导体-存储基本面韧性，LTA冲击2027年才体现",
+        "Citi：韩国半导体-Citi，HBM价格2027年仍涨70%，市场担忧过度",
+        "Citi：SouthKorea半导体SolidMemory"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "Citi：韩国半导体-存储基本面韧性，LTA冲击2027年才体现",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "Citi：韩国半导体-Citi，HBM价格2027年仍涨70%，市场担忧过度",
+          "reasons": [
+            "anchor_coverage=0.37",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：SouthKorea半导体SolidMemory",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：韩国半导体-存储基本面在市场担忧中展现韧性",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "Citi：韩国半导体-存储基本面在市场担忧中展现韧性"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0004-19-DB-Richemont-CFR.SW-Very strong 1Q performance-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "历峰集团Q1：珠宝依",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：历峰集团CFR.SW首季销售增20%远超预期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-DB-Richemont-CFR.SW-Very strong 1Q performance-260715.pdf",
+      "cleaned_source_title": "DB-Richemont-CFR.SW-Very strong 1Q performance",
+      "institution_name": "DB",
+      "required_terms": [
+        "CFR",
+        "SW"
+      ],
+      "deterministic_fallback": "DB：RichemontCFR.SWVerystrong1",
+      "raw_candidates": [
+        "历峰集团CFR.SW首季业绩强劲",
+        "历峰集团CFR.SW首季销售增20%远超预期",
+        "历峰集团CFR.SW首季超预期-珠宝驱动奢侈消费韧性"
+      ],
+      "cleaned_candidates": [
+        "DB：历峰集团CFR.SW首季业绩强劲",
+        "DB：历峰集团CFR.SW首季销售增20%远超预期",
+        "DB：历峰集团CFR.SW首季超预期-珠宝驱动奢侈消费韧性",
+        "DB：RichemontCFR.SWVerystrong1"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "DB：RichemontCFR.SWVerystrong1",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：历峰集团CFR.SW首季销售增20%远超预期",
+      "selection_reason": "supported_hook",
+      "hook_signals": {
+        "added_numbers": [
+          "20"
+        ],
+        "added_contrarian_terms": [
+          "超预期"
+        ],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "DB：历峰集团CFR.SW首季销售增20%远超预期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0005-20-DB-FX Blog-What is driving high-frequency FX--260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "谁来主导外汇的波动？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：FX博客，高频外汇的驱动力是什么",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-DB-FX Blog-What is driving high-frequency FX--260714.pdf",
+      "cleaned_source_title": "DB-FX Blog-What is driving high-frequency FX",
+      "institution_name": "DB",
+      "required_terms": [
+        "FX"
+      ],
+      "deterministic_fallback": "DB：FXBlogWhatisdrivinghi",
+      "raw_candidates": [
+        "FX博客：高频外汇的驱动力是什么",
+        "FX博客：美股驱动超60%货币对，高频外汇驱动力重构",
+        "FX博客：DB发现美股正重新定义高频外汇驱动力"
+      ],
+      "cleaned_candidates": [
+        "DB：FX博客，高频外汇的驱动力是什么",
+        "DB：FX博客，美股驱动超60%货币对，高频外汇驱动力重构",
+        "DB：FX博客，DB发现美股正重新定义高频外汇驱动力",
+        "DB：FXBlogWhatisdrivinghi"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "DB：FX博客，美股驱动超60%货币对，高频外汇驱动力重构",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "DB：FX博客，DB发现美股正重新定义高频外汇驱动力",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "DB：FXBlogWhatisdrivinghi",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：FX博客，高频外汇的驱动力是什么",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "DB：FX博客，高频外汇的驱动力是什么"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

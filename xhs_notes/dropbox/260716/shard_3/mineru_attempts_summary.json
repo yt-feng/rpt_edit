@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0001-16-CITI-Shennan Circuit -002916-1H26 Preliminary Results In-line- Stock Preference of KBL - Shengyi - Shennan Amid Material Cost Inflation-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0002-17-DB-European Software - IT Services-Do numbers even matter anymore--260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0003-18-CITI-South Korea Semiconductors-Solid Memory Fundamentals Prove Resilient Despite Market Concern-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0004-19-DB-Richemont-CFR.SW-Very strong 1Q performance-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7ynlxjn/pdfs/0005-20-DB-FX Blog-What is driving high-frequency FX--260714.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
