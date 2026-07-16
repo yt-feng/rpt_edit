@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260717/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/mineru_raw/images/8a6e395ad34afecf69ef09032004481cec4c67a4daaad8d9bff56edbfb0c21bb.jpg",
+    "path": "kc_translated_reports/consulting/260717/05-0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.11,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260717/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/mineru_raw/images/35cce2daa13caa709b246913561fbbddd59d29eb1ed068c574e697aabeb678aa.jpg",
+    "path": "kc_translated_reports/consulting/260717/05-0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.15,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260717/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/mineru_raw/images/f096b835ecef6f51ca2b354f25082a427fe06ec929258452e7cdbffaf6077f6e.jpg",
+    "path": "kc_translated_reports/consulting/260717/05-0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.16,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260717/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/mineru_raw/images/4bd62b1a1806c0bbc1c3bf0aac1f8fab64bffa5be6ffa7bc484a3cd9087da74b.jpg",
+    "path": "kc_translated_reports/consulting/260717/05-0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.21,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260717/0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/mineru_raw/images/294e8c67ff2c22371241d2a2ce4e448d867440de8a4a478d072f0513a981bab1.jpg",
+    "path": "kc_translated_reports/consulting/260717/05-0005-BCG_The-Real-Cost-of-Decarbonizing-in-the-Shipping-Industry_c951a780/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.14,contrast,large"
+  }
+]

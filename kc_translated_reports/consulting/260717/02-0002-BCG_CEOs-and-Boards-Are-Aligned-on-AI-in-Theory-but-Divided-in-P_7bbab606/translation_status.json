@@ -1,0 +1,72 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260717/0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606",
+  "title": "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+  "source_title": "0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606",
+    "cleaned_source_title": "0002-BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-P_7bbab606",
+    "institution_name": "波士顿咨询",
+    "required_terms": [
+      "BCG",
+      "AI"
+    ],
+    "deterministic_fallback": "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+    "raw_candidates": [
+      "波士顿咨询：CEO与董事会AI共识理论一致但实践分歧",
+      "波士顿咨询：351位CEO与274位董事AI共识下五条裂痕浮现",
+      "波士顿咨询：近四成CEO认为董事会缺乏AI重塑增长知情判断"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+      "波士顿咨询：CEO与董事会AI共识理论一致但实践分歧",
+      "波士顿咨询：351位CEO与274位董事AI共识下五条裂痕浮现",
+      "波士顿咨询：近四成CEO认为董事会缺乏AI重塑增长知情判断"
+    ],
+    "faithful_candidate_missing_terms": [
+      "BCG"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：CEO与董事会AI共识理论一致但实践分歧",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：351位CEO与274位董事AI共识下五条裂痕浮现",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：近四成CEO认为董事会缺乏AI重塑增长知情判断",
+        "reasons": [
+          "missing_required_terms=BCG",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "波士顿咨询：BCG与AI0002CEOs和BoardsAre"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 4,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
