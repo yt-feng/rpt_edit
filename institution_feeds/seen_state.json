@@ -1908,6 +1908,46 @@
     "wto:https://www.wto.org/english/news_e/news26_e/acc_09jul26_455_e.htm": {
       "first_seen": "2026-07-15",
       "status": "no_pdf"
+    },
+    "bis:https://www.bis.org/publ/work1369.htm": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/enforcement-data-of-the-oecd-anti-bribery-convention-1999-2025_dad01040-en.html": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/artificial-intelligence-and-open-finance_eb511c3c-en.html": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/bridging-the-gaps-for-sustainable-development_d6b60ea7-en.html": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/a-second-career-in-teaching_37722003-en.html": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/environmental-tax-policy-review-of-romania_42ed5f84-en.html": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "adb:1154656": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/rsmfn_16jul26_458_e.htm": {
+      "first_seen": "2026-07-16",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/tbt_10jul26_459_e.htm": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/agng_09jul26_454_e.htm": {
+      "first_seen": "2026-07-16",
+      "status": "too_old"
     }
   }
 }
