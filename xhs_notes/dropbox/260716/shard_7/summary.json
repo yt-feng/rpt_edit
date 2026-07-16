@@ -1,0 +1,437 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0001-36-GS-Kelun Biotech -6990.HK-- Lung06 met primary endpoint- further validates sac-TMT as 1L NSCLC backbone-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "TROP2 ADC ",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：HK与TMT与NSCLCKelunBiotech6990.",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-GS-Kelun Biotech -6990.HK-- Lung06 met primary endpoint- further validates sac-TMT as 1L NSCLC backbone-260715.pdf",
+      "cleaned_source_title": "GS-Kelun Biotech -6990.HK-- Lung06 met primary endpoint- further validates sac-TMT as 1L NSCLC backbone",
+      "institution_name": "GS",
+      "required_terms": [
+        "HK",
+        "TMT",
+        "NSCLC"
+      ],
+      "deterministic_fallback": "GS：HK与TMT与NSCLCKelunBiotech6990.",
+      "raw_candidates": [
+        "科伦博泰Lung06达主要终点，进一步验证sac-TMT一线NSCLC地位",
+        "科伦博泰Lung06达主要终点，sac-TMT一线NSCLC成功概率升至90%",
+        "科伦博泰Lung06达主要终点，sac-TMT改写PD-L1低表达肺癌格局"
+      ],
+      "cleaned_candidates": [
+        "GS：HK与TMT与NSCLCKelunBiotech6990.",
+        "GS：科伦博泰Lung06达主要终点，进一步验证sac",
+        "GS：科伦博泰Lung06达主要终点，sac",
+        "GS：科伦博泰Lung06达主要终点，sac-TMT改写PD"
+      ],
+      "faithful_candidate_missing_terms": [
+        "HK",
+        "TMT",
+        "NSCLC"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "GS：科伦博泰Lung06达主要终点，进一步验证sac",
+          "reasons": [
+            "missing_required_terms=HK,TMT,NSCLC",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：科伦博泰Lung06达主要终点，sac",
+          "reasons": [
+            "missing_required_terms=HK,TMT,NSCLC",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：科伦博泰Lung06达主要终点，sac-TMT改写PD",
+          "reasons": [
+            "missing_required_terms=HK,NSCLC",
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：HK与TMT与NSCLCKelunBiotech6990.",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "GS：HK与TMT与NSCLCKelunBiotech6990."
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0002-37-GS-MS - Co. -MS.US- 2Q26- Riding the capital markets super cycle-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "MS：业绩全面",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投行->国际机构 x1",
+      "sanitize_wechat_stock_line",
+      "投行->国际机构 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "金融机构->机构 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：MSUS2Q26乘资本市场超级周期核心ROTCE达27.1",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-GS-MS - Co. -MS.US- 2Q26- Riding the capital markets super cycle-260715.pdf",
+      "cleaned_source_title": "GS-MS - Co. -MS.US- 2Q26- Riding the capital markets super cycle",
+      "institution_name": "GS",
+      "required_terms": [
+        "US"
+      ],
+      "deterministic_fallback": "GS：MorganStanleyCo.MS.US2Q26",
+      "raw_candidates": [
+        "MS-US-2Q26-乘资本市场超级周期",
+        "MS-US-2Q26-乘资本市场超级周期-核心ROTCE达27.1%远超20%目标",
+        "MS-US-2Q26-乘资本市场超级周期-GS指职场渠道改写财富管理规则"
+      ],
+      "cleaned_candidates": [
+        "GS：MSUS2Q26乘资本市场超级周期",
+        "GS：MSUS2Q26乘资本市场超级周期核心ROTCE达27.1",
+        "GS：MSUS2Q26乘资本市场超级周期GS指职场渠道改写财富管",
+        "GS：MorganStanleyCo.MS.US2Q26"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "GS：MorganStanleyCo.MS.US2Q26",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：MSUS2Q26乘资本市场超级周期核心ROTCE达27.1",
+      "selection_reason": "supported_hook",
+      "hook_signals": {
+        "added_numbers": [
+          "27.1"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "GS：MSUS2Q26乘资本市场超级周期核心ROTCE达27.1"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0003-38-GS-Rio Tinto Ltd.-RIO.AX--2Q26 result-Big assets perform strongly-Fe - metal prices strong-although working cap builds US-1-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "力拓二季报：大矿很稳",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：RIO与AX与USTintoLtd.-.",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-GS-Rio Tinto Ltd.-RIO.AX--2Q26 result-Big assets perform strongly-Fe - metal prices strong-although working cap builds US-1-260715.pdf",
+      "cleaned_source_title": "GS-Rio Tinto Ltd.-RIO.AX--2Q26 result-Big assets perform strongly-Fe - metal prices strong-although working cap builds US-1",
+      "institution_name": "GS",
+      "required_terms": [
+        "RIO",
+        "AX",
+        "US"
+      ],
+      "deterministic_fallback": "GS：RIO与AX与USTintoLtd.-.",
+      "raw_candidates": [
+        "力拓RIO.AX二季度业绩：大资产表现强劲，铁矿石金属价格坚挺，营运资本消耗US",
+        "力拓RIO.AX二季度业绩：大资产表现强劲，铁矿石金属价格坚挺，营运资本消耗US，铜产量环比降7%",
+        "力拓RIO.AX二季度业绩：大资产表现强劲，铁矿石金属价格坚挺，营运资本消耗US，铜矿事故压制下半年产量"
+      ],
+      "cleaned_candidates": [
+        "GS：RIO与AX与USTintoLtd.-.",
+        "GS：力拓RIO.AX二季度业绩，大资产表现强劲，铁矿石金属价格坚挺"
+      ],
+      "faithful_candidate_missing_terms": [
+        "US"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "GS：力拓RIO.AX二季度业绩，大资产表现强劲，铁矿石金属价格坚挺",
+          "reasons": [
+            "missing_required_terms=US",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：RIO与AX与USTintoLtd.-.",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "GS：RIO与AX与USTintoLtd.-."
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0004-39-GS-OIL ANALYST-Risks From Lower Gulf Flows and Higher China Imports-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "全球油市的关键变量：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：GSOILANALYST，波斯湾出口下降与中国进口上升的风险",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-GS-OIL ANALYST-Risks From Lower Gulf Flows and Higher China Imports-260714.pdf",
+      "cleaned_source_title": "GS-OIL ANALYST-Risks From Lower Gulf Flows and Higher China Imports",
+      "institution_name": "GS",
+      "required_terms": [
+        "OIL",
+        "ANALYST"
+      ],
+      "deterministic_fallback": "GS：OILANALYSTRisksFromLower",
+      "raw_candidates": [
+        "GSOIL ANALYST：波斯湾出口下降与中国进口上升的风险",
+        "GSOIL ANALYST：波斯湾出口缺口1340万桶，中国进口触底",
+        "GSOIL ANALYST：停火难解供给，船东谨慎致恢复更慢"
+      ],
+      "cleaned_candidates": [
+        "GS：GSOILANALYST，波斯湾出口下降与中国进口上升的风险",
+        "GS：GSOILANALYST，波斯湾出口缺口1340万桶",
+        "GS：GSOILANALYST，停火难解供给，船东谨慎致恢复更慢",
+        "GS：OILANALYSTRisksFromLower"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "GS：GSOILANALYST，波斯湾出口缺口1340万桶",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GSOILANALYST，停火难解供给，船东谨慎致恢复更慢",
+          "reasons": [
+            "anchor_coverage=0.39",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：OILANALYSTRisksFromLower",
+          "reasons": [
+            "anchor_coverage=0.32",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：GSOILANALYST，波斯湾出口下降与中国进口上升的风险",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "GS：GSOILANALYST，波斯湾出口下降与中国进口上升的风险"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0005-40-JPM-ASML-ASML.AS-Final word on -27--28 has not been said. Co.can raise estimates again.Reiterate OW rating.-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "ASML 的估值，市",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：ASML与AS与OW.Finalwordon27",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-JPM-ASML-ASML.AS-Final word on -27--28 has not been said. Co.can raise estimates again.Reiterate OW rating.-260716.pdf",
+      "cleaned_source_title": "JPM-ASML-ASML.AS-Final word on -27--28 has not been said. Co.can raise estimates again.Reiterate OW rating.",
+      "institution_name": "JPM",
+      "required_terms": [
+        "ASML",
+        "AS",
+        "OW"
+      ],
+      "deterministic_fallback": "JPM：ASML与AS与OW.Finalwordon27",
+      "raw_candidates": [
+        "ASML对27-28年尚未定论，公司可再次上调预估，重申OW评级",
+        "ASML上调全年指引至440亿欧元，估值跌至历史区间下沿",
+        "ASML指引方式已变，市场用旧框架定价或错过结构性重估"
+      ],
+      "cleaned_candidates": [
+        "JPM：ASML与AS与OW.Finalwordon27",
+        "JPM：ASML对27-28年尚未定论，公司可再次上调预估",
+        "JPM：ASML上调全年指引至440亿欧元，估值跌至历史区间下沿",
+        "JPM：ASML指引方式已变，市场用旧框架定价或错过结构性重估"
+      ],
+      "faithful_candidate_missing_terms": [
+        "OW"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "JPM：ASML对27-28年尚未定论，公司可再次上调预估",
+          "reasons": [
+            "missing_required_terms=OW",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：ASML上调全年指引至440亿欧元，估值跌至历史区间下沿",
+          "reasons": [
+            "missing_required_terms=OW",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：ASML指引方式已变，市场用旧框架定价或错过结构性重估",
+          "reasons": [
+            "missing_required_terms=OW",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：ASML与AS与OW.Finalwordon27",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：ASML与AS与OW.Finalwordon27"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0001-36-GS-Kelun Biotech -6990.HK-- Lung06 met primary endpoint- further validates sac-TMT as 1L NSCLC backbone-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0002-37-GS-MS - Co. -MS.US- 2Q26- Riding the capital markets super cycle-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0003-38-GS-Rio Tinto Ltd.-RIO.AX--2Q26 result-Big assets perform strongly-Fe - metal prices strong-although working cap builds US-1-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0004-39-GS-OIL ANALYST-Risks From Lower Gulf Flows and Higher China Imports-260714.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_703lukyc/pdfs/0005-40-JPM-ASML-ASML.AS-Final word on -27--28 has not been said. Co.can raise estimates again.Reiterate OW rating.-260716.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
