@@ -1,0 +1,515 @@
+[
+  {
+    "item": "0001-41-Goldman-Sachs-Volkswagen--VOWG_p.DE--Thoughts-on-restructuring-news-and-",
+    "source_pdf": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0001-41-GS-Volkswagen -VOWG_p.DE- Thoughts on restructuring news and Everllence transaction- revising estimates ahead of 2Q26-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "大众重组：蓝图很美，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：VolkswagenVOWGp.DE",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-GS-Volkswagen -VOWG_p.DE- Thoughts on restructuring news and Everllence transaction- revising estimates ahead of 2Q26-260715.pdf",
+      "cleaned_source_title": "GS-Volkswagen -VOWG_p.DE- Thoughts on restructuring news and Everllence transaction- revising estimates ahead of 2Q26",
+      "institution_name": "GS",
+      "required_terms": [
+        "VOWG",
+        "DE"
+      ],
+      "deterministic_fallback": "GS：VolkswagenVOWGp.DE",
+      "raw_candidates": [
+        "GS：大众重组新闻与Everllence交易-2Q26前修正预估",
+        "GS：大众重组与Everllence交易-2Q26前下调EPS7%-14%",
+        "GS：大众重组遭监事会否决-历史执行力不足致利润率从8.1%降至2.8%"
+      ],
+      "cleaned_candidates": [
+        "GS：VolkswagenVOWGp.DE",
+        "GS：大众重组新闻与Everllence交易-2Q26前修正预估",
+        "GS：大众重组与Everllence交易-2Q26前下调EPS7%",
+        "GS：大众重组遭监事会否决"
+      ],
+      "faithful_candidate_missing_terms": [
+        "VOWG",
+        "DE"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "GS：大众重组新闻与Everllence交易-2Q26前修正预估",
+          "reasons": [
+            "missing_required_terms=VOWG,DE",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：大众重组与Everllence交易-2Q26前下调EPS7%",
+          "reasons": [
+            "missing_required_terms=VOWG,DE",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：大众重组遭监事会否决",
+          "reasons": [
+            "missing_required_terms=VOWG,DE",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：VolkswagenVOWGp.DE",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "GS：VolkswagenVOWGp.DE"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-42-Goldman-Sachs-USA--GS-Economic-Indicators-Update-260715",
+    "source_pdf": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0002-42-GS-USA- GS Economic Indicators Update-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "美国经济数据在悄悄变",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x3",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "经济->宏观环境 x1",
+      "金融条件->资金条件 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x3",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "金融条件->资金条件 x1",
+      "股票市场|股市->市场 x2",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x2",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "资产定价->市场定价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：USA-EconomicIndicators更新",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-GS-USA- GS Economic Indicators Update-260715.pdf",
+      "cleaned_source_title": "GS-USA- GS Economic Indicators Update",
+      "institution_name": "GS",
+      "required_terms": [
+        "USA"
+      ],
+      "deterministic_fallback": "GS：USA-EconomicIndicators更新",
+      "raw_candidates": [
+        "GS美国宏观环境指标更新",
+        "GS美国宏观环境指标更新：意外指数归零",
+        "GS美国宏观环境指标更新：意外指数归零，市场切换至基本面确认模式"
+      ],
+      "cleaned_candidates": [
+        "GS：USA-EconomicIndicators更新",
+        "GS：GS美国宏观环境指标更新",
+        "GS：GS美国宏观环境指标更新，意外指数归零",
+        "GS：GS美国宏观环境指标更新，意外指数归零，市场切换至基本面确认模式"
+      ],
+      "faithful_candidate_missing_terms": [
+        "USA"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "GS：GS美国宏观环境指标更新",
+          "reasons": [
+            "missing_required_terms=USA",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS美国宏观环境指标更新，意外指数归零",
+          "reasons": [
+            "missing_required_terms=USA",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS美国宏观环境指标更新，意外指数归零，市场切换至基本面确认模式",
+          "reasons": [
+            "missing_required_terms=USA",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：USA-EconomicIndicators更新",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "GS：USA-EconomicIndicators更新"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-43-J.P.-Morgan-Apple-AAPL.US--Approval-to-Leverage-Qwen-AI-in-China-for-App",
+    "source_pdf": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0003-43-JPM-Apple-AAPL.US--Approval to Leverage Qwen AI in China for Apple Intelligence to Help Overcome Price Elasticity with iPhone 18-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "苹果拿下阿里AI授权",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：AAPL与US与AIApple.",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-JPM-Apple-AAPL.US--Approval to Leverage Qwen AI in China for Apple Intelligence to Help Overcome Price Elasticity with iPhone 18-260715.pdf",
+      "cleaned_source_title": "JPM-Apple-AAPL.US--Approval to Leverage Qwen AI in China for Apple Intelligence to Help Overcome Price Elasticity with iPhone 18",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AAPL",
+        "US",
+        "AI"
+      ],
+      "deterministic_fallback": "JPM：AAPL与US与AIApple.",
+      "raw_candidates": [
+        "苹果获准在中国使用通义千问AI以助iPhone 18克服定价弹性",
+        "苹果获准在中国使用通义千问AI：iPhone 18定价弹性问题获解",
+        "苹果获准在中国使用通义千问AI：iPhone 18定价不确定性化解"
+      ],
+      "cleaned_candidates": [
+        "JPM：AAPL与US与AIApple.",
+        "JPM：苹果获准在中国使用通义千问AI以助iPhone18克服定价弹",
+        "JPM：苹果获准在中国使用通义千问AI"
+      ],
+      "faithful_candidate_missing_terms": [
+        "AAPL",
+        "US"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "JPM：苹果获准在中国使用通义千问AI以助iPhone18克服定价弹",
+          "reasons": [
+            "missing_required_terms=AAPL,US",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：苹果获准在中国使用通义千问AI",
+          "reasons": [
+            "missing_required_terms=AAPL,US",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：AAPL与US与AIApple.",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：AAPL与US与AIApple."
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-44-J.P.-Morgan-China-CSSC-Holdings-A-600150-Positive-profit-alert-reinforce",
+    "source_pdf": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0004-44-JPM-China CSSC Holdings-A-600150-Positive profit alert reinforces our earnings thesis-recent pullback offers an attractive entry point-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "中国造船龙头，利润爆",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国船舶CSSC利润预告强化盈利论点-回调提供入场点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-JPM-China CSSC Holdings-A-600150-Positive profit alert reinforces our earnings thesis-recent pullback offers an attractive entry point-260714.pdf",
+      "cleaned_source_title": "JPM-China CSSC Holdings-A-600150-Positive profit alert reinforces our earnings thesis-recent pullback offers an attractive entry point",
+      "institution_name": "JPM",
+      "required_terms": [
+        "CSSC"
+      ],
+      "deterministic_fallback": "JPM：中国CSSCHoldingsA600150P",
+      "raw_candidates": [
+        "中国船舶CSSC利润预告强化盈利论点-回调提供入场点",
+        "中国船舶CSSC利润预告：二季度净利44-66亿，回调9%提供入场点",
+        "中国船舶CSSC利润预告强化盈利论点-股价回调9%与基本面背离"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国船舶CSSC利润预告强化盈利论点-回调提供入场点",
+        "JPM：中国船舶CSSC利润预告，二季度净利44-66亿",
+        "JPM：中国船舶CSSC利润预告强化盈利论点",
+        "JPM：中国CSSCHoldingsA600150P"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国船舶CSSC利润预告，二季度净利44-66亿",
+          "reasons": [
+            "anchor_coverage=0.46",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国船舶CSSC利润预告强化盈利论点",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国CSSCHoldingsA600150P",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国船舶CSSC利润预告强化盈利论点-回调提供入场点",
+      "selection_reason": "faithful_filename_anchor",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：中国船舶CSSC利润预告强化盈利论点-回调提供入场点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-45-J.P.-Morgan-Asia-Insurance-Key-takeaways-from-2026-MDRT-statistics--MDRT",
+    "source_pdf": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0005-45-JPM-Asia Insurance-Key takeaways from 2026 MDRT statistics- MDRT headcount resets- AIA still leads-260714.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "MDRT人数骤降，别",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：MDRT与AIAAsiaInsuranceK",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-JPM-Asia Insurance-Key takeaways from 2026 MDRT statistics- MDRT headcount resets- AIA still leads-260714.pdf",
+      "cleaned_source_title": "JPM-Asia Insurance-Key takeaways from 2026 MDRT statistics- MDRT headcount resets- AIA still leads",
+      "institution_name": "JPM",
+      "required_terms": [
+        "MDRT",
+        "AIA"
+      ],
+      "deterministic_fallback": "JPM：MDRT与AIAAsiaInsuranceK",
+      "raw_candidates": [
+        "亚洲保险：2026年MDRT统计关键要点，MDRT人数重置，AIA仍领先",
+        "亚洲保险：2026年MDRT统计，AIA中国内地MDRT人数降73%，仍以16228人领先",
+        "亚洲保险：2026年MDRT统计，AIA香港逆势增长20%，MDRT人数重置"
+      ],
+      "cleaned_candidates": [
+        "JPM：MDRT与AIAAsiaInsuranceK",
+        "JPM：亚洲保险，2026年MDRT统计关键要点，MDRT人数重置",
+        "JPM：亚洲保险，2026年MDRT统计",
+        "JPM：亚洲保险，2026年MDRT统计，AIA香港逆势增长20%"
+      ],
+      "faithful_candidate_missing_terms": [
+        "AIA"
+      ],
+      "rejected_candidates": [
+        {
+          "title": "JPM：亚洲保险，2026年MDRT统计关键要点，MDRT人数重置",
+          "reasons": [
+            "missing_required_terms=AIA",
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：亚洲保险，2026年MDRT统计",
+          "reasons": [
+            "missing_required_terms=AIA",
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：亚洲保险，2026年MDRT统计，AIA香港逆势增长20%",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：MDRT与AIAAsiaInsuranceK",
+      "selection_reason": "fallback_missing_required_terms",
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "final_title_after_wording_guard": "JPM：MDRT与AIAAsiaInsuranceK"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

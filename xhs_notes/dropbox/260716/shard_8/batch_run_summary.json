@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 99,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 8,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/41-GS-Volkswagen （VOWG_p.DE） Thoughts on restructuring news and Everllence transaction； revising estimates ahead of 2Q26-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0001-41-GS-Volkswagen -VOWG_p.DE- Thoughts on restructuring news and Everllence transaction- revising estimates ahead of 2Q26-260715.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/42-GS-USA： GS Economic Indicators Update-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0002-42-GS-USA- GS Economic Indicators Update-260715.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/43-JPM-Apple（AAPL.US）：Approval to Leverage Qwen AI in China for Apple Intelligence to Help Overcome Price Elasticity with iPhone 18-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0003-43-JPM-Apple-AAPL.US--Approval to Leverage Qwen AI in China for Apple Intelligence to Help Overcome Price Elasticity with iPhone 18-260715.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/44-JPM-China CSSC Holdings~A（600150）Positive profit alert reinforces our earnings thesis；recent pullback offers an attractive entry point-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0004-44-JPM-China CSSC Holdings-A-600150-Positive profit alert reinforces our earnings thesis-recent pullback offers an attractive entry point-260714.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/45-JPM-Asia Insurance：Key takeaways from 2026 MDRT statistics： MDRT headcount resets， AIA still leads-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_pwno4tu1/pdfs/0005-45-JPM-Asia Insurance-Key takeaways from 2026 MDRT statistics- MDRT headcount resets- AIA still leads-260714.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
