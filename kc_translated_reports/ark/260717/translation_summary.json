@@ -1,0 +1,73 @@
+{
+  "date_folder": "260717",
+  "max_reports": "all",
+  "selected_count": 1,
+  "successful_count": 1,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/ark/260717/0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+      "title": "木头姐ARK：ARK，创业成本下降-美国初创企业年增550万",
+      "source_title": "0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+        "cleaned_source_title": "0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+        "institution_name": "木头姐ARK",
+        "required_terms": [
+          "ARK"
+        ],
+        "deterministic_fallback": "木头姐ARK：0001ARKTheFallingCos",
+        "raw_candidates": [
+          "ARK：创业成本下降",
+          "ARK：创业成本下降-美国初创企业年增550万",
+          "ARK：创业成本下降-AI让1-2人完成5-10人工作"
+        ],
+        "cleaned_candidates": [
+          "木头姐ARK：ARK，创业成本下降",
+          "木头姐ARK：ARK，创业成本下降-美国初创企业年增550万",
+          "木头姐ARK：ARK，创业成本下降AI让12人完成510人工作",
+          "木头姐ARK：0001ARKTheFallingCos"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "rejected_candidates": [
+          {
+            "title": "木头姐ARK：ARK，创业成本下降AI让12人完成510人工作",
+            "reasons": [
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "木头姐ARK：0001ARKTheFallingCos",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "木头姐ARK：ARK，创业成本下降-美国初创企业年增550万",
+        "selection_reason": "supported_hook",
+        "hook_signals": {
+          "added_numbers": [
+            "550"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "final_title_after_wording_guard": "木头姐ARK：ARK，创业成本下降-美国初创企业年增550万"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/ark/260717/01-0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0",
+      "pdf_path": "kc_translated_reports/ark/260717/01-0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0/kc_translated_report_01.pdf"
+    }
+  ]
+}
