@@ -1,0 +1,126 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qq4wy2ea/pdfs/0002-62-NOM-Asia Insights China- Sectoral breakdown of Q2 GDP-260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "Q2经济数据里的K型",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "股票市场|股市->市场 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "券商->机构 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x6",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：中国二季度GDP分项解读",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-62-NOM-Asia Insights China- Sectoral breakdown of Q2 GDP-260716.pdf",
+    "cleaned_source_title": "NOM-Asia Insights China- Sectoral breakdown of Q2 GDP",
+    "institution_name": "NOM",
+    "required_terms": [
+      "GDP"
+    ],
+    "deterministic_fallback": "NOM：GDPAsiaInsights中国",
+    "raw_candidates": [
+      "中国二季度GDP分项解读",
+      "中国二季度GDP：名义繁荣与实际背离",
+      "中国二季度GDP：价格驱动而非内需回暖"
+    ],
+    "cleaned_candidates": [
+      "NOM：中国二季度GDP分项解读",
+      "NOM：中国二季度GDP，名义繁荣与实际背离",
+      "NOM：中国二季度GDP，价格驱动而非内需回暖",
+      "NOM：GDPAsiaInsights中国",
+      "NOM：名义GDP增速从一季度的6.2%跳升至8.8%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：GDPAsiaInsights中国",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：名义GDP增速从一季度的6.2%跳升至8.8%",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：中国二季度GDP分项解读",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "NOM：中国二季度GDP分项解读"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "424",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

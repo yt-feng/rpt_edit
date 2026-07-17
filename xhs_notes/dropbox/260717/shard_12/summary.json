@@ -1,0 +1,380 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qq4wy2ea/pdfs/0001-61-NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "韩国央行加息25bp",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "资产定价->市场定价 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "金融->资金 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：韩国央行全票加息25个基点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-61-NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike-260716.pdf",
+      "cleaned_source_title": "NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：AsiaInsightsKorea",
+      "raw_candidates": [
+        "NOM：韩国央行全票加息25个基点",
+        "NOM：韩国央行加息25基点-后续节奏慢于市场预期",
+        "NOM：韩国央行加息路径比市场预期更慢更依赖数据"
+      ],
+      "cleaned_candidates": [
+        "NOM：韩国央行全票加息25个基点",
+        "NOM：韩国央行加息25基点-后续节奏慢于市场预期",
+        "NOM：韩国央行加息路径比市场预期更慢更依赖数据",
+        "NOM：AsiaInsightsKorea",
+        "NOM：韩国央行在6月议息会议上以全票通过将政策利率上调25个基点至2."
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：韩国央行加息25基点-后续节奏慢于市场预期",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "NOM：韩国央行加息路径比市场预期更慢更依赖数据",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "NOM：AsiaInsightsKorea",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：韩国央行在6月议息会议上以全票通过将政策利率上调25个基点至2.",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        }
+      ],
+      "selected_title": "NOM：韩国央行全票加息25个基点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：韩国央行全票加息25个基点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qq4wy2ea/pdfs/0002-62-NOM-Asia Insights China- Sectoral breakdown of Q2 GDP-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "Q2经济数据里的K型",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "券商->机构 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x6",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x3",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：中国二季度GDP分项解读",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-62-NOM-Asia Insights China- Sectoral breakdown of Q2 GDP-260716.pdf",
+      "cleaned_source_title": "NOM-Asia Insights China- Sectoral breakdown of Q2 GDP",
+      "institution_name": "NOM",
+      "required_terms": [
+        "GDP"
+      ],
+      "deterministic_fallback": "NOM：GDPAsiaInsights中国",
+      "raw_candidates": [
+        "中国二季度GDP分项解读",
+        "中国二季度GDP：名义繁荣与实际背离",
+        "中国二季度GDP：价格驱动而非内需回暖"
+      ],
+      "cleaned_candidates": [
+        "NOM：中国二季度GDP分项解读",
+        "NOM：中国二季度GDP，名义繁荣与实际背离",
+        "NOM：中国二季度GDP，价格驱动而非内需回暖",
+        "NOM：GDPAsiaInsights中国",
+        "NOM：名义GDP增速从一季度的6.2%跳升至8.8%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：GDPAsiaInsights中国",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：名义GDP增速从一季度的6.2%跳升至8.8%",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：中国二季度GDP分项解读",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：中国二季度GDP分项解读"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qq4wy2ea/pdfs/0003-63-MS-Sieyuan Electric Co.Ltd.-002028--Look Through the Dip-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "思源电气：半年报后的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：思源电气，透过下跌看本质",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-63-MS-Sieyuan Electric Co.Ltd.-002028--Look Through the Dip-260715.pdf",
+      "cleaned_source_title": "MS-Sieyuan Electric Co.Ltd.-002028--Look Through the Dip",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SieyuanElectric.-002028",
+      "raw_candidates": [
+        "思源电气：透过下跌看本质",
+        "思源电气：透过下跌看本质-北美订单加速",
+        "思源电气：透过下跌看本质-北美订单成变量"
+      ],
+      "cleaned_candidates": [
+        "MS：思源电气，透过下跌看本质",
+        "MS：思源电气，透过下跌看本质-北美订单加速",
+        "MS：思源电气，透过下跌看本质-北美订单成变量",
+        "MS：SieyuanElectric.-002028",
+        "MS：思源电气2026年上半年业绩初报出炉，收入增长27%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SieyuanElectric.-002028",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：思源电气2026年上半年业绩初报出炉，收入增长27%",
+          "reasons": [
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：思源电气，透过下跌看本质",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：思源电气，透过下跌看本质"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qq4wy2ea/pdfs/0004-64-NOM-USD CNY fix model-Projection- 6.7739-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "人民币汇率模型指向6",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_editorial_guard_changes": [
+      "removed_section:报告没有展开的隐含前提：模型误差本身也在提供信息"
+    ],
+    "wechat_title": "NOM：美元人民币中间价模型预测6.7739",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-64-NOM-USD CNY fix model-Projection- 6.7739-260717.pdf",
+      "cleaned_source_title": "NOM-USD CNY fix model-Projection- 6.7739",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.7739",
+      "raw_candidates": [
+        "NOM：美元人民币中间价模型预测6.7739",
+        "NOM：中间价模型预测下移170基点至6.7739",
+        "NOM：逆周期因子与模型差距收窄至75基点"
+      ],
+      "cleaned_candidates": [
+        "NOM：美元人民币中间价模型预测6.7739",
+        "NOM：中间价模型预测下移170基点至6.7739",
+        "NOM：逆周期因子与模型差距收窄至75基点",
+        "NOM：USDCNYfixmodelProjection-6.7739",
+        "NOM：给出的模型预测值——6.7739，较前次预测下移170个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：中间价模型预测下移170基点至6.7739",
+          "reasons": [
+            "bare_trailing_number",
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "NOM：逆周期因子与模型差距收窄至75基点",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：USDCNYfixmodelProjection-6.7739",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：给出的模型预测值——6.7739，较前次预测下移170个基点",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        }
+      ],
+      "selected_title": "NOM：美元人民币中间价模型预测6.7739",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：美元人民币中间价模型预测6.7739"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
