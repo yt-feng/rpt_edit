@@ -1,0 +1,1145 @@
+[
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0001-96-UBS-China-Oil--Gas-and-Chemical-Sector-Weekly-tracker--Chemical-stock-in/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0001-96-UBS-China-Oil--Gas-and-Chemical-Sector-Weekly-tracker--Chemical-stock-in/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "粉",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0001-96-UBS-China-Oil--Gas-and-Chemical-Sector-Weekly-tracker--Chemical-stock-in/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "粉",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0001-96-UBS-China-Oil--Gas-and-Chemical-Sector-Weekly-tracker--Chemical-stock-in/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:最强->较强 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0001-96-UBS-China-Oil--Gas-and-Chemical-Sector-Weekly-tracker--Chemical-stock-in/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "中国",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0001-96-UBS-China-Oil--Gas-and-Chemical-Sector-Weekly-tracker--Chemical-stock-in/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "限制",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "导致",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "粉",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "系统",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "放在",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0002-97-UBS-Mining-Strategy-China-Commodity-Trade-Jun-26--Resilient--but-Diverge/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资者->读者 x1",
+      "after_deepseek:买入评级->报告评级 x2",
+      "after_deepseek:收益率->回报表现 x2",
+      "after_deepseek:投资->研究 x6"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "sb",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "6.4",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "5.4",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "64",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0002-97-UBS-Mining-Strategy-China-Commodity-Trade-Jun-26--Resilient--but-Diverge/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0002-97-UBS-Mining-Strategy-China-Commodity-Trade-Jun-26--Resilient--but-Diverge/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0002-97-UBS-Mining-Strategy-China-Commodity-Trade-Jun-26--Resilient--but-Diverge/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "sb",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0002-97-UBS-Mining-Strategy-China-Commodity-Trade-Jun-26--Resilient--but-Diverge/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0002-97-UBS-Mining-Strategy-China-Commodity-Trade-Jun-26--Resilient--but-Diverge/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "sb",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "保持",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "限制",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "放在",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0003-98-UBS-Shengyi-Technology-600183-Q226-prelim-results--CCL-ASP-hikes-materia/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0003-98-UBS-Shengyi-Technology-600183-Q226-prelim-results--CCL-ASP-hikes-materia/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "传统",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0003-98-UBS-Shengyi-Technology-600183-Q226-prelim-results--CCL-ASP-hikes-materia/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0003-98-UBS-Shengyi-Technology-600183-Q226-prelim-results--CCL-ASP-hikes-materia/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0003-98-UBS-Shengyi-Technology-600183-Q226-prelim-results--CCL-ASP-hikes-materia/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0003-98-UBS-Shengyi-Technology-600183-Q226-prelim-results--CCL-ASP-hikes-materia/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "最强->较强 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "高潮",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "保持",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "系统",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0004-99-UBS-Korean-Shipbuilders-Is-AI-DC-and-valuations-enough--260714/mineru_raw/full.md",
+    "changed": false,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 2,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "AV",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "54",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "6.4",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "5.4",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "6.4",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "6.4",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": "Response ended prematurely"
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0004-99-UBS-Korean-Shipbuilders-Is-AI-DC-and-valuations-enough--260714/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "64",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0004-99-UBS-Korean-Shipbuilders-Is-AI-DC-and-valuations-enough--260714/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "公告",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0004-99-UBS-Korean-Shipbuilders-Is-AI-DC-and-valuations-enough--260714/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资者->读者 x5",
+      "after_deepseek:投资->研究 x4"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 2,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0004-99-UBS-Korean-Shipbuilders-Is-AI-DC-and-valuations-enough--260714/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资->研究 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "制造",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260716/shard_19/0004-99-UBS-Korean-Shipbuilders-Is-AI-DC-and-valuations-enough--260714/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "投资逻辑->研究逻辑 x1",
+      "暴涨->明显走强 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "系统",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "挑战",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "维护",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "政治",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  }
+]
