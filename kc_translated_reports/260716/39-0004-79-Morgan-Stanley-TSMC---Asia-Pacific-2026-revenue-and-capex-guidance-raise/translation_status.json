@@ -1,0 +1,95 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_15/0004-79-Morgan-Stanley-TSMC---Asia-Pacific-2026-revenue-and-capex-guidance-raise",
+  "title": "摩根士丹利：TSMC与OWAsiaPacific2026revenue",
+  "source_title": "0004-79-MS-TSMC - Asia Pacific 2026 revenue and capex guidance raised again- OW-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-79-MS-TSMC - Asia Pacific 2026 revenue and capex guidance raised again- OW-260716",
+    "cleaned_source_title": "MS-TSMC - Asia Pacific 2026 revenue and capex guidance raised again- OW",
+    "institution_name": "摩根士丹利",
+    "required_terms": [
+      "TSMC",
+      "OW"
+    ],
+    "deterministic_fallback": "摩根士丹利：TSMC与OWAsiaPacific2026revenue",
+    "raw_candidates": [
+      "台积电：2026年亚太营收与资本支出指引再次上调-OW",
+      "台积电：2026年营收指引上调至同比超40%，资本支出上调至600-640亿美元-OW",
+      "台积电：2026年营收指引再上调至同比超40%，AI需求推动超华尔街预期-OW"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：TSMC与OWAsiaPacific2026revenue",
+      "摩根士丹利：台积电，2026年亚太营收与资本支出指引再次上调-OW",
+      "摩根士丹利：台积电，2026年营收指引上调至同比超40%",
+      "摩根士丹利：台积电，2026年营收指引再上调至同比超40%"
+    ],
+    "faithful_candidate_missing_terms": [
+      "TSMC"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：台积电，2026年亚太营收与资本支出指引再次上调-OW",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：台积电，2026年营收指引上调至同比超40%",
+        "reasons": [
+          "missing_required_terms=TSMC,OW",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：台积电，2026年营收指引再上调至同比超40%",
+        "reasons": [
+          "missing_required_terms=TSMC,OW",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：TSMC与OWAsiaPacific2026revenue",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "摩根士丹利：TSMC与OWAsiaPacific2026revenue"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_39.pdf",
+  "figure_count": 1,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

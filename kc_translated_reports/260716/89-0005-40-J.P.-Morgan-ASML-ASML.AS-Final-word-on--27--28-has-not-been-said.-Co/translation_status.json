@@ -1,0 +1,114 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_7/0005-40-J.P.-Morgan-ASML-ASML.AS-Final-word-on--27--28-has-not-been-said.-Co.can",
+  "title": "摩根大通：ASML与AS与OW.Finalwordon27",
+  "source_title": "0005-40-JPM-ASML-ASML.AS-Final word on -27--28 has not been said. Co.can raise estimates again.Reiterate OW rating.-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-40-JPM-ASML-ASML.AS-Final word on -27--28 has not been said. Co.can raise estimates again.Reiterate OW rating.-260716",
+    "cleaned_source_title": "JPM-ASML-ASML.AS-Final word on -27--28 has not been said. Co.can raise estimates again.Reiterate OW rating.",
+    "institution_name": "摩根大通",
+    "required_terms": [
+      "ASML",
+      "AS",
+      "OW"
+    ],
+    "deterministic_fallback": "摩根大通：ASML与AS与OW.Finalwordon27",
+    "raw_candidates": [
+      "ASML关于2027-2028年最终结论未定，公司可能再次上调预期，重申增持评级",
+      "ASML：2027年EUV产能指引非上限，公司可能再次上调预期，重申增持评级",
+      "ASML交易方式仍如2025年，但指引已变，2027年产能或上调，重申增持评级"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：ASML与AS与OW.Finalwordon27",
+      "摩根大通：ASML关于2027-2028年最终结论未定",
+      "摩根大通：ASML，2027年EUV产能指引非上限",
+      "摩根大通：ASML交易方式仍如2025年，但指引已变"
+    ],
+    "faithful_candidate_missing_terms": [
+      "OW"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：ASML关于2027-2028年最终结论未定",
+        "reasons": [
+          "missing_required_terms=OW",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：ASML，2027年EUV产能指引非上限",
+        "reasons": [
+          "missing_required_terms=OW",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：ASML交易方式仍如2025年，但指引已变",
+        "reasons": [
+          "missing_required_terms=OW",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：ASML与AS与OW.Finalwordon27",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "摩根大通：ASML与AS与OW.Finalwordon27"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_89.pdf",
+  "figure_count": 5,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资者->读者 x1",
+    "股票|个股->公司 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x3",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_19/0003-98-UBS-Shengyi-Technology-600183-Q226-prelim-results--CCL-ASP-hikes-materia",
+  "title": "瑞银：CCL与ASP与PCBShengyi科技600183Q226",
+  "source_title": "0003-98-UBS-Shengyi Technology-600183-Q226 prelim results- CCL ASP hikes materialized- PCB margin concerns alleviated-260714",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-98-UBS-Shengyi Technology-600183-Q226 prelim results- CCL ASP hikes materialized- PCB margin concerns alleviated-260714",
+    "cleaned_source_title": "UBS-Shengyi Technology-600183-Q226 prelim results- CCL ASP hikes materialized- PCB margin concerns alleviated",
+    "institution_name": "瑞银",
+    "required_terms": [
+      "CCL",
+      "ASP",
+      "PCB"
+    ],
+    "deterministic_fallback": "瑞银：CCL与ASP与PCBShengyi科技600183Q226",
+    "raw_candidates": [
+      "生益科技Q226初步业绩-CCL ASP上调已实现-PCB利润率担忧缓解",
+      "生益科技Q226初步业绩：归母净利预增117%-131%-CCL ASP上调已实现",
+      "生益科技Q226业绩超预期37%-51%-CCL ASP上调已实现-PCB利润率担忧缓解"
+    ],
+    "cleaned_candidates": [
+      "瑞银：CCL与ASP与PCBShengyi科技600183Q226",
+      "瑞银：生益科技Q226初步业绩-CCLASP上调已实现",
+      "瑞银：生益科技Q226初步业绩，归母净利预增117%-131%",
+      "瑞银：生益科技Q226业绩超预期37%51%CCLASP上调已实现"
+    ],
+    "faithful_candidate_missing_terms": [
+      "PCB"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "瑞银：生益科技Q226初步业绩-CCLASP上调已实现",
+        "reasons": [
+          "missing_required_terms=PCB",
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "瑞银：生益科技Q226初步业绩，归母净利预增117%-131%",
+        "reasons": [
+          "missing_required_terms=CCL,ASP,PCB",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "瑞银：生益科技Q226业绩超预期37%51%CCLASP上调已实现",
+        "reasons": [
+          "missing_required_terms=PCB",
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "瑞银：CCL与ASP与PCBShengyi科技600183Q226",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "瑞银：CCL与ASP与PCBShengyi科技600183Q226"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_58.pdf",
+  "figure_count": 0,
+  "institution_name": "瑞银",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x1",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

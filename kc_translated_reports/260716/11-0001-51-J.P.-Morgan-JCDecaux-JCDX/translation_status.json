@@ -1,0 +1,95 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_10/0001-51-J.P.-Morgan-JCDecaux-JCDX.PA--Solid-Trading-in-Europe--Middle-East-Stabi",
+  "title": "摩根大通：JCDecauxJCDX.PASolidTr",
+  "source_title": "0001-51-JPM-JCDecaux-JCDX.PA- Solid Trading in Europe- Middle East Stabilization- and Incremental World Cup Revenues - A Setup for Further U",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-51-JPM-JCDecaux-JCDX.PA- Solid Trading in Europe- Middle East Stabilization- and Incremental World Cup Revenues - A Setup for Further U",
+    "cleaned_source_title": "JPM-JCDecaux-JCDX.PA- Solid Trading in Europe- Middle East Stabilization- and Incremental World Cup Revenues - A Setup for Further U",
+    "institution_name": "摩根大通",
+    "required_terms": [
+      "JCDX",
+      "PA"
+    ],
+    "deterministic_fallback": "摩根大通：JCDecauxJCDX.PASolidTr",
+    "raw_candidates": [
+      "JCDecaux：欧洲业务稳健、中东企稳及世界杯增量收入，为进一步上调奠定基础",
+      "JCDecaux：欧洲业务稳健、中东企稳及世界杯增量收入，上半年营业利润超预期3%",
+      "JCDecaux：欧洲业务稳健、中东企稳及世界杯增量收入，股价年初至今涨38%"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：JCDecauxJCDX.PASolidTr",
+      "摩根大通：JCDecaux，欧洲业务稳健、中东企稳及世界杯增量收入"
+    ],
+    "faithful_candidate_missing_terms": [
+      "JCDX",
+      "PA"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：JCDecaux，欧洲业务稳健、中东企稳及世界杯增量收入",
+        "reasons": [
+          "missing_required_terms=JCDX,PA",
+          "anchor_coverage=0.39"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：JCDecauxJCDX.PASolidTr",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "摩根大通：JCDecauxJCDX.PASolidTr"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_11.pdf",
+  "figure_count": 27,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_16/0005-85-Nomura-Asia-Insights-Asia-rates--Some-caution-still-warranted-260714",
+  "title": "野村：亚洲利率，仍需保持谨慎-6月CPI数据发布在即",
+  "source_title": "0005-85-NOM-Asia Insights-Asia rates- Some caution still warranted-260714",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-85-NOM-Asia Insights-Asia rates- Some caution still warranted-260714",
+    "cleaned_source_title": "NOM-Asia Insights-Asia rates- Some caution still warranted",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：AsiaInsightsAsia利率",
+    "raw_candidates": [
+      "亚洲利率：仍需保持谨慎",
+      "亚洲利率：仍需保持谨慎-6月CPI数据发布在即",
+      "亚洲利率：仍需保持谨慎-市场定价加息约52个基点"
+    ],
+    "cleaned_candidates": [
+      "野村：亚洲利率，仍需保持谨慎",
+      "野村：亚洲利率，仍需保持谨慎-6月CPI数据发布在即",
+      "野村：亚洲利率，仍需保持谨慎-市场定价加息约52个基点",
+      "野村：AsiaInsightsAsia利率"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "野村：AsiaInsightsAsia利率",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：亚洲利率，仍需保持谨慎-6月CPI数据发布在即",
+    "selection_reason": "supported_hook",
+    "hook_signals": {
+      "added_numbers": [
+        "6"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "野村：亚洲利率，仍需保持谨慎-6月CPI数据发布在即"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_45.pdf",
+  "figure_count": 0,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x3",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

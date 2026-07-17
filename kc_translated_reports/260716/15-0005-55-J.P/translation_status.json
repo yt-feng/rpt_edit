@@ -1,0 +1,112 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_10/0005-55-J.P.-Morgan-TSMC-First-Take-2Q26---upside-to-FY26-revenue-guide-and-cape",
+  "title": "摩根大通：TSMCFirstTake2Q26upsidetoFY26",
+  "source_title": "0005-55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations-260716",
+    "cleaned_source_title": "JPM-TSMC First Take-2Q26 - upside to FY26 revenue guide and capex- GMs slightly lower than market expectations",
+    "institution_name": "摩根大通",
+    "required_terms": [
+      "TSMC"
+    ],
+    "deterministic_fallback": "摩根大通：TSMCFirstTake2Q26upsidetoFY26",
+    "raw_candidates": [
+      "台积电第一时间解读-2Q26：FY26营收指引和资本支出上调，毛利率略低于市场预期",
+      "台积电2Q26：FY26营收指引上调至同比增40%以上，资本支出上调至600-640亿美元",
+      "台积电2Q26：FY26营收指引和资本支出上调，毛利率略低于市场预期60-70%"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：TSMCFirstTake2Q26upsidetoFY26",
+      "摩根大通：台积电第一时间解读-2Q26，FY26营收指引和资本支出上调",
+      "摩根大通：台积电2Q26，FY26营收指引上调至同比增40%以上",
+      "摩根大通：台积电2Q26，FY26营收指引和资本支出上调"
+    ],
+    "faithful_candidate_missing_terms": [
+      "TSMC"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：台积电第一时间解读-2Q26，FY26营收指引和资本支出上调",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：台积电2Q26，FY26营收指引上调至同比增40%以上",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：台积电2Q26，FY26营收指引和资本支出上调",
+        "reasons": [
+          "missing_required_terms=TSMC",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：TSMCFirstTake2Q26upsidetoFY26",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "摩根大通：TSMCFirstTake2Q26upsidetoFY26"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 1,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

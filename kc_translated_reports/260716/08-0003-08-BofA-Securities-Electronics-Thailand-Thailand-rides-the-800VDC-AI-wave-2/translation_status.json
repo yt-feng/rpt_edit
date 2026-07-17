@@ -1,0 +1,110 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_1/0003-08-BofA-Securities-Electronics-Thailand-Thailand-rides-the-800VDC-AI-wave-2",
+  "title": "美银：ElectronicsThailandThail",
+  "source_title": "0003-08-BofA-Electronics-Thailand-Thailand rides the 800VDC AI wave-260714",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-08-BofA-Electronics-Thailand-Thailand rides the 800VDC AI wave-260714",
+    "cleaned_source_title": "BofA-Electronics-Thailand-Thailand rides the 800VDC AI wave",
+    "institution_name": "美银",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "美银：ElectronicsThailandThail",
+    "raw_candidates": [
+      "泰国乘上800VDC人工智能浪潮",
+      "泰国800VDC AI浪潮：机架功率升至1兆瓦",
+      "泰国800VDC AI浪潮：电力瓶颈转向基础设施"
+    ],
+    "cleaned_candidates": [
+      "美银：ElectronicsThailandThail",
+      "美银：泰国乘上800VDC人工智能浪潮",
+      "美银：泰国800VDCAI浪潮，机架功率升至1兆瓦",
+      "美银：泰国800VDCAI浪潮，电力瓶颈转向基础设施"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "美银：泰国乘上800VDC人工智能浪潮",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "美银：泰国800VDCAI浪潮，机架功率升至1兆瓦",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "美银：泰国800VDCAI浪潮，电力瓶颈转向基础设施",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "美银：ElectronicsThailandThail",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "美银：ElectronicsThailandThail"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_08.pdf",
+  "figure_count": 28,
+  "institution_name": "美银",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

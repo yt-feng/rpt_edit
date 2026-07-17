@@ -1,0 +1,87 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_6/0005-35-Goldman-Sachs-Merck---Co.--MRK.US---Sac-TMT-Further-De-Risked-by-Partner",
+  "title": "高盛：MRK与US与TMTMerckCo.-.",
+  "source_title": "0005-35-GS-Merck - Co. -MRK.US-- Sac-TMT Further De-Risked by Partner Kelun OptiTROP-Lung06-260715",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-35-GS-Merck - Co. -MRK.US-- Sac-TMT Further De-Risked by Partner Kelun OptiTROP-Lung06-260715",
+    "cleaned_source_title": "GS-Merck - Co. -MRK.US-- Sac-TMT Further De-Risked by Partner Kelun OptiTROP-Lung06",
+    "institution_name": "高盛",
+    "required_terms": [
+      "MRK",
+      "US",
+      "TMT"
+    ],
+    "deterministic_fallback": "高盛：MRK与US与TMTMerckCo.-.",
+    "raw_candidates": [
+      "默克MRK.US：合作伙伴科伦博泰OptiTROP-Lung06进一步降低Sac-TMT不确定性",
+      "默克MRK.US：科伦博泰OptiTROP-Lung06阳性结果降低Sac-TMT不确定性",
+      "默克MRK.US：科伦博泰OptiTROP-Lung06头对头胜Keytruda化疗，降低Sac-TMT不确定性"
+    ],
+    "cleaned_candidates": [
+      "高盛：MRK与US与TMTMerckCo.-.",
+      "高盛：默克MRK.US，合作伙伴科伦博泰OptiTROP",
+      "高盛：默克MRK.US，科伦博泰OptiTROP"
+    ],
+    "faithful_candidate_missing_terms": [
+      "TMT"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "高盛：默克MRK.US，合作伙伴科伦博泰OptiTROP",
+        "reasons": [
+          "missing_required_terms=TMT",
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：默克MRK.US，科伦博泰OptiTROP",
+        "reasons": [
+          "missing_required_terms=TMT",
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：MRK与US与TMTMerckCo.-.",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "高盛：MRK与US与TMTMerckCo.-."
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_84.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x3",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_18/0003-93-UBS-China-Healthcare-Expert-call-takeaways--Pulse-check-on-China-s-clini",
+  "title": "瑞银：中国临床CRO行业2026年二季度脉搏扫描",
+  "source_title": "0003-93-UBS-China Healthcare Expert call takeaways- Pulse check on China-s clinical CROs in Q226-260714",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-93-UBS-China Healthcare Expert call takeaways- Pulse check on China-s clinical CROs in Q226-260714",
+    "cleaned_source_title": "UBS-China Healthcare Expert call takeaways- Pulse check on China-s clinical CROs in Q226",
+    "institution_name": "瑞银",
+    "required_terms": [],
+    "deterministic_fallback": "瑞银：中国HealthcareExpertcalltakeaways",
+    "raw_candidates": [
+      "中国临床CRO行业2026年二季度脉搏扫描",
+      "中国临床CRO订单强劲复苏，2026上半年同比增长20-30%",
+      "中国临床CRO价格温和回升，SMO服务费增长5-10%"
+    ],
+    "cleaned_candidates": [
+      "瑞银：中国临床CRO行业2026年二季度脉搏扫描",
+      "瑞银：中国临床CRO订单强劲复苏，2026上半年同比增长20-30%",
+      "瑞银：中国临床CRO价格温和回升，SMO服务费增长5-10%",
+      "瑞银：中国HealthcareExpertcalltakeaways"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "瑞银：中国临床CRO订单强劲复苏，2026上半年同比增长20-30%",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "瑞银：中国临床CRO价格温和回升，SMO服务费增长5-10%",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      },
+      {
+        "title": "瑞银：中国HealthcareExpertcalltakeaways",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "瑞银：中国临床CRO行业2026年二季度脉搏扫描",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "瑞银：中国临床CRO行业2026年二季度脉搏扫描"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_53.pdf",
+  "figure_count": 0,
+  "institution_name": "瑞银",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x5",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line"
+  ]
+}

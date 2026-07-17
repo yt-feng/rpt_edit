@@ -1,0 +1,89 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_8/0001-41-Goldman-Sachs-Volkswagen--VOWG_p.DE--Thoughts-on-restructuring-news-and-",
+  "title": "高盛：大众汽车VOWG_p.DE",
+  "source_title": "0001-41-GS-Volkswagen -VOWG_p.DE- Thoughts on restructuring news and Everllence transaction- revising estimates ahead of 2Q26-260715",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-41-GS-Volkswagen -VOWG_p.DE- Thoughts on restructuring news and Everllence transaction- revising estimates ahead of 2Q26-260715",
+    "cleaned_source_title": "GS-Volkswagen -VOWG_p.DE- Thoughts on restructuring news and Everllence transaction- revising estimates ahead of 2Q26",
+    "institution_name": "高盛",
+    "required_terms": [
+      "VOWG",
+      "DE"
+    ],
+    "deterministic_fallback": "高盛：VolkswagenVOWGp.DE",
+    "raw_candidates": [
+      "大众汽车VOWG_p.DE：重组消息与Everllence交易看法，2Q26前修正预测",
+      "大众汽车VOWG_p.DE：重组消息与Everllence交易看法，2Q26前下调EPS预测7%-14%",
+      "大众汽车VOWG_p.DE：重组消息与Everllence交易看法，2Q26前谨慎执行，工厂关闭历史稀少"
+    ],
+    "cleaned_candidates": [
+      "高盛：大众汽车VOWG_p.DE",
+      "高盛：VolkswagenVOWGp.DE"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "高盛：VolkswagenVOWGp.DE",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      }
+    ],
+    "selected_title": "高盛：大众汽车VOWG_p.DE",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "高盛：大众汽车VOWG_p.DE"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_90.pdf",
+  "figure_count": 2,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资组合->组合观察 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "中国经济->中国宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

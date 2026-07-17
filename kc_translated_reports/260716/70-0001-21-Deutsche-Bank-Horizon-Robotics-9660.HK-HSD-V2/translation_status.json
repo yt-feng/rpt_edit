@@ -1,0 +1,84 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_4/0001-21-Deutsche-Bank-Horizon-Robotics-9660.HK-HSD-V2.0-Demonstrates-Exceptional",
+  "title": "德意志银行：HorizonRobotics9660.HKHSDV2.0",
+  "source_title": "0001-21-DB-Horizon Robotics-9660.HK-HSD V2.0 Demonstrates Exceptional Precision and Strategic Maneuvering-260714",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-21-DB-Horizon Robotics-9660.HK-HSD V2.0 Demonstrates Exceptional Precision and Strategic Maneuvering-260714",
+    "cleaned_source_title": "DB-Horizon Robotics-9660.HK-HSD V2.0 Demonstrates Exceptional Precision and Strategic Maneuvering",
+    "institution_name": "德意志银行",
+    "required_terms": [
+      "HK",
+      "HSD"
+    ],
+    "deterministic_fallback": "德意志银行：HorizonRobotics9660.HKHSDV2.0",
+    "raw_candidates": [
+      "地平线机器人HSD V2.0展现卓越精度与策略性操控",
+      "地平线机器人HSD V2.0：世界模型驱动，驾驶精度与策略性操控媲美人类",
+      "地平线机器人HSD V2.0精度卓越，策略性操控逼近人类驾驶员"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：HorizonRobotics9660.HKHSDV2.0",
+      "德意志银行：地平线机器人HSDV2.0展现卓越精度与策略性操控",
+      "德意志银行：地平线机器人HSDV2.0，世界模型驱动",
+      "德意志银行：地平线机器人HSDV2.0精度卓越"
+    ],
+    "faithful_candidate_missing_terms": [
+      "HK"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：地平线机器人HSDV2.0展现卓越精度与策略性操控",
+        "reasons": [
+          "missing_required_terms=HK",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：地平线机器人HSDV2.0，世界模型驱动",
+        "reasons": [
+          "missing_required_terms=HK",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：地平线机器人HSDV2.0精度卓越",
+        "reasons": [
+          "missing_required_terms=HK",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：HorizonRobotics9660.HKHSDV2.0",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "德意志银行：HorizonRobotics9660.HKHSDV2.0"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_70.pdf",
+  "figure_count": 0,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "证券->标的 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_12/0002-62-Morgan-Stanley-China-Equity-Strategy-China-HK-Flows-and-Positioning-Mont",
+  "title": "摩根士丹利：中国Equity策略中国HKFlows和P",
+  "source_title": "0002-62-MS-China Equity Strategy-China HK Flows and Positioning Monthly Tracker - June 2026-260714",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-62-MS-China Equity Strategy-China HK Flows and Positioning Monthly Tracker - June 2026-260714",
+    "cleaned_source_title": "MS-China Equity Strategy-China HK Flows and Positioning Monthly Tracker - June 2026",
+    "institution_name": "摩根士丹利",
+    "required_terms": [
+      "HK"
+    ],
+    "deterministic_fallback": "摩根士丹利：中国Equity策略中国HKFlows和P",
+    "raw_candidates": [
+      "中国权益策略-中国香港资金流与仓位月度追踪",
+      "中国香港资金流追踪：6月外资流出36亿美元创第三大",
+      "中国香港资金流：6月外资流出36亿美元，国家队卖出加速"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：中国Equity策略中国HKFlows和P",
+      "摩根士丹利：中国权益策略-中国香港资金流与仓位月度追踪",
+      "摩根士丹利：中国香港资金流追踪，6月外资流出36亿美元创第三大",
+      "摩根士丹利：中国香港资金流，6月外资流出36亿美元，国家队卖出加速"
+    ],
+    "faithful_candidate_missing_terms": [
+      "HK"
+    ],
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：中国权益策略-中国香港资金流与仓位月度追踪",
+        "reasons": [
+          "missing_required_terms=HK",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国香港资金流追踪，6月外资流出36亿美元创第三大",
+        "reasons": [
+          "missing_required_terms=HK",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国香港资金流，6月外资流出36亿美元，国家队卖出加速",
+        "reasons": [
+          "missing_required_terms=HK",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：中国Equity策略中国HKFlows和P",
+    "selection_reason": "fallback_missing_required_terms",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "摩根士丹利：中国Equity策略中国HKFlows和P"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_22.pdf",
+  "figure_count": 21,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "基金->产品 x3",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "基金->产品 x6",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "市场市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x8",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "基金经理->组合负责人 x1"
+  ]
+}

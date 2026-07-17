@@ -1,0 +1,74 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260716/shard_17/0002-87-Morgan-Stanley-Yili-Industrial-600887-1H26-On-Track--Raw-Milk-Supply-Dem",
+  "title": "摩根士丹利：伊利股份1H26进展顺利原奶供需改善派息率不低于75%",
+  "source_title": "0002-87-MS-Yili Industrial-600887-1H26 On Track- Raw Milk Supply-Demand Improving-260714",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-87-MS-Yili Industrial-600887-1H26 On Track- Raw Milk Supply-Demand Improving-260714",
+    "cleaned_source_title": "MS-Yili Industrial-600887-1H26 On Track- Raw Milk Supply-Demand Improving",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：YiliIndustrial6008871H26",
+    "raw_candidates": [
+      "伊利股份-1H26进展顺利-原奶供需改善",
+      "伊利股份-1H26进展顺利-原奶供需改善-派息率不低于75%",
+      "伊利股份-1H26进展顺利-原奶供需改善-管理层预计原奶价格温和回升"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：伊利股份-1H26进展顺利-原奶供需改善",
+      "摩根士丹利：伊利股份1H26进展顺利原奶供需改善派息率不低于75%",
+      "摩根士丹利：伊利股份1H26进展顺利原奶供需改善管理层预计原奶价格温",
+      "摩根士丹利：YiliIndustrial6008871H26"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：YiliIndustrial6008871H26",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：伊利股份1H26进展顺利原奶供需改善派息率不低于75%",
+    "selection_reason": "supported_hook",
+    "hook_signals": {
+      "added_numbers": [
+        "75"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "摩根士丹利：伊利股份1H26进展顺利原奶供需改善派息率不低于75%"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_47.pdf",
+  "figure_count": 1,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
