@@ -1,0 +1,99 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_pyj14xsw/pdfs/0003-OECD_Assessing-the-gains-from-moving-along-the-global-value-chain_c21befb7.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "电子业升级，哥斯达黎",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：评估沿全球价值链移动的收益",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-OECD_Assessing-the-gains-from-moving-along-the-global-value-chain_c21befb7.pdf",
+    "cleaned_source_title": "0003-OECD_Assessing-the-gains-from-moving-along-the-global-value-chain_c21befb7",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0003OECDAssessingthega",
+    "raw_candidates": [
+      "经合组织：评估沿全球价值链移动的收益",
+      "经合组织：哥斯达黎加电子业向上游移动空间被低估",
+      "经合组织：哥斯达黎加电子业向上游移动可提升出口20%"
+    ],
+    "cleaned_candidates": [
+      "经合组织：评估沿全球价值链移动的收益",
+      "经合组织：哥斯达黎加电子业向上游移动空间被低估",
+      "经合组织：哥斯达黎加电子业向上游移动可提升出口20%",
+      "经合组织：0003OECDAssessingthega",
+      "经合组织：具体做法是，利用1995年至2019年的面板数据"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：哥斯达黎加电子业向上游移动空间被低估",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：哥斯达黎加电子业向上游移动可提升出口20%",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：0003OECDAssessingthega",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：具体做法是，利用1995年至2019年的面板数据",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：评估沿全球价值链移动的收益",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：评估沿全球价值链移动的收益"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

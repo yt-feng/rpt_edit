@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_v9xnx_o5/pdfs/0006-OECD_Policies-supporting-responsible-and-systematic-GenAI-adoptio_f63fa6a5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_v9xnx_o5/pdfs/0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_v9xnx_o5/pdfs/0008-OECD_Strengthening-the-Economic-Financial-and-Technological-Dimen_1fb0daf6.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_v9xnx_o5/pdfs/0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

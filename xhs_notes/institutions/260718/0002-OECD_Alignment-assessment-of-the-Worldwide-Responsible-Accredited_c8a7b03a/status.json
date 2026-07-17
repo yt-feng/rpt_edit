@@ -1,0 +1,94 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_pyj14xsw/pdfs/0002-OECD_Alignment-assessment-of-the-Worldwide-Responsible-Accredited_c8a7b03a.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "全球服装供应链认证，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：WRAP认证与OECD标准存在系统性差距",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-OECD_Alignment-assessment-of-the-Worldwide-Responsible-Accredited_c8a7b03a.pdf",
+    "cleaned_source_title": "0002-OECD_Alignment-assessment-of-the-Worldwide-Responsible-Accredited_c8a7b03a",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0002OECDAlignmentasses",
+    "raw_candidates": [
+      "经合组织：WRAP认证与OECD标准存在系统性差距",
+      "经合组织：WRAP认证与OECD标准存在六大结构性错位",
+      "经合组织：WRAP认证通过时点检查，未要求持续尽职调查"
+    ],
+    "cleaned_candidates": [
+      "经合组织：WRAP认证与OECD标准存在系统性差距",
+      "经合组织：WRAP认证与OECD标准存在六大结构性错位",
+      "经合组织：WRAP认证通过时点检查，未要求持续尽职调查",
+      "经合组织：0002OECDAlignmentasses",
+      "经合组织：WRAP认证覆盖全球超过3900家工厂，其标准包含12项原则"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：WRAP认证通过时点检查，未要求持续尽职调查",
+        "reasons": [
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：0002OECDAlignmentasses",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：WRAP认证覆盖全球超过3900家工厂，其标准包含12项原则",
+        "reasons": [
+          "anchor_coverage=0.32"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：WRAP认证与OECD标准存在系统性差距",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：WRAP认证与OECD标准存在系统性差距"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
