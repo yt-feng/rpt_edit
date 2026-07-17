@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-Bernstein-India Autos India EVs ： The Market Structure Question~Lessons from ICE-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxsbg0i0/pdfs/0001-06-Bernstein-India Autos India EVs - The Market Structure Question-Lessons from ICE-260717.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-CITI-China Economics：Another Miss in Credit Data， and Will It Turn Around？-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxsbg0i0/pdfs/0002-07-CITI-China Economics-Another Miss in Credit Data- and Will It Turn Around--260715.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-CITI-China Consumer ~Jewelry：A K~shaped June and 2Q26 Amid Gold Price Pull Back-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxsbg0i0/pdfs/0003-08-CITI-China Consumer -Jewelry-A K-shaped June and 2Q26 Amid Gold Price Pull Back-260715.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-CITI-China Consumer：Sequentially Improved China Retail Sales in Jun； Reiterate Upside ST View on Li Ning & Haidilao-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxsbg0i0/pdfs/0004-09-CITI-China Consumer-Sequentially Improved China Retail Sales in Jun- Reiterate Upside ST View on Li Ning - Haidilao-260715.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-GS-CHINA OVERSEAS LAND & INVESTMENT （0688.HK）1H26 Preview： Sector~leading contracts sales growth though margin pressure still lingers； Buy-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rxsbg0i0/pdfs/0005-10-GS-CHINA OVERSEAS LAND - INVESTMENT -0688.HK-1H26 Preview- Sector-leading contracts sales growth though margin pressure still lingers- Buy-260717.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
