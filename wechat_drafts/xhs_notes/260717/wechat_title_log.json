@@ -1,0 +1,4624 @@
+{
+  "schema_version": 1,
+  "date_folder": "260717",
+  "source": "xhs_notes/dropbox",
+  "generated_at_utc": "2026-07-17T23:59:39Z",
+  "article_count": 64,
+  "uploaded_count": 62,
+  "articles": [
+    {
+      "source_report_name": "01-Bernstein-Global Electrical Infrastructure- Pulse check on the data center build out- power gen lead times and international competition-260717",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：全球电气基础设施，数据中心建设进度检查",
+      "final_wechat_title": "伯恩斯坦：全球电气基础设施，数据中心建设进度检查",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_0/0001-01-Bernstein-Global-Electrical-Infrastructure--Pulse-check-on-the-data-cent",
+      "generation_decision": {
+        "source_filename": "0001-01-Bernstein-Global Electrical Infrastructure- Pulse check on the data center build out- power gen lead times and international competition-260717.pdf",
+        "cleaned_source_title": "Bernstein-Global Electrical Infrastructure- Pulse check on the data center build out- power gen lead times and international competition",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：全球ElectricalInfrastructure",
+        "raw_candidates": [
+          "Bernstein-全球电气基础设施：数据中心建设进度检查",
+          "Bernstein-全球电气基础设施：数据中心建设进度检查-仅60-65%项目能落地",
+          "Bernstein-全球电气基础设施：数据中心建设进度检查-取消延迟已超去年全年"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：全球电气基础设施，数据中心建设进度检查",
+          "Bernstein：全球电气基础设施，数据中心建设进度检查-仅60",
+          "Bernstein：全球电气基础设施，数据中心建设进度检查-取消延迟已超去年全年",
+          "Bernstein：全球ElectricalInfrastructure",
+          "Bernstein：这位专家预计，目前管线中只有60%-65%的项目能按计划推进"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：全球电气基础设施，数据中心建设进度检查-仅60",
+            "reasons": [
+              "incomplete_last_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：全球ElectricalInfrastructure",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：这位专家预计，目前管线中只有60%-65%的项目能按计划推进",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：全球电气基础设施，数据中心建设进度检查",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：全球电气基础设施，数据中心建设进度检查"
+      }
+    },
+    {
+      "source_report_name": "02-BARC-China-Demand trails supply-260715",
+      "institution_name": "巴克莱",
+      "title_before_upload": "BARC：生产与需求的结构性分化观察",
+      "final_wechat_title": "巴克莱：生产与需求的结构性分化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_0/0002-02-Barclays-China-Demand-trails-supply-260715",
+      "generation_decision": {
+        "source_filename": "0002-02-BARC-China-Demand trails supply-260715.pdf",
+        "cleaned_source_title": "BARC-China-Demand trails supply",
+        "institution_name": "BARC",
+        "required_terms": [],
+        "deterministic_fallback": "BARC：中国Demandtrailssupply",
+        "raw_candidates": [
+          "中国需求落后供给",
+          "中国需求落后供给-生产需求裂口扩大",
+          "中国需求落后供给-K型分化固化为结构"
+        ],
+        "cleaned_candidates": [
+          "BARC：中国需求落后供给",
+          "BARC：中国需求落后供给-生产需求裂口扩大",
+          "BARC：中国需求落后供给-K型分化固化为结构",
+          "BARC：中国Demandtrailssupply",
+          "BARC：零售销售在6月勉强转正至1%，但远低于一季度2.4%的平均增速"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "BARC：中国Demandtrailssupply",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BARC：零售销售在6月勉强转正至1%，但远低于一季度2.4%的平均增速",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "BARC：中国需求落后供给-生产需求裂口扩大",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "BARC：中国需求落后供给-生产需求裂口扩大"
+      }
+    },
+    {
+      "source_report_name": "03-Bernstein-Asian Autos-Chinese Autos- Still Searching for a Bottom - June domestic sales-21- YoY- EV penetration 59-- Export -80- YoY-260716",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：亚洲汽车-中国车市仍在调整",
+      "final_wechat_title": "伯恩斯坦：亚洲汽车-中国车市仍在调整",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_0/0003-03-Bernstein-Asian-Autos-Chinese-Autos--Still-Searching-for-a-Bottom---June",
+      "generation_decision": {
+        "source_filename": "0003-03-Bernstein-Asian Autos-Chinese Autos- Still Searching for a Bottom - June domestic sales-21- YoY- EV penetration 59-- Export -80- YoY-260716.pdf",
+        "cleaned_source_title": "Bernstein-Asian Autos-Chinese Autos- Still Searching for a Bottom - June domestic sales-21- YoY- EV penetration 59-- Export -80- YoY",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：Asian汽车Chinese汽车StillS",
+        "raw_candidates": [
+          "Bernstein：亚洲汽车-中国车市仍在寻底",
+          "Bernstein：中国车市6月零售同比降21%出口增80%",
+          "Bernstein：中国车市缺的不是刺激是时间"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：亚洲汽车-中国车市仍在寻底",
+          "Bernstein：中国车市6月零售同比降21%出口增80%",
+          "Bernstein：中国车市缺的不是刺激是时间",
+          "Bernstein：Asian汽车Chinese汽车StillS",
+          "Bernstein：中国汽车市场6月零售销量同比下滑21.4%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：中国车市6月零售同比降21%出口增80%",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：中国车市缺的不是刺激是时间",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：Asian汽车Chinese汽车StillS",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：中国汽车市场6月零售销量同比下滑21.4%",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：亚洲汽车-中国车市仍在寻底",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：亚洲汽车-中国车市仍在寻底"
+      }
+    },
+    {
+      "source_report_name": "04-Bernstein-U.S. Multi Industry - Electrical Equipment Liquid Cooling in Data Centers- What comes after single phase DTC- With CoolIT-s 15kW cold plate- does anything even",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "数据中心冷却技术观察：单相DTC之后是什么",
+      "final_wechat_title": "伯恩斯坦：数据中心冷却技术观察，单相DTC之后是什么",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_0/0004-04-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Liquid-Cooling-in-D",
+      "generation_decision": {
+        "source_filename": "0004-04-Bernstein-U.S. Multi Industry - Electrical Equipment Liquid Cooling in Data Centers- What comes after single phase DTC- With CoolIT-s 15kW cold plate- does anything even.pdf",
+        "cleaned_source_title": "Bernstein-U.S. Multi Industry - Electrical Equipment Liquid Cooling in Data Centers- What comes after single phase DTC- With CoolIT-s 15kW cold plate- does anything even",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：.MultiIndustryElectric",
+        "raw_candidates": [
+          "Bernstein-美国多行业：数据中心电气设备液冷-单相DTC之后是什么-CoolIT的15kW冷板是否改写一切",
+          "Bernstein-美国多行业：数据中心液冷-单相DTC后是什么-CoolIT 15kW冷板改写路线",
+          "Bernstein-美国多行业：数据中心液冷-单相DTC未达极限-CoolIT 15kW冷板反常识"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：美国多行业，数据中心电气设备液冷-单相DTC之后是什么",
+          "Bernstein：美国多行业，数据中心液冷-单相DTC后是什么",
+          "Bernstein：美国多行业，数据中心液冷-单相DTC未达极限",
+          "Bernstein：.MultiIndustryElectric",
+          "Bernstein：液冷技术路线可能被一张15kW冷板改写"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：美国多行业，数据中心液冷-单相DTC后是什么",
+            "reasons": [
+              "anchor_coverage=0.71"
+            ]
+          },
+          {
+            "title": "Bernstein：美国多行业，数据中心液冷-单相DTC未达极限",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "Bernstein：.MultiIndustryElectric",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：液冷技术路线可能被一张15kW冷板改写",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：美国多行业，数据中心电气设备液冷-单相DTC之后是什么",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：美国多行业，数据中心电气设备液冷-单相DTC之后是什么"
+      }
+    },
+    {
+      "source_report_name": "05-Bernstein-India Emerging Consumer-India Quick Commerce- From the gold rush to the long harvest...-260716",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获",
+      "final_wechat_title": "伯恩斯坦：印度新兴消费-即时零售，从淘金热到长期收获",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_0/0005-05-Bernstein-India-Emerging-Consumer-India-Quick-Commerce--From-the-gold-ru",
+      "generation_decision": {
+        "source_filename": "0005-05-Bernstein-India Emerging Consumer-India Quick Commerce- From the gold rush to the long harvest...-260716.pdf",
+        "cleaned_source_title": "Bernstein-India Emerging Consumer-India Quick Commerce- From the gold rush to the long harvest...",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：IndiaEmerging消费IndiaQu",
+        "raw_candidates": [
+          "印度新兴消费-即时零售：从淘金热到长期收获",
+          "印度即时零售：140亿美元市场进入密度竞争期",
+          "Bernstein：印度即时零售暗店密度超均衡点20%"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获",
+          "Bernstein：印度即时零售，140亿美元市场进入密度竞争期",
+          "Bernstein：印度即时零售暗店密度超均衡点20%",
+          "Bernstein：IndiaEmerging消费IndiaQu",
+          "Bernstein：印度即时零售行业年化交易额在2026财年末已达到约140亿美"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：印度即时零售，140亿美元市场进入密度竞争期",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：印度即时零售暗店密度超均衡点20%",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：IndiaEmerging消费IndiaQu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：印度即时零售行业年化交易额在2026财年末已达到约140亿美",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获"
+      }
+    },
+    {
+      "source_report_name": "06-Bernstein-India Autos India EVs - The Market Structure Question-Lessons from ICE-260717",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：印度两轮车电动化-市场结构问题与ICE经验",
+      "final_wechat_title": "伯恩斯坦：印度两轮车电动化-市场结构问题与ICE经验",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_1/0001-06-Bernstein-India-Autos-India-EVs---The-Market-Structure-Question-Lessons-",
+      "generation_decision": {
+        "source_filename": "0001-06-Bernstein-India Autos India EVs - The Market Structure Question-Lessons from ICE-260717.pdf",
+        "cleaned_source_title": "Bernstein-India Autos India EVs - The Market Structure Question-Lessons from ICE",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：India汽车IndiaEVsThe市场St",
+        "raw_candidates": [
+          "印度两轮车电动化-市场结构问题与ICE经验",
+          "印度两轮车电动化-不会改变竞争结构"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：印度两轮车电动化-市场结构问题与ICE经验",
+          "Bernstein：印度两轮车电动化-不会改变竞争结构",
+          "Bernstein：India汽车IndiaEVsThe市场St",
+          "Bernstein：印度两轮车年销量超过2000万辆，涉及约80个品牌"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：印度两轮车电动化-不会改变竞争结构",
+            "reasons": [
+              "anchor_coverage=0.42",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：India汽车IndiaEVsThe市场St",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：印度两轮车年销量超过2000万辆，涉及约80个品牌",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：印度两轮车电动化-市场结构问题与ICE经验",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：印度两轮车电动化-市场结构问题与ICE经验"
+      }
+    },
+    {
+      "source_report_name": "07-CITI-China Economics-Another Miss in Credit Data- and Will It Turn Around--260715",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：中国宏观，信贷数据与市场预期存在差异",
+      "final_wechat_title": "花旗：中国宏观，信贷数据与市场预期存在差异",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_1/0002-07-CITI-China-Economics-Another-Miss-in-Credit-Data--and-Will-It-Turn-Aroun",
+      "generation_decision": {
+        "source_filename": "0002-07-CITI-China Economics-Another Miss in Credit Data- and Will It Turn Around--260715.pdf",
+        "cleaned_source_title": "CITI-China Economics-Another Miss in Credit Data- and Will It Turn Around",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：中国EconomicsAnotherMissin",
+        "raw_candidates": [
+          "Citi-中国宏观：信贷数据再次不及预期",
+          "Citi-中国宏观：信贷数据不及预期，1.61万亿贷款低于1.95万亿",
+          "Citi-中国宏观：信贷数据不及预期，企业中长期贷款同比少增4580亿"
+        ],
+        "cleaned_candidates": [
+          "Citi：中国宏观，信贷数据再次不及预期",
+          "Citi：中国宏观，信贷数据不及预期，1.61万亿贷款低于1.95万亿",
+          "Citi：中国宏观，信贷数据不及预期，企业中长期贷款同比少增4580亿",
+          "Citi：中国EconomicsAnotherMissin",
+          "Citi：新增人民币贷款1.61万亿元，低于市场预期的1.95万亿元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：中国EconomicsAnotherMissin",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：新增人民币贷款1.61万亿元，低于市场预期的1.95万亿元",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：中国宏观，信贷数据不及预期，1.61万亿贷款低于1.95万亿",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "1.61",
+            "1.95"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：中国宏观，信贷数据不及预期，1.61万亿贷款低于1.95万亿"
+      }
+    },
+    {
+      "source_report_name": "08-CITI-China Consumer -Jewelry-A K-shaped June and 2Q26 Amid Gold Price Pull Back-260715",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：中国珠宝零售金价调整下的K型6月与2Q26",
+      "final_wechat_title": "花旗：中国珠宝零售金价调整下的K型6月与2Q26",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_1/0003-08-CITI-China-Consumer--Jewelry-A-K-shaped-June-and-2Q26-Amid-Gold-Price-Pu",
+      "generation_decision": {
+        "source_filename": "0003-08-CITI-China Consumer -Jewelry-A K-shaped June and 2Q26 Amid Gold Price Pull Back-260715.pdf",
+        "cleaned_source_title": "CITI-China Consumer -Jewelry-A K-shaped June and 2Q26 Amid Gold Price Pull Back",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：中国消费JewelryAKshapedJune和2Q26",
+        "raw_candidates": [
+          "中国珠宝零售金价回调下的K型6月与2Q26",
+          "Citi：金价回调11%触发克重黄金抄底，珠宝K型分化",
+          "老铺黄金溢价74%承压，Citi称2Q26或为底部"
+        ],
+        "cleaned_candidates": [
+          "Citi：中国珠宝零售金价回调下的K型6月与2Q26",
+          "Citi：金价回调11%触发克重黄金抄底，珠宝K型分化",
+          "Citi：老铺黄金溢价74%承压，Citi称2Q26或为底部",
+          "Citi：中国消费JewelryAKshapedJune和2Q26",
+          "Citi：国家统计局数据显示，6月金银珠宝零售额同比降幅收窄至3.4%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：金价回调11%触发克重黄金抄底，珠宝K型分化",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：老铺黄金溢价74%承压，Citi称2Q26或为底部",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中国消费JewelryAKshapedJune和2Q26",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：国家统计局数据显示，6月金银珠宝零售额同比降幅收窄至3.4%",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：中国珠宝零售金价回调下的K型6月与2Q26",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：中国珠宝零售金价回调下的K型6月与2Q26"
+      }
+    },
+    {
+      "source_report_name": "09-CITI-China Consumer-Sequentially Improved China Retail Sales in Jun- Reiterate Upside ST View on Li Ning - Haidilao-260715",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：Citi中国消费，6月零售环比改善，重申李宁海底捞短期正面",
+      "final_wechat_title": "花旗：中国消费，6月零售环比改善，重申李宁海底捞短期正面",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_1/0004-09-CITI-China-Consumer-Sequentially-Improved-China-Retail-Sales-in-Jun--Rei",
+      "generation_decision": {
+        "source_filename": "0004-09-CITI-China Consumer-Sequentially Improved China Retail Sales in Jun- Reiterate Upside ST View on Li Ning - Haidilao-260715.pdf",
+        "cleaned_source_title": "CITI-China Consumer-Sequentially Improved China Retail Sales in Jun- Reiterate Upside ST View on Li Ning - Haidilao",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：中国消费SequentiallyImproved中国",
+        "raw_candidates": [
+          "Citi中国消费：6月零售环比改善，重申李宁海底捞短期正面",
+          "Citi中国消费：6月零售增速转正至1.0%，预期差修复催化李宁海底捞",
+          "Citi中国消费：市场过度悲观，6月数据改善触发李宁海底捞情绪修复"
+        ],
+        "cleaned_candidates": [
+          "Citi：Citi中国消费，6月零售环比改善，重申李宁海底捞短期正面",
+          "Citi：Citi中国消费，6月零售增速转正至1.0%",
+          "Citi：Citi中国消费，市场过度悲观，6月数据改善触发李宁海底捞情绪修复",
+          "Citi：中国消费SequentiallyImproved中国",
+          "Citi：Citi在最新报告中预计，6月社会消费品零售总额同比增速将从5月的"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：Citi中国消费，6月零售增速转正至1.0%",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：Citi中国消费，市场过度悲观，6月数据改善触发李宁海底捞情绪修复",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中国消费SequentiallyImproved中国",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：Citi在最新报告中预计，6月社会消费品零售总额同比增速将从5月的",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：Citi中国消费，6月零售环比改善，重申李宁海底捞短期正面",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：Citi中国消费，6月零售环比改善，重申李宁海底捞短期正面"
+      }
+    },
+    {
+      "source_report_name": "10-GS-CHINA OVERSEAS LAND - INVESTMENT -0688.HK-1H26 Preview- Sector-leading contracts sales growth though margin pressure still lingers- 报告观点-260717",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：中海地产1H26预览，合约销售增长12%但利润率承压",
+      "final_wechat_title": "高盛：中海地产1H26预览，合约销售增长12%但利润率承压",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_1/0005-10-Goldman-Sachs-CHINA-OVERSEAS-LAND---INVESTMENT--0688.HK-1H26-Preview--Se",
+      "generation_decision": {
+        "source_filename": "0005-10-GS-CHINA OVERSEAS LAND - INVESTMENT -0688.HK-1H26 Preview- Sector-leading contracts sales growth though margin pressure still lingers- Buy-260717.pdf",
+        "cleaned_source_title": "GS-CHINA OVERSEAS LAND - INVESTMENT -0688.HK-1H26 Preview- Sector-leading contracts sales growth though margin pressure still lingers- Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国OVERSEASLANDINVESTMENT1H26",
+        "raw_candidates": [
+          "GS-中海地产1H26预览：合约销售领先但利润率承压",
+          "GS-中海地产1H26预览：合约销售增长12%但利润率承压",
+          "GS-中海地产1H26预览：销售领先但利润率承压-土储质量支撑韧性"
+        ],
+        "cleaned_candidates": [
+          "GS：中海地产1H26预览，合约销售领先但利润率承压",
+          "GS：中海地产1H26预览，合约销售增长12%但利润率承压",
+          "GS：中海地产1H26预览，销售领先但利润率承压-土储质量支撑韧性",
+          "GS：中国OVERSEASLANDINVESTMENT1H26",
+          "GS：GS将中海地产2026至2028年的毛利率预测下调了约1个百分点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国OVERSEASLANDINVESTMENT1H26",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：GS将中海地产2026至2028年的毛利率预测下调了约1个百分点",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中海地产1H26预览，合约销售增长12%但利润率承压",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "12"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中海地产1H26预览，合约销售增长12%但利润率承压"
+      }
+    },
+    {
+      "source_report_name": "11-DB-FX Special Report-FX seasonality-August favours the yen-260715",
+      "institution_name": "德意志银行",
+      "title_before_upload": "八月外汇季节性观察：日元走势与市场关注点",
+      "final_wechat_title": "德意志银行：八月外汇季节性观察，日元走势与市场关注点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_2/0001-11-Deutsche-Bank-FX-Special-Report-FX-seasonality-August-favours-the-yen-26",
+      "generation_decision": {
+        "source_filename": "0001-11-DB-FX Special Report-FX seasonality-August favours the yen-260715.pdf",
+        "cleaned_source_title": "DB-FX Special Report-FX seasonality-August favours the yen",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：FXSpecialReportFXseas",
+        "raw_candidates": [
+          "八月外汇季节性：日元走强",
+          "八月外汇季节性：日元全面走强，60个货币对验证",
+          "八月外汇季节性：日元走强，高贝塔货币承压最重"
+        ],
+        "cleaned_candidates": [
+          "DB：八月外汇季节性，日元走强",
+          "DB：八月外汇季节性，日元全面走强，60个货币对验证",
+          "DB：八月外汇季节性，日元走强，高贝塔货币承压最重",
+          "DB：FXSpecialReportFXseas",
+          "DB：3.季节性信号在2024-2025年出现局部偏离"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：FXSpecialReportFXseas",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：3.季节性信号在2024-2025年出现局部偏离",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：八月外汇季节性，日元全面走强，60个货币对验证",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "60"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：八月外汇季节性，日元全面走强，60个货币对验证"
+      }
+    },
+    {
+      "source_report_name": "12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：中国光伏产品价格持续调整——逆变器和薄膜企业仍保持盈利",
+      "final_wechat_title": "花旗：中国光伏产品价格持续调整，逆变器和薄膜企业仍保持盈利",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_2/0002-12-CITI-China-Renewable-Energy-Solar-Product-Prices-Further-Dipped--Compani",
+      "generation_decision": {
+        "source_filename": "0002-12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715.pdf",
+        "cleaned_source_title": "CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：中国Renewable能源SolarProduc",
+        "raw_candidates": [
+          "中国光伏产品价格续跌-逆变器和薄膜企业仍盈利",
+          "中国光伏产业链价格续跌-逆变器和薄膜企业仍盈利",
+          "中国光伏产业链价格续跌-仅逆变器和薄膜企业盈利"
+        ],
+        "cleaned_candidates": [
+          "Citi：中国光伏产品价格续跌-逆变器和薄膜企业仍盈利",
+          "Citi：中国光伏产业链价格续跌-逆变器和薄膜企业仍盈利",
+          "Citi：中国光伏产业链价格续跌-仅逆变器和薄膜企业盈利",
+          "Citi：中国Renewable能源SolarProduc",
+          "Citi：截至2026年7月15日当周"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：中国Renewable能源SolarProduc",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：截至2026年7月15日当周",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：中国光伏产品价格续跌-逆变器和薄膜企业仍盈利",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：中国光伏产品价格续跌-逆变器和薄膜企业仍盈利"
+      }
+    },
+    {
+      "source_report_name": "13-GS-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- 报告观点-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲",
+      "final_wechat_title": "高盛：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_2/0003-13-Goldman-Sachs-CHINA-RESOURCES-LAND--1109.HK--1H26-Preview--DP-impairment",
+      "generation_decision": {
+        "source_filename": "0003-13-GS-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- Buy-260716.pdf",
+        "cleaned_source_title": "GS-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国RESOURCESLAND1H26Previ",
+        "raw_candidates": [
+          "华润置地上半年预览：减值加深但处置收益与租金提供缓冲",
+          "华润置地上半年预览：减值或超15.5亿元，处置收益与租金提供缓冲",
+          "华润置地上半年预览：利润触底但减值不确定性未消失"
+        ],
+        "cleaned_candidates": [
+          "GS：华润置地上半年预览，减值加深但处置收益与租金提供缓冲",
+          "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲",
+          "GS：华润置地上半年预览，利润触底但减值不确定性未消失",
+          "GS：中国RESOURCESLAND1H26Previ",
+          "GS：将2026年开发业务毛利率预测下调了4个百分点至13.4%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：华润置地上半年预览，利润触底但减值不确定性未消失",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国RESOURCESLAND1H26Previ",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：将2026年开发业务毛利率预测下调了4个百分点至13.4%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "15.5"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲"
+      }
+    },
+    {
+      "source_report_name": "14-GS-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价",
+      "final_wechat_title": "高盛：中国医疗设备集采启动-乙类加速但强调合理定价",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_2/0004-14-Goldman-Sachs-China-Healthcare--Device-VBP---6--Capital-Equipment-VBP-Ki",
+      "generation_decision": {
+        "source_filename": "0004-14-GS-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing-260716.pdf",
+        "cleaned_source_title": "GS-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国HealthcareDeviceVBP6Ca",
+        "raw_candidates": [
+          "GS中国医疗设备集采启动-乙类加速但强调合理定价"
+        ],
+        "cleaned_candidates": [
+          "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价",
+          "GS：中国HealthcareDeviceVBP6Ca",
+          "GS：7月14日，国家卫健委发布大型医用设备集采通知"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国HealthcareDeviceVBP6Ca",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：7月14日，国家卫健委发布大型医用设备集采通知",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价"
+      }
+    },
+    {
+      "source_report_name": "15-GS-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：富士通与英伟达及多家公司合作推进物理AI",
+      "final_wechat_title": "高盛：富士通与英伟达及多家公司合作推进物理AI",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_2/0005-15-Goldman-Sachs-Fujitsu--6702.T---Announced-partnership-with-NVIDIA--Fanuc",
+      "generation_decision": {
+        "source_filename": "0005-15-GS-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI-260716.pdf",
+        "cleaned_source_title": "GS-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI",
+        "institution_name": "GS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "GS：AIFujitsuAnnouncedpartners",
+        "raw_candidates": [
+          "GS：富士通与英伟达及多家公司合作推进物理AI",
+          "GS：富士通联手英伟达等四家公司推进物理AI-市场关注记忆体成本",
+          "GS：富士通押注物理AI-市场等待记忆体成本落地"
+        ],
+        "cleaned_candidates": [
+          "GS：富士通与英伟达及多家公司合作推进物理AI",
+          "GS：富士通联手英伟达等四家公司推进物理AI-市场关注记忆体成本",
+          "GS：富士通押注物理AI-市场等待记忆体成本落地",
+          "GS：AIFujitsuAnnouncedpartners",
+          "GS：1.物理AI的商业化路径已经清晰，但时间表仍有不确定性"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：富士通联手英伟达等四家公司推进物理AI-市场关注记忆体成本",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "GS：富士通押注物理AI-市场等待记忆体成本落地",
+            "reasons": [
+              "anchor_coverage=0.26",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：AIFujitsuAnnouncedpartners",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.物理AI的商业化路径已经清晰，但时间表仍有不确定性",
+            "reasons": [
+              "anchor_coverage=0.16",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：富士通与英伟达及多家公司合作推进物理AI",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：富士通与英伟达及多家公司合作推进物理AI"
+      }
+    },
+    {
+      "source_report_name": "16-GS-GLOBAL ECONOMICS ANALYST Geopolitics and GDP- Structural Alignment Matters More than Near-Term Risk-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：地缘不确定性冲击GDP仅两个季度，结构性结盟影响持续14年",
+      "final_wechat_title": "高盛：地缘不确定性冲击GDP仅两个季度，结构性结盟影响持续14年",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_3/0001-16-Goldman-Sachs-GLOBAL-ECONOMICS-ANALYST-Geopolitics-and-GDP--Structural-A",
+      "generation_decision": {
+        "source_filename": "0001-16-GS-GLOBAL ECONOMICS ANALYST Geopolitics and GDP- Structural Alignment Matters More than Near-Term Risk-260716.pdf",
+        "cleaned_source_title": "GS-GLOBAL ECONOMICS ANALYST Geopolitics and GDP- Structural Alignment Matters More than Near-Term Risk",
+        "institution_name": "GS",
+        "required_terms": [
+          "GDP"
+        ],
+        "deterministic_fallback": "GS：GDP全球ECONOMICSANALYSTGeopolitics",
+        "raw_candidates": [
+          "GS：地缘结盟水平降至1980年代最低，长期影响远超短期冲击",
+          "GS：地缘结盟若回升至2010年代中期，2030年可贡献全球GDP约1%",
+          "GS：地缘不确定性冲击GDP仅两个季度，结构性结盟影响持续14年",
+          "GS全球宏观分析：地缘结盟比短期风险更重要",
+          "GS：地缘结盟降至1980年代最低，影响远超短期冲击",
+          "GS：地缘结盟水平若回升，2030年可贡献全球GDP约1%"
+        ],
+        "cleaned_candidates": [
+          "GS：地缘结盟水平降至1980年代最低，长期影响远超短期冲击",
+          "GS：地缘结盟若回升至2010年代中期",
+          "GS：地缘不确定性冲击GDP仅两个季度，结构性结盟影响持续14年",
+          "GS：GS全球宏观分析，地缘结盟比短期风险更重要",
+          "GS：地缘结盟降至1980年代最低，影响远超短期冲击",
+          "GS：地缘结盟水平若回升，2030年可贡献全球GDP约1%",
+          "GS：GDP全球ECONOMICSANALYSTGeopolitics",
+          "GS：1.不确定性事件冲击GDP的幅度有限，且集中在两个季度内"
+        ],
+        "faithful_candidate_missing_terms": [
+          "GDP"
+        ],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：地缘结盟水平降至1980年代最低，长期影响远超短期冲击",
+            "reasons": [
+              "missing_required_terms=GDP",
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：地缘结盟若回升至2010年代中期",
+            "reasons": [
+              "missing_required_terms=GDP",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "GS：GS全球宏观分析，地缘结盟比短期风险更重要",
+            "reasons": [
+              "missing_required_terms=GDP",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：地缘结盟降至1980年代最低，影响远超短期冲击",
+            "reasons": [
+              "missing_required_terms=GDP",
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：地缘结盟水平若回升，2030年可贡献全球GDP约1%",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "GS：GDP全球ECONOMICSANALYSTGeopolitics",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.不确定性事件冲击GDP的幅度有限，且集中在两个季度内",
+            "reasons": [
+              "anchor_coverage=0.37",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：地缘不确定性冲击GDP仅两个季度，结构性结盟影响持续14年",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "14"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "GS：1.不确定性事件冲击GDP的幅度有限，且集中在两个季度内",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "GS：地缘结盟水平降至1980年代最低，长期影响远超短期冲击",
+          "GS：地缘结盟若回升至2010年代中期，2030年可贡献全球GDP约1%",
+          "GS：地缘不确定性冲击GDP仅两个季度，结构性结盟影响持续14年"
+        ],
+        "final_title_after_wording_guard": "GS：地缘不确定性冲击GDP仅两个季度，结构性结盟影响持续14年"
+      }
+    },
+    {
+      "source_report_name": "17-GS-GLOBAL METALS - MINING-BHP S32 Copper- Spence and Sierra Gorda partnership could unlock US-2-4bn in synergies-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：BHP智利铜矿合作可释放20-40亿美元协同效应",
+      "final_wechat_title": "高盛：BHP智利铜矿合作可释放20-40亿美元协同效应",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_3/0002-17-Goldman-Sachs-GLOBAL-METALS---MINING-BHP-S32-Copper--Spence-and-Sierra-G",
+      "generation_decision": {
+        "source_filename": "0002-17-GS-GLOBAL METALS - MINING-BHP S32 Copper- Spence and Sierra Gorda partnership could unlock US-2-4bn in synergies-260716.pdf",
+        "cleaned_source_title": "GS-GLOBAL METALS - MINING-BHP S32 Copper- Spence and Sierra Gorda partnership could unlock US-2-4bn in synergies",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：全球METALSMININGBHPS32Copper",
+        "raw_candidates": [
+          "GS：BHP与Sierra Gorda铜矿合作可释放20-40亿美元协同效应",
+          "GS：BHP智利铜矿合作可释放20-40亿美元协同效应，相当于净现值10%-20%",
+          "GS：BHP与Sierra Gorda铜矿合作释放20-40亿美元协同效应，市场或低估"
+        ],
+        "cleaned_candidates": [
+          "GS：BHP与SierraGorda铜矿合作可释放20",
+          "GS：BHP智利铜矿合作可释放20-40亿美元协同效应",
+          "GS：BHP与SierraGorda铜矿合作释放20",
+          "GS：全球METALSMININGBHPS32Copper",
+          "GS：Spence也在将尾矿密度从53%提升至65%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "long_untranslated_english"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：BHP与SierraGorda铜矿合作可释放20",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.45",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：BHP与SierraGorda铜矿合作释放20",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.36",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：全球METALSMININGBHPS32Copper",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：Spence也在将尾矿密度从53%提升至65%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：BHP智利铜矿合作可释放20-40亿美元协同效应",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "40"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：BHP智利铜矿合作可释放20-40亿美元协同效应"
+      }
+    },
+    {
+      "source_report_name": "18-GS-Global PCs- Shipment estimates-14- -5- YoY in 2026E-27E- rising AI PC penetration-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：全球PC出货量2026年降14%，AIPC渗透率升至59%",
+      "final_wechat_title": "高盛：全球PC出货量2026年降14%，AIPC渗透率升至59%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_3/0003-18-Goldman-Sachs-Global-PCs--Shipment-estimates-14---5--YoY-in-2026E-27E--r",
+      "generation_decision": {
+        "source_filename": "0003-18-GS-Global PCs- Shipment estimates-14- -5- YoY in 2026E-27E- rising AI PC penetration-260716.pdf",
+        "cleaned_source_title": "GS-Global PCs- Shipment estimates-14- -5- YoY in 2026E-27E- rising AI PC penetration",
+        "institution_name": "GS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "GS：AI全球PCsShipmentestimates14",
+        "raw_candidates": [
+          "GS：全球PC出货量2026年降14%，2027年降5%",
+          "GS：全球PC出货量2026年降14%，AI PC渗透率升至59%",
+          "GS：全球PC出货量骤降14%，AI PC逆势增长成唯一机会"
+        ],
+        "cleaned_candidates": [
+          "GS：全球PC出货量2026年降14%，2027年降5%",
+          "GS：全球PC出货量2026年降14%，AIPC渗透率升至59%",
+          "GS：全球PC出货量骤降14%，AIPC逆势增长成唯一机会",
+          "GS：AI全球PCsShipmentestimates14",
+          "GS：2026年AIPC在商业PC中的渗透率预计达到65%"
+        ],
+        "faithful_candidate_missing_terms": [
+          "AI"
+        ],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：全球PC出货量2026年降14%，2027年降5%",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.58",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：全球PC出货量骤降14%，AIPC逆势增长成唯一机会",
+            "reasons": [
+              "anchor_coverage=0.46"
+            ]
+          },
+          {
+            "title": "GS：AI全球PCsShipmentestimates14",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：2026年AIPC在商业PC中的渗透率预计达到65%",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          }
+        ],
+        "selected_title": "GS：全球PC出货量2026年降14%，AIPC渗透率升至59%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "59"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：全球PC出货量2026年降14%，AIPC渗透率升至59%"
+      }
+    },
+    {
+      "source_report_name": "19-GS-Greater China Semis- Jun- IC import export value -72.3- -121.9- YoY-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：中国半导体进口价值六月同比增72%——高端芯片需求韧性超预期",
+      "final_wechat_title": "高盛：中国半导体进口价值六月同比增72%，高端芯片需求韧性超预期",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_3/0004-19-Goldman-Sachs-Greater-China-Semis--Jun--IC-import-export-value--72.3---1",
+      "generation_decision": {
+        "source_filename": "0004-19-GS-Greater China Semis- Jun- IC import export value -72.3- -121.9- YoY-260716.pdf",
+        "cleaned_source_title": "GS-Greater China Semis- Jun- IC import export value -72.3- -121.9- YoY",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：Greater中国SemisJunICimpor",
+        "raw_candidates": [
+          "GS：中国半导体进口价值六月同比增72%",
+          "GS：中国半导体进口价值六月同比增72%-进口均价跳升61.6%",
+          "GS：中国半导体进口价值六月同比增72%-高端芯片需求韧性超预期"
+        ],
+        "cleaned_candidates": [
+          "GS：中国半导体进口价值六月同比增72%",
+          "GS：中国半导体进口价值六月同比增72%-进口均价跳升61.6%",
+          "GS：中国半导体进口价值六月同比增72%-高端芯片需求韧性超预期",
+          "GS：Greater中国SemisJunICimpor",
+          "GS：同期进口量仅增长6.6%，意味着进口均价同比跳升61.6%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：Greater中国SemisJunICimpor",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：同期进口量仅增长6.6%，意味着进口均价同比跳升61.6%",
+            "reasons": [
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国半导体进口价值六月同比增72%-高端芯片需求韧性超预期",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [
+            "韧性",
+            "超预期"
+          ],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国半导体进口价值六月同比增72%-高端芯片需求韧性超预期"
+      }
+    },
+    {
+      "source_report_name": "20-GS-Japan Economic Flash- Raising Our FY2027 Inflation Forecasts Due to Weaker Yen- Higher Memory Chip Prices- and Rebound in Food Prices-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：GS日本宏观环境速报，日元贬值推升通胀但服务价格滞后才是央行考验",
+      "final_wechat_title": "高盛：日本宏观环境速报，日元贬值推升通胀但服务价格滞后才是央行考验",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_3/0005-20-Goldman-Sachs-Japan-Economic-Flash--Raising-Our-FY2027-Inflation-Forecas",
+      "generation_decision": {
+        "source_filename": "0005-20-GS-Japan Economic Flash- Raising Our FY2027 Inflation Forecasts Due to Weaker Yen- Higher Memory Chip Prices- and Rebound in Food Prices-260716.pdf",
+        "cleaned_source_title": "GS-Japan Economic Flash- Raising Our FY2027 Inflation Forecasts Due to Weaker Yen- Higher Memory Chip Prices- and Rebound in Food Prices",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：日本EconomicFlashRaisingOurFY2027通",
+        "raw_candidates": [
+          "GS日本经济速报：上调2027财年通胀预测因日元贬值、芯片涨价及食品反弹",
+          "GS日本经济速报：上调2027财年通胀预测至2.3%因日元贬值及芯片涨价",
+          "GS日本经济速报：日元贬值推升通胀但服务价格滞后才是央行考验"
+        ],
+        "cleaned_candidates": [
+          "GS：GS日本宏观环境速报",
+          "GS：GS日本宏观环境速报，日元贬值推升通胀但服务价格滞后才是央行考验",
+          "GS：日本EconomicFlashRaisingOurFY2027通",
+          "GS：将2027财年剔除生鲜食品和能源的“新核心CPI”预测上调0.3"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：日本EconomicFlashRaisingOurFY2027通",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：将2027财年剔除生鲜食品和能源的“新核心CPI”预测上调0.3",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：GS日本宏观环境速报，日元贬值推升通胀但服务价格滞后才是央行考验",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：GS日本宏观环境速报，日元贬值推升通胀但服务价格滞后才是央行考验"
+      }
+    },
+    {
+      "source_report_name": "21-GS-Japan Healthcare- JNJ results read-across- Pharma drives favorable 2Q performance- watching US surgical volume trends-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "研究笔记：日本医疗领域观察——强生业绩传导与制药板块二季度表现",
+      "final_wechat_title": "高盛：日本医疗领域观察，强生业绩传导与制药板块二季度表现",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_4/0001-21-Goldman-Sachs-Japan-Healthcare--JNJ-results-read-across--Pharma-drives-f",
+      "generation_decision": {
+        "source_filename": "0001-21-GS-Japan Healthcare- JNJ results read-across- Pharma drives favorable 2Q performance- watching US surgical volume trends-260716.pdf",
+        "cleaned_source_title": "GS-Japan Healthcare- JNJ results read-across- Pharma drives favorable 2Q performance- watching US surgical volume trends",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：日本HealthcareJNJresultsre",
+        "raw_candidates": [
+          "日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势",
+          "日本医疗-强生业绩传导-制药推动二季度表现-Icotyde放量改写竞争标准",
+          "日本医疗-强生业绩传导-制药推动二季度表现-新药Icotyde处方量超18000张"
+        ],
+        "cleaned_candidates": [
+          "GS：日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势",
+          "GS：日本医疗-强生业绩传导-制药推动二季度表现",
+          "GS：日本HealthcareJNJresultsre",
+          "GS：这款3月才获批的药物，在90天内商业保险覆盖率已超过50%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：日本医疗-强生业绩传导-制药推动二季度表现",
+            "reasons": [
+              "anchor_coverage=0.67",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：日本HealthcareJNJresultsre",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：这款3月才获批的药物，在90天内商业保险覆盖率已超过50%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势"
+      }
+    },
+    {
+      "source_report_name": "22-GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：日本半导体设备-台积电资本开支上调15%通胀推涨",
+      "final_wechat_title": "高盛：日本半导体设备-台积电资本开支上调15%通胀推涨",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_4/0002-22-Goldman-Sachs-Japan-SPE--TSMC-results-read-across--Capex-hike--comments-",
+      "generation_decision": {
+        "source_filename": "0002-22-GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole-260716.pdf",
+        "cleaned_source_title": "GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：日本SPETSMCresultsreadacro",
+        "raw_candidates": [
+          "日本半导体设备-台积电资本开支上调对行业正面",
+          "日本半导体设备-台积电资本开支上调15%通胀推涨",
+          "日本半导体设备-台积电接受涨价日本设备商迎定价权"
+        ],
+        "cleaned_candidates": [
+          "GS：日本半导体设备-台积电资本开支上调对行业正面",
+          "GS：日本半导体设备-台积电资本开支上调15%通胀推涨",
+          "GS：日本半导体设备-台积电接受涨价日本设备商迎定价权",
+          "GS：日本SPETSMCresultsreadacro",
+          "GS：台积电在7月16日的财报电话会上做了一件超出市场预期的事"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：日本半导体设备-台积电接受涨价日本设备商迎定价权",
+            "reasons": [
+              "anchor_coverage=0.45",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：日本SPETSMCresultsreadacro",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：台积电在7月16日的财报电话会上做了一件超出市场预期的事",
+            "reasons": [
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：日本半导体设备-台积电资本开支上调15%通胀推涨",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "15"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：日本半导体设备-台积电资本开支上调15%通胀推涨"
+      }
+    },
+    {
+      "source_report_name": "23-GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate 报告观点-260717",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+      "final_wechat_title": "高盛：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_4/0003-23-Goldman-Sachs-Japan-Industrials--Multiple-cos.-announce-NVIDIA-partnersh",
+      "generation_decision": {
+        "source_filename": "0003-23-GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy-260717.pdf",
+        "cleaned_source_title": "GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy",
+        "institution_name": "GS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "GS：AI日本IndustrialsMultiplecos.",
+        "raw_candidates": [
+          "日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估-重申买入",
+          "日本工业-英伟达物理AI合作-欧姆龙被低估-市场反应偏差",
+          "日本工业-英伟达物理AI合作-欧姆龙被低估-已实现技术成果"
+        ],
+        "cleaned_candidates": [
+          "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+          "GS：日本工业-英伟达物理AI合作-欧姆龙被低估-市场反应偏差",
+          "GS：日本工业-英伟达物理AI合作-欧姆龙被低估-已实现技术成果",
+          "GS：AI日本IndustrialsMultiplecos.",
+          "GS：7月16日，英伟达CEO黄仁勋在日本宣布了一系列物理AI合作"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：AI日本IndustrialsMultiplecos.",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：7月16日，英伟达CEO黄仁勋在日本宣布了一系列物理AI合作",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估"
+      }
+    },
+    {
+      "source_report_name": "24-GS-Kingsoft Cloud -KC.US- 2Q26 Preview- Moderated revenue growth against a more normalized base- Capex visibility key to 2H26 growth acceleration- 报告观点-2607",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：金山云二季度预览，营收增速节奏变化，资本开支决定下半年增长",
+      "final_wechat_title": "高盛：金山云二季度预览，营收增速节奏变化，资本开支决定下半年增长",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_4/0004-24-Goldman-Sachs-Kingsoft-Cloud--KC.US--2Q26-Preview--Moderated-revenue-gro",
+      "generation_decision": {
+        "source_filename": "0004-24-GS-Kingsoft Cloud -KC.US- 2Q26 Preview- Moderated revenue growth against a more normalized base- Capex visibility key to 2H26 growth acceleration- Buy-2607.pdf",
+        "cleaned_source_title": "GS-Kingsoft Cloud -KC.US- 2Q26 Preview- Moderated revenue growth against a more normalized base- Capex visibility key to 2H26 growth acceleration- Buy-2607",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：KingsoftCloud2Q26Preview",
+        "raw_candidates": [
+          "金山云二季度预览：营收增速放缓，资本开支决定下半年增长",
+          "金山云二季度营收增速放缓至27%，资本开支指引支撑下半年加速",
+          "金山云：营收增速放缓非需求走弱，芯片供给才是下半年关键"
+        ],
+        "cleaned_candidates": [
+          "GS：金山云二季度预览，营收增速放缓，资本开支决定下半年增长",
+          "GS：金山云二季度营收增速放缓至27%，资本开支指引支撑下半年加速",
+          "GS：金山云，营收增速放缓非需求走弱，芯片供给才是下半年关键",
+          "GS：KingsoftCloud2Q26Preview",
+          "GS：自5月下旬一季报发布以来，金山云报价回调约23%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：金山云二季度营收增速放缓至27%，资本开支指引支撑下半年加速",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "GS：金山云，营收增速放缓非需求走弱，芯片供给才是下半年关键",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：KingsoftCloud2Q26Preview",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：自5月下旬一季报发布以来，金山云报价回调约23%",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：金山云二季度预览，营收增速放缓，资本开支决定下半年增长",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：金山云二季度预览，营收增速放缓，资本开支决定下半年增长"
+      }
+    },
+    {
+      "source_report_name": "25-GS-South Korea- BOK Hikes to 2.75-- As Expected- and Stresses Data Dependency on the Next Hike-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：韩国央行加息至2.75%，强调数据依赖",
+      "final_wechat_title": "高盛：韩国央行加息至2.75%，强调数据依赖",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_4/0005-25-Goldman-Sachs-South-Korea--BOK-Hikes-to-2.75---As-Expected--and-Stresses",
+      "generation_decision": {
+        "source_filename": "0005-25-GS-South Korea- BOK Hikes to 2.75-- As Expected- and Stresses Data Dependency on the Next Hike-260716.pdf",
+        "cleaned_source_title": "GS-South Korea- BOK Hikes to 2.75-- As Expected- and Stresses Data Dependency on the Next Hike",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：SouthKoreaBOKHikesto2.75",
+        "raw_candidates": [
+          "韩国央行加息至2.75%，强调数据依赖",
+          "韩国央行加息至2.75%，GS预计还有两次加息",
+          "韩国央行加息至2.75%，数据依赖取代预设路径"
+        ],
+        "cleaned_candidates": [
+          "GS：韩国央行加息至2.75%，强调数据依赖",
+          "GS：韩国央行加息至2.75%，GS预计还有两次加息",
+          "GS：韩国央行加息至2.75%，数据依赖取代预设路径",
+          "GS：SouthKoreaBOKHikesto2.75",
+          "GS：韩国央行在7月将政策利率上调25个基点至2.75%，符合市场共识"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：韩国央行加息至2.75%，GS预计还有两次加息",
+            "reasons": [
+              "anchor_coverage=0.60",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：SouthKoreaBOKHikesto2.75",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.13",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "GS：韩国央行在7月将政策利率上调25个基点至2.75%，符合市场共识",
+            "reasons": [
+              "anchor_coverage=0.40",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：韩国央行加息至2.75%，强调数据依赖",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：韩国央行加息至2.75%，强调数据依赖"
+      }
+    },
+    {
+      "source_report_name": "26-GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- 报告观点-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：六福同店增长强劲-内地关店150家远超预期",
+      "final_wechat_title": "高盛：六福同店增长强劲-内地关店150家远超预期",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_5/0001-26-Goldman-Sachs-Luk-Fook-Holdings--0590.HK--1QFY27-strong-SSSG-as-expected",
+      "generation_decision": {
+        "source_filename": "0001-26-GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral-260716.pdf",
+        "cleaned_source_title": "GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：LukFookHoldings1QFY27str",
+        "raw_candidates": [
+          "六福同店增长强劲但关店超预期",
+          "六福同店增长强劲-内地关店150家远超预期",
+          "六福同店增长强劲-黄金主导但固定价格珠宝下滑7%"
+        ],
+        "cleaned_candidates": [
+          "GS：六福同店增长强劲但关店超预期",
+          "GS：六福同店增长强劲-内地关店150家远超预期",
+          "GS：六福同店增长强劲-黄金主导但固定价格珠宝下滑7%",
+          "GS：LukFookHoldings1QFY27str",
+          "GS：六福集团在7月16日公布了截至6月底的第一财季运营数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：六福同店增长强劲-黄金主导但固定价格珠宝下滑7%",
+            "reasons": [
+              "anchor_coverage=0.54"
+            ]
+          },
+          {
+            "title": "GS：LukFookHoldings1QFY27str",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：六福集团在7月16日公布了截至6月底的第一财季运营数据",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：六福同店增长强劲-内地关店150家远超预期",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "150"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：六福同店增长强劲-内地关店150家远超预期"
+      }
+    },
+    {
+      "source_report_name": "27-GS-TSMC -2330.TW-Earnings review- AI demand visibility into 2030 with stronger guidance extends TSMC-s lead with higher capacity investment- reiterate 报告观点",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+      "final_wechat_title": "高盛：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_5/0002-27-Goldman-Sachs-TSMC--2330.TW-Earnings-review--AI-demand-visibility-into-2",
+      "generation_decision": {
+        "source_filename": "0002-27-GS-TSMC -2330.TW-Earnings review- AI demand visibility into 2030 with stronger guidance extends TSMC-s lead with higher capacity investment- reiterate Buy.pdf",
+        "cleaned_source_title": "GS-TSMC -2330.TW-Earnings review- AI demand visibility into 2030 with stronger guidance extends TSMC-s lead with higher capacity investment- reiterate Buy",
+        "institution_name": "GS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "GS：AITSMCEarningsreview",
+        "raw_candidates": [
+          "GS：台积电AI需求可见度延伸至2030年",
+          "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+          "GS：台积电AI需求可见度至2030年-管理层称新AI产业浮现"
+        ],
+        "cleaned_candidates": [
+          "GS：台积电AI需求可见度延伸至2030年",
+          "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+          "GS：台积电AI需求可见度至2030年-管理层称新AI产业浮现",
+          "GS：AITSMCEarningsreview",
+          "GS：台积电的AI需求可见度已延伸至2030年"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：AITSMCEarningsreview",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026",
+            "40"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%"
+      }
+    },
+    {
+      "source_report_name": "29-GS-XPeng Inc. -XPEV 9868.HK-Mona L03 to drive volume growth acceleration with strong orders post launch- 报告观点-260717",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：小鹏MONAL03订单加速推动销量增长",
+      "final_wechat_title": "高盛：小鹏MONAL03订单加速推动销量增长",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_5/0004-29-Goldman-Sachs-XPeng-Inc.--XPEV-9868.HK-Mona-L03-to-drive-volume-growth-a",
+      "generation_decision": {
+        "source_filename": "0004-29-GS-XPeng Inc. -XPEV 9868.HK-Mona L03 to drive volume growth acceleration with strong orders post launch- Buy-260717.pdf",
+        "cleaned_source_title": "GS-XPeng Inc. -XPEV 9868.HK-Mona L03 to drive volume growth acceleration with strong orders post launch- Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：XPengInc.",
+        "raw_candidates": [
+          "小鹏MONA L03订单加速推动销量增长",
+          "小鹏MONA L03订单7分钟2万-销量增速看至59%",
+          "小鹏MONA L03订单速度翻倍-GS看好销量加速"
+        ],
+        "cleaned_candidates": [
+          "GS：小鹏MONAL03订单加速推动销量增长",
+          "GS：小鹏MONAL03订单7分钟2万-销量增速看至59%",
+          "GS：小鹏MONAL03订单速度翻倍-GS看好销量加速",
+          "GS：XPengInc.",
+          "GS：7月16日，小鹏在慕尼黑全球首发了MONA品牌第二款车型L03"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：小鹏MONAL03订单7分钟2万-销量增速看至59%",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "GS：小鹏MONAL03订单速度翻倍-GS看好销量加速",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "GS：XPengInc.",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：7月16日，小鹏在慕尼黑全球首发了MONA品牌第二款车型L03",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          }
+        ],
+        "selected_title": "GS：小鹏MONAL03订单加速推动销量增长",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：小鹏MONAL03订单加速推动销量增长"
+      }
+    },
+    {
+      "source_report_name": "30-GS-UMT -3491.TWO-- AI data center from LEO Satellite- High-speed interconnection end application in expansion- 报告观点-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：UMT并购DYNAHZ——产能扩2-3倍切入AI数据中心高速互联",
+      "final_wechat_title": "高盛：UMT并购DYNAHZ，产能扩2-3倍切入AI数据中心高速互联",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_5/0005-30-Goldman-Sachs-UMT--3491.TWO---AI-data-center-from-LEO-Satellite--High-sp",
+      "generation_decision": {
+        "source_filename": "0005-30-GS-UMT -3491.TWO-- AI data center from LEO Satellite- High-speed interconnection end application in expansion- Buy-260716.pdf",
+        "cleaned_source_title": "GS-UMT -3491.TWO-- AI data center from LEO Satellite- High-speed interconnection end application in expansion- Buy",
+        "institution_name": "GS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "GS：UMTAIdatacenterfromLEOSa",
+        "raw_candidates": [
+          "UMT从低轨卫星切入AI数据中心高速互联",
+          "UMT收购DYNAHZ-17亿新台币切入AI数据中心高速互联",
+          "UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联"
+        ],
+        "cleaned_candidates": [
+          "GS：UMT从低轨卫星切入AI数据中心高速互联",
+          "GS：UMT收购DYNAHZ-17亿新台币切入AI数据中心高速互联",
+          "GS：UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联",
+          "GS：UMTAIdatacenterfromLEOSa",
+          "GS：1.收购标的DYNAHZ已切入AI数据中心客户，产能计划扩2"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：UMTAIdatacenterfromLEOSa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.16",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.收购标的DYNAHZ已切入AI数据中心客户，产能计划扩2",
+            "reasons": [
+              "anchor_coverage=0.37"
+            ]
+          }
+        ],
+        "selected_title": "GS：UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2",
+            "3"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联"
+      }
+    },
+    {
+      "source_report_name": "31-JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：中国权益策略-AI主题-去杠杆是健康重置",
+      "final_wechat_title": "摩根大通：中国权益策略-AI主题-去杠杆是健康重置",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_6/0001-31-J.P.-Morgan-China-Equity-Strategy-The-AI-Theme--Deleveraging-as-a-Health",
+      "generation_decision": {
+        "source_filename": "0001-31-JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset-260715.pdf",
+        "cleaned_source_title": "JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：中国Equity策略TheAITheme",
+        "raw_candidates": [
+          "中国权益策略-AI主题-去杠杆是健康重置",
+          "中国权益策略-AI去杠杆健康重置-云厂商负债率仅40%",
+          "中国权益策略-AI回调非泡沫破裂-去杠杆是健康重置"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国权益策略-AI主题-去杠杆是健康重置",
+          "JPM：中国权益策略-AI去杠杆健康重置-云厂商负债率仅40%",
+          "JPM：中国权益策略-AI回调非泡沫破裂-去杠杆是健康重置",
+          "JPM：中国Equity策略TheAITheme",
+          "JPM：3.短期非AI板块有政策窗口，但AI可能在8月业绩季重新领跑"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国Equity策略TheAITheme",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：3.短期非AI板块有政策窗口，但AI可能在8月业绩季重新领跑",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国权益策略-AI主题-去杠杆是健康重置",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国权益策略-AI主题-去杠杆是健康重置"
+      }
+    },
+    {
+      "source_report_name": "32-JPM-China Consumer Strategy-June retail sales return to growth on easier comps- 15th FYP sets the goal- not the how-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "关于消费趋势的观察笔记",
+      "final_wechat_title": "摩根大通：关于消费趋势",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_6/0002-32-J.P.-Morgan-China-Consumer-Strategy-June-retail-sales-return-to-growth-o",
+      "generation_decision": {
+        "source_filename": "0002-32-JPM-China Consumer Strategy-June retail sales return to growth on easier comps- 15th FYP sets the goal- not the how-260715.pdf",
+        "cleaned_source_title": "JPM-China Consumer Strategy-June retail sales return to growth on easier comps- 15th FYP sets the goal- not the how",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国消费策略Juneretailsalesreturnto增",
+        "raw_candidates": [
+          "中国消费策略：6月零售靠基数转正，十五五定目标未定路径",
+          "中国消费策略：6月零售转正1.0%但复合增速持平，十五五目标3.7%路径未定",
+          "中国消费策略：6月零售靠基数转正，CPI-PPI剪刀差-3.1%侵蚀利润"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国消费策略，6月零售靠基数转正，十五五定目标未定路径",
+          "JPM：中国消费策略，6月零售转正1.0%但复合增速持平",
+          "JPM：中国消费策略，6月零售靠基数转正，CPI-PPI剪刀差",
+          "JPM：中国消费策略Juneretailsalesreturnto增",
+          "JPM：6月社会消费品零售总额同比转正至1.0%，超过彭博预期的"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国消费策略，6月零售转正1.0%但复合增速持平",
+            "reasons": [
+              "anchor_coverage=0.42",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国消费策略，6月零售靠基数转正，CPI-PPI剪刀差",
+            "reasons": [
+              "anchor_coverage=0.58",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国消费策略Juneretailsalesreturnto增",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：6月社会消费品零售总额同比转正至1.0%，超过彭博预期的",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国消费策略，6月零售靠基数转正，十五五定目标未定路径",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国消费策略，6月零售靠基数转正，十五五定目标未定路径"
+      }
+    },
+    {
+      "source_report_name": "33-HSBC-China Macro Tracker-Expanding consumption- led by services-260715",
+      "institution_name": "汇丰",
+      "title_before_upload": "HSBC：HSBC中国宏观追踪-服务引领消费扩张",
+      "final_wechat_title": "汇丰：中国宏观追踪-服务引领消费扩张",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_6/0003-33-HSBC-China-Macro-Tracker-Expanding-consumption--led-by-services-260715",
+      "generation_decision": {
+        "source_filename": "0003-33-HSBC-China Macro Tracker-Expanding consumption- led by services-260715.pdf",
+        "cleaned_source_title": "HSBC-China Macro Tracker-Expanding consumption- led by services",
+        "institution_name": "HSBC",
+        "required_terms": [],
+        "deterministic_fallback": "HSBC：中国MacroTrackerExpandingc",
+        "raw_candidates": [
+          "HSBC中国宏观追踪-服务引领消费扩张",
+          "HSBC中国宏观追踪-服务消费2030年目标100万亿",
+          "HSBC中国宏观追踪-政策重心从零售转向服务"
+        ],
+        "cleaned_candidates": [
+          "HSBC：HSBC中国宏观追踪-服务引领消费扩张",
+          "HSBC：HSBC中国宏观追踪-服务消费2030年目标100万亿",
+          "HSBC：HSBC中国宏观追踪-政策重心从零售转向服务",
+          "HSBC：中国MacroTrackerExpandingc",
+          "HSBC：7月13日，国务院发布了第十五份扩大消费五年规划"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "HSBC：HSBC中国宏观追踪-服务消费2030年目标100万亿",
+            "reasons": [
+              "anchor_coverage=0.67",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "HSBC：HSBC中国宏观追踪-政策重心从零售转向服务",
+            "reasons": [
+              "anchor_coverage=0.53",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "HSBC：中国MacroTrackerExpandingc",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "HSBC：7月13日，国务院发布了第十五份扩大消费五年规划",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "HSBC：HSBC中国宏观追踪-服务引领消费扩张",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "HSBC：HSBC中国宏观追踪-服务引领消费扩张"
+      }
+    },
+    {
+      "source_report_name": "34-JPM-China Property-Tier-1 cities- home price stabilization continues- but overall trends diverge-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "中国房地产市场观察：一线城市价格趋稳，整体趋势分化",
+      "final_wechat_title": "摩根大通：中国房地产市场观察，一线城市价格趋稳，整体趋势分化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_6/0004-34-J.P.-Morgan-China-Property-Tier-1-cities--home-price-stabilization-conti",
+      "generation_decision": {
+        "source_filename": "0004-34-JPM-China Property-Tier-1 cities- home price stabilization continues- but overall trends diverge-260715.pdf",
+        "cleaned_source_title": "JPM-China Property-Tier-1 cities- home price stabilization continues- but overall trends diverge",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国地产Tier1cities",
+        "raw_candidates": [
+          "中国房地产-一线城市房价企稳但整体趋势分化",
+          "中国房地产-一线城市房价连四月正增长但全国分化加剧",
+          "中国房地产-上海二手房跑赢一线城市但深圳广州走弱"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国房地产-一线城市房价企稳但整体趋势分化",
+          "JPM：中国房地产-一线城市房价连四月正增长但全国分化加剧",
+          "JPM：中国房地产-上海二手房跑赢一线城市但深圳广州走弱",
+          "JPM：中国地产Tier1cities",
+          "JPM：住宅销售额同比降幅从5月的8%扩大至6月的14%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国房地产-一线城市房价连四月正增长但全国分化加剧",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "JPM：中国房地产-上海二手房跑赢一线城市但深圳广州走弱",
+            "reasons": [
+              "anchor_coverage=0.37",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国地产Tier1cities",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：住宅销售额同比降幅从5月的8%扩大至6月的14%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国房地产-一线城市房价企稳但整体趋势分化",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国房地产-一线城市房价企稳但整体趋势分化"
+      }
+    },
+    {
+      "source_report_name": "35-JPM-China Healthcare 2-day Chengdu tour takeaways- Rising innovation- partnerships and global execution-260716",
+      "institution_name": "摩根大通",
+      "title_before_upload": "行业观察：中国医疗成都调研，创新方向与全球实践",
+      "final_wechat_title": "摩根大通：中国医疗成都调研，创新方向与全球实践",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_6/0005-35-J.P.-Morgan-China-Healthcare-2-day-Chengdu-tour-takeaways--Rising-innova",
+      "generation_decision": {
+        "source_filename": "0005-35-JPM-China Healthcare 2-day Chengdu tour takeaways- Rising innovation- partnerships and global execution-260716.pdf",
+        "cleaned_source_title": "JPM-China Healthcare 2-day Chengdu tour takeaways- Rising innovation- partnerships and global execution",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国Healthcare2dayChengd",
+        "raw_candidates": [
+          "中国医疗成都调研：创新崛起与全球执行",
+          "中国医疗成都调研：9家公司AI与出海信号",
+          "中国医疗成都调研：出海靠临床差异化而非低价"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国医疗成都调研，创新崛起与全球执行",
+          "JPM：中国医疗成都调研，9家公司AI与出海信号",
+          "JPM：中国医疗成都调研，出海靠临床差异化而非低价",
+          "JPM：中国Healthcare2dayChengd",
+          "JPM：调研发生在7月中旬，正值市场对中国医疗板块情绪回暖的窗口期"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国医疗成都调研，9家公司AI与出海信号",
+            "reasons": [
+              "anchor_coverage=0.44",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国医疗成都调研，出海靠临床差异化而非低价",
+            "reasons": [
+              "anchor_coverage=0.44",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国Healthcare2dayChengd",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：调研发生在7月中旬，正值市场对中国医疗板块情绪回暖的窗口期",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国医疗成都调研，创新崛起与全球执行",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国医疗成都调研，创新崛起与全球执行"
+      }
+    },
+    {
+      "source_report_name": "37-JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%",
+      "final_wechat_title": "摩根大通：中国增长企稳但动能减弱-二季度GDP降至4.3%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_7/0002-37-J.P.-Morgan-China--Growth-weakened-despite-activity-stabilization-Produc",
+      "generation_decision": {
+        "source_filename": "0002-37-JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags-260715.pdf",
+        "cleaned_source_title": "JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国-增长weakeneddespiteac",
+        "raw_candidates": [
+          "中国增长企稳但动能减弱",
+          "中国增长企稳但动能减弱-二季度GDP降至4.3%",
+          "中国增长企稳但动能减弱-支撑面收窄至出口与产业升级"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国增长企稳但动能减弱",
+          "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%",
+          "JPM：中国增长企稳但动能减弱-支撑面收窄至出口与产业升级",
+          "JPM：中国-增长weakeneddespiteac",
+          "JPM：二季度GDP增速降至4.3%，但六月工业增加值反弹至5.3%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国-增长weakeneddespiteac",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.30"
+            ]
+          },
+          {
+            "title": "JPM：二季度GDP增速降至4.3%，但六月工业增加值反弹至5.3%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "4.3"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%"
+      }
+    },
+    {
+      "source_report_name": "38-JPM-Hong Kong Property - Conglomerates-Results preview- kickstarting the earnings upcycle-260716",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：香港地产综合企业，业绩预览开启盈利上行周期",
+      "final_wechat_title": "摩根大通：香港地产综合企业，业绩预览开启盈利上行周期",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_7/0003-38-J.P.-Morgan-Hong-Kong-Property---Conglomerates-Results-preview--kickstar",
+      "generation_decision": {
+        "source_filename": "0003-38-JPM-Hong Kong Property - Conglomerates-Results preview- kickstarting the earnings upcycle-260716.pdf",
+        "cleaned_source_title": "JPM-Hong Kong Property - Conglomerates-Results preview- kickstarting the earnings upcycle",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：HongKong地产Conglomerate",
+        "raw_candidates": [
+          "香港地产综合企业：业绩预览开启盈利上行周期",
+          "香港地产综合企业：2026年盈利增速约9%",
+          "香港地产综合企业：盈利节奏变化周期已结束"
+        ],
+        "cleaned_candidates": [
+          "JPM：香港地产综合企业，业绩预览开启盈利上行周期",
+          "JPM：香港地产综合企业，2026年盈利增速约9%",
+          "JPM：香港地产综合企业，盈利节奏变化周期已结束",
+          "JPM：HongKong地产Conglomerate",
+          "JPM：香港置地预计增长10%，九龙仓置业增长2%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：香港地产综合企业，2026年盈利增速约9%",
+            "reasons": [
+              "anchor_coverage=0.42",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：香港地产综合企业，盈利节奏变化周期已结束",
+            "reasons": [
+              "anchor_coverage=0.47",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：HongKong地产Conglomerate",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：香港置地预计增长10%，九龙仓置业增长2%",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：香港地产综合企业，业绩预览开启盈利上行周期",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：香港地产综合企业，业绩预览开启盈利上行周期"
+      }
+    },
+    {
+      "source_report_name": "39-JPM-China- Housing activity index trended lower further-Housing-s role in the Boosting Consumption 15th FYP-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "研究笔记：中国住房市场观察——住房在消费规划中的角色定位",
+      "final_wechat_title": "摩根大通：中国住房市场观察，住房在消费规划中的角色定位",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_7/0004-39-J.P.-Morgan-China--Housing-activity-index-trended-lower-further-Housing-",
+      "generation_decision": {
+        "source_filename": "0004-39-JPM-China- Housing activity index trended lower further-Housing-s role in the Boosting Consumption 15th FYP-260715.pdf",
+        "cleaned_source_title": "JPM-China- Housing activity index trended lower further-Housing-s role in the Boosting Consumption 15th FYP",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国-Housingactivityinde",
+        "raw_candidates": [
+          "中国住房活动指数继续走低-住房在提振消费十五五规划中的角色",
+          "中国住房活动指数6月降幅扩大-住房被定位为消费平台",
+          "中国住房活动指数走低-JPM：政策转向消费平台但调整未完成"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国住房活动指数继续走低-住房在提振消费十五五规划中的角色",
+          "JPM：中国住房活动指数6月降幅扩大-住房被定位为消费平台",
+          "JPM：中国住房活动指数走低-JPM，政策转向消费平台但调整未完成",
+          "JPM：中国-Housingactivityinde",
+          "JPM：一线城市新房和二手房价格涨幅均较5月节奏变化0.1个百分点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国住房活动指数6月降幅扩大-住房被定位为消费平台",
+            "reasons": [
+              "anchor_coverage=0.31",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国住房活动指数走低-JPM，政策转向消费平台但调整未完成",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国-Housingactivityinde",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：一线城市新房和二手房价格涨幅均较5月节奏变化0.1个百分点",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国住房活动指数继续走低-住房在提振消费十五五规划中的角色",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国住房活动指数继续走低-住房在提振消费十五五规划中的角色"
+      }
+    },
+    {
+      "source_report_name": "40-JPM-Huaqin Co Ltd -A-603296-NP beat on solid execution and investment gains- datacenter acceleration to drive re-rating in 2H26-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：华勤执行力与研究收益超预期",
+      "final_wechat_title": "摩根大通：华勤执行力与研究收益超预期",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_7/0005-40-J.P.-Morgan-Huaqin-Co-Ltd--A-603296-NP-beat-on-solid-execution-and-inves",
+      "generation_decision": {
+        "source_filename": "0005-40-JPM-Huaqin Co Ltd -A-603296-NP beat on solid execution and investment gains- datacenter acceleration to drive re-rating in 2H26-260715.pdf",
+        "cleaned_source_title": "JPM-Huaqin Co Ltd -A-603296-NP beat on solid execution and investment gains- datacenter acceleration to drive re-rating in 2H26",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：HuaqinCoLtdA603296NPbe",
+        "raw_candidates": [
+          "华勤执行力与投资收益超预期-数据中心加速推动2026下半年重估",
+          "华勤2Q26净利润超预期65%-数据中心加速推动2026下半年重估",
+          "华勤扣非净利润增长15%-数据中心加速推动2026下半年重估"
+        ],
+        "cleaned_candidates": [
+          "JPM：华勤执行力与研究收益超预期",
+          "JPM：华勤2Q26净利润超预期65%",
+          "JPM：华勤扣非净利润增长15%-数据中心加速推动2026下半年重估",
+          "JPM：HuaqinCoLtdA603296NPbe",
+          "JPM：华勤当季净利润中值达到19亿元，同比增长83%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：华勤2Q26净利润超预期65%",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：华勤扣非净利润增长15%-数据中心加速推动2026下半年重估",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：HuaqinCoLtdA603296NPbe",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：华勤当季净利润中值达到19亿元，同比增长83%",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：华勤执行力与研究收益超预期",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：华勤执行力与研究收益超预期"
+      }
+    },
+    {
+      "source_report_name": "41-JPM-Kelun Biotech-6990.HK- The first PD-1-sac-TMT Ph3 win over PD-1-chemo- raising",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗",
+      "final_wechat_title": "摩根大通：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_8/0001-41-J.P.-Morgan-Kelun-Biotech-6990.HK--The-first-PD-1-sac-TMT-Ph3-win-over-P",
+      "generation_decision": {
+        "source_filename": "0001-41-JPM-Kelun Biotech-6990.HK- The first PD-1-sac-TMT Ph3 win over PD-1-chemo- raising PT on higher PoS-260716.pdf",
+        "cleaned_source_title": "JPM-Kelun Biotech-6990.HK- The first PD-1-sac-TMT Ph3 win over PD-1-chemo- raising PT on higher PoS",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：KelunBiotech",
+        "raw_candidates": [
+          "科伦博泰PD-1-sac-TMT III期击败PD-1-化疗",
+          "科伦博泰III期胜出-JPM上调目标价至648港元",
+          "科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗"
+        ],
+        "cleaned_candidates": [
+          "JPM：科伦博泰PD-1-sac-TMTIII期击败PD-1-化疗",
+          "JPM",
+          "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗",
+          "JPM：KelunBiotech",
+          "JPM：从6月初低点至今，公司报价已回升38%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "incomplete_last_segment"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：科伦博泰PD-1-sac-TMTIII期击败PD-1-化疗",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：KelunBiotech",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：从6月初低点至今，公司报价已回升38%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗"
+      }
+    },
+    {
+      "source_report_name": "42-JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW-260716",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：李宁二季度零售观察-库存改善至4个月",
+      "final_wechat_title": "摩根大通：李宁二季度零售观察-库存改善至4个月",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_8/0002-42-J.P.-Morgan-Li-Ning--2331.HK-Retail-headwinds-in-2Q--in-line--sustained-",
+      "generation_decision": {
+        "source_filename": "0002-42-JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW-260716.pdf",
+        "cleaned_source_title": "JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：LiNingRetailheadwindsin2",
+        "raw_candidates": [
+          "李宁二季度零售承压-维持增持",
+          "李宁二季度零售承压-库存改善至4个月",
+          "李宁二季度零售承压-折扣加深但库存改善"
+        ],
+        "cleaned_candidates": [
+          "JPM：李宁二季度零售承压-更新公司观点",
+          "JPM：李宁二季度零售承压-库存改善至4个月",
+          "JPM：李宁二季度零售承压-折扣加深但库存改善",
+          "JPM：LiNingRetailheadwindsin2",
+          "JPM：线上分别加深中个位数和低个位数，整体折扣在65折左右）"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "generic_series_title"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：李宁二季度零售承压-更新公司观点",
+            "reasons": [
+              "generic_series_title",
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：李宁二季度零售承压-折扣加深但库存改善",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "JPM：LiNingRetailheadwindsin2",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：线上分别加深中个位数和低个位数，整体折扣在65折左右）",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：李宁二季度零售承压-库存改善至4个月",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "4"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：李宁二季度零售承压-库存改善至4个月"
+      }
+    },
+    {
+      "source_report_name": "43-JPM-MedTech - Healthcare Services Sector-Impact of DX and AI adoption in healthcare- Initiatives that will lead to future market share gains are underway behind the",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+      "final_wechat_title": "摩根大通：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_8/0003-43-J.P.-Morgan-MedTech---Healthcare-Services-Sector-Impact-of-DX-and-AI-ado",
+      "generation_decision": {
+        "source_filename": "0003-43-JPM-MedTech - Healthcare Services Sector-Impact of DX and AI adoption in healthcare- Initiatives that will lead to future market share gains are underway behind the.pdf",
+        "cleaned_source_title": "JPM-MedTech - Healthcare Services Sector-Impact of DX and AI adoption in healthcare- Initiatives that will lead to future market share gains are underway behind the",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：AIMedTechHealthcareServi",
+        "raw_candidates": [
+          "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+          "JPM：日本医院AI补贴最高8000万日元-设备商降本竞争",
+          "JPM：日本医院AI加速-设备商真正战场是降低固定成本"
+        ],
+        "cleaned_candidates": [
+          "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+          "JPM：日本医院AI补贴最高8000万日元-设备商降本竞争",
+          "JPM：日本医院AI加速-设备商真正战场是降低固定成本",
+          "JPM：AIMedTechHealthcareServi",
+          "JPM：1.医院端的AI采纳已从“试点”进入“可量化效率”阶段"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：日本医院AI补贴最高8000万日元-设备商降本竞争",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：日本医院AI加速-设备商真正战场是降低固定成本",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：AIMedTechHealthcareServi",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：1.医院端的AI采纳已从“试点”进入“可量化效率”阶段",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动"
+      }
+    },
+    {
+      "source_report_name": "44-JPM-Tango Therapeutics-TNGX.US-It Takes Two to Make a Revolution- Initiate at OW-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗",
+      "final_wechat_title": "摩根大通：Tango组合疗法，92%客观缓解率突破胰腺癌治疗",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_8/0004-44-J.P.-Morgan-Tango-Therapeutics-TNGX.US-It-Takes-Two-to-Make-a-Revolution",
+      "generation_decision": {
+        "source_filename": "0004-44-JPM-Tango Therapeutics-TNGX.US-It Takes Two to Make a Revolution- Initiate at OW-260715.pdf",
+        "cleaned_source_title": "JPM-Tango Therapeutics-TNGX.US-It Takes Two to Make a Revolution- Initiate at OW",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：TangoTherapeuticsItTak",
+        "raw_candidates": [
+          "Tango Therapeutics：组合疗法开启胰腺癌革命",
+          "Tango组合疗法：92%客观缓解率突破胰腺癌治疗",
+          "Tango联手Revolution：胰腺癌二线治疗ORR从30%跃升至92%"
+        ],
+        "cleaned_candidates": [
+          "JPM：TangoTherapeutics，组合疗法开启胰腺癌革命",
+          "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗",
+          "JPM：Tango联手Revolution",
+          "JPM：TangoTherapeuticsItTak",
+          "JPM：二线治疗的中位总生存期徘徊在6个月左右，客观缓解率仅10%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "long_untranslated_english"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：TangoTherapeutics，组合疗法开启胰腺癌革命",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：Tango联手Revolution",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：TangoTherapeuticsItTak",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：二线治疗的中位总生存期徘徊在6个月左右，客观缓解率仅10%",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "92"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗"
+      }
+    },
+    {
+      "source_report_name": "45-JPM-Technology - Electronic Components Industry data-260716",
+      "institution_name": "摩根大通",
+      "title_before_upload": "电子元器件行业观察笔记",
+      "final_wechat_title": "摩根大通：电子元器件行业",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_8/0005-45-J.P.-Morgan-Technology---Electronic-Components-Industry-data-260716",
+      "generation_decision": {
+        "source_filename": "0005-45-JPM-Technology - Electronic Components Industry data-260716.pdf",
+        "cleaned_source_title": "JPM-Technology - Electronic Components Industry data",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：科技ElectronicComponents",
+        "raw_candidates": [
+          "电子元器件行业数据",
+          "电子元器件行业数据：2026年智能手机出货预计下滑11%",
+          "电子元器件需求拐点或晚于预期-JPM"
+        ],
+        "cleaned_candidates": [
+          "JPM：电子元器件行业数据",
+          "JPM：电子元器件行业数据，2026年智能手机出货预计下滑11%",
+          "JPM：电子元器件需求拐点或晚于预期-JPM",
+          "JPM：科技ElectronicComponents",
+          "JPM：传递的核心信号是，2025年下半年至2026年"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：电子元器件行业数据，2026年智能手机出货预计下滑11%",
+            "reasons": [
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "JPM：电子元器件需求拐点或晚于预期-JPM",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "JPM：科技ElectronicComponents",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：传递的核心信号是，2025年下半年至2026年",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：电子元器件行业数据",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：电子元器件行业数据"
+      }
+    },
+    {
+      "source_report_name": "46-MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets-260716",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：2Q26CIO调查，2026年IT预算修正不确定性改善",
+      "final_wechat_title": "摩根士丹利：2Q26CIO调查，2026年IT预算修正不确定性改善",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_9/0001-46-Morgan-Stanley-2Q26-CIO-Survey---An-Improved-Revision-Risk-Picture-for-2",
+      "generation_decision": {
+        "source_filename": "0001-46-MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets-260716.pdf",
+        "cleaned_source_title": "MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：2Q26CIOSurveyAnImprov",
+        "raw_candidates": [
+          "2Q26 CIO调查：2026年IT预算修正风险改善",
+          "2Q26 CIO调查：预算修正比率回升至1.2倍，IT服务承压",
+          "2Q26 CIO调查：预算上修信号转正，但IT服务折扣意愿上升"
+        ],
+        "cleaned_candidates": [
+          "MS：2Q26CIO调查，2026年IT预算修正风险改善",
+          "MS：2Q26CIO调查，预算修正比率回升至1.2倍",
+          "MS：2Q26CIO调查，预算上修信号转正",
+          "MS：2Q26CIOSurveyAnImprov",
+          "MS：下修比率在连续五个季度低于1.0后，首次回升至1.2倍"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：2Q26CIO调查，预算修正比率回升至1.2倍",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：2Q26CIO调查，预算上修信号转正",
+            "reasons": [
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：2Q26CIOSurveyAnImprov",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：下修比率在连续五个季度低于1.0后，首次回升至1.2倍",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：2Q26CIO调查，2026年IT预算修正风险改善",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：2Q26CIO调查，2026年IT预算修正风险改善"
+      }
+    },
+    {
+      "source_report_name": "47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：2Q26CIO调查，预算改善但赢家仍有限",
+      "final_wechat_title": "摩根士丹利：2Q26CIO调查，预算改善但赢家仍有限",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_9/0002-47-Morgan-Stanley-2Q26-CIO-Survey---Budget-Support-Improves--But-Winners-Re",
+      "generation_decision": {
+        "source_filename": "0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716.pdf",
+        "cleaned_source_title": "MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：2Q26CIOSurveyBudgetSu",
+        "raw_candidates": [
+          "2Q26 CIO调查：预算改善但赢家仍有限",
+          "2Q26 CIO调查：预算上修比率转正至1.2x",
+          "2Q26 CIO调查：安全软件增速跃升至+12.4%领跑"
+        ],
+        "cleaned_candidates": [
+          "MS：2Q26CIO调查，预算改善但赢家仍有限",
+          "MS：2Q26CIO调查，预算上修比率转正至1.2x",
+          "MS：2Q26CIO调查，安全软件增速跃升至+12.4%领跑",
+          "MS：2Q26CIOSurveyBudgetSu",
+          "MS：下修比率自2024年一季度以来首次突破1.0x"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：2Q26CIO调查，预算上修比率转正至1.2x",
+            "reasons": [
+              "anchor_coverage=0.56",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：2Q26CIO调查，安全软件增速跃升至+12.4%领跑",
+            "reasons": [
+              "anchor_coverage=0.44",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：2Q26CIOSurveyBudgetSu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.33",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：下修比率自2024年一季度以来首次突破1.0x",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：2Q26CIO调查，预算改善但赢家仍有限",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：2Q26CIO调查，预算改善但赢家仍有限"
+      }
+    },
+    {
+      "source_report_name": "48-JPM-Zoom Communications-ZM.US-CFO Meeting Takeaways-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：Zoom通讯-CFO会面，ZCX ARR突破2亿美元",
+      "final_wechat_title": "摩根大通：Zoom通讯-CFO会面，ZCXARR突破2亿美元",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_9/0003-48-J.P.-Morgan-Zoom-Communications-ZM.US-CFO-Meeting-Takeaways-260715",
+      "generation_decision": {
+        "source_filename": "0003-48-JPM-Zoom Communications-ZM.US-CFO Meeting Takeaways-260715.pdf",
+        "cleaned_source_title": "JPM-Zoom Communications-ZM.US-CFO Meeting Takeaways",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：ZoomCommunicationsCFOM",
+        "raw_candidates": [
+          "Zoom通讯-CFO会面纪要",
+          "Zoom通讯-CFO会面：ZCX ARR突破2亿美元",
+          "Zoom通讯-CFO会面：AI变现加速，ZCX ARR翻倍"
+        ],
+        "cleaned_candidates": [
+          "JPM：Zoom通讯-CFO会面纪要",
+          "JPM：Zoom通讯-CFO会面，ZCXARR突破2亿美元",
+          "JPM：Zoom通讯-CFO会面，AI变现加速，ZCXARR翻倍",
+          "JPM：ZoomCommunicationsCFOM",
+          "JPM：与此同时，ZoomPhone的ARR估计已达7.5-8亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：ZoomCommunicationsCFOM",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.42"
+            ]
+          },
+          {
+            "title": "JPM：与此同时，ZoomPhone的ARR估计已达7.5-8亿美元",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：Zoom通讯-CFO会面，ZCXARR突破2亿美元",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：Zoom通讯-CFO会面，ZCXARR突破2亿美元"
+      }
+    },
+    {
+      "source_report_name": "49-MS-China Economics-June Credit Slowed Further-Faster Fiscal Deployment Awaited-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：宏观环境观察，6月信贷增速续降，公共融资加速待落地",
+      "final_wechat_title": "摩根士丹利：宏观环境观察，6月信贷增速续降，公共融资加速待落地",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_9/0004-49-Morgan-Stanley-China-Economics-June-Credit-Slowed-Further-Faster-Fiscal-",
+      "generation_decision": {
+        "source_filename": "0004-49-MS-China Economics-June Credit Slowed Further-Faster Fiscal Deployment Awaited-260715.pdf",
+        "cleaned_source_title": "MS-China Economics-June Credit Slowed Further-Faster Fiscal Deployment Awaited",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：中国EconomicsJuneCredit",
+        "raw_candidates": [
+          "中国宏观：6月信贷增速续降，财政加速待落地",
+          "中国宏观：6月信贷增速降至7.5%，政府债券融资已超9000亿",
+          "中国宏观：6月信贷续降但财政加速，政府债券月中已超全月"
+        ],
+        "cleaned_candidates": [
+          "MS：中国宏观，6月信贷增速续降，财政加速待落地",
+          "MS：中国宏观，6月信贷增速降至7.5%",
+          "MS：中国宏观，6月信贷续降但财政加速，政府债券月中已超全月",
+          "MS：中国EconomicsJuneCredit",
+          "MS：9020亿元的月中数据，比6月全月还高"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：中国宏观，6月信贷增速降至7.5%",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国宏观，6月信贷续降但财政加速，政府债券月中已超全月",
+            "reasons": [
+              "anchor_coverage=0.61"
+            ]
+          },
+          {
+            "title": "MS：中国EconomicsJuneCredit",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：9020亿元的月中数据，比6月全月还高",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：中国宏观，6月信贷增速续降，财政加速待落地",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：中国宏观，6月信贷增速续降，财政加速待落地"
+      }
+    },
+    {
+      "source_report_name": "50-MS-China Financials-Deleveraging continued in June with ongoing new household savings shift-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+      "final_wechat_title": "摩根士丹利：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_9/0005-50-Morgan-Stanley-China-Financials-Deleveraging-continued-in-June-with-ongo",
+      "generation_decision": {
+        "source_filename": "0005-50-MS-China Financials-Deleveraging continued in June with ongoing new household savings shift-260715.pdf",
+        "cleaned_source_title": "MS-China Financials-Deleveraging continued in June with ongoing new household savings shift",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：中国FinancialsDeleverag",
+        "raw_candidates": [
+          "中国金融业：六月去杠杆持续，住户储蓄继续转移",
+          "中国金融业：六月社融降至7.4%，去杠杆持续储蓄转移",
+          "中国金融业：去杠杆持续，企业贷款利率降至3%定价权转移"
+        ],
+        "cleaned_candidates": [
+          "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+          "MS：中国资金业，六月社融降至7.4%，去杠杆持续储蓄转移",
+          "MS：中国资金业，去杠杆持续，企业贷款利率降至3%定价权转移",
+          "MS：中国FinancialsDeleverag",
+          "MS：当新增企业中长期贷款同比下降23%、上半年住户贷款净减少3"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：中国资金业，六月社融降至7.4%，去杠杆持续储蓄转移",
+            "reasons": [
+              "anchor_coverage=0.63",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国资金业，去杠杆持续，企业贷款利率降至3%定价权转移",
+            "reasons": [
+              "anchor_coverage=0.47",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国FinancialsDeleverag",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：当新增企业中长期贷款同比下降23%、上半年住户贷款净减少3",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移"
+      }
+    },
+    {
+      "source_report_name": "51-MS-China Autos - Shared Mobility-Tighter social insurance contributions enforcement - Time to reprice the hidden cost--260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：中国汽车共享出行-社保从严征缴，重估隐藏成本",
+      "final_wechat_title": "摩根士丹利：中国汽车共享出行-社保从严征缴，重估隐藏成本",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_10/0001-51-Morgan-Stanley-China-Autos---Shared-Mobility-Tighter-social-insurance-co",
+      "generation_decision": {
+        "source_filename": "0001-51-MS-China Autos - Shared Mobility-Tighter social insurance contributions enforcement - Time to reprice the hidden cost--260715.pdf",
+        "cleaned_source_title": "MS-China Autos -- Mobility-Tighter social insurance contributions enforcement - Time to reprice the hidden cost",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：中国汽车",
+        "raw_candidates": [
+          "中国汽车共享出行-社保从严征缴：重估隐藏成本",
+          "中国汽车共享出行-社保从严征缴：长三角成本冲击25%",
+          "中国汽车共享出行-社保从严征缴：长三角才是测试区"
+        ],
+        "cleaned_candidates": [
+          "MS：中国汽车共享出行-社保从严征缴，重估隐藏成本",
+          "MS：中国汽车共享出行-社保从严征缴，长三角成本冲击25%",
+          "MS：中国汽车共享出行-社保从严征缴，长三角才是测试区",
+          "MS：中国汽车",
+          "MS：2026年7月起，社保征收全面移交税务部门"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：中国汽车共享出行-社保从严征缴，长三角成本冲击25%",
+            "reasons": [
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国汽车共享出行-社保从严征缴，长三角才是测试区",
+            "reasons": [
+              "anchor_coverage=0.68",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国汽车",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.16",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：2026年7月起，社保征收全面移交税务部门",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：中国汽车共享出行-社保从严征缴，重估隐藏成本",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：中国汽车共享出行-社保从严征缴，重估隐藏成本"
+      }
+    },
+    {
+      "source_report_name": "52-MS-Estun Automation Co Ltd-002747-2Q26 Prelim Result Beat Consensus- but Below MSe-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：埃斯顿自动化2Q26初步业绩超预期但低于MS预测",
+      "final_wechat_title": "摩根士丹利：埃斯顿自动化2Q26初步业绩超预期但低于MS预测",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_10/0002-52-Morgan-Stanley-Estun-Automation-Co-Ltd-002747-2Q26-Prelim-Result-Beat-Co",
+      "generation_decision": {
+        "source_filename": "0002-52-MS-Estun Automation Co Ltd-002747-2Q26 Prelim Result Beat Consensus- but Below MSe-260715.pdf",
+        "cleaned_source_title": "MS-Estun Automation Co Ltd-002747-2Q26 Prelim Result Beat Consensus- but Below MSe",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：EstunAutomationCoLtd0027472Q2",
+        "raw_candidates": [
+          "埃斯顿自动化2Q26初步业绩超预期但低于MS预测",
+          "埃斯顿2Q26净利润1.5-1.8亿超预期-盈利质量才是关键",
+          "埃斯顿业绩超预期-但扣非利润仅4800万低于MS预期"
+        ],
+        "cleaned_candidates": [
+          "MS：埃斯顿自动化2Q26初步业绩超预期但低于MS预测",
+          "MS：埃斯顿2Q26净利润1.5-1.8亿超预期",
+          "MS：埃斯顿业绩超预期-但扣非利润仅4800万低于MS预期",
+          "MS：EstunAutomationCoLtd0027472Q2",
+          "MS：公司预告2026年上半年净利润1.5亿至1.8亿元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：埃斯顿2Q26净利润1.5-1.8亿超预期",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：埃斯顿业绩超预期-但扣非利润仅4800万低于MS预期",
+            "reasons": [
+              "anchor_coverage=0.54"
+            ]
+          },
+          {
+            "title": "MS：EstunAutomationCoLtd0027472Q2",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "malformed_numeric_range",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：公司预告2026年上半年净利润1.5亿至1.8亿元",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：埃斯顿自动化2Q26初步业绩超预期但低于MS预测",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：埃斯顿自动化2Q26初步业绩超预期但低于MS预测"
+      }
+    },
+    {
+      "source_report_name": "53-MS-China Hong Kong Consumer-China Retail Sales - Jun 2026- Momentum Remains Uneven-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：中国香港消费-中国零售销售-6月动能仍不均",
+      "final_wechat_title": "摩根士丹利：中国香港消费-中国零售销售-6月动能仍不均",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_10/0003-53-Morgan-Stanley-China-Hong-Kong-Consumer-China-Retail-Sales---Jun-2026--M",
+      "generation_decision": {
+        "source_filename": "0003-53-MS-China Hong Kong Consumer-China Retail Sales - Jun 2026- Momentum Remains Uneven-260715.pdf",
+        "cleaned_source_title": "MS-China Hong Kong Consumer-China Retail Sales - Jun 2026- Momentum Remains Uneven",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：中国HongKong消费中国RetailSalesJun2",
+        "raw_candidates": [
+          "MS-中国香港消费-中国零售销售-6月动能仍不均",
+          "MS-中国零售6月转正至1.0%-动能仍不均",
+          "MS-中国零售6月超预期-但结构分化才是核心"
+        ],
+        "cleaned_candidates": [
+          "MS：中国香港消费-中国零售销售-6月动能仍不均",
+          "MS：中国零售6月转正至1.0%-动能仍不均",
+          "MS：中国零售6月超预期-但结构分化才是核心",
+          "MS：中国HongKong消费中国RetailSalesJun2",
+          "MS：整体零售同比增速从5月的-0.6%回升至1.0%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：中国零售6月转正至1.0%-动能仍不均",
+            "reasons": [
+              "anchor_coverage=0.53",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国零售6月超预期-但结构分化才是核心",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国HongKong消费中国RetailSalesJun2",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：整体零售同比增速从5月的-0.6%回升至1.0%",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：中国香港消费-中国零售销售-6月动能仍不均",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：中国香港消费-中国零售销售-6月动能仍不均"
+      }
+    },
+    {
+      "source_report_name": "54-MS-China Property-Property Data Deteriorated on All Fronts in June-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：中国地产，六月数据观察-开发商拿地降40%",
+      "final_wechat_title": "摩根士丹利：中国地产，六月数据观察-开发商拿地降40%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_10/0004-54-Morgan-Stanley-China-Property-Property-Data-Deteriorated-on-All-Fronts-i",
+      "generation_decision": {
+        "source_filename": "0004-54-MS-China Property-Property Data Deteriorated on All Fronts in June-260715.pdf",
+        "cleaned_source_title": "MS-China Property-Property Data Deteriorated on All Fronts in June",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：中国地产地产DataDeteriorate",
+        "raw_candidates": [
+          "中国地产:六月数据全线走弱",
+          "中国地产:六月销售面积同比降14.3%",
+          "中国地产:六月数据全线走弱-开发商拿地降40%"
+        ],
+        "cleaned_candidates": [
+          "MS：中国地产，六月数据全线走弱",
+          "MS：中国地产，六月销售面积同比降14.3%",
+          "MS：中国地产，六月数据全线走弱-开发商拿地降40%",
+          "MS：中国地产地产DataDeteriorate",
+          "MS：六月新开工面积同比下降26%，竣工面积下降25%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：中国地产，六月销售面积同比降14.3%",
+            "reasons": [
+              "anchor_coverage=0.45",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国地产地产DataDeteriorate",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：六月新开工面积同比下降26%，竣工面积下降25%",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：中国地产，六月数据全线走弱-开发商拿地降40%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "40"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：中国地产，六月数据全线走弱-开发商拿地降40%"
+      }
+    },
+    {
+      "source_report_name": "55-MS-FY GDP Trimmed to 4.6-- Faster Budget Rollout to Lift 2H Growth-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：全年GDP预测调整至4.6%，加快预算落地支撑下半年增长",
+      "final_wechat_title": "摩根士丹利：全年GDP预测调整至4.6%，加快预算落地支撑下半年增长",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_10/0005-55-Morgan-Stanley-FY-GDP-Trimmed-to-4.6---Faster-Budget-Rollout-to-Lift-2H-",
+      "generation_decision": {
+        "source_filename": "0005-55-MS-FY GDP Trimmed to 4.6-- Faster Budget Rollout to Lift 2H Growth-260715.pdf",
+        "cleaned_source_title": "MS-FY GDP Trimmed to 4.6-- Faster Budget Rollout to Lift 2H Growth",
+        "institution_name": "MS",
+        "required_terms": [
+          "GDP"
+        ],
+        "deterministic_fallback": "MS：FYGDPTrimmedto4.6",
+        "raw_candidates": [
+          "全年GDP预测下调至4.6%：加快预算落地支撑下半年增长",
+          "全年GDP预测下调至4.6%：二季度低于预期，下半年靠预算节奏而非规模扩张",
+          "全年GDP预测下调至4.6%：六月零售仅增0.2%，汽车销售同比下滑16.1%"
+        ],
+        "cleaned_candidates": [
+          "MS：全年GDP预测下调至4.6%，加快预算落地支撑下半年增长",
+          "MS：全年GDP预测下调至4.6%，二季度低于预期",
+          "MS：全年GDP预测下调至4.6%，六月零售仅增0.2%",
+          "MS：FYGDPTrimmedto4.6",
+          "MS：这份MS研报将全年GDP预测下调20个基点至4.6%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：全年GDP预测下调至4.6%，二季度低于预期",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：全年GDP预测下调至4.6%，六月零售仅增0.2%",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：FYGDPTrimmedto4.6",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.12",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "MS：这份MS研报将全年GDP预测下调20个基点至4.6%",
+            "reasons": [
+              "anchor_coverage=0.42",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：全年GDP预测下调至4.6%，加快预算落地支撑下半年增长",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：全年GDP预测下调至4.6%，加快预算落地支撑下半年增长"
+      }
+    },
+    {
+      "source_report_name": "56-MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+      "final_wechat_title": "摩根士丹利：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_11/0001-56-Morgan-Stanley-Greater-China-Technology-Hardware--Building-Blocks-of-Com",
+      "generation_decision": {
+        "source_filename": "0001-56-MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260715.pdf",
+        "cleaned_source_title": "MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components",
+        "institution_name": "MS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "MS：AIGreater中国科技硬件Building",
+        "raw_candidates": [
+          "大中华科技硬件：计算基石、服务器、AI基础设施与电子组件",
+          "大中华科技硬件：AI服务器设计换代，PCB与ABF载板供应紧张",
+          "大中华科技硬件：Vera Rubin与Kyber架构驱动机架级重新设计"
+        ],
+        "cleaned_candidates": [
+          "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+          "MS：大中华科技硬件，AI服务器设计换代",
+          "MS：大中华科技硬件",
+          "MS：AIGreater中国科技硬件Building",
+          "MS：AI服务器硬件升级，供应链正在经历一次“设计换代”"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：大中华科技硬件，AI服务器设计换代",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：大中华科技硬件",
+            "reasons": [
+              "missing_required_terms=AI",
+              "body_too_short",
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：AIGreater中国科技硬件Building",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：AI服务器硬件升级，供应链正在经历一次“设计换代”",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件"
+      }
+    },
+    {
+      "source_report_name": "57-MS-Hong Kong China Insurance- Monthly Datapack- Southbound and Long-Only Positions in Insurers in June-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "研究笔记：相关市场保险板块资金流向观察",
+      "final_wechat_title": "摩根士丹利：相关市场保险板块资金流向观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_11/0002-57-Morgan-Stanley-Hong-Kong-China-Insurance--Monthly-Datapack--Southbound-a",
+      "generation_decision": {
+        "source_filename": "0002-57-MS-Hong Kong China Insurance- Monthly Datapack- Southbound and Long-Only Positions in Insurers in June-260715.pdf",
+        "cleaned_source_title": "MS-Hong Kong China Insurance- Monthly Datapack- Southbound and Long-Only Positions in Insurers in June",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：HongKong中国Insurance",
+        "raw_candidates": [
+          "香港中国保险-月度数据包-南向与长线资金在保险公司的六月持仓",
+          "香港中国保险-六月南向与长线资金持仓分化-中国财险南向增1.1个百分点",
+          "香港中国保险-六月南向与长线资金持仓分化-中国平安长线持仓降0.6个百分点"
+        ],
+        "cleaned_candidates": [
+          "MS：香港中国保险-月度数据包",
+          "MS：香港中国保险-六月南向与长线资金持仓分化",
+          "MS：HongKong中国Insurance",
+          "MS：友邦保险的长线持仓也下降了0.3个百分点至2.6%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：香港中国保险-六月南向与长线资金持仓分化",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：HongKong中国Insurance",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：友邦保险的长线持仓也下降了0.3个百分点至2.6%",
+            "reasons": [
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：香港中国保险-月度数据包",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：香港中国保险-月度数据包"
+      }
+    },
+    {
+      "source_report_name": "58-MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues-260716",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：香港写字楼JLL租金更新-市场观察",
+      "final_wechat_title": "摩根士丹利：香港写字楼JLL租金更新-市场观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_11/0003-58-Morgan-Stanley-Hong-Kong-Property-JLL-2Q26-Rental-Update--Recovery-Conti",
+      "generation_decision": {
+        "source_filename": "0003-58-MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues-260716.pdf",
+        "cleaned_source_title": "MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：HongKong地产JLL2Q26Rental更新",
+        "raw_candidates": [
+          "香港写字楼JLL租金更新-复苏持续",
+          "香港写字楼租金环比涨1.7%空置率降至13.1%",
+          "香港写字楼复苏扩散但零售租金仍在探底"
+        ],
+        "cleaned_candidates": [
+          "MS：香港写字楼JLL租金更新-复苏持续",
+          "MS：香港写字楼租金环比涨1.7%空置率降至13.1%",
+          "MS：香港写字楼复苏扩散但零售租金仍在探底",
+          "MS：HongKong地产JLL2Q26Rental更新",
+          "MS：但当前水平较2018年三季度峰值仍低约50%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：香港写字楼租金环比涨1.7%空置率降至13.1%",
+            "reasons": [
+              "anchor_coverage=0.33",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：香港写字楼复苏扩散但零售租金仍在探底",
+            "reasons": [
+              "anchor_coverage=0.40"
+            ]
+          },
+          {
+            "title": "MS：HongKong地产JLL2Q26Rental更新",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：但当前水平较2018年三季度峰值仍低约50%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：香港写字楼JLL租金更新-复苏持续",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：香港写字楼JLL租金更新-复苏持续"
+      }
+    },
+    {
+      "source_report_name": "59-MS-IT Services- 2026 Budget Growth Expectations Reduced-260716",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：IT服务-2026预算增长预期下调",
+      "final_wechat_title": "摩根士丹利：IT服务-2026预算增长预期下调",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_11/0004-59-Morgan-Stanley-IT-Services--2026-Budget-Growth-Expectations-Reduced-2607",
+      "generation_decision": {
+        "source_filename": "0004-59-MS-IT Services- 2026 Budget Growth Expectations Reduced-260716.pdf",
+        "cleaned_source_title": "MS-IT Services- 2026 Budget Growth Expectations Reduced",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：ITServices",
+        "raw_candidates": [
+          "IT服务-2026预算增长预期下调",
+          "IT服务预算增速预期降至1.8%-AI资金转向腾挪",
+          "IT服务预算增速下调-美欧分化与AI预算再分配"
+        ],
+        "cleaned_candidates": [
+          "MS：IT服务-2026预算增长预期下调",
+          "MS：IT服务预算增速预期降至1.8%-AI资金转向腾挪",
+          "MS：IT服务预算增速下调-美欧分化与AI预算再分配",
+          "MS：ITServices",
+          "MS：美国CIO对2026年IT服务支出的增长预期从上一季度的2"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：IT服务预算增速预期降至1.8%-AI资金转向腾挪",
+            "reasons": [
+              "anchor_coverage=0.40",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：IT服务预算增速下调-美欧分化与AI预算再分配",
+            "reasons": [
+              "anchor_coverage=0.40",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：ITServices",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：美国CIO对2026年IT服务支出的增长预期从上一季度的2",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          }
+        ],
+        "selected_title": "MS：IT服务-2026预算增长预期下调",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：IT服务-2026预算增长预期下调"
+      }
+    },
+    {
+      "source_report_name": "60-MS-Sichuan Kelun Pharmaceutical Co Ltd-002422-OptiTROP-Lung06 Met Primary Endpoint - A Major Global Relevant Clinical Validation for sac-TMT-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：科伦博泰sac-TMT关键临床达主要终点",
+      "final_wechat_title": "摩根士丹利：科伦博泰sac-TMT关键临床达主要终点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_11/0005-60-Morgan-Stanley-Sichuan-Kelun-Pharmaceutical-Co-Ltd-002422-OptiTROP-Lung0",
+      "generation_decision": {
+        "source_filename": "0005-60-MS-Sichuan Kelun Pharmaceutical Co Ltd-002422-OptiTROP-Lung06 Met Primary Endpoint - A Major Global Relevant Clinical Validation for sac-TMT-260715.pdf",
+        "cleaned_source_title": "MS-Sichuan Kelun Pharmaceutical Co Ltd-002422-OptiTROP-Lung06 Met Primary Endpoint - A Major Global Relevant Clinical Validation for sac-TMT",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：SichuanKelunPharmaceu",
+        "raw_candidates": [
+          "MS：科伦博泰sac-TMT关键临床达主要终点，全球验证路径更清晰",
+          "MS：科伦博泰Lung06研究阳性，sac-TMT联合Keytruda覆盖低表达人群",
+          "MS：sac-TMT全球临床验证加速，科伦博泰Lung06数据填补低表达空白",
+          "科伦博泰OptiTROP-Lung06达到主要终点-sac-TMT全球临床验证",
+          "科伦博泰Lung06达主要终点-sac-TMT全球验证路径更清晰",
+          "科伦博泰Lung06阳性-sac-TMT联合Keytruda覆盖低表达人群"
+        ],
+        "cleaned_candidates": [
+          "MS：科伦博泰sac-TMT关键临床达主要终点",
+          "MS：科伦博泰Lung06研究阳性，sac",
+          "MS：sac-TMT全球临床验证加速",
+          "MS：科伦博泰OptiTROP-Lung06达到主要终点-sac",
+          "MS：科伦博泰Lung06达主要终点-sac",
+          "MS：科伦博泰Lung06阳性-sac",
+          "MS：SichuanKelunPharmaceu",
+          "MS：1.全球临床布局的关键拼图已经就位"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：科伦博泰Lung06研究阳性，sac",
+            "reasons": [
+              "anchor_coverage=0.28",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：sac-TMT全球临床验证加速",
+            "reasons": [
+              "anchor_coverage=0.33",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：科伦博泰OptiTROP-Lung06达到主要终点-sac",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.44",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：科伦博泰Lung06达主要终点-sac",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "MS：科伦博泰Lung06阳性-sac",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.28",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：SichuanKelunPharmaceu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：1.全球临床布局的关键拼图已经就位",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：科伦博泰sac-TMT关键临床达主要终点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "MS：1.全球临床布局的关键拼图已经就位",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "MS：科伦博泰sac-TMT关键临床达主要终点，全球验证路径更清晰",
+          "MS：科伦博泰Lung06研究阳性，sac-TMT联合Keytruda覆盖低表达人群",
+          "MS：sac-TMT全球临床验证加速，科伦博泰Lung06数据填补低表达空白"
+        ],
+        "final_title_after_wording_guard": "MS：科伦博泰sac-TMT关键临床达主要终点"
+      }
+    },
+    {
+      "source_report_name": "61-NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike-260716",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：韩国央行全票加息25个基点",
+      "final_wechat_title": "野村：韩国央行全票加息25个基点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_12/0001-61-Nomura-Asia-Insights-Korea--BOK-delivers-a-unanimous-decision-for-a-25bp",
+      "generation_decision": {
+        "source_filename": "0001-61-NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike-260716.pdf",
+        "cleaned_source_title": "NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：AsiaInsightsKorea",
+        "raw_candidates": [
+          "NOM：韩国央行全票加息25个基点",
+          "NOM：韩国央行加息25基点-后续节奏慢于市场预期",
+          "NOM：韩国央行加息路径比市场预期更慢更依赖数据"
+        ],
+        "cleaned_candidates": [
+          "NOM：韩国央行全票加息25个基点",
+          "NOM：韩国央行加息25基点-后续节奏慢于市场预期",
+          "NOM：韩国央行加息路径比市场预期更慢更依赖数据",
+          "NOM：AsiaInsightsKorea",
+          "NOM：韩国央行在6月议息会议上以全票通过将政策利率上调25个基点至2."
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：韩国央行加息25基点-后续节奏慢于市场预期",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "NOM：韩国央行加息路径比市场预期更慢更依赖数据",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          },
+          {
+            "title": "NOM：AsiaInsightsKorea",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：韩国央行在6月议息会议上以全票通过将政策利率上调25个基点至2.",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          }
+        ],
+        "selected_title": "NOM：韩国央行全票加息25个基点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：韩国央行全票加息25个基点"
+      }
+    },
+    {
+      "source_report_name": "62-NOM-Asia Insights China- Sectoral breakdown of Q2 GDP-260716",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：中国二季度GDP分项观察",
+      "final_wechat_title": "野村：中国二季度GDP分项观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_12/0002-62-Nomura-Asia-Insights-China--Sectoral-breakdown-of-Q2-GDP-260716",
+      "generation_decision": {
+        "source_filename": "0002-62-NOM-Asia Insights China- Sectoral breakdown of Q2 GDP-260716.pdf",
+        "cleaned_source_title": "NOM-Asia Insights China- Sectoral breakdown of Q2 GDP",
+        "institution_name": "NOM",
+        "required_terms": [
+          "GDP"
+        ],
+        "deterministic_fallback": "NOM：GDPAsiaInsights中国",
+        "raw_candidates": [
+          "中国二季度GDP分项解读",
+          "中国二季度GDP：名义繁荣与实际背离",
+          "中国二季度GDP：价格驱动而非内需回暖"
+        ],
+        "cleaned_candidates": [
+          "NOM：中国二季度GDP分项解读",
+          "NOM：中国二季度GDP，名义繁荣与实际背离",
+          "NOM：中国二季度GDP，价格驱动而非内需回暖",
+          "NOM：GDPAsiaInsights中国",
+          "NOM：名义GDP增速从一季度的6.2%跳升至8.8%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：GDPAsiaInsights中国",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：名义GDP增速从一季度的6.2%跳升至8.8%",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "NOM：中国二季度GDP分项解读",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：中国二季度GDP分项解读"
+      }
+    },
+    {
+      "source_report_name": "63-MS-Sieyuan Electric Co.Ltd.-002028--Look Through the Dip-260715",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：思源电气，透过波动看本质",
+      "final_wechat_title": "摩根士丹利：思源电气，透过波动看本质",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_12/0003-63-Morgan-Stanley-Sieyuan-Electric-Co.Ltd.-002028--Look-Through-the-Dip-260",
+      "generation_decision": {
+        "source_filename": "0003-63-MS-Sieyuan Electric Co.Ltd.-002028--Look Through the Dip-260715.pdf",
+        "cleaned_source_title": "MS-Sieyuan Electric Co.Ltd.-002028--Look Through the Dip",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：SieyuanElectric.-002028",
+        "raw_candidates": [
+          "思源电气：透过下跌看本质",
+          "思源电气：透过下跌看本质-北美订单加速",
+          "思源电气：透过下跌看本质-北美订单成变量"
+        ],
+        "cleaned_candidates": [
+          "MS：思源电气，透过下跌看本质",
+          "MS：思源电气，透过下跌看本质-北美订单加速",
+          "MS：思源电气，透过下跌看本质-北美订单成变量",
+          "MS：SieyuanElectric.-002028",
+          "MS：思源电气2026年上半年业绩初报出炉，收入增长27%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：SieyuanElectric.-002028",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：思源电气2026年上半年业绩初报出炉，收入增长27%",
+            "reasons": [
+              "anchor_coverage=0.30",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：思源电气，透过下跌看本质",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：思源电气，透过下跌看本质"
+      }
+    },
+    {
+      "source_report_name": "64-NOM-USD CNY fix model-Projection- 6.7739-260717",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：美元人民币中间价模型预测6.7739",
+      "final_wechat_title": "野村：美元人民币中间价模型预测6.7739",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260717/shard_12/0004-64-Nomura-USD-CNY-fix-model-Projection--6.7739-260717",
+      "generation_decision": {
+        "source_filename": "0004-64-NOM-USD CNY fix model-Projection- 6.7739-260717.pdf",
+        "cleaned_source_title": "NOM-USD CNY fix model-Projection- 6.7739",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.7739",
+        "raw_candidates": [
+          "NOM：美元人民币中间价模型预测6.7739",
+          "NOM：中间价模型预测下移170基点至6.7739",
+          "NOM：逆周期因子与模型差距收窄至75基点"
+        ],
+        "cleaned_candidates": [
+          "NOM：美元人民币中间价模型预测6.7739",
+          "NOM：中间价模型预测下移170基点至6.7739",
+          "NOM：逆周期因子与模型差距收窄至75基点",
+          "NOM：USDCNYfixmodelProjection-6.7739",
+          "NOM：给出的模型预测值——6.7739，较前次预测下移170个基点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：中间价模型预测下移170基点至6.7739",
+            "reasons": [
+              "bare_trailing_number",
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "NOM：逆周期因子与模型差距收窄至75基点",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：USDCNYfixmodelProjection-6.7739",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：给出的模型预测值——6.7739，较前次预测下移170个基点",
+            "reasons": [
+              "anchor_coverage=0.44"
+            ]
+          }
+        ],
+        "selected_title": "NOM：美元人民币中间价模型预测6.7739",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：美元人民币中间价模型预测6.7739"
+      }
+    },
+    {
+      "source_report_name": "28-GS-Tongyu Communication -002792-- China LEO satellites in progress- 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26- 报告观点-260716",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄",
+      "final_wechat_title": "高盛：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄",
+      "uploaded": false,
+      "skip_reason": "china_negative_title_terms=中国;negative=亏损",
+      "report_dir": "xhs_notes/dropbox/260717/shard_5/0003-28-Goldman-Sachs-Tongyu-Communication--002792---China-LEO-satellites-in-pro",
+      "generation_decision": {
+        "source_filename": "0003-28-GS-Tongyu Communication -002792-- China LEO satellites in progress- 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26- Buy-260716.pdf",
+        "cleaned_source_title": "GS-Tongyu Communication -002792-- China LEO satellites in progress- 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26- Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：TongyuCommunication002792中国",
+        "raw_candidates": [
+          "通宇通讯-中国低轨卫星进展中-二季度净亏损中位数指引显示亏损较一季度收窄-买入",
+          "通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄-买入",
+          "通宇通讯-中国低轨卫星进展中-GS上调2031年卫星安装基数至30.5万台-买入"
+        ],
+        "cleaned_candidates": [
+          "GS：通宇通讯-中国低轨卫星进展中",
+          "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄",
+          "GS：TongyuCommunication002792中国",
+          "GS：二季度净亏损中位数为1200万元，较一季度的1300万元有所收窄"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：TongyuCommunication002792中国",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：二季度净亏损中位数为1200万元，较一季度的1300万元有所收窄",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "1200"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄"
+      }
+    },
+    {
+      "source_report_name": "36-JPM-China banks-June credit data -demand weakness and loan pricing pressure persists-260715",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：中国银行6月资金数据观察——需求仍在调整与定价不确定性持续",
+      "final_wechat_title": "摩根大通：中国银行6月资金数据观察，需求仍在调整与定价不确定性持续",
+      "uploaded": false,
+      "skip_reason": "china_negative_title_terms=中国;negative=不确定",
+      "report_dir": "xhs_notes/dropbox/260717/shard_7/0001-36-J.P.-Morgan-China-banks-June-credit-data--demand-weakness-and-loan-prici",
+      "generation_decision": {
+        "source_filename": "0001-36-JPM-China banks-June credit data -demand weakness and loan pricing pressure persists-260715.pdf",
+        "cleaned_source_title": "JPM-China banks-June credit data -demand weakness and loan pricing pressure persists",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国banksJunecreditdatad",
+        "raw_candidates": [
+          "中国银行6月信贷数据-需求疲弱与贷款定价压力持续",
+          "中国银行6月信贷数据-企业贷款利率降至3.0%定价压力持续",
+          "中国银行6月信贷数据-定价权丧失比流动性更关键"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国银行6月信贷数据-需求疲弱与贷款定价压力持续",
+          "JPM：中国银行6月信贷数据-企业贷款利率降至3.0%定价压力持续",
+          "JPM：中国银行6月信贷数据-定价权丧失比流动性更关键",
+          "JPM：中国banksJunecreditdatad",
+          "JPM：6月新发放企业贷款加权平均利率已降至约3.0%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国银行6月信贷数据-企业贷款利率降至3.0%定价压力持续",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "JPM：中国银行6月信贷数据-定价权丧失比流动性更关键",
+            "reasons": [
+              "anchor_coverage=0.45",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国banksJunecreditdatad",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：6月新发放企业贷款加权平均利率已降至约3.0%",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国银行6月信贷数据-需求疲弱与贷款定价压力持续",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国银行6月信贷数据-需求疲弱与贷款定价压力持续"
+      }
+    }
+  ]
+}
