@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "date_folder": "260718",
+  "source": "kc_translated_reports/institutions",
+  "generated_at_utc": "2026-07-17T23:19:31Z",
+  "article_count": 9,
+  "uploaded_count": 9,
+  "articles": [
+    {
+      "source_report_name": "OECD Alignment-assessment-of-the-Fair-Labor-Accreditation-for-man d2505f45",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：公平劳工认证尽责管理评估，标准覆盖尽责管理全流程",
+      "final_wechat_title": "经合组织：公平劳工认证尽责管理评估，标准覆盖尽责管理全流程",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/01-0001-OECD_Alignment-assessment-of-the-Fair-Labor-Accreditation-for-man_d2505f45",
+      "generation_decision": {
+        "source_filename": "0001-OECD_Alignment-assessment-of-the-Fair-Labor-Accreditation-for-man_d2505f45",
+        "cleaned_source_title": "0001-OECD_Alignment-assessment-of-the-Fair-Labor-Accreditation-for-man_d2505f45",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0001OECDAlignmentasses",
+        "raw_candidates": [
+          "经合组织：公平劳工认证尽责管理评估",
+          "经合组织：公平劳工认证尽责管理仅部分达标",
+          "经合组织：30家品牌获认证但尽责管理存模糊地带"
+        ],
+        "cleaned_candidates": [
+          "经合组织：公平劳工认证尽责管理评估",
+          "经合组织：公平劳工认证尽责管理仅部分达标",
+          "经合组织：30家品牌获认证但尽责管理存模糊地带",
+          "经合组织：0001OECDAlignmentasses",
+          "经合组织：经合组织在2024年5月至2026年6月期间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：30家品牌获认证但尽责管理存模糊地带",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "经合组织：0001OECDAlignmentasses",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：经合组织在2024年5月至2026年6月期间",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：公平劳工认证尽责管理评估",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：公平劳工认证尽责管理评估"
+      }
+    },
+    {
+      "source_report_name": "OECD Alignment-assessment-of-the-Worldwide-Responsible-Accredited c8a7b03a",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：WRAP认证与OECD标准未对齐-超3900家设施受影响",
+      "final_wechat_title": "经合组织：WRAP认证与OECD标准未对齐-超3900家设施受影响",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/02-0002-OECD_Alignment-assessment-of-the-Worldwide-Responsible-Accredited_c8a7b03a",
+      "generation_decision": {
+        "source_filename": "0002-OECD_Alignment-assessment-of-the-Worldwide-Responsible-Accredited_c8a7b03a",
+        "cleaned_source_title": "0002-OECD_Alignment-assessment-of-the-Worldwide-Responsible-Accredited_c8a7b03a",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0002OECDAlignmentasses",
+        "raw_candidates": [
+          "经合组织：WRAP认证与OECD标准未对齐",
+          "经合组织：WRAP认证与OECD标准未对齐-超3900家设施受影响",
+          "经合组织：WRAP认证与OECD标准未对齐-零容忍政策存局限"
+        ],
+        "cleaned_candidates": [
+          "经合组织：WRAP认证与OECD标准未对齐",
+          "经合组织：WRAP认证与OECD标准未对齐-超3900家设施受影响",
+          "经合组织：WRAP认证与OECD标准未对齐-零容忍政策存局限",
+          "经合组织：0002OECDAlignmentasses",
+          "经合组织：经合组织（OECD）在2024年2月至2025年8月期间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：0002OECDAlignmentasses",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：经合组织（OECD）在2024年2月至2025年8月期间",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：WRAP认证与OECD标准未对齐-超3900家设施受影响",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "3900"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：WRAP认证与OECD标准未对齐-超3900家设施受影响"
+      }
+    },
+    {
+      "source_report_name": "OECD Assessing-the-gains-from-moving-along-the-global-value-chain c21befb7",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：评估沿全球价值链移动的收益，向上游移动能显著提升出口与工资",
+      "final_wechat_title": "经合组织：评估沿全球价值链移动的收益，向上游移动能显著提升出口与工资",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/03-0003-OECD_Assessing-the-gains-from-moving-along-the-global-value-chain_c21befb7",
+      "generation_decision": {
+        "source_filename": "0003-OECD_Assessing-the-gains-from-moving-along-the-global-value-chain_c21befb7",
+        "cleaned_source_title": "0003-OECD_Assessing-the-gains-from-moving-along-the-global-value-chain_c21befb7",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0003OECDAssessingthega",
+        "raw_candidates": [
+          "经合组织：评估沿全球价值链移动的收益",
+          "经合组织：哥斯达黎加电子产业升级可提升出口30%",
+          "经合组织：哥斯达黎加电子产业上游度下降，升级可提升工资4%"
+        ],
+        "cleaned_candidates": [
+          "经合组织：评估沿全球价值链移动的收益",
+          "经合组织：哥斯达黎加电子产业升级可提升出口30%",
+          "经合组织：哥斯达黎加电子产业上游度下降，升级可提升工资4%",
+          "经合组织：0003OECDAssessingthega",
+          "经合组织：研究覆盖2005年至2020年的跨国投入产出数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：哥斯达黎加电子产业升级可提升出口30%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：哥斯达黎加电子产业上游度下降，升级可提升工资4%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：0003OECDAssessingthega",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：研究覆盖2005年至2020年的跨国投入产出数据",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：评估沿全球价值链移动的收益",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：评估沿全球价值链移动的收益"
+      }
+    },
+    {
+      "source_report_name": "OECD Building-Centre-of-Government-Capabilities-to-Steer-and-Deli f0ec5c35",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：政府中枢驾驭复杂优先事项的能力建设",
+      "final_wechat_title": "经合组织：政府中枢驾驭复杂优先事项的能力建设",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/04-0004-OECD_Building-Centre-of-Government-Capabilities-to-Steer-and-Deli_f0ec5c35",
+      "generation_decision": {
+        "source_filename": "0004-OECD_Building-Centre-of-Government-Capabilities-to-Steer-and-Deli_f0ec5c35",
+        "cleaned_source_title": "0004-OECD_Building-Centre-of-Government-Capabilities-to-Steer-and-Deli_f0ec5c35",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0004OECDBuildingCentre",
+        "raw_candidates": [
+          "经合组织：政府中枢驾驭复杂优先事项的能力建设",
+          "经合组织：政府中枢能力建设-机构重组非万能药",
+          "经合组织：政府中枢能力建设-从清单思维转向系统嵌入"
+        ],
+        "cleaned_candidates": [
+          "经合组织：政府中枢驾驭复杂优先事项的能力建设",
+          "经合组织：政府中枢能力建设-机构重组非万能药",
+          "经合组织：政府中枢能力建设-从清单思维转向系统嵌入",
+          "经合组织：0004OECDBuildingCentre",
+          "经合组织：[[KC_IMAGE_002]]"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：政府中枢能力建设-机构重组非万能药",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "经合组织：政府中枢能力建设-从清单思维转向系统嵌入",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "经合组织：0004OECDBuildingCentre",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：[[KC_IMAGE_002]]",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：政府中枢驾驭复杂优先事项的能力建设",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：政府中枢驾驭复杂优先事项的能力建设"
+      }
+    },
+    {
+      "source_report_name": "OECD Non-compete-clauses-and-productivity 4e40c937",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：竞业限制条款与生产率，竞业限制覆盖率每提高10个百分点",
+      "final_wechat_title": "经合组织：竞业限制条款与生产率，竞业限制覆盖率每提高10个百分点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/05-0005-OECD_Non-compete-clauses-and-productivity_4e40c937",
+      "generation_decision": {
+        "source_filename": "0005-OECD_Non-compete-clauses-and-productivity_4e40c937",
+        "cleaned_source_title": "0005-OECD_Non-compete-clauses-and-productivity_4e40c937",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0005OECDNoncompeteclauses",
+        "raw_candidates": [
+          "经合组织：竞业限制条款与生产率",
+          "经合组织：竞业限制覆盖率每提高10个百分点生产率下降1.9%",
+          "经合组织：竞业限制覆盖率提高10个百分点劳动力再配置强度下降17%"
+        ],
+        "cleaned_candidates": [
+          "经合组织：竞业限制条款与生产率",
+          "经合组织：竞业限制覆盖率每提高10个百分点生产率下降1.9%",
+          "经合组织：竞业限制覆盖率提高10个百分点劳动力再配置强度下降17%",
+          "经合组织：0005OECDNoncompeteclauses",
+          "经合组织：竞业限制覆盖率每提高10个百分点，追赶型增长下降约5%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：竞业限制覆盖率每提高10个百分点生产率下降1.9%",
+            "reasons": [
+              "anchor_coverage=0.56"
+            ]
+          },
+          {
+            "title": "经合组织：竞业限制覆盖率提高10个百分点劳动力再配置强度下降17%",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          },
+          {
+            "title": "经合组织：0005OECDNoncompeteclauses",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：竞业限制覆盖率每提高10个百分点，追赶型增长下降约5%",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：竞业限制条款与生产率",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：竞业限制条款与生产率"
+      }
+    },
+    {
+      "source_report_name": "OECD Policies-supporting-responsible-and-systematic-GenAI-adoptio f63fa6a5",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：支持负责任和系统化生成式AI采纳的政策",
+      "final_wechat_title": "经合组织：支持负责任和系统化生成式AI采纳的政策",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/06-0006-OECD_Policies-supporting-responsible-and-systematic-GenAI-adoptio_f63fa6a5",
+      "generation_decision": {
+        "source_filename": "0006-OECD_Policies-supporting-responsible-and-systematic-GenAI-adoptio_f63fa6a5",
+        "cleaned_source_title": "0006-OECD_Policies-supporting-responsible-and-systematic-GenAI-adoptio_f63fa6a5",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0006OECDPoliciessuppor",
+        "raw_candidates": [
+          "经合组织：支持负责任和系统化生成式AI采纳的政策",
+          "经合组织：九成大学生已用生成式AI，高校政策滞后",
+          "经合组织：学生AI使用率95%，高校教学变革远未跟上"
+        ],
+        "cleaned_candidates": [
+          "经合组织：支持负责任和系统化生成式AI采纳的政策",
+          "经合组织：九成大学生已用生成式AI，高校政策滞后",
+          "经合组织：学生AI使用率95%，高校教学变革远未跟上",
+          "经合组织：0006OECDPoliciessuppor",
+          "经合组织：2026年3月，经合组织在斯洛伐克布拉迪斯拉发召开专家研讨会"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：九成大学生已用生成式AI，高校政策滞后",
+            "reasons": [
+              "anchor_coverage=0.28",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：学生AI使用率95%，高校教学变革远未跟上",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：0006OECDPoliciessuppor",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：2026年3月，经合组织在斯洛伐克布拉迪斯拉发召开专家研讨会",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：支持负责任和系统化生成式AI采纳的政策",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：支持负责任和系统化生成式AI采纳的政策"
+      }
+    },
+    {
+      "source_report_name": "OECD Scaled-up-crediting-approaches-to-deliver-climate-change-mit 28c6f803",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：规模化碳信用扩容减排模式，规模化碳信用能解决项目级碳信用的哪",
+      "final_wechat_title": "经合组织：规模化碳信用扩容减排模式，规模化碳信用能解决项目级碳信用的哪",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/07-0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803",
+      "generation_decision": {
+        "source_filename": "0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803",
+        "cleaned_source_title": "0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0007OECDScaledupcredit",
+        "raw_candidates": [
+          "经合组织：规模化碳信用扩容减排模式",
+          "经合组织：80国参与碳信用，发行量仅占6%",
+          "经合组织：碳信用扩容，政府主导能否兑现气候承诺"
+        ],
+        "cleaned_candidates": [
+          "经合组织：规模化碳信用扩容减排模式",
+          "经合组织：80国参与碳信用，发行量仅占6%",
+          "经合组织：碳信用扩容，政府主导能否兑现气候承诺",
+          "经合组织：0007OECDScaledupcredit",
+          "经合组织：自2020年以来，规模化碳信用标准下共发行了1.54亿个单位"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：80国参与碳信用，发行量仅占6%",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：碳信用扩容，政府主导能否兑现气候承诺",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "经合组织：0007OECDScaledupcredit",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：自2020年以来，规模化碳信用标准下共发行了1.54亿个单位",
+            "reasons": [
+              "anchor_coverage=0.45"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：规模化碳信用扩容减排模式",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：规模化碳信用扩容减排模式"
+      }
+    },
+    {
+      "source_report_name": "OECD Strengthening-the-Economic-Financial-and-Technological-Dimen 1fb0daf6",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：强化宏观环境资金与技术维度，研究环境评估",
+      "final_wechat_title": "经合组织：强化宏观环境资金与技术维度，研究环境评估",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/08-0008-OECD_Strengthening-the-Economic-Financial-and-Technological-Dimen_1fb0daf6",
+      "generation_decision": {
+        "source_filename": "0008-OECD_Strengthening-the-Economic-Financial-and-Technological-Dimen_1fb0daf6",
+        "cleaned_source_title": "0008-OECD_Strengthening-the-Economic-Financial-and-Technological-Dimen_1fb0daf6",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0008OECDStrengtheningt",
+        "raw_candidates": [
+          "经合组织：强化经济金融与技术维度",
+          "经合组织：乌兹别克斯坦水安全研究面临三重瓶颈",
+          "经合组织：乌兹别克斯坦水不确定性指数112%全球最高"
+        ],
+        "cleaned_candidates": [
+          "经合组织：强化宏观环境资金与技术维度",
+          "经合组织：乌兹别克斯坦水安全研究面临三重瓶颈",
+          "经合组织：乌兹别克斯坦水不确定性指数112%全球最高",
+          "经合组织：0008OECDStrengtheningt",
+          "经合组织：乌兹别克斯坦2022年水资源不确定性指数达到112%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：乌兹别克斯坦水安全研究面临三重瓶颈",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：乌兹别克斯坦水不确定性指数112%全球最高",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：0008OECDStrengtheningt",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：乌兹别克斯坦2022年水资源不确定性指数达到112%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：强化宏观环境资金与技术维度",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：强化宏观环境资金与技术维度"
+      }
+    },
+    {
+      "source_report_name": "WTO United-States-launches-safeguard-investigation-on-lamb-meat ec8e4054",
+      "institution_name": "世界贸易组织",
+      "title_before_upload": "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害",
+      "final_wechat_title": "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260718/09-0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054",
+      "generation_decision": {
+        "source_filename": "0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054",
+        "cleaned_source_title": "0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054",
+        "institution_name": "世界贸易组织",
+        "required_terms": [],
+        "deterministic_fallback": "世界贸易组织：0009WTOUnitedStatesl",
+        "raw_candidates": [
+          "美国启动羊肉进口保障调查",
+          "美国启动羊肉进口保障调查-进口激增致产业受损",
+          "美国启动羊肉进口保障调查-2026年11月前认定损害"
+        ],
+        "cleaned_candidates": [
+          "世界贸易组织：美国启动羊肉进口保障调查",
+          "世界贸易组织：美国启动羊肉进口保障调查-进口激增致产业受损",
+          "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害",
+          "世界贸易组织：0009WTOUnitedStatesl",
+          "世界贸易组织：2026年7月13日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界贸易组织：0009WTOUnitedStatesl",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界贸易组织：2026年7月13日",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "11",
+            "2026"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害"
+      }
+    }
+  ]
+}
