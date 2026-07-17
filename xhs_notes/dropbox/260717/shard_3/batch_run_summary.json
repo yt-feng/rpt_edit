@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-GS-GLOBAL ECONOMICS ANALYST Geopolitics and GDP： Structural Alignment Matters More than Near~Term Risk-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hkq9r31a/pdfs/0001-16-GS-GLOBAL ECONOMICS ANALYST Geopolitics and GDP- Structural Alignment Matters More than Near-Term Risk-260716.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-GLOBAL METALS & MINING：BHP S32 Copper； Spence and Sierra Gorda partnership could unlock US$2~4bn in synergies-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hkq9r31a/pdfs/0002-17-GS-GLOBAL METALS - MINING-BHP S32 Copper- Spence and Sierra Gorda partnership could unlock US-2-4bn in synergies-260716.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-GS-Global PCs： Shipment estimates~14% ~5% YoY in 2026E~27E； rising AI PC penetration-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hkq9r31a/pdfs/0003-18-GS-Global PCs- Shipment estimates-14- -5- YoY in 2026E-27E- rising AI PC penetration-260716.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-GS-Greater China Semis： Jun： IC import export value +72.3% +121.9% YoY-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hkq9r31a/pdfs/0004-19-GS-Greater China Semis- Jun- IC import export value -72.3- -121.9- YoY-260716.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-GS-Japan Economic Flash： Raising Our FY2027 Inflation Forecasts Due to Weaker Yen， Higher Memory Chip Prices， and Rebound in Food Prices-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hkq9r31a/pdfs/0005-20-GS-Japan Economic Flash- Raising Our FY2027 Inflation Forecasts Due to Weaker Yen- Higher Memory Chip Prices- and Rebound in Food Prices-260716.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

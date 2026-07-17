@@ -1,0 +1,1668 @@
+[
+    {
+        "type": "text",
+        "text": "Japan Economic Flash: Raising Our FY2027 Inflation Forecasts Due to Weaker Yen, Higher Memory Chip Prices, and Rebound in Food Prices",
+        "text_level": 1,
+        "bbox": [
+            76,
+            94,
+            808,
+            147
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We raise our inflation forecasts for FY2027. Our forecasts for new core CPI (excludes fresh food and energy) in FY2026 and FY2027 are 2.1% (unchanged from previous forecast) and 2.3% (+0.3pp), respectively.",
+        "bbox": [
+            78,
+            189,
+            676,
+            244
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Tomohiro Ota\n+81(3)4587-9984 |\ntomohiro.ota@gs.com\nGS Japan Co., Ltd.",
+        "bbox": [
+            718,
+            189,
+            866,
+            232
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The upward revision to our FY2027 forecasts reflect our forex research team's revised forecast (12-month forecast: from ¥155/US\\$ to ¥165/US\\$), a significant rise in memory chip prices, and higher food prices partly due to weather factors. While these factors will accelerate inflation not only in FY2027 but also in FY2026, our FY2026 inflation forecast remains unchanged, since the rise in private services prices is tracking below our forecast. Naphtha-flation (the rise in naphtha-related product prices) took a breather in the June corporate goods price index (CGPI, goods-PPI equivalent) print. This is consistent with our forecast that the margin of price increases will narrow as pass-through progresses downstream. We expect some price increases from June, mainly in non-durable goods, but the margin of increase in retail prices, which are the farthest downstream in the supply chain, is likely to be small.",
+        "bbox": [
+            78,
+            251,
+            694,
+            478
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, our core CPI (excludes fresh food) forecasts for FY2026 and FY2027 are also revised to be $2.1\\%$ (-0.2pp from our previous forecast) and $2.3\\%$ (+0.2pp), respectively. The downward revision for FY2026 reflects crude oil prices trending at levels below our previous forecast, as well as the government's price control measures exceeding our initial assumptions in scale. Our commodities research team has also revised down its crude oil price forecast for FY2027, and reflecting this, the upward revision for FY2027 is smaller than that of the new core CPI.",
+        "bbox": [
+            78,
+            484,
+            694,
+            633
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This forecast revision does not incorporate the upcoming CPI base-year revision in August as well as the potential consumption tax cut which the government may implement from April 2027. While the impact of the CPI base-year revision to our forecast is unclear, inflation rate could decline significantly with the start of the tax cut, from April 2027.",
+        "bbox": [
+            78,
+            641,
+            689,
+            734
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            23,
+            297,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Economics Research",
+        "bbox": [
+            761,
+            26,
+            916,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "16 July 2026 | 3:36PM JST",
+        "bbox": [
+            723,
+            47,
+            918,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html.",
+        "bbox": [
+            78,
+            922,
+            857,
+            970
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Raising Our FY2027 Inflation Forecasts Due to Weaker Yen, Higher Memory Chip Prices, and Rebound in Food Prices",
+        "text_level": 2,
+        "bbox": [
+            76,
+            59,
+            905,
+            104
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Upward Revisions to New Core CPI Outlook, Mainly in FY2027",
+        "text_level": 2,
+        "bbox": [
+            269,
+            146,
+            821,
+            164
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We revise our inflation forecasts mainly to incorporate changes in our forex forecasts and higher memory chip prices (Exhibit 1). Our new core CPI (excludes fresh food and energy) forecasts for FY2026 and FY2027 are 2.1% (unchanged vs. previous forecast) and 2.3% (+0.3pp).",
+        "bbox": [
+            267,
+            165,
+            893,
+            236
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The upward revisions to the new core CPI are concentrated in FY2027, driven mainly by our forex research team's revised USD/JPY forecast toward a weaker yen (12-month forecast: from ¥155/US\\$ to ¥165/US\\$), the expected impact of higher memory chip prices on the CPI from fall 2026 through H1 2027, and higher food prices in 2026-2027. Of these, higher memory chip and food prices are also upside factors for the FY2026 inflation rate. However, as discussed later, they are offset by the increase in private services prices tracking below our expectations, leaving the new core CPI outlook for FY2026 unchanged. In this note, we examine each price fluctuation factor.",
+        "bbox": [
+            267,
+            246,
+            908,
+            388
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We also note that in the upcoming once-every-five-year base year revision for the CPI on August 7, the CPI inflation rate for January-June 2026 is subject to retroactive revision and could also impact the future inflation rate (we estimate a small upward revision to January-June 2026 inflation rate, while the new base year could exert downward pressure on the future CPI, although uncertainty is high). We plan to review our inflation forecast once the new CPI series is officially released.",
+        "bbox": [
+            269,
+            398,
+            898,
+            505
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In addition, we currently do not incorporate a potential consumption tax cut in our base-case forecasts. Therefore, our core CPI inflation forecasts from April 2027, the expected starting period for a possible tax cut, could decline by 1.3pp with a tax cut.",
+        "bbox": [
+            269,
+            516,
+            890,
+            570
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5bf0af08488e4c3927ab146d0ed862a68b1a5bef56e069fc880b2bed4e064687.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 1: Inflation Outlook Raised, Mainly for FY2027"
+        ],
+        "chart_footnote": [
+            "Source: Ministry of Internal Affairs and Communications, BoJ, JCER, GS Global Investment Research"
+        ],
+        "bbox": [
+            88,
+            604,
+            908,
+            844
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Forex: Upside Risk to Prices From Further Yen Depreciation of Around ¥5 Is Small, but Impact on Monetary Policy Cannot Be Ignored",
+        "text_level": 2,
+        "bbox": [
+            269,
+            59,
+            906,
+            95
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "One reason for the upside in the FY2027 inflation rate shown in Exhibit 1 is that our forex research team revised its 12-month USD/JPY forecast from ¥155/US\\$ to ¥165/US\\$. In our model, a ¥10 depreciation of the yen (a weaker yen of just over 6% in terms of rate of change) pushes up the new core CPI by 0.25pp 12 months later.",
+        "bbox": [
+            267,
+            95,
+            918,
+            167
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The rate of change in the forex rate is what affects the inflation rate (Exhibit 2). Therefore, given that the yen has already depreciated to a level exceeding ¥160, even if the yen were to weaken by several yen beyond our team's forecast of ¥165/US\\$, we would expect upside to the inflation rate to be limited. However, the Bank of Japan (BOJ) is becoming increasingly vigilant against the risk of underlying inflation rising above 2%, and some of BOJ's indicators of underlying inflation are approaching 2%. Consequently, even a relatively modest upside surprise to prices could heighten BOJ concerns over the risk of underlying inflation exceeding 2%.",
+        "bbox": [
+            269,
+            176,
+            916,
+            319
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5ea58602301533d003a998ee2996d5bbbfde94553fd5e4f6eba5974bca6e113e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 2: Compared to When the USD/JPY Rate Was Around ¥100/US\\$, the Impact of a ¥10 Fluctuation on the Inflation Rate Is Smaller\nImpact of USD/JPY Fluctuations on New Core CPI"
+        ],
+        "chart_footnote": [
+            "Source: Ministry of Internal Affairs and Communications, GS Global Investment Research"
+        ],
+        "bbox": [
+            272,
+            404,
+            692,
+            632
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI-Related: The CPI-Boosting Effect of Higher Memory Chip Prices",
+        "text_level": 2,
+        "bbox": [
+            269,
+            689,
+            766,
+            705
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Along with the rapid surge in demand related to AI servers, memory chip prices have skyrocketed since H2 2025, with spot prices reportedly up seven-fold yoy (Nikkei, June 29). Reflecting this movement, B2B prices for PCs have already soared since April. In light of this, we expect PC prices in the CPI, which tend to lag B2B prices by several months, to rise going forward (Exhibit 3). However, since retail prices are also influenced by logistics costs and labor costs at the retail level, it is unlikely that PC retail prices will be hiked as much as the increase in B2B prices. Furthermore, since the weighting of PCs and tablets in the CPI is only just over 0.3%, the resulting boost to the CPI could be limited to a cumulative c.0.05pp.",
+        "bbox": [
+            269,
+            705,
+            918,
+            866
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Mobile phones have a larger impact on the CPI since they account for about 1% of the",
+        "bbox": [
+            269,
+            876,
+            897,
+            893
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "CPI weight (Exhibit 4). $^{1}$ While retail prices have been raised for some models on soaring component prices, the iPhone, which has about a 50% share of the mobile phone market in Japan, will reportedly see the launch of new products in two stages this fall and next spring, and price hikes are anticipated. If prices are raised by nearly 20% as reported, the iPhone price hike alone would push up next year's CPI by about 0.1pp, an impact that cannot be ignored.",
+        "bbox": [
+            269,
+            59,
+            918,
+            165
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/79fb307a1c956b762402b85cea171b963ea99a810db1cc44e7da194c1a3fb9e9.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3: PC Prices in the PPI, Which Leads the CPI by Several Months, Surged in April\nDomestic Corporate Goods Prices and CPI PC Prices"
+        ],
+        "chart_footnote": [
+            "Source: BoJ, Ministry of Internal Affairs and Communications"
+        ],
+        "bbox": [
+            80,
+            236,
+            485,
+            462
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1b12b71cc998f911fd06a4e63dd3cd1bc61b9f0b268bd536ff1128a24e23bf94.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 4: Mobile Phone Price Hikes Reflecting Surging Memory Prices Have Just Begun\nMobile Phone Prices in CPI"
+        ],
+        "chart_footnote": [
+            "Source: Ministry of Internal Affairs and Communications"
+        ],
+        "bbox": [
+            509,
+            236,
+            916,
+            460
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Food Inflation: A Third Wave Arrives, but Lower Rice Prices Serve as a Dampening Factor",
+        "text_level": 2,
+        "bbox": [
+            269,
+            505,
+            875,
+            539
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Food prices, which rose significantly in 2024-25 driven primarily by rice prices, have seen relatively limited price increases since the end of 2025, becoming the main driver of the inflation rate slowdown over the past half-year. Rice prices, which drove food inflation in 2024-25, are likely to continue declining due to increased inventories (Exhibit 5).",
+        "bbox": [
+            269,
+            542,
+            918,
+            613
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "However, according to a Teikoku Databank survey, the number of food items subject to price hikes is expected to increase again from July, making it likely that a third wave of food inflation will push up the CPI going forward (Exhibit 5). On this point, micro-level information from the BOJ's July Branch Managers' Meeting also indicated that many companies are considering price hikes from the summer onward. This is partly due to much higher packaging film prices driven by higher naphtha prices, but the contribution from prices for imported food ingredients, which continue to rise mainly for meat prices, is also seen as significant.",
+        "bbox": [
+            267,
+            623,
+            915,
+            763
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In addition, wheat planting in the US and Australia is declining due to weather conditions and other factors, and the import price of meat, which accounts for 20% of food import value, continues to rise. Thus, the rise in related food prices is likely to continue next year as well.",
+        "bbox": [
+            267,
+            773,
+            916,
+            845
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            905,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ However, the 2025 base year revision lowers the weight from 0.90% to 0.58%, reducing the positive contribution. See this comment for the details.",
+        "bbox": [
+            269,
+            907,
+            864,
+            935
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/50fa69ab1418348d8e213b772f691222da8f9ccc460722b57cd072a65e836f25.jpg",
+        "content": "",
+        "chart_caption": [
+            "Number of Food Items Subject to Price Hikes and Food CPI",
+            "Exhibit 5: Rice Prices Likely to Continue Declining\nRice Price Outlook DI and CPI Rice Prices"
+        ],
+        "chart_footnote": [
+            "The DI is an index of the difference between the percentage of dealers answering that “rice prices over the next three months will rise compared to current prices” and the percentage answering that they will “decline.”"
+        ],
+        "bbox": [
+            86,
+            126,
+            480,
+            338
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 6: Food Prices Expected to Rise Again From the Summer",
+        "text_level": 2,
+        "bbox": [
+            508,
+            71,
+            887,
+            99
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0c4da90e609452af9842f2b36c5424bb3f1c9ac82245d01a9816288b7a91a2d1.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Teikoku Data Bank, Ministry of Internal Affairs and Communications, Data compiled by GS Global Investment Research",
+            "Source: Ministry of Internal Affairs and Communications, Japan Rice Stable Supply Support Organization, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            514,
+            121,
+            908,
+            348
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Naphtha-flation: Impact on CPI Likely to Remain Small",
+        "text_level": 2,
+        "bbox": [
+            269,
+            455,
+            679,
+            472
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We have previously expected the cumulative impact of soaring naphtha prices on the CPI to remain at +0.2-0.3pp, and we make no change to this forecast at this point. The CGPI (goods PPI equivalent) rose further in June, but no notable acceleration was seen in prices of naphtha-related items (naphtha, chemicals, plastic products, and rubber products), as Exhibit 7 indicates. As we pointed out before, this is likely because the margin of price increases shrinks as pass-through moves downstream. If the scale of pass-through downstream continues to lessen in this manner, the margin of increase in retail prices, which are the farthest downstream, is likely to remain small.",
+        "bbox": [
+            267,
+            473,
+            913,
+            614
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "However, moves to raise B2B prices have been observed in July, mainly for construction material-related products (derived by increases in naphtha prices), posing upside risks to the July CGPI. $^{2}$ Furthermore, retail price hikes, seemingly stemming from surging naphtha prices, are scheduled from July onward for detergents, automobile tires, apparel, and other items, so we expect some positive contribution centered on non-durable goods prices.",
+        "bbox": [
+            269,
+            626,
+            906,
+            732
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The acceleration in the June CGPI was almost entirely due to higher fuel prices (such as jet fuel, kerosene, and heavy fuel oil; Exhibit 7). If fuel prices continue to rise, they could broadly push up import prices. However, the rate of fuel price increase is only about half the 2021 level.",
+        "bbox": [
+            267,
+            743,
+            913,
+            813
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ In addition, the CGPI includes many items for which price revisions are effectively only carried out in January, April, July, and October. Therefore we are more likely to see price rises in July.",
+        "bbox": [
+            269,
+            907,
+            910,
+            936
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3406d499e088a7cc83b35fd88fc87e93945f025217ec6cb1436fd1c12d7d5176.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 7: Acceleration of Naphtha-flation Pauses in June B2B Prices\nCGPI YoY Growth Rate and Contributions"
+        ],
+        "chart_footnote": [
+            "Source: BoJ, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            274,
+            127,
+            692,
+            356
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Private Services Prices: Pass-Through of Wage Hikes Remains Sluggish in Labor Intensive Sectors",
+        "text_level": 2,
+        "bbox": [
+            269,
+            398,
+            854,
+            434
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "In recent years, the pass-through of increased production costs has become more visible in goods prices, such as food products. In the service industries, however, the pace of increase in final demand prices (the majority of which are retail prices) remains sluggish compared to price increases upstream in the supply chain. Exhibit 8 shows a weighted average of various B2B service prices grouped by stage of the supply chain (the most upstream B2B service prices belong to Stage 1, with prices positioned progressively downstream classified into Stages 2, 3, and 4, while the most downstream prices, which are predominantly B2C, are grouped under final demand). The chart indicates that the lag in price increases is observed only at the final demand stage.",
+        "bbox": [
+            269,
+            436,
+            915,
+            597
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This trend is particularly pronounced in labor-intensive B2C services industries. The BOJ's labor-intensive corporate services (services with a high labor cost ratio) prices are rising in tandem with the wage growth rate, indicating that the pass-through of personnel costs in B2B prices is progressing smoothly. However, the labor-intensive private services CPI, our estimate using a similar methodology, remains at a low growth rate (Exhibit 9).",
+        "bbox": [
+            269,
+            606,
+            910,
+            712
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We had expected services prices to also rise to some extent in April—a month when private services price revisions are concentrated—reflecting the high wage growth rate, but the actual margin of increase in April-May was smaller than expected.",
+        "bbox": [
+            269,
+            723,
+            908,
+            776
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 8: In the Services Industry, Pass-Through to Final Demand Prices Lags Price Increases Upstream in the Supply Chain",
+        "bbox": [
+            78,
+            71,
+            470,
+            113
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "B2B and B2C Service Prices Grouped by Stage of the Supply Chain (FD-ID Price Index)",
+        "bbox": [
+            78,
+            112,
+            450,
+            140
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/21126b0b6b1b17aeecbf802f4f8f0eae2dbaca02493357fdb93b0543a9954db0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "For final demand services prices, we have removed special factors such as free high school tuition."
+        ],
+        "bbox": [
+            81,
+            152,
+            486,
+            383
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 9: Despite Accelerating Wage Growth, No Signs of Acceleration Apparent in Labor-Intensive Retail Services Prices\nBasic Wage Growth and Services Prices",
+        "bbox": [
+            506,
+            70,
+            906,
+            128
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/34c19f562dbe376ab93e41e86ec51f2ce6a662cd7fc7e047d14f80fc1bc23269.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BoJ, Ministry of Health, Labour and Welfare",
+            "Source: BoJ, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            513,
+            154,
+            913,
+            373
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "FY2026 Core CPI Outlook Revised Down, FY2027 Revised Up\nWe revise our core CPI (excludes fresh food) forecasts to 2.1% (-0.2pp from previous forecast) for FY2026 and 2.3% (+0.2pp) for FY2027. In contrast to the new core CPI forecast for FY2026, which is unchanged from our previous forecast, we lower our core CPI forecast mainly because crude oil prices are below our forecast as of April, and the electricity and gas price control measures for the summer of 2026 exceeded our initial assumptions in scale (Exhibit 10).",
+        "bbox": [
+            269,
+            467,
+            903,
+            593
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            905,
+            955,
+            916,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b92c74f659b45881bd0f7c4c885a363f54a5c68ef8d78cbcb5787f06b5d79ce5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 10: Core CPI Expected to Turn Up in the Summer and Accelerate in November\nCore CPI Forecast and Factor Decomposition"
+        ],
+        "chart_footnote": [
+            "To avoid complicating the exhibit, only factors other than energy price control measures are listed as special factors (energy prices include the impact of policy factors).",
+            "Source: Ministry of Internal Affairs and Communications, GS Global Investment Research"
+        ],
+        "bbox": [
+            274,
+            117,
+            913,
+            338
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Regarding FY2027 as well, we raise our core CPI forecast by less than the new core CPI, reflecting the downward revision to the crude oil price forecast by our commodities research team (whereas their forecast as of April 2026 was for the Brent price to remain at US\\$80/bbl throughout 2027, the team has now revised this to a decline to US\\$70 by the end of 2027).",
+        "bbox": [
+            269,
+            406,
+            911,
+            494
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Energy Prices: Price Risks Are Two-Sided Amid Fluid Middle East Situation, but Government Price Control Measures Likely to Suppress Core CPI Volatility\nWe assume that crude oil prices will return to US\\$70/bbl, the level before the deterioration of the Middle East situation, by the end of 2027. As a result, gasoline prices would fall below ¥170/liter in 2027, and the fuel price control measures, which are designed to keep gasoline prices below ¥170, are expected to naturally expire. We also assume that electricity and gas price control measures will be scaled back in 2027 in tandem with the decline in crude oil prices, and terminated in the winter of 2027.",
+        "bbox": [
+            267,
+            517,
+            918,
+            660
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "However, crude oil price uncertainty is high, with the Middle East situation remaining fluid. Exhibit 11 shows our estimates of the trajectory of the core CPI assuming crude oil prices are held constant at US\\$70, US\\$85, and US\\$100/bbl going forward. The reaction of core CPI to crude oil prices is smaller than before, because gasoline prices are effectively fixed by the government. $^{3}$",
+        "bbox": [
+            267,
+            671,
+            913,
+            760
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ In the scenario where crude oil prices are US\\$70/bbl, the gasoline price control measures would naturally expire, generating a minor but early negative contribution to the core CPI.",
+        "bbox": [
+            269,
+            907,
+            893,
+            936
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/da11048eadf3e6f90aaf4b4c7e3ae07bdd9737a35633f76a206ede6115f2d353.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 11: Due to Government Price Control Measures, the Impact of Crude Oil Prices on Core CPI Is Smaller Than Before\nCore CPI Inflation Rate Simulation by Crude Oil Price Scenario"
+        ],
+        "chart_footnote": [
+            "Source: Ministry of Internal Affairs and Communications, GS Global Investment Research"
+        ],
+        "bbox": [
+            272,
+            141,
+            692,
+            364
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The Japan Economics Team",
+        "bbox": [
+            282,
+            422,
+            511,
+            444
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Akira Otani\n+81(3)4587-9960\nakira.otani@gs.com\nGS Japan Co., Ltd.",
+        "bbox": [
+            282,
+            465,
+            429,
+            506
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Tomohiro Ota\n+81(3)4587-9984\ntomohiro.ota@gs.com\nGS Japan Co., Ltd.",
+        "bbox": [
+            493,
+            465,
+            638,
+            506
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Yuriko Tanaka\n+81(3)4587-9964\nyuriko.tanaka@gs.com\nGS Japan Co., Ltd.",
+        "bbox": [
+            704,
+            465,
+            851,
+            506
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            60,
+            253,
+            80
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            101,
+            138,
+            116
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "I, Tomohiro Ota, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+        "bbox": [
+            76,
+            122,
+            893,
+            147
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            151,
+            887,
+            165
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Tomohiro Ota GS Japan Co., Ltd..",
+        "bbox": [
+            78,
+            169,
+            467,
+            183
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            186,
+            897,
+            210
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            223,
+            169,
+            237
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            242,
+            253,
+            257
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            260,
+            516,
+            273
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            76,
+            273,
+            908,
+            319
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            76,
+            324,
+            913,
+            402
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            78,
+            412,
+            875,
+            426
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            76,
+            422,
+            913,
+            733
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are",
+        "bbox": [
+            76,
+            731,
+            916,
+            929
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            898,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "available from GS International on request.",
+        "bbox": [
+            78,
+            60,
+            388,
+            74
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            76,
+            79,
+            910,
+            157
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            76,
+            162,
+            915,
+            218
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            78,
+            229,
+            352,
+            243
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            242,
+            916,
+            364
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            368,
+            880,
+            393
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            76,
+            397,
+            903,
+            443
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            455,
+            230,
+            468
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            76,
+            467,
+            915,
+            523
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            76,
+            529,
+            915,
+            563
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            76,
+            568,
+            916,
+            603
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            76,
+            608,
+            890,
+            632
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            76,
+            637,
+            916,
+            661
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            76,
+            666,
+            913,
+            689
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+        "bbox": [
+            78,
+            694,
+            887,
+            719
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+        "bbox": [
+            76,
+            724,
+            867,
+            747
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            76,
+            752,
+            916,
+            820
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            76,
+            824,
+            906,
+            881
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints.",
+        "bbox": [
+            76,
+            885,
+            905,
+            931
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            76,
+            61,
+            900,
+            118
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            76,
+            122,
+            897,
+            167
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            172,
+            888,
+            195
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            78,
+            200,
+            220,
+            214
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            76,
+            220,
+            911,
+            297
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Japan Economic Flash",
+        "bbox": [
+            769,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "16 July 2026",
+        "bbox": [
+            81,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 11
+    }
+]
