@@ -1,0 +1,131 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0005-50-MS-China Financials-Deleveraging continued in June with ongoing new household savings shift-260715.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "6月社融：去杠杆还在",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "金融->资金 x1",
+    "收益率->回报表现 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-50-MS-China Financials-Deleveraging continued in June with ongoing new household savings shift-260715.pdf",
+    "cleaned_source_title": "MS-China Financials-Deleveraging continued in June with ongoing new household savings shift",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：中国FinancialsDeleverag",
+    "raw_candidates": [
+      "中国金融业：六月去杠杆持续，住户储蓄继续转移",
+      "中国金融业：六月社融降至7.4%，去杠杆持续储蓄转移",
+      "中国金融业：去杠杆持续，企业贷款利率降至3%定价权转移"
+    ],
+    "cleaned_candidates": [
+      "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+      "MS：中国资金业，六月社融降至7.4%，去杠杆持续储蓄转移",
+      "MS：中国资金业，去杠杆持续，企业贷款利率降至3%定价权转移",
+      "MS：中国FinancialsDeleverag",
+      "MS：当新增企业中长期贷款同比下降23%、上半年住户贷款净减少3"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：中国资金业，六月社融降至7.4%，去杠杆持续储蓄转移",
+        "reasons": [
+          "anchor_coverage=0.63",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国资金业，去杠杆持续，企业贷款利率降至3%定价权转移",
+        "reasons": [
+          "anchor_coverage=0.47",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国FinancialsDeleverag",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：当新增企业中长期贷款同比下降23%、上半年住户贷款净减少3",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "537",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

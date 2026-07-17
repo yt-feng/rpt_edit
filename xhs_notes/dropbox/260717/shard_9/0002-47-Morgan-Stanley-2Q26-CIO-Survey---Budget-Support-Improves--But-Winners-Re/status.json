@@ -1,0 +1,117 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "2026 IT预算回",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资周期->研究周期 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：2Q26CIO调查，预算改善但赢家仍有限",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716.pdf",
+    "cleaned_source_title": "MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：2Q26CIOSurveyBudgetSu",
+    "raw_candidates": [
+      "2Q26 CIO调查：预算改善但赢家仍有限",
+      "2Q26 CIO调查：预算上修比率转正至1.2x",
+      "2Q26 CIO调查：安全软件增速跃升至+12.4%领跑"
+    ],
+    "cleaned_candidates": [
+      "MS：2Q26CIO调查，预算改善但赢家仍有限",
+      "MS：2Q26CIO调查，预算上修比率转正至1.2x",
+      "MS：2Q26CIO调查，安全软件增速跃升至+12.4%领跑",
+      "MS：2Q26CIOSurveyBudgetSu",
+      "MS：下修比率自2024年一季度以来首次突破1.0x"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：2Q26CIO调查，预算上修比率转正至1.2x",
+        "reasons": [
+          "anchor_coverage=0.56",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：2Q26CIO调查，安全软件增速跃升至+12.4%领跑",
+        "reasons": [
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：2Q26CIOSurveyBudgetSu",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：下修比率自2024年一季度以来首次突破1.0x",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：2Q26CIO调查，预算改善但赢家仍有限",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：2Q26CIO调查，预算改善但赢家仍有限"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "505",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

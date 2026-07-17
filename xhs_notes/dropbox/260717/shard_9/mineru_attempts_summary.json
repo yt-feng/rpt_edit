@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0001-46-MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0003-48-JPM-Zoom Communications-ZM.US-CFO Meeting Takeaways-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0004-49-MS-China Economics-June Credit Slowed Further-Faster Fiscal Deployment Awaited-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0005-50-MS-China Financials-Deleveraging continued in June with ongoing new household savings shift-260715.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

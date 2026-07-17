@@ -1,0 +1,555 @@
+[
+  {
+    "item": "0001-46-Morgan-Stanley-2Q26-CIO-Survey---An-Improved-Revision-Risk-Picture-for-2",
+    "source_pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0001-46-MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "CIO 调查：202",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：2Q26CIO调查，2026年IT预算修正风险改善",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-46-MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets-260716.pdf",
+      "cleaned_source_title": "MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：2Q26CIOSurveyAnImprov",
+      "raw_candidates": [
+        "2Q26 CIO调查：2026年IT预算修正风险改善",
+        "2Q26 CIO调查：预算修正比率回升至1.2倍，IT服务承压",
+        "2Q26 CIO调查：预算上修信号转正，但IT服务折扣意愿上升"
+      ],
+      "cleaned_candidates": [
+        "MS：2Q26CIO调查，2026年IT预算修正风险改善",
+        "MS：2Q26CIO调查，预算修正比率回升至1.2倍",
+        "MS：2Q26CIO调查，预算上修信号转正",
+        "MS：2Q26CIOSurveyAnImprov",
+        "MS：下修比率在连续五个季度低于1.0后，首次回升至1.2倍"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：2Q26CIO调查，预算修正比率回升至1.2倍",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2Q26CIO调查，预算上修信号转正",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2Q26CIOSurveyAnImprov",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：下修比率在连续五个季度低于1.0后，首次回升至1.2倍",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：2Q26CIO调查，2026年IT预算修正风险改善",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：2Q26CIO调查，2026年IT预算修正风险改善"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-47-Morgan-Stanley-2Q26-CIO-Survey---Budget-Support-Improves--But-Winners-Re",
+    "source_pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "2026 IT预算回",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资周期->研究周期 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：2Q26CIO调查，预算改善但赢家仍有限",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716.pdf",
+      "cleaned_source_title": "MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：2Q26CIOSurveyBudgetSu",
+      "raw_candidates": [
+        "2Q26 CIO调查：预算改善但赢家仍有限",
+        "2Q26 CIO调查：预算上修比率转正至1.2x",
+        "2Q26 CIO调查：安全软件增速跃升至+12.4%领跑"
+      ],
+      "cleaned_candidates": [
+        "MS：2Q26CIO调查，预算改善但赢家仍有限",
+        "MS：2Q26CIO调查，预算上修比率转正至1.2x",
+        "MS：2Q26CIO调查，安全软件增速跃升至+12.4%领跑",
+        "MS：2Q26CIOSurveyBudgetSu",
+        "MS：下修比率自2024年一季度以来首次突破1.0x"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：2Q26CIO调查，预算上修比率转正至1.2x",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2Q26CIO调查，安全软件增速跃升至+12.4%领跑",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2Q26CIOSurveyBudgetSu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：下修比率自2024年一季度以来首次突破1.0x",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：2Q26CIO调查，预算改善但赢家仍有限",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：2Q26CIO调查，预算改善但赢家仍有限"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-48-J.P.-Morgan-Zoom-Communications-ZM.US-CFO-Meeting-Takeaways-260715",
+    "source_pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0003-48-JPM-Zoom Communications-ZM.US-CFO Meeting Takeaways-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "Zoom 的 AI ",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：Zoom通讯-CFO会面，ZCXARR突破2亿美元",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-48-JPM-Zoom Communications-ZM.US-CFO Meeting Takeaways-260715.pdf",
+      "cleaned_source_title": "JPM-Zoom Communications-ZM.US-CFO Meeting Takeaways",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：ZoomCommunicationsCFOM",
+      "raw_candidates": [
+        "Zoom通讯-CFO会面纪要",
+        "Zoom通讯-CFO会面：ZCX ARR突破2亿美元",
+        "Zoom通讯-CFO会面：AI变现加速，ZCX ARR翻倍"
+      ],
+      "cleaned_candidates": [
+        "JPM：Zoom通讯-CFO会面纪要",
+        "JPM：Zoom通讯-CFO会面，ZCXARR突破2亿美元",
+        "JPM：Zoom通讯-CFO会面，AI变现加速，ZCXARR翻倍",
+        "JPM：ZoomCommunicationsCFOM",
+        "JPM：与此同时，ZoomPhone的ARR估计已达7.5-8亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：ZoomCommunicationsCFOM",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "JPM：与此同时，ZoomPhone的ARR估计已达7.5-8亿美元",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Zoom通讯-CFO会面，ZCXARR突破2亿美元",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：Zoom通讯-CFO会面，ZCXARR突破2亿美元"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-49-Morgan-Stanley-China-Economics-June-Credit-Slowed-Further-Faster-Fiscal-",
+    "source_pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0004-49-MS-China Economics-June Credit Slowed Further-Faster Fiscal Deployment Awaited-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月社融解读",
+    "cover_subtitle": "政府债提速，能否对冲私人信贷疲软？",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国宏观，6月信贷增速续降，财政加速待落地",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-49-MS-China Economics-June Credit Slowed Further-Faster Fiscal Deployment Awaited-260715.pdf",
+      "cleaned_source_title": "MS-China Economics-June Credit Slowed Further-Faster Fiscal Deployment Awaited",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国EconomicsJuneCredit",
+      "raw_candidates": [
+        "中国宏观：6月信贷增速续降，财政加速待落地",
+        "中国宏观：6月信贷增速降至7.5%，政府债券融资已超9000亿",
+        "中国宏观：6月信贷续降但财政加速，政府债券月中已超全月"
+      ],
+      "cleaned_candidates": [
+        "MS：中国宏观，6月信贷增速续降，财政加速待落地",
+        "MS：中国宏观，6月信贷增速降至7.5%",
+        "MS：中国宏观，6月信贷续降但财政加速，政府债券月中已超全月",
+        "MS：中国EconomicsJuneCredit",
+        "MS：9020亿元的月中数据，比6月全月还高"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国宏观，6月信贷增速降至7.5%",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国宏观，6月信贷续降但财政加速，政府债券月中已超全月",
+          "reasons": [
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "MS：中国EconomicsJuneCredit",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：9020亿元的月中数据，比6月全月还高",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国宏观，6月信贷增速续降，财政加速待落地",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国宏观，6月信贷增速续降，财政加速待落地"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-50-Morgan-Stanley-China-Financials-Deleveraging-continued-in-June-with-ongo",
+    "source_pdf": "/tmp/pdf_batch_001_dx14rkmw/pdfs/0005-50-MS-China Financials-Deleveraging continued in June with ongoing new household savings shift-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月社融：去杠杆还在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "金融->资金 x1",
+      "收益率->回报表现 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "金融->资金 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-50-MS-China Financials-Deleveraging continued in June with ongoing new household savings shift-260715.pdf",
+      "cleaned_source_title": "MS-China Financials-Deleveraging continued in June with ongoing new household savings shift",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国FinancialsDeleverag",
+      "raw_candidates": [
+        "中国金融业：六月去杠杆持续，住户储蓄继续转移",
+        "中国金融业：六月社融降至7.4%，去杠杆持续储蓄转移",
+        "中国金融业：去杠杆持续，企业贷款利率降至3%定价权转移"
+      ],
+      "cleaned_candidates": [
+        "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+        "MS：中国资金业，六月社融降至7.4%，去杠杆持续储蓄转移",
+        "MS：中国资金业，去杠杆持续，企业贷款利率降至3%定价权转移",
+        "MS：中国FinancialsDeleverag",
+        "MS：当新增企业中长期贷款同比下降23%、上半年住户贷款净减少3"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国资金业，六月社融降至7.4%，去杠杆持续储蓄转移",
+          "reasons": [
+            "anchor_coverage=0.63",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国资金业，去杠杆持续，企业贷款利率降至3%定价权转移",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国FinancialsDeleverag",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：当新增企业中长期贷款同比下降23%、上半年住户贷款净减少3",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国资金业，六月去杠杆持续，住户储蓄继续转移"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
