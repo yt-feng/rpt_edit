@@ -1,0 +1,497 @@
+[
+  {
+    "item": "0001-11-Deutsche-Bank-FX-Special-Report-FX-seasonality-August-favours-the-yen-26",
+    "source_pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0001-11-DB-FX Special Report-FX seasonality-August favours the yen-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "8月外汇的隐藏剧本：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：八月外汇季节性，日元全面走强，60个货币对验证",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-11-DB-FX Special Report-FX seasonality-August favours the yen-260715.pdf",
+      "cleaned_source_title": "DB-FX Special Report-FX seasonality-August favours the yen",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：FXSpecialReportFXseas",
+      "raw_candidates": [
+        "八月外汇季节性：日元走强",
+        "八月外汇季节性：日元全面走强，60个货币对验证",
+        "八月外汇季节性：日元走强，高贝塔货币承压最重"
+      ],
+      "cleaned_candidates": [
+        "DB：八月外汇季节性，日元走强",
+        "DB：八月外汇季节性，日元全面走强，60个货币对验证",
+        "DB：八月外汇季节性，日元走强，高贝塔货币承压最重",
+        "DB：FXSpecialReportFXseas",
+        "DB：3.季节性信号在2024-2025年出现局部偏离"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：FXSpecialReportFXseas",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：3.季节性信号在2024-2025年出现局部偏离",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：八月外汇季节性，日元全面走强，60个货币对验证",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "60"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "DB：八月外汇季节性，日元全面走强，60个货币对验证"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-12-CITI-China-Renewable-Energy-Solar-Product-Prices-Further-Dipped--Compani",
+    "source_pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0002-12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "光伏行业洗牌期，谁在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：中国光伏产品价格续跌-逆变器和薄膜企业仍盈利",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715.pdf",
+      "cleaned_source_title": "CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国Renewable能源SolarProduc",
+      "raw_candidates": [
+        "中国光伏产品价格续跌-逆变器和薄膜企业仍盈利",
+        "中国光伏产业链价格续跌-逆变器和薄膜企业仍盈利",
+        "中国光伏产业链价格续跌-仅逆变器和薄膜企业盈利"
+      ],
+      "cleaned_candidates": [
+        "Citi：中国光伏产品价格续跌-逆变器和薄膜企业仍盈利",
+        "Citi：中国光伏产业链价格续跌-逆变器和薄膜企业仍盈利",
+        "Citi：中国光伏产业链价格续跌-仅逆变器和薄膜企业盈利",
+        "Citi：中国Renewable能源SolarProduc",
+        "Citi：截至2026年7月15日当周"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：中国Renewable能源SolarProduc",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：截至2026年7月15日当周",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：中国光伏产品价格续跌-逆变器和薄膜企业仍盈利",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：中国光伏产品价格续跌-逆变器和薄膜企业仍盈利"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-13-Goldman-Sachs-CHINA-RESOURCES-LAND--1109.HK--1H26-Preview--DP-impairment",
+    "source_pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0003-13-GS-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- Buy-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "华润置地半年报前瞻：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-13-GS-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- Buy-260716.pdf",
+      "cleaned_source_title": "GS-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国RESOURCESLAND1H26Previ",
+      "raw_candidates": [
+        "华润置地上半年预览：减值加深但处置收益与租金提供缓冲",
+        "华润置地上半年预览：减值或超15.5亿元，处置收益与租金提供缓冲",
+        "华润置地上半年预览：利润触底但减值不确定性未消失"
+      ],
+      "cleaned_candidates": [
+        "GS：华润置地上半年预览，减值加深但处置收益与租金提供缓冲",
+        "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲",
+        "GS：华润置地上半年预览，利润触底但减值不确定性未消失",
+        "GS：中国RESOURCESLAND1H26Previ",
+        "GS：将2026年开发业务毛利率预测下调了4个百分点至13.4%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：华润置地上半年预览，利润触底但减值不确定性未消失",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国RESOURCESLAND1H26Previ",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：将2026年开发业务毛利率预测下调了4个百分点至13.4%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "15.5"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：华润置地上半年预览，减值或超15.5亿元，处置收益与租金提供缓冲"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-14-Goldman-Sachs-China-Healthcare--Device-VBP---6--Capital-Equipment-VBP-Ki",
+    "source_pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0004-14-GS-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "大型设备集采来了，逻",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-14-GS-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing-260716.pdf",
+      "cleaned_source_title": "GS-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国HealthcareDeviceVBP6Ca",
+      "raw_candidates": [
+        "GS中国医疗设备集采启动-乙类加速但强调合理定价"
+      ],
+      "cleaned_candidates": [
+        "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价",
+        "GS：中国HealthcareDeviceVBP6Ca",
+        "GS：7月14日，国家卫健委发布大型医用设备集采通知"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国HealthcareDeviceVBP6Ca",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月14日，国家卫健委发布大型医用设备集采通知",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：GS中国医疗设备集采启动-乙类加速但强调合理定价"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-15-Goldman-Sachs-Fujitsu--6702.T---Announced-partnership-with-NVIDIA--Fanuc",
+    "source_pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0005-15-GS-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "富士通的物理AI，开",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：富士通与英伟达及多家公司合作推进物理AI",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-15-GS-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI-260716.pdf",
+      "cleaned_source_title": "GS-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIFujitsuAnnouncedpartners",
+      "raw_candidates": [
+        "GS：富士通与英伟达及多家公司合作推进物理AI",
+        "GS：富士通联手英伟达等四家公司推进物理AI-市场关注记忆体成本",
+        "GS：富士通押注物理AI-市场等待记忆体成本落地"
+      ],
+      "cleaned_candidates": [
+        "GS：富士通与英伟达及多家公司合作推进物理AI",
+        "GS：富士通联手英伟达等四家公司推进物理AI-市场关注记忆体成本",
+        "GS：富士通押注物理AI-市场等待记忆体成本落地",
+        "GS：AIFujitsuAnnouncedpartners",
+        "GS：1.物理AI的商业化路径已经清晰，但时间表仍有不确定性"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：富士通联手英伟达等四家公司推进物理AI-市场关注记忆体成本",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "GS：富士通押注物理AI-市场等待记忆体成本落地",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AIFujitsuAnnouncedpartners",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.物理AI的商业化路径已经清晰，但时间表仍有不确定性",
+          "reasons": [
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：富士通与英伟达及多家公司合作推进物理AI",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：富士通与英伟达及多家公司合作推进物理AI"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

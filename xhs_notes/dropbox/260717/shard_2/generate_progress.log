@@ -1,0 +1,28 @@
+Found 64 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_06hrq0ij/pdfs/0001-11-Deutsche Bank-FX Special Report-FX seasonality-August favours the yen-260715.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_06hrq0ij/pdfs/0002-12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_06hrq0ij/pdfs/0003-13-Goldman Sachs-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- Buy-260716.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_06hrq0ij/pdfs/0004-14-Goldman Sachs-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing-260716.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_06hrq0ij/pdfs/0005-15-Goldman Sachs-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI-260716.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=4c7e7f88-b0ab-4c07-be16-f977a8315611
+MinerU states: running, running, pending, pending, waiting-file
+MinerU states: done, running, running, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:291: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 5616a3bc112b88d5897a93b89c68120654e92c5f1d4f6df2fa73a472abc30ca6.jpg: score=-1;odd_ratio:5.55,edge:0.22
+Skip non-chart visual asset 6663dbc53e5a0b9e6227f95702fb1b12ecbf4b18ed296644012f398e65c2b936.jpg: score=1;chart_ratio
+Skip non-chart visual asset bdb1cd46c4f55a3484bdc0cfdf60854b7d83b2663a3f081e35cae0702b31c69b.jpg: score=-100;too_small:1431x148
+Skip non-chart visual asset fd9b6264876cbc8c6f7f649e84d5cfdd78a38972accfc9e7c927fa5ff699df4f.jpg: score=-100;too_small:1159x107
+Skip non-chart visual asset dd60e34ce71b18df9de77d0d439843a0ad201a5e6685f0fe851bf5a9910f1798.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.24
+Skip non-chart visual asset 5cff849598b11290fb652cf8197a584a66c1cffaa88ce230c329f897f19bb3c2.jpg: score=1;square_without_chart_hint,edge:0.37,contrast,large
+Skip non-chart visual asset b2e7e4215473befccfd1f2c860a8e4a8f4d0fd3e3ae61f0aa2a9216749b1e0b5.jpg: score=1;square_without_chart_hint,edge:0.38,contrast,large
+Skip non-chart visual asset 0dd2440594697272fe95ddf7bbdc6fcc2f9d6f26ac174333e6face6dca0d560a.jpg: score=-100;too_small:1159x112
+Skip non-chart visual asset 34ed36c16c0716adacdab69c7a6c7b1a37a65553ba51dcef43a76872977fc614.jpg: score=-100;too_small:1029x40
+Skip non-chart visual asset eff21c236d516412ad9c7268a71dcaee9ec44e2be6002423773fc22cafb081bd.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset ffa915c66f9c9e93bb3b628028742f195f41cb72700b9a4f12deb97e7dfe8519.jpg: score=-100;too_small:1159x109
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260717/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0001-11-DB-FX Special Report-FX seasonality-August favours the yen-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0002-12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0003-13-GS-CHINA RESOURCES LAND -1109.HK- 1H26 Preview- DP impairments could steepen though disposal gain and solid rental income might provide buffers- Buy-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0004-14-GS-China Healthcare- Device VBP- -6- Capital Equipment VBP Kicks Off- Faster Category B Rollout but Emphasis on Reasonable Pricing-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_06hrq0ij/pdfs/0005-15-GS-Fujitsu -6702.T-- Announced partnership with NVIDIA- Fanuc- Yaskawa- and Kawasaki Heavy on physical AI to deliver AI-260716.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
