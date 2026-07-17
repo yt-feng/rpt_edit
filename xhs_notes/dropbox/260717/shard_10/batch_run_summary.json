@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 10,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/51-MS-China Autos & Shared Mobility：Tighter social insurance contributions enforcement – Time to reprice the hidden cost？-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bjv4sd4y/pdfs/0001-51-MS-China Autos - Shared Mobility-Tighter social insurance contributions enforcement - Time to reprice the hidden cost--260715.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/52-MS-Estun Automation Co Ltd（002747）2Q26 Prelim Result Beat Consensus， but Below MSe-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bjv4sd4y/pdfs/0002-52-MS-Estun Automation Co Ltd-002747-2Q26 Prelim Result Beat Consensus- but Below MSe-260715.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/53-MS-China Hong Kong Consumer：China Retail Sales – Jun 2026： Momentum Remains Uneven-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bjv4sd4y/pdfs/0003-53-MS-China Hong Kong Consumer-China Retail Sales - Jun 2026- Momentum Remains Uneven-260715.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/54-MS-China Property：Property Data Deteriorated on All Fronts in June-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bjv4sd4y/pdfs/0004-54-MS-China Property-Property Data Deteriorated on All Fronts in June-260715.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/55-MS-FY GDP Trimmed to 4.6%； Faster Budget Rollout to Lift 2H Growth-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bjv4sd4y/pdfs/0005-55-MS-FY GDP Trimmed to 4.6-- Faster Budget Rollout to Lift 2H Growth-260715.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

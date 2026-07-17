@@ -1,0 +1,126 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_bjv4sd4y/pdfs/0005-55-MS-FY GDP Trimmed to 4.6-- Faster Budget Rollout to Lift 2H Growth-260715.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "二季度GDP 4.3",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x2",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：全年GDP预测下调至4.6%，加快预算落地支撑下半年增长",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-MS-FY GDP Trimmed to 4.6-- Faster Budget Rollout to Lift 2H Growth-260715.pdf",
+    "cleaned_source_title": "MS-FY GDP Trimmed to 4.6-- Faster Budget Rollout to Lift 2H Growth",
+    "institution_name": "MS",
+    "required_terms": [
+      "GDP"
+    ],
+    "deterministic_fallback": "MS：FYGDPTrimmedto4.6",
+    "raw_candidates": [
+      "全年GDP预测下调至4.6%：加快预算落地支撑下半年增长",
+      "全年GDP预测下调至4.6%：二季度低于预期，下半年靠预算节奏而非规模扩张",
+      "全年GDP预测下调至4.6%：六月零售仅增0.2%，汽车销售同比下滑16.1%"
+    ],
+    "cleaned_candidates": [
+      "MS：全年GDP预测下调至4.6%，加快预算落地支撑下半年增长",
+      "MS：全年GDP预测下调至4.6%，二季度低于预期",
+      "MS：全年GDP预测下调至4.6%，六月零售仅增0.2%",
+      "MS：FYGDPTrimmedto4.6",
+      "MS：这份MS研报将全年GDP预测下调20个基点至4.6%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：全年GDP预测下调至4.6%，二季度低于预期",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：全年GDP预测下调至4.6%，六月零售仅增0.2%",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：FYGDPTrimmedto4.6",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "MS：这份MS研报将全年GDP预测下调20个基点至4.6%",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：全年GDP预测下调至4.6%，加快预算落地支撑下半年增长",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：全年GDP预测下调至4.6%，加快预算落地支撑下半年增长"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "505",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
