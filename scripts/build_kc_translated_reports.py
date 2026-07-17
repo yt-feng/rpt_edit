@@ -44,6 +44,7 @@ except Exception:  # pragma: no cover
         return ""
 
 from wechat_title_optimizer import (
+    build_filename_title_repair_prompt,
     build_filename_title_translation_prompt,
     decide_filename_anchored_title,
     extract_title_candidates,
@@ -956,7 +957,8 @@ def wechat_title_from_filename(
 ) -> tuple[str, dict[str, Any]]:
     if not getattr(args, "title_refine", True):
         return decide_filename_anchored_title([], source_filename, institution_name)
-    article_excerpt = normalize_space(re.sub(r"[#>*`!\\[\\]()]+", " ", translated_md))[:1800]
+    article_excerpt = re.sub(r"[ \t]+", " ", re.sub(r"[#>*`!\\[\\]()]+", " ", translated_md))
+    article_excerpt = re.sub(r"\n{2,}", "\n", article_excerpt).strip()[:2200]
     prompt = build_filename_title_translation_prompt(source_filename, institution_name, article_excerpt)
     try:
         raw = call_deepseek(
@@ -970,12 +972,54 @@ def wechat_title_from_filename(
     except Exception as exc:
         log(f"  Filename-anchored title fine-tuning failed, using deterministic filename fallback: {exc}")
         candidates = []
-    return decide_filename_anchored_title(
+    selected, decision = decide_filename_anchored_title(
         candidates,
         source_filename,
         institution_name,
         evidence_text=article_excerpt,
     )
+    decision["repair_attempted"] = False
+    if not decision.get("needs_model_repair"):
+        return selected, decision
+
+    repair_reasons = list(decision.get("selected_quality_issues") or [])
+    for rejected in decision.get("rejected_candidates", [])[:6]:
+        repair_reasons.extend(rejected.get("reasons") or [])
+    repair_prompt = build_filename_title_repair_prompt(
+        source_filename,
+        institution_name,
+        article_excerpt,
+        candidates,
+        list(dict.fromkeys(repair_reasons)),
+    )
+    try:
+        repair_raw = call_deepseek(
+            repair_prompt,
+            args,
+            f"WeChat title repair: {source_filename[:40]}",
+            temperature=0.15,
+            system_content="你是中文标题纠错编辑，只输出严格 JSON；每个标题必须完整、自然、可独立理解。",
+        )
+        repair_candidates = extract_title_candidates(repair_raw)
+        repaired, repaired_decision = decide_filename_anchored_title(
+            [*repair_candidates, *candidates],
+            source_filename,
+            institution_name,
+            evidence_text=article_excerpt,
+        )
+        repaired_decision["repair_attempted"] = True
+        repaired_decision["initial_selection"] = {
+            "title": selected,
+            "reason": decision.get("selection_reason"),
+            "quality_issues": decision.get("selected_quality_issues", []),
+        }
+        repaired_decision["repair_candidates"] = repair_candidates
+        return repaired, repaired_decision
+    except Exception as exc:
+        decision["repair_attempted"] = True
+        decision["repair_error"] = str(exc)
+        log(f"  Filename title repair failed, keeping deterministic fallback: {exc}")
+        return selected, decision
 
 
 def register_cjk_font() -> str:

@@ -32,7 +32,9 @@ from PIL import Image, ImageDraw
 from institution_names import ensure_title_has_institution, infer_institution_name
 from wechat_title_optimizer import (
     clean_wechat_title as optimizer_clean_wechat_title,
+    evidence_title_fallback,
     extract_wechat_keywords,
+    title_quality_issues,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
@@ -286,10 +288,16 @@ def clean_leading_report_slug(title: str) -> str:
     def readable_slug_tail(value: str) -> str:
         if value.count("-") + value.count("_") < 3:
             return value
+        chinese_chars = len(re.findall(r"[\u4e00-\u9fff]", value))
+        latin_chars = len(re.findall(r"[A-Za-z]", value))
+        if chinese_chars >= 6 and "_" not in value and latin_chars <= chinese_chars * 2:
+            return value
+        numeric_range_token = "␟"
+        value = re.sub(r"(?<=\d)-(?=\d)", numeric_range_token, value)
         value = value.replace("_", " ")
         value = re.sub(r"\s*-{2,}\s*", "，", value)
         value = re.sub(r"\s*-\s*", " ", value)
-        return normalize_space(value)
+        return normalize_space(value).replace(numeric_range_token, "-")
 
     for sep in ("：", ":"):
         if sep in cleaned:
@@ -2250,6 +2258,26 @@ def translated_article_title_metadata(
         institution_name,
     )
     wechat_title = fit_wechat_title(title, institution_name)
+    final_title_issues = title_quality_issues(wechat_title, institution_name, source_report_name)
+    if final_title_issues:
+        decision = status.get("wechat_title_decision", {}) if isinstance(status, dict) else {}
+        generated_title = str(decision.get("selected_title") or "") if isinstance(decision, dict) else ""
+        fallback_candidates = [
+            generated_title,
+            evidence_title_fallback(markdown, source_report_name, institution_name, WECHAT_TITLE_MAX_CHARS),
+        ]
+        for fallback_candidate in fallback_candidates:
+            if not fallback_candidate:
+                continue
+            repaired_title = fit_wechat_title(fallback_candidate, institution_name)
+            if not title_quality_issues(repaired_title, institution_name, source_report_name):
+                wechat_title = repaired_title
+                final_title_issues = []
+                break
+    if final_title_issues:
+        raise RuntimeError(
+            f"WeChat title failed final completeness gate: {final_title_issues}; title={wechat_title!r}"
+        )
     header_title = content_header_title(raw_title, wechat_title)
     return {
         "report_dir": str(report_dir),

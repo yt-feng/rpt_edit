@@ -27,6 +27,11 @@ INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
     ("杰富瑞", ["JEF", "Jefferies"]),
     ("德意志银行", ["DB", "Deutsche Bank", "德银"]),
     ("野村", ["NOM", "Nomura"]),
+    ("麦格理", ["Macquarie"]),
+    ("法兴", ["SocGen", "Societe Generale"]),
+    ("法国巴黎银行", ["BNP", "BNP Paribas"]),
+    ("瑞穗", ["Mizuho"]),
+    ("大和", ["Daiwa"]),
     ("美联储", ["Fed", "Federal Reserve"]),
 ]
 TITLE_ALIAS_SEPARATOR_RE = r"(?:[：:，,、;；\-—]\s*)?"
@@ -95,6 +100,107 @@ REQUIRED_ACRONYM_EXCLUSIONS = {
     "UPDATE",
     "WEEKLY",
 }
+
+# Only topic-defining technical acronyms are literal requirements. Exchange
+# suffixes (HK/US/TT/UN), document metadata (CIO/IT), and finance shorthand
+# (EPS/ROIC/FX/USD) may be translated or omitted when natural Chinese keeps the
+# same meaning. Treating every capitalized token as mandatory was the root
+# cause of readable Chinese candidates losing to filename fragments.
+REQUIRED_TECHNICAL_ACRONYMS = {
+    "ADAS",
+    "AGI",
+    "AI",
+    "API",
+    "ASIC",
+    "CCL",
+    "CPI",
+    "CPO",
+    "CPU",
+    "CSRD",
+    "DRAM",
+    "GDP",
+    "GPU",
+    "HBM",
+    "HDD",
+    "HDI",
+    "IGBT",
+    "LIDAR",
+    "LLM",
+    "MLCC",
+    "NAND",
+    "NPU",
+    "PCB",
+    "PFY",
+    "PP",
+    "PVC",
+    "SAAS",
+    "SSD",
+    "TPU",
+}
+
+GENERIC_SERIES_SOURCE_RE = re.compile(
+    r"^(?:(?:fx|macro|market|asia|china|global)\s*)?"
+    r"(?:insights?|notes?|viewpoint|observations?|watch|overview)"
+    r"(?:\s*[-:：]\s*(?:thoughts?|views?|notes?)\s+on\s+[^-:：]+)?$",
+    re.I,
+)
+GENERIC_SERIES_TITLE_RE = re.compile(
+    r"^(?:(?:FX|宏观|市场|行业|公司|全球|亚洲|中国|日本)?"
+    r"(?:洞察|观察|观点|笔记|思考|简报|周报|月报|概览|综述|总览)"
+    r"(?:[-，]?(?:对)?[^，。；;]{1,10}(?:的)?(?:思考|观察|观点))?"
+    r"|宏观观察笔记)$",
+    re.I,
+)
+CONCRETE_TITLE_SIGNAL_RE = re.compile(
+    r"(?:增长|下降|回落|回升|走弱|改善|加速|放缓|分化|挤出|转向|"
+    r"拐点|触底|超预期|低于预期|高于预期|未到|决定|创(?:新高|纪录)|"
+    r"压力|韧性|关键变量|分水岭|同比|环比|\d)",
+    re.I,
+)
+TITLE_DANGLING_SUFFIX_RE = re.compile(
+    r"(?:[-—，,：:]\s*(?:关键|核心|以及|和|与|但|而|而是|不是|的|为|是)|"
+    r"(?:以及|因为|如果|但是|而是|不是|显示|指出|包括|对于|通过|需要|"
+    r"正在|成为))$"
+)
+LISTING_SUFFIX_RE = re.compile(r"(?:[A-Z]{1,8}|\d{3,6})\.[A-Z]{1,3}(?![A-Za-z])", re.I)
+LONG_UNTRANSLATED_ENGLISH_RE = re.compile(r"[A-Za-z]{10,}")
+TITLE_FORBIDDEN_PUBLIC_WORDING_RE = re.compile(
+    r"(?:目标价|目标价格|买入|卖出|增持|减持|荐股|推荐|股票|个股|股价|股市|"
+    r"投资|经济|财经|金融|理财|证券|券商|收益率|资产定价)",
+    re.I,
+)
+MALFORMED_NUMERIC_TITLE_RE = re.compile(r"(?:\d+\.\d+\d+\.\d+|\d{7,})")
+TITLE_REPAIR_PHRASES: list[tuple[str, str]] = [
+    (r"(?:关键|核心)?股票(?:观点|思路|想法|选择)", "核心公司线索"),
+    (r"(?:关键|核心)?个股(?:观点|思路|想法|选择)", "核心公司线索"),
+    (r"\bkey\s+stock\s+ideas?\b", "核心公司线索"),
+    (r"存储周期辩论", "存储周期讨论"),
+    (r"\bASML\s+Holding\b", "ASML"),
+    (r"(?:GS)?(?:OIL|EQUITY|CREDIT|MACRO)\s+ANALYST", ""),
+    (r"(?:报告)?上调([\u4e00-\u9fffA-Za-z0-9.-]{2,16}?)(?:至|为)?买入", r"\1"),
+]
+TITLE_DIRECT_WORD_REPLACEMENTS: list[tuple[str, str]] = [
+    (r"中国经济学", "中国宏观研究"),
+    (r"国内经济学", "国内宏观研究"),
+    (r"全球经济学|世界经济学", "全球宏观研究"),
+    (r"中国经济", "中国宏观环境"),
+    (r"国内经济", "国内宏观环境"),
+    (r"全球经济|世界经济", "全球宏观环境"),
+    (r"经济学", "宏观研究"),
+    (r"经济", "宏观环境"),
+    (r"投资银行|投行", "国际机构"),
+    (r"投资者|投资人", "参与者"),
+    (r"投资", "研究"),
+    (r"财经", "研究"),
+    (r"金融", "资金"),
+    (r"股票市场|股市", "市场"),
+    (r"股票|个股", "公司"),
+    (r"股价", "报价"),
+    (r"理财", "资金规划"),
+    (r"证券|券商", "机构"),
+    (r"收益率", "回报表现"),
+    (r"资产定价", "市场定价"),
+]
 
 BIG_NAME_TERMS = [
     "高盛",
@@ -367,6 +473,12 @@ def canonicalize_institution_title_name(title: str) -> str:
     normalized = normalize_space(title)
     normalized = normalized.replace("摩根斯坦利", "摩根士丹利")
     normalized = normalized.replace("美国银行", "美银")
+    for chinese_name, aliases in INSTITUTION_TITLE_ALIASES:
+        if normalized.casefold() in {chinese_name.casefold(), *(alias.casefold() for alias in aliases)}:
+            return chinese_name
+    for chinese_name, aliases in FILENAME_INSTITUTION_EXTRA_ALIASES.items():
+        if normalized.casefold() in {chinese_name.casefold(), *(alias.casefold() for alias in aliases)}:
+            return chinese_name
     return normalized
 
 
@@ -398,10 +510,16 @@ def clean_leading_report_slug(title: str) -> str:
     def readable_slug_tail(value: str) -> str:
         if value.count("-") + value.count("_") < 3:
             return value
+        chinese_chars = len(re.findall(r"[\u4e00-\u9fff]", value))
+        latin_chars = len(re.findall(r"[A-Za-z]", value))
+        if chinese_chars >= 6 and "_" not in value and latin_chars <= chinese_chars * 2:
+            return value
+        numeric_range_token = "␟"
+        value = re.sub(r"(?<=\d)-(?=\d)", numeric_range_token, value)
         value = value.replace("_", " ")
         value = re.sub(r"\s*-{2,}\s*", "，", value)
         value = re.sub(r"\s*-\s*", " ", value)
-        return normalize_space(value)
+        return normalize_space(value).replace(numeric_range_token, "-")
 
     for sep in ("：", ":"):
         if sep in cleaned:
@@ -517,9 +635,9 @@ def repair_english_slug_tail(title: str) -> str:
     head, tail = title.split("：", 1)
     if not re.search(r"[A-Za-z]", tail):
         return title
-    readable_tail = re.sub(r"\b(?:Shared|Update|Quick Note|Report|Research)\b", "", tail, flags=re.I)
-    readable_tail = re.sub(r"[-_/]+", " ", readable_tail)
-    words = re.findall(r"AI|USD|CNY|RMB|[A-Z]+(?=[A-Z][a-z]|$)|[A-Z]?[a-z]+|\d+", readable_tail)
+    noise_clean_tail = re.sub(r"\b(?:Shared|Update|Quick Note|Report|Research)\b", "", tail, flags=re.I)
+    slug_words = re.sub(r"[-_/]+", " ", noise_clean_tail)
+    words = re.findall(r"AI|USD|CNY|RMB|[A-Z]+(?=[A-Z][a-z]|$)|[A-Z]?[a-z]+|\d+", slug_words)
     mapped: list[str] = []
     for word in words:
         key = word.lower()
@@ -532,7 +650,10 @@ def repair_english_slug_tail(title: str) -> str:
     latin_chars = len(re.findall(r"[A-Za-z]", tail))
     if mapped and latin_chars > max(chinese_chars * 2, 6):
         return f"{head}：{''.join(mapped[:6])}"
-    tail = normalize_space(readable_tail).strip(" ，,")
+    # In a mixed Chinese title, hyphens can be semantic: 9.8-14.8,
+    # PayPal-Stripe, IL-23. Only the English-heavy slug branch above may
+    # reinterpret them as filename separators.
+    tail = normalize_space(noise_clean_tail).strip(" ，,")
     return f"{head}：{tail}" if tail else head
 
 
@@ -664,6 +785,36 @@ def filename_institution_aliases(institution_name: str) -> list[str]:
     return list(dict.fromkeys(alias for alias in aliases if alias))
 
 
+def normalize_title_institution_prefix(title: str, institution_name: str) -> str:
+    """Replace an expected English prefix with one canonical Chinese prefix."""
+    expected = canonicalize_institution_title_name(institution_name)
+    cleaned = normalize_space(title).replace(":", "：")
+    if not expected:
+        return cleaned
+
+    if "：" in cleaned:
+        head, tail = cleaned.split("：", 1)
+        if canonicalize_institution_title_name(head) == expected:
+            cleaned = tail.strip()
+
+    for alias in sorted(filename_institution_aliases(expected), key=len, reverse=True):
+        if canonicalize_institution_title_name(alias) != expected:
+            continue
+        separator_pattern = rf"^(?:{alias_pattern(alias)})\s*[：:，,、;；\-—_/]+\s*"
+        replaced = re.sub(separator_pattern, "", cleaned, count=1, flags=re.I).strip()
+        if replaced != cleaned:
+            cleaned = replaced
+            break
+        if re.fullmatch(r"[A-Z]{2,6}", alias):
+            # DeepSeek sometimes concatenates the broker alias and the topic,
+            # e.g. NOMFX. Strip NOM while preserving the topic-defining FX.
+            replaced = re.sub(rf"^{re.escape(alias)}(?=[A-Z]{{2,}})", "", cleaned, count=1, flags=re.I)
+            if replaced != cleaned:
+                cleaned = replaced.strip()
+                break
+    return f"{expected}：{cleaned}".strip("： ") if cleaned else expected
+
+
 def strip_filename_institution_prefix(source_filename: str, institution_name: str) -> str:
     cleaned = strip_source_filename_noise(source_filename)
     aliases = filename_institution_aliases(institution_name)
@@ -715,6 +866,9 @@ def fit_filename_title(text: str, max_chars: int) -> str:
 def clean_filename_wechat_title(title: str, institution_name: str = "", max_chars: int = 35) -> str:
     """Apply structural gates without reinterpreting the filename's meaning."""
     cleaned = strip_source_filename_noise(strip_markdown_markup(title))
+    for pattern, replacement in TITLE_REPAIR_PHRASES:
+        cleaned = re.sub(pattern, replacement, cleaned, flags=re.I)
+    cleaned = LISTING_SUFFIX_RE.sub("", cleaned)
     cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned, strict_wording=False)
     cleaned = re.sub(r"^(?:标题|微信标题|公众号标题)\s*[：:]\s*", "", cleaned)
     cleaned = re.sub(r"[《》#>*]+", "", cleaned)
@@ -722,8 +876,23 @@ def clean_filename_wechat_title(title: str, institution_name: str = "", max_char
     cleaned = remove_redundant_title_aliases(cleaned)
     if institution_name:
         cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
-        cleaned = ensure_title_has_institution_local(cleaned, institution_name)
+        cleaned = normalize_title_institution_prefix(cleaned, institution_name)
     cleaned = remove_redundant_title_aliases(cleaned)
+    prefix = ""
+    body = cleaned
+    if "：" in cleaned:
+        head, body = cleaned.split("：", 1)
+        prefix = f"{head}："
+    for pattern, replacement in TITLE_DIRECT_WORD_REPLACEMENTS:
+        body = re.sub(pattern, replacement, body, flags=re.I)
+    without_report = re.sub(
+        r"^报告(?:指出|显示|认为|称|拆解|提示)?\s*[：:，,、;；\-—]*\s*",
+        "",
+        body,
+    ).strip()
+    if len(re.findall(r"[A-Za-z0-9\u4e00-\u9fff]", without_report)) >= 8:
+        body = without_report
+    cleaned = f"{prefix}{body}".strip("：: -—")
     cleaned = remove_generic_filename_title_labels(cleaned)
     cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
     if "：" in cleaned:
@@ -792,15 +961,110 @@ def required_filename_terms(source_filename: str, institution_name: str = "") ->
     terms: list[str] = []
     for token in re.findall(r"(?<![A-Za-z0-9])([A-Z]{2,8})(?![A-Za-z0-9])", body):
         upper = token.upper()
-        if upper in REQUIRED_ACRONYM_EXCLUSIONS or upper in terms:
+        if (
+            upper in REQUIRED_ACRONYM_EXCLUSIONS
+            or upper not in REQUIRED_TECHNICAL_ACRONYMS
+            or upper in terms
+        ):
             continue
         terms.append(upper)
-    return terms[:8]
+    return terms[:6]
 
 
 def missing_required_filename_terms(candidate: str, required_terms: list[str]) -> list[str]:
     haystack = (candidate or "").upper()
     return [term for term in required_terms if term.upper() not in haystack]
+
+
+def source_uses_generic_series_title(source_filename: str, institution_name: str = "") -> bool:
+    """Return True when the filename names a series but not a readable thesis."""
+    body = strip_filename_institution_prefix(source_filename, institution_name)
+    body = re.sub(r"\s+", " ", body).strip(" -_：:")
+    if GENERIC_SERIES_SOURCE_RE.fullmatch(body):
+        return True
+    last_segment = re.split(r"\s*[-:：]\s*", body)[-1]
+    if re.fullmatch(
+        r"(?:[A-Za-z0-9& ]+\s+)?(?:overview|insights?|notes?|viewpoint|observations?|watch)",
+        last_segment,
+        flags=re.I,
+    ):
+        return True
+    compact = re.sub(r"[\s_\-：:]+", "", body)
+    return bool(
+        re.fullmatch(
+            r"(?:宏观|市场|行业|公司|全球|亚洲|中国|日本)?(?:洞察|观察|观点|笔记|思考|简报|周报|月报|概览|综述|总览)",
+            compact,
+        )
+    )
+
+
+def title_is_generic_series(title: str) -> bool:
+    body = normalize_space(title).replace(":", "：")
+    if "：" in body:
+        body = body.split("：", 1)[1]
+    body = re.sub(r"^(?:MS|NOM|JPM|JEF|BARC|BofA|UBS|Citi)(?=[A-Z])", "", body, flags=re.I)
+    compact = re.sub(r"[\s_]+", "", body).strip(" ，,。；;：:、-—")
+    if GENERIC_SERIES_TITLE_RE.fullmatch(compact):
+        return True
+    has_generic_label = bool(re.search(r"(?:洞察|观察|观点|笔记|思考|简报|周报|月报|概览|综述|总览)", compact))
+    return has_generic_label and not CONCRETE_TITLE_SIGNAL_RE.search(compact) and len(compact) <= 18
+
+
+def title_quality_issues(
+    title: str,
+    institution_name: str = "",
+    source_filename: str = "",
+) -> list[str]:
+    """Find defects that must never reach a WeChat draft title."""
+    cleaned = normalize_space(title).replace(":", "：").strip(" ，,。；;：:、-—")
+    body = cleaned.split("：", 1)[1] if "：" in cleaned else cleaned
+    body = body.strip(" ，,。；;：:、-—")
+    issues: list[str] = []
+    semantic_chars = re.findall(r"[A-Za-z0-9\u4e00-\u9fff]", body)
+    if len(semantic_chars) < 8:
+        issues.append("body_too_short")
+    if title_is_generic_series(cleaned):
+        issues.append("generic_series_title")
+    if body.endswith("主题进展与关键变化"):
+        issues.append("generic_emergency_title")
+    if TITLE_DANGLING_SUFFIX_RE.search(body):
+        issues.append("dangling_suffix")
+    segments = [item.strip(" ，,。；;：:、-—") for item in re.split(r"[-—]", body) if item.strip()]
+    if len(segments) >= 2:
+        tail = segments[-1]
+        if len(re.findall(r"[A-Za-z0-9\u4e00-\u9fff]", tail)) < 4 or tail in {
+            "关键",
+            "核心",
+            "观点",
+            "观察",
+            "更新",
+            "讨论",
+            "研究",
+            "报告",
+            "笔记",
+            "分析",
+            "展望",
+            "思考",
+        }:
+            issues.append("incomplete_last_segment")
+    if LISTING_SUFFIX_RE.search(body):
+        issues.append("listing_suffix")
+    if LONG_UNTRANSLATED_ENGLISH_RE.search(body):
+        issues.append("long_untranslated_english")
+    latin_chars = len(re.findall(r"[A-Za-z]", body))
+    chinese_chars = len(re.findall(r"[\u4e00-\u9fff]", body))
+    if latin_chars >= 12 and latin_chars > max(10, chinese_chars * 2):
+        issues.append("english_heavy_fragment")
+    if TITLE_FORBIDDEN_PUBLIC_WORDING_RE.search(body):
+        issues.append("forbidden_public_wording")
+    if MALFORMED_NUMERIC_TITLE_RE.search(body):
+        issues.append("malformed_numeric_range")
+    if re.search(r"(?:至|达|为|约|上调至|下调至)\d+(?:\.\d+)?$", body):
+        issues.append("bare_trailing_number")
+    if source_filename and source_uses_generic_series_title(source_filename, institution_name):
+        if not CONCRETE_TITLE_SIGNAL_RE.search(body):
+            issues.append("series_missing_body_thesis")
+    return list(dict.fromkeys(issues))
 
 
 def ensure_required_filename_terms(
@@ -824,6 +1088,42 @@ def ensure_required_filename_terms(
     tail = fit_filename_title(body.strip(" ，,、;；：:—-"), tail_budget) if tail_budget else ""
     rebuilt = f"{prefix}{term_block}{tail}"
     return clean_filename_wechat_title(rebuilt, institution_name, max_chars=max_chars)
+
+
+def evidence_title_fallback(
+    evidence_text: str,
+    source_filename: str,
+    institution_name: str = "",
+    max_chars: int = 35,
+) -> str:
+    """Choose a complete body sentence when every generated title is malformed."""
+    required_terms = required_filename_terms(source_filename, institution_name)
+    candidates: list[tuple[int, str]] = []
+    for index, raw in enumerate(re.split(r"[\n。！？!?；;]+", evidence_text or "")):
+        clause = normalize_space(raw).strip(" ，,。；;：:、-—")
+        if not clause or re.search(r"(?:KC评论|免责声明|仅供|公众号|星标|扫码|更新信息)", clause, re.I):
+            continue
+        candidate = clean_filename_wechat_title(clause, institution_name, max_chars=max_chars)
+        if missing_required_filename_terms(candidate, required_terms):
+            continue
+        if title_quality_issues(candidate, institution_name, source_filename):
+            continue
+        score = 0
+        score += min(len(_numeric_title_tokens(candidate)), 2) * 8
+        score += 6 if CONCRETE_TITLE_SIGNAL_RE.search(candidate) else 0
+        score += 4 if 16 <= len(candidate) <= max_chars else 0
+        score -= min(index, 8)
+        candidates.append((score, candidate))
+    if candidates:
+        return max(candidates, key=lambda item: item[0])[1]
+
+    fallback = filename_title_fallback(source_filename, institution_name, max_chars=max_chars)
+    if not title_quality_issues(fallback, institution_name, source_filename):
+        return fallback
+    institution = canonicalize_institution_title_name(institution_name)
+    term_block = "与".join(required_terms)
+    safe_body = f"{term_block}主题进展与关键变化" if term_block else "本期主题进展与关键变化"
+    return clean_filename_wechat_title(safe_body, institution, max_chars=max_chars)
 
 
 def _contrarian_additions_supported(candidate: str, anchor: str, evidence: str) -> bool:
@@ -873,6 +1173,7 @@ def decide_filename_anchored_title(
     evidence_text: str = "",
 ) -> tuple[str, dict[str, Any]]:
     """Select a title and return an auditable record of every deterministic gate."""
+    institution_name = canonicalize_institution_title_name(institution_name)
     required_terms = required_filename_terms(source_filename, institution_name)
     fallback = filename_title_fallback(source_filename, institution_name, max_chars=max_chars)
     fallback = ensure_required_filename_terms(
@@ -889,15 +1190,49 @@ def decide_filename_anchored_title(
         max_chars=max_chars,
     )
     faithful_missing = missing_required_filename_terms(faithful, required_terms)
-    anchor = fallback if faithful_missing else faithful
-
-    pool: list[str] = []
-    for raw in [anchor, *candidates, fallback]:
+    generic_source = source_uses_generic_series_title(source_filename, institution_name)
+    generated_pool: list[str] = []
+    for raw in candidates:
         cleaned = finalize_filename_wechat_title(raw, source_filename, institution_name, max_chars=max_chars)
-        if cleaned and cleaned not in pool:
-            pool.append(cleaned)
+        if cleaned and cleaned not in generated_pool:
+            generated_pool.append(cleaned)
+    pool = list(generated_pool)
+    if fallback and fallback not in pool:
+        pool.append(fallback)
+
+    def base_reasons(candidate: str) -> list[str]:
+        reasons: list[str] = []
+        missing_terms = missing_required_filename_terms(candidate, required_terms)
+        if missing_terms:
+            reasons.append("missing_required_terms=" + ",".join(missing_terms))
+        reasons.extend(title_quality_issues(candidate, institution_name, source_filename))
+        return reasons
+
+    valid_generated = [candidate for candidate in generated_pool if not base_reasons(candidate)]
+    if generic_source:
+        concrete_generated = [
+            candidate
+            for candidate in valid_generated
+            if not title_is_generic_series(candidate) and CONCRETE_TITLE_SIGNAL_RE.search(candidate)
+        ]
+        anchor = concrete_generated[0] if concrete_generated else (valid_generated[0] if valid_generated else "")
+    else:
+        anchor = valid_generated[0] if valid_generated else ""
+
+    fallback_valid = not base_reasons(fallback)
+    emergency = evidence_title_fallback(
+        evidence_text,
+        source_filename,
+        institution_name,
+        max_chars=max_chars,
+    )
+    if not anchor:
+        anchor = fallback if fallback_valid else emergency
+    for item in [anchor, emergency]:
+        if item and item not in pool:
+            pool.append(item)
     if not pool:
-        pool = [fallback]
+        pool = [emergency]
 
     anchor_segments = [
         segment
@@ -912,38 +1247,45 @@ def decide_filename_anchored_title(
     eligible: list[str] = []
     rejected: list[dict[str, Any]] = []
     for candidate in pool:
-        reasons: list[str] = []
-        missing_terms = missing_required_filename_terms(candidate, required_terms)
+        reasons = base_reasons(candidate)
         coverage = filename_anchor_coverage(candidate, anchor)
-        if missing_terms:
-            reasons.append("missing_required_terms=" + ",".join(missing_terms))
-        if coverage < coverage_threshold:
-            reasons.append(f"anchor_coverage={coverage:.2f}")
-        if not preserves_each_segment(candidate):
-            reasons.append("missing_anchor_segment")
-        if not filename_title_additions_are_supported(candidate, anchor, source_filename, evidence_text):
+        if generic_source:
+            if title_is_generic_series(candidate) or not CONCRETE_TITLE_SIGNAL_RE.search(candidate):
+                reasons.append("series_title_without_concrete_thesis")
+        else:
+            if coverage < coverage_threshold:
+                reasons.append(f"anchor_coverage={coverage:.2f}")
+            if not preserves_each_segment(candidate):
+                reasons.append("missing_anchor_segment")
+        if not filename_title_additions_are_supported(candidate, faithful, source_filename, evidence_text):
             reasons.append("unsupported_hook_addition")
         if reasons:
             rejected.append({"title": candidate, "reasons": reasons})
         else:
             eligible.append(candidate)
     if not eligible:
-        eligible = [anchor]
+        eligible = [emergency]
 
     def anchored_score(candidate: str) -> tuple[float, int]:
         coverage = filename_anchor_coverage(candidate, anchor)
-        signals = _title_hook_signals(candidate, anchor)
+        signals = _title_hook_signals(candidate, faithful)
         data_bonus = min(len(signals["added_numbers"]), 2) * 12
         contrast_bonus = min(len(signals["added_contrarian_terms"]), 2) * 9
         name_bonus = min(len(signals["added_big_names"]), 2) * 5
         existing_data_bonus = 3 if re.search(r"(?:\d+(?:\.\d+)?%?|20\d{2}|Q[1-4])", candidate) else 0
+        concrete_bonus = 10 if generic_source and CONCRETE_TITLE_SIGNAL_RE.search(candidate) else 0
         length_bonus = 4 if 18 <= len(candidate) <= 35 else 1
-        score = coverage * 55 + data_bonus + contrast_bonus + name_bonus + existing_data_bonus + length_bonus
+        score = coverage * 55 + data_bonus + contrast_bonus + name_bonus + existing_data_bonus + concrete_bonus + length_bonus
         return score, -pool.index(candidate)
 
     selected = max(eligible, key=anchored_score)
-    signals = _title_hook_signals(selected, anchor)
-    if selected != anchor and any(signals.values()):
+    signals = _title_hook_signals(selected, faithful)
+    selected_issues = title_quality_issues(selected, institution_name, source_filename)
+    if selected == emergency and selected not in valid_generated and not fallback_valid:
+        selection_reason = "evidence_or_emergency_fallback"
+    elif generic_source:
+        selection_reason = "series_body_thesis"
+    elif selected != faithful and any(signals.values()):
         selection_reason = "supported_hook"
     elif faithful_missing and selected == fallback:
         selection_reason = "fallback_missing_required_terms"
@@ -960,9 +1302,17 @@ def decide_filename_anchored_title(
         "raw_candidates": candidates,
         "cleaned_candidates": pool,
         "faithful_candidate_missing_terms": faithful_missing,
+        "faithful_candidate_quality_issues": title_quality_issues(
+            faithful,
+            institution_name,
+            source_filename,
+        ),
+        "generic_series_source": generic_source,
         "rejected_candidates": rejected,
         "selected_title": selected,
         "selection_reason": selection_reason,
+        "selected_quality_issues": selected_issues,
+        "needs_model_repair": bool(selected_issues) or selection_reason == "evidence_or_emergency_fallback",
         "hook_signals": signals,
         "removed_generic_labels": [
             label
@@ -1133,9 +1483,11 @@ def build_filename_title_translation_prompt(
     institution_name: str,
     article_excerpt: str = "",
 ) -> str:
+    institution_name = canonicalize_institution_title_name(institution_name)
     cleaned_filename = strip_source_filename_noise(source_filename)
     filename_body = strip_filename_institution_prefix(cleaned_filename, institution_name)
     required_terms = required_filename_terms(source_filename, institution_name)
+    generic_series_source = source_uses_generic_series_title(source_filename, institution_name)
     hook_snippets = []
     for clause in re.split(r"[。！？!?；;\n]+", normalize_space(article_excerpt)):
         clause = clause.strip(" ，,")
@@ -1154,26 +1506,65 @@ def build_filename_title_translation_prompt(
 1. 只返回 JSON：{{"titles":["忠实底稿","数据增强版","反常识增强版"]}}，固定三个候选，不要解释。
 2. 删除文件扩展名、开头归档编号和末尾发布日期；不要删除文件名中的主题、地区、公司、数据或判断。
 3. 已识别机构必须写中文名，并放在唯一的中文冒号前。不要保留英文机构简称。
-4. 第一个候选是忠实中文底稿：按原文件名顺序翻译，允许为自然中文调整词序，但不能另选角度。
+4. 第一个候选通常是忠实中文底稿：按原文件名顺序完整翻译，允许为自然中文调整词序，但不能另选角度。若文件名只是 Insights、Notes、Viewpoint、Thoughts on 等系列名，三个候选都必须结合正文写出本期真正对象和结论，不能直译成“宏观观察笔记”“洞察”“对某事的思考”。
 5. 第二个候选优先补充正文摘录中明确出现的数据节点；第三个候选优先补充明确的反常识差异、大机构或知名人物。只要下方“可用钩子证据”非空，至少一个增强版必须把其中最锐利、最易懂的一项写进标题；没有可靠钩子时才重复忠实底稿，严禁编造。
 6. 两个增强版仍必须保留底稿中的地区/对象、主题和核心判断；钩子只能补充或锐化，不能替换文件名命题。
 7. 原文件名如果包含“主标题：副标题”或明显的双层结构，中文标题使用“主标题-副标题”；不要生成第二个冒号。
 8. 尽量控制在 20-35 个字符。过长时只能压缩“报告、更新、研究”等文体词或使用更短的直译，不能截断句子，不能另选角度。
-9. 下方“必须原样保留的技术词”每一个都必须出现在三个候选中，不能漏掉。例如原名是“PCB CCL update”，不得写成只有“CCL更新”，必须同时保留 PCB 和 CCL。
+9. 下方“必须原样保留的技术词”只包含定义主题的技术缩写，每一个都必须出现在三个候选中。例如原名是“PCB CCL update”，不得写成只有“CCL更新”，必须同时保留 PCB 和 CCL。交易所后缀 HK/US/TT/UN，以及 EPS、ROIC、FX、USD、CIO、IT 等可自然译成中文，不要求机械保留英文。
 10. Research note、quick note、industry update、sector view 只是文档类型，不是读者关心的主题。不要翻成“研究笔记、行业观察、研究观察、观察笔记”；直接从真正的对象和结论开始。
-11. 常用专有名词和缩写可保留，例如 AI、GDP、CPI、GPU；其余普通英文应译成简体中文。
-12. 不要输出“报告指出、报告认为、核心观点、关键要点、研报速览”等正文概括措辞。
+11. 常用专有名词和技术缩写可保留，例如 AI、GDP、CPI、GPU；其余普通英文必须译成简体中文。删除 1880.HK、MSFT.US 等上市代码，不得出现 TourismGroupDutyFree、WhereAreWe 这类英文文件名残片。
+12. Key Stock Ideas 必须按语义写成“核心公司线索”或具体公司变化，不得写“股票观点、推荐、买入”等措辞。
+13. 不要直接写“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”；使用“宏观环境、研究、资金、公司、报价、市场、回报表现、市场定价”等中性表述。
+14. 不要输出“报告指出、报告认为、核心观点、关键要点、研报速览”等正文概括措辞。
+15. 输出前逐条自检：冒号或短横线后的每个分句都必须完整；不得以“关键、核心、以及、和、与、但、而是、的、为”结尾；标题正文不能只有 AI、更新、观察等一个词。读者必须能直接看懂“谁/什么主题发生了什么”。
 
 已识别机构：{institution_name or "未知"}
 原始文件名：{source_filename}
 去除编号和日期后的文件名：{cleaned_filename}
 待翻译的文件名正文：{filename_body or cleaned_filename}
 必须原样保留的技术词：{"、".join(required_terms) or "无"}
+文件名是否只是系列名：{"是，必须从正文补足本期主题和结论" if generic_series_source else "否，以文件名命题为最高权重"}
 
 可用钩子证据（只可从这里选，不得改数字或扩大含义）：
 {chr(10).join(f"- {item}" for item in hook_snippets) or "无"}
 
 正文第一段摘录（只用于验证数据或反常识钩子，不能替代文件名命题）：
+{article_excerpt[:1800] or "无"}
+""".strip()
+
+
+def build_filename_title_repair_prompt(
+    source_filename: str,
+    institution_name: str,
+    article_excerpt: str,
+    previous_candidates: list[str],
+    quality_issues: list[str],
+) -> str:
+    """Build a second-pass prompt used only after deterministic gates fail."""
+    institution_name = canonicalize_institution_title_name(institution_name)
+    required_terms = required_filename_terms(source_filename, institution_name)
+    generic_series = source_uses_generic_series_title(source_filename, institution_name)
+    return f"""
+你是微信公众号标题纠错编辑。上一轮标题未通过程序硬校验，请重新生成三个完整中文标题。只返回 JSON：{{"titles":["标题1","标题2","标题3"]}}，不要解释。
+
+必须做到：
+1. 机构只写“{institution_name or '已识别机构'}”，放在唯一的中文冒号前。
+2. 普通英文全部译成简体中文；删除 HK/US/TT/UN 上市后缀和代码；只保留下方指定的技术缩写。
+3. 每个标题正文必须说明清楚对象、主题和变化，不能只写 AI、更新、观察、关键、核心，也不能以连接词或“关键/核心”收尾。
+4. 任何短横线或逗号后的分句都必须完整，控制在 20-35 个字符，宁可重写短句，绝不从中间截断。
+5. 不要写研究笔记、行业观察、宏观观察笔记、报告解读、核心观点、关键要点。
+6. Key Stock Ideas 写成“核心公司线索”或具体公司变化，不写股票观点、推荐、买入、卖出、目标价。
+7. 原文件名若只是系列名称，必须依据正文摘录写本期实际主题和结论，不能翻译系列名充数。
+8. 不直接写经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价，改用中性表述。
+9. 不得编造正文没有的数据、人物或反常识判断。
+
+原始文件名：{source_filename}
+必须保留的技术缩写：{"、".join(required_terms) or "无"}
+是否为系列名称：{"是" if generic_series else "否"}
+上一轮候选：{json.dumps(previous_candidates, ensure_ascii=False)}
+未通过原因：{"、".join(quality_issues) or "候选均被语义或完整性校验拒绝"}
+正文摘录：
 {article_excerpt[:1800] or "无"}
 """.strip()
 
