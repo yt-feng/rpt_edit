@@ -1,0 +1,122 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_oh38n8d4/pdfs/0002-37-JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags-260715.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "二季度GDP放缓，生",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "投资->研究 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x5",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x4",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-37-JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags-260715.pdf",
+    "cleaned_source_title": "JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：中国-增长weakeneddespiteac",
+    "raw_candidates": [
+      "中国增长企稳但动能减弱",
+      "中国增长企稳但动能减弱-二季度GDP降至4.3%",
+      "中国增长企稳但动能减弱-支撑面收窄至出口与产业升级"
+    ],
+    "cleaned_candidates": [
+      "JPM：中国增长企稳但动能减弱",
+      "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%",
+      "JPM：中国增长企稳但动能减弱-支撑面收窄至出口与产业升级",
+      "JPM：中国-增长weakeneddespiteac",
+      "JPM：二季度GDP增速降至4.3%，但六月工业增加值反弹至5.3%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：中国-增长weakeneddespiteac",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.30"
+        ]
+      },
+      {
+        "title": "JPM：二季度GDP增速降至4.3%，但六月工业增加值反弹至5.3%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "4.3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：中国增长企稳但动能减弱-二季度GDP降至4.3%"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "565",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

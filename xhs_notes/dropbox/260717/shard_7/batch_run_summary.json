@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-JPM-China banks：June credit data ~demand weakness and loan pricing pressure persists-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_oh38n8d4/pdfs/0001-36-JPM-China banks-June credit data -demand weakness and loan pricing pressure persists-260715.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-JPM-China： Growth weakened despite activity stabilization，Production steadies， domestic demand drags-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_oh38n8d4/pdfs/0002-37-JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags-260715.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-JPM-Hong Kong Property & Conglomerates：Results preview： kickstarting the earnings upcycle-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_oh38n8d4/pdfs/0003-38-JPM-Hong Kong Property - Conglomerates-Results preview- kickstarting the earnings upcycle-260716.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-JPM-China： Housing activity index trended lower further，Housing’s role in the Boosting Consumption 15th FYP-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_oh38n8d4/pdfs/0004-39-JPM-China- Housing activity index trended lower further-Housing-s role in the Boosting Consumption 15th FYP-260715.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-JPM-Huaqin Co Ltd ~A（603296）NP beat on solid execution and investment gains； datacenter acceleration to drive re~rating in 2H26-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_oh38n8d4/pdfs/0005-40-JPM-Huaqin Co Ltd -A-603296-NP beat on solid execution and investment gains- datacenter acceleration to drive re-rating in 2H26-260715.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

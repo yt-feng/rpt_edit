@@ -1,0 +1,124 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_oh38n8d4/pdfs/0003-38-JPM-Hong Kong Property - Conglomerates-Results preview- kickstarting the earnings upcycle-260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "香港地产终于要走出低",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "股票市场|股市->市场 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：香港地产综合企业，业绩预览开启盈利上行周期",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-38-JPM-Hong Kong Property - Conglomerates-Results preview- kickstarting the earnings upcycle-260716.pdf",
+    "cleaned_source_title": "JPM-Hong Kong Property - Conglomerates-Results preview- kickstarting the earnings upcycle",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：HongKong地产Conglomerate",
+    "raw_candidates": [
+      "香港地产综合企业：业绩预览开启盈利上行周期",
+      "香港地产综合企业：2026年盈利增速约9%",
+      "香港地产综合企业：盈利节奏变化周期已结束"
+    ],
+    "cleaned_candidates": [
+      "JPM：香港地产综合企业，业绩预览开启盈利上行周期",
+      "JPM：香港地产综合企业，2026年盈利增速约9%",
+      "JPM：香港地产综合企业，盈利节奏变化周期已结束",
+      "JPM：HongKong地产Conglomerate",
+      "JPM：香港置地预计增长10%，九龙仓置业增长2%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：香港地产综合企业，2026年盈利增速约9%",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：香港地产综合企业，盈利节奏变化周期已结束",
+        "reasons": [
+          "anchor_coverage=0.47",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：HongKong地产Conglomerate",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：香港置地预计增长10%，九龙仓置业增长2%",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：香港地产综合企业，业绩预览开启盈利上行周期",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：香港地产综合企业，业绩预览开启盈利上行周期"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "498",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
