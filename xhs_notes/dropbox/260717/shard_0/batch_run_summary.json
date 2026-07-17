@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bernstein-Global Electrical Infrastructure： Pulse check on the data center build out， power gen lead times and international competition-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0001-01-Bernstein-Global Electrical Infrastructure- Pulse check on the data center build out- power gen lead times and international competition-260717.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-BARC-China：Demand trails supply-260715.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0002-02-BARC-China-Demand trails supply-260715.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-Bernstein-Asian Autos：Chinese Autos： Still Searching for a Bottom — June domestic sales~21% YoY， EV penetration 59%； Export +80% YoY-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0003-03-Bernstein-Asian Autos-Chinese Autos- Still Searching for a Bottom - June domestic sales-21- YoY- EV penetration 59-- Export -80- YoY-260716.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-Bernstein-U.S. Multi Industry & Electrical Equipment Liquid Cooling in Data Centers： What comes after single phase DTC？ With CoolIT's 15kW cold plate， does anything even.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0004-04-Bernstein-U.S. Multi Industry - Electrical Equipment Liquid Cooling in Data Centers- What comes after single phase DTC- With CoolIT-s 15kW cold plate- does anything even.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-Bernstein-India Emerging Consumer：India Quick Commerce： From the gold rush to the long harvest...-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0005-05-Bernstein-India Emerging Consumer-India Quick Commerce- From the gold rush to the long harvest...-260716.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

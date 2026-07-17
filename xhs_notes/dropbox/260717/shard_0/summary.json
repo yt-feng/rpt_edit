@@ -1,0 +1,495 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0001-01-Bernstein-Global Electrical Infrastructure- Pulse check on the data center build out- power gen lead times and international competition-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "数据中心建设，比去年",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：全球电气基础设施，数据中心建设进度检查",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-01-Bernstein-Global Electrical Infrastructure- Pulse check on the data center build out- power gen lead times and international competition-260717.pdf",
+      "cleaned_source_title": "Bernstein-Global Electrical Infrastructure- Pulse check on the data center build out- power gen lead times and international competition",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：全球ElectricalInfrastructure",
+      "raw_candidates": [
+        "Bernstein-全球电气基础设施：数据中心建设进度检查",
+        "Bernstein-全球电气基础设施：数据中心建设进度检查-仅60-65%项目能落地",
+        "Bernstein-全球电气基础设施：数据中心建设进度检查-取消延迟已超去年全年"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：全球电气基础设施，数据中心建设进度检查",
+        "Bernstein：全球电气基础设施，数据中心建设进度检查-仅60",
+        "Bernstein：全球电气基础设施，数据中心建设进度检查-取消延迟已超去年全年",
+        "Bernstein：全球ElectricalInfrastructure",
+        "Bernstein：这位专家预计，目前管线中只有60%-65%的项目能按计划推进"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：全球电气基础设施，数据中心建设进度检查-仅60",
+          "reasons": [
+            "incomplete_last_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：全球ElectricalInfrastructure",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：这位专家预计，目前管线中只有60%-65%的项目能按计划推进",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：全球电气基础设施，数据中心建设进度检查",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：全球电气基础设施，数据中心建设进度检查"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0002-02-BARC-China-Demand trails supply-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "Q2数据信号：需求跑",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "中国经济->中国宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "中国经济->中国宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "恶化->出现变化 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x4",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "BARC：中国需求落后供给-生产需求裂口扩大",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-02-BARC-China-Demand trails supply-260715.pdf",
+      "cleaned_source_title": "BARC-China-Demand trails supply",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：中国Demandtrailssupply",
+      "raw_candidates": [
+        "中国需求落后供给",
+        "中国需求落后供给-生产需求裂口扩大",
+        "中国需求落后供给-K型分化固化为结构"
+      ],
+      "cleaned_candidates": [
+        "BARC：中国需求落后供给",
+        "BARC：中国需求落后供给-生产需求裂口扩大",
+        "BARC：中国需求落后供给-K型分化固化为结构",
+        "BARC：中国Demandtrailssupply",
+        "BARC：零售销售在6月勉强转正至1%，但远低于一季度2.4%的平均增速"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：中国Demandtrailssupply",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：零售销售在6月勉强转正至1%，但远低于一季度2.4%的平均增速",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BARC：中国需求落后供给-生产需求裂口扩大",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "BARC：中国需求落后供给-生产需求裂口扩大"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0003-03-Bernstein-Asian Autos-Chinese Autos- Still Searching for a Bottom - June domestic sales-21- YoY- EV penetration 59-- Export -80- YoY-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "6月车市还在底部徘徊",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：亚洲汽车-中国车市仍在寻底",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-03-Bernstein-Asian Autos-Chinese Autos- Still Searching for a Bottom - June domestic sales-21- YoY- EV penetration 59-- Export -80- YoY-260716.pdf",
+      "cleaned_source_title": "Bernstein-Asian Autos-Chinese Autos- Still Searching for a Bottom - June domestic sales-21- YoY- EV penetration 59-- Export -80- YoY",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：Asian汽车Chinese汽车StillS",
+      "raw_candidates": [
+        "Bernstein：亚洲汽车-中国车市仍在寻底",
+        "Bernstein：中国车市6月零售同比降21%出口增80%",
+        "Bernstein：中国车市缺的不是刺激是时间"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：亚洲汽车-中国车市仍在寻底",
+        "Bernstein：中国车市6月零售同比降21%出口增80%",
+        "Bernstein：中国车市缺的不是刺激是时间",
+        "Bernstein：Asian汽车Chinese汽车StillS",
+        "Bernstein：中国汽车市场6月零售销量同比下滑21.4%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：中国车市6月零售同比降21%出口增80%",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：中国车市缺的不是刺激是时间",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Asian汽车Chinese汽车StillS",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：中国汽车市场6月零售销量同比下滑21.4%",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：亚洲汽车-中国车市仍在寻底",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：亚洲汽车-中国车市仍在寻底"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0004-04-Bernstein-U.S. Multi Industry - Electrical Equipment Liquid Cooling in Data Centers- What comes after single phase DTC- With CoolIT-s 15kW cold plate- does anything even.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "数据中心液冷，下一步",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：美国多行业，数据中心电气设备液冷-单相DTC之后是什么",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-04-Bernstein-U.S. Multi Industry - Electrical Equipment Liquid Cooling in Data Centers- What comes after single phase DTC- With CoolIT-s 15kW cold plate- does anything even.pdf",
+      "cleaned_source_title": "Bernstein-U.S. Multi Industry - Electrical Equipment Liquid Cooling in Data Centers- What comes after single phase DTC- With CoolIT-s 15kW cold plate- does anything even",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：.MultiIndustryElectric",
+      "raw_candidates": [
+        "Bernstein-美国多行业：数据中心电气设备液冷-单相DTC之后是什么-CoolIT的15kW冷板是否改写一切",
+        "Bernstein-美国多行业：数据中心液冷-单相DTC后是什么-CoolIT 15kW冷板改写路线",
+        "Bernstein-美国多行业：数据中心液冷-单相DTC未达极限-CoolIT 15kW冷板反常识"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：美国多行业，数据中心电气设备液冷-单相DTC之后是什么",
+        "Bernstein：美国多行业，数据中心液冷-单相DTC后是什么",
+        "Bernstein：美国多行业，数据中心液冷-单相DTC未达极限",
+        "Bernstein：.MultiIndustryElectric",
+        "Bernstein：液冷技术路线可能被一张15kW冷板改写"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：美国多行业，数据中心液冷-单相DTC后是什么",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "Bernstein：美国多行业，数据中心液冷-单相DTC未达极限",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "Bernstein：.MultiIndustryElectric",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：液冷技术路线可能被一张15kW冷板改写",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：美国多行业，数据中心电气设备液冷-单相DTC之后是什么",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：美国多行业，数据中心电气设备液冷-单相DTC之后是什么"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nubb6oaj/pdfs/0005-05-Bernstein-India Emerging Consumer-India Quick Commerce- From the gold rush to the long harvest...-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "印度即时零售，黄金期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-05-Bernstein-India Emerging Consumer-India Quick Commerce- From the gold rush to the long harvest...-260716.pdf",
+      "cleaned_source_title": "Bernstein-India Emerging Consumer-India Quick Commerce- From the gold rush to the long harvest...",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：IndiaEmerging消费IndiaQu",
+      "raw_candidates": [
+        "印度新兴消费-即时零售：从淘金热到长期收获",
+        "印度即时零售：140亿美元市场进入密度竞争期",
+        "Bernstein：印度即时零售暗店密度超均衡点20%"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获",
+        "Bernstein：印度即时零售，140亿美元市场进入密度竞争期",
+        "Bernstein：印度即时零售暗店密度超均衡点20%",
+        "Bernstein：IndiaEmerging消费IndiaQu",
+        "Bernstein：印度即时零售行业年化交易额在2026财年末已达到约140亿美"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：印度即时零售，140亿美元市场进入密度竞争期",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：印度即时零售暗店密度超均衡点20%",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：IndiaEmerging消费IndiaQu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：印度即时零售行业年化交易额在2026财年末已达到约140亿美",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：印度新兴消费-即时零售，从淘金热到长期收获"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

@@ -1,0 +1,35 @@
+EN_A: So, data center liquid cooling is everywhere right now. Everyone’s talking about single-phase versus two-phase. But this report seems to have a pretty contrarian take.
+EN_B: It does. The core argument is simple: we might not actually need to move to two-phase cooling at all.
+EN_A: Really? That goes against the market consensus. Most people think single-phase is hitting a wall.
+EN_B: Exactly. The market believes that with GPUs like Rubin Ultra pushing past 2.5 kilowatts, single-phase direct-to-chip has reached its theoretical limit.
+EN_A: So why does the report say we don’t need to switch?
+EN_B: Because of one big wildcard. CoolIT just announced a single-phase cold plate rated at 15 kilowatts.
+EN_A: 15 kilowatts? That is six times the supposed limit.
+EN_B: Right. And if this product can be commercialized at scale, it basically resets the entire technology roadmap.
+EN_A: So the real question this report is trying to answer is... what?
+EN_B: It’s asking: is single-phase cooling really dead before two-phase or direct-to-die even become viable?
+EN_A: And the verdict is a stay of execution?
+EN_B: Exactly. The report argues that technology adoption is driven by necessity. If single-phase still works, data center operators have no reason to adopt more complex and expensive solutions.
+EN_A: Let’s dig into the key insights. First, the credibility of this 15-kilowatt cold plate.
+EN_B: The report thinks it’s credible. It was tested in a lab under standard conditions. CoolIT has a strong track record, so this isn’t just vaporware.
+EN_A: What does that mean for the industry?
+EN_B: It means the urgency for two-phase cooling drops significantly. We might not see it at scale until well after 2030.
+EN_A: What’s the second key insight?
+EN_B: It’s about the implications for the companies making cold plates and coolant distribution units, or CDUs.
+EN_A: Sounds like a double-edged sword.
+EN_B: It is. In the short term, demand far outstrips supply, so no impact on revenue. But long term, if everyone sticks with single-phase, the innovation premium disappears and these components become commoditized faster.
+EN_A: So that’s bad news for cold plate makers?
+EN_B: Not entirely. The report points out that it actually removes the obsolescence risk. Because no one will need direct-to-die cooling anytime soon.
+EN_A: So cold plate makers can breathe a sigh of relief?
+EN_B: For now. But the big question is how fast competitors can copy CoolIT’s design, because they have a patent on it.
+EN_A: The report also covers two-phase and direct-to-die. What are their main challenges?
+EN_B: For two-phase, the biggest engineering challenge is managing the flow of both liquid and vapor in the cold plate. You can get localized hotspots. And the refrigerants used are often PFAS, which have environmental concerns.
+EN_A: And direct-to-die?
+EN_B: Direct-to-die is much more radical. It etches microchannels directly into the silicon, eliminating the cold plate. But it’s extremely early stage. We won’t see it at scale before 2030.
+EN_A: So the report leaves us with at least two big open questions?
+EN_B: Exactly. First, can CoolIT actually mass-produce this 15-kilowatt cold plate reliably and cost-effectively?
+EN_A: And the second?
+EN_B: The second is, even if single-phase works for now, what happens when GPU power envelopes go above six kilowatts? Will two-phase become inevitable after all?
+EN_A: Those are definitely questions worth exploring in the full report. If you want to see the complete analysis, including the investment implications for specific companies, you should read the full report.
+EN_B: Yes, there’s a lot more detail on valuations and risks that we didn’t get into today.
+EN_A: Thanks for the insights. We’ll catch you next time.
