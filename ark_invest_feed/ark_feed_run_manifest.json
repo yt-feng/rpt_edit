@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "260717",
+  "date_folder": "260718",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1366,
+  "feed_item_count": 1367,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "The Falling Cost Of Entrepreneurship",
-      "type": "Articles",
-      "category": "Analyst Research",
-      "source_url": "https://www.ark-invest.com/articles/analyst-research/the-falling-cost-of-entrepreneurship",
-      "guid": "https://www.ark-invest.com/articles/analyst-research/the-falling-cost-of-entrepreneurship",
-      "pub_date": "Thu, 16 Jul 2026 12:52:00 GMT",
-      "updated": "0001-01-01T05:00:00.000+00:00",
-      "event_datetime": "2026-07-16T12:52:00+00:00",
-      "feed_key": "97ff517988ef0dc0",
+      "title": "The Bitcoin Quarterly: Q2 2026",
+      "type": "Crypto Reports",
+      "category": "Crypto Reports",
+      "source_url": "https://www.ark-invest.com/crypto-reports/bitcoin-quarterly-q2-2026",
+      "guid": "https://www.ark-invest.com/crypto-reports/bitcoin-quarterly-q2-2026",
+      "pub_date": "Fri, 17 Jul 2026 12:15:00 GMT",
+      "updated": "2026-07-17T23:18:48.910+00:00",
+      "event_datetime": "2026-07-17T23:18:48.910000+00:00",
+      "feed_key": "98d58265c311e097",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/260717/0001-ARK_The-Falling-Cost-Of-Entrepreneurship_97ff517988ef0dc0"
+      "output_dir": "xhs_notes/ark/260718/0001-ARK_The-Bitcoin-Quarterly-Q2-2026_98d58265c311e097"
     }
   ],
   "status": "ok"
