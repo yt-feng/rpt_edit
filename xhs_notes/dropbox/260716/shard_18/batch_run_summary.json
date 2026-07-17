@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 99,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 18,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/91-UBS-China Consumer Appliances Sector：June domestic retail sales weak， except for RVC-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_f14np2mv/pdfs/0001-91-UBS-China Consumer Appliances Sector-June domestic retail sales weak- except for RVC-260714.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/92-UBS-China Economic Comment：Another positive surprise in export to yield strong 1H26-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_f14np2mv/pdfs/0002-92-UBS-China Economic Comment-Another positive surprise in export to yield strong 1H26-260714.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/93-UBS-China Healthcare Expert call takeaways： Pulse check on China’s clinical CROs in Q226-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_f14np2mv/pdfs/0003-93-UBS-China Healthcare Expert call takeaways- Pulse check on China-s clinical CROs in Q226-260714.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/94-UBS-European MedTech：Dragons at the gate： new VBP proposals raise further China risk-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_f14np2mv/pdfs/0004-94-UBS-European MedTech-Dragons at the gate- new VBP proposals raise further China risk-260714.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/95-UBS-China Industrials：Shipping supply chain weekly： trade flows， freight and Hormuz updates （week 28）-260714.pdf",
+          "batch_file": "/tmp/pdf_batch_001_f14np2mv/pdfs/0005-95-UBS-China Industrials-Shipping supply chain weekly- trade flows- freight and Hormuz updates -week 28--260714.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

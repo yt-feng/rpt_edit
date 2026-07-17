@@ -1,0 +1,81 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_f14np2mv/pdfs/0003-93-UBS-China Healthcare Expert call takeaways- Pulse check on China-s clinical CROs in Q226-260714.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "UBS",
+  "cover_short_title": "临床CRO回暖信号：",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "UBS：中国临床CRO在Q226的订单修复与价格温和回升",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-93-UBS-China Healthcare Expert call takeaways- Pulse check on China-s clinical CROs in Q226-260714.pdf",
+    "cleaned_source_title": "UBS-China Healthcare Expert call takeaways- Pulse check on China-s clinical CROs in Q226",
+    "institution_name": "UBS",
+    "required_terms": [],
+    "deterministic_fallback": "UBS：中国HealthcareExpertcalltakeaways",
+    "raw_candidates": [
+      "UBS：中国临床CRO在Q226的订单修复与价格温和回升",
+      "UBS：中国临床CRO订单量增长20%-30%，价格仅温和回升3%-5%",
+      "UBS：中国临床CRO订单修复确认，但价格回升仍温和"
+    ],
+    "cleaned_candidates": [
+      "UBS：中国临床CRO在Q226的订单修复与价格温和回升",
+      "UBS：中国临床CRO订单量增长20%-30%，价格仅温和回升3%-5%",
+      "UBS：中国临床CRO订单修复确认，但价格回升仍温和",
+      "UBS：中国HealthcareExpertcalltakeaways"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "rejected_candidates": [
+      {
+        "title": "UBS：中国临床CRO订单量增长20%-30%，价格仅温和回升3%-5%",
+        "reasons": [
+          "anchor_coverage=0.48"
+        ]
+      },
+      {
+        "title": "UBS：中国临床CRO订单修复确认，但价格回升仍温和",
+        "reasons": [
+          "anchor_coverage=0.52"
+        ]
+      },
+      {
+        "title": "UBS：中国HealthcareExpertcalltakeaways",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "UBS：中国临床CRO在Q226的订单修复与价格温和回升",
+    "selection_reason": "faithful_filename_anchor",
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "final_title_after_wording_guard": "UBS：中国临床CRO在Q226的订单修复与价格温和回升"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "501",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
