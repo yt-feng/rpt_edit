@@ -1,0 +1,233 @@
+{
+  "created_at_utc": "2026-07-17T23:38:07.274400+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260717",
+  "output_dir": "publish_ready_zips/260717",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 13,
+  "skipped_shards": [],
+  "total_files": 1186,
+  "total_renamed_markdown_count": 320,
+  "total_raw_file_bytes": 164910876,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260717/publish_ready_260717_part001.zip",
+      "size_bytes": 88300994,
+      "file_count": 690,
+      "renamed_markdown_count": 195,
+      "raw_file_bytes": 94163884,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_11",
+        "shard_12",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260717/publish_ready_260717_part002.zip",
+      "size_bytes": 66225204,
+      "file_count": 496,
+      "renamed_markdown_count": 125,
+      "raw_file_bytes": 70746992,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15030682,
+      "reports": [
+        "0001-01-Bernstein-Global-Electrical-Infrastructure--Pulse-check-on-the-data-cent",
+        "0002-02-Barclays-China-Demand-trails-supply-260715",
+        "0003-03-Bernstein-Asian-Autos-Chinese-Autos--Still-Searching-for-a-Bottom---June",
+        "0004-04-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Liquid-Cooling-in-D",
+        "0005-05-Bernstein-India-Emerging-Consumer-India-Quick-Commerce--From-the-gold-ru"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11798033,
+      "reports": [
+        "0001-06-Bernstein-India-Autos-India-EVs---The-Market-Structure-Question-Lessons-",
+        "0002-07-CITI-China-Economics-Another-Miss-in-Credit-Data--and-Will-It-Turn-Aroun",
+        "0003-08-CITI-China-Consumer--Jewelry-A-K-shaped-June-and-2Q26-Amid-Gold-Price-Pu",
+        "0004-09-CITI-China-Consumer-Sequentially-Improved-China-Retail-Sales-in-Jun--Rei",
+        "0005-10-Goldman-Sachs-CHINA-OVERSEAS-LAND---INVESTMENT--0688.HK-1H26-Preview--Se"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 77,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9842633,
+      "reports": [
+        "0001-51-Morgan-Stanley-China-Autos---Shared-Mobility-Tighter-social-insurance-co",
+        "0002-52-Morgan-Stanley-Estun-Automation-Co-Ltd-002747-2Q26-Prelim-Result-Beat-Co",
+        "0003-53-Morgan-Stanley-China-Hong-Kong-Consumer-China-Retail-Sales---Jun-2026--M",
+        "0004-54-Morgan-Stanley-China-Property-Property-Data-Deteriorated-on-All-Fronts-i",
+        "0005-55-Morgan-Stanley-FY-GDP-Trimmed-to-4.6---Faster-Budget-Rollout-to-Lift-2H-"
+      ]
+    },
+    {
+      "shard": "shard_11",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12523230,
+      "reports": [
+        "0001-56-Morgan-Stanley-Greater-China-Technology-Hardware--Building-Blocks-of-Com",
+        "0002-57-Morgan-Stanley-Hong-Kong-China-Insurance--Monthly-Datapack--Southbound-a",
+        "0003-58-Morgan-Stanley-Hong-Kong-Property-JLL-2Q26-Rental-Update--Recovery-Conti",
+        "0004-59-Morgan-Stanley-IT-Services--2026-Budget-Growth-Expectations-Reduced-2607",
+        "0005-60-Morgan-Stanley-Sichuan-Kelun-Pharmaceutical-Co-Ltd-002422-OptiTROP-Lung0"
+      ]
+    },
+    {
+      "shard": "shard_12",
+      "report_count": 4,
+      "file_count": 46,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 4760097,
+      "reports": [
+        "0001-61-Nomura-Asia-Insights-Korea--BOK-delivers-a-unanimous-decision-for-a-25bp",
+        "0002-62-Nomura-Asia-Insights-China--Sectoral-breakdown-of-Q2-GDP-260716",
+        "0003-63-Morgan-Stanley-Sieyuan-Electric-Co.Ltd.-002028--Look-Through-the-Dip-260",
+        "0004-64-Nomura-USD-CNY-fix-model-Projection--6.7739-260717"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 71,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 8560794,
+      "reports": [
+        "0001-11-Deutsche-Bank-FX-Special-Report-FX-seasonality-August-favours-the-yen-26",
+        "0002-12-CITI-China-Renewable-Energy-Solar-Product-Prices-Further-Dipped--Compani",
+        "0003-13-Goldman-Sachs-CHINA-RESOURCES-LAND--1109.HK--1H26-Preview--DP-impairment",
+        "0004-14-Goldman-Sachs-China-Healthcare--Device-VBP---6--Capital-Equipment-VBP-Ki",
+        "0005-15-Goldman-Sachs-Fujitsu--6702.T---Announced-partnership-with-NVIDIA--Fanuc"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16992073,
+      "reports": [
+        "0001-16-Goldman-Sachs-GLOBAL-ECONOMICS-ANALYST-Geopolitics-and-GDP--Structural-A",
+        "0002-17-Goldman-Sachs-GLOBAL-METALS---MINING-BHP-S32-Copper--Spence-and-Sierra-G",
+        "0003-18-Goldman-Sachs-Global-PCs--Shipment-estimates-14---5--YoY-in-2026E-27E--r",
+        "0004-19-Goldman-Sachs-Greater-China-Semis--Jun--IC-import-export-value--72.3---1",
+        "0005-20-Goldman-Sachs-Japan-Economic-Flash--Raising-Our-FY2027-Inflation-Forecas"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 75,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11710870,
+      "reports": [
+        "0001-21-Goldman-Sachs-Japan-Healthcare--JNJ-results-read-across--Pharma-drives-f",
+        "0002-22-Goldman-Sachs-Japan-SPE--TSMC-results-read-across--Capex-hike--comments-",
+        "0003-23-Goldman-Sachs-Japan-Industrials--Multiple-cos.-announce-NVIDIA-partnersh",
+        "0004-24-Goldman-Sachs-Kingsoft-Cloud--KC.US--2Q26-Preview--Moderated-revenue-gro",
+        "0005-25-Goldman-Sachs-South-Korea--BOK-Hikes-to-2.75---As-Expected--and-Stresses"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15214361,
+      "reports": [
+        "0001-26-Goldman-Sachs-Luk-Fook-Holdings--0590.HK--1QFY27-strong-SSSG-as-expected",
+        "0002-27-Goldman-Sachs-TSMC--2330.TW-Earnings-review--AI-demand-visibility-into-2",
+        "0003-28-Goldman-Sachs-Tongyu-Communication--002792---China-LEO-satellites-in-pro",
+        "0004-29-Goldman-Sachs-XPeng-Inc.--XPEV-9868.HK-Mona-L03-to-drive-volume-growth-a",
+        "0005-30-Goldman-Sachs-UMT--3491.TWO---AI-data-center-from-LEO-Satellite--High-sp"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15111413,
+      "reports": [
+        "0001-31-J.P.-Morgan-China-Equity-Strategy-The-AI-Theme--Deleveraging-as-a-Health",
+        "0002-32-J.P.-Morgan-China-Consumer-Strategy-June-retail-sales-return-to-growth-o",
+        "0003-33-HSBC-China-Macro-Tracker-Expanding-consumption--led-by-services-260715",
+        "0004-34-J.P.-Morgan-China-Property-Tier-1-cities--home-price-stabilization-conti",
+        "0005-35-J.P.-Morgan-China-Healthcare-2-day-Chengdu-tour-takeaways--Rising-innova"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16457226,
+      "reports": [
+        "0001-36-J.P.-Morgan-China-banks-June-credit-data--demand-weakness-and-loan-prici",
+        "0002-37-J.P.-Morgan-China--Growth-weakened-despite-activity-stabilization-Produc",
+        "0003-38-J.P.-Morgan-Hong-Kong-Property---Conglomerates-Results-preview--kickstar",
+        "0004-39-J.P.-Morgan-China--Housing-activity-index-trended-lower-further-Housing-",
+        "0005-40-J.P.-Morgan-Huaqin-Co-Ltd--A-603296-NP-beat-on-solid-execution-and-inves"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17511814,
+      "reports": [
+        "0001-41-J.P.-Morgan-Kelun-Biotech-6990.HK--The-first-PD-1-sac-TMT-Ph3-win-over-P",
+        "0002-42-J.P.-Morgan-Li-Ning--2331.HK-Retail-headwinds-in-2Q--in-line--sustained-",
+        "0003-43-J.P.-Morgan-MedTech---Healthcare-Services-Sector-Impact-of-DX-and-AI-ado",
+        "0004-44-J.P.-Morgan-Tango-Therapeutics-TNGX.US-It-Takes-Two-to-Make-a-Revolution",
+        "0005-45-J.P.-Morgan-Technology---Electronic-Components-Industry-data-260716"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9397650,
+      "reports": [
+        "0001-46-Morgan-Stanley-2Q26-CIO-Survey---An-Improved-Revision-Risk-Picture-for-2",
+        "0002-47-Morgan-Stanley-2Q26-CIO-Survey---Budget-Support-Improves--But-Winners-Re",
+        "0003-48-J.P.-Morgan-Zoom-Communications-ZM.US-CFO-Meeting-Takeaways-260715",
+        "0004-49-Morgan-Stanley-China-Economics-June-Credit-Slowed-Further-Faster-Fiscal-",
+        "0005-50-Morgan-Stanley-China-Financials-Deleveraging-continued-in-June-with-ongo"
+      ]
+    }
+  ]
+}
