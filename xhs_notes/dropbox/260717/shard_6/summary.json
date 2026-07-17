@@ -1,0 +1,510 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rouqhk65/pdfs/0001-31-JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "AI回调不是泡沫，是",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "券商->机构 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国权益策略-AI主题-去杠杆是健康重置",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset-260715.pdf",
+      "cleaned_source_title": "JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "JPM：中国Equity策略TheAITheme",
+      "raw_candidates": [
+        "中国权益策略-AI主题-去杠杆是健康重置",
+        "中国权益策略-AI去杠杆健康重置-云厂商负债率仅40%",
+        "中国权益策略-AI回调非泡沫破裂-去杠杆是健康重置"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国权益策略-AI主题-去杠杆是健康重置",
+        "JPM：中国权益策略-AI去杠杆健康重置-云厂商负债率仅40%",
+        "JPM：中国权益策略-AI回调非泡沫破裂-去杠杆是健康重置",
+        "JPM：中国Equity策略TheAITheme",
+        "JPM：3.短期非AI板块有政策窗口，但AI可能在8月业绩季重新领跑"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国Equity策略TheAITheme",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：3.短期非AI板块有政策窗口，但AI可能在8月业绩季重新领跑",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国权益策略-AI主题-去杠杆是健康重置",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国权益策略-AI主题-去杠杆是健康重置"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rouqhk65/pdfs/0002-32-JPM-China Consumer Strategy-June retail sales return to growth on easier comps- 15th FYP sets the goal- not the how-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "6月消费回暖，但别高",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国消费策略，6月零售靠基数转正，十五五定目标未定路径",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-JPM-China Consumer Strategy-June retail sales return to growth on easier comps- 15th FYP sets the goal- not the how-260715.pdf",
+      "cleaned_source_title": "JPM-China Consumer Strategy-June retail sales return to growth on easier comps- 15th FYP sets the goal- not the how",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国消费策略Juneretailsalesreturnto增",
+      "raw_candidates": [
+        "中国消费策略：6月零售靠基数转正，十五五定目标未定路径",
+        "中国消费策略：6月零售转正1.0%但复合增速持平，十五五目标3.7%路径未定",
+        "中国消费策略：6月零售靠基数转正，CPI-PPI剪刀差-3.1%侵蚀利润"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国消费策略，6月零售靠基数转正，十五五定目标未定路径",
+        "JPM：中国消费策略，6月零售转正1.0%但复合增速持平",
+        "JPM：中国消费策略，6月零售靠基数转正，CPI-PPI剪刀差",
+        "JPM：中国消费策略Juneretailsalesreturnto增",
+        "JPM：6月社会消费品零售总额同比转正至1.0%，超过彭博预期的"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国消费策略，6月零售转正1.0%但复合增速持平",
+          "reasons": [
+            "anchor_coverage=0.42",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国消费策略，6月零售靠基数转正，CPI-PPI剪刀差",
+          "reasons": [
+            "anchor_coverage=0.58",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国消费策略Juneretailsalesreturnto增",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：6月社会消费品零售总额同比转正至1.0%，超过彭博预期的",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国消费策略，6月零售靠基数转正，十五五定目标未定路径",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国消费策略，6月零售靠基数转正，十五五定目标未定路径"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rouqhk65/pdfs/0003-33-HSBC-China Macro Tracker-Expanding consumption- led by services-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "十五五消费新蓝图：服",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "HSBC：HSBC中国宏观追踪-服务引领消费扩张",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-HSBC-China Macro Tracker-Expanding consumption- led by services-260715.pdf",
+      "cleaned_source_title": "HSBC-China Macro Tracker-Expanding consumption- led by services",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：中国MacroTrackerExpandingc",
+      "raw_candidates": [
+        "HSBC中国宏观追踪-服务引领消费扩张",
+        "HSBC中国宏观追踪-服务消费2030年目标100万亿",
+        "HSBC中国宏观追踪-政策重心从零售转向服务"
+      ],
+      "cleaned_candidates": [
+        "HSBC：HSBC中国宏观追踪-服务引领消费扩张",
+        "HSBC：HSBC中国宏观追踪-服务消费2030年目标100万亿",
+        "HSBC：HSBC中国宏观追踪-政策重心从零售转向服务",
+        "HSBC：中国MacroTrackerExpandingc",
+        "HSBC：7月13日，国务院发布了第十五份扩大消费五年规划"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：HSBC中国宏观追踪-服务消费2030年目标100万亿",
+          "reasons": [
+            "anchor_coverage=0.67",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：HSBC中国宏观追踪-政策重心从零售转向服务",
+          "reasons": [
+            "anchor_coverage=0.53",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：中国MacroTrackerExpandingc",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：7月13日，国务院发布了第十五份扩大消费五年规划",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：HSBC中国宏观追踪-服务引领消费扩张",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "HSBC：HSBC中国宏观追踪-服务引领消费扩张"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rouqhk65/pdfs/0004-34-JPM-China Property-Tier-1 cities- home price stabilization continues- but overall trends diverge-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "一线城市房价企稳，但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国房地产-一线城市房价企稳但整体趋势分化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-JPM-China Property-Tier-1 cities- home price stabilization continues- but overall trends diverge-260715.pdf",
+      "cleaned_source_title": "JPM-China Property-Tier-1 cities- home price stabilization continues- but overall trends diverge",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国地产Tier1cities",
+      "raw_candidates": [
+        "中国房地产-一线城市房价企稳但整体趋势分化",
+        "中国房地产-一线城市房价连四月正增长但全国分化加剧",
+        "中国房地产-上海二手房跑赢一线城市但深圳广州走弱"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国房地产-一线城市房价企稳但整体趋势分化",
+        "JPM：中国房地产-一线城市房价连四月正增长但全国分化加剧",
+        "JPM：中国房地产-上海二手房跑赢一线城市但深圳广州走弱",
+        "JPM：中国地产Tier1cities",
+        "JPM：住宅销售额同比降幅从5月的8%扩大至6月的14%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国房地产-一线城市房价连四月正增长但全国分化加剧",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "JPM：中国房地产-上海二手房跑赢一线城市但深圳广州走弱",
+          "reasons": [
+            "anchor_coverage=0.37",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国地产Tier1cities",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：住宅销售额同比降幅从5月的8%扩大至6月的14%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国房地产-一线城市房价企稳但整体趋势分化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国房地产-一线城市房价企稳但整体趋势分化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rouqhk65/pdfs/0005-35-JPM-China Healthcare 2-day Chengdu tour takeaways- Rising innovation- partnerships and global execution-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "成都医疗调研：创新与",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国医疗成都调研，创新崛起与全球执行",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-JPM-China Healthcare 2-day Chengdu tour takeaways- Rising innovation- partnerships and global execution-260716.pdf",
+      "cleaned_source_title": "JPM-China Healthcare 2-day Chengdu tour takeaways- Rising innovation- partnerships and global execution",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国Healthcare2dayChengd",
+      "raw_candidates": [
+        "中国医疗成都调研：创新崛起与全球执行",
+        "中国医疗成都调研：9家公司AI与出海信号",
+        "中国医疗成都调研：出海靠临床差异化而非低价"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国医疗成都调研，创新崛起与全球执行",
+        "JPM：中国医疗成都调研，9家公司AI与出海信号",
+        "JPM：中国医疗成都调研，出海靠临床差异化而非低价",
+        "JPM：中国Healthcare2dayChengd",
+        "JPM：调研发生在7月中旬，正值市场对中国医疗板块情绪回暖的窗口期"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国医疗成都调研，9家公司AI与出海信号",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国医疗成都调研，出海靠临床差异化而非低价",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国Healthcare2dayChengd",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：调研发生在7月中旬，正值市场对中国医疗板块情绪回暖的窗口期",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国医疗成都调研，创新崛起与全球执行",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国医疗成都调研，创新崛起与全球执行"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
