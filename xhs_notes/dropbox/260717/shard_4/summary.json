@@ -1,0 +1,479 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_pos3ub9j/pdfs/0001-21-GS-Japan Healthcare- JNJ results read-across- Pharma drives favorable 2Q performance- watching US surgical volume trends-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "强生财报里的日本医药",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_stock_parenthetical x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-GS-Japan Healthcare- JNJ results read-across- Pharma drives favorable 2Q performance- watching US surgical volume trends-260716.pdf",
+      "cleaned_source_title": "GS-Japan Healthcare- JNJ results read-across- Pharma drives favorable 2Q performance- watching US surgical volume trends",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本HealthcareJNJresultsre",
+      "raw_candidates": [
+        "日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势",
+        "日本医疗-强生业绩传导-制药推动二季度表现-Icotyde放量改写竞争标准",
+        "日本医疗-强生业绩传导-制药推动二季度表现-新药Icotyde处方量超18000张"
+      ],
+      "cleaned_candidates": [
+        "GS：日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势",
+        "GS：日本医疗-强生业绩传导-制药推动二季度表现",
+        "GS：日本HealthcareJNJresultsre",
+        "GS：这款3月才获批的药物，在90天内商业保险覆盖率已超过50%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本医疗-强生业绩传导-制药推动二季度表现",
+          "reasons": [
+            "anchor_coverage=0.67",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本HealthcareJNJresultsre",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：这款3月才获批的药物，在90天内商业保险覆盖率已超过50%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：日本医疗-强生业绩传导-制药推动二季度表现-关注美国手术量趋势"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_pos3ub9j/pdfs/0002-22-GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "台积电法说会，给日本",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：日本半导体设备-台积电资本开支上调15%通胀推涨",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole-260716.pdf",
+      "cleaned_source_title": "GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本SPETSMCresultsreadacro",
+      "raw_candidates": [
+        "日本半导体设备-台积电资本开支上调对行业正面",
+        "日本半导体设备-台积电资本开支上调15%通胀推涨",
+        "日本半导体设备-台积电接受涨价日本设备商迎定价权"
+      ],
+      "cleaned_candidates": [
+        "GS：日本半导体设备-台积电资本开支上调对行业正面",
+        "GS：日本半导体设备-台积电资本开支上调15%通胀推涨",
+        "GS：日本半导体设备-台积电接受涨价日本设备商迎定价权",
+        "GS：日本SPETSMCresultsreadacro",
+        "GS：台积电在7月16日的财报电话会上做了一件超出市场预期的事"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本半导体设备-台积电接受涨价日本设备商迎定价权",
+          "reasons": [
+            "anchor_coverage=0.45",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本SPETSMCresultsreadacro",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：台积电在7月16日的财报电话会上做了一件超出市场预期的事",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日本半导体设备-台积电资本开支上调15%通胀推涨",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "15"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：日本半导体设备-台积电资本开支上调15%通胀推涨"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_pos3ub9j/pdfs/0003-23-GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本工业机器人集体“",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy-260717.pdf",
+      "cleaned_source_title": "GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AI日本IndustrialsMultiplecos.",
+      "raw_candidates": [
+        "日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估-重申买入",
+        "日本工业-英伟达物理AI合作-欧姆龙被低估-市场反应偏差",
+        "日本工业-英伟达物理AI合作-欧姆龙被低估-已实现技术成果"
+      ],
+      "cleaned_candidates": [
+        "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+        "GS：日本工业-英伟达物理AI合作-欧姆龙被低估-市场反应偏差",
+        "GS：日本工业-英伟达物理AI合作-欧姆龙被低估-已实现技术成果",
+        "GS：AI日本IndustrialsMultiplecos.",
+        "GS：7月16日，英伟达CEO黄仁勋在日本宣布了一系列物理AI合作"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：AI日本IndustrialsMultiplecos.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月16日，英伟达CEO黄仁勋在日本宣布了一系列物理AI合作",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_pos3ub9j/pdfs/0004-24-GS-Kingsoft Cloud -KC.US- 2Q26 Preview- Moderated revenue growth against a more normalized base- Capex visibility key to 2H26 growth acceleration- Buy-2607.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "金山云Q2前瞻：增速",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：金山云二季度预览，营收增速放缓，资本开支决定下半年增长",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-GS-Kingsoft Cloud -KC.US- 2Q26 Preview- Moderated revenue growth against a more normalized base- Capex visibility key to 2H26 growth acceleration- Buy-2607.pdf",
+      "cleaned_source_title": "GS-Kingsoft Cloud -KC.US- 2Q26 Preview- Moderated revenue growth against a more normalized base- Capex visibility key to 2H26 growth acceleration- Buy-2607",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：KingsoftCloud2Q26Preview",
+      "raw_candidates": [
+        "金山云二季度预览：营收增速放缓，资本开支决定下半年增长",
+        "金山云二季度营收增速放缓至27%，资本开支指引支撑下半年加速",
+        "金山云：营收增速放缓非需求走弱，芯片供给才是下半年关键"
+      ],
+      "cleaned_candidates": [
+        "GS：金山云二季度预览，营收增速放缓，资本开支决定下半年增长",
+        "GS：金山云二季度营收增速放缓至27%，资本开支指引支撑下半年加速",
+        "GS：金山云，营收增速放缓非需求走弱，芯片供给才是下半年关键",
+        "GS：KingsoftCloud2Q26Preview",
+        "GS：自5月下旬一季报发布以来，金山云报价回调约23%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：金山云二季度营收增速放缓至27%，资本开支指引支撑下半年加速",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "GS：金山云，营收增速放缓非需求走弱，芯片供给才是下半年关键",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：KingsoftCloud2Q26Preview",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：自5月下旬一季报发布以来，金山云报价回调约23%",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：金山云二季度预览，营收增速放缓，资本开支决定下半年增长",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：金山云二季度预览，营收增速放缓，资本开支决定下半年增长"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_pos3ub9j/pdfs/0005-25-GS-South Korea- BOK Hikes to 2.75-- As Expected- and Stresses Data Dependency on the Next Hike-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "韩国央行再加息，数据",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "投资->研究 x1",
+      "金融->资金 x1",
+      "股票市场|股市->市场 x2",
+      "风险->不确定性 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：韩国央行加息至2.75%，强调数据依赖",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-GS-South Korea- BOK Hikes to 2.75-- As Expected- and Stresses Data Dependency on the Next Hike-260716.pdf",
+      "cleaned_source_title": "GS-South Korea- BOK Hikes to 2.75-- As Expected- and Stresses Data Dependency on the Next Hike",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：SouthKoreaBOKHikesto2.75",
+      "raw_candidates": [
+        "韩国央行加息至2.75%，强调数据依赖",
+        "韩国央行加息至2.75%，GS预计还有两次加息",
+        "韩国央行加息至2.75%，数据依赖取代预设路径"
+      ],
+      "cleaned_candidates": [
+        "GS：韩国央行加息至2.75%，强调数据依赖",
+        "GS：韩国央行加息至2.75%，GS预计还有两次加息",
+        "GS：韩国央行加息至2.75%，数据依赖取代预设路径",
+        "GS：SouthKoreaBOKHikesto2.75",
+        "GS：韩国央行在7月将政策利率上调25个基点至2.75%，符合市场共识"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：韩国央行加息至2.75%，GS预计还有两次加息",
+          "reasons": [
+            "anchor_coverage=0.60",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：SouthKoreaBOKHikesto2.75",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "GS：韩国央行在7月将政策利率上调25个基点至2.75%，符合市场共识",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：韩国央行加息至2.75%，强调数据依赖",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：韩国央行加息至2.75%，强调数据依赖"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

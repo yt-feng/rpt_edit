@@ -1,0 +1,99 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_pos3ub9j/pdfs/0003-23-GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy-260717.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "日本工业机器人集体“",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资者->读者 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy-260717.pdf",
+    "cleaned_source_title": "GS-Japan Industrials- Multiple cos. announce NVIDIA partnerships physical AI initiatives- Omron is being overlooked- reiterate Buy",
+    "institution_name": "GS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "GS：AI日本IndustrialsMultiplecos.",
+    "raw_candidates": [
+      "日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估-重申买入",
+      "日本工业-英伟达物理AI合作-欧姆龙被低估-市场反应偏差",
+      "日本工业-英伟达物理AI合作-欧姆龙被低估-已实现技术成果"
+    ],
+    "cleaned_candidates": [
+      "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+      "GS：日本工业-英伟达物理AI合作-欧姆龙被低估-市场反应偏差",
+      "GS：日本工业-英伟达物理AI合作-欧姆龙被低估-已实现技术成果",
+      "GS：AI日本IndustrialsMultiplecos.",
+      "GS：7月16日，英伟达CEO黄仁勋在日本宣布了一系列物理AI合作"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：AI日本IndustrialsMultiplecos.",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：7月16日，英伟达CEO黄仁勋在日本宣布了一系列物理AI合作",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：日本工业-多家公司宣布英伟达物理AI合作-欧姆龙被低估"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "600",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
