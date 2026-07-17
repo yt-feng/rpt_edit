@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260718/0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803",
+  "title": "经合组织：规模化碳信用扩容减排模式",
+  "source_title": "0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803",
+    "cleaned_source_title": "0007-OECD_Scaled-up-crediting-approaches-to-deliver-climate-change-mit_28c6f803",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0007OECDScaledupcredit",
+    "raw_candidates": [
+      "经合组织：规模化碳信用扩容减排模式",
+      "经合组织：80国参与碳信用，发行量仅占6%",
+      "经合组织：碳信用扩容，政府主导能否兑现气候承诺"
+    ],
+    "cleaned_candidates": [
+      "经合组织：规模化碳信用扩容减排模式",
+      "经合组织：80国参与碳信用，发行量仅占6%",
+      "经合组织：碳信用扩容，政府主导能否兑现气候承诺",
+      "经合组织：0007OECDScaledupcredit",
+      "经合组织：自2020年以来，规模化碳信用标准下共发行了1.54亿个单位"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：80国参与碳信用，发行量仅占6%",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：碳信用扩容，政府主导能否兑现气候承诺",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "经合组织：0007OECDScaledupcredit",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：自2020年以来，规模化碳信用标准下共发行了1.54亿个单位",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：规模化碳信用扩容减排模式",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：规模化碳信用扩容减排模式"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_07.pdf",
+  "figure_count": 8,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

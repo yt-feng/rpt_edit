@@ -1,0 +1,68 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260718/0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054",
+  "title": "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害",
+  "source_title": "0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054",
+    "cleaned_source_title": "0009-WTO_United-States-launches-safeguard-investigation-on-lamb-meat_ec8e4054",
+    "institution_name": "世界贸易组织",
+    "required_terms": [],
+    "deterministic_fallback": "世界贸易组织：0009WTOUnitedStatesl",
+    "raw_candidates": [
+      "美国启动羊肉进口保障调查",
+      "美国启动羊肉进口保障调查-进口激增致产业受损",
+      "美国启动羊肉进口保障调查-2026年11月前认定损害"
+    ],
+    "cleaned_candidates": [
+      "世界贸易组织：美国启动羊肉进口保障调查",
+      "世界贸易组织：美国启动羊肉进口保障调查-进口激增致产业受损",
+      "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害",
+      "世界贸易组织：0009WTOUnitedStatesl",
+      "世界贸易组织：2026年7月13日"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界贸易组织：0009WTOUnitedStatesl",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界贸易组织：2026年7月13日",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "11",
+        "2026"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界贸易组织：美国启动羊肉进口保障调查-2026年11月前认定损害"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_09.pdf",
+  "figure_count": 0,
+  "institution_name": "世界贸易组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
