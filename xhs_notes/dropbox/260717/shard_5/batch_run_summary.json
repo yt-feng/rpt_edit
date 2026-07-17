@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-Luk Fook Holdings （0590.HK） 1QFY27 strong SSSG as expected， yet store closure ahead of GSe； Neutral-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0001-26-GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral-260716.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-GS-TSMC （2330.TW）Earnings review： AI demand visibility into 2030 with stronger guidance extends TSMC’s lead with higher capacity investment； reiterate Buy.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0002-27-GS-TSMC -2330.TW-Earnings review- AI demand visibility into 2030 with stronger guidance extends TSMC-s lead with higher capacity investment- reiterate Buy.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-GS-Tongyu Communication （002792）： China LEO satellites in progress； 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26； Buy-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0003-28-GS-Tongyu Communication -002792-- China LEO satellites in progress- 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26- Buy-260716.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-XPeng Inc. （XPEV 9868.HK）Mona L03 to drive volume growth acceleration with strong orders post launch； Buy-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0004-29-GS-XPeng Inc. -XPEV 9868.HK-Mona L03 to drive volume growth acceleration with strong orders post launch- Buy-260717.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-UMT （3491.TWO）： AI data center from LEO Satellite； High~speed interconnection end application in expansion； Buy-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0005-30-GS-UMT -3491.TWO-- AI data center from LEO Satellite- High-speed interconnection end application in expansion- Buy-260716.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

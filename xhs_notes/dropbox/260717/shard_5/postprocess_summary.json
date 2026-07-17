@@ -1,0 +1,487 @@
+[
+  {
+    "item": "0001-26-Goldman-Sachs-Luk-Fook-Holdings--0590.HK--1QFY27-strong-SSSG-as-expected",
+    "source_pdf": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0001-26-GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "珠宝龙头开店节奏超预",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：六福同店增长强劲-内地关店150家远超预期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral-260716.pdf",
+      "cleaned_source_title": "GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：LukFookHoldings1QFY27str",
+      "raw_candidates": [
+        "六福同店增长强劲但关店超预期",
+        "六福同店增长强劲-内地关店150家远超预期",
+        "六福同店增长强劲-黄金主导但固定价格珠宝下滑7%"
+      ],
+      "cleaned_candidates": [
+        "GS：六福同店增长强劲但关店超预期",
+        "GS：六福同店增长强劲-内地关店150家远超预期",
+        "GS：六福同店增长强劲-黄金主导但固定价格珠宝下滑7%",
+        "GS：LukFookHoldings1QFY27str",
+        "GS：六福集团在7月16日公布了截至6月底的第一财季运营数据"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：六福同店增长强劲-黄金主导但固定价格珠宝下滑7%",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        },
+        {
+          "title": "GS：LukFookHoldings1QFY27str",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：六福集团在7月16日公布了截至6月底的第一财季运营数据",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：六福同店增长强劲-内地关店150家远超预期",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "150"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：六福同店增长强劲-内地关店150家远超预期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-27-Goldman-Sachs-TSMC--2330.TW-Earnings-review--AI-demand-visibility-into-2",
+    "source_pdf": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0002-27-GS-TSMC -2330.TW-Earnings review- AI demand visibility into 2030 with stronger guidance extends TSMC-s lead with higher capacity investment- reiterate Buy.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI需求能看到203",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-GS-TSMC -2330.TW-Earnings review- AI demand visibility into 2030 with stronger guidance extends TSMC-s lead with higher capacity investment- reiterate Buy.pdf",
+      "cleaned_source_title": "GS-TSMC -2330.TW-Earnings review- AI demand visibility into 2030 with stronger guidance extends TSMC-s lead with higher capacity investment- reiterate Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AITSMCEarningsreview",
+      "raw_candidates": [
+        "GS：台积电AI需求可见度延伸至2030年",
+        "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+        "GS：台积电AI需求可见度至2030年-管理层称新AI产业浮现"
+      ],
+      "cleaned_candidates": [
+        "GS：台积电AI需求可见度延伸至2030年",
+        "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+        "GS：台积电AI需求可见度至2030年-管理层称新AI产业浮现",
+        "GS：AITSMCEarningsreview",
+        "GS：台积电的AI需求可见度已延伸至2030年"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：AITSMCEarningsreview",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026",
+          "40"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：台积电AI需求可见度至2030年-上调2026年营收预期至40%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-28-Goldman-Sachs-Tongyu-Communication--002792---China-LEO-satellites-in-pro",
+    "source_pdf": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0003-28-GS-Tongyu Communication -002792-- China LEO satellites in progress- 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26- Buy-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "这家公司亏着亏着，卫",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-GS-Tongyu Communication -002792-- China LEO satellites in progress- 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26- Buy-260716.pdf",
+      "cleaned_source_title": "GS-Tongyu Communication -002792-- China LEO satellites in progress- 2Q26 NI midpoint guidance indicates narrowing losses vs. 1Q26- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：TongyuCommunication002792中国",
+      "raw_candidates": [
+        "通宇通讯-中国低轨卫星进展中-二季度净亏损中位数指引显示亏损较一季度收窄-买入",
+        "通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄-买入",
+        "通宇通讯-中国低轨卫星进展中-GS上调2031年卫星安装基数至30.5万台-买入"
+      ],
+      "cleaned_candidates": [
+        "GS：通宇通讯-中国低轨卫星进展中",
+        "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄",
+        "GS：TongyuCommunication002792中国",
+        "GS：二季度净亏损中位数为1200万元，较一季度的1300万元有所收窄"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：TongyuCommunication002792中国",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：二季度净亏损中位数为1200万元，较一季度的1300万元有所收窄",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "1200"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：通宇通讯-中国低轨卫星进展中-二季度净亏损1200万较一季度收窄"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-29-Goldman-Sachs-XPeng-Inc.--XPEV-9868.HK-Mona-L03-to-drive-volume-growth-a",
+    "source_pdf": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0004-29-GS-XPeng Inc. -XPEV 9868.HK-Mona L03 to drive volume growth acceleration with strong orders post launch- Buy-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "Mona L03 订",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：小鹏MONAL03订单加速推动销量增长",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-GS-XPeng Inc. -XPEV 9868.HK-Mona L03 to drive volume growth acceleration with strong orders post launch- Buy-260717.pdf",
+      "cleaned_source_title": "GS-XPeng Inc. -XPEV 9868.HK-Mona L03 to drive volume growth acceleration with strong orders post launch- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：XPengInc.",
+      "raw_candidates": [
+        "小鹏MONA L03订单加速推动销量增长",
+        "小鹏MONA L03订单7分钟2万-销量增速看至59%",
+        "小鹏MONA L03订单速度翻倍-GS看好销量加速"
+      ],
+      "cleaned_candidates": [
+        "GS：小鹏MONAL03订单加速推动销量增长",
+        "GS：小鹏MONAL03订单7分钟2万-销量增速看至59%",
+        "GS：小鹏MONAL03订单速度翻倍-GS看好销量加速",
+        "GS：XPengInc.",
+        "GS：7月16日，小鹏在慕尼黑全球首发了MONA品牌第二款车型L03"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：小鹏MONAL03订单7分钟2万-销量增速看至59%",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "GS：小鹏MONAL03订单速度翻倍-GS看好销量加速",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "GS：XPengInc.",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月16日，小鹏在慕尼黑全球首发了MONA品牌第二款车型L03",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        }
+      ],
+      "selected_title": "GS：小鹏MONAL03订单加速推动销量增长",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：小鹏MONAL03订单加速推动销量增长"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-30-Goldman-Sachs-UMT--3491.TWO---AI-data-center-from-LEO-Satellite--High-sp",
+    "source_pdf": "/tmp/pdf_batch_001_6gaat_6d/pdfs/0005-30-GS-UMT -3491.TWO-- AI data center from LEO Satellite- High-speed interconnection end application in expansion- Buy-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "这家公司要抢AI数据",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-GS-UMT -3491.TWO-- AI data center from LEO Satellite- High-speed interconnection end application in expansion- Buy-260716.pdf",
+      "cleaned_source_title": "GS-UMT -3491.TWO-- AI data center from LEO Satellite- High-speed interconnection end application in expansion- Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：UMTAIdatacenterfromLEOSa",
+      "raw_candidates": [
+        "UMT从低轨卫星切入AI数据中心高速互联",
+        "UMT收购DYNAHZ-17亿新台币切入AI数据中心高速互联",
+        "UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联"
+      ],
+      "cleaned_candidates": [
+        "GS：UMT从低轨卫星切入AI数据中心高速互联",
+        "GS：UMT收购DYNAHZ-17亿新台币切入AI数据中心高速互联",
+        "GS：UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联",
+        "GS：UMTAIdatacenterfromLEOSa",
+        "GS：1.收购标的DYNAHZ已切入AI数据中心客户，产能计划扩2"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：UMTAIdatacenterfromLEOSa",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.收购标的DYNAHZ已切入AI数据中心客户，产能计划扩2",
+          "reasons": [
+            "anchor_coverage=0.37"
+          ]
+        }
+      ],
+      "selected_title": "GS：UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2",
+          "3"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：UMT并购DYNAHZ-产能扩2-3倍切入AI数据中心高速互联"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
