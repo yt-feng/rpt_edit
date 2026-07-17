@@ -1,6 +1,6 @@
 # kcdesk.com 技术架构文档
 
-最后更新：2026-07-13
+最后更新：2026-07-17
 维护范围：`kcdesk.com` / KC Desk Notes 搜索站、报告详情页、外部报告检索、账号权限、管理后台、运营后台、每日文件缓存、访问埋点。
 
 ## 1. 总览
@@ -41,6 +41,7 @@ flowchart LR
 | `.github/workflows/kc-desk-notes-pages.yml` | 构建/部署 kcdesk.com 的主 workflow。 |
 | `scripts/kc_desk_notes_catalog.py` | 扫描 Dropbox、生成/合并 catalog、同步 PDF 到 R2、执行 PDF 容量清理。 |
 | `scripts/build_kc_desk_notes_site.py` | 生成 Pages artifact 和公开搜索索引。 |
+| `scripts/submit_kcdesk_indexnow.py` | 对比部署前后 catalog，只把新增、更新或删除的公开 canonical URL 通知 IndexNow。 |
 | `scripts/translate_kc_desk_titles.py` | 用 DeepSeek 批量补中文标题。 |
 | `kc_desk_notes/account_schema.sql` | Supabase 账号/权益/购买/使用事件 schema。 |
 
@@ -67,8 +68,51 @@ flowchart LR
    - `data/password_rules.json`
    - HTML/CSS/JS 静态资源
 8. 部署 GitHub Pages。
-9. 条件满足时部署 Cloudflare Worker，并写入 `CATALOG_URL`、`SEARCH_INDEX_URL`、`PASSWORD_RULES_URL` 等变量。
-10. 提交更新后的 `kc_desk_notes/data/catalog.json`。
+9. 验证根目录 IndexNow key 后，增量通知 Bing、Yandex 等 IndexNow 参与者；通知失败不阻塞网站部署。
+10. 条件满足时部署 Cloudflare Worker，并写入 `CATALOG_URL`、`SEARCH_INDEX_URL`、`PASSWORD_RULES_URL` 等变量。
+11. 提交更新后的 `kc_desk_notes/data/catalog.json`。
+
+### 3.1 SEO / GEO 公开发现层
+
+公开索引只使用短 canonical URL：
+
+```text
+https://kcdesk.com/reports/<report_id>.html
+```
+
+动态业务页 `report.html`、`doc.html`、`delivery.html` 和登录后的 `newsfeed.html` 不进入 sitemap，并设置 `noindex`。任何带密码、source、token 或交付参数的 URL 都不会进入 sitemap、RSS、llms 文件或 IndexNow payload。
+
+每次构建生成：
+
+| 文件 | 用途 |
+| --- | --- |
+| `sitemap.xml` | sitemap index，供 Google、Bing、Yandex 和通用爬虫使用。 |
+| `sitemap-pages.xml` / `sitemap-reports-*.xml` | 公开页面与报告静态页分片，每片最多 5000 篇。 |
+| `sitemap-baidu.xml` | 百度专用扁平 URL 集；不使用百度已停止处理的 sitemap index。 |
+| `sitemap-sogou.xml` | 搜狗可直接提交的扁平 URL 集。 |
+| `feed.xml` | 最近 100 篇报告 RSS；供 Bing、阅读器和增量发现使用。 |
+| `robots.txt` | 声明全部 sitemap，允许公开页面与 catalog，隔离 API、私有数据、交付页和 Newsfeed。 |
+| `llms.txt` | AI 检索入口和站点说明。 |
+| `llms-full.txt` | 最近 200 篇报告的中文标题、机构、主题、日期、摘要和 canonical URL。 |
+| `<INDEXNOW_KEY>.txt` | IndexNow 域名所有权验证。key 是公开验证值，不是业务 secret。 |
+
+静态报告页包含中文 title/description、英文原标题、canonical、hreflang、Open Graph、Schema.org `Report`、`BreadcrumbList` 和相关报告静态链接。`lastmod` 优先使用文件真实修改时间或报告日期，不使用每次扫描都会变化的 `last_seen_at_bjt`，避免对搜索引擎制造虚假更新。
+
+主动通知：
+
+- workflow 在扫描 catalog 前保存一份部署前快照。
+- Pages 部署成功后，`scripts/submit_kcdesk_indexnow.py` 对公开元数据做字段级比较。
+- 只提交首页、报告索引、RSS，以及发生新增/修改/删除的静态报告 URL。
+- 单次请求最多 10,000 URL；先确认线上 key 文件可读取，再调用 `https://api.indexnow.org/indexnow`。
+- Cloudflare 可额外启用 Crawler Hints，利用 CDN cache 信号补充发送 IndexNow 通知。
+
+站长平台提交口径：
+
+- Google Search Console：`https://kcdesk.com/sitemap.xml`
+- Bing Webmaster Tools：`https://kcdesk.com/sitemap.xml`，并由 IndexNow 接收增量更新。
+- 百度搜索资源平台：`https://kcdesk.com/sitemap-baidu.xml`
+- 搜狗资源平台：`https://kcdesk.com/sitemap-sogou.xml`；若账号未获 sitemap 邀请权限，则使用 URL 提交工具提交重要静态报告页。
+- Yandex Webmaster：`https://kcdesk.com/sitemap.xml`，并由 IndexNow 接收增量更新。
 
 ## 4. 前端页面
 

@@ -45,6 +45,8 @@ concurrency:
 
 env:
   PYTHONUNBUFFERED: "1"
+  # Public IndexNow verification key. The build publishes /<key>.txt.
+  INDEXNOW_KEY: "201eca2fc32f348cb7280e22b4999524"
 
 jobs:
   build-and-deploy:
@@ -87,6 +89,9 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
         run: |
+          if [ -f "kc_desk_notes/data/catalog.json" ]; then
+            cp "kc_desk_notes/data/catalog.json" "$RUNNER_TEMP/kcdesk-catalog-before.json"
+          fi
           SYNC_R2="${{ github.event.inputs.sync_r2 || 'true' }}"
           FORCE_UPLOAD="${{ github.event.inputs.force_upload || 'false' }}"
           EXTRA_ARGS=()
@@ -168,6 +173,15 @@ jobs:
         run: |
           echo "GitHub Pages deployment failed after 3 attempts."
           exit 1
+
+      - name: Notify Bing, Yandex, and IndexNow participants
+        continue-on-error: true
+        run: |
+          python scripts/submit_kcdesk_indexnow.py \
+            --catalog "kc_desk_notes/data/catalog.json" \
+            --previous-catalog "$RUNNER_TEMP/kcdesk-catalog-before.json" \
+            --base-url "https://kcdesk.com" \
+            --key "$INDEXNOW_KEY"
 
       - name: Commit persistent catalog and search archive
         run: |

@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
+from email.utils import format_datetime
 import gzip
 import hashlib
 from html import escape as html_escape
@@ -75,6 +77,9 @@ BANK_ALIASES = [
 
 SITE_BASE_URL = "https://kcdesk.com"
 SITEMAP_REPORT_CHUNK_SIZE = 5000
+INDEXNOW_KEY = "201eca2fc32f348cb7280e22b4999524"
+RSS_ITEM_LIMIT = 100
+LLMS_REPORT_LIMIT = 200
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -752,9 +757,10 @@ def bjt_timestamp_to_date(value: str) -> str:
 
 def item_lastmod(item: dict[str, Any], fallback: str = "") -> str:
     return (
-        bjt_timestamp_to_date(str(item.get("last_seen_at_bjt") or ""))
-        or bjt_timestamp_to_date(str(item.get("server_modified") or ""))
+        bjt_timestamp_to_date(str(item.get("server_modified") or ""))
         or date_folder_to_iso(str(item.get("date_folder") or ""))
+        or bjt_timestamp_to_date(str(item.get("first_seen_at_bjt") or ""))
+        or bjt_timestamp_to_date(str(item.get("last_seen_at_bjt") or ""))
         or fallback
     )
 
@@ -810,15 +816,24 @@ def item_availability_label(item: dict[str, Any]) -> str:
 
 
 def item_meta_description(item: dict[str, Any]) -> str:
-    parts = [
-        item_display_title(item),
-        f"机构：{item_institution(item)}",
-        f"行业：{item_industry(item)}",
-        f"日期：{date_folder_to_iso(str(item.get('date_folder') or '')) or str(item.get('date_folder') or '')}",
-        item_page_label(item),
-        item_availability_label(item),
-    ]
-    return "。".join(part for part in parts if part)[:280]
+    title = item_display_title(item)
+    institution = item_institution(item)
+    industry = item_industry(item)
+    report_date = date_folder_to_iso(str(item.get("date_folder") or "")) or str(item.get("date_folder") or "")
+    return compact_space(
+        f"{institution}报告《{title}》，研究主题为{industry}，发布日期为{report_date}，"
+        f"{item_page_label(item)}。{item_availability_label(item)}。"
+        "KC Desk Notes 提供中文标题、英文标题、报告信息和相关研究索引。"
+    )[:280]
+
+
+def item_summary(item: dict[str, Any]) -> str:
+    report_date = date_folder_to_iso(str(item.get("date_folder") or "")) or str(item.get("date_folder") or "")
+    return compact_space(
+        f"本报告由{item_institution(item)}发布，聚焦{item_industry(item)}，"
+        f"发布日期为{report_date}，{item_page_label(item)}。"
+        "本页整理中英文标题、研究机构、主题分类、页数和可用状态，便于中文检索及相关研究发现。"
+    )
 
 
 def write_text(path: Path, text: str) -> None:
@@ -854,7 +869,12 @@ def report_keywords(item: dict[str, Any]) -> str:
     return ", ".join(keywords[:12])
 
 
-def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: str) -> str:
+def render_report_seo_page(
+    item: dict[str, Any],
+    base_url: str,
+    generated_date: str,
+    related_items: list[dict[str, Any]] | None = None,
+) -> str:
     report_id = str(item.get("id") or "")
     title = item_display_title(item)
     source_title = item_source_title(item)
@@ -866,17 +886,21 @@ def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: 
     lastmod = item_lastmod(item, generated_date)
     institution = item_institution(item)
     industry = item_industry(item)
-    json_ld = {
-        "@context": "https://schema.org",
+    report_json_ld = {
         "@type": "Report",
+        "@id": f"{canonical}#report",
         "name": title,
         "headline": title,
         "alternateName": source_title,
         "description": description,
         "url": canonical,
+        "mainEntityOfPage": canonical,
+        "identifier": report_id,
         "datePublished": date_iso or lastmod,
         "dateModified": lastmod,
         "inLanguage": ["zh-CN", "en"],
+        "genre": "金融研究报告",
+        "keywords": report_keywords(item),
         "publisher": {
             "@type": "Organization",
             "name": "KC Desk Notes",
@@ -885,12 +909,45 @@ def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: 
         "about": [industry, institution],
         "isAccessibleForFree": False,
     }
+    json_ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            report_json_ld,
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
+                    {"@type": "ListItem", "position": 2, "name": "报告索引", "item": url_join(base_url, "reports/")},
+                    {"@type": "ListItem", "position": 3, "name": title, "item": canonical},
+                ],
+            },
+        ],
+    }
     if source_title and source_title != title:
         source_block = f"""
           <h2>英文标题</h2>
           <p>{html_escape(source_title)}</p>"""
     else:
         source_block = ""
+    related_rows = []
+    for related in related_items or []:
+        related_id = str(related.get("id") or "")
+        if not related_id:
+            continue
+        related_rows.append(
+            "<li>"
+            f"<a href=\"{html_escape(quote(related_id, safe='') + '.html')}\">{html_escape(item_display_title(related))}</a>"
+            f"<span>{html_escape(item_institution(related))} · {html_escape(item_lastmod(related))}</span>"
+            "</li>"
+        )
+    related_block = ""
+    if related_rows:
+        related_block = (
+            "<h2>相关报告</h2>"
+            '<ul class="seo-report-index seo-related-reports">'
+            + "".join(related_rows)
+            + "</ul>"
+        )
     return f"""<!doctype html>
 <html lang="zh-CN">
   <head>
@@ -901,7 +958,11 @@ def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: 
     <meta name="keywords" content="{html_escape(report_keywords(item))}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="zh-CN" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical)}">
+    <link rel="alternate" type="application/rss+xml" title="KC Desk Notes 最近报告" href="../feed.xml">
     <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="KC Desk Notes">
     <meta property="og:title" content="{html_escape(title)}">
     <meta property="og:description" content="{html_escape(description)}">
@@ -921,6 +982,8 @@ def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: 
       <article class="legal-panel">
         <h1>{html_escape(title)}</h1>
         <p class="subtle">{html_escape(description)}</p>
+        <h2>研究摘要</h2>
+        <p>{html_escape(item_summary(item))}</p>
         <h2>报告信息</h2>
         <p>机构：{html_escape(institution)}</p>
         <p>行业：{html_escape(industry)}</p>
@@ -930,7 +993,7 @@ def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: 
         <p>
           <a class="primary-link" href="{html_escape(detail_href)}">打开报告详情</a>
           <a class="secondary-button" href="{html_escape(search_href)}">检索相关报告</a>
-        </p>
+        </p>{related_block}
       </article>
     </main>
     <footer class="legal-footer">
@@ -946,8 +1009,16 @@ def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: 
 
 def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date: str) -> str:
     items = [item for item in catalog.get("items", []) if item.get("id")]
+    sorted_items = sorted(
+        items,
+        key=lambda row: (
+            sort_date_value(str(row.get("date_folder") or "")),
+            normalize_search_text(item_display_title(row)),
+        ),
+        reverse=True,
+    )
     rows = []
-    for item in sorted(items, key=lambda row: (sort_date_value(str(row.get("date_folder") or "")), normalize_search_text(item_display_title(row))), reverse=True):
+    for item in sorted_items:
         href = f"{quote(str(item.get('id')), safe='')}.html"
         date_iso = date_folder_to_iso(str(item.get("date_folder") or ""))
         rows.append(
@@ -957,15 +1028,30 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
             "</li>"
         )
     description = "KC Desk Notes 中文金融研报索引，覆盖宏观策略、行业分析、公司研究、财报、招股书和国际智库报告线索。"
-    json_ld = {
-        "@context": "https://schema.org",
+    collection_json_ld = {
         "@type": "CollectionPage",
+        "@id": f"{url_join(base_url, 'reports/')}#collection",
         "name": "KC Desk Notes 报告索引",
         "description": description,
         "url": url_join(base_url, "reports/"),
         "dateModified": generated_date,
         "inLanguage": "zh-CN",
     }
+    item_list = {
+        "@type": "ItemList",
+        "name": "最新金融研报",
+        "numberOfItems": len(items),
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": index,
+                "name": item_display_title(item),
+                "url": url_join(base_url, report_seo_path(str(item.get("id")))),
+            }
+            for index, item in enumerate(sorted_items[:50], start=1)
+        ],
+    }
+    json_ld = {"@context": "https://schema.org", "@graph": [collection_json_ld, item_list]}
     return f"""<!doctype html>
 <html lang="zh-CN">
   <head>
@@ -975,6 +1061,15 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
     <meta name="description" content="{html_escape(description)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(url_join(base_url, 'reports/'))}">
+    <link rel="alternate" hreflang="zh-CN" href="{html_escape(url_join(base_url, 'reports/'))}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(url_join(base_url, 'reports/'))}">
+    <link rel="alternate" type="application/rss+xml" title="KC Desk Notes 最近报告" href="../feed.xml">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="KC Desk Notes">
+    <meta property="og:title" content="金融研报索引 | KC Desk Notes">
+    <meta property="og:description" content="{html_escape(description)}">
+    <meta property="og:url" content="{html_escape(url_join(base_url, 'reports/'))}">
     <link rel="stylesheet" href="../assets/styles.css">
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
@@ -998,6 +1093,7 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
     </main>
     <footer class="legal-footer">
       <a href="../index.html">首页检索</a>
+      <a href="../feed.xml">最近报告 RSS</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
       <span>Contact: MacroGate</span>
@@ -1027,21 +1123,138 @@ def write_urlset(path: Path, rows: list[str]) -> None:
     )
 
 
+def build_related_reports(items: list[dict[str, Any]], limit: int = 6) -> dict[str, list[dict[str, Any]]]:
+    sorted_items = sorted(
+        items,
+        key=lambda item: (item_lastmod(item), sort_date_value(str(item.get("date_folder") or ""))),
+        reverse=True,
+    )
+    institution_buckets: dict[str, list[dict[str, Any]]] = {}
+    industry_buckets: dict[str, list[dict[str, Any]]] = {}
+    for item in sorted_items:
+        institution_buckets.setdefault(normalize_search_text(item_institution(item)), []).append(item)
+        industry_buckets.setdefault(normalize_search_text(item_industry(item)), []).append(item)
+
+    related: dict[str, list[dict[str, Any]]] = {}
+    for item in sorted_items:
+        report_id = str(item.get("id") or "")
+        candidates: dict[str, dict[str, Any]] = {}
+        institution_key = normalize_search_text(item_institution(item))
+        industry_key = normalize_search_text(item_industry(item))
+        for candidate in institution_buckets.get(institution_key, [])[:40]:
+            candidate_id = str(candidate.get("id") or "")
+            if candidate_id and candidate_id != report_id:
+                candidates[candidate_id] = candidate
+        for candidate in industry_buckets.get(industry_key, [])[:40]:
+            candidate_id = str(candidate.get("id") or "")
+            if candidate_id and candidate_id != report_id:
+                candidates[candidate_id] = candidate
+
+        def relation_key(candidate: dict[str, Any]) -> tuple[int, int, str]:
+            score = 0
+            if normalize_search_text(item_institution(candidate)) == institution_key:
+                score += 4
+            if normalize_search_text(item_industry(candidate)) == industry_key:
+                score += 3
+            if candidate.get("available") and not candidate.get("pdf_archived"):
+                score += 1
+            return score, sort_date_value(str(candidate.get("date_folder") or "")), item_lastmod(candidate)
+
+        related[report_id] = sorted(candidates.values(), key=relation_key, reverse=True)[:limit]
+    return related
+
+
+def rss_pub_date(value: str) -> str:
+    try:
+        parsed = datetime.strptime(value, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    except ValueError:
+        parsed = datetime.now(timezone.utc)
+    return format_datetime(parsed)
+
+
+def render_report_feed(catalog: dict[str, Any], base_url: str, generated_date: str) -> str:
+    items = sorted(
+        [item for item in catalog.get("items", []) if item.get("id")],
+        key=lambda item: (item_lastmod(item, generated_date), sort_date_value(str(item.get("date_folder") or ""))),
+        reverse=True,
+    )[:RSS_ITEM_LIMIT]
+    rows = []
+    for item in items:
+        canonical = url_join(base_url, report_seo_path(str(item.get("id"))))
+        rows.append(
+            "    <item>\n"
+            f"      <title>{xml_escape(item_display_title(item))}</title>\n"
+            f"      <link>{xml_escape(canonical)}</link>\n"
+            f"      <guid isPermaLink=\"true\">{xml_escape(canonical)}</guid>\n"
+            f"      <pubDate>{xml_escape(rss_pub_date(item_lastmod(item, generated_date)))}</pubDate>\n"
+            f"      <description>{xml_escape(item_meta_description(item))}</description>\n"
+            f"      <category>{xml_escape(item_institution(item))}</category>\n"
+            f"      <category>{xml_escape(item_industry(item))}</category>\n"
+            "    </item>"
+        )
+    return (
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        "<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n"
+        "  <channel>\n"
+        "    <title>KC Desk Notes 最近报告</title>\n"
+        f"    <link>{xml_escape(url_join(base_url, '/'))}</link>\n"
+        "    <description>中文金融研报、宏观策略、行业研究和国际智库报告的最近更新。</description>\n"
+        "    <language>zh-CN</language>\n"
+        f"    <lastBuildDate>{xml_escape(rss_pub_date(generated_date))}</lastBuildDate>\n"
+        f"    <atom:link href=\"{xml_escape(url_join(base_url, 'feed.xml'))}\" rel=\"self\" type=\"application/rss+xml\" />\n"
+        + "\n".join(rows)
+        + "\n  </channel>\n</rss>\n"
+    )
+
+
+def render_llms_full(catalog: dict[str, Any], base_url: str) -> str:
+    items = sorted(
+        [item for item in catalog.get("items", []) if item.get("id")],
+        key=lambda item: (item_lastmod(item), sort_date_value(str(item.get("date_folder") or ""))),
+        reverse=True,
+    )[:LLMS_REPORT_LIMIT]
+    lines = [
+        "# KC Desk Notes 公开报告索引",
+        "",
+        "以下是最近更新的中文金融研究报告元数据。报告下载权限与公开索引相互独立。",
+        "",
+    ]
+    for item in items:
+        lines.extend([
+            f"## {item_display_title(item)}",
+            f"- URL: {url_join(base_url, report_seo_path(str(item.get('id'))))}",
+            f"- 机构: {item_institution(item)}",
+            f"- 主题: {item_industry(item)}",
+            f"- 日期: {item_lastmod(item)}",
+            f"- 摘要: {item_summary(item)}",
+            "",
+        ])
+    return "\n".join(lines)
+
+
 def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SITE_BASE_URL) -> None:
     base_url = base_url.rstrip("/") or SITE_BASE_URL
     generated_date = bjt_timestamp_to_date(str(catalog.get("updated_at_bjt") or "")) or ""
     reports_dir = output / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
-    report_items = [item for item in catalog.get("items", []) if item.get("id")]
+    report_items = sorted(
+        [item for item in catalog.get("items", []) if item.get("id")],
+        key=lambda item: (item_lastmod(item, generated_date), sort_date_value(str(item.get("date_folder") or ""))),
+        reverse=True,
+    )
+    related_reports = build_related_reports(report_items)
 
     for item in report_items:
-        write_text(reports_dir / f"{quote(str(item.get('id')), safe='')}.html", render_report_seo_page(item, base_url, generated_date))
+        report_id = str(item.get("id") or "")
+        write_text(
+            reports_dir / f"{quote(report_id, safe='')}.html",
+            render_report_seo_page(item, base_url, generated_date, related_reports.get(report_id, [])),
+        )
     write_text(reports_dir / "index.html", render_reports_index(catalog, base_url, generated_date))
 
     page_rows = [
         sitemap_url(url_join(base_url, "/"), generated_date, "1.0"),
         sitemap_url(url_join(base_url, "reports/"), generated_date, "0.9"),
-        sitemap_url(url_join(base_url, "newsfeed.html"), generated_date, "0.5"),
         sitemap_url(url_join(base_url, "terms.html"), generated_date, "0.2"),
         sitemap_url(url_join(base_url, "privacy.html"), generated_date, "0.2"),
     ]
@@ -1078,17 +1291,46 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
         + "\n</sitemapindex>\n",
     )
 
+    # Baidu no longer accepts sitemap index files. A single flat file also works
+    # well for Sogou and remains under the 50,000 URL / 10 MB limits.
+    cn_rows = list(page_rows)
+    cn_rows.extend(
+        sitemap_url(
+            url_join(base_url, report_seo_path(str(item.get("id")))),
+            item_lastmod(item, generated_date),
+            "0.8" if item.get("available") else "0.6",
+        )
+        for item in report_items
+    )
+    write_urlset(output / "sitemap-baidu.xml", cn_rows)
+    write_urlset(output / "sitemap-sogou.xml", cn_rows)
+    write_text(output / "feed.xml", render_report_feed(catalog, base_url, generated_date))
+
+    indexnow_key = compact_space(os.environ.get("INDEXNOW_KEY") or INDEXNOW_KEY)
+    if not re.fullmatch(r"[A-Za-z0-9-]{8,128}", indexnow_key):
+        raise ValueError("INDEXNOW_KEY must be 8-128 ASCII letters, digits, or hyphens")
+    write_text(output / f"{indexnow_key}.txt", f"{indexnow_key}\n")
+
+    restricted_rules = [
+        "Disallow: /api/",
+        "Disallow: /data/",
+        "Allow: /data/catalog.json",
+        "Disallow: /delivery.html",
+        "Disallow: /newsfeed.html",
+    ]
+    robots_lines: list[str] = []
+    for agent in ("*", "OAI-SearchBot", "PerplexityBot"):
+        robots_lines.extend([f"User-agent: {agent}", "Allow: /", *restricted_rules, ""])
+    robots_lines.extend([
+        f"Sitemap: {url_join(base_url, 'sitemap.xml')}",
+        f"Sitemap: {url_join(base_url, 'sitemap-baidu.xml')}",
+        f"Sitemap: {url_join(base_url, 'sitemap-sogou.xml')}",
+        f"Sitemap: {url_join(base_url, 'feed.xml')}",
+        "",
+    ])
     write_text(
         output / "robots.txt",
-        "\n".join([
-            "User-agent: *",
-            "Allow: /",
-            "Allow: /data/catalog.json",
-            "Disallow: /data/",
-            "Disallow: /delivery.html",
-            f"Sitemap: {url_join(base_url, 'sitemap.xml')}",
-            "",
-        ]),
+        "\n".join(robots_lines),
     )
     write_text(
         output / "llms.txt",
@@ -1101,6 +1343,8 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
             f"- Home/Search: {url_join(base_url, '/')}",
             f"- Report index: {url_join(base_url, 'reports/')}",
             f"- Sitemap index: {url_join(base_url, 'sitemap.xml')}",
+            f"- Recent reports RSS: {url_join(base_url, 'feed.xml')}",
+            f"- Expanded public report metadata: {url_join(base_url, 'llms-full.txt')}",
             f"- Public catalog JSON: {url_join(base_url, 'data/catalog.json')}",
             "",
             "## Content Notes",
@@ -1110,6 +1354,7 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
             "",
         ]),
     )
+    write_text(output / "llms-full.txt", render_llms_full(catalog, base_url))
 
 
 def copy_site(src: Path, output: Path) -> None:
