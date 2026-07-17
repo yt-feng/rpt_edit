@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0001-56-MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0002-57-MS-Hong Kong China Insurance- Monthly Datapack- Southbound and Long-Only Positions in Insurers in June-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0003-58-MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0004-59-MS-IT Services- 2026 Budget Growth Expectations Reduced-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0005-60-MS-Sichuan Kelun Pharmaceutical Co Ltd-002422-OptiTROP-Lung06 Met Primary Endpoint - A Major Global Relevant Clinical Validation for sac-TMT-260715.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

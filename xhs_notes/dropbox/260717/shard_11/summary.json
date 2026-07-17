@@ -1,0 +1,555 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0001-56-MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "AI服务器下一波升级",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-56-MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260715.pdf",
+      "cleaned_source_title": "MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components",
+      "institution_name": "MS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "MS：AIGreater中国科技硬件Building",
+      "raw_candidates": [
+        "大中华科技硬件：计算基石、服务器、AI基础设施与电子组件",
+        "大中华科技硬件：AI服务器设计换代，PCB与ABF载板供应紧张",
+        "大中华科技硬件：Vera Rubin与Kyber架构驱动机架级重新设计"
+      ],
+      "cleaned_candidates": [
+        "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+        "MS：大中华科技硬件，AI服务器设计换代",
+        "MS：大中华科技硬件",
+        "MS：AIGreater中国科技硬件Building",
+        "MS：AI服务器硬件升级，供应链正在经历一次“设计换代”"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：大中华科技硬件，AI服务器设计换代",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：大中华科技硬件",
+          "reasons": [
+            "missing_required_terms=AI",
+            "body_too_short",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：AIGreater中国科技硬件Building",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：AI服务器硬件升级，供应链正在经历一次“设计换代”",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0002-57-MS-Hong Kong China Insurance- Monthly Datapack- Southbound and Long-Only Positions in Insurers in June-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月保险持仓：谁在买",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "增持->观点偏积极 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "减持->观点偏谨慎 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "投资者->读者 x1",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "投资收益->回报表现 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "增持->观点偏积极 x1",
+      "减持->观点偏谨慎 x1",
+      "股票|个股->公司 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：香港中国保险-月度数据包",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-57-MS-Hong Kong China Insurance- Monthly Datapack- Southbound and Long-Only Positions in Insurers in June-260715.pdf",
+      "cleaned_source_title": "MS-Hong Kong China Insurance- Monthly Datapack- Southbound and Long-Only Positions in Insurers in June",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：HongKong中国Insurance",
+      "raw_candidates": [
+        "香港中国保险-月度数据包-南向与长线资金在保险公司的六月持仓",
+        "香港中国保险-六月南向与长线资金持仓分化-中国财险南向增1.1个百分点",
+        "香港中国保险-六月南向与长线资金持仓分化-中国平安长线持仓降0.6个百分点"
+      ],
+      "cleaned_candidates": [
+        "MS：香港中国保险-月度数据包",
+        "MS：香港中国保险-六月南向与长线资金持仓分化",
+        "MS：HongKong中国Insurance",
+        "MS：友邦保险的长线持仓也下降了0.3个百分点至2.6%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：香港中国保险-六月南向与长线资金持仓分化",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：HongKong中国Insurance",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：友邦保险的长线持仓也下降了0.3个百分点至2.6%",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：香港中国保险-月度数据包",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：香港中国保险-月度数据包"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0003-58-MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "香港写字楼租金回暖，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：香港写字楼JLL租金更新-复苏持续",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-58-MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues-260716.pdf",
+      "cleaned_source_title": "MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：HongKong地产JLL2Q26Rental更新",
+      "raw_candidates": [
+        "香港写字楼JLL租金更新-复苏持续",
+        "香港写字楼租金环比涨1.7%空置率降至13.1%",
+        "香港写字楼复苏扩散但零售租金仍在探底"
+      ],
+      "cleaned_candidates": [
+        "MS：香港写字楼JLL租金更新-复苏持续",
+        "MS：香港写字楼租金环比涨1.7%空置率降至13.1%",
+        "MS：香港写字楼复苏扩散但零售租金仍在探底",
+        "MS：HongKong地产JLL2Q26Rental更新",
+        "MS：但当前水平较2018年三季度峰值仍低约50%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：香港写字楼租金环比涨1.7%空置率降至13.1%",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：香港写字楼复苏扩散但零售租金仍在探底",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：HongKong地产JLL2Q26Rental更新",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：但当前水平较2018年三季度峰值仍低约50%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：香港写字楼JLL租金更新-复苏持续",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：香港写字楼JLL租金更新-复苏持续"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0004-59-MS-IT Services- 2026 Budget Growth Expectations Reduced-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "CIO调查：2026",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x3",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：IT服务-2026预算增长预期下调",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-59-MS-IT Services- 2026 Budget Growth Expectations Reduced-260716.pdf",
+      "cleaned_source_title": "MS-IT Services- 2026 Budget Growth Expectations Reduced",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：ITServices",
+      "raw_candidates": [
+        "IT服务-2026预算增长预期下调",
+        "IT服务预算增速预期降至1.8%-AI资金转向腾挪",
+        "IT服务预算增速下调-美欧分化与AI预算再分配"
+      ],
+      "cleaned_candidates": [
+        "MS：IT服务-2026预算增长预期下调",
+        "MS：IT服务预算增速预期降至1.8%-AI资金转向腾挪",
+        "MS：IT服务预算增速下调-美欧分化与AI预算再分配",
+        "MS：ITServices",
+        "MS：美国CIO对2026年IT服务支出的增长预期从上一季度的2"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：IT服务预算增速预期降至1.8%-AI资金转向腾挪",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：IT服务预算增速下调-美欧分化与AI预算再分配",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：ITServices",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：美国CIO对2026年IT服务支出的增长预期从上一季度的2",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        }
+      ],
+      "selected_title": "MS：IT服务-2026预算增长预期下调",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：IT服务-2026预算增长预期下调"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0005-60-MS-Sichuan Kelun Pharmaceutical Co Ltd-002422-OptiTROP-Lung06 Met Primary Endpoint - A Major Global Relevant Clinical Validation for sac-TMT-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "科伦博泰肺癌新药临床",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：科伦博泰sac-TMT关键临床达主要终点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-60-MS-Sichuan Kelun Pharmaceutical Co Ltd-002422-OptiTROP-Lung06 Met Primary Endpoint - A Major Global Relevant Clinical Validation for sac-TMT-260715.pdf",
+      "cleaned_source_title": "MS-Sichuan Kelun Pharmaceutical Co Ltd-002422-OptiTROP-Lung06 Met Primary Endpoint - A Major Global Relevant Clinical Validation for sac-TMT",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SichuanKelunPharmaceu",
+      "raw_candidates": [
+        "MS：科伦博泰sac-TMT关键临床达主要终点，全球验证路径更清晰",
+        "MS：科伦博泰Lung06研究阳性，sac-TMT联合Keytruda覆盖低表达人群",
+        "MS：sac-TMT全球临床验证加速，科伦博泰Lung06数据填补低表达空白",
+        "科伦博泰OptiTROP-Lung06达到主要终点-sac-TMT全球临床验证",
+        "科伦博泰Lung06达主要终点-sac-TMT全球验证路径更清晰",
+        "科伦博泰Lung06阳性-sac-TMT联合Keytruda覆盖低表达人群"
+      ],
+      "cleaned_candidates": [
+        "MS：科伦博泰sac-TMT关键临床达主要终点",
+        "MS：科伦博泰Lung06研究阳性，sac",
+        "MS：sac-TMT全球临床验证加速",
+        "MS：科伦博泰OptiTROP-Lung06达到主要终点-sac",
+        "MS：科伦博泰Lung06达主要终点-sac",
+        "MS：科伦博泰Lung06阳性-sac",
+        "MS：SichuanKelunPharmaceu",
+        "MS：1.全球临床布局的关键拼图已经就位"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：科伦博泰Lung06研究阳性，sac",
+          "reasons": [
+            "anchor_coverage=0.28",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：sac-TMT全球临床验证加速",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：科伦博泰OptiTROP-Lung06达到主要终点-sac",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：科伦博泰Lung06达主要终点-sac",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：科伦博泰Lung06阳性-sac",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.28",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SichuanKelunPharmaceu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：1.全球临床布局的关键拼图已经就位",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：科伦博泰sac-TMT关键临床达主要终点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：1.全球临床布局的关键拼图已经就位",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "MS：科伦博泰sac-TMT关键临床达主要终点，全球验证路径更清晰",
+        "MS：科伦博泰Lung06研究阳性，sac-TMT联合Keytruda覆盖低表达人群",
+        "MS：sac-TMT全球临床验证加速，科伦博泰Lung06数据填补低表达空白"
+      ],
+      "final_title_after_wording_guard": "MS：科伦博泰sac-TMT关键临床达主要终点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

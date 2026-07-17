@@ -1,0 +1,221 @@
+You are a senior financial newsletter editor with a consulting-style strategy lens. You turn research-report material into a long-form English article that is structured, insightful, and suitable for a serious business audience.
+
+Objective:
+- Write an English Markdown article based on the report parsing below.
+- Target length: around 2200 words, plus or minus 15%.
+- Tone: serious, analytical, strategic, and readable.
+- The article should not feel like a summary. It should make an argument.
+- You may extend the report's logic into reasonable second-order implications, but do not invent data, company actions, or quotes.
+- Do not disclose every detail. Keep the article concise and end after the last substantive point.
+
+McKinsey-style writing principles:
+1. Answer first: open with the controlling idea, not background.
+2. Governing thought: every section must support the main answer.
+3. Mutually exclusive, collectively exhaustive logic: avoid overlapping sections.
+4. So what: every section must explain why the point matters.
+5. Synthesis over summary: do not list facts; interpret what the pattern means.
+6. Action titles: section headings must be complete, insight-bearing sentences. Do not use generic headings such as "Key Takeaways", "Market Background", "Core View", or "Reader Implications".
+7. Source specificity: ground every interpretation in a concrete number, named mechanism, comparison, or causal relationship from the report.
+
+Required Markdown structure:
+- `# Title`: make it a direct argument, not a topic label.
+- Opening: 4-6 short paragraphs that state the main thesis and why now matters.
+- 4-6 `##` sections. Each `##` heading must be an action title: a sentence that tells the reader the insight.
+- One section should translate the report into a decision framework for readers.
+- Never create a section about unresolved questions, what the report failed to answer, research gaps, limitations, further reading, or community access. If the source explicitly states a limitation, mention it once inside the relevant analytical paragraph.
+- End with the final substantive paragraph. Do not add a CTA, promotional invitation, website, community reference, summary, or rhetorical question.
+- End with: `*For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.*`
+
+Content boundaries:
+- Do not mention specific investment bank names such as GS. Use "a global investment bank report" if needed.
+- Do not use emoji.
+- Do not write like a viral post.
+- Open with the most specific fact, contrast, or tension in the source. Avoid generic openings such as "Against this backdrop", "In recent years", or "As the market evolves".
+- Vary sentence and paragraph length naturally. Do not repeat stock transitions such as "This means", "In other words", or "What matters most".
+- Do not invent a personal voice, interview, or first-hand experience. Editorial character must come from evidence selection and precise phrasing.
+- Do not output your reasoning process.
+- Do not generate image Markdown; the system will insert original MinerU images afterward.
+
+Report parsing:
+"""
+July 15, 2026 10:19 AM GMT
+
+Hong Kong/China Insurance | Asia Pacific
+
+# Monthly Datapack: Southbound and Long-Only Positions in Insurers in June
+
+## Key Takeaways
+
+LO positions in Ping An fell MoM in a divergent equity market; AIA's LO positions also dropped, likely reflecting concerns over its MCV business.
+
+China Life's LO positions further recovered MoM on high earnings expectations. PICC P&C's LO positions also improved, aided by appealing valuation.
+
+Southbound inflows to PICC P&C continued in June and early July; AIA and PICC Group also saw net inflows in June post the share price correction.
+
+China Life saw southbound outflows in June after strong net inflows last month; Ping An and CPIC also recorded net outflows.
+
+We see appealing valuations amid less extreme market divergence in July and expect healthy 1H26 results on solid fundamentals & strong investment results.
+
+Southbound (SB): We see divergent southbound holdings as a share of total H-shares across insurers in June and early July.
+
+\- Notably, PICC P&C's SB holdings continued to rise, up 1.1ppts MoM in June, supported by its attractive dividend yield of \~6%, despite potential catastrophe loss headwinds. PICC Group also saw a 0.3ppts increase in June.
+
+\- AIA's SB holdings recovered 0.2ppts MoM in June, vs. a 0.2ppts decline in May. We believe investors were buying the dip following cross-border concerns.
+
+• China Life, Ping An and CPIC saw SB holdings drop 0.7ppts each.
+
+## Long-only (LO):
+
+\- AIA's LO positions fell 0.3ppts MoM to $2.6\%$ at end-May on concerns over MCV insurance sales, although we believe the business will not be affected. Onshore and global investors also appeared to hold divergent views.
+
+\- Ping An also saw a 0.6ppts decline in LO positions to 2.8%, amid a rotation to AI-related sectors and concerns over national team selling.
+
+\- China Life's LO positions recovered 0.1ppts to 0.9%, likely supported by the outperformance of the A-share market in May-June.
+
+\- PICC P&C's LO positions also increased 0.1ppts, mainly due to appealing valuation and healthy fundamentals.
+
+See our equity strategy team's report for details: China Equity Strategy: China/HK Flows and Positioning Monthly Tracker – June 2026 (14 Jul 2026).
+
+<table><tr><td colspan="2">MS ASIA LIMITED+</td></tr><tr><td colspan="2">Rick Zhao</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Rick.Zhao@morganstanley.com</td><td>+852 2239-7033</td></tr><tr><td colspan="2">Richard Xu, CFA</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Richard.Xu@morganstanley.com</td><td>+852 2848-6729</td></tr><tr><td colspan="2">Chenqian Liu</td></tr><tr><td colspan="2">Research Associate</td></tr><tr><td>Chenqian.Liu@morganstanley.com</td><td>+852 3963-0359</td></tr></table>
+
+![](images/cc4b5c527b9ba18064d46137d91b7410a463dd4e760e9e033b6c0cbc851f2a8f.jpg)
+
+Asia Summer School 2026
+
+HONG KONG/CHINA INSURANCE
+
+Asia Pacific
+
+Industry View
+
+Attractive
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+Exhibit 1: Southbound holdings of H-share listed insurers and changes in June 2026  
+![](images/6b7133e7c853d8830887ffd895eac9543d1883df11936a419e4efc35b06a6dc8.jpg)  
+Source: Wind, MS. \*Note: Changes between May 29 and June 30
+
+![](images/731e303839acf8a25c6afe4ec983cd4125de0633e6788298db803be09e5da2ee.jpg)
+
+Exhibit 2: H-share listed insurers' holdings among long-only EM and China active managers  
+![](images/de072d8db9048add63245981353fc16074d586543f7dd55c4e28c1b014480786.jpg)
+
+![](images/abef462e5c907938aa4513350bc062b157983d23463f6570dcc4206b42af4afb.jpg)  
+Source: FactSet, MorningStar, EPFR, MS. Note: % are expressed as a share of overall CN/HK holdings; Data refreshed as of June 30, 2026; most funds have disclosed position data up to May 31.
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Richard Xu, CFA; Rick Zhao.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of June 30, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: AIA Group Ltd, China Life Insurance Co Ltd, China Pacific Insurance Group Co Ltd, Ping An Insurance Group Co of China Ltd.
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of China Pacific Insurance Group Co Ltd, FWD Group Holdings Ltd. Within the last 12 months, MS has received compensation for investment banking services from China Pacific Insurance Group Co Ltd, FWD Group Holdings Ltd, Ping An Insurance Group Co of China Ltd.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from AIA Group Ltd, China Life Insurance Co Ltd, China Pacific Insurance Group Co Ltd, China Taiping Insurance Holdings Co Ltd, FWD Group Holdings Ltd, New China Life Insurance Company Ltd, PICC Group, Ping An Insurance Group Co of China Ltd, ZhongAn Online P & C Insurance Co Ltd.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from AIA Group Ltd, China Life Insurance Co Ltd, China Taiping Insurance Holdings Co Ltd, FWD Group Holdings Ltd, PICC Group, Ping An Insurance Group Co of China Ltd, ZhongAn Online P & C Insurance Co Ltd.
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: AIA Group Ltd, China Life Insurance Co Ltd, China Pacific Insurance Group Co Ltd, China Taiping Insurance Holdings Co Ltd, FWD Group Holdings Ltd, New China Life Insurance Company Ltd, PICC Group, Ping An Insurance Group Co of China Ltd, ZhongAn Online P & C Insurance Co Ltd.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: AIA Group Ltd, China Life Insurance Co Ltd, China Pacific Insurance Group Co Ltd, China Taiping Insurance Holdings Co Ltd, FWD Group Holdings Ltd, New China Life Insurance Company Ltd, PICC Group, PICC P&C Company Ltd, Ping An Insurance Group Co of China Ltd, ZhongAn Online P & C Insurance Co Ltd.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+(as of June 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment Services Clients (MISC)</td></tr><tr><td>Stock Rating Category</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of Rating Category</td><td>Count</td><td>% of Total Other MISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is a
+
+[中间内容因长度限制已省略]
+
+ Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of AIA Group Ltd, China Life Insurance Co Ltd, China Pacific Insurance Group Co Ltd, New China Life Insurance Company Ltd, PICC Group, PICC P&C Company Ltd, Ping An Insurance Group Co of China Ltd, ZhongAn Online P & C Insurance Co Ltd listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+## INDUSTRY COVERAGE: Hong Kong/China Insurance
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (07/15/2026)</td></tr><tr><td colspan="3">Richard Xu, CFA</td></tr><tr><td>AIA Group Ltd (1299.HK)</td><td>O (12/12/2023)</td><td>HK$76.20</td></tr><tr><td>FWD Group Holdings Ltd (1828.HK)</td><td>O (08/13/2025)</td><td>HK$29.54</td></tr><tr><td>Ping An Insurance Group Co of China Ltd (2318.HK)</td><td>O (05/30/2023)</td><td>HK$54.40</td></tr><tr><td>Ping An Insurance Group Co of China Ltd (601318.SS)</td><td>O (05/30/2023)</td><td>Rmb50.95</td></tr><tr><td colspan="3">Rick Zhao</td></tr><tr><td>China Life Insurance Co Ltd (601628.SS)</td><td>E (05/30/2023)</td><td>Rmb40.42</td></tr><tr><td>China Life Insurance Co Ltd (2628.HK)</td><td>O (05/30/2023)</td><td>HK$28.00</td></tr><tr><td>China Pacific Insurance Group Co Ltd (601601.SS)</td><td>O (06/07/2024)</td><td>Rmb31.36</td></tr><tr><td>China Pacific Insurance Group Co Ltd (2601.HK)</td><td>O (05/30/2023)</td><td>HK$28.68</td></tr><tr><td>China Taiping Insurance Holdings Co Ltd (0966.HK)</td><td>E (05/30/2023)</td><td>HK$19.42</td></tr><tr><td>New China Life Insurance Company Ltd (601336.SS)</td><td>U (05/30/2023)</td><td>Rmb65.55</td></tr><tr><td>New China Life Insurance Company Ltd (1336.HK)</td><td>U (07/31/2025)</td><td>HK$47.04</td></tr><tr><td>PICC Group (1339.HK)</td><td>O (09/23/2024)</td><td>HK$5.18</td></tr><tr><td>PICC Group (601319.SS)</td><td>E (07/31/2025)</td><td>Rmb7.41</td></tr><tr><td>PICC P&amp;C Company Ltd (2328.HK)</td><td>O (05/30/2023)</td><td>HK$14.27</td></tr><tr><td>ZhongAn Online P &amp; C Insurance Co Ltd (6060.HK)</td><td>O (05/30/2023)</td><td>HK$10.18</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+© 2026 MS
+"""

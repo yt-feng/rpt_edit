@@ -1,0 +1,120 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_ynsirw6n/pdfs/0001-56-MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260715.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "AI服务器下一波升级",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-56-MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260715.pdf",
+    "cleaned_source_title": "MS-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components",
+    "institution_name": "MS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "MS：AIGreater中国科技硬件Building",
+    "raw_candidates": [
+      "大中华科技硬件：计算基石、服务器、AI基础设施与电子组件",
+      "大中华科技硬件：AI服务器设计换代，PCB与ABF载板供应紧张",
+      "大中华科技硬件：Vera Rubin与Kyber架构驱动机架级重新设计"
+    ],
+    "cleaned_candidates": [
+      "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+      "MS：大中华科技硬件，AI服务器设计换代",
+      "MS：大中华科技硬件",
+      "MS：AIGreater中国科技硬件Building",
+      "MS：AI服务器硬件升级，供应链正在经历一次“设计换代”"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：大中华科技硬件，AI服务器设计换代",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：大中华科技硬件",
+        "reasons": [
+          "missing_required_terms=AI",
+          "body_too_short",
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：AIGreater中国科技硬件Building",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：AI服务器硬件升级，供应链正在经历一次“设计换代”",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：大中华科技硬件，计算基石、服务器、AI基础设施与电子组件"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "528",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
