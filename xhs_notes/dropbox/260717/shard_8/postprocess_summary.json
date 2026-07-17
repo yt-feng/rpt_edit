@@ -1,0 +1,570 @@
+[
+  {
+    "item": "0001-41-J.P.-Morgan-Kelun-Biotech-6990.HK--The-first-PD-1-sac-TMT-Ph3-win-over-P",
+    "source_pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0001-41-JPM-Kelun Biotech-6990.HK- The first PD-1-sac-TMT Ph3 win over PD-1-chemo- raising PT on higher PoS-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "ADC+PD-1组合",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x7",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-JPM-Kelun Biotech-6990.HK- The first PD-1-sac-TMT Ph3 win over PD-1-chemo- raising PT on higher PoS-260716.pdf",
+      "cleaned_source_title": "JPM-Kelun Biotech-6990.HK- The first PD-1-sac-TMT Ph3 win over PD-1-chemo- raising PT on higher PoS",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：KelunBiotech",
+      "raw_candidates": [
+        "科伦博泰PD-1-sac-TMT III期击败PD-1-化疗",
+        "科伦博泰III期胜出-JPM上调目标价至648港元",
+        "科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗"
+      ],
+      "cleaned_candidates": [
+        "JPM：科伦博泰PD-1-sac-TMTIII期击败PD-1-化疗",
+        "JPM",
+        "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗",
+        "JPM：KelunBiotech",
+        "JPM：从6月初低点至今，公司报价已回升38%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "incomplete_last_segment"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：科伦博泰PD-1-sac-TMTIII期击败PD-1-化疗",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：KelunBiotech",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：从6月初低点至今，公司报价已回升38%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：科伦博泰ADC改写标准治疗-头对头击败Keytruda+化疗"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-42-J.P.-Morgan-Li-Ning--2331.HK-Retail-headwinds-in-2Q--in-line--sustained-",
+    "source_pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0002-42-JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "李宁Q2承压，但长期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：李宁二季度零售承压-库存改善至4个月",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW-260716.pdf",
+      "cleaned_source_title": "JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LiNingRetailheadwindsin2",
+      "raw_candidates": [
+        "李宁二季度零售承压-维持增持",
+        "李宁二季度零售承压-库存改善至4个月",
+        "李宁二季度零售承压-折扣加深但库存改善"
+      ],
+      "cleaned_candidates": [
+        "JPM：李宁二季度零售承压-更新公司观点",
+        "JPM：李宁二季度零售承压-库存改善至4个月",
+        "JPM：李宁二季度零售承压-折扣加深但库存改善",
+        "JPM：LiNingRetailheadwindsin2",
+        "JPM：线上分别加深中个位数和低个位数，整体折扣在65折左右）"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "generic_series_title"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：李宁二季度零售承压-更新公司观点",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：李宁二季度零售承压-折扣加深但库存改善",
+          "reasons": [
+            "anchor_coverage=0.69"
+          ]
+        },
+        {
+          "title": "JPM：LiNingRetailheadwindsin2",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：线上分别加深中个位数和低个位数，整体折扣在65折左右）",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：李宁二季度零售承压-库存改善至4个月",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "4"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：李宁二季度零售承压-库存改善至4个月"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-43-J.P.-Morgan-MedTech---Healthcare-Services-Sector-Impact-of-DX-and-AI-ado",
+    "source_pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0003-43-JPM-MedTech - Healthcare Services Sector-Impact of DX and AI adoption in healthcare- Initiatives that will lead to future market share gains are underway behind the.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "医院悄悄上AI，谁在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "不好|不行->需要继续观察 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-JPM-MedTech - Healthcare Services Sector-Impact of DX and AI adoption in healthcare- Initiatives that will lead to future market share gains are underway behind the.pdf",
+      "cleaned_source_title": "JPM-MedTech - Healthcare Services Sector-Impact of DX and AI adoption in healthcare- Initiatives that will lead to future market share gains are underway behind the",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "JPM：AIMedTechHealthcareServi",
+      "raw_candidates": [
+        "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+        "JPM：日本医院AI补贴最高8000万日元-设备商降本竞争",
+        "JPM：日本医院AI加速-设备商真正战场是降低固定成本"
+      ],
+      "cleaned_candidates": [
+        "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+        "JPM：日本医院AI补贴最高8000万日元-设备商降本竞争",
+        "JPM：日本医院AI加速-设备商真正战场是降低固定成本",
+        "JPM：AIMedTechHealthcareServi",
+        "JPM：1.医院端的AI采纳已从“试点”进入“可量化效率”阶段"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：日本医院AI补贴最高8000万日元-设备商降本竞争",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：日本医院AI加速-设备商真正战场是降低固定成本",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：AIMedTechHealthcareServi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：1.医院端的AI采纳已从“试点”进入“可量化效率”阶段",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：医疗科技与医疗服务-AI应用影响-市场份额增长举措已启动"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-44-J.P.-Morgan-Tango-Therapeutics-TNGX.US-It-Takes-Two-to-Make-a-Revolution",
+    "source_pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0004-44-JPM-Tango Therapeutics-TNGX.US-It Takes Two to Make a Revolution- Initiate at OW-260715.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "一款组合疗法，改写胰",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x3",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-JPM-Tango Therapeutics-TNGX.US-It Takes Two to Make a Revolution- Initiate at OW-260715.pdf",
+      "cleaned_source_title": "JPM-Tango Therapeutics-TNGX.US-It Takes Two to Make a Revolution- Initiate at OW",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：TangoTherapeuticsItTak",
+      "raw_candidates": [
+        "Tango Therapeutics：组合疗法开启胰腺癌革命",
+        "Tango组合疗法：92%客观缓解率突破胰腺癌治疗",
+        "Tango联手Revolution：胰腺癌二线治疗ORR从30%跃升至92%"
+      ],
+      "cleaned_candidates": [
+        "JPM：TangoTherapeutics，组合疗法开启胰腺癌革命",
+        "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗",
+        "JPM：Tango联手Revolution",
+        "JPM：TangoTherapeuticsItTak",
+        "JPM：二线治疗的中位总生存期徘徊在6个月左右，客观缓解率仅10%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：TangoTherapeutics，组合疗法开启胰腺癌革命",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：Tango联手Revolution",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：TangoTherapeuticsItTak",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：二线治疗的中位总生存期徘徊在6个月左右，客观缓解率仅10%",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "92"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：Tango组合疗法，92%客观缓解率突破胰腺癌治疗"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-45-J.P.-Morgan-Technology---Electronic-Components-Industry-data-260716",
+    "source_pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0005-45-JPM-Technology - Electronic Components Industry data-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "电子元器件，需求拐点",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：电子元器件行业数据",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-JPM-Technology - Electronic Components Industry data-260716.pdf",
+      "cleaned_source_title": "JPM-Technology - Electronic Components Industry data",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：科技ElectronicComponents",
+      "raw_candidates": [
+        "电子元器件行业数据",
+        "电子元器件行业数据：2026年智能手机出货预计下滑11%",
+        "电子元器件需求拐点或晚于预期-JPM"
+      ],
+      "cleaned_candidates": [
+        "JPM：电子元器件行业数据",
+        "JPM：电子元器件行业数据，2026年智能手机出货预计下滑11%",
+        "JPM：电子元器件需求拐点或晚于预期-JPM",
+        "JPM：科技ElectronicComponents",
+        "JPM：传递的核心信号是，2025年下半年至2026年"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：电子元器件行业数据，2026年智能手机出货预计下滑11%",
+          "reasons": [
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "JPM：电子元器件需求拐点或晚于预期-JPM",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "JPM：科技ElectronicComponents",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：传递的核心信号是，2025年下半年至2026年",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：电子元器件行业数据",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：电子元器件行业数据"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

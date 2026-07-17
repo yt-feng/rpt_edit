@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0001-41-JPM-Kelun Biotech-6990.HK- The first PD-1-sac-TMT Ph3 win over PD-1-chemo- raising PT on higher PoS-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0002-42-JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0003-43-JPM-MedTech - Healthcare Services Sector-Impact of DX and AI adoption in healthcare- Initiatives that will lead to future market share gains are underway behind the.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0004-44-JPM-Tango Therapeutics-TNGX.US-It Takes Two to Make a Revolution- Initiate at OW-260715.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8aa8lcl6/pdfs/0005-45-JPM-Technology - Electronic Components Industry data-260716.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

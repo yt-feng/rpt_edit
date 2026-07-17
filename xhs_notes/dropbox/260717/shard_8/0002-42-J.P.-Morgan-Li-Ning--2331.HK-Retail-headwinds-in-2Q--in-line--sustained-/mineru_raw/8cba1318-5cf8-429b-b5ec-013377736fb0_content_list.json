@@ -1,0 +1,1937 @@
+[
+    {
+        "type": "text",
+        "text": "JPM",
+        "text_level": 1,
+        "bbox": [
+            133,
+            23,
+            346,
+            61
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Li Ning (2331)",
+        "text_level": 2,
+        "bbox": [
+            138,
+            107,
+            357,
+            137
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Retail headwinds in 2Q, in-line; sustained investments for long-term growth; maintain OW",
+        "text_level": 2,
+        "bbox": [
+            135,
+            142,
+            589,
+            183
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Li Ning reported 2Q operational updates with retail sell-through facing headwinds (down LSD if excl. kids and flat incl. kids), in-line with our expectations (see report). This was mainly due to weaker-than-expected traffic amid a lukewarm retail environment and unfavorable weather. Inventory level remained robust at c.4 months (vs. c.5 months as of 1Q) with a healthy inventory age profile, despite deepened discounts (offline/online by MSD/LSD; overall at mid-30s off). Despite headwinds lingering in early July, management maintained its full year guidance (sales +HSD, HSD NPM), given multiple catalysts to boost the retail trend in 2H (such as the launch of the new cushioned running shoe collection, the debut of the Loong store and the Asian Games-related campaigns) and initiatives to uphold margins (such as supply-chain optimization, closing underperforming stores, efficiency enhancement, etc.). Meanwhile, management reaffirmed its commitment to long-term strategic investments, including R&D (such as the newly launched BOOM Arc technology) and brand equity (such as the partnership with Curry and sponsorship of elite athletes and top-tier sports events). This strengthened our confidence in Li Ning's long-term recovery. We maintain our 2026-28 earnings estimates. Our DCF-based Dec-26 PT of HK\\$23 implies a 12-month forward P/E of 17x. Maintain OW.",
+        "bbox": [
+            133,
+            196,
+            663,
+            536
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Progress of the Curry partnership. Regarding products, a dedicated team has been set up for the Curry brand and it has kicked off product planning. The products will focus on basketball in 2H and a broader range of products (such as lifestyle and golf) will be rolled-out in 2027. The commemorative T-shirt launched in July was welcomed by consumers. Regarding expenses, related expenses include signing fees, co-branding fees and operational and marketing expenses. As a long term partnership, the related expenses will be amortized during the partnership. The financial impact on 2026 shall be limited, per management.",
+        "bbox": [
+            135,
+            545,
+            663,
+            709
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Swing factors on margin in 2H. Despite challenges on margin, management has rolled out multiple initiatives to maintain a solid margin profile. The challenges include: 1) pressures on discount levels amid the lukewarm retail environment which would weigh on GPM; and 2) increase in A&P expenses, given the Curry partnership, Asian Games-related campaigns, and sponsorship of sports events (such as the Chengdu Marathon). The initiatives include: 1) supply chain optimization, such as pre-locked raw material prices and product design optimization to offset deeper discounts; 2) strict control on non-essential expenses, such as closure of",
+        "bbox": [
+            135,
+            718,
+            663,
+            880
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Overweight",
+        "text_level": 2,
+        "bbox": [
+            694,
+            97,
+            828,
+            119
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2331.HK, 2331 HK\nPrice (15 Jul 26): HK\\$15.12",
+        "bbox": [
+            694,
+            122,
+            864,
+            152
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Price Target (Dec-26): HK\\$23.00",
+        "bbox": [
+            694,
+            156,
+            901,
+            172
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "China",
+        "text_level": 2,
+        "bbox": [
+            691,
+            203,
+            738,
+            219
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Consumer",
+        "bbox": [
+            691,
+            219,
+            772,
+            234
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Qian Yao AC\n(86-21) 6106 6277\nqian.q.yao@JPM.com\nSAC Registration Number: S1730521050001",
+        "bbox": [
+            691,
+            237,
+            926,
+            292
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Carson Fan\n(86-21) 6106-6294\nrong.fan@JPM.com\nSAC Registration Number: S1730522070002\nJPM Securities (China) Company Limited",
+        "bbox": [
+            691,
+            292,
+            947,
+            362
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Style Exposure",
+        "text_level": 2,
+        "bbox": [
+            692,
+            378,
+            803,
+            395
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/14af54323697bb51e4eb3e429b172b43e3ff120e773f7db2844e7204f23c81d0.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Quant Factors</td><td rowspan=\"2\">Current %Rank</td><td colspan=\"4\">Hist %Rank (1=Top)</td></tr><tr><td>6M</td><td>1Y</td><td>3Y</td><td>5Y</td></tr><tr><td>Value</td><td>55</td><td>47</td><td>45</td><td>74</td><td>86</td></tr><tr><td>Growth</td><td>78</td><td>87</td><td>75</td><td>32</td><td>26</td></tr><tr><td>Momentum</td><td>19</td><td>56</td><td>67</td><td>71</td><td>13</td></tr><tr><td>Quality</td><td>43</td><td>46</td><td>35</td><td>22</td><td>16</td></tr><tr><td>Low Vol</td><td>48</td><td>63</td><td>81</td><td>85</td><td>78</td></tr><tr><td>ESGQ</td><td>95</td><td>27</td><td>13</td><td>9</td><td>3</td></tr></table>",
+        "bbox": [
+            692,
+            398,
+            950,
+            520
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "10 Jul 2026 Li Ning: Industry softness weighed pressures in 2Q; long-term recovery trend intact; maintain OW",
+        "bbox": [
+            694,
+            525,
+            919,
+            564
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "10 Jul 2026 China Sportswear: Takeaways from expert call",
+        "bbox": [
+            694,
+            571,
+            950,
+            599
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "22 Jun 2026 China Sportswear: How can brands be successful in China – lessons from Adidas \"Urban Errand\" viral marketing campaign",
+        "bbox": [
+            694,
+            606,
+            950,
+            657
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2 Jun 2026 Li Ning: Landmark partnership with Curry",
+        "bbox": [
+            694,
+            664,
+            944,
+            691
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "27 Apr 2026 China Sportswear: What's moving in the landscape",
+        "bbox": [
+            694,
+            699,
+            928,
+            726
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "22 Apr 2026 Li Ning: 1Q26 in line; validated recovery signals; maintain OW",
+        "bbox": [
+            694,
+            734,
+            952,
+            761
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "23 Mar 2026 Li Ning: Earlier than expected recovery; upgrade to OW",
+        "bbox": [
+            694,
+            768,
+            950,
+            796
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "28 Feb 2026 China Sportswear: Takeaways from expert call",
+        "bbox": [
+            694,
+            804,
+            885,
+            830
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "J.D.Morgan",
+        "bbox": [
+            1,
+            561,
+            96,
+            881
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            697,
+            25,
+            905,
+            54
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Sources for: Style Exposure – JPM Quantitative and Derivatives Strategy; all other tables are company data and JPM estimates.",
+        "bbox": [
+            135,
+            898,
+            738,
+            915
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See page 6 for analyst certification and important disclosures, including non-US analyst disclosures.",
+        "bbox": [
+            135,
+            936,
+            849,
+            955
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": ".com",
+        "bbox": [
+            928,
+            967,
+            968,
+            981
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "underperforming stores; and 3) efficiency enhancement.",
+        "bbox": [
+            150,
+            148,
+            560,
+            167
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- 2Q26 in-line. Li Ning's (excl. kids) 2Q26 retail sell-through declined by LSD yoy, while it was flat if incl. kids (kids +low-teens). By channel, e-commerce grew by MSD, and offline declined by LSD (retail down LSD despite outlets delivering positive growth; wholesale down MSD). By category, core categories all faced headwinds (running and lifestyle turned negative; basketball saw widening declines), despite fitness remaining resilient (driven by functional apparels) and outdoor and Glory collections maintaining momentum (representing MSD and LSD of overall retail sell-through, respectively; in-line with the management's expectations). As of 2Q26, Li Ning Adults POS in China amounted to 6,063, net -28 vs. 2025, with retail/wholesale -66/+38. Li Ning Young POS totaled 1,516, net +2 vs. 2025.",
+        "bbox": [
+            137,
+            176,
+            663,
+            387
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            89,
+            25,
+            230,
+            59
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            23,
+            504,
+            47
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            55,
+            947,
+            78
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            89,
+            943,
+            99,
+            954
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0562bd5635f70923807f8e15399bd3d74dffa51fcfa4885d34765d78709a7cf3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Price Performance"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            70,
+            162,
+            478,
+            289
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/44c0952ae5788e6359dcec100bde6d12d54de0a02f465fae26d0a02ea685a7c8.jpg",
+        "table_caption": [
+            "— 2331.HK Price (HK\\$) HSCEI (rebased)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>YTD</td><td>1m</td><td>3m</td><td>12m</td></tr><tr><td>Abs</td><td>-19.0%</td><td>-12.4%</td><td>-28.1%</td><td>-4.8%</td></tr><tr><td>Rel</td><td>-10.8%</td><td>-10.1%</td><td>-21.9%</td><td>3.0%</td></tr></table>",
+        "bbox": [
+            86,
+            313,
+            485,
+            352
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/54902714bb4ff4c87ac40f0b59c5dcfe61b05412bb07d7e3b910391408114e7c.jpg",
+        "table_caption": [
+            "Company Data"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Shares O/S (mn)</td><td>2,585</td></tr><tr><td>52-week range (HK$)</td><td>23.42-14.21</td></tr><tr><td>Market cap ($ mn)</td><td>4,986</td></tr><tr><td>Exchange rate</td><td>7.84</td></tr><tr><td>Free float (%)</td><td>85.3%</td></tr><tr><td>3M ADV (mn)</td><td>20.65</td></tr><tr><td>3M ADV ($ mn)</td><td>46.9</td></tr><tr><td>Volatility (90 Day)</td><td>36</td></tr><tr><td>Index</td><td>HSCEI</td></tr><tr><td>BBG ANR (Buy | Hold | Sell)</td><td>42|6|1</td></tr></table>",
+        "bbox": [
+            58,
+            376,
+            480,
+            498
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/03821f4a0b4d683799676111946eeee3d04d41846bb88b40100b24f480cab154.jpg",
+        "table_caption": [
+            "Key Metrics (FYE Dec)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Rmb in millions</td><td>FY25A</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td colspan=\"5\">Financial Estimates</td></tr><tr><td>Revenue</td><td>29,598</td><td>31,351</td><td>32,617</td><td>33,933</td></tr><tr><td>Adj. EBITDA</td><td>4,444</td><td>4,310</td><td>4,944</td><td>5,461</td></tr><tr><td>Adj. EBIT</td><td>3,669</td><td>3,537</td><td>3,990</td><td>4,384</td></tr><tr><td>Adj. net income</td><td>2,936</td><td>2,820</td><td>3,129</td><td>3,384</td></tr><tr><td>Adj. EPS</td><td>1.14</td><td>1.09</td><td>1.21</td><td>1.31</td></tr><tr><td>BBG EPS</td><td>1.03</td><td>1.18</td><td>1.32</td><td>1.48</td></tr><tr><td>Cashflow from operations</td><td>4,852</td><td>3,000</td><td>4,130</td><td>4,555</td></tr><tr><td>FCFF</td><td>4,794</td><td>979</td><td>2,049</td><td>2,426</td></tr><tr><td colspan=\"5\">Margins and Growth</td></tr><tr><td>Revenue Growth Y/Y (%)</td><td>3.2%</td><td>5.9%</td><td>4.0%</td><td>4.0%</td></tr><tr><td>Gross margin</td><td>49.0%</td><td>49.1%</td><td>49.3%</td><td>49.6%</td></tr><tr><td>EBITDA margin</td><td>15.0%</td><td>13.7%</td><td>15.2%</td><td>16.1%</td></tr><tr><td>EBIT margin</td><td>12.4%</td><td>11.3%</td><td>12.2%</td><td>12.9%</td></tr><tr><td>Adj. EPS growth</td><td>(2.1%)</td><td>(3.9%)</td><td>11.0%</td><td>8.1%</td></tr><tr><td colspan=\"5\">Ratios</td></tr><tr><td>Adj. tax rate</td><td>29.9%</td><td>29.9%</td><td>29.9%</td><td>29.9%</td></tr><tr><td>Interest cover</td><td>NM</td><td>NM</td><td>NM</td><td>261.1</td></tr><tr><td>Net debt/Equity</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>Net debt/EBITDA</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>ROCE</td><td>9.6%</td><td>8.7%</td><td>9.4%</td><td>9.8%</td></tr><tr><td>ROE</td><td>10.9%</td><td>10.0%</td><td>10.5%</td><td>10.8%</td></tr><tr><td colspan=\"5\">Valuation</td></tr><tr><td>FCFF yield</td><td>14.2%</td><td>2.9%</td><td>6.1%</td><td>7.2%</td></tr><tr><td>Dividend yield</td><td>4.3%</td><td>4.2%</td><td>4.6%</td><td>5.0%</td></tr><tr><td>EV/Revenue</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td></tr><tr><td>EV/EBITDA</td><td>2.9</td><td>3.1</td><td>2.6</td><td>2.2</td></tr><tr><td>Adj. P/E</td><td>11.5</td><td>12.0</td><td>10.8</td><td>10.0</td></tr></table>",
+        "bbox": [
+            58,
+            518,
+            480,
+            861
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Summary Investment Thesis and Valuation",
+        "text_level": 2,
+        "bbox": [
+            517,
+            148,
+            825,
+            164
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Li Ning is the second-largest domestic sportswear player in China, with a 9.4% market share in 2025 (source: Euromonitor). We have been looking for two signs of a recovery at Li Ning: 1) a regaining of market share after a loss since 2022 (a 1.3ppt loss, per Euromonitor); and 2) relatively effective cost control. Li Ning has now shown us both signs, and its 1Q results validate our confidence in its recovery. Maintain OW.",
+        "bbox": [
+            517,
+            169,
+            934,
+            292
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Our DCF-based Dec-26 PT of HK\\$23 implies a 17x 2027E P/E. We derive our 10.1% WACC by assuming a 4.5% risk-free rate, a 7.0% risk premium, a 12.2% cost of equity and a terminal growth rate of 2.0%.",
+        "bbox": [
+            517,
+            305,
+            921,
+            368
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d58183d0359f878409fcf94ce6efc9f3c60d4a5fc76d622512e3ac90bd78ac12.jpg",
+        "content": "",
+        "chart_caption": [
+            "Performance Drivers"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            519,
+            390,
+            934,
+            493
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/52908a3db8648f5bff748a6e0776bbafd6547f882b673ffedcdf0c1f79ac7e5b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Factors</td><td>6M Corr</td><td>1Y Corr</td></tr><tr><td>Market: MSCI Asia Pac ex JP</td><td>0.11</td><td>0.16</td></tr><tr><td>Region: China</td><td>-0.31</td><td>0.11</td></tr><tr><td colspan=\"3\">Macro:</td></tr><tr><td>JPM GBI-EM Global Div</td><td>0.22</td><td>0.25</td></tr><tr><td>JPM EM Currency(EMCI) Fixing</td><td>0.10</td><td>0.18</td></tr><tr><td>JPM China A-shares Sentiment</td><td>0.08</td><td>0.17</td></tr><tr><td colspan=\"3\">Quant Styles:</td></tr><tr><td>Quality</td><td>-0.23</td><td>-0.16</td></tr><tr><td>Size</td><td>-0.45</td><td>-0.16</td></tr><tr><td>Growth</td><td>-0.25</td><td>-0.12</td></tr></table>",
+        "bbox": [
+            519,
+            494,
+            934,
+            665
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            56,
+            230,
+            90
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            808,
+            55,
+            929,
+            78
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Source: JPM Quantitative and Derivatives Strategy for Performance Drivers; company data, Bloomberg Finance L.P. and JPM estimates for all other tables. Note: Price history may not be complete or exact.",
+        "bbox": [
+            53,
+            935,
+            937,
+            959
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            924,
+            952,
+            937,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Investment Thesis, Valuation and Risks",
+        "text_level": 2,
+        "bbox": [
+            341,
+            157,
+            864,
+            183
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Li Ning Co Ltd (Overweight; Price Target: HK\\$23.00)",
+        "bbox": [
+            341,
+            199,
+            761,
+            217
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Investment Thesis",
+        "text_level": 2,
+        "bbox": [
+            341,
+            220,
+            475,
+            236
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Li Ning is the second-largest domestic sportswear player in China, with a 9.4% market share in 2025 (source: Euromonitor). We have been looking for two signs of a recovery at Li Ning: 1) a regaining of market share after a loss since 2022 (a 1.3ppt loss, per Euromonitor); and 2) relatively effective cost control. Li Ning has now shown us both signs, and its 1Q results validate our confidence in its recovery. Maintain OW.",
+        "bbox": [
+            341,
+            239,
+            906,
+            330
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Valuation",
+        "text_level": 2,
+        "bbox": [
+            341,
+            344,
+            418,
+            359
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Our DCF-based Dec-26 PT of HK\\$23 implies a 17x 2027E P/E. We derive our 10.1% WACC by assuming a 4.5% risk-free rate, a 7.0% risk premium, a 12.2% cost of equity and a terminal growth rate of 2.0%.",
+        "bbox": [
+            341,
+            362,
+            906,
+            410
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/d35a629325b983c295c3d0e5c40d173f4fbc95f696a7a913a3f65f677b9c9af2.jpg",
+        "table_caption": [
+            "DCF valuation"
+        ],
+        "table_footnote": [
+            "Source: JPM estimates."
+        ],
+        "table_body": "<table><tr><td>Rmb in millions</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td><td>2032E</td><td>2033E</td><td>2034E</td></tr><tr><td>Sales</td><td>31,351</td><td>32,617</td><td>33,933</td><td>34,961</td><td>35,662</td><td>36,265</td><td>36,874</td><td>37,489</td><td>38,109</td></tr><tr><td>EBIT</td><td>3,537</td><td>3,990</td><td>4,384</td><td>4,517</td><td>4,608</td><td>4,685</td><td>4,764</td><td>4,844</td><td>4,924</td></tr><tr><td>Investment income from associate</td><td>273</td><td>284</td><td>296</td><td>305</td><td>311</td><td>316</td><td>321</td><td>327</td><td>332</td></tr><tr><td>Tax rate %</td><td>30%</td><td>30%</td><td>30%</td><td>30%</td><td>30%</td><td>30%</td><td>30%</td><td>30%</td><td>30%</td></tr><tr><td>NOPAT</td><td>2,670</td><td>2,995</td><td>3,279</td><td>3,379</td><td>3,447</td><td>3,505</td><td>3,564</td><td>3,623</td><td>3,683</td></tr><tr><td>D&amp;A</td><td>773</td><td>954</td><td>1,121</td><td>1,276</td><td>1,417</td><td>1,544</td><td>1,658</td><td>1,761</td><td>1,854</td></tr><tr><td>W.C. change</td><td>-593</td><td>46</td><td>51</td><td>36</td><td>24</td><td>21</td><td>21</td><td>224</td><td>243</td></tr><tr><td>Capex</td><td>-1,948</td><td>-2,028</td><td>-2,112</td><td>-2,177</td><td>-2,221</td><td>-2,260</td><td>-2,298</td><td>-2,337</td><td>-2,376</td></tr><tr><td>as % of sales</td><td>-6.2%</td><td>-6.2%</td><td>-6.2%</td><td>-6.2%</td><td>-6.2%</td><td>-6.2%</td><td>-6.2%</td><td>-6.2%</td><td>-6.2%</td></tr><tr><td>FCFF</td><td>902</td><td>1,967</td><td>2,339</td><td>2,513</td><td>2,667</td><td>2,811</td><td>2,945</td><td>3,271</td><td>3,404</td></tr><tr><td>NPV of FCFF</td><td>14,958</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of terminal value</td><td>19,899</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Net debt</td><td>-17,419</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Minority</td><td>0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity value</td><td>52,275</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td># of shares O/S (in millions)</td><td>2,586</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Value per share (Rmb)</td><td>20.2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Value per share (HK$)</td><td>23.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            204,
+            439,
+            913,
+            665
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Risks to Rating and Price Target",
+        "text_level": 2,
+        "bbox": [
+            343,
+            696,
+            578,
+            712
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Downside risks to our rating and price target include: 1) intensified competition from both international brands and domestic peers; 2) failure to execute strategies such as branding initiatives, new store formats, product innovation, etc.; 3) weaker-than-expected consumer sentiment; and 4) slower-than-expected margin expansion.",
+        "bbox": [
+            341,
+            714,
+            905,
+            777
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Upside catalysts include: (1) a greater-than-expected improvement in fundamentals, including enhancement in product offerings, channel optimization, elevation in brand equity, etc.; (2) better-than-expected consumer sentiment; and (3) earlier-than-expected margin expansion.",
+        "bbox": [
+            341,
+            789,
+            906,
+            852
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            78
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            89,
+            952,
+            99,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/8b6c332898381d920db46aa2cfe3ef8b7e181a0bf036906e4d8eb9858cfe7f80.jpg",
+        "table_caption": [
+            "Li Ning (2331): Summary of Financials"
+        ],
+        "table_footnote": [
+            "Source: Company reports and JPM estimates.",
+            "Note: Rmb in millions (except per-share data). Fiscal year ends Dec. o/w - out of which"
+        ],
+        "table_body": "<table><tr><td>Income Statement</td><td>FY24A</td><td>FY25A</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Revenue</td><td>28,676</td><td>29,598</td><td>31,351</td><td>32,617</td><td>33,933</td></tr><tr><td>COGS</td><td>(14,520)</td><td>(15,110)</td><td>(15,948)</td><td>(16,544)</td><td>(17,113)</td></tr><tr><td>Gross profit</td><td>14,156</td><td>14,489</td><td>15,402</td><td>16,074</td><td>16,820</td></tr><tr><td>SG&amp;A</td><td>(10,627)</td><td>(10,820)</td><td>(11,866)</td><td>(12,084)</td><td>(12,436)</td></tr><tr><td>Adj. EBITDA</td><td>4,687</td><td>4,444</td><td>4,310</td><td>4,944</td><td>5,461</td></tr><tr><td>D&amp;A</td><td>(1,158)</td><td>(775)</td><td>(773)</td><td>(954)</td><td>(1,077)</td></tr><tr><td>Adj. EBIT</td><td>3,529</td><td>3,669</td><td>3,537</td><td>3,990</td><td>4,384</td></tr><tr><td>Net Interest</td><td>175</td><td>33</td><td>57</td><td>28</td><td>(21)</td></tr><tr><td>Adj. PBT</td><td>4,110</td><td>4,189</td><td>4,024</td><td>4,465</td><td>4,828</td></tr><tr><td>Tax</td><td>(1,097)</td><td>(1,253)</td><td>(1,204)</td><td>(1,336)</td><td>(1,445)</td></tr><tr><td>Minority Interest</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Adj. Net Income</td><td>3,013</td><td>2,936</td><td>2,820</td><td>3,129</td><td>3,384</td></tr><tr><td>Reported EPS (Basic)</td><td>1.16</td><td>1.14</td><td>1.09</td><td>1.21</td><td>1.31</td></tr><tr><td>Adj. EPS</td><td>1.16</td><td>1.14</td><td>1.09</td><td>1.21</td><td>1.31</td></tr><tr><td>DPS</td><td>0.58</td><td>0.57</td><td>0.55</td><td>0.61</td><td>0.65</td></tr><tr><td>Payout ratio</td><td>50.0%</td><td>50.0%</td><td>50.0%</td><td>50.0%</td><td>50.0%</td></tr><tr><td>Shares outstanding</td><td>2,598</td><td>2,586</td><td>2,586</td><td>2,586</td><td>2,586</td></tr><tr><td>Balance Sheet</td><td>FY24A</td><td>FY25A</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Cash and cash equivalents</td><td>15,786</td><td>17,809</td><td>17,419</td><td>17,923</td><td>18,642</td></tr><tr><td>Accounts receivable</td><td>1,005</td><td>1,389</td><td>1,288</td><td>1,340</td><td>1,395</td></tr><tr><td>Inventories</td><td>2,598</td><td>2,694</td><td>2,793</td><td>2,897</td><td>2,997</td></tr><tr><td>Other current assets</td><td>1,139</td><td>1,058</td><td>1,072</td><td>1,082</td><td>1,092</td></tr><tr><td>Current assets</td><td>20,528</td><td>22,950</td><td>22,572</td><td>23,242</td><td>24,125</td></tr><tr><td>PP&amp;E</td><td>4,610</td><td>4,754</td><td>5,981</td><td>7,103</td><td>8,139</td></tr><tr><td>LT investments</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other non current assets</td><td>10,570</td><td>10,011</td><td>9,991</td><td>9,975</td><td>9,964</td></tr><tr><td>Total assets</td><td>35,708</td><td>37,714</td><td>38,544</td><td>40,321</td><td>42,228</td></tr><tr><td>Short term borrowings</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Payables</td><td>1,625</td><td>1,902</td><td>1,966</td><td>2,040</td><td>2,110</td></tr><tr><td>Other short term liabilities</td><td>5,961</td><td>6,159</td><td>5,515</td><td>5,654</td><td>5,799</td></tr><tr><td>Current liabilities</td><td>7,586</td><td>8,061</td><td>7,481</td><td>7,694</td><td>7,908</td></tr><tr><td>Long-term debt</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other long term liabilities</td><td>2,019</td><td>2,025</td><td>2,025</td><td>2,025</td><td>2,025</td></tr><tr><td>Total liabilities</td><td>9,605</td><td>10,087</td><td>9,506</td><td>9,719</td><td>9,934</td></tr><tr><td>Shareholders&#x27; equity</td><td>26,104</td><td>27,627</td><td>29,038</td><td>30,602</td><td>32,294</td></tr><tr><td>Minority interests</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Total liabilities &amp; equity</td><td>35,708</td><td>37,714</td><td>38,544</td><td>40,321</td><td>42,228</td></tr><tr><td>BVPS</td><td>10.05</td><td>10.68</td><td>11.23</td><td>11.83</td><td>12.49</td></tr><tr><td>y/y Growth</td><td>7.0%</td><td>6.3%</td><td>5.1%</td><td>5.4%</td><td>5.5%</td></tr><tr><td>Net debt/(cash)</td><td>(15,786)</td><td>(17,809)</td><td>(17,419)</td><td>(17,923)</td><td>(18,642)</td></tr></table>",
+        "bbox": [
+            84,
+            184,
+            473,
+            719
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/020a72a1c338206fa570d25e689008626e6dc5d9ee7f895346722fc264efc61d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Cash Flow Statement</td><td>FY24A</td><td>FY25A</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Cash flow from operating activities</td><td>5,268</td><td>4,852</td><td>3,000</td><td>4,130</td><td>4,555</td></tr><tr><td>o/w Depreciation &amp; amortization</td><td>1,158</td><td>775</td><td>773</td><td>954</td><td>1,077</td></tr><tr><td>o/w Changes in working capital</td><td>444</td><td>(27)</td><td>(593)</td><td>46</td><td>51</td></tr><tr><td>Cash flow from investing activities</td><td>(840)</td><td>6,634</td><td>(1,980)</td><td>(2,061)</td><td>(2,144)</td></tr><tr><td>o/w Capital expenditure</td><td>(3,316)</td><td>(34)</td><td>(1,980)</td><td>(2,061)</td><td>(2,144)</td></tr><tr><td>as % of sales</td><td>11.6%</td><td>0.1%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td></tr><tr><td>Cash flow from financing activities</td><td>(2,324)</td><td>(2,155)</td><td>(1,410)</td><td>(1,565)</td><td>(1,692)</td></tr><tr><td>o/w Dividends paid</td><td>(1,444)</td><td>(1,468)</td><td>(1,410)</td><td>(1,565)</td><td>(1,692)</td></tr><tr><td>o/w Shares issued/(repurchased)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>o/w Net debt issued/(repaid)</td><td>(856)</td><td>(687)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net change in cash</td><td>2,055</td><td>9,218</td><td>(391)</td><td>504</td><td>719</td></tr><tr><td>Adj. Free cash flow to firm</td><td>1,834</td><td>4,794</td><td>979</td><td>2,049</td><td>2,426</td></tr><tr><td>y/y Growth</td><td>(24.4%)</td><td>161.5%</td><td>(79.6%)</td><td>109.2%</td><td>18.4%</td></tr></table>",
+        "bbox": [
+            478,
+            183,
+            901,
+            388
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/21e9ceacbaba2e23a44febd7e14685ac4b336d21ae93c2a1c6d2012a88489882.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Ratio Analysis</td><td>FY24A</td><td>FY25A</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Gross margin</td><td>49.4%</td><td>49.0%</td><td>49.1%</td><td>49.3%</td><td>49.6%</td></tr><tr><td>EBITDA margin</td><td>16.3%</td><td>15.0%</td><td>13.7%</td><td>15.2%</td><td>16.1%</td></tr><tr><td>EBIT margin</td><td>12.3%</td><td>12.4%</td><td>11.3%</td><td>12.2%</td><td>12.9%</td></tr><tr><td>Net profit margin</td><td>10.5%</td><td>9.9%</td><td>9.0%</td><td>9.6%</td><td>10.0%</td></tr><tr><td>ROE</td><td>11.9%</td><td>10.9%</td><td>10.0%</td><td>10.5%</td><td>10.8%</td></tr><tr><td>ROA</td><td>8.6%</td><td>8.0%</td><td>7.4%</td><td>7.9%</td><td>8.2%</td></tr><tr><td>ROCE</td><td>10.2%</td><td>9.6%</td><td>8.7%</td><td>9.4%</td><td>9.8%</td></tr><tr><td>SG&amp;A/Sales</td><td>37.1%</td><td>36.6%</td><td>37.8%</td><td>37.0%</td><td>36.6%</td></tr><tr><td>Net debt/Equity</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>Net debt/EBITDA</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>Sales/Assets (x)</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td></tr><tr><td>Assets/Equity (x)</td><td>1.4</td><td>1.4</td><td>1.3</td><td>1.3</td><td>1.3</td></tr><tr><td>Interest cover (x)</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td><td>261.1</td></tr><tr><td>Operating leverage</td><td>436.3%</td><td>122.8%</td><td>(60.7%)</td><td>316.8%</td><td>245.1%</td></tr><tr><td>Tax rate</td><td>26.7%</td><td>29.9%</td><td>29.9%</td><td>29.9%</td><td>29.9%</td></tr><tr><td>Revenue y/y Growth</td><td>3.9%</td><td>3.2%</td><td>5.9%</td><td>4.0%</td><td>4.0%</td></tr><tr><td>EBITDA y/y Growth</td><td>14.7%</td><td>(5.2%)</td><td>(3.0%)</td><td>14.7%</td><td>10.5%</td></tr><tr><td>EPS y/y Growth</td><td>(5.5%)</td><td>(2.1%)</td><td>(3.9%)</td><td>11.0%</td><td>8.1%</td></tr><tr><td>Valuation</td><td>FY24A</td><td>FY25A</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td>P/E (x)</td><td>11.3</td><td>11.5</td><td>12.0</td><td>10.8</td><td>10.0</td></tr><tr><td>P/BV (x)</td><td>1.3</td><td>1.2</td><td>1.2</td><td>1.1</td><td>1.0</td></tr><tr><td>EV/EBITDA (x)</td><td>3.2</td><td>2.9</td><td>3.1</td><td>2.6</td><td>2.2</td></tr><tr><td>Dividend Yield</td><td>4.4%</td><td>4.3%</td><td>4.2%</td><td>4.6%</td><td>5.0%</td></tr></table>",
+        "bbox": [
+            477,
+            407,
+            901,
+            724
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            56,
+            230,
+            90
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            506,
+            80
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            77
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            897,
+            952,
+            908,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            84,
+            172,
+            903,
+            279
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            84,
+            285,
+            883,
+            325
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            86,
+            334,
+            250,
+            349
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Market Maker/ Liquidity Provider (Hong Kong): JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited and/or an affiliate is a market maker and/or liquidity provider in the securities of Li Ning (2331) or related entities and/or warrants or options thereon, which are listed or traded on The Stock Exchange of Hong Kong Limited.",
+        "bbox": [
+            84,
+            367,
+            903,
+            409
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: Li Ning (2331) or related entities.",
+        "bbox": [
+            84,
+            412,
+            875,
+            440
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from Li Ning (2331) or related entities.",
+        "bbox": [
+            86,
+            444,
+            872,
+            472
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Debt Position: JPM may hold a position in the debt securities of Li Ning (2331) or related entities, if any.",
+        "bbox": [
+            86,
+            474,
+            781,
+            489
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            84,
+            497,
+            890,
+            579
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/119d13c3adecf942fad659ffc41dbf63ac105567d3b012ee83cede8f7fefac3b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Li Ning (2331) (2331.HK, 2331 HK) Price Chart"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            93,
+            611,
+            576,
+            830
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/4f934f7d4c9d3464859a9adfb5fead3288fca7d5b026e21b7e5a7ecd289d91b3.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Sep 22, 2006. All share prices are as of market close on the previous business day."
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price (HK$)</td><td>Price Target (HK$)</td></tr><tr><td>14-Aug-23</td><td>OW</td><td>43.70</td><td>70</td></tr><tr><td>26-Oct-23</td><td>OW</td><td>30.20</td><td>56.4</td></tr><tr><td>03-Nov-23</td><td>OW</td><td>25.85</td><td>45.4</td></tr><tr><td>14-Jan-24</td><td>UW</td><td>18.00</td><td>14</td></tr><tr><td>25-Jul-24</td><td>UW</td><td>14.46</td><td>13.8</td></tr><tr><td>18-Aug-24</td><td>UW</td><td>13.10</td><td>11.9</td></tr><tr><td>24-Oct-24</td><td>UW</td><td>15.28</td><td>13.4</td></tr><tr><td>31-Mar-25</td><td>UW</td><td>17.16</td><td>13</td></tr><tr><td>25-Aug-25</td><td>UW</td><td>19.70</td><td>14.6</td></tr><tr><td>23-Mar-26</td><td>OW</td><td>21.44</td><td>25.6</td></tr><tr><td>10-Jul-26</td><td>OW</td><td>14.35</td><td>23</td></tr></table>",
+        "bbox": [
+            584,
+            587,
+            846,
+            766
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period.",
+        "bbox": [
+            84,
+            872,
+            883,
+            898
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated",
+        "bbox": [
+            86,
+            898,
+            723,
+            912
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            78
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            89,
+            952,
+            99,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            148,
+            656,
+            162
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            84,
+            162,
+            903,
+            348
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: Yao, Qian : Anta Sports (2020) (2020.HK), Best Pacific (2111) (2111.HK), Bosideng (3998.HK), Botanee (300957.SZ), CTG Duty-Free – A (601888.SS), Chicmax (2145.HK), Chow Tai Fook Jewellery (1929) (1929.HK), HLA Group Corp Ltd - A (600398.SS), Lao Feng Xiang - A (600612.SS), Laopu Gold - H (6181.HK), Li Ning (2331) (2331.HK), Luolai Lifestyle - A (002293.SZ), Luthai Textile - A (000726.SZ), Mao Geping - H (1318.HK), Marubi (603983.SS), Peacebird Fashion - A (603877.SS), Proya (603605.SS), Semir Garment - A (002563.SZ), Shanghai Jahwa (600315.SS), Shenzhou International (2313) (2313.HK), Xtep International (1368.HK)",
+        "bbox": [
+            84,
+            353,
+            906,
+            434
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/d78161a01d62ebc5264c10024b47ea4a0a10a5fbe2af6b2d75dc03ed710537af.jpg",
+        "table_caption": [
+            "JPM Equity Research Ratings Distribution, as of July 04, 2026"
+        ],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding.",
+            "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months.",
+            "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+        "bbox": [
+            80,
+            462,
+            624,
+            535
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            84,
+            633,
+            903,
+            715
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            722,
+            354,
+            734
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            84,
+            734,
+            897,
+            763
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            84,
+            779,
+            893,
+            806
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+        "bbox": [
+            84,
+            813,
+            906,
+            868
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            86,
+            875,
+            218,
+            888
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            84,
+            893,
+            849,
+            921
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            77
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            897,
+            952,
+            908,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            84,
+            148,
+            898,
+            178
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            84,
+            191,
+            885,
+            234
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            84,
+            250,
+            900,
+            277
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            84,
+            292,
+            897,
+            348
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            84,
+            362,
+            857,
+            404
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            84,
+            419,
+            887,
+            446
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            84,
+            462,
+            897,
+            544
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-",
+        "bbox": [
+            84,
+            558,
+            906,
+            612
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            86,
+            611,
+            808,
+            626
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            84,
+            632,
+            903,
+            674
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            84,
+            679,
+            900,
+            722
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            84,
+            728,
+            906,
+            861
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            867,
+            526,
+            881
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            84,
+            880,
+            872,
+            922
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            78
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            89,
+            952,
+            99,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits",
+        "bbox": [
+            84,
+            148,
+            906,
+            248
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            86,
+            250,
+            901,
+            292
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            86,
+            292,
+            846,
+            319
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            86,
+            319,
+            903,
+            358
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            86,
+            358,
+            609,
+            372
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            86,
+            371,
+            895,
+            397
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            86,
+            398,
+            901,
+            450
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            86,
+            450,
+            892,
+            502
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für",
+        "bbox": [
+            86,
+            502,
+            890,
+            529
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            86,
+            527,
+            906,
+            619
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.\nIndia: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            86,
+            619,
+            903,
+            880
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            86,
+            881,
+            877,
+            907
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by",
+        "bbox": [
+            86,
+            907,
+            900,
+            934
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            77
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            897,
+            953,
+            908,
+            963
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            86,
+            148,
+            897,
+            176
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            86,
+            175,
+            877,
+            202
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            86,
+            202,
+            898,
+            241
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            86,
+            241,
+            880,
+            280
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            86,
+            280,
+            906,
+            319
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            86,
+            319,
+            867,
+            358
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            86,
+            358,
+            903,
+            463
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            86,
+            463,
+            859,
+            489
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei",
+        "bbox": [
+            86,
+            489,
+            901,
+            542
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            86,
+            541,
+            903,
+            619
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            86,
+            619,
+            905,
+            659
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            84,
+            659,
+            903,
+            816
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            86,
+            815,
+            883,
+            854
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of",
+        "bbox": [
+            84,
+            863,
+            908,
+            931
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            77
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            89,
+            952,
+            107,
+            963
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            84,
+            148,
+            906,
+            556
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            84,
+            571,
+            903,
+            679
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            84,
+            684,
+            893,
+            753
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            84,
+            767,
+            903,
+            848
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised July 04, 2026.",
+        "bbox": [
+            86,
+            854,
+            338,
+            868
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Securities (China) Company Limited. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            84,
+            869,
+            903,
+            939
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            88,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            56,
+            504,
+            80
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            78
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            890,
+            952,
+            908,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Qian Yao\n(86-21) 6106 6277\nqian.q.yao@JPM.com",
+        "bbox": [
+            89,
+            58,
+            230,
+            90
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n16 July 2026",
+        "bbox": [
+            343,
+            58,
+            504,
+            80
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            56,
+            901,
+            78
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            91,
+            952,
+            106,
+            963
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "T",
+        "bbox": [
+            926,
+            969,
+            937,
+            979
+        ],
+        "page_idx": 11
+    }
+]
