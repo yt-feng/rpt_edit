@@ -84,6 +84,8 @@ class SeoOutputTests(unittest.TestCase):
             self.assertIn('"@type":"BreadcrumbList"', page)
             self.assertIn("研究摘要", page)
             self.assertIn("相关报告", page)
+            self.assertIn('../assets/contact.js', page)
+            self.assertIn('data-kc-non-chinese-only', page)
             self.assertNotIn("password=", page)
 
     def test_dynamic_private_pages_are_noindex(self) -> None:

@@ -168,7 +168,8 @@
           <h2 id="reportATitle">报告A</h2>
           <span id="reportACount"></span>
         </div>
-        <p class="subtle external-hint">联系 MacroGate 获取原文。</p>
+        <p class="subtle external-hint" data-kc-chinese-only hidden>联系 MacroGate 获取原文。</p>
+        <p class="subtle external-hint" data-kc-non-chinese-only hidden>Contact <a href="mailto:econ.scroll@gmail.com">econ.scroll@gmail.com</a> to request the original report.</p>
         <div id="reportAResults" class="related-list"></div>
         <div id="reportAStatus" class="status-line" aria-live="polite"></div>
       </section>
@@ -178,7 +179,8 @@
           <h2 id="authorityTitle">高权报告</h2>
           <span id="authorityCount"></span>
         </div>
-        <p class="subtle external-hint">高权报告仅提供检索线索；具体获取请联系微信号 MacroGate。</p>
+        <p class="subtle external-hint" data-kc-chinese-only hidden>高权报告仅提供检索线索；具体获取请联系微信号 MacroGate。</p>
+        <p class="subtle external-hint" data-kc-non-chinese-only hidden>High-authority reports are search leads only. Contact <a href="mailto:econ.scroll@gmail.com">econ.scroll@gmail.com</a> to request the original.</p>
         <div id="authorityResults" class="related-list"></div>
         <div id="authorityStatus" class="status-line" aria-live="polite"></div>
       </section>
@@ -188,7 +190,11 @@
           <h2 id="aboutTitle">关于我们</h2>
           <p>平台全面覆盖宏观策略、行业分析、公司研究、财报、招股书、定制报告等内容。通过前沿的技术和便捷的产品体验，为金融从业人员、投资者、市场运营等提供信息获取和整合的专业服务。</p>
         </div>
-        <img class="wechat-qr" src="assets/macrogate.jpg" alt="macroGate 微信二维码">
+        <img class="wechat-qr" src="assets/macrogate.jpg" alt="MacroGate 微信二维码" data-kc-chinese-only hidden>
+        <a class="about-contact-email" href="mailto:econ.scroll@gmail.com" data-kc-non-chinese-only hidden>
+          <span>Contact</span>
+          <strong>econ.scroll@gmail.com</strong>
+        </a>
       </section>
     </main>
 
@@ -196,9 +202,11 @@
       <a href="reports/index.html">报告索引</a>
       <a href="terms.html">Terms of Service</a>
       <a href="privacy.html">Privacy Policy</a>
-      <span>Contact: MacroGate</span>
+      <span data-kc-chinese-only hidden>Contact WeChat: MacroGate</span>
+      <a href="mailto:econ.scroll@gmail.com" data-kc-non-chinese-only hidden>Email: econ.scroll@gmail.com</a>
     </footer>
 
+    <script src="assets/contact.js"></script>
     <script src="assets/app.js?v=analytics-coverage-20260718"></script>
   </body>
 </html>

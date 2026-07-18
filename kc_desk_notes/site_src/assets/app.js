@@ -1,6 +1,7 @@
 (function () {
   const page = document.body.dataset.page;
   const CONTACT_WECHAT = "MacroGate";
+  const CONTACT_EMAIL = "econ.scroll@gmail.com";
   const ADMIN_TOKEN_KEY = "kcdesk_admin_token";
   const ADMIN_PLAIN_KEY = "kcdesk_admin_plain_key";
   const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
@@ -65,6 +66,76 @@
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
+  }
+
+  function contactDetails() {
+    if (window.KCDeskContact && typeof window.KCDeskContact.details === "function") {
+      return window.KCDeskContact.details();
+    }
+    const languages = Array.isArray(navigator.languages) && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || ""];
+    const isChinese = /^zh(?:[-_]|$)/i.test(String(languages[0] || ""));
+    return {
+      isChinese,
+      channel: isChinese ? "wechat" : "email",
+      value: isChinese ? CONTACT_WECHAT : CONTACT_EMAIL,
+      label: isChinese ? "微信" : "邮箱",
+      href: isChinese ? "" : `mailto:${CONTACT_EMAIL}`,
+    };
+  }
+
+  function contactMethodText(uiLanguage = "zh") {
+    const contact = contactDetails();
+    const label = contact.channel === "wechat"
+      ? (uiLanguage === "en" ? "WeChat" : "微信")
+      : (uiLanguage === "en" ? "email" : "邮箱");
+    return `${label} ${contact.value}`;
+  }
+
+  function contactMethodHtml(uiLanguage = "zh") {
+    const contact = contactDetails();
+    const value = escapeHtml(contact.value);
+    const label = contact.channel === "wechat"
+      ? (uiLanguage === "en" ? "WeChat" : "微信")
+      : (uiLanguage === "en" ? "email" : "邮箱");
+    return contact.href
+      ? `${escapeHtml(label)} <a href="${escapeHtml(contact.href)}"><b>${value}</b></a>`
+      : `${escapeHtml(label)} <b>${value}</b>`;
+  }
+
+  function registrationNoticeText(mode = "login") {
+    if (!contactDetails().isChinese) {
+      return mode === "register"
+        ? `Use an email address you check regularly. An administrator will activate your account by email within 5 business days. Questions: ${CONTACT_EMAIL}.`
+        : `New here? Register with an email address you check regularly. Account activation is completed by email within 5 business days.`;
+    }
+    return mode === "register"
+      ? `请填写常用邮箱。注册完成后，管理员会在 5 个工作日内通过邮件开通账号；任何疑问请联系邮箱 ${CONTACT_EMAIL}。`
+      : "没有账号？请注册并填写常用邮箱。管理员会在 5 个工作日内通过邮件开通账号。";
+  }
+
+  function registrationCompleteText(emailDestination = {}) {
+    const verifyReminder = ["pending", "verified"].includes(String(emailDestination.status || ""))
+      ? (emailDestination.status === "pending" ? " 请同时留意收件箱并完成邮箱验证。" : "")
+      : "";
+    if (!contactDetails().isChinese) {
+      const reminder = emailDestination.status === "pending"
+        ? " Please also check your inbox and complete email verification."
+        : "";
+      return `Registration complete. An administrator will activate your account by email within 5 business days. Questions: ${CONTACT_EMAIL}.${reminder}`;
+    }
+    return `注册成功。管理员将在 5 个工作日内通过邮件为你开通账号；任何疑问请联系邮箱 ${CONTACT_EMAIL}。${verifyReminder}`;
+  }
+
+  function localizedContactText(value) {
+    const text = String(value || "");
+    if (!text || contactDetails().isChinese) return text;
+    return text
+      .replace(/Contact\s+WeChat\s*:\s*MacroGate/gi, `Email: ${CONTACT_EMAIL}`)
+      .replace(/WeChat\s*:\s*MacroGate/gi, `email ${CONTACT_EMAIL}`)
+      .replace(/联系微信号?\s*[:：]?\s*MacroGate/gi, `联系邮箱 ${CONTACT_EMAIL}`)
+      .replace(/联系\s+MacroGate/gi, `联系邮箱 ${CONTACT_EMAIL}`);
   }
 
   function normalize(value) {
@@ -420,9 +491,10 @@
           <form id="accountAuthForm" class="auth-form" ${signedIn ? "hidden" : ""}>
             <div class="auth-grid">
               <label>用户名<input id="accountUsername" type="text" autocomplete="username" placeholder="yourname" required></label>
-              <label id="accountEmailLabel" hidden>邮箱（注册必填）<input id="accountEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+              <label id="accountEmailLabel" hidden>常用邮箱（必填）<input id="accountEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com"></label>
               <label>密码<input id="accountPassword" type="password" autocomplete="current-password" placeholder="至少 4 位" required></label>
             </div>
+            <p class="auth-registration-notice" id="accountRegistrationNotice">${escapeHtml(registrationNoticeText("login"))}</p>
             <label class="captcha-field">验证码
               <div class="captcha-row">
                 <img id="accountCaptchaImage" alt="验证码">
@@ -456,7 +528,7 @@
           <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
             ${reportLine}
-            <span>开通账号权限或获取报告，请联系微信 <b>${escapeHtml(CONTACT_WECHAT)}</b>。</span>
+            <span>开通账号权限或获取报告，请联系${contactMethodHtml()}。</span>
           </div>
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
@@ -500,6 +572,7 @@
     const username = document.getElementById("accountUsername");
     const emailLabel = document.getElementById("accountEmailLabel");
     const email = document.getElementById("accountEmail");
+    const registrationNotice = document.getElementById("accountRegistrationNotice");
     const password = document.getElementById("accountPassword");
     const answer = document.getElementById("accountCaptchaAnswer");
     const refresh = document.getElementById("accountRefreshCaptcha");
@@ -518,10 +591,11 @@
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
-      status.textContent = text || "";
+      status.textContent = localizedContactText(text);
     }
 
-    function refreshUi() {
+    function refreshUi(options = {}) {
+      const statusOverride = String(options.statusOverride || "");
       const session = loadAuthSession();
       const signedIn = Boolean(session);
       form.hidden = signedIn;
@@ -533,17 +607,16 @@
           adminOpen.hidden = !canOpenOperationsPanel(session);
           adminOpen.textContent = isOperatorSession(session) && !isSuperSession(session) ? "运营后台" : "管理后台";
         }
-        setStatus(
+        setStatus(statusOverride || (
           isSuperSession(session)
             ? "已登录，当前账号拥有管理员权限。"
-            : (isOperatorSession(session) ? "已登录，当前账号拥有运营权限。" : `已登录。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`),
-          "ok",
-        );
+            : (isOperatorSession(session) ? "已登录，当前账号拥有运营权限。" : `已登录。如需开通下载权限，请联系${contactMethodText()}。`)
+        ), "ok");
         fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
           .then((response) => response.json())
           .then((data) => {
             const summary = accountRightSummary(data);
-            if (summary) setStatus(`账号${summary}。`, "ok");
+            if (summary && !statusOverride) setStatus(`账号${summary}。`, "ok");
           })
           .catch(() => {});
       } else {
@@ -557,6 +630,7 @@
       mode = nextMode;
       emailLabel.hidden = mode !== "register";
       email.required = mode === "register";
+      if (registrationNotice) registrationNotice.textContent = registrationNoticeText(mode);
       password.autocomplete = mode === "register" ? "new-password" : "current-password";
       submit.textContent = mode === "register" ? "注册并登录" : "登录";
       toggle.textContent = mode === "register" ? "已有账号，去登录" : "注册新账号";
@@ -644,8 +718,8 @@
       submit.disabled = true;
       setStatus(mode === "register" ? "正在注册…" : "正在登录…");
       try {
-        if (mode === "register" && !email.value.trim()) {
-          throw new Error("注册需要绑定邮箱。");
+        if (mode === "register" && (!email.value.trim() || !email.validity.valid)) {
+          throw new Error("注册必须填写有效的常用邮箱。");
         }
         const response = await fetch(`${workerUrl}/auth`, {
           method: "POST",
@@ -669,21 +743,10 @@
         });
         password.value = "";
         answer.value = "";
-        refreshUi();
-        if (mode === "register") {
-          const destination = data.email_destination || {};
-          if (destination.status === "verified") {
-            setStatus("注册成功，邮箱已完成 Cloudflare 收件地址验证。", "ok");
-          } else if (destination.status === "pending" && destination.requested) {
-            setStatus("注册成功，Cloudflare 已向邮箱发送验证邮件，请在邮箱里点击 Verify email address。", "ok");
-          } else if (destination.status === "pending") {
-            setStatus("注册成功，邮箱已经在 Cloudflare 待验证列表里，请在邮箱里完成验证。", "ok");
-          } else if (destination.status === "failed") {
-            setStatus(`注册成功，邮箱已绑定；Cloudflare 验证邮件暂时没有发出：${destination.detail || "请稍后重试。"}`, "error");
-          } else if (destination.status === "not_configured") {
-            setStatus("注册成功，邮箱已绑定；后续可在 Cloudflare Destination Addresses 完成验证。", "ok");
-          }
-        }
+        const registrationStatus = mode === "register"
+          ? registrationCompleteText(data.email_destination || {})
+          : "";
+        refreshUi({ statusOverride: registrationStatus });
       } catch (error) {
         trackEvent(workerUrl, "account_auth", {
           target: username.value,
@@ -3919,22 +3982,25 @@
 
   function downloadErrorMessage(status, message, data) {
     const text = String(message || "");
-    if (data && data.limit_exceeded) return text || `3天体验下载已满 10 篇，请联系微信 ${CONTACT_WECHAT}。`;
+    if (data && data.limit_exceeded) return localizedContactText(text || `3天体验下载已满 10 篇，请联系${contactMethodText()}。`);
     if (
       data && data.archived ||
       status === 404 && /pdf|object|mirrored|archived|not found/i.test(text)
     ) {
-      return `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`;
+      const contact = contactDetails();
+      return contact.isChinese
+        ? `PDF 暂不可用，请联系${contactMethodText()}。`
+        : `PDF is not currently available. Email: ${CONTACT_EMAIL}.`;
     }
-    if (/password/i.test(text)) return text;
+    if (/password/i.test(text)) return localizedContactText(text);
     if (/configured/i.test(text)) return "PDF download is temporarily unavailable. Please try again later.";
-    return text || "Download failed.";
+    return localizedContactText(text) || "Download failed.";
   }
 
   function maybeAlertDownloadLimit(message) {
     const text = String(message || "");
     if (/体验下载已满|limit_exceeded|MacroGate/i.test(text) && /体验|limit_exceeded/i.test(text)) {
-      window.alert(text || `3天体验下载已满 10 篇，请联系微信 ${CONTACT_WECHAT}。`);
+      window.alert(localizedContactText(text || `3天体验下载已满 10 篇，请联系${contactMethodText()}。`));
     }
   }
 
@@ -3959,9 +4025,9 @@
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
-        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限；开通权限请联系微信 ${escapeHtml(CONTACT_WECHAT)}。</p>
+        <p class="subtle" id="accountAccessHint">请先注册或登录账号；开通权限请联系${contactMethodHtml()}。</p>
         <div class="account-access-actions">
-          <button class="secondary-button" id="openAccountPanel" type="button">登录 / 账号</button>
+          <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
         </div>
         <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
@@ -3972,7 +4038,7 @@
   function setLineStatus(target, text, kind) {
     if (!target) return;
     target.className = kind ? `status-line ${kind}` : "status-line";
-    target.textContent = text || "";
+    target.textContent = localizedContactText(text);
   }
 
   async function fetchReportAccess(workerUrl, item, source) {
@@ -4043,8 +4109,8 @@
       accountDownload.hidden = true;
       openAccount.hidden = Boolean(session);
       if (!session) {
-        hint.textContent = `登录后可查看账号下载权限；开通权限请联系微信 ${CONTACT_WECHAT}。`;
-        statusTarget(`如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
+        hint.textContent = `请先注册或登录账号；注册必须填写常用邮箱。开通权限请联系${contactMethodText()}。`;
+        statusTarget(`注册后，管理员会在 5 个工作日内通过邮件开通账号；任何疑问请联系邮箱 ${CONTACT_EMAIL}。`);
         return;
       }
       hint.textContent = `当前账号：${authUserLabel(session)}`;
@@ -4060,8 +4126,8 @@
         } else {
           if (passwordForm) passwordForm.hidden = false;
           statusTarget(summary
-            ? `当前账号有${summary}，但不包含此报告。如需调整权限，请联系微信 ${CONTACT_WECHAT}。`
-            : `当前账号尚未解锁此报告。如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
+            ? `当前账号有${summary}，但不包含此报告。如需调整权限，请联系${contactMethodText()}。`
+            : `当前账号尚未解锁此报告。如需开通权限，请联系${contactMethodText()}。`);
         }
       } catch (error) {
         if (passwordForm) passwordForm.hidden = false;
@@ -4191,7 +4257,7 @@
         status.classList.add("ok");
       } catch (error) {
         linkInput.value = "";
-        status.textContent = error.message || "Could not generate delivery link.";
+        status.textContent = localizedContactText(error.message || "Could not generate delivery link.");
         status.classList.add("error");
       } finally {
         generate.disabled = false;
@@ -4233,7 +4299,7 @@
       : '<div class="setup-warning">PDF download is temporarily unavailable. Please try again later.</div>';
     const archiveNotice = available
       ? ""
-      : `<div class="archive-notice">PDF storage for this report is currently archived, but the text record remains searchable. Contact WeChat: <strong>${escapeHtml(CONTACT_WECHAT)}</strong>.</div>`;
+      : `<div class="archive-notice">PDF storage for this report is currently archived, but the text record remains searchable. Please contact ${contactMethodHtml("en")}.</div>`;
     const related = relatedReports(item, catalogItems, searchTextById);
     const relatedMarkup = related.length
       ? `
@@ -4575,7 +4641,7 @@
         : `${elapsedSeconds} 秒`;
       if (attempts > maxAttempts) {
         window.clearInterval(timer);
-        statusTarget(`报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败请联系 ${CONTACT_WECHAT}。`, "error");
+        statusTarget(`报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败请联系${contactMethodText()}。`, "error");
         return;
       }
       try {
@@ -4590,7 +4656,7 @@
           onReady();
         } else if (data.status === "failed") {
           window.clearInterval(timer);
-          statusTarget(data.message || `报告准备失败，请联系 ${CONTACT_WECHAT}。`, "error");
+          statusTarget(data.message || `报告准备失败，请联系${contactMethodText()}。`, "error");
         }
       } catch (_error) {
         // Keep polling while the background grab runs.
@@ -4709,13 +4775,13 @@
     if (isContactOnlyItem(item)) {
       const hint = isAuthorityItem(item)
         ? "高权报告仅提供检索线索，无法在本站直接下载。"
-        : "联系 MacroGate 获取原文。";
+        : `联系${contactMethodText()}获取原文。`;
       target.innerHTML = `
         ${detailHeader}
         <section class="unlock-box authority-contact-box">
           <h3>获取报告</h3>
           <p class="subtle">${escapeHtml(hint)}</p>
-          <p class="contact-line">如需原文，请联系微信号：<strong>${escapeHtml(CONTACT_WECHAT)}</strong></p>
+          <p class="contact-line">如需原文，请联系${contactMethodHtml()}。</p>
         </section>
         ${externalRelatedMarkup()}
       `;
@@ -4767,7 +4833,7 @@
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
-      status.textContent = text || "";
+      status.textContent = localizedContactText(text);
       wait.hidden = !/准备|等待|自动检测/.test(String(text || ""));
     }
 
@@ -4820,7 +4886,7 @@
         deliveryStatus.textContent = "Delivery link generated.";
       } catch (error) {
         deliveryStatus.className = "status-line error";
-        deliveryStatus.textContent = error.message || "Could not generate delivery link.";
+        deliveryStatus.textContent = localizedContactText(error.message || "Could not generate delivery link.");
       } finally {
         generate.disabled = false;
       }

@@ -812,7 +812,7 @@ def item_page_label(item: dict[str, Any]) -> str:
 def item_availability_label(item: dict[str, Any]) -> str:
     if item.get("available") and not item.get("pdf_archived"):
         return "PDF可用"
-    return "文字索引可检索，原文请联系 MacroGate"
+    return "文字索引可检索，原文获取请联系平台"
 
 
 def item_meta_description(item: dict[str, Any]) -> str:
@@ -1000,8 +1000,10 @@ def render_report_seo_page(
       <a href="../reports/index.html">报告索引</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
-      <span>Contact: MacroGate</span>
+      <span data-kc-chinese-only hidden>Contact WeChat: MacroGate</span>
+      <a href="mailto:econ.scroll@gmail.com" data-kc-non-chinese-only hidden>Email: econ.scroll@gmail.com</a>
     </footer>
+    <script src="../assets/contact.js"></script>
   </body>
 </html>
 """
@@ -1096,8 +1098,10 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
       <a href="../feed.xml">最近报告 RSS</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
-      <span>Contact: MacroGate</span>
+      <span data-kc-chinese-only hidden>Contact WeChat: MacroGate</span>
+      <a href="mailto:econ.scroll@gmail.com" data-kc-non-chinese-only hidden>Email: econ.scroll@gmail.com</a>
     </footer>
+    <script src="../assets/contact.js"></script>
   </body>
 </html>
 """
@@ -1350,7 +1354,7 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
             "## Content Notes",
             "- Preferred language for summaries: zh-CN.",
             "- Report pages expose titles, translated titles, institution, industry, date, page count, and availability status.",
-            "- PDF download access may require an approved account. For source files or unavailable PDFs, contact WeChat MacroGate.",
+            "- PDF download access may require an approved account. For source files or unavailable PDFs, email econ.scroll@gmail.com.",
             "",
         ]),
     )
@@ -1364,7 +1368,7 @@ def copy_site(src: Path, output: Path) -> None:
 
 
 def version_assets(output: Path) -> None:
-    """Append a content-hash query to app.js / styles.css links in every HTML file.
+    """Append a content-hash query to JavaScript / stylesheet links in every HTML file.
 
     kcdesk.com is fronted by Cloudflare, which caches these assets for hours, so an
     unversioned `assets/app.js` keeps serving stale JS after a deploy. Hashing the
@@ -1372,7 +1376,7 @@ def version_assets(output: Path) -> None:
     effect immediately. Only busts when the file content actually changes.
     """
     versions: dict[str, str] = {}
-    for rel in ("assets/app.js", "assets/styles.css"):
+    for rel in ("assets/app.js", "assets/contact.js", "assets/styles.css"):
         path = output / rel
         if path.exists():
             versions[rel] = hashlib.sha1(path.read_bytes()).hexdigest()[:8]

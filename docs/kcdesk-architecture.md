@@ -1,6 +1,6 @@
 # kcdesk.com 技术架构文档
 
-最后更新：2026-07-17
+最后更新：2026-07-18
 维护范围：`kcdesk.com` / KC Desk Notes 搜索站、报告详情页、外部报告检索、账号权限、管理后台、运营后台、每日文件缓存、访问埋点。
 
 ## 1. 总览
@@ -123,7 +123,7 @@ https://kcdesk.com/reports/<report_id>.html
 | 外部报告详情 | `kc_desk_notes/site_src/doc.html` | “其他报告 / 报告A / 高权报告”的统一详情页。 |
 | 交付页 | `kc_desk_notes/site_src/delivery.html` | 发货链接落地页，预填密码，但仍由客户点击下载按钮。 |
 | 用户行为历史 | `kc_desk_notes/site_src/activity.html` | 仅 super 管理员可用；按日期、事件类型和关键词筛选 R2 历史埋点，并使用游标分页。 |
-| 条款/退款 | `terms.html`、`refund.html` | 当前不展示自助支付，统一引导联系微信 `MacroGate`。 |
+| 条款/退款 | `terms.html`、`refund.html` | 当前不展示自助支付；联系方式按浏览器首选语言显示微信或邮箱。 |
 
 首页搜索策略：
 
@@ -158,7 +158,7 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | `/external/status` | GET | “其他报告”准备状态轮询。 |
 | `/report-a/search` | GET | “报告A”检索，只返回站内格式，不跳上游页面。 |
 | `/authority/search` | GET | “高权报告”检索。 |
-| `/authority/pdf` | GET/POST | “高权报告”不下载，返回联系微信。 |
+| `/authority/pdf` | GET/POST | “高权报告”不下载，前端按浏览器语言显示对应联系方式。 |
 | `/paddle-config` | GET | 历史兼容接口；前台自助支付入口已下架。 |
 | `/paddle-webhook` | POST | 历史兼容 webhook；当前售卖/权限开通走微信。 |
 
@@ -183,7 +183,7 @@ PDF 容量策略：
 - `storage_limit_gb` 默认 8 GiB。
 - 超过上限时，只归档旧 PDF：`available=false`、`r2_synced=false`，并删除对应 R2 PDF。
 - catalog、标题、日期、机构、页数和搜索文字继续保留。
-- 前端搜索到已归档报告时显示 `Text only`，下载时提示联系微信 `MacroGate`。
+- 前端搜索到已归档报告时显示 `Text only`，并按浏览器语言提示对应联系方式。
 
 文字索引策略：
 
@@ -250,6 +250,13 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 - 登录后根据 `role` 显示“管理后台”或“运营后台”。
 - 也保留一个隐藏的通用密钥入口，用于临时生成报告密码/发货链接。
 
+注册与联系方式：
+
+- 注册必须填写有效的常用邮箱；前端和 Worker 都做必填校验。
+- 注册成功后提示管理员会在 5 个工作日内通过邮件开通账号，问题邮箱为 `econ.scroll@gmail.com`。
+- `assets/contact.js` 只读取浏览器首选语言：首选语言以 `zh` 开头时显示微信 `MacroGate`，其他语言显示可点击邮箱 `econ.scroll@gmail.com`。
+- 首页二维码、页脚、报告详情、外部线索、账号弹窗和政策页都使用同一语言规则；邮件注册与审核通知始终使用邮箱。
+
 ## 9. 外部报告检索
 
 用户端命名必须保持抽象：
@@ -263,8 +270,8 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 - 用户可见文案、按钮、链接名、详情页正文不展示真实上游品牌名或内部项目名。
 - 前端不直接跳转上游原文；详情页统一走 `doc.html`。
 - “其他报告”支持通用密码和单篇伪密码；有些 PDF 需要后台准备，页面轮询 `/external/status`。
-- “报告A”只做检索线索展示，详情页格式和“其他报告”一致，需要原文时提示联系 `MacroGate`。
-- “高权报告”只做检索线索展示，不提供下载，价格口径为普通外文 26 元/份、实时外文 46 元/份，详情页提示联系 `MacroGate`。
+- “报告A”只做检索线索展示，详情页格式和“其他报告”一致，需要原文时显示语言自适应联系方式。
+- “高权报告”只做检索线索展示，不提供下载，价格口径为普通外文 26 元/份、实时外文 46 元/份，详情页显示语言自适应联系方式。
 - 搜索次序和推荐次序：站内 Dropbox 报告 -> 其他报告 -> 报告A -> 高权报告。
 
 ## 10. 管理后台与运营后台
@@ -421,7 +428,7 @@ dashboard：
 当前前台自助支付已经下架：
 
 - 站点不展示定价按钮或 checkout。
-- 获取权限、开通报告、售后统一引导联系微信 `MacroGate`。
+- 获取权限、开通报告、售后统一使用语言自适应联系方式；非中文浏览器不展示微信，改为 `econ.scroll@gmail.com`。
 - Worker 中的 Paddle 配置、webhook、entitlement 处理保留为历史兼容代码，不作为当前用户路径。
 
 如果未来重启支付，需要同时更新：
@@ -515,6 +522,7 @@ curl -s https://kcdesk.com/api/health
 - `报告A`
 - `高权报告`
 - `MacroGate`
+- `econ.scroll@gmail.com`
 - `KC桌面`
 - `KC偏见`
 - `KC娱乐`

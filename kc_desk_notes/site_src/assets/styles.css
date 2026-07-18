@@ -12,6 +12,11 @@
   --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
+[data-kc-chinese-only][hidden],
+[data-kc-non-chinese-only][hidden] {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -933,6 +938,27 @@ a.secondary-button {
   background: #ffffff;
 }
 
+.about-contact-email {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--accent-strong);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.about-contact-email span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.about-contact-email strong {
+  font-size: 14px;
+}
+
 .admin-modal {
   position: fixed;
   inset: 0;
@@ -1715,6 +1741,13 @@ a.secondary-button {
   gap: 12px;
 }
 
+.auth-registration-notice {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .auth-form[hidden],
 .account-summary[hidden] {
   display: none;
@@ -1844,6 +1877,14 @@ a.secondary-button {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.5;
+}
+
+.contact-card a,
+.contact-line a,
+.external-hint a,
+.legal-panel a[href^="mailto:"] {
+  color: var(--accent-strong);
+  overflow-wrap: anywhere;
 }
 
 .admin-close {
