@@ -1,0 +1,1650 @@
+{
+  "date_folder": "260718",
+  "source": "xhs_notes/dropbox",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 74,
+  "selected_count": 70,
+  "skipped_title_policy_count": 4,
+  "skipped_title_policy": [
+    {
+      "report_dir": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy",
+      "wechat_markdown": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy/wechat_article.md",
+      "title": "德意志银行：中国银行，6月社融与新增贷款仍疲软，下半年政策支持预期加码",
+      "wechat_title": "德意志银行：中国银行，6月社融与新增贷款仍疲软，下半年政策支持预期加码",
+      "raw_title": "DB：中国银行，6月社融与新增贷款仍疲软，下半年政策支持预期加码",
+      "institution_name": "德意志银行",
+      "source_report_name": "23-DB-China Banks-June TSF and new loans remain soft-more policy support expected in 2H-260716",
+      "title_decision": {
+        "source_filename": "0003-23-DB-China Banks-June TSF and new loans remain soft-more policy support expected in 2H-260716.pdf",
+        "cleaned_source_title": "DB-China Banks-June TSF and new loans remain soft-more policy support expected in 2H",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：中国BanksJuneTSF和newloa",
+        "raw_candidates": [
+          "中国银行：6月社融与新增贷款仍疲软，下半年政策支持预期加码",
+          "中国银行：6月社融3.4万亿元低于预期，贷款增速创历史新低",
+          "中国银行：企业中长期贷款同比骤降45%，票据融资飙升至1140亿元"
+        ],
+        "cleaned_candidates": [
+          "DB：中国银行，6月社融与新增贷款仍疲软，下半年政策支持预期加码",
+          "DB：中国银行，6月社融3.4万亿元低于预期，贷款增速创历史新低",
+          "DB：中国银行，企业中长期贷款同比骤降45%",
+          "DB：中国BanksJuneTSF和newloa",
+          "DB：社融存量增速节奏变化至7.4%，贷款余额增速降至5.2%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：中国银行，6月社融3.4万亿元低于预期，贷款增速创历史新低",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：中国银行，企业中长期贷款同比骤降45%",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：中国BanksJuneTSF和newloa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：社融存量增速节奏变化至7.4%，贷款余额增速降至5.2%",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：中国银行，6月社融与新增贷款仍疲软，下半年政策支持预期加码",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：中国银行，6月社融与新增贷款仍疲软，下半年政策支持预期加码"
+      },
+      "generation_failure_reason": "",
+      "skip_reason": "china_political_policy_terms=中国;sensitive=政策"
+    },
+    {
+      "report_dir": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal",
+      "wechat_markdown": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal/wechat_article.md",
+      "title": "德意志银行：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+      "wechat_title": "德意志银行：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+      "raw_title": "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+      "institution_name": "德意志银行",
+      "source_report_name": "25-DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition--260716",
+      "title_decision": {
+        "source_filename": "0005-25-DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition--260716.pdf",
+        "cleaned_source_title": "DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：HumanoidRobotPulseUSa",
+        "raw_candidates": [
+          "人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策-第二季度版",
+          "人形机器人脉冲：美国活动加速，中国快速扩张，支持性政策-第二季度版",
+          "人形机器人脉冲：美国活动加速，中国产量预计超10万台-支持性政策-第二季度版"
+        ],
+        "cleaned_candidates": [
+          "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+          "DB：人形机器人脉冲，美国活动加速，中国快速扩张，支持性政策",
+          "DB：人形机器人脉冲，美国活动加速，中国产量预计超10万台",
+          "DB：HumanoidRobotPulseUSa",
+          "DB：引用中国工信部官员在2026年7月的表态"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：人形机器人脉冲，美国活动加速，中国产量预计超10万台",
+            "reasons": [
+              "anchor_coverage=0.61",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：HumanoidRobotPulseUSa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：引用中国工信部官员在2026年7月的表态",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策"
+      },
+      "generation_failure_reason": "",
+      "skip_reason": "china_political_policy_terms=中国;sensitive=政策"
+    },
+    {
+      "report_dir": "xhs_notes/dropbox/260718/shard_5/0004-29-Goldman-Sachs-China-Consumer-Staples-Offshore-marketing-feedback--focus-",
+      "wechat_markdown": "xhs_notes/dropbox/260718/shard_5/0004-29-Goldman-Sachs-China-Consumer-Staples-Offshore-marketing-feedback--focus-/wechat_article.md",
+      "title": "高盛：中国消费必需品，海外交流反馈，聚焦政策情绪变化，基本面修复需时间",
+      "wechat_title": "高盛：中国消费必需品，海外交流反馈，聚焦政策情绪变化，基本面修复需时间",
+      "raw_title": "中国消费必需品：海外交流反馈，聚焦政策情绪变化，基本面修复需时间",
+      "institution_name": "高盛",
+      "source_report_name": "29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated",
+      "title_decision": {
+        "source_filename": "0004-29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated.pdf",
+        "cleaned_source_title": "GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国消费StaplesOffshoremarke",
+        "raw_candidates": [
+          "GS-中国消费必需品-海外路演反馈：聚焦政策情绪拐点，基本面修复需时间",
+          "GS-中国消费必需品-海外路演反馈：等待政策信号，社零目标60万亿",
+          "GS-中国消费必需品-海外路演反馈：市场等待情绪拐点，而非基本面改善"
+        ],
+        "cleaned_candidates": [
+          "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+          "GS：中国消费必需品-海外路演反馈，等待政策信号，社零目标60万亿",
+          "GS：中国消费必需品-海外路演反馈，市场等待情绪拐点，而非基本面改善",
+          "GS：中国消费StaplesOffshoremarke",
+          "GS：特别指出，读者对7月13日发布的扩大消费十五五规划讨论热度之低令"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国消费必需品-海外路演反馈，等待政策信号，社零目标60万亿",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国消费必需品-海外路演反馈，市场等待情绪拐点，而非基本面改善",
+            "reasons": [
+              "anchor_coverage=0.61",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国消费StaplesOffshoremarke",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：特别指出，读者对7月13日发布的扩大消费十五五规划讨论热度之低令",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间"
+      },
+      "generation_failure_reason": "",
+      "skip_reason": "china_political_policy_terms=中国;sensitive=政策"
+    },
+    {
+      "report_dir": "xhs_notes/dropbox/260718/shard_8/0001-41-Goldman-Sachs-TAIWAN-CCL-High-end-players--profitability-uptrend-restart",
+      "wechat_markdown": "xhs_notes/dropbox/260718/shard_8/0001-41-Goldman-Sachs-TAIWAN-CCL-High-end-players--profitability-uptrend-restart/wechat_article.md",
+      "title": "高盛：台湾CCL高端厂商盈利能力重启升势",
+      "wechat_title": "高盛：台湾CCL高端厂商盈利能力重启升势",
+      "raw_title": "台湾CCL高端厂商盈利能力重启升势",
+      "institution_name": "高盛",
+      "source_report_name": "41-GS-TAIWAN CCL-High-end players- profitability uptrend restart- with better pricing and product mix outlook- 报告观点EMC and TUC with",
+      "title_decision": {
+        "source_filename": "0001-41-GS-TAIWAN CCL-High-end players- profitability uptrend restart- with better pricing and product mix outlook- Buy EMC and TUC with new TP of NT-9-500 2-860.pdf",
+        "cleaned_source_title": "GS-TAIWAN CCL-High-end players- profitability uptrend restart- with better pricing and product mix outlook- Buy EMC and TUC with new TP of NT-9-500 2-860",
+        "institution_name": "GS",
+        "required_terms": [
+          "CCL"
+        ],
+        "deterministic_fallback": "GS：TAIWANCCLHighendplayersp",
+        "raw_candidates": [
+          "台湾CCL高端厂商盈利能力重启升势",
+          "台湾CCL高端厂商盈利能力重启升势-定价与产品组合改善",
+          "台湾CCL高端厂商盈利能力重启升势-高端CCL需求年增96%供给仅增22%"
+        ],
+        "cleaned_candidates": [
+          "GS：台湾CCL高端厂商盈利能力重启升势",
+          "GS：台湾CCL高端厂商盈利能力重启升势-定价与产品组合改善",
+          "GS：TAIWANCCLHighendplayersp",
+          "GS：1.高端CCL需求以96%的年复合增速狂奔，而供给增速只有22%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：TAIWANCCLHighendplayersp",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.高端CCL需求以96%的年复合增速狂奔，而供给增速只有22%",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：台湾CCL高端厂商盈利能力重启升势",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：台湾CCL高端厂商盈利能力重启升势"
+      },
+      "generation_failure_reason": "",
+      "skip_reason": "china_political_sensitive_terms=台湾"
+    }
+  ],
+  "articles_per_draft": 8,
+  "draft_count": 9,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "title_log": "wechat_drafts/xhs_notes/260718/wechat_title_log.json",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit875lnXQpHeJWvmTYA6OqnOxyY_Vq768RcSemTxiljXtm",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 64209,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_01.json",
+      "titles": [
+        "伯恩斯坦：雅培二季报EPS超预期并上调指引，力挺医疗技术市场健康",
+        "伯恩斯坦：3M研发引擎重新点火",
+        "伯恩斯坦：NEOM在2027到2029年间每年对每股盈利的影响约为0.",
+        "伯恩斯坦：Burberry2Q26收入4.55亿英镑符合预期",
+        "伯恩斯坦：美国成品油流动揭示报价与成品油价格脱节-隐含报价超90美元",
+        "伯恩斯坦：Burberry1Q27复苏，被低估的品牌修复",
+        "伯恩斯坦：中国互联网-Kimi时刻与蝴蝶效应",
+        "伯恩斯坦：全球奢侈品-高级珠宝的案例"
+      ],
+      "wechat_titles": [
+        "伯恩斯坦：雅培二季报EPS超预期并上调指引，力挺医疗技术市场健康",
+        "伯恩斯坦：3M研发引擎重新点火",
+        "伯恩斯坦：NEOM在2027到2029年间每年对每股盈利的影响约为0.",
+        "伯恩斯坦：Burberry2Q26收入4.55亿英镑符合预期",
+        "伯恩斯坦：美国成品油流动揭示报价与成品油价格脱节-隐含报价超90美元",
+        "伯恩斯坦：Burberry1Q27复苏，被低估的品牌修复",
+        "伯恩斯坦：中国互联网-Kimi时刻与蝴蝶效应",
+        "伯恩斯坦：全球奢侈品-高级珠宝的案例"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "ä¼¯æ©æ¯å¦ï¼é å¹äºå­£æ¥EPSè¶ é¢æå¹¶ä¸è°æå¼ï¼åæºå»çææ¯å¸åºå¥åº·",
+          "ä¼¯æ©æ¯å¦ï¼3Mç åå¼æéæ°ç¹ç«",
+          "ä¼¯æ©æ¯å¦ï¼NEOMå¨2027å°2029å¹´é´æ¯å¹´å¯¹æ¯è¡çå©çå½±åçº¦ä¸º0.",
+          "ä¼¯æ©æ¯å¦ï¼Burberry2Q26æ¶å ¥4.55äº¿è±éç¬¦åé¢æ",
+          "ä¼¯æ©æ¯å¦ï¼ç¾å½æåæ²¹æµå¨æ­ç¤ºæ¥ä»·ä¸æåæ²¹ä»·æ ¼è±è-éå«æ¥ä»·è¶ 90ç¾å ",
+          "ä¼¯æ©æ¯å¦ï¼Burberry1Q27å¤èï¼è¢«ä½ä¼°çåçä¿®å¤",
+          "ä¼¯æ©æ¯å¦ï¼ä¸­å½äºèç½-Kimiæ¶å»ä¸è´è¶æåº",
+          "ä¼¯æ©æ¯å¦ï¼å ¨çå¥¢ä¾å-é«çº§ç å®çæ¡ä¾"
+        ],
+        "create_time": 1784418377,
+        "update_time": 1784418378
+      }
+    },
+    {
+      "draft_index": 2,
+      "media_id": "avPwUQVH0p7DPpCFFkit8yeSkGy1rkrhY7QarrtJ6hG46zV1Frlzss2FE2GW2gdv",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 70234,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_02.json",
+      "titles": [
+        "伯恩斯坦：化工二季报前瞻，战术观察与需管理的预期差",
+        "伯恩斯坦：澜起科技1H26超预期-韩国调查不改基本面",
+        "伯恩斯坦：直觉外科2Q26美国增长趋势讨论再起",
+        "伯恩斯坦：Netflix2Q26指引持平引发更多关注",
+        "伯恩斯坦：SAP从迁移截止到迁移宏观研究",
+        "伯恩斯坦：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+        "伯恩斯坦：阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+        "美银：BofAFlowShow，市场已到极端，夏季最佳策略是撤退"
+      ],
+      "wechat_titles": [
+        "伯恩斯坦：化工二季报前瞻，战术观察与需管理的预期差",
+        "伯恩斯坦：澜起科技1H26超预期-韩国调查不改基本面",
+        "伯恩斯坦：直觉外科2Q26美国增长趋势讨论再起",
+        "伯恩斯坦：Netflix2Q26指引持平引发更多关注",
+        "伯恩斯坦：SAP从迁移截止到迁移宏观研究",
+        "伯恩斯坦：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+        "伯恩斯坦：阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+        "美银：BofAFlowShow，市场已到极端，夏季最佳策略是撤退"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "ä¼¯æ©æ¯å¦ï¼åå·¥äºå­£æ¥åç»ï¼ææ¯è§å¯ä¸éç®¡ççé¢æå·®",
+          "ä¼¯æ©æ¯å¦ï¼æ¾èµ·ç§æ1H26è¶ é¢æ-é©å½è°æ¥ä¸æ¹åºæ¬é¢",
+          "ä¼¯æ©æ¯å¦ï¼ç´è§å¤ç§2Q26ç¾å½å¢é¿è¶å¿è®¨è®ºåèµ·",
+          "ä¼¯æ©æ¯å¦ï¼Netflix2Q26æå¼æå¹³å¼åæ´å¤å ³æ³¨",
+          "ä¼¯æ©æ¯å¦ï¼SAPä»è¿ç§»æªæ­¢å°è¿ç§»å®è§ç ç©¶",
+          "ä¼¯æ©æ¯å¦ï¼ç¾å½å¤è¡ä¸-çµæ°è®¾å¤æ°æ®ä¸­å¿å·å´ä¸ä¾çµ-ä¸åè®¾å¤æ¯å ç¦ä»·å¼",
+          "ä¼¯æ©æ¯å¦ï¼é³ç®é£è½®ä»å¨è½¬å¨-4.7%å¢é¿è·èµ¢AIè¾å®¶",
+          "ç¾é¶ï¼BofAFlowShowï¼å¸åºå·²å°æç«¯ï¼å¤å­£æä½³ç­ç¥æ¯æ¤é"
+        ],
+        "create_time": 1784418388,
+        "update_time": 1784418389
+      }
+    },
+    {
+      "draft_index": 3,
+      "media_id": "avPwUQVH0p7DPpCFFkit82LSedD2N1QRCnKxbxnh3bffbiCMtKkIKBVDV_gSZkPi",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 73987,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_03.json",
+      "titles": [
+        "伯恩斯坦：沃尔沃汽车二季度毛利与息税前利润不及预期",
+        "伯恩斯坦：Bernstein周末科技，算力市场观察-对冲万亿美元AI资",
+        "花旗：澜起科技二季度利润强劲-回购或助稳报价",
+        "花旗：台积电AI需求加速-资本支出上调超预期",
+        "花旗：阳光电源储能出货高增-二季度利润不确定性已反映",
+        "花旗：美国通信设备2Q26预览-参与者关注供应约束",
+        "德意志银行：中国电池月度监测-2026年6月",
+        "高盛：安踏2Q26零售基本符合预期-上半年略超全年指引"
+      ],
+      "wechat_titles": [
+        "伯恩斯坦：沃尔沃汽车二季度毛利与息税前利润不及预期",
+        "伯恩斯坦：Bernstein周末科技，算力市场观察-对冲万亿美元AI资",
+        "花旗：澜起科技二季度利润强劲-回购或助稳报价",
+        "花旗：台积电AI需求加速-资本支出上调超预期",
+        "花旗：阳光电源储能出货高增-二季度利润不确定性已反映",
+        "花旗：美国通信设备2Q26预览-参与者关注供应约束",
+        "德意志银行：中国电池月度监测-2026年6月",
+        "高盛：安踏2Q26零售基本符合预期-上半年略超全年指引"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "ä¼¯æ©æ¯å¦ï¼æ²å°æ²æ±½è½¦äºå­£åº¦æ¯å©ä¸æ¯ç¨åå©æ¶¦ä¸åé¢æ",
+          "ä¼¯æ©æ¯å¦ï¼Bernsteinå¨æ«ç§æï¼ç®åå¸åºè§å¯-å¯¹å²ä¸äº¿ç¾å AIèµ",
+          "è±æï¼æ¾èµ·ç§æäºå­£åº¦å©æ¶¦å¼ºå²-åè´­æå©ç¨³æ¥ä»·",
+          "è±æï¼å°ç§¯çµAIéæ±å é-èµæ¬æ¯åºä¸è°è¶ é¢æ",
+          "è±æï¼é³å çµæºå¨è½åºè´§é«å¢-äºå­£åº¦å©æ¶¦ä¸ç¡®å®æ§å·²åæ",
+          "è±æï¼ç¾å½éä¿¡è®¾å¤2Q26é¢è§-åä¸è å ³æ³¨ä¾åºçº¦æ",
+          "å¾·æå¿é¶è¡ï¼ä¸­å½çµæ± æåº¦çæµ-2026å¹´6æ",
+          "é«çï¼å®è¸2Q26é¶å®åºæ¬ç¬¦åé¢æ-ä¸åå¹´ç¥è¶ å ¨å¹´æå¼"
+        ],
+        "create_time": 1784418401,
+        "update_time": 1784418401
+      }
+    },
+    {
+      "draft_index": 4,
+      "media_id": "avPwUQVH0p7DPpCFFkit83oipbimoEL0C1Y6gD-O8oMoa6dBFeg7pb7HeQ2jss8R",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 71509,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_04.json",
+      "titles": [
+        "德意志银行：大宗商品观察，关注积极因素，外部不确定性推动供应体系调整",
+        "高盛：中国软件产品追踪，AI原生应用扩张",
+        "高盛：中国基础材料监测-需求端边际变化观察",
+        "高盛：中国外汇数据暗示六月资金流入",
+        "高盛：全球外汇市场观察，冷静与从容",
+        "高盛：全球利率观察-快速久期突破-九月才是利率市场真正考验",
+        "高盛：长电科技新先进封装产能公布-2Q26净利润指引超预期",
+        "高盛：HSBC二季度预览，又一个强劲季度-关注净息差指引与财富趋势"
+      ],
+      "wechat_titles": [
+        "德意志银行：大宗商品观察，关注积极因素，外部不确定性推动供应体系调整",
+        "高盛：中国软件产品追踪，AI原生应用扩张",
+        "高盛：中国基础材料监测-需求端边际变化观察",
+        "高盛：中国外汇数据暗示六月资金流入",
+        "高盛：全球外汇市场观察，冷静与从容",
+        "高盛：全球利率观察-快速久期突破-九月才是利率市场真正考验",
+        "高盛：长电科技新先进封装产能公布-2Q26净利润指引超预期",
+        "高盛：HSBC二季度预览，又一个强劲季度-关注净息差指引与财富趋势"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "å¾·æå¿é¶è¡ï¼å¤§å®ååè§å¯ï¼å ³æ³¨ç§¯æå ç´ ï¼å¤é¨ä¸ç¡®å®æ§æ¨å¨ä¾åºä½ç³»è°æ´",
+          "é«çï¼ä¸­å½è½¯ä»¶äº§åè¿½è¸ªï¼AIåçåºç¨æ©å¼",
+          "é«çï¼ä¸­å½åºç¡ææçæµ-éæ±ç«¯è¾¹é ååè§å¯",
+          "é«çï¼ä¸­å½å¤æ±æ°æ®æç¤ºå ­æèµéæµå ¥",
+          "é«çï¼å ¨çå¤æ±å¸åºè§å¯ï¼å·éä¸ä»å®¹",
+          "é«çï¼å ¨çå©çè§å¯-å¿«éä¹ æçªç ´-ä¹æææ¯å©çå¸åºçæ­£èéª",
+          "é«çï¼é¿çµç§ææ°å è¿å°è£ äº§è½å ¬å¸-2Q26åå©æ¶¦æå¼è¶ é¢æ",
+          "é«çï¼HSBCäºå­£åº¦é¢è§ï¼åä¸ä¸ªå¼ºå²å­£åº¦-å ³æ³¨åæ¯å·®æå¼ä¸è´¢å¯è¶å¿"
+        ],
+        "create_time": 1784418412,
+        "update_time": 1784418413
+      }
+    },
+    {
+      "draft_index": 5,
+      "media_id": "avPwUQVH0p7DPpCFFkit8wOJQq6Jumvf_kYkc9CVXsPiOn0sMTWW4Q8vJeq1fsvY",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 63261,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_05.json",
+      "titles": [
+        "高盛：日本策略速报，FX与AI顺风遭遇高共识门槛",
+        "高盛：5月央行购金提供金价底部",
+        "高盛：中国AI模型新前沿-KimiK3从成本效率到智能定价",
+        "高盛：NetflixQ2-26观察，管理层聚焦收入复合增长与利润率轨迹",
+        "高盛：周度资金流-能源资金重新流入，科技吸金174亿美元",
+        "高盛：美国密歇根消费者信心回升-短期通胀预期下降",
+        "高盛：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+        "摩根大通：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开"
+      ],
+      "wechat_titles": [
+        "高盛：日本策略速报，FX与AI顺风遭遇高共识门槛",
+        "高盛：5月央行购金提供金价底部",
+        "高盛：中国AI模型新前沿-KimiK3从成本效率到智能定价",
+        "高盛：NetflixQ2-26观察，管理层聚焦收入复合增长与利润率轨迹",
+        "高盛：周度资金流-能源资金重新流入，科技吸金174亿美元",
+        "高盛：美国密歇根消费者信心回升-短期通胀预期下降",
+        "高盛：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+        "摩根大通：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "é«çï¼æ¥æ¬ç­ç¥éæ¥ï¼FXä¸AIé¡ºé£é­éé«å ±è¯é¨æ§",
+          "é«çï¼5æå¤®è¡è´­éæä¾éä»·åºé¨",
+          "é«çï¼ä¸­å½AIæ¨¡åæ°åæ²¿-KimiK3ä»ææ¬æçå°æºè½å®ä»·",
+          "é«çï¼NetflixQ2-26è§å¯ï¼ç®¡çå±èç¦æ¶å ¥å¤åå¢é¿ä¸å©æ¶¦çè½¨è¿¹",
+          "é«çï¼å¨åº¦èµéæµ-è½æºèµééæ°æµå ¥ï¼ç§æå¸é174äº¿ç¾å ",
+          "é«çï¼ç¾å½å¯æ­æ ¹æ¶è´¹è ä¿¡å¿åå-ç­æéèé¢æä¸é",
+          "é«çï¼é²é¾ç§æ-å ¨çé±¼å­é ±é¾å¤´ç±æµ·å¤æ©å¼ ä¸å½å å¤èé©±å¨",
+          "æ©æ ¹å¤§éï¼åºæ¬éå±ä¾éè¿½è¸ª-ä¸­å½éåºå­éè³äºå¹´ä½ä½ï¼è¿å£å¥å©çªå£æå¼"
+        ],
+        "create_time": 1784418425,
+        "update_time": 1784418425
+      }
+    },
+    {
+      "draft_index": 6,
+      "media_id": "avPwUQVH0p7DPpCFFkit81oFYEjiB-ppj3n0gJD6LH2vJa81-2u_ncb7Cf7-KyWo",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 71914,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_06.json",
+      "titles": [
+        "高盛：小米机器人整合硬件数据与模型以扩大规模",
+        "摩根大通：中国燃气公用事业1H26预览，业绩表现与盈利调整",
+        "摩根大通：中国境内债季度分析，截至2026年6月30日",
+        "摩根大通：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+        "摩根大通：中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+        "摩根大通：中国人寿与AMP受益于老龄化养老金需求",
+        "摩根大通：储能电池6月出货超100GWh，高基数下同比增66%",
+        "摩根大通：SK电讯AI工厂建设成为新催化剂-上调至超配"
+      ],
+      "wechat_titles": [
+        "高盛：小米机器人整合硬件数据与模型以扩大规模",
+        "摩根大通：中国燃气公用事业1H26预览，业绩表现与盈利调整",
+        "摩根大通：中国境内债季度分析，截至2026年6月30日",
+        "摩根大通：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+        "摩根大通：中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+        "摩根大通：中国人寿与AMP受益于老龄化养老金需求",
+        "摩根大通：储能电池6月出货超100GWh，高基数下同比增66%",
+        "摩根大通：SK电讯AI工厂建设成为新催化剂-上调至超配"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "é«çï¼å°ç±³æºå¨äººæ´åç¡¬ä»¶æ°æ®ä¸æ¨¡åä»¥æ©å¤§è§æ¨¡",
+          "æ©æ ¹å¤§éï¼ä¸­å½çæ°å ¬ç¨äºä¸1H26é¢è§ï¼ä¸ç»©è¡¨ç°ä¸çå©è°æ´",
+          "æ©æ ¹å¤§éï¼ä¸­å½å¢å åºå­£åº¦åæï¼æªè³2026å¹´6æ30æ¥",
+          "æ©æ ¹å¤§éï¼ä¸­å½åºç¡ææï¼é§æ§éæ±æ¯æé«éå±ä»·æ ¼ä¸ç¿ä¼çå©",
+          "æ©æ ¹å¤§éï¼ä¸­å½é¢éäº§éè§é¡¶-éç¿ç³FOBä»·æ ¼å¼±äºæå",
+          "æ©æ ¹å¤§éï¼ä¸­å½äººå¯¿ä¸AMPåçäºèé¾åå »èééæ±",
+          "æ©æ ¹å¤§éï¼å¨è½çµæ± 6æåºè´§è¶ 100GWhï¼é«åºæ°ä¸åæ¯å¢66%",
+          "æ©æ ¹å¤§éï¼SKçµè®¯AIå·¥åå»ºè®¾æä¸ºæ°å¬åå-ä¸è°è³è¶ é "
+        ],
+        "create_time": 1784418436,
+        "update_time": 1784418437
+      }
+    },
+    {
+      "draft_index": 7,
+      "media_id": "avPwUQVH0p7DPpCFFkit83t7cg4MFIqF5LNbRqp-4g8zHCSnPjcImvNwsnh2_NTP",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 58328,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_07.json",
+      "titles": [
+        "摩根大通：电子元件-技术板块",
+        "摩根大通：电子元器件板块数据沉积-METI生产统计-ABF基板",
+        "摩根士丹利：中国AI基础模型K3，MS观点",
+        "摩根士丹利：金山办公WAIC2026新品发布",
+        "杰富瑞：AI",
+        "摩根士丹利：中国房地产1H26预览，利润率压缩下的盈利观察",
+        "摩根士丹利：地平线HSD2.0-安全先于锐利",
+        "摩根士丹利：中国钢铁与铁矿石周度更新"
+      ],
+      "wechat_titles": [
+        "摩根大通：电子元件-技术板块",
+        "摩根大通：电子元器件板块数据沉积-METI生产统计-ABF基板",
+        "摩根士丹利：中国AI基础模型K3，MS观点",
+        "摩根士丹利：金山办公WAIC2026新品发布",
+        "杰富瑞：AI",
+        "摩根士丹利：中国房地产1H26预览，利润率压缩下的盈利观察",
+        "摩根士丹利：地平线HSD2.0-安全先于锐利",
+        "摩根士丹利：中国钢铁与铁矿石周度更新"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ©æ ¹å¤§éï¼çµå­å ä»¶-ææ¯æ¿å",
+          "æ©æ ¹å¤§éï¼çµå­å å¨ä»¶æ¿åæ°æ®æ²ç§¯-METIçäº§ç»è®¡-ABFåºæ¿",
+          "æ©æ ¹å£«ä¸¹å©ï¼ä¸­å½AIåºç¡æ¨¡åK3ï¼MSè§ç¹",
+          "æ©æ ¹å£«ä¸¹å©ï¼éå±±åå ¬WAIC2026æ°ååå¸",
+          "æ°å¯çï¼AI",
+          "æ©æ ¹å£«ä¸¹å©ï¼ä¸­å½æ¿å°äº§1H26é¢è§ï¼å©æ¶¦çåç¼©ä¸ççå©è§å¯",
+          "æ©æ ¹å£«ä¸¹å©ï¼å°å¹³çº¿HSD2.0-å®å ¨å äºéå©",
+          "æ©æ ¹å£«ä¸¹å©ï¼ä¸­å½é¢éä¸éç¿ç³å¨åº¦æ´æ°"
+        ],
+        "create_time": 1784418449,
+        "update_time": 1784418449
+      }
+    },
+    {
+      "draft_index": 8,
+      "media_id": "avPwUQVH0p7DPpCFFkit8zsRwpYwRrnG0LSgYWVjEIRWv4W_WP3s4_xb2jdovALy",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 69024,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_08.json",
+      "titles": [
+        "摩根士丹利：海光信息二季度净利润11亿元超预期8%",
+        "摩根士丹利：理想L6换代-同徽章新体验",
+        "摩根士丹利：日本暑期学校-半导体生产设备",
+        "摩根士丹利：历峰集团管理层10问-美国增长30%",
+        "摩根士丹利：瑞士腕表二级市场在2026年第二季度持续走高",
+        "摩根士丹利：稀土-资金流向何处",
+        "摩根士丹利：收购完成后，Uber的跨平台市场将从34个增加到58个",
+        "摩根士丹利：太空探索技术公司，太空对冲地面邻避主义"
+      ],
+      "wechat_titles": [
+        "摩根士丹利：海光信息二季度净利润11亿元超预期8%",
+        "摩根士丹利：理想L6换代-同徽章新体验",
+        "摩根士丹利：日本暑期学校-半导体生产设备",
+        "摩根士丹利：历峰集团管理层10问-美国增长30%",
+        "摩根士丹利：瑞士腕表二级市场在2026年第二季度持续走高",
+        "摩根士丹利：稀土-资金流向何处",
+        "摩根士丹利：收购完成后，Uber的跨平台市场将从34个增加到58个",
+        "摩根士丹利：太空探索技术公司，太空对冲地面邻避主义"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ©æ ¹å£«ä¸¹å©ï¼æµ·å ä¿¡æ¯äºå­£åº¦åå©æ¶¦11äº¿å è¶ é¢æ8%",
+          "æ©æ ¹å£«ä¸¹å©ï¼çæ³L6æ¢ä»£-åå¾½ç« æ°ä½éª",
+          "æ©æ ¹å£«ä¸¹å©ï¼æ¥æ¬ææå­¦æ ¡-åå¯¼ä½çäº§è®¾å¤",
+          "æ©æ ¹å£«ä¸¹å©ï¼åå³°éå¢ç®¡çå±10é®-ç¾å½å¢é¿30%",
+          "æ©æ ¹å£«ä¸¹å©ï¼çå£«è è¡¨äºçº§å¸åºå¨2026å¹´ç¬¬äºå­£åº¦æç»­èµ°é«",
+          "æ©æ ¹å£«ä¸¹å©ï¼ç¨å-èµéæµåä½å¤",
+          "æ©æ ¹å£«ä¸¹å©ï¼æ¶è´­å®æåï¼Uberçè·¨å¹³å°å¸åºå°ä»34ä¸ªå¢å å°58ä¸ª",
+          "æ©æ ¹å£«ä¸¹å©ï¼å¤ªç©ºæ¢ç´¢ææ¯å ¬å¸ï¼å¤ªç©ºå¯¹å²å°é¢é»é¿ä¸»ä¹"
+        ],
+        "create_time": 1784418461,
+        "update_time": 1784418462
+      }
+    },
+    {
+      "draft_index": 9,
+      "media_id": "avPwUQVH0p7DPpCFFkit858B-B1MixUfxu6IF9pmH7BVoW0tG39KA0jfxv8LXNdI",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 6,
+      "payload_bytes": 54739,
+      "payload": "wechat_drafts/xhs_notes/260718/draft_payload_09.json",
+      "titles": [
+        "摩根士丹利：台积电积极资本开支应对更强AI需求",
+        "摩根士丹利：小鹏MONAL03全球首发，欧洲定价策略观察",
+        "摩根士丹利：宇通客车不确定性回报更新",
+        "摩根士丹利：中际旭创上调预测",
+        "野村：深南电路，PCB与IC基板驱动稳健增长",
+        "野村：美国宏观环境周报，通胀降温使美联储维持观望"
+      ],
+      "wechat_titles": [
+        "摩根士丹利：台积电积极资本开支应对更强AI需求",
+        "摩根士丹利：小鹏MONAL03全球首发，欧洲定价策略观察",
+        "摩根士丹利：宇通客车不确定性回报更新",
+        "摩根士丹利：中际旭创上调预测",
+        "野村：深南电路，PCB与IC基板驱动稳健增长",
+        "野村：美国宏观环境周报，通胀降温使美联储维持观望"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 6,
+        "expected_article_count": 6,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ©æ ¹å£«ä¸¹å©ï¼å°ç§¯çµç§¯æèµæ¬å¼æ¯åºå¯¹æ´å¼ºAIéæ±",
+          "æ©æ ¹å£«ä¸¹å©ï¼å°é¹MONAL03å ¨çé¦åï¼æ¬§æ´²å®ä»·ç­ç¥è§å¯",
+          "æ©æ ¹å£«ä¸¹å©ï¼å®éå®¢è½¦ä¸ç¡®å®æ§åæ¥æ´æ°",
+          "æ©æ ¹å£«ä¸¹å©ï¼ä¸­é æ­åä¸è°é¢æµ",
+          "éæï¼æ·±åçµè·¯ï¼PCBä¸ICåºæ¿é©±å¨ç¨³å¥å¢é¿",
+          "éæï¼ç¾å½å®è§ç¯å¢å¨æ¥ï¼éèéæ¸©ä½¿ç¾èå¨ç»´æè§æ"
+        ],
+        "create_time": 1784418472,
+        "update_time": 1784418473
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "伯恩斯坦：雅培二季报EPS超预期并上调指引，力挺医疗技术市场健康",
+      "wechat_title": "伯恩斯坦：雅培二季报EPS超预期并上调指引，力挺医疗技术市场健康",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "01-Bernstein-Abbott Laboratories-ABT.US-Abbott 2Q26- EPS beat and raise on in-line sales- and a vehement defense of medtech market health-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_0/0001-01-Bernstein-Abbott-Laboratories-ABT.US-Abbott-2Q26--EPS-beat-and-raise-on-",
+      "content_chars": 6172,
+      "content_bytes": 8324,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_0/0001-01-Bernstein-Abbott-Laboratories-ABT.US-Abbott-2Q26--EPS-beat-and-raise-on-/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：3M研发引擎重新点火",
+      "wechat_title": "伯恩斯坦：3M研发引擎重新点火",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "02-Bernstein-3M Co-MMM.US-3M- Is the R-D engine re-igniting- Thoughts on the EBO partnership with Microsoft for data center connectivity.-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_0/0002-02-Bernstein-3M-Co-MMM.US-3M--Is-the-R-D-engine-re-igniting--Thoughts-on-th",
+      "content_chars": 5134,
+      "content_bytes": 7200,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_0/0002-02-Bernstein-3M-Co-MMM.US-3M--Is-the-R-D-engine-re-igniting--Thoughts-on-th/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：NEOM在2027到2029年间每年对每股盈利的影响约为0.",
+      "wechat_title": "伯恩斯坦：NEOM在2027到2029年间每年对每股盈利的影响约为0.",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "03-Bernstein-Air Products - Chemicals Inc-APD.US-Air Products- Sustainable above-consensus EPS growth- even including NEOM-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_0/0003-03-Bernstein-Air-Products---Chemicals-Inc-APD.US-Air-Products--Sustainable-",
+      "content_chars": 6512,
+      "content_bytes": 8492,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_0/0003-03-Bernstein-Air-Products---Chemicals-Inc-APD.US-Air-Products--Sustainable-/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：Burberry2Q26收入4.55亿英镑符合预期",
+      "wechat_title": "伯恩斯坦：Burberry2Q26收入4.55亿英镑符合预期",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "04-Bernstein-Burberry Group PLC-BRBY.LN-Burberry- 2Q26 calendar in line with expectations-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_0/0004-04-Bernstein-Burberry-Group-PLC-BRBY.LN-Burberry--2Q26-calendar-in-line-wit",
+      "content_chars": 6593,
+      "content_bytes": 8717,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_0/0004-04-Bernstein-Burberry-Group-PLC-BRBY.LN-Burberry--2Q26-calendar-in-line-wit/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：美国成品油流动揭示报价与成品油价格脱节-隐含报价超90美元",
+      "wechat_title": "伯恩斯坦：美国成品油流动揭示报价与成品油价格脱节-隐含报价超90美元",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "05-Bernstein-Americas Energy - Transition Americas Oil- US refined product flows show why oil and product prices are disconnected amidst all-time high crack spreads-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_0/0005-05-Bernstein-Americas-Energy---Transition-Americas-Oil--US-refined-product-",
+      "content_chars": 6437,
+      "content_bytes": 8643,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_0/0005-05-Bernstein-Americas-Energy---Transition-Americas-Oil--US-refined-product-/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：Burberry1Q27复苏，被低估的品牌修复",
+      "wechat_title": "伯恩斯坦：Burberry1Q27复苏，被低估的品牌修复",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "06-Bernstein-Burberry Group PLC-BRBY.LN-Burberry- Reflections on 1Q27 -- calendar 2Q26--260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_1/0001-06-Bernstein-Burberry-Group-PLC-BRBY.LN-Burberry--Reflections-on-1Q27----ca",
+      "content_chars": 6152,
+      "content_bytes": 8240,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_1/0001-06-Bernstein-Burberry-Group-PLC-BRBY.LN-Burberry--Reflections-on-1Q27----ca/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：中国互联网-Kimi时刻与蝴蝶效应",
+      "wechat_title": "伯恩斯坦：中国互联网-Kimi时刻与蝴蝶效应",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "07-Bernstein-China Internet- The Kimi moment - quick thoughts on the butterfly effects-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_1/0002-07-Bernstein-China-Internet--The-Kimi-moment---quick-thoughts-on-the-butter",
+      "content_chars": 2831,
+      "content_bytes": 3191,
+      "visible_text_chars": 203,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_1/0002-07-Bernstein-China-Internet--The-Kimi-moment---quick-thoughts-on-the-butter/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：全球奢侈品-高级珠宝的案例",
+      "wechat_title": "伯恩斯坦：全球奢侈品-高级珠宝的案例",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "08-Bernstein-Global Luxury Goods- The case for Haute Joaillerie-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_1/0003-08-Bernstein-Global-Luxury-Goods--The-case-for-Haute-Joaillerie-260717",
+      "content_chars": 6075,
+      "content_bytes": 8185,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_1/0003-08-Bernstein-Global-Luxury-Goods--The-case-for-Haute-Joaillerie-260717/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：化工二季报前瞻，战术观察与需管理的预期差",
+      "wechat_title": "伯恩斯坦：化工二季报前瞻，战术观察与需管理的预期差",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "09-Bernstein-Chemicals 2Q26 Preview- A tactical long and a couple of prints to be managed-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_1/0004-09-Bernstein-Chemicals-2Q26-Preview--A-tactical-long-and-a-couple-of-prints",
+      "content_chars": 6018,
+      "content_bytes": 7988,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_1/0004-09-Bernstein-Chemicals-2Q26-Preview--A-tactical-long-and-a-couple-of-prints/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：澜起科技1H26超预期-韩国调查不改基本面",
+      "wechat_title": "伯恩斯坦：澜起科技1H26超预期-韩国调查不改基本面",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "10-Bernstein-Montage Technology-688008-Montage- 1H26 beat- Korean investigation unlikely to alter fundamentals-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_1/0005-10-Bernstein-Montage-Technology-688008-Montage--1H26-beat--Korean-investiga",
+      "content_chars": 6011,
+      "content_bytes": 8183,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_1/0005-10-Bernstein-Montage-Technology-688008-Montage--1H26-beat--Korean-investiga/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：直觉外科2Q26美国增长趋势讨论再起",
+      "wechat_title": "伯恩斯坦：直觉外科2Q26美国增长趋势讨论再起",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "11-Bernstein-Intuitive Surgical Inc-ISRG.US-Intuitive Surgical 2Q26- Reviving debates on U.S. growth trend-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_2/0001-11-Bernstein-Intuitive-Surgical-Inc-ISRG.US-Intuitive-Surgical-2Q26--Revivi",
+      "content_chars": 6333,
+      "content_bytes": 8617,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_2/0001-11-Bernstein-Intuitive-Surgical-Inc-ISRG.US-Intuitive-Surgical-2Q26--Revivi/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：Netflix2Q26指引持平引发更多关注",
+      "wechat_title": "伯恩斯坦：Netflix2Q26指引持平引发更多关注",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "12-Bernstein-Netflix Inc-NFLX.US-Netflix -NFLX- 2Q26- Same-ish guide- more doubts-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_2/0002-12-Bernstein-Netflix-Inc-NFLX.US-Netflix--NFLX--2Q26--Same-ish-guide--more-",
+      "content_chars": 6542,
+      "content_bytes": 8724,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_2/0002-12-Bernstein-Netflix-Inc-NFLX.US-Netflix--NFLX--2Q26--Same-ish-guide--more-/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：SAP从迁移截止到迁移宏观研究",
+      "wechat_title": "伯恩斯坦：SAP从迁移截止到迁移宏观研究",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "13-Bernstein-SAP SE-SAP.GR-From migration deadlines to migration economics-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_2/0003-13-Bernstein-SAP-SE-SAP.GR-From-migration-deadlines-to-migration-economics-",
+      "content_chars": 5424,
+      "content_bytes": 7570,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_2/0003-13-Bernstein-SAP-SE-SAP.GR-From-migration-deadlines-to-migration-economics-/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+      "wechat_title": "伯恩斯坦：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "14-Bernstein-U.S. Multi Industry - Electrical Equipment Data Center Cooling and Power- What-s the -M per MW for different types of equipment-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_2/0004-14-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Data-Center-Cooling",
+      "content_chars": 6392,
+      "content_bytes": 8526,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_2/0004-14-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Data-Center-Cooling/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+      "wechat_title": "伯恩斯坦：阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "15-Bernstein-Publicis Groupe SA-PUB.FP-Publicis- The flywheel is alive and kicking - Why has the share price outperformed other -AI losers---260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_2/0005-15-Bernstein-Publicis-Groupe-SA-PUB.FP-Publicis--The-flywheel-is-alive-and-",
+      "content_chars": 6937,
+      "content_bytes": 8785,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_2/0005-15-Bernstein-Publicis-Groupe-SA-PUB.FP-Publicis--The-flywheel-is-alive-and-/assets/cover.png"
+    },
+    {
+      "title": "美银：BofAFlowShow，市场已到极端，夏季最佳策略是撤退",
+      "wechat_title": "美银：BofAFlowShow，市场已到极端，夏季最佳策略是撤退",
+      "institution_name": "美银",
+      "source_report_name": "16-Bofa-The Flow Show Fade Runner-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_3/0001-16-Bofa-The-Flow-Show-Fade-Runner-260717",
+      "content_chars": 6377,
+      "content_bytes": 8507,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_3/0001-16-Bofa-The-Flow-Show-Fade-Runner-260717/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：沃尔沃汽车二季度毛利与息税前利润不及预期",
+      "wechat_title": "伯恩斯坦：沃尔沃汽车二季度毛利与息税前利润不及预期",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "17-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- 11- gross profit miss- 25- EBIT miss. Company still expects materially better H2-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_3/0002-17-Bernstein-Volvo-Car-AB-VOLCARB.SS-Volvo-Cars-Q2-2026--11--gross-profit-m",
+      "content_chars": 6907,
+      "content_bytes": 9343,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_3/0002-17-Bernstein-Volvo-Car-AB-VOLCARB.SS-Volvo-Cars-Q2-2026--11--gross-profit-m/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：Bernstein周末科技，算力市场观察-对冲万亿美元AI资",
+      "wechat_title": "伯恩斯坦：Bernstein周末科技，算力市场观察-对冲万亿美元AI资",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "18-Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_3/0003-18-Bernstein-Weekend-Tech-Byte--Compute-capital-markets---Hedging-the-trill",
+      "content_chars": 4991,
+      "content_bytes": 7335,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_3/0003-18-Bernstein-Weekend-Tech-Byte--Compute-capital-markets---Hedging-the-trill/assets/cover.png"
+    },
+    {
+      "title": "花旗：澜起科技二季度利润强劲-回购或助稳报价",
+      "wechat_title": "花旗：澜起科技二季度利润强劲-回购或助稳报价",
+      "institution_name": "花旗",
+      "source_report_name": "19-CITI-Montage Technology -688008- Strong 2Q26 Results- Share Repurchase May Help Stabilize Share Volatility-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_3/0004-19-CITI-Montage-Technology--688008--Strong-2Q26-Results--Share-Repurchase-M",
+      "content_chars": 7288,
+      "content_bytes": 9332,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_3/0004-19-CITI-Montage-Technology--688008--Strong-2Q26-Results--Share-Repurchase-M/assets/cover.png"
+    },
+    {
+      "title": "花旗：台积电AI需求加速-资本支出上调超预期",
+      "wechat_title": "花旗：台积电AI需求加速-资本支出上调超预期",
+      "institution_name": "花旗",
+      "source_report_name": "20-CITI-TSMC -2330.TW- AI demand keeps accelerating- Upside surprise on further capex increase-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_3/0005-20-CITI-TSMC--2330.TW--AI-demand-keeps-accelerating--Upside-surprise-on-fur",
+      "content_chars": 6830,
+      "content_bytes": 8948,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_3/0005-20-CITI-TSMC--2330.TW--AI-demand-keeps-accelerating--Upside-surprise-on-fur/assets/cover.png"
+    },
+    {
+      "title": "花旗：阳光电源储能出货高增-二季度利润不确定性已反映",
+      "wechat_title": "花旗：阳光电源储能出货高增-二季度利润不确定性已反映",
+      "institution_name": "花旗",
+      "source_report_name": "21-CITI-Sungrow Power Supply -300274- High ESS Shipment Volume Growth- Low 2Q26E Margin Probably Reflected in -30- Share Price Drop in July-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-",
+      "content_chars": 7054,
+      "content_bytes": 9172,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-/assets/cover.png"
+    },
+    {
+      "title": "花旗：美国通信设备2Q26预览-参与者关注供应约束",
+      "wechat_title": "花旗：美国通信设备2Q26预览-参与者关注供应约束",
+      "institution_name": "花旗",
+      "source_report_name": "22-CITI-US Communications Equipment 2Q26 Earnings Preview- Investor Focus on Supply Constraints-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o",
+      "content_chars": 6252,
+      "content_bytes": 8344,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o/assets/cover.png"
+    },
+    {
+      "title": "德意志银行：中国电池月度监测-2026年6月",
+      "wechat_title": "德意志银行：中国电池月度监测-2026年6月",
+      "institution_name": "德意志银行",
+      "source_report_name": "24-DB-Battery-China Battery - Monthly Monitor-June 2026-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716",
+      "content_chars": 7077,
+      "content_bytes": 9039,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716/assets/cover.png"
+    },
+    {
+      "title": "高盛：安踏2Q26零售基本符合预期-上半年略超全年指引",
+      "wechat_title": "高盛：安踏2Q26零售基本符合预期-上半年略超全年指引",
+      "institution_name": "高盛",
+      "source_report_name": "26-GS-Anta Sports Products -2020.HK-2Q26 retail sales broadly in-line- 1H26 modestly ahead of the full-year guidance- 报告观点-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_5/0001-26-Goldman-Sachs-Anta-Sports-Products--2020.HK-2Q26-retail-sales-broadly-in",
+      "content_chars": 6686,
+      "content_bytes": 9056,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_5/0001-26-Goldman-Sachs-Anta-Sports-Products--2020.HK-2Q26-retail-sales-broadly-in/assets/cover.png"
+    },
+    {
+      "title": "德意志银行：大宗商品观察，关注积极因素，外部不确定性推动供应体系调整",
+      "wechat_title": "德意志银行：大宗商品观察，关注积极因素，外部不确定性推动供应体系调整",
+      "institution_name": "德意志银行",
+      "source_report_name": "27-DB-Commodities Outlook-Look on the bright side-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_5/0002-27-Deutsche-Bank-Commodities-Outlook-Look-on-the-bright-side-260716",
+      "content_chars": 5893,
+      "content_bytes": 8193,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_5/0002-27-Deutsche-Bank-Commodities-Outlook-Look-on-the-bright-side-260716/assets/cover.png"
+    },
+    {
+      "title": "高盛：中国软件产品追踪，AI原生应用扩张",
+      "wechat_title": "高盛：中国软件产品追踪，AI原生应用扩张",
+      "institution_name": "高盛",
+      "source_report_name": "28-GS-China Software- Product Tracker- Comprehensive Agentic AI tools driving token consumption- AI native applications in expansion-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_5/0003-28-Goldman-Sachs-China-Software--Product-Tracker--Comprehensive-Agentic-AI-",
+      "content_chars": 4906,
+      "content_bytes": 6850,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_5/0003-28-Goldman-Sachs-China-Software--Product-Tracker--Comprehensive-Agentic-AI-/assets/cover.png"
+    },
+    {
+      "title": "高盛：中国基础材料监测-需求端边际变化观察",
+      "wechat_title": "高盛：中国基础材料监测-需求端边际变化观察",
+      "institution_name": "高盛",
+      "source_report_name": "30-GS-China Basic Materials Monitor-July 2026- losing incremental strength-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_5/0005-30-Goldman-Sachs-China-Basic-Materials-Monitor-July-2026--losing-incrementa",
+      "content_chars": 6067,
+      "content_bytes": 8457,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_5/0005-30-Goldman-Sachs-China-Basic-Materials-Monitor-July-2026--losing-incrementa/assets/cover.png"
+    },
+    {
+      "title": "高盛：中国外汇数据暗示六月资金流入",
+      "wechat_title": "高盛：中国外汇数据暗示六月资金流入",
+      "institution_name": "高盛",
+      "source_report_name": "31-GS-China- SAFE data suggest some FX inflows in June-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_6/0001-31-Goldman-Sachs-China--SAFE-data-suggest-some-FX-inflows-in-June-260717",
+      "content_chars": 6435,
+      "content_bytes": 8683,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_6/0001-31-Goldman-Sachs-China--SAFE-data-suggest-some-FX-inflows-in-June-260717/assets/cover.png"
+    },
+    {
+      "title": "高盛：全球外汇市场观察，冷静与从容",
+      "wechat_title": "高盛：全球外汇市场观察，冷静与从容",
+      "institution_name": "高盛",
+      "source_report_name": "32-GS-GLOBAL FX TRADER-Cool- Calm and Collected-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_6/0002-32-Goldman-Sachs-GLOBAL-FX-TRADER-Cool--Calm-and-Collected-260717",
+      "content_chars": 4688,
+      "content_bytes": 7022,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_6/0002-32-Goldman-Sachs-GLOBAL-FX-TRADER-Cool--Calm-and-Collected-260717/assets/cover.png"
+    },
+    {
+      "title": "高盛：全球利率观察-快速久期突破-九月才是利率市场真正考验",
+      "wechat_title": "高盛：全球利率观察-快速久期突破-九月才是利率市场真正考验",
+      "institution_name": "高盛",
+      "source_report_name": "33-GS-Global Rates Trader-Quick Duration Break-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_6/0003-33-Goldman-Sachs-Global-Rates-Trader-Quick-Duration-Break-260717",
+      "content_chars": 5207,
+      "content_bytes": 7527,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_6/0003-33-Goldman-Sachs-Global-Rates-Trader-Quick-Duration-Break-260717/assets/cover.png"
+    },
+    {
+      "title": "高盛：长电科技新先进封装产能公布-2Q26净利润指引超预期",
+      "wechat_title": "高盛：长电科技新先进封装产能公布-2Q26净利润指引超预期",
+      "institution_name": "高盛",
+      "source_report_name": "34-GS-JCET -600584-- New advanced packaging capacity announced- 2Q26 NI guidance beat-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_6/0004-34-Goldman-Sachs-JCET--600584---New-advanced-packaging-capacity-announced--",
+      "content_chars": 8881,
+      "content_bytes": 10985,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_6/0004-34-Goldman-Sachs-JCET--600584---New-advanced-packaging-capacity-announced--/assets/cover.png"
+    },
+    {
+      "title": "高盛：HSBC二季度预览，又一个强劲季度-关注净息差指引与财富趋势",
+      "wechat_title": "高盛：HSBC二季度预览，又一个强劲季度-关注净息差指引与财富趋势",
+      "institution_name": "高盛",
+      "source_report_name": "35-GS-HSBC -0005.HK HSBA.L-2Q26 Preview- Another robust quarter- with focus on NII guidance and wealth trends-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_6/0005-35-Goldman-Sachs-HSBC--0005.HK-HSBA.L-2Q26-Preview--Another-robust-quarter-",
+      "content_chars": 8230,
+      "content_bytes": 10430,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_6/0005-35-Goldman-Sachs-HSBC--0005.HK-HSBA.L-2Q26-Preview--Another-robust-quarter-/assets/cover.png"
+    },
+    {
+      "title": "高盛：日本策略速报，FX与AI顺风遭遇高共识门槛",
+      "wechat_title": "高盛：日本策略速报，FX与AI顺风遭遇高共识门槛",
+      "institution_name": "高盛",
+      "source_report_name": "36-GS-Japan Strategy Flash- 1Q3 27 earnings preview-FX and AI tailwinds meet a high consensus bar-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_7/0001-36-Goldman-Sachs-Japan-Strategy-Flash--1Q3-27-earnings-preview-FX-and-AI-ta",
+      "content_chars": 5071,
+      "content_bytes": 6905,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_7/0001-36-Goldman-Sachs-Japan-Strategy-Flash--1Q3-27-earnings-preview-FX-and-AI-ta/assets/cover.png"
+    },
+    {
+      "title": "高盛：5月央行购金提供金价底部",
+      "wechat_title": "高盛：5月央行购金提供金价底部",
+      "institution_name": "高盛",
+      "source_report_name": "37-GS-Precious Comment- Strong Central Bank Buying in May Provides Price Floor Amidst Likely Temporary Rates Pressure-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_7/0002-37-Goldman-Sachs-Precious-Comment--Strong-Central-Bank-Buying-in-May-Provid",
+      "content_chars": 5791,
+      "content_bytes": 8027,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_7/0002-37-Goldman-Sachs-Precious-Comment--Strong-Central-Bank-Buying-in-May-Provid/assets/cover.png"
+    },
+    {
+      "title": "高盛：中国AI模型新前沿-KimiK3从成本效率到智能定价",
+      "wechat_title": "高盛：中国AI模型新前沿-KimiK3从成本效率到智能定价",
+      "institution_name": "高盛",
+      "source_report_name": "38-GS-Navigating China AI models-New frontier from Kimi K3- from cost efficiency- intelligence to pricing power of Chinese models-260718",
+      "report_dir": "xhs_notes/dropbox/260718/shard_7/0003-38-Goldman-Sachs-Navigating-China-AI-models-New-frontier-from-Kimi-K3--from",
+      "content_chars": 2402,
+      "content_bytes": 2482,
+      "visible_text_chars": 0,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_7/0003-38-Goldman-Sachs-Navigating-China-AI-models-New-frontier-from-Kimi-K3--from/assets/cover.png"
+    },
+    {
+      "title": "高盛：NetflixQ2-26观察，管理层聚焦收入复合增长与利润率轨迹",
+      "wechat_title": "高盛：NetflixQ2-26观察，管理层聚焦收入复合增长与利润率轨迹",
+      "institution_name": "高盛",
+      "source_report_name": "39-GS-Netflix Inc. -NFLX.US- Q2-26 Earnings Review- Management Team Focused on Compounded Revenue- Margin Trajectory - Capital Allocation- Investor Debates",
+      "report_dir": "xhs_notes/dropbox/260718/shard_7/0004-39-Goldman-Sachs-Netflix-Inc.--NFLX.US--Q2-26-Earnings-Review--Management-T",
+      "content_chars": 6240,
+      "content_bytes": 8388,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_7/0004-39-Goldman-Sachs-Netflix-Inc.--NFLX.US--Q2-26-Earnings-Review--Management-T/assets/cover.png"
+    },
+    {
+      "title": "高盛：周度资金流-能源资金重新流入，科技吸金174亿美元",
+      "wechat_title": "高盛：周度资金流-能源资金重新流入，科技吸金174亿美元",
+      "institution_name": "高盛",
+      "source_report_name": "40-GS-WEEKLY FUND FLOWS-Renewed Energy Inflows-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_7/0005-40-Goldman-Sachs-WEEKLY-FUND-FLOWS-Renewed-Energy-Inflows-260717",
+      "content_chars": 5824,
+      "content_bytes": 8216,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_7/0005-40-Goldman-Sachs-WEEKLY-FUND-FLOWS-Renewed-Energy-Inflows-260717/assets/cover.png"
+    },
+    {
+      "title": "高盛：美国密歇根消费者信心回升-短期通胀预期下降",
+      "wechat_title": "高盛：美国密歇根消费者信心回升-短期通胀预期下降",
+      "institution_name": "高盛",
+      "source_report_name": "42-GS-USA- UMich Sentiment Rises- Short-Term Inflation Expectations Decline-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_8/0002-42-Goldman-Sachs-USA--UMich-Sentiment-Rises--Short-Term-Inflation-Expectati",
+      "content_chars": 6176,
+      "content_bytes": 8494,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_8/0002-42-Goldman-Sachs-USA--UMich-Sentiment-Rises--Short-Term-Inflation-Expectati/assets/cover.png"
+    },
+    {
+      "title": "高盛：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+      "wechat_title": "高盛：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+      "institution_name": "高盛",
+      "source_report_name": "43-GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_8/0003-43-Goldman-Sachs-Xunlong-Sci-Tech--6715.HK--NC---The-Next-Gen-call-takeaway",
+      "content_chars": 6882,
+      "content_bytes": 9396,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_8/0003-43-Goldman-Sachs-Xunlong-Sci-Tech--6715.HK--NC---The-Next-Gen-call-takeaway/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开",
+      "wechat_title": "摩根大通：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开",
+      "institution_name": "摩根大通",
+      "source_report_name": "44-JPM-Base Metals Supply - Demand Tracker-While market awaits tariff update- China keeps buying copper-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_8/0004-44-J.P.-Morgan-Base-Metals-Supply---Demand-Tracker-While-market-awaits-tari",
+      "content_chars": 5857,
+      "content_bytes": 8137,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_8/0004-44-J.P.-Morgan-Base-Metals-Supply---Demand-Tracker-While-market-awaits-tari/assets/cover.png"
+    },
+    {
+      "title": "高盛：小米机器人整合硬件数据与模型以扩大规模",
+      "wechat_title": "高盛：小米机器人整合硬件数据与模型以扩大规模",
+      "institution_name": "高盛",
+      "source_report_name": "45-GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- 报告观点-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_8/0005-45-Goldman-Sachs-Xiaomi-Corp.--1810.HK-Xiaomi-Robotics--Integrating-Hardwar",
+      "content_chars": 5254,
+      "content_bytes": 7242,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_8/0005-45-Goldman-Sachs-Xiaomi-Corp.--1810.HK-Xiaomi-Robotics--Integrating-Hardwar/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：中国燃气公用事业1H26预览，业绩表现与盈利调整",
+      "wechat_title": "摩根大通：中国燃气公用事业1H26预览，业绩表现与盈利调整",
+      "institution_name": "摩根大通",
+      "source_report_name": "46-JPM-China Gas Utilities-1H26 preview-weak results and consensus earnings cuts are likely-turning point yet to come-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_9/0001-46-J.P.-Morgan-China-Gas-Utilities-1H26-preview-weak-results-and-consensus-",
+      "content_chars": 6524,
+      "content_bytes": 8786,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_9/0001-46-J.P.-Morgan-China-Gas-Utilities-1H26-preview-weak-results-and-consensus-/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：中国境内债季度分析，截至2026年6月30日",
+      "wechat_title": "摩根大通：中国境内债季度分析，截至2026年6月30日",
+      "institution_name": "摩根大通",
+      "source_report_name": "47-JPM-China Bond Analytics-For the quarter ended Jun 30- 2026-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_9/0002-47-J.P.-Morgan-China-Bond-Analytics-For-the-quarter-ended-Jun-30--2026-2607",
+      "content_chars": 5880,
+      "content_bytes": 8206,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_9/0002-47-J.P.-Morgan-China-Bond-Analytics-For-the-quarter-ended-Jun-30--2026-2607/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+      "wechat_title": "摩根大通：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+      "institution_name": "摩根大通",
+      "source_report_name": "48-JPM-China Basic Materials June 26 NBS data- Resilient demand to support high metal prices and strengthen miners- earnings-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_9/0003-48-J.P.-Morgan-China-Basic-Materials-June-26-NBS-data--Resilient-demand-to-",
+      "content_chars": 6515,
+      "content_bytes": 8783,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_9/0003-48-J.P.-Morgan-China-Basic-Materials-June-26-NBS-data--Resilient-demand-to-/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+      "wechat_title": "摩根大通：中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+      "institution_name": "摩根大通",
+      "source_report_name": "49-JPM-China Steel-Channel checker-10-day China steel output-3- vs previous-Iron ore FOB price remains weaker vs pre-war as freight rates tick up-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_9/0004-49-J.P.-Morgan-China-Steel-Channel-checker-10-day-China-steel-output-3--vs-",
+      "content_chars": 6813,
+      "content_bytes": 8941,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_9/0004-49-J.P.-Morgan-China-Steel-Channel-checker-10-day-China-steel-output-3--vs-/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：中国人寿与AMP受益于老龄化养老金需求",
+      "wechat_title": "摩根大通：中国人寿与AMP受益于老龄化养老金需求",
+      "institution_name": "摩根大通",
+      "source_report_name": "50-JPM-China Insurance-China-s ageing demographics create pension upside for China Life and AMP-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_9/0005-50-J.P.-Morgan-China-Insurance-China-s-ageing-demographics-create-pension-u",
+      "content_chars": 6804,
+      "content_bytes": 8796,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_9/0005-50-J.P.-Morgan-China-Insurance-China-s-ageing-demographics-create-pension-u/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：储能电池6月出货超100GWh，高基数下同比增66%",
+      "wechat_title": "摩根大通：储能电池6月出货超100GWh，高基数下同比增66%",
+      "institution_name": "摩根大通",
+      "source_report_name": "51-JPM-ESS Battery June shipments above 100GWh- -3- m m and -66- y y despite a high base- FY26 on track to 1-100Gwh-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_10/0001-51-J.P.-Morgan-ESS-Battery-June-shipments-above-100GWh---3--m-m-and--66--y-",
+      "content_chars": 7599,
+      "content_bytes": 9619,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_10/0001-51-J.P.-Morgan-ESS-Battery-June-shipments-above-100GWh---3--m-m-and--66--y-/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：SK电讯AI工厂建设成为新催化剂-上调至超配",
+      "wechat_title": "摩根大通：SK电讯AI工厂建设成为新催化剂-上调至超配",
+      "institution_name": "摩根大通",
+      "source_report_name": "52-JPM-SK Telecom-017670.KS-AI factory build-out emerges as next catalyst- upgrade to OW-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_10/0002-52-J.P.-Morgan-SK-Telecom-017670.KS-AI-factory-build-out-emerges-as-next-ca",
+      "content_chars": 6226,
+      "content_bytes": 8140,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_10/0002-52-J.P.-Morgan-SK-Telecom-017670.KS-AI-factory-build-out-emerges-as-next-ca/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：电子元件-技术板块",
+      "wechat_title": "摩根大通：电子元件-技术板块",
+      "institution_name": "摩根大通",
+      "source_report_name": "53-JPM-Technology - Electronic Components-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_10/0003-53-J.P.-Morgan-Technology---Electronic-Components-260716",
+      "content_chars": 7397,
+      "content_bytes": 9405,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_10/0003-53-J.P.-Morgan-Technology---Electronic-Components-260716/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：电子元器件板块数据沉积-METI生产统计-ABF基板",
+      "wechat_title": "摩根大通：电子元器件板块数据沉积-METI生产统计-ABF基板",
+      "institution_name": "摩根大通",
+      "source_report_name": "54-JPM-Electronic Components Sector Component Data Deposition- METI production statistics -electronic components- semiconductors- for May 2026- ABF substrates re",
+      "report_dir": "xhs_notes/dropbox/260718/shard_10/0004-54-J.P.-Morgan-Electronic-Components-Sector-Component-Data-Deposition--METI",
+      "content_chars": 6248,
+      "content_bytes": 8310,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_10/0004-54-J.P.-Morgan-Electronic-Components-Sector-Component-Data-Deposition--METI/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：中国AI基础模型K3，MS观点",
+      "wechat_title": "摩根士丹利：中国AI基础模型K3，MS观点",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "55-MS-China AI Foundation Model Moonshot K3 What-s Our View-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_10/0005-55-Morgan-Stanley-China-AI-Foundation-Model-Moonshot-K3-What-s-Our-View-260",
+      "content_chars": 2320,
+      "content_bytes": 2390,
+      "visible_text_chars": 0,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_10/0005-55-Morgan-Stanley-China-AI-Foundation-Model-Moonshot-K3-What-s-Our-View-260/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：金山办公WAIC2026新品发布",
+      "wechat_title": "摩根士丹利：金山办公WAIC2026新品发布",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "56-MS-Beijing Kingsoft Office Software Inc-688111-WAIC 2026 New Product Launch-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_11/0001-56-Morgan-Stanley-Beijing-Kingsoft-Office-Software-Inc-688111-WAIC-2026-New",
+      "content_chars": 4949,
+      "content_bytes": 6973,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_11/0001-56-Morgan-Stanley-Beijing-Kingsoft-Office-Software-Inc-688111-WAIC-2026-New/assets/cover.png"
+    },
+    {
+      "title": "杰富瑞：AI",
+      "wechat_title": "杰富瑞：AI",
+      "institution_name": "杰富瑞",
+      "source_report_name": "57-JEF-AI Series -58- Kimi K3 Model Capabilities an Unexpected Surprise for Market-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_11/0002-57-Jefferies-AI-Series--58--Kimi-K3-Model-Capabilities-an-Unexpected-Surpri",
+      "content_chars": 3204,
+      "content_bytes": 3804,
+      "visible_text_chars": 396,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_11/0002-57-Jefferies-AI-Series--58--Kimi-K3-Model-Capabilities-an-Unexpected-Surpri/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：中国房地产1H26预览，利润率压缩下的盈利观察",
+      "wechat_title": "摩根士丹利：中国房地产1H26预览，利润率压缩下的盈利观察",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "58-MS-China Property-1H26 Preview- Weak Earnings amid Further Margin Squeeze-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_11/0003-58-Morgan-Stanley-China-Property-1H26-Preview--Weak-Earnings-amid-Further-M",
+      "content_chars": 6001,
+      "content_bytes": 8157,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_11/0003-58-Morgan-Stanley-China-Property-1H26-Preview--Weak-Earnings-amid-Further-M/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：地平线HSD2.0-安全先于锐利",
+      "wechat_title": "摩根士丹利：地平线HSD2.0-安全先于锐利",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "59-MS-Horizon Robotics-9660.HK-HSD 2.0 - Safe Before Sharp-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_11/0004-59-Morgan-Stanley-Horizon-Robotics-9660.HK-HSD-2.0---Safe-Before-Sharp-2607",
+      "content_chars": 4726,
+      "content_bytes": 7030,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_11/0004-59-Morgan-Stanley-Horizon-Robotics-9660.HK-HSD-2.0---Safe-Before-Sharp-2607/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：中国钢铁与铁矿石周度更新",
+      "wechat_title": "摩根士丹利：中国钢铁与铁矿石周度更新",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "60-MS-China Steel and Iron Ore Weekly Update-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_11/0005-60-Morgan-Stanley-China-Steel-and-Iron-Ore-Weekly-Update-260716",
+      "content_chars": 6969,
+      "content_bytes": 9247,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_11/0005-60-Morgan-Stanley-China-Steel-and-Iron-Ore-Weekly-Update-260716/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：海光信息二季度净利润11亿元超预期8%",
+      "wechat_title": "摩根士丹利：海光信息二季度净利润11亿元超预期8%",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "61-MS-Hygon Information Technology Co.- Ltd.-688041-2Q26 preliminary earnings beat- OW-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_12/0001-61-Morgan-Stanley-Hygon-Information-Technology-Co.--Ltd.-688041-2Q26-prelim",
+      "content_chars": 6717,
+      "content_bytes": 9073,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_12/0001-61-Morgan-Stanley-Hygon-Information-Technology-Co.--Ltd.-688041-2Q26-prelim/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：理想L6换代-同徽章新体验",
+      "wechat_title": "摩根士丹利：理想L6换代-同徽章新体验",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "62-MS-Li Auto Inc.-2015.HK--New L6 - Same badge- next level experience-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_12/0002-62-Morgan-Stanley-Li-Auto-Inc.-2015.HK--New-L6---Same-badge--next-level-exp",
+      "content_chars": 4980,
+      "content_bytes": 6628,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_12/0002-62-Morgan-Stanley-Li-Auto-Inc.-2015.HK--New-L6---Same-badge--next-level-exp/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：日本暑期学校-半导体生产设备",
+      "wechat_title": "摩根士丹利：日本暑期学校-半导体生产设备",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "63-MS-Japan Summer School- Semiconductor Production Equipment-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_12/0003-63-Morgan-Stanley-Japan-Summer-School--Semiconductor-Production-Equipment-2",
+      "content_chars": 5605,
+      "content_bytes": 7859,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_12/0003-63-Morgan-Stanley-Japan-Summer-School--Semiconductor-Production-Equipment-2/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：历峰集团管理层10问-美国增长30%",
+      "wechat_title": "摩根士丹利：历峰集团管理层10问-美国增长30%",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "64-MS-Richemont SA-CFR.S--10 Questions for Management-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_12/0004-64-Morgan-Stanley-Richemont-SA-CFR.S--10-Questions-for-Management-260716",
+      "content_chars": 5981,
+      "content_bytes": 8103,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_12/0004-64-Morgan-Stanley-Richemont-SA-CFR.S--10-Questions-for-Management-260716/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：瑞士腕表二级市场在2026年第二季度持续走高",
+      "wechat_title": "摩根士丹利：瑞士腕表二级市场在2026年第二季度持续走高",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "65-MS-Luxury Goods Swiss Watches- Secondary Market Keeps Ticking Higher in 2Q26-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_12/0005-65-Morgan-Stanley-Luxury-Goods-Swiss-Watches--Secondary-Market-Keeps-Tickin",
+      "content_chars": 7105,
+      "content_bytes": 9217,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_12/0005-65-Morgan-Stanley-Luxury-Goods-Swiss-Watches--Secondary-Market-Keeps-Tickin/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：稀土-资金流向何处",
+      "wechat_title": "摩根士丹利：稀土-资金流向何处",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "66-MS-Rare Earths- Where Is The Money Flowing--260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_13/0001-66-Morgan-Stanley-Rare-Earths--Where-Is-The-Money-Flowing--260716",
+      "content_chars": 6825,
+      "content_bytes": 9005,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_13/0001-66-Morgan-Stanley-Rare-Earths--Where-Is-The-Money-Flowing--260716/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：收购完成后，Uber的跨平台市场将从34个增加到58个",
+      "wechat_title": "摩根士丹利：收购完成后，Uber的跨平台市场将从34个增加到58个",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "67-MS-Uber Technologies Inc-UBER.UN-Delivering a Cross Platform -Hero--260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_13/0002-67-Morgan-Stanley-Uber-Technologies-Inc-UBER.UN-Delivering-a-Cross-Platform",
+      "content_chars": 6086,
+      "content_bytes": 8142,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_13/0002-67-Morgan-Stanley-Uber-Technologies-Inc-UBER.UN-Delivering-a-Cross-Platform/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：太空探索技术公司，太空对冲地面邻避主义",
+      "wechat_title": "摩根士丹利：太空探索技术公司，太空对冲地面邻避主义",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "68-MS-Space Exploration Technologies Corp.-SPCX.US-A -Heavenly- Hedge to DC NIMBYism--260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_13/0003-68-Morgan-Stanley-Space-Exploration-Technologies-Corp.-SPCX.US-A--Heavenly-",
+      "content_chars": 5752,
+      "content_bytes": 7740,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_13/0003-68-Morgan-Stanley-Space-Exploration-Technologies-Corp.-SPCX.US-A--Heavenly-/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：台积电积极资本开支应对更强AI需求",
+      "wechat_title": "摩根士丹利：台积电积极资本开支应对更强AI需求",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "69-MS-TSMC-2330.TW-Aggressive capex to address stronger AI demand- OW-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_13/0004-69-Morgan-Stanley-TSMC-2330.TW-Aggressive-capex-to-address-stronger-AI-dema",
+      "content_chars": 7486,
+      "content_bytes": 9608,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_13/0004-69-Morgan-Stanley-TSMC-2330.TW-Aggressive-capex-to-address-stronger-AI-dema/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：小鹏MONAL03全球首发，欧洲定价策略观察",
+      "wechat_title": "摩根士丹利：小鹏MONAL03全球首发，欧洲定价策略观察",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "70-MS-XPeng Inc.-9868.HK--MONA L03 - The global launch that funds itself-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_13/0005-70-Morgan-Stanley-XPeng-Inc.-9868.HK--MONA-L03---The-global-launch-that-fun",
+      "content_chars": 6039,
+      "content_bytes": 8219,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_13/0005-70-Morgan-Stanley-XPeng-Inc.-9868.HK--MONA-L03---The-global-launch-that-fun/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：宇通客车不确定性回报更新",
+      "wechat_title": "摩根士丹利：宇通客车不确定性回报更新",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "71-MS-Zhengzhou Yutong Bus Co-600066-Risk Reward Update-260716",
+      "report_dir": "xhs_notes/dropbox/260718/shard_14/0001-71-Morgan-Stanley-Zhengzhou-Yutong-Bus-Co-600066-Risk-Reward-Update-260716",
+      "content_chars": 6490,
+      "content_bytes": 8726,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_14/0001-71-Morgan-Stanley-Zhengzhou-Yutong-Bus-Co-600066-Risk-Reward-Update-260716/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：中际旭创上调预测",
+      "wechat_title": "摩根士丹利：中际旭创上调预测",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "72-MS-Zhongji Innolight Co Ltd Updating estimates-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_14/0002-72-Morgan-Stanley-Zhongji-Innolight-Co-Ltd-Updating-estimates-260717",
+      "content_chars": 6288,
+      "content_bytes": 8170,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_14/0002-72-Morgan-Stanley-Zhongji-Innolight-Co-Ltd-Updating-estimates-260717/assets/cover.png"
+    },
+    {
+      "title": "野村：深南电路，PCB与IC基板驱动稳健增长",
+      "wechat_title": "野村：深南电路，PCB与IC基板驱动稳健增长",
+      "institution_name": "野村",
+      "source_report_name": "73-NOM-Shennan Circuits-002916-Steady growth driven by PCB and IC substrate-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_14/0003-73-Nomura-Shennan-Circuits-002916-Steady-growth-driven-by-PCB-and-IC-substr",
+      "content_chars": 6626,
+      "content_bytes": 8734,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_14/0003-73-Nomura-Shennan-Circuits-002916-Steady-growth-driven-by-PCB-and-IC-substr/assets/cover.png"
+    },
+    {
+      "title": "野村：美国宏观环境周报，通胀降温使美联储维持观望",
+      "wechat_title": "野村：美国宏观环境周报，通胀降温使美联储维持观望",
+      "institution_name": "野村",
+      "source_report_name": "74-NOM-US Economic Weekly-Cooling inflation will keep the Fed on 报告观点-260717",
+      "report_dir": "xhs_notes/dropbox/260718/shard_14/0004-74-Nomura-US-Economic-Weekly-Cooling-inflation-will-keep-the-Fed-on-hold-26",
+      "content_chars": 6469,
+      "content_bytes": 8775,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260718/shard_14/0004-74-Nomura-US-Economic-Weekly-Cooling-inflation-will-keep-the-Fed-on-hold-26/assets/cover.png"
+    }
+  ]
+}
