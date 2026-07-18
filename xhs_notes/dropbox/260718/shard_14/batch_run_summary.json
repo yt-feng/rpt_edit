@@ -1,0 +1,46 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 74,
+  "pdf_count_before_skip": 4,
+  "pdf_count": 4,
+  "generated_report_count": 4,
+  "batch_size": 5,
+  "shard_index": 14,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 4,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/71-MS-Zhengzhou Yutong Bus Co（600066）Risk Reward Update-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4v0k83oz/pdfs/0001-71-MS-Zhengzhou Yutong Bus Co-600066-Risk Reward Update-260716.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/72-MS-Zhongji Innolight Co Ltd Updating estimates-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4v0k83oz/pdfs/0002-72-MS-Zhongji Innolight Co Ltd Updating estimates-260717.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/73-NOM-Shennan Circuits（002916）Steady growth driven by PCB and IC substrate-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4v0k83oz/pdfs/0003-73-NOM-Shennan Circuits-002916-Steady growth driven by PCB and IC substrate-260717.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/74-NOM-US Economic Weekly：Cooling inflation will keep the Fed on hold-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4v0k83oz/pdfs/0004-74-NOM-US Economic Weekly-Cooling inflation will keep the Fed on hold-260717.pdf",
+          "stable_index": "4"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
