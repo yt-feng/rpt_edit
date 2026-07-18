@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_g754ccyo/pdfs/0001-51-JPM-ESS Battery June shipments above 100GWh- -3- m m and -66- y y despite a high base- FY26 on track to 1-100Gwh-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g754ccyo/pdfs/0002-52-JPM-SK Telecom-017670.KS-AI factory build-out emerges as next catalyst- upgrade to OW-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g754ccyo/pdfs/0003-53-JPM-Technology - Electronic Components-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g754ccyo/pdfs/0004-54-JPM-Electronic Components Sector Component Data Deposition- METI production statistics -electronic components- semiconductors- for May 2026- ABF substrates re.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g754ccyo/pdfs/0005-55-MS-China AI Foundation Model Moonshot K3 What-s Our View-260717.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
