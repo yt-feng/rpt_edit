@@ -1,0 +1,275 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_mk7k62ds/pdfs/0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "政府服务用AI，信任",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：2024全球信任报告4.0",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91.pdf",
+      "cleaned_source_title": "0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0001BCG2024全球ReportTr",
+      "raw_candidates": [
+        "波士顿咨询：2024全球信任报告4.0",
+        "波士顿咨询：全球信任报告4.0-公民对GenAI接受度超预期",
+        "波士顿咨询：全球信任报告4.0-公民信任GenAI前提是安全"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：2024全球信任报告4.0",
+        "波士顿咨询：全球信任报告4.0-公民对GenAI接受度超预期",
+        "波士顿咨询：全球信任报告4.0-公民信任GenAI前提是安全",
+        "波士顿咨询：0001BCG2024全球ReportTr",
+        "波士顿咨询：这份基于41,600名受访者、覆盖48个司法管辖区的调查"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：全球信任报告4.0-公民对GenAI接受度超预期",
+          "reasons": [
+            "anchor_coverage=0.64",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "波士顿咨询：全球信任报告4.0-公民信任GenAI前提是安全",
+          "reasons": [
+            "anchor_coverage=0.64"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0001BCG2024全球ReportTr",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "波士顿咨询：这份基于41,600名受访者、覆盖48个司法管辖区的调查",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：2024全球信任报告4.0",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：2024全球信任报告4.0"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_mk7k62ds/pdfs/0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "全球空军战备率堪忧，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_title": "波士顿咨询：国防航空出勤率问题-AI可助力修复",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92.pdf",
+      "cleaned_source_title": "0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：AI0002BCGDefenseAviatio",
+      "raw_candidates": [
+        "波士顿咨询：国防航空出勤率问题-AI可助力修复",
+        "波士顿咨询：美法德战机出勤率低于70%-AI修复方案",
+        "波士顿咨询：英国F-35仅三分之一可用-AI重构维护体系"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：国防航空出勤率问题-AI可助力修复",
+        "波士顿咨询：美法德战机出勤率低于70%-AI修复方案",
+        "波士顿咨询：英国F-35仅三分之一可用-AI重构维护体系",
+        "波士顿咨询：AI0002BCGDefenseAviatio",
+        "波士顿咨询：1.生成式AI正在解决维护人员“经验断层”这个硬约束"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：美法德战机出勤率低于70%-AI修复方案",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：英国F-35仅三分之一可用-AI重构维护体系",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI0002BCGDefenseAviatio",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：1.生成式AI正在解决维护人员“经验断层”这个硬约束",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：国防航空出勤率问题-AI可助力修复",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：国防航空出勤率问题-AI可助力修复"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_mk7k62ds/pdfs/0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "欧洲军工，卡在制造上",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：欧洲军工挑战也是制造挑战",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356.pdf",
+      "cleaned_source_title": "0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0003BCGEuropesDefense",
+      "raw_candidates": [
+        "波士顿咨询：欧洲军工挑战也是制造挑战",
+        "波士顿咨询：欧洲军工制造瓶颈在流程效率而非厂房",
+        "波士顿咨询：欧洲军工不缺订单缺制造规模"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：欧洲军工挑战也是制造挑战",
+        "波士顿咨询：欧洲军工制造瓶颈在流程效率而非厂房",
+        "波士顿咨询：欧洲军工不缺订单缺制造规模",
+        "波士顿咨询：0003BCGEuropesDefense",
+        "波士顿咨询：1.产能瓶颈往往来自流程效率，而非厂房面积"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：欧洲军工制造瓶颈在流程效率而非厂房",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "波士顿咨询：欧洲军工不缺订单缺制造规模",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0003BCGEuropesDefense",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：1.产能瓶颈往往来自流程效率，而非厂房面积",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：欧洲军工挑战也是制造挑战",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：欧洲军工挑战也是制造挑战"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

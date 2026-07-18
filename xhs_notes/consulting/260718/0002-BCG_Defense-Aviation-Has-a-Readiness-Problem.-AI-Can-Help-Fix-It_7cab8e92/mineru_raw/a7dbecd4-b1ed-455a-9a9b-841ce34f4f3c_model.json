@@ -1,0 +1,1158 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.397
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.432,
+                0.31,
+                0.449
+            ],
+            "angle": 0,
+            "content": "AEROSPACE AND DEFENSE INDUSTRY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.779,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Defense Aviation Has a Readiness Problem. AI Can Help Fix It."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.657,
+                0.418,
+                0.676
+            ],
+            "angle": 0,
+            "content": "By Lacy Ketzner, Doug Peck, and Adi Zolotov",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.7,
+                0.353,
+                0.718
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 16, 2026 3 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.779,
+                0.944,
+                0.879
+            ],
+            "angle": 0,
+            "content": "The nature of conflict worldwide is changing, but one aspect remains consistent: many defense aviation fleets still suffer from low mission-ready rates. In the US, France, and Germany, mission-capable rates are routinely below 70%. In the UK, only one-third of the UK’s F-35 fleet was fully mission capable in 2024. These levels persist despite growing investments in maintainers, spare parts, and depot capacity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.892,
+                0.881,
+                0.934
+            ],
+            "angle": 0,
+            "content": "The solution isn't to spend more, it's to rethink maintenance and sustainment processes, increasingly through the use of AI. Specifically, AI-enabled processes can improve mission",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.304,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.476,
+                0.778,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.528,
+                0.757,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.578,
+                0.544,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.66,
+                0.414,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.704,
+                0.348,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.781,
+                0.924,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.801,
+                0.937,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.821,
+                0.926,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.841,
+                0.94,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.861,
+                0.286,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.894,
+                0.875,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.915,
+                0.875,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.616,
+                0.088
+            ],
+            "angle": 0,
+            "content": "readiness for defense fleets by focusing on three main areas.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.158,
+                0.728,
+                0.236
+            ],
+            "angle": 0,
+            "content": "Develop GenAI Copilots for Maintainers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.265,
+                0.951,
+                0.366
+            ],
+            "angle": 0,
+            "content": "A key constraint on readiness is the low number of trained maintainers. Older generations with long tenure are starting to retire, but younger people taking over their roles often struggle to get up to speed on complex processes. That’s particularly true given that much of the documentation for aviation maintenance is spread across a range of disparate sources—including technical documents that are still often on paper—making on-site troubleshooting a clunky, slow process.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.378,
+                0.946,
+                0.479
+            ],
+            "angle": 0,
+            "content": "GenAI can compile and synthesize this information, bringing all technical information on a given aircraft or repair process into a more accessible format and making troubleshooting much easier. Less experienced maintainers can easily identify the right repair process, including a comprehensive, accurate list of all the tools and parts required to complete it. As a result, they work more efficiently and complete jobs on the first pass.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.599,
+                0.751,
+                0.677
+            ],
+            "angle": 0,
+            "content": "Create Supply Chain Control\nTowers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.706,
+                0.946,
+                0.826
+            ],
+            "angle": 0,
+            "content": "Spare parts are another key constraint in maintenance, but it’s often more of a visibility issue than a true shortage. Needed parts sit on a pallet somewhere, but the service can’t accurately locate it and get it to the right maintainer on the right aircraft at the right time. AI-enabled supply control towers can increase visibility into the location of parts, order status, and lead time. Equipped with this information, fleets can reduce friction and expedite the movement of parts to where they need to be.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.612,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.156,
+                0.727,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.198,
+                0.343,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.266,
+                0.924,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.288,
+                0.936,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.307,
+                0.947,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.327,
+                0.903,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.346,
+                0.938,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.383,
+                0.936,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.401,
+                0.944,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.419,
+                0.831,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.92,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.46,
+                0.578,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.598,
+                0.754,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.64,
+                0.229,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.708,
+                0.912,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.728,
+                0.913,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.746,
+                0.943,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.767,
+                0.882,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.786,
+                0.938,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.807,
+                0.257,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.044,
+                0.067,
+                0.825,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Shift from Reactive to Proactive\nSustainment"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.174,
+                0.943,
+                0.255
+            ],
+            "angle": 0,
+            "content": "Last, rather than continuing to execute repairs as planes break, forces can use AI to shift to a more proactive approach that reduces demand on the system. Predictive-maintenance solutions can anticipate needed repairs, enabling squadrons to schedule them before a plane is downed and line up all other resources—parts, toolkits, and maintainers—so that jobs happen faster.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.267,
+                0.926,
+                0.35
+            ],
+            "angle": 0,
+            "content": "Reliability control boards can help as well. These entities use AI to identify the small subset of long-tail parts and processes that lead to a disproportionate share of down-aircraft days. If demand for a part is growing, boards can work with suppliers to increase production, communicate with OEMs about design changes in future variants, or pull other levers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.362,
+                0.921,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Boards can also look at mandatory inspections and processes to determine which are truly necessary—based on real-world, operational data across the fleet—and which are happening because of an outdated requirement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.472,
+                0.917,
+                0.514
+            ],
+            "angle": 0,
+            "content": "Around the world, mission-capable rates for aircraft in most forces are far too low, threatening overall readiness at a time when the pace of conflict is accelerating. AI can help.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.066,
+                0.825,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.357,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.176,
+                0.91,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.197,
+                0.936,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.216,
+                0.922,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.234,
+                0.913,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.27,
+                0.921,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.29,
+                0.881,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.31,
+                0.826,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.329,
+                0.838,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.363,
+                0.889,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.384,
+                0.916,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.404,
+                0.39,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.475,
+                0.913,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.495,
+                0.789,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.187,
+                0.22,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.34,
+                0.22,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.191,
+                0.39,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Lacy Ketzner"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.223,
+                0.436,
+                0.265
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nPhiladelphia"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.268,
+                0.274,
+                0.284
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.188,
+                0.683,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.197,
+                0.828,
+                0.219
+            ],
+            "angle": 0,
+            "content": "Doug Peck"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.263,
+                0.737,
+                0.279
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.229,
+                0.909,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nWashington, DC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.343,
+                0.374,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Adi Zolotov"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.376,
+                0.453,
+                0.431
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner, Global Lead BCG X AI Science Institute\nWashington, DC",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.434,
+                0.275,
+                0.449
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.546,
+                0.436,
+                0.565
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.58,
+                0.952,
+                0.701
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.972,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.343,
+                0.372,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.378,
+                0.443,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.389,
+                0.45,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.402,
+                0.303,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.416,
+                0.355,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.548,
+                0.432,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.583,
+                0.949,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.603,
+                0.899,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.622,
+                0.905,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.642,
+                0.912,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.661,
+                0.934,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.681,
+                0.594,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

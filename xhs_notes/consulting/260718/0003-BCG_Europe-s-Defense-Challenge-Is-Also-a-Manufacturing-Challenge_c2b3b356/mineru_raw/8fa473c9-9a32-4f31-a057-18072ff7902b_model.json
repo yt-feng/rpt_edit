@@ -1,0 +1,1728 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.002,
+                0.014,
+                1.0,
+                0.397
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.431,
+                0.311,
+                0.449
+            ],
+            "angle": 0,
+            "content": "AEROSPACE AND DEFENSE INDUSTRY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.479,
+                0.641,
+                0.68
+            ],
+            "angle": 0,
+            "content": "Europe's Defense Challenge Is Also a Manufacturing Challenge"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.707,
+                0.621,
+                0.726
+            ],
+            "angle": 0,
+            "content": "By Andrea De Blasi, Pilar Landon, Giacomo Bressa, and Giulio Galvan",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.751,
+                0.353,
+                0.768
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 17, 2026 5 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.829,
+                0.929,
+                0.91
+            ],
+            "angle": 0,
+            "content": "Europe's defense needs are growing, which creates a two-word imperative for contractors in the region: more, faster. EU ministries of defense are spending more, recent conflicts have depleted some categories of munitions, and the nature of defense is changing, with a greater reliance on less expensive platforms that can be manufactured faster.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.304,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.477,
+                0.598,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.524,
+                0.65,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.577,
+                0.518,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.626,
+                0.36,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.71,
+                0.618,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.754,
+                0.347,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.831,
+                0.926,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.851,
+                0.917,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.872,
+                0.921,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.891,
+                0.589,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.956,
+                0.167
+            ],
+            "angle": 0,
+            "content": "These should all be promising signs for the European defense industry, but many contractors and suppliers in the region operate with subscale facilities. They can't simply increase their output overnight. Moreover, most are small businesses that are hesitant to invest in more capacity out of their own pockets. Even though demand is strong today, they risk getting stuck with underutilized assets if spending slows down later.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.18,
+                0.921,
+                0.222
+            ],
+            "angle": 0,
+            "content": "To overcome this challenge, contractors and defense ministries can take several steps to help scale up defense production in the region.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.292,
+                0.822,
+                0.332
+            ],
+            "angle": 0,
+            "content": "Three Priorities for Contractors"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.359,
+                0.459,
+                0.379
+            ],
+            "angle": 0,
+            "content": "Contractors should focus on three priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.394,
+                0.921,
+                0.474
+            ],
+            "angle": 0,
+            "content": "Streamline production processes. A potential misperception among some contractors is that they can only increase production by investing in bigger plants and more people. In our experience, capacity is often limited by inefficiencies in existing facilities, which in many cases can be resolved without new capex.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.487,
+                0.957,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Addressing these issues requires understanding where the true chokepoints lie, such as specific processes or time-intensive steps like design-to-production and testing. With those insights, manufacturers can make targeted investments to improve throughput, potentially reducing steps, streamlining processes, or investing in digital and AI to accelerate manufacturing processes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.582,
+                0.951,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Localize the production of key components. Currently, European contractors source some materials and components from suppliers in other markets, like the US and Asia. But that kind of long value chain may increase lead times, and geopolitical considerations may mean that overseas suppliers serve their local OEMs first, before turning to European customers. Contractors and defense ministries don’t need to localize everything, but they should determine which components create the biggest production bottlenecks and assess whether they can ramp up and qualify domestic suppliers to provide those products.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.735,
+                0.948,
+                0.914
+            ],
+            "angle": 0,
+            "content": "Build more resilient supply chains. Contractors can make supply chains more stable and resilient through measures like dual sourcing. In situations where no alternative supplier exists, they can develop promising small and medium-size enterprises and get them qualified for critical components. That may even entail working with suppliers in other countries. Finding and qualifying suppliers can be challenging (and time intensive), making this a long-term solution to boost production. But with the right organizational commitment and resources, it can yield dividends over time. For example, fostering supplier relationships in other countries can potentially open up those markets as export customers for a contractor's products and services, creating new pockets of demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.949,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.09,
+                0.918,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.952,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.128,
+                0.938,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.147,
+                0.377,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.182,
+                0.917,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.437,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.292,
+                0.82,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.361,
+                0.456,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.397,
+                0.913,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.416,
+                0.858,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.436,
+                0.917,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.456,
+                0.375,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.49,
+                0.927,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.51,
+                0.896,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.529,
+                0.954,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.549,
+                0.901,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.583,
+                0.891,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.605,
+                0.947,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.623,
+                0.872,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.643,
+                0.849,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.663,
+                0.933,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.683,
+                0.941,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.607,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.736,
+                0.874,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.756,
+                0.932,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.776,
+                0.945,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.796,
+                0.866,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.817,
+                0.932,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.837,
+                0.88,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.856,
+                0.859,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.875,
+                0.942,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.896,
+                0.353,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.174,
+                0.701,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Four Priorities for Defense Ministries"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.281,
+                0.914,
+                0.302
+            ],
+            "angle": 0,
+            "content": "European defense ministries can likewise take specific steps to increase defense production.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.316,
+                0.935,
+                0.415
+            ],
+            "angle": 0,
+            "content": "Collaborate to fast-track designs and pool industrial resources. Governments must determine which capabilities to develop for their country's own use and which to develop through alliances with other EU nations. Collective land-based air defense, for example, will get more assets into the field faster and avoid the interoperability issues that occur when countries buy highly customized solutions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.43,
+                0.95,
+                0.549
+            ],
+            "angle": 0,
+            "content": "Don't chase perfection. All countries want the best defense systems they can get. But in some cases, extra features and capabilities may not be worth the time it takes to add them. Instead, given the urgent need for speed and volume, ministries can identify those platforms for which “good enough” solutions are acceptable. That may mean accepting components that are made to stock or scaling back some functionality, provided these tradeoffs don’t sacrifice operational capabilities or readiness.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.563,
+                0.946,
+                0.662
+            ],
+            "angle": 0,
+            "content": "Similarly, ministries should minimize design changes once production starts. That does not mean locking in designs permanently. In some cases, a design change may be operationally necessary, and governments may be willing to wait for it to be implemented. But contractors can only benefit from the experience curve when designs remain stable for reasonably long production runs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.676,
+                0.947,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Provide predictable demand signals to industry. Contractors and suppliers will only invest in new capacity if they have a clear view to future demand. Defense ministries can shift to multiyear contracts, purchasing agreements with a minimum guaranteed volume, and rolling, five- to ten-year commitments. In addition, they can create more demand transparency by developing and communicating explicit, up-to-date demand pipelines. These measures give contractors and suppliers the confidence to devote funds to capex, hiring, upskilling, and other investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.809,
+                0.953,
+                0.89
+            ],
+            "angle": 0,
+            "content": "Streamline regulations. Governments can remove some of the regulatory burden that slows down manufacturing. For example, defense ministries can make contracting terms less complex, reducing the burden on small players, accelerating the tender process, and potentially creating a larger pool of suppliers.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.173,
+                0.699,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.215,
+                0.289,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.283,
+                0.91,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.318,
+                0.93,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.338,
+                0.93,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.357,
+                0.922,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.376,
+                0.866,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.397,
+                0.25,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.433,
+                0.923,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.452,
+                0.915,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.472,
+                0.909,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.491,
+                0.946,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.511,
+                0.901,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.53,
+                0.28,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.564,
+                0.941,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.584,
+                0.941,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.605,
+                0.881,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.624,
+                0.917,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.646,
+                0.097,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.679,
+                0.915,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.699,
+                0.943,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.718,
+                0.918,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.737,
+                0.921,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.758,
+                0.9,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.777,
+                0.895,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.811,
+                0.95,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.832,
+                0.885,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.851,
+                0.946,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.872,
+                0.267,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.935,
+                0.147
+            ],
+            "angle": 0,
+            "content": "In production, countries can waive some regulations through short-term exemptions for projects that are critical to national defense. For example, the Danish government recently suspended some laws and regulations so that a foreign defense company could fast-track construction of a new plant in the country.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.218,
+                0.762,
+                0.26
+            ],
+            "angle": 0,
+            "content": "One Priority for Both Groups"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.285,
+                0.954,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Contractors and governments alike should align on a joint priority: investing in talent. Many manufacturers currently struggle to find employees. In an effort to retain their existing workforce, they are offering upskilling and better compensation and benefits. But the defense industry has a bigger challenge, which is that it may not be an attractive career path for European workers, particularly younger people.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.399,
+                0.951,
+                0.537
+            ],
+            "angle": 0,
+            "content": "To increase the talent pool for defense, governments and contractors need to change the messaging and the value proposition of these jobs. They can emphasize the broader purpose that the sector serves in defending borders and the values and way of life that residents enjoy. Since the end of the Cold War, Europe has enjoyed the peace dividend. In a time of increased geopolitical tension, it is time to emphasize the importance of regional defense. This type of emotional appeal can help build the growing workforce that defense contractors and suppliers need.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.93,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.091,
+                0.914,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.93,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.128,
+                0.278,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.216,
+                0.765,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.287,
+                0.895,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.306,
+                0.946,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.327,
+                0.951,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.347,
+                0.895,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.367,
+                0.309,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.401,
+                0.872,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.421,
+                0.949,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.439,
+                0.927,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.46,
+                0.844,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.479,
+                0.9,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.5,
+                0.923,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.519,
+                0.101,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.383,
+                0.766,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Partner London"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.187,
+                0.221,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.196,
+                0.423,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Andrea De Blasi"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.229,
+                0.446,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nMilan"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.263,
+                0.275,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.535,
+                0.186,
+                0.674,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.196,
+                0.852,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Pilar Landon"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.229,
+                0.909,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nSeattle"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.341,
+                0.221,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.263,
+                0.737,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.348,
+                0.425,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Giacomo Bressa"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.382,
+                0.311,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Principal\nMilan",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.416,
+                0.275,
+                0.433
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.341,
+                0.683,
+                0.448
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.348,
+                0.86,
+                0.371
+            ],
+            "angle": 0,
+            "content": "Giulio Galvan"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.416,
+                0.738,
+                0.433
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.534,
+                0.436,
+                0.553
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.569,
+                0.952,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.248,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.383,
+                0.308,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.397,
+                0.286,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.537,
+                0.433,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.571,
+                0.95,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.59,
+                0.901,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.611,
+                0.903,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.63,
+                0.912,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.649,
+                0.934,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.672,
+                0.592,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,92 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_mk7k62ds/pdfs/0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "欧洲军工，卡在制造上",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：欧洲军工挑战也是制造挑战",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356.pdf",
+    "cleaned_source_title": "0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0003BCGEuropesDefense",
+    "raw_candidates": [
+      "波士顿咨询：欧洲军工挑战也是制造挑战",
+      "波士顿咨询：欧洲军工制造瓶颈在流程效率而非厂房",
+      "波士顿咨询：欧洲军工不缺订单缺制造规模"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：欧洲军工挑战也是制造挑战",
+      "波士顿咨询：欧洲军工制造瓶颈在流程效率而非厂房",
+      "波士顿咨询：欧洲军工不缺订单缺制造规模",
+      "波士顿咨询：0003BCGEuropesDefense",
+      "波士顿咨询：1.产能瓶颈往往来自流程效率，而非厂房面积"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：欧洲军工制造瓶颈在流程效率而非厂房",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "波士顿咨询：欧洲军工不缺订单缺制造规模",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0003BCGEuropesDefense",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：1.产能瓶颈往往来自流程效率，而非厂房面积",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：欧洲军工挑战也是制造挑战",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：欧洲军工挑战也是制造挑战"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

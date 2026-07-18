@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_mk7k62ds/pdfs/0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mk7k62ds/pdfs/0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mk7k62ds/pdfs/0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
