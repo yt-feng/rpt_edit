@@ -1,0 +1,559 @@
+[
+  {
+    "item": "0001-16-Bofa-The-Flow-Show-Fade-Runner-260717",
+    "source_pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0001-16-Bofa-The Flow Show Fade Runner-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "全球资金正在大搬家🔥",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金->产品 x3",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "全球经济->全球宏观环境 x1",
+      "基金经理->组合负责人 x1",
+      "sanitize_wechat_stock_line",
+      "(?:强烈推荐|推荐买入|建议买入|建议卖出)->报告观点 x1",
+      "股票|个股->公司 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "基金经理->组合负责人 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金经理->组合负责人 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "券商->机构 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "BofA：BofAFlowShow，市场已到极端，夏季最佳策略是撤退",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-Bofa-The Flow Show Fade Runner-260717.pdf",
+      "cleaned_source_title": "Bofa-The Flow Show Fade Runner",
+      "institution_name": "BofA",
+      "required_terms": [],
+      "deterministic_fallback": "BofA：TheFlowShowFadeRunner",
+      "raw_candidates": [
+        "BofAFlow Show：市场已到极端，夏季最佳策略是撤退",
+        "BofAFlow Show：牛熊指标升至9.6，夏季建议撤退",
+        "BofAFlow Show：市场极端拥挤，夏季最佳策略是撤退而非加仓"
+      ],
+      "cleaned_candidates": [
+        "BofA：BofAFlowShow，市场已到极端，夏季最佳策略是撤退",
+        "BofA：BofAFlowShow，牛熊指标升至9.6，夏季建议撤退",
+        "BofA：BofAFlowShow，市场极端拥挤，夏季最佳策略是撤退而非加仓",
+        "BofA：TheFlowShowFadeRunner",
+        "BofA：过去一周全球公司产品流入558亿美元，债券产品流入200亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：BofAFlowShow，牛熊指标升至9.6，夏季建议撤退",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：TheFlowShowFadeRunner",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：过去一周全球公司产品流入558亿美元，债券产品流入200亿美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：BofAFlowShow，市场已到极端，夏季最佳策略是撤退",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "BofA：BofAFlowShow，市场已到极端，夏季最佳策略是撤退"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-17-Bernstein-Volvo-Car-AB-VOLCARB.SS-Volvo-Cars-Q2-2026--11--gross-profit-m",
+    "source_pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0002-17-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- 11- gross profit miss- 25- EBIT miss. Company still expects materially better H2-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "沃尔沃Q2：利润mi",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：沃尔沃汽车二季度毛利与息税前利润不及预期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- 11- gross profit miss- 25- EBIT miss. Company still expects materially better H2-260717.pdf",
+      "cleaned_source_title": "Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- 11- gross profit miss- 25- EBIT miss. Company still expects materially better H2",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：VolvoCarABVolvoCarsQ22026",
+      "raw_candidates": [
+        "Bernstein-沃尔沃汽车二季度毛利与息税前利润不及预期，公司仍预期下半年显著改善",
+        "Bernstein-沃尔沃汽车二季度营收低于预期6%，毛利率16.8%低于共识90个基点",
+        "Bernstein-沃尔沃汽车二季度自由现金流负52亿克朗，下半年反弹承诺面临信任考验"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：沃尔沃汽车二季度毛利与息税前利润不及预期",
+        "Bernstein：沃尔沃汽车二季度营收低于预期6%",
+        "Bernstein：沃尔沃汽车二季度自由现金流负52亿克朗",
+        "Bernstein：VolvoCarABVolvoCarsQ22026",
+        "Bernstein：美国市场在5月和6月出现复苏迹象，但能否在下半年持续放量"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：沃尔沃汽车二季度营收低于预期6%",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "Bernstein：沃尔沃汽车二季度自由现金流负52亿克朗",
+          "reasons": [
+            "anchor_coverage=0.37"
+          ]
+        },
+        {
+          "title": "Bernstein：VolvoCarABVolvoCarsQ22026",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：美国市场在5月和6月出现复苏迹象，但能否在下半年持续放量",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：沃尔沃汽车二季度毛利与息税前利润不及预期",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：沃尔沃汽车二季度毛利与息税前利润不及预期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-18-Bernstein-Weekend-Tech-Byte--Compute-capital-markets---Hedging-the-trill",
+    "source_pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0003-18-Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "AI算力正在变成一种",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：Bernstein周末科技，算力资本市场-对冲万亿美元AI资本支出周期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle-260717.pdf",
+      "cleaned_source_title": "Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle",
+      "institution_name": "Bernstein",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "Bernstein：AIWeekendTechByte",
+      "raw_candidates": [
+        "Bernstein周末科技：算力资本市场-对冲万亿美元AI资本支出周期",
+        "Bernstein：算力资本市场-用期货对冲万亿美元AI资本支出周期",
+        "Bernstein：算力正复制电力资金化路径-对冲万亿美元AI资本支出周期"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：Bernstein周末科技，算力资本市场-对冲万亿美元AI资本支出周期",
+        "Bernstein：算力资本市场-用期货对冲万亿美元AI资本支出周期",
+        "Bernstein：算力正复制电力资金化路径-对冲万亿美元AI资本支出周期",
+        "Bernstein：AIWeekendTechByte",
+        "Bernstein：AI主题进展与关键变化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：算力资本市场-用期货对冲万亿美元AI资本支出周期",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：算力正复制电力资金化路径-对冲万亿美元AI资本支出周期",
+          "reasons": [
+            "anchor_coverage=0.58",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AIWeekendTechByte",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AI主题进展与关键变化",
+          "reasons": [
+            "generic_emergency_title",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：Bernstein周末科技，算力资本市场-对冲万亿美元AI资本支出周期",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：Bernstein周末科技，算力资本市场-对冲万亿美元AI资本支出周期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-19-CITI-Montage-Technology--688008--Strong-2Q26-Results--Share-Repurchase-M",
+    "source_pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0004-19-CITI-Montage Technology -688008- Strong 2Q26 Results- Share Repurchase May Help Stabilize Share Volatility-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "DDR5 和 AI ",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x2",
+      "sanitize_wechat_stock_line",
+      "投资收益->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：澜起科技二季度利润强劲-回购或助稳报价",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-CITI-Montage Technology -688008- Strong 2Q26 Results- Share Repurchase May Help Stabilize Share Volatility-260716.pdf",
+      "cleaned_source_title": "CITI-Montage Technology -688008- Strong 2Q26 Results- Share Repurchase May Help Stabilize Share Volatility",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：Montage科技688008",
+      "raw_candidates": [
+        "澜起科技二季度利润强劲-回购或助稳股价",
+        "澜起科技二季度利润超预期66%-98%-回购计划助稳股价",
+        "澜起科技二季度利润超预期-回购对冲韩国调查冲击"
+      ],
+      "cleaned_candidates": [
+        "Citi：澜起科技二季度利润强劲-回购或助稳报价",
+        "Citi：澜起科技二季度利润超预期66%-98%-回购计划助稳报价",
+        "Citi：澜起科技二季度利润超预期-回购对冲韩国调查冲击",
+        "Citi：Montage科技688008",
+        "Citi：7月16日，澜起科技公布2026年上半年初步业绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：澜起科技二季度利润超预期66%-98%-回购计划助稳报价",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "Citi：澜起科技二季度利润超预期-回购对冲韩国调查冲击",
+          "reasons": [
+            "anchor_coverage=0.53",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Montage科技688008",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：7月16日，澜起科技公布2026年上半年初步业绩",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：澜起科技二季度利润强劲-回购或助稳报价",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：澜起科技二季度利润强劲-回购或助稳报价"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-20-CITI-TSMC--2330.TW--AI-demand-keeps-accelerating--Upside-surprise-on-fur",
+    "source_pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0005-20-CITI-TSMC -2330.TW- AI demand keeps accelerating- Upside surprise on further capex increase-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "台积电又提资本支出，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：台积电AI需求加速-资本支出上调超预期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-CITI-TSMC -2330.TW- AI demand keeps accelerating- Upside surprise on further capex increase-260716.pdf",
+      "cleaned_source_title": "CITI-TSMC -2330.TW- AI demand keeps accelerating- Upside surprise on further capex increase",
+      "institution_name": "Citi",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "Citi：TSMC-AIdemandkeepsaccelerating",
+      "raw_candidates": [
+        "台积电AI需求加速-资本支出上调超预期",
+        "台积电AI需求再加速-2026年资本支出上调至600-640亿美元",
+        "台积电AI需求从GPU向系统级扩散-资本支出上调超15%"
+      ],
+      "cleaned_candidates": [
+        "Citi：台积电AI需求加速-资本支出上调超预期",
+        "Citi：台积电AI需求再加速-2026年资本支出上调至600",
+        "Citi：台积电AI需求从GPU向系统级扩散-资本支出上调超15%",
+        "Citi：TSMC-AIdemandkeepsaccelerating",
+        "Citi：1.资本支出跳升背后，是AI需求从单一芯片走向系统级扩散"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：台积电AI需求再加速-2026年资本支出上调至600",
+          "reasons": [
+            "bare_trailing_number"
+          ]
+        },
+        {
+          "title": "Citi：TSMC-AIdemandkeepsaccelerating",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：1.资本支出跳升背后，是AI需求从单一芯片走向系统级扩散",
+          "reasons": [
+            "anchor_coverage=0.35"
+          ]
+        }
+      ],
+      "selected_title": "Citi：台积电AI需求加速-资本支出上调超预期",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：台积电AI需求加速-资本支出上调超预期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

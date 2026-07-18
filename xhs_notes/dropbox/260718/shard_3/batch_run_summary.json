@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 74,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-Bofa-The Flow Show Fade Runner-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0001-16-Bofa-The Flow Show Fade Runner-260717.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-Bernstein-Volvo Car AB（VOLCARB.SS）Volvo Cars Q2 2026： 11% gross profit miss， 25% EBIT miss. Company still expects materially better H2-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0002-17-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- 11- gross profit miss- 25- EBIT miss. Company still expects materially better H2-260717.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-Bernstein-Weekend Tech Byte： Compute capital markets ~ Hedging the trillion dollar AI capex cycle-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0003-18-Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle-260717.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-CITI-Montage Technology （688008） Strong 2Q26 Results， Share Repurchase May Help Stabilize Share Volatility-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0004-19-CITI-Montage Technology -688008- Strong 2Q26 Results- Share Repurchase May Help Stabilize Share Volatility-260716.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-CITI-TSMC （2330.TW） AI demand keeps accelerating； Upside surprise on further capex increase-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0005-20-CITI-TSMC -2330.TW- AI demand keeps accelerating- Upside surprise on further capex increase-260716.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

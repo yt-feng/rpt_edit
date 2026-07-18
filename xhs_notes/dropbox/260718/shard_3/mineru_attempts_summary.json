@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0001-16-Bofa-The Flow Show Fade Runner-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0002-17-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- 11- gross profit miss- 25- EBIT miss. Company still expects materially better H2-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0003-18-Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0004-19-CITI-Montage Technology -688008- Strong 2Q26 Results- Share Repurchase May Help Stabilize Share Volatility-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jtw_uhim/pdfs/0005-20-CITI-TSMC -2330.TW- AI demand keeps accelerating- Upside surprise on further capex increase-260716.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
