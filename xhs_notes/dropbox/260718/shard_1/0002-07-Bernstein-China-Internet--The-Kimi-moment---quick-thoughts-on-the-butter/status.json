@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_dd6oh8tz/pdfs/0002-07-Bernstein-China Internet- The Kimi moment - quick thoughts on the butterfly effects-260717.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "中国AI模型杀出黑马",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：中国互联网-Kimi时刻与蝴蝶效应",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-07-Bernstein-China Internet- The Kimi moment - quick thoughts on the butterfly effects-260717.pdf",
+    "cleaned_source_title": "Bernstein-China Internet- The Kimi moment - quick thoughts on the butterfly effects",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：中国Internet",
+    "raw_candidates": [
+      "Bernstein：中国互联网-Kimi时刻与蝴蝶效应",
+      "Bernstein：Kimi K3发布-中国AI前沿差距缩至3-4个月",
+      "Bernstein：Kimi K3定价比Fable便宜70%-模型层竞争加剧"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：中国互联网-Kimi时刻与蝴蝶效应",
+      "Bernstein：KimiK3发布-中国AI前沿差距缩至3-4个月",
+      "Bernstein：KimiK3定价比Fable便宜70%-模型层竞争加剧",
+      "Bernstein：中国Internet",
+      "Bernstein：阿里巴巴在2024年2月的一轮融资中收购了Kimi36%的股"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：KimiK3发布-中国AI前沿差距缩至3-4个月",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：KimiK3定价比Fable便宜70%-模型层竞争加剧",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：中国Internet",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：阿里巴巴在2024年2月的一轮融资中收购了Kimi36%的股",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：中国互联网-Kimi时刻与蝴蝶效应",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：中国互联网-Kimi时刻与蝴蝶效应"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "495",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,122 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_dd6oh8tz/pdfs/0005-10-Bernstein-Montage Technology-688008-Montage- 1H26 beat- Korean investigation unlikely to alter fundamentals-260717.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "澜起科技：韩国调查，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "A股|港股->相关市场 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "投资者->读者 x1",
+    "A股|港股->相关市场 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：澜起科技1H26超预期-韩国调查不改基本面",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-10-Bernstein-Montage Technology-688008-Montage- 1H26 beat- Korean investigation unlikely to alter fundamentals-260717.pdf",
+    "cleaned_source_title": "Bernstein-Montage Technology-688008-Montage- 1H26 beat- Korean investigation unlikely to alter fundamentals",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：Montage科技688008Montage",
+    "raw_candidates": [
+      "Bernstein-澜起科技1H26超预期-韩国调查不改基本面",
+      "Bernstein-澜起科技1H26超预期-收入26.6亿净利增72.6%",
+      "Bernstein-澜起科技被误判为存储周期股-定价逻辑与存储价无关"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：澜起科技1H26超预期-韩国调查不改基本面",
+      "Bernstein：澜起科技1H26超预期-收入26.6亿净利增72.6%",
+      "Bernstein：澜起科技被误判为存储周期股-定价逻辑与存储价无关",
+      "Bernstein：Montage科技688008Montage",
+      "Bernstein：澜起1H26收入26.6亿元，同比增长26.6%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：澜起科技1H26超预期-收入26.6亿净利增72.6%",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：澜起科技被误判为存储周期股-定价逻辑与存储价无关",
+        "reasons": [
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：Montage科技688008Montage",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：澜起1H26收入26.6亿元，同比增长26.6%",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：澜起科技1H26超预期-韩国调查不改基本面",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：澜起科技1H26超预期-韩国调查不改基本面"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "471",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
