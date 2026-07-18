@@ -1,0 +1,111 @@
+{
+  "date_folder": "260718",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 3,
+  "selected_count": 3,
+  "include_institutions": [],
+  "institution_filtered_count": 0,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "image_upload_delay_seconds": 3.0,
+  "article_delay_seconds": 12.0,
+  "draft_delay_seconds": 90.0,
+  "draft_verify_delay_seconds": 8.0,
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "title_log": "wechat_drafts/consulting/260718/wechat_title_log.json",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit81IWyKn1uJZJDROQRkzji7V8PxM3zl7ZgFUL30Ci4h1f",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 3,
+      "payload_bytes": 22689,
+      "payload": "wechat_drafts/consulting/260718/draft_payload_01.json",
+      "titles": [
+        "波士顿咨询：全球信任势在必行4.0报告，公民期望对标顶级私企",
+        "波士顿咨询：军用飞机战备问题-AI可协助修复",
+        "波士顿咨询：欧洲防务挑战实为制造挑战，承包商应优先优化生产流程"
+      ],
+      "wechat_titles": [
+        "波士顿咨询：全球信任势在必行4.0报告，公民期望对标顶级私企",
+        "波士顿咨询：军用飞机战备问题-AI可协助修复",
+        "波士顿咨询：欧洲防务挑战实为制造挑战，承包商应优先优化生产流程"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 3,
+        "expected_article_count": 3,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ³¢å£«é¡¿å¨è¯¢ï¼å ¨çä¿¡ä»»å¿å¨å¿ è¡4.0æ¥åï¼å ¬æ°ææå¯¹æ é¡¶çº§ç§ä¼",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼åç¨é£æºæå¤é®é¢-AIå¯åå©ä¿®å¤",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼æ¬§æ´²é²å¡ææå®ä¸ºå¶é ææï¼æ¿å ååºä¼å ä¼åçäº§æµç¨"
+        ],
+        "create_time": 1784340832,
+        "update_time": 1784340833
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "波士顿咨询：全球信任势在必行4.0报告，公民期望对标顶级私企",
+      "wechat_title": "波士顿咨询：全球信任势在必行4.0报告，公民期望对标顶级私企",
+      "header_title": "公民期望对标顶级私企，基础体验仍有四分之三遇阻",
+      "digest": "全球信任势在必行4.0报告，公民期望对标顶级私企，基础体验仍有四分之三遇阻。",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG 2024-Global-Report-Trust-Imperative-4.0 6195cc91",
+      "report_dir": "kc_translated_reports/consulting/260718/01-0001-BCG_2024-Global-Report-Trust-Imperative-4",
+      "content_chars": 5705,
+      "content_bytes": 7609,
+      "visible_text_chars": 1055,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "wechat_drafts/consulting/260718/_assets/article_01_cover.jpg"
+    },
+    {
+      "title": "波士顿咨询：军用飞机战备问题-AI可协助修复",
+      "wechat_title": "波士顿咨询：军用飞机战备问题-AI可协助修复",
+      "header_title": "生成式AI助手可缓解维修技师短缺与经验断层",
+      "digest": "军用飞机战备问题-AI可协助修复，生成式AI助手可缓解维修技师短缺与经验断层。",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It 7cab8e92",
+      "report_dir": "kc_translated_reports/consulting/260718/02-0002-BCG_Defense-Aviation-Has-a-Readiness-Problem",
+      "content_chars": 4272,
+      "content_bytes": 6488,
+      "visible_text_chars": 883,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260718/_assets/article_02_cover.jpg"
+    },
+    {
+      "title": "波士顿咨询：欧洲防务挑战实为制造挑战，承包商应优先优化生产流程",
+      "wechat_title": "波士顿咨询：欧洲防务挑战实为制造挑战，承包商应优先优化生产流程",
+      "header_title": "承包商应优先优化生产流程，而非盲目扩张产能",
+      "digest": "欧洲防务挑战实为制造挑战，承包商应优先优化生产流程，而非盲目扩张产能。",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge c2b3b356",
+      "report_dir": "kc_translated_reports/consulting/260718/03-0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+      "content_chars": 4306,
+      "content_bytes": 6876,
+      "visible_text_chars": 1099,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260718/_assets/article_03_cover.jpg"
+    }
+  ]
+}
