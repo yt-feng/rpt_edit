@@ -10,6 +10,7 @@ on:
       - "kc_desk_notes/site_src/**"
       - "scripts/build_kc_desk_notes_site.py"
       - "scripts/submit_kcdesk_indexnow.py"
+      - "workers/kc-desk-notes-worker/**"
   workflow_dispatch:
     inputs:
       dropbox_root:
