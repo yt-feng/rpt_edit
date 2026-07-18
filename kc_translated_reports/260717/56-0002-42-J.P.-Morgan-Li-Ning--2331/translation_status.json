@@ -1,0 +1,118 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_8/0002-42-J.P.-Morgan-Li-Ning--2331.HK-Retail-headwinds-in-2Q--in-line--sustained-",
+  "title": "摩根大通：李宁二季度零售逆风符合预期-持续研究长期增长维持超配",
+  "source_title": "0002-42-JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-42-JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW-260716",
+    "cleaned_source_title": "JPM-Li Ning -2331.HK-Retail headwinds in 2Q- in-line- sustained investments for long-term growth- maintain OW",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：LiNingRetailheadwindsin2",
+    "raw_candidates": [
+      "李宁二季度零售逆风符合预期-持续投资长期增长维持超配",
+      "李宁二季度零售逆风-折扣65折库存4个月-维持超配",
+      "李宁二季度零售逆风-管理层维持全年高个位数增长指引-超配"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：李宁二季度零售逆风符合预期-持续研究长期增长维持超配",
+      "摩根大通：李宁二季度零售逆风-折扣65折库存4个月-维持超配",
+      "摩根大通：李宁二季度零售逆风-管理层维持全年高个位数增长指引-超配",
+      "摩根大通：LiNingRetailheadwindsin2",
+      "摩根大通：我们维持2026-2028年盈利预测"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：李宁二季度零售逆风-折扣65折库存4个月-维持超配",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：李宁二季度零售逆风-管理层维持全年高个位数增长指引-超配",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：LiNingRetailheadwindsin2",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：我们维持2026-2028年盈利预测",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：李宁二季度零售逆风符合预期-持续研究长期增长维持超配",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：李宁二季度零售逆风符合预期-持续研究长期增长维持超配"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_56.pdf",
+  "figure_count": 2,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

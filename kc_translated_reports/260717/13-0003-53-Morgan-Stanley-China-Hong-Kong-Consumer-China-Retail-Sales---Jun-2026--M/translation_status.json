@@ -1,0 +1,88 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_10/0003-53-Morgan-Stanley-China-Hong-Kong-Consumer-China-Retail-Sales---Jun-2026--M",
+  "title": "摩根士丹利：中国香港消费-中国零售销售6月动能仍不均衡",
+  "source_title": "0003-53-MS-China Hong Kong Consumer-China Retail Sales - Jun 2026- Momentum Remains Uneven-260715",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-53-MS-China Hong Kong Consumer-China Retail Sales - Jun 2026- Momentum Remains Uneven-260715",
+    "cleaned_source_title": "MS-China Hong Kong Consumer-China Retail Sales - Jun 2026- Momentum Remains Uneven",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：中国HongKong消费中国RetailSalesJun2",
+    "raw_candidates": [
+      "摩根士丹利：中国香港消费-中国零售销售6月动能仍不均衡",
+      "摩根士丹利：中国零售销售6月同比增1.0%超预期，动能仍不均衡",
+      "摩根士丹利：中国零售销售6月超预期，化妆品同比增12.6%表现突出"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：中国香港消费-中国零售销售6月动能仍不均衡",
+      "摩根士丹利：中国零售销售6月同比增1.0%超预期，动能仍不均衡",
+      "摩根士丹利：中国零售销售6月超预期，化妆品同比增12.6%表现突出",
+      "摩根士丹利：中国HongKong消费中国RetailSalesJun2",
+      "摩根士丹利：中国零售销售——2026年6月，动能仍不均衡"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：中国零售销售6月同比增1.0%超预期，动能仍不均衡",
+        "reasons": [
+          "anchor_coverage=0.67",
+          "missing_anchor_segment",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国零售销售6月超预期，化妆品同比增12.6%表现突出",
+        "reasons": [
+          "anchor_coverage=0.39",
+          "missing_anchor_segment",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国HongKong消费中国RetailSalesJun2",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国零售销售——2026年6月，动能仍不均衡",
+        "reasons": [
+          "anchor_coverage=0.67",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：中国香港消费-中国零售销售6月动能仍不均衡",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：中国香港消费-中国零售销售6月动能仍不均衡"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_13.pdf",
+  "figure_count": 12,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

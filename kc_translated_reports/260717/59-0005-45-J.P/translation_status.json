@@ -1,0 +1,65 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_8/0005-45-J.P.-Morgan-Technology---Electronic-Components-Industry-data-260716",
+  "title": "摩根大通：科技-电子元件行业数据与销售指数",
+  "source_title": "0005-45-JPM-Technology - Electronic Components Industry data-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-45-JPM-Technology - Electronic Components Industry data-260716",
+    "cleaned_source_title": "JPM-Technology - Electronic Components Industry data",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：科技ElectronicComponents",
+    "raw_candidates": [
+      "摩根大通：科技-电子元件行业数据",
+      "摩根大通：科技-电子元件行业数据与销售指数",
+      "摩根大通：科技-电子元件行业数据-日本厂商美元含量对比"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：科技-电子元件行业数据",
+      "摩根大通：科技-电子元件行业数据与销售指数",
+      "摩根大通：科技-电子元件行业数据-日本厂商美元含量对比",
+      "摩根大通：科技ElectronicComponents",
+      "摩根大通：PC与服务器（含FCBGA、HDD相关，2Q18=100）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：科技ElectronicComponents",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：PC与服务器（含FCBGA、HDD相关，2Q18=100）",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：科技-电子元件行业数据与销售指数",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：科技-电子元件行业数据与销售指数"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_59.pdf",
+  "figure_count": 28,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": []
+}

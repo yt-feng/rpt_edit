@@ -1,0 +1,101 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_12/0001-61-Nomura-Asia-Insights-Korea--BOK-delivers-a-unanimous-decision-for-a-25bp",
+  "title": "野村：韩国央行一致加息25个基点-预计2026年10月再加息",
+  "source_title": "0001-61-NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-61-NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike-260716",
+    "cleaned_source_title": "NOM-Asia Insights Korea- BOK delivers a unanimous decision for a 25bp hike",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：AsiaInsightsKorea",
+    "raw_candidates": [
+      "韩国央行一致决定加息25个基点",
+      "韩国央行一致加息25个基点-预计2026年10月再加息",
+      "韩国央行一致加息25个基点-行长未暗示8月连续加息"
+    ],
+    "cleaned_candidates": [
+      "野村：韩国央行一致决定加息25个基点",
+      "野村：韩国央行一致加息25个基点-预计2026年10月再加息",
+      "野村：韩国央行一致加息25个基点-行长未暗示8月连续加息",
+      "野村：AsiaInsightsKorea",
+      "野村：我们预计韩国央行将在2026年10月和2027年1月各再加息25"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：AsiaInsightsKorea",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：我们预计韩国央行将在2026年10月和2027年1月各再加息25",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      }
+    ],
+    "selected_title": "野村：韩国央行一致加息25个基点-预计2026年10月再加息",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "10",
+        "2026"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：韩国央行一致加息25个基点-预计2026年10月再加息"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_21.pdf",
+  "figure_count": 2,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

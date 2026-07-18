@@ -1,0 +1,113 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_9/0002-47-Morgan-Stanley-2Q26-CIO-Survey---Budget-Support-Improves--But-Winners-Re",
+  "title": "摩根士丹利：2Q26CIO调查-预算支持改善但赢家需精挑细选",
+  "source_title": "0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-47-MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective-260716",
+    "cleaned_source_title": "MS-2Q26 CIO Survey - Budget Support Improves- But Winners Remain Selective",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：2Q26CIOSurveyBudgetSu",
+    "raw_candidates": [
+      "摩根士丹利：2Q26 CIO调查-预算支持改善但赢家需精挑细选",
+      "摩根士丹利：2Q26 CIO调查-预算增长预期升至3.8%但赢家需精挑细选",
+      "摩根士丹利：2Q26 CIO调查-预算支持改善但微软和安全领域赢家最清晰"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：2Q26CIO调查-预算支持改善但赢家需精挑细选",
+      "摩根士丹利：2Q26CIO调查",
+      "摩根士丹利：2Q26CIO调查-预算支持改善但微软和安全领域赢家最清晰",
+      "摩根士丹利：2Q26CIOSurveyBudgetSu",
+      "摩根士丹利：而通信（+2.6%，同比下降12个基点）、硬件（+1.6%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：2Q26CIO调查",
+        "reasons": [
+          "anchor_coverage=0.36",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：2Q26CIOSurveyBudgetSu",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：而通信（+2.6%，同比下降12个基点）、硬件（+1.6%",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：2Q26CIO调查-预算支持改善但赢家需精挑细选",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：2Q26CIO调查-预算支持改善但赢家需精挑细选"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_61.pdf",
+  "figure_count": 28,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "恶化->出现变化 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资周期->研究周期 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

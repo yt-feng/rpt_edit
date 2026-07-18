@@ -1,0 +1,120 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_7/0002-37-J.P.-Morgan-China--Growth-weakened-despite-activity-stabilization-Produc",
+  "title": "摩根大通：中国增长走弱但活动企稳-生产企稳内需拖累",
+  "source_title": "0002-37-JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags-260715",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-37-JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags-260715",
+    "cleaned_source_title": "JPM-China- Growth weakened despite activity stabilization-Production steadies- domestic demand drags",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：中国-增长weakeneddespiteac",
+    "raw_candidates": [
+      "中国增长走弱但活动企稳-生产企稳内需拖累",
+      "中国增长走弱但活动企稳-二季度GDP降至4.3%",
+      "中国增长走弱但活动企稳-摩根大通下调2026年GDP预测至4.6%"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：中国增长走弱但活动企稳-生产企稳内需拖累",
+      "摩根大通：中国增长走弱但活动企稳-二季度GDP降至4.3%",
+      "摩根大通：中国增长走弱但活动企稳",
+      "摩根大通：中国-增长weakeneddespiteac",
+      "摩根大通：实际GDP同比增速从一季度的5.0%节奏变化至二季度的4.3"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：中国增长走弱但活动企稳-二季度GDP降至4.3%",
+        "reasons": [
+          "anchor_coverage=0.59",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国增长走弱但活动企稳",
+        "reasons": [
+          "anchor_coverage=0.59",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国-增长weakeneddespiteac",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：实际GDP同比增速从一季度的5.0%节奏变化至二季度的4.3",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：中国增长走弱但活动企稳-生产企稳内需拖累",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：中国增长走弱但活动企稳-生产企稳内需拖累"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_51.pdf",
+  "figure_count": 14,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "投资->研究 x2",
+    "风险->不确定性 x1",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x8",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "投资->研究 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "风险->不确定性 x3",
+    "通缩->价格变化 x1",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

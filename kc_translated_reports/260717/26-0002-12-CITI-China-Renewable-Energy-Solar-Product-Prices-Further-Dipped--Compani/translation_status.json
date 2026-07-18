@@ -1,0 +1,98 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_2/0002-12-CITI-China-Renewable-Energy-Solar-Product-Prices-Further-Dipped--Compani",
+  "title": "花旗：中国太阳能产品价格续跌-企业普遍亏损",
+  "source_title": "0002-12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-12-CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players-260715",
+    "cleaned_source_title": "CITI-China Renewable Energy-Solar Product Prices Further Dipped- Companies Loss-Making except Inverter and PV Film Players",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：中国Renewable能源SolarProduc",
+    "raw_candidates": [
+      "花旗：中国太阳能产品价格续跌-企业普遍亏损",
+      "花旗：中国太阳能价格续跌-逆变器与光伏薄膜企业逆势盈利",
+      "花旗：中国太阳能价格续跌-德业股份Q2净利同比增81-89%"
+    ],
+    "cleaned_candidates": [
+      "花旗：中国太阳能产品价格续跌-企业普遍亏损",
+      "花旗：中国太阳能价格续跌-逆变器与光伏薄膜企业逆势盈利",
+      "花旗：中国太阳能价格续跌-德业股份Q2净利同比增81-89%",
+      "花旗：中国Renewable能源SolarProduc",
+      "花旗：杭州福斯特净利润为5.58亿元人民币（同比增长489.3%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：中国太阳能价格续跌-逆变器与光伏薄膜企业逆势盈利",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：中国太阳能价格续跌-德业股份Q2净利同比增81-89%",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：中国Renewable能源SolarProduc",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：杭州福斯特净利润为5.58亿元人民币（同比增长489.3%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：中国太阳能产品价格续跌-企业普遍亏损",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "花旗：中国太阳能产品价格续跌-企业普遍亏损"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_26.pdf",
+  "figure_count": 5,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

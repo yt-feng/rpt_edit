@@ -1,0 +1,91 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_4/0002-22-Goldman-Sachs-Japan-SPE--TSMC-results-read-across--Capex-hike--comments-",
+  "title": "高盛：日本半导体设备，台积电业绩传导与资本支出上调利好板块",
+  "source_title": "0002-22-GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-22-GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole-260716",
+    "cleaned_source_title": "GS-Japan SPE- TSMC results read-across- Capex hike- comments on inflation look positive for the SPE sector as a whole",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：日本SPETSMCresultsreadacro",
+    "raw_candidates": [
+      "日本半导体设备：台积电业绩传导与资本支出上调利好板块",
+      "日本SPE：台积电资本支出上调至600-640亿美元，通胀评论利好板块",
+      "日本半导体设备：台积电上调资本支出，AI需求强劲推动板块利好"
+    ],
+    "cleaned_candidates": [
+      "高盛：日本半导体设备，台积电业绩传导与资本支出上调利好板块",
+      "高盛：日本SPE，台积电资本支出上调至600-640亿美元",
+      "高盛：日本半导体设备，台积电上调资本支出，AI需求强劲推动板块利好",
+      "高盛：日本SPETSMCresultsreadacro",
+      "高盛：在总资本支出中，公司表示将分配70-80%用于先进制程"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：日本SPE，台积电资本支出上调至600-640亿美元",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：日本半导体设备，台积电上调资本支出，AI需求强劲推动板块利好",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "高盛：日本SPETSMCresultsreadacro",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：在总资本支出中，公司表示将分配70-80%用于先进制程",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：日本半导体设备，台积电业绩传导与资本支出上调利好板块",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：日本半导体设备，台积电业绩传导与资本支出上调利好板块"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_36.pdf",
+  "figure_count": 1,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

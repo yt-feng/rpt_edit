@@ -1,0 +1,85 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_5/0001-26-Goldman-Sachs-Luk-Fook-Holdings--0590.HK--1QFY27-strong-SSSG-as-expected",
+  "title": "高盛：六福集团1QFY27同店销售增长强劲符合预期",
+  "source_title": "0001-26-GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-26-GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral-260716",
+    "cleaned_source_title": "GS-Luk Fook Holdings -0590.HK- 1QFY27 strong SSSG as expected- yet store closure ahead of GSe- Neutral",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：LukFookHoldings1QFY27str",
+    "raw_candidates": [
+      "六福集团1QFY27同店销售增长强劲符合预期",
+      "六福集团1QFY27同店销售增长41%门店关闭超预期",
+      "六福集团1QFY27同店销售强劲但门店关闭早于预期"
+    ],
+    "cleaned_candidates": [
+      "高盛：六福集团1QFY27同店销售增长强劲符合预期",
+      "高盛：六福集团1QFY27同店销售增长41%门店关闭超预期",
+      "高盛：六福集团1QFY27同店销售强劲但门店关闭早于预期",
+      "高盛：LukFookHoldings1QFY27str",
+      "高盛：六福于7月16日公布了1QFY27（6月季度）运营更新"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：六福集团1QFY27同店销售增长41%门店关闭超预期",
+        "reasons": [
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "高盛：六福集团1QFY27同店销售强劲但门店关闭早于预期",
+        "reasons": [
+          "anchor_coverage=0.71"
+        ]
+      },
+      {
+        "title": "高盛：LukFookHoldings1QFY27str",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：六福于7月16日公布了1QFY27（6月季度）运营更新",
+        "reasons": [
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：六福集团1QFY27同店销售增长强劲符合预期",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：六福集团1QFY27同店销售增长强劲符合预期"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_40.pdf",
+  "figure_count": 5,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

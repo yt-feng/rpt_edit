@@ -1,0 +1,117 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_11/0003-58-Morgan-Stanley-Hong-Kong-Property-JLL-2Q26-Rental-Update--Recovery-Conti",
+  "title": "摩根士丹利：香港房地产仲量联行2026年第二季度租金更新-复苏持续",
+  "source_title": "0003-58-MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-58-MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues-260716",
+    "cleaned_source_title": "MS-Hong Kong Property JLL 2Q26 Rental Update- Recovery Continues",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：HongKong地产JLL2Q26Rental更新",
+    "raw_candidates": [
+      "摩根士丹利：香港房地产仲量联行2026年第二季度租金更新-复苏持续",
+      "摩根士丹利：香港房地产仲量联行2Q26租金更新-写字楼租金环比上涨1.7%",
+      "摩根士丹利：香港房地产仲量联行2Q26租金更新-中环空置率降至8.8%"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：香港房地产仲量联行2026年第二季度租金更新-复苏持续",
+      "摩根士丹利：香港房地产仲量联行2Q26租金更新",
+      "摩根士丹利：香港房地产仲量联行2Q26租金更新-中环空置率降至8.8%",
+      "摩根士丹利：HongKong地产JLL2Q26Rental更新",
+      "摩根士丹利：(+)2026年第二季度写字楼租金环比上涨1.7%（年初至"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：香港房地产仲量联行2Q26租金更新",
+        "reasons": [
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：香港房地产仲量联行2Q26租金更新-中环空置率降至8.8%",
+        "reasons": [
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：HongKong地产JLL2Q26Rental更新",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：(+)2026年第二季度写字楼租金环比上涨1.7%（年初至",
+        "reasons": [
+          "anchor_coverage=0.36",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：香港房地产仲量联行2026年第二季度租金更新-复苏持续",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：香港房地产仲量联行2026年第二季度租金更新-复苏持续"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_18.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x1",
+    "基金->产品 x1",
+    "收益率->回报表现 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_9/0001-46-Morgan-Stanley-2Q26-CIO-Survey---An-Improved-Revision-Risk-Picture-for-2",
+  "title": "摩根士丹利：2Q26CIO调查，2026年IT预算修正不确定性改善",
+  "source_title": "0001-46-MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-46-MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets-260716",
+    "cleaned_source_title": "MS-2Q26 CIO Survey - An Improved Revision Risk Picture for 2026 IT Budgets",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：2Q26CIOSurveyAnImprov",
+    "raw_candidates": [
+      "2Q26 CIO调查：2026年IT预算修正不确定性改善",
+      "2Q26 CIO调查：IT预算增长预期加速至3.8%",
+      "2Q26 CIO调查：AI仍是首要支出，但宏观防御性减弱"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：2Q26CIO调查，2026年IT预算修正不确定性改善",
+      "摩根士丹利：2Q26CIO调查，IT预算增长预期加速至3.8%",
+      "摩根士丹利：2Q26CIO调查，AI仍是首要支出，但宏观防御性减弱",
+      "摩根士丹利：2Q26CIOSurveyAnImprov",
+      "摩根士丹利：2Q26CIO调查——2026年IT预算修正不确定性图景改"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：2Q26CIO调查，IT预算增长预期加速至3.8%",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：2Q26CIO调查，AI仍是首要支出，但宏观防御性减弱",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：2Q26CIOSurveyAnImprov",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：2Q26CIO调查，2026年IT预算修正不确定性改善",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：2Q26CIO调查，2026年IT预算修正不确定性改善"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_60.pdf",
+  "figure_count": 28,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1"
+  ]
+}

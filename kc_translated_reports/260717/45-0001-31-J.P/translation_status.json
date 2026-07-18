@@ -1,0 +1,164 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_6/0001-31-J.P.-Morgan-China-Equity-Strategy-The-AI-Theme--Deleveraging-as-a-Health",
+  "title": "摩根大通：AI主题进展与关键变化",
+  "source_title": "0001-31-JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset-260715",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-31-JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset-260715",
+    "cleaned_source_title": "JPM-China Equity Strategy-The AI Theme- Deleveraging as a Healthy Reset",
+    "institution_name": "摩根大通",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "摩根大通：中国Equity策略TheAITheme",
+    "raw_candidates": [
+      "摩根大通：中国人工智能去杠杆是健康重置，超大规模云厂商杠杆率约40%远低于历史峰值",
+      "摩根大通：人工智能硬件供应瓶颈至少持续至2027年底，资本支出可持续性验证窗口未到",
+      "摩根大通：中国人工智能首选股包括中际旭创、潍柴动力、北方华创等，大盘优质标的估值更合理",
+      "中国公司策略-人工智能主题-去杠杆是健康重置",
+      "中国公司策略-人工智能去杠杆-资产负债表健康度约40%",
+      "中国公司策略-人工智能去杠杆-云厂商杠杆率远低于泡沫峰值"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：中国人工智能去杠杆是健康重置",
+      "摩根大通：人工智能硬件供应瓶颈至少持续至2027年底",
+      "摩根大通：中国人工智能首选股包括中际旭创、潍柴动力、北方华创等",
+      "摩根大通：中国公司策略-人工智能主题-去杠杆是健康重置",
+      "摩根大通：中国公司策略-人工智能去杠杆-资产负债表健康度约40%",
+      "摩根大通：中国公司策略-人工智能去杠杆-云厂商杠杆率远低于泡沫峰值",
+      "摩根大通：中国Equity策略TheAITheme",
+      "摩根大通：AI主题进展与关键变化"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：中国人工智能去杠杆是健康重置",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：人工智能硬件供应瓶颈至少持续至2027年底",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国人工智能首选股包括中际旭创、潍柴动力、北方华创等",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国公司策略-人工智能主题-去杠杆是健康重置",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.10",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国公司策略-人工智能去杠杆-资产负债表健康度约40%",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国公司策略-人工智能去杠杆-云厂商杠杆率远低于泡沫峰值",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国Equity策略TheAITheme",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.10",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：AI主题进展与关键变化",
+        "reasons": [
+          "generic_emergency_title"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：AI主题进展与关键变化",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [
+      "generic_emergency_title"
+    ],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根大通：AI主题进展与关键变化",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": [
+        "generic_emergency_title"
+      ]
+    },
+    "repair_candidates": [
+      "摩根大通：中国人工智能去杠杆是健康重置，超大规模云厂商杠杆率约40%远低于历史峰值",
+      "摩根大通：人工智能硬件供应瓶颈至少持续至2027年底，资本支出可持续性验证窗口未到",
+      "摩根大通：中国人工智能首选股包括中际旭创、潍柴动力、北方华创等，大盘优质标的估值更合理"
+    ],
+    "final_title_after_wording_guard": "摩根大通：AI主题进展与关键变化"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_45.pdf",
+  "figure_count": 9,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "A股|港股->相关市场 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "券商->机构 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

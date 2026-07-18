@@ -1,0 +1,114 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260717/shard_10/0004-54-Morgan-Stanley-China-Property-Property-Data-Deteriorated-on-All-Fronts-i",
+  "title": "摩根士丹利：中国房地产，6月数据全线恶化",
+  "source_title": "0004-54-MS-China Property-Property Data Deteriorated on All Fronts in June-260715",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-54-MS-China Property-Property Data Deteriorated on All Fronts in June-260715",
+    "cleaned_source_title": "MS-China Property-Property Data Deteriorated on All Fronts in June",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：中国地产地产DataDeteriorate",
+    "raw_candidates": [
+      "中国房地产：6月数据全线恶化",
+      "中国房地产：6月销售降幅加深至-13.9%",
+      "中国房地产：6月数据恶化-一线房价涨幅放缓"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：中国房地产，6月数据全线恶化",
+      "摩根士丹利：中国房地产，6月销售降幅加深至-13.9%",
+      "摩根士丹利：中国房地产，6月数据恶化-一线房价涨幅放缓",
+      "摩根士丹利：中国地产地产DataDeteriorate",
+      "摩根士丹利：6月住宅销售进一步下滑，此前自5月以来的上升趋势出现逆转"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：中国房地产，6月销售降幅加深至-13.9%",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国地产地产DataDeteriorate",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：6月住宅销售进一步下滑，此前自5月以来的上升趋势出现逆转",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：中国房地产，6月数据全线恶化",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：中国房地产，6月数据全线恶化"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_14.pdf",
+  "figure_count": 1,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1"
+  ]
+}
