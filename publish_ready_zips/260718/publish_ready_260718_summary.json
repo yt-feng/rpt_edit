@@ -1,0 +1,271 @@
+{
+  "created_at_utc": "2026-07-18T23:33:23.564896+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260718",
+  "output_dir": "publish_ready_zips/260718",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 15,
+  "skipped_shards": [],
+  "total_files": 1430,
+  "total_renamed_markdown_count": 370,
+  "total_raw_file_bytes": 203779877,
+  "zip_count": 3,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260718/publish_ready_260718_part001.zip",
+      "size_bytes": 87018791,
+      "file_count": 646,
+      "renamed_markdown_count": 170,
+      "raw_file_bytes": 94336809,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_11",
+        "shard_12",
+        "shard_13",
+        "shard_14"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260718/publish_ready_260718_part002.zip",
+      "size_bytes": 88493617,
+      "file_count": 673,
+      "renamed_markdown_count": 175,
+      "raw_file_bytes": 94101407,
+      "shards": [
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260718/publish_ready_260718_part003.zip",
+      "size_bytes": 14106430,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15341661,
+      "shards": [
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13583123,
+      "reports": [
+        "0001-01-Bernstein-Abbott-Laboratories-ABT.US-Abbott-2Q26--EPS-beat-and-raise-on-",
+        "0002-02-Bernstein-3M-Co-MMM.US-3M--Is-the-R-D-engine-re-igniting--Thoughts-on-th",
+        "0003-03-Bernstein-Air-Products---Chemicals-Inc-APD.US-Air-Products--Sustainable-",
+        "0004-04-Bernstein-Burberry-Group-PLC-BRBY.LN-Burberry--2Q26-calendar-in-line-wit",
+        "0005-05-Bernstein-Americas-Energy---Transition-Americas-Oil--US-refined-product-"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14593708,
+      "reports": [
+        "0001-06-Bernstein-Burberry-Group-PLC-BRBY.LN-Burberry--Reflections-on-1Q27----ca",
+        "0002-07-Bernstein-China-Internet--The-Kimi-moment---quick-thoughts-on-the-butter",
+        "0003-08-Bernstein-Global-Luxury-Goods--The-case-for-Haute-Joaillerie-260717",
+        "0004-09-Bernstein-Chemicals-2Q26-Preview--A-tactical-long-and-a-couple-of-prints",
+        "0005-10-Bernstein-Montage-Technology-688008-Montage--1H26-beat--Korean-investiga"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20442231,
+      "reports": [
+        "0001-51-J.P.-Morgan-ESS-Battery-June-shipments-above-100GWh---3--m-m-and--66--y-",
+        "0002-52-J.P.-Morgan-SK-Telecom-017670.KS-AI-factory-build-out-emerges-as-next-ca",
+        "0003-53-J.P.-Morgan-Technology---Electronic-Components-260716",
+        "0004-54-J.P.-Morgan-Electronic-Components-Sector-Component-Data-Deposition--METI",
+        "0005-55-Morgan-Stanley-China-AI-Foundation-Model-Moonshot-K3-What-s-Our-View-260"
+      ]
+    },
+    {
+      "shard": "shard_11",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12593156,
+      "reports": [
+        "0001-56-Morgan-Stanley-Beijing-Kingsoft-Office-Software-Inc-688111-WAIC-2026-New",
+        "0002-57-Jefferies-AI-Series--58--Kimi-K3-Model-Capabilities-an-Unexpected-Surpri",
+        "0003-58-Morgan-Stanley-China-Property-1H26-Preview--Weak-Earnings-amid-Further-M",
+        "0004-59-Morgan-Stanley-Horizon-Robotics-9660.HK-HSD-2.0---Safe-Before-Sharp-2607",
+        "0005-60-Morgan-Stanley-China-Steel-and-Iron-Ore-Weekly-Update-260716"
+      ]
+    },
+    {
+      "shard": "shard_12",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9960214,
+      "reports": [
+        "0001-61-Morgan-Stanley-Hygon-Information-Technology-Co.--Ltd.-688041-2Q26-prelim",
+        "0002-62-Morgan-Stanley-Li-Auto-Inc.-2015.HK--New-L6---Same-badge--next-level-exp",
+        "0003-63-Morgan-Stanley-Japan-Summer-School--Semiconductor-Production-Equipment-2",
+        "0004-64-Morgan-Stanley-Richemont-SA-CFR.S--10-Questions-for-Management-260716",
+        "0005-65-Morgan-Stanley-Luxury-Goods-Swiss-Watches--Secondary-Market-Keeps-Tickin"
+      ]
+    },
+    {
+      "shard": "shard_13",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11327729,
+      "reports": [
+        "0001-66-Morgan-Stanley-Rare-Earths--Where-Is-The-Money-Flowing--260716",
+        "0002-67-Morgan-Stanley-Uber-Technologies-Inc-UBER.UN-Delivering-a-Cross-Platform",
+        "0003-68-Morgan-Stanley-Space-Exploration-Technologies-Corp.-SPCX.US-A--Heavenly-",
+        "0004-69-Morgan-Stanley-TSMC-2330.TW-Aggressive-capex-to-address-stronger-AI-dema",
+        "0005-70-Morgan-Stanley-XPeng-Inc.-9868.HK--MONA-L03---The-global-launch-that-fun"
+      ]
+    },
+    {
+      "shard": "shard_14",
+      "report_count": 4,
+      "file_count": 74,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 11836648,
+      "reports": [
+        "0001-71-Morgan-Stanley-Zhengzhou-Yutong-Bus-Co-600066-Risk-Reward-Update-260716",
+        "0002-72-Morgan-Stanley-Zhongji-Innolight-Co-Ltd-Updating-estimates-260717",
+        "0003-73-Nomura-Shennan-Circuits-002916-Steady-growth-driven-by-PCB-and-IC-substr",
+        "0004-74-Nomura-US-Economic-Weekly-Cooling-inflation-will-keep-the-Fed-on-hold-26"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13822959,
+      "reports": [
+        "0001-11-Bernstein-Intuitive-Surgical-Inc-ISRG.US-Intuitive-Surgical-2Q26--Revivi",
+        "0002-12-Bernstein-Netflix-Inc-NFLX.US-Netflix--NFLX--2Q26--Same-ish-guide--more-",
+        "0003-13-Bernstein-SAP-SE-SAP.GR-From-migration-deadlines-to-migration-economics-",
+        "0004-14-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Data-Center-Cooling",
+        "0005-15-Bernstein-Publicis-Groupe-SA-PUB.FP-Publicis--The-flywheel-is-alive-and-"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13357324,
+      "reports": [
+        "0001-16-Bofa-The-Flow-Show-Fade-Runner-260717",
+        "0002-17-Bernstein-Volvo-Car-AB-VOLCARB.SS-Volvo-Cars-Q2-2026--11--gross-profit-m",
+        "0003-18-Bernstein-Weekend-Tech-Byte--Compute-capital-markets---Hedging-the-trill",
+        "0004-19-CITI-Montage-Technology--688008--Strong-2Q26-Results--Share-Repurchase-M",
+        "0005-20-CITI-TSMC--2330.TW--AI-demand-keeps-accelerating--Upside-surprise-on-fur"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11738585,
+      "reports": [
+        "0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-",
+        "0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o",
+        "0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy",
+        "0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716",
+        "0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15491944,
+      "reports": [
+        "0001-26-Goldman-Sachs-Anta-Sports-Products--2020.HK-2Q26-retail-sales-broadly-in",
+        "0002-27-Deutsche-Bank-Commodities-Outlook-Look-on-the-bright-side-260716",
+        "0003-28-Goldman-Sachs-China-Software--Product-Tracker--Comprehensive-Agentic-AI-",
+        "0004-29-Goldman-Sachs-China-Consumer-Staples-Offshore-marketing-feedback--focus-",
+        "0005-30-Goldman-Sachs-China-Basic-Materials-Monitor-July-2026--losing-incrementa"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14962743,
+      "reports": [
+        "0001-31-Goldman-Sachs-China--SAFE-data-suggest-some-FX-inflows-in-June-260717",
+        "0002-32-Goldman-Sachs-GLOBAL-FX-TRADER-Cool--Calm-and-Collected-260717",
+        "0003-33-Goldman-Sachs-Global-Rates-Trader-Quick-Duration-Break-260717",
+        "0004-34-Goldman-Sachs-JCET--600584---New-advanced-packaging-capacity-announced--",
+        "0005-35-Goldman-Sachs-HSBC--0005.HK-HSBA.L-2Q26-Preview--Another-robust-quarter-"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12223639,
+      "reports": [
+        "0001-36-Goldman-Sachs-Japan-Strategy-Flash--1Q3-27-earnings-preview-FX-and-AI-ta",
+        "0002-37-Goldman-Sachs-Precious-Comment--Strong-Central-Bank-Buying-in-May-Provid",
+        "0003-38-Goldman-Sachs-Navigating-China-AI-models-New-frontier-from-Kimi-K3--from",
+        "0004-39-Goldman-Sachs-Netflix-Inc.--NFLX.US--Q2-26-Earnings-Review--Management-T",
+        "0005-40-Goldman-Sachs-WEEKLY-FUND-FLOWS-Renewed-Energy-Inflows-260717"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12504213,
+      "reports": [
+        "0001-41-Goldman-Sachs-TAIWAN-CCL-High-end-players--profitability-uptrend-restart",
+        "0002-42-Goldman-Sachs-USA--UMich-Sentiment-Rises--Short-Term-Inflation-Expectati",
+        "0003-43-Goldman-Sachs-Xunlong-Sci-Tech--6715.HK--NC---The-Next-Gen-call-takeaway",
+        "0004-44-J.P.-Morgan-Base-Metals-Supply---Demand-Tracker-While-market-awaits-tari",
+        "0005-45-Goldman-Sachs-Xiaomi-Corp.--1810.HK-Xiaomi-Robotics--Integrating-Hardwar"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15341661,
+      "reports": [
+        "0001-46-J.P.-Morgan-China-Gas-Utilities-1H26-preview-weak-results-and-consensus-",
+        "0002-47-J.P.-Morgan-China-Bond-Analytics-For-the-quarter-ended-Jun-30--2026-2607",
+        "0003-48-J.P.-Morgan-China-Basic-Materials-June-26-NBS-data--Resilient-demand-to-",
+        "0004-49-J.P.-Morgan-China-Steel-Channel-checker-10-day-China-steel-output-3--vs-",
+        "0005-50-J.P.-Morgan-China-Insurance-China-s-ageing-demographics-create-pension-u"
+      ]
+    }
+  ]
+}
