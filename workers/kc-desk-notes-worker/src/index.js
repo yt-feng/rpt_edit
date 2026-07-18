@@ -179,7 +179,7 @@ const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 60;
 const ANALYTICS_DASHBOARD_TIMEOUT_MS = 9000;
 const ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE = 100;
 const ANALYTICS_HISTORY_MAX_PAGE_SIZE = 200;
-const ANALYTICS_HISTORY_SCAN_LIMIT = 300;
+const ANALYTICS_HISTORY_FILTER_SCAN_LIMIT = 100;
 const ANALYTICS_HISTORY_READ_BATCH = 30;
 const ADMIN_GITHUB_FILES_TIMEOUT_MS = 12000;
 const ADMIN_GITHUB_SOURCE_TIMEOUT_MS = 8500;
@@ -2937,6 +2937,9 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
     startDate: cleanAnalyticsHistoryDate(url.searchParams.get("start_date")),
     endDate: cleanAnalyticsHistoryDate(url.searchParams.get("end_date")),
   };
+  const scanLimit = filters.type || filters.query
+    ? ANALYTICS_HISTORY_FILTER_SCAN_LIMIT
+    : pageSize;
   if (filters.startDate && filters.endDate && filters.startDate > filters.endDate) {
     return jsonResponse(request, env, 400, { detail: "Start date must not be after end date." });
   }
@@ -2985,7 +2988,7 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
       let lastProcessedKey = "";
 
       while (keyIndex < keys.length && !stop) {
-        const remainingScan = ANALYTICS_HISTORY_SCAN_LIMIT - scannedCount;
+        const remainingScan = scanLimit - scannedCount;
         if (remainingScan <= 0) {
           stop = true;
           break;
@@ -3002,7 +3005,7 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
           if (analyticsHistoryEventMatches(batch[index], filters)) {
             events.push(publicAnalyticsEvent(batch[index]));
           }
-          if (events.length >= pageSize || scannedCount >= ANALYTICS_HISTORY_SCAN_LIMIT) {
+          if (events.length >= pageSize || scannedCount >= scanLimit) {
             stop = true;
             break;
           }
