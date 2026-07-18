@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 74,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 11,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/56-MS-Beijing Kingsoft Office Software Inc（688111）WAIC 2026 New Product Launch-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lcvdj1tn/pdfs/0001-56-MS-Beijing Kingsoft Office Software Inc-688111-WAIC 2026 New Product Launch-260716.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/57-JEF-AI Series #58： Kimi K3 Model Capabilities an Unexpected Surprise for Market-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lcvdj1tn/pdfs/0002-57-JEF-AI Series -58- Kimi K3 Model Capabilities an Unexpected Surprise for Market-260716.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/58-MS-China Property：1H26 Preview： Weak Earnings amid Further Margin Squeeze-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lcvdj1tn/pdfs/0003-58-MS-China Property-1H26 Preview- Weak Earnings amid Further Margin Squeeze-260716.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/59-MS-Horizon Robotics（9660.HK）HSD 2.0 – Safe Before Sharp-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lcvdj1tn/pdfs/0004-59-MS-Horizon Robotics-9660.HK-HSD 2.0 - Safe Before Sharp-260717.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/60-MS-China Steel and Iron Ore Weekly Update-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lcvdj1tn/pdfs/0005-60-MS-China Steel and Iron Ore Weekly Update-260716.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

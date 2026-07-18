@@ -1,0 +1,83 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_lcvdj1tn/pdfs/0001-56-MS-Beijing Kingsoft Office Software Inc-688111-WAIC 2026 New Product Launch-260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "WPS 365 正在",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_title": "MS：金山办公WAIC2026新品发布",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-56-MS-Beijing Kingsoft Office Software Inc-688111-WAIC 2026 New Product Launch-260716.pdf",
+    "cleaned_source_title": "MS-Beijing Kingsoft Office Software Inc-688111-WAIC 2026 New Product Launch",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：BeijingKingsoftOffice软件Inc688",
+    "raw_candidates": [
+      "金山办公WAIC 2026新品发布",
+      "金山办公WAIC 2026新品发布-AI模糊办公与管理软件边界",
+      "金山办公WAIC 2026新品发布-WPS 365切入企业管理领域"
+    ],
+    "cleaned_candidates": [
+      "MS：金山办公WAIC2026新品发布",
+      "MS：BeijingKingsoftOffice软件Inc688",
+      "MS：在2026年世界人工智能大会上，金山办公发布了两款产品"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：BeijingKingsoftOffice软件Inc688",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：在2026年世界人工智能大会上，金山办公发布了两款产品",
+        "reasons": [
+          "anchor_coverage=0.47"
+        ]
+      }
+    ],
+    "selected_title": "MS：金山办公WAIC2026新品发布",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：金山办公WAIC2026新品发布"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "443",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
