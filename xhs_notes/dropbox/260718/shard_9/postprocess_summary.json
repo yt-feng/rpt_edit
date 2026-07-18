@@ -1,0 +1,553 @@
+[
+  {
+    "item": "0001-46-J.P.-Morgan-China-Gas-Utilities-1H26-preview-weak-results-and-consensus-",
+    "source_pdf": "/tmp/pdf_batch_001_q5br8arl/pdfs/0001-46-JPM-China Gas Utilities-1H26 preview-weak results and consensus earnings cuts are likely-turning point yet to come-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "城燃板块还在等风来",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国燃气公用事业1H26预览，业绩疲软且盈利下调，拐点未至",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-46-JPM-China Gas Utilities-1H26 preview-weak results and consensus earnings cuts are likely-turning point yet to come-260716.pdf",
+      "cleaned_source_title": "JPM-China Gas Utilities-1H26 preview-weak results and consensus earnings cuts are likely-turning point yet to come",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国GasUtilities1H26prev",
+      "raw_candidates": [
+        "中国燃气公用事业1H26预览：业绩疲软且盈利下调，拐点未至",
+        "中国燃气公用事业1H26预览：四家公司利润平均降4%，拐点未至",
+        "中国燃气公用事业1H26预览：冬季气价或翻倍，拐点未至"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国燃气公用事业1H26预览，业绩疲软且盈利下调，拐点未至",
+        "JPM：中国燃气公用事业1H26预览，四家公司利润平均降4%",
+        "JPM：中国燃气公用事业1H26预览，冬季气价或翻倍，拐点未至",
+        "JPM：中国GasUtilities1H26prev",
+        "JPM：新奥能源1H26核心利润预计下降约7%，华润燃气下降约1%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国燃气公用事业1H26预览，四家公司利润平均降4%",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国燃气公用事业1H26预览，冬季气价或翻倍，拐点未至",
+          "reasons": [
+            "anchor_coverage=0.62",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国GasUtilities1H26prev",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：新奥能源1H26核心利润预计下降约7%，华润燃气下降约1%",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国燃气公用事业1H26预览，业绩疲软且盈利下调，拐点未至",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国燃气公用事业1H26预览，业绩疲软且盈利下调，拐点未至"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-47-J.P.-Morgan-China-Bond-Analytics-For-the-quarter-ended-Jun-30--2026-2607",
+    "source_pdf": "/tmp/pdf_batch_001_q5br8arl/pdfs/0002-47-JPM-China Bond Analytics-For the quarter ended Jun 30- 2026-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "中国债市最新信号，看",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "增持->观点偏积极 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "衰退|萎缩|收缩->调整 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：JPM中国境内债季度分析，截至2026年6月30日",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-47-JPM-China Bond Analytics-For the quarter ended Jun 30- 2026-260717.pdf",
+      "cleaned_source_title": "JPM-China Bond Analytics-For the quarter ended Jun 30- 2026",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国BondAnalyticsFortheq",
+      "raw_candidates": [
+        "JPM中国境内债季度分析：截至2026年6月30日",
+        "JPM中国境内债季度分析：政府债供给挤压信用债定价",
+        "JPM中国境内债季度分析：供给驱动信用分层"
+      ],
+      "cleaned_candidates": [
+        "JPM：JPM中国境内债季度分析，截至2026年6月30日",
+        "JPM：JPM中国境内债季度分析，政府债供给挤压信用债定价",
+        "JPM：JPM中国境内债季度分析，供给驱动信用分层",
+        "JPM：中国BondAnalyticsFortheq",
+        "JPM：这份截至2026年6月30日的JPM中国境内债季度分析"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：JPM中国境内债季度分析，政府债供给挤压信用债定价",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：JPM中国境内债季度分析，供给驱动信用分层",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国BondAnalyticsFortheq",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：JPM中国境内债季度分析，截至2026年6月30日",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：JPM中国境内债季度分析，截至2026年6月30日"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-48-J.P.-Morgan-China-Basic-Materials-June-26-NBS-data--Resilient-demand-to-",
+    "source_pdf": "/tmp/pdf_batch_001_q5br8arl/pdfs/0003-48-JPM-China Basic Materials June 26 NBS data- Resilient demand to support high metal prices and strengthen miners- earnings-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "铜铝锂利润集体预喜，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-48-JPM-China Basic Materials June 26 NBS data- Resilient demand to support high metal prices and strengthen miners- earnings-260716.pdf",
+      "cleaned_source_title": "JPM-China Basic Materials June 26 NBS data- Resilient demand to support high metal prices and strengthen miners- earnings",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国BasicMaterialsJune26NBSdata",
+      "raw_candidates": [
+        "中国基础材料：韧性需求支撑高金属价格与矿企盈利",
+        "中国基础材料：韧性需求支撑高金属价格，矿企盈利预告验证",
+        "中国基础材料：金属需求撑住价格，但市场定价尚未跟上"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+        "JPM：中国基础材料，韧性需求支撑高金属价格，矿企盈利预告验证",
+        "JPM：中国基础材料，金属需求撑住价格，但市场定价尚未跟上",
+        "JPM：中国BasicMaterialsJune26NBSdata",
+        "JPM：6月国内产量同比增长4.7%至400万吨"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国基础材料，金属需求撑住价格，但市场定价尚未跟上",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国BasicMaterialsJune26NBSdata",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：6月国内产量同比增长4.7%至400万吨",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国基础材料，韧性需求支撑高金属价格与矿企盈利"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-49-J.P.-Morgan-China-Steel-Channel-checker-10-day-China-steel-output-3--vs-",
+    "source_pdf": "/tmp/pdf_batch_001_q5br8arl/pdfs/0004-49-JPM-China Steel-Channel checker-10-day China steel output-3- vs previous-Iron ore FOB price remains weaker vs pre-war as freight rates tick up-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "中国钢铁产量，拐点可",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "中国经济->中国宏观环境 x1",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x4",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-49-JPM-China Steel-Channel checker-10-day China steel output-3- vs previous-Iron ore FOB price remains weaker vs pre-war as freight rates tick up-260716.pdf",
+      "cleaned_source_title": "JPM-China Steel-Channel checker-10-day China steel output-3- vs previous-Iron ore FOB price remains weaker vs pre-war as freight rates tick up",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国SteelChannelchecker10day中国",
+      "raw_candidates": [
+        "JPM-中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+        "JPM-中国钢铁产量见顶-铁矿石FOB价格弱于战前-10天产量回升3%",
+        "JPM-中国钢铁产量见顶-铁矿石FOB价格弱于战前-内需支撑力减弱"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+        "JPM：中国钢铁产量见顶-铁矿石FOB价格弱于战前-内需支撑力减弱",
+        "JPM：中国SteelChannelchecker10day中国",
+        "JPM：最新10天粗钢产量折年率为9.96亿吨，较前10天回升3%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国SteelChannelchecker10day中国",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：最新10天粗钢产量折年率为9.96亿吨，较前10天回升3%",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国钢铁产量见顶-铁矿石FOB价格弱于战前",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国钢铁产量见顶-铁矿石FOB价格弱于战前"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-50-J.P.-Morgan-China-Insurance-China-s-ageing-demographics-create-pension-u",
+    "source_pdf": "/tmp/pdf_batch_001_q5br8arl/pdfs/0005-50-JPM-China Insurance-China-s ageing demographics create pension upside for China Life and AMP-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "老龄化下的养老金红利",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国人寿与AMP受益于老龄化养老金需求",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-50-JPM-China Insurance-China-s ageing demographics create pension upside for China Life and AMP-260716.pdf",
+      "cleaned_source_title": "JPM-China Insurance-China-s ageing demographics create pension upside for China Life and AMP",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国Insurance中国sageingde",
+      "raw_candidates": [
+        "中国人寿与AMP受益于老龄化养老金需求",
+        "中国人寿养老金管理规模2.4万亿的杠杆效应",
+        "老龄化非不确定性-中国人寿的养老金卡位优势"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国人寿与AMP受益于老龄化养老金需求",
+        "JPM：中国人寿养老金管理规模2.4万亿的杠杆效应",
+        "JPM：老龄化非不确定性-中国人寿的养老金卡位优势",
+        "JPM：中国Insurance中国sageingde",
+        "JPM：截至2024年底，第一支柱规模11.6万亿元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国人寿养老金管理规模2.4万亿的杠杆效应",
+          "reasons": [
+            "anchor_coverage=0.28",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：老龄化非不确定性-中国人寿的养老金卡位优势",
+          "reasons": [
+            "anchor_coverage=0.39"
+          ]
+        },
+        {
+          "title": "JPM：中国Insurance中国sageingde",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：截至2024年底，第一支柱规模11.6万亿元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国人寿与AMP受益于老龄化养老金需求",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国人寿与AMP受益于老龄化养老金需求"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

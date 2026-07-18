@@ -1,0 +1,4262 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                35,
+                250,
+                87
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Bond Analytics"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                82,
+                336,
+                495,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the quarter ended Jun 30, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                428,
+                423,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shirley Yau  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{AC}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " \n(852) 2800-0566\nshirley.yau@JPM.com\nJPM Securities (Asia Pacific) Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                700,
+                347,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Alvin Au  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{AC}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " \n(852) 2800-8533\nalvin.au@JPM.com\nJPM Securities (Asia Pacific) Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                393,
+                699,
+                658,
+                789
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See page 31 for analyst certification and important disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                818,
+                441,
+                845
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/fecc0e1f15a22f495cea587bdd50ef4505ef8828bb7702a3c3ebb6d393e7ebe9.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Recent Onshore Rating Actions</td><td>22</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                554,
+                349,
+                917,
+                374
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary\nPerformance Overview 3"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                166,
+                481,
+                208
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                763,
+                58,
+                919,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Credit Trends 21"
+                    }
+                ]
+            },
+            "bbox": [
+                554,
+                183,
+                917,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China Onshore Bond Yields 4  \nChina Short-term Interbank Rate and New Issue Bonds Yields 5  \nChina Onshore Market Overview 6  \nChina Bond Inflow and BondConnect Trading Volume 8  \nChina FX Loan and Deposit 9  \nChina Onshore Liquidity Environment 10  \nChinaBond - Bond Ownership 11  \nShanghai Clearing House - Bond Ownership 12  \nOverall Onshore Issuance Trends 13  \nOnshore Issuance Trend By Ownership And Industry 15  \nOnshore Issuance Trends By Rating 16  \nOnshore Issuance Trends For Key Sectors 17  \nOnshore LGFV Issuance Trends 18  \nOnshore Debt Maturities 19  \nOnshore Debt Maturities For Key Sectors 20"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                344,
+                481,
+                705
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Contents"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                75,
+                159,
+                105
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9c2d649ab44d4207f74c79c78dcc96f84c90d1291fa41ebadc3e4aa30a2f1480.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Total returns of key China onshore and offshore indices"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                68,
+                163,
+                929,
+                517
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/db375ea3ec82386b86f9ef9286478ae9367d3be7d661265c11d2ab2b50a507bc.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "China onshore AAA vs offshore IG index"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                64,
+                549,
+                476,
+                895
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c0e7523ad1b3985f11a0a38a69c512b89ad1b12b7f2a0dc21c90787cd5f52d13.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                532,
+                929,
+                897
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Performance Overview"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                77,
+                303,
+                109
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                60,
+                927,
+                110
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND, Bloomberg Finance L.P. and JPM. Note: as of June 30, 2026. Performance of Dim Sum Bonds as measured by FTSE Dim Sum Bond Index."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                924,
+                763,
+                944
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Onshore Bonds Yields"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                366,
+                110
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                766,
+                60,
+                926,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0f1b362894633a42a9d5408101e159303f2feea10a6b03c5e8618c14496e2395.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                137,
+                470,
+                907
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/13ac1450b926cce9835ba1b589a2e454cf9b4b46ed354b30a5ea78c69a8b8523.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                137,
+                916,
+                519
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/47244e7f7821b80cb10b7763fbd17df4bf2f66ae4c08f83312265583d851faef.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                529,
+                929,
+                905
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Short-term Interbank Rate and New Issue Bonds Yields"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                697,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6476219cc25f7b4bbc1ef86523328d1882c1e9eb905b5d24264d8897f5ee9876.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                66,
+                137,
+                925,
+                504
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f9585ace18b16632b143c8b9332e1357e5c5bdd3b9bb8a070a6cacbfd04f89bb.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                64,
+                527,
+                470,
+                905
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c1c5a3bba2696624cda7a1ea84128619e21a6cfd375af90042b7f580dd44f6fd.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026. Enterprise bonds are regulated by NDRC and issued by non-financial corporates (mainly SOEs), whereas corporate bonds and MTNs are"
+                    }
+                ]
+            },
+            "bbox": [
+                518,
+                529,
+                923,
+                905
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                60,
+                929,
+                107
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Onshore Market Overview"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                400,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/df139b2aff29ceea0fc87ecd4ba051b347b3d5c48793b48f8218206b3ba15bc2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Breakdown of outstanding bonds"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                68,
+                156,
+                925,
+                515
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e73b941b257b6d475d8f046afd884fecf0985d2619ac4c529490ed4acc6328d8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Breakdown of government bonds"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                68,
+                557,
+                475,
+                905
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4b58bb4615e0e6a3733010af816b6c8ccd66a013e931998e40bf81070032e1a5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Breakdown of financial bonds"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                556,
+                926,
+                905
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                62,
+                928,
+                110
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "YTD"
+                    }
+                ]
+            },
+            "bbox": [
+                896,
+                885,
+                920,
+                905
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026. Corporate bonds include enterprise bonds, corporate bonds, and MTNs. Others include commercial paper, project revenue notes, private"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                927,
+                897,
+                949
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Onshore Market Overview"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                400,
+                110
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                765,
+                62,
+                926,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/04609e9330fba649cbaf152ae9c7f0860549788d3628ac0098cc7e8394b33ce0.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Breakdown of outstanding corporate bonds by ownership of issuers"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                68,
+                169,
+                473,
+                517
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/30aabac98b4ae3cdc11e8d07fe38ea1c6d181caa399128f8600858e2166814ce.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Breakdown of outstanding corporate bonds by sector"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                520,
+                171,
+                921,
+                514
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c1a2f0f189e1609965e4ab0c64264f52f81715187111b82768fcd6560dad1adb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "SOEs - debentures outstanding by issuer rating"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                68,
+                556,
+                474,
+                890
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c6b29f65d8869755b1e1d3fb13f8465703e51a2451d9959749b757703b9fb984.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "POEs - debentures outstanding by issuer rating"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                554,
+                923,
+                890
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026. Corporate bonds include enterprise bonds, corporate bonds, and MTNs. SOEs include state-owned enterprises, collective enterprises and"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                927,
+                904,
+                947
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Bond Inflow and BondConnect Trading Volume"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                619,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/90b937a45b6d699c24d5bc4cf5c1342133a446f5b38a474219615306c4432e63.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Monthly bond foreign inflows (USD bn)"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                65,
+                171,
+                929,
+                515
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/403bf3eb7fb508bc1258acde006b0bc6edf7a30c56c780ef77e5cb0a1223851b.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Monthly BondConnect trading volume"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                559,
+                929,
+                890
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                60,
+                928,
+                110
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China FX Loan and Deposit"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                350,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9f32472398e4c8030d5ea856147bdce42f49556922886e4ccacfe6b23ac11558.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Domestic FX Loans and Deposit"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                67,
+                178,
+                907,
+                509
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/07a6c49505f982c5bf5ad35e726fc78ab242fd3a30a73757e9b6fe23885776ac.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "FX Loan to Deposit Ratio"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: PBOC, JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                61,
+                556,
+                467,
+                899
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/80cd077f07bd7166483cc5bfd74ec7a0ab582362e090f9e9e45f582c8566f639.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Outbound Bond Flows"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                505,
+                537,
+                897,
+                902
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                60,
+                929,
+                110
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Onshore Liquidity Environment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                457,
+                112
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                766,
+                60,
+                929,
+                109
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9b37fcd0d970f61c53544c9efdf1f80b243405b3e22ff38ce9b8e99ecd7d4ea5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Required Reserve Ratios"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Onshore bond yields vs. inflation"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                61,
+                168,
+                457,
+                517
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5db81ebc1cd5cec168e0c6cf6914c8266aa807cba56afa5e776f8049ffb515ea.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "China's foreign currency deposits"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                498,
+                164,
+                902,
+                517
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5c05a9e37ebf7c8cf45a39f03423191706b564319e9558ec98fe8e49b92da32a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: PBOC, NBS, CEIC, and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                561,
+                890,
+                902
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ChinaBond - Bond Ownership"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                75,
+                376,
+                112
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                766,
+                60,
+                929,
+                109
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall Holdings"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                142,
+                175,
+                166
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/564aa39e1d59a35c7f1a3230f40007ccabfb5b79093a5df18c44070b5f5060fc.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Holdings of Govt Bonds"
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                169,
+                462,
+                480
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/91f4020fc59c708e77d518981b9a66ef1a27047b433d10806d27c0ea73e8df8a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Holdings of Financial Bonds"
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                159,
+                915,
+                480
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6af7c2e2f0952bff558f96b109968aa107e58403a0e2d26582feab6af3b9b51f.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Holdings of Corporate Bonds"
+                    }
+                ]
+            },
+            "bbox": [
+                149,
+                566,
+                454,
+                868
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f953467d0b0d71295fb64d09763410c9d25b311fe6d001ee8dccc55d99cf72ca.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                533,
+                566,
+                820,
+                870
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: ChinaBond, WIND and JPM. Note: as of May 30, 2026. Investor structure for Main Bonds in the interbank bond market. Other investors include unincorporated product and others."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                937,
+                895,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Holdings of Other Bonds (e.g. Panda and ABS)"
+                    }
+                ]
+            },
+            "bbox": [
+                520,
+                532,
+                816,
+                557
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Shanghai Clearing House - Bond Ownership"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                75,
+                521,
+                112
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall Holdings"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                142,
+                175,
+                166
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ee6c3284918fa58e6f569c7d7e5c9021445d8d6f329f6cb5dd607532d40953c8.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Holdings of Financial Bonds"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                139,
+                437,
+                510
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/36f1b4ea717e3fa2749c250c18fd834ef739b04634fc5012217a382d91112840.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Holdings of Corporate Bonds"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                546,
+                439,
+                902
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c0c95935068082420e2ef65c5199d87459148d1a1e21fbd7aa84cf3e820102af.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                520,
+                142,
+                885,
+                500
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/725afafd6084bcda7482e56d405dc9e56e92deb571e5c83edb9f160baa88369a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                519,
+                529,
+                884,
+                890
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                60,
+                929,
+                107
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: SHCH, WIND and JPM. Note: as of May 31, 2026. Investor structure for Main Bonds in Shanghai Clearing House. Other investors include non-FI sector, unincorporated product, domestic"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                927,
+                925,
+                949
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall Onshore Issuance Trends"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                412,
+                110
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                766,
+                60,
+                928,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b4bcc0d205d752539e7c37a466d1eeb3822107f40ffe91adbde795f46532250c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown - Quarterly"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                63,
+                163,
+                472,
+                495
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f041e56f6350f1ed6a489197b40659e6c2b6793c8eb726107a5cfe8e3db5d0da.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown - Quarterly"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                159,
+                934,
+                497
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e375612cb7593d06e4da98436423ceb95c233dbf0a8b8218654e085e0717d6fa.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown - Annually"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                64,
+                556,
+                478,
+                887
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b5671807ae80747217c587926781e5460c44151eb5697a83c7d383b0e82e05fb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown - Annually"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                556,
+                931,
+                887
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026. Corporate bonds include enterprise bonds, corporate bonds, and MTNs. Others include commercial paper, project revenue notes, private"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                927,
+                900,
+                947
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall Onshore Issuance Trends"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                412,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5da65fc8d9eed73518e2a5cb4d5f2fa818a1f9c39d55f7c253d5f83358b65342.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown for government bonds"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                61,
+                168,
+                464,
+                517
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9fdca0bee210ad8cc77672356860926ea8d55e8f81ac3051c78a872655acf6ab.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown for government bonds"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                519,
+                164,
+                920,
+                515
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7735fa9f8a5a5f251d71f969bd0719d4654fb3cf40d82da62ec5cc6381667ceb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown for financial bonds"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                61,
+                559,
+                464,
+                905
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e4b1d717bc6c1d8093c8c14cc33d6d5e3abd285ccf6fda2d86168e1d98cb1afa.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown for financial bonds"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                519,
+                559,
+                920,
+                905
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                60,
+                928,
+                107
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Onshore Issuance Trend By Ownership And Industry"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                611,
+                112
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a0601fab47adf7b84fda0c88d79e706b74eba96f2ea403dad38a7b55a4939a9a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown by enterprise nature"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                68,
+                164,
+                462,
+                509
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/da6c6eb613277718c81ae725ce75df2546de1aea7ffebb5409d6bbe9f65fa4a9.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown by enterprise nature"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                520,
+                163,
+                929,
+                519
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c629ce31cba0d82811640e7cabb2c17b1851edc04afc864c9d3118aab479c6cc.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown by industry"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                67,
+                559,
+                470,
+                892
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b6f6aa8db3eef98a1aa327336aee46c60bf5b90038fae6af46db254a0c830493.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown by industry"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026. SOEs include state-owend enterprises, collective enterprises and public enterprises. Other industries include healthcare, TMT, and telecom."
+                    }
+                ]
+            },
+            "bbox": [
+                519,
+                552,
+                929,
+                902
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                769,
+                62,
+                929,
+                110
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Onshore Issuance Trends By Rating"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                439,
+                112
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7f639e760d619cb30a3441b4718aaf11108216446f31e694bb265c3e4ab7754f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown by issuer ratings for SOEs"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                66,
+                169,
+                461,
+                507
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e6f48aa904e9b60fe63010b82180455fad9c82603c3d6b9e88df7bd0b6732026.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown by issuer ratings for SOEs"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                517,
+                164,
+                921,
+                515
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/db9dd4d2fb7867735f1f018c9612c315918e63b545226bd424698d1d334f219e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Gross supply breakdown by issuer ratings for POEs"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                66,
+                559,
+                472,
+                899
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/407e94aa0f6954f701b1a5f3cae2bac2f220bc26e268c6e0f85c4bae463c3a72.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Net supply breakdown by issuer ratings for POEs"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                519,
+                557,
+                916,
+                912
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                62,
+                927,
+                110
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                924,
+                319,
+                944
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Onshore Issuance Trends For Key Sectors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                502,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3c5063e7ef29945bd272d7856daab06db93a765b0c694aadc639b18a0952cadd.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Onshore gross and net supply for LGFVs"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                64,
+                188,
+                473,
+                549
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/280463f80b76adb945659588d0dd087a96bfb8a32552e40292937269a636f752.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Offshore gross and net supply for LGFVs"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Onshore gross and net supply for real estate companies\nRMB bn"
+                    }
+                ]
+            },
+            "bbox": [
+                519,
+                186,
+                928,
+                549
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0b0894e26c1a117344a5e4d617507720c901aa28a6aeab6bd02c1f970eb36ff7.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                67,
+                600,
+                926,
+                954
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                768,
+                60,
+                928,
+                110
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Onshore LGFV Issuance Trends"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                397,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e8a9ad6edd348f0c5ac195984a812fae489aec26bed6a27b5ad697b1e12efc24.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "2025 bond stock for LGFVs in different provinces and their respective credit spreads"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of Jun 30, 2026. Total debt/fiscal revenue calculated by sum of local government bond and LGFV bond over fiscal revenue."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Provincial governments' economic and fiscal positions"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                163,
+                912,
+                480
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4c164a94e019874d4d1f21acfbac47d1d3c564eafc33e5e3873ce1a5f22b0d09.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026. Total debt/fiscal revenue calculated by sum of local government bond and LGFV bond over fiscal revenue."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                559,
+                913,
+                895
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                768,
+                60,
+                929,
+                109
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4c5ea9bdf88e690e38327056816da972a1d79263ecc130705dd6f8b23cde65d7.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Debt maturities by sector"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Dec-23 Mar-24 Jun-24 Sep-24 Dec-24 Mar-25 Jun-25 Sep-25 Dec-25 Mar-26 Jun-26"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                166,
+                460,
+                495
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f3c9eabf076a4217a8f31fefe863f44475d5f88b351bbbb433e8e6b992f9eb49.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Debt maturities by rating category"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Dec-23 Mar-24 Jun-24 Sep-24 Dec-24 Mar-25 Jun-25 Sep-25 Dec-25 Mar-26 Jun-26"
+                    }
+                ]
+            },
+            "bbox": [
+                521,
+                168,
+                915,
+                495
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d3e59bf953f6d70a96f6e3034e4d3f2299579dec8673ebd78aeea05de2e3d668.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Debentures maturities by ownership"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Dec-23 Mar-24 Jun-24 Sep-24 Dec-24 Mar-25 Jun-25 Sep-25 Dec-25 Mar-26 Jun-26"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                561,
+                458,
+                887
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bee68c1645967d3892060a8eeabcacb510edf0a4647ab528c9516c9860389b8c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Debentures maturities by industry"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Dec-23 Mar-24 Jun-24 Sep-24 Dec-24 Mar-25 Jun-25 Sep-25 Dec-25 Mar-26 Jun-26"
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                561,
+                913,
+                884
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Onshore Debt Maturities"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                75,
+                319,
+                110
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                770,
+                62,
+                921,
+                110
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/20b35f17a2b6b0551391e6a2640b1a563ea1019305d120f16a45070a845d06e2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Debt maturities by rating category - LGFV"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Jun-24 Jul-24 Aug-24 Sep-24 Oct-24 Nov-24 Dec-24 Jan-25 Feb-25 Mar-25 Apr-25 May-25 Jun-25 Jul-25 Aug-25 Sep-25 Oct-25 Nov-25 Dec-25 Jan-26 Feb-26 Mar-26 Apr-26 May-26 Jun-26"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                168,
+                926,
+                468
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/158fd46b774085eb0e696a6958b1739e36b7870c47353f035b76b518051ee73a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Debt maturities by rating category - Real Estate"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Jun-24 Jul-24 Aug-24 Sep-24 Oct-24 Nov-24 Dec-24 Jan-25 Feb-25 Mar-25 Apr-25 May-25 Jun-25 Jul-25 Aug-25 Sep-25 Oct-25 Nov-25 Dec-25 Jan-26 Feb-26 Mar-26 Apr-26 May-26 Jun-26"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                552,
+                917,
+                853
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Onshore Debt Maturities For Key Sectors"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                75,
+                489,
+                110
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                62,
+                928,
+                110
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                924,
+                319,
+                944
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Credit Trends"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                210,
+                110
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e7d7fad11a97d230fc659dcc96755cd87055286ef7639a781dcc2d830107af15.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                64,
+                139,
+                476,
+                905
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/75a7bb611b6d4e42752677ef1c84d00a564affc16558639904a723384410cf40.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                518,
+                139,
+                925,
+                902
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                762,
+                60,
+                923,
+                110
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Ministry of Finance, WIND and JPM. Note: as of June 30, 2026. Gearing defined as total liabilities over total assets. Data in Jan and Feb reflect the combined Jan–Feb average."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                924,
+                881,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/faca380107ae3cc39ebd72836b9db5d90335838d1a90bf75b06ef8e1cdb4d107.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rolling 6-mth and 12-mth ratings actions trend"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                114,
+                953,
+                534
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Recent Onshore Rating Actions"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                52,
+                234,
+                73
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                854,
+                47,
+                948,
+                77
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Default Ratio Analysis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                73,
+                279,
+                107
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1c5b920382c5ece16b2eed796853c497747043a245f52caa99b2dda13232c8c3.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Total number and amount of defaults"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                61,
+                149,
+                482,
+                489
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e20c2a8227b585959ae42f23162efef1075f14c3e0815746d40830d29a90c595.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Default ratio by industry"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                501,
+                147,
+                961,
+                484
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cd1817ccd46882abed46b50f4eda4885e77c732250b049d4bc5da6bfb884cbe5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "SOE default ratio"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                65,
+                529,
+                487,
+                862
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b3c2ec9e8690660974c63d1978adf44b9e7ef56bf58c6147f74b2186f724bce3.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026. New default ratio defined as current year defaults over last year-end total bond stock."
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                524,
+                963,
+                862
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                58,
+                948,
+                104
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Default Ratio Analysis For Key Sectors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                75,
+                466,
+                112
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/af8b299af2f2e88f8de3cd304ebd4ee65e6ba2c585bb91f5e7cf45b5a22881aa.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                66,
+                163,
+                903,
+                515
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f80d7b6292b71779bee9442751ebb5186a0ec7f3ed708a5aeefc6ee73610c926.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND and JPM. Note: as of June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                59,
+                566,
+                461,
+                919
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/523d1943765ad5306382f2435d1cd391565f707514a03d131b18b72cff3f0a39.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                478,
+                561,
+                892,
+                919
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                725,
+                55,
+                887,
+                105
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d50bd5087d8b370c4af758365b6724078750f596a1735ee542d475edcf3ad0d1.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND. Note: as of June 30, 2026."
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Issuer</td><td>Sector</td><td>Defaulted/Extended amount (Rmb mn)</td></tr><tr><td>2026-06-30</td><td>Shenzhen Youhong Enterprise Management Co., Ltd</td><td>Others</td><td>1,156</td></tr><tr><td>2026-06-30</td><td>Shenzhen Youhong Enterprise Management Co., Ltd</td><td>Others</td><td>2</td></tr><tr><td>2026-06-30</td><td>Guangzhou R&amp;F Properties Co.,Ltd</td><td>Real Estate</td><td>986</td></tr><tr><td>2026-06-30</td><td>Guangzhou Fangyuan Real Estate Development Co., Ltd</td><td>Real Estate</td><td>4,590</td></tr><tr><td>2026-06-29</td><td>Guohou Asset Management Co.,Ltd</td><td>Others</td><td>359</td></tr><tr><td>2026-06-23</td><td>Wuhan Contemporary Technology Investment Co., Ltd</td><td>Others</td><td>1,500</td></tr><tr><td>2026-06-15</td><td>China Vanke Co.,Ltd</td><td>Real Estate</td><td>1,200</td></tr><tr><td>2026-06-12</td><td>Bohai Leasing Co.,Ltd</td><td>Others</td><td>1,882</td></tr><tr><td>2026-06-10</td><td>China Vanke Co.,Ltd</td><td>Real Estate</td><td>2,000</td></tr><tr><td>2026-05-26</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>2,118</td></tr><tr><td>2026-05-26</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>1,436</td></tr><tr><td>2026-05-26</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>1,875</td></tr><tr><td>2026-05-26</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>444</td></tr><tr><td>2026-05-26</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>1,554</td></tr><tr><td>2026-05-26</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>978</td></tr><tr><td>2026-05-25</td><td>Dr.Peng Telecom&amp;Media Group Co., Ltd</td><td>Others</td><td>2,900</td></tr><tr><td>2026-05-22</td><td>Wuhan Contemporary Technology Investment Co., Ltd</td><td>Others</td><td>3,000</td></tr><tr><td>2026-05-18</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>3,118</td></tr><tr><td>2026-05-18</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>200</td></tr><tr><td>2026-05-11</td><td>China Vanke Co.,Ltd</td><td>Real Estate</td><td>2,000</td></tr><tr><td>2026-05-11</td><td>Wuhan Tianying Investment Group Co., Ltd</td><td>Others</td><td>600</td></tr><tr><td>2026-05-06</td><td>Hubei Tianqian Asset Management Co., Ltd</td><td>Others</td><td>4,200</td></tr><tr><td>2026-04-27</td><td>Evergrande Real Estate Group Co.,Ltd.</td><td>Real Estate</td><td>8,200</td></tr><tr><td>2026-04-23</td><td>China Vanke Co.,Ltd</td><td>Real Estate</td><td>1,200</td></tr><tr><td>2026-04-10</td><td>Nanjing Shimao Real Estate Development Co.,Ltd</td><td>Real Estate</td><td>2,459</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                61,
+                134,
+                929,
+                833
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Rolling Last-12 Month Defaults and Extensions"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                73,
+                533,
+                110
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                772,
+                68,
+                929,
+                115
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c059dbd239a72b77fca936d576f8f2ca6a6e317f251346a7d1b8738dc81005ee.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND. Note: as of June 30, 2026."
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Issuer</td><td>Sector</td><td>Defaulted/Extended amount (Rmb mn)</td></tr><tr><td>2026-04-10</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>700</td></tr><tr><td>2026-04-10</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>3,026</td></tr><tr><td>2026-04-09</td><td>Eastern Pioneer Driving School Co., Ltd</td><td>Others</td><td>62</td></tr><tr><td>2026-03-31</td><td>Aoyuan Group Company Limited</td><td>Real Estate</td><td>2,833</td></tr><tr><td>2026-03-16</td><td>Xiamen Yuzhou Hongtu Real Estate Development Co., Ltd</td><td>Real Estate</td><td>1,746</td></tr><tr><td>2026-02-11</td><td>Xiamen Yuzhou Hongtu Real Estate Development Co., Ltd</td><td>Real Estate</td><td>1,075</td></tr><tr><td>2026-02-02</td><td>Contemporary Energy Conservation Property Co., Ltd</td><td>Real Estate</td><td>685</td></tr><tr><td>2026-01-28</td><td>Tianjin Xinquan Commercial Factoring Co., Ltd</td><td>Others</td><td>2</td></tr><tr><td>2026-01-28</td><td>Tianjin Xinquan Commercial Factoring Co., Ltd</td><td>Others</td><td>958</td></tr><tr><td>2026-01-26</td><td>Xiamen Yuzhou Hongtu Real Estate Development Co., Ltd</td><td>Real Estate</td><td>1,728</td></tr><tr><td>2026-01-22</td><td>China Vanke Co.,Ltd</td><td>Real Estate</td><td>1,100</td></tr><tr><td>2026-01-22</td><td>SUNSHINE CITY</td><td>Real Estate</td><td>4,000</td></tr><tr><td>2026-01-08</td><td>Country Garden Real Estate Group Co., Ltd</td><td>Real Estate</td><td>2,630</td></tr><tr><td>2026-01-08</td><td>Country Garden Real Estate Group Co., Ltd</td><td>Real Estate</td><td>922</td></tr><tr><td>2026-01-08</td><td>Country Garden Real Estate Group Co., Ltd</td><td>Real Estate</td><td>2,133</td></tr><tr><td>2026-01-08</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>2,992</td></tr><tr><td>2026-01-08</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>1,846</td></tr><tr><td>2026-01-08</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>470</td></tr><tr><td>2026-01-08</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>10,097</td></tr><tr><td>2026-01-07</td><td>Xinyuan (China) Real Estate Co., Ltd</td><td>Real Estate</td><td>500</td></tr><tr><td>2025-12-31</td><td>Fantasia Group (China) Co., Ltd</td><td>Real Estate</td><td>1,458</td></tr><tr><td>2025-12-31</td><td>Fantasia Group (China) Co., Ltd</td><td>Real Estate</td><td>2,171</td></tr><tr><td>2025-12-31</td><td>Fantasia Group (China) Co., Ltd</td><td>Real Estate</td><td>4,620</td></tr><tr><td>2025-12-31</td><td>Fantasia Group (China) Co., Ltd</td><td>Real Estate</td><td>6,058</td></tr><tr><td>2025-12-31</td><td>Fantasia Group (China) Co., Ltd</td><td>Real Estate</td><td>1,899</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                61,
+                134,
+                931,
+                833
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Rolling Last-12 Month Defaults and Extensions"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                73,
+                533,
+                110
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                772,
+                68,
+                929,
+                115
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/eb1c2d19ba88bbc1d3733e4a731732ef91dd56f9b1211ff97960bac342f471a4.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND. Note: as of June 30, 2026."
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Issuer</td><td>Sector</td><td>Defaulted/Extended amount (Rmb mn)</td></tr><tr><td>2025-12-31</td><td>Guangzhou Fangyuan Real Estate Development Co., Ltd</td><td>Real Estate</td><td>4,590</td></tr><tr><td>2025-12-29</td><td>Beijing Ocean Investment Holdings Group Limited</td><td>Real Estate</td><td>1,950</td></tr><tr><td>2025-12-29</td><td>Rongxin (Fujian) Investment Group Co., Ltd</td><td>Real Estate</td><td>1,135</td></tr><tr><td>2025-12-29</td><td>Rongxin (Fujian) Investment Group Co., Ltd</td><td>Real Estate</td><td>3,262</td></tr><tr><td>2025-12-29</td><td>Tianan Life Insurance Co., Ltd.</td><td>Others</td><td>4,000</td></tr><tr><td>2025-12-28</td><td>China Vanke Co.,Ltd</td><td>Real Estate</td><td>3,700</td></tr><tr><td>2025-12-25</td><td>Rongxin (Fujian) Investment Group Co., Ltd</td><td>Real Estate</td><td>988</td></tr><tr><td>2025-12-24</td><td>Shanghai Huaming Intelligent Terminal Equipment Co.,Ltd</td><td>Industrial</td><td>15</td></tr><tr><td>2025-12-17</td><td>Wuhan Tianying Investment Group Co., Ltd</td><td>Others</td><td>800</td></tr><tr><td>2025-12-16</td><td>Hongda Xingye Co., Ltd.</td><td>Industrial</td><td>337</td></tr><tr><td>2025-12-15</td><td>China Vanke Co.,Ltd</td><td>Real Estate</td><td>2,000</td></tr><tr><td>2025-12-05</td><td>Bohai Leasing Co.,Ltd.</td><td>Others</td><td>319</td></tr><tr><td>2025-12-01</td><td>Aoyuan Group Company Limited</td><td>Real Estate</td><td>1,176</td></tr><tr><td>2025-11-25</td><td>Dr.Peng Telecom&amp;Media Group Co., Ltd</td><td>Others</td><td>2,900</td></tr><tr><td>2025-11-17</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>200</td></tr><tr><td>2025-11-17</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>3,118</td></tr><tr><td>2025-11-13</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>3,026</td></tr><tr><td>2025-11-13</td><td>Xinyuan (China) Real Estate Co., Ltd</td><td>Real Estate</td><td>900</td></tr><tr><td>2025-11-13</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>1,875</td></tr><tr><td>2025-11-13</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>1,436</td></tr><tr><td>2025-11-13</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>568</td></tr><tr><td>2025-11-12</td><td>Wuhan Contemporary Technology Investment Co., Ltd</td><td>Others</td><td>1,300</td></tr><tr><td>2025-11-07</td><td>Shanghai Yuanyuan Investment Holding Co., Ltd</td><td>Others</td><td>999</td></tr><tr><td>2025-11-06</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>175</td></tr><tr><td>2025-11-06</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>546</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                61,
+                134,
+                931,
+                833
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Rolling Last-12 Month Defaults and Extensions"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                73,
+                533,
+                110
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                772,
+                68,
+                929,
+                115
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4958679a8bedd92971bc3f451a36e8ad85b3c0df3b1279375dafa3e8cb3921be.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND. Note: as of June 30, 2026."
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Issuer</td><td>Sector</td><td>Defaulted/Extended amount (Rmb mn)</td></tr><tr><td>2025-11-03</td><td>Country Garden Real Estate Group Co., Ltd</td><td>Real Estate</td><td>1,671</td></tr><tr><td>2025-10-31</td><td>Rongqiao Group Co., Ltd</td><td>Real Estate</td><td>200</td></tr><tr><td>2025-10-28</td><td>Rongxin (Fujian) Investment Group Co., Ltd</td><td>Real Estate</td><td>1,284</td></tr><tr><td>2025-10-28</td><td>Rongxin (Fujian) Investment Group Co., Ltd</td><td>Real Estate</td><td>988</td></tr><tr><td>2025-10-28</td><td>Rongxin (Fujian) Investment Group Co., Ltd</td><td>Real Estate</td><td>1,978</td></tr><tr><td>2025-10-21</td><td>Teng Yue Construction Technology Group Co., Ltd.</td><td>Infrastructure</td><td>442</td></tr><tr><td>2025-10-14</td><td>SUNSHINE CITY</td><td>Real Estate</td><td>1,600</td></tr><tr><td>2025-10-13</td><td>Shenghe (Shenzhen) Commercial Factoring Co., Ltd.</td><td>Others</td><td>693</td></tr><tr><td>2025-10-13</td><td>Shenghe (Shenzhen) Commercial Factoring Co., Ltd.</td><td>Others</td><td>1</td></tr><tr><td>2025-10-13</td><td>Shenghe (Shenzhen) Commercial Factoring Co., Ltd.</td><td>Others</td><td>674</td></tr><tr><td>2025-10-13</td><td>Shenghe (Shenzhen) Commercial Factoring Co., Ltd.</td><td>Others</td><td>1</td></tr><tr><td>2025-10-10</td><td>Guangzhou Times Holdings Group Co., Ltd.</td><td>Real Estate</td><td>2,118</td></tr><tr><td>2025-10-10</td><td>Bohai Leasing Co.,Ltd.</td><td>Others</td><td>1,008</td></tr><tr><td>2025-09-30</td><td>Beijing Ocean Investment Holdings Group Limited</td><td>Real Estate</td><td>1,316</td></tr><tr><td>2025-09-30</td><td>Beijing Ocean Investment Holdings Group Limited</td><td>Real Estate</td><td>1,495</td></tr><tr><td>2025-09-30</td><td>Beijing Ocean Investment Holdings Group Limited</td><td>Real Estate</td><td>1,196</td></tr><tr><td>2025-09-30</td><td>Aoyuan Group Company Limited</td><td>Real Estate</td><td>1,817</td></tr><tr><td>2025-09-30</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>200</td></tr><tr><td>2025-09-30</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>3,118</td></tr><tr><td>2025-09-30</td><td>Aoyuan Group Company Limited</td><td>Real Estate</td><td>2,833</td></tr><tr><td>2025-09-30</td><td>Beijing Ocean Investment Holdings Group Limited</td><td>Real Estate</td><td>5,184</td></tr><tr><td>2025-09-30</td><td>Tianan Property Insurance Company Limited Of China</td><td>Others</td><td>5,300</td></tr><tr><td>2025-09-29</td><td>Guangxi Wantong Real Estate Co., Ltd.</td><td>Real Estate</td><td>371</td></tr><tr><td>2025-09-26</td><td>Tus Environmental Science and Technology Development Co., Ltd.</td><td>Infrastructure</td><td>252</td></tr><tr><td>2025-09-15</td><td>Wuhan Contemporary Technology Investment Co., Ltd</td><td>Others</td><td>1,011</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                61,
+                134,
+                931,
+                833
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Rolling Last-12 Month Defaults and Extensions"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                73,
+                533,
+                110
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                772,
+                68,
+                929,
+                115
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ce2e44676fed10d350ff6475bbb9a96307d0edaab6261da8c409ae94c0d69178.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND. Note: as of June 30, 2026."
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Issuer</td><td>Sector</td><td>Defaulted/Extended amount (Rmb mn)</td></tr><tr><td>2025-09-12</td><td>Hubei Tianqian Asset Management Co., Ltd</td><td>Others</td><td>1,800</td></tr><tr><td>2025-09-08</td><td>Hunan Haifei Holding Co., Ltd</td><td>Others</td><td>300</td></tr><tr><td>2025-09-01</td><td>Rongqiao Group Co., Ltd</td><td>Real Estate</td><td>800</td></tr><tr><td>2025-09-01</td><td>Rongqiao Group Co., Ltd</td><td>Real Estate</td><td>1,060</td></tr><tr><td>2025-09-01</td><td>Rongqiao Group Co., Ltd</td><td>Real Estate</td><td>2,000</td></tr><tr><td>2025-09-01</td><td>Rongqiao Group Co., Ltd</td><td>Real Estate</td><td>1,990</td></tr><tr><td>2025-08-25</td><td>Dr.Peng Telecom&amp;Media Group Co., Ltd</td><td>Others</td><td>2,900</td></tr><tr><td>2025-08-19</td><td>Shenzhen Zhongzhuang Construction Group Co.,Ltd</td><td>Infrastructure</td><td>994</td></tr><tr><td>2025-08-18</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>200</td></tr><tr><td>2025-08-18</td><td>Zhengxinglong Real Estate (Shenzhen) Co., Ltd</td><td>Real Estate</td><td>3,118</td></tr><tr><td>2025-08-15</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>1,846</td></tr><tr><td>2025-08-12</td><td>Beijing Ocean Investment Holdings Group Limited</td><td>Real Estate</td><td>5,184</td></tr><tr><td>2025-08-07</td><td>Guohou Asset Management Co., Ltd.</td><td>Others</td><td>1,149</td></tr><tr><td>2025-08-06</td><td>Shanghai Baolong Industrial Development (Group) Co., Ltd</td><td>Real Estate</td><td>10,097</td></tr><tr><td>2025-08-06</td><td>CHUYAGRO-PASTORAL</td><td>Consumer</td><td>3,200</td></tr><tr><td>2025-07-24</td><td>Hongda Xingye Co., Ltd.</td><td>Industrial</td><td>1,347</td></tr><tr><td>2025-07-18</td><td>Cifi Group Co., Ltd</td><td>Real Estate</td><td>1,406</td></tr><tr><td>2025-07-18</td><td>Cifi Group Co., Ltd</td><td>Real Estate</td><td>3,967</td></tr><tr><td>2025-07-18</td><td>Cifi Group Co., Ltd</td><td>Real Estate</td><td>5,973</td></tr><tr><td>2025-07-18</td><td>Cifi Group Co., Ltd</td><td>Real Estate</td><td>691</td></tr><tr><td>2025-07-18</td><td>Cifi Group Co., Ltd</td><td>Real Estate</td><td>1,671</td></tr><tr><td>2025-07-18</td><td>Cifi Group Co., Ltd</td><td>Real Estate</td><td>2,000</td></tr><tr><td>2025-07-17</td><td>Wuhan Contemporary Technology Investment Co., Ltd</td><td>Others</td><td>400</td></tr><tr><td>2025-07-10</td><td>Shenzhen Logan Holdings Company Limited</td><td>Real Estate</td><td>3,780</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                61,
+                134,
+                931,
+                806
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Rolling Last-12 Month Defaults and Extensions"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                73,
+                533,
+                110
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                772,
+                68,
+                929,
+                115
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/11f60ea94c08d79122a929d4c4493fcb6db74295c21808332c03b61c050f4168.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WIND. Note: as of June 30, 2026."
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Issuer</td><td>Sector</td><td>Defaulted amount (Rmb mn)</td></tr><tr><td>2025-07-10</td><td>Shenzhen Logan Holdings Company Limited</td><td>Real Estate</td><td>4,903</td></tr><tr><td>2025-07-10</td><td>Shenzhen Logan Holdings Company Limited</td><td>Real Estate</td><td>842</td></tr><tr><td>2025-07-10</td><td>Shenzhen Logan Holdings Company Limited</td><td>Real Estate</td><td>1,950</td></tr><tr><td>2025-07-10</td><td>Shenzhen Logan Holdings Company Limited</td><td>Real Estate</td><td>3,944</td></tr><tr><td>2025-07-10</td><td>Shenzhen Logan Holdings Company Limited</td><td>Real Estate</td><td>210</td></tr><tr><td>2025-07-07</td><td>SMC</td><td>Real Estate</td><td>4,836</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                61,
+                132,
+                929,
+                302
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Rolling Last-12 Month Defaults"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                73,
+                373,
+                107
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                772,
+                68,
+                928,
+                115
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                60,
+                187,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst’s compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                95,
+                929,
+                163
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                171,
+                926,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                245,
+                922,
+                295
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "History of Investment Recommendations:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                64,
+                307,
+                219,
+                322
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                321,
+                929,
+                354
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Explanation of Credit Research Valuation Methodology, Ratings and Risk to Ratings:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                64,
+                381,
+                374,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM uses a bond-level rating system that incorporates valuations (relative value) and our fundamental view on the security. Our fundamental credit view of an issuer is based on the company's underlying credit trends, overall creditworthiness and our opinion on whether the issuer will be able to service its debt obligations when they become due and payable. We analyze, among other things, the company's cash flow capacity and trends and standard credit ratios, such as gross and net leverage, interest coverage and liquidity ratios. We also analyze profitability, capitalization and asset quality, among other variables, when assessing financials. Analysts also rate the issuer, based on the rating of the benchmark or representative security. Unless we specify a different recommendation for the company's individual securities, an issuer recommendation applies to all of the bonds at the same level of the issuer's capital structure. We may also rate certain loans and preferred securities, as applicable. This report also sets out within it the material underlying assumptions used."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                396,
+                928,
+                475
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We use the following ratings for bonds (issues), issuers, loans, and preferred securities: Overweight (over the next three months, the recommended risk position is expected to outperform the relevant index, sector, or benchmark); Neutral (over the next three months, the recommended risk position is expected to perform in line with the relevant index, sector, or benchmark); and Underweight (over the next three months, the recommended risk position is expected to underperform the relevant index, sector, or benchmark)."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                485,
+                928,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For CDS, we use the following rating system: Long Risk (over the next three months, the credit return on the recommended position is expected to exceed the relevant index, sector or benchmark); Neutral (over the next three months, the credit return on the recommended position is expected to match the relevant index, sector or benchmark); and Short Risk (over the next three months, the credit return on the recommended position is expected to underperform the relevant index, sector or benchmark)."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                546,
+                927,
+                581
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM Credit Research Ratings Distribution, as of July 04, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                589,
+                318,
+                610
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e9fa42318bc179c25ce992870e9e500e8444b08aadf3df46c7271008a9938856.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>Global Credit Research Universe*</td><td>27%</td><td>57%</td><td>16%</td></tr><tr><td>IB clients**</td><td>84%</td><td>84%</td><td>89%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                67,
+                645,
+                435,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*Please note that the percentages may not add to 100% because of rounding."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                739,
+                330,
+                757
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "**Percentage of subject companies within each of the \"Overweight,\" \"Neutral\" and \"Underweight\" categories for which JPM has provided investment banking services within the previous 12 months."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                754,
+                753,
+                773
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. The Credit Research Rating Distribution is at the issuer level. Issuers with an NR or an NC designation are not included in the table above. This information is current as of the end of the most recent calendar quarter."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                769,
+                927,
+                805
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                830,
+                923,
+                850
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                858,
+                922,
+                895
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                774,
+                13,
+                929,
+                60
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                60,
+                187,
+                90
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                99,
+                137,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                129,
+                539,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                159,
+                921,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                188,
+                751,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                218,
+                961,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                263,
+                938,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                309,
+                665,
+                327
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                339,
+                961,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-08/Security_Futures_Risk_Disclosure_Statement_2020.pdf for a copy of the Security Futures Risk Disclosure Statement."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                400,
+                963,
+                448
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                458,
+                942,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                502,
+                959,
+                537
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                547,
+                959,
+                628
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                638,
+                322,
+                655
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (\"BCRA\" - Central Bank of Argentina) and Comisión Nacional de Valores (\"CNV\"- Argentinian Securities Commission - ALYC y AN Integral N°51). Australia: JPM Securities Australia Limited (\"JPMSAL\") (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                653,
+                959,
+                759
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsm an JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@ipmchase.com.\nCanada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                757,
+                929,
+                805
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                803,
+                360,
+                818
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                818,
+                561,
+                835
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                833,
+                923,
+                865
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                863,
+                963,
+                897
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                774,
+                13,
+                929,
+                60
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                60,
+                187,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                100,
+                934,
+                176
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                176,
+                939,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI- IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                236,
+                940,
+                312
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                310,
+                931,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK)."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                354,
+                630,
+                373
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.\nJapan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                369,
+                931,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                416,
+                910,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”)."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                445,
+                934,
+                477
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                475,
+                931,
+                507
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                505,
+                931,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                534,
+                945,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA). Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                596,
+                942,
+                702
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                700,
+                942,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK: Research is produced in the UK by JPM Securities plc (\"JPMS plc\") which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (\"JPMML Ltd\") which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (\"the FPO\"); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA's policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                729,
+                942,
+                821
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "U.S.: JPM Securities LLC (\"JPMS\") is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                818,
+                938,
+                850
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                774,
+                13,
+                929,
+                60
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                60,
+                187,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                100,
+                950,
+                391
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. AI though this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                400,
+                947,
+                465
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MSCI: Certain information herein (\"Information\") is reproduced by permission of MSCI Inc., its affiliates and information providers (\"MSCI\") ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                473,
+                940,
+                524
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for information purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                549,
+                946,
+                600
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "\"Other Disclosures\" last revised July 04, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                610,
+                223,
+                628
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or re distributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                638,
+                940,
+                689
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                774,
+                13,
+                929,
+                60
+            ]
+        }
+    ]
+]
