@@ -1,0 +1,161 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_h4azbcv2/pdfs/0002-67-MS-Uber Technologies Inc-UBER.UN-Delivering a Cross Platform -Hero--260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "Uber 买下外卖对",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：收购完成后，Uber的跨平台市场将从34个增加到58个",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-67-MS-Uber Technologies Inc-UBER.UN-Delivering a Cross Platform -Hero--260716.pdf",
+    "cleaned_source_title": "MS-Uber Technologies Inc-UBER.UN-Delivering a Cross Platform -Hero",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：UberTechnologiesIncDe",
+    "raw_candidates": [
+      "MS：Uber收购Delivery Hero后跨平台用户支出达单一用户3倍",
+      "MS：Uber收购Delivery Hero使跨平台市场从34个增至58个",
+      "MS：Uber收购Delivery Hero后中东韩国阿根廷成关键战场",
+      "MS：Uber收购Delivery Hero打造跨平台超级用户",
+      "MS：Uber收购Delivery Hero-跨平台用户支出达3倍",
+      "MS：Uber收购Delivery Hero-跨平台市场从34增至58个"
+    ],
+    "cleaned_candidates": [
+      "MS：Uber收购DeliveryHero后跨平台用户支出达单一",
+      "MS：Uber收购DeliveryHero使跨平台市场从34个增",
+      "MS：Uber收购DeliveryHero后中东韩国阿根廷成关键",
+      "MS：Uber收购DeliveryHero打造跨平台超级用户",
+      "MS：Uber收购DeliveryHero-跨平台用户支出达3倍",
+      "MS：Uber收购DeliveryHero",
+      "MS：UberTechnologiesIncDe",
+      "MS：收购完成后，Uber的跨平台市场将从34个增加到58个"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：Uber收购DeliveryHero后跨平台用户支出达单一",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：Uber收购DeliveryHero使跨平台市场从34个增",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：Uber收购DeliveryHero后中东韩国阿根廷成关键",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：Uber收购DeliveryHero打造跨平台超级用户",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：Uber收购DeliveryHero-跨平台用户支出达3倍",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：Uber收购DeliveryHero",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：UberTechnologiesIncDe",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：收购完成后，Uber的跨平台市场将从34个增加到58个",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "34",
+        "58"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "MS：收购完成后，Uber的跨平台市场将从34个增加到58个",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "MS：Uber收购Delivery Hero后跨平台用户支出达单一用户3倍",
+      "MS：Uber收购Delivery Hero使跨平台市场从34个增至58个",
+      "MS：Uber收购Delivery Hero后中东韩国阿根廷成关键战场"
+    ],
+    "final_title_after_wording_guard": "MS：收购完成后，Uber的跨平台市场将从34个增加到58个"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "533",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,114 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_h4azbcv2/pdfs/0001-66-MS-Rare Earths- Where Is The Money Flowing--260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "稀土出口管制，钱流向",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：稀土-资金流向何处",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-66-MS-Rare Earths- Where Is The Money Flowing--260716.pdf",
+    "cleaned_source_title": "MS-Rare Earths- Where Is The Money Flowing",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：RareEarths",
+    "raw_candidates": [
+      "稀土-资金流向何处",
+      "稀土-资金流向错位：私募押注下游",
+      "稀土-6.5万亿美元下游面临管制风险"
+    ],
+    "cleaned_candidates": [
+      "MS：稀土-资金流向何处",
+      "MS：稀土-资金流向错位，私募押注下游",
+      "MS：稀土-6.5万亿美元下游面临管制风险",
+      "MS：RareEarths",
+      "MS：2025年4月和10月，中国先后两轮出台稀土出口管制"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：稀土-资金流向错位，私募押注下游",
+        "reasons": [
+          "anchor_coverage=0.71"
+        ]
+      },
+      {
+        "title": "MS：稀土-6.5万亿美元下游面临管制风险",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：RareEarths",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：2025年4月和10月，中国先后两轮出台稀土出口管制",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：稀土-资金流向何处",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：稀土-资金流向何处"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "486",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
