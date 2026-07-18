@@ -1246,8 +1246,34 @@
     `;
   }
 
-  function renderAnalyticsRecentEvents(events) {
-    const rows = Array.isArray(events) ? events.slice(0, 30) : [];
+  function analyticsEventUserText(event) {
+    if (event.user && (event.user.username || event.user.email)) {
+      return `${event.user.username || ""}${event.user.email ? ` · ${event.user.email}` : ""}`;
+    }
+    const visitor = event.visitor_id || event.ip_hash || "";
+    return visitor ? String(visitor).slice(0, 18) : "匿名";
+  }
+
+  function analyticsEventContentText(event) {
+    if (event.query) return `${event.source || ""} 搜索：${event.query}`;
+    return event.report_title || event.report_id || event.path || "";
+  }
+
+  function analyticsEventStatusText(event) {
+    return [
+      event.result_count ? `${event.result_count}条` : "",
+      analyticsEventFilterText(event),
+      event.action || "",
+      event.cache_status || "",
+      event.status || "",
+      event.duration_ms ? `${event.duration_ms}ms` : "",
+      event.error || "",
+    ].filter(Boolean).join(" · ");
+  }
+
+  function renderAnalyticsRecentEvents(events, limit = 30) {
+    const sourceRows = Array.isArray(events) ? events : [];
+    const rows = limit > 0 ? sourceRows.slice(0, limit) : sourceRows;
     if (!rows.length) return '<div class="empty-state">还没有最近事件。</div>';
     return `
       <div class="account-admin-table-wrap">
@@ -1263,26 +1289,13 @@
           </thead>
           <tbody>
             ${rows.map((event) => {
-              const user = event.user && (event.user.username || event.user.email)
-                ? `${event.user.username || ""}${event.user.email ? ` · ${event.user.email}` : ""}`
-                : (event.visitor_id ? event.visitor_id.slice(0, 12) : "匿名");
-              const content = event.query
-                ? `${event.source || ""} 搜索：${event.query}`
-                : (event.report_title || event.report_id || event.path || "");
-              const status = [
-                event.result_count ? `${event.result_count}条` : "",
-                analyticsEventFilterText(event),
-                event.cache_status || "",
-                event.status || "",
-                event.error || "",
-              ].filter(Boolean).join(" · ");
               return `
                 <tr>
                   <td>${escapeHtml(analyticsTime(event.ts))}</td>
                   <td>${escapeHtml(event.type || "")}</td>
-                  <td>${escapeHtml(user)}</td>
-                  <td>${escapeHtml(content)}</td>
-                  <td>${escapeHtml(status)}</td>
+                  <td>${escapeHtml(analyticsEventUserText(event))}</td>
+                  <td>${escapeHtml(analyticsEventContentText(event))}</td>
+                  <td>${escapeHtml(analyticsEventStatusText(event))}</td>
                 </tr>
               `;
             }).join("")}
@@ -1315,10 +1328,233 @@
         </section>
       </div>
       <section>
-        <h4>最近事件</h4>
+        <div class="account-admin-analytics-heading">
+          <h4>最近事件</h4>
+          <a class="secondary-button" href="activity.html" target="_blank" rel="noopener">查看全部历史</a>
+        </div>
         ${renderAnalyticsRecentEvents(analytics.recent_events)}
       </section>
     `;
+  }
+
+  const ANALYTICS_EVENT_LABELS = {
+    page_view: "页面访问",
+    search: "搜索",
+    report_open: "打开报告",
+    download_attempt: "尝试下载",
+    download_success: "下载成功",
+    download_error: "下载失败",
+    delivery_link_generate: "生成发货链接",
+  };
+
+  function analyticsEventLabel(type) {
+    const value = String(type || "");
+    return ANALYTICS_EVENT_LABELS[value] || value || "其他事件";
+  }
+
+  function analyticsEventEnvironmentText(event) {
+    return [
+      event.country || "",
+      event.colo ? `节点 ${event.colo}` : "",
+      event.page ? `页面 ${event.page}` : "",
+      event.source ? `来源 ${event.source}` : "",
+    ].filter(Boolean).join(" · ");
+  }
+
+  function analyticsEventDetailText(event) {
+    return [
+      event.path ? `路径：${event.path}` : "",
+      event.referrer ? `来源页：${event.referrer}` : "",
+      event.user_agent ? `设备：${event.user_agent}` : "",
+      event.institution ? `机构：${event.institution}` : "",
+      event.report_id ? `报告 ID：${event.report_id}` : "",
+      event.visitor_id ? `访客 ID：${event.visitor_id}` : "",
+      event.ip_hash ? `IP Hash：${event.ip_hash}` : "",
+    ].filter(Boolean).join("\n");
+  }
+
+  function renderAnalyticsHistoryEvents(events) {
+    const rows = Array.isArray(events) ? events : [];
+    if (!rows.length) {
+      return '<div class="empty-state">当前区间没有匹配事件。</div>';
+    }
+    return `
+      <div class="account-admin-table-wrap analytics-history-table-wrap">
+        <table class="account-admin-table analytics-history-table">
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>事件</th>
+              <th>用户 / 访客</th>
+              <th>内容</th>
+              <th>条件 / 状态</th>
+              <th>环境</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((event) => {
+              const detail = analyticsEventDetailText(event);
+              return `
+                <tr>
+                  <td class="analytics-history-time">${escapeHtml(analyticsTime(event.ts))}</td>
+                  <td>
+                    <strong>${escapeHtml(analyticsEventLabel(event.type))}</strong>
+                    <small>${escapeHtml(event.type || "")}</small>
+                  </td>
+                  <td>
+                    <strong>${escapeHtml(analyticsEventUserText(event))}</strong>
+                    <small>${escapeHtml(event.user && event.user.role || "")}</small>
+                  </td>
+                  <td class="analytics-history-content">
+                    <strong>${escapeHtml(analyticsEventContentText(event))}</strong>
+                    <small>${escapeHtml(event.institution || event.report_id || event.path || "")}</small>
+                  </td>
+                  <td>${escapeHtml(analyticsEventStatusText(event))}</td>
+                  <td>
+                    <span>${escapeHtml(analyticsEventEnvironmentText(event))}</span>
+                    ${detail ? `
+                      <details class="analytics-event-details">
+                        <summary>详细信息</summary>
+                        <pre>${escapeHtml(detail)}</pre>
+                      </details>
+                    ` : ""}
+                  </td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  async function initAnalyticsHistory() {
+    const config = await loadOptionalJson("data/config.json", {});
+    const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
+
+    const form = document.getElementById("analyticsHistoryFilters");
+    const type = document.getElementById("analyticsHistoryType");
+    const query = document.getElementById("analyticsHistoryQuery");
+    const startDate = document.getElementById("analyticsHistoryStartDate");
+    const endDate = document.getElementById("analyticsHistoryEndDate");
+    const pageSize = document.getElementById("analyticsHistoryPageSize");
+    const reset = document.getElementById("analyticsHistoryReset");
+    const refresh = document.getElementById("analyticsHistoryRefresh");
+    const status = document.getElementById("analyticsHistoryStatus");
+    const meta = document.getElementById("analyticsHistoryMeta");
+    const results = document.getElementById("analyticsHistoryResults");
+    const previous = document.getElementById("analyticsHistoryPrev");
+    const next = document.getElementById("analyticsHistoryNext");
+    const pageLabel = document.getElementById("analyticsHistoryPage");
+    let cursor = "";
+    let cursorStack = [];
+    let nextCursor = "";
+    let pageNumber = 1;
+
+    function setStatus(message, kind = "") {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = message || "";
+    }
+
+    function resetPagination() {
+      cursor = "";
+      cursorStack = [];
+      nextCursor = "";
+      pageNumber = 1;
+    }
+
+    function historySearchParams() {
+      const params = new URLSearchParams();
+      if (type.value) params.set("type", type.value);
+      if (query.value.trim()) params.set("q", query.value.trim());
+      if (startDate.value) params.set("start_date", startDate.value);
+      if (endDate.value) params.set("end_date", endDate.value);
+      params.set("page_size", pageSize.value || "100");
+      if (cursor) params.set("cursor", cursor);
+      return params;
+    }
+
+    function renderHistoryMeta(data) {
+      const range = data.newest_date || data.oldest_date
+        ? `${data.oldest_date || ""} 至 ${data.newest_date || ""}`
+        : "暂无存档日期";
+      meta.innerHTML = `
+        <span>历史范围：<strong>${escapeHtml(range)}</strong></span>
+        <span>本页 ${escapeHtml((data.events || []).length)} 条</span>
+        <span>扫描 ${escapeHtml(data.scanned_count || 0)} 条存档</span>
+        <span>更新 ${escapeHtml(analyticsTime(data.generated_at))}</span>
+      `;
+    }
+
+    async function loadPage(options = {}) {
+      if (options.reset) resetPagination();
+      refresh.disabled = true;
+      previous.disabled = true;
+      next.disabled = true;
+      setStatus(`正在读取第 ${pageNumber} 页…`);
+      try {
+        const response = await fetch(`${workerUrl}/account-admin/analytics-events?${historySearchParams()}`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || `历史记录读取失败 (${response.status})。`);
+        const events = Array.isArray(data.events) ? data.events : [];
+        nextCursor = String(data.next_cursor || "");
+        results.innerHTML = renderAnalyticsHistoryEvents(events);
+        renderHistoryMeta(data);
+        if (!startDate.min && data.oldest_date) {
+          startDate.min = data.oldest_date;
+          startDate.max = data.newest_date || "";
+          endDate.min = data.oldest_date;
+          endDate.max = data.newest_date || "";
+        }
+        pageLabel.textContent = `第 ${pageNumber} 页`;
+        previous.disabled = cursorStack.length === 0;
+        next.disabled = !nextCursor;
+        setStatus(events.length
+          ? `已读取 ${events.length} 条事件。`
+          : (nextCursor ? "当前扫描区间没有匹配事件，可继续下一页。" : "没有匹配事件。"), "ok");
+      } catch (error) {
+        results.innerHTML = '<div class="empty-state">无法读取用户行为历史。</div>';
+        meta.textContent = "";
+        setStatus(error.message || "历史记录读取失败。", "error");
+        previous.disabled = cursorStack.length === 0;
+      } finally {
+        refresh.disabled = false;
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      loadPage({ reset: true });
+    });
+    reset.addEventListener("click", () => {
+      form.reset();
+      loadPage({ reset: true });
+    });
+    refresh.addEventListener("click", () => loadPage());
+    previous.addEventListener("click", () => {
+      if (!cursorStack.length) return;
+      cursor = cursorStack.pop() || "";
+      pageNumber = Math.max(1, pageNumber - 1);
+      loadPage();
+    });
+    next.addEventListener("click", () => {
+      if (!nextCursor) return;
+      cursorStack.push(cursor);
+      cursor = nextCursor;
+      pageNumber += 1;
+      loadPage();
+    });
+
+    if (!isSuperSession()) {
+      results.innerHTML = '<div class="empty-state">请先使用管理员账号登录。</div>';
+      setStatus("当前账号没有查看用户行为历史的权限。", "error");
+      return;
+    }
+    await loadPage({ reset: true });
   }
 
   function resetDownloadProgress(progress) {
@@ -5873,9 +6109,11 @@
       ? initExternalDetail
       : page === "delivery"
         ? initDelivery
-        : page === "newsfeed"
-          ? initNewsfeed
-          : initIndex;
+        : page === "activity"
+          ? initAnalyticsHistory
+          : page === "newsfeed"
+            ? initNewsfeed
+            : initIndex;
   boot().catch((error) => {
     const target = page === "report"
       ? document.getElementById("detail")
@@ -5883,9 +6121,11 @@
         ? document.getElementById("externalDetail")
         : page === "delivery"
           ? document.getElementById("delivery")
-          : page === "newsfeed"
-            ? document.getElementById("newsfeedApp")
-            : document.getElementById("results");
+          : page === "activity"
+            ? document.getElementById("analyticsHistoryResults")
+            : page === "newsfeed"
+              ? document.getElementById("newsfeedApp")
+              : document.getElementById("results");
     if (target) target.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
   });
 }());

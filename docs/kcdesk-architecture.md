@@ -122,6 +122,7 @@ https://kcdesk.com/reports/<report_id>.html
 | 报告详情 | `kc_desk_notes/site_src/report.html` | 站内 PDF 报告详情、密码/账号下载、相关报告推荐。 |
 | 外部报告详情 | `kc_desk_notes/site_src/doc.html` | “其他报告 / 报告A / 高权报告”的统一详情页。 |
 | 交付页 | `kc_desk_notes/site_src/delivery.html` | 发货链接落地页，预填密码，但仍由客户点击下载按钮。 |
+| 用户行为历史 | `kc_desk_notes/site_src/activity.html` | 仅 super 管理员可用；按日期、事件类型和关键词筛选 R2 历史埋点，并使用游标分页。 |
 | 条款/退款 | `terms.html`、`refund.html` | 当前不展示自助支付，统一引导联系微信 `MacroGate`。 |
 
 首页搜索策略：
@@ -148,6 +149,7 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | `/admin/login` | POST | 通用密钥入口，写入管理 token。 |
 | `/admin/report-password` | POST | 管理端生成单篇报告密码/交付信息。 |
 | `/account-admin/summary` | GET | 管理后台/运营后台总数据。 |
+| `/account-admin/analytics-events` | GET | 仅 super 管理员可用的完整埋点历史查询；支持筛选、页数和稳定游标分页。 |
 | `/account-admin/github-file` | GET | 每日文件下载，支持 R2 缓存和 Range。 |
 | `/account-admin/github-artifact` | GET | GitHub artifact 下载，支持 R2 缓存和 Range。 |
 | `/account-admin/report-pdf` | GET | 管理后台每日精选 PDF 下载。 |
@@ -389,6 +391,9 @@ dashboard：
 - 只在 `twotigers` super 管理后台显示。
 - 默认看近 7 天。
 - 展示访客数、搜索数、报告打开、下载、发货链接、热门搜索、热门报告、最近事件。
+- “最近事件”只保留摘要；“查看全部历史”会在新标签页打开 `activity.html`。
+- 完整历史页直接读取 R2 日期目录，按时间倒序使用对象键游标分页；新事件写入不会打乱已翻过的页。
+- 完整历史页支持开始/结束日期、事件类型、关键词和 50/100/200 条每页。
 - visitor id 存在浏览器本地，Worker 同时保存 IP hash，避免直接保存明文 IP。
 - 聚合后的 dashboard 写入 `_account/admin-snapshots/analytics.json`；读取事件超时不会清空管理后台的历史统计。
 

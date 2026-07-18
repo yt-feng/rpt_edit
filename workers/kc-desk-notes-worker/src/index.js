@@ -177,6 +177,10 @@ const ANALYTICS_DASHBOARD_DAYS = 7;
 const ANALYTICS_DASHBOARD_LIMIT = 50;
 const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 60;
 const ANALYTICS_DASHBOARD_TIMEOUT_MS = 9000;
+const ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE = 100;
+const ANALYTICS_HISTORY_MAX_PAGE_SIZE = 200;
+const ANALYTICS_HISTORY_SCAN_LIMIT = 1200;
+const ANALYTICS_HISTORY_READ_BATCH = 40;
 const ADMIN_GITHUB_FILES_TIMEOUT_MS = 12000;
 const ADMIN_GITHUB_SOURCE_TIMEOUT_MS = 8500;
 const ADMIN_GITHUB_ARTIFACT_TIMEOUT_MS = 2500;
@@ -2714,6 +2718,325 @@ async function listAnalyticsEvents(env, days = ANALYTICS_DASHBOARD_DAYS, limit =
   return [...rowsById.values()].sort((a, b) => String(b.ts || "").localeCompare(String(a.ts || "")));
 }
 
+function analyticsDateFromPrefix(prefixRoot, value) {
+  const prefix = `${prefixRoot}/`;
+  const date = String(value || "").startsWith(prefix)
+    ? String(value).slice(prefix.length).replace(/\/$/, "")
+    : "";
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : "";
+}
+
+async function listAnalyticsEventDatesForRoot(env, prefixRoot) {
+  const dates = new Set();
+  let cursor = undefined;
+  do {
+    const listed = await env.REPORT_BUCKET.list({
+      prefix: `${prefixRoot}/`,
+      delimiter: "/",
+      limit: 1000,
+      cursor,
+    });
+    for (const value of Array.isArray(listed && listed.delimitedPrefixes) ? listed.delimitedPrefixes : []) {
+      const date = analyticsDateFromPrefix(prefixRoot, value);
+      if (date) dates.add(date);
+    }
+    if (!listed || !listed.truncated || !listed.cursor) break;
+    cursor = listed.cursor;
+  } while (cursor);
+  return [...dates];
+}
+
+async function listAnalyticsEventDateRows(env) {
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return [];
+  const [primaryDates, backupDates] = await Promise.all([
+    listAnalyticsEventDatesForRoot(env, ANALYTICS_PREFIX),
+    listAnalyticsEventDatesForRoot(env, ANALYTICS_BACKUP_PREFIX),
+  ]);
+  const primary = new Set(primaryDates);
+  const backup = new Set(backupDates);
+  return [...new Set([...primaryDates, ...backupDates])]
+    .sort((a, b) => b.localeCompare(a))
+    .map((date) => ({
+      date,
+      prefix_roots: [
+        primary.has(date) ? ANALYTICS_PREFIX : "",
+        backup.has(date) ? ANALYTICS_BACKUP_PREFIX : "",
+      ].filter(Boolean),
+    }));
+}
+
+async function listAnalyticsEventKeysForRoot(env, prefixRoot, date) {
+  const rows = [];
+  let cursor = undefined;
+  do {
+    const listed = await env.REPORT_BUCKET.list({
+      prefix: `${prefixRoot}/${date}/`,
+      limit: 1000,
+      cursor,
+    });
+    for (const object of Array.isArray(listed && listed.objects) ? listed.objects : []) {
+      if (!object || !object.key) continue;
+      const key = String(object.key);
+      rows.push({
+        key,
+        suffix: key.slice(`${prefixRoot}/${date}/`.length),
+      });
+    }
+    if (!listed || !listed.truncated || !listed.cursor) break;
+    cursor = listed.cursor;
+  } while (cursor);
+  return rows;
+}
+
+async function listAnalyticsEventKeysForDate(env, prefixRoots, date) {
+  const batches = await Promise.all((Array.isArray(prefixRoots) ? prefixRoots : [])
+    .map((prefixRoot) => listAnalyticsEventKeysForRoot(env, prefixRoot, date)));
+  const rowsBySuffix = new Map();
+  for (const rows of batches) {
+    for (const row of rows) {
+      if (!row.suffix) continue;
+      const existing = rowsBySuffix.get(row.suffix);
+      if (existing) {
+        existing.keys.push(row.key);
+      } else {
+        rowsBySuffix.set(row.suffix, { suffix: row.suffix, keys: [row.key] });
+      }
+    }
+  }
+  return [...rowsBySuffix.values()].sort((a, b) => b.suffix.localeCompare(a.suffix));
+}
+
+async function readAnalyticsEventsByRows(env, rows) {
+  return Promise.all((Array.isArray(rows) ? rows : []).map(async (row) => {
+    for (const key of Array.isArray(row && row.keys) ? row.keys : []) {
+      try {
+        const stored = await env.REPORT_BUCKET.get(key);
+        if (stored) return JSON.parse(await stored.text());
+      } catch (_error) {
+        // Try the mirrored analytics object next.
+      }
+    }
+    return null;
+  }));
+}
+
+function publicAnalyticsEvent(event) {
+  return {
+    id: event.id || "",
+    ts: event.ts || "",
+    date: event.date || "",
+    type: event.type || "",
+    visitor_id: event.visitor_id || "",
+    ip_hash: event.ip_hash || "",
+    user: event.user ? {
+      username: event.user.username || "",
+      email: event.user.email || "",
+      role: event.user.role || "",
+    } : null,
+    country: event.country || "",
+    colo: event.colo || "",
+    page: event.page || "",
+    path: event.path || "",
+    source: event.source || "",
+    query: event.query || "",
+    bank: event.bank || "",
+    industry: event.industry || "",
+    start_date: event.start_date || "",
+    end_date: event.end_date || "",
+    scope: event.scope || "",
+    availability: event.availability || "",
+    page_ranges: event.page_ranges || "",
+    page_range_labels: event.page_range_labels || "",
+    result_count: event.result_count || 0,
+    total_count: event.total_count || 0,
+    cache_status: event.cache_status || "",
+    report_id: event.report_id || "",
+    report_title: event.report_title || "",
+    institution: event.institution || "",
+    action: event.action || "",
+    status: event.status || "",
+    duration_ms: event.duration_ms || 0,
+    error: event.error || "",
+    referrer: event.referrer || "",
+    user_agent: event.user_agent || "",
+  };
+}
+
+function cleanAnalyticsHistoryDate(value) {
+  const date = cleanAnalyticsText(value, 10);
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : "";
+}
+
+function analyticsHistoryFilterSignature(filters) {
+  return [filters.type, filters.query, filters.startDate, filters.endDate].join("\u001f");
+}
+
+function encodeAnalyticsHistoryCursor(value) {
+  return base64UrlEncodeText(JSON.stringify(value || {}));
+}
+
+function decodeAnalyticsHistoryCursor(value) {
+  try {
+    const parsed = JSON.parse(base64UrlDecodeText(value));
+    return parsed && typeof parsed === "object" ? parsed : null;
+  } catch (_error) {
+    return null;
+  }
+}
+
+function analyticsHistoryEventMatches(event, filters) {
+  if (!event || typeof event !== "object") return false;
+  if (filters.type && String(event.type || "").toLowerCase() !== filters.type) return false;
+  if (!filters.query) return true;
+  const user = event.user && typeof event.user === "object" ? event.user : {};
+  const haystack = normalizeText([
+    event.type,
+    event.visitor_id,
+    event.ip_hash,
+    user.username,
+    user.email,
+    event.country,
+    event.colo,
+    event.page,
+    event.path,
+    event.source,
+    event.query,
+    event.bank,
+    event.industry,
+    event.report_id,
+    event.report_title,
+    event.institution,
+    event.action,
+    event.status,
+    event.error,
+    event.referrer,
+    event.user_agent,
+  ].filter(Boolean).join(" "));
+  return normalizeText(filters.query).split(" ").filter(Boolean).every((token) => haystack.includes(token));
+}
+
+async function handleAccountAdminAnalyticsEvents(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") {
+    return jsonResponse(request, env, 503, { detail: "Analytics storage is unavailable." });
+  }
+
+  const url = new URL(request.url);
+  const pageSize = Math.min(
+    ANALYTICS_HISTORY_MAX_PAGE_SIZE,
+    Math.max(1, Number(url.searchParams.get("page_size")) || ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE),
+  );
+  const filters = {
+    type: cleanAnalyticsText(url.searchParams.get("type"), 60).toLowerCase(),
+    query: cleanAnalyticsText(url.searchParams.get("q"), 240),
+    startDate: cleanAnalyticsHistoryDate(url.searchParams.get("start_date")),
+    endDate: cleanAnalyticsHistoryDate(url.searchParams.get("end_date")),
+  };
+  if (filters.startDate && filters.endDate && filters.startDate > filters.endDate) {
+    return jsonResponse(request, env, 400, { detail: "Start date must not be after end date." });
+  }
+
+  const signature = analyticsHistoryFilterSignature(filters);
+  const requestedCursor = decodeAnalyticsHistoryCursor(url.searchParams.get("cursor"));
+  const cursor = requestedCursor && requestedCursor.signature === signature ? requestedCursor : null;
+
+  try {
+    const allDateRows = await listAnalyticsEventDateRows(env);
+    const dateRows = allDateRows.filter((row) => {
+      if (filters.startDate && row.date < filters.startDate) return false;
+      if (filters.endDate && row.date > filters.endDate) return false;
+      return true;
+    });
+    let dateIndex = 0;
+    let afterKey = "";
+    if (cursor && cursor.date) {
+      const index = dateRows.findIndex((row) => row.date === cursor.date);
+      if (index >= 0) {
+        dateIndex = index;
+        afterKey = cleanAnalyticsText(cursor.after_key, 500);
+      }
+    }
+
+    const events = [];
+    let scannedCount = 0;
+    let nextCursor = "";
+    let hasMore = false;
+    let stop = false;
+
+    for (; dateIndex < dateRows.length && !stop; dateIndex += 1) {
+      const dateRow = dateRows[dateIndex];
+      const keys = await listAnalyticsEventKeysForDate(env, dateRow.prefix_roots, dateRow.date);
+      let keyIndex = 0;
+      if (afterKey) {
+        const exactIndex = keys.findIndex((row) => row.suffix === afterKey);
+        if (exactIndex >= 0) {
+          keyIndex = exactIndex + 1;
+        } else {
+          const nextIndex = keys.findIndex((row) => row.suffix.localeCompare(afterKey) < 0);
+          keyIndex = nextIndex >= 0 ? nextIndex : keys.length;
+        }
+      }
+      afterKey = "";
+      let lastProcessedKey = "";
+
+      while (keyIndex < keys.length && !stop) {
+        const remainingScan = ANALYTICS_HISTORY_SCAN_LIMIT - scannedCount;
+        if (remainingScan <= 0) {
+          stop = true;
+          break;
+        }
+        const batchRows = keys.slice(
+          keyIndex,
+          Math.min(keys.length, keyIndex + ANALYTICS_HISTORY_READ_BATCH, keyIndex + remainingScan),
+        );
+        const batch = await readAnalyticsEventsByRows(env, batchRows);
+        for (let index = 0; index < batchRows.length; index += 1) {
+          lastProcessedKey = batchRows[index].suffix;
+          keyIndex += 1;
+          scannedCount += 1;
+          if (analyticsHistoryEventMatches(batch[index], filters)) {
+            events.push(publicAnalyticsEvent(batch[index]));
+          }
+          if (events.length >= pageSize || scannedCount >= ANALYTICS_HISTORY_SCAN_LIMIT) {
+            stop = true;
+            break;
+          }
+        }
+      }
+
+      if (stop) {
+        hasMore = keyIndex < keys.length || dateIndex < dateRows.length - 1;
+        if (hasMore && lastProcessedKey) {
+          nextCursor = encodeAnalyticsHistoryCursor({
+            date: dateRow.date,
+            after_key: lastProcessedKey,
+            signature,
+          });
+        }
+      }
+    }
+
+    return jsonResponse(request, env, 200, {
+      events,
+      next_cursor: nextCursor,
+      has_more: hasMore,
+      page_size: pageSize,
+      scanned_count: scannedCount,
+      available_dates: allDateRows.map((row) => row.date),
+      newest_date: allDateRows.length ? allDateRows[0].date : "",
+      oldest_date: allDateRows.length ? allDateRows[allDateRows.length - 1].date : "",
+      generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "Analytics history is unavailable." });
+  }
+}
+
 function analyticsEventVisitorKey(event) {
   return String(event && (event.visitor_id || event.ip_hash || (event.user && event.user.email)) || "");
 }
@@ -2829,35 +3152,7 @@ async function buildAnalyticsDashboard(env) {
     top_searches: analyticsTopSearches(events),
     top_reports: analyticsTopReports(events),
     daily: analyticsDailySeries(events),
-    recent_events: events.slice(0, 120).map((event) => ({
-      ts: event.ts || "",
-      type: event.type || "",
-      visitor_id: event.visitor_id || "",
-      user: event.user ? {
-        username: event.user.username || "",
-        email: event.user.email || "",
-        role: event.user.role || "",
-      } : null,
-      country: event.country || "",
-      page: event.page || "",
-      path: event.path || "",
-      source: event.source || "",
-      query: event.query || "",
-      bank: event.bank || "",
-      industry: event.industry || "",
-      start_date: event.start_date || "",
-      end_date: event.end_date || "",
-      scope: event.scope || "",
-      availability: event.availability || "",
-      page_ranges: event.page_ranges || "",
-      page_range_labels: event.page_range_labels || "",
-      result_count: event.result_count || 0,
-      cache_status: event.cache_status || "",
-      report_id: event.report_id || "",
-      report_title: event.report_title || "",
-      status: event.status || "",
-      error: event.error || "",
-    })),
+    recent_events: events.slice(0, 120).map(publicAnalyticsEvent),
   };
 }
 
@@ -8524,6 +8819,10 @@ export default {
 
     if (pathname === "/account-admin/summary" && request.method === "GET") {
       return handleAccountAdminSummary(request, env, ctx);
+    }
+
+    if (pathname === "/account-admin/analytics-events" && request.method === "GET") {
+      return handleAccountAdminAnalyticsEvents(request, env);
     }
 
     if (pathname === "/account-admin/user-access" && request.method === "POST") {

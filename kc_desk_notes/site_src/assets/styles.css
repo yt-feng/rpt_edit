@@ -1202,6 +1202,190 @@ a.secondary-button {
   gap: 8px;
 }
 
+.account-admin-analytics-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 0 8px;
+}
+
+.account-admin-analytics-heading h4 {
+  margin: 0;
+}
+
+.analytics-history-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.analytics-history-shell {
+  width: min(1680px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 30px 0 48px;
+}
+
+.analytics-history-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.analytics-history-title h1 {
+  margin: 0 0 6px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.analytics-history-title p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.analytics-history-filters {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(280px, 2fr) repeat(3, minmax(140px, 0.8fr)) auto;
+  gap: 12px;
+  align-items: end;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.analytics-history-filters label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.analytics-history-filters label > span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.analytics-history-filters input,
+.analytics-history-filters select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 12px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.analytics-history-filter-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.analytics-history-filter-actions button {
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+.analytics-history-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  min-height: 46px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.analytics-history-results {
+  min-height: 280px;
+}
+
+.analytics-history-table-wrap {
+  max-height: none;
+}
+
+.analytics-history-table {
+  min-width: 1380px;
+}
+
+.analytics-history-table th:nth-child(1) {
+  width: 132px;
+}
+
+.analytics-history-table th:nth-child(2) {
+  width: 130px;
+}
+
+.analytics-history-table th:nth-child(3) {
+  width: 210px;
+}
+
+.analytics-history-table th:nth-child(4) {
+  width: 360px;
+}
+
+.analytics-history-table td {
+  vertical-align: top;
+}
+
+.analytics-history-table td strong,
+.analytics-history-table td small,
+.analytics-history-table td span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.analytics-history-table td small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.analytics-history-time {
+  white-space: nowrap;
+}
+
+.analytics-event-details {
+  margin-top: 7px;
+}
+
+.analytics-event-details summary {
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.analytics-event-details pre {
+  max-width: 360px;
+  margin: 7px 0 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f7f9fb;
+  color: var(--ink);
+  font: 11px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.analytics-history-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 20px;
+}
+
+.analytics-history-pagination span {
+  min-width: 76px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 800;
+}
+
 .account-admin-picks {
   display: grid;
   gap: 12px;
@@ -3273,5 +3457,59 @@ a.secondary-button {
 
   .newsfeed-bottom-tabs button {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .analytics-history-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .analytics-history-query {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .analytics-history-page .topbar {
+    position: static;
+    align-items: stretch;
+  }
+
+  .analytics-history-page .topbar-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .analytics-history-shell {
+    width: min(100% - 24px, 1680px);
+    padding-top: 20px;
+  }
+
+  .analytics-history-title {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .analytics-history-title h1 {
+    font-size: 25px;
+  }
+
+  .analytics-history-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-history-query {
+    grid-column: auto;
+  }
+
+  .analytics-history-filter-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .account-admin-analytics-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

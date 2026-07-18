@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户行为历史 | KC Desk Notes</title>
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <link rel="stylesheet" href="assets/styles.css?v=admin-activity-20260718b">
+  </head>
+  <body data-page="activity" class="analytics-history-page">
+    <header class="topbar">
+      <a class="brand compact" href="index.html" aria-label="KC Desk Notes home">
+        <img src="assets/kc-mark.svg" alt="" width="30" height="30">
+        <span>KC Desk Notes</span>
+      </a>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="index.html">返回首页</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+      </div>
+    </header>
+
+    <main class="analytics-history-shell">
+      <div class="analytics-history-title">
+        <div>
+          <h1>用户行为历史</h1>
+          <p>查看已存档的访问、搜索、报告打开和下载事件。</p>
+        </div>
+        <button id="analyticsHistoryRefresh" class="secondary-button" type="button">刷新</button>
+      </div>
+
+      <form id="analyticsHistoryFilters" class="analytics-history-filters">
+        <label>
+          <span>事件类型</span>
+          <select id="analyticsHistoryType">
+            <option value="">全部事件</option>
+            <option value="page_view">页面访问</option>
+            <option value="search">搜索</option>
+            <option value="report_open">打开报告</option>
+            <option value="download_attempt">尝试下载</option>
+            <option value="download_success">下载成功</option>
+            <option value="download_error">下载失败</option>
+            <option value="delivery_link_generate">生成发货链接</option>
+          </select>
+        </label>
+        <label class="analytics-history-query">
+          <span>关键词</span>
+          <input id="analyticsHistoryQuery" type="search" autocomplete="off" placeholder="用户、邮箱、搜索词、报告、来源或状态">
+        </label>
+        <label>
+          <span>开始日期</span>
+          <input id="analyticsHistoryStartDate" type="date">
+        </label>
+        <label>
+          <span>结束日期</span>
+          <input id="analyticsHistoryEndDate" type="date">
+        </label>
+        <label>
+          <span>每页</span>
+          <select id="analyticsHistoryPageSize">
+            <option value="50">50 条</option>
+            <option value="100" selected>100 条</option>
+            <option value="200">200 条</option>
+          </select>
+        </label>
+        <div class="analytics-history-filter-actions">
+          <button class="primary" type="submit">查询</button>
+          <button id="analyticsHistoryReset" class="secondary-button" type="button">重置</button>
+        </div>
+      </form>
+
+      <div id="analyticsHistoryStatus" class="status-line" aria-live="polite">正在验证管理员权限…</div>
+      <div id="analyticsHistoryMeta" class="analytics-history-meta"></div>
+      <section id="analyticsHistoryResults" class="analytics-history-results" aria-live="polite"></section>
+
+      <nav class="analytics-history-pagination" aria-label="用户行为历史翻页">
+        <button id="analyticsHistoryPrev" class="secondary-button" type="button" disabled>上一页</button>
+        <span id="analyticsHistoryPage">第 1 页</span>
+        <button id="analyticsHistoryNext" class="secondary-button" type="button" disabled>下一页</button>
+      </nav>
+    </main>
+
+    <script src="assets/app.js?v=admin-activity-20260718b"></script>
+  </body>
+</html>
