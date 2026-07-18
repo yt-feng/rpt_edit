@@ -1,0 +1,251 @@
+{
+  "date_folder": "260718",
+  "max_reports": "all",
+  "selected_count": 3,
+  "successful_count": 3,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260718/0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91",
+      "title": "波士顿咨询：全球信任势在必行4.0报告",
+      "source_title": "0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91",
+        "cleaned_source_title": "0001-BCG_2024-Global-Report-Trust-Imperative-4.0_6195cc91",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0001BCG2024全球ReportTr",
+        "raw_candidates": [
+          "波士顿咨询：全球信任势在必行4.0报告",
+          "波士顿咨询：数字政府满意度微升至65%",
+          "波士顿咨询：GenAI成信任倍增器，超六成愿交互"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：全球信任势在必行4.0报告",
+          "波士顿咨询：数字政府满意度微升至65%",
+          "波士顿咨询：GenAI成信任倍增器，超六成愿交互",
+          "波士顿咨询：0001BCG2024全球ReportTr",
+          "波士顿咨询：[[KC_IMAGE_001]]"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：数字政府满意度微升至65%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：GenAI成信任倍增器，超六成愿交互",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0001BCG2024全球ReportTr",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：[[KC_IMAGE_001]]",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：全球信任势在必行4.0报告",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：全球信任势在必行4.0报告"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 28,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260718/01-0001-BCG_2024-Global-Report-Trust-Imperative-4",
+      "pdf_path": "kc_translated_reports/consulting/260718/01-0001-BCG_2024-Global-Report-Trust-Imperative-4/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260718/0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92",
+      "title": "波士顿咨询：军用飞机战备问题-AI可协助修复",
+      "source_title": "0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92",
+        "cleaned_source_title": "0002-BCG_Defense-Aviation-Has-a-Readiness-Problem.-AI-Can-Help-Fix-It_7cab8e92",
+        "institution_name": "波士顿咨询",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "波士顿咨询：AI0002BCGDefenseAviatio",
+        "raw_candidates": [
+          "波士顿咨询：军用飞机战备问题-AI可协助修复",
+          "波士顿咨询：军用飞机战备率低于70%-AI成关键变量",
+          "波士顿咨询：英国F-35仅三分之一可用-AI修复战备问题"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：军用飞机战备问题-AI可协助修复",
+          "波士顿咨询：军用飞机战备率低于70%-AI成关键变量",
+          "波士顿咨询：英国F-35仅三分之一可用-AI修复战备问题",
+          "波士顿咨询：AI0002BCGDefenseAviatio",
+          "波士顿咨询：建议，空军应借助AI从“飞机坏了再修”转向主动保障"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：军用飞机战备率低于70%-AI成关键变量",
+            "reasons": [
+              "anchor_coverage=0.43",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：英国F-35仅三分之一可用-AI修复战备问题",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI0002BCGDefenseAviatio",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：建议，空军应借助AI从“飞机坏了再修”转向主动保障",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：军用飞机战备问题-AI可协助修复",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：军用飞机战备问题-AI可协助修复"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260718/02-0002-BCG_Defense-Aviation-Has-a-Readiness-Problem",
+      "pdf_path": "kc_translated_reports/consulting/260718/02-0002-BCG_Defense-Aviation-Has-a-Readiness-Problem/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260718/0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+      "title": "波士顿咨询：欧洲防务挑战实为制造挑战",
+      "source_title": "0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+        "cleaned_source_title": "0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0003BCGEuropesDefense",
+        "raw_candidates": [
+          "波士顿咨询：欧洲防务挑战实为制造挑战",
+          "波士顿咨询：欧洲防务制造瓶颈致扩产受限",
+          "波士顿咨询：欧洲防务需求激增但制造瓶颈才是真挑战"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：欧洲防务挑战实为制造挑战",
+          "波士顿咨询：欧洲防务制造瓶颈致扩产受限",
+          "波士顿咨询：欧洲防务需求激增但制造瓶颈才是真挑战",
+          "波士顿咨询：0003BCGEuropesDefense",
+          "波士顿咨询：欧洲各国国防支出持续增长，近期冲突消耗了大量弹药库存"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：欧洲防务制造瓶颈致扩产受限",
+            "reasons": [
+              "anchor_coverage=0.40"
+            ]
+          },
+          {
+            "title": "波士顿咨询：欧洲防务需求激增但制造瓶颈才是真挑战",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0003BCGEuropesDefense",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：欧洲各国国防支出持续增长，近期冲突消耗了大量弹药库存",
+            "reasons": [
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：欧洲防务挑战实为制造挑战",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：欧洲防务挑战实为制造挑战"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260718/03-0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356",
+      "pdf_path": "kc_translated_reports/consulting/260718/03-0003-BCG_Europe-s-Defense-Challenge-Is-Also-a-Manufacturing-Challenge_c2b3b356/kc_translated_report_03.pdf"
+    }
+  ]
+}
