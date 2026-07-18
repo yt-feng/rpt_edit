@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>用户行为历史 | KC Desk Notes</title>
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <link rel="stylesheet" href="assets/styles.css?v=admin-activity-20260718b">
+    <link rel="stylesheet" href="assets/styles.css?v=admin-activity-20260718c">
   </head>
   <body data-page="activity" class="analytics-history-page">
     <header class="topbar">
@@ -22,8 +22,8 @@
     <main class="analytics-history-shell">
       <div class="analytics-history-title">
         <div>
-          <h1>用户行为历史</h1>
-          <p>查看已存档的访问、搜索、报告打开和下载事件。</p>
+          <h1>用户行为历史（已采集）</h1>
+          <p>查看埋点启用后已存档的访问、搜索、报告、账号与后台操作。</p>
         </div>
         <button id="analyticsHistoryRefresh" class="secondary-button" type="button">刷新</button>
       </div>
@@ -39,7 +39,11 @@
             <option value="download_attempt">尝试下载</option>
             <option value="download_success">下载成功</option>
             <option value="download_error">下载失败</option>
+            <option value="download_pending">等待报告</option>
             <option value="delivery_link_generate">生成发货链接</option>
+            <option value="account_auth">账号操作</option>
+            <option value="admin_user_update">用户权限操作</option>
+            <option value="daily_file_download">每日文件下载</option>
           </select>
         </label>
         <label class="analytics-history-query">
@@ -68,17 +72,18 @@
         </div>
       </form>
 
+      <p id="analyticsHistoryCoverage" class="analytics-history-coverage">正在读取埋点存档范围…</p>
       <div id="analyticsHistoryStatus" class="status-line" aria-live="polite">正在验证管理员权限…</div>
       <div id="analyticsHistoryMeta" class="analytics-history-meta"></div>
       <section id="analyticsHistoryResults" class="analytics-history-results" aria-live="polite"></section>
 
       <nav class="analytics-history-pagination" aria-label="用户行为历史翻页">
-        <button id="analyticsHistoryPrev" class="secondary-button" type="button" disabled>上一页</button>
+        <button id="analyticsHistoryPrev" class="secondary-button" type="button" disabled>上一页（较新）</button>
         <span id="analyticsHistoryPage">第 1 页</span>
-        <button id="analyticsHistoryNext" class="secondary-button" type="button" disabled>下一页</button>
+        <button id="analyticsHistoryNext" class="secondary-button" type="button" disabled>下一页（更早记录）</button>
       </nav>
     </main>
 
-    <script src="assets/app.js?v=admin-activity-20260718b"></script>
+    <script src="assets/app.js?v=admin-activity-20260718c"></script>
   </body>
 </html>

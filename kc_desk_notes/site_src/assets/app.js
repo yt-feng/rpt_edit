@@ -576,6 +576,12 @@
     refresh.addEventListener("click", () => loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; }));
     if (logout) {
       logout.addEventListener("click", () => {
+        const session = loadAuthSession();
+        trackEvent(workerUrl, "account_auth", {
+          target: authUserLabel(session),
+          action: "logout",
+          status: "success",
+        });
         clearAuthSession();
         setStatus("已退出登录。");
         refreshUi();
@@ -609,12 +615,23 @@
           const data = await response.json().catch(() => ({}));
           if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "密码修改失败。");
           saveAuthSession({ token: data.token, user: data.user });
+          trackEvent(workerUrl, "account_auth", {
+            target: data.user.username || data.user.email || "",
+            action: "password_change",
+            status: "success",
+          });
           currentPassword.value = "";
           newPassword.value = "";
           newPasswordConfirm.value = "";
           refreshUi();
           setStatus("密码已更新。", "ok");
         } catch (error) {
+          trackEvent(workerUrl, "account_auth", {
+            target: authUserLabel(loadAuthSession()),
+            action: "password_change",
+            status: "error",
+            error: error && error.message || "password_change_failed",
+          });
           setStatus(error.message || "密码修改失败。", "error");
         } finally {
           passwordSubmit.disabled = false;
@@ -645,6 +662,11 @@
         const data = await response.json().catch(() => ({}));
         if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "账号请求失败。");
         saveAuthSession({ token: data.token, user: data.user });
+        trackEvent(workerUrl, "account_auth", {
+          target: data.user.username || data.user.email || username.value,
+          action: data.recovered ? "login_recovered" : mode,
+          status: "success",
+        });
         password.value = "";
         answer.value = "";
         refreshUi();
@@ -663,6 +685,12 @@
           }
         }
       } catch (error) {
+        trackEvent(workerUrl, "account_auth", {
+          target: username.value,
+          action: mode,
+          status: "error",
+          error: error && error.message || "account_request_failed",
+        });
         setStatus(error.message || "账号请求失败。", "error");
         answer.value = "";
         captchaToken = await loadAccountCaptcha(workerUrl, status);
@@ -1256,7 +1284,7 @@
 
   function analyticsEventContentText(event) {
     if (event.query) return `${event.source || ""} 搜索：${event.query}`;
-    return event.report_title || event.report_id || event.path || "";
+    return event.report_title || event.report_id || event.target || event.path || "";
   }
 
   function analyticsEventStatusText(event) {
@@ -1330,7 +1358,7 @@
       <section>
         <div class="account-admin-analytics-heading">
           <h4>最近事件</h4>
-          <a class="secondary-button" href="activity.html" target="_blank" rel="noopener">查看全部历史</a>
+          <a class="secondary-button" href="activity.html" target="_blank" rel="noopener">查看全部已采集记录</a>
         </div>
         ${renderAnalyticsRecentEvents(analytics.recent_events)}
       </section>
@@ -1344,7 +1372,11 @@
     download_attempt: "尝试下载",
     download_success: "下载成功",
     download_error: "下载失败",
+    download_pending: "等待报告",
     delivery_link_generate: "生成发货链接",
+    account_auth: "账号操作",
+    admin_user_update: "用户权限操作",
+    daily_file_download: "每日文件下载",
   };
 
   function analyticsEventLabel(type) {
@@ -1367,6 +1399,7 @@
       event.referrer ? `来源页：${event.referrer}` : "",
       event.user_agent ? `设备：${event.user_agent}` : "",
       event.institution ? `机构：${event.institution}` : "",
+      event.target ? `对象：${event.target}` : "",
       event.report_id ? `报告 ID：${event.report_id}` : "",
       event.visitor_id ? `访客 ID：${event.visitor_id}` : "",
       event.ip_hash ? `IP Hash：${event.ip_hash}` : "",
@@ -1447,6 +1480,7 @@
     const previous = document.getElementById("analyticsHistoryPrev");
     const next = document.getElementById("analyticsHistoryNext");
     const pageLabel = document.getElementById("analyticsHistoryPage");
+    const coverage = document.getElementById("analyticsHistoryCoverage");
     let cursor = "";
     let cursorStack = [];
     let nextCursor = "";
@@ -1481,10 +1515,17 @@
         : "暂无存档日期";
       meta.innerHTML = `
         <span>历史范围：<strong>${escapeHtml(range)}</strong></span>
+        <span>已存档 ${escapeHtml((data.available_dates || []).length)} 天</span>
         <span>本页 ${escapeHtml((data.events || []).length)} 条</span>
         <span>扫描 ${escapeHtml(data.scanned_count || 0)} 条存档</span>
+        <span><strong>${data.has_more ? "还有更早记录" : "已到最早记录"}</strong></span>
         <span>更新 ${escapeHtml(analyticsTime(data.generated_at))}</span>
       `;
+      if (coverage) {
+        coverage.textContent = data.oldest_date
+          ? `原始埋点自 ${data.oldest_date} 开始保存；更早或当时未设置埋点的操作无法补录。记录按时间倒序分页，每页仅显示当前批次。`
+          : "当前还没有原始埋点存档。";
+      }
     }
 
     async function loadPage(options = {}) {
@@ -1514,8 +1555,10 @@
         previous.disabled = cursorStack.length === 0;
         next.disabled = !nextCursor;
         setStatus(events.length
-          ? `已读取 ${events.length} 条事件。`
-          : (nextCursor ? "当前扫描区间没有匹配事件，可继续下一页。" : "没有匹配事件。"), "ok");
+          ? (nextCursor
+            ? `已读取 ${events.length} 条事件；还有更早记录，请点击“下一页（更早记录）”。`
+            : `已读取 ${events.length} 条事件，已到当前筛选范围的最早记录。`)
+          : (nextCursor ? "当前扫描区间没有匹配事件，可继续搜索更早记录。" : "没有匹配事件。"), "ok");
       } catch (error) {
         results.innerHTML = '<div class="empty-state">无法读取用户行为历史。</div>';
         meta.textContent = "";
@@ -2309,16 +2352,22 @@
     files.addEventListener("click", async (event) => {
       const button = event.target.closest(".account-admin-download");
       if (!button) return;
+      const kind = button.dataset.kind;
+      const key = button.dataset.key || "";
+      const repo = button.dataset.repo || "";
+      const name = button.dataset.name || "download";
       if (cancelActiveAdminButton(button)) {
+        trackEvent(workerUrl, "daily_file_download", {
+          target: name,
+          source: kind,
+          action: "download",
+          status: "cancel_requested",
+        });
         status.className = "status-line";
         status.textContent = "正在取消下载…";
         return;
       }
-      const kind = button.dataset.kind;
       const segmented = (kind === "file" || kind === "artifact") && shouldUseSegmentedDownload(button);
-      const key = button.dataset.key || "";
-      const repo = button.dataset.repo || "";
-      const name = button.dataset.name || "download";
       const endpoint = kind === "artifact"
         ? `${workerUrl}/account-admin/github-artifact?id=${encodeURIComponent(key)}`
         : `${workerUrl}/account-admin/github-file?path=${encodeURIComponent(key)}${repo ? `&repo=${encodeURIComponent(repo)}` : ""}`;
@@ -2329,6 +2378,12 @@
       resetDownloadProgress(progress);
       status.className = "status-line";
       status.textContent = segmented ? "正在准备高速缓存…" : "正在准备下载…";
+      trackEvent(workerUrl, "daily_file_download", {
+        target: name,
+        source: kind,
+        action: "download",
+        status: "attempt",
+      });
       let finalLabel = "";
       let finalDelay = 0;
       try {
@@ -2352,6 +2407,12 @@
             if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
             setDownloadMessage(progress, "高速缓存仍未就绪，已切换浏览器下载。", 18);
             triggerNativeDownload(directUrl, name);
+            trackEvent(workerUrl, "daily_file_download", {
+              target: name,
+              source: kind,
+              action: "download",
+              status: "browser_download_started",
+            });
             status.textContent = "已切换浏览器下载。";
             status.classList.add("ok");
             finalLabel = "已切换";
@@ -2377,12 +2438,31 @@
           blob = await responseBlobWithProgress(response, progress);
         }
         triggerBlobDownload(blob, disposition, name);
+        trackEvent(workerUrl, "daily_file_download", {
+          target: name,
+          source: kind,
+          action: "download",
+          status: "success",
+        });
         status.textContent = "下载已开始。";
         status.classList.add("ok");
       } catch (error) {
         if (error && error.name === "AbortError") {
+          trackEvent(workerUrl, "daily_file_download", {
+            target: name,
+            source: kind,
+            action: "download",
+            status: "cancelled",
+          });
           status.textContent = "下载已取消。";
         } else {
+          trackEvent(workerUrl, "daily_file_download", {
+            target: name,
+            source: kind,
+            action: "download",
+            status: "error",
+            error: error && error.message || "download_failed",
+          });
           status.textContent = error.message || "下载失败。";
           status.classList.add("error");
         }

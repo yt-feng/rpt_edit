@@ -1298,6 +1298,13 @@ a.secondary-button {
   font-size: 13px;
 }
 
+.analytics-history-coverage {
+  margin: 16px 0 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .analytics-history-results {
   min-height: 280px;
 }

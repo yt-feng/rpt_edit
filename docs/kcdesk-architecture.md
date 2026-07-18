@@ -378,7 +378,11 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 - `download_attempt`
 - `download_success`
 - `download_error`
-- `delivery_link`
+- `download_pending`
+- `delivery_link_generate`
+- `account_auth`
+- `admin_user_update`
+- `daily_file_download`
 
 存储：
 
@@ -391,9 +395,11 @@ dashboard：
 - 只在 `twotigers` super 管理后台显示。
 - 默认看近 7 天。
 - 展示访客数、搜索数、报告打开、下载、发货链接、热门搜索、热门报告、最近事件。
-- “最近事件”只保留摘要；“查看全部历史”会在新标签页打开 `activity.html`。
+- “最近事件”只保留摘要；“查看全部已采集记录”会在新标签页打开 `activity.html`。
 - 完整历史页直接读取 R2 日期目录，按时间倒序使用对象键游标分页；新事件写入不会打乱已翻过的页。
 - 完整历史页支持开始/结束日期、事件类型、关键词和 50/100/200 条每页。
+- 页面会明确展示原始埋点的最早日期、当前页条数和是否还有更早记录；埋点启用前或当时未设置埋点的动作无法追溯补录。
+- 除访问、搜索、报告与下载外，成功登录/注册/改密、退出登录、管理员用户权限变更，以及运营后台每日文件下载也写入同一份事件存档。
 - 带事件类型或关键词筛选时按 100 条存档窗口推进，并保留下一页游标，避免稀有条件一次读取过多 R2 小对象。
 - visitor id 存在浏览器本地，Worker 同时保存 IP hash，避免直接保存明文 IP。
 - 聚合后的 dashboard 写入 `_account/admin-snapshots/analytics.json`；读取事件超时不会清空管理后台的历史统计。

@@ -2623,6 +2623,7 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     report_id: cleanAnalyticsText(data.report_id || data.id, 120),
     report_title: cleanAnalyticsText(data.report_title || data.title, 360),
     institution: cleanAnalyticsText(data.institution, 160),
+    target: cleanAnalyticsText(data.target, 240),
     action: cleanAnalyticsText(data.action, 80),
     status: cleanAnalyticsText(data.status, 80),
     duration_ms: cleanAnalyticsNumber(data.duration_ms),
@@ -2636,10 +2637,22 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
   };
 }
 
-async function persistAnalyticsEvent(request, env, payload) {
+function analyticsUserSnapshot(user) {
+  if (!user) return null;
+  return {
+    id: cleanAnalyticsText(user.id, 80),
+    username: cleanAnalyticsText(user.username, 80),
+    email: cleanAnalyticsText(user.email, 160),
+    role: accountRole(user),
+  };
+}
+
+async function persistAnalyticsEvent(request, env, payload, userOverride = undefined) {
   if (!env.REPORT_BUCKET || !payload || typeof payload !== "object") return null;
   const [user, ipHash] = await Promise.all([
-    optionalAnalyticsUser(request, env),
+    userOverride === undefined
+      ? optionalAnalyticsUser(request, env)
+      : Promise.resolve(analyticsUserSnapshot(userOverride)),
     analyticsIpHash(request, env),
   ]);
   const event = analyticsEventFromPayload(request, payload, user, ipHash);
@@ -2853,6 +2866,7 @@ function publicAnalyticsEvent(event) {
     report_id: event.report_id || "",
     report_title: event.report_title || "",
     institution: event.institution || "",
+    target: event.target || "",
     action: event.action || "",
     status: event.status || "",
     duration_ms: event.duration_ms || 0,
@@ -2906,6 +2920,7 @@ function analyticsHistoryEventMatches(event, filters) {
     event.report_id,
     event.report_title,
     event.institution,
+    event.target,
     event.action,
     event.status,
     event.error,
@@ -6986,6 +7001,15 @@ async function handleAccountAdminUserAccess(request, env) {
     if (!user && payload.username) user = await findSiteUserByUsername(env, normalizeUsername(payload.username)).catch(() => null);
     const visibleUser = user ? adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access) : null;
     if (visibleUser) await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
+    await persistAnalyticsEvent(request, env, {
+      type: "admin_user_update",
+      path: "/account-admin/user-access",
+      data: {
+        target: email,
+        action: `access_${access.access_mode || "none"}`,
+        status: "success",
+      },
+    }, adminUser).catch(() => null);
     return jsonResponse(request, env, 200, {
       ok: true,
       verified: true,
@@ -7046,6 +7070,15 @@ async function handleAccountAdminUserCreate(request, env) {
     const merged = await mergeSiteUserAdminState(env, user);
     const visibleUser = adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null)));
     await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
+    await persistAnalyticsEvent(request, env, {
+      type: "admin_user_update",
+      path: "/account-admin/user",
+      data: {
+        target: email,
+        action: "create",
+        status: "success",
+      },
+    }, adminUser).catch(() => null);
     return jsonResponse(request, env, 201, {
       ok: true,
       user: visibleUser,
@@ -7085,6 +7118,15 @@ async function handleAccountAdminUserStatus(request, env) {
     const merged = await mergeSiteUserAdminState(env, { ...user, ...state });
     const visibleUser = adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null)));
     await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
+    await persistAnalyticsEvent(request, env, {
+      type: "admin_user_update",
+      path: "/account-admin/user-status",
+      data: {
+        target: email,
+        action: payload.disabled ? "disable" : "enable",
+        status: "success",
+      },
+    }, adminUser).catch(() => null);
     return jsonResponse(request, env, 200, {
       ok: true,
       user: visibleUser,
