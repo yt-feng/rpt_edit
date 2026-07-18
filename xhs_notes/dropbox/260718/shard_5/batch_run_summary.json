@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 74,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-Anta Sports Products （2020.HK）2Q26 retail sales broadly in~line； 1H26 modestly ahead of the full~year guidance； Buy-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w5159vja/pdfs/0001-26-GS-Anta Sports Products -2020.HK-2Q26 retail sales broadly in-line- 1H26 modestly ahead of the full-year guidance- Buy-260717.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-DB-Commodities Outlook：Look on the bright side-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w5159vja/pdfs/0002-27-DB-Commodities Outlook-Look on the bright side-260716.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-GS-China Software： Product Tracker： Comprehensive Agentic AI tools driving token consumption； AI native applications in expansion-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w5159vja/pdfs/0003-28-GS-China Software- Product Tracker- Comprehensive Agentic AI tools driving token consumption- AI native applications in expansion-260717.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-China Consumer Staples：Offshore marketing feedback： focus on policy sentiment inflection while fundamental recovery to take time； looking for differentiated.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w5159vja/pdfs/0004-29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-China Basic Materials Monitor：July 2026： losing incremental strength-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w5159vja/pdfs/0005-30-GS-China Basic Materials Monitor-July 2026- losing incremental strength-260717.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

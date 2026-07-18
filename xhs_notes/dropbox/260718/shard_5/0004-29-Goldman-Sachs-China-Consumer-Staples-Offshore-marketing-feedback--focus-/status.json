@@ -1,0 +1,116 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0004-29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "外资怎么看消费股？路",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x2",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated.pdf",
+    "cleaned_source_title": "GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：中国消费StaplesOffshoremarke",
+    "raw_candidates": [
+      "GS-中国消费必需品-海外路演反馈：聚焦政策情绪拐点，基本面修复需时间",
+      "GS-中国消费必需品-海外路演反馈：等待政策信号，社零目标60万亿",
+      "GS-中国消费必需品-海外路演反馈：市场等待情绪拐点，而非基本面改善"
+    ],
+    "cleaned_candidates": [
+      "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+      "GS：中国消费必需品-海外路演反馈，等待政策信号，社零目标60万亿",
+      "GS：中国消费必需品-海外路演反馈，市场等待情绪拐点，而非基本面改善",
+      "GS：中国消费StaplesOffshoremarke",
+      "GS：特别指出，读者对7月13日发布的扩大消费十五五规划讨论热度之低令"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：中国消费必需品-海外路演反馈，等待政策信号，社零目标60万亿",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：中国消费必需品-海外路演反馈，市场等待情绪拐点，而非基本面改善",
+        "reasons": [
+          "anchor_coverage=0.61",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：中国消费StaplesOffshoremarke",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：特别指出，读者对7月13日发布的扩大消费十五五规划讨论热度之低令",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "534",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

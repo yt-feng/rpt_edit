@@ -1,0 +1,525 @@
+[
+  {
+    "item": "0001-26-Goldman-Sachs-Anta-Sports-Products--2020.HK-2Q26-retail-sales-broadly-in",
+    "source_pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0001-26-GS-Anta Sports Products -2020.HK-2Q26 retail sales broadly in-line- 1H26 modestly ahead of the full-year guidance- Buy-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "安踏Q2跑赢同行，但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：安踏2Q26零售基本符合预期-上半年略超全年指引",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-GS-Anta Sports Products -2020.HK-2Q26 retail sales broadly in-line- 1H26 modestly ahead of the full-year guidance- Buy-260717.pdf",
+      "cleaned_source_title": "GS-Anta Sports Products -2020.HK-2Q26 retail sales broadly in-line- 1H26 modestly ahead of the full-year guidance- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：AntaSportsProducts2Q26re",
+      "raw_candidates": [
+        "安踏2Q26零售基本符合预期-上半年略超全年指引",
+        "安踏2Q26零售基本符合预期-上半年略超全年指引-斐乐低个位数增长",
+        "安踏2Q26零售基本符合预期-上半年略超全年指引-跑赢特步李宁"
+      ],
+      "cleaned_candidates": [
+        "GS：安踏2Q26零售基本符合预期-上半年略超全年指引",
+        "GS：安踏2Q26零售基本符合预期-上半年略超全年指引-跑赢特步李宁",
+        "GS：AntaSportsProducts2Q26re",
+        "GS：库存水平同比改善了0.3个月，降至5个月以下"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：AntaSportsProducts2Q26re",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：库存水平同比改善了0.3个月，降至5个月以下",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：安踏2Q26零售基本符合预期-上半年略超全年指引",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：安踏2Q26零售基本符合预期-上半年略超全年指引"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-27-Deutsche-Bank-Commodities-Outlook-Look-on-the-bright-side-260716",
+    "source_pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0002-27-DB-Commodities Outlook-Look on the bright side-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "大宗商品下半年怎么看",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：大宗商品展望-看好光明面，地缘不确定性催生供应韧性",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-DB-Commodities Outlook-Look on the bright side-260716.pdf",
+      "cleaned_source_title": "DB-Commodities Outlook-Look on the bright side",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：Commodities展望Lookonth",
+      "raw_candidates": [
+        "大宗商品展望-看好光明面",
+        "大宗商品展望-看好光明面，定价锚从利率转向财政",
+        "大宗商品展望-看好光明面，地缘不确定性催生供应韧性"
+      ],
+      "cleaned_candidates": [
+        "DB：大宗商品展望-看好光明面",
+        "DB：大宗商品展望-看好光明面，定价锚从利率转向财政",
+        "DB：大宗商品展望-看好光明面，地缘不确定性催生供应韧性",
+        "DB：Commodities展望Lookonth",
+        "DB：3.原油的短期错配掩盖了2027年的过剩现实"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：Commodities展望Lookonth",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：3.原油的短期错配掩盖了2027年的过剩现实",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：大宗商品展望-看好光明面，地缘不确定性催生供应韧性",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [
+          "韧性"
+        ],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "DB：大宗商品展望-看好光明面，地缘不确定性催生供应韧性"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-28-Goldman-Sachs-China-Software--Product-Tracker--Comprehensive-Agentic-AI-",
+    "source_pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0003-28-GS-China Software- Product Tracker- Comprehensive Agentic AI tools driving token consumption- AI native applications in expansion-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI产品正在从“工具",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国软件产品追踪，AI原生应用扩张",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-GS-China Software- Product Tracker- Comprehensive Agentic AI tools driving token consumption- AI native applications in expansion-260717.pdf",
+      "cleaned_source_title": "GS-China Software- Product Tracker- Comprehensive Agentic AI tools driving token consumption- AI native applications in expansion",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AI中国软件ProductTrackerCompre",
+      "raw_candidates": [
+        "中国软件产品追踪：AI原生应用扩张",
+        "中国软件产品追踪：Agentic AI驱动token消耗",
+        "中国软件产品追踪：从AI功能转向AI原生"
+      ],
+      "cleaned_candidates": [
+        "GS：中国软件产品追踪，AI原生应用扩张",
+        "GS：中国软件产品追踪，AgenticAI驱动token消耗",
+        "GS：中国软件产品追踪，从AI功能转向AI原生",
+        "GS：AI中国软件ProductTrackerCompre",
+        "GS：1.AgenticAI不再停留在对话，而是覆盖完整工作流"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国软件产品追踪，AgenticAI驱动token消耗",
+          "reasons": [
+            "anchor_coverage=0.60",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AI中国软件ProductTrackerCompre",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.AgenticAI不再停留在对话，而是覆盖完整工作流",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国软件产品追踪，AI原生应用扩张",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国软件产品追踪，AI原生应用扩张"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-29-Goldman-Sachs-China-Consumer-Staples-Offshore-marketing-feedback--focus-",
+    "source_pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0004-29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "外资怎么看消费股？路",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x2",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated.pdf",
+      "cleaned_source_title": "GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国消费StaplesOffshoremarke",
+      "raw_candidates": [
+        "GS-中国消费必需品-海外路演反馈：聚焦政策情绪拐点，基本面修复需时间",
+        "GS-中国消费必需品-海外路演反馈：等待政策信号，社零目标60万亿",
+        "GS-中国消费必需品-海外路演反馈：市场等待情绪拐点，而非基本面改善"
+      ],
+      "cleaned_candidates": [
+        "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+        "GS：中国消费必需品-海外路演反馈，等待政策信号，社零目标60万亿",
+        "GS：中国消费必需品-海外路演反馈，市场等待情绪拐点，而非基本面改善",
+        "GS：中国消费StaplesOffshoremarke",
+        "GS：特别指出，读者对7月13日发布的扩大消费十五五规划讨论热度之低令"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国消费必需品-海外路演反馈，等待政策信号，社零目标60万亿",
+          "reasons": [
+            "anchor_coverage=0.46",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国消费必需品-海外路演反馈，市场等待情绪拐点，而非基本面改善",
+          "reasons": [
+            "anchor_coverage=0.61",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国消费StaplesOffshoremarke",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：特别指出，读者对7月13日发布的扩大消费十五五规划讨论热度之低令",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国消费必需品-海外路演反馈，聚焦政策情绪拐点，基本面修复需时间"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-30-Goldman-Sachs-China-Basic-Materials-Monitor-July-2026--losing-incrementa",
+    "source_pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0005-30-GS-China Basic Materials Monitor-July 2026- losing incremental strength-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "7月需求转弱，谁在扛",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国基础材料监测-失去增量动力",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-GS-China Basic Materials Monitor-July 2026- losing incremental strength-260717.pdf",
+      "cleaned_source_title": "GS-China Basic Materials Monitor-July 2026- losing incremental strength",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国BasicMaterialsMonitorJuly2026",
+      "raw_candidates": [
+        "中国基础材料监测-失去增量动力",
+        "中国基础材料监测-7月订单改善比例降至27%",
+        "中国基础材料监测-库存被动累积比例从9%升至24%"
+      ],
+      "cleaned_candidates": [
+        "GS：中国基础材料监测-失去增量动力",
+        "GS：中国基础材料监测-7月订单改善比例降至27%",
+        "GS：中国基础材料监测-库存被动累积比例从9%升至24%",
+        "GS：中国BasicMaterialsMonitorJuly2026",
+        "GS：1.建筑、汽车和金属加工是7月减速的主要影响"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国基础材料监测-7月订单改善比例降至27%",
+          "reasons": [
+            "anchor_coverage=0.54",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国基础材料监测-库存被动累积比例从9%升至24%",
+          "reasons": [
+            "anchor_coverage=0.54",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国BasicMaterialsMonitorJuly2026",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.建筑、汽车和金属加工是7月减速的主要影响",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国基础材料监测-失去增量动力",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国基础材料监测-失去增量动力"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

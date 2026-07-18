@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0001-26-GS-Anta Sports Products -2020.HK-2Q26 retail sales broadly in-line- 1H26 modestly ahead of the full-year guidance- Buy-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0002-27-DB-Commodities Outlook-Look on the bright side-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0003-28-GS-China Software- Product Tracker- Comprehensive Agentic AI tools driving token consumption- AI native applications in expansion-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0004-29-GS-China Consumer Staples-Offshore marketing feedback- focus on policy sentiment inflection while fundamental recovery to take time- looking for differentiated.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w5159vja/pdfs/0005-30-GS-China Basic Materials Monitor-July 2026- losing incremental strength-260717.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
