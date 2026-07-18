@@ -1,0 +1,501 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_woi45idq/pdfs/0001-36-GS-Japan Strategy Flash- 1Q3 27 earnings preview-FX and AI tailwinds meet a high consensus bar-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本财报季来了，AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "不好|不行->需要继续观察 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：日本策略速报，FX与AI顺风遭遇高共识门槛",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-GS-Japan Strategy Flash- 1Q3 27 earnings preview-FX and AI tailwinds meet a high consensus bar-260717.pdf",
+      "cleaned_source_title": "GS-Japan Strategy Flash- 1Q3 27 earnings preview-FX and AI tailwinds meet a high consensus bar",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AI日本策略Flash",
+      "raw_candidates": [
+        "日本策略速报：FX与AI顺风遭遇高共识门槛",
+        "日本策略速报：AI光环与汇率红利绕不开高门槛"
+      ],
+      "cleaned_candidates": [
+        "GS：日本策略速报，FX与AI顺风遭遇高共识门槛",
+        "GS：日本策略速报，AI光环与汇率红利绕不开高门槛",
+        "GS：AI日本策略Flash",
+        "GS：这份报告同时提供了两个关键变量——日元贬值和AI相关公司的贡献度"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本策略速报，AI光环与汇率红利绕不开高门槛",
+          "reasons": [
+            "anchor_coverage=0.37",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AI日本策略Flash",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：这份报告同时提供了两个关键变量——日元贬值和AI相关公司的贡献度",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日本策略速报，FX与AI顺风遭遇高共识门槛",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：日本策略速报，FX与AI顺风遭遇高共识门槛"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_woi45idq/pdfs/0002-37-GS-Precious Comment- Strong Central Bank Buying in May Provides Price Floor Amidst Likely Temporary Rates Pressure-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "全球央行5月狂买81",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "压力->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资组合->组合观察 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "投资者->读者 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：5月央行购金提供金价底部",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-GS-Precious Comment- Strong Central Bank Buying in May Provides Price Floor Amidst Likely Temporary Rates Pressure-260717.pdf",
+      "cleaned_source_title": "GS-Precious Comment- Strong Central Bank Buying in May Provides Price Floor Amidst Likely Temporary Rates Pressure",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：PreciousComment",
+      "raw_candidates": [
+        "GS：5月央行购金提供金价底部",
+        "GS：5月央行购金81吨，中国贡献48吨",
+        "GS：央行购金提供底部，但短期利率不确定性未解除"
+      ],
+      "cleaned_candidates": [
+        "GS：5月央行购金提供金价底部",
+        "GS：5月央行购金81吨，中国贡献48吨",
+        "GS：央行购金提供底部，但短期利率不确定性未解除",
+        "GS：PreciousComment",
+        "GS：5月全球央行黄金购买量达到81吨"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：5月央行购金81吨，中国贡献48吨",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "GS：央行购金提供底部，但短期利率不确定性未解除",
+          "reasons": [
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "GS：PreciousComment",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：5月全球央行黄金购买量达到81吨",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：5月央行购金提供金价底部",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：5月央行购金提供金价底部"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_woi45idq/pdfs/0003-38-GS-Navigating China AI models-New frontier from Kimi K3- from cost efficiency- intelligence to pricing power of Chinese models-260718.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "中国AI大模型，开始",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "不好|不行->需要继续观察 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国AI模型新前沿-KimiK3从成本效率到智能定价",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-GS-Navigating China AI models-New frontier from Kimi K3- from cost efficiency- intelligence to pricing power of Chinese models-260718.pdf",
+      "cleaned_source_title": "GS-Navigating China AI models-New frontier from Kimi K3- from cost efficiency- intelligence to pricing power of Chinese models",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：Navigating中国AImodelsNewf",
+      "raw_candidates": [
+        "GS：中国AI模型新前沿-Kimi K3从成本效率到智能定价",
+        "GS：Kimi K3定价2.3美元/百万token-中国AI模型定价权迁移",
+        "GS：Kimi K3定价超DeepSeek V4 Pro-中国模型从拼低价到拼智能"
+      ],
+      "cleaned_candidates": [
+        "GS：中国AI模型新前沿-KimiK3从成本效率到智能定价",
+        "GS：百万token-中国AI模型定价权迁移",
+        "GS：KimiK3定价超DeepSeekV4Pro",
+        "GS：Navigating中国AImodelsNewf",
+        "GS：这轮变化的信号很明确，中国AI模型竞争不再只是拼低价"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：百万token-中国AI模型定价权迁移",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：KimiK3定价超DeepSeekV4Pro",
+          "reasons": [
+            "missing_required_terms=AI",
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Navigating中国AImodelsNewf",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：这轮变化的信号很明确，中国AI模型竞争不再只是拼低价",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国AI模型新前沿-KimiK3从成本效率到智能定价",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国AI模型新前沿-KimiK3从成本效率到智能定价"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_woi45idq/pdfs/0004-39-GS-Netflix Inc. -NFLX.US- Q2-26 Earnings Review- Management Team Focused on Compounded Revenue- Margin Trajectory - Capital Allocation- Investor Debates.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "Netflix财报电",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：NetflixQ2-26财报，管理层聚焦收入复合增长与利润率轨迹",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-GS-Netflix Inc. -NFLX.US- Q2-26 Earnings Review- Management Team Focused on Compounded Revenue- Margin Trajectory - Capital Allocation- Investor Debates.pdf",
+      "cleaned_source_title": "GS-Netflix Inc. -NFLX.US- Q2-26 Earnings Review- Management Team Focused on Compounded Revenue- Margin Trajectory - Capital Allocation- Investor Debates",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：NetflixInc.",
+      "raw_candidates": [
+        "GS-Netflix Q2-26财报：管理层聚焦收入复合增长与利润率轨迹",
+        "GS-Netflix Q2-26财报：管理层聚焦收入复合增长与利润率轨迹-资本回报成新叙事",
+        "GS-Netflix Q2-26财报：管理层聚焦收入复合增长与利润率轨迹-用户参与度未下滑"
+      ],
+      "cleaned_candidates": [
+        "GS：NetflixQ2-26财报，管理层聚焦收入复合增长与利润率轨迹",
+        "GS：NetflixInc.",
+        "GS：中的财务模型显示，2026至2028年"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：NetflixInc.",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中的财务模型显示，2026至2028年",
+          "reasons": [
+            "anchor_coverage=0.03",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：NetflixQ2-26财报，管理层聚焦收入复合增长与利润率轨迹",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：NetflixQ2-26财报，管理层聚焦收入复合增长与利润率轨迹"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_woi45idq/pdfs/0005-40-GS-WEEKLY FUND FLOWS-Renewed Energy Inflows-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "全球资金流向有变化了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "基金->产品 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x4",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x2",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "A股|港股->相关市场 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：GS周度资金流-能源资金重新流入，科技吸金174亿美元",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-GS-WEEKLY FUND FLOWS-Renewed Energy Inflows-260717.pdf",
+      "cleaned_source_title": "GS-WEEKLY FUND FLOWS-Renewed Energy Inflows",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：WEEKLYFUNDFLOWSRenewed能源Inflows",
+      "raw_candidates": [
+        "GS周度资金流-能源资金重新流入",
+        "GS周度资金流-能源资金重新流入，科技吸金174亿美元",
+        "GS周度资金流-能源资金重新流入，中东局势触发转向"
+      ],
+      "cleaned_candidates": [
+        "GS：GS周度资金流-能源资金重新流入",
+        "GS：GS周度资金流-能源资金重新流入，科技吸金174亿美元",
+        "GS：GS周度资金流-能源资金重新流入，中东局势触发转向",
+        "GS：WEEKLYFUNDFLOWSRenewed能源Inflows",
+        "GS：截至7月15日当周，全球公司产品净流入约560亿美元，与上周持平"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：WEEKLYFUNDFLOWSRenewed能源Inflows",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：截至7月15日当周，全球公司产品净流入约560亿美元，与上周持平",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：GS周度资金流-能源资金重新流入，科技吸金174亿美元",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "174"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：GS周度资金流-能源资金重新流入，科技吸金174亿美元"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

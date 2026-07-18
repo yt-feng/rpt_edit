@@ -1,0 +1,128 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_woi45idq/pdfs/0002-37-GS-Precious Comment- Strong Central Bank Buying in May Provides Price Floor Amidst Likely Temporary Rates Pressure-260717.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "全球央行5月狂买81",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "压力->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资组合->组合观察 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "投资者->读者 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：5月央行购金提供金价底部",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-37-GS-Precious Comment- Strong Central Bank Buying in May Provides Price Floor Amidst Likely Temporary Rates Pressure-260717.pdf",
+    "cleaned_source_title": "GS-Precious Comment- Strong Central Bank Buying in May Provides Price Floor Amidst Likely Temporary Rates Pressure",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：PreciousComment",
+    "raw_candidates": [
+      "GS：5月央行购金提供金价底部",
+      "GS：5月央行购金81吨，中国贡献48吨",
+      "GS：央行购金提供底部，但短期利率不确定性未解除"
+    ],
+    "cleaned_candidates": [
+      "GS：5月央行购金提供金价底部",
+      "GS：5月央行购金81吨，中国贡献48吨",
+      "GS：央行购金提供底部，但短期利率不确定性未解除",
+      "GS：PreciousComment",
+      "GS：5月全球央行黄金购买量达到81吨"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：5月央行购金81吨，中国贡献48吨",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "GS：央行购金提供底部，但短期利率不确定性未解除",
+        "reasons": [
+          "anchor_coverage=0.55"
+        ]
+      },
+      {
+        "title": "GS：PreciousComment",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：5月全球央行黄金购买量达到81吨",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：5月央行购金提供金价底部",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：5月央行购金提供金价底部"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "467",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
