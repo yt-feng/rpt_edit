@@ -1,0 +1,496 @@
+[
+  {
+    "item": "0001-41-Goldman-Sachs-TAIWAN-CCL-High-end-players--profitability-uptrend-restart",
+    "source_pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0001-41-GS-TAIWAN CCL-High-end players- profitability uptrend restart- with better pricing and product mix outlook- Buy EMC and TUC with new TP of NT-9-500 2-860.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI服务器引爆高端C",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "卖出->观点偏谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：台湾CCL高端厂商盈利能力重启升势",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-GS-TAIWAN CCL-High-end players- profitability uptrend restart- with better pricing and product mix outlook- Buy EMC and TUC with new TP of NT-9-500 2-860.pdf",
+      "cleaned_source_title": "GS-TAIWAN CCL-High-end players- profitability uptrend restart- with better pricing and product mix outlook- Buy EMC and TUC with new TP of NT-9-500 2-860",
+      "institution_name": "GS",
+      "required_terms": [
+        "CCL"
+      ],
+      "deterministic_fallback": "GS：TAIWANCCLHighendplayersp",
+      "raw_candidates": [
+        "台湾CCL高端厂商盈利能力重启升势",
+        "台湾CCL高端厂商盈利能力重启升势-定价与产品组合改善",
+        "台湾CCL高端厂商盈利能力重启升势-高端CCL需求年增96%供给仅增22%"
+      ],
+      "cleaned_candidates": [
+        "GS：台湾CCL高端厂商盈利能力重启升势",
+        "GS：台湾CCL高端厂商盈利能力重启升势-定价与产品组合改善",
+        "GS：TAIWANCCLHighendplayersp",
+        "GS：1.高端CCL需求以96%的年复合增速狂奔，而供给增速只有22%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：TAIWANCCLHighendplayersp",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.高端CCL需求以96%的年复合增速狂奔，而供给增速只有22%",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：台湾CCL高端厂商盈利能力重启升势",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：台湾CCL高端厂商盈利能力重启升势"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-42-Goldman-Sachs-USA--UMich-Sentiment-Rises--Short-Term-Inflation-Expectati",
+    "source_pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0002-42-GS-USA- UMich Sentiment Rises- Short-Term Inflation Expectations Decline-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "美国消费者信心意外回",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "通缩->价格变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：美国密歇根消费者信心回升-短期通胀预期下降",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-GS-USA- UMich Sentiment Rises- Short-Term Inflation Expectations Decline-260717.pdf",
+      "cleaned_source_title": "GS-USA- UMich Sentiment Rises- Short-Term Inflation Expectations Decline",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：USA-UMichSentimentRises",
+      "raw_candidates": [
+        "美国密歇根消费者信心回升-短期通胀预期下降",
+        "美国消费者信心反弹-短期通胀预期骤降0.4个百分点",
+        "美国消费者信心回升-通胀预期创2021年来最大降幅"
+      ],
+      "cleaned_candidates": [
+        "GS：美国密歇根消费者信心回升-短期通胀预期下降",
+        "GS：美国消费者信心反弹-短期通胀预期骤降0.4个百分点",
+        "GS：美国消费者信心回升-通胀预期创2021年来最大降幅",
+        "GS：USA-UMichSentimentRises",
+        "GS：7月密歇根大学消费者信心指数初值录得54.4"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：美国消费者信心反弹-短期通胀预期骤降0.4个百分点",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "GS：美国消费者信心回升-通胀预期创2021年来最大降幅",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "GS：USA-UMichSentimentRises",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月密歇根大学消费者信心指数初值录得54.4",
+          "reasons": [
+            "anchor_coverage=0.32",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：美国密歇根消费者信心回升-短期通胀预期下降",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：美国密歇根消费者信心回升-短期通胀预期下降"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-43-Goldman-Sachs-Xunlong-Sci-Tech--6715.HK--NC---The-Next-Gen-call-takeaway",
+    "source_pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0003-43-GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "全球鱼子酱老大，凭什",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery-260717.pdf",
+      "cleaned_source_title": "GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：XunlongSciTechNCTheNextG",
+      "raw_candidates": [
+        "鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+        "鲟龙科技-全球鱼子酱龙头掌控36%产量，规模壁垒转品牌溢价",
+        "鲟龙科技-全球鱼子酱龙头：7至15年生物资产积累成护城河"
+      ],
+      "cleaned_candidates": [
+        "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+        "GS：鲟龙科技-全球鱼子酱龙头掌控36%产量，规模壁垒转品牌溢价",
+        "GS：鲟龙科技-全球鱼子酱龙头，7至15年生物资产积累成护城河",
+        "GS：XunlongSciTechNCTheNextG",
+        "GS：一家中国公司，掌控着全球36%的鱼子酱产量，规模是第二名近4倍"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：鲟龙科技-全球鱼子酱龙头掌控36%产量，规模壁垒转品牌溢价",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "GS：鲟龙科技-全球鱼子酱龙头，7至15年生物资产积累成护城河",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "GS：XunlongSciTechNCTheNextG",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：一家中国公司，掌控着全球36%的鱼子酱产量，规模是第二名近4倍",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-44-J.P.-Morgan-Base-Metals-Supply---Demand-Tracker-While-market-awaits-tari",
+    "source_pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0004-44-JPM-Base Metals Supply - Demand Tracker-While market awaits tariff update- China keeps buying copper-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "铜的库存，快被搬空了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-JPM-Base Metals Supply - Demand Tracker-While market awaits tariff update- China keeps buying copper-260716.pdf",
+      "cleaned_source_title": "JPM-Base Metals Supply - Demand Tracker-While market awaits tariff update- China keeps buying copper",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：BaseMetalsSupplyDemand",
+      "raw_candidates": [
+        "JPM：基本金属供需追踪-市场等待关税更新，中国持续买入铜",
+        "JPM：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开",
+        "JPM：基本金属供需追踪-铜定价权从政策转向库存，中国需求与库存背离"
+      ],
+      "cleaned_candidates": [
+        "JPM：基本金属供需追踪-市场等待关税更新，中国持续买入铜",
+        "JPM：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开",
+        "JPM：基本金属供需追踪-铜定价权从政策转向库存，中国需求与库存背离",
+        "JPM：BaseMetalsSupplyDemand",
+        "JPM：中的图23和图24分别展示了这两条曲线的走向"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "forbidden_public_wording"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：基本金属供需追踪-市场等待关税更新，中国持续买入铜",
+          "reasons": [
+            "forbidden_public_wording",
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：基本金属供需追踪-铜定价权从政策转向库存，中国需求与库存背离",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：BaseMetalsSupplyDemand",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中的图23和图24分别展示了这两条曲线的走向",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：基本金属供需追踪-中国铜库存降至五年低位，进口套利窗口打开"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-45-Goldman-Sachs-Xiaomi-Corp.--1810.HK-Xiaomi-Robotics--Integrating-Hardwar",
+    "source_pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0005-45-GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- Buy-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "小米机器人，正在悄悄",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：小米机器人整合硬件数据与模型以扩大规模",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- Buy-260717.pdf",
+      "cleaned_source_title": "GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：XiaomiCorp.XiaomiRobotic",
+      "raw_candidates": [
+        "GS：小米机器人整合硬件数据与模型以扩大规模",
+        "GS：小米机器人产线成功率98%逼近熟练工人",
+        "GS：小米机器人跑通硬件-数据-模型闭环"
+      ],
+      "cleaned_candidates": [
+        "GS：小米机器人整合硬件数据与模型以扩大规模",
+        "GS：小米机器人产线成功率98%逼近熟练工人",
+        "GS：小米机器人跑通硬件-数据-模型闭环",
+        "GS：XiaomiCorp.XiaomiRobotic",
+        "GS：2026年7月，小米机器人部门连续发布三项进展"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：小米机器人产线成功率98%逼近熟练工人",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：小米机器人跑通硬件-数据-模型闭环",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        },
+        {
+          "title": "GS：XiaomiCorp.XiaomiRobotic",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：2026年7月，小米机器人部门连续发布三项进展",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：小米机器人整合硬件数据与模型以扩大规模",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：小米机器人整合硬件数据与模型以扩大规模"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,44 @@
+EN_A: So Xiaomi Robotics just made a bunch of new announcements. Are their humanoid robots actually working in factories now?
+EN_B: Yes, and the numbers are pretty specific. Back in March, when they first deployed the humanoids at a self-tapping nut loading station, the task success rate was over 90 percent. By July, it had climbed to 98 percent.
+EN_A: 98 percent? How does that compare to a human worker?
+EN_B: It is just one percentage point behind experienced workers. So in that specific industrial task, Xiaomi's robot is essentially operating at near-human level.
+EN_A: That sounds like a big leap. What else are they doing on the factory floor?
+EN_B: Starting in July, the humanoids also took on new logistics jobs, like sorting flexible center console side covers and folding returnable boxes. They hit a 90 percent success rate there. And for the first time, they achieved long-duration continuous operations with flexible workpieces.
+EN_A: Flexible workpieces? That is usually tough for robots, right?
+EN_B: Exactly. Handling flexible materials is a known challenge in robotics. The fact that they can run continuously on those tasks means the control system has improved a lot.
+EN_A: So what is the real question this report is trying to answer? Is it just whether Xiaomi's robots are good enough?
+EN_B: It is bigger than that. The real question is whether Xiaomi can create a self-reinforcing loop that accelerates improvement on its own.
+EN_A: A self-reinforcing loop? What does that mean in practice?
+EN_B: The report says Xiaomi has completed the initial integration of its robotics framework across hardware, data, and models. In simple terms, when a robot fails at a task on the factory floor, that failure is recorded. It gets fed into a generative model that creates synthetic data for similar edge cases. That synthetic data is used to retrain the core foundation model, and then the updated model is deployed back onto the physical robot.
+EN_A: So it is a loop from the real world to the virtual world and back again?
+EN_B: Exactly. If that loop works, the robot keeps getting better without humans having to manually label more and more data.
+EN_A: What did Xiaomi actually build on the data and model side?
+EN_B: They released a generative model called Robotics-U0 with 38 billion parameters. What is unique is that it unifies text-to-image generation, image editing, multi-view scene generation, embodied transfer, and embodied video generation into a single architecture.
+EN_A: One model doing all that?
+EN_B: Yes. And according to Xiaomi, it outperforms GPT-Image-2 on embodied scene generation and embodied transfer tasks. It also ranks number one on WorldArena, which is a benchmark for embodied world models.
+EN_A: What about the actual robot control model?
+EN_B: They also released a Vision-Language-Action foundation model called Robotics-1, designed for end-to-end physical execution. It was pre-trained on 100,000 hours of real-world robot operation data and then post-trained on 10,000 hours of cross-ontology data.
+EN_A: Cross-ontology? What does that mean?
+EN_B: It means the same model can work across different robot body types, like bipedal humanoids, quadruped robots, dual-arm systems, or even wheeled robots.
+EN_A: How does it perform?
+EN_B: On benchmarks like RoboCasa and RoboDojo, Robotics-1 achieves state-of-the-art results, beating open-source models like Pi-0.5.
+EN_A: So where does Xiaomi stand compared to global leaders in robotics?
+EN_B: The report says that in terms of deploying humanoids on active automotive production lines, Xiaomi is now alongside players like Figure AI.
+EN_A: But there must still be gaps.
+EN_B: Definitely. In real-world execution speed, Figure 03 deployed at BMW's Spartanburg plant is faster. And in model capability, closed-source models like Physical Intelligence's Pi-0.7 or Figure's Helix 02 are still ahead.
+EN_A: What has Xiaomi not disclosed?
+EN_B: The report points out that Xiaomi has not shared detailed architecture information, like cost structure or performance parameters. So it is still hard for outsiders to assess the commercial viability precisely.
+EN_A: Speaking of commercial viability, how does Xiaomi plan to make money from robotics?
+EN_B: The report expects Xiaomi Robotics to focus on structured B2B scenarios over the next three to five years. That means large-scale humanoid deployment in Xiaomi's own factories, like its smart EV factory, smartphone factory, and home appliance factory, and potentially in partner factories too.
+EN_A: That sounds a lot like Tesla's strategy with Optimus.
+EN_B: The report makes that exact comparison. And Xiaomi has one advantage Tesla does not, which is its massive home AIoT ecosystem.
+EN_A: What about valuation? Is the stock already pricing all of this in?
+EN_B: The report argues that the current market cap assigns zero value to AI, robotics, and other new initiatives. The recent stock price rally has been driven mostly by sentiment around the smart EV business, especially the upcoming SkyNomad launch.
+EN_A: So if the robotics story really works, there is still significant upside?
+EN_B: Potentially. But there are two big open questions the report does not fully answer.
+EN_A: What are they?
+EN_B: First, what is the actual cost structure of Xiaomi's robots? Can they achieve economic parity with human labor? Second, how fast does that self-reinforcing loop actually converge? It took four months to go from 90 percent to 98 percent. Going from 98 percent to 99 percent might take much longer.
+EN_A: Does the full report dig deeper into those questions?
+EN_B: Yes. The full report has more detailed analysis on Xiaomi's AI monetization paths, EV valuation comparisons, and the potential narrative and financial inflection point in the third quarter of 2026.
+EN_A: Sounds like it is worth reading the full version. Thanks for the insights today.
+EN_B: Thank you. If you want to get the full report, you can find it through our usual channels.

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0001-41-GS-TAIWAN CCL-High-end players- profitability uptrend restart- with better pricing and product mix outlook- Buy EMC and TUC with new TP of NT-9-500 2-860.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0002-42-GS-USA- UMich Sentiment Rises- Short-Term Inflation Expectations Decline-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0003-43-GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0004-44-JPM-Base Metals Supply - Demand Tracker-While market awaits tariff update- China keeps buying copper-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0005-45-GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- Buy-260717.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

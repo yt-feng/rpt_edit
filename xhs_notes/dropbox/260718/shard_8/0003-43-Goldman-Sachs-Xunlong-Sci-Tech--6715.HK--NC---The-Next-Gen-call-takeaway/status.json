@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_cwbyoqie/pdfs/0003-43-GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery-260717.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "全球鱼子酱老大，凭什",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery-260717.pdf",
+    "cleaned_source_title": "GS-Xunlong Sci-Tech -6715.HK- NC-- The-Next-Gen call takeaways- Global leader in caviar driven by overseas expansion and domestic recovery",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：XunlongSciTechNCTheNextG",
+    "raw_candidates": [
+      "鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+      "鲟龙科技-全球鱼子酱龙头掌控36%产量，规模壁垒转品牌溢价",
+      "鲟龙科技-全球鱼子酱龙头：7至15年生物资产积累成护城河"
+    ],
+    "cleaned_candidates": [
+      "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+      "GS：鲟龙科技-全球鱼子酱龙头掌控36%产量，规模壁垒转品牌溢价",
+      "GS：鲟龙科技-全球鱼子酱龙头，7至15年生物资产积累成护城河",
+      "GS：XunlongSciTechNCTheNextG",
+      "GS：一家中国公司，掌控着全球36%的鱼子酱产量，规模是第二名近4倍"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：鲟龙科技-全球鱼子酱龙头掌控36%产量，规模壁垒转品牌溢价",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "GS：鲟龙科技-全球鱼子酱龙头，7至15年生物资产积累成护城河",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "GS：XunlongSciTechNCTheNextG",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：一家中国公司，掌控着全球36%的鱼子酱产量，规模是第二名近4倍",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：鲟龙科技-全球鱼子酱龙头由海外扩张与国内复苏驱动"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "667",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
