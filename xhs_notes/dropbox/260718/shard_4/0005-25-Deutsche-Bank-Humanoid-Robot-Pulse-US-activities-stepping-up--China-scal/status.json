@@ -1,0 +1,95 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_irp9w07h/pdfs/0005-25-DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition--260716.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "DB",
+  "cover_short_title": "人形机器人：全球竞速",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-25-DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition--260716.pdf",
+    "cleaned_source_title": "DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition",
+    "institution_name": "DB",
+    "required_terms": [],
+    "deterministic_fallback": "DB：HumanoidRobotPulseUSa",
+    "raw_candidates": [
+      "人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策-第二季度版",
+      "人形机器人脉冲：美国活动加速，中国快速扩张，支持性政策-第二季度版",
+      "人形机器人脉冲：美国活动加速，中国产量预计超10万台-支持性政策-第二季度版"
+    ],
+    "cleaned_candidates": [
+      "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+      "DB：人形机器人脉冲，美国活动加速，中国快速扩张，支持性政策",
+      "DB：人形机器人脉冲，美国活动加速，中国产量预计超10万台",
+      "DB：HumanoidRobotPulseUSa",
+      "DB：引用中国工信部官员在2026年7月的表态"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "DB：人形机器人脉冲，美国活动加速，中国产量预计超10万台",
+        "reasons": [
+          "anchor_coverage=0.61",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "DB：HumanoidRobotPulseUSa",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "DB：引用中国工信部官员在2026年7月的表态",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "DB：人形机器人脉冲-美国活动加速-中国快速扩张-支持性政策"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "519",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

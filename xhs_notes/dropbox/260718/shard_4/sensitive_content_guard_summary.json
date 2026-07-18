@@ -1,0 +1,402 @@
+[
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-/mineru_raw/full.md",
+    "changed": false,
+    "local_changes": [],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=16+Jul+2026+12%3A02%3A07+ET+%7C+16+pages%0A%0A%23+Sungrow+Power+Supply+%28300274.SZ%29%0A%"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-/note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E5%82%A8%E8%83%BD%E9%BE%99%E5%A4%B4%E8%B7%8C%E4%BA%8630%25%EF%BC%8C%E7%84%B6%E5%90%8E%E5%"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+Citi%EF%BC%9A%E9%98%B3%E5%85%89%E7%94%B5%E6%BA%90%E5%82%A8%E8%83%BD%E5%87%BA%E8%B4%A7%"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+Sungrow%E2%80%99s+30%25+Share+Price+Collapse+Creates+a+Buying+Opportunity+That+Depends"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资->研究 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E9%97%B2%E9%B1%BC%E6%A0%87%E9%A2%98%EF%BC%9A%E6%8A%95%E8%A1%8C%E7%A0%94%E6%8A%A5+%E9%98%B"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0001-21-CITI-Sungrow-Power-Supply--300274--High-ESS-Shipment-Volume-Growth--Low-/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1",
+      "收益率->回报表现 x1"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E9%98%B3%E5%85%89%E7%94%B5%E6%BA%90%E8%82%A1%E4%BB%B7%E8%B7%8C%E8%B6%8530%25%E5%90%8E%EF%"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o/mineru_raw/full.md",
+    "changed": false,
+    "local_changes": [],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+US+Communications+Equipment%0A%0A%23%23+2Q26+Earnings+Preview%3A+Investor+Focus+on+Sup"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o/note.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x1",
+      "投资->研究 x1",
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=AI%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%AD%A3%E5%9C%A8%E7%BB%8F%E5%8E%86%E2%80%9C%E4%BE%9B%E5%BA%"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x2",
+      "顶级->高质量 x1",
+      "绝对->相对 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+Citi%EF%BC%9A%E7%BE%8E%E5%9B%BD%E9%80%9A%E4%BF%A1%E8%AE%BE%E5%A4%872Q26%E9%A2%84%E8%A7"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+The+Networking+Infrastructure+Bottleneck+Is+Shifting+from+Demand+to+Supply%2Cand+the+E"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资->研究 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E9%97%B2%E9%B1%BC%E6%A0%87%E9%A2%98%EF%BC%9A%E6%8A%95%E8%A1%8C%E7%A0%94%E6%8A%A5+%E7%BE%8"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0002-22-CITI-US-Communications-Equipment-2Q26-Earnings-Preview--Investor-Focus-o/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "绝对->相对 x1",
+      "投资->研究 x2"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23%23%23+%E4%BA%91%E5%8E%82%E5%95%86%E7%9A%84%E8%B5%84%E6%9C%AC%E5%BC%80%E6%94%AF%EF%BC%8"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy/mineru_raw/full.md",
+    "changed": false,
+    "local_changes": [],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=Banking+%2F+Finance+Banks%0A%0A%23+June+TSF+and+new+loans+remain+soft%3B+more+policy+suppo"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy/note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=6%E6%9C%88%E7%A4%BE%E8%9E%8D%E6%95%B0%E6%8D%AE%E5%87%BA%E7%82%89%EF%BC%8C%E4%BF%A1%E8%B4%B"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+DB%EF%BC%9A%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C%EF%BC%8C6%E6%9C%88%E7%A4%BE%E8%9E%8D%E"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+China%27s+Credit+Data+Signals+a+Structural+Shift%2CNot+Just+a+Cyclical+Slowdown%E2%80%"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E9%97%B2%E9%B1%BC%E6%A0%87%E9%A2%98%EF%BC%9A%E6%8A%95%E8%A1%8C%E7%A0%94%E6%8A%A5%EF%BC%9A"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy/zhihu_article.md",
+    "changed": false,
+    "local_changes": [
+      "投资->研究 x3"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23%23%23+%E5%85%AD%E6%9C%88%E7%A4%BE%E8%9E%8D%E4%B8%8E%E4%BF%A1%E8%B4%B7%E6%95%B0%E6%8D%A"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716/mineru_raw/full.md",
+    "changed": false,
+    "local_changes": [],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=Asia+China%0A%0AConsumer+Autos+%26+Auto+Technology%0A%0AIndustry+Battery%0A%0A%23+China+Ba"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716/note.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x2",
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=6%E6%9C%88%E7%94%B5%E6%B1%A0%E6%95%B0%E6%8D%AE%EF%BC%9A%E5%82%A8%E8%83%BD%E5%A2%9E%E9%80%9"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x1",
+      "绝对->相对 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+DB%EF%BC%9A%E4%B8%AD%E5%9B%BD%E7%94%B5%E6%B1%A0%E6%9C%88%E5%BA%A6%E7%9B%91%E6%B5%8B-20"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+China%E2%80%99s+Battery+Market+Is+No+Longer+a+Single+Story%3AThe+Energy+Storage+Boom+I"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E9%97%B2%E9%B1%BC%E6%A0%87%E9%A2%98%EF%BC%9A%E4%B8%AD%E5%9B%BD%E7%94%B5%E6%B1%A0%E8%A1%8C"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "抄底->底部观察 x1",
+      "暴涨->明显走强 x1",
+      "暴跌->明显回落 x1",
+      "绝对->相对 x2"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E4%B8%AD%E5%9B%BD%E9%94%82%E7%94%B5%E6%B1%A0%E5%85%AD%E6%9C%88%E6%95%B0%E6%8D%AE%E9%87%8C"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal/mineru_raw/full.md",
+    "changed": false,
+    "local_changes": [],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+Industry+Humanoid+Robot+Pulse%0A%0AAsia%0AJapan%0ANorth+America%0A%0AIndustrials%0AMan"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal/note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA%EF%BC%9A%E5%85%A8%E7%90%83%E7%AB%9E%E9%80%9F"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+DB%EF%BC%9A%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%84%89%E5%86%B2-%E7%BE%8E%E"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+The+Humanoid+Robot+Market+Has+Crossed+an+Inflection+Point%3APolicy%2CProduction%2Cand+"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资->研究 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%E9%97%B2%E9%B1%BC%E6%A0%87%E9%A2%98%EF%BC%9A%E6%8A%95%E8%A1%8C%E7%A0%94%E6%8A%A5-%E4%BA%B"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal/zhihu_article.md",
+    "changed": false,
+    "local_changes": [],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "HTTPSConnectionPool(host='v.api.aa1.cn', port=443): Max retries exceeded with url: /api/api-mgc/index.php?msg=%23+2026%E5%B9%B4%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BA%A7%E4%B8%9A%E8%BF%9B%"
+    ],
+    "rewrite_error": ""
+  }
+]
