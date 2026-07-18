@@ -606,7 +606,8 @@ jobs:
             --output-root "kc_translated_reports" \
             --max-reports "$MAX_REPORTS" \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
-            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" 2>&1 | tee kc_translated_reports_progress.log
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --title-guard 2>&1 | tee kc_translated_reports_progress.log
           echo "KC_TRANSLATED_DIR=kc_translated_reports/$DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Verify translated PDFs exist

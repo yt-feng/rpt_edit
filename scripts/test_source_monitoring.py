@@ -2,8 +2,11 @@
 from __future__ import annotations
 
 import unittest
+from unittest.mock import Mock, patch
 
-from fetch_institution_latest_pdfs import INSTITUTIONS, collect_worldbank_items
+import requests
+
+from fetch_institution_latest_pdfs import INSTITUTIONS, collect_worldbank_items, http_get, http_post
 from select_macro_trend_pdfs import sanitize_filename
 
 
@@ -31,9 +34,9 @@ class _FakeSession:
         self.url = ""
         self.params: dict = {}
 
-    def get(self, url: str, *, params: dict, timeout: int) -> _FakeResponse:
+    def get(self, url: str, *, params: dict | None = None, timeout: int, **_kwargs) -> _FakeResponse:
         self.url = url
-        self.params = params
+        self.params = params or {}
         return _FakeResponse()
 
 
@@ -60,6 +63,72 @@ class SourceMonitoringTests(unittest.TestCase):
         self.assertEqual(1, len(items))
         self.assertEqual("2026-07-01", items[0]["date"])
         self.assertEqual(30, session.params["rows"])
+
+    @patch("fetch_institution_latest_pdfs.time.sleep")
+    def test_http_get_retries_connection_error(self, sleep: Mock) -> None:
+        session = Mock()
+        success = Mock(status_code=200, headers={})
+        session.get.side_effect = [requests.exceptions.ConnectionError("reset"), success]
+
+        response = http_get(session, "https://example.com/feed", timeout=10)
+
+        self.assertIs(response, success)
+        self.assertEqual(session.get.call_count, 2)
+        sleep.assert_called_once_with(2.0)
+
+    @patch("fetch_institution_latest_pdfs.time.sleep")
+    def test_http_get_retries_503_and_honors_retry_after(self, sleep: Mock) -> None:
+        session = Mock()
+        busy = Mock(status_code=503, headers={"Retry-After": "6"})
+        success = Mock(status_code=200, headers={})
+        session.get.side_effect = [busy, success]
+
+        response = http_get(session, "https://example.com/feed", timeout=10)
+
+        self.assertIs(response, success)
+        self.assertEqual(session.get.call_count, 2)
+        busy.close.assert_called_once()
+        sleep.assert_called_once_with(6.0)
+
+    @patch("fetch_institution_latest_pdfs.time.sleep")
+    def test_http_get_does_not_retry_permanent_status(self, sleep: Mock) -> None:
+        session = Mock()
+        forbidden = Mock(status_code=403, headers={})
+        session.get.return_value = forbidden
+
+        response = http_get(session, "https://example.com/feed", timeout=10)
+
+        self.assertIs(response, forbidden)
+        session.get.assert_called_once()
+        sleep.assert_not_called()
+
+    @patch("fetch_institution_latest_pdfs.time.sleep")
+    def test_http_get_does_not_retry_programming_error(self, sleep: Mock) -> None:
+        session = Mock()
+        session.get.side_effect = ValueError("bad test input")
+
+        with self.assertRaises(ValueError):
+            http_get(session, "https://example.com/feed", timeout=10)
+
+        session.get.assert_called_once()
+        sleep.assert_not_called()
+
+    @patch("fetch_institution_latest_pdfs.time.sleep")
+    def test_http_post_retries_timeout(self, sleep: Mock) -> None:
+        session = Mock()
+        success = Mock(status_code=200, headers={})
+        session.post.side_effect = [requests.exceptions.Timeout("slow"), success]
+
+        response = http_post(
+            session,
+            "https://example.com/search",
+            timeout=10,
+            json_payload={"q": ""},
+        )
+
+        self.assertIs(response, success)
+        self.assertEqual(session.post.call_count, 2)
+        sleep.assert_called_once_with(2.0)
 
 
 if __name__ == "__main__":

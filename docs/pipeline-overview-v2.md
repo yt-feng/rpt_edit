@@ -2,6 +2,9 @@
 
 本文档用于记录当前 repo 内已经整理好的 GitHub Actions、脚本、prompt、输出目录和日常使用方式。后续如果流程继续迭代，优先同步更新本文件。
 
+报告到微信公众号的 runner 边界、幂等规则、重试矩阵和恢复手册见
+[`docs/report-to-wechat-architecture.md`](report-to-wechat-architecture.md)。修改相关 workflow 或脚本时必须同步更新这两份文档。
+
 ## 1. 总体目标
 
 `rpt_edit` 的核心目标是把每日 PDF 研报自动加工成多平台可发布内容：
@@ -334,11 +337,10 @@ scripts/push_kc_translated_to_wechat_drafts.py
 - 从 `xhs_notes/dropbox/<日期>/.../source_mineru.md` 选取报告，清理原报告 logo、作者、页脚免责声明和披露段落。
 - 用 DeepSeek 翻译成中文正文，保留正文图表，渲染为带 **KC桌面——外资精译** 品牌的 PDF。
 - 中文精译 PDF 每页在页眉和页脚居中放置蓝色 `公众号：KC桌面` 标识，不再使用页面中央大水印。
-- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号短版图文 HTML，可见正文约 2000 字；正文图片先走微信 `uploadimg`，封面走永久图片素材，并调用 `draft/add` 创建草稿；当 `wechat_freepublish=true` 时再调用 `freepublish/submit` 提交发布。
+- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号短版图文 HTML，可见正文约 1200 字；正文图片先走微信 `uploadimg`，封面走永久图片素材，并调用 `draft/add` 创建草稿；当 `wechat_freepublish=true` 时再调用 `freepublish/submit` 提交发布。
 - 微信短版正文图默认最多 3 张、至少 3 张。优先使用 MinerU 抽出的报告图表；如果报告图不足，会参考 `gen_rpt` 的方式用 Pollinations 生成主题相关 AI 配图，下载压缩后再上传微信。
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
-- 星球图之前的钩子（`DEFAULT_BODY_HOOK`）：`更多国际信源汇编&评论，扫码交流，每日更新~40页…`（星球介绍 CTA）。
-- 星球图之后、文章最结尾再追加关注/星标提醒（`DEFAULT_AFTER_IMAGE_NOTE`）：`微信推荐机制调整，期望收到更多此类信息，关注后可以加微信从朋友圈查看更新&免费领取原文报告。或将「KC桌面」设为星标`。两段文案都在 `scripts/push_kc_translated_to_wechat_drafts.py` 顶部常量里改。
+- 中间 CTA 已禁用（`DEFAULT_BODY_HOOK=""`）；正文只保留 KC 评论。文章最结尾统一追加 `更新信息参见ΚСⅾеѕk․сοｍ`。
 - 图文分组默认 `articles_per_draft=8`。如果微信 `draft/add` 返回 `45008 article size out of limit`，脚本会自动把该组拆小重试，优先保证草稿能保存成功；`wechat_freepublish=true` 时会按实际成功草稿组提交发布。
 
 主流程入口：
@@ -457,7 +459,7 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 - World Bank 的 WDS `docdt` 比实际发布滞后数月，因此该来源不按日期过滤（`recency_filter=False`），只按 `docdt` 倒序取最新若干篇并靠 seen 去重；其余来源按 `since_days` 过滤。
 - 依赖 `curl_cffi`（已加入 `requirements.txt`）：IMF / WEF 用 Chrome TLS 指纹，OECD 用 Firefox 指纹（Akamai 对 Chrome 指纹更严）。未安装时对无指纹要求的来源无影响。整条链路不需要无头浏览器。
 - **微信公众号合规：RAND / Brookings 已从默认抓取名单移除；精译步骤仍保留 `--exclude-institutions "rand,brookings"` 双保险，即使手动抓了也不翻译、不上公众号。**
-- **标题敏感性审核：精译步骤加了 `--title-guard`，对进入精译的每篇用 DeepSeek 审核标题（是否唱衰中国 / 攻击中国制度 / 涉敏感政治议题）。判为 SENSITIVE 的不翻译、不进草稿箱；DeepSeek 报错或结论不明时按"宁可漏发"处理（跳过）。被跳过的记录在 `kc_translated_reports/institutions/<日期>/translation_summary.json` 的 `sensitive_skipped` 里。**
+- **标题敏感性审核：精译步骤加了 `--title-guard`，先用确定性规则阻断军事、国防、战备和明确政治敏感标题，再用 DeepSeek 审核是否唱衰中国、攻击中国制度或涉及其他敏感议题。判为 SENSITIVE 的不翻译、不进草稿箱；DeepSeek 报错会作为该篇失败记录，不会放行，也不会终止同批其他文章。被跳过的记录在 `kc_translated_reports/institutions/<日期>/translation_summary.json` 的 `sensitive_skipped` 里。**
 - market views 汇总 PDF 不做敏感过滤，当天抓到的机构全部纳入，见 §3.3。
 
 ### 3.9 Consulting latest PDF to WeChat（MBB：麦肯锡 / BCG，贝恩暂缓）
@@ -489,6 +491,9 @@ wechat_drafts/consulting/<日期>/...               # 独立的一批公众号�
 
 - **时效性：不是"只抓当天发布"，而是"最新优先 + 旧报告过滤 + seen 去重"。** McKinsey 限定当年/去年，BCG 限定最近 120 天修改；首跑会抓当前这批近期报告，之后每天只增量抓新出现的（seen 去重保证不重复）。想更严格可调小 `recent_years`（改 1）或 `sitemap_max_age_days`（改 30/60）。这些常青站点没有可靠的"今天发布"信号，做不到严格的"仅当天"。
 - 同样过 `--title-guard` 标题敏感性审核；`--max-per-institution` 默认 5，控制每家每天量。
+- 标题审核采用“双层、三道门”策略：原始英文/中文标题先经过确定性军事与政治敏感规则，再由 DeepSeek 补充审核；最终精修标题在写入 PDF 前再次执行确定性审核；微信上传脚本还会执行共享的最终标题策略。命中军事、国防、军用装备、武器、战争、战备或明确政治敏感议题时，整篇不进入微信草稿，但仍可留在 market views 原始信源汇总中。
+- 抓取 GET/API POST/PDF 下载对连接错误和 `408/425/429/5xx` 最多重试 3 次；DeepSeek 和微信 API 各有有界重试。单篇失败会记录并继续处理同批其他报告。
+- `xhs_notes/consulting/<日期>` 和 `kc_translated_reports/consulting/<日期>` 是 GitHub-hosted build job 到固定 IP runner 的关键交接；推送 8 次仍失败时 workflow 必须失败，不能继续显示绿色并上传旧数据。
 - MBB 也并入 market views 汇总 PDF（§3.3 的 `--extra-roots` 已含 `xhs_notes/consulting`）。
 - 加 / 调来源、时效阈值：编辑 `scripts/fetch_institution_latest_pdfs.py` 顶部 `INSTITUTIONS` 里 `mckinsey` / `bcg` / `bain` 的配置。
 

@@ -24,6 +24,8 @@ from typing import Any
 
 import requests
 
+from deepseek_http import request_with_retry
+
 try:
     from finalize_outputs import sanitize_text
 except Exception:  # pragma: no cover
@@ -49,7 +51,7 @@ from wechat_title_optimizer import (
     decide_filename_anchored_title,
     extract_title_candidates,
 )
-from sensitive_content_guard import sanitize_wechat_stock_language
+from sensitive_content_guard import blocked_wechat_title_reason, sanitize_wechat_stock_language
 from wechat_article_quality import (
     WECHAT_EDITORIAL_GUARD_ZH,
     WECHAT_EDITOR_SYSTEM_PROMPT,
@@ -127,6 +129,15 @@ PDF_FOOTER_DISCLAIMER = (
     "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
     "This is not investment, legal, tax, accounting, or other professional advice."
 )
+
+
+class SensitiveTitleError(RuntimeError):
+    def __init__(self, title: str, reason: str) -> None:
+        super().__init__(f"blocked WeChat title ({reason}): {title}")
+        self.title = title
+        self.reason = reason
+
+
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^\)]+)\)")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
@@ -732,6 +743,7 @@ def call_deepseek(
     label: str,
     temperature: float = 0.15,
     system_content: str | None = None,
+    max_attempts: int | None = None,
 ) -> str:
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
@@ -751,11 +763,16 @@ def call_deepseek(
             {"role": "user", "content": prompt},
         ],
     }
-    response = requests.post(
+    response = request_with_retry(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json=payload,
+        payload=payload,
+        label=label,
         timeout=args.deepseek_timeout,
+        max_attempts=max_attempts if max_attempts is not None else max(1, int(args.deepseek_retries)),
+        retry_base_seconds=5,
+        retry_max_seconds=60,
+        logger=log,
     )
     data = parse_json_response(response, label)
     return data["choices"][0]["message"]["content"].strip()
@@ -772,10 +789,16 @@ def title_is_sensitive(title: str, args: argparse.Namespace) -> bool:
     title = (title or "").strip()
     if not title:
         return False
+    deterministic_reason = blocked_wechat_title_reason(title)
+    if deterministic_reason:
+        log(f"  [title-guard] deterministic block ({deterministic_reason}): {title[:100]}")
+        return True
     prompt = (
         "你是中国大陆微信公众号合规审核员。下面是一篇外文研究报告的标题。"
-        "判断该标题是否包含对中国不友好、负面唱衰、攻击中国制度或政策，"
-        "或涉及敏感政治议题（如台独、疆独、藏独、人权指控等）的内容。"
+        "判断该标题是否涉及军事、国防、军用装备、武器、战争、战备，"
+        "或包含对中国不友好、负面唱衰、攻击中国制度或政策，"
+        "或涉及选举、政党、地缘政治及其他敏感政治议题"
+        "（如台独、疆独、藏独、人权指控等）。"
         "只回答一个英文单词：SENSITIVE 或 SAFE。\n\n标题：" + title
     )
     try:
@@ -808,7 +831,12 @@ def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chun
 待翻译内容：
 {chunk}
 """.strip()
-    return call_deepseek(prompt, args, f"translate chunk {chunk_index}/{chunk_total}")
+    return call_deepseek(
+        prompt,
+        args,
+        f"translate chunk {chunk_index}/{chunk_total}",
+        max_attempts=1,
+    )
 
 
 def translate_markdown(markdown: str, args: argparse.Namespace) -> str:
@@ -817,16 +845,18 @@ def translate_markdown(markdown: str, args: argparse.Namespace) -> str:
     for idx, chunk in enumerate(chunks, 1):
         log(f"Translating chunk {idx}/{len(chunks)} ({len(chunk)} chars)")
         last_error: Exception | None = None
-        for attempt in range(1, args.deepseek_retries + 1):
+        attempts = max(1, int(args.deepseek_retries))
+        for attempt in range(1, attempts + 1):
             try:
                 text = translate_chunk(chunk, args, idx, len(chunks))
                 translated.append(text)
                 break
             except Exception as exc:
                 last_error = exc
-                wait = min(60, 5 * attempt)
-                log(f"DeepSeek chunk {idx} attempt {attempt} failed: {exc}; retrying in {wait}s")
-                time.sleep(wait)
+                if attempt < attempts:
+                    wait = min(60, 5 * attempt)
+                    log(f"DeepSeek chunk {idx} attempt {attempt}/{attempts} failed: {exc}; retrying in {wait}s")
+                    time.sleep(wait)
         else:
             raise RuntimeError(f"DeepSeek translation failed for chunk {idx}: {last_error}")
     text = "\n\n".join(translated)
@@ -1252,6 +1282,10 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         args,
     )
     display_title, title_stock_changes = sanitize_wechat_stock_language(display_title, strict_wording=False)
+    if args.title_guard:
+        blocked_reason = blocked_wechat_title_reason(display_title)
+        if blocked_reason:
+            raise SensitiveTitleError(display_title, blocked_reason)
     title_decision["final_title_after_wording_guard"] = display_title
     translated_md = replace_first_heading(translated_md, display_title)
     translated_md, stock_changes_after_title = sanitize_wechat_stock_language(
@@ -1303,7 +1337,7 @@ def main() -> int:
                         help="Skip filename-anchored DeepSeek fine-tuning and use the deterministic filename fallback.")
     parser.set_defaults(title_refine=True)
     parser.add_argument("--title-guard", action="store_true",
-                        help="Use DeepSeek to skip reports whose title is China-sensitive (keeps them out of WeChat).")
+                        help="Use deterministic and DeepSeek checks to block military/politically sensitive WeChat titles.")
     args = parser.parse_args()
 
     max_reports = parse_selection_limit(args.max_reports, "--max-reports")
@@ -1362,14 +1396,28 @@ def main() -> int:
     failures: list[dict[str, Any]] = []
     sensitive_skipped: list[dict[str, Any]] = []
     for idx, report_dir in enumerate(selected, 1):
-        if args.title_guard:
-            title = report_title(report_dir)
-            if title_is_sensitive(title, args):
-                log(f"Skipping China-sensitive title, not sending to WeChat: {title}")
-                sensitive_skipped.append({"source_report_dir": str(report_dir), "title": title})
-                continue
         try:
+            if args.title_guard:
+                title = report_title(report_dir)
+                if title_is_sensitive(title, args):
+                    reason = blocked_wechat_title_reason(title) or "deepseek_title_guard"
+                    log(f"Skipping sensitive title, not sending to WeChat ({reason}): {title}")
+                    sensitive_skipped.append({
+                        "source_report_dir": str(report_dir),
+                        "title": title,
+                        "reason": reason,
+                    })
+                    continue
             summary.append(process_report(report_dir, out_dir, idx, args))
+        except SensitiveTitleError as exc:
+            report_out_dir = out_dir / f"{idx:02d}-{slug(report_dir.name)}"
+            shutil.rmtree(report_out_dir, ignore_errors=True)
+            log(f"Skipping sensitive refined title, not sending to WeChat ({exc.reason}): {exc.title}")
+            sensitive_skipped.append({
+                "source_report_dir": str(report_dir),
+                "title": exc.title,
+                "reason": exc.reason,
+            })
         except Exception as exc:
             log(f"ERROR processing {report_dir}: {exc}")
             failures.append({"source_report_dir": str(report_dir), "error": str(exc)})

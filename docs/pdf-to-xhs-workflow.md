@@ -43,7 +43,8 @@ pdfs/
 | `language` | `en` | PDF 语言。英文研报用 `en`，中文用 `ch` |
 | `ocr` | `true` | 扫描件/图片 PDF 建议开启 |
 | `wechat_length` | `1200` | 微信公众号文章目标字数 |
-| `community_cta` | `加入社群，领取完整研报解读与原始图表。` | 微信文末社群引导语 |
+| `community_cta` | `更新信息参见ΚСⅾеѕk․сοｍ` | 兼容参数；正文中间 CTA 会被清理，最终文字由微信渲染脚本统一追加 |
+| `deepseek_max_attempts` | `4` | DeepSeek 连接重置、超时、`429` 和部分 `5xx` 的最大尝试次数 |
 | `commit_results` | `true` | 是否把生成结果自动提交回 repo |
 
 ## 生成结果在哪里
@@ -111,7 +112,7 @@ prompts/wechat_report_article_prompt.md
 - 无 emoji
 - 不讲完整报告所有细节
 - 埋下关键伏笔和后续阅读钩子
-- 自然引导读者加入社群获取完整报告
+- 不生成中间 CTA，只保留 KC 评论；最终统一文字由微信渲染脚本追加
 
 ## 本地运行
 
@@ -130,5 +131,8 @@ python scripts/pdf_to_xhs_batch.py \
   --language en \
   --ocr true \
   --wechat-length 1200 \
-  --community-cta "加入社群，领取完整研报解读与原始图表。"
+  --community-cta "更新信息参见ΚСⅾеѕk․сοｍ"
 ```
+
+完整的运行边界、标题审核、失败语义和恢复方式见
+[`docs/report-to-wechat-architecture.md`](report-to-wechat-architecture.md)。

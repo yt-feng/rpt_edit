@@ -212,6 +212,32 @@ WECHAT_CHINA_NEGATIVE_CONTEXT_RE = re.compile(
     r"暴跌|下行|放缓|压力|拖累|负面|唱衰)"
 )
 
+WECHAT_BLOCKED_TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
+    (
+        "military_or_defense",
+        re.compile(
+            r"(?:军用|军事|军队|国防|防务|战备|军工|武器|导弹|弹药|作战|战场|战争|"
+            r"空军|海军|陆军|核武|航母)"
+            r"|\b(?:defen[cs]e|military|armed\s+forces?|weapons?|missiles?|munitions?|"
+            r"combat|warfare|battlefield|army|navy|air\s+force|nuclear\s+weapons?)\b"
+            r"|\b(?:defen[cs]e|military|combat)\b.{0,40}\breadiness\b"
+            r"|\breadiness\b.{0,40}\b(?:defen[cs]e|military|combat)\b",
+            re.I,
+        ),
+    ),
+    (
+        "politically_sensitive",
+        re.compile(
+            r"(?:政治|政党|选举|议会|政变|地缘政治|制裁|主权争端|领土争端|台海|"
+            r"台湾问题|台独|新疆|疆独|西藏|藏独|港独|人权指控|颜色革命)"
+            r"|\b(?:geopolitic(?:s|al)?|political\s+part(?:y|ies)|elections?|parliament|"
+            r"coup|sanctions?|sovereignty\s+disputes?|territorial\s+disputes?|"
+            r"Taiwan\s+Strait|Xinjiang|Tibet|human\s+rights\s+allegations?)\b",
+            re.I,
+        ),
+    ),
+]
+
 PROTECTED_TERMS = {
     "投研": "__PROTECT_TOUYAN__",
     "投行": "__PROTECT_TOUHANG__",
@@ -222,6 +248,17 @@ PROTECTED_TERMS = {
 
 def log(message: str) -> None:
     print(message, flush=True)
+
+
+def blocked_wechat_title_reason(title: str) -> str | None:
+    """Return a deterministic block reason for a public-account title."""
+    normalized = re.sub(r"\s+", " ", title or "").strip()
+    if not normalized:
+        return None
+    for reason, pattern in WECHAT_BLOCKED_TITLE_RULES:
+        if pattern.search(normalized):
+            return reason
+    return None
 
 
 def apply_local_guard(text: str) -> tuple[str, list[str]]:

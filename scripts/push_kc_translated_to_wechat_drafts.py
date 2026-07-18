@@ -36,7 +36,7 @@ from wechat_title_optimizer import (
     extract_wechat_keywords,
     title_quality_issues,
 )
-from sensitive_content_guard import sanitize_wechat_stock_language
+from sensitive_content_guard import blocked_wechat_title_reason, sanitize_wechat_stock_language
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
 
 
@@ -219,6 +219,10 @@ def wechat_title_policy_skip_reason(title: str) -> str:
     if not normalized:
         return ""
 
+    blocked_reason = blocked_wechat_title_reason(normalized)
+    if blocked_reason:
+        return "public_account_sensitive_title=" + blocked_reason
+
     strong_sensitive = regex_matches(WECHAT_TITLE_STRONG_CHINA_SENSITIVE_RE, normalized)
     if strong_sensitive:
         return "china_political_sensitive_terms=" + ",".join(strong_sensitive[:6])
@@ -246,6 +250,21 @@ def wechat_title_policy_skip_reason(title: str) -> str:
         )
 
     return ""
+
+
+def all_reports_skipped_by_translation_title_guard(summary: Any) -> bool:
+    if not isinstance(summary, dict):
+        return False
+    selected_count = int(summary.get("selected_count") or 0)
+    successful_count = int(summary.get("successful_count") or 0)
+    sensitive_count = int(summary.get("sensitive_skipped_count") or 0)
+    failures = summary.get("failures") or []
+    return (
+        selected_count > 0
+        and successful_count == 0
+        and sensitive_count >= selected_count
+        and not failures
+    )
 
 
 def canonicalize_institution_title_name(title: str) -> str:
@@ -2611,7 +2630,31 @@ def main() -> int:
     if not date_dir.exists():
         raise RuntimeError(f"Date folder not found: {date_dir}")
 
+    output_dir = Path(args.output_root) / date_dir.name
+    output_dir.mkdir(parents=True, exist_ok=True)
     report_dirs = find_report_dirs(date_dir)
+    if not report_dirs:
+        translation_summary = read_json(date_dir / "translation_summary.json")
+        if not all_reports_skipped_by_translation_title_guard(translation_summary):
+            raise RuntimeError(f"No translated reports found under {date_dir}")
+        summary_path = output_dir / "wechat_draft_summary.json"
+        title_log_path = write_wechat_title_log(output_dir, date_dir.name, str(root), [], [])
+        summary = {
+            "date_folder": date_dir.name,
+            "dry_run": args.dry_run,
+            "publish": args.publish,
+            "selected_count": 0,
+            "draft_count": 0,
+            "status": "skipped_translation_title_guard",
+            "message": "All translated reports were blocked by the upstream title guard.",
+            "title_log": str(title_log_path),
+            "drafts": [],
+            "articles": [],
+        }
+        write_json(summary_path, summary)
+        log(f"All translated reports blocked by upstream title guard; wrote skip summary: {summary_path}")
+        return 0
+
     included_institutions = parse_institution_filter(args.include_institutions)
     institution_filtered_count = 0
     if included_institutions:
@@ -2631,8 +2674,6 @@ def main() -> int:
     if not selected:
         raise RuntimeError(f"No translated reports selected from {date_dir}")
 
-    output_dir = Path(args.output_root) / date_dir.name
-    output_dir.mkdir(parents=True, exist_ok=True)
     input_selected_count = len(selected)
     skipped_title_policy: list[dict[str, str]] = []
     allowed_selected: list[Path] = []

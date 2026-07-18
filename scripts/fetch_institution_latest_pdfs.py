@@ -58,6 +58,7 @@ import subprocess
 import sys
 import time
 import xml.etree.ElementTree as ET
+from collections.abc import Callable
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html.entities import name2codepoint
@@ -83,6 +84,10 @@ DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
+HTTP_RETRYABLE_STATUSES = {408, 425, 429, 500, 502, 503, 504}
+HTTP_MAX_ATTEMPTS = 3
+HTTP_RETRY_BASE_SECONDS = 2.0
+HTTP_RETRY_MAX_SECONDS = 15.0
 
 # Anchor hrefs that look like a downloadable document.
 PDF_HREF_RE = re.compile(r'(?:href|data-href|content)=["\']([^"\']+?\.(?:pdf|ashx)[^"\']*)["\']', re.I)
@@ -666,19 +671,121 @@ def parse_feed(content: bytes) -> list[dict[str, str]]:
 # Item collection per institution
 # ------------------------------------------------------------------
 
-def http_get(session: requests.Session, url: str, timeout: int, impersonate: bool = False, stream: bool = False, profile: str | None = None, proxy: str | None = None):
+def _http_retry_delay(attempt: int, response: Any | None = None) -> float:
+    delay = HTTP_RETRY_BASE_SECONDS * (2 ** max(0, attempt - 1))
+    if response is not None:
+        retry_after = str(getattr(response, "headers", {}).get("Retry-After", "")).strip()
+        try:
+            delay = max(delay, float(retry_after))
+        except (TypeError, ValueError):
+            pass
+    return min(HTTP_RETRY_MAX_SECONDS, delay)
+
+
+def _is_transient_get_error(exc: Exception) -> bool:
+    if isinstance(
+        exc,
+        (
+            requests.exceptions.ConnectionError,
+            requests.exceptions.Timeout,
+            requests.exceptions.ChunkedEncodingError,
+        ),
+    ):
+        return True
+    return type(exc).__module__.startswith("curl_cffi")
+
+
+def _request_with_retry(
+    url: str,
+    request_call: Callable[[], Any],
+    max_attempts: int,
+) -> Any:
+    attempts = max(1, int(max_attempts))
+    for attempt in range(1, attempts + 1):
+        try:
+            response = request_call()
+        except Exception as exc:  # noqa: BLE001 - curl_cffi uses its own exception classes
+            if not _is_transient_get_error(exc) or attempt >= attempts:
+                raise
+            delay = _http_retry_delay(attempt)
+            warn(
+                f"transient HTTP error for {url} on attempt {attempt}/{attempts} "
+                f"({type(exc).__name__}); retrying in {delay:g}s"
+            )
+            time.sleep(delay)
+            continue
+
+        status_code = int(getattr(response, "status_code", 200))
+        if status_code not in HTTP_RETRYABLE_STATUSES or attempt >= attempts:
+            return response
+        delay = _http_retry_delay(attempt, response)
+        warn(
+            f"retryable HTTP {status_code} for {url} on attempt {attempt}/{attempts}; "
+            f"retrying in {delay:g}s"
+        )
+        close = getattr(response, "close", None)
+        if callable(close):
+            close()
+        time.sleep(delay)
+    raise RuntimeError(f"HTTP retry loop ended unexpectedly: {url}")
+
+
+def http_get(
+    session: requests.Session,
+    url: str,
+    timeout: int,
+    impersonate: bool = False,
+    stream: bool = False,
+    profile: str | None = None,
+    proxy: str | None = None,
+    params: dict[str, Any] | None = None,
+    headers: dict[str, str] | None = None,
+    max_attempts: int = HTTP_MAX_ATTEMPTS,
+):
     """GET via curl_cffi (browser fingerprint) when impersonate is requested and the
     library is installed; otherwise via the shared requests session. The returned
     object exposes .status_code/.headers/.content/.text/.raise_for_status like requests.
     ``profile`` overrides the default Chrome fingerprint (e.g. OECD only accepts
     Firefox); ``proxy`` routes the impersonated request through a VPS node.
     """
-    if impersonate and _HAS_CFFI:
-        return cffi_requests.get(
-            url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True, stream=stream,
-            proxies={"http": proxy, "https": proxy} if proxy else None,
+    def request_call() -> Any:
+        if impersonate and _HAS_CFFI:
+            return cffi_requests.get(
+                url,
+                timeout=timeout,
+                impersonate=profile or CFFI_IMPERSONATE,
+                allow_redirects=True,
+                stream=stream,
+                proxies={"http": proxy, "https": proxy} if proxy else None,
+                params=params,
+                headers=headers,
+            )
+        return session.get(
+            url,
+            timeout=timeout,
+            allow_redirects=True,
+            stream=stream,
+            params=params,
+            headers=headers,
         )
-    return session.get(url, timeout=timeout, allow_redirects=True, stream=stream)
+
+    return _request_with_retry(url, request_call, max_attempts)
+
+
+def http_post(
+    session: requests.Session,
+    url: str,
+    timeout: int,
+    *,
+    headers: dict[str, str] | None = None,
+    json_payload: dict[str, Any] | None = None,
+    max_attempts: int = HTTP_MAX_ATTEMPTS,
+) -> Any:
+    return _request_with_retry(
+        url,
+        lambda: session.post(url, headers=headers, json=json_payload, timeout=timeout),
+        max_attempts,
+    )
 
 
 def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
@@ -728,7 +835,7 @@ def _derive_pdf_candidates(cfg: dict[str, Any], link: str) -> list[str]:
 def collect_worldbank_items(cfg: dict[str, Any], session: requests.Session, timeout: int, rows: int) -> list[dict[str, Any]]:
     params = dict(cfg["params"])
     params["rows"] = rows
-    resp = session.get(cfg["api_base"], params=params, timeout=timeout)
+    resp = http_get(session, cfg["api_base"], timeout, params=params)
     resp.raise_for_status()
     data = resp.json()
     documents = data.get("documents", {})
@@ -975,15 +1082,17 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
         "numberOfResults": rows,
         "fieldsToInclude": ["title", "clickableuri", "imfdate", "imfcontenttype", "permanentid", "urihash"],
     }
-    resp = session.post(
+    resp = http_post(
+        session,
         cfg["coveo_url"],
+        timeout,
         headers={
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json",
             "Origin": "https://www.imf.org",
             "Referer": "https://www.imf.org/",
         },
-        json=body, timeout=timeout,
+        json_payload=body,
     )
     resp.raise_for_status()
     data = resp.json()
@@ -1059,9 +1168,13 @@ def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, tim
         try:
             if impersonate and _HAS_CFFI:
                 # curl_cffi: read fully (bounded below), no chunked streaming API needed.
-                resp = cffi_requests.get(
-                    url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True,
-                    proxies={"http": proxy, "https": proxy} if proxy else None,
+                resp = http_get(
+                    session,
+                    url,
+                    timeout,
+                    impersonate=True,
+                    profile=profile,
+                    proxy=proxy,
                 )
                 if resp.status_code >= 400:
                     last_status = f"http_{resp.status_code}"
@@ -1071,7 +1184,7 @@ def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, tim
                     last_status = "too_large"
                     continue
             else:
-                with session.get(url, stream=True, timeout=timeout, allow_redirects=True) as resp:
+                with http_get(session, url, timeout, stream=True) as resp:
                     if resp.status_code >= 400:
                         last_status = f"http_{resp.status_code}"
                         continue

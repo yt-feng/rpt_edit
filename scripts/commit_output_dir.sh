@@ -4,14 +4,23 @@ set -u
 OUTPUT_DIR="${1:-}"
 COMMIT_MESSAGE="${2:-Commit generated outputs}"
 MAX_ATTEMPTS="${3:-8}"
+REQUIRE_PUSH_SUCCESS="${4:-false}"
+
+case "$REQUIRE_PUSH_SUCCESS" in
+  1|true|TRUE|True|yes|YES|Yes|y|Y|on|ON|On) REQUIRE_PUSH_SUCCESS="true" ;;
+  *) REQUIRE_PUSH_SUCCESS="false" ;;
+esac
 
 if [ -z "$OUTPUT_DIR" ]; then
-  echo "Usage: scripts/commit_output_dir.sh <output_dir> [commit_message] [max_attempts]"
+  echo "Usage: scripts/commit_output_dir.sh <output_dir> [commit_message] [max_attempts] [require_push_success]"
   exit 2
 fi
 
 if [ ! -d "$OUTPUT_DIR" ]; then
   echo "Output directory does not exist: $OUTPUT_DIR"
+  if [ "$REQUIRE_PUSH_SUCCESS" = "true" ]; then
+    exit 2
+  fi
   exit 0
 fi
 
@@ -52,4 +61,8 @@ done
 # Do not fail the whole shard if generation succeeded but a parallel commit lost the race.
 # The workflow still uploads the artifact, and a later run can re-commit if needed.
 echo "WARNING: Could not push $OUTPUT_DIR after $MAX_ATTEMPTS attempts. Artifact upload still contains outputs."
+if [ "$REQUIRE_PUSH_SUCCESS" = "true" ]; then
+  echo "ERROR: A downstream job requires $OUTPUT_DIR from origin/main; failing this handoff."
+  exit 1
+fi
 exit 0

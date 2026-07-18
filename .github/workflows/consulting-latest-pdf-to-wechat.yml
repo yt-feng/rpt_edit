@@ -156,8 +156,8 @@ jobs:
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
         run: |
           DATE="${{ steps.fetch.outputs.date_folder }}"
-          bash scripts/commit_output_dir.sh "xhs_notes/consulting/$DATE" "Generate consulting XHS/MinerU outputs $DATE" 8
-          bash scripts/commit_output_dir.sh "kc_translated_reports/consulting/$DATE" "Generate consulting KC translated PDFs $DATE" 8
+          bash scripts/commit_output_dir.sh "xhs_notes/consulting/$DATE" "Generate consulting XHS/MinerU outputs $DATE" 8 true
+          bash scripts/commit_output_dir.sh "kc_translated_reports/consulting/$DATE" "Generate consulting KC translated PDFs $DATE" 8 true
 
       - name: Upload run artifacts
         uses: actions/upload-artifact@v4
