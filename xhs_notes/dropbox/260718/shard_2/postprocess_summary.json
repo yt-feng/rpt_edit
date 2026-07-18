@@ -1,0 +1,574 @@
+[
+  {
+    "item": "0001-11-Bernstein-Intuitive-Surgical-Inc-ISRG.US-Intuitive-Surgical-2Q26--Revivi",
+    "source_pdf": "/tmp/pdf_batch_001_45pbi0aw/pdfs/0001-11-Bernstein-Intuitive Surgical Inc-ISRG.US-Intuitive Surgical 2Q26- Reviving debates on U.S. growth trend-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "手术机器人巨头，财报",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：直觉外科2Q26美国增长趋势辩论重燃",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-11-Bernstein-Intuitive Surgical Inc-ISRG.US-Intuitive Surgical 2Q26- Reviving debates on U.S. growth trend-260717.pdf",
+      "cleaned_source_title": "Bernstein-Intuitive Surgical Inc-ISRG.US-Intuitive Surgical 2Q26- Reviving debates on U.S. growth trend",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：IntuitiveSurgicalIncIn",
+      "raw_candidates": [
+        "直觉外科2Q26美国增长趋势辩论重燃",
+        "直觉外科2Q26美国手术量增速降至12%低于预期",
+        "直觉外科2Q26美国增长减速考验市场定价能力"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：直觉外科2Q26美国增长趋势辩论重燃",
+        "Bernstein：直觉外科2Q26美国手术量增速降至12%低于预期",
+        "Bernstein：直觉外科2Q26美国增长减速考验市场定价能力",
+        "Bernstein：IntuitiveSurgicalIncIn",
+        "Bernstein：直觉外科第二季度营收达到28.9亿美元，同比增长19%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：直觉外科2Q26美国手术量增速降至12%低于预期",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "Bernstein：直觉外科2Q26美国增长减速考验市场定价能力",
+          "reasons": [
+            "anchor_coverage=0.65"
+          ]
+        },
+        {
+          "title": "Bernstein：IntuitiveSurgicalIncIn",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：直觉外科第二季度营收达到28.9亿美元，同比增长19%",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：直觉外科2Q26美国增长趋势辩论重燃",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：直觉外科2Q26美国增长趋势辩论重燃"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-12-Bernstein-Netflix-Inc-NFLX.US-Netflix--NFLX--2Q26--Same-ish-guide--more-",
+    "source_pdf": "/tmp/pdf_batch_001_45pbi0aw/pdfs/0002-12-Bernstein-Netflix Inc-NFLX.US-Netflix -NFLX- 2Q26- Same-ish guide- more doubts-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "Netflix财报后",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：Netflix2Q26指引持平引发更多疑虑",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-12-Bernstein-Netflix Inc-NFLX.US-Netflix -NFLX- 2Q26- Same-ish guide- more doubts-260717.pdf",
+      "cleaned_source_title": "Bernstein-Netflix Inc-NFLX.US-Netflix -NFLX- 2Q26- Same-ish guide- more doubts",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：NetflixIncNetflixNFLX2Q26",
+      "raw_candidates": [
+        "Bernstein：Netflix 2Q26指引持平引发更多疑虑",
+        "Bernstein：Netflix估值消化最坏预期但缺催化剂",
+        "Bernstein：Netflix指引未下调但隐含增速收窄"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：Netflix2Q26指引持平引发更多疑虑",
+        "Bernstein：Netflix估值消化最坏预期但缺催化剂",
+        "Bernstein：Netflix指引未下调但隐含增速收窄",
+        "Bernstein：NetflixIncNetflixNFLX2Q26",
+        "Bernstein：Netflix在2Q26财报后盘后下跌约9%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：Netflix估值消化最坏预期但缺催化剂",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "Bernstein：Netflix指引未下调但隐含增速收窄",
+          "reasons": [
+            "anchor_coverage=0.35"
+          ]
+        },
+        {
+          "title": "Bernstein：NetflixIncNetflixNFLX2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "Bernstein：Netflix在2Q26财报后盘后下跌约9%",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：Netflix2Q26指引持平引发更多疑虑",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：Netflix2Q26指引持平引发更多疑虑"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-13-Bernstein-SAP-SE-SAP.GR-From-migration-deadlines-to-migration-economics-",
+    "source_pdf": "/tmp/pdf_batch_001_45pbi0aw/pdfs/0003-13-Bernstein-SAP SE-SAP.GR-From migration deadlines to migration economics-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "SAP的护城河，正在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：SAP从迁移截止到迁移宏观研究",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-13-Bernstein-SAP SE-SAP.GR-From migration deadlines to migration economics-260717.pdf",
+      "cleaned_source_title": "Bernstein-SAP SE-SAP.GR-From migration deadlines to migration economics",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：SAPSEFrommigrationdead",
+      "raw_candidates": [
+        "SAP从迁移截止到迁移经济学",
+        "SAP迁移经济学：客户议价权成新变量",
+        "SAP真正不确定性：客户议价权而非第三方支持"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：SAP从迁移截止到迁移宏观研究",
+        "Bernstein：SAP迁移宏观研究，客户议价权成新变量",
+        "Bernstein：SAP真正不确定性，客户议价权而非第三方支持",
+        "Bernstein：SAPSEFrommigrationdead",
+        "Bernstein：2.维护毛利率超过90%，即使小幅流失也会放大利润影响"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：SAP迁移宏观研究，客户议价权成新变量",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "Bernstein：SAP真正不确定性，客户议价权而非第三方支持",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：SAPSEFrommigrationdead",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：2.维护毛利率超过90%，即使小幅流失也会放大利润影响",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：SAP从迁移截止到迁移宏观研究",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：SAP从迁移截止到迁移宏观研究"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-14-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Data-Center-Cooling",
+    "source_pdf": "/tmp/pdf_batch_001_45pbi0aw/pdfs/0004-14-Bernstein-U.S. Multi Industry - Electrical Equipment Data Center Cooling and Power- What-s the -M per MW for different types of equipment-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "数据中心冷却与供电，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-14-Bernstein-U.S. Multi Industry - Electrical Equipment Data Center Cooling and Power- What-s the -M per MW for different types of equipment-260717.pdf",
+      "cleaned_source_title": "Bernstein-U.S. Multi Industry - Electrical Equipment Data Center Cooling and Power- What-s the -M per MW for different types of equipment",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：.MultiIndustryElectric",
+      "raw_candidates": [
+        "美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+        "美国多行业-数据中心冷却与供电-每兆瓦价值110万至180万美元",
+        "美国多行业-数据中心冷却与供电-液冷重新分配组件价值"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+        "Bernstein：美国多行业-数据中心冷却与供电",
+        "Bernstein：美国多行业-数据中心冷却与供电-液冷重新分配组件价值",
+        "Bernstein：.MultiIndustryElectric",
+        "Bernstein：在冷却侧，风冷数据中心每兆瓦设备价值约为110万至150万美"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：美国多行业-数据中心冷却与供电",
+          "reasons": [
+            "anchor_coverage=0.48",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：美国多行业-数据中心冷却与供电-液冷重新分配组件价值",
+          "reasons": [
+            "anchor_coverage=0.52",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：.MultiIndustryElectric",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：在冷却侧，风冷数据中心每兆瓦设备价值约为110万至150万美",
+          "reasons": [
+            "anchor_coverage=0.32",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：美国多行业-电气设备数据中心冷却与供电-不同设备每兆瓦价值"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-15-Bernstein-Publicis-Groupe-SA-PUB.FP-Publicis--The-flywheel-is-alive-and-",
+    "source_pdf": "/tmp/pdf_batch_001_45pbi0aw/pdfs/0005-15-Bernstein-Publicis Groupe SA-PUB.FP-Publicis- The flywheel is alive and kicking - Why has the share price outperformed other -AI losers---260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "Publicis的飞",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "风险->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-15-Bernstein-Publicis Groupe SA-PUB.FP-Publicis- The flywheel is alive and kicking - Why has the share price outperformed other -AI losers---260717.pdf",
+      "cleaned_source_title": "Bernstein-Publicis Groupe SA-PUB.FP-Publicis- The flywheel is alive and kicking - Why has the share price outperformed other -AI losers",
+      "institution_name": "Bernstein",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "Bernstein：AIPublicisGroupeSAPublicis",
+      "raw_candidates": [
+        "阳狮飞轮仍在转动-为何跑赢AI输家",
+        "阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+        "阳狮飞轮仍在转动-150基点收入递延至2027"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：阳狮飞轮仍在转动-为何跑赢AI输家",
+        "Bernstein：阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+        "Bernstein：阳狮飞轮仍在转动-150基点收入递延至2027",
+        "Bernstein：AIPublicisGroupeSAPublicis",
+        "Bernstein：但其他运营支出（包括AI相关投入）从8.16亿欧元增加至8."
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：阳狮飞轮仍在转动-150基点收入递延至2027",
+          "reasons": [
+            "missing_required_terms=AI",
+            "bare_trailing_number",
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AIPublicisGroupeSAPublicis",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：但其他运营支出（包括AI相关投入）从8.16亿欧元增加至8.",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：阳狮飞轮仍在转动-4.7%增长跑赢AI输家",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "4.7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：阳狮飞轮仍在转动-4.7%增长跑赢AI输家"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,195 @@
+You are a senior financial newsletter editor with a consulting-style strategy lens. You turn research-report material into a long-form English article that is structured, insightful, and suitable for a serious business audience.
+
+Objective:
+- Write an English Markdown article based on the report parsing below.
+- Target length: around 2200 words, plus or minus 15%.
+- Tone: serious, analytical, strategic, and readable.
+- The article should not feel like a summary. It should make an argument.
+- You may extend the report's logic into reasonable second-order implications, but do not invent data, company actions, or quotes.
+- Do not disclose every detail. Keep the article concise and end after the last substantive point.
+
+McKinsey-style writing principles:
+1. Answer first: open with the controlling idea, not background.
+2. Governing thought: every section must support the main answer.
+3. Mutually exclusive, collectively exhaustive logic: avoid overlapping sections.
+4. So what: every section must explain why the point matters.
+5. Synthesis over summary: do not list facts; interpret what the pattern means.
+6. Action titles: section headings must be complete, insight-bearing sentences. Do not use generic headings such as "Key Takeaways", "Market Background", "Core View", or "Reader Implications".
+7. Source specificity: ground every interpretation in a concrete number, named mechanism, comparison, or causal relationship from the report.
+
+Required Markdown structure:
+- `# Title`: make it a direct argument, not a topic label.
+- Opening: 4-6 short paragraphs that state the main thesis and why now matters.
+- 4-6 `##` sections. Each `##` heading must be an action title: a sentence that tells the reader the insight.
+- One section should translate the report into a decision framework for readers.
+- Never create a section about unresolved questions, what the report failed to answer, research gaps, limitations, further reading, or community access. If the source explicitly states a limitation, mention it once inside the relevant analytical paragraph.
+- End with the final substantive paragraph. Do not add a CTA, promotional invitation, website, community reference, summary, or rhetorical question.
+- End with: `*For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.*`
+
+Content boundaries:
+- Do not mention specific investment bank names such as GS. Use "a global investment bank report" if needed.
+- Do not use emoji.
+- Do not write like a viral post.
+- Open with the most specific fact, contrast, or tension in the source. Avoid generic openings such as "Against this backdrop", "In recent years", or "As the market evolves".
+- Vary sentence and paragraph length naturally. Do not repeat stock transitions such as "This means", "In other words", or "What matters most".
+- Do not invent a personal voice, interview, or first-hand experience. Editorial character must come from evidence selection and precise phrasing.
+- Do not output your reasoning process.
+- Do not generate image Markdown; the system will insert original MinerU images afterward.
+
+Report parsing:
+"""
+# U.S. Multi Industry & Electrical Equipment
+
+# Data Center Cooling and Power: What's the \$M per MW for different types of equipment
+
+![](images/1d02914a130bb48fc7b2d17bec0c8e50b8e45c6875cdb2304fbb1cdb820e265a.jpg)
+
+![](images/4ba68f2e6f74d63ab6a64d01b4cced38ac4e20b6a5cc87f3a35ec54726c7bcce.jpg)
+
+![](images/f6a0d8dd624ad4c6a08473e46ad6ec0077ba1fc9c193bba2afcd770f3d424d4e.jpg)
+
+![](images/d23d6ef6d73c938d8a76512c649fa5c2b4144e3edb872d743e0a6a5e8e9be463.jpg)
+
+![](images/12f550a7ef4c6842c28ad50a2d5b813dad1bf5bef068727fb515fcbe5c5beefc.jpg)
+
+Varun Govindaraj
++1 917 344 8543
+varun.govindaraj@bernsteinsg.com
+
+Chad Dillard
++1 917 344 8469
+chad.dillard@bernsteinsg.com
+
+Alasdair Leslie
++44 20 7762 4952
+alasdair.leslie@bernsteinsg.com
+
+Miguel Marques, CFA
++1 917 344 8432
+miguel.marques@bernsteinsg.com
+
+Om Kela
++44 20 7550 2192
+om.kela@bernsteinsg.com
+
+## Specialist Sales
+
+![](images/45f71ccbebb1b099af4b2c0512dbfde34562c1aba4e47a63d8ea43e7167aa85a.jpg)
+
+Steve Song
++1 917 344 8401
+steve.song@bernsteinsg.com
+
+As AI infrastructure scales, investors increasingly need to understand which suppliers are positioned to capture the spend associated with next-generation data centers (on a \$M/MW basis). In this note, we share our estimates of cooling and power content for key pieces of equipment. To validate our numbers, we combined primary and secondary research, including discussions with experts, reviews of company websites and product catalogs, and detailed component-level mapping across cooling and power systems.
+
+Data Center Cooling Equipment: The rapid increase in AI rack densities is forcing a transition away from traditional air-cooled architectures towards direct liquid cooling. In an air-cooled data center, heat generated by servers is removed through a combination of rear-door heat exchangers (RDHx), computer room air handlers (CRAHs), chillers and heat-rejection equipment (dry coolers or cooling towers). In a liquid-cooled architecture, heat is removed much closer to the chip through cold plates, manifolds and coolant distribution units (CDUs), substantially improving cooling efficiency for high-density AI workloads. While chillers remain the central engine of the cooling plant in both architectures, the equipment mix changes meaningfully as liquid cooling adoption increases. Value shifts away from CRAHs and RDHx (used only for residual heat in liquid-cooled systems) towards CDUs, cold plates and liquid distribution infrastructure.
+
+We estimate total cooling content increases from approximately \$1.1-1.5M/MW in air-cooled deployments to \$1.3-1.8M/MW in liquid-cooled deployments.
+
+Data Center Power Distribution Equipment. The conventional data center power architecture relies on an AC-based electrical chain consisting of switchgears, transformers, ATS, UPS systems and PDUs. However, as AI clusters become larger and more power intensive, operators are increasingly evaluating higher-voltage DC architectures that reduce conversion losses and improve electrical efficiency. The industry's likely path forward involves a gradual transition from traditional AC to hybrid 800VDC architectures before potentially moving toward fully native 800VDC systems over the longer term. The transition reshapes the equipment stack rather than eliminating infrastructure requirements altogether. Hybrid 800VDC architectures introduce new categories such as rectifiers, busways and BESS while eliminating traditional UPS and AC distribution systems. Native 800VDC architectures represent a far more fundamental redesign that could ultimately incorporate solid-state transformers and a largely DC-based distribution network.
+
+Despite the changing equipment mix, we estimate total power content remains substantial across architectures at approximately \$1.8-2.5M/MW for traditional AC, \$1.7-2.5M/MW (excluding rectifier) for hybrid 800VDC and \$1.4-2.1M/MW (excluding solid-state transformer) for native 800VDC architectures. We have seen material dispersion around estimates for the rectifier / SST and do not yet feel comfortable taking a point of view on them given the technology continues to evolve.
+
+## BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td colspan="3">16 Jul 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Adjusted EPS</td><td colspan="3">Adjusted P/E (x)</td></tr><tr><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>VRT (Vertiv)</td><td>O</td><td>USD</td><td>294.11</td><td>416.00</td><td>114.3%</td><td>USD</td><td>4.20</td><td>6.52</td><td>9.21</td><td>70.1</td><td>45.1</td><td>31.9</td></tr><tr><td>NVT (nVent)</td><td>O</td><td>USD</td><td>153.65</td><td>220.00</td><td>86.0%</td><td>USD</td><td>3.34</td><td>4.84</td><td>6.26</td><td>45.9</td><td>31.8</td><td>24.5</td></tr><tr><td>TT (Trane)</td><td>O</td><td>USD</td><td>475.00</td><td>555.00</td><td>(11.6)%</td><td>USD</td><td>13.06</td><td>14.98</td><td>17.82</td><td>36.4</td><td>31.7</td><td>26.7</td></tr><tr><td>JCI (Johnson Controls)</td><td>O</td><td>USD</td><td>141.26</td><td>173.00</td><td>11.4%</td><td>USD</td><td>3.78</td><td>4.97</td><td>5.93</td><td>37.4</td><td>28.4</td><td>23.8</td></tr><tr><td>CARR (Carrier)</td><td>M</td><td>USD</td><td>69.34</td><td>75.00</td><td>(28.4)%</td><td>USD</td><td>2.57</td><td>2.79</td><td>3.20</td><td>26.9</td><td>24.9</td><td>21.7</td></tr><tr><td>SU.FP (Schneider)</td><td>O</td><td>EUR</td><td>264.35</td><td>310.00</td><td>0.8%</td><td>EUR</td><td>8.43</td><td>10.22</td><td>11.95</td><td>31.4</td><td>25.9</td><td>22.1</td></tr><tr><td>SIE.GR (Siemens)</td><td>O</td><td>EUR</td><td>269.30</td><td>300.00</td><td>5.0%</td><td>EUR</td><td>12.23</td><td>10.73</td><td>10.83</td><td>26.6</td><td>23.9</td><td>23.5</td></tr><tr><td>LR.FP (Legrand)</td><td>O</td><td>EUR</td><td>137.70</td><td>170.00</td><td>5.4%</td><td>EUR</td><td>5.22</td><td>6.01</td><td>6.80</td><td>26.4</td><td>22.9</td><td>20.3</td></tr><tr><td>ABBN.SW (ABB)</td><td>M</td><td>CHF</td><td>78.26</td><td>70.00</td><td>47.1%</td><td>USD</td><td>2.56</td><td>2.93</td><td>3.23</td><td>37.9</td><td>33.0</td><td>30.0</td></tr><tr><td>ETN (Eaton)</td><td>O</td><td>USD</td><td>396.27</td><td>534.00</td><td>(11.1)%</td><td>USD</td><td>12.07</td><td>13.45</td><td>16.37</td><td>32.8</td><td>29.5</td><td>24.2</td></tr><tr><td>SPX</td><td></td><td></td><td>7,533.77</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EDME</td><td></td><td></td><td>1,598.24</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended
+
+SIE.GR estimate is Reported EPS Organic Sales Growth (%) EBITA (M);
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## INVESTMENT IMPLICATIONS
+
+US Multi-Industrials: We rate VRT (PT \$416), NVT (PT \$220), TT (PT \$555) and JCI (PT \$173) Outperform. We are rate CARR (PT \$75) Market-Perform.
+
+European Capital Goods: We rate Schneider (PT €310), Siemens (€300), and Legrand (€170) Outperform, and rate ABB (CHF70) Market-Perform.
+
+US Machinery & Electrical Equipment: We rate Eaton (PT \$534) Outperform.
+
+EXHIBIT 1: Total cooling content opportunity by architecture (\$M/MW)
+
+<table><tr><td colspan="2">Component</td><td>Air cooled</td><td>Liquid cooled</td></tr><tr><td rowspan="7">Cooling</td><td> $Chillers^1$ </td><td>~0.45 – 0.55</td><td>~0.45 – 0.55</td></tr><tr><td> $CRAH^2$ </td><td>~0.20 – 0.30</td><td>~0.04 – 0.05</td></tr><tr><td> $RDHx^2$ </td><td>~0.15 – 0.25</td><td>~0.04 – 0.05</td></tr><tr><td> $CDU^3$ </td><td>NA</td><td>~0.30 – 0.40</td></tr><tr><td>Cold plates</td><td>NA</td><td>~0.20 – 0.25</td></tr><tr><td>Manifolds</td><td>NA</td><td>~0.05 – 0.10</td></tr><tr><td>DCIM software</td><td>~0.05 – 0.10</td><td>~0.05 – 0.10</td></tr><tr><td colspan="2">Ancillaries (incl. refrigerant)</td><td>~0.10</td><td>~0.10</td></tr><tr><td colspan="2">Redundancy allowance $^4$ </td><td>~0.14 – 0.20</td><td>~0.12 – 0.16</td></tr><tr><td colspan="2">Total Opportunity ($M / MW)</td><td>~1.1 – 1.5</td><td>~1.3 – 1.8</td></tr></table>
+
+1. Fully loaded cost including chiller, installation labor, pipes, pumping, heat rejection equipment (dry coolers and cooling towers) 2. For air-cooled: assuming required at 50% of gross unit value as residual heat consumption is split 50/50 among CRAH and RDHx; For liquid-cooled: assuming ancillary heat capture split 50/50 among CRAH and RDHx 3. All-in costs for pure-play liquid-to-liquid CDUs including filtration, integration, labor and installation 4. For air-cooled – 15%; For liquid-cooled – 10%
+
+EXHIBIT 2: Total power content opportunity by architecture (\$M/MW)
+
+<table><tr><td colspan="2">Component</td><td>Traditional AC</td><td>Hybrid 800VDC</td><td>Native 800VDC</td></tr><tr><td rowspan="13">Power</td><td>MV switchgear</td><td>~0.15 – 0.20</td><td>~0.15 – 0.20</td><td>~0.15 – 0.20</td></tr><tr><td>Step-down transformer</td><td>~0.15 – 0.20</td><td>~0.15 – 0.20</td><td>NA</td></tr><tr><td>LV AC / DC switchgear</td><td>~0.15 – 0.20</td><td>~0.15 – 0.20</td><td>NA</td></tr><tr><td>ATS</td><td>~0.10 – 0.15</td><td>~0.10 – 0.15</td><td>~0.10 – 0.15</td></tr><tr><td>UPS</td><td>~0.40 – 0.50</td><td>NA</td><td>NA</td></tr><tr><td>PDU (AC) / Busway (DC)</td><td>~0.20 – 0.30</td><td>~0.20 – 0.30</td><td>~0.20 – 0.30</td></tr><tr><td>Bulk rectifier</td><td>NA</td><td>Unclear</td><td>NA</td></tr><tr><td>BBU $^{1}$ </td><td>NA</td><td>~0.10 – 0.15</td><td>NA</td></tr><tr><td>BESS $^{1}$ </td><td>NA</td><td>~0.10 – 0.15</td><td>~0.20 – 0.30</td></tr><tr><td>VRM</td><td>NA</td><td>~0.10 – 0.20</td><td>~0.10 – 0.20</td></tr><tr><td>Solid-state transformer</td><td>NA</td><td>NA</td><td>Unclear</td></tr><tr><td>Diesel generator</td><td>~0.60 – 0.80</td><td>~0.60 – 0.80</td><td>~0.60 – 0.80</td></tr><tr><td>DCIM software</td><td>~0.05 – 0.10</td><td>~0.05 – 0.10</td><td>~0.05 – 0.10</td></tr><tr><td colspan="2">Total Opportunity ($M / MW)</td><td>~1.8 – 2.5</td><td>~1.7 – 2.5</td><td>~1.4 – 2.1</td></tr></table>
+
+1. BESS assumed at $50\%$ capacity in hybrid 800VDC given the BBU; BBU is not required in native 800VDC and is replaced by a larger BESS given that AC to DC conversion happens way upstream
+
+## COOLING EQUIPMENT IN DATA CENTERS
+
+There are two primary architectures for data center cooling, we explain them (and the components used in them) below in greater detail.
+
+Air-Cooled Architecture: Heat is expelled from the servers as hot exhaust air and is partially captured by Rear-door Heat Exchangers (RDHx) mounted on the back of the server racks. The resulting warm/hot air enters the hot aisle, where it is cooled by conditioned air supplied from Computer Room Air Handlers (CRAHs) located within the data hall. Heat absorbed by the CRAHs is transferred into the facility chilled-water loop and routed to the chiller plant, which serves as the central cooling engine of the facility. The chiller then transfers the heat to the external heat-rejection equipment (dry coolers or cooling towers), where it is ultimately discharged into the ambient environment.
+
+Liquid-Cooled Architecture: Heat is removed directly from GPUs (and CPUs) through cold plates mounted on processors. Coolant is distributed through Coolant Distribution Units (CDU) and rack-level manifolds that interface between the facility water system and chip-level coolant loops. The majority of thermal energy is removed through the liquid path, substantially increasing cooling efficiency at high compute densities. Nevertheless, residual heat remains within the room and is typically cooled through a combination of CRAHs and rear-door heat exchangers. The facility ultimately rejects heat through chillers, dry coolers and cooling towers (similar to a traditional air-cooled data center).
+
+## Components used in the data center cooling ecosystem
+
+1. Chiller: The chiller serves as the central cooling engine of the facility and generates chilled water used throughout the cooling system. It removes heat from warm return water and transfers that heat to a heat rejection system (typically a dry cooler or cooling tower) before the cooling cycle repeats.
+
+2. Computer Room Air Handler (CRAH): CRAH units distribute cool air to server rows and provide residual heat management in both air-cooled and liquid-cooled environments. The blown air takes away the hot heat from the servers (in air-cooled systems) and residual heat (in liquid-cooled environments).
+
+3. Dry Cooler: Dry coolers are outdoor heat rejection systems that use fans to discharge heat into the ambient environment. They provide a water-efficient means of removing heat from the facility. Can be used along with chillers or independently.
+
+4. Cooling Tower: Cooling towers transfer heat from facility water into the atmosphere through evaporation. They are commonly utilized in larger-scale chilled-water installations requiring significant heat rejection capacity.
+
+5. Cold Plate: Mounted directly on GPUs (and CPUs), cold plates extract heat through direct contact with the processor package. The heat is transferred immediately into a circulating coolant stream (inside cold plate microchannels), which is then routed back into the liquid cooling loop.
+
+6. Manifolds: Manifolds distribute coolant from the CDU to individual cold plates within a rack and collect heated coolant upon return. They act as the rack-level plumbing backbone of direct liquid cooling systems.
+
+7. Coolant Distribution Unit (CDU): The CDU serves as the interface between facility water and the secondary liquid cooling loop serving the processors. CDU controls coolant pressure, flow rates, temperature and system protection across the liquid cooling loop.
+
+8. Rear Door Heat Exchanger (RDHx): RDHx systems are installed at the rear of racks and utilize liquid-to-air coils to absorb heat from server exhaust. They provide supplemental cooling and residual heat removal in particularly high-density environments.
+
+9. Data Center Infrastructure Management (DCIM) Software: DCIM software monitors and optimizes the performance of cooling assets throughout the facility. The platform provides operational visibility, alarms, analytics, capacity and performance management for the entire ecosystem.
+
+Basis our analysis, we estimate the total cooling equipment content opportunity at \$1.1-1.5M/MW for air-cooled data centers, and \$1.3 - 1.8M/MW for liquid-cooled data centers.
+
+EXHIBIT 3: Different cooling architectures for data centers  
+![](images/f5f8bd6df541ecffb1da5f75255b951d70bab3fa9bbccd31f9908fb37fb8dbe8.jpg)  
+Heat dumped externally outside facility
+
+![](images/9f50725ad43a5642e9332d1258df191fc0dbab5b89fff3b53ba9bf15e7ede0fb.jpg)  
+Heat dumped externally outside facility  
+Source: Bernstein Analysis
+
+EXHIBIT 4: Components needed for cooling in data centers (1/2)
+
+<table><tr><td rowspan="2">Component</td><td rowspan="2" colspan="2">Description</td><td rowspan="2">Value ($M/MW)</td><td colspan="2">Requirement in architecture</td></tr><tr><td>Air-cooled</td><td>Liquid-cooled</td></tr><tr><td>Chiller1</td><td><img src="images/9565d9f4b297b860b2a0c6cea09e85814bb98ea264fae889de662bfd59939408.jpg"/></td><td>“Central engine” of the cooling plant, responsible for cooling water to inject into TCS and rejecting heat from warm liquid to the FWS</td><td>~0.45 – 0.55</td><td>✓</td><td>✓</td></tr><tr><td>Dry cooler</td><td><img src="images/98c8166ea3c4e113dde53bcfd3f6293e1b97356448bf258076735336deb8a3ff.jpg"/></td><td>“Heat fans” to blow hot air outside of the facility</td><td>~0.10 – 0.20</td><td>✓</td><td>✓</td></tr><tr><td>Cooling tower</td><td><img src="images/b19d27d7d8c652ceb8f95c4a640c6fcf59df2426b080c217755727272ac69938.jpg"/></td><td>“Heat rejection equipment” sitting outside the facility to transfer heat from facility water system to environment</td><td>~0.10 – 0.20</td><td>✓</td><td>✓</td></tr><tr><td>Computer room air handler (CRAH)2</td><td><img src="images/5ad71b4c79f1d8f2aee046132ed875593a85561ab1d056d50529fbdf8ec64e82.jpg"/></td><td>Data-hall-level air handler that cools residual hot air over chilled-water coils</td><td>~0.40 – 0.60</td><td>✓</td><td>✓</td></tr></table>
+
+1. Fully loaded cost including chiller, installation labor, pipes, pumping, heat rejection equipment (dry coolers and cooling towers) 2. While gross unit price is shown, we have taken residual heat assumptions while calculating overall content cost for both air-cooled and liquid-cooled
+
+Source: Bernstein Analysis, Expert Interviews
+
+## EXHIBIT 5: Components needed for cooling in data centers (2/2)
+
+<table><tr><td rowspan="2">Component</td><td rowspan="2" colspan="2">Description</td><td rowspan="2">Value ($M/MW)</td><td colspan="2">Requirement in architecture</td></tr><tr><td>Air-cooled</td><td>Liquid-cooled</td></tr><tr><td>Rear door heat exchanger (RDHx)1</td><td><img src="images/c5e57f64430eac536df020074f38d07b8ae2483234b030307f14ffd1f0681b5d.jpg"/></td><td>Server rack-level liquid-to-air coil that rejects heat exhaust from the back of the rack</td><td>~0.30 – 0.50</td><td>√</td><td>√</td></tr><tr><td>Coolant distribution unit (CDU)2</td><td><img src="images/a5f03672c63b83ffea30627c8c0d7403368f2c5137d9b1f7974f5c96631d3dff.jpg"/></td><td>&quot;Gateway&quot; between facility water and chip-level liquid cooling loop; controls coolant flow, pressure and temperature to liquid-cooled racks</td><td>~0.30 – 0.40</td><td>×</td><td>√</td></tr><tr><td>Cold plates</td><td><img src="images/e9fd42f0e1bcedfd61f4086e1234f24208b5db01caa0c8a66adf8874e3434aba.jpg"/></td><td>&quot;Metal plates&quot; mounted on GPUs / CPUs, responsible for pulling heat directly from chip into the liquid loop</td><td>~0.20 – 0.25</td><td>×</td><td>√</td></tr><tr><td>Manifolds</td><td><img src="images/94578ceddb4772ea409f8fd43c4afce35f80490ed4582565903aa9b5501257ee.jpg"/></td><td>Rack plumbing that distributes coolant from CDU to each cold plate and returns the warm liquid</td><td>~0.05 – 0.10</td><td>×</td><td>√</td></tr><tr><td>Data center infrastructure management (DCIM) software</td><td><img src="images/e0935fbf9463617d01af2af88985d58f5fe695be3ff463278f535286a97039bd.jpg"/></td><td>Monitoring and control software that tracks the entire ecosystem</td><td>~0.05 – 0.10</td><td>√</td><td>√</td></tr></table>
+
+1. While gross unit price is shown, we have taken residual heat assumptions while calculating overall content cost for both air-cooled and liquid-cooled 2. All-in costs for pure-play liquid-to-liquid CDUs including filtration, integration, labor and installation  
+Source: Bernstein Analysis, Expert I
+
+[中间内容因长度限制已省略]
+
+ence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
+"""
