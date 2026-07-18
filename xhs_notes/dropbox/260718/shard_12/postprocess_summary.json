@@ -1,0 +1,504 @@
+[
+  {
+    "item": "0001-61-Morgan-Stanley-Hygon-Information-Technology-Co.--Ltd.-688041-2Q26-prelim",
+    "source_pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0001-61-MS-Hygon Information Technology Co.- Ltd.-688041-2Q26 preliminary earnings beat- OW-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "国产CPU与AI芯片",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：海光信息二季度净利润11亿元超预期8%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-61-MS-Hygon Information Technology Co.- Ltd.-688041-2Q26 preliminary earnings beat- OW-260716.pdf",
+      "cleaned_source_title": "MS-Hygon Information Technology Co.- Ltd.-688041-2Q26 preliminary earnings beat- OW",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：HygonInformation科技Co.Ltd.6880",
+      "raw_candidates": [
+        "海光信息二季度盈利超预期",
+        "海光信息二季度净利润11亿元超预期8%",
+        "海光信息二季度盈利超预期-AI算力国产化受益者"
+      ],
+      "cleaned_candidates": [
+        "MS：海光信息二季度盈利超预期",
+        "MS：海光信息二季度净利润11亿元超预期8%",
+        "MS：海光信息二季度盈利超预期-AI算力国产化受益者",
+        "MS：HygonInformation科技Co.Ltd.6880",
+        "MS：二季度净利润11亿元，环比增长57%，同比增长55%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：HygonInformation科技Co.Ltd.6880",
+          "reasons": [
+            "listing_suffix",
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "MS：二季度净利润11亿元，环比增长57%，同比增长55%",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：海光信息二季度净利润11亿元超预期8%",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "11",
+          "8"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：海光信息二季度净利润11亿元超预期8%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-62-Morgan-Stanley-Li-Auto-Inc.-2015.HK--New-L6---Same-badge--next-level-exp",
+    "source_pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0002-62-MS-Li Auto Inc.-2015.HK--New L6 - Same badge- next level experience-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "理想L6上新，这次升",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：理想L6换代-同徽章新体验",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-62-MS-Li Auto Inc.-2015.HK--New L6 - Same badge- next level experience-260716.pdf",
+      "cleaned_source_title": "MS-Li Auto Inc.-2015.HK--New L6 - Same badge- next level experience",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：LiAutoInc.",
+      "raw_candidates": [
+        "理想L6换代-同徽章新体验",
+        "理想L6换代-电池51kWh续航300公里",
+        "理想L6换代-单配置满配重新定义25万级SUV"
+      ],
+      "cleaned_candidates": [
+        "MS：理想L6换代-同徽章新体验",
+        "MS：理想L6换代-电池51kWh续航300公里",
+        "MS：理想L6换代-单配置满配重新定义25万级SUV",
+        "MS：LiAutoInc.",
+        "MS：理想汽车在7月推出了全新L6，起售价维持24.98万元不变"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：理想L6换代-电池51kWh续航300公里",
+          "reasons": [
+            "anchor_coverage=0.45",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：理想L6换代-单配置满配重新定义25万级SUV",
+          "reasons": [
+            "anchor_coverage=0.45",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：LiAutoInc.",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：理想汽车在7月推出了全新L6，起售价维持24.98万元不变",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：理想L6换代-同徽章新体验",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：理想L6换代-同徽章新体验"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-63-Morgan-Stanley-Japan-Summer-School--Semiconductor-Production-Equipment-2",
+    "source_pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0003-63-MS-Japan Summer School- Semiconductor Production Equipment-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "日本半导体设备：一张",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：日本暑期学校-半导体生产设备",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-63-MS-Japan Summer School- Semiconductor Production Equipment-260717.pdf",
+      "cleaned_source_title": "MS-Japan Summer School- Semiconductor Production Equipment",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：日本SummerSchool",
+      "raw_candidates": [
+        "日本暑期学校-半导体生产设备",
+        "日本半导体设备：工艺细节里的护城河",
+        "日本设备商：不起眼工艺节点的不可替代积累"
+      ],
+      "cleaned_candidates": [
+        "MS：日本暑期学校-半导体生产设备",
+        "MS：日本半导体设备，工艺细节里的护城河",
+        "MS：日本设备商，不起眼工艺节点的不可替代积累",
+        "MS：日本SummerSchool",
+        "MS：代工是最大应用领域，而台积电一家就占了其中的30%到50%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：日本半导体设备，工艺细节里的护城河",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：日本设备商，不起眼工艺节点的不可替代积累",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：日本SummerSchool",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：代工是最大应用领域，而台积电一家就占了其中的30%到50%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：日本暑期学校-半导体生产设备",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：日本暑期学校-半导体生产设备"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-64-Morgan-Stanley-Richemont-SA-CFR.S--10-Questions-for-Management-260716",
+    "source_pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0004-64-MS-Richemont SA-CFR.S--10 Questions for Management-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "历峰集团：珠宝奢侈品",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x3",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：历峰集团管理层10问-美国增长30%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-64-MS-Richemont SA-CFR.S--10 Questions for Management-260716.pdf",
+      "cleaned_source_title": "MS-Richemont SA-CFR.S--10 Questions for Management",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：RichemontSA",
+      "raw_candidates": [
+        "历峰集团管理层10问",
+        "历峰集团管理层10问-美国增长30%",
+        "历峰集团管理层10问-美国K型消费成增长支柱"
+      ],
+      "cleaned_candidates": [
+        "MS：历峰集团管理层10问",
+        "MS：历峰集团管理层10问-美国增长30%",
+        "MS：历峰集团管理层10问-美国K型消费成增长支柱",
+        "MS：RichemontSA",
+        "MS：MS估算，中国集群在1Q27实现了约9%的增长"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：RichemontSA",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MS估算，中国集群在1Q27实现了约9%的增长",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：历峰集团管理层10问-美国增长30%",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "30"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：历峰集团管理层10问-美国增长30%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-65-Morgan-Stanley-Luxury-Goods-Swiss-Watches--Secondary-Market-Keeps-Tickin",
+    "source_pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0005-65-MS-Luxury Goods Swiss Watches- Secondary Market Keeps Ticking Higher in 2Q26-260716.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "二手表市场回暖，但分",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：瑞士腕表二级市场在2026年第二季度持续走高",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-65-MS-Luxury Goods Swiss Watches- Secondary Market Keeps Ticking Higher in 2Q26-260716.pdf",
+      "cleaned_source_title": "MS-Luxury Goods Swiss Watches- Secondary Market Keeps Ticking Higher in 2Q26",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：LuxuryGoodsSwissWatches",
+      "raw_candidates": [
+        "瑞士腕表二级市场在2026年第二季度持续走高",
+        "瑞士腕表二级市场连续四季度上涨，4月涨幅创2022年来新高",
+        "瑞士腕表二级市场回暖但定价权仍集中在三巨头"
+      ],
+      "cleaned_candidates": [
+        "MS：瑞士腕表二级市场在2026年第二季度持续走高",
+        "MS：瑞士腕表二级市场连续四季度上涨，4月涨幅创2022年来新高",
+        "MS：瑞士腕表二级市场回暖但定价权仍集中在三巨头",
+        "MS：LuxuryGoodsSwissWatches",
+        "MS：上涨的品牌数量从一季度的25个扩大到27个"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：瑞士腕表二级市场连续四季度上涨，4月涨幅创2022年来新高",
+          "reasons": [
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "MS：瑞士腕表二级市场回暖但定价权仍集中在三巨头",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "MS：LuxuryGoodsSwissWatches",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：上涨的品牌数量从一季度的25个扩大到27个",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：瑞士腕表二级市场在2026年第二季度持续走高",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：瑞士腕表二级市场在2026年第二季度持续走高"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0001-61-MS-Hygon Information Technology Co.- Ltd.-688041-2Q26 preliminary earnings beat- OW-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0002-62-MS-Li Auto Inc.-2015.HK--New L6 - Same badge- next level experience-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0003-63-MS-Japan Summer School- Semiconductor Production Equipment-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0004-64-MS-Richemont SA-CFR.S--10 Questions for Management-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_k1q9osq_/pdfs/0005-65-MS-Luxury Goods Swiss Watches- Secondary Market Keeps Ticking Higher in 2Q26-260716.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
