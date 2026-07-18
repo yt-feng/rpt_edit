@@ -44,6 +44,7 @@ from wechat_article_quality import (
     audit_wechat_article_markdown,
     sanitize_wechat_article_markdown,
 )
+from deepseek_http import request_with_retry
 
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
@@ -602,7 +603,17 @@ def call_deepseek(
             {"role": "user", "content": prompt},
         ],
     }
-    response = requests.post(url, headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}, json=payload, timeout=180)
+    response = request_with_retry(
+        url,
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+        payload=payload,
+        label=label,
+        timeout=180,
+        max_attempts=getattr(args, "deepseek_max_attempts", 4),
+        retry_base_seconds=getattr(args, "deepseek_retry_base_seconds", 4),
+        retry_max_seconds=getattr(args, "deepseek_retry_max_seconds", 45),
+        logger=log,
+    )
     data = parse_json_response(response, f"DeepSeek generate {label}")
     try:
         return data["choices"][0]["message"]["content"].strip() + "\n"
@@ -972,6 +983,9 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
+    parser.add_argument("--deepseek-max-attempts", type=int, default=int(os.getenv("DEEPSEEK_MAX_ATTEMPTS", "4")))
+    parser.add_argument("--deepseek-retry-base-seconds", type=float, default=float(os.getenv("DEEPSEEK_RETRY_BASE_SECONDS", "4")))
+    parser.add_argument("--deepseek-retry-max-seconds", type=float, default=float(os.getenv("DEEPSEEK_RETRY_MAX_SECONDS", "45")))
     parser.add_argument("--mineru-model", default="vlm")
     parser.add_argument("--language", default="en")
     parser.add_argument("--ocr", default="true")
@@ -1075,7 +1089,22 @@ def main() -> int:
                 log(f"Skipping PDF after MinerU retry exhaustion: {pdf_path.name}")
                 summary.append(status)
                 continue
-            status = process_pdf(pdf_path, row, output_dir, args)
+            try:
+                status = process_pdf(pdf_path, row, output_dir, args)
+            except Exception as exc:
+                status = {
+                    "source_pdf": str(pdf_path),
+                    "mineru_state": row.get("state"),
+                    "mineru_error": row.get("err_msg") or row.get("error") or "",
+                    "error": f"Report generation failed: {exc}",
+                }
+                item_dir = output_dir / slug(pdf_path.name)
+                item_dir.mkdir(parents=True, exist_ok=True)
+                (item_dir / "status.json").write_text(
+                    json.dumps(status, ensure_ascii=False, indent=2),
+                    encoding="utf-8",
+                )
+                log(f"Report generation failed for {pdf_path.name}; continuing with the next PDF: {exc}")
             summary.append(status)
             if not status.get("error") and status.get("wechat_article") == "wechat_article.md":
                 successful_reports += 1

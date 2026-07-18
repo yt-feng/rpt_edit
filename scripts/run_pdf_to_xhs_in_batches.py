@@ -131,6 +131,9 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
         "--wechat-prompt-template", args.wechat_prompt_template,
         "--model", args.model,
         "--deepseek-base-url", args.deepseek_base_url,
+        "--deepseek-max-attempts", str(args.deepseek_max_attempts),
+        "--deepseek-retry-base-seconds", str(args.deepseek_retry_base_seconds),
+        "--deepseek-retry-max-seconds", str(args.deepseek_retry_max_seconds),
         "--mineru-model", args.mineru_model,
         "--language", args.language,
         "--ocr", args.ocr,
@@ -206,6 +209,9 @@ def main() -> int:
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
+    parser.add_argument("--deepseek-max-attempts", type=int, default=int(os.getenv("DEEPSEEK_MAX_ATTEMPTS", "4")))
+    parser.add_argument("--deepseek-retry-base-seconds", type=float, default=float(os.getenv("DEEPSEEK_RETRY_BASE_SECONDS", "4")))
+    parser.add_argument("--deepseek-retry-max-seconds", type=float, default=float(os.getenv("DEEPSEEK_RETRY_MAX_SECONDS", "45")))
     parser.add_argument("--mineru-model", default="vlm")
     parser.add_argument("--language", default="en")
     parser.add_argument("--ocr", default="true")
