@@ -2231,28 +2231,125 @@
     });
   }
 
-  function getRememberedDownloadPassword() {
+  function getRememberedDownloadPassword(reportId = "") {
+    reportId = String(reportId || "");
     try {
+      if (reportId) {
+        const scoped = localStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`) || "";
+        if (scoped) return scoped;
+      }
       return localStorage.getItem(DOWNLOAD_PASSWORD_KEY) || "";
     } catch (_error) {
       return "";
     }
   }
 
-  function setRememberedDownloadPassword(value) {
+  function setRememberedDownloadPassword(value, reportId = "") {
+    reportId = String(reportId || "");
+    const password = String(value || "");
     try {
-      localStorage.setItem(DOWNLOAD_PASSWORD_KEY, String(value || ""));
+      localStorage.setItem(DOWNLOAD_PASSWORD_KEY, password);
+      if (reportId) localStorage.setItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`, password);
     } catch (_error) {
       // Ignore private browsing/localStorage restrictions.
+    }
+    try {
+      if (reportId) sessionStorage.setItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`, password);
+    } catch (_error) {
+      // Ignore private browsing/sessionStorage restrictions.
     }
   }
 
-  function clearRememberedDownloadPassword() {
+  function clearRememberedDownloadPassword(reportId = "") {
+    reportId = String(reportId || "");
     try {
       localStorage.removeItem(DOWNLOAD_PASSWORD_KEY);
+      if (reportId) localStorage.removeItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`);
     } catch (_error) {
       // Ignore private browsing/localStorage restrictions.
     }
+    try {
+      if (reportId) sessionStorage.removeItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`);
+    } catch (_error) {
+      // Ignore private browsing/sessionStorage restrictions.
+    }
+  }
+
+  function deliveryPasswordFromLocation(params) {
+    const query = params || new URLSearchParams(window.location.search);
+    const fromQuery = query.get("password") || "";
+    if (fromQuery) return fromQuery;
+    const hash = String(window.location.hash || "").replace(/^#\??/, "");
+    return hash ? new URLSearchParams(hash).get("password") || "" : "";
+  }
+
+  function deliveryPasswordFromHistory(reportId) {
+    const state = window.history.state;
+    if (!state || typeof state !== "object") return "";
+    const savedId = String(state.kcdeskDeliveryReportId || "");
+    if (savedId && reportId && savedId !== String(reportId)) return "";
+    return String(state.kcdeskDeliveryPassword || "");
+  }
+
+  function getRecoverableDownloadPassword(reportId, explicitPassword) {
+    const direct = String(explicitPassword || deliveryPasswordFromLocation() || "");
+    if (direct) return direct;
+    const fromHistory = deliveryPasswordFromHistory(reportId);
+    if (fromHistory) return fromHistory;
+    try {
+      const fromSession = sessionStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`) || "";
+      if (fromSession) return fromSession;
+    } catch (_error) {
+      // Ignore private browsing/sessionStorage restrictions.
+    }
+    return getRememberedDownloadPassword(reportId);
+  }
+
+  function rememberDeliveryPassword(reportId, value) {
+    const password = String(value || "");
+    if (!password) return;
+    setRememberedDownloadPassword(password, reportId);
+    try {
+      const current = window.history.state && typeof window.history.state === "object"
+        ? window.history.state
+        : {};
+      window.history.replaceState({
+        ...current,
+        kcdeskDeliveryReportId: String(reportId || ""),
+        kcdeskDeliveryPassword: password,
+      }, "", window.location.href);
+    } catch (_error) {
+      // The URL remains the primary fallback when history state is unavailable.
+    }
+  }
+
+  function initResilientPasswordInput(input, reportId, explicitPassword, setStatus) {
+    if (!input) return "";
+    const linkedPassword = String(explicitPassword || "");
+    const initialPassword = getRecoverableDownloadPassword(reportId, linkedPassword);
+    if (initialPassword) {
+      input.value = initialPassword;
+      rememberDeliveryPassword(reportId, initialPassword);
+      setStatus(linkedPassword
+        ? "Password filled from delivery link."
+        : "Password restored on this device.");
+    }
+
+    const restoreIfEmpty = () => {
+      if (!input.isConnected || input.value) return;
+      const recovered = getRecoverableDownloadPassword(reportId, linkedPassword);
+      if (!recovered) return;
+      input.value = recovered;
+      setStatus("Password restored from delivery link.");
+    };
+
+    window.addEventListener("pageshow", restoreIfEmpty);
+    window.addEventListener("focus", restoreIfEmpty);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) restoreIfEmpty();
+    });
+    [0, 250, 1200, 2500].forEach((delay) => window.setTimeout(restoreIfEmpty, delay));
+    return initialPassword;
   }
 
   function initAdminGate(workerUrl) {
@@ -3840,7 +3937,7 @@
           <h3>PDF Download</h3>
           <p class="subtle">Enter the report password to download the PDF.</p>
           <div class="password-row">
-            <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Password" required>
+            <input id="passwordInput" name="report-access-code" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Password" required>
             <button class="primary" type="submit">Download</button>
           </div>
           <div id="downloadStatus" class="status-line" aria-live="polite"></div>
@@ -3888,20 +3985,9 @@
     const status = document.getElementById("downloadStatus");
     const button = form.querySelector("button");
     const deliveryPassword = String(options.password || "");
-    const rememberedPassword = deliveryPassword || getRememberedDownloadPassword();
-    if (rememberedPassword) {
-      input.value = rememberedPassword;
-      if (deliveryPassword) {
-        setRememberedDownloadPassword(deliveryPassword);
-        status.textContent = "Password filled from delivery link.";
-        const cleanUrl = new URL(window.location.href);
-        cleanUrl.searchParams.delete("password");
-        cleanUrl.searchParams.delete("deliver");
-        window.history.replaceState({}, "", cleanUrl.toString());
-      } else {
-        status.textContent = "Password remembered on this device.";
-      }
-    }
+    initResilientPasswordInput(input, item.id, deliveryPassword, (message) => {
+      status.textContent = message;
+    });
 
     async function submitDownload(event) {
       if (event) event.preventDefault();
@@ -3941,7 +4027,7 @@
           } catch (_err) {
             // Ignore non-JSON errors.
           }
-          if (response.status === 401) clearRememberedDownloadPassword();
+          if (response.status === 401) clearRememberedDownloadPassword(item.id);
           trackEvent(workerUrl, "download_error", {
             ...analyticsReportPayload(item, "catalog"),
             action,
@@ -3954,7 +4040,7 @@
 
         const blob = await response.blob();
         triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
-        if (!session && input.value) setRememberedDownloadPassword(input.value);
+        if (!session && input.value) rememberDeliveryPassword(item.id, input.value);
         trackEvent(workerUrl, "download_success", {
           ...analyticsReportPayload(item, "catalog"),
           action,
@@ -4003,7 +4089,7 @@
     const searchTextById = new Map();
     document.title = `${titleText(item)} | KC Desk Notes`;
     renderDetail(item, config, items, searchTextById, {
-      password: params.get("password") || "",
+      password: deliveryPasswordFromLocation(params),
     });
     // The text index only improves related-report ranking, so load it after
     // the detail renders instead of blocking the page on a large download.
@@ -4139,7 +4225,7 @@
       } catch (_error) {
         // Keep generic message.
       }
-      if (response.status === 401) clearRememberedDownloadPassword();
+      if (response.status === 401) clearRememberedDownloadPassword(item.id);
       trackEvent(workerUrl, "download_error", {
         ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
         action: options.auth ? "account_download" : "password_download",
@@ -4150,7 +4236,7 @@
     }
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
-    setRememberedDownloadPassword(password);
+    rememberDeliveryPassword(item.id, password);
     trackEvent(workerUrl, "download_success", {
       ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
       action: options.auth ? "account_download" : "password_download",
@@ -4255,7 +4341,8 @@
     initAdminGate(workerUrl);
     initNewsfeedNav();
     item = await fetchDocDetailItem(workerUrl, item);
-    const shortUrl = externalPageUrl(item, params.get("password") || "");
+    const passwordFromLink = deliveryPasswordFromLocation(params);
+    const shortUrl = externalPageUrl(item, passwordFromLink);
     if (shortUrl.length < window.location.href.length) {
       window.history.replaceState({}, "", shortUrl);
     }
@@ -4320,14 +4407,13 @@
       return;
     }
 
-    const passwordFromLink = params.get("password") || "";
     target.innerHTML = `
       ${detailHeader}
       <form class="unlock-box" id="externalDetailForm">
         <h3>PDF Download</h3>
         <p class="subtle">Enter the report password to download the PDF.</p>
         <div class="password-row">
-          <input id="externalDetailPassword" type="password" autocomplete="current-password" placeholder="Password" required>
+          <input id="externalDetailPassword" name="report-access-code" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Password" required>
           <button class="primary" type="submit">Download</button>
         </div>
         <div class="external-wait" id="externalDetailWait" hidden>
@@ -4383,7 +4469,7 @@
       try {
         const result = await fetchExternalPdf(workerUrl, item, input.value, setStatus);
         if (result.pending) {
-          setRememberedDownloadPassword(input.value);
+          rememberDeliveryPassword(item.id, input.value);
           setStatus("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
           pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
         }
@@ -4437,20 +4523,7 @@
       }
     });
 
-    const initialPassword = passwordFromLink || getRememberedDownloadPassword();
-    if (initialPassword) {
-      input.value = initialPassword;
-      if (passwordFromLink) {
-        setRememberedDownloadPassword(passwordFromLink);
-        setStatus("Password filled from delivery link.");
-        const cleanUrl = new URL(window.location.href);
-        cleanUrl.searchParams.delete("password");
-        cleanUrl.searchParams.delete("deliver");
-        window.history.replaceState({}, "", cleanUrl.toString());
-      } else {
-        setStatus("Password remembered on this device.");
-      }
-    }
+    initResilientPasswordInput(input, item.id, passwordFromLink, setStatus);
   }
 
   function newsfeedLogoUrl(item) {
@@ -5775,7 +5848,7 @@
   async function initDelivery() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
-    const password = params.get("password") || "";
+    const password = deliveryPasswordFromLocation(params);
     const target = document.getElementById("delivery");
     if (!id || !password) {
       target.innerHTML = '<div class="error-state">Delivery link is incomplete.</div>';
