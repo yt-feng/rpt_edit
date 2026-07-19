@@ -1,0 +1,157 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_5/0005-30-Goldman-Sachs-China-Basic-Materials-Monitor-July-2026--losing-incrementa",
+  "title": "高盛：7月中国基础材料增量动能减弱，订单走软库存上升",
+  "source_title": "0005-30-GS-China Basic Materials Monitor-July 2026- losing incremental strength-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-30-GS-China Basic Materials Monitor-July 2026- losing incremental strength-260717",
+    "cleaned_source_title": "GS-China Basic Materials Monitor-July 2026- losing incremental strength",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国BasicMaterialsMonitorJuly2026",
+    "raw_candidates": [
+      "高盛：7月中国基础材料增量动能减弱，订单走软库存上升",
+      "高盛：7月中国基础材料需求分化，水泥用钢降4-10%铜增3%",
+      "高盛：7月中国基础材料供给调整，钢厂水泥减产而铝产量上升",
+      "中国基础材料监测-增量动能减弱",
+      "中国基础材料监测-7月订单走弱库存上升",
+      "中国基础材料监测-7月需求同比降4-10%"
+    ],
+    "cleaned_candidates": [
+      "高盛：7月中国基础材料增量动能减弱，订单走软库存上升",
+      "高盛：7月中国基础材料需求分化，水泥用钢降4-10%铜增3%",
+      "高盛：7月中国基础材料供给调整，钢厂水泥减产而铝产量上升",
+      "高盛：中国基础材料监测-增量动能减弱",
+      "高盛：中国基础材料监测-7月订单走弱库存上升",
+      "高盛：中国基础材料监测-7月需求同比降4-10%",
+      "高盛：中国BasicMaterialsMonitorJuly2026",
+      "高盛：中国基础材料监测-2026年7月-增量动能减弱"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：7月中国基础材料需求分化，水泥用钢降4-10%铜增3%",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：7月中国基础材料供给调整，钢厂水泥减产而铝产量上升",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国基础材料监测-增量动能减弱",
+        "reasons": [
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国基础材料监测-7月订单走弱库存上升",
+        "reasons": [
+          "anchor_coverage=0.52"
+        ]
+      },
+      {
+        "title": "高盛：中国基础材料监测-7月需求同比降4-10%",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国BasicMaterialsMonitorJuly2026",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国基础材料监测-2026年7月-增量动能减弱",
+        "reasons": [
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：7月中国基础材料增量动能减弱，订单走软库存上升",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "高盛：中国基础材料监测-2026年7月-增量动能减弱",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "高盛：7月中国基础材料增量动能减弱，订单走软库存上升",
+      "高盛：7月中国基础材料需求分化，水泥用钢降4-10%铜增3%",
+      "高盛：7月中国基础材料供给调整，钢厂水泥减产而铝产量上升"
+    ],
+    "final_title_after_wording_guard": "高盛：7月中国基础材料增量动能减弱，订单走软库存上升"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_54.pdf",
+  "figure_count": 28,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

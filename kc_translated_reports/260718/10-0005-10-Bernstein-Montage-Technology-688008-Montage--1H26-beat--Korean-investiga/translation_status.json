@@ -1,0 +1,119 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_1/0005-10-Bernstein-Montage-Technology-688008-Montage--1H26-beat--Korean-investiga",
+  "title": "伯恩斯坦：澜起科技1H26业绩超预期-韩国调查不改基本面",
+  "source_title": "0005-10-Bernstein-Montage Technology-688008-Montage- 1H26 beat- Korean investigation unlikely to alter fundamentals-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-10-Bernstein-Montage Technology-688008-Montage- 1H26 beat- Korean investigation unlikely to alter fundamentals-260717",
+    "cleaned_source_title": "Bernstein-Montage Technology-688008-Montage- 1H26 beat- Korean investigation unlikely to alter fundamentals",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：Montage科技688008Montage",
+    "raw_candidates": [
+      "澜起科技1H26业绩超预期-韩国调查不改基本面",
+      "澜起科技1H26营收增26.6%-净利润率扩1596基点",
+      "澜起科技1H26超预期-内存接口芯片定价不随内存波动"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：澜起科技1H26业绩超预期-韩国调查不改基本面",
+      "伯恩斯坦：澜起科技1H26营收增26.6%-净利润率扩1596基点",
+      "伯恩斯坦：澜起科技1H26超预期-内存接口芯片定价不随内存波动",
+      "伯恩斯坦：Montage科技688008Montage",
+      "伯恩斯坦：Montage1H26营收同比增长26.6%至人民币33.4"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：澜起科技1H26营收增26.6%-净利润率扩1596基点",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：澜起科技1H26超预期-内存接口芯片定价不随内存波动",
+        "reasons": [
+          "anchor_coverage=0.43",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：Montage科技688008Montage",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：Montage1H26营收同比增长26.6%至人民币33.4",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：澜起科技1H26业绩超预期-韩国调查不改基本面",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：澜起科技1H26业绩超预期-韩国调查不改基本面"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_10.pdf",
+  "figure_count": 4,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资收益->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x4",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1"
+  ]
+}

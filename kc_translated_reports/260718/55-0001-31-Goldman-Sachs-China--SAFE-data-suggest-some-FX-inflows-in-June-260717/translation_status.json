@@ -1,0 +1,87 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_6/0001-31-Goldman-Sachs-China--SAFE-data-suggest-some-FX-inflows-in-June-260717",
+  "title": "高盛：中国外管局数据显示6月外汇流入",
+  "source_title": "0001-31-GS-China- SAFE data suggest some FX inflows in June-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-31-GS-China- SAFE data suggest some FX inflows in June-260717",
+    "cleaned_source_title": "GS-China- SAFE data suggest some FX inflows in June",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国-SAFEdatasuggestsomeFX",
+    "raw_candidates": [
+      "高盛:中国外管局数据显示6月外汇流入",
+      "高盛:中国6月外汇净流入340亿美元",
+      "高盛:中国6月外汇流入340亿-经常账户与标的研究渠道分化"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国外管局数据显示6月外汇流入",
+      "高盛：中国6月外汇净流入340亿美元",
+      "高盛：中国6月外汇流入340亿-经常账户与标的研究渠道分化",
+      "高盛：中国-SAFEdatasuggestsomeFX",
+      "高盛：经常账户渠道6月显示650亿美元外汇流入"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国6月外汇净流入340亿美元",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "高盛：中国6月外汇流入340亿-经常账户与标的研究渠道分化",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "高盛：中国-SAFEdatasuggestsomeFX",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：经常账户渠道6月显示650亿美元外汇流入",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      }
+    ],
+    "selected_title": "高盛：中国外管局数据显示6月外汇流入",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：中国外管局数据显示6月外汇流入"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_55.pdf",
+  "figure_count": 4,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "证券->标的 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_4/0004-24-Deutsche-Bank-Battery-China-Battery---Monthly-Monitor-June-2026-260716",
+  "title": "德意志银行：中国电池月度监测-2026年6月",
+  "source_title": "0004-24-DB-Battery-China Battery - Monthly Monitor-June 2026-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-24-DB-Battery-China Battery - Monthly Monitor-June 2026-260716",
+    "cleaned_source_title": "DB-Battery-China Battery - Monthly Monitor-June 2026",
+    "institution_name": "德意志银行",
+    "required_terms": [],
+    "deterministic_fallback": "德意志银行：Battery中国BatteryMonth",
+    "raw_candidates": [
+      "德意志银行：中国电池月度监测-2026年6月",
+      "德意志银行：中国电池月度监测-6月产量与价格数据",
+      "德意志银行：中国电池月度监测-6月xEV与ESS电池产量趋势"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：中国电池月度监测-2026年6月",
+      "德意志银行：中国电池月度监测-6月产量与价格数据",
+      "德意志银行：中国电池月度监测-6月xEV与ESS电池产量趋势",
+      "德意志银行：Battery中国BatteryMonth",
+      "德意志银行：中国电池月度监测，2026年6月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：中国电池月度监测-6月产量与价格数据",
+        "reasons": [
+          "anchor_coverage=0.57",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：中国电池月度监测-6月xEV与ESS电池产量趋势",
+        "reasons": [
+          "anchor_coverage=0.57",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：Battery中国BatteryMonth",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：中国电池月度监测-2026年6月",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "德意志银行：中国电池月度监测-2026年6月"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_48.pdf",
+  "figure_count": 28,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_6/0003-33-Goldman-Sachs-Global-Rates-Trader-Quick-Duration-Break-260717",
+  "title": "高盛：高盛全球利率交易员，快速久期突破-6月通胀缓解",
+  "source_title": "0003-33-GS-Global Rates Trader-Quick Duration Break-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-33-GS-Global Rates Trader-Quick Duration Break-260717",
+    "cleaned_source_title": "GS-Global Rates Trader-Quick Duration Break",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：全球利率TraderQuickDurationBreak",
+    "raw_candidates": [
+      "高盛全球利率交易员：快速久期突破",
+      "高盛全球利率交易员：快速久期突破-6月通胀缓解",
+      "高盛全球利率交易员：快速久期突破-锚定5年期多头"
+    ],
+    "cleaned_candidates": [
+      "高盛：高盛全球利率交易员，快速久期突破",
+      "高盛：高盛全球利率交易员，快速久期突破-6月通胀缓解",
+      "高盛：高盛全球利率交易员，快速久期突破-锚定5年期多头",
+      "高盛：全球利率TraderQuickDurationBreak",
+      "高盛：也就是说，1y1y和2y2y交易略显昂贵"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：全球利率TraderQuickDurationBreak",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：也就是说，1y1y和2y2y交易略显昂贵",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：高盛全球利率交易员，快速久期突破-6月通胀缓解",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "6"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：高盛全球利率交易员，快速久期突破-6月通胀缓解"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_57.pdf",
+  "figure_count": 28,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "收益率->回报表现 x2",
+    "风险->不确定性 x5",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "收益率->回报表现 x3",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "风险->不确定性 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "基金->产品 x5",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "收益率->回报表现 x3",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "风险->不确定性 x4",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "风险->不确定性 x6",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

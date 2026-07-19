@@ -1,0 +1,110 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_4/0003-23-Deutsche-Bank-China-Banks-June-TSF-and-new-loans-remain-soft-more-policy",
+  "title": "德意志银行：中国银行-6月社融与新增贷款疲软-下半年政策支持可期",
+  "source_title": "0003-23-DB-China Banks-June TSF and new loans remain soft-more policy support expected in 2H-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-DB-China Banks-June TSF and new loans remain soft-more policy support expected in 2H-260716",
+    "cleaned_source_title": "DB-China Banks-June TSF and new loans remain soft-more policy support expected in 2H",
+    "institution_name": "德意志银行",
+    "required_terms": [],
+    "deterministic_fallback": "德意志银行：中国BanksJuneTSF和newloa",
+    "raw_candidates": [
+      "中国银行-6月社融与新增贷款疲软-下半年政策支持可期",
+      "中国银行-6月社融3.4万亿元低于预期-下半年政策支持可期",
+      "中国银行-6月贷款增速创历史新低-下半年政策支持可期"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：中国银行-6月社融与新增贷款疲软-下半年政策支持可期",
+      "德意志银行：中国银行-6月社融3.4万亿元低于预期-下半年政策支持可期",
+      "德意志银行：中国银行-6月贷款增速创历史新低-下半年政策支持可期",
+      "德意志银行：中国BanksJuneTSF和newloa",
+      "德意志银行：6月当月社融和新增人民币贷款分别为3.4万亿元和1.6万亿"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：中国银行-6月社融3.4万亿元低于预期-下半年政策支持可期",
+        "reasons": [
+          "anchor_coverage=0.65"
+        ]
+      },
+      {
+        "title": "德意志银行：中国银行-6月贷款增速创历史新低-下半年政策支持可期",
+        "reasons": [
+          "anchor_coverage=0.61",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：中国BanksJuneTSF和newloa",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：6月当月社融和新增人民币贷款分别为3.4万亿元和1.6万亿",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：中国银行-6月社融与新增贷款疲软-下半年政策支持可期",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "德意志银行：中国银行-6月社融与新增贷款疲软-下半年政策支持可期"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_47.pdf",
+  "figure_count": 8,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "衰退|萎缩|收缩->调整 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融机构->机构 x1",
+    "理财->资金规划 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

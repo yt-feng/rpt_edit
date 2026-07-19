@@ -1,0 +1,106 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_13/0005-70-Morgan-Stanley-XPeng-Inc.-9868.HK--MONA-L03---The-global-launch-that-fun",
+  "title": "摩根士丹利：小鹏MONAL03-自我造血能力的全球首发",
+  "source_title": "0005-70-MS-XPeng Inc.-9868.HK--MONA L03 - The global launch that funds itself-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-70-MS-XPeng Inc.-9868.HK--MONA L03 - The global launch that funds itself-260716",
+    "cleaned_source_title": "MS-XPeng Inc.-9868.HK--MONA L03 - The global launch that funds itself",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：XPengInc.",
+    "raw_candidates": [
+      "小鹏MONA L03-自我造血能力的全球首发",
+      "小鹏MONA L03-月销1.5万辆的全球首发",
+      "小鹏MONA L03-中欧同步上市提升利润率"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：小鹏MONAL03-自我造血能力的全球首发",
+      "摩根士丹利：小鹏MONAL03-月销1.5万辆的全球首发",
+      "摩根士丹利：小鹏MONAL03-中欧同步上市提升利润率",
+      "摩根士丹利：XPengInc.",
+      "摩根士丹利：关键基准情景假设，终端增长率3%，贝塔系数1.6"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：小鹏MONAL03-月销1.5万辆的全球首发",
+        "reasons": [
+          "anchor_coverage=0.63"
+        ]
+      },
+      {
+        "title": "摩根士丹利：小鹏MONAL03-中欧同步上市提升利润率",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：XPengInc.",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：关键基准情景假设，终端增长率3%，贝塔系数1.6",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：小鹏MONAL03-自我造血能力的全球首发",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：小鹏MONAL03-自我造血能力的全球首发"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_30.pdf",
+  "figure_count": 1,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

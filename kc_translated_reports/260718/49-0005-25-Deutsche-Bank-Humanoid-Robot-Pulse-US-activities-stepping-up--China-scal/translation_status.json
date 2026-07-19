@@ -1,0 +1,93 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_4/0005-25-Deutsche-Bank-Humanoid-Robot-Pulse-US-activities-stepping-up--China-scal",
+  "title": "德意志银行：人形机器人脉搏-美国活动加速-中国快速规模化-政策支持",
+  "source_title": "0005-25-DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition--260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-25-DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition--260716",
+    "cleaned_source_title": "DB-Humanoid Robot Pulse-US activities stepping up- China scaling fast- Supportive policies -2Q edition",
+    "institution_name": "德意志银行",
+    "required_terms": [],
+    "deterministic_fallback": "德意志银行：HumanoidRobotPulseUSa",
+    "raw_candidates": [
+      "德意志银行：人形机器人脉搏-美国活动加速-中国快速规模化-政策支持-二季度版",
+      "德意志银行：人形机器人脉搏-美国活动加速-中国2026年产量预计10万台-政策支持-二季度版",
+      "德意志银行：人形机器人脉搏-美国Agility计划SPAC上市-中国产量超预期-政策支持-二季度版"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：人形机器人脉搏-美国活动加速-中国快速规模化-政策支持",
+      "德意志银行：人形机器人脉搏-美国活动加速",
+      "德意志银行：人形机器人脉搏-美国Agility计划SPAC上市",
+      "德意志银行：HumanoidRobotPulseUSa",
+      "德意志银行：3.政策更新，中国计划2026年生产10万台人形机器人"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：人形机器人脉搏-美国活动加速",
+        "reasons": [
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：人形机器人脉搏-美国Agility计划SPAC上市",
+        "reasons": [
+          "anchor_coverage=0.35",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：HumanoidRobotPulseUSa",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：3.政策更新，中国计划2026年生产10万台人形机器人",
+        "reasons": [
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：人形机器人脉搏-美国活动加速-中国快速规模化-政策支持",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "德意志银行：人形机器人脉搏-美国活动加速-中国快速规模化-政策支持"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_49.pdf",
+  "figure_count": 1,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_stock_parenthetical x6",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

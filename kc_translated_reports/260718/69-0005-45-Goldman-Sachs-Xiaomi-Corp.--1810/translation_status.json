@@ -1,0 +1,101 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_8/0005-45-Goldman-Sachs-Xiaomi-Corp.--1810.HK-Xiaomi-Robotics--Integrating-Hardwar",
+  "title": "高盛：小米机器人整合硬件数据模型以实现规模化",
+  "source_title": "0005-45-GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- Buy-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-45-GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- Buy-260717",
+    "cleaned_source_title": "GS-Xiaomi Corp. -1810.HK-Xiaomi Robotics- Integrating Hardware Ontologies- Data- and Models to Scale up- Buy",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：XiaomiCorp.XiaomiRobotic",
+    "raw_candidates": [
+      "高盛：小米机器人整合硬件数据模型以实现规模化",
+      "高盛：小米机器人任务成功率升至98%部署生产线",
+      "高盛：小米人形机器人部署汽车线-与Figure AI并肩"
+    ],
+    "cleaned_candidates": [
+      "高盛：小米机器人整合硬件数据模型以实现规模化",
+      "高盛：小米机器人任务成功率升至98%部署生产线",
+      "高盛：小米人形机器人部署汽车线-与FigureAI并肩",
+      "高盛：XiaomiCorp.XiaomiRobotic",
+      "高盛：小米机器人于7月13日至15日宣布了多项成果"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：小米机器人任务成功率升至98%部署生产线",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：小米人形机器人部署汽车线-与FigureAI并肩",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：XiaomiCorp.XiaomiRobotic",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：小米机器人于7月13日至15日宣布了多项成果",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：小米机器人整合硬件数据模型以实现规模化",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：小米机器人整合硬件数据模型以实现规模化"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_69.pdf",
+  "figure_count": 6,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "宏观环境环境->宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

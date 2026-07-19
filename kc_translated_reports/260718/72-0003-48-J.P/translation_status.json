@@ -1,0 +1,114 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_9/0003-48-J.P.-Morgan-China-Basic-Materials-June-26-NBS-data--Resilient-demand-to-",
+  "title": "摩根大通：中国基础材料，韧性需求支撑金属价格高企并增强矿商业绩",
+  "source_title": "0003-48-JPM-China Basic Materials June 26 NBS data- Resilient demand to support high metal prices and strengthen miners- earnings-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-48-JPM-China Basic Materials June 26 NBS data- Resilient demand to support high metal prices and strengthen miners- earnings-260716",
+    "cleaned_source_title": "JPM-China Basic Materials June 26 NBS data- Resilient demand to support high metal prices and strengthen miners- earnings",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：中国BasicMaterialsJune26NBSdata",
+    "raw_candidates": [
+      "中国基础材料：韧性需求支撑金属价格高企并增强矿商业绩",
+      "中国基础材料：6月NBS数据韧性需求支撑金属价格高企并增强矿商业绩",
+      "中国基础材料：韧性需求支撑金属价格高企，矿商业绩增强"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：中国基础材料，韧性需求支撑金属价格高企并增强矿商业绩",
+      "摩根大通：中国基础材料",
+      "摩根大通：中国基础材料，韧性需求支撑金属价格高企，矿商业绩增强",
+      "摩根大通：中国BasicMaterialsJune26NBSdata",
+      "摩根大通：6月26日国家统计局数据"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：中国基础材料",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国BasicMaterialsJune26NBSdata",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：6月26日国家统计局数据",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：中国基础材料，韧性需求支撑金属价格高企并增强矿商业绩",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：中国基础材料，韧性需求支撑金属价格高企并增强矿商业绩"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_72.pdf",
+  "figure_count": 15,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x6",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1"
+  ]
+}

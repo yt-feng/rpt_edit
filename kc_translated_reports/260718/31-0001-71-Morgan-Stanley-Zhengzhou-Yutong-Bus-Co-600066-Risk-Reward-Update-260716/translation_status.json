@@ -1,0 +1,114 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_14/0001-71-Morgan-Stanley-Zhengzhou-Yutong-Bus-Co-600066-Risk-Reward-Update-260716",
+  "title": "摩根士丹利：郑州宇通客车风险回报更新",
+  "source_title": "0001-71-MS-Zhengzhou Yutong Bus Co-600066-Risk Reward Update-260716",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-71-MS-Zhengzhou Yutong Bus Co-600066-Risk Reward Update-260716",
+    "cleaned_source_title": "MS-Zhengzhou Yutong Bus Co-600066-Risk Reward Update",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：ZhengzhouYutongBusCo600066",
+    "raw_candidates": [
+      "郑州宇通客车风险回报更新",
+      "郑州宇通客车风险回报：下调2027/2028年预测",
+      "郑州宇通客车风险回报：中欧贸易摩擦影响欧盟销售"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：郑州宇通客车风险回报更新",
+      "摩根士丹利：2028年预测",
+      "摩根士丹利：郑州宇通客车风险回报，中欧贸易摩擦影响欧盟销售",
+      "摩根士丹利：ZhengzhouYutongBusCo600066",
+      "摩根士丹利：5%，以反映对出口的影响——2027年影响温和"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：2028年预测",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：ZhengzhouYutongBusCo600066",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：5%，以反映对出口的影响——2027年影响温和",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：郑州宇通客车风险回报更新",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：郑州宇通客车风险回报更新"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_31.pdf",
+  "figure_count": 6,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

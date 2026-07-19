@@ -1,0 +1,110 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260718/shard_3/0003-18-Bernstein-Weekend-Tech-Byte--Compute-capital-markets---Hedging-the-trill",
+  "title": "伯恩斯坦：周末科技简报，算力资本市场对冲万亿美元AI资本支出",
+  "source_title": "0003-18-Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-18-Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle-260717",
+    "cleaned_source_title": "Bernstein-Weekend Tech Byte- Compute capital markets - Hedging the trillion dollar AI capex cycle",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "伯恩斯坦：AIWeekendTechByte",
+    "raw_candidates": [
+      "周末科技简报：算力资本市场对冲万亿美元AI资本支出",
+      "算力资本市场：对冲万亿美元AI资本支出周期，CME与ICE推出期货",
+      "算力资本市场：对冲万亿美元AI资本支出，离岸交易所先行，CME与ICE追赶"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：周末科技简报，算力资本市场对冲万亿美元AI资本支出",
+      "伯恩斯坦：算力资本市场，对冲万亿美元AI资本支出周期",
+      "伯恩斯坦：算力资本市场，对冲万亿美元AI资本支出，离岸交易所先行",
+      "伯恩斯坦：AIWeekendTechByte",
+      "伯恩斯坦：周末科技简报，算力资本市场——对冲万亿美元AI资本支出周期"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：算力资本市场，对冲万亿美元AI资本支出周期",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：算力资本市场，对冲万亿美元AI资本支出，离岸交易所先行",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：AIWeekendTechByte",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：周末科技简报，算力资本市场对冲万亿美元AI资本支出",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：周末科技简报，算力资本市场对冲万亿美元AI资本支出"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_42.pdf",
+  "figure_count": 6,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "金融->资金 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
