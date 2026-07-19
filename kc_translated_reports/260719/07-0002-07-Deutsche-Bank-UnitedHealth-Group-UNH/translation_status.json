@@ -1,0 +1,113 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260719/shard_1/0002-07-Deutsche-Bank-UnitedHealth-Group-UNH.US-No-Good-Deed-UNH-Delivers-Robust",
+  "title": "德意志银行：联合健康集团善举未获善报-强劲展望报价回落",
+  "source_title": "0002-07-DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-07-DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade-260717",
+    "cleaned_source_title": "DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade",
+    "institution_name": "德意志银行",
+    "required_terms": [],
+    "deterministic_fallback": "德意志银行：UnitedHealthGroupNoGo",
+    "raw_candidates": [
+      "联合健康集团善举未获善报-强劲展望报价回落",
+      "联合健康集团强劲展望-2026年每股收益指引上调至19.50-20.00美元",
+      "联合健康集团善举未获善报-强劲展望难阻板块抛售"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：联合健康集团善举未获善报-强劲展望报价回落",
+      "德意志银行：联合健康集团强劲展望",
+      "德意志银行：联合健康集团善举未获善报-强劲展望难阻板块抛售",
+      "德意志银行：UnitedHealthGroupNoGo",
+      "德意志银行：2026年调整后每股收益指引中值上调约1.50美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：联合健康集团强劲展望",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：UnitedHealthGroupNoGo",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：2026年调整后每股收益指引中值上调约1.50美元",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：联合健康集团善举未获善报-强劲展望报价回落",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "德意志银行：联合健康集团善举未获善报-强劲展望报价回落"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_07.pdf",
+  "figure_count": 0,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "股价->报价 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "股票|个股->公司 x1",
+    "股价->报价 x1",
+    "风险->不确定性 x3",
+    "恶化->出现变化 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1"
+  ]
+}

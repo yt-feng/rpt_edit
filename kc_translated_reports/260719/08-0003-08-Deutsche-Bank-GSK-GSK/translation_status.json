@@ -1,0 +1,94 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260719/shard_1/0003-08-Deutsche-Bank-GSK-GSK.L-Don-t-panic--but-that-bridge-just-lost-a-few-bri",
+  "title": "德意志银行：GSK，不必恐慌，但桥掉了几块砖",
+  "source_title": "0003-08-DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-08-DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes-260717",
+    "cleaned_source_title": "DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes",
+    "institution_name": "德意志银行",
+    "required_terms": [],
+    "deterministic_fallback": "德意志银行：GSKDontpanic",
+    "raw_candidates": [
+      "GSK：不必恐慌，但桥掉了几块砖-camlipixant头条数据",
+      "GSK：camlipixant数据喜忧参半-CALM1达标CALM2未达标",
+      "GSK：camlipixant终止-中期指引与市场预期差距拉大"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：GSK，不必恐慌，但桥掉了几块砖",
+      "德意志银行：GSK，camlipixant数据喜忧参半",
+      "德意志银行：GSK，camlipixant终止",
+      "德意志银行：GSKDontpanic",
+      "德意志银行：的预测较市场一致预期（2031年4.15亿英镑）高出17%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：GSK，camlipixant数据喜忧参半",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：GSK，camlipixant终止",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：GSKDontpanic",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：的预测较市场一致预期（2031年4.15亿英镑）高出17%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：GSK，不必恐慌，但桥掉了几块砖",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "德意志银行：GSK，不必恐慌，但桥掉了几块砖"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_08.pdf",
+  "figure_count": 6,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

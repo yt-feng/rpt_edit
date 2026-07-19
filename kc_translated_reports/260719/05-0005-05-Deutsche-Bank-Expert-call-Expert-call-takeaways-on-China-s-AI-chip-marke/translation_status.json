@@ -1,0 +1,109 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260719/shard_0/0005-05-Deutsche-Bank-Expert-call-Expert-call-takeaways-on-China-s-AI-chip-marke",
+  "title": "德意志银行：专家电话会议，中国AI芯片市场最新动态",
+  "source_title": "0005-05-DB-Expert call-Expert call takeaways on China-s AI chip market updates-260717",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-05-DB-Expert call-Expert call takeaways on China-s AI chip market updates-260717",
+    "cleaned_source_title": "DB-Expert call-Expert call takeaways on China-s AI chip market updates",
+    "institution_name": "德意志银行",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "德意志银行：AIExpertcallExpertcallt",
+    "raw_candidates": [
+      "专家电话会议：中国AI芯片市场最新动态",
+      "专家电话会议：中国AI芯片市场出货量预计2026年达500万颗",
+      "专家电话会议：中国AI芯片市场本土份额预计从40%升至50%以上"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：专家电话会议，中国AI芯片市场最新动态",
+      "德意志银行：专家电话会议",
+      "德意志银行：AIExpertcallExpertcallt",
+      "德意志银行：专家电话会议要点，中国AI芯片市场最新动态"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：专家电话会议",
+        "reasons": [
+          "missing_required_terms=AI",
+          "body_too_short",
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：AIExpertcallExpertcallt",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：专家电话会议，中国AI芯片市场最新动态",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "德意志银行：专家电话会议，中国AI芯片市场最新动态"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_05.pdf",
+  "figure_count": 2,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "卖出->观点偏谨慎 x2",
+    "投资者->读者 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "(?:强烈推荐|推荐买入|建议买入|建议卖出)->报告观点 x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x2",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "经济->宏观环境 x1",
+    "投资者->读者 x3",
+    "投资回报->回报表现 x1",
+    "投资->研究 x4",
+    "金融->资金 x4",
+    "股票|个股->公司 x2",
+    "证券->标的 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "投资者->读者 x2",
+    "风险->不确定性 x6",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x5",
+    "风险->不确定性 x7",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "投资->研究 x1"
+  ]
+}
