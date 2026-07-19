@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 27,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-CITI-Zhongji Innolight Co.， Ltd.（300308）A Leading Global Optical Interconnects Solution Provider-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0001-06-CITI-Zhongji Innolight Co.- Ltd.-300308-A Leading Global Optical Interconnects Solution Provider-260717.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-DB-UnitedHealth Group（UNH.US）No Good Deed：UNH Delivers Robust Outlook，Shares Fade-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0002-07-DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade-260717.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-DB-GSK（GSK.L）Don’t panic， but that bridge just lost a few bricks： camplipixant headline takes-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0003-08-DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes-260717.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-DB-Intuitive Surgical（ISRG.OQ）Choppy 2Q； maintain SELL and lower PT to $324-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0004-09-DB-Intuitive Surgical-ISRG.OQ-Choppy 2Q- maintain SELL and lower PT to -324-260717.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-GS-Montage （688008）：Rising memory interface IC with Gen~3 Gen~4 ramp up； 2Q26 NI guidance beat； Buy-260718.pdf",
+          "batch_file": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0005-10-GS-Montage -688008--Rising memory interface IC with Gen-3 Gen-4 ramp up- 2Q26 NI guidance beat- Buy-260718.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

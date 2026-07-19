@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0001-06-CITI-Zhongji Innolight Co.- Ltd.-300308-A Leading Global Optical Interconnects Solution Provider-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0002-07-DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0003-08-DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0004-09-DB-Intuitive Surgical-ISRG.OQ-Choppy 2Q- maintain SELL and lower PT to -324-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_evbkv1f3/pdfs/0005-10-GS-Montage -688008--Rising memory interface IC with Gen-3 Gen-4 ramp up- 2Q26 NI guidance beat- Buy-260718.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
