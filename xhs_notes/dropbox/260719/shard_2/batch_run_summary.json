@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 27,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-DB-XPeng（9868.HK）Competitive Pricing and Appealing Design Drives “L03” SUV‘s Success-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4c5gummt/pdfs/0001-11-DB-XPeng-9868.HK-Competitive Pricing and Appealing Design Drives -L03- SUV-s Success-260717.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-Nongfu Spring （9633.HK）： 1H26 Preview： Leading position solidified across categories with strong sugar~free tea； water recovery new-260718.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4c5gummt/pdfs/0002-12-GS-Nongfu Spring -9633.HK-- 1H26 Preview- Leading position solidified across categories with strong sugar-free tea- water recovery new-260718.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-JPM-Korea Battery：LGES wins 2.9GWh Google ESS project； SK On wins 13% of Korea AI ESS tender-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4c5gummt/pdfs/0003-13-JPM-Korea Battery-LGES wins 2.9GWh Google ESS project- SK On wins 13- of Korea AI ESS tender-260717.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-GS-Xtep International Holdings （1368.HK） 2Q26 sell~through under pressure leading to risk in guidance， yet discount remained disciplined； Buy-260718.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4c5gummt/pdfs/0004-14-GS-Xtep International Holdings -1368.HK- 2Q26 sell-through under pressure leading to risk in guidance- yet discount remained disciplined- Buy-260718.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-JPM-China alt~data trackers chartpack （Series 59）：Limited government bond issuance pick~up so far-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4c5gummt/pdfs/0005-15-JPM-China alt-data trackers chartpack -Series 59--Limited government bond issuance pick-up so far-260717.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_4c5gummt/pdfs/0004-14-GS-Xtep International Holdings -1368.HK- 2Q26 sell-through under pressure leading to risk in guidance- yet discount remained disciplined- Buy-260718.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "特步Q2承压，但折扣",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：特步二季度销售承压-行业折扣加深但特步折扣纪律未松",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-14-GS-Xtep International Holdings -1368.HK- 2Q26 sell-through under pressure leading to risk in guidance- yet discount remained disciplined- Buy-260718.pdf",
+    "cleaned_source_title": "GS-Xtep International Holdings -1368.HK- 2Q26 sell-through under pressure leading to risk in guidance- yet discount remained disciplined- Buy",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：XtepInternationalHoldings2Q26报告观",
+    "raw_candidates": [
+      "特步二季度销售承压致指引风险-折扣保持纪律-买入",
+      "特步二季度销售承压致指引风险-折扣纪律未松-库存升至4.5-5.0个月",
+      "特步二季度销售承压-行业折扣加深但特步折扣纪律未松-GS维持买入"
+    ],
+    "cleaned_candidates": [
+      "GS：特步二季度销售承压致指引风险-折扣保持纪律-买入",
+      "GS：特步二季度销售承压致指引风险-折扣纪律未松-库存升至4.5",
+      "GS：特步二季度销售承压-行业折扣加深但特步折扣纪律未松",
+      "GS：XtepInternationalHoldings2Q26报告观",
+      "GS：特步核心品牌二季度零售折扣维持在25-30%，同比基本持平"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "incomplete_last_segment",
+      "forbidden_public_wording"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：特步二季度销售承压致指引风险-折扣保持纪律-买入",
+        "reasons": [
+          "incomplete_last_segment",
+          "forbidden_public_wording",
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：特步二季度销售承压致指引风险-折扣纪律未松-库存升至4.5",
+        "reasons": [
+          "bare_trailing_number",
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "GS：XtepInternationalHoldings2Q26报告观",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：特步核心品牌二季度零售折扣维持在25-30%，同比基本持平",
+        "reasons": [
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：特步二季度销售承压-行业折扣加深但特步折扣纪律未松",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：特步二季度销售承压-行业折扣加深但特步折扣纪律未松"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "545",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,150 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_4c5gummt/pdfs/0003-13-JPM-Korea Battery-LGES wins 2.9GWh Google ESS project- SK On wins 13- of Korea AI ESS tender-260717.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "LGES 拿到 Go",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-13-JPM-Korea Battery-LGES wins 2.9GWh Google ESS project- SK On wins 13- of Korea AI ESS tender-260717.pdf",
+    "cleaned_source_title": "JPM-Korea Battery-LGES wins 2.9GWh Google ESS project- SK On wins 13- of Korea AI ESS tender",
+    "institution_name": "JPM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "JPM：AIKoreaBatteryLGESwins2.9",
+    "raw_candidates": [
+      "JPM：韩国电池厂利润拐点取决于资产出清速度",
+      "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+      "JPM：SK Innovation资产重组逻辑优于电池订单增长",
+      "韩国电池：LGES获谷歌2.9GWh储能项目，SK On获韩国AI储能招标13%份额",
+      "韩国电池：LGES获谷歌2.9GWh储能项目，SK On获韩国AI储能招标13%份额-利润拐点待验证",
+      "韩国电池：LGES获谷歌2.9GWh储能项目，SK On获韩国AI储能招标13%份额-资产出清才是真正拐点"
+    ],
+    "cleaned_candidates": [
+      "JPM：韩国电池厂利润拐点取决于资产出清速度",
+      "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+      "JPM：SKInnovation资产重组逻辑优于电池订单增长",
+      "JPM：韩国电池，LGES获谷歌2.9GWh储能项目",
+      "JPM：AIKoreaBatteryLGESwins2.9",
+      "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：韩国电池厂利润拐点取决于资产出清速度",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：SKInnovation资产重组逻辑优于电池订单增长",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：韩国电池，LGES获谷歌2.9GWh储能项目",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：AIKoreaBatteryLGESwins2.9",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "JPM：韩国电池厂利润拐点取决于资产出清速度",
+      "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+      "JPM：SK Innovation资产重组逻辑优于电池订单增长"
+    ],
+    "final_title_after_wording_guard": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "465",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
