@@ -1,0 +1,2026 @@
+{
+  "schema_version": 1,
+  "date_folder": "260719",
+  "source": "xhs_notes/dropbox",
+  "generated_at_utc": "2026-07-19T22:58:47Z",
+  "article_count": 27,
+  "uploaded_count": 26,
+  "articles": [
+    {
+      "source_report_name": "01-Bofa-Global Memory Tech Weekly theme-3Q DRAM ASP rising well- memory upside with TSMC-ASML guidance-260716",
+      "institution_name": "美银",
+      "title_before_upload": "研究笔记：全球存储行业三季度观察",
+      "final_wechat_title": "美银：全球存储行业三季度观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_0/0001-01-Bofa-Global-Memory-Tech-Weekly-theme-3Q-DRAM-ASP-rising-well--memory-ups",
+      "generation_decision": {
+        "source_filename": "0001-01-Bofa-Global Memory Tech Weekly theme-3Q DRAM ASP rising well- memory upside with TSMC-ASML guidance-260716.pdf",
+        "cleaned_source_title": "Bofa-Global Memory Tech Weekly theme-3Q DRAM ASP rising well- memory upside with TSMC-ASML guidance",
+        "institution_name": "BofA",
+        "required_terms": [
+          "DRAM"
+        ],
+        "deterministic_fallback": "BofA：DRAM全球MemoryTechWeeklytheme3",
+        "raw_candidates": [
+          "BofA全球存储周报：3Q DRAM均价上涨，台积电ASML指引支撑",
+          "BofA：3Q DRAM均价环比涨21%，非LTA占比60-70%推升弹性",
+          "BofA：DRAM涨价超预期，OEM从抵制转向补库"
+        ],
+        "cleaned_candidates": [
+          "BofA：BofA全球存储周报，3QDRAM均价上涨，台积电ASML指引支撑",
+          "BofA：3QDRAM均价环比涨21%，非LTA占比60-70%推升弹性",
+          "BofA：DRAM涨价超预期，OEM从抵制转向补库",
+          "BofA：DRAM全球MemoryTechWeeklytheme3",
+          "BofA：DRAM涨价超预期，3QASP环比增长21%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "BofA：3QDRAM均价环比涨21%，非LTA占比60-70%推升弹性",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BofA：DRAM涨价超预期，OEM从抵制转向补库",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BofA：DRAM全球MemoryTechWeeklytheme3",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BofA：DRAM涨价超预期，3QASP环比增长21%",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "BofA：BofA全球存储周报，3QDRAM均价上涨，台积电ASML指引支撑",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "BofA：BofA全球存储周报，3QDRAM均价上涨，台积电ASML指引支撑"
+      }
+    },
+    {
+      "source_report_name": "02-CITI-ASML Holding NV -ASML.AS- AI Demand Extends Visibility into 2028- Raising",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：ASML AI需求将能见度延伸至2028年",
+      "final_wechat_title": "花旗：ASMLAI需求将能见度延伸至2028年",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_0/0002-02-CITI-ASML-Holding-NV--ASML.AS--AI-Demand-Extends-Visibility-into-2028--R",
+      "generation_decision": {
+        "source_filename": "0002-02-CITI-ASML Holding NV -ASML.AS- AI Demand Extends Visibility into 2028- Raising TP to -2-200-260717.pdf",
+        "cleaned_source_title": "CITI-ASML Holding NV -ASML.AS- AI Demand Extends Visibility into 2028- Raising TP to -2-200",
+        "institution_name": "Citi",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "Citi：ASMLNV-AIDemandExtendsVi",
+        "raw_candidates": [
+          "Citi：ASML AI需求将能见度延伸至2028年",
+          "Citi：ASML订单能见度穿透至2028年，EPS上调25%-52%",
+          "Citi：ASML订单已覆盖2027年产能，2028年订单开始流入"
+        ],
+        "cleaned_candidates": [
+          "Citi：ASMLAI需求将能见度延伸至2028年",
+          "Citi：ASML订单能见度穿透至2028年，EPS上调25%-52%",
+          "Citi：ASML订单已覆盖2027年产能，2028年订单开始流入",
+          "Citi：ASMLNV-AIDemandExtendsVi",
+          "Citi：这意味着，半导体设备行业的景气度正在从“AI预期”转向“可验证"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：ASML订单能见度穿透至2028年，EPS上调25%-52%",
+            "reasons": [
+              "missing_required_terms=AI",
+              "incomplete_last_segment",
+              "anchor_coverage=0.53"
+            ]
+          },
+          {
+            "title": "Citi：ASML订单已覆盖2027年产能，2028年订单开始流入",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.37"
+            ]
+          },
+          {
+            "title": "Citi：ASMLNV-AIDemandExtendsVi",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：这意味着，半导体设备行业的景气度正在从“AI预期”转向“可验证",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：ASMLAI需求将能见度延伸至2028年",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：ASMLAI需求将能见度延伸至2028年"
+      }
+    },
+    {
+      "source_report_name": "03-CITI-Asia Communication Infrastructure-800VDC Architecture for Next-Generation AI Data Centers-260717",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：亚洲通信基础设施-下一代AI数据中心800VDC架构",
+      "final_wechat_title": "花旗：亚洲通信基础设施-下一代AI数据中心800VDC架构",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_0/0003-03-CITI-Asia-Communication-Infrastructure-800VDC-Architecture-for-Next-Gene",
+      "generation_decision": {
+        "source_filename": "0003-03-CITI-Asia Communication Infrastructure-800VDC Architecture for Next-Generation AI Data Centers-260717.pdf",
+        "cleaned_source_title": "CITI-Asia Communication Infrastructure-800VDC Architecture for Next-Generation AI Data Centers",
+        "institution_name": "Citi",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "Citi：AIAsiaCommunicationInfra",
+        "raw_candidates": [
+          "亚洲通信基础设施-下一代AI数据中心800VDC架构",
+          "亚洲通信基础设施-800VDC架构：2030年覆盖79%新增数据中心",
+          "亚洲通信基础设施-800VDC架构：GPU机柜功率密度十年增长100倍"
+        ],
+        "cleaned_candidates": [
+          "Citi：亚洲通信基础设施-下一代AI数据中心800VDC架构",
+          "Citi：亚洲通信基础设施-800VDC架构",
+          "Citi：AIAsiaCommunicationInfra",
+          "Citi：AI数据中心正从“交流电时代”转向800伏直流电架构"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：亚洲通信基础设施-800VDC架构",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "Citi：AIAsiaCommunicationInfra",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：AI数据中心正从“交流电时代”转向800伏直流电架构",
+            "reasons": [
+              "anchor_coverage=0.33",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：亚洲通信基础设施-下一代AI数据中心800VDC架构",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：亚洲通信基础设施-下一代AI数据中心800VDC架构"
+      }
+    },
+    {
+      "source_report_name": "04-CITI-China Auto Manufacturers-Bi-Monthly Duo NEV Pricing Trends -Discount - MSRP-- Mid-Jul-26-260717",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：中国车企新能源车定价趋势-折扣与MSRP",
+      "final_wechat_title": "花旗：中国车企新能源车定价趋势-折扣与MSRP",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_0/0004-04-CITI-China-Auto-Manufacturers-Bi-Monthly-Duo-NEV-Pricing-Trends--Discoun",
+      "generation_decision": {
+        "source_filename": "0004-04-CITI-China Auto Manufacturers-Bi-Monthly Duo NEV Pricing Trends -Discount - MSRP-- Mid-Jul-26-260717.pdf",
+        "cleaned_source_title": "CITI-China Auto Manufacturers-Bi-Monthly Duo NEV Pricing Trends -Discount - MSRP-- Mid-Jul-26",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：中国AutoManufacturersBiMon",
+        "raw_candidates": [
+          "Citi：中国车企新能源车定价趋势-折扣与MSRP",
+          "Citi：中国新能源车折扣率5.9%稳态-豪华品牌仍失血",
+          "Citi：新能源车折扣战转向局部交火-理想特斯拉率先收价"
+        ],
+        "cleaned_candidates": [
+          "Citi：中国车企新能源车定价趋势-折扣与MSRP",
+          "Citi：中国新能源车折扣率5.9%稳态-豪华品牌仍失血",
+          "Citi：新能源车折扣战转向局部交火-理想特斯拉率先收价",
+          "Citi：中国AutoManufacturersBiMon",
+          "Citi：7月中旬，中国新能源乘用车市场的加权平均零售折扣率停在5.9%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：中国新能源车折扣率5.9%稳态-豪华品牌仍失血",
+            "reasons": [
+              "anchor_coverage=0.28",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：新能源车折扣战转向局部交火-理想特斯拉率先收价",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中国AutoManufacturersBiMon",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：7月中旬，中国新能源乘用车市场的加权平均零售折扣率停在5.9%",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：中国车企新能源车定价趋势-折扣与MSRP",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：中国车企新能源车定价趋势-折扣与MSRP"
+      }
+    },
+    {
+      "source_report_name": "05-DB-Expert call-Expert call takeaways on China-s AI chip market updates-260717",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：专家交流，中国AI芯片市场更新",
+      "final_wechat_title": "德意志银行：专家交流，中国AI芯片市场更新",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_0/0005-05-Deutsche-Bank-Expert-call-Expert-call-takeaways-on-China-s-AI-chip-marke",
+      "generation_decision": {
+        "source_filename": "0005-05-DB-Expert call-Expert call takeaways on China-s AI chip market updates-260717.pdf",
+        "cleaned_source_title": "DB-Expert call-Expert call takeaways on China-s AI chip market updates",
+        "institution_name": "DB",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "DB：AIExpertcallExpertcallt",
+        "raw_candidates": [
+          "专家电话会：中国AI芯片市场更新",
+          "中国AI芯片市场更新-产能瓶颈至2027年",
+          "中国AI芯片市场更新-卖方市场格局不变"
+        ],
+        "cleaned_candidates": [
+          "DB：专家电话会，中国AI芯片市场更新",
+          "DB：中国AI芯片市场更新-产能瓶颈至2027年",
+          "DB：中国AI芯片市场更新-卖方市场格局不变",
+          "DB：AIExpertcallExpertcallt",
+          "DB：2025年国内AI芯片出货量约400万颗"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：中国AI芯片市场更新-产能瓶颈至2027年",
+            "reasons": [
+              "anchor_coverage=0.58",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：中国AI芯片市场更新-卖方市场格局不变",
+            "reasons": [
+              "anchor_coverage=0.58",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：AIExpertcallExpertcallt",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：2025年国内AI芯片出货量约400万颗",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：专家电话会，中国AI芯片市场更新",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：专家电话会，中国AI芯片市场更新"
+      }
+    },
+    {
+      "source_report_name": "06-CITI-Zhongji Innolight Co.- Ltd.-300308-A Leading Global Optical Interconnects Solution Provider-260717",
+      "institution_name": "花旗",
+      "title_before_upload": "中际旭创：全球领先光互联解决方案供应商",
+      "final_wechat_title": "花旗：中际旭创，全球领先光互联解决方案供应商",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_1/0001-06-CITI-Zhongji-Innolight-Co.--Ltd.-300308-A-Leading-Global-Optical-Interco",
+      "generation_decision": {
+        "source_filename": "0001-06-CITI-Zhongji Innolight Co.- Ltd.-300308-A Leading Global Optical Interconnects Solution Provider-260717.pdf",
+        "cleaned_source_title": "CITI-Zhongji Innolight Co.- Ltd.-300308-A Leading Global Optical Interconnects Solution Provider",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：ZhongjiInnolightCo.-Ltd.",
+        "raw_candidates": [
+          "中际旭创：全球领先光互联解决方案供应商",
+          "中际旭创：全球光互联龙头，市占率21.2%",
+          "中际旭创：光互联龙头，AI资本开支从0.9万亿跃升至6.1万亿"
+        ],
+        "cleaned_candidates": [
+          "Citi：中际旭创，全球领先光互联解决方案供应商",
+          "Citi：中际旭创，全球光互联龙头，市占率21.2%",
+          "Citi：中际旭创，光互联龙头，AI资本开支从0.9万亿跃升至6.1万亿",
+          "Citi：ZhongjiInnolightCo.-Ltd.",
+          "Citi：全球AI资本开支正从过去五年的0.9万亿美元跃升至未来五年的6."
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：中际旭创，全球光互联龙头，市占率21.2%",
+            "reasons": [
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中际旭创，光互联龙头，AI资本开支从0.9万亿跃升至6.1万亿",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：ZhongjiInnolightCo.-Ltd.",
+            "reasons": [
+              "incomplete_last_segment",
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：全球AI资本开支正从过去五年的0.9万亿美元跃升至未来五年的6.",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          }
+        ],
+        "selected_title": "Citi：中际旭创，全球领先光互联解决方案供应商",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：中际旭创，全球领先光互联解决方案供应商"
+      }
+    },
+    {
+      "source_report_name": "07-DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade-260717",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：联合健康交出强劲展望-报价回落",
+      "final_wechat_title": "德意志银行：联合健康交出强劲展望-报价回落",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_1/0002-07-Deutsche-Bank-UnitedHealth-Group-UNH.US-No-Good-Deed-UNH-Delivers-Robust",
+      "generation_decision": {
+        "source_filename": "0002-07-DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade-260717.pdf",
+        "cleaned_source_title": "DB-UnitedHealth Group-UNH.US-No Good Deed-UNH Delivers Robust Outlook-Shares Fade",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：UnitedHealthGroupNoGo",
+        "raw_candidates": [
+          "联合健康交出强劲展望-报价回落",
+          "联合健康营收1120亿美元超预期-报价回落",
+          "联合健康交出完美季度-市场为何不买账"
+        ],
+        "cleaned_candidates": [
+          "DB：联合健康交出强劲展望-报价回落",
+          "DB：联合健康营收1120亿美元超预期-报价回落",
+          "DB：联合健康交出完美季度-市场为何不买账",
+          "DB：UnitedHealthGroupNoGo",
+          "DB：但报价在开盘上涨约9%后迅速回落，收盘仅微涨1%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：联合健康营收1120亿美元超预期-报价回落",
+            "reasons": [
+              "anchor_coverage=0.46"
+            ]
+          },
+          {
+            "title": "DB：联合健康交出完美季度-市场为何不买账",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：UnitedHealthGroupNoGo",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：但报价在开盘上涨约9%后迅速回落，收盘仅微涨1%",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：联合健康交出强劲展望-报价回落",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：联合健康交出强劲展望-报价回落"
+      }
+    },
+    {
+      "source_report_name": "08-DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes-260717",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：GSK慢性咳嗽管线桥墩少了几块-CALM-2未达终点",
+      "final_wechat_title": "德意志银行：GSK慢性咳嗽管线桥墩少了几块-CALM-2未达终点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_1/0003-08-Deutsche-Bank-GSK-GSK.L-Don-t-panic--but-that-bridge-just-lost-a-few-bri",
+      "generation_decision": {
+        "source_filename": "0003-08-DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes-260717.pdf",
+        "cleaned_source_title": "DB-GSK-GSK.L-Don-t panic- but that bridge just lost a few bricks- camplipixant headline takes",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：GSKDontpanic",
+        "raw_candidates": [
+          "GSK慢性咳嗽管线桥墩少了几块",
+          "GSK慢性咳嗽管线桥墩少了几块-CALM-2未达终点",
+          "GSK慢性咳嗽管线桥墩少了几块-DB冷静重新校准"
+        ],
+        "cleaned_candidates": [
+          "DB：GSK慢性咳嗽管线桥墩少了几块",
+          "DB：GSK慢性咳嗽管线桥墩少了几块-CALM-2未达终点",
+          "DB：GSK慢性咳嗽管线桥墩少了几块-DB冷静重新校准",
+          "DB：GSKDontpanic",
+          "DB：GSK在7月17日公布了一项让市场失望的临床数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：GSKDontpanic",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：GSK在7月17日公布了一项让市场失望的临床数据",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：GSK慢性咳嗽管线桥墩少了几块-CALM-2未达终点",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：GSK慢性咳嗽管线桥墩少了几块-CALM-2未达终点"
+      }
+    },
+    {
+      "source_report_name": "09-DB-Intuitive Surgical-ISRG.OQ-Choppy 2Q- maintain 报告观点and",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：达芬奇手术机器人三重护城河正被侵蚀",
+      "final_wechat_title": "德意志银行：达芬奇手术机器人三重护城河正被侵蚀",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_1/0004-09-Deutsche-Bank-Intuitive-Surgical-ISRG.OQ-Choppy-2Q--maintain-SELL-and-lo",
+      "generation_decision": {
+        "source_filename": "0004-09-DB-Intuitive Surgical-ISRG.OQ-Choppy 2Q- maintain SELL and lower PT to -324-260717.pdf",
+        "cleaned_source_title": "DB-Intuitive Surgical-ISRG.OQ-Choppy 2Q- maintain SELL and lower PT to -324",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：IntuitiveSurgicalChoppy2Q",
+        "raw_candidates": [
+          "DB：达芬奇手术机器人三重护城河正被侵蚀",
+          "DB：直觉外科美国手术量增速放缓至12%",
+          "DB：直觉外科耗材业务面临翻新器械与降价双重压力",
+          "直觉外科二季度业绩疲软-维持卖出下调目标价至324",
+          "直觉外科二季度美国手术量仅增12%-维持卖出下调目标价",
+          "直觉外科三重护城河侵蚀-维持卖出下调目标价至324"
+        ],
+        "cleaned_candidates": [
+          "DB：达芬奇手术机器人三重护城河正被侵蚀",
+          "DB：直觉外科美国手术量增速放缓至12%",
+          "DB：直觉外科耗材业务面临翻新器械与降价双重压力",
+          "DB",
+          "DB：IntuitiveSurgicalChoppy2Q",
+          "DB：将全年美国手术量增速预测下调110个基点至12.1%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：直觉外科美国手术量增速放缓至12%",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：直觉外科耗材业务面临翻新器械与降价双重压力",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：IntuitiveSurgicalChoppy2Q",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：将全年美国手术量增速预测下调110个基点至12.1%",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：达芬奇手术机器人三重护城河正被侵蚀",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "DB：将全年美国手术量增速预测下调110个基点至12.1%",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "DB：达芬奇手术机器人三重护城河正被侵蚀",
+          "DB：直觉外科美国手术量增速放缓至12%",
+          "DB：直觉外科耗材业务面临翻新器械与降价双重压力"
+        ],
+        "final_title_after_wording_guard": "DB：达芬奇手术机器人三重护城河正被侵蚀"
+      }
+    },
+    {
+      "source_report_name": "10-GS-Montage -688008--Rising memory interface IC with Gen-3 Gen-4 ramp up- 2Q26 NI guidance beat- 报告观点-260718",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：澜起科技DDR5代际升级推动净利润超预期",
+      "final_wechat_title": "高盛：澜起科技DDR5代际升级推动净利润超预期",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_1/0005-10-Goldman-Sachs-Montage--688008--Rising-memory-interface-IC-with-Gen-3-Gen",
+      "generation_decision": {
+        "source_filename": "0005-10-GS-Montage -688008--Rising memory interface IC with Gen-3 Gen-4 ramp up- 2Q26 NI guidance beat- Buy-260718.pdf",
+        "cleaned_source_title": "GS-Montage -688008--Rising memory interface IC with Gen-3 Gen-4 ramp up- 2Q26 NI guidance beat- Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：Montage688008Risingmemor",
+        "raw_candidates": [
+          "澜起科技DDR5代际升级推动净利润超预期",
+          "澜起科技2Q26净利润指引超预期48%",
+          "澜起科技DDR5 Gen-3/Gen-4驱动业绩超预期"
+        ],
+        "cleaned_candidates": [
+          "GS：澜起科技DDR5代际升级推动净利润超预期",
+          "GS：澜起科技2Q26净利润指引超预期48%",
+          "GS：Gen-4驱动业绩超预期",
+          "GS：Montage688008Risingmemor",
+          "GS：澜起科技2026年第二季度净利润指引中值达到10亿至12亿元人民"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：澜起科技2Q26净利润指引超预期48%",
+            "reasons": [
+              "anchor_coverage=0.37"
+            ]
+          },
+          {
+            "title": "GS：Gen-4驱动业绩超预期",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：Montage688008Risingmemor",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：澜起科技2026年第二季度净利润指引中值达到10亿至12亿元人民",
+            "reasons": [
+              "anchor_coverage=0.26",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：澜起科技DDR5代际升级推动净利润超预期",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：澜起科技DDR5代际升级推动净利润超预期"
+      }
+    },
+    {
+      "source_report_name": "11-DB-XPeng-9868.HK-Competitive Pricing and Appealing Design Drives -L03- SUV-s Success-260717",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：小鹏L03 SUV定价与设计驱动成功",
+      "final_wechat_title": "德意志银行：小鹏L03SUV定价与设计驱动成功",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_2/0001-11-Deutsche-Bank-XPeng-9868.HK-Competitive-Pricing-and-Appealing-Design-Dri",
+      "generation_decision": {
+        "source_filename": "0001-11-DB-XPeng-9868.HK-Competitive Pricing and Appealing Design Drives -L03- SUV-s Success-260717.pdf",
+        "cleaned_source_title": "DB-XPeng-9868.HK-Competitive Pricing and Appealing Design Drives -L03- SUV-s Success",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：XPengCompetitivePricing",
+        "raw_candidates": [
+          "小鹏L03 SUV定价与设计驱动成功",
+          "小鹏L03 SUV七分钟获两万订单",
+          "小鹏L03 SUV定价低万元斩获两万订单"
+        ],
+        "cleaned_candidates": [
+          "DB：小鹏L03SUV定价与设计驱动成功",
+          "DB：小鹏L03SUV七分钟获两万订单",
+          "DB：小鹏L03SUV定价低万元斩获两万订单",
+          "DB：XPengCompetitivePricing",
+          "DB：7月16日，小鹏正式推出MonaL03SUV"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：小鹏L03SUV七分钟获两万订单",
+            "reasons": [
+              "anchor_coverage=0.44"
+            ]
+          },
+          {
+            "title": "DB：小鹏L03SUV定价低万元斩获两万订单",
+            "reasons": [
+              "anchor_coverage=0.56"
+            ]
+          },
+          {
+            "title": "DB：XPengCompetitivePricing",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：7月16日，小鹏正式推出MonaL03SUV",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          }
+        ],
+        "selected_title": "DB：小鹏L03SUV定价与设计驱动成功",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：小鹏L03SUV定价与设计驱动成功"
+      }
+    },
+    {
+      "source_report_name": "12-GS-Nongfu Spring -9633.HK-- 1H26 Preview- Leading position solidified across categories with strong sugar-free tea- water recovery new-260718",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：农夫山泉1H26预览-各品类领先地位巩固，无糖茶强劲，水业务复苏",
+      "final_wechat_title": "高盛：农夫山泉1H26预览-各品类领先地位巩固，无糖茶强劲，水业务复苏",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_2/0002-12-Goldman-Sachs-Nongfu-Spring--9633.HK---1H26-Preview--Leading-position-so",
+      "generation_decision": {
+        "source_filename": "0002-12-GS-Nongfu Spring -9633.HK-- 1H26 Preview- Leading position solidified across categories with strong sugar-free tea- water recovery new-260718.pdf",
+        "cleaned_source_title": "GS-Nongfu Spring -9633.HK-- 1H26 Preview- Leading position solidified across categories with strong sugar-free tea- water recovery new",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：NongfuSpring1H26PreviewL",
+        "raw_candidates": [
+          "农夫山泉1H26预览-各品类领先地位巩固，无糖茶强劲，水业务复苏",
+          "农夫山泉1H26预览-茶饮料占比升至43%，取代包装水成最大增长引擎",
+          "农夫山泉1H26预览-东方树叶增速35%是茶π的10倍，无糖茶改写增长逻辑"
+        ],
+        "cleaned_candidates": [
+          "GS：农夫山泉1H26预览-各品类领先地位巩固，无糖茶强劲，水业务复苏",
+          "GS：农夫山泉1H26预览-茶饮料占比升至43%",
+          "GS：农夫山泉1H26预览-东方树叶增速35%是茶π的10倍",
+          "GS：NongfuSpring1H26PreviewL",
+          "GS：茶饮料收入占比从2022年的21%攀升至2026年预期的43%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：农夫山泉1H26预览-茶饮料占比升至43%",
+            "reasons": [
+              "anchor_coverage=0.32",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：农夫山泉1H26预览-东方树叶增速35%是茶π的10倍",
+            "reasons": [
+              "anchor_coverage=0.32",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：NongfuSpring1H26PreviewL",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：茶饮料收入占比从2022年的21%攀升至2026年预期的43%",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：农夫山泉1H26预览-各品类领先地位巩固，无糖茶强劲，水业务复苏",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：农夫山泉1H26预览-各品类领先地位巩固，无糖茶强劲，水业务复苏"
+      }
+    },
+    {
+      "source_report_name": "13-JPM-Korea Battery-LGES wins 2.9GWh Google ESS project- SK On wins 13- of Korea AI ESS tender-260717",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化",
+      "final_wechat_title": "摩根大通：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_2/0003-13-J.P.-Morgan-Korea-Battery-LGES-wins-2.9GWh-Google-ESS-project--SK-On-win",
+      "generation_decision": {
+        "source_filename": "0003-13-JPM-Korea Battery-LGES wins 2.9GWh Google ESS project- SK On wins 13- of Korea AI ESS tender-260717.pdf",
+        "cleaned_source_title": "JPM-Korea Battery-LGES wins 2.9GWh Google ESS project- SK On wins 13- of Korea AI ESS tender",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：AIKoreaBatteryLGESwins2.9",
+        "raw_candidates": [
+          "JPM：韩国电池厂利润拐点取决于资产出清速度",
+          "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+          "JPM：SK Innovation资产重组逻辑优于电池订单增长",
+          "韩国电池：LGES获谷歌2.9GWh储能项目，SK On获韩国AI储能招标13%份额",
+          "韩国电池：LGES获谷歌2.9GWh储能项目，SK On获韩国AI储能招标13%份额-利润拐点待验证",
+          "韩国电池：LGES获谷歌2.9GWh储能项目，SK On获韩国AI储能招标13%份额-资产出清才是真正拐点"
+        ],
+        "cleaned_candidates": [
+          "JPM：韩国电池厂利润拐点取决于资产出清速度",
+          "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+          "JPM：SKInnovation资产重组逻辑优于电池订单增长",
+          "JPM：韩国电池，LGES获谷歌2.9GWh储能项目",
+          "JPM：AIKoreaBatteryLGESwins2.9",
+          "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化"
+        ],
+        "faithful_candidate_missing_terms": [
+          "AI"
+        ],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：韩国电池厂利润拐点取决于资产出清速度",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：SKInnovation资产重组逻辑优于电池订单增长",
+            "reasons": [
+              "missing_required_terms=AI",
+              "long_untranslated_english",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：韩国电池，LGES获谷歌2.9GWh储能项目",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：AIKoreaBatteryLGESwins2.9",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化",
+        "selection_reason": "evidence_or_emergency_fallback",
+        "selected_quality_issues": [],
+        "needs_model_repair": true,
+        "hook_signals": {
+          "added_numbers": [
+            "2"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "JPM：韩国电池厂利润拐点取决于资产出清速度",
+          "JPM：LG新能源获谷歌2.9GWh储能项目，下半年出货量有望翻倍",
+          "JPM：SK Innovation资产重组逻辑优于电池订单增长"
+        ],
+        "final_title_after_wording_guard": "JPM：2.韩国AI储能招标揭示了一个新变量，运营商结构正在分化"
+      }
+    },
+    {
+      "source_report_name": "14-GS-Xtep International Holdings -1368.HK- 2Q26 报告观点-through under pressure leading to risk in guidance- yet discount remained disciplined- 报告观点-260718",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：特步二季度销售观察——行业折扣加深但特步折扣纪律未松",
+      "final_wechat_title": "高盛：特步二季度销售观察，行业折扣加深但特步折扣纪律未松",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_2/0004-14-Goldman-Sachs-Xtep-International-Holdings--1368.HK--2Q26-sell-through-un",
+      "generation_decision": {
+        "source_filename": "0004-14-GS-Xtep International Holdings -1368.HK- 2Q26 sell-through under pressure leading to risk in guidance- yet discount remained disciplined- Buy-260718.pdf",
+        "cleaned_source_title": "GS-Xtep International Holdings -1368.HK- 2Q26 sell-through under pressure leading to risk in guidance- yet discount remained disciplined- Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：XtepInternationalHoldings2Q26报告观",
+        "raw_candidates": [
+          "特步二季度销售承压致指引风险-折扣保持纪律-买入",
+          "特步二季度销售承压致指引风险-折扣纪律未松-库存升至4.5-5.0个月",
+          "特步二季度销售承压-行业折扣加深但特步折扣纪律未松-GS维持买入"
+        ],
+        "cleaned_candidates": [
+          "GS：特步二季度销售承压致指引风险-折扣保持纪律-买入",
+          "GS：特步二季度销售承压致指引风险-折扣纪律未松-库存升至4.5",
+          "GS：特步二季度销售承压-行业折扣加深但特步折扣纪律未松",
+          "GS：XtepInternationalHoldings2Q26报告观",
+          "GS：特步核心品牌二季度零售折扣维持在25-30%，同比基本持平"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "incomplete_last_segment",
+          "forbidden_public_wording"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：特步二季度销售承压致指引风险-折扣保持纪律-买入",
+            "reasons": [
+              "incomplete_last_segment",
+              "forbidden_public_wording",
+              "anchor_coverage=0.48",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：特步二季度销售承压致指引风险-折扣纪律未松-库存升至4.5",
+            "reasons": [
+              "bare_trailing_number",
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "GS：XtepInternationalHoldings2Q26报告观",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：特步核心品牌二季度零售折扣维持在25-30%，同比基本持平",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：特步二季度销售承压-行业折扣加深但特步折扣纪律未松",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：特步二季度销售承压-行业折扣加深但特步折扣纪律未松"
+      }
+    },
+    {
+      "source_report_name": "16-MS-Burberry -BRBY.L--Addressing Investor Pushback- Stay 报告观点-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：Burberry回应参与者质疑-维持超配",
+      "final_wechat_title": "摩根士丹利：Burberry回应参与者质疑-维持超配",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_3/0001-16-Morgan-Stanley-Burberry--BRBY.L--Addressing-Investor-Pushback--Stay-Over",
+      "generation_decision": {
+        "source_filename": "0001-16-MS-Burberry -BRBY.L--Addressing Investor Pushback- Stay Overweight-260717.pdf",
+        "cleaned_source_title": "MS-Burberry -BRBY.L--Addressing Investor Pushback- Stay Overweight",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：Burberry",
+        "raw_candidates": [
+          "Burberry回应投资者质疑-维持超配",
+          "Burberry同店增长加速5%-市场反应过度",
+          "Burberry复苏非曲棍球效应-季度验证中"
+        ],
+        "cleaned_candidates": [
+          "MS：Burberry回应参与者质疑-维持超配",
+          "MS：Burberry同店增长加速5%-市场反应过度",
+          "MS：Burberry复苏非曲棍球效应-季度验证中",
+          "MS：Burberry",
+          "MS：第一财季同店销售增长5%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：Burberry同店增长加速5%-市场反应过度",
+            "reasons": [
+              "anchor_coverage=0.39",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：Burberry复苏非曲棍球效应-季度验证中",
+            "reasons": [
+              "anchor_coverage=0.39",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：Burberry",
+            "reasons": [
+              "anchor_coverage=0.39",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：第一财季同店销售增长5%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：Burberry回应参与者质疑-维持超配",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：Burberry回应参与者质疑-维持超配"
+      }
+    },
+    {
+      "source_report_name": "17-JEF-Lithium Value Chain Survey- Momentum Soft- Outlook Deteriorates-260717",
+      "institution_name": "杰富瑞",
+      "title_before_upload": "JEF：JEF锂电产业链调研，动能变化，前景出现调整",
+      "final_wechat_title": "杰富瑞：锂电产业链调研，动能变化，前景出现调整",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_3/0002-17-Jefferies-Lithium-Value-Chain-Survey--Momentum-Soft--Outlook-Deteriorate",
+      "generation_decision": {
+        "source_filename": "0002-17-JEF-Lithium Value Chain Survey- Momentum Soft- Outlook Deteriorates-260717.pdf",
+        "cleaned_source_title": "JEF-Lithium Value Chain Survey- Momentum Soft- Outlook Deteriorates",
+        "institution_name": "JEF",
+        "required_terms": [],
+        "deterministic_fallback": "JEF：LithiumValueChainSurvey",
+        "raw_candidates": [
+          "JEF锂电产业链调研：动能转弱，前景恶化",
+          "JEF锂电调研：三季度订单急冻，库存增速跑赢销量",
+          "JEF锂电调研：库存增速跑赢销量，过去三年仅两次"
+        ],
+        "cleaned_candidates": [
+          "JEF：JEF锂电产业链调研，动能转弱，前景恶化",
+          "JEF：JEF锂电调研，三季度订单急冻，库存增速跑赢销量",
+          "JEF：JEF锂电调研，库存增速跑赢销量，过去三年仅两次",
+          "JEF：LithiumValueChainSurvey",
+          "JEF：这份来自JEF的锂电产业链调研覆盖了中国市场98%的锂盐转化企"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JEF：JEF锂电调研，三季度订单急冻，库存增速跑赢销量",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：JEF锂电调研，库存增速跑赢销量，过去三年仅两次",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：LithiumValueChainSurvey",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：这份来自JEF的锂电产业链调研覆盖了中国市场98%的锂盐转化企",
+            "reasons": [
+              "anchor_coverage=0.47",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JEF：JEF锂电产业链调研，动能转弱，前景恶化",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JEF：JEF锂电产业链调研，动能转弱，前景恶化"
+      }
+    },
+    {
+      "source_report_name": "18-MS-Biopharma-A picture is worth a thousand words-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭",
+      "final_wechat_title": "摩根士丹利：生物制药，一图胜千言-新药放量速度决定药企分水岭",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_3/0003-18-Morgan-Stanley-Biopharma-A-picture-is-worth-a-thousand-words-260717",
+      "generation_decision": {
+        "source_filename": "0003-18-MS-Biopharma-A picture is worth a thousand words-260717.pdf",
+        "cleaned_source_title": "MS-Biopharma-A picture is worth a thousand words",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：BiopharmaApictureiswo",
+        "raw_candidates": [
+          "生物制药：一图胜千言",
+          "生物制药：一图胜千言-新药放量速度决定药企分水岭",
+          "生物制药：一图胜千言-Cobenfy放量目标需达历史同类2至5倍"
+        ],
+        "cleaned_candidates": [
+          "MS：生物制药，一图胜千言",
+          "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭",
+          "MS：BiopharmaApictureiswo",
+          "MS：过去12周滚动增速仅为1.2%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：BiopharmaApictureiswo",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：过去12周滚动增速仅为1.2%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [
+            "分水岭"
+          ],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭"
+      }
+    },
+    {
+      "source_report_name": "19-MS-China Healthcare-China Biotech Valuation and Liquidity Monthly-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：中国生物科技板块估值与流动性月度更新",
+      "final_wechat_title": "摩根士丹利：中国生物科技板块估值与流动性月度更新",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_3/0004-19-Morgan-Stanley-China-Healthcare-China-Biotech-Valuation-and-Liquidity-Mo",
+      "generation_decision": {
+        "source_filename": "0004-19-MS-China Healthcare-China Biotech Valuation and Liquidity Monthly-260717.pdf",
+        "cleaned_source_title": "MS-China Healthcare-China Biotech Valuation and Liquidity Monthly",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：中国Healthcare中国Biotech",
+        "raw_candidates": [
+          "中国生物科技估值与流动性月度更新",
+          "中国生物科技估值修复至3.8倍，流动性创9.7%新高",
+          "中国生物科技估值反弹27%，资金轮动与政策预期驱动"
+        ],
+        "cleaned_candidates": [
+          "MS：中国生物科技估值与流动性月度更新",
+          "MS：中国生物科技估值修复至3.8倍，流动性创9.7%新高",
+          "MS：中国生物科技估值反弹27%，资金轮动与政策预期驱动",
+          "MS：中国Healthcare中国Biotech",
+          "MS：S）从5月底的约3.5倍，在6月下旬压缩至约3.0倍的低点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：中国生物科技估值修复至3.8倍，流动性创9.7%新高",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "MS：中国生物科技估值反弹27%，资金轮动与政策预期驱动",
+            "reasons": [
+              "anchor_coverage=0.54"
+            ]
+          },
+          {
+            "title": "MS：中国Healthcare中国Biotech",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：S）从5月底的约3.5倍，在6月下旬压缩至约3.0倍的低点",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：中国生物科技估值与流动性月度更新",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：中国生物科技估值与流动性月度更新"
+      }
+    },
+    {
+      "source_report_name": "20-MS-LVMH-LVMH.PA-Champagne exports accelerated in 2Q26-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：LVMH香槟出口2Q26加速-出口量同比增8%",
+      "final_wechat_title": "摩根士丹利：LVMH香槟出口2Q26加速-出口量同比增8%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_3/0005-20-Morgan-Stanley-LVMH-LVMH.PA-Champagne-exports-accelerated-in-2Q26-260717",
+      "generation_decision": {
+        "source_filename": "0005-20-MS-LVMH-LVMH.PA-Champagne exports accelerated in 2Q26-260717.pdf",
+        "cleaned_source_title": "MS-LVMH-LVMH.PA-Champagne exports accelerated in 2Q26",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：LVMHChampagneexportsa",
+        "raw_candidates": [
+          "LVMH香槟出口2Q26加速",
+          "LVMH香槟出口2Q26加速-出口量同比增8%",
+          "LVMH香槟出口加速-MS:隐藏弹性"
+        ],
+        "cleaned_candidates": [
+          "MS：LVMH香槟出口2Q26加速",
+          "MS：LVMH香槟出口2Q26加速-出口量同比增8%",
+          "MS：LVMH香槟出口加速-MS，隐藏弹性",
+          "MS：LVMHChampagneexportsa",
+          "MS：6月全行业香槟销量同比增长4%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：LVMH香槟出口加速-MS，隐藏弹性",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "MS：LVMHChampagneexportsa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：6月全行业香槟销量同比增长4%",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：LVMH香槟出口2Q26加速-出口量同比增8%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "8"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：LVMH香槟出口2Q26加速-出口量同比增8%"
+      }
+    },
+    {
+      "source_report_name": "21-MS-Electrifying Europe Reinforces -New Growth Era--260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：欧洲电气化开启新增长时代",
+      "final_wechat_title": "摩根士丹利：欧洲电气化开启新增长时代",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_4/0001-21-Morgan-Stanley-Electrifying-Europe-Reinforces--New-Growth-Era--260717",
+      "generation_decision": {
+        "source_filename": "0001-21-MS-Electrifying Europe Reinforces -New Growth Era--260717.pdf",
+        "cleaned_source_title": "MS-Electrifying Europe Reinforces -New Growth Era",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：ElectrifyingEuropeRei",
+        "raw_candidates": [
+          "欧洲电气化开启新增长时代",
+          "欧洲电气化：2040年电力需求或达5000太瓦时",
+          "欧洲电气化延长电网研究确定性窗口"
+        ],
+        "cleaned_candidates": [
+          "MS：欧洲电气化开启新增长时代",
+          "MS：欧洲电气化，2040年电力需求或达5000太瓦时",
+          "MS：欧洲电气化延长电网研究确定性窗口",
+          "MS：ElectrifyingEuropeRei",
+          "MS：相比之下，中国和日本已接近30%，整个亚太地区达到约25%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：欧洲电气化，2040年电力需求或达5000太瓦时",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "MS：欧洲电气化延长电网研究确定性窗口",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "MS：ElectrifyingEuropeRei",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：相比之下，中国和日本已接近30%，整个亚太地区达到约25%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：欧洲电气化开启新增长时代",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：欧洲电气化开启新增长时代"
+      }
+    },
+    {
+      "source_report_name": "22-MS-Montage Technology Co Ltd -688008--2Q beat driven by continued strong demand-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：澜起科技二季度超预期-持续强劲需求驱动",
+      "final_wechat_title": "摩根士丹利：澜起科技二季度超预期-持续强劲需求驱动",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_4/0002-22-Morgan-Stanley-Montage-Technology-Co-Ltd--688008--2Q-beat-driven-by-cont",
+      "generation_decision": {
+        "source_filename": "0002-22-MS-Montage Technology Co Ltd -688008--2Q beat driven by continued strong demand-260717.pdf",
+        "cleaned_source_title": "MS-Montage Technology Co Ltd -688008--2Q beat driven by continued strong demand",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：Montage科技CoLtd688008",
+        "raw_candidates": [
+          "澜起科技二季度超预期-持续强劲需求驱动",
+          "澜起科技二季度营收19亿元-超预期6%",
+          "澜起科技二季度超预期-韩国反垄断调查未影响运营"
+        ],
+        "cleaned_candidates": [
+          "MS：澜起科技二季度超预期-持续强劲需求驱动",
+          "MS：澜起科技二季度营收19亿元-超预期6%",
+          "MS：澜起科技二季度超预期-韩国反垄断调查未影响运营",
+          "MS：Montage科技CoLtd688008",
+          "MS：二季度初步营收19亿元人民币，环比增长28%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：澜起科技二季度营收19亿元-超预期6%",
+            "reasons": [
+              "anchor_coverage=0.47",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：澜起科技二季度超预期-韩国反垄断调查未影响运营",
+            "reasons": [
+              "anchor_coverage=0.53",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：Montage科技CoLtd688008",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：二季度初步营收19亿元人民币，环比增长28%",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：澜起科技二季度超预期-持续强劲需求驱动",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：澜起科技二季度超预期-持续强劲需求驱动"
+      }
+    },
+    {
+      "source_report_name": "23-MS-Volvo-VOLVb.ST-2Q26- In line- Europe market outlook upgrade-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：沃尔沃二季度符合预期-欧洲市场展望上调",
+      "final_wechat_title": "摩根士丹利：沃尔沃二季度符合预期-欧洲市场展望上调",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_4/0003-23-Morgan-Stanley-Volvo-VOLVb.ST-2Q26--In-line--Europe-market-outlook-upgra",
+      "generation_decision": {
+        "source_filename": "0003-23-MS-Volvo-VOLVb.ST-2Q26- In line- Europe market outlook upgrade-260717.pdf",
+        "cleaned_source_title": "MS-Volvo-VOLVb.ST-2Q26- In line- Europe market outlook upgrade",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：Volvo2Q26-Inline",
+        "raw_candidates": [
+          "沃尔沃二季度符合预期-欧洲市场展望上调",
+          "沃尔沃二季度利润超预期8%-北美订单暴增122%",
+          "沃尔沃北美订单暴增122%-MS警示补库存非真需求"
+        ],
+        "cleaned_candidates": [
+          "MS：沃尔沃二季度符合预期-欧洲市场展望上调",
+          "MS：沃尔沃二季度利润超预期8%-北美订单暴增122%",
+          "MS：沃尔沃北美订单暴增122%-MS警示补库存非真需求",
+          "MS：Volvo2Q26-Inline",
+          "MS：调整后营业利润比市场预期高出8%，利润率达到11.2%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：沃尔沃二季度利润超预期8%-北美订单暴增122%",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：沃尔沃北美订单暴增122%-MS警示补库存非真需求",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：Volvo2Q26-Inline",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：调整后营业利润比市场预期高出8%，利润率达到11.2%",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：沃尔沃二季度符合预期-欧洲市场展望上调",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：沃尔沃二季度符合预期-欧洲市场展望上调"
+      }
+    },
+    {
+      "source_report_name": "24-MS-Monthly Tracker- June Data Deteriorated- Weaker 3Q Ahead-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：MS月度追踪，6月数据出现变化，三季度更弱",
+      "final_wechat_title": "摩根士丹利：月度追踪，6月数据出现变化，三季度更弱",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_4/0004-24-Morgan-Stanley-Monthly-Tracker--June-Data-Deteriorated--Weaker-3Q-Ahead-",
+      "generation_decision": {
+        "source_filename": "0004-24-MS-Monthly Tracker- June Data Deteriorated- Weaker 3Q Ahead-260717.pdf",
+        "cleaned_source_title": "MS-Monthly Tracker- June Data Deteriorated- Weaker 3Q Ahead",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：MonthlyTracker",
+        "raw_candidates": [
+          "MS月度追踪：6月数据恶化，三季度更弱",
+          "MS月度追踪：6月新房销售同比降7%，三季度更弱",
+          "MS月度追踪：二手房挂牌量创新高，三季度房价不确定性加大"
+        ],
+        "cleaned_candidates": [
+          "MS：MS月度追踪，6月数据恶化，三季度更弱",
+          "MS：MS月度追踪，6月新房销售同比降7%，三季度更弱",
+          "MS：MS月度追踪，二手房挂牌量创新高",
+          "MS：MonthlyTracker",
+          "MS：追踪的约50个样本城市中，6月总挂牌量环比上升0.2%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：MS月度追踪，6月新房销售同比降7%，三季度更弱",
+            "reasons": [
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：MS月度追踪，二手房挂牌量创新高",
+            "reasons": [
+              "anchor_coverage=0.42",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：MonthlyTracker",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：追踪的约50个样本城市中，6月总挂牌量环比上升0.2%",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：MS月度追踪，6月数据恶化，三季度更弱",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：MS月度追踪，6月数据恶化，三季度更弱"
+      }
+    },
+    {
+      "source_report_name": "25-UBS-Korea Strategy-New rules for single-stock leveraged ETF-260717",
+      "institution_name": "瑞银",
+      "title_before_upload": "UBS：韩国单股杠杆ETF新规-AUM已缩水29%",
+      "final_wechat_title": "瑞银：韩国单股杠杆ETF新规-AUM已缩水29%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_4/0005-25-UBS-Korea-Strategy-New-rules-for-single-stock-leveraged-ETF-260717",
+      "generation_decision": {
+        "source_filename": "0005-25-UBS-Korea Strategy-New rules for single-stock leveraged ETF-260717.pdf",
+        "cleaned_source_title": "UBS-Korea Strategy-New rules for single-stock leveraged ETF",
+        "institution_name": "UBS",
+        "required_terms": [],
+        "deterministic_fallback": "UBS：Korea策略Newrulesforsingle",
+        "raw_candidates": [
+          "韩国策略-单股杠杆ETF新规",
+          "韩国单股杠杆ETF新规-AUM已缩水29%",
+          "韩国单股杠杆ETF新规-市场回调先于监管去杠杆"
+        ],
+        "cleaned_candidates": [
+          "UBS：韩国策略-单股杠杆ETF新规",
+          "UBS：韩国单股杠杆ETF新规-AUM已缩水29%",
+          "UBS：韩国单股杠杆ETF新规-市场回调先于监管去杠杆",
+          "UBS：Korea策略Newrulesforsingle",
+          "UBS：截至7月中旬，韩国本土及海外上市的单股杠杆ETF总资产规模已从6"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "UBS：Korea策略Newrulesforsingle",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "UBS：截至7月中旬，韩国本土及海外上市的单股杠杆ETF总资产规模已从6",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          }
+        ],
+        "selected_title": "UBS：韩国单股杠杆ETF新规-AUM已缩水29%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "29"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "UBS：韩国单股杠杆ETF新规-AUM已缩水29%"
+      }
+    },
+    {
+      "source_report_name": "26-MS-Weekly Monitor- Energy Storage Continues to Support Lithium Battery Demand-260717",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "储能需求占比提升，锂电池行业结构观察",
+      "final_wechat_title": "摩根士丹利：储能需求占比提升，锂电池行业结构观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_5/0001-26-Morgan-Stanley-Weekly-Monitor--Energy-Storage-Continues-to-Support-Lithi",
+      "generation_decision": {
+        "source_filename": "0001-26-MS-Weekly Monitor- Energy Storage Continues to Support Lithium Battery Demand-260717.pdf",
+        "cleaned_source_title": "MS-Weekly Monitor- Energy Storage Continues to Support Lithium Battery Demand",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：WeeklyMonitor",
+        "raw_candidates": [
+          "储能持续支撑锂电池需求",
+          "储能占比突破四成支撑锂电池需求",
+          "储能取代电动车成为锂电池主引擎"
+        ],
+        "cleaned_candidates": [
+          "MS：储能持续支撑锂电池需求",
+          "MS：储能占比突破四成支撑锂电池需求",
+          "MS：储能取代电动车成为锂电池主引擎",
+          "MS：WeeklyMonitor",
+          "MS：7月排产创纪录，且储能占比超过40%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：储能占比突破四成支撑锂电池需求",
+            "reasons": [
+              "anchor_coverage=0.70"
+            ]
+          },
+          {
+            "title": "MS：储能取代电动车成为锂电池主引擎",
+            "reasons": [
+              "anchor_coverage=0.30"
+            ]
+          },
+          {
+            "title": "MS：WeeklyMonitor",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：7月排产创纪录，且储能占比超过40%",
+            "reasons": [
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：储能持续支撑锂电池需求",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：储能持续支撑锂电池需求"
+      }
+    },
+    {
+      "source_report_name": "27-UBS-Momenta-6880.HK-Steering mainstream carmakers into the autonomous era- initiate at 报告观点-260716",
+      "institution_name": "瑞银",
+      "title_before_upload": "UBS：UBS首次覆盖Momenta——引领主流车企进入自动驾驶时代",
+      "final_wechat_title": "瑞银：首次覆盖Momenta，引领主流车企进入自动驾驶时代",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260719/shard_5/0002-27-UBS-Momenta-6880.HK-Steering-mainstream-carmakers-into-the-autonomous-er",
+      "generation_decision": {
+        "source_filename": "0002-27-UBS-Momenta-6880.HK-Steering mainstream carmakers into the autonomous era- initiate at Buy-260716.pdf",
+        "cleaned_source_title": "UBS-Momenta-6880.HK-Steering mainstream carmakers into the autonomous era- initiate at Buy",
+        "institution_name": "UBS",
+        "required_terms": [],
+        "deterministic_fallback": "UBS：MomentaSteeringmainstrea",
+        "raw_candidates": [
+          "UBS首次覆盖Momenta-引领主流车企进入自动驾驶时代-给予买入评级",
+          "UBS：Momenta与24家车企合作-170个定点项目-68个已量产",
+          "UBS：Momenta市场份额64.5%-从亏损到高利润的议价能力"
+        ],
+        "cleaned_candidates": [
+          "UBS：UBS首次覆盖Momenta-引领主流车企进入自动驾驶时代",
+          "UBS：Momenta与24家车企合作-170个定点项目-68个已量产",
+          "UBS：Momenta市场份额64.5%-从亏损到高利润的议价能力",
+          "UBS：MomentaSteeringmainstrea",
+          "UBS：截至2026年2月，其累计获得超过170个定点项目"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "UBS：Momenta与24家车企合作-170个定点项目-68个已量产",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "UBS：Momenta市场份额64.5%-从亏损到高利润的议价能力",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "UBS：MomentaSteeringmainstrea",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "UBS：截至2026年2月，其累计获得超过170个定点项目",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "UBS：UBS首次覆盖Momenta-引领主流车企进入自动驾驶时代",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "UBS：UBS首次覆盖Momenta-引领主流车企进入自动驾驶时代"
+      }
+    },
+    {
+      "source_report_name": "15-JPM-China alt-data trackers chartpack -Series 59--Limited government bond issuance pick-up so far-260717",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：中国高频数据追踪，7月前两周政府债券发行1.17万亿元",
+      "final_wechat_title": "摩根大通：中国高频数据追踪，7月前两周政府债券发行1.17万亿元",
+      "uploaded": false,
+      "skip_reason": "china_political_policy_terms=中国;sensitive=政府",
+      "report_dir": "xhs_notes/dropbox/260719/shard_2/0005-15-J.P.-Morgan-China-alt-data-trackers-chartpack--Series-59--Limited-govern",
+      "generation_decision": {
+        "source_filename": "0005-15-JPM-China alt-data trackers chartpack -Series 59--Limited government bond issuance pick-up so far-260717.pdf",
+        "cleaned_source_title": "JPM-China alt-data trackers chartpack -Series 59--Limited government bond issuance pick-up so far",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国altdatatrackerschart",
+        "raw_candidates": [
+          "中国高频数据追踪：政府债券发行提速",
+          "中国高频数据追踪：7月前两周政府债券发行1.17万亿元",
+          "中国高频数据追踪：政府债券发行提速，增长动能分化"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国高频数据追踪，政府债券发行提速",
+          "JPM：中国高频数据追踪，7月前两周政府债券发行1.17万亿元",
+          "JPM：中国高频数据追踪，政府债券发行提速，增长动能分化",
+          "JPM：中国altdatatrackerschart",
+          "JPM：覆盖了7月截至17日的数据，其核心发现是"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国altdatatrackerschart",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：覆盖了7月截至17日的数据，其核心发现是",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：中国高频数据追踪，7月前两周政府债券发行1.17万亿元",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "1.17",
+            "7"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：中国高频数据追踪，7月前两周政府债券发行1.17万亿元"
+      }
+    }
+  ]
+}
