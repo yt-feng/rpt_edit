@@ -1,0 +1,519 @@
+[
+  {
+    "item": "0001-16-Morgan-Stanley-Burberry--BRBY.L--Addressing-Investor-Pushback--Stay-Over",
+    "source_pdf": "/tmp/pdf_batch_001_njqmshvv/pdfs/0001-16-MS-Burberry -BRBY.L--Addressing Investor Pushback- Stay Overweight-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Burberry Q",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Burberry回应参与者质疑-维持超配",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-MS-Burberry -BRBY.L--Addressing Investor Pushback- Stay Overweight-260717.pdf",
+      "cleaned_source_title": "MS-Burberry -BRBY.L--Addressing Investor Pushback- Stay Overweight",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Burberry",
+      "raw_candidates": [
+        "Burberry回应投资者质疑-维持超配",
+        "Burberry同店增长加速5%-市场反应过度",
+        "Burberry复苏非曲棍球效应-季度验证中"
+      ],
+      "cleaned_candidates": [
+        "MS：Burberry回应参与者质疑-维持超配",
+        "MS：Burberry同店增长加速5%-市场反应过度",
+        "MS：Burberry复苏非曲棍球效应-季度验证中",
+        "MS：Burberry",
+        "MS：第一财季同店销售增长5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Burberry同店增长加速5%-市场反应过度",
+          "reasons": [
+            "anchor_coverage=0.39",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Burberry复苏非曲棍球效应-季度验证中",
+          "reasons": [
+            "anchor_coverage=0.39",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Burberry",
+          "reasons": [
+            "anchor_coverage=0.39",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：第一财季同店销售增长5%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Burberry回应参与者质疑-维持超配",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：Burberry回应参与者质疑-维持超配"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-17-JEF-Lithium-Value-Chain-Survey--Momentum-Soft--Outlook-Deteriorate",
+    "source_pdf": "/tmp/pdf_batch_001_njqmshvv/pdfs/0002-17-JEF-Lithium Value Chain Survey- Momentum Soft- Outlook Deteriorates-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "锂电投研：Q3 压力",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JEF：JEF锂电产业链调研，动能转弱，前景恶化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-JEF-Lithium Value Chain Survey- Momentum Soft- Outlook Deteriorates-260717.pdf",
+      "cleaned_source_title": "JEF-Lithium Value Chain Survey- Momentum Soft- Outlook Deteriorates",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：LithiumValueChainSurvey",
+      "raw_candidates": [
+        "JEF锂电产业链调研：动能转弱，前景恶化",
+        "JEF锂电调研：三季度订单急冻，库存增速跑赢销量",
+        "JEF锂电调研：库存增速跑赢销量，过去三年仅两次"
+      ],
+      "cleaned_candidates": [
+        "JEF：JEF锂电产业链调研，动能转弱，前景恶化",
+        "JEF：JEF锂电调研，三季度订单急冻，库存增速跑赢销量",
+        "JEF：JEF锂电调研，库存增速跑赢销量，过去三年仅两次",
+        "JEF：LithiumValueChainSurvey",
+        "JEF：这份来自JEF的锂电产业链调研覆盖了中国市场98%的锂盐转化企"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：JEF锂电调研，三季度订单急冻，库存增速跑赢销量",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：JEF锂电调研，库存增速跑赢销量，过去三年仅两次",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：LithiumValueChainSurvey",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：这份来自JEF的锂电产业链调研覆盖了中国市场98%的锂盐转化企",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：JEF锂电产业链调研，动能转弱，前景恶化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JEF：JEF锂电产业链调研，动能转弱，前景恶化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-18-Morgan-Stanley-Biopharma-A-picture-is-worth-a-thousand-words-260717",
+    "source_pdf": "/tmp/pdf_batch_001_njqmshvv/pdfs/0003-18-MS-Biopharma-A picture is worth a thousand words-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "美国新药上市第一波数",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-MS-Biopharma-A picture is worth a thousand words-260717.pdf",
+      "cleaned_source_title": "MS-Biopharma-A picture is worth a thousand words",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：BiopharmaApictureiswo",
+      "raw_candidates": [
+        "生物制药：一图胜千言",
+        "生物制药：一图胜千言-新药放量速度决定药企分水岭",
+        "生物制药：一图胜千言-Cobenfy放量目标需达历史同类2至5倍"
+      ],
+      "cleaned_candidates": [
+        "MS：生物制药，一图胜千言",
+        "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭",
+        "MS：BiopharmaApictureiswo",
+        "MS：过去12周滚动增速仅为1.2%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：BiopharmaApictureiswo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：过去12周滚动增速仅为1.2%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [
+          "分水岭"
+        ],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：生物制药，一图胜千言-新药放量速度决定药企分水岭"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-19-Morgan-Stanley-China-Healthcare-China-Biotech-Valuation-and-Liquidity-Mo",
+    "source_pdf": "/tmp/pdf_batch_001_njqmshvv/pdfs/0004-19-MS-China Healthcare-China Biotech Valuation and Liquidity Monthly-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "中国生物科技估值：从",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国生物科技估值与流动性月度更新",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-MS-China Healthcare-China Biotech Valuation and Liquidity Monthly-260717.pdf",
+      "cleaned_source_title": "MS-China Healthcare-China Biotech Valuation and Liquidity Monthly",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国Healthcare中国Biotech",
+      "raw_candidates": [
+        "中国生物科技估值与流动性月度更新",
+        "中国生物科技估值修复至3.8倍，流动性创9.7%新高",
+        "中国生物科技估值反弹27%，资金轮动与政策预期驱动"
+      ],
+      "cleaned_candidates": [
+        "MS：中国生物科技估值与流动性月度更新",
+        "MS：中国生物科技估值修复至3.8倍，流动性创9.7%新高",
+        "MS：中国生物科技估值反弹27%，资金轮动与政策预期驱动",
+        "MS：中国Healthcare中国Biotech",
+        "MS：S）从5月底的约3.5倍，在6月下旬压缩至约3.0倍的低点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国生物科技估值修复至3.8倍，流动性创9.7%新高",
+          "reasons": [
+            "anchor_coverage=0.69"
+          ]
+        },
+        {
+          "title": "MS：中国生物科技估值反弹27%，资金轮动与政策预期驱动",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        },
+        {
+          "title": "MS：中国Healthcare中国Biotech",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：S）从5月底的约3.5倍，在6月下旬压缩至约3.0倍的低点",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国生物科技估值与流动性月度更新",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国生物科技估值与流动性月度更新"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-20-Morgan-Stanley-LVMH-LVMH.PA-Champagne-exports-accelerated-in-2Q26-260717",
+    "source_pdf": "/tmp/pdf_batch_001_njqmshvv/pdfs/0005-20-MS-LVMH-LVMH.PA-Champagne exports accelerated in 2Q26-260717.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "香槟出口，悄悄加速了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：LVMH香槟出口2Q26加速-出口量同比增8%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-MS-LVMH-LVMH.PA-Champagne exports accelerated in 2Q26-260717.pdf",
+      "cleaned_source_title": "MS-LVMH-LVMH.PA-Champagne exports accelerated in 2Q26",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：LVMHChampagneexportsa",
+      "raw_candidates": [
+        "LVMH香槟出口2Q26加速",
+        "LVMH香槟出口2Q26加速-出口量同比增8%",
+        "LVMH香槟出口加速-MS:隐藏弹性"
+      ],
+      "cleaned_candidates": [
+        "MS：LVMH香槟出口2Q26加速",
+        "MS：LVMH香槟出口2Q26加速-出口量同比增8%",
+        "MS：LVMH香槟出口加速-MS，隐藏弹性",
+        "MS：LVMHChampagneexportsa",
+        "MS：6月全行业香槟销量同比增长4%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：LVMH香槟出口加速-MS，隐藏弹性",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "MS：LVMHChampagneexportsa",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：6月全行业香槟销量同比增长4%",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：LVMH香槟出口2Q26加速-出口量同比增8%",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "8"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：LVMH香槟出口2Q26加速-出口量同比增8%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
