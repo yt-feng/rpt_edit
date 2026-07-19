@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 27,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bofa-Global Memory Tech Weekly theme-3Q DRAM ASP rising well, memory upside with TSMC-ASML guidance-260716.pdf",
+          "batch_file": "/tmp/pdf_batch_001_m4igpobs/pdfs/0001-01-Bofa-Global Memory Tech Weekly theme-3Q DRAM ASP rising well- memory upside with TSMC-ASML guidance-260716.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-CITI-ASML Holding NV （ASML.AS） AI Demand Extends Visibility into 2028； Raising TP to €2，200-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_m4igpobs/pdfs/0002-02-CITI-ASML Holding NV -ASML.AS- AI Demand Extends Visibility into 2028- Raising TP to -2-200-260717.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-CITI-Asia Communication Infrastructure：800VDC Architecture for Next~Generation AI Data Centers-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_m4igpobs/pdfs/0003-03-CITI-Asia Communication Infrastructure-800VDC Architecture for Next-Generation AI Data Centers-260717.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-CITI-China Auto Manufacturers：Bi~Monthly Duo NEV Pricing Trends （Discount & MSRP）： Mid~Jul~26-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_m4igpobs/pdfs/0004-04-CITI-China Auto Manufacturers-Bi-Monthly Duo NEV Pricing Trends -Discount - MSRP-- Mid-Jul-26-260717.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-DB-Expert call：Expert call takeaways on China's AI chip market updates-260717.pdf",
+          "batch_file": "/tmp/pdf_batch_001_m4igpobs/pdfs/0005-05-DB-Expert call-Expert call takeaways on China-s AI chip market updates-260717.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

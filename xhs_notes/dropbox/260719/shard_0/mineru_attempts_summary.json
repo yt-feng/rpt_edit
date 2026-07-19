@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_m4igpobs/pdfs/0001-01-Bofa-Global Memory Tech Weekly theme-3Q DRAM ASP rising well- memory upside with TSMC-ASML guidance-260716.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_m4igpobs/pdfs/0002-02-CITI-ASML Holding NV -ASML.AS- AI Demand Extends Visibility into 2028- Raising TP to -2-200-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_m4igpobs/pdfs/0003-03-CITI-Asia Communication Infrastructure-800VDC Architecture for Next-Generation AI Data Centers-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_m4igpobs/pdfs/0004-04-CITI-China Auto Manufacturers-Bi-Monthly Duo NEV Pricing Trends -Discount - MSRP-- Mid-Jul-26-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_m4igpobs/pdfs/0005-05-DB-Expert call-Expert call takeaways on China-s AI chip market updates-260717.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

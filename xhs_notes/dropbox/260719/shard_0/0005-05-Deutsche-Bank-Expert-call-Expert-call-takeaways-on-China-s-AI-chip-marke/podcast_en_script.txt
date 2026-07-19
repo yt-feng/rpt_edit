@@ -1,0 +1,24 @@
+EN_A: So I just read this really interesting research note on China’s AI chip market. It says we are still in a seller’s market. Is that really the case?
+EN_B: Yes, absolutely. The core takeaway is that demand is incredibly strong, but manufacturing capacity is the main bottleneck. As long as that capacity is tight, sellers have the upper hand.
+EN_A: How long is this seller’s market expected to last? Does the report give a timeline?
+EN_B: It gives some very specific numbers. Total shipments were about 4 million units in 2025, and they expect that to grow to 5 million by 2026. But even with that growth, the supply-demand gap will persist through 2026 and 2027.
+EN_A: So what’s driving this growth? Is it mainly the shift to domestic chips?
+EN_B: Exactly. The localization trend is a huge factor. The report estimates the domestic share will rise from about 40% to over 50%. So we are seeing a clear acceleration in substitution, but the capacity constraint remains the big story.
+EN_A: Speaking of domestic players, who are the main ones? What does the competitive landscape look like?
+EN_B: The report breaks them down into four tiers. Tier one is just Huawei. Tier two includes Alibaba’s T-Head, Cambricon, and Baidu’s Kunlunxin. Tier three has Hygon and the so-called “four little dragons” like MetaX and Moore Threads.
+EN_A: That’s pretty clear hierarchy. So what’s the real competitive advantage among these players? Is it raw computing power?
+EN_B: That’s the fascinating part. The report says their hardware capabilities are actually quite comparable. The real differentiator is supply chain capability. Whoever can secure the most fab capacity wins.
+EN_A: How do they stack up against the global leader, Nvidia? Where is the gap?
+EN_B: The gap is at the system level. For example, Huawei’s Ascend 950 is comparable to Nvidia’s H100 in memory capacity. But it lags in compute performance and overall system integration. Nvidia sells a whole AI factory architecture, not just a chip. Only Huawei and Alibaba are even starting to address that domestically.
+EN_A: So what are these domestic chips actually used for? Training or inference?
+EN_B: This is a key data point. The installed base is heavily skewed toward inference, with a ratio of about 10 to 1 compared to training. So most chips are used for running already-trained models. Handling pre-training of large models is still a big challenge for domestic players.
+EN_A: Who are the customers, and what do they care about most?
+EN_B: Two main groups. Internet companies, or CSPs, care most about performance, price-performance ratio, and supply chain reliability. They often order over 50,000 units at a time. Then you have telecoms and state-owned enterprises, who tend to favor Huawei and value innovation and flexible deployment.
+EN_A: Sounds like the internet companies are much tougher to please.
+EN_B: They are. The qualification process is rigorous, with an initial sampling phase and then strict procurement benchmarks. And buyers usually use a multi-vendor strategy to manage risk.
+EN_A: The report must leave some questions unanswered. What are the big unknowns?
+EN_B: Two big ones. First, can domestic chips really break through in large model training? The report doesn’t give a clear yes. Second, will this seller’s market suddenly reverse after 2027 as new capacity comes online? That really depends on the ramp-up of new fabs.
+EN_A: Those are the critical questions. If our listeners want the full details, like specific specs or vendor comparisons, they should read the complete report?
+EN_B: Absolutely. We’ve only scratched the surface with this expert call summary. The full report has much deeper analysis on chip performance and procurement strategies.
+EN_A: Great. If you want to get the full report, check out our community or reach out to us directly. Thanks for listening, and see you next time.
+EN_B: Thanks, everyone. See you next time.
