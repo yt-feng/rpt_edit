@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ppenwvpo/pdfs/0001-26-MS-Weekly Monitor- Energy Storage Continues to Support Lithium Battery Demand-260717.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ppenwvpo/pdfs/0002-27-UBS-Momenta-6880.HK-Steering mainstream carmakers into the autonomous era- initiate at Buy-260716.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
