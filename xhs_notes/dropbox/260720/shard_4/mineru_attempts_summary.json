@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_6qj7c488/pdfs/0001-21-GS-Kweichow Moutai-600519-Market-oriented plan -5-Second round of unexpected ex-factory and suggested retail price hike of Feitian in July 2026-Buy-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6qj7c488/pdfs/0002-22-GS-Powering Up Europe- EU Electrification Plan supports our thesis-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6qj7c488/pdfs/0003-23-JPM-Equity Strategy The maturing stage of AI-momentum unwind- Inflation rates rolling- Earnings to offer a support-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6qj7c488/pdfs/0004-24-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6qj7c488/pdfs/0005-25-JPM-US Equity Strategy Hyperscalers vs. AI Hardware- AI Capex - Monetization- Momentum Unwind- 2Q Earnings-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
