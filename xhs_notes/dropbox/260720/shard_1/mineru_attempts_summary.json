@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_oo5at7je/pdfs/0001-06-Bernstein-Renesas Electronics Corp-6723.JP-Quick Take- Renesas Memory Interface IC Investigation Likely Manageable-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oo5at7je/pdfs/0002-07-GS-Americas Banks- Key Takeaways from TFC- FITB- and RF earnings-260719.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oo5at7je/pdfs/0003-08-GS-Americas Technology-Internet-Ridesharing - Delivery Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oo5at7je/pdfs/0004-09-GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oo5at7je/pdfs/0005-10-GS-Asia Economics Analyst-Korea-s Equity Rally-Household Wealth Gains amid Consumption Constraints-260719.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
