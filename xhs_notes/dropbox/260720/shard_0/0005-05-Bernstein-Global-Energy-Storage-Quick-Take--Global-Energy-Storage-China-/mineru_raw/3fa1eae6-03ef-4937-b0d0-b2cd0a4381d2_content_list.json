@@ -1,0 +1,3139 @@
+[
+    {
+        "type": "text",
+        "text": "Global Energy Storage",
+        "bbox": [
+            65,
+            102,
+            316,
+            126
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Quick Take: Global Energy Storage: China announces consumption tax on batteries - Implications",
+        "text_level": 1,
+        "bbox": [
+            65,
+            134,
+            757,
+            192
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/c2f12b895fab2d0a730e20b8b4347cd82dc939a1a005fe9c55a61c59eda89cea.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            67,
+            247,
+            122,
+            291
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Neil Beveridge, Ph.D.",
+        "bbox": [
+            140,
+            253,
+            281,
+            268
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2123 2648",
+        "bbox": [
+            140,
+            267,
+            234,
+            280
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            140,
+            278,
+            304,
+            291
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/e3a6fb2af24e22e3bed3d5a9d4481c4f3ab63a0b1933fe1b76771cc39f240c62.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            299,
+            122,
+            344
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Brian Ho, CFA",
+        "bbox": [
+            140,
+            304,
+            237,
+            319
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2123 2615",
+        "bbox": [
+            140,
+            319,
+            234,
+            332
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "brian.ho@bernsteinsg.com",
+        "bbox": [
+            140,
+            329,
+            275,
+            342
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/682b8f68eeab52586d5fd1228bac0fd94e2d65f58167f43e0d0fffee1506b6e1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            352,
+            122,
+            396
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kelvin Yuan, Ph.D., CFA",
+        "bbox": [
+            140,
+            357,
+            273,
+            371
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2123 2612",
+        "bbox": [
+            140,
+            370,
+            234,
+            383
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "kelvin.yuan@bernsteinsg.com",
+        "bbox": [
+            139,
+            380,
+            290,
+            395
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "China has announced the introduction of a consumption tax on the lithium-ion battery industry after an 11-year exemption. Starting from September 1, 2026, a 2% consumption tax will be levied on lithium-ion batteries at the cell level. The tax rate will subsequently double to 4% beginning September 1, 2027. To prevent double taxation within the supply chain, batteries produced for internal use in the continuous production of other taxable battery products will be exempt, and taxes paid on externally purchased batteries used in continuous production can be deducted.",
+        "bbox": [
+            357,
+            246,
+            909,
+            357
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The impact on battery pack price will be relatively small but nevertheless will raise costs. Current battery prices for LFP and NMC are US\\$54.8/kWh and US\\$66.2/kWh respectively. While the increase in tax will raise the cost of battery cells by 2% (2026) and 4% by 2027, at the pack level the increase in costs will be 1% (2026) and 3% (2027) by 2027. For ESS systems the new tax will increase the cost by 1-2% by 2027 which should limit the demand impact.",
+        "bbox": [
+            357,
+            367,
+            914,
+            463
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sodium ion and solid-state batteries will be exempt from the new consumption tax. The new tax covers all conventional lithium-based battery technology including LFP batteries, nickel-based batteries, and vanadium redox flow batteries. Emerging battery technologies such as sodium-ion batteries, solid-state batteries, and fuel cells will remain entirely exempt from the consumption tax through the end of 2028 and possibly beyond. We expect that by 2030, roughly $10 - 20\\%$ of total battery production in China will be solid state or sodium-ion.",
+        "bbox": [
+            357,
+            473,
+            914,
+            583
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Battery exports will be unaffected by the new consumption tax. The consumption tax will only apply to domestic sales and not levied on imports. Currently, around 20% of total battery production in China is exported and will be impacted by the new tax.",
+        "bbox": [
+            357,
+            596,
+            921,
+            645
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "While the policy could negatively impact demand or margins for the industry, it is aimed at curbing overcapacity as part of China's broader anti-involution policies and encouraging new technologies. The China battery industry is plagued by overcapacity at the Tier 2 level. Battery makers will either have to absorb this cost or pass on to OEM's. For Tier 2 battery makers on wafer thin margins, this policy is intended to curb excessive capacity expansion. It will also be a strong signal to encourage a shift towards battery technologies of the future, namely sodium-ion and solid state which are both on the cusp of large-scale commercialization.",
+        "bbox": [
+            357,
+            655,
+            924,
+            782
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN\nSG GROUP",
+        "bbox": [
+            65,
+            1,
+            293,
+            51
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website. First Published: 20 Jul 2026 00:41 UTC Completion Date: 20 Jul 2026 00:41 UTC",
+        "bbox": [
+            65,
+            935,
+            704,
+            980
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            778,
+            935,
+            922,
+            948
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "On 16 July 2026, China's Ministry of Finance, General Administration of Customs, and State Taxation Administration issued Announcement No. 20 of 2026, introducing a phased consumption-tax regime for certain battery products. The policy primarily affects batteries produced, processed, sold, imported, or used domestically in China. Details o the impact on battery pricing is shown below.",
+        "bbox": [
+            103,
+            41,
+            891,
+            103
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/b8151baa66db4004684b01dda2ff842b0f91b0cfd3f5713e9812be631f376639.jpg",
+        "table_caption": [
+            "EXHIBIT 1: Price & change for LFP and NMC under different tax rate"
+        ],
+        "table_footnote": [
+            "Source: Baiinfor, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td colspan=\"4\">Cell level (USD/kWh)</td><td colspan=\"3\">Package level(USD/kWh)</td></tr><tr><td></td><td>Current</td><td>Post tax 2%</td><td>Post tax 4%</td><td>Current</td><td>Post tax 2%</td><td>Post tax 4%</td></tr><tr><td>LFP</td><td>54.8</td><td>55.9</td><td>57.0</td><td>79.3</td><td>80.4</td><td>81.5</td></tr><tr><td>NMC</td><td>66.2</td><td>67.5</td><td>68.8</td><td>101.5</td><td>102.8</td><td>104.1</td></tr><tr><td colspan=\"4\">Price chage (USD/kWh)</td><td colspan=\"3\">Price change (USD/kWh)</td></tr><tr><td>LFP</td><td></td><td>1.1</td><td>2.2</td><td></td><td>1.1</td><td>2.2</td></tr><tr><td>NMC</td><td></td><td>1.3</td><td>2.6</td><td></td><td>1.3</td><td>2.6</td></tr><tr><td colspan=\"4\">% of change</td><td colspan=\"3\">% of change</td></tr><tr><td>LFP</td><td></td><td>2%</td><td>4%</td><td></td><td>1%</td><td>3%</td></tr><tr><td>NMC</td><td></td><td>2%</td><td>4%</td><td></td><td>1%</td><td>3%</td></tr></table>",
+        "bbox": [
+            178,
+            134,
+            819,
+            291
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "KEY TAX-RATE CHANGES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            350,
+            286,
+            365
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "From 1 September 2026, the following battery products will be subject to a $2\\%$ consumption tax:",
+        "bbox": [
+            104,
+            370,
+            706,
+            386
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Lithium-ion rechargeable batteries;(LFP and NMC)",
+        "bbox": [
+            104,
+            399,
+            440,
+            414
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Primary lithium batteries;",
+        "bbox": [
+            106,
+            428,
+            283,
+            443
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Mercury-free primary batteries;",
+        "bbox": [
+            104,
+            456,
+            322,
+            471
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Nickel-metal hydride batteries;",
+        "bbox": [
+            106,
+            485,
+            319,
+            500
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Vanadium redox-flow batteries.",
+        "bbox": [
+            104,
+            513,
+            322,
+            528
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The tax rate for these products will increase from 2% to 4% on 1 September 2027.",
+        "bbox": [
+            104,
+            541,
+            619,
+            557
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "TEMPORARY EXEMPTIONS FOR EMERGING TECHNOLOGIES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            573,
+            527,
+            587
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "China will continue to exempt the following products from consumption tax from 1 September 2026 through 31 December 2028:",
+        "bbox": [
+            103,
+            592,
+            865,
+            623
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Sodium-ion batteries;",
+        "bbox": [
+            106,
+            637,
+            263,
+            651
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Solid-state batteries;",
+        "bbox": [
+            106,
+            666,
+            260,
+            680
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Fuel cells;",
+        "bbox": [
+            106,
+            695,
+            191,
+            709
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Perovskite photovoltaic cells;",
+        "bbox": [
+            106,
+            723,
+            309,
+            738
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Tandem photovoltaic cells;",
+        "bbox": [
+            104,
+            752,
+            293,
+            767
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Gallium-arsenide photovoltaic cells.",
+        "bbox": [
+            104,
+            781,
+            350,
+            795
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The announcement does not specify the tax treatment of these emerging technologies after 31 December 2028.",
+        "bbox": [
+            104,
+            808,
+            801,
+            824
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "CONDITIONS FOR CLAIMING AN EXEMPTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            839,
+            422,
+            854
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The exemptions are not automatic. Battery products manufactured or processed under commission must comply with the applicable Chinese national standards. Products that do not meet the relevant national standard—or for which no national standard exists—cannot qualify for the preferential treatment.",
+        "bbox": [
+            103,
+            859,
+            855,
+            907
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            885,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            939,
+            214,
+            952
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Before filing the first consumption-tax exemption claim, a taxpayer must obtain a product testing report from a qualified testing institution. The institution must hold a valid CMA-accredited Inspection and Testing Institution Qualification Certificate, and its approved testing scope must include the relevant battery-testing items.",
+        "bbox": [
+            103,
+            41,
+            888,
+            87
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "DEDUCTION FOR TAX ALREADY PAID ON BATTERY INPUTS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            103,
+            519,
+            117
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Where a company purchases, imports, or receives from commissioned processing battery products on which consumption tax has already been paid, and then uses those products to continuously manufacture other taxable battery products, the company may deduct the consumption tax already paid on the inputs. The deductible amount is determined based on the quantity actually used in production during the relevant period.",
+        "bbox": [
+            103,
+            123,
+            895,
+            185
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Similarly, taxable batteries produced and used internally for the continuous production of other taxable batteries are not subject to consumption tax at the point of internal transfer. However, if the batteries are used to manufacture non-taxable products or for other purposes, consumption tax becomes payable when they are transferred for such use.",
+        "bbox": [
+            103,
+            198,
+            891,
+            246
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "EXPORT TREATMENT: NO CHANGE TO CONSUMPTION-TAX EXPORT RELIEF",
+        "text_level": 2,
+        "bbox": [
+            104,
+            260,
+            634,
+            274
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Importantly, the new consumption-tax adjustment is mainly a domestic-market measure. It primarily applies at the following stages:",
+        "bbox": [
+            104,
+            280,
+            865,
+            311
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Domestic production and sale;",
+        "bbox": [
+            104,
+            325,
+            316,
+            339
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Commissioned processing;",
+        "bbox": [
+            106,
+            354,
+            298,
+            367
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Importation into China; and",
+        "bbox": [
+            106,
+            382,
+            296,
+            396
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Internal use outside the continuous production of taxable batteries.",
+        "bbox": [
+            104,
+            410,
+            540,
+            425
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For battery products that are exported, the existing consumption-tax refund or exemption treatment remains unchanged. In other words, the announcement does not impose an additional consumption-tax burden on qualifying battery exports.",
+        "bbox": [
+            104,
+            439,
+            865,
+            469
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "A careful distinction should nevertheless be made between:",
+        "bbox": [
+            104,
+            482,
+            478,
+            498
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Consumption-tax export refund/exemption, which was not changed by this policy; and VAT export rebates, which are governed by a separate policy.",
+        "bbox": [
+            103,
+            511,
+            640,
+            543
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "BUSINESS IMPLICATIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            558,
+            288,
+            573
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The policy represents a shift from broad tax exemptions toward differentiated treatment based on technological maturity:",
+        "bbox": [
+            104,
+            578,
+            854,
+            594
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Established technologies, particularly conventional lithium-ion batteries, will gradually move to the standard 4% consumption-tax rate;",
+        "bbox": [
+            104,
+            607,
+            814,
+            638
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Emerging technologies, such as solid-state and sodium-ion batteries, will continue to receive tax support;",
+        "bbox": [
+            104,
+            651,
+            775,
+            667
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Domestic manufacturers and importers will need to review pricing, product classifications, contracts, and tax-accounting systems;",
+        "bbox": [
+            104,
+            679,
+            870,
+            710
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Export-oriented companies should separate the consumption-tax impact from the separate VAT export-rebate changes;",
+        "bbox": [
+            104,
+            723,
+            865,
+            740
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Companies claiming exemptions must maintain national-standard compliance documents and valid CMA-accredited testing reports;",
+        "bbox": [
+            104,
+            752,
+            888,
+            782
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• Manufacturers should establish detailed records for tax-paid battery inputs to support consumption-tax deductions.",
+        "bbox": [
+            104,
+            797,
+            839,
+            812
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            883,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            106,
+            941,
+            214,
+            951
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "INVESTMENT IMPLICATIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            39,
+            329,
+            54
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The introduction of a consumption tax on lithium-ion batteries is a surprise. We think this will do nothing to help long term demand, which is unfortunate given the strategic role batteries will play in electrification of China's energy system. However, the increase needs to be seen in context. Assuming the 4% increase in consumption tax by September 2027, increase in price for battery packs will be <3%, while for ESS systems the overall increase in cost will be 1-2%, which is unlikely to have a material impact on demand. If the tax is not passed through however, it will impact the margins of battery makers, which are already wafer thin for some of the Tier 2 battery makers. Given the exuberance in the industry following triple digit ESS demand, the rationale for the new tax is likely aimed at curbing overcapacity within the industry and dampening down capex expansion plans. It is also designed as clear signal for battery makers in China to pivot into sodium-ion and solid state batteries which will be exempt from the tax. For China's leading player CATL, the new tax possibly explains why the stock has been so weak over the past month, despite strong industry fundamentals, which makes us think that the reaction to this announcement on Friday evening may not be significant. While this is not a positive for CATL, we think it will help curb over capacity efforts by Tier 2 players leading to greater industry consolidation longer term. It will also not impact CATL's exports or Na-ion/solid state batteries which CATL is at the forefront of the industry in commercializing. Overall, while this is not a positive headline for CATL, given the P/E valuation of 13x (A-share) and 18x (H-share), for a company growing revenues at 20-30% CAGR overt the next 5 years, the risk reward continues to look attractive. We rate CATL as Outperform.",
+        "bbox": [
+            103,
+            71,
+            893,
+            304
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN TICKER TABLE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            316,
+            314,
+            332
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/3dbadce321f05d52af6165587f03e9e2f5c122ce5e67534b2dbf7812e78957f6.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended",
+            "Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td colspan=\"3\"></td><td rowspan=\"2\">16 Jul 2026 Closing Price Target</td><td rowspan=\"2\">TTM Rel. Perf.</td><td colspan=\"4\">Reported EPS</td><td colspan=\"3\">Reported P/E (x)</td><td></td></tr><tr><td>Ticker</td><td>Rating</td><td>Cur</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td><td></td></tr><tr><td>3750.HK (CATL)</td><td>O</td><td>HKD</td><td>621.00</td><td>770.00</td><td>40.1%</td><td>CNY</td><td>16.14</td><td>21.95</td><td>28.77</td><td>33.2</td><td>24.5</td><td>18.7</td></tr><tr><td>300750.CH (CATL)</td><td>O</td><td>CNY</td><td>366.20</td><td>800.00</td><td>12.0%</td><td>CNY</td><td>16.14</td><td>21.95</td><td>28.77</td><td>22.7</td><td>16.7</td><td>12.7</td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,865.18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            108,
+            346,
+            891,
+            439
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            883,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            106,
+            941,
+            214,
+            951
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            68,
+            300,
+            83
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            103,
+            96,
+            898,
+            196
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's \"affiliates\" relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            103,
+            208,
+            896,
+            251
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            263,
+            303,
+            278
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Contemporary Amperex Technology Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            293,
+            398,
+            308
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We value CATL (A) using the DCF approach using a WACC of 9.6% and a terminal growth rate of 3%. Our DCF model is based on annual free cash flow forecasts until 2050, plus a terminal value estimate to capture the continuing value of the company. Our price target is RMB800.",
+        "bbox": [
+            103,
+            321,
+            896,
+            367
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We value CATL (H) using the DCF approach using a WACC of 10.4% and a terminal growth rate of 3%. Our DCF model is based on annual free cash flow forecasts until 2050, plus a terminal value estimate to capture the continuing value of the company. Our price target is HKD770.",
+        "bbox": [
+            103,
+            380,
+            896,
+            426
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            439,
+            155,
+            455
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Contemporary Amperex Technology Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            469,
+            398,
+            485
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For CATL (A), key risks include: 1) overcapacity of battery manufacturing in China 2) geopolitical factors which restrict CATL market share and 3) increased competition from vertically integrated OEM's.",
+        "bbox": [
+            104,
+            498,
+            896,
+            528
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For CATL (H), key downside risks include: 1) overcapacity of battery manufacturing in China 2) geopolitical factors which restrict CATL market share and 3) increased competition from vertically integrated OEM's.",
+        "bbox": [
+            104,
+            541,
+            896,
+            573
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            585,
+            511,
+            600
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            612,
+            322,
+            626
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            640,
+            219,
+            655
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            103,
+            667,
+            896,
+            753
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            765,
+            431,
+            780
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform: Stock will outpace the market index by more than 15 pp",
+        "bbox": [
+            104,
+            793,
+            550,
+            808
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+        "bbox": [
+            104,
+            821,
+            639,
+            836
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform: Stock will trail the performance of the market index by more than 15 pp",
+        "bbox": [
+            104,
+            850,
+            660,
+            865
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            103,
+            878,
+            896,
+            908
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            885,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            729,
+            39,
+            895,
+            54
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            939,
+            214,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            103,
+            40,
+            896,
+            83
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            96,
+            521,
+            111
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            123,
+            534,
+            137
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            150,
+            362,
+            164
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 600 Financials Price Return Index (E600BK) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 600 Insurance Price Return Index (E600IN) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            103,
+            176,
+            898,
+            277
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            289,
+            544,
+            304
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            316,
+            586,
+            332
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+        "bbox": [
+            104,
+            346,
+            606,
+            359
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            374,
+            696,
+            388
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            104,
+            401,
+            896,
+            431
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            104,
+            443,
+            896,
+            486
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as 'Feature' (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            500,
+            786,
+            514
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            526,
+            521,
+            541
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            553,
+            609,
+            568
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            581,
+            368,
+            595
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            608,
+            549,
+            623
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            636,
+            896,
+            667
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            679,
+            896,
+            710
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            723,
+            896,
+            755
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            767,
+            567,
+            782
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            794,
+            349,
+            808
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            103,
+            821,
+            896,
+            850
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in",
+        "bbox": [
+            103,
+            863,
+            896,
+            907
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            885,
+            943,
+            895,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            941,
+            214,
+            951
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "this report and vice versa.",
+        "bbox": [
+            104,
+            40,
+            268,
+            54
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            66,
+            321,
+            81
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            95,
+            488,
+            109
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            121,
+            896,
+            154
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            166,
+            896,
+            198
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            210,
+            896,
+            242
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            253,
+            506,
+            270
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            103,
+            281,
+            895,
+            311
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            103,
+            321,
+            896,
+            367
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/ea07bc8d3b8981c2eec30cee0ce7d9ae46479c2c50d7a39c6f486e0d39131377.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of June 30, 2026. All figures are updated quarterly."
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>",
+        "bbox": [
+            106,
+            430,
+            891,
+            556
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            638,
+            491,
+            651
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dbaeaae43176752aaf44522ffc571542f8df644c8dd1297a0086afa5383bd0f5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Contemporary Amperex Technology Co Ltd (3750.HK) Rating History for Bernstein as of 04/22/2026"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            114,
+            683,
+            872,
+            863
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            885,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            106,
+            941,
+            214,
+            951
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/c5396b9e6893fb6455e806eb3533979b738cf8fd54efb90654a32b7863374f24.jpg",
+        "image_caption": [
+            "Contemporary Amperex Technology Co Ltd (300750.CH) Rating History for Bernstein as of 07/17/2026",
+            "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            129,
+            58,
+            881,
+            297
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            104,
+            356,
+            283,
+            370
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "SG and/or its affiliates beneficially own 0.5% or more of [the total issued share capital/any class of common equity securities] with a net [long/short] position of: Contemporary Amperex Technology Co Ltd.",
+        "bbox": [
+            103,
+            384,
+            895,
+            413
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Contemporary Amperex Technology Co Ltd.",
+        "bbox": [
+            104,
+            439,
+            896,
+            468
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Contemporary Amperex Technology Co Ltd.",
+        "bbox": [
+            103,
+            479,
+            896,
+            509
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            520,
+            229,
+            535
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            103,
+            548,
+            895,
+            575
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+        "bbox": [
+            104,
+            590,
+            516,
+            603
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK",
+        "bbox": [
+            104,
+            616,
+            386,
+            630
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+        "bbox": [
+            104,
+            643,
+            586,
+            658
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+33 BSG France S.A.; Paris, France",
+        "bbox": [
+            104,
+            671,
+            329,
+            685
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+34 BSG France S.A.; Madrid, Spain",
+        "bbox": [
+            104,
+            698,
+            332,
+            712
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+        "bbox": [
+            104,
+            726,
+            442,
+            739
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+49 BSG France S.A.; Frankfurt, Germany",
+        "bbox": [
+            104,
+            752,
+            368,
+            767
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+91 Bernstein (India) Private Limited; Mumbai, India",
+        "bbox": [
+            104,
+            780,
+            498,
+            793
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+        "bbox": [
+            104,
+            807,
+            645,
+            821
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+65 Bernstein (Singapore) Private Limited; Singapore",
+        "bbox": [
+            104,
+            833,
+            509,
+            848
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan",
+        "bbox": [
+            104,
+            862,
+            414,
+            876
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SECregistered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            103,
+            888,
+            896,
+            918
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            883,
+            943,
+            895,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            19
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            106,
+            941,
+            214,
+            951
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            103,
+            40,
+            896,
+            112
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            103,
+            124,
+            896,
+            168
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            179,
+            218,
+            193
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            103,
+            206,
+            896,
+            264
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            274,
+            447,
+            290
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            103,
+            303,
+            896,
+            348
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            358,
+            504,
+            374
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for \"Bernstein\" and \"Autonomous\" research products.",
+        "bbox": [
+            104,
+            386,
+            642,
+            401
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+        "bbox": [
+            104,
+            414,
+            898,
+            523
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.",
+        "bbox": [
+            104,
+            535,
+            896,
+            599
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            103,
+            609,
+            896,
+            655
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            103,
+            664,
+            896,
+            709
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (\"SEC\") and a member of the U.S. Financial Industry Regulatory Authority, Inc. (\"FINRA\") is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            103,
+            721,
+            898,
+            794
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            103,
+            804,
+            896,
+            849
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            103,
+            859,
+            898,
+            904
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            939,
+            214,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            885,
+            943,
+            895,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            103,
+            39,
+            781,
+            56
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            103,
+            66,
+            896,
+            96
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            103,
+            108,
+            896,
+            138
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            103,
+            149,
+            896,
+            193
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            103,
+            205,
+            898,
+            335
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            103,
+            345,
+            896,
+            376
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            103,
+            386,
+            896,
+            475
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.",
+        "bbox": [
+            101,
+            484,
+            898,
+            600
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            103,
+            609,
+            896,
+            655
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            103,
+            666,
+            896,
+            696
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            101,
+            706,
+            898,
+            808
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            103,
+            819,
+            896,
+            905
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            896,
+            20
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            878,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            939,
+            214,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            103,
+            40,
+            896,
+            99
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            103,
+            109,
+            896,
+            181
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• providing financial product advice;",
+        "bbox": [
+            104,
+            193,
+            342,
+            209
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• dealing in a financial product;",
+        "bbox": [
+            106,
+            223,
+            309,
+            238
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• making a market for a financial product; and",
+        "bbox": [
+            104,
+            252,
+            400,
+            265
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• providing a custodial or depository service.",
+        "bbox": [
+            104,
+            280,
+            393,
+            295
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            103,
+            308,
+            896,
+            380
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+        "bbox": [
+            104,
+            392,
+            896,
+            455
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+        "bbox": [
+            104,
+            467,
+            896,
+            498
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• SCB India does not have any disciplinary history as on the date of this report.",
+        "bbox": [
+            104,
+            511,
+            596,
+            527
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives",
+        "bbox": [
+            104,
+            540,
+            896,
+            571
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• do not have any financial interest in the subject company",
+        "bbox": [
+            122,
+            585,
+            495,
+            599
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+        "bbox": [
+            122,
+            613,
+            767,
+            628
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- is not engaged in any investment banking activities for Indian companies, as such;",
+        "bbox": [
+            122,
+            642,
+            649,
+            657
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+        "bbox": [
+            122,
+            670,
+            783,
+            685
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+        "bbox": [
+            122,
+            698,
+            896,
+            730
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+        "bbox": [
+            122,
+            743,
+            816,
+            757
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+        "bbox": [
+            122,
+            772,
+            896,
+            802
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+        "bbox": [
+            122,
+            816,
+            896,
+            846
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- do not have any conflict of interest in the subject company as of the date of this report.",
+        "bbox": [
+            122,
+            859,
+            675,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+        "bbox": [
+            104,
+            888,
+            896,
+            918
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            881,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            939,
+            214,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            121,
+            41,
+            896,
+            71
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+        "bbox": [
+            104,
+            85,
+            896,
+            117
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+        "bbox": [
+            104,
+            128,
+            896,
+            160
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+        "bbox": [
+            104,
+            172,
+            896,
+            205
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            104,
+            217,
+            896,
+            264
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            103,
+            276,
+            898,
+            349
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            103,
+            359,
+            898,
+            447
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            456,
+            155,
+            472
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            103,
+            485,
+            896,
+            530
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            103,
+            540,
+            898,
+            599
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            101,
+            609,
+            898,
+            811
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            101,
+            821,
+            898,
+            922
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            20
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            880,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            939,
+            214,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            103,
+            40,
+            896,
+            70
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            103,
+            81,
+            898,
+            197
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            103,
+            206,
+            896,
+            238
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            103,
+            248,
+            896,
+            335
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            103,
+            346,
+            896,
+            390
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            101,
+            401,
+            898,
+            532
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            101,
+            541,
+            898,
+            685
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            103,
+            696,
+            898,
+            770
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively \"Bloomberg\"). Bloomberg or Bloomberg's licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg's licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            103,
+            780,
+            898,
+            854
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan",
+        "bbox": [
+            103,
+            863,
+            898,
+            922
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            896,
+            20
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            104,
+            939,
+            214,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            880,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "KK（サンフォード・C・バーンスタイン株式会社）。All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            103,
+            40,
+            896,
+            96
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            878,
+            942,
+            895,
+            952
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@bernsteinsg.com",
+        "bbox": [
+            104,
+            7,
+            473,
+            20
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "20 July 2026",
+        "bbox": [
+            827,
+            7,
+            895,
+            19
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL ENERGY STORAGE",
+        "bbox": [
+            106,
+            941,
+            214,
+            951
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            863,
+            952
+        ],
+        "page_idx": 13
+    }
+]

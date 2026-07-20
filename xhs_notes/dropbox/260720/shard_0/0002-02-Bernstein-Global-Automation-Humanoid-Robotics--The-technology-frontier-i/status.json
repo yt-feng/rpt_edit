@@ -1,0 +1,92 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_yh53ktt5/pdfs/0002-02-Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "人形机器人，正站在“",
+  "cover_subtitle": "**",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：全球自动化-人形机器人-2026年技术前沿",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-02-Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026-260720.pdf",
+    "cleaned_source_title": "Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：全球AutomationHumanoidRobotics",
+    "raw_candidates": [
+      "全球自动化-人形机器人-2026年技术前沿",
+      "全球自动化-人形机器人-2026年技术前沿：WAM模型迁移",
+      "全球自动化-人形机器人-2026年技术前沿：从VLA到WAM的拐点"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：全球自动化-人形机器人-2026年技术前沿",
+      "Bernstein：全球自动化-人形机器人-2026年技术前沿，WAM模型迁移",
+      "Bernstein：全球AutomationHumanoidRobotics",
+      "Bernstein：1.WAM的核心差异在于“预测物理可行结果”而非直接输出动作"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：全球AutomationHumanoidRobotics",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：1.WAM的核心差异在于“预测物理可行结果”而非直接输出动作",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：全球自动化-人形机器人-2026年技术前沿",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：全球自动化-人形机器人-2026年技术前沿"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "471",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
