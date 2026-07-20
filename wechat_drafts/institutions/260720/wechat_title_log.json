@@ -1,0 +1,719 @@
+{
+  "schema_version": 1,
+  "date_folder": "260720",
+  "source": "kc_translated_reports/institutions",
+  "generated_at_utc": "2026-07-20T05:50:12Z",
+  "article_count": 10,
+  "uploaded_count": 10,
+  "articles": [
+    {
+      "source_report_name": "IMF Beyond-the-First-Bond-Market-Access-and-Debt-Dynamics-in-Fro 3a9b0ab9",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：首次发债之后-前沿地区市场准入与债务动态",
+      "final_wechat_title": "IMF：首次发债之后-前沿地区市场准入与债务动态",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/01-0001-IMF_Beyond-the-First-Bond-Market-Access-and-Debt-Dynamics-in-Fro_3a9b0ab9",
+      "generation_decision": {
+        "source_filename": "0001-IMF_Beyond-the-First-Bond-Market-Access-and-Debt-Dynamics-in-Fro_3a9b0ab9",
+        "cleaned_source_title": "0001-IMF_Beyond-the-First-Bond-Market-Access-and-Debt-Dynamics-in-Fro_3a9b0ab9",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0001IMFBeyondtheFirstBond市场",
+        "raw_candidates": [
+          "IMF：首次发债之后-前沿地区市场准入与债务动态",
+          "IMF：前沿地区发债后私人融资占比增长超200%",
+          "IMF：2022年全球紧缩后前沿地区债券发行骤降"
+        ],
+        "cleaned_candidates": [
+          "IMF：首次发债之后-前沿地区市场准入与债务动态",
+          "IMF：前沿地区发债后私人融资占比增长超200%",
+          "IMF：2022年全球紧缩后前沿地区债券发行骤降",
+          "IMF：0001IMFBeyondtheFirstBond市场",
+          "IMF：2005年至2021年间，多个前沿地区首次发行欧洲债券"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：前沿地区发债后私人融资占比增长超200%",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2022年全球紧缩后前沿地区债券发行骤降",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0001IMFBeyondtheFirstBond市场",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2005年至2021年间，多个前沿地区首次发行欧洲债券",
+            "reasons": [
+              "anchor_coverage=0.28",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：首次发债之后-前沿地区市场准入与债务动态",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：首次发债之后-前沿地区市场准入与债务动态"
+      }
+    },
+    {
+      "source_report_name": "IMF Closing-the-Gap-A-LIC-s-Policy-Options-Under-an-Aid-Shock 97055ee1",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：援助断崖下低收入国家的政策选择，完全依赖借款",
+      "final_wechat_title": "IMF：援助断崖下低收入国家的政策选择，完全依赖借款",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/02-0002-IMF_Closing-the-Gap-A-LIC-s-Policy-Options-Under-an-Aid-Shock_97055ee1",
+      "generation_decision": {
+        "source_filename": "0002-IMF_Closing-the-Gap-A-LIC-s-Policy-Options-Under-an-Aid-Shock_97055ee1",
+        "cleaned_source_title": "0002-IMF_Closing-the-Gap-A-LIC-s-Policy-Options-Under-an-Aid-Shock_97055ee1",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0002IMFClosingtheGapALICs政策",
+        "raw_candidates": [
+          "IMF：援助断崖下低收入国家的政策选择",
+          "IMF：援助削减GDP3%时低收入国家最优路径",
+          "IMF：利比里亚案例显示借款填补援助缺口推高基尼系数至0.45"
+        ],
+        "cleaned_candidates": [
+          "IMF：援助断崖下低收入国家的政策选择",
+          "IMF：援助削减GDP3%时低收入国家最优路径",
+          "IMF：利比里亚案例显示借款填补援助缺口推高基尼系数至0.45",
+          "IMF：0002IMFClosingtheGapALICs政策",
+          "IMF：利比里亚2010至2022年间净援助占GNI的22%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：援助削减GDP3%时低收入国家最优路径",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "IMF：利比里亚案例显示借款填补援助缺口推高基尼系数至0.45",
+            "reasons": [
+              "bare_trailing_number",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0002IMFClosingtheGapALICs政策",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：利比里亚2010至2022年间净援助占GNI的22%",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：援助断崖下低收入国家的政策选择",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：援助断崖下低收入国家的政策选择"
+      }
+    },
+    {
+      "source_report_name": "IMF Graying-Asia-How-Aging-Is-Reshaping-Banking 9f6a1dc7",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：老龄化重塑亚洲银行业，老龄化压低银行传统贷款占比",
+      "final_wechat_title": "IMF：老龄化重塑亚洲银行业，老龄化压低银行传统贷款占比",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/03-0003-IMF_Graying-Asia-How-Aging-Is-Reshaping-Banking_9f6a1dc7",
+      "generation_decision": {
+        "source_filename": "0003-IMF_Graying-Asia-How-Aging-Is-Reshaping-Banking_9f6a1dc7",
+        "cleaned_source_title": "0003-IMF_Graying-Asia-How-Aging-Is-Reshaping-Banking_9f6a1dc7",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0003IMFGrayingAsiaHowAg",
+        "raw_candidates": [
+          "IMF：老龄化重塑亚洲银行业",
+          "IMF：老龄化压低亚洲银行贷存比，资产转向非贷款",
+          "IMF：亚洲一代人内从红利到后红利，银行资产配置承压"
+        ],
+        "cleaned_candidates": [
+          "IMF：老龄化重塑亚洲银行业",
+          "IMF：老龄化压低亚洲银行贷存比，资产转向非贷款",
+          "IMF：亚洲一代人内从红利到后红利，银行资产配置承压",
+          "IMF：0003IMFGrayingAsiaHowAg",
+          "IMF：基于覆盖46个地区、166家银行集团的全球面板数据，研究发现"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：老龄化压低亚洲银行贷存比，资产转向非贷款",
+            "reasons": [
+              "anchor_coverage=0.56"
+            ]
+          },
+          {
+            "title": "IMF：亚洲一代人内从红利到后红利，银行资产配置承压",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0003IMFGrayingAsiaHowAg",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：基于覆盖46个地区、166家银行集团的全球面板数据，研究发现",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：老龄化重塑亚洲银行业",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：老龄化重塑亚洲银行业"
+      }
+    },
+    {
+      "source_report_name": "IMF Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest 44cb6d5d",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：莱索托公共研究技术援助报告，高研究并未转化为高产出",
+      "final_wechat_title": "IMF：莱索托公共研究技术援助报告，高研究并未转化为高产出",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/04-0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+      "generation_decision": {
+        "source_filename": "0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+        "cleaned_source_title": "0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0004IMFKingdomofLesotho",
+        "raw_candidates": [
+          "IMF：莱索托公共研究技术援助报告",
+          "IMF：莱索托研究效率缺口达49%，执行率仅53%",
+          "IMF：莱索托高研究低增长，效率折损近半"
+        ],
+        "cleaned_candidates": [
+          "IMF：莱索托公共研究技术援助报告",
+          "IMF：莱索托研究效率缺口达49%，执行率仅53%",
+          "IMF：莱索托高研究低增长，效率折损近半",
+          "IMF：0004IMFKingdomofLesotho",
+          "IMF：IMF财政事务部在2025年7月实地评估后发布的公共研究管理评"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：莱索托研究效率缺口达49%，执行率仅53%",
+            "reasons": [
+              "anchor_coverage=0.30"
+            ]
+          },
+          {
+            "title": "IMF：莱索托高研究低增长，效率折损近半",
+            "reasons": [
+              "anchor_coverage=0.30"
+            ]
+          },
+          {
+            "title": "IMF：0004IMFKingdomofLesotho",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：IMF财政事务部在2025年7月实地评估后发布的公共研究管理评",
+            "reasons": [
+              "anchor_coverage=0.30"
+            ]
+          }
+        ],
+        "selected_title": "IMF：莱索托公共研究技术援助报告",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：莱索托公共研究技术援助报告"
+      }
+    },
+    {
+      "source_report_name": "IMF Macroeconomic-Effects-of-Rare-Earths-Supply-Chain-Disruption a07f1a80",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：稀土供应链中断的宏观宏观环境影响",
+      "final_wechat_title": "IMF：稀土供应链中断的宏观宏观环境影响",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/05-0005-IMF_Macroeconomic-Effects-of-Rare-Earths-Supply-Chain-Disruption_a07f1a80",
+      "generation_decision": {
+        "source_filename": "0005-IMF_Macroeconomic-Effects-of-Rare-Earths-Supply-Chain-Disruption_a07f1a80",
+        "cleaned_source_title": "0005-IMF_Macroeconomic-Effects-of-Rare-Earths-Supply-Chain-Disruption_a07f1a80",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0005IMFMacroeconomicEff",
+        "raw_candidates": [
+          "IMF：稀土供应链中断的宏观经济影响",
+          "IMF：稀土断供冲击远超预期-日本GDP或损失2.3%",
+          "IMF：稀土供应减少80%-美国汽车业产出或下降9%"
+        ],
+        "cleaned_candidates": [
+          "IMF：稀土供应链中断的宏观宏观环境影响",
+          "IMF：稀土断供冲击远超预期-日本GDP或损失2.3%",
+          "IMF：稀土供应减少80%-美国汽车业产出或下降9%",
+          "IMF：0005IMFMacroeconomicEff",
+          "IMF：2025年4月，在中国对七类稀土及永磁体实施出口许可新规后"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：稀土断供冲击远超预期-日本GDP或损失2.3%",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "IMF：稀土供应减少80%-美国汽车业产出或下降9%",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0005IMFMacroeconomicEff",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2025年4月，在中国对七类稀土及永磁体实施出口许可新规后",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：稀土供应链中断的宏观宏观环境影响",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：稀土供应链中断的宏观宏观环境影响"
+      }
+    },
+    {
+      "source_report_name": "IMF Malaysia-Implementing-a-Medium-term-Expenditure-Framework d5fe3383",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：马来西亚实施中期支出框架，年度预算惯性制约中期财政纪律",
+      "final_wechat_title": "IMF：马来西亚实施中期支出框架，年度预算惯性制约中期财政纪律",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/06-0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383",
+      "generation_decision": {
+        "source_filename": "0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383",
+        "cleaned_source_title": "0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0006IMFMalaysiaImplemen",
+        "raw_candidates": [
+          "IMF：马来西亚实施中期支出框架",
+          "IMF：马来西亚中期支出框架改革路径",
+          "IMF：马来西亚中期支出框架-年度预算惯性制约改革"
+        ],
+        "cleaned_candidates": [
+          "IMF：马来西亚实施中期支出框架",
+          "IMF：马来西亚中期支出框架改革路径",
+          "IMF：马来西亚中期支出框架-年度预算惯性制约改革",
+          "IMF：0006IMFMalaysiaImplemen",
+          "IMF：国际货币产品组织2025年11月技术援助团评估认为"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0006IMFMalaysiaImplemen",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织2025年11月技术援助团评估认为",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：马来西亚实施中期支出框架",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：马来西亚实施中期支出框架"
+      }
+    },
+    {
+      "source_report_name": "IMF Mauritius-Technical-Assistance-Report-Report-on-National-Acc 5c436158",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：毛里求斯GDP统计中的离岸公司核算缺口",
+      "final_wechat_title": "IMF：毛里求斯GDP统计中的离岸公司核算缺口",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/07-0007-IMF_Mauritius-Technical-Assistance-Report-Report-on-National-Acc_5c436158",
+      "generation_decision": {
+        "source_filename": "0007-IMF_Mauritius-Technical-Assistance-Report-Report-on-National-Acc_5c436158",
+        "cleaned_source_title": "0007-IMF_Mauritius-Technical-Assistance-Report-Report-on-National-Acc_5c436158",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0007IMFMauritiusTechnic",
+        "raw_candidates": [
+          "IMF：毛里求斯GDP统计中的离岸公司核算缺口",
+          "IMF：毛里求斯离岸公司核算使GDP平均提升0.9%",
+          "IMF：毛里求斯央行数据颗粒度优于统计局调查"
+        ],
+        "cleaned_candidates": [
+          "IMF：毛里求斯GDP统计中的离岸公司核算缺口",
+          "IMF：毛里求斯离岸公司核算使GDP平均提升0.9%",
+          "IMF：毛里求斯央行数据颗粒度优于统计局调查",
+          "IMF：0007IMFMauritiusTechnic",
+          "IMF：2026年5月，IMF技术援助团队应毛里求斯统计局请求"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：毛里求斯离岸公司核算使GDP平均提升0.9%",
+            "reasons": [
+              "anchor_coverage=0.56"
+            ]
+          },
+          {
+            "title": "IMF：毛里求斯央行数据颗粒度优于统计局调查",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0007IMFMauritiusTechnic",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2026年5月，IMF技术援助团队应毛里求斯统计局请求",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：毛里求斯GDP统计中的离岸公司核算缺口",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：毛里求斯GDP统计中的离岸公司核算缺口"
+      }
+    },
+    {
+      "source_report_name": "IMF Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food- f3eea5cf",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：国际燃料与食品价格传导-3万组数据",
+      "final_wechat_title": "IMF：国际燃料与食品价格传导-3万组数据",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/08-0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+      "generation_decision": {
+        "source_filename": "0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+        "cleaned_source_title": "0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0008IMFPumps和PlatesPass",
+        "raw_candidates": [
+          "IMF：国际燃料与食品价格传导",
+          "IMF：国际燃料与食品价格传导-3万组数据",
+          "IMF：国际燃料与食品价格传导-棘轮效应"
+        ],
+        "cleaned_candidates": [
+          "IMF：国际燃料与食品价格传导",
+          "IMF：国际燃料与食品价格传导-3万组数据",
+          "IMF：国际燃料与食品价格传导-棘轮效应",
+          "IMF：0008IMFPumps和PlatesPass",
+          "IMF：2026年3月，中东冲突与供给约束再度推高全球能源与食品价格"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0008IMFPumps和PlatesPass",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2026年3月，中东冲突与供给约束再度推高全球能源与食品价格",
+            "reasons": [
+              "anchor_coverage=0.40"
+            ]
+          }
+        ],
+        "selected_title": "IMF：国际燃料与食品价格传导-3万组数据",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "3"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：国际燃料与食品价格传导-3万组数据"
+      }
+    },
+    {
+      "source_report_name": "IMF Tariff-Pass-Through-and-Import-Reallocation 47fc25e9",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：关税传导与进口重新配置-进口价格下降之谜",
+      "final_wechat_title": "IMF：关税传导与进口重新配置-进口价格下降之谜",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/09-0009-IMF_Tariff-Pass-Through-and-Import-Reallocation_47fc25e9",
+      "generation_decision": {
+        "source_filename": "0009-IMF_Tariff-Pass-Through-and-Import-Reallocation_47fc25e9",
+        "cleaned_source_title": "0009-IMF_Tariff-Pass-Through-and-Import-Reallocation_47fc25e9",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0009IMFTariffPassThrough",
+        "raw_candidates": [
+          "IMF：关税传导与进口重新配置",
+          "IMF：关税传导与进口重新配置-进口价格下降之谜",
+          "IMF：关税越高进口均价越低-供应商重新配置"
+        ],
+        "cleaned_candidates": [
+          "IMF：关税传导与进口重新配置",
+          "IMF：关税传导与进口重新配置-进口价格下降之谜",
+          "IMF：关税越高进口均价越低-供应商重新配置",
+          "IMF：0009IMFTariffPassThrough",
+          "IMF：研究基于2025年2月至12月美国月度海关数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：关税越高进口均价越低-供应商重新配置",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "IMF：0009IMFTariffPassThrough",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：研究基于2025年2月至12月美国月度海关数据",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：关税传导与进口重新配置-进口价格下降之谜",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：关税传导与进口重新配置-进口价格下降之谜"
+      }
+    },
+    {
+      "source_report_name": "IMF The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci c2dae4a7",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：亚太资金一体化格局变迁，区域内部呈现“双速”格局",
+      "final_wechat_title": "IMF：亚太资金一体化格局变迁，区域内部呈现“双速”格局",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260720/10-0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+      "generation_decision": {
+        "source_filename": "0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+        "cleaned_source_title": "0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0010IMFTheChangingLands",
+        "raw_candidates": [
+          "IMF：亚太资金一体化格局变迁",
+          "IMF：亚太资金一体化远落后贸易，区域分化明显",
+          "IMF：亚太资金一体化双速格局：发达深融，新兴滞后"
+        ],
+        "cleaned_candidates": [
+          "IMF：亚太资金一体化格局变迁",
+          "IMF：亚太资金一体化远落后贸易，区域分化明显",
+          "IMF：亚太资金一体化双速格局，发达深融，新兴滞后",
+          "IMF：0010IMFTheChangingLands",
+          "IMF：以2001至2023年为观察窗口"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：亚太资金一体化远落后贸易，区域分化明显",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "IMF：亚太资金一体化双速格局，发达深融，新兴滞后",
+            "reasons": [
+              "anchor_coverage=0.70"
+            ]
+          },
+          {
+            "title": "IMF：0010IMFTheChangingLands",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：以2001至2023年为观察窗口",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：亚太资金一体化格局变迁",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：亚太资金一体化格局变迁"
+      }
+    }
+  ]
+}
