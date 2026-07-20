@@ -1,0 +1,123 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_er_2l0wb/pdfs/0005-30-NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "中东火药桶又冒烟了🌍",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x3",
+    "投资者->读者 x1",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：亚洲图表警报，TACO风险上升但不太可能立即爆发",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-30-NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent-260720.pdf",
+    "cleaned_source_title": "NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：AsiaChartAlertTACOrisksa",
+    "raw_candidates": [
+      "亚洲图表警报：TACO风险上升但不太可能立即爆发",
+      "亚洲图表警报：TACO风险升至2.0标准差，油价需再涨10%才触发",
+      "亚洲图表警报：美伊停火三周即失效，TACO风险上升但未到临界点"
+    ],
+    "cleaned_candidates": [
+      "NOM：亚洲图表警报，TACO风险上升但不太可能立即爆发",
+      "NOM：亚洲图表警报，TACO风险升至2.0标准差",
+      "NOM：亚洲图表警报，美伊停火三周即失效，TACO风险上升但未到临界点",
+      "NOM：AsiaChartAlertTACOrisksa",
+      "NOM：中东不确定性指标升至2.0标准差，但触发条件仍需油价再涨10%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：亚洲图表警报，TACO风险升至2.0标准差",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "NOM：亚洲图表警报，美伊停火三周即失效，TACO风险上升但未到临界点",
+        "reasons": [
+          "anchor_coverage=0.59"
+        ]
+      },
+      {
+        "title": "NOM：AsiaChartAlertTACOrisksa",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：中东不确定性指标升至2.0标准差，但触发条件仍需油价再涨10%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：亚洲图表警报，TACO风险上升但不太可能立即爆发",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "NOM：亚洲图表警报，TACO风险上升但不太可能立即爆发"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "535",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
