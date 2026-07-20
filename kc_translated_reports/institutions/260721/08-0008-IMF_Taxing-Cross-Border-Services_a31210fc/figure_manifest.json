@@ -1,0 +1,107 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/058e4e82b669726f64d2182b3293e2d9931a9d4c01868d66fa7cfa79efbda5fe.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=8;chart_context,edge:0.22"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/6b0ccb07fdc0308ecedf228d039f6a1699bf0004bdf119e3ad32c60d861d3db3.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=3;non_chart_context,chart_context,edge:0.11"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/8685b636677269430ca45dba5420ba8b18e6cb2df923e2e5d419908270fad0b6.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=3;non_chart_context,chart_context,edge:0.11"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/79aa99f2c2a80140ebaa49d210eab2f1d946a14560710010e3ad98721ced80b8.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=3;non_chart_context,chart_context,edge:0.15"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/77aaad064219b385f6097cccdda371cf9ec7ead3933aab7a7970e920d37cb0fa.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.11,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_006]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/b4be139bb4da4c08d46eab445fa89a1b1b06b844b2a159b99a6220455620d9dd.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_006.jpg",
+    "relative_path": "fig_006.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.25,large"
+  },
+  {
+    "token": "[[KC_IMAGE_007]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/6844ea22d7c6efa7c0b2a24d7e5f08c8a478b28791dc9e330df3fb15b5db405d.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_007.jpg",
+    "relative_path": "fig_007.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.16,large"
+  },
+  {
+    "token": "[[KC_IMAGE_008]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/28c98a8ab58749dc93f052d888aadb6c17cdc83d7c1ea7e65e3331d5e6189040.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_008.jpg",
+    "relative_path": "fig_008.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.48,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_009]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/a1347f7ca89a3829e4f1bf254de22f94465d271622e00de4bb500f9284678991.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_009.jpg",
+    "relative_path": "fig_009.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.13"
+  },
+  {
+    "token": "[[KC_IMAGE_010]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/206444a917d51a52842f7416569517d340aee36fff457ea0447fdd90aa49107a.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_010.jpg",
+    "relative_path": "fig_010.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.34,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_011]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/6a13e7e467a0aee18fa7280c7912b8e00b4e2229d059b9adc19efe078c8bce1e.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_011.jpg",
+    "relative_path": "fig_011.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.18,large"
+  },
+  {
+    "token": "[[KC_IMAGE_012]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/3a3b4b4841c5ea739b504f699968d7c488f69b005d44e0d68ac2fbe3549b8bda.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_012.jpg",
+    "relative_path": "fig_012.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.29,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_013]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/b78cce73f2b9d95cca2fa6f67e41e36b9d0ec048aff34a0bdee1d2e5051988b3.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_013.jpg",
+    "relative_path": "fig_013.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.11,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_014]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/6ce1aac0f26e59d908a19bfc9ebf0f2ac75dcb39dbcf179442a86ac9ec84bdd1.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_014.jpg",
+    "relative_path": "fig_014.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.17,large"
+  },
+  {
+    "token": "[[KC_IMAGE_015]]",
+    "source_path": "xhs_notes/institutions/260721/0008-IMF_Taxing-Cross-Border-Services_a31210fc/mineru_raw/images/7e727899cbff3f1e0d9d62bb7b915ca189e2e33e6e44e093be3f2bb8d0e98c1c.jpg",
+    "path": "kc_translated_reports/institutions/260721/08-0008-IMF_Taxing-Cross-Border-Services_a31210fc/assets/fig_015.jpg",
+    "relative_path": "fig_015.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.12,contrast,large"
+  }
+]

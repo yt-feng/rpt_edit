@@ -1,0 +1,79 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260721/0013-WorldBank_Stanley-Fischer-Memorial-Lecture-Public-Debt-and-Central-Ban_3931",
+  "title": "世界银行：斯坦利·费舍尔纪念演讲-公共债务与央行",
+  "source_title": "0013-WorldBank_Stanley-Fischer-Memorial-Lecture-Public-Debt-and-Central-Ban_39314481",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0013-WorldBank_Stanley-Fischer-Memorial-Lecture-Public-Debt-and-Central-Ban_39314481",
+    "cleaned_source_title": "0013-WorldBank_Stanley-Fischer-Memorial-Lecture-Public-Debt-and-Central-Ban",
+    "institution_name": "世界银行",
+    "required_terms": [],
+    "deterministic_fallback": "世界银行：0013WorldBankStanleyFi",
+    "raw_candidates": [
+      "世界银行：斯坦利·费舍尔纪念演讲-公共债务与央行",
+      "世界银行：公共债务与央行-5.6亿人发展陷阱",
+      "世界银行：公共债务与央行-浮动汇率加剧贫困"
+    ],
+    "cleaned_candidates": [
+      "世界银行：斯坦利·费舍尔纪念演讲-公共债务与央行",
+      "世界银行：公共债务与央行-5.6亿人发展陷阱",
+      "世界银行：公共债务与央行-浮动汇率加剧贫困",
+      "世界银行：0013WorldBankStanleyFi",
+      "世界银行：以埃塞俄比亚为例，2024年7月IMF项目推动比尔“浮动”后"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界银行：公共债务与央行-5.6亿人发展陷阱",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：公共债务与央行-浮动汇率加剧贫困",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：0013WorldBankStanleyFi",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：以埃塞俄比亚为例，2024年7月IMF项目推动比尔“浮动”后",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界银行：斯坦利·费舍尔纪念演讲-公共债务与央行",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界银行：斯坦利·费舍尔纪念演讲-公共债务与央行"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_13.pdf",
+  "figure_count": 0,
+  "institution_name": "世界银行",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

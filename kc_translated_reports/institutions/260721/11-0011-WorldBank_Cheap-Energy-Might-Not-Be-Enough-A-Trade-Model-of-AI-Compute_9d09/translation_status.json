@@ -1,0 +1,72 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260721/0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d09",
+  "title": "世界银行：廉价电力不足以撬动AI算力出口",
+  "source_title": "0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d0939c3",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d0939c3",
+    "cleaned_source_title": "0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d0939c3",
+    "institution_name": "世界银行",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "世界银行：AI0011WorldBankCheap能源Mi",
+    "raw_candidates": [
+      "世界银行：廉价电力不足以撬动AI算力出口",
+      "世界银行：AI算力出口成本差异仅12%至20%",
+      "世界银行：融资成本对AI算力出口影响是电价四倍"
+    ],
+    "cleaned_candidates": [
+      "世界银行：廉价电力不足以撬动AI算力出口",
+      "世界银行：AI算力出口成本差异仅12%至20%",
+      "世界银行：融资成本对AI算力出口影响是电价四倍",
+      "世界银行：AI0011WorldBankCheap能源Mi",
+      "世界银行：廉价电力不足以撬动AI算力出口——制度可信度才是硬约束"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界银行：AI算力出口成本差异仅12%至20%",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "世界银行：融资成本对AI算力出口影响是电价四倍",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "世界银行：AI0011WorldBankCheap能源Mi",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界银行：廉价电力不足以撬动AI算力出口",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界银行：廉价电力不足以撬动AI算力出口"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_11.pdf",
+  "figure_count": 1,
+  "institution_name": "世界银行",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

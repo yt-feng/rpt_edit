@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260721/0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/mineru_raw/images/3b9812785ee9cf89a978f463520ab8626763de7237f50eb0158fccabb2156986.jpg",
+    "path": "kc_translated_reports/institutions/260721/09-0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.28,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260721/0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/mineru_raw/images/aa1cf3451d776ae23900d326b975a7b8b344d00ed2c02dcd6f82e8f93a28670a.jpg",
+    "path": "kc_translated_reports/institutions/260721/09-0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,edge:0.25,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260721/0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/mineru_raw/images/63fa842fb4a654ce01f713bdf637e00ce55bbde0e60e5dac2b5da82970f44150.jpg",
+    "path": "kc_translated_reports/institutions/260721/09-0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=8;chart_context,edge:0.23"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260721/0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/mineru_raw/images/8b165ae191b514f37a516384142af0e342e675614ccc87a4d2f2277e2f9175fa.jpg",
+    "path": "kc_translated_reports/institutions/260721/09-0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.33,contrast,large"
+  }
+]

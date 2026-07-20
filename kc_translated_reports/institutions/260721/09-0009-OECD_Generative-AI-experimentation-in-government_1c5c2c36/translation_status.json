@@ -1,0 +1,60 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260721/0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36",
+  "title": "经合组织：政府生成式AI实验指南多但操作少",
+  "source_title": "0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36",
+    "cleaned_source_title": "0009-OECD_Generative-AI-experimentation-in-government_1c5c2c36",
+    "institution_name": "经合组织",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "经合组织：0009OECDGenerativeAIex",
+    "raw_candidates": [
+      "经合组织：政府生成式AI实验指南多但操作少",
+      "经合组织：政府生成式AI实验指南碎片化，22%员工已使用",
+      "经合组织：政府生成式AI实验指南多但操作少，影子AI盛行"
+    ],
+    "cleaned_candidates": [
+      "经合组织：政府生成式AI实验指南多但操作少",
+      "经合组织：政府生成式AI实验指南碎片化，22%员工已使用",
+      "经合组织：政府生成式AI实验指南多但操作少，影子AI盛行",
+      "经合组织：0009OECDGenerativeAIex",
+      "经合组织：政府生成式AI实验，指南多但操作少"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：0009OECDGenerativeAIex",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：政府生成式AI实验指南多但操作少",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：政府生成式AI实验指南多但操作少"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_09.pdf",
+  "figure_count": 4,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

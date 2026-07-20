@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260721/0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd/mineru_raw/images/ae44c3971285eb0b344012c554884638f74d53a802ce288e5246c02f792b81e0.jpg",
+    "path": "kc_translated_reports/institutions/260721/01-0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.32,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260721/0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd/mineru_raw/images/58f500e246b4d602ea9c8fae4e227dcc977ee90a0bc191773d58e604aebf63c2.jpg",
+    "path": "kc_translated_reports/institutions/260721/01-0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.22,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260721/0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd/mineru_raw/images/6cb008cd6cd6eb582fa497b1b5961a309bcea19ba845a77dad7c8b4d9c66298f.jpg",
+    "path": "kc_translated_reports/institutions/260721/01-0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.27,large"
+  }
+]
