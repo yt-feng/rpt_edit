@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "date_folder": "260721",
+  "source": "kc_translated_reports/ark",
+  "generated_at_utc": "2026-07-20T23:49:50Z",
+  "article_count": 1,
+  "uploaded_count": 1,
+  "articles": [
+    {
+      "source_report_name": "ARK 517-Prediction-Markets-Are-Moving-Beyond-Sports-More ad962268aad90a2c",
+      "institution_name": "",
+      "title_before_upload": "木头姐ARK：预测市场正从体育博彩走向工业级应用",
+      "final_wechat_title": "木头姐ARK：预测市场正从体育博彩走向工业级应用",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/ark/260721/01-0001-ARK_517-Prediction-Markets-Are-Moving-Beyond-Sports-More_ad962268aad90a2c",
+      "generation_decision": {
+        "source_filename": "0001-ARK_517-Prediction-Markets-Are-Moving-Beyond-Sports-More_ad962268aad90a2c",
+        "cleaned_source_title": "0001-ARK_517-Prediction-Markets-Are-Moving-Beyond-Sports-More_ad962268aad90a2c",
+        "institution_name": "木头姐ARK",
+        "required_terms": [],
+        "deterministic_fallback": "木头姐ARK：0001ARK517Prediction",
+        "raw_candidates": [
+          "木头姐ARK：预测市场正从体育博彩走向工业级应用",
+          "木头姐ARK：预测市场覆盖半导体出货量等产业指标",
+          "木头姐ARK：预测市场或成下一层资金基础设施"
+        ],
+        "cleaned_candidates": [
+          "木头姐ARK：预测市场正从体育博彩走向工业级应用",
+          "木头姐ARK：预测市场覆盖半导体出货量等产业指标",
+          "木头姐ARK：预测市场或成下一层资金基础设施",
+          "木头姐ARK：0001ARK517Prediction"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "木头姐ARK：预测市场覆盖半导体出货量等产业指标",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：预测市场或成下一层资金基础设施",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：0001ARK517Prediction",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "木头姐ARK：预测市场正从体育博彩走向工业级应用",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "木头姐ARK：预测市场正从体育博彩走向工业级应用"
+      }
+    }
+  ]
+}
