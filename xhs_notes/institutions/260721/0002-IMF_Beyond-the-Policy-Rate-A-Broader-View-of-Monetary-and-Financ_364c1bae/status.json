@@ -1,0 +1,111 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_igegf90d/pdfs/0002-IMF_Beyond-the-Policy-Rate-A-Broader-View-of-Monetary-and-Financ_364c1bae.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "政策利率之外，才是真",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "金融条件->资金条件 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "金融条件->资金条件 x2",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融条件->资金条件 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1",
+    "金融条件->资金条件 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融条件->资金条件 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融条件->资金条件 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "IMF：超越政策利率-货币与资金的宏观视角",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-IMF_Beyond-the-Policy-Rate-A-Broader-View-of-Monetary-and-Financ_364c1bae.pdf",
+    "cleaned_source_title": "0002-IMF_Beyond-the-Policy-Rate-A-Broader-View-of-Monetary-and-Financ_364c1bae",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0002IMFBeyondthe政策RateA",
+    "raw_candidates": [
+      "IMF：超越政策利率-货币与金融的宏观视角",
+      "IMF：吉尔吉斯斯坦资金条件指数显示宽松",
+      "IMF：流动性过剩致政策利率信号失效"
+    ],
+    "cleaned_candidates": [
+      "IMF：超越政策利率-货币与资金的宏观视角",
+      "IMF：吉尔吉斯斯坦资金条件指数显示宽松",
+      "IMF：流动性过剩致政策利率信号失效",
+      "IMF：0002IMFBeyondthe政策RateA",
+      "IMF：过剩流动性从2021年的约30亿索姆（占GDP的3.8%）攀升"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：吉尔吉斯斯坦资金条件指数显示宽松",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：流动性过剩致政策利率信号失效",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：0002IMFBeyondthe政策RateA",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：过剩流动性从2021年的约30亿索姆（占GDP的3.8%）攀升",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：超越政策利率-货币与资金的宏观视角",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：超越政策利率-货币与资金的宏观视角"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

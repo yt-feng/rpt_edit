@@ -1,0 +1,3805 @@
+[
+    {
+        "type": "text",
+        "text": "Cheap Energy Might Not Be Enough",
+        "text_level": 1,
+        "bbox": [
+            187,
+            297,
+            810,
+            338
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A Trade Model of AI Compute Services",
+        "text_level": 1,
+        "bbox": [
+            243,
+            359,
+            754,
+            388
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Michael Lokshin",
+        "bbox": [
+            424,
+            415,
+            575,
+            436
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "Public Disclosure Authorized",
+        "bbox": [
+            6,
+            500,
+            29,
+            667
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "Public Disclosure Authorized",
+        "bbox": [
+            6,
+            36,
+            27,
+            203
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Policy Research Working Paper",
+        "bbox": [
+            111,
+            85,
+            611,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "11426",
+        "bbox": [
+            709,
+            85,
+            803,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            50,
+            821,
+            109,
+            872
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "WORLD BANK GROUP\nEurope and Central Asia Region\nOffice of the Chief Economist\nJuly 2026",
+        "bbox": [
+            112,
+            837,
+            405,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            542,
+            823,
+            602,
+            869
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Reproducible Research Repository",
+        "bbox": [
+            611,
+            839,
+            949,
+            859
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "A verified reproducibility package for this paper is available at http://reproducibility.worldbank.org, click here for direct access.",
+        "bbox": [
+            624,
+            872,
+            937,
+            917
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "POLICY RESEARCH WORKING PAPER 11429",
+        "bbox": [
+            65,
+            64,
+            374,
+            82
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Abstract",
+        "text_level": 2,
+        "bbox": [
+            83,
+            106,
+            176,
+            127
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Can energy-rich developing countries convert cheap electricity into AI compute exports? This paper develops a capacity-constrained trade model of AI compute services with bilateral frictions in delivery, regulation, and trust. Calibrating the model across 85 countries shows that several developing economies can produce compute at low cost, but this advantage rarely becomes export competitiveness. Because hardware dominates unit costs and is globally priced, cross-country production costs differ by only 12–20 percent. Modest regulatory, financing, and trust frictions can therefore erase the gains from cheap power. The binding constraint is institutional credibility rather than electricity prices, including enforceable data governance, stable regulation, credible power contracts, access to finance, and geopolitical alignment with buyers.",
+        "bbox": [
+            81,
+            133,
+            477,
+            270
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            493,
+            135,
+            887,
+            253
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/62c1c09888403db031082d9706f56345de0ebc23b1cd2d9724a4735f292ad26f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            413,
+            593,
+            580,
+            720
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "This paper is a product of the Office of the Chief Economist, Europe and Central Asia Region. It is part of a larger effort by the World Bank to provide open access to its research and make a contribution to development policy discussions around the world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp. The author may be contacted at mlokshin@worldbank.org. A verified reproducibility package for this paper is available at http://reproducibility.worldbank.org, click here for direct access.",
+        "bbox": [
+            81,
+            388,
+            885,
+            474
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent.",
+        "bbox": [
+            133,
+            852,
+            843,
+            926
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Produced by the Research Support Team",
+        "bbox": [
+            354,
+            941,
+            616,
+            958
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Cheap Energy Might Not Be Enough: A Trade Model of AI Compute Services",
+        "text_level": 1,
+        "bbox": [
+            284,
+            90,
+            714,
+            150
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Michael Lokshin $^{1}$",
+        "bbox": [
+            423,
+            174,
+            571,
+            194
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Authorized for distribution by Ivailo V. Izvorski, Chief Economist, Europe and Central Asia Region, World Bank Group",
+        "bbox": [
+            68,
+            424,
+            923,
+            443
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification: F14, F18, L86, O14, O33, Q40",
+        "bbox": [
+            169,
+            674,
+            589,
+            693
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Keywords: compute trade, FLOPs, artificial intelligence, data centers, comparative advantage, developing countries",
+        "bbox": [
+            169,
+            700,
+            826,
+            739
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ This paper's findings, interpretations, and conclusions are entirely those of the author and do not necessarily represent the views of the author's employer, the World Bank, its Executive Directors, or the countries they represent. Michael Lokshin: mlokshin@worldbank.org. I thank Ivan Torre, Christine Ann McDaniel, and Erhan Artuc for their constructive comments.",
+        "bbox": [
+            111,
+            849,
+            852,
+            909
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction",
+        "text_level": 2,
+        "bbox": [
+            112,
+            90,
+            267,
+            109
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The expansion of artificial intelligence drives the demand for computational resources. The compute used to train machine-learning models (ML) has doubled every six months since 2010 (Sevilla et al. 2022). In 2024, data centers accounted for approximately 1.5 percent of global electricity demand, and that share is projected to exceed 3 percent by 2030 (IEA 2025). Rising compute demand creates a new kind of export opportunity: countries can sell computational work across borders. In this paper, we call this FLOP exporting because the service being traded is measured in floating-point operations, the standard unit of computational work. For energy-rich developing countries, this creates a potential path from raw energy exports to higher-value digital services.",
+        "bbox": [
+            111,
+            128,
+            887,
+            357
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Several megaprojects suggest that FLOP exporting is technically and commercially feasible. Armenia is deploying 50,000 GPUs as part of a \\$4 billion investment (Firebird 2026). Kenya, Saudi Arabia, and Malaysia have attracted billion-dollar investments in data centers. Google has committed \\$15 billion to India, and OpenAI has proposed a \\$25 billion “Stargate Argentina” complex (Straub et al. 2026). Global data-center FDI reached over \\$310 billion in 2025 (Aykut et al. 2026) and annual cloud computing exports exceeded \\$9 billion (World Bank 2025).",
+        "bbox": [
+            109,
+            375,
+            885,
+            525
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Yet the cheapest locations are not the ones attracting the most investment. The cheapest potential producer in our calibration, Kyrgyzstan, has 5 MW of installed capacity and virtually no data-center FDI, while the largest recipients among developing economies (Malaysia, India, Brazil) sit in the middle of the cost ranking (Aykut et al. 2026). Cheap electricity alone is not creating compute exports. The central question, then, is why low-cost countries fail to attract compute investment and what conditions would allow them to convert cheap power into export capacity.",
+        "bbox": [
+            109,
+            541,
+            885,
+            691
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Recent work examines compute governance and the geography of AI infrastructure (Sastry et al. 2024, Lehdonvirta et al. 2024, Pilz et al. 2025), but no formal trade model of compute has been developed. This paper offers the first such model and makes three contributions. First, we develop a capacity-constrained Ricardian model of compute trade. The model treats latency as an iceberg trade cost and geopolitical distrust as a bilateral sovereignty premium that raises delivered costs. Second, we calibrate the model across 85 countries, correcting for energy subsidies that distort headline cost rankings. Third, we characterize the resulting trade regimes and quantify the welfare cost of sovereignty premia.",
+        "bbox": [
+            109,
+            708,
+            887,
+            910
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            869,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Cheap power and favorable cooling conditions do not automatically translate into export competitiveness. Hardware amortization accounts for roughly 90 percent of the unit cost and is priced globally, so cross-country production cost differences are limited to 12–20 percent. This narrow spread leaves little room for institutional frictions. Under cost-recovery pricing, several developing countries rank among the lowest-cost producers. However, when bilateral sovereignty frictions are introduced, trust deficits with OECD buyers eliminate nearly all of their export potential. Financing costs reinforce this result: a 10-percentage-point WACC gap between OECD hyperscalers and locally financed developing-country operators adds about \\$0.29 per GPU-hour to unit cost, roughly four times the electricity-cost spread among the top twenty producers (Calcaterra et al. 2024).",
+        "bbox": [
+            109,
+            90,
+            888,
+            345
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2. Related Literature",
+        "text_level": 2,
+        "bbox": [
+            112,
+            376,
+            326,
+            395
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Goldfarb and Trefler (2018) argue that AI shifts comparative advantage toward data and human capital. Our model highlights a different margin: compute production depends heavily on electricity costs and climate. Resource-rich countries could therefore export compute even without large domestic AI industries. Korinek and Stiglitz (2021) warn that developing countries may be left behind in the AI revolution; FLOP exporting offers a route in. The concept relates to Hausmann et al. (2007) on export composition and growth, and to Limão and Venables (2001) on infrastructure as a determinant of trade costs. In our setting, network latency plays an analogous role.",
+        "bbox": [
+            109,
+            412,
+            887,
+            614
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The closest precedent to our model is IT services offshoring, which is labor-intensive and skill-biased (Blinder 2006). FLOP exporting differs from traditional IT services offshoring in factor intensity. It is capital- and energy-intensive rather than labor-intensive, so likely exporters are energy-rich countries rather than labor-abundant ones. The structural difference is that GPUs, the main traded input, are priced globally. Cross-country cost variation therefore comes primarily from electricity and facility costs, which together account for only a small share of unit cost. Comparative advantage in compute is consequently narrower and more fragile than in services offshoring, where labor-cost differences are larger.",
+        "bbox": [
+            111,
+            632,
+            887,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Several studies examine where firms should build data centers. Flucker et al. (2013) show that climate affects data center cooling costs. Liu et al. (2023) study data center placement under renewable energy constraints. In international trade theory, Brainard (1997) formalizes the proximity-concentration trade-off between serving a market locally and concentrating production abroad. Helpman et al. (2004) extend this to heterogeneous firms choosing between exporting and FDI.",
+        "bbox": [
+            111,
+            851,
+            887,
+            897
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            869,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            109,
+            90,
+            885,
+            186
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "On governance, Sastry et al. (2024) argue that compute is well-suited for regulation. Lehdonvirta et al. (2024) map a “Compute North” with training-capable hardware versus a “Compute South” limited to inference chips. Pilz et al. (2025) project that data center power demand could reach 327 GW by 2030. The World Bank (2025) documents the resulting divide (high-income countries hold 77 percent of colocation capacity), but does not offer a formal framework linking costs to trade patterns. Biglaiser et al. (2024) survey the cloud market in IO, and Stojkoski et al. (2024) estimate cloud export geography but treat services as homogeneous. Our model adds supply-side cost structure and a training–inference distinction.",
+        "bbox": [
+            109,
+            205,
+            887,
+            407
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3. Model of Compute Production and Trade",
+        "text_level": 2,
+        "bbox": [
+            111,
+            438,
+            549,
+            458
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3.1 Production Technology and Cost Structure",
+        "text_level": 2,
+        "bbox": [
+            112,
+            489,
+            488,
+            508
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Consider N countries, each capable of producing compute services. The cost of producing a unit of compute in country j depends on three inputs: electricity, hardware, and data center construction.",
+        "bbox": [
+            111,
+            523,
+            885,
+            595
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A data center consumes electricity for its Graphics Processing Units (GPUs), cooling, power distribution, and lighting. This overhead is measured by the power usage effectiveness (PUE), the ratio of total facility energy consumption to IT equipment energy consumption. The cost per GPU-hour in country j is: $^{2}$",
+        "bbox": [
+            109,
+            614,
+            885,
+            710
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "$$\nc _ {j} = \\mathrm{PUE} (\\theta_ {j}) \\cdot \\gamma \\cdot p _ {E, j} + \\rho + \\eta + p _ {L, j} / (D \\cdot H),\\tag{1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            243,
+            728,
+            692,
+            748
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "where $\\gamma$ is GPU power draw (kW), $p_{E,j}$ is the electricity price (\\$/kWh), $\\rho = P_{GPU} / (L \\cdot H \\cdot \\beta)$ is amortized hardware cost per GPU-hour ( $P_{GPU}$ = purchase price, $L$ = lifetime in years, $H$ = 8,766 hours per year, $\\beta = utilization rate$ , ${}^{3}\\eta$ is amortized networking cost, and the last term amortizes per-GPU construction costs $p_{L,j} (= per-watt cost \\times 700\\ W)$ over the facility's lifetime D. Both $\\rho$ and $\\eta$ are determined in global hardware markets. $^{4}$ Cross-country variation in $c_{j}$ is therefore driven by electricity prices, climate, and construction costs; the construction-cost estimates are described in Appendix E. The PUE function captures temperature-dependent cooling overhead: $\\mathrm{PUE}(\\theta_{j}) = \\varphi + \\delta \\cdot \\max(0, \\theta_{j} - \\overline{\\theta})$ , where $\\varphi$ is the base PUE at or below the free-cooling threshold $\\overline{\\theta}$ , $\\delta$ is the marginal PUE penalty per °C above $\\overline{\\theta}$ , and $\\theta_{j}$ is country j's peak summer temperature.",
+        "bbox": [
+            111,
+            763,
+            883,
+            813
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ The linear PUE model is a simplification. Modern liquid and immersion cooling technologies can achieve PUE $\\approx$ 1.2 even in hot climates, flattening the temperature–PUE relationship. The robustness check in Section 7 confirms that the results are insensitive to this specification. Google (2024) reports a fleet-wide trailing twelve-month PUE of 1.10.",
+        "bbox": [
+            111,
+            849,
+            882,
+            909
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            869,
+            939,
+            883,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            311
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The cost structure is Ricardian: countries differ in production costs because they differ in technology and input prices. The intuition for resource-rich comparative advantage, however, is closer to Heckscher–Ohlin with countries exporting goods intensive in their abundant factors (Heckscher 1919, Ohlin 1933). For compute production, the relevant endowment is not electricity, but the natural resources that generate it, such as hydropower (Kyrgyzstan, Ethiopia, Georgia), oil and gas (Iran, Turkmenistan, Qatar), solar irradiance (North Africa, the Gulf), and geothermal energy (Kenya, Iceland).",
+        "bbox": [
+            109,
+            327,
+            887,
+            503
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.2 Trade Costs",
+        "text_level": 2,
+        "bbox": [
+            112,
+            532,
+            245,
+            550
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Countries produce and trade two types of compute services that differ in their offshoring costs. Training services (denoted T) include batch workloads such as model training, fine-tuning, and large-scale data processing. Training a state-of-the-art AI model can take weeks to months across thousands of GPUs. The client ships its data to a data center, the computation executes locally, and the output is returned to the client. Since neither input nor output is time-sensitive, network latency plays no role. Inference services (denoted I) encompass real-time workloads such as chatbot responses, autonomous decisions, and interactive agents. Each query must travel to the server and back within milliseconds, so the service quality degrades as delivery delays (latency) increase.",
+        "bbox": [
+            109,
+            566,
+            885,
+            770
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ For the NVIDIA H100: \\$25,000 / (3 years × 8,766 hours/year × 70% utilization) ≈ \\$1.36/hr. Street prices have fallen to \\$18,000–\\$22,000 as of late 2025. Each GPU draws approximately 700 watts.",
+        "bbox": [
+            111,
+            820,
+            854,
+            851
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ China is developing an alternative domestic chip stack based on Huawei's Ascend series (910B/910C) and other domestic accelerators. If these achieve comparable FLOPs per watt at lower prices, China's effective $\\rho$ could diverge from the NVIDIA-based benchmark used here, potentially improving its cost position despite export controls.",
+        "bbox": [
+            111,
+            849,
+            864,
+            909
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            870,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Latency, denoted $l_{jk}$ , is the round-trip time for a data packet to travel from the seller country j to buyer country k, typically 5–10 ms within a country and over 150 ms across continents (Appendix F summarizes workload types and their latency sensitivity).",
+        "bbox": [
+            111,
+            90,
+            885,
+            165
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Governments and firms may prefer to process data domestically for national security, regulatory compliance, or political reasons. This is captured by a bilateral sovereignty premium $\\lambda_{ij} \\geq 0$ , which acts as a markup on the cost of compute sourced from seller country i by buyer country j. When buyer j sources compute from seller $i \\neq j$ , the effective cost is inflated by the factor $(1 + \\lambda_{ij})$ . The sovereignty premium is zero for domestic production ( $\\lambda_{ii} = 0$ ). The bilateral premium is modeled as a function of geopolitical alignment $G_{ij}$ , measured from the UN General Assembly ideal-point distance (Bailey, Strezhnev, and Voeten 2017) and normalized so that $G_{ij} \\in [0, 1]$ , with 0 denoting perfect alignment; regulatory compatibility $R_{ij}$ , coded as 1 for country pairs covered by a mutual data adequacy agreement and 0 otherwise. Pairs under comprehensive trade sanctions ( $S_{ij} = 1$ ) are treated separately as a corner case: trade is prohibited by assumption, so $\\lambda_{ij} = \\infty$ . For all other (non-sanctioned) pairs, the bilateral premium is:",
+        "bbox": [
+            111,
+            181,
+            885,
+            479
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\lambda_ {i j} = \\{\\infty \\text {if} S _ {i j} = 1; w _ {1} \\cdot G _ {i j} + w _ {2} \\cdot (1 - R _ {i j}) \\text {otherwise} \\}.\\tag{2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            207,
+            493,
+            728,
+            513
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Two established bodies of literature motivate this functional form. The multiplicative wedge (1 + $\\lambda_{ij}$ ) on delivered cost is the standard representation of ad valorem bilateral trade frictions in the gravity literature (Anderson and van Wincoop 2003), where pair-specific wedges capture border effects, policy barriers, and non-tariff measures that raise the price paid by buyer j for seller i's services above the seller's own cost. The linear additive structure of the two components $G_{ij}$ and $R_{ij}$ treats geopolitical, regulatory, and sanctions frictions as separable contributions to the wedge, consistent with the iceberg-equivalent decomposition of services trade costs in Benz and Jaax (2020).",
+        "bbox": [
+            111,
+            530,
+            885,
+            739
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The wedge dependence on bilateral institutional alignment follows from the incomplete-contracts theory (Anderson and Marcouiller 2002, Antràs 2003). Compute trade is contract-intensive. A buyer sends sensitive data to a remote seller and depends on the seller's jurisdiction to enforce confidentiality, service-level obligations, and, in many applications, the buyer's ability to retrieve or delete its data. In countries where these contracts are weakly enforceable, the buyer discounts the seller's effective price, and the size of the discount varies with the pair-specific strength of the enforcement environment. Political alignment $G_{ij}$ proxies dispute-resolution willingness, mutual data adequacy $R_{ij}$ proxies enforceable contractual floors on data handling, and sanctions $S_{ij}$ proxy the extreme case where no enforcement is possible. Equation (2) is thus the natural implementation of the insecure-trade framework in a services-trade setting where the traded object is a compute service bundled with a data-handling contract. The delivered cost of service $s \\in \\{T, I\\}$ from seller j to buyer k is:",
+        "bbox": [
+            109,
+            755,
+            885,
+            905
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            870,
+            939,
+            883,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            109,
+            90,
+            885,
+            246
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "$$\nP _ {s} (j, k) = (1 + \\lambda_ {j k}) \\cdot (1 + \\tau_ {s} \\cdot l _ {j k}) \\cdot c _ {j},\\tag{3}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            284,
+            262,
+            653,
+            282
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "where $c_{j}$ is the unit cost of producing one GPU-hour in country j (equation (1)). The bilateral premium $\\lambda_{jk}$ is the same object as $\\lambda_{ij}$ in equation (2); we relabel the subscripts as $(j, k)$ whenever the premium is paired with a specific seller's production cost $c_{j}$ . We treat governance quality, grid reliability, and similar institutional risks as demand-side frictions. They enter through $\\lambda_{jk}$ rather than by a production cost adjustment.",
+        "bbox": [
+            111,
+            299,
+            885,
+            431
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The parameter $\\tau$ measures the rate of quality degradation per millisecond of round-trip latency, with $\\tau_{T} = 0$ and $\\tau_{I} = \\tau > 0$ . For training ( $\\tau_{T} = 0$ ), the delivered cost is the sum of the production cost and the sovereignty markup. For inference, the delivered cost increases with latency at rate $\\tau_{I}$ . Beyond a threshold $\\overline{l}$ (typically 200–300 ms for interactive applications), the service becomes unusable regardless of price: $P_{I}(j, k) = \\infty$ if $l_{jk} > \\overline{l}$ .",
+        "bbox": [
+            111,
+            449,
+            885,
+            582
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3.3 Global Compute Demand",
+        "text_level": 2,
+        "bbox": [
+            112,
+            612,
+            352,
+            630
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The model is closed by specifying demand for compute services. Let $q_{k}$ denote the volume of compute purchased by buyer k. We measure compute demand using installed data center capacity in megawatts (MW):",
+        "bbox": [
+            111,
+            646,
+            885,
+            718
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "$$\nq _ {k} = \\omega_ {k} \\cdot Q, \\quad \\omega_ {k} = M _ {k} / \\sum_ {k ^ {\\prime}} M _ {k ^ {\\prime}},\\tag{4}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            310,
+            733,
+            627,
+            776
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "where $Q$ is the total global compute spending and $\\omega_{k}$ is country $k$ 's share of global demand, measured by its share of installed data center capacity $M_{k}$ in MW. $^{5}$",
+        "bbox": [
+            111,
+            792,
+            883,
+            839
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{5}$ Installed capacity is preferable to GDP as a demand proxy because compute consumption is driven by data center infrastructure, not aggregate income. Ireland and the Netherlands, for example, host far more capacity per capita",
+        "bbox": [
+            111,
+            878,
+            872,
+            910
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            870,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Demand splits between training and inference. Training demand is $q_{Tk} = \\alpha \\cdot q_k$ and inference demand is $q_{Ik} = (1 - \\alpha) \\cdot q_k$ , where $\\alpha \\in (0,1)$ is the exogenous training share. The parameter $\\alpha$ should be interpreted as the share of compute that is fully latency-insensitive and freely offshorable. The effective offshorable share may be smaller as intermediate workloads (agentic inference, fine-tuning) grow. $^{6}$",
+        "bbox": [
+            111,
+            90,
+            885,
+            215
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "3.4 Sourcing and Market Equilibrium",
+        "text_level": 2,
+        "bbox": [
+            111,
+            246,
+            416,
+            263
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For each service type $s \\in \\{T, I\\}$ , each buyer k chooses the source that minimizes the delivered cost:",
+        "bbox": [
+            111,
+            279,
+            883,
+            323
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\nj _ {s} ^ {*} (k) = \\underset {j} {\\arg \\min} P _ {s} (j, k).\\tag{5}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            357,
+            340,
+            576,
+            371
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Each country j is characterized by a capacity ceiling $\\overline{K}_{j}$ , measured in GPU-hours per period, representing the maximum volume of compute the country can supply. This ceiling reflects the joint constraint of grid electricity availability, institutional capacity for data center permitting and construction, and access to GPU financing.",
+        "bbox": [
+            109,
+            388,
+            885,
+            489
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Training market. Since $\\tau_{T} = 0$ , training is a homogeneous good with no distance-related quality degradation. Country k imports training whenever the world price, after adding the bilateral sovereignty premium, is lower than the price of producing domestically: $(1 + \\lambda_{jk}) \\cdot p_{T} < c_{k}$ , where $p_{T}$ is the competitive world training price. In the capacity-constrained equilibrium, the cheapest producer supplies up to its capacity, then the next cheapest producer enters, and so on until demand is met. The marginal training exporter $m_{T}$ is the index of the producer whose entry just satisfies total export demand. The equilibrium training price equals the marginal exporter's cost: $p_{T} = c_{(m_{T})}$ .",
+        "bbox": [
+            109,
+            507,
+            885,
+            715
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Without capacity constraints, $m_{T} = 1$ and the cheapest country serves all demand at its own cost, earning zero rent. With binding capacity constraints, $m_{T} > 1$ , the price rises to the cost of the marginal entrant, and all infra-marginal exporters earn positive rents: $\\pi_{Tj} = (p_T - c_j) \\cdot K_{Tj}$ . When a country allocates capacity across multiple uses, the shadow value $\\mu_j$ of the capacity constraint equals the margin on the marginal activity. That activity is the least profitable use that still receives capacity. In the training-only case, $\\mu_j = \\pi_j$ ; in the multi-market case, $\\mu_j \\leq \\pi_j$ because training, as the higher-margin activity, is served first.",
+        "bbox": [
+            111,
+            734,
+            885,
+            780
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "than their GDP shares would predict. At the same time, large economies like India and Brazil account for modest shares of global data center power.",
+        "bbox": [
+            111,
+            820,
+            861,
+            851
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{6}$ Emerging workload categories, notably agentic inference (long-running, multi-step reasoning tasks) and fine-tuning (rapid iterative retraining on proprietary data), occupy a middle ground, tolerating moderate latency but requiring sustained GPU allocation and proximity to data. Using installed capacity to proxy demand is a static assumption; endogenizing demand, for instance, proportional to GDP or digital adoption, is a natural extension.",
+        "bbox": [
+            111,
+            849,
+            849,
+            910
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            870,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            222
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Inference market. Since $\\tau_{I} = \\tau > 0$ , inference suffers distance-dependent quality degradation. The inference market for buyer k is localized, as only countries with latency $l_{jk} \\leq \\overline{l}$ can participate, and each faces a different delivered cost. The delivered inference price for buyer k is:",
+        "bbox": [
+            111,
+            238,
+            883,
+            316
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "$$\np _ {I} (k) = (1 + \\tau \\cdot l _ {m _ {I} (k), k}) \\cdot c _ {m _ {I} (k)},\\tag{6}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            310,
+            332,
+            625,
+            353
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "where $m_{I}(k)$ is the marginal inference supplier to k, determined by the capacity-constrained supply stack for k's inference market. Each GPU-hour of capacity is allocated to its highest-margin use, whether training exports, inference exports to various destinations, or domestic supply.",
+        "bbox": [
+            111,
+            369,
+            885,
+            443
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The cost-based equilibrium identifies the set of countries that could profitably produce and export compute. Whether these countries attract investment also depends on agglomeration economies, hyperscaler market structure, and network connectivity (Krugman 1991). In practice, AWS, Azure, and Google Cloud dominate the cloud compute market, and their location choices reflect scale economies and colocation effects that the competitive model does not capture. The capacity ceilings $\\overline{K}_{j}$ partially capture the resulting gap between cost-based potential and realized investment; Section 7 discusses these limitations in more detail.",
+        "bbox": [
+            111,
+            458,
+            885,
+            640
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "4. Equilibrium Properties",
+        "text_level": 2,
+        "bbox": [
+            112,
+            670,
+            370,
+            691
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This section derives the properties of the capacity-constrained equilibrium introduced in Section 3. Full derivations are shown in Appendix B.",
+        "bbox": [
+            111,
+            707,
+            883,
+            753
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Proposition 1 (Country Taxonomy). With two service types (training with $\\tau_{T} = 0$ , and inference with $\\tau_{I} > 0$ ) and three possible statuses (export, domestic production, and import), there are nine potential regime combinations. In equilibrium, only five are realized. Each regime is coded by two letters: the first for training status, the second for inference (E = export, D = domestic production, I = import).",
+        "bbox": [
+            109,
+            770,
+            885,
+            893
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            870,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "(i) EE. Training exporter + inference exporter. The cheapest producers, with $c_{j} < p_{T}$ , supply training globally and inference to nearby demand centers.",
+        "bbox": [
+            111,
+            90,
+            883,
+            138
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "(ii) IE. Training importer + inference exporter. Countries with $c_{j} > p_{T}$ that are not cheap enough to compete in the global training market but serve as regional inference hubs due to low costs and proximity to demand centers ( $l_{jk}$ below the latency threshold $\\bar{l}$ ).",
+        "bbox": [
+            111,
+            155,
+            883,
+            233
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "(iii) ID. Training importer + inference domestic producer. Countries that import training but produce inference domestically, because the bilateral sovereignty premium $\\lambda_{jk}$ or geographic isolation makes all foreign inference sources more expensive than domestic production.",
+        "bbox": [
+            111,
+            251,
+            885,
+            325
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "(iv) DD. Domestic producer of both. Countries where $c_{k} \\leq (1 + \\lambda_{jk}) \\cdot p_{T}$ , so the bilateral sovereignty premium is large enough to justify domestic production of both training and inference.",
+        "bbox": [
+            111,
+            342,
+            883,
+            390
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "(v) II. Importer of both. High-cost countries with $c_{k} > (1 + \\lambda_{jk}) \\cdot p_{T}$ that import both training and inference from cheaper or closer suppliers.",
+        "bbox": [
+            111,
+            407,
+            885,
+            454
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The model rules out the remaining four regime combinations. A training exporter cannot simultaneously produce inference domestically or import inference. A country cheap enough to win a global training competition ( $c_j < p_T$ ) is necessarily cheap enough to export inference to nearby buyers (Proposition 4). A country that produces training domestically cannot import inference. The sovereignty premium that justifies domestic training also justifies domestic inference production, which faces latency degradation when imported. A country that produces training domestically while exporting inference would need both a strong domestic-sovereignty motive and very low costs. The model's cost ordering rules out that combination. Table 1 summarizes this taxonomy.",
+        "bbox": [
+            111,
+            472,
+            885,
+            703
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Proposition 2 (Capacity Constraints Reduce Concentration). In the training market, define the Herfindahl–Hirschman Index (HHI) as a measure of market concentration that is equal to the sum of squared market shares:",
+        "bbox": [
+            111,
+            719,
+            885,
+            789
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$HHI_{T} = \\sum_{j}\\left(\\frac{K_{T,j}}{Q_{T,X}}\\right)^{2}$ , where $Q_{T,X} = \\sum_{k \\in M_{T}} q_{T,k}$ denote total training export demand, the sum of training demand across all importing countries, and $K_{T,j}$ is country j's training export allocation (GPU-hours), bounded by the capacity ceiling $K_{T,j} \\leq \\overline{K}_{j}$ . Without capacity constraints, the cheapest producer captures all training demand and $HHI_{T} = 1$ . With binding capacity constraints on the cheapest producers, $HHI_{T} < 1$ , and $HHI_{T}$ is strictly decreasing in the number of capacity-constrained infra-marginal exporters. When low-cost producers reach capacity limits, residual demand shifts to higher-cost suppliers, reducing market concentration.",
+        "bbox": [
+            111,
+            808,
+            885,
+            904
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            861,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            109,
+            90,
+            885,
+            190
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Proposition 3 (Sovereignty Switching Threshold). A country produces AI training domestically only when the sovereignty premium is large enough to offset the higher domestic cost. Formally, country k produces training domestically if and only if $\\lambda_{jk} \\geq \\lambda_{k}^{*} = c_{k}/p_{T} - 1$ for every potential supplier j with $c_{j} < c_{k}$ ; equivalently, k imports whenever there exists a supplier j for which $\\lambda_{jk} < \\lambda_{k}^{*}$ . The threshold is increasing in $c_{k}$ and decreasing in $p_{T}$ . Under capacity constraints, $p_{T} > c_{(1)}$ , so the threshold is lower than in the unconstrained model. Capacity constraints reduce the sovereignty premium required for domestic production because they raise world prices, making imports more expensive. $^{7}$",
+        "bbox": [
+            109,
+            205,
+            887,
+            419
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Corollary. Capacity constraints reduce the welfare cost of sovereignty because the higher equilibrium price narrows the gap between domestic and import costs.",
+        "bbox": [
+            111,
+            434,
+            885,
+            481
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Proposition 4 (Training Exporters Nest Within Inference Exporters). If a country is cheap enough to export training (which can be done from anywhere), it is also cheap enough to export inference to nearby demand centers. $^{8}$ Training exporters therefore also export inference to nearby demand centers, provided that latency remains below the threshold $\\overline{l}$ . A training exporter has the globally lowest $c_{j}$ . For inference to proximate demand centers, this cost advantage dominates the latency markup, so the same country wins the inference competition. Since training has no distance penalty while inference does, every country that exports training is also competitive in inference within its geographic neighborhood, but not vice versa.",
+        "bbox": [
+            109,
+            497,
+            887,
+            705
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{7}$ For large-demand countries (e.g., the United States with 43% of global compute demand), the observed domestic production may partly reflect scale economies rather than sovereignty preferences. The switching threshold $\\lambda_{k}^{*}$ conflates the home market effect with the sovereignty premium; disentangling the two would require a model with increasing returns, which lies outside the present framework.",
+        "bbox": [
+            111,
+            739,
+            870,
+            801
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{8}$ The nesting result assumes that the training exporter’s latency cone is non-empty. Formally, country j has a non-empty latency cone if there exists some country $\\exists k$ such that $q_{k} > 0$ and $l_{jk} \\leq \\overline{l}$ . A hypothetical country with the globally lowest production cost but round-trip latency exceeding $\\overline{l}$ to every country with positive compute demand would export training (which is latency-insensitive) yet be unable to serve any inference market, a “pure training exporter” regime not listed in Table 1. This case is empirically negligible in the calibration: any country remote enough to have an empty latency cone (e.g., a mid-Pacific island) typically also faces prohibitive governance and construction cost penalties that exclude it from the training market.",
+        "bbox": [
+            111,
+            799,
+            872,
+            910
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            859,
+            938,
+            882,
+            953
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5. Data",
+        "text_level": 2,
+        "bbox": [
+            112,
+            92,
+            191,
+            109
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The propositions above generate testable predictions that depend on country-specific costs and bilateral frictions. Calibrating the production-cost and trade-cost parameters in equations (1)–(4) requires data on electricity prices, temperatures, construction costs, bilateral latencies, and bilateral sovereignty frictions (geopolitical alignment, regulatory compatibility, and sanctions).",
+        "bbox": [
+            109,
+            128,
+            885,
+            228
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Electricity prices. For European countries, we use prices from Eurostat (industrial band, 20,000–69,999) (Eurostat 2025). For non-European countries, prices are sourced from national regulatory tariff sheets and secondary sources. These include the U.S. Energy Information Administration (EIA 2025) for the United States, KEPCO for South Korea, $^{9}$ national utility tariffs for Central Asian countries, and GlobalPetrolPrices (2025) for the remaining countries. All prices are converted to \\$/kWh at 2024 exchange rates.",
+        "bbox": [
+            109,
+            243,
+            887,
+            393
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Temperature and construction. Peak summer temperature is derived from ERA5 data (Hersbach et al. 2020) as the average monthly maximum in the three warmest months, aggregated across populated grid cells. Construction costs per watt of IT capacity are from the Turner & Townsend Data Center Construction Cost Index 2025 (Turner & Townsend 2025), for 37 countries. For the remaining countries, costs are predicted (Appendix E). Since construction is only 3–6 percent of total per-GPU-hour costs, imputation error has a limited impact on cost rankings.",
+        "bbox": [
+            109,
+            410,
+            887,
+            561
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Latency. Inter-country round-trip latency is measured using WonderNetwork's global ping dataset (WonderNetwork 2024). For each country pair, the median round-trip time (RTT) in milliseconds is used. Domestic latency defaults to 5 ms where no intra-country measurement is available.",
+        "bbox": [
+            111,
+            577,
+            885,
+            648
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Demand. Compute demand $q_{k}$ is proxied by installed data center capacity in MW (equation (4)). For the top 15 markets, capacity estimates are based on industry reports (Synergy Research, Cushman & Wakefield, CBRE, Mordor Intelligence). $^{10}$ For smaller markets, capacity is estimated from facility counts (Cloudscene 2025) and regional averages.",
+        "bbox": [
+            111,
+            666,
+            885,
+            765
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bilateral compute-trade data are not yet available, so we calibrate the model from hardware prices, electricity tariffs, and facility-cost coefficients rather than estimating it from observed trade flows.",
+        "bbox": [
+            111,
+            780,
+            885,
+            825
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{9}$ Korea Electric Power Corporation (KEPCO), Electricity Rate Table, accessed January 2025.",
+        "bbox": [
+            111,
+            849,
+            736,
+            864
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{10}$ Synergy Research Group, Global Data Center Market Share (Q4 2024); Cushman & Wakefield, Global Data Center Market Comparison (2024); CBRE, Global Data Center Trends (2025); Mordor Intelligence, Data Center Market Forecast (2025).",
+        "bbox": [
+            111,
+            864,
+            857,
+            909
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The calibration identifies the conditions under which FLOP exporting becomes viable. It also provides a framework that can be taken to gravity-style estimation as transaction-level data emerge.",
+        "bbox": [
+            109,
+            90,
+            885,
+            162
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "6. Calibration and Results",
+        "text_level": 2,
+        "bbox": [
+            111,
+            191,
+            375,
+            212
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "6.1 Parameter calibration",
+        "text_level": 2,
+        "bbox": [
+            112,
+            244,
+            325,
+            263
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "PUE. The baseline $\\varphi = 1.08$ matches Google's reported PUE for facilities with free-air cooling in cold climates (Google 2024). The sensitivity coefficient $\\delta = 0.015$ per $^{\\circ}$ C is estimated from cross-sectional variation in PUE across data center locations with different cooling loads (Liu et al. 2023). The threshold $\\overline{\\theta} = 15^{\\circ}$ C is the outdoor temperature above which mechanical cooling is needed, below which free-air cooling suffices. These assumptions yield PUE values from 1.08 (Iceland, Scandinavia) to 1.41 (UAE), consistent with the industry average of 1.56 (Uptime Institute 2024). $^{11}$",
+        "bbox": [
+            109,
+            277,
+            887,
+            459
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Hardware. The calibration uses the NVIDIA H100 SXM GPU as the reference hardware platform, with a list price of \\$25,000, a power of 700W, an economic lifetime of 3 years, and a utilization rate of 70 percent (Barroso et al. 2018). The calibration implies an amortized hardware cost $\\rho = \\$1.358/\\text{hr}$ . This amortization is straight-line and includes no cost of capital. Columns (1)–(3) of Table 3 therefore hold financing costs at zero, so the cross-country spread reflects only electricity, climate, and construction; column (4) adds country-specific financing through the WACC adjustment of Section 7.2. Networking costs are calibrated at $\\eta = \\$0.15/\\text{hr}$ , based on the same three-year horizon (Barroso et al. 2018). GPU and networking equipment prices are assumed to be uniform across countries.",
+        "bbox": [
+            109,
+            474,
+            887,
+            705
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Latency degradation. The parameter $\\tau$ is set at $\\tau = 0.0008$ per ms, implying that 100 ms of round-trip latency (roughly the intercontinental round-trip between Europe and East Asia) inflates inference cost by 8 percent, consistent with the finding in Deloitte and Google (2020) for e-commerce.",
+        "bbox": [
+            111,
+            722,
+            887,
+            768
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{11}$ Capping PUE at 1.20 (simulating universal liquid cooling) yields a Kendall rank correlation of 0.96 with the baseline rankings. The top five countries are unchanged, and the maximum rank shift is six positions. Gulf states and North Africa gain the most (UAE moves from 26th to 20th, Qatar from 15th to 11th), but the effect is small because electricity prices, not cooling, dominate cross-country cost variation.",
+        "bbox": [
+            111,
+            849,
+            885,
+            910
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            133
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Sovereignty premium. The bilateral sovereignty premium $\\lambda_{ij}$ is constructed from geopolitical distance and regulatory compatibility (eq. (2)), with coefficient weights $w_{1} = 0.05$ (geopolitical distance) and $w_{2} = 0.025$ (regulatory incompatibility). Sanctioned pairs are excluded by assumption ( $\\lambda_{ij} = \\infty$ ) rather than being assigned a finite weight. The continuous weights are calibrated so that an intra-bloc pair with data adequacy (for example, two EU member states) faces $\\lambda_{ij} \\approx 0$ , and a typical cross-bloc pair without a regulatory agreement faces $\\lambda_{ij} \\approx 0.04 - 0.07$ . The implied premium for non-adversarial services trade remains below Benz and Jaax (2020) 16 percent upper bound for regulatory barriers in communication services. $^{12}$ Table 3 also reports results under a uniform premium $\\lambda = 10$ percent. The training share of compute demand is $\\alpha = 0.50$ , within the industry range of 0.4–0.6 (Deloitte 2025). Construction costs are amortized over 15 years.",
+        "bbox": [
+            111,
+            154,
+            885,
+            444
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Table 2 reports all model parameters. Country-specific values, including electricity prices, temperatures, construction costs, and resulting unit costs, are reported in Table A1 (Appendix A).",
+        "bbox": [
+            111,
+            459,
+            883,
+            505
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "6.2 Cost Rankings and Trade Patterns",
+        "text_level": 2,
+        "bbox": [
+            112,
+            535,
+            421,
+            553
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Figure 1 summarizes the model structure, from country endowments through production costs and prices to equilibrium regimes. We first correct electricity prices for subsidies, then add bilateral trade frictions.",
+        "bbox": [
+            111,
+            569,
+            885,
+            638
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Under observed electricity tariffs, the cheapest producer in our sample of 85 countries is Iran, followed by Turkmenistan and Ethiopia (Column(1) of Table 3). This ranking, however, overstates the role of production-cost advantage. Iran’s headline electricity cost reflects one of the world’s largest fossil fuel subsidies. Turkmenistan, Algeria, Qatar, and several other low-cost producers face similar distortions.",
+        "bbox": [
+            111,
+            657,
+            885,
+            782
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{12}$ The bilateral sovereignty coefficients capture the geopolitical and data-governance components of services trade costs, which constitute a subset of the full regulatory barriers estimated at approximately 16% for communication services (Benz and Jaax 2020). The uniform 10% premium serves as a robustness benchmark.",
+        "bbox": [
+            111,
+            864,
+            870,
+            909
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            861,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "We replace subsidized tariffs with cost-recovery prices to distinguish real comparative advantage from subsidy-driven advantage. The cost-recovery prices are defined as the long-run marginal cost (LRMC) of the dominant generation technology at opportunity-cost fuel prices (IMF 2025, Lazard 2025). We apply this adjustment to 13 countries whose retail electricity prices fall below the estimated LRMC. $^{13}$ Appendix G develops a symmetric specification that additionally corrects OECD and high-income tariff distortions—carbon externalities and industrial cross-subsidies—and confirms that the qualitative ranking is reinforced rather than overturned. The subsidy gap ranges from \\$0.000 to \\$0.080/kWh. For Iran, a 100 MW IT-load data center would receive \\$93 million in implicit transfers per year. At hyperscale, such subsidies are fiscally unsustainable. The resulting cost-recovery ranking (column (2) of Table 3) shifts the top of the ranking toward hydropower-rich countries: Kyrgyzstan, Ethiopia, Kosovo, Canada, and Tajikistan. Iran drops from first to 24th, and Turkmenistan falls 16 places. 35 countries change their trade regimes, but the remaining cross-country variation is narrow (Table A2 extends the ranking to all countries).",
+        "bbox": [
+            109,
+            90,
+            888,
+            426
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The cost ranking diverges sharply from observed investment patterns, indicating that low production cost alone is not sufficient to attract investment. Eight of the twenty cheapest producers have under 100 MW of installed capacity (e.g., Kyrgyzstan: rank 1, 5 MW), while countries outside the top twenty host large clusters (Netherlands: rank 67, 1,800 MW; Ireland: rank 83, 1,260 MW). Thus, the cost ranking should be interpreted as the set of feasible exporters, not as a prediction of realized investment.",
+        "bbox": [
+            109,
+            440,
+            887,
+            590
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Data-center FDI patterns support this interpretation. Among EMDEs, the largest recipients of data-center investment are Malaysia, India, and Brazil, countries with moderate electricity costs but strong regulatory frameworks and credible grid infrastructure. In contrast, the cheapest producers (Kyrgyzstan, Tajikistan, Ethiopia) received virtually no data-center FDI (Aykut et al. 2026). Most investment flows occur between geopolitical allies. This pattern is consistent with the bilateral sovereignty premium and suggests that cost alone does not determine where capacity is built (Straub et al. 2026). Econometric evidence shows that electricity costs do not predict data-center location once market size and the regulatory environment are controlled for (Caoui and Steck 2025).",
+        "bbox": [
+            109,
+            607,
+            888,
+            785
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{13}$ For gas exporters (Iran, Turkmenistan, Algeria, Qatar), the calibration uses combined-cycle gas generation at export-parity fuel prices (\\$0.065–\\$0.100/kWh). For the Gulf states, it uses the opportunity cost of domestic gas combustion relative to LNG exports. For coal-dependent producers (Kazakhstan, South Africa), the calibration uses the Eskom-style cost-recovery tariff. Ethiopia uses the IMF's hydro cost-recovery target (\\$0.050/kWh). The IMF estimates global fossil fuel subsidies at \\$6.7 trillion in 2024. Explicit subsidies (below-cost pricing) account for 8%; the remainder reflects unpriced environmental costs. The calibration uses only the explicit component.",
+        "bbox": [
+            109,
+            820,
+            880,
+            911
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            135
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Policy-readiness indicators reinforce this interpretation. Economies with advanced AI and cloud strategies—such as Singapore, Australia, Japan, and South Korea—record estimated economic impacts from AI and cloud investment of 3–4 percent of GDP, compared with less than 1 percent in Indonesia and Viet Nam (Katz et al. 2025). In the model, institutional quality stands in for the complementary investments that separate these groups: digital skills, regulatory predictability, and grid modernization. Countries that align digital strategies with energy-sector planning are becoming preferred destinations for hyperscalers. Examples include Malaysia’s National Energy Transition Roadmap, Brazil’s electricity mix of more than 80 percent renewables, and the UAE’s nuclear- and solar-powered AI hubs. These cases are consistent with the model’s prediction that moderate costs can attract investment when paired with credible institutions (Aykut et al. 2026).",
+        "bbox": [
+            111,
+            152,
+            887,
+            409
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The bilateral sovereignty premium $\\lambda_{ij}$ reshapes trade patterns along geopolitical lines. Between allies with mutual data adequacy agreements (e.g., EU member states), the effective premium is near zero. For geopolitical adversaries, it is effectively infinite—the United States would not source training from Iran regardless of cost, and current sanctions make such transactions illegal. Column (3) of Table 3 reports the bilateral specification. The bilateral sovereignty premium has the strongest effect on inference. Within Europe, latency raises costs by 1–3 percent, so a small sovereignty premium can shift sourcing from foreign suppliers to domestic production.",
+        "bbox": [
+            111,
+            425,
+            885,
+            604
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Trade flows under capacity constraints. Weighting the sourcing patterns by demand shares from equation (4) and applying capacity constraints, the equilibrium training price is $p_T = \\$1.60/\\text{hr}$ , set by the marginal exporter's cost. Training demand is served by a dominant exporter (HHI = 0.984, with 3 other producers at the margin), leaving the training market close to the unconstrained benchmark of Proposition 2. The largest shadow values of grid capacity are in Kyrgyzstan (\\$0.019/hr), Ethiopia (\\$0.003/hr), and Kosovo (\\$0.001/hr), indicating modest returns to capacity expansion. When bilateral sovereignty premia are added, most countries switch to domestic training. The remaining export market is served by a single exporter at \\$1.58 per GPU-hour.",
+        "bbox": [
+            109,
+            619,
+            885,
+            824
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            861,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Inference exports are more dispersed, with the top five exporters being Canada (43 percent), Kyrgyzstan (26 percent), Kosovo (10 percent), Indonesia (0.9 percent), and Ukraine (0.5 percent), collectively accounting for 80 percent of cross-border inference demand (HHI = 0.265).",
+        "bbox": [
+            111,
+            90,
+            883,
+            162
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Among developing countries, Kyrgyzstan captures 26 percent of global inference demand by serving China, Kazakhstan, and Uzbekistan, a large share for a country with a GDP of under \\$15 billion. Kosovo serves as an inference hub for 21 countries, accounting for 10 percent of global inference demand.",
+        "bbox": [
+            111,
+            179,
+            885,
+            276
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Major demand centers. The model's predictions differ across major AI demand centers because each faces a distinct latency geography. For the United States, the cost-recovery equilibrium sources training from the lowest-cost available producer and inference from Canada. For Germany, France, and the United Kingdom, inference is sourced from Kosovo. For China, the lowest-cost foreign inference supplier is Kyrgyzstan. Inference supply therefore clusters around latency-constrained regional hubs, with each major market served by a nearby low-cost producer.",
+        "bbox": [
+            111,
+            294,
+            885,
+            444
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Among these demand centers, China illustrates the DD regime. China hosts one of the world's largest data-center markets. Yet almost all capacity is built and financed by domestic technology firms and state-owned operators, including Alibaba Cloud, Tencent, Baidu, and China Telecom (Aykut et al. 2026). This outcome fits the mechanism above: China's sovereignty premium is effectively infinite for most Western buyers, yet its large domestic demand and moderate production costs make domestic production of both training and inference the equilibrium strategy. Government initiatives such as the Eastern Data, Western Computing project further support domestic sourcing by shifting energy-intensive computing to western provinces with cheaper power.",
+        "bbox": [
+            111,
+            460,
+            887,
+            690
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Raising the uniform premium to 20 percent shifts five additional countries (including Croatia, Cyprus, and Germany) to domestic training, reducing the share of global training demand available to foreign producers from 3 percent to 0 percent. Inference exports respond less to sovereignty premia because nearby suppliers retain a latency advantage.",
+        "bbox": [
+            111,
+            705,
+            885,
+            804
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Welfare cost of sovereignty. The bilateral sovereignty premium imposes a welfare cost with two components, an import markup (importers pay $\\lambda_{ij} \\cdot p_{T}$ per unit above the competitive price) and an allocative inefficiency (countries with $p_{T} < c_{k} \\leq (1 + \\lambda_{ij}) \\cdot p_{T}$ produce domestically at above-world-price costs). Under capacity constraints, both components are smaller than in the unconstrained model because the higher world price narrows the gap between domestic and import costs. The demand-weighted welfare cost is 1.6 percent of total compute spending, in the range of the welfare gains from trade in goods estimated in the quantitative trade literature, which range from roughly 0.2 percent to 10 percent depending on country size and specification (Eaton and Kortum 2002, Arkolakis et al. 2012). At current demand levels (approximately $6 \\times 10^{10}$ GPU-hours at \\$1.50/hr), this amounts to roughly \\$1.44 billion per year. At this scale, governments can rationally choose domestic production for sensitive workloads. Examples include military applications, health records, and national statistical systems.",
+        "bbox": [
+            111,
+            820,
+            885,
+            895
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            859,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            109,
+            90,
+            887,
+            319
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The welfare implications depend on whether the sovereignty premium reflects genuine security concerns or overly broad regulation. Domestic processing may be justified for confidential data, but current policy often extends the logic of sovereignty to routine commercial computation. In the model, the bilateral premium shifts most countries toward domestic production, reducing the gains from specialization. The welfare cost is large in dollar terms but modest relative to total compute spending. Because part of the premium reflects weak international data governance, enforceable data-protection agreements, such as those within the EU, reduce it. In their absence, even commercial buyers have reason to choose domestic processing over cheaper foreign supply.",
+        "bbox": [
+            109,
+            335,
+            885,
+            539
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Sovereignty preferences are not limited to developing countries: France's SecNumCloud certification mandates EU-only data hosting and staffing, effectively excluding U.S. hyperscalers from sovereign workloads. Developing countries that adopt broad data localization requirements risk foreclosing both import savings and regional export opportunities, the specialization gains that the model predicts. The World Bank (2025) frames this as a core policy trade-off: building domestic capacity versus securing affordable access to international cloud services.",
+        "bbox": [
+            111,
+            555,
+            887,
+            705
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "7. Robustness, Caveats, and Extensions",
+        "text_level": 2,
+        "bbox": [
+            112,
+            734,
+            501,
+            753
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "7.1 Robustness to parameter variation",
+        "text_level": 2,
+        "bbox": [
+            114,
+            789,
+            421,
+            805
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Sensitivity analysis. Cost rankings are robust to substantial variations in parameters. Table A3 (Appendix C) reports results across three robustness specifications that vary the share of hardware costs. A rise in global hardware costs increases the globally priced cost share, compressing the locally penalized component and muting governance penalties for developing-country exporters. On the other hand, improved cooling technology that flattens the PUE–temperature curve narrows the advantage of cold-climate countries but leaves energy-price differences intact. A reduction in sovereignty frictions shifts countries from domestic production to importing. This expands trade volumes but reduces exporter rents.",
+        "bbox": [
+            111,
+            821,
+            885,
+            893
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            861,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            215
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Hardware cost share. Varying $\\rho$ by $\\pm4$ percent changes the composition of the top fifteen countries, but the qualitative result is stable across all specifications. Because hardware is globally priced and dominates unit cost, a higher $\\rho$ compresses the cross-country cost spread, making electricity price differences less decisive and facilitating entry by developing countries. Countries that combine cheap energy with adequate governance retain their cost advantage regardless of the chosen parameter.",
+        "bbox": [
+            109,
+            231,
+            887,
+            383
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Uniform sovereignty premium. As a robustness check, we compute the equilibrium under a uniform premium $\\lambda = 0.10$ . The uniform premium produces similar regime assignments: most countries produce domestically under either specification. The main difference is that the bilateral premium excludes sanctioned countries from serving any demand center, while the uniform premium treats all pairs identically. The bilateral specification is preferred because it captures observed cross-country heterogeneity.",
+        "bbox": [
+            111,
+            398,
+            887,
+            551
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Sovereignty tiers. Each country's demand is divided into three tiers: sovereign workloads (10 percent, domestic only), regulated workloads (20 percent, higher regulatory compatibility weight), and commercial workloads (70 percent, geopolitical alignment only). Under calibrated parameters, tiering leaves regime assignments unchanged for all countries, so Table 3 omits a separate tiered column. Tiering primarily affects inference sourcing: regulated workloads shift toward suppliers with strong data governance, favoring EU and APEC CBPR participants over closer but less regulated alternatives. $^{14}$",
+        "bbox": [
+            111,
+            566,
+            887,
+            744
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{14}$ The tier shares (10/20/70) are assumptions calibrated to match the approximate composition of government, regulated-industry, and commercial AI workloads (Deloitte 2025). Results are robust to moderate variation in these shares.",
+        "bbox": [
+            111,
+            864,
+            875,
+            907
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            861,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "7.2 Caveats and omitted frictions",
+        "text_level": 2,
+        "bbox": [
+            114,
+            90,
+            380,
+            109
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The calibration adjusts for energy subsidies and institutional quality, but several constraints remain outside the model and would further narrow the set of viable exporters. GPU export controls bar Iran, Russia, and Belarus from acquiring current-generation hardware. Water scarcity constrains cooling in the Middle East and North Africa; hyperscale data centers can consume billions of liters of water annually, and next-generation high-density GPU clusters increasingly rely on liquid-cooling technologies, intensifying this pressure in water-stressed economies. Regulated tariffs in many developing countries cover operating expenses but not the full capital cost, raising concerns about financial sustainability. Exporting compute at scale while the domestic energy sector cannot maintain its capital stock may prove politically unsustainable. Finally, logistics costs and local distribution markups can raise effective GPU prices by 5–15 percent in developing countries that are not subject to export bans, eroding the thin cost advantages. These omitted constraints all work against developing-country competitiveness. The calibration results should therefore be read as upper bounds.",
+        "bbox": [
+            111,
+            125,
+            887,
+            459
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Endogenous electricity prices. The model treats electricity prices as fixed. In small countries with low-cost power, a hyperscale facility can be large relative to the host grid — a 100 MW data center would consume roughly 3 percent of Kyrgyzstan’s 3,800 MW national output. At the multi-facility scale, data centers would compete with residential and industrial electricity demand, making regulatory intervention likely. The capacity ceiling $\\overline{K}_{j}$ partially addresses this, but the fixed-price assumption implies that the cost advantages in Table A1 are upper bounds. Allowing electricity supply curves to slope upward would narrow these apparent advantages. Evidence from the US suggests the AI workloads, combined with broader electrification, could raise wholesale electricity prices by roughly 19 percent between 2025 and 2028 (Chandramowli et al. 2024), and AI data-center expansion alone could increase retail prices by 8–9 percent by 2030 (IMF 2025). Alvarez et al. (2026) find that in the US, a one-unit increase in log cumulative data-center revenue raises local electricity prices by roughly 0.9 percent. Counties that have ever hosted a data center have retail prices about 3.9 percent higher. For small grids such as Kyrgyzstan’s, the proportional impact would likely be larger, further eroding the cost advantages documented above.",
+        "bbox": [
+            109,
+            474,
+            887,
+            839
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Newer GPUs, such as NVIDIA's B200, increase training throughput substantially but also raise power draw to roughly 1 kW. Higher power draw makes electricity prices more important, which modestly strengthens the advantage of low-cost power producers. Because higher capital costs lead developing economies to refresh GPUs less frequently, they are more likely to operate older, less efficient hardware, raising their cost per effective FLOP and partly offsetting their electricity-cost advantage. The qualitative ranking is not driven by the choice of GPU generation.",
+        "bbox": [
+            111,
+            854,
+            885,
+            900
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            189
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Form of the sovereignty wedge. $\\lambda_{jk}$ is modeled as an ad valorem markup on the cost of compute. This specification is standard in the services trade, but it simplifies how sovereignty frictions operate. Many sovereignty frictions are closer to fixed entry costs than to variable markups. Cloud security certifications, sanctions screening, export control compliance, and bilateral digital services agreements all raise the cost of entering a market. Our model also treats $\\lambda_{jk}$ as fixed, but in practice, sanctions, export-control revisions, and regulatory reversals arrive as exogenous shocks. The impact of these two assumptions on the stability of our results could be assessed through a Monte Carlo simulation using stochastic $\\lambda_{jk}$ and fixed costs. Both extensions would likely make entry harder for developing-country exporters, so they should strengthen rather than weaken the main result.",
+        "bbox": [
+            111,
+            205,
+            885,
+            467
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Cost of capital. Because hardware dominates the cost stack, financing terms can determine the ranking. At an 8 percent WACC, an OECD hyperscaler pays about \\$1.58 per GPU-hour in hardware costs. At an 18 percent WACC, a locally financed developing-country operator pays \\$1.87, a \\$0.29 gap on hardware alone (Calcaterra et al. 2024). Column (4) of Table 3 reports the cost-recovery ranking with hardware amortized at each country's income-group WACC, using 8 percent for HICs, 12 percent for UMICs, 15 percent for LMICs, and 18 percent for LICs. Once financing costs enter, cheap electricity explains less of the ranking, and several regime classifications shift.",
+        "bbox": [
+            111,
+            484,
+            885,
+            686
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Institutional credibility enters the compute trade through two channels: the sovereignty premium $\\lambda_{ij}$ and the cost of capital facing any locally financed operator. Hyperscaler-led foreign direct investment partially bypasses the financial channel. If a multinational owns, finances, and operates the facility outright, it may fund at its home WACC — but partial ownership, local debt, sovereign guarantees, and the pass-through of country risk to operating agreements reintroduce the channel in proportion to the host country's financial exposure. A fully hyperscaler-financed project is therefore best treated as a limiting case rather than the baseline. For this reason, Column (4) is the more realistic benchmark for assessing whether developing countries can capture compute-export rents with domestic capital.",
+        "bbox": [
+            111,
+            703,
+            887,
+            882
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            859,
+            938,
+            880,
+            952
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            135
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "7.3 Extensions",
+        "text_level": 2,
+        "bbox": [
+            114,
+            166,
+            235,
+            183
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Edge computing. Edge computing could relax one of the model's central constraints. As more AI demand comes from real-time inference on lightweight models deployed on local devices, the capacity constraint for inference becomes less binding: inference need not be concentrated in large data centers but can be distributed across many small nodes connected via existing mobile networks. If this trend accelerates, inference exports may become less concentrated, and more countries could serve regional demand. For EMDEs with weak grid infrastructure but adequate mobile connectivity, edge computing may offer a leapfrogging path that bypasses the grid bottlenecks central to the model (Aykut et al. 2026). A fuller trade model could distinguish centralized GPU clusters for training from distributed edge nodes for inference.",
+        "bbox": [
+            109,
+            199,
+            887,
+            428
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "8. Conclusion",
+        "text_level": 2,
+        "bbox": [
+            112,
+            458,
+            251,
+            477
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Energy-rich developing countries can produce compute at low cost, but low cost alone does not make them exporters. Training can be traded globally, inference is constrained by latency, and both are affected by bilateral sovereignty frictions. Because hardware is globally priced, electricity and cooling create only a thin cost advantage, while the institutional frictions facing developing-country suppliers are often wider than that advantage.",
+        "bbox": [
+            111,
+            494,
+            885,
+            619
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The 85-country calibration shows that hardware dominance compresses cross-country differences in production costs. Cheap electricity and favorable cooling can make countries cost-competitive quickly, but modest frictions, including a sovereignty premium, weak governance, or a higher cost of capital, can erase that advantage. Compute may therefore be unusually accessible on engineering grounds, yet unusually exposed to policy and financing frictions because the production-cost spread is narrow.",
+        "bbox": [
+            111,
+            636,
+            887,
+            787
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Under the bilateral sovereignty specification, weak institutional credibility eliminates much of the cost advantage that developing countries hold under pure cost-recovery pricing. The binding constraint is often not the electricity price itself but rather non-sanctioned status, credible long-term power contracts, stable network connectivity, enforceable data governance rules, and a regulatory environment that supports capital-intensive investment. Where those conditions are absent, buyers shift toward domestic production despite higher production costs. The resulting welfare loss is large in dollars but modest relative to total compute spending, at about 1.6 percent, so governments with legitimate data-sovereignty objectives may rationally choose domestic supply.",
+        "bbox": [
+            111,
+            803,
+            887,
+            901
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            859,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            90,
+            885,
+            215
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "For developing countries pursuing compute exports, the binding policy levers lie mostly outside the electricity tariffs. The first is financing. Because hardware dominates the cost stack, differences in the weighted average cost of capital can exceed the energy-cost advantage by several times. Sovereign guarantees, blended finance, multilateral risk insurance, and hyperscaler co-investment can therefore narrow the competitiveness gap more than any feasible reduction in electricity tariffs. The second lever is regulatory credibility. Data-adequacy status, mutual recognition agreements, and recognized cloud security certifications reduce the trust premium applied by foreign buyers. Broad data-localization mandates raise that premium and can foreclose export opportunities.",
+        "bbox": [
+            111,
+            231,
+            885,
+            435
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The final policy question is how much surplus the host country captures. The Kyrgyzstan facility in Appendix D is NPV-positive, but under full foreign-hyperscaler ownership, the host country retains little beyond electricity payments and construction-phase jobs. The domestic share of operating surplus depends on taxation, equity participation, and royalty terms. Cheap energy can make a country cost-competitive, but rent capture depends on financing, governance, and ownership.",
+        "bbox": [
+            111,
+            450,
+            887,
+            601
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The policy implications differ for training and inference. Restricting training imports raises costs without improving service quality, because training has no meaningful proximity advantage. Domestic inference production is easier to justify, since low latency can provide a genuine quality-of-service benefit, although that rationale weakens for countries located near low-cost regional hubs.",
+        "bbox": [
+            111,
+            617,
+            885,
+            741
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "FLOP exporting is best understood as capital-intensive resource processing: imported equipment converts local energy into an exportable digital service with minimal domestic labor input. Unlike extractive commodities, the energy input can be renewable, and demand for compute is growing faster than demand for most physical commodities. Still, the resource-curse literature remains relevant because concentrated compute-export revenues can generate exchange-rate pressure, institutional risks, and exposure to demand cycles. Whether these risks materialize depends on ownership structures, fiscal arrangements, and domestic rent capture. As bilateral compute-trade data become available, this framework can be estimated using gravity-style methods.",
+        "bbox": [
+            111,
+            758,
+            887,
+            909
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            859,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            112,
+            90,
+            883,
+            136
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            859,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "ref_text",
+        "text": "Alvarez, F., Argente, D., Chow, J., and D. Van Patten. (2026). “Data Centers and Local Economies in the Age of AI: A Shift-Share Approach.” NBER Working Paper No. 35194.",
+        "bbox": [
+            112,
+            126,
+            883,
+            160
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Anderson, J. and D. Marcouiller. (2002). “Insecure Trade: Reduced-Form Evidence.” Review of Economics and Statistics, 84(2): 342–352.",
+        "bbox": [
+            112,
+            162,
+            888,
+            194
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Anderson, J. and E. van Wincoop. (2003). “Gravity with Gravitas: A Solution to the Border Puzzle.” American Economic Review, 93(1): 170–192.",
+        "bbox": [
+            112,
+            196,
+            885,
+            229
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Antràs, P. (2003). “Firms, Contracts, and Trade Structure.” Quarterly Journal of Economics, 118(4): 1375–1418.",
+        "bbox": [
+            112,
+            232,
+            883,
+            265
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Arkolakis, C., Costinot, A., and A. Rodríguez-Clare. (2012). “New Trade Models, Same Old Gains?” American Economic Review, 102(1): 94–130.",
+        "bbox": [
+            112,
+            268,
+            885,
+            300
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Asian Development Bank. (2020). “Toktogul Rehabilitation Project Phase 3: Sector Assessment.” Asian Development Bank. Report No. 49013-002.",
+        "bbox": [
+            112,
+            303,
+            883,
+            335
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Aykut, D., Ozyurt, S., Jung, K., and E. Vergara Cobos. (2026). “Data Center and AI Investment in EMDEs: Risks and Opportunities.” Watch This Space. Washington, DC: World Bank Group.",
+        "bbox": [
+            112,
+            339,
+            885,
+            387
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Bailey, M., Strezhnev, A., and E. Voeten. (2017). “Estimating Dynamic State Preferences from United Nations Voting Data.” Journal of Conflict Resolution, 61(2): 430–456.",
+        "bbox": [
+            112,
+            388,
+            883,
+            422
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Barroso, L., Hölzle, U., and P. Ranganathan. (2018). The Datacenter as a Computer: Designing Warehouse-Scale Machines, 3rd ed. San Rafael, CA: Morgan & Claypool.",
+        "bbox": [
+            114,
+            424,
+            885,
+            458
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Benz, S. and A. Jaax. (2020). “The Costs of Regulatory Barriers to Trade in Services: New Estimates of Ad Valorem Tariff Equivalents.” OECD Trade Policy Papers, No. 238. Paris: OECD Publishing.",
+        "bbox": [
+            112,
+            459,
+            883,
+            508
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Biglaiser, G., Crémer, J., and A. Mantovani. (2024). “The Economics of the Cloud.” Toulouse School of Economics Working Paper No. 24-1520.",
+        "bbox": [
+            112,
+            510,
+            883,
+            544
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Blinder, A. (2006). “Offshoring: The Next Industrial Revolution?” Foreign Affairs, 85(2): 113–128.",
+        "bbox": [
+            114,
+            545,
+            883,
+            579
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Borenstein, S. (2012). “The Redistributional Impact of Nonlinear Electricity Pricing.” American Economic Journal: Economic Policy, 4(3): 56–90.",
+        "bbox": [
+            112,
+            580,
+            883,
+            614
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Brainard, S. (1997). “An Empirical Assessment of the Proximity-Concentration Trade-off.” American Economic Review, 87(4): 520–544.",
+        "bbox": [
+            112,
+            616,
+            883,
+            648
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Calcaterra, M., Reis, L., Fragkos, P., Briera, T., Boer, H., Egli, F., et al. (2024). “Reducing the Cost of Capital to Finance the Energy Transition in Developing Countries.” Nature Energy, 9(10): 1241–1251.",
+        "bbox": [
+            112,
+            652,
+            883,
+            700
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Caoui, E., and A. Steck. (2025). “Content Providers and the Deployment of Internet Infrastructure.” Information Economics and Policy. doi:10.1016/j.infoecopol.2025.101134.",
+        "bbox": [
+            112,
+            702,
+            883,
+            750
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Chandramowli, S., Cook, P., Mackovyak, J., Parmar, H., and M. Scheller. (2024). Power Surge: Navigating US Electricity Demand Growth. ICF.",
+        "bbox": [
+            112,
+            752,
+            883,
+            786
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Cloudscene. (2025). Global Data Center Directory. cloudscene.com.",
+        "bbox": [
+            112,
+            787,
+            661,
+            806
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Davis, L., and C. Hausman. (2016). “Market Impacts of a Nuclear Power Plant Closure.” American Economic Journal: Applied Economics, 8(2): 92–122.",
+        "bbox": [
+            112,
+            808,
+            883,
+            840
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Deloitte. (2025). “Technology, Media, and Telecommunications Predictions 2026.” Deloitte Insights.",
+        "bbox": [
+            112,
+            843,
+            883,
+            877
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Deloitte and Google. (2020). “Milliseconds Make Millions.” Deloitte Digital and Google.",
+        "bbox": [
+            112,
+            878,
+            823,
+            898
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "References",
+        "bbox": [
+            112,
+            92,
+            227,
+            111
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            857,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "ref_text",
+        "text": "Eaton, J., and S. Kortum. (2002). “Technology, Geography, and Trade.” Econometrica, 70(5):1741–1779.",
+        "bbox": [
+            112,
+            88,
+            883,
+            121
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "EIA. (2025). Electric Power Monthly. U.S. Energy Information Administration.",
+        "bbox": [
+            112,
+            123,
+            746,
+            142
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Epoch AI. (2024). “The Training Compute of Notable AI Models.” epochai.org.",
+        "bbox": [
+            112,
+            143,
+            750,
+            162
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Eurostat. (2025). Electricity Prices for Non-Household Consumers (nrg\\_pc\\_205). Luxembourg: Eurostat.",
+        "bbox": [
+            112,
+            164,
+            883,
+            196
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Firebird. (2026). “Phase 2 of Armenia AI Megaproject, Scaling to \\$4 Billion and 50,000 GPUs.” Press release, January 2026.",
+        "bbox": [
+            112,
+            199,
+            885,
+            232
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Flucker, S., Tozer, R., and R. Whitehead. (2013). “Data Centre Energy Efficiency Analysis to Minimize Total Cost of Ownership.” Building Services Engineering Research and Technology, 34(1): 103–117.",
+        "bbox": [
+            112,
+            234,
+            885,
+            282
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "GlobalPetrolPrices. (2025). Electricity Prices Around the World. globalpetrolprices.com.",
+        "bbox": [
+            112,
+            285,
+            816,
+            304
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Goldfarb, A., and D. Trefler. (2018). “AI and International Trade.” In The Economics of Artificial Intelligence. Chicago: Univ. of Chicago Press, pp. 463–492.",
+        "bbox": [
+            112,
+            305,
+            885,
+            339
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Google. (2024). 2024 Environmental Report. sustainability.google.",
+        "bbox": [
+            112,
+            340,
+            645,
+            359
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Hausmann, R., Hwang, J., and D. Rodrik. (2007). “What You Export Matters.” Journal of Economic Growth, 12(1): 1–25.",
+        "bbox": [
+            112,
+            361,
+            887,
+            393
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Heckscher, E. (1919). “The Effect of Foreign Trade on the Distribution of Income.” Ekonomisk Tidskrift, 21: 497–512.",
+        "bbox": [
+            112,
+            396,
+            885,
+            430
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Helpman, E., Melitz, M., and S. Yeaple. (2004). “Export Versus FDI with Heterogeneous Firms.” American Economic Review, 94(1): 300–316.",
+        "bbox": [
+            112,
+            431,
+            883,
+            465
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Hersbach, H., et al. (2020). “The ERA5 Global Reanalysis.” Quarterly Journal of the Royal Meteorological Society, 146(730): 1999–2049.",
+        "bbox": [
+            112,
+            465,
+            885,
+            500
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "IEA. (2025). “Energy Demand from AI.” Published online at iea.org.",
+        "bbox": [
+            112,
+            502,
+            661,
+            521
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "IMF. (2025). “Fossil Fuel Subsidies Data: 2025 Update.” IMF Working Paper WP/25/270.",
+        "bbox": [
+            112,
+            522,
+            831,
+            541
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Katz, R., Jung, K., and F. Callorda. (2025). “The Economic Impact of AI and Cloud Investment in Asia-Pacific.” Report prepared for the Asian Development Bank.",
+        "bbox": [
+            112,
+            542,
+            883,
+            575
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Korinek, A., and J. Stiglitz. (2021). “Artificial Intelligence, Globalization, and Strategies for Economic Development.” NBER Working Paper No. 28453.",
+        "bbox": [
+            112,
+            578,
+            885,
+            612
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Krugman, P. (1991). “Increasing Returns and Economic Geography.” Journal of Political Economy, 99(3): 483–499.",
+        "bbox": [
+            112,
+            613,
+            885,
+            647
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Lazard. (2025). Lazard's Levelized Cost of Energy Analysis, Version 17.0. lazard.com.",
+        "bbox": [
+            112,
+            648,
+            800,
+            667
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Lehdonvirta, V., Wu, B., and Z. Hawkins. (2024). “Compute North vs. Compute South: The Uneven Possibilities of Compute-Based AI Governance Around the Globe.” Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 7(1): 828–838.",
+        "bbox": [
+            112,
+            669,
+            885,
+            718
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Limão, N., and A. Venables. (2001). “Infrastructure, Geographical Disadvantage, Transport Costs, and Trade.” World Bank Economic Review, 15(3): 451–479.",
+        "bbox": [
+            112,
+            719,
+            883,
+            753
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Liu, Z., Wierman, A., Chen, Y., Raber, B., and J. Moriarty. (2023). “Sustainability of Data Center Digital Twins.” Proceedings of ACM e-Energy, pp. 178–189.",
+        "bbox": [
+            112,
+            753,
+            883,
+            789
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "NVIDIA. (2024). NVIDIA H100 Tensor Core GPU Datasheet. nvidia.com.",
+        "bbox": [
+            112,
+            790,
+            710,
+            809
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Ohlin, B. (1933). Interregional and International Trade. Cambridge, MA: Harvard University Press.",
+        "bbox": [
+            112,
+            810,
+            883,
+            843
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Pilz, K., Mahmood, Y., and L. Heim. (2025). AI's Power Requirements Under Exponential Growth. Santa Monica, CA: RAND Corporation, RR-A3572-1.",
+        "bbox": [
+            112,
+            845,
+            885,
+            878
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "ref_text",
+        "text": "Sastry, G., Heim, L., Belfield, H., Anderljung, M., Brundage, M., Hazell, J., et al. (2024). \"Computing Power and the Governance of Artificial Intelligence.\" arXiv:2402.08797.",
+        "bbox": [
+            112,
+            89,
+            882,
+            121
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "Sevilla, J., Heim, L., Ho, A., Besiroglu, T., Hobbahn, M., and P. Villalobos. (2022). “Compute Trends across Three Eras of Machine Learning.” arXiv Working Paper No. 2202.05924. https://doi.org/10.48550/arXiv.2202.05924.",
+        "bbox": [
+            112,
+            125,
+            883,
+            171
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "Stojkoski, V., Koch, P., Coll, E., and C. Hidalgo. (2024). “Estimating Digital Product Trade through Corporate Revenue Data.” Nature Communications, 15: 5262.",
+        "bbox": [
+            112,
+            174,
+            883,
+            207
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "Straub, S., He, H., Li, Y., Lyu, X., Steinbuks, J., Vergara Cobos, E., et al. (2026). Infrastructure Foundations: From Current Assets to Future Growth. Sustainable Infrastructure Series. Washington, DC: World Bank.",
+        "bbox": [
+            114,
+            209,
+            883,
+            258
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "Turner & Townsend. (2025). Data Centre Construction Cost Index 2025. turnerandtownsend.com.",
+        "bbox": [
+            112,
+            258,
+            883,
+            277
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "Uptime Institute. (2024). Global Data Center Survey Results 2024. uptimeinstitute.com.",
+        "bbox": [
+            112,
+            280,
+            810,
+            299
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "WonderNetwork. (2024). Global Ping Statistics. wondernetwork.com.",
+        "bbox": [
+            112,
+            300,
+            673,
+            319
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "World Bank. (2024). World Development Indicators. Washington, DC.",
+        "bbox": [
+            112,
+            320,
+            678,
+            339
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "World Bank. (2025). Digital Progress and Trends Report 2025: Strengthening AI Foundations. Washington, DC: World Bank.",
+        "bbox": [
+            112,
+            340,
+            883,
+            373
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/a23470ca78dbf0723d9190e60039f6f5ade4e31139a3aff6f1e8fe07e1eb56fb.jpg",
+        "image_caption": [
+            "Figure 1. Model structure",
+            "Notes: Country endowments (gray) determine production cost $c_{j}$ , which together with capacity $K_{j}$ (purple) sets the world training price $p_{t}^{*}$ and regional inference price $p_{i}^{*}(k)$ . Regime conditions sort countries into five equilibrium regimes (coral) from Proposition 1."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            158,
+            138,
+            839,
+            599
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "table",
+        "img_path": "images/da6045bedfaa60bfef22438e57c0e750ed551eb33a988188bbe137a7baeca668.jpg",
+        "table_caption": [
+            "Table 1. Country regime taxonomy (Proposition 1)"
+        ],
+        "table_footnote": [
+            "Notes: $\\checkmark$ = feasible in equilibrium. $X$ = ruled out. Grey cells cannot arise. Roman numerals correspond to regime labels in Proposition 1. Letter codes (EE, IE, ID, DD, II) denote training status (first letter: E = export, I = import, D = domestic) and inference status (second letter), used in Table 3."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\"></td><td colspan=\"3\">Trainingdomestic production cost →</td></tr><tr><td>Export</td><td>Domestic</td><td>Import</td></tr><tr><td rowspan=\"3\">Inference↓ domestic production cost</td><td>Export</td><td>√ (i) EET+I exporterCheapest producers</td><td>XProp. 4</td><td>√ (ii) IEInference hubRegional low-cost hubs</td></tr><tr><td>Domestic</td><td>XProp. 4</td><td>√ (iv) DDDomesticHigh sovereignty</td><td>√ (iii) IDHybridIsolated / moderate cost</td></tr><tr><td>Import</td><td>XProp. 4</td><td>XSovereigntydominates</td><td>√ (v) IIFull importerHigh-cost countries</td></tr></table>",
+        "bbox": [
+            130,
+            114,
+            864,
+            340
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            859,
+            938,
+            883,
+            952
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "table",
+        "img_path": "images/07af9251b97142a2822d20d3017ec3360a54ae1811a9a8f825c7ea12f5a3ad7b.jpg",
+        "table_caption": [
+            "Table 2. Model parameters"
+        ],
+        "table_footnote": [
+            "Notes: Hardware cost $\\rho = P(\\text{GPU}) / (\\text{L} \\cdot \\text{H} \\cdot \\beta)$ . $\\text{PUE}(\\theta) = \\varphi + \\delta \\cdot \\max(0, \\theta - \\bar{\\theta})$ . RTT = round-trip time, the network delay for a data packet to travel from client to server and back, measured in milliseconds. Sanctions exposure is captured by the bilateral sovereignty premium $\\lambda_{ij}$ (equation 2)."
+        ],
+        "table_body": "<table><tr><td>Parameter</td><td>Symbol</td><td>Value</td><td>Source</td></tr><tr><td>GPU thermal design power</td><td> $\\gamma$ </td><td>0.700 kW</td><td>NVIDIA (2024)</td></tr><tr><td>GPU purchase price</td><td> $P_{\\text{GPU}}$ </td><td>$25,000</td><td>NVIDIA (2024)</td></tr><tr><td>GPU useful life</td><td>L</td><td>3 years</td><td>Industry standard</td></tr><tr><td>GPU utilization rate</td><td> $\\beta$ </td><td>0.70</td><td>Barroso et al. (2018)</td></tr><tr><td>Hours per year (365.25 x 24)</td><td>H</td><td>8766 hr/yr</td><td>Calendar</td></tr><tr><td>Amortized hardware cost per GPU-hour</td><td> $\\rho$ </td><td>$1.36/hr</td><td>Derived</td></tr><tr><td>Amortized networking cost per GPU-hour</td><td> $\\eta$ </td><td>$0.15/hr</td><td>Liu et al. (2023)</td></tr><tr><td>PUE baseline (best-practice free-air cooling)</td><td> $\\varphi$ </td><td>1.08</td><td>Google (2024)</td></tr><tr><td>PUE temperature sensitivity per degree C</td><td> $\\delta$ </td><td>0.015 per C</td><td>Flucker et al. (2013)</td></tr><tr><td>Free-cooling temperature threshold</td><td> $\\overline{\\theta}$ </td><td>15 C</td><td>Industry standard</td></tr><tr><td>Data center facility lifetime</td><td>D</td><td>15 years</td><td>Turner and Townsend (2025)</td></tr><tr><td>Latency degradation per ms of RTT</td><td> $\\tau$ </td><td>0.0008 per ms</td><td>Calibrated</td></tr><tr><td>Bilateral sovereignty premium</td><td> $\\lambda_{ij}$ </td><td>Eq. (2)</td><td>Bailey et al. (2017)</td></tr><tr><td>Training share of compute demand</td><td> $\\alpha$ </td><td>0.50</td><td>Deloitte (2025)</td></tr><tr><td>Total global compute demand</td><td>Q</td><td>6×10 $^{10}$  GPU-hr/yr</td><td>Epoch AI (2024)</td></tr></table>",
+        "bbox": [
+            114,
+            111,
+            882,
+            522
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            859,
+            938,
+            883,
+            953
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "table",
+        "img_path": "images/374aa3a76104dba343cfb7f3007153a13ead60a72c7de9056a566f42adb5094c.jpg",
+        "table_caption": [
+            "Table 3. Country rankings under alternative cost and sovereignty specifications"
+        ],
+        "table_footnote": [
+            "Notes: Top 25 countries by delivered price under each specification. P $_{j}$ = delivered price from seller j (\\$/GPU-hr) from equation (3). Under specs (1)–(2), $\\lambda$ = 0, so P $_{j}$ = c $_{j}$ . Under spec (3), P $_{jk}$ = c $_{j}$ (1 + $\\lambda_{jk}$ ) where k = United States. EE = training + inference exporter; IE = inference exporter; ID = hybrid (imports training, domestic inference); DD = domestic producer; II = full importer. (1) Raw: observed electricity tariffs. (2) Cost-recovery: subsidized tariffs replaced with LRMC. (3) Bilateral: cost-recovery prices with bilateral sovereignty premium $\\lambda_{jk}$ from equation (2); countries ranked by delivered price to US buyer. (4) CR + host WACC: cost-recovery prices with hardware amortization computed at the host country's weighted average cost of capital (HIC 8%, UMIC 12%, LMIC 15%, LIC 18%; annuity formula applied over a"
+        ],
+        "table_body": "<table><tr><td colspan=\"3\">(1) Raw Electricity</td><td colspan=\"3\">(2) Cost-Recovery</td><td colspan=\"3\">(3) Bilateral</td><td colspan=\"3\">(4) CR + host WACC</td></tr><tr><td>Country</td><td> $P_j$ </td><td>Type</td><td>Country</td><td> $P_j$ </td><td>Type</td><td>Country</td><td> $P_{jk}$ </td><td>Type</td><td>Country</td><td> $P_j$ </td><td>Type</td></tr><tr><td>Iran</td><td>$1.56</td><td>DD*</td><td>Kyrgyzstan</td><td>$1.58</td><td>EE†</td><td>Canada</td><td>$1.60</td><td>EE</td><td>Canada</td><td>$1.82</td><td>EE</td></tr><tr><td>Turkmenistan</td><td>$1.57</td><td>DD*</td><td>Ethiopia</td><td>$1.59</td><td>EE†</td><td>Australia</td><td>$1.65</td><td>II</td><td>Norway</td><td>$1.84</td><td>IE</td></tr><tr><td>Ethiopia</td><td>$1.58</td><td>EE†</td><td>Kosovo</td><td>$1.60</td><td>EE†</td><td>USA</td><td>$1.65</td><td>DD</td><td>Finland</td><td>$1.84</td><td>IE</td></tr><tr><td>Kyrgyzstan</td><td>$1.58</td><td>EE†</td><td>Canada</td><td>$1.60</td><td>EE</td><td>Kyrgyzstan</td><td>$1.65</td><td>EE†</td><td>Sweden</td><td>$1.85</td><td>II</td></tr><tr><td>Egypt</td><td>$1.58</td><td>EE†</td><td>Tajikistan</td><td>$1.60</td><td>II</td><td>Norway</td><td>$1.66</td><td>DD</td><td>Iceland</td><td>$1.87</td><td>II</td></tr><tr><td>Algeria</td><td>$1.59</td><td>EE†</td><td>Montenegro</td><td>$1.60</td><td>IE†</td><td>Finland</td><td>$1.66</td><td>IE</td><td>Australia</td><td>$1.87</td><td>II</td></tr><tr><td>Canada</td><td>$1.59</td><td>EE</td><td>China</td><td>$1.61</td><td>II</td><td>Ethiopia</td><td>$1.67</td><td>EE†</td><td>USA</td><td>$1.87</td><td>II</td></tr><tr><td>Russia</td><td>$1.59</td><td>DD*</td><td>Ukraine</td><td>$1.61</td><td>IE†</td><td>Sweden</td><td>$1.67</td><td>IE</td><td>New Zealand</td><td>$1.87</td><td>II</td></tr><tr><td>South Africa</td><td>$1.60</td><td>II</td><td>Argentina</td><td>$1.61</td><td>II</td><td>Kosovo</td><td>$1.67</td><td>EE†</td><td>UAE</td><td>$1.87</td><td>II</td></tr><tr><td>Kosovo</td><td>$1.60</td><td>IE†</td><td>Colombia</td><td>$1.61</td><td>II</td><td>Tajikistan</td><td>$1.68</td><td>DD</td><td>Chile</td><td>$1.88</td><td>II</td></tr><tr><td>Nigeria</td><td>$1.60</td><td>II</td><td>Azerbaijan</td><td>$1.61</td><td>IE</td><td>Montenegro</td><td>$1.68</td><td>DD</td><td>UK</td><td>$1.88</td><td>II</td></tr><tr><td>Tajikistan</td><td>$1.60</td><td>II</td><td>Russia</td><td>$1.61</td><td>DD*</td><td>Mexico</td><td>$1.68</td><td>II</td><td>Israel</td><td>$1.88</td><td>II</td></tr><tr><td>Montenegro</td><td>$1.60</td><td>IE†</td><td>Norway</td><td>$1.62</td><td>IE</td><td>Ukraine</td><td>$1.68</td><td>DD</td><td>Portugal</td><td>$1.88</td><td>II</td></tr><tr><td>China</td><td>$1.61</td><td>II</td><td>Algeria</td><td>$1.62</td><td>II</td><td>Argentina</td><td>$1.68</td><td>DD</td><td>France</td><td>$1.89</td><td>II</td></tr><tr><td>Qatar</td><td>$1.61</td><td>II</td><td>Vietnam</td><td>$1.62</td><td>II</td><td>Iceland</td><td>$1.69</td><td>II</td><td>Latvia</td><td>$1.89</td><td>II</td></tr><tr><td>Ukraine</td><td>$1.61</td><td>IE†</td><td>Finland</td><td>$1.62</td><td>IE</td><td>Colombia</td><td>$1.69</td><td>DD</td><td>Saudi Arabia</td><td>$1.89</td><td>II</td></tr><tr><td>Argentina</td><td>$1.61</td><td>II</td><td>Brazil</td><td>$1.62</td><td>II</td><td>Azerbaijan</td><td>$1.69</td><td>DD</td><td>Qatar</td><td>$1.89</td><td>II</td></tr><tr><td>Colombia</td><td>$1.61</td><td>II</td><td>Turkmenistan</td><td>$1.62</td><td>DD*</td><td>South Korea</td><td>$1.69</td><td>II</td><td>Luxembourg</td><td>$1.89</td><td>II</td></tr><tr><td>Azerbaijan</td><td>$1.61</td><td>IE</td><td>Egypt</td><td>$1.62</td><td>II</td><td>Algeria</td><td>$1.69</td><td>DD</td><td>Spain</td><td>$1.90</td><td>II</td></tr><tr><td>Norway</td><td>$1.62</td><td>IE</td><td>India</td><td>$1.63</td><td>II</td><td>Philippines</td><td>$1.69</td><td>II</td><td>Belgium</td><td>$1.90</td><td>II</td></tr><tr><td>Kazakhstan</td><td>$1.62</td><td>II</td><td>Indonesia</td><td>$1.63</td><td>IE†</td><td>New Zealand</td><td>$1.69</td><td>II</td><td>Malta</td><td>$1.90</td><td>II</td></tr><tr><td>Uzbekistan</td><td>$1.62</td><td>II</td><td>Sweden</td><td>$1.63</td><td>II</td><td>Vietnam</td><td>$1.69</td><td>DD</td><td>Denmark</td><td>$1.90</td><td>II</td></tr><tr><td>Finland</td><td>$1.62</td><td>IE</td><td>Kazakhstan</td><td>$1.63</td><td>II</td><td>Brazil</td><td>$1.69</td><td>DD</td><td>Lithuania</td><td>$1.90</td><td>II</td></tr><tr><td>Vietnam</td><td>$1.62</td><td>II</td><td>Iran</td><td>$1.63</td><td>DD*</td><td>UK</td><td>$1.69</td><td>II</td><td>South Korea</td><td>$1.91</td><td>II</td></tr><tr><td>Saudi Arabia</td><td>$1.62</td><td>II</td><td>Georgia</td><td>$1.63</td><td>II</td><td>Egypt</td><td>$1.70</td><td>DD</td><td>Poland</td><td>$1.91</td><td>II</td></tr></table>",
+        "bbox": [
+            65,
+            117,
+            930,
+            774
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            912,
+            919,
+            931,
+            939
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "three-year GPU life). This column isolates the cost-of-capital channel that columns (1)–(3) suppress by amortizing hardware at a single straight-line $\\rho$ with no financing cost. \\* = sanctioned/GPU-blocked. $\\dagger$ = developing-country exporter. See Table A2 for all 85 countries.",
+        "bbox": [
+            63,
+            88,
+            919,
+            127
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            914,
+            919,
+            933,
+            937
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "table",
+        "img_path": "images/de15d2aa5ec29ff6924d064b30ab2ac8ab0b15383d61ffaf01268d392d3b28b4.jpg",
+        "table_caption": [
+            "Table A1. Country-specific calibration parameters"
+        ],
+        "table_footnote": [
+            "Notes: Countries sorted by cost-recovery adjusted rank (ascending). $p^{E}$ = national electricity price for industrial/data center consumers (\\$/kWh). $\\theta_{j}$ = peak summer temperature (°C). PUE = Power Usage Effectiveness. Constr. = predicted data center construction cost (\\$/W of IT load). $\\bar{k}_{j}$ = installed data center power"
+        ],
+        "table_body": "<table><tr><td>Country</td><td> $p^E$  ($/kWh)</td><td> $θ_j$  (°C)</td><td>PUE</td><td>Constr. ($/W)</td><td> $\\bar{k}_j$  (MW)</td><td> $ω_j$  (%)</td><td> $c_j$  ($/hr)</td><td>Cost-Rec.  $p^E$  ($/kWh)</td></tr><tr><td>Kyrgyzstan</td><td>$0.038</td><td>13.3</td><td>1.08</td><td>$7.83</td><td>5</td><td>0.0</td><td>$1.43</td><td>$0.038</td></tr><tr><td>Ethiopia</td><td>$0.030</td><td>26.5</td><td>1.25</td><td>$8.08</td><td>10</td><td>0.0</td><td>$1.43</td><td>$0.050</td></tr><tr><td>Kosovo</td><td>$0.047</td><td>21.0</td><td>1.17</td><td>$9.48</td><td>5</td><td>0.0</td><td>$1.45</td><td>$0.047</td></tr><tr><td>Canada</td><td>$0.045</td><td>14.6</td><td>1.08</td><td>$9.39</td><td>3,200</td><td>2.6</td><td>$1.44</td><td>$0.053</td></tr><tr><td>Tajikistan</td><td>$0.074</td><td>16.8</td><td>1.11</td><td>$7.32</td><td>5</td><td>0.0</td><td>$1.45</td><td>$0.074</td></tr><tr><td>Montenegro</td><td>$0.051</td><td>21.7</td><td>1.18</td><td>$10.28</td><td>5</td><td>0.0</td><td>$1.45</td><td>$0.051</td></tr><tr><td>China</td><td>$0.079</td><td>20.9</td><td>1.17</td><td>$6.12</td><td>31,900</td><td>25.8</td><td>$1.46</td><td>$0.079</td></tr><tr><td>Ukraine</td><td>$0.057</td><td>22.5</td><td>1.19</td><td>$9.86</td><td>175</td><td>0.1</td><td>$1.46</td><td>$0.057</td></tr><tr><td>Argentina</td><td>$0.060</td><td>22.3</td><td>1.19</td><td>$10.10</td><td>150</td><td>0.1</td><td>$1.46</td><td>$0.060</td></tr><tr><td>Colombia</td><td>$0.075</td><td>25.5</td><td>1.24</td><td>$7.49</td><td>150</td><td>0.1</td><td>$1.46</td><td>$0.075</td></tr><tr><td>Azerbaijan</td><td>$0.062</td><td>24.4</td><td>1.22</td><td>$9.77</td><td>10</td><td>0.0</td><td>$1.46</td><td>$0.062</td></tr><tr><td>Russia</td><td>$0.040</td><td>16.9</td><td>1.11</td><td>$10.36</td><td>2,000</td><td>1.6</td><td>$1.44</td><td>$0.065</td></tr><tr><td>Norway</td><td>$0.054</td><td>14.5</td><td>1.08</td><td>$12.41</td><td>400</td><td>0.3</td><td>$1.47</td><td>$0.056</td></tr><tr><td>Algeria</td><td>$0.033</td><td>35.8</td><td>1.39</td><td>$8.48</td><td>25</td><td>0.0</td><td>$1.44</td><td>$0.065</td></tr><tr><td>Vietnam</td><td>$0.073</td><td>28.0</td><td>1.27</td><td>$8.76</td><td>250</td><td>0.2</td><td>$1.47</td><td>$0.073</td></tr><tr><td>Finland</td><td>$0.057</td><td>16.4</td><td>1.10</td><td>$12.29</td><td>350</td><td>0.3</td><td>$1.47</td><td>$0.062</td></tr><tr><td>Brazil</td><td>$0.063</td><td>27.3</td><td>1.26</td><td>$10.75</td><td>1,200</td><td>1.0</td><td>$1.47</td><td>$0.063</td></tr><tr><td>Turkmenistan</td><td>$0.010</td><td>32.2</td><td>1.34</td><td>$9.24</td><td>5</td><td>0.0</td><td>$1.42</td><td>$0.070</td></tr><tr><td>Egypt</td><td>$0.038</td><td>31.7</td><td>1.33</td><td>$7.63</td><td>150</td><td>0.1</td><td>$1.43</td><td>$0.080</td></tr><tr><td>India</td><td>$0.090</td><td>30.2</td><td>1.31</td><td>$6.64</td><td>3,600</td><td>2.9</td><td>$1.48</td><td>$0.090</td></tr><tr><td>Indonesia</td><td>$0.067</td><td>26.4</td><td>1.25</td><td>$11.21</td><td>500</td><td>0.4</td><td>$1.48</td><td>$0.067</td></tr><tr><td>Sweden</td><td>$0.068</td><td>15.2</td><td>1.08</td><td>$12.29</td><td>500</td><td>0.4</td><td>$1.48</td><td>$0.071</td></tr><tr><td>Kazakhstan</td><td>$0.066</td><td>24.9</td><td>1.23</td><td>$9.53</td><td>100</td><td>0.1</td><td>$1.47</td><td>$0.085</td></tr><tr><td>Iran</td><td>$0.005</td><td>31.2</td><td>1.32</td><td>$8.50</td><td>10</td><td>0.0</td><td>$1.41</td><td>$0.085</td></tr><tr><td>Georgia</td><td>$0.091</td><td>19.4</td><td>1.15</td><td>$9.58</td><td>15</td><td>0.0</td><td>$1.48</td><td>$0.091</td></tr><tr><td>Uzbekistan</td><td>$0.071</td><td>29.9</td><td>1.30</td><td>$8.37</td><td>25</td><td>0.0</td><td>$1.47</td><td>$0.090</td></tr><tr><td>Kenya</td><td>$0.088</td><td>27.4</td><td>1.26</td><td>$9.74</td><td>60</td><td>0.0</td><td>$1.49</td><td>$0.088</td></tr><tr><td>Turkey</td><td>$0.086</td><td>24.4</td><td>1.22</td><td>$10.57</td><td>350</td><td>0.3</td><td>$1.49</td><td>$0.086</td></tr><tr><td>Bosnia and Herz.</td><td>$0.099</td><td>21.6</td><td>1.18</td><td>$9.17</td><td>10</td><td>0.0</td><td>$1.49</td><td>$0.099</td></tr><tr><td>Nigeria</td><td>$0.042</td><td>31.4</td><td>1.33</td><td>$10.50</td><td>100</td><td>0.1</td><td>$1.45</td><td>$0.080</td></tr><tr><td>South Africa</td><td>$0.040</td><td>23.5</td><td>1.21</td><td>$10.20</td><td>250</td><td>0.2</td><td>$1.45</td><td>$0.095</td></tr><tr><td>Iceland</td><td>$0.089</td><td>8.7</td><td>1.08</td><td>$12.47</td><td>60</td><td>0.0</td><td>$1.49</td><td>$0.092</td></tr><tr><td>Belarus</td><td>$0.099</td><td>19.8</td><td>1.15</td><td>$10.91</td><td>35</td><td>0.0</td><td>$1.50</td><td>$0.099</td></tr><tr><td>Australia</td><td>$0.090</td><td>28.8</td><td>1.29</td><td>$10.68</td><td>2,670</td><td>2.2</td><td>$1.50</td><td>$0.090</td></tr><tr><td>Morocco</td><td>$0.108</td><td>28.5</td><td>1.28</td><td>$7.82</td><td>50</td><td>0.0</td><td>$1.50</td><td>$0.108</td></tr><tr><td>Mexico</td><td>$0.095</td><td>26.6</td><td>1.25</td><td>$10.40</td><td>900</td><td>0.7</td><td>$1.50</td><td>$0.095</td></tr><tr><td>United States of Am.</td><td>$0.081</td><td>22.9</td><td>1.20</td><td>$10.78</td><td>53,700</td><td>43.4</td><td>$1.48</td><td>$0.098</td></tr><tr><td>Armenia</td><td>$0.111</td><td>19.8</td><td>1.15</td><td>$9.76</td><td>10</td><td>0.0</td><td>$1.50</td><td>$0.111</td></tr><tr><td>New Zealand</td><td>$0.095</td><td>15.9</td><td>1.09</td><td>$12.30</td><td>250</td><td>0.2</td><td>$1.50</td><td>$0.099</td></tr><tr><td>United Arab Emirates</td><td>$0.065</td><td>37.1</td><td>1.41</td><td>$9.24</td><td>500</td><td>0.4</td><td>$1.47</td><td>$0.095</td></tr><tr><td>Chile</td><td>$0.130</td><td>13.4</td><td>1.08</td><td>$8.61</td><td>200</td><td>0.2</td><td>$1.50</td><td>$0.130</td></tr><tr><td>United Kingdom</td><td>$0.097</td><td>15.9</td><td>1.09</td><td>$11.88</td><td>2,590</td><td>2.1</td><td>$1.50</td><td>$0.107</td></tr><tr><td>Malaysia</td><td>$0.099</td><td>26.9</td><td>1.26</td><td>$11.37</td><td>500</td><td>0.4</td><td>$1.51</td><td>$0.099</td></tr><tr><td>Philippines</td><td>$0.115</td><td>27.8</td><td>1.27</td><td>$8.80</td><td>200</td><td>0.2</td><td>$1.51</td><td>$0.115</td></tr><tr><td>Israel</td><td>$0.108</td><td>28.2</td><td>1.28</td><td>$10.09</td><td>300</td><td>0.2</td><td>$1.51</td><td>$0.108</td></tr><tr><td>Thailand</td><td>$0.108</td><td>29.3</td><td>1.29</td><td>$10.03</td><td>300</td><td>0.2</td><td>$1.51</td><td>$0.108</td></tr><tr><td>Portugal</td><td>$0.109</td><td>22.9</td><td>1.20</td><td>$10.25</td><td>100</td><td>0.1</td><td>$1.50</td><td>$0.117</td></tr><tr><td>France</td><td>$0.102</td><td>21.0</td><td>1.17</td><td>$10.43</td><td>1,400</td><td>1.1</td><td>$1.50</td><td>$0.121</td></tr><tr><td>Serbia</td><td>$0.120</td><td>23.2</td><td>1.20</td><td>$10.15</td><td>40</td><td>0.0</td><td>$1.51</td><td>$0.120</td></tr><tr><td>Latvia</td><td>$0.110</td><td>18.4</td><td>1.13</td><td>$10.92</td><td>80</td><td>0.1</td><td>$1.50</td><td>$0.124</td></tr><tr><td>Pakistan</td><td>$0.134</td><td>29.9</td><td>1.30</td><td>$6.57</td><td>50</td><td>0.0</td><td>$1.52</td><td>$0.134</td></tr><tr><td>Saudi Arabia</td><td>$0.053</td><td>36.0</td><td>1.40</td><td>$11.34</td><td>400</td><td>0.3</td><td>$1.47</td><td>$0.100</td></tr><tr><td>Qatar</td><td>$0.036</td><td>36.1</td><td>1.40</td><td>$11.86</td><td>80</td><td>0.1</td><td>$1.46</td><td>$0.100</td></tr><tr><td>Luxembourg</td><td>$0.128</td><td>18.0</td><td>1.12</td><td>$10.99</td><td>70</td><td>0.1</td><td>$1.52</td><td>$0.133</td></tr><tr><td>Moldova</td><td>$0.135</td><td>24.2</td><td>1.22</td><td>$9.21</td><td>20</td><td>0.0</td><td>$1.52</td><td>$0.135</td></tr><tr><td>North Macedonia</td><td>$0.135</td><td>24.0</td><td>1.21</td><td>$9.79</td><td>18</td><td>0.0</td><td>$1.53</td><td>$0.135</td></tr><tr><td>Ghana</td><td>$0.120</td><td>30.7</td><td>1.31</td><td>$10.80</td><td>15</td><td>0.0</td><td>$1.53</td><td>$0.120</td></tr><tr><td>Spain</td><td>$0.113</td><td>24.9</td><td>1.23</td><td>$10.04</td><td>720</td><td>0.6</td><td>$1.51</td><td>$0.134</td></tr><tr><td>Belgium</td><td>$0.125</td><td>19.0</td><td>1.14</td><td>$9.97</td><td>400</td><td>0.3</td><td>$1.51</td><td>$0.147</td></tr><tr><td>Malta</td><td>$0.111</td><td>27.0</td><td>1.26</td><td>$9.40</td><td>20</td><td>0.0</td><td>$1.51</td><td>$0.137</td></tr><tr><td>Denmark</td><td>$0.129</td><td>17.2</td><td>1.11</td><td>$12.02</td><td>300</td><td>0.2</td><td>$1.52</td><td>$0.139</td></tr><tr><td>Lithuania</td><td>$0.134</td><td>18.8</td><td>1.14</td><td>$10.97</td><td>55</td><td>0.0</td><td>$1.52</td><td>$0.145</td></tr><tr><td>Albania</td><td>$0.147</td><td>23.7</td><td>1.21</td><td>$9.55</td><td>5</td><td>0.0</td><td>$1.53</td><td>$0.147</td></tr><tr><td>South Korea</td><td>$0.125</td><td>26.0</td><td>1.25</td><td>$10.07</td><td>850</td><td>0.7</td><td>$1.52</td><td>$0.145</td></tr><tr><td>Poland</td><td>$0.119</td><td>19.7</td><td>1.15</td><td>$9.16</td><td>600</td><td>0.5</td><td>$1.50</td><td>$0.166</td></tr><tr><td>Slovenia</td><td>$0.147</td><td>21.7</td><td>1.18</td><td>$10.17</td><td>40</td><td>0.0</td><td>$1.53</td><td>$0.161</td></tr><tr><td>Netherlands</td><td>$0.130</td><td>18.9</td><td>1.14</td><td>$10.81</td><td>1,800</td><td>1.5</td><td>$1.52</td><td>$0.164</td></tr><tr><td>Estonia</td><td>$0.129</td><td>18.2</td><td>1.13</td><td>$11.19</td><td>50</td><td>0.0</td><td>$1.52</td><td>$0.169</td></tr><tr><td>Romania</td><td>$0.156</td><td>22.1</td><td>1.19</td><td>$9.24</td><td>100</td><td>0.1</td><td>$1.54</td><td>$0.174</td></tr><tr><td>Japan</td><td>$0.135</td><td>25.2</td><td>1.23</td><td>$14.64</td><td>2,400</td><td>1.9</td><td>$1.55</td><td>$0.135</td></tr><tr><td>Slovakia</td><td>$0.164</td><td>20.9</td><td>1.17</td><td>$10.02</td><td>40</td><td>0.0</td><td>$1.55</td><td>$0.173</td></tr><tr><td>Austria</td><td>$0.160</td><td>18.6</td><td>1.13</td><td>$11.81</td><td>250</td><td>0.2</td><td>$1.55</td><td>$0.167</td></tr><tr><td>Switzerland</td><td>$0.160</td><td>15.7</td><td>1.09</td><td>$14.24</td><td>500</td><td>0.4</td><td>$1.56</td><td>$0.163</td></tr><tr><td>Greece</td><td>$0.165</td><td>26.1</td><td>1.25</td><td>$7.84</td><td>50</td><td>0.0</td><td>$1.54</td><td>$0.191</td></tr><tr><td>Bulgaria</td><td>$0.155</td><td>23.9</td><td>1.21</td><td>$10.31</td><td>75</td><td>0.1</td><td>$1.54</td><td>$0.182</td></tr><tr><td>Italy</td><td>$0.162</td><td>24.0</td><td>1.22</td><td>$9.79</td><td>850</td><td>0.7</td><td>$1.55</td><td>$0.190</td></tr><tr><td>Singapore</td><td>$0.145</td><td>28.5</td><td>1.28</td><td>$14.53</td><td>1,130</td><td>0.9</td><td>$1.57</td><td>$0.152</td></tr><tr><td>Hungary</td><td>$0.176</td><td>23.6</td><td>1.21</td><td>$10.73</td><td>50</td><td>0.0</td><td>$1.56</td><td>$0.192</td></tr><tr><td>Czechia</td><td>$0.172</td><td>19.1</td><td>1.14</td><td>$10.93</td><td>130</td><td>0.1</td><td>$1.55</td><td>$0.203</td></tr><tr><td>Senegal</td><td>$0.180</td><td>32.4</td><td>1.34</td><td>$10.50</td><td>10</td><td>0.0</td><td>$1.58</td><td>$0.180</td></tr><tr><td>Croatia</td><td>$0.206</td><td>23.7</td><td>1.21</td><td>$9.77</td><td>30</td><td>0.0</td><td>$1.58</td><td>$0.218</td></tr><tr><td>Germany</td><td>$0.155</td><td>19.0</td><td>1.14</td><td>$11.54</td><td>1,955</td><td>1.6</td><td>$1.54</td><td>$0.220</td></tr><tr><td>Ireland</td><td>$0.228</td><td>15.3</td><td>1.08</td><td>$10.05</td><td>1,260</td><td>1.0</td><td>$1.58</td><td>$0.249</td></tr><tr><td>Cyprus</td><td>$0.185</td><td>28.0</td><td>1.27</td><td>$10.29</td><td>20</td><td>0.0</td><td>$1.58</td><td>$0.228</td></tr><tr><td>Greenland</td><td>$0.263</td><td>-3.1</td><td>1.08</td><td>$11.12</td><td>5</td><td>0.0</td><td>$1.62</td><td>$0.263</td></tr></table>",
+        "bbox": [
+            88,
+            215,
+            909,
+            866
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "Appendix A",
+        "bbox": [
+            85,
+            138,
+            184,
+            165
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "33",
+        "bbox": [
+            891,
+            919,
+            909,
+            939
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            89,
+            112,
+            910,
+            862
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "page_number",
+        "text": "34",
+        "bbox": [
+            891,
+            919,
+            910,
+            937
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            89,
+            111,
+            909,
+            816
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "page_number",
+        "text": "35",
+        "bbox": [
+            890,
+            919,
+            910,
+            939
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "capacity (MW). $\\omega_{j}$ = country share of global compute demand from equation (4). $c_{j}$ = hourly cost of operating one H100 GPU (electricity + hardware at \\$1.36/hr + amortized construction; excludes networking $\\eta$ = \\$0.15/hr, which is added in the equilibrium computations in Section 6). Cost-Rec. $p^{E}$ = cost-recovery electricity price. For 13 countries with subsidized tariffs, this is the estimated long-run marginal cost of electricity generation (shown in bold). For all other countries, the cost-recovery price equals the observed tariff. The 37 DCCI countries span 52 markets: Australia, Austria, Brazil, Canada, Chile, China, Colombia, Denmark, Finland, France, Germany, Greece, India, Indonesia, Ireland, Italy, Japan, Kenya, Malaysia, Mexico, Netherlands, New Zealand, Nigeria, Norway, Poland, Portugal, Saudi Arabia, Singapore, South Africa, South Korea, Spain, Sweden, Switzerland, UAE, UK, Uruguay, and USA. The 95% prediction intervals for imputed countries span about ±\\$3.50/W, which translates to ±\\$0.02/hr in total cost (1.5–2% of the mean).",
+        "bbox": [
+            85,
+            117,
+            910,
+            251
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "page_number",
+        "text": "36",
+        "bbox": [
+            891,
+            919,
+            910,
+            937
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "table",
+        "img_path": "images/079b42de6f0815c367ebc203c355323d2311b83704b7fddc6074810b2f9050ee.jpg",
+        "table_caption": [
+            "Table A2. Country rankings under alternative cost and sovereignty specifications (all countries)"
+        ],
+        "table_footnote": [
+            "Notes: See Table 3 notes for column definitions. Countries sorted by specification (2) rank (ascending)."
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"3\">(1) Raw Electricity</td><td colspan=\"3\">(2) Cost-Recovery</td><td>(3) Bilateral</td></tr><tr><td>Country</td><td> $c_j$ </td><td>Rank</td><td>Type</td><td> $c_j$ </td><td>Rank</td><td>Type</td><td>Type</td></tr><tr><td>Kyrgyzstan</td><td>$1.58</td><td>4</td><td>EE</td><td>$1.58</td><td>1</td><td>EE</td><td>EE</td></tr><tr><td>Ethiopia</td><td>$1.58</td><td>3</td><td>EE</td><td>$1.59</td><td>2</td><td>EE</td><td>EE</td></tr><tr><td>Kosovo</td><td>$1.60</td><td>10</td><td>IE</td><td>$1.60</td><td>3</td><td>EE</td><td>EE</td></tr><tr><td>Canada</td><td>$1.59</td><td>7</td><td>EE</td><td>$1.60</td><td>4</td><td>EE</td><td>EE</td></tr><tr><td>Tajikistan</td><td>$1.60</td><td>12</td><td>II</td><td>$1.60</td><td>5</td><td>II</td><td>DD</td></tr><tr><td>Montenegro</td><td>$1.60</td><td>13</td><td>IE</td><td>$1.60</td><td>6</td><td>IE</td><td>DD</td></tr><tr><td>China</td><td>$1.61</td><td>14</td><td>II</td><td>$1.61</td><td>7</td><td>II</td><td>II</td></tr><tr><td>Ukraine</td><td>$1.61</td><td>16</td><td>IE</td><td>$1.61</td><td>8</td><td>IE</td><td>DD</td></tr><tr><td>Argentina</td><td>$1.61</td><td>17</td><td>II</td><td>$1.61</td><td>9</td><td>II</td><td>DD</td></tr><tr><td>Colombia</td><td>$1.61</td><td>18</td><td>II</td><td>$1.61</td><td>10</td><td>II</td><td>DD</td></tr><tr><td>Azerbaijan</td><td>$1.61</td><td>19</td><td>IE</td><td>$1.61</td><td>11</td><td>IE</td><td>DD</td></tr><tr><td>Russia</td><td>$1.59</td><td>8</td><td>DD</td><td>$1.61</td><td>12</td><td>DD</td><td>DD</td></tr><tr><td>Norway</td><td>$1.62</td><td>20</td><td>IE</td><td>$1.62</td><td>13</td><td>IE</td><td>DD</td></tr><tr><td>Algeria</td><td>$1.59</td><td>6</td><td>EE</td><td>$1.62</td><td>14</td><td>II</td><td>DD</td></tr><tr><td>Vietnam</td><td>$1.62</td><td>24</td><td>II</td><td>$1.62</td><td>15</td><td>II</td><td>DD</td></tr><tr><td>Finland</td><td>$1.62</td><td>23</td><td>IE</td><td>$1.62</td><td>16</td><td>IE</td><td>IE</td></tr><tr><td>Brazil</td><td>$1.62</td><td>26</td><td>II</td><td>$1.62</td><td>17</td><td>II</td><td>DD</td></tr><tr><td>Turkmenistan</td><td>$1.57</td><td>2</td><td>DD</td><td>$1.62</td><td>18</td><td>DD</td><td>DD</td></tr><tr><td>Egypt</td><td>$1.58</td><td>5</td><td>EE</td><td>$1.62</td><td>19</td><td>II</td><td>DD</td></tr><tr><td>India</td><td>$1.63</td><td>29</td><td>II</td><td>$1.63</td><td>20</td><td>II</td><td>DD</td></tr><tr><td>Indonesia</td><td>$1.63</td><td>30</td><td>IE</td><td>$1.63</td><td>21</td><td>IE</td><td>DD</td></tr><tr><td>Sweden</td><td>$1.63</td><td>28</td><td>II</td><td>$1.63</td><td>22</td><td>II</td><td>IE</td></tr><tr><td>Kazakhstan</td><td>$1.62</td><td>21</td><td>II</td><td>$1.63</td><td>23</td><td>II</td><td>DD</td></tr><tr><td>Iran</td><td>$1.56</td><td>1</td><td>DD</td><td>$1.63</td><td>24</td><td>DD</td><td>DD</td></tr><tr><td>Georgia</td><td>$1.63</td><td>31</td><td>II</td><td>$1.63</td><td>25</td><td>II</td><td>DD</td></tr><tr><td>Uzbekistan</td><td>$1.62</td><td>22</td><td>II</td><td>$1.63</td><td>26</td><td>II</td><td>DD</td></tr><tr><td>Kenya</td><td>$1.64</td><td>33</td><td>II</td><td>$1.64</td><td>27</td><td>II</td><td>DD</td></tr><tr><td>Turkey</td><td>$1.64</td><td>34</td><td>II</td><td>$1.64</td><td>28</td><td>II</td><td>DD</td></tr><tr><td>Bosnia and Herz.</td><td>$1.64</td><td>35</td><td>II</td><td>$1.64</td><td>29</td><td>II</td><td>DD</td></tr><tr><td>Nigeria</td><td>$1.60</td><td>11</td><td>II</td><td>$1.64</td><td>30</td><td>II</td><td>DD</td></tr><tr><td>South Africa</td><td>$1.60</td><td>9</td><td>II</td><td>$1.64</td><td>31</td><td>II</td><td>DD</td></tr><tr><td>Iceland</td><td>$1.64</td><td>36</td><td>II</td><td>$1.64</td><td>32</td><td>II</td><td>II</td></tr><tr><td>Belarus</td><td>$1.65</td><td>38</td><td>DD</td><td>$1.65</td><td>33</td><td>DD</td><td>DD</td></tr><tr><td>Australia</td><td>$1.65</td><td>39</td><td>II</td><td>$1.65</td><td>34</td><td>II</td><td>II</td></tr><tr><td>Morocco</td><td>$1.65</td><td>41</td><td>II</td><td>$1.65</td><td>35</td><td>II</td><td>DD</td></tr><tr><td>Mexico</td><td>$1.65</td><td>42</td><td>II</td><td>$1.65</td><td>36</td><td>II</td><td>II</td></tr><tr><td>United States of A.</td><td>$1.63</td><td>32</td><td>II</td><td>$1.65</td><td>37</td><td>II</td><td>II</td></tr><tr><td>Armenia</td><td>$1.65</td><td>44</td><td>II</td><td>$1.65</td><td>38</td><td>II</td><td>DD</td></tr><tr><td>New Zealand</td><td>$1.65</td><td>40</td><td>II</td><td>$1.65</td><td>39</td><td>II</td><td>II</td></tr><tr><td>UAE</td><td>$1.62</td><td>27</td><td>II</td><td>$1.65</td><td>40</td><td>II</td><td>DD</td></tr><tr><td>Chile</td><td>$1.65</td><td>45</td><td>II</td><td>$1.65</td><td>41</td><td>II</td><td>II</td></tr><tr><td>UK</td><td>$1.65</td><td>37</td><td>II</td><td>$1.65</td><td>42</td><td>II</td><td>II</td></tr><tr><td>Malaysia</td><td>$1.66</td><td>50</td><td>II</td><td>$1.66</td><td>43</td><td>II</td><td>II</td></tr><tr><td>Philippines</td><td>$1.66</td><td>51</td><td>II</td><td>$1.66</td><td>44</td><td>II</td><td>II</td></tr><tr><td>Israel</td><td>$1.66</td><td>52</td><td>II</td><td>$1.66</td><td>45</td><td>II</td><td>II</td></tr><tr><td>Thailand</td><td>$1.66</td><td>54</td><td>II</td><td>$1.66</td><td>46</td><td>II</td><td>II</td></tr><tr><td>Portugal</td><td>$1.65</td><td>48</td><td>II</td><td>$1.66</td><td>47</td><td>II</td><td>II</td></tr><tr><td>France</td><td>$1.65</td><td>43</td><td>II</td><td>$1.66</td><td>48</td><td>II</td><td>II</td></tr><tr><td>Serbia</td><td>$1.66</td><td>56</td><td>II</td><td>$1.66</td><td>49</td><td>II</td><td>II</td></tr><tr><td>Latvia</td><td>$1.65</td><td>47</td><td>II</td><td>$1.66</td><td>50</td><td>II</td><td>II</td></tr><tr><td>Pakistan</td><td>$1.67</td><td>57</td><td>II</td><td>$1.67</td><td>51</td><td>II</td><td>II</td></tr><tr><td>Saudi Arabia</td><td>$1.62</td><td>25</td><td>II</td><td>$1.67</td><td>52</td><td>II</td><td>II</td></tr><tr><td>Qatar</td><td>$1.61</td><td>15</td><td>II</td><td>$1.67</td><td>53</td><td>II</td><td>II</td></tr><tr><td>Luxembourg</td><td>$1.67</td><td>58</td><td>II</td><td>$1.67</td><td>54</td><td>II</td><td>II</td></tr><tr><td>Moldova</td><td>$1.67</td><td>62</td><td>II</td><td>$1.67</td><td>55</td><td>II</td><td>II</td></tr><tr><td>N. Macedonia</td><td>$1.68</td><td>65</td><td>II</td><td>$1.68</td><td>56</td><td>II</td><td>II</td></tr><tr><td>Ghana</td><td>$1.68</td><td>66</td><td>II</td><td>$1.68</td><td>57</td><td>II</td><td>II</td></tr><tr><td>Spain</td><td>$1.66</td><td>53</td><td>II</td><td>$1.68</td><td>58</td><td>II</td><td>II</td></tr><tr><td>Belgium</td><td>$1.66</td><td>55</td><td>II</td><td>$1.68</td><td>59</td><td>II</td><td>II</td></tr><tr><td>Malta</td><td>$1.66</td><td>49</td><td>II</td><td>$1.68</td><td>60</td><td>II</td><td>II</td></tr><tr><td>Denmark</td><td>$1.67</td><td>63</td><td>II</td><td>$1.68</td><td>61</td><td>II</td><td>II</td></tr><tr><td>Lithuania</td><td>$1.67</td><td>64</td><td>II</td><td>$1.68</td><td>62</td><td>II</td><td>II</td></tr><tr><td>Albania</td><td>$1.68</td><td>68</td><td>II</td><td>$1.68</td><td>63</td><td>II</td><td>II</td></tr><tr><td>South Korea</td><td>$1.67</td><td>61</td><td>II</td><td>$1.69</td><td>64</td><td>II</td><td>II</td></tr><tr><td>Poland</td><td>$1.65</td><td>46</td><td>II</td><td>$1.69</td><td>65</td><td>II</td><td>II</td></tr><tr><td>Slovenia</td><td>$1.68</td><td>67</td><td>II</td><td>$1.70</td><td>66</td><td>II</td><td>II</td></tr><tr><td>Netherlands</td><td>$1.67</td><td>59</td><td>II</td><td>$1.70</td><td>67</td><td>II</td><td>II</td></tr><tr><td>Estonia</td><td>$1.67</td><td>60</td><td>II</td><td>$1.70</td><td>68</td><td>II</td><td>II</td></tr><tr><td>Romania</td><td>$1.69</td><td>69</td><td>II</td><td>$1.70</td><td>69</td><td>II</td><td>II</td></tr><tr><td>Japan</td><td>$1.70</td><td>76</td><td>II</td><td>$1.70</td><td>70</td><td>II</td><td>II</td></tr><tr><td>Slovakia</td><td>$1.70</td><td>73</td><td>II</td><td>$1.70</td><td>71</td><td>II</td><td>II</td></tr><tr><td>Austria</td><td>$1.70</td><td>74</td><td>II</td><td>$1.70</td><td>72</td><td>II</td><td>II</td></tr><tr><td>Switzerland</td><td>$1.71</td><td>78</td><td>II</td><td>$1.71</td><td>73</td><td>II</td><td>II</td></tr><tr><td>Greece</td><td>$1.69</td><td>71</td><td>II</td><td>$1.72</td><td>74</td><td>II</td><td>II</td></tr><tr><td>Bulgaria</td><td>$1.69</td><td>72</td><td>II</td><td>$1.72</td><td>75</td><td>II</td><td>II</td></tr><tr><td>Italy</td><td>$1.70</td><td>75</td><td>II</td><td>$1.72</td><td>76</td><td>II</td><td>II</td></tr><tr><td>Singapore</td><td>$1.72</td><td>80</td><td>II</td><td>$1.72</td><td>77</td><td>II</td><td>II</td></tr><tr><td>Hungary</td><td>$1.71</td><td>79</td><td>II</td><td>$1.73</td><td>78</td><td>II</td><td>II</td></tr><tr><td>Czechia</td><td>$1.70</td><td>77</td><td>II</td><td>$1.73</td><td>79</td><td>II</td><td>II</td></tr><tr><td>Senegal</td><td>$1.73</td><td>82</td><td>II</td><td>$1.73</td><td>80</td><td>II</td><td>II</td></tr><tr><td>Croatia</td><td>$1.73</td><td>83</td><td>II</td><td>$1.74</td><td>81</td><td>II</td><td>II</td></tr><tr><td>Germany</td><td>$1.69</td><td>70</td><td>II</td><td>$1.75</td><td>82</td><td>II</td><td>II</td></tr><tr><td>Ireland</td><td>$1.73</td><td>84</td><td>II</td><td>$1.75</td><td>83</td><td>II</td><td>II</td></tr><tr><td>Cyprus</td><td>$1.73</td><td>81</td><td>II</td><td>$1.77</td><td>84</td><td>II</td><td>II</td></tr><tr><td>Greenland</td><td>$1.77</td><td>85</td><td>II</td><td>$1.77</td><td>85</td><td>II</td><td>II</td></tr></table>",
+        "bbox": [
+            65,
+            117,
+            930,
+            893
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "page_number",
+        "text": "37",
+        "bbox": [
+            912,
+            919,
+            933,
+            939
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            66,
+            83,
+            893,
+            906
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "page_number",
+        "text": "38",
+        "bbox": [
+            914,
+            919,
+            933,
+            939
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            68,
+            81,
+            929,
+            292
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "page_number",
+        "text": "39",
+        "bbox": [
+            914,
+            919,
+            933,
+            939
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "Appendix B: Model Derivation",
+        "text_level": 2,
+        "bbox": [
+            142,
+            107,
+            450,
+            126
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "This appendix provides the full derivation of the capacity-constrained Ricardian model summarized in Sections 3–4.",
+        "bbox": [
+            140,
+            143,
+            854,
+            188
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "B.1 Primitives",
+        "text_level": 2,
+        "bbox": [
+            140,
+            219,
+            261,
+            236
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "Each country j is endowed with a capacity ceiling $\\overline{K}_{j}$ (GPU-hours per period), representing the maximum volume of compute it can supply. Country j faces unit production cost $c_{j}$ from equation (1). On the demand side, total compute demand from country k is $q_{k}$ from equation (4). Training demand is $q_{Tk} = \\alpha \\cdot q_{k}$ and inference demand is $q_{Ik} = (1 - \\alpha) \\cdot q_{k}$ . Countries are ordered by cost: $c_{(1)} \\leq c_{(2)} \\leq \\ldots \\leq c_{(N)}$ .",
+        "bbox": [
+            140,
+            253,
+            854,
+            387
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "B.2 The Training Market",
+        "text_level": 2,
+        "bbox": [
+            142,
+            417,
+            346,
+            435
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "Country k imports training if and only if $(1 + \\lambda_{jk}) \\cdot p_{T} < c_{k}$ , where $\\lambda_{jk}$ is the bilateral sovereignty premium from equation (2). The set of training importers is $M_{T} = \\{ k : c_{k} > (1 + \\lambda_{jk}) \\cdot p_{T} \\}$ and total training export demand is $Q_{T,X} = \\sum_{k \\in M_{T}} q_{T,k}$ . The marginal training exporter $m_{T}$ is defined by:",
+        "bbox": [
+            140,
+            450,
+            854,
+            554
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "$$\nm _ {T} = \\min \\{m: \\sum_ {i = 1} ^ {m} K _ {T, (i)} \\geq Q _ {T, X} \\}.\\tag{B.1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            308,
+            566,
+            627,
+            621
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "The equilibrium training price is $p_{T} = c(m_{T})$ . Training rent for country j with $c_{j} < p_{T}$ is $\\pi_{Tj} = (p_{T} - c_{j}) \\cdot K_{Tj}$ .",
+        "bbox": [
+            140,
+            637,
+            852,
+            686
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "B.3 The Inference Market",
+        "text_level": 2,
+        "bbox": [
+            142,
+            717,
+            351,
+            734
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "The feasible supplier set for demand center k is $S(k) = \\{j : l_{jk} \\leq \\bar{l}\\}$ . The marginal cost of delivering one effective unit of inference from j to k is:",
+        "bbox": [
+            140,
+            753,
+            854,
+            800
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "$$\nM C _ {I} (j, k) = (1 + \\tau \\cdot l _ {j k}) \\cdot c _ {j}.\\tag{B.2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            333,
+            816,
+            604,
+            837
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "The inference rent per GPU-hour allocated to serving $k$ is $r_I(j,k) = p_I(k) / (1 + \\tau \\cdot l_{jk}) - c_j$ .",
+        "bbox": [
+            143,
+            854,
+            854,
+            902
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "page_number",
+        "text": "40",
+        "bbox": [
+            830,
+            938,
+            854,
+            952
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "B.4 Capacity Allocation",
+        "text_level": 2,
+        "bbox": [
+            142,
+            90,
+            338,
+            108
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "Let $K_{T,j}$ denote the GPU-hours country $j$ allocates to training exports and $K_{I,j \\to k}$ the GPU-hours it allocates to inference exports to buyer $k$ , so that total capacity used by country $j$ is $K_j = K_{T,j} + \\sum_k K_{I,j \\to k}$ . Each GPU-hour is allocated to its highest-margin use. The margins per GPU-hour are: training exports $r_T(j) = p_T - c_j$ ; inference exports to $k$ : $r_I(j,k) = p_I(k) / (1 + \\tau \\cdot l_{jk}) - c_j$ . Total rent from operating $K_j$ GPU-hours is:",
+        "bbox": [
+            140,
+            125,
+            854,
+            257
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Pi_ {j} (K _ {j}) = \\sum_ {n = 1} ^ {K _ {j}} r _ {j} ^ {(n)},\\tag{B.3}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            383,
+            272,
+            553,
+            330
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "which is concave and piecewise linear in $K_{j}$ .",
+        "bbox": [
+            140,
+            347,
+            493,
+            364
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "B.5 Equilibrium Definition and Existence",
+        "text_level": 2,
+        "bbox": [
+            140,
+            398,
+            473,
+            416
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "A competitive equilibrium consists of a training price $p_{T}$ , inference prices $\\{p_{I}(k)\\}$ , and capacity allocations $\\{K_{j}\\}$ such that: (i) each GPU-hour is allocated to its highest-margin use; (ii) training and inference markets clear; (iii) all allocations are feasible ( $K_{j} \\leq \\overline{K}_{j}$ ). Existence follows from a fixed-point argument: the training supply curve is a step function with steps at $c_{(i)}$ and widths $\\overline{K}_{(i)}$ ; intersection with the demand curve pins down $p_{T}$ .",
+        "bbox": [
+            140,
+            431,
+            854,
+            566
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "B.6 Welfare Cost of Sovereignty",
+        "text_level": 2,
+        "bbox": [
+            142,
+            597,
+            401,
+            614
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "The welfare cost has two components. For each importing country k, let $j_{k}^{*}$ denote its equilibrium supplier (the seller minimizing delivered cost), and write $\\lambda_{jk}$ evaluated at $j = j_{k}^{*}$ . Import markup:",
+        "bbox": [
+            140,
+            631,
+            854,
+            705
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "$$\nD W L _ {i m p o r t} = \\sum_ {k \\in M _ {T}} q _ {T k} \\cdot \\lambda_ {j k} \\cdot p _ {T}.\\tag{B.4}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            316,
+            720,
+            620,
+            763
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "Allocative inefficiency:",
+        "bbox": [
+            142,
+            782,
+            334,
+            800
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "$$\nD W L _ {a l l o c} = \\sum_ {{k: p _ {T} <   c _ {k} \\leq (1 + \\min _ {j} \\lambda_ {j k}) p _ {T}}} q _ {T k} \\cdot (c _ {k} - p _ {T}).\\tag{B.5}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            248,
+            815,
+            689,
+            866
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "page_number",
+        "text": "41",
+        "bbox": [
+            830,
+            938,
+            852,
+            952
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "Total: DWL = $DWL_{import} + DWL_{alloc}$ . Under capacity constraints, both components are smaller because the higher $p_{T}$ narrows the gap between domestic and import costs.",
+        "bbox": [
+            140,
+            90,
+            854,
+            138
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "Appendix C: Sensitivity Analysis",
+        "text_level": 2,
+        "bbox": [
+            140,
+            169,
+            470,
+            190
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "Table A3 reports cost-recovery rankings under three robustness specifications. The baseline uses the calibrated hardware cost; the alternative scenarios vary the hardware cost share to test sensitivity of the rankings.",
+        "bbox": [
+            140,
+            205,
+            856,
+            277
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "table",
+        "img_path": "images/3bfd6ea56dd475ecf22fc4978fec40f38186b26adcdcf213979250c9cd957ec5.jpg",
+        "table_caption": [
+            "Table A3. Sensitivity of cost-recovery rankings to parameter variation"
+        ],
+        "table_footnote": [
+            "Notes: Each row uses cost-recovery pricing (subsidized tariffs replaced with LRMC). Dev top 15 = number of developing countries in top 15. Max spread = maximum percentage difference between costliest and cheapest producer. Spearman $\\rho$ vs baseline = rank correlation with baseline scenario."
+        ],
+        "table_body": "<table><tr><td>Scenario</td><td>Parameter change</td><td>Dev top 15</td><td>Max spread</td><td>Spearman ρ vs baseline</td><td>Top 5</td></tr><tr><td>Baseline (ρ=$1.36)</td><td>ρ=$1.36</td><td>11</td><td>11.9%</td><td>1.00</td><td>Kyrgyzstan, Ethiopia, Kosovo, Canada, Tajikistan</td></tr><tr><td>Low hardware share (ρ=$1.30)</td><td>ρ=$1.30 (-4.4%)</td><td>11</td><td>12.3%</td><td>1.00</td><td>Kyrgyzstan, Ethiopia, Kosovo, Canada, Tajikistan</td></tr><tr><td>High hardware share (ρ=$1.42)</td><td>ρ=$1.42 (+4.4%)</td><td>11</td><td>11.4%</td><td>1.00</td><td>Kyrgyzstan, Ethiopia, Kosovo, Canada, Tajikistan</td></tr></table>",
+        "bbox": [
+            143,
+            316,
+            852,
+            481
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "Appendix D: Data Center Investment Model — Kyrgyzstan",
+        "text_level": 2,
+        "bbox": [
+            142,
+            555,
+            730,
+            575
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "This appendix presents a 15-year discounted cash flow (DCF) analysis for a hypothetical 40 MW data center in Kyrgyzstan, the lowest-cost seller in the cost-recovery-adjusted calibration. Table A4 summarizes facility parameters, Table A5 presents the year-by-year cash flow, and Table A6 reports sensitivity to parameter variation.",
+        "bbox": [
+            140,
+            592,
+            856,
+            690
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "table",
+        "img_path": "images/d08e90d898975c10f8d6831f707d48f1d171824ac2651f03bc6cae3da7b069b9.jpg",
+        "table_caption": [
+            "Table A4. Facility specification"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Parameter</td><td>Value</td></tr><tr><td>IT capacity</td><td>40 MW</td></tr><tr><td>Total power (with cooling)</td><td>43.2 MW (PUE = 1.08)</td></tr><tr><td>GPU count</td><td>57,142 (H100-class, 700W each)</td></tr><tr><td>GPU cost / lifetime</td><td>$25,000 / 3 yr (-10% per generation)</td></tr><tr><td>Construction cost</td><td>$313M ($7.83/W)</td></tr><tr><td>Electricity price</td><td>$0.038/kWh (+2%/yr real)</td></tr><tr><td>Revenue price</td><td>$2.00/GPU-hr (wholesale)</td></tr><tr><td>Utilization</td><td>70% steady-state (40% yr 1, 60% yr 2)</td></tr></table>",
+        "bbox": [
+            145,
+            729,
+            854,
+            898
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "page_number",
+        "text": "42",
+        "bbox": [
+            830,
+            938,
+            854,
+            953
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "Notes: WACC = 60% × 15% (cost of equity) + 40% × 10% × (1 - 10%) (after-tax debt) = 12.6%. Cost of equity includes a 4% country risk premium and 6% emerging-market equity premium over the 5% risk-free rate.",
+        "bbox": [
+            140,
+            113,
+            851,
+            157
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "table",
+        "img_path": "images/04e3e72051444d1e75656f08bb8714ab8a5739106ef958e517e14e8edc22cc23.jpg",
+        "table_caption": [
+            "Table A5. Year-by-year cash flow (\\$ millions)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Year</td><td>CAPEX</td><td>Revenue</td><td>OPEX</td><td>EBITDA</td><td>FCF</td><td>Cum. CF</td></tr><tr><td>0</td><td>313.2</td><td>0.0</td><td>0.0</td><td>0.0</td><td>-313.2</td><td>-313.2</td></tr><tr><td>1</td><td>1542.8</td><td>400.7</td><td>32.4</td><td>368.4</td><td>-1174.5</td><td>-1487.7</td></tr><tr><td>2</td><td>0.0</td><td>601.1</td><td>30.3</td><td>570.8</td><td>563.4</td><td>-924.2</td></tr><tr><td>3</td><td>0.0</td><td>701.3</td><td>28.2</td><td>673.1</td><td>655.5</td><td>-268.8</td></tr><tr><td>4</td><td>1285.7</td><td>701.3</td><td>32.6</td><td>668.7</td><td>-638.9</td><td>-907.7</td></tr><tr><td>5</td><td>0.0</td><td>701.3</td><td>30.8</td><td>670.5</td><td>648.4</td><td>-259.3</td></tr><tr><td>6</td><td>114.3</td><td>701.3</td><td>29.0</td><td>672.3</td><td>535.7</td><td>276.4</td></tr><tr><td>7</td><td>1157.1</td><td>701.3</td><td>32.9</td><td>668.3</td><td>-515.0</td><td>-238.6</td></tr><tr><td>8</td><td>0.0</td><td>701.3</td><td>31.4</td><td>669.9</td><td>643.6</td><td>405.0</td></tr><tr><td>9</td><td>0.0</td><td>701.3</td><td>29.8</td><td>671.5</td><td>645.0</td><td>1050.0</td></tr><tr><td>10</td><td>1041.4</td><td>701.3</td><td>33.4</td><td>667.9</td><td>-403.5</td><td>646.5</td></tr><tr><td>11</td><td>114.3</td><td>701.3</td><td>32.0</td><td>669.2</td><td>524.8</td><td>1171.3</td></tr><tr><td>12</td><td>0.0</td><td>701.3</td><td>30.7</td><td>670.6</td><td>640.3</td><td>1811.6</td></tr><tr><td>13</td><td>937.3</td><td>701.3</td><td>34.0</td><td>667.2</td><td>-303.4</td><td>1508.2</td></tr><tr><td>14</td><td>0.0</td><td>701.3</td><td>32.9</td><td>668.4</td><td>634.9</td><td>2143.1</td></tr><tr><td>15</td><td>0.0</td><td>701.3</td><td>31.7</td><td>669.6</td><td>636.0</td><td>2779.1</td></tr><tr><td>Total</td><td>6506.1</td><td>10118.3</td><td>472.0</td><td>9646.4</td><td>2779.1</td><td></td></tr></table>",
+        "bbox": [
+            143,
+            184,
+            851,
+            532
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "The project yields an NPV of \\$353M at a 12.6% WACC, an IRR of 17.6%, and a simple payback in year 6. GPU hardware accounts for \\$5850M of the \\$6506M total CAPEX (90%), and electricity represents 53% of operating costs.",
+        "bbox": [
+            140,
+            540,
+            854,
+            613
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "table",
+        "img_path": "images/69066ade3ff2d03dc0650064ce0613aaaf2770361a6f059499e24a2116b28edd.jpg",
+        "table_caption": [
+            "Table A6. Sensitivity of investment returns to parameter variation"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Scenario</td><td>NPV ($M)</td><td>IRR</td></tr><tr><td>Base case</td><td>$353</td><td>17.6%</td></tr><tr><td>GPU price -20%</td><td>$930</td><td>27.6%</td></tr><tr><td>GPU price +20%</td><td>$-225</td><td>9.7%</td></tr><tr><td>Electricity +50%</td><td>$305</td><td>16.9%</td></tr><tr><td>Electricity -25%</td><td>$377</td><td>17.9%</td></tr><tr><td>Revenue +5%</td><td>$509</td><td>19.8%</td></tr><tr><td>Revenue -5%</td><td>$198</td><td>15.4%</td></tr><tr><td>Utilization 80%</td><td>$957</td><td>26.4%</td></tr><tr><td>Utilization 60%</td><td>$-253</td><td>9.0%</td></tr><tr><td>WACC 10%</td><td>$619</td><td>17.6%</td></tr><tr><td>WACC 16%</td><td>$95</td><td>17.6%</td></tr></table>",
+        "bbox": [
+            143,
+            645,
+            852,
+            876
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "header",
+        "text": "WACC",
+        "bbox": [
+            151,
+            90,
+            197,
+            103
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "header",
+        "text": "12.6%",
+        "bbox": [
+            434,
+            90,
+            473,
+            103
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "page_number",
+        "text": "43",
+        "bbox": [
+            830,
+            938,
+            854,
+            952
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "Risks. Kyrgyzstan depends on the Toktogul reservoir for over 80 percent of electricity (ADB 2020); seasonal drawdowns and drought years create acute power shortages. GPU procurement faces US export-control uncertainty. Underdeveloped contract enforcement and regulatory frameworks raise the bilateral sovereignty premium for potential importers. Despite these risks, the engineering economics are clear: electricity at \\$0.038/kWh and a PUE of 1.08 yield production costs well below the global median, and the positive NPV survives eight of ten perturbations in Table A6. The share of this surplus retained in Kyrgyzstan depends on the ownership and fiscal structure: if the facility is owned by a foreign hyperscaler, most operating surplus flows abroad as repatriated profits, and the host country retains only the electricity payment and construction-phase employment unless the government captures rent through taxation, equity participation, or resource royalties.",
+        "bbox": [
+            140,
+            90,
+            857,
+            373
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "Appendix E: Construction Cost Regression",
+        "text_level": 2,
+        "bbox": [
+            140,
+            402,
+            571,
+            422
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "Data center construction costs per watt of IT capacity are observed for 37 countries from the Turner & Townsend Data Centre Construction Cost Index 2025 (52 markets). For the remaining countries, construction costs are predicted using the log-linear regression reported in Table A7. The dependent variable is ln(\\$/W). Since construction accounts for only 3–6% of total per-GPU-hour costs, imputation error has limited impact on cost rankings.",
+        "bbox": [
+            138,
+            439,
+            857,
+            589
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "table",
+        "img_path": "images/b074b67934125379d622b4d9ec85977588fcc078d6534e1cae50bf37c19c6204.jpg",
+        "table_caption": [
+            "Table A7. Construction cost regression: ln(\\$/W)"
+        ],
+        "table_footnote": [
+            "Notes: OLS regression on 37 countries from the Turner & Townsend DCCI 2025. Dependent variable: ln(construction cost in \\$/W). R $^{2}$ = 0.48, adjusted R $^{2}$ = 0.29, RMSE = 0.160. Reference region: Europe & Central Asia. \\*\\*\\* p < 0.01, \\*\\* p < 0.05, \\* p < 0.10."
+        ],
+        "table_body": "<table><tr><td>Variable</td><td>Coefficient</td><td>Std. Error</td></tr><tr><td>Intercept</td><td>1.753</td><td>(1.467)</td></tr><tr><td>ln(GDP per capita)</td><td>0.056</td><td>(0.114)</td></tr><tr><td>ln(Population)</td><td>-0.020</td><td>(0.027)</td></tr><tr><td>Urban population share</td><td>0.459</td><td>(0.355)</td></tr><tr><td>Seismic zone indicator</td><td>-0.053</td><td>(0.077)</td></tr><tr><td>East Asia &amp; Pacific</td><td>0.054</td><td>(0.084)</td></tr><tr><td>Latin America &amp; Caribbean</td><td>-0.106</td><td>(0.141)</td></tr><tr><td>Middle East</td><td>-0.114</td><td>(0.122)</td></tr><tr><td>North America</td><td>-0.024</td><td>(0.151)</td></tr><tr><td>South Asia</td><td>-0.070</td><td>(0.218)</td></tr><tr><td>Sub-Saharan Africa</td><td>0.190</td><td>(0.200)</td></tr></table>",
+        "bbox": [
+            143,
+            627,
+            852,
+            854
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "page_number",
+        "text": "44",
+        "bbox": [
+            830,
+            938,
+            854,
+            952
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "Appendix F: Workload Classification",
+        "text_level": 2,
+        "bbox": [
+            140,
+            90,
+            514,
+            112
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "Table A8 summarizes the latency sensitivity and offshorability of major AI workload types. The model collapses these into two categories — training ( $\\tau = 0$ ) and inference ( $\\tau > 0$ ) — but the intermediate workloads noted in footnote 6 occupy a middle ground that may narrow the effective offshorable share.",
+        "bbox": [
+            140,
+            128,
+            856,
+            224
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "table",
+        "img_path": "images/752facd0b92e902797be6972086787781b1db8c243e6acc2682fa41dbf7578ce.jpg",
+        "table_caption": [
+            "Table A8. Workload classification and offshorability"
+        ],
+        "table_footnote": [
+            "Notes: Latency tolerance is approximate round-trip time. “Offshorable” refers to whether the workload can be processed in a different country from the end user without significant quality degradation. The model treats fine-tuning and agentic inference as part of the training share $\\alpha$ ; footnote 6 notes this simplification."
+        ],
+        "table_body": "<table><tr><td>Workload</td><td>Example</td><td>Latency tolerance</td><td>Offshorable?</td><td>Model treatment</td></tr><tr><td>Large-scale training</td><td>Foundation model pre-training</td><td>Days-weeks</td><td>Fully</td><td> $\\tau_{\\text{T}} = 0$ </td></tr><tr><td>Fine-tuning</td><td>Domain adaptation on proprietary data</td><td>Hours</td><td>Mostly</td><td>Treated as training</td></tr><tr><td>Agentic inference</td><td>Multi-step reasoning, tool use</td><td>500–2,000 ms</td><td>Regionally</td><td>Intermediate (fn. 7)</td></tr><tr><td>Interactive inference</td><td>Chatbot, search, recommendation</td><td>50–200 ms</td><td>Limited</td><td> $\\tau_{i} > 0$ , threshold  $\\bar{1}$ </td></tr><tr><td>Real-time control</td><td>Autonomous vehicles, robotics</td><td>&lt; 20 ms</td><td>No</td><td>Domestic only</td></tr></table>",
+        "bbox": [
+            143,
+            263,
+            851,
+            415
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "Appendix G: Symmetric LRMC Construction",
+        "text_level": 2,
+        "bbox": [
+            140,
+            489,
+            598,
+            508
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "The cost-recovery specification in earlier versions of this paper adjusted electricity prices downward for thirteen developing countries whose observed industrial tariffs reflect explicit fossil-fuel subsidies (IMF 2025), replacing subsidized tariffs with the estimated long-run marginal cost of the dominant generation technology at opportunity-cost fuel prices. No symmetric correction was applied to OECD and high-income tariffs, which also embed distortions: emissions externalities not priced at the retail meter, industrial cross-subsidies financed by residential and commercial rate classes, and regulated-access privileges for incumbents. The asymmetry biases the cross-country cost spread in favor of OECD economies. This appendix constructs a symmetric LRMC specification that corrects distortions on both sides.",
+        "bbox": [
+            140,
+            526,
+            857,
+            781
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "Of the 85 calibrated countries, 13 retain the IMF-based LRMC replacement used throughout the paper (Iran, Turkmenistan, Algeria, Egypt, Qatar, Saudi Arabia, United Arab Emirates, Russia, Kazakhstan, Nigeria, South Africa, Ethiopia, and Uzbekistan). Forty-three OECD, EU non-OECD, and high-income non-OECD countries receive a symmetric adjustment. Twenty-nine middle-income developing economies whose observed industrial tariffs already approximate long-run marginal cost retain their observed prices. Three countries (Qatar, Saudi Arabia, United Arab Emirates) appear in both the developing-country subsidy set and the high-income non-OECD set; the IMF-based treatment dominates and no layering is applied.",
+        "bbox": [
+            140,
+            797,
+            857,
+            895
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "page_number",
+        "text": "45",
+        "bbox": [
+            830,
+            938,
+            854,
+            952
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            140,
+            90,
+            857,
+            215
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "The carbon-price adder equals the 2024 grid carbon intensity in grams of CO $_{2}$ per kilowatt-hour (EMBER Yearly Electricity Data 2025 release) multiplied by the 2024 annual-average price under the applicable emissions-trading or carbon-tax regime: EU ETS (\\$70.94 per tonne, applied to EU27 plus Norway, Iceland, and Switzerland via the linked Swiss ETS), UK ETS (\\$47.32), Canadian federal backstop (\\$58.48), California Cap-and-Trade plus RGGI coverage-weighted for the United States (\\$3.81 effective national average), New Zealand ETS (\\$39.50), and Singapore carbon tax (\\$18.60). Nominal instruments with effective prices below ten dollars per tonne (Korea K-ETS, Japanese carbon tax, Australian safeguard mechanism, Israel, Chile, Mexico, Turkey, Colombia) are set to zero.",
+        "bbox": [
+            140,
+            231,
+            857,
+            462
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "Only well-documented, quantified industrial cross-subsidies exceeding \\$0.005 per kilowatt-hour are included. Germany receives the largest add-back (\\$0.038/kWh) reflecting the EEG renewables-surcharge exemption and grid-fee exemption for energy-intensive industry (Agora Energiewende; BDEW). France receives \\$0.015/kWh for postARENH regulated nuclear access. Spain, Italy, the Netherlands, and Belgium receive \\$0.010/kWh each from the Eurostat nrg\\_pc\\_205 subsidies column (industrial band IB6). The United States receives \\$0.015/kWh reflecting the industrial–residential rate differential in excess of cost-of-service documented by Borenstein (2012) and Davis and Hausman (2016). Korea receives \\$0.020/kWh reflecting KEPCO industrial tariffs below cost-of-service (OECD Energy Policy Review). All other countries receive zero. $^{15}$",
+        "bbox": [
+            140,
+            476,
+            857,
+            733
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "Three choices warrant note. First, the carbon adder uses 2024 annual-average market prices, not the social cost of carbon; using US EPA (2023) social-cost values would widen the OECD adjustment further. Second, we use existing-asset variable cost rather than replacement-cost capital for OECD nuclear and hydro; a replacement-cost treatment would raise Norwegian and French LRMCs materially. Third, the largest ten changes in per-kWh prices occur in Germany, Poland, Cyprus, Estonia, Netherlands, Czechia, Italy, Bulgaria, Malta, and Greece; the corresponding rank shifts in Table A1 illustrate how the symmetric specification reallocates comparative advantage toward countries with cleaner grids or cost-reflective tariffs rather than toward those with below-marginal-cost industrial rates.",
+        "bbox": [
+            140,
+            750,
+            857,
+            821
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{15}$ Data sources for the carbon-price and cross-subsidy adjustments: EMBER, Yearly Electricity Data (2025 release); Agora Energiewende and BDEW industrial electricity-price analyses; and OECD, Energy Policy Reviews: Korea.",
+        "bbox": [
+            140,
+            864,
+            852,
+            909
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "page_number",
+        "text": "46",
+        "bbox": [
+            830,
+            938,
+            854,
+            953
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            140,
+            90,
+            857,
+            241
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "Under the symmetric LRMC specification, the five lowest-cost producers are Kyrgyzstan, Ethiopia, Kosovo, Canada, and Tajikistan. Canada falls from second to fourth after a modest carbon adder of \\$0.008 per kilowatt-hour. Poland drops 21 positions, Germany 10, the United States 10, and France 12, while Nordic low-carbon grids and Switzerland move by two positions or fewer. The qualitative conclusion is therefore reinforced rather than overturned: countries with cheap, clean electricity retain their cost advantage once both sides of the distortion are corrected.",
+        "bbox": [
+            140,
+            258,
+            857,
+            434
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "page_number",
+        "text": "47",
+        "bbox": [
+            830,
+            938,
+            854,
+            952
+        ],
+        "page_idx": 48
+    }
+]

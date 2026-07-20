@@ -1,0 +1,6086 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.039,
+                0.831,
+                0.077
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.078,
+                0.198,
+                0.818,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Beyond the Policy Rate: A Broader View of Monetary and Financial Conditions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.398,
+                0.437,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Nasir Rao and Anvar Muratkhanov",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.461,
+                0.225,
+                0.483
+            ],
+            "angle": 0,
+            "content": "SIP/2026/062",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.52,
+                0.684
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 14, 2026. This paper is also published separately as IMF Country Report No 26/164.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.821,
+                0.234,
+                0.923
+            ],
+            "angle": 0,
+            "content": "2026\nJUL",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.653,
+                0.811,
+                0.799,
+                0.927
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.919,
+                0.121,
+                0.984,
+                0.88
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.2,
+                0.819,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.251,
+                0.811,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.311,
+                0.783,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.398,
+                0.436,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.461,
+                0.225,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.499,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.614,
+                0.518,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.631,
+                0.511,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.647,
+                0.509,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.666,
+                0.466,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.82,
+                0.237,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.866,
+                0.229,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.127,
+                0.372,
+                0.143
+            ],
+            "angle": 0,
+            "content": "© 2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.776,
+                0.127,
+                0.876,
+                0.141
+            ],
+            "angle": 0,
+            "content": "SIP/2026/062"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.396,
+                0.195,
+                0.603,
+                0.23
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Paper\nMiddle East and Central Asia"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.142,
+                0.246,
+                0.856,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Beyond the Policy Rate: A Broader View of Monetary and Financial Conditions, Kyrgyz Republic Prepared by Nasir Rao and Anvar Muratkhanov*"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.328,
+                0.299,
+                0.67,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Authorized for distribution by Dmitry Gershenson\nJuly 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.368,
+                0.846,
+                0.421
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 14, 2026. This paper is also published separately as IMF Country Report No 26/164.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.461,
+                0.871,
+                0.566
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: This study assesses the effective monetary stance in the Kyrgyz Republic amid excess liquidity, rapid household credit growth, and elevated inflation pressures. It develops a monthly Financial Conditions Index covering liquidity, market rates, monetary aggregates, credit dynamics, and external financial factors. The results show a marked easing in financial conditions since early 2024, driven by strong credit and money growth and lower market rates, despite a relatively tight policy rate. The findings underscore the need for stronger liquidity management, corridor operations, and targeted macroprudential tools.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.599,
+                0.884,
+                0.652
+            ],
+            "angle": 0,
+            "content": "RECOMMENDED CITATION: Rao, N.H. and Muratkhanov, A. (2026). Beyond the Policy Rate: A Broader View of Monetary and Financial Conditions, Kyrgyz Republic, IMF Selected Issues Paper, Middle East and Central Asia Department, SIP/2026/062. Washington, DC: International Monetary Fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.127,
+                0.679,
+                0.327,
+                0.696
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.385,
+                0.679,
+                0.565,
+                0.696
+            ],
+            "angle": 0,
+            "content": "E52, E43, E51, E66, G32",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.127,
+                0.722,
+                0.206,
+                0.738
+            ],
+            "angle": 0,
+            "content": "Keywords:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.385,
+                0.713,
+                0.785,
+                0.748
+            ],
+            "angle": 0,
+            "content": "Monetary Policy, Interest Rates, Money Supply, Financial Conditions, and Liquidity Management",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.764,
+                0.304,
+                0.78
+            ],
+            "angle": 0,
+            "content": "Author's E-Mail Address:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.385,
+                0.764,
+                0.666,
+                0.781
+            ],
+            "angle": 0,
+            "content": "NRao@imf.org, AMuratkhanov@imf.org",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.401,
+                0.197,
+                0.598,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.214,
+                0.601,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.248,
+                0.853,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.267,
+                0.676,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.332,
+                0.3,
+                0.667,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.465,
+                0.318,
+                0.534,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.13,
+                0.37,
+                0.844,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.389,
+                0.798,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.405,
+                0.839,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.463,
+                0.868,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.48,
+                0.849,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.498,
+                0.851,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.515,
+                0.866,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.533,
+                0.835,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.55,
+                0.716,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.6,
+                0.881,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.619,
+                0.865,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.635,
+                0.664,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.681,
+                0.325,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.387,
+                0.681,
+                0.562,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.13,
+                0.724,
+                0.205,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.387,
+                0.715,
+                0.782,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.387,
+                0.732,
+                0.65,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.13,
+                0.766,
+                0.302,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.766,
+                0.663,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.112,
+                0.195,
+                0.524,
+                0.222
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPERS"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.113,
+                0.301,
+                0.78,
+                0.426
+            ],
+            "angle": 0,
+            "content": "Beyond the Policy Rate: A\nBroader View of Monetary and\nFinancial Conditions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.455,
+                0.357,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Kyrgyz Republic",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.569,
+                0.612,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Prepared by Nasir Rao and Anvar Muratkhanov \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.112,
+                0.911,
+                0.802,
+                0.927
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  The authors would like to thank Subir Lall and Dmitry Gershenson for their helpful comments and valuable guidance."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.302,
+                0.692,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.345,
+                0.778,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.39,
+                0.569,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.456,
+                0.354,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.571,
+                0.608,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.081,
+                0.017,
+                0.177,
+                0.097
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.234,
+                0.063,
+                0.828,
+                0.09
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.22,
+                0.124,
+                0.651,
+                0.161
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.218,
+                0.183,
+                0.416,
+                0.204
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.207,
+                0.153,
+                0.225
+            ],
+            "angle": 0,
+            "content": "May 14, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.25,
+                0.371,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Approved By",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.272,
+                0.371,
+                0.289
+            ],
+            "angle": 0,
+            "content": "Middle East and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.436,
+                0.252,
+                0.872,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Prepared By Nasir Rao and Anvar Muratkhanov (all MCD)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.291,
+                0.339,
+                0.307
+            ],
+            "angle": 0,
+            "content": "Central Asia",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.31,
+                0.341,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Department",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.242,
+                0.355,
+                0.384,
+                0.378
+            ],
+            "angle": 0,
+            "content": "CONTENTS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.218,
+                0.4,
+                0.861,
+                0.419
+            ],
+            "angle": 0,
+            "content": "BEYOND THE POLICY RATE: A BROADER VIEW OF MONETARY AND FINANCIAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.424,
+                0.884,
+                0.442
+            ],
+            "angle": 0,
+            "content": "CONDITIONS 2",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.447,
+                0.882,
+                0.465
+            ],
+            "angle": 0,
+            "content": "A. Introduction 2",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.469,
+                0.883,
+                0.488
+            ],
+            "angle": 0,
+            "content": "B. Methodology and Results 4",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.216,
+                0.491,
+                0.883,
+                0.511
+            ],
+            "angle": 0,
+            "content": "C. Conclusion and Policy Recommendations ____ 7",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.217,
+                0.531,
+                0.286,
+                0.55
+            ],
+            "angle": 0,
+            "content": "ANNEX"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.216,
+                0.551,
+                0.883,
+                0.57
+            ],
+            "angle": 0,
+            "content": "I. Methodology ____ 9",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.218,
+                0.588,
+                0.326,
+                0.606
+            ],
+            "angle": 0,
+            "content": "REFERENCES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.607,
+                0.884,
+                0.626
+            ],
+            "angle": 0,
+            "content": "References 13",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.126,
+                0.651,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.187,
+                0.414,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.208,
+                0.151,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.237,
+                0.25,
+                0.37,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.238,
+                0.272,
+                0.368,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.436,
+                0.253,
+                0.871,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.238,
+                0.293,
+                0.336,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.239,
+                0.313,
+                0.338,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.24,
+                0.355,
+                0.385,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.404,
+                0.858,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.425,
+                0.33,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.868,
+                0.426,
+                0.882,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.449,
+                0.336,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.868,
+                0.449,
+                0.881,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.47,
+                0.435,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.868,
+                0.472,
+                0.881,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.495,
+                0.552,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.869,
+                0.495,
+                0.881,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.535,
+                0.282,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.552,
+                0.337,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.87,
+                0.555,
+                0.88,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.593,
+                0.322,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.608,
+                0.305,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.858,
+                0.61,
+                0.882,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.116,
+                0.096,
+                0.802,
+                0.155
+            ],
+            "angle": 0,
+            "content": "BEYOND THE POLICY RATE: A BROADER VIEW OF MONETARY AND FINANCIAL CONDITIONS \\( ^{1} \\)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.175,
+                0.875,
+                0.345
+            ],
+            "angle": 0,
+            "content": "This study assesses the effective monetary stance in the Kyrgyz Republic amid persistent excess liquidity, rapid household credit growth, and elevated inflation pressures. It constructs a monthly Financial Conditions Index (FCI) that captures liquidity conditions, market rates, monetary aggregates, credit dynamics, and external financial factors. The results point to a marked easing in financial conditions since early 2024, driven by strong credit and monetary expansion and declining market rates, despite a relatively tight policy rate. Neutral rate estimates and the real policy rate gap corroborate that monetary conditions have at times remained accommodative in real terms, underscoring the need to complement interest-rate policy with stronger liquidity management, improved corridor operations, and targeted macroprudential tools to safeguard price stability.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.358,
+                0.287,
+                0.376
+            ],
+            "angle": 0,
+            "content": "A. Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.393,
+                0.861,
+                0.431
+            ],
+            "angle": 0,
+            "content": "1. The Kyrgyz Republic's post-COVID experience shows why monetary stance must be assessed beyond the policy rate. Although the National Bank of the Kyrgyz Republic (NBKR) has",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.432,
+                0.436,
+                0.696
+            ],
+            "angle": 0,
+            "content": "maintained a relatively tight headline policy rate, the operational stance – captured by short-term market rates – has remained accommodative amid persistent excess liquidity driven by NBKR's domestic gold purchases, capitalization of state-owned banks to support directed lending, and the placement of government deposits in the banking system. As shown in Text Figure 1, broad money growth has accelerated, with M2X reaching 50 percent of GDP, indicating a sizable expansion of system-wide liquidity. Consequently, money",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.449,
+                0.44,
+                0.879,
+                0.68
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.697,
+                0.868,
+                0.753
+            ],
+            "angle": 0,
+            "content": "market rates (interbank rate) have stayed well below the policy rate, implying looser effective financing conditions despite a restrictive signal. This wedge weakens transmission and complicates interest-rate calibration amid strong domestic demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.769,
+                0.879,
+                0.864
+            ],
+            "angle": 0,
+            "content": "2. Easy liquidity conditions have fueled rapid credit growth, sustaining demand and price pressures. Following the initial cost-push inflation surge triggered by external shocks in 2020–22, inflation dynamics increasingly reflects domestic demand pressures. Credit growth has outpaced nominal GDP, with households relying more heavily on short-term consumer loans and mortgages. New lending has also shifted sharply toward households, whose share in total new credit reached",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.116,
+                0.886,
+                0.505,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Prepared by Nasir Rao and Anvar Muratkhanov (all MCD)."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.116,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.101,
+                0.799,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.133,
+                0.722,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.176,
+                0.818,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.195,
+                0.831,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.213,
+                0.872,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.234,
+                0.824,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.252,
+                0.845,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.27,
+                0.806,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.29,
+                0.798,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.31,
+                0.815,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.327,
+                0.808,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.357,
+                0.284,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.394,
+                0.85,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.414,
+                0.857,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.434,
+                0.401,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.452,
+                0.392,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.471,
+                0.411,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.49,
+                0.39,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.509,
+                0.388,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.527,
+                0.371,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.547,
+                0.41,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.566,
+                0.374,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.585,
+                0.433,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.604,
+                0.426,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.623,
+                0.424,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.642,
+                0.41,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.66,
+                0.429,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.68,
+                0.394,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.697,
+                0.821,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.717,
+                0.865,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.736,
+                0.537,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.77,
+                0.137,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.771,
+                0.876,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.789,
+                0.855,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.808,
+                0.849,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.827,
+                0.866,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.847,
+                0.854,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.064
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.878,
+                0.15
+            ],
+            "angle": 0,
+            "content": "historically high levels in 2024–25, while corporate lending expanded more moderately. As shown in Text Figure 2, total new bank lending now exceeds 25 percent of GDP, underscoring rapid financial deepening but also rising macro-financial vulnerabilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.165,
+                0.882,
+                0.337
+            ],
+            "angle": 0,
+            "content": "3. Credit expansion has been accompanied by a rapid buildup of excess liquidity, which is sterilized primarily through short-term instruments. While the NBKR's absorption operations have been extensive, heavy reliance on overnight placements makes sterilization highly reversible and vulnerable to shifts in banks' behavior and market sentiment. Excess liquidity rose sharply during 2021–25, from around KGS 30 billion (3.8 percent of GDP) in 2021 to nearly KGS 150 billion (9.2 percent of GDP) most recently. Although this liquidity is formally absorbed by the NBKR, more than 80 percent is placed in overnight deposits and can quickly re-enter the system through renewed credit expansion (Text Figure 3). This combination can keep financing conditions easier than intended, reinforce demand pressures, and complicate the pursuit of price stability.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.119,
+                0.347,
+                0.511,
+                0.589
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.523,
+                0.35,
+                0.888,
+                0.385
+            ],
+            "angle": 0,
+            "content": "Text Figure 3. Excess Liquidity and Structure of Sterilization (in bn KGS)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.515,
+                0.377,
+                0.894,
+                0.59
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.609,
+                0.879,
+                0.78
+            ],
+            "angle": 0,
+            "content": "4. These developments highlight the limitations of using the policy rate alone to assess monetary stance. With a persistent structural liquidity surplus, the NBKR has effectively operated as a net borrower from banks, with no refinancing to banks since 2022, underscoring ample liquidity in the system (Text Figure 4). In this environment, the interest rate corridor floor has become the operative anchor for short-term market rates. When the corridor floor was lowered, interbank rates and short-term yields fell even though the headline policy rate was unchanged (Text Figure 5). As a result, the policy signal became divergent from the financing conditions faced by households and firms in practice (Text Box 1), underscoring the need for a broader measure – such as an FCI – that captures liquidity, market rates, credit dynamics, and external financial influences.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.095,
+                0.875,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.113,
+                0.864,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.546,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.166,
+                0.138,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.167,
+                0.879,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.186,
+                0.848,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.205,
+                0.854,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.222,
+                0.826,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.244,
+                0.859,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.262,
+                0.862,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.281,
+                0.815,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.3,
+                0.844,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.319,
+                0.785,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.61,
+                0.138,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.61,
+                0.861,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.629,
+                0.877,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.648,
+                0.874,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.667,
+                0.828,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.686,
+                0.867,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.705,
+                0.868,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.725,
+                0.856,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.743,
+                0.86,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.762,
+                0.732,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.241,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.109,
+                0.093,
+                0.441,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Text Figure 4. Composition of Net NBKR"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.111,
+                0.112,
+                0.487,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Liabilities to Banks (borrowing from banks minus lending"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.11,
+                0.128,
+                0.497,
+                0.277
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.109,
+                0.279,
+                0.374,
+                0.293
+            ],
+            "angle": 0,
+            "content": "Source: NBKR and IMF staff calculations."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.511,
+                0.092,
+                0.889,
+                0.274
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.278,
+                0.778,
+                0.294
+            ],
+            "angle": 0,
+            "content": "Source: NBKR and IMF staff calculations."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.196,
+                0.317,
+                0.802,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Text Box 1. Why the Policy Rate Loses Traction Under Surplus Liquidity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.352,
+                0.867,
+                0.465
+            ],
+            "angle": 0,
+            "content": "In an interest rate corridor system, the policy rate is meant to guide short-term market rates through active interbank trading. This mechanism works best when banks have a structural need to borrow liquidity. When the system is in persistent surplus, banks hold ample reserves and interbank activity becomes thin. Instead of borrowing from each other, banks place excess funds at the central bank deposit facility, earning the corridor floor rate. As a result, money market rates are pulled toward the floor rather than the headline policy rate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.48,
+                0.867,
+                0.615
+            ],
+            "angle": 0,
+            "content": "In such conditions, the central bank effectively becomes a net borrower from the banking system and the corridor floor – not the policy rate – anchors short-term pricing. Unless excess liquidity is absorbed durably, policy rate changes may have limited influence on interbank rates, short-term yields, and the financing conditions faced by households and firms. Empirical evidence supports this mechanism, excess liquidity weakens monetary transmission (Saxegaard, 2006), large inflows can delink funding costs from the policy rate (Barajas et al., 2016), and banks with higher reserves may reduce credit supply less after rate hikes (Fricke et al., 2024).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.647,
+                0.882,
+                0.838
+            ],
+            "angle": 0,
+            "content": "5. This study develops a Financial Conditions Index (FCI) for the Kyrgyz Republic to provide a high-frequency, comprehensive gauge of the effective monetary stance beyond the policy rate. To support and interpret the FCI signals, it also presents an indicative estimate of the real neutral interest rate and compares it with the ex-ante real policy rate. Together, these tools help assess whether overall monetary conditions are effectively restrictive or accommodative in real terms and whether the policy signal is aligned with financing conditions faced by households and firms. This integrated framework is particularly useful in episodes when excess liquidity and strong credit growth weaken the pass-through of the policy rate to market rates and inflation outcomes. By combining a broad conditions-based measure with a real-rate benchmark, it helps identify when tightening “on paper” may not translate into tighter conditions in practice.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.85,
+                0.416,
+                0.87
+            ],
+            "angle": 0,
+            "content": "B. Methodology and Results"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.886,
+                0.338,
+                0.902
+            ],
+            "angle": 0,
+            "content": "Financial Condition Index"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.116,
+                0.935,
+                0.131,
+                0.954
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.095,
+                0.438,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.198,
+                0.317,
+                0.799,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.353,
+                0.823,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.371,
+                0.856,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.391,
+                0.824,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.411,
+                0.856,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.429,
+                0.865,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.448,
+                0.605,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.481,
+                0.86,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.501,
+                0.861,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.52,
+                0.856,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.539,
+                0.853,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.558,
+                0.858,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.576,
+                0.864,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.596,
+                0.617,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.648,
+                0.138,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.648,
+                0.828,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.668,
+                0.874,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.687,
+                0.855,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.706,
+                0.876,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.726,
+                0.833,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.744,
+                0.855,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.761,
+                0.859,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.783,
+                0.876,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.801,
+                0.846,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.82,
+                0.68,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.85,
+                0.414,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.887,
+                0.335,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.883,
+                0.245
+            ],
+            "angle": 0,
+            "content": "6. The FCI draws on methodologies used in recent IMF analytical work. The index is constructed at monthly frequency and combines indicators covering policy instruments, market interest rates, monetary aggregates, credit dynamics, exchange rate movements, and global financial conditions (Text Table 1). \\( ^{2} \\)  Each series is transformed so that higher values indicate tighter financial conditions and then standardized using \"Z\" scores to ensure comparability across variables measured in different units. The resulting FCI provides a consistent measure of how overall financial conditions evolve over time and complements the neutral-rate benchmark in assessing whether the effective monetary stance is restrictive or accommodative in practice.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.12,
+                0.256,
+                0.879,
+                0.45
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"6\">Text Table 1. Components of Financial Condition Index.</td></tr><tr><td>Policy Rate</td><td>Market Interest rates</td><td>Monetary Aggregates</td><td>Banking Credit</td><td>Exchange rate</td><td>External Indicators</td></tr><tr><td>NBKR&#x27;s policy rate</td><td>NBKR&#x27;s interbank rate, government securities rate, banking lending rate, and banking deposit rate</td><td>Monetary base and broad money</td><td>Business credits and household credits</td><td>Nominal effective exchange rate</td><td>Fed rate</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.46,
+                0.79,
+                0.478
+            ],
+            "angle": 0,
+            "content": "7. The weights of the FCI components are derived using three complementary"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.479,
+                0.871,
+                0.67
+            ],
+            "angle": 0,
+            "content": "approaches. An equal-weight specification provides a transparent baseline, treating each indicator as equally important. Principal component analysis (PCA) is then used to extract the common underlying factor across the data, capturing shared variation in financial conditions. Finally, structural VAR (SVAR) assigns weights based on the cumulative impact of each component on real GDP growth. To keep the SVAR tractable given the large number of underlying indicators, it is implemented in two stages: PCA is first applied within key groups (market interest rates, monetary aggregates, and banking credit) to construct representative sub-indices, which are then included in the SVAR alongside real GDP growth. This multi-method approach enhances robustness by combining a transparent benchmark, a purely statistical summary measure, and an economically interpretable weighting scheme based on the estimated output effects of financial shocks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.684,
+                0.877,
+                0.799
+            ],
+            "angle": 0,
+            "content": "8. Results across all three approaches point to a notable easing in financial conditions from early 2024 (Figure 6). The FCI decomposition suggests that this easing has been driven mainly by faster credit growth and monetary expansion, alongside a decline in market interest rates, even as the policy rate contribution remained tightening (Figure 7). This pattern indicates that the restrictive policy signal was partly offset by liquidity and credit dynamics, leaving overall financing conditions more accommodative than implied by the policy rate alone.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.858,
+                0.872,
+                0.905
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  Policy rate, market interest rates, and external indicators are expressed in percent levels; monetary aggregates and banking credit are expressed as percent of GDP and measured as year-over-year growth; and the exchange rate is measured as month-over-month growth."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.598,
+                0.939,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.935,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.094,
+                0.136,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.095,
+                0.822,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.114,
+                0.84,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.879,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.152,
+                0.865,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.17,
+                0.805,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.189,
+                0.871,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.21,
+                0.87,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.229,
+                0.639,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.461,
+                0.786,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.481,
+                0.866,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.5,
+                0.822,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.52,
+                0.804,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.539,
+                0.862,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.557,
+                0.828,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.575,
+                0.861,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.596,
+                0.867,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.615,
+                0.808,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.633,
+                0.844,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.652,
+                0.799,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.685,
+                0.137,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.686,
+                0.849,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.705,
+                0.831,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.725,
+                0.874,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.743,
+                0.858,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.763,
+                0.855,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.78,
+                0.654,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.461,
+                0.547,
+                0.735,
+                0.561
+            ],
+            "angle": 0,
+            "content": "Source: Country authorities and IMF staff calculations."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.049,
+                0.241,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.125,
+                0.092,
+                0.498,
+                0.277
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.277,
+                0.279,
+                0.29
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.523,
+                0.093,
+                0.795,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Text Figure 7. FCI Decomposition (higher value = tighter financial conditions)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.521,
+                0.109,
+                0.889,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.523,
+                0.277,
+                0.675,
+                0.29
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.317,
+                0.875,
+                0.355
+            ],
+            "angle": 0,
+            "content": "9. Lower FCI values – indicating looser financial conditions – are associated with higher subsequent inflation. With headline inflation already above the NBKR's medium-term target range",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.356,
+                0.439,
+                0.581
+            ],
+            "angle": 0,
+            "content": "of 5–7 percent, this pattern suggests that inflation persistence reflects not only exogenous cost-push shocks but also sustained domestic demand supported by still-easy financial conditions. This is confirmed by both the visual relationship in Text Figure 8 and by a simple regression where the sixth lag of the FCI is statistically significant for inflation. In this environment, excess liquidity and strong credit dynamics can weaken the pass-through of the policy rate to market",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.453,
+                0.361,
+                0.871,
+                0.565
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.582,
+                0.859,
+                0.638
+            ],
+            "angle": 0,
+            "content": "pricing and borrowing conditions. The FCI therefore provides a useful leading indicator of inflationary pressures and complements the policy rate in assessing the effective monetary stance and near-term inflation risks.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.654,
+                0.271,
+                0.671
+            ],
+            "angle": 0,
+            "content": "Real Neutral Rate"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.688,
+                0.864,
+                0.821
+            ],
+            "angle": 0,
+            "content": "10. Rolling Taylor-rule estimates suggest that the current real neutral interest rate is around 2 percent. This estimation focuses on the period after the NBKR introduced its medium-term inflation objective of 5–7 percent and strengthened its interest rate based monetary policy framework. Results also suggest that the neutral rate was higher earlier in the sample averaging around 3 percent during 2014-19, before gradually declining in recent years (Text Figure 9). This is broadly consistent with earlier evidence for the Kyrgyz Republic – range of 3.5 to 4 percent at the end of 2019 determined by Teodoru and Toktonalieva (2020).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.316,
+                0.86,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.336,
+                0.874,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.356,
+                0.432,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.375,
+                0.399,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.395,
+                0.404,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.414,
+                0.439,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.432,
+                0.392,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.45,
+                0.431,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.471,
+                0.361,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.489,
+                0.424,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.509,
+                0.417,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.527,
+                0.405,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.547,
+                0.415,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.565,
+                0.434,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.584,
+                0.798,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.604,
+                0.856,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.622,
+                0.335,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.655,
+                0.268,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.689,
+                0.83,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.71,
+                0.851,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.728,
+                0.842,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.746,
+                0.842,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.766,
+                0.861,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.785,
+                0.854,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.805,
+                0.585,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.872,
+                0.245
+            ],
+            "angle": 0,
+            "content": "11. The real policy rate gap, defined as the difference between the ex-ante real policy rate \\( ^{3} \\) and the estimated real neutral rate, is currently negative, suggesting that monetary conditions remain accommodative in real terms despite elevated nominal policy rates (Text Figure 10). Movements in the real policy rate gap closely track the FCI, reinforcing the conclusion that effective financing conditions have loosened at times even when the policy rate signal remained tight. By contrast, the positive real rate gap in 2023–24 coincided with a tightening in financial conditions and a decline in inflation toward its medium-term target, underscoring the effectiveness of a sufficiently restrictive stance when real rates rise above the neutral benchmark.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.121,
+                0.257,
+                0.514,
+                0.453
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.52,
+                0.257,
+                0.9,
+                0.452
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.469,
+                0.57,
+                0.489
+            ],
+            "angle": 0,
+            "content": "C. Conclusion and Policy Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.505,
+                0.876,
+                0.676
+            ],
+            "angle": 0,
+            "content": "12. Overall, the analysis suggests that financial conditions in the Kyrgyz Republic have been more accommodative than implied by the headline policy rate alone. The constructed FCI indicates that conditions have eased since early 2024 despite a relatively tight policy signal, consistent with the decline in the real policy rate gap toward accommodative territory in real terms. Ample liquidity, declining market interest rates, and rapid household credit growth have supported domestic demand and weakened the pass-through of monetary tightening to market rates and borrowing conditions. In this context, maintaining a sufficiently restrictive real stance remains important to curb inflationary pressures, particularly amid strengthening demand and the announced increases in public sector wages.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.69,
+                0.881,
+                0.825
+            ],
+            "angle": 0,
+            "content": "13. Strengthening monetary policy transmission will require a multi-instrument policy response that addresses liquidity conditions, operational implementation, and credit dynamics. First, improving the durability of liquidity absorption is critical under persistent structural surplus: greater use of longer-tenor sterilization instruments, stronger liquidity forecasting, and reduced reliance on overnight operations would limit reversibility and prevent excess funds from quickly re-entering the system during demand upswings. Second, refining the corridor framework – including a higher corridor floor and a more symmetric design – would help anchor money market",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.845,
+                0.846,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\) The real policy rate is calculated by adjusting the nominal policy rate by the NBKR's one-year-ahead inflation forecasts, which incorporate inflation expectations of domestic households and firms collected by the NSC and subsequently processed by the NBKR. Inflation forecast figures are obtained from the quarterly Monetary Policy Reports published on the NBKR's website."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.935,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.093,
+                0.838,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.113,
+                0.808,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.132,
+                0.859,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.152,
+                0.834,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.17,
+                0.845,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.19,
+                0.829,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.21,
+                0.866,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.227,
+                0.745,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.47,
+                0.567,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.505,
+                0.155,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.506,
+                0.844,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.525,
+                0.875,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.544,
+                0.807,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.564,
+                0.869,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.583,
+                0.867,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.602,
+                0.839,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.621,
+                0.822,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.64,
+                0.794,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.659,
+                0.455,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.691,
+                0.171,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.692,
+                0.844,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.712,
+                0.802,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.73,
+                0.877,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.749,
+                0.838,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.769,
+                0.848,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.788,
+                0.875,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.807,
+                0.864,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.872,
+                0.265
+            ],
+            "angle": 0,
+            "content": "rates closer to the intended stance rather than the lower bound. Third, stronger coordination between the NBKR and the public sector- particularly the Ministry of Finance, given its role in state-owned bank capitalization and fiscal cash management – would reduce autonomous liquidity fluctuations through improved information sharing, more predictable placement of government deposits, and better alignment of fiscal operations with monetary objectives. Finally, given rapid household credit expansion, targeted macroprudential measures could complement monetary policy by containing demand-driven pressures and limiting risks to price stability. Together, these measures would narrow the wedge between the policy signal and effective financing conditions, strengthening the overall effectiveness of monetary policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.096,
+                0.825,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.114,
+                0.869,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.823,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.152,
+                0.845,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.17,
+                0.849,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.19,
+                0.831,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.209,
+                0.854,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.845,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.246,
+                0.562,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.366,
+                0.094,
+                0.632,
+                0.117
+            ],
+            "angle": 0,
+            "content": "Annex I. Methodology"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.131,
+                0.431,
+                0.152
+            ],
+            "angle": 0,
+            "content": "A. Estimating the FCI Weights"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.167,
+                0.428,
+                0.185
+            ],
+            "angle": 0,
+            "content": "Principal Component Analysis (PCA)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.202,
+                0.879,
+                0.297
+            ],
+            "angle": 0,
+            "content": "1. PCA is used to summarize a large set of financial indicators into a small number of common factors while retaining as much information as possible. Technically, principal components are obtained from the eigen-decomposition of the correlation matrix of standardized variables. The first principal component captures the largest share of common variation across indicators and is interpreted as the PCA-based measure of overall financial conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.312,
+                0.884,
+                0.445
+            ],
+            "angle": 0,
+            "content": "The eigenvalue of the first principal component is 4.22; with eleven standardized indicators, this implies that it explains about 38 percent of the total variance. Text Table 1 reports the corresponding factor loadings, which indicate that the common factor is driven primarily by domestic interest rates and liquidity conditions, reflecting their dominant contribution to overall variation in the data. Credit variables also load positively but play a more secondary role, while the exchange rate and external financial conditions contribute relatively little. Overall, the PCA-based FCI therefore mainly reflects domestic monetary and liquidity dynamics in the Kyrgyz Republic.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.302,
+                0.456,
+                0.697,
+                0.893
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"2\">Table 1. Variables Loadings in PC1.</td></tr><tr><td>Indicator</td><td>Loadings</td></tr><tr><td>Policy Rate</td><td></td></tr><tr><td>NBKR&#x27;s Policy Rate</td><td>0.422</td></tr><tr><td>Market Interest Rates</td><td></td></tr><tr><td>NBKR&#x27;s Interbank Rate</td><td>0.406</td></tr><tr><td>Government Securities Rate</td><td>0.361</td></tr><tr><td>Banking Lending Rate</td><td>-0.000</td></tr><tr><td>Banking Deposit Rate</td><td>0.263</td></tr><tr><td>Monetary Aggregates</td><td></td></tr><tr><td>Monetary Base</td><td>0.415</td></tr><tr><td>Broad Money</td><td>0.417</td></tr><tr><td>Banking Credit</td><td></td></tr><tr><td>Business Credits</td><td>0.233</td></tr><tr><td>Household Credits</td><td>0.218</td></tr><tr><td>Exchange Rate</td><td></td></tr><tr><td>NEER</td><td>0.015</td></tr><tr><td>External Factor</td><td></td></tr><tr><td>FED rate</td><td>-0.095</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.935,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.368,
+                0.092,
+                0.629,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.131,
+                0.428,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.169,
+                0.425,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.203,
+                0.142,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.203,
+                0.871,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.222,
+                0.828,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.241,
+                0.876,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.261,
+                0.819,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.28,
+                0.641,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.314,
+                0.841,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.332,
+                0.767,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.351,
+                0.81,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.37,
+                0.845,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.39,
+                0.861,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.408,
+                0.879,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.427,
+                0.804,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.093,
+                0.249,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Structural VAR"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.127,
+                0.878,
+                0.221
+            ],
+            "angle": 0,
+            "content": "2. The structural VAR (SVAR) framework is used to derive economically grounded weights of FCI. A two-stage approach is adopted. First, PCA is applied within key blocks to construct composite indicators for market rates, monetary aggregates, and banking credit. These composites are then included in a monthly SVAR together with the policy rate, the exchange rate (NEER), the U.S. federal funds rate, and real GDP growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.237,
+                0.456,
+                0.255
+            ],
+            "angle": 0,
+            "content": "The estimated SVAR has the following form:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.374,
+                0.272,
+                0.626,
+                0.29
+            ],
+            "angle": 0,
+            "content": "\\[\nA y _ {t} = c + B (L) y _ {t - 1} + D x _ {t} + \\varepsilon_ {t},\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.305,
+                0.871,
+                0.361
+            ],
+            "angle": 0,
+            "content": "where  \\( y_{t} \\)  is the vector of variables in the system, A is the contemporaneous impact matrix,  \\( B(L) \\)  is a matrix polynomial in the lag operator with six lags,  \\( x_{t} \\)  is a vector of exogenous controls, and  \\( \\varepsilon_{t} \\)  is the vector of structural shocks. All variables are expressed in standardized form. The system vector is:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.144,
+                0.377,
+                0.852,
+                0.398
+            ],
+            "angle": 0,
+            "content": "\\[\ny _ {t} = [ f e d \\_ r a t e, n e e r _ {t}, p o l i c y, m a r k e t \\_ r a t e s _ {t}, m o n e t \\_ a g g r, b a n k \\_ c r e d i t _ {t}, g d p _ {g r o w t h _ {t}} ] ^ {\\prime}.\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.411,
+                0.869,
+                0.468
+            ],
+            "angle": 0,
+            "content": "The model is estimated over period 2002M01–2025M6 and includes two exogenous dummy variables: (i) a COVID-19 dummy and (ii) a post-2022 dummy capturing the period when the war in Ukraine significantly boosted domestic economic activity through the re-export flows.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.483,
+                0.374,
+                0.5
+            ],
+            "angle": 0,
+            "content": "Identification and restrictions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.517,
+                0.88,
+                0.555
+            ],
+            "angle": 0,
+            "content": "3. Identification follows a recursive (Cholesky) structure, with A restricted to be lower triangular with ones on the diagonal (variables ordered from most exogenous to most endogenous):",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.335,
+                0.568,
+                0.661,
+                0.683
+            ],
+            "angle": 0,
+            "content": "\\[\nA = \\left( \\begin{array}{c c c c c c c} 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ a _ {2 1} & 1 & 0 & 0 & 0 & 0 & 0 \\\\ a _ {3 1} & a _ {3 2} & 1 & 0 & 0 & 0 & 0 \\\\ a _ {4 1} & a _ {4 2} & a _ {4 3} & 1 & 0 & 0 & 0 \\\\ a _ {5 1} & a _ {5 2} & a _ {5 3} & a _ {5 4} & 1 & 0 & 0 \\\\ a _ {6 1} & a _ {6 2} & a _ {6 3} & a _ {6 4} & a _ {6 5} & 1 & 0 \\\\ a _ {7 1} & a _ {7 2} & a _ {7 3} & a _ {7 4} & a _ {7 5} & a _ {7 6} & 1 \\end{array} \\right)\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.7,
+                0.282,
+                0.717
+            ],
+            "angle": 0,
+            "content": "The ordering used is:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.145,
+                0.728,
+                0.864,
+                0.804
+            ],
+            "angle": 0,
+            "content": "1. Fed rate → 2) NEER → 3) Policy rate → 4) Market rates (PCA composite) → 5) Monetary aggregates (PCA composite) → 6) Banking Credits (PCA composite) → 7) Real GDP growth. This implies GDP is allowed to respond contemporaneously to all financial shocks, while external variable is most exogenous.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.82,
+                0.871,
+                0.895
+            ],
+            "angle": 0,
+            "content": "In addition to the contemporaneous recursive structure, we imposed a block-exogeneity restriction reflecting the small-open-economy assumption. Although included in the system vector to capture external financial shocks, the U.S. federal funds rate is treated as strictly block-exogenous: its equation contains only its own lags (and a constant), while coefficients on all lagged domestic",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.168,
+                0.308,
+                0.187,
+                0.323
+            ],
+            "latex": "",
+            "score": 0.8455
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.801,
+                0.306,
+                0.838,
+                0.322
+            ],
+            "latex": "",
+            "score": 0.4657
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.811,
+                0.326,
+                0.84,
+                0.341
+            ],
+            "latex": "",
+            "score": 0.7908
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.095,
+                0.245,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.128,
+                0.139,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.128,
+                0.858,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.148,
+                0.875,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.167,
+                0.851,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.186,
+                0.873,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.204,
+                0.366,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.238,
+                0.451,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.306,
+                0.167,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.188,
+                0.306,
+                0.8,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.839,
+                0.306,
+                0.868,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.325,
+                0.811,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.841,
+                0.325,
+                0.869,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.345,
+                0.854,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.412,
+                0.817,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.432,
+                0.866,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.451,
+                0.767,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.485,
+                0.369,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.519,
+                0.876,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.537,
+                0.801,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.7,
+                0.278,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.729,
+                0.831,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.749,
+                0.862,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.768,
+                0.839,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.786,
+                0.453,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.82,
+                0.868,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.841,
+                0.867,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.859,
+                0.818,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.879,
+                0.827,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.862,
+                0.148
+            ],
+            "angle": 0,
+            "content": "variables and dummy variables are restricted to zero. This ensures that innovations to the Fed rate reflect purely external financial shocks, with no feedback from the domestic economy on any horizon.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.165,
+                0.879,
+                0.222
+            ],
+            "angle": 0,
+            "content": "SVAR-based weights are obtained from the 12-month cumulative impulse response of real GDP to a one-standard-deviation shock in each financial indicator. This assigns larger weights to indicators whose shocks have a stronger cumulative impact on real activity over one year.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.237,
+                0.884,
+                0.312
+            ],
+            "angle": 0,
+            "content": "The SVAR results indicate that banking credit is the dominant driver of real activity, receiving the largest weight in the FCI. The policy rate and the exchange rate play a secondary but still important role, while market interest rates and external indicator contribute more moderately. The market rates show the lowest effect.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.31,
+                0.326,
+                0.689,
+                0.564
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"2\">Text Table 2. SVAR-based weights.</td></tr><tr><td>Indicator</td><td>Weight</td></tr><tr><td>Policy rate</td><td>0.263</td></tr><tr><td>Market rates Indicator</td><td>0.016</td></tr><tr><td>Monetary aggregates Indicator</td><td>0.082</td></tr><tr><td>Banking credit indicator</td><td>0.403</td></tr><tr><td>NEER</td><td>0.132</td></tr><tr><td>Fed rate</td><td>0.099</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.595,
+                0.446,
+                0.615
+            ],
+            "angle": 0,
+            "content": "B. Estimating Real Neutral Rate"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.631,
+                0.864,
+                0.688
+            ],
+            "angle": 0,
+            "content": "The estimation is based on a standard inertial Taylor rule in which the policy rate responds to deviations of inflation from its target and output from potential, while also displaying interest-rate smoothing. The rule is specified as:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.285,
+                0.703,
+                0.712,
+                0.722
+            ],
+            "angle": 0,
+            "content": "\\[\ni _ {t} = \\rho i _ {t - 1} + (1 - \\rho) [ r ^ {*} + \\pi^ {*} + \\alpha (\\pi_ {t} - \\pi^ {*}) + \\beta \\tilde {y} _ {t} ] + \\varepsilon_ {t},\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.771,
+                0.868,
+                0.847
+            ],
+            "angle": 0,
+            "content": "where  \\( i_{t} \\)  denotes the nominal policy rate,  \\( \\pi_{t} \\)  the inflation rate,  \\( \\pi^{*} \\)  the inflation target, and  \\( \\tilde{y}_{t} \\)  the output gap. The parameter  \\( \\rho \\)  captures policy inertia, while  \\( \\alpha \\)  and  \\( \\beta \\)  measure the response to the inflation gap and the output gap, respectively. The real neutral interest rate  \\( r^{*} \\)  is defined as the real rate that prevails when inflation is at its target and the output gap is closed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.861,
+                0.78,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Under these neutral conditions,  \\( \\pi_{t} = \\pi^{*} \\)  and  \\( \\tilde{y}_{t} = 0 \\) , the steady-state policy rate satisfies",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.939,
+                0.875,
+                0.955
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.168,
+                0.773,
+                0.183,
+                0.788
+            ],
+            "latex": "",
+            "score": 0.864
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.325,
+                0.793,
+                0.341,
+                0.808
+            ],
+            "latex": "",
+            "score": 0.7744
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.433,
+                0.774,
+                0.451,
+                0.788
+            ],
+            "latex": "",
+            "score": 0.817
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.583,
+                0.773,
+                0.602,
+                0.787
+            ],
+            "latex": "",
+            "score": 0.6329
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.607,
+                0.791,
+                0.622,
+                0.807
+            ],
+            "latex": "",
+            "score": 0.8335
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.784,
+                0.773,
+                0.801,
+                0.789
+            ],
+            "latex": "",
+            "score": 0.8553
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.688,
+                0.811,
+                0.703,
+                0.825
+            ],
+            "latex": "",
+            "score": 0.5222
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.359,
+                0.864,
+                0.416,
+                0.878
+            ],
+            "latex": "",
+            "score": 0.796
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.449,
+                0.864,
+                0.5,
+                0.878
+            ],
+            "latex": "",
+            "score": 0.755
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.094,
+                0.859,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.113,
+                0.819,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.133,
+                0.182,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.166,
+                0.877,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.186,
+                0.854,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.204,
+                0.717,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.239,
+                0.847,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.258,
+                0.869,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.276,
+                0.879,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.296,
+                0.293,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.596,
+                0.444,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.632,
+                0.822,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.651,
+                0.862,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.671,
+                0.383,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.772,
+                0.167,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.184,
+                0.772,
+                0.432,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.451,
+                0.772,
+                0.582,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.602,
+                0.772,
+                0.784,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.802,
+                0.772,
+                0.827,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.792,
+                0.324,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.341,
+                0.792,
+                0.606,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.623,
+                0.792,
+                0.843,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.811,
+                0.687,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.811,
+                0.865,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.83,
+                0.691,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.863,
+                0.357,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.416,
+                0.862,
+                0.448,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.501,
+                0.862,
+                0.777,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.446,
+                0.093,
+                0.552,
+                0.11
+            ],
+            "angle": 0,
+            "content": "\\[\ni ^ {*} = r ^ {*} + \\pi^ {*}.\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.127,
+                0.881,
+                0.165
+            ],
+            "angle": 0,
+            "content": "This identity forms the basis for recovering the neutral rate from the estimated policy rule. Assuming a constant inflation target, the Taylor rule can be rewritten in a form suitable for estimation:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.342,
+                0.18,
+                0.656,
+                0.199
+            ],
+            "angle": 0,
+            "content": "\\[\ni _ {t} = k + \\rho i _ {t - 1} + \\gamma (\\pi_ {t} - \\pi^ {*}) + \\delta \\tilde {y} _ {t} + u _ {t},\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.214,
+                0.178,
+                0.231
+            ],
+            "angle": 0,
+            "content": "Where:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.304,
+                0.248,
+                0.694,
+                0.267
+            ],
+            "angle": 0,
+            "content": "\\[\nk = (1 - \\rho) (r ^ {*} + \\pi^ {*}), \\gamma = (1 - \\rho) \\alpha , \\delta = (1 - \\rho) \\beta .\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.282,
+                0.687,
+                0.3
+            ],
+            "angle": 0,
+            "content": "The real neutral interest rate is obtained from the estimated coefficients as",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.439,
+                0.32,
+                0.558,
+                0.355
+            ],
+            "angle": 0,
+            "content": "\\[\n\\mathrm{r} ^ {*} = \\frac {k}{1 - \\rho} - \\pi^ {*}\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.377,
+                0.869,
+                0.51
+            ],
+            "angle": 0,
+            "content": "According to the approach proposed by Tiedemann, Bizimana, and Arzoumanian (2025), the model is initially estimated by ordinary least squares for the sample period 2014Q1–2019Q4. To allow for time variation in the neutral rate, the Taylor rule is subsequently estimated recursively using an expanding-window approach. In each step, one additional quarterly observation is added to the sample, and the model is re-estimated. This procedure continues until the final estimation window 2014Q1–2025Q3. For each estimation window, the real neutral interest rate is recovered using the coefficient mapping described above, generating a time series of neutral-rate estimates.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.938,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.938,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.128,
+                0.878,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.149,
+                0.81,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.214,
+                0.176,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.285,
+                0.682,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.378,
+                0.867,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.399,
+                0.859,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.417,
+                0.835,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.436,
+                0.843,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.862,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.473,
+                0.858,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.494,
+                0.784,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.433,
+                0.095,
+                0.567,
+                0.115
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.126,
+                0.883,
+                0.164
+            ],
+            "angle": 0,
+            "content": "Barajas, Adolfo, Emilio Fernández-Corugedo, and Roberto Steiner. 2016. \"Credit, Liquidity, and Banking Crises.\" IMF Working Paper 16/106. Washington: International Monetary Fund."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.182,
+                0.884,
+                0.22
+            ],
+            "angle": 0,
+            "content": "Fricke, Daniel, Thomas Kick, and Alexander Schiersch. 2024. \"Banks' Liquidity and the Transmission of Monetary Policy.\" Journal of Banking & Finance 158: 107003."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.24,
+                0.883,
+                0.282
+            ],
+            "angle": 0,
+            "content": "Gumata, Nombulelo, Nir Klein, and Eliphas Ndou. 2012. \"A Financial Conditions Index for South Africa.\" IMF Working Paper 12/196. Washington: International Monetary Fund."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.301,
+                0.883,
+                0.343
+            ],
+            "angle": 0,
+            "content": "Kara, Hakan, Pınar Özlü, and Derya Ünalmış. 2015. \"Türkiye için Finansal Koşullar Endeksi (Financial Conditions Index for Turkey).\" Central Bank Review 15 (3): 41–73.",
+            "merge_prev": false
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.362,
+                0.885,
+                0.425
+            ],
+            "angle": 0,
+            "content": "Osorio, Carolina, Runchana Pongsaparn, and D. Filiz Unsal. 2011. \"A Quantitative Assessment of Financial Conditions in Asia.\" IMF Working Paper 11/170. Washington: International Monetary Fund."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.445,
+                0.883,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Pham Thi Tuyet Trinh, and Nguyen Thien Kim. 2015. \"Broad Monetary Condition Index: An Indicator for Short-Run Monetary Management in Vietnam.\" Working Paper. Hanoi.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.508,
+                0.883,
+                0.544
+            ],
+            "angle": 0,
+            "content": "Saxegaard, Magnus. 2006. \"Excess Liquidity and Effectiveness of Monetary Policy: Evidence from Sub-Saharan Africa.\" IMF Working Paper 06/115. Washington: International Monetary Fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.566,
+                0.883,
+                0.609
+            ],
+            "angle": 0,
+            "content": "Teodoru, Iuliana Ruxandra, and Asel Toktonalieva. 2020. \"Estimating the Neutral Interest Rate in the Kyrgyz Republic.\" IMF Working Paper 20/087. Washington: International Monetary Fund."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.627,
+                0.884,
+                0.692
+            ],
+            "angle": 0,
+            "content": "Tiedemann, Johanna, Olivier Bizimana, and Shant Arzoumanian. 2025. \"Measuring Monetary Policy Stance in Sub-Saharan African Emerging and Frontier Markets.\" IMF Working Paper 25/160. Washington: International Monetary Fund."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.71,
+                0.884,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Yaaba, Baba N. 2013. \"Monetary Policy Rule: A Broad Monetary Conditions Index for Nigeria.\" CBN Journal of Applied Statistics 4 (1): 35–53. Abuja: Central Bank of Nigeria.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.771,
+                0.884,
+                0.813
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund. 2019. Mauritius: Selected Issues—Estimating a Financial Conditions Index for Mauritius. Washington: International Monetary Fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.832,
+                0.884,
+                0.896
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund. 2023. Regional Economic Outlook: Middle East and Central Asia—Safeguarding Macroeconomic Stability amid Continued Uncertainty. Washington: International Monetary Fund, May."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.598,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.938,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.437,
+                0.095,
+                0.564,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.302,
+                0.881,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.325,
+                0.666,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.448,
+                0.881,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.469,
+                0.735,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.511,
+                0.881,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.526,
+                0.831,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.712,
+                0.881,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.736,
+                0.712,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.774,
+                0.881,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.796,
+                0.601,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.11,
+                0.882,
+                0.15
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund. 2024. Oman: Selected Issues—Monetary Policy Transmission in Oman. Washington: International Monetary Fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.17,
+                0.882,
+                0.211
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund. 2025. Qatar: Selected Issues—Financial Conditions and Their Growth Implications for Qatar. Washington: International Monetary Fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.392,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.11,
+                0.88,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.133,
+                0.498,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.173,
+                0.879,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.196,
+                0.672,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

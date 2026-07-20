@@ -1,0 +1,4812 @@
+[
+    [
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.008,
+                0.501,
+                0.03,
+                0.669
+            ],
+            "angle": 0,
+            "content": "Public Disclosure Authorized"
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.008,
+                0.037,
+                0.029,
+                0.204
+            ],
+            "angle": 0,
+            "content": "Public Disclosure Authorized"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.112,
+                0.086,
+                0.612,
+                0.115
+            ],
+            "angle": 0,
+            "content": "Policy Research Working Paper"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.709,
+                0.087,
+                0.803,
+                0.114
+            ],
+            "angle": 0,
+            "content": "11428"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.213,
+                0.298,
+                0.79,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Stanley Fischer Memorial Lecture: Public Debt and Central Banks\nThe World Bank Group ABCDE Conference"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.42,
+                0.454,
+                0.583,
+                0.478
+            ],
+            "angle": 0,
+            "content": "David R. Malpass",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.114,
+                0.837,
+                0.358,
+                0.859
+            ],
+            "angle": 0,
+            "content": "WORLD BANK GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.112,
+                0.862,
+                0.62,
+                0.927
+            ],
+            "angle": 0,
+            "content": "Development Economics Vice Presidency\nOffice of the Chief Economist and Senior Vice President\nJuly 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.051,
+                0.823,
+                0.111,
+                0.873
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.3,
+                0.782,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.242,
+                0.338,
+                0.76,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.215,
+                0.398,
+                0.788,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.425,
+                0.456,
+                0.579,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.065,
+                0.375,
+                0.083
+            ],
+            "angle": 0,
+            "content": "POLICY RESEARCH WORKING PAPER 11428",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.084,
+                0.106,
+                0.177,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Abstract"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.083,
+                0.135,
+                0.476,
+                0.485
+            ],
+            "angle": 0,
+            "content": "This paper, based on the Stanley Fischer Memorial Lecture that the author delivered at the Annual Bank Conference on Development Economics (ABCDE) 2026, examines two structural impediments to broad-based economic development: dysfunctional central bank currency systems and inadequately resolved sovereign debt burdens. On currency, the paper argues that floating exchange rate regimes and multiple exchange rate systems—as practiced in countries such as Ethiopia, Nigeria, and Egypt—systematically transfer wealth from low-income wage earners to a narrow-privileged class, deepening poverty rather than alleviating it. Using Ethiopia as a central case study, the paper documents how successive devaluations have raised the national poverty rate from 33 percent in 2016 to a projected 43 percent by 2025, while eroding the real value of development assistance disbursed in local currency. The paper proposes that currency stabilization, low-cost digital payment infrastructure, and unsterilized central bank intervention offer a more direct path to rising median incomes than current IMF-endorsed exchange rate flexibility. On sovereign debt, the paper evaluates the performance of",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.494,
+                0.136,
+                0.889,
+                0.47
+            ],
+            "angle": 0,
+            "content": "the G20 Common Framework and the Global Sovereign Debt Roundtable against the benchmark of the 1989 Brady Plan, finding that contemporary frameworks have generated intensive creditor engagement but minimal net present value reduction for debtor countries. Key failures identified include the absence of a single comparable discount rate for measuring debt relief, incomplete participation by China and commercial creditors, growing opacity in collateralized sovereign transactions, and the risks posed by value recovery instruments to the durability of restructuring agreements. The paper concludes that neither the Common Framework nor the Global Sovereign Debt Roundtable, in their current forms, are fit for purpose, and calls for replacement frameworks that prioritize measurable median income gains over creditor accommodation. Absent reforms on both fronts, per capita income growth in low-income developing economies is projected to remain at approximately 2 percent annually, leaving 5.6 billion people with incomes less than one-tenth of those in advanced economies and widening the global development gap.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.082,
+                0.602,
+                0.887,
+                0.672
+            ],
+            "angle": 0,
+            "content": "This paper is a product of the Office of the Chief Economist and Senior Vice President, Development Economics Vice Presidency. It is part of a larger effort by the World Bank to provide open access to its research and make a contribution to development policy discussions around the world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.134,
+                0.853,
+                0.844,
+                0.926
+            ],
+            "angle": 0,
+            "content": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.356,
+                0.942,
+                0.617,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Produced by the Research Support Team"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.068,
+                0.371,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.107,
+                0.175,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.14,
+                0.469,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.157,
+                0.469,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.173,
+                0.47,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.189,
+                0.47,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.204,
+                0.474,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.222,
+                0.472,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.239,
+                0.471,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.255,
+                0.47,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.27,
+                0.474,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.288,
+                0.47,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.305,
+                0.47,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.32,
+                0.47,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.336,
+                0.47,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.353,
+                0.47,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.369,
+                0.47,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.386,
+                0.469,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.402,
+                0.47,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.42,
+                0.474,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.435,
+                0.47,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.452,
+                0.469,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.468,
+                0.472,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.138,
+                0.882,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.156,
+                0.882,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.171,
+                0.886,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.189,
+                0.884,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.205,
+                0.882,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.222,
+                0.883,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.238,
+                0.883,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.254,
+                0.882,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.27,
+                0.883,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.286,
+                0.885,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.304,
+                0.884,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.32,
+                0.884,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.336,
+                0.886,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.353,
+                0.884,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.5,
+                0.37,
+                0.884,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.386,
+                0.886,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.402,
+                0.884,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.419,
+                0.882,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.433,
+                0.884,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.451,
+                0.686,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.207,
+                0.084,
+                0.791,
+                0.197
+            ],
+            "angle": 0,
+            "content": "Stanley Fischer Memorial Lecture: Public Debt and Central Banks\nThe World Bank Group ABCDE Conference\nDavid R. Malpass\nPresident of the World Bank Group (2019-23)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.011,
+                0.464,
+                0.983,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Authorized for distribution by Indermit Gill, Chief Economist & Senior Vice President, Development Economics, World Bank Group",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.729,
+                0.347,
+                0.747
+            ],
+            "angle": 0,
+            "content": "JEL Classification Codes:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.759,
+                0.813,
+                0.778
+            ],
+            "angle": 0,
+            "content": "E42: Monetary Systems; Standards; Regimes; Government and the Monetary System",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.776,
+                0.504,
+                0.794
+            ],
+            "angle": 0,
+            "content": "F34: International Lending and Debt Problems",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.793,
+                0.268,
+                0.81
+            ],
+            "angle": 0,
+            "content": "F35: Foreign Aid",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.809,
+                0.508,
+                0.826
+            ],
+            "angle": 0,
+            "content": "H63: Debt; Debt Management; Sovereign Debt",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.826,
+                0.443,
+                0.843
+            ],
+            "angle": 0,
+            "content": "O10: Economic Development: General",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.842,
+                0.603,
+                0.859
+            ],
+            "angle": 0,
+            "content": "O11: Macroeconomic Analyses of Economic Development",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.858,
+                0.58,
+                0.875
+            ],
+            "angle": 0,
+            "content": "O16: Financial Markets; Saving and Capital Investment",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.875,
+                0.783,
+                0.893
+            ],
+            "angle": 0,
+            "content": "O19: International Linkages to Development, Role of International Organizations",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.212,
+                0.088,
+                0.787,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.307,
+                0.119,
+                0.693,
+                0.135
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.419,
+                0.149,
+                0.577,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.18,
+                0.685,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.012,
+                0.463,
+                0.982,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.73,
+                0.342,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.761,
+                0.809,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.777,
+                0.498,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.793,
+                0.262,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.811,
+                0.503,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.827,
+                0.437,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.844,
+                0.597,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.86,
+                0.573,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.876,
+                0.778,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.086,
+                0.233,
+                0.103
+            ],
+            "angle": 0,
+            "content": "Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.117,
+                0.875,
+                0.235
+            ],
+            "angle": 0,
+            "content": "It is a great pleasure to be at the World Bank today. It is good to see so many friends. Thank you especially to our host Indermit Gill. He has made a lasting contribution through his work products and his leadership in economics. He explained the Middle Income Trap in his 2007 research, revisited the issues in the 2024 World Development Report, provided new thinking on industrial policy, one of the most complicated issues in geoeconomics, launched the B-Ready reports to help countries measure their progress, and focused global attention on the positive and negative consequences of the world's massive demographic realignment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.245,
+                0.874,
+                0.313
+            ],
+            "angle": 0,
+            "content": "I ended my term as President of the World Bank Group three years ago this month. Since then, the world has gone through massive changes. That makes for a vibrant discussion. I am going to focus today on two key topics in development, central bank currency systems, and unsustainable public debt.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.325,
+                0.879,
+                0.442
+            ],
+            "angle": 0,
+            "content": "It is also a real pleasure to be part of the Stanley Fischer Memorial Lecture series. Dr. Fischer was renowned as an economist, a teacher and a policy maker at the World Bank, the IMF, the Bank of Israel, and the Federal Reserve. In his address last year, Bob Zoellick lauded Stan's career and concluded with two key points: that big powers, particularly the U.S. and China, will set the course for the geopolitical system based on their national interests; and that “The demographics of Sub-Saharan Africa will fill in all future maps of economic geography.” Those are good jumping off points for today’s discussion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.454,
+                0.861,
+                0.522
+            ],
+            "angle": 0,
+            "content": "I had the good fortune to interact with both Stan and Bob in several of their capacities over the decades. The overlap started in January 1988 when Bob was Counselor to Treasury Secretary James Baker, I was Deputy Assistant Secretary for Developing Nations, and Stan joined the World Bank as Chief Economist.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.534,
+                0.862,
+                0.602
+            ],
+            "angle": 0,
+            "content": "One of the biggest development challenges in the 1980s was the Latin debt crisis because it blocked growth and threatened the global banking system. I am going to come back to the topic of unsustainable debt a little later, but I want to first lay out the fundamental development challenge.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.614,
+                0.6,
+                0.632
+            ],
+            "angle": 0,
+            "content": "Development Challenge – Achieving Widespread Gains"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.645,
+                0.884,
+                0.762
+            ],
+            "angle": 0,
+            "content": "My goal for the World Bank was and is to improve the outcomes for people in developing countries. As a first estimate, we can seek increases in per capita income. Even better is an increase in median income which gets at the inequality problem. Per capita income can go up if the income of just a few people goes up a lot whereas the median income will give a clearer picture. Other development measures including literacy and health are vitally important, but it is hard to achieve them until median income rises. That requires investment, growth, and participation in growth across broad segments of the population.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.773,
+                0.851,
+                0.842
+            ],
+            "angle": 0,
+            "content": "The problem facing development is that billions of people remain in poverty or just above and the path forward is grim. Investment in developing countries has been weak while population growth is fast on average, meaning a worsening imbalance in the allocation of global capital and stagnant income growth in poorer countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.853,
+                0.862,
+                0.905
+            ],
+            "angle": 0,
+            "content": "The World Bank's January 2026 Global Economic Prospects stated that per-capita income growth in developing economies was projected at 3.1 percent in 2026. That includes China, which still presents itself as a developing country and takes loans from multilateral",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.926,
+                0.506,
+                0.939
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.087,
+                0.23,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.119,
+                0.865,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.136,
+                0.872,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.15,
+                0.866,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.166,
+                0.869,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.184,
+                0.849,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.201,
+                0.853,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.216,
+                0.812,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.247,
+                0.841,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.264,
+                0.871,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.281,
+                0.858,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.296,
+                0.331,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.326,
+                0.878,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.344,
+                0.875,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.359,
+                0.865,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.376,
+                0.858,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.393,
+                0.868,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.408,
+                0.841,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.426,
+                0.586,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.456,
+                0.854,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.472,
+                0.822,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.49,
+                0.857,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.505,
+                0.473,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.536,
+                0.86,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.552,
+                0.846,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.569,
+                0.781,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.586,
+                0.311,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.616,
+                0.597,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.646,
+                0.848,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.663,
+                0.852,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.679,
+                0.874,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.696,
+                0.878,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.712,
+                0.88,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.728,
+                0.838,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.745,
+                0.64,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.776,
+                0.846,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.792,
+                0.816,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.808,
+                0.845,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.826,
+                0.625,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.855,
+                0.851,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.872,
+                0.857,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.888,
+                0.789,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.086,
+                0.881,
+                0.171
+            ],
+            "angle": 0,
+            "content": "development banks (MDBs). Per capita income growth in developing economies excluding China was projected at only 2% in 2026, well below its long-term average. Growth in median income would be even less due to the concentration of wealth and income at the top. That leaves this group, 5.6 billion people, with a per capita income that is less than one tenth of the per capita income in the advanced economies and little prospect that the gap will narrow.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.182,
+                0.863,
+                0.266
+            ],
+            "angle": 0,
+            "content": "The question for us is whether and how the World Bank, the IMF and other global financial institutions can help people gain ground. When I was here, I wanted Bank staff to present country programs that could plausibly improve outcomes, not just the volume of loans and grants. We looked for opportunities to support transformative change for the billions of people ready to move well above poverty.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.278,
+                0.859,
+                0.38
+            ],
+            "angle": 0,
+            "content": "In assisting countries with a country program, I think of it as a recipe, not a menu. A recipe means multiple ingredients that are each necessary. A menu means picking and choosing. The menu approach ends up employing staff and generating thousands of loans, grants, conferences, and reports, but it can easily ignore persistently low median income. The incentives problem with a menu approach is that the elite, whether in country or at global institutions, gravitate to easier items on the menu and might even prefer those.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.391,
+                0.879,
+                0.476
+            ],
+            "angle": 0,
+            "content": "The development community has thousands of programs underway, but few that could be transformative or add materially to median income. In a front-page article on June 11, for example, the Wall Street Journal investigated the failure of microlending to reduce poverty. In many ways, this is the problem of multilateral finance as well: the risk of leaving people in developing countries more indebted without improving their living standards.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.487,
+                0.752,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Development economics faces many problems just as big as the microlending disappointment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.147,
+                0.535,
+                0.88,
+                0.585
+            ],
+            "angle": 0,
+            "content": "- Central banking and IMF policies cause devaluations by advocating floating exchange rates and tolerating multiple exchange rates, primary causes of the impoverishment we see in countries such as Nigeria, Egypt, and Ethiopia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.147,
+                0.586,
+                0.869,
+                0.651
+            ],
+            "angle": 0,
+            "content": "- Unrestrained government spending in advanced economies drains huge global resources into waste, fraud, and misallocation. Unrestrained government spending in developing economies drains the pool of finance for private enterprises in these countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.147,
+                0.653,
+                0.875,
+                0.767
+            ],
+            "angle": 0,
+            "content": "- Economics allocates scarce resources based on price, channeling natural gas, fertilizer, and new investment to regions of the world that are already saturated. Shortages of electricity, water, machinery, local crops, literacy, and job skills leave billions of people behind. For poorer farmers, Russia’s invasion of Ukraine in 2022 created a major crisis in the allocation of global fertilizer and components, but the so-called global order and multilateralist arrangements were unable to help then -- or now when the closure of the Strait of Hormuz has caused a repeat fertilizer crisis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.147,
+                0.769,
+                0.866,
+                0.835
+            ],
+            "angle": 0,
+            "content": "- The sprawl of globalism has increased the cost of multilateral institutions and forced expensive new climate and regulatory spending, adding additional barriers and burdens to development. I do not see current pathways leading to meaningful progress.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.847,
+                0.881,
+                0.915
+            ],
+            "angle": 0,
+            "content": "Using the recipe analogy, true development requires transformative changes that provide the essential ingredients for material growth in median income and eventual graduation from development assistance. It is rare. Missing ingredients help explain poverty. Achieving all the key ingredients is necessary to propel prosperity.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.927,
+                0.506,
+                0.939
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.087,
+                0.858,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.104,
+                0.876,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.121,
+                0.845,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.137,
+                0.877,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.154,
+                0.838,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.184,
+                0.861,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.2,
+                0.843,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.216,
+                0.852,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.233,
+                0.828,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.249,
+                0.459,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.281,
+                0.856,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.297,
+                0.842,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.313,
+                0.823,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.33,
+                0.815,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.346,
+                0.841,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.363,
+                0.752,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.393,
+                0.845,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.409,
+                0.843,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.426,
+                0.86,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.441,
+                0.876,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.458,
+                0.745,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.489,
+                0.749,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.505,
+                0.251,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.537,
+                0.878,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.553,
+                0.853,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.569,
+                0.639,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.587,
+                0.812,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.604,
+                0.865,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.62,
+                0.822,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.637,
+                0.261,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.652,
+                0.801,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.671,
+                0.821,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.687,
+                0.853,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.703,
+                0.855,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.719,
+                0.871,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.735,
+                0.841,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.752,
+                0.838,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.77,
+                0.863,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.181,
+                0.786,
+                0.816,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.802,
+                0.804,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.82,
+                0.256,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.849,
+                0.866,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.866,
+                0.84,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.883,
+                0.876,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.898,
+                0.515,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.086,
+                0.547,
+                0.103
+            ],
+            "angle": 0,
+            "content": "Currency Systems Need to Provide Sound Money"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.117,
+                0.88,
+                0.266
+            ],
+            "angle": 0,
+            "content": "One of the most important ingredients for growth in median income is sound money and the ability to conduct transactions at low cost. Economic history is clear on the transformative benefit of sound money. This understanding is missing in today's development policies. As people moved from barter, which is highly inefficient; to species, whether shells or standardized packets of salt or pieces of eight; to various forms of credit and promissory notes; the economic gains were massive. We see every day in development the benefit when a country allows money and credit – Peru's opening to international banks in the early 1990s, Brazil's steps to allow autos to become collateral, China's 1993 reforms to stabilize and unify the yuan.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.279,
+                0.875,
+                0.445
+            ],
+            "angle": 0,
+            "content": "One of the biggest steps forward in development would be for more people to have access to sound money, transact at low cost, and use their property as collateral for credit. Lower income people get huge benefits from this. Spanish silver coins were a primary source of specie for over two hundred years, in part because they could be broken into eight pieces. Each piece of eight could facilitate a normal-sized transaction whereas the whole coin had fewer uses. We see the modern equivalent in digital payments that allow fractions of a dollar to change hands at low cost. A U.S. dollar is too big for an everyday transaction in a poor country, while physical coins are too cumbersome. The innovation of digital cents provides a low-cost solution that can empower growth and development. Fractions of a cent are being used now to empower high volume, low-cost electronic work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.457,
+                0.882,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Allowing broader use of sound money like this is a huge opportunity for development. I have already mentioned China's transformation starting in 1993 with the unification and explicit stabilization of the yuan. The same giant gains in income are available today to Argentina if it ended the peso, and Venezuela if it ended the bolivar. It is a direct path to higher median incomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.553,
+                0.865,
+                0.67
+            ],
+            "angle": 0,
+            "content": "I would like to give other examples. One of my early World Bank country visits was to Ethiopia in 2019 to meet with Prime Minister Abiy. He had just won the Nobel Peace Prize and expressed interest in Ethiopia's economic progress. Ethiopia has huge growth potential including agricultural land, natural resources, favorable climate, immense water resources, and raw human talent. The World Bank has undertaken two hundred projects in Ethiopia, with forty-three ongoing. Yet Ethiopia's per capita income is roughly $1,100, leaving it one of the world's poorest countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.682,
+                0.879,
+                0.897
+            ],
+            "angle": 0,
+            "content": "At the time of my visit in 2019, the Ethiopian currency, the birr, was valued at about twenty-eight per U.S. dollar. The Ethiopian central bank oversaw multiple exchange rates and a foreign exchange permitting system that meant that favored industries and groups could buy dollars cheaper than others. The incentive to devalue was intense because it was so profitable. During a devaluation, resources flow from the poor, whose income and any financial assets are devalued, to those who held foreign currency or had been able to arrange local currency loans. For the World Bank, it meant that dollars sent for projects ended up providing much less local resources after the currency depreciation. A $100 million loan was intended to provide 2.8 billion birrs in resources to benefit people in Ethiopia but, by the time it was spent, the value of the resources was materially less. The profit from the devaluation accrued to the central bank and a small group of people favored by government officials while the cost was borne through the inflation tax on the poor. People earning wages in birr lost ground.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.927,
+                0.506,
+                0.939
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.087,
+                0.544,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.119,
+                0.863,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.136,
+                0.849,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.151,
+                0.857,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.168,
+                0.792,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.183,
+                0.833,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.201,
+                0.866,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.217,
+                0.873,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.233,
+                0.877,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.25,
+                0.195,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.279,
+                0.868,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.297,
+                0.826,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.313,
+                0.841,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.33,
+                0.842,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.346,
+                0.849,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.362,
+                0.869,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.379,
+                0.845,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.395,
+                0.872,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.411,
+                0.853,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.428,
+                0.62,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.457,
+                0.874,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.474,
+                0.857,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.49,
+                0.879,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.507,
+                0.836,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.524,
+                0.193,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.555,
+                0.824,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.571,
+                0.856,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.587,
+                0.857,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.603,
+                0.851,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.62,
+                0.842,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.637,
+                0.861,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.654,
+                0.381,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.684,
+                0.868,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.699,
+                0.832,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.716,
+                0.863,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.732,
+                0.877,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.75,
+                0.857,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.765,
+                0.858,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.782,
+                0.854,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.798,
+                0.834,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.815,
+                0.834,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.832,
+                0.87,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.848,
+                0.844,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.864,
+                0.814,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.88,
+                0.184,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.086,
+                0.883,
+                0.203
+            ],
+            "angle": 0,
+            "content": "Kristalina and I worked hard in 2019 to convince Prime Minister Abiy to end those central banking practices. We were unsuccessful and the devaluations have proceeded inexorably. In 2022 and 2023, the World Bank developed a system to inform its Board of expected losses on World Bank Group activity in Ethiopia and other countries that gave unfavorable exchange rates for development assistance. One key ingredient for development is some degree of transparency in contracts. I wanted the Board and people in the devaluing country to be aware of the cost of the devaluation in terms of added poverty and the diversion of resources.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.215,
+                0.882,
+                0.381
+            ],
+            "angle": 0,
+            "content": "Reuters described the July 2024 IMF program as Ethiopia “floating” the birr; the IMF described the reform as moving to a “market-determined exchange rate.” The birr lost half its value, so people earning wages in birr saw their incomes decimated. There was no real effort at subsequent stabilization, so the devaluation continued and poverty became even worse. The World Bank projected Ethiopia’s poverty rate at 43% by 2025, up from 33% in 2016, with multidimensional poverty afflicting 72% of the population. In 2025, the birr was the world’s third weakest currency. Today the official rate stands at 161 per dollar, but foreign exchange is allocated through periodic auctions to a narrow group of banks so the true impact on people living in poverty is even worse. The February 2026 central bank intervention allocated $500 million to friendly banks. In May it was another bundle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.393,
+                0.878,
+                0.544
+            ],
+            "angle": 0,
+            "content": "Incentives work to perpetuate the currency system because huge profits are made through the devaluation. Winners are those who get local currency loans before devaluations or a privileged allocation of foreign exchange and those who provide access to them. Losers are people paid in local currency, the development assistance programs disbursed in local currency, and the people being impoverished. They are expected to pay back IMF loans in dollars even though their resources have been drained. The reality is that failed programs are the norm, and the expectation is that they will be rolled into new programs, with appropriated funds like IDA and the periodic MDB capital increases providing the new money to keep the system churning along.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.555,
+                0.86,
+                0.606
+            ],
+            "angle": 0,
+            "content": "The same story has played out in dozens of countries in recent decades. It helps explain the devastation of poverty while a narrow group gets rich. The impoverishment traces to the currency system.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.618,
+                0.879,
+                0.768
+            ],
+            "angle": 0,
+            "content": "I think two changes in thinking would help. First, development needs stable money, low transaction costs, and a currency system that delivers it. Development economics relies on maintaining the real exchange rate through devaluations that keep up with inflation. This creates a downward spiral that causes poverty. Second, perhaps more controversially, during the transition, central bank interventions should be left unsterilized to break the devaluation cycle. Ethiopia, Argentina, or Colombia could quickly stabilize the local currency at a lower interest rate by shifting to unsterilized intervention. I believe that this was what led to success in Malaysia’s 1998 stabilization program. It was also what set it apart from the wreckage elsewhere from the Asia Devaluation Crisis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.781,
+                0.88,
+                0.914
+            ],
+            "angle": 0,
+            "content": "Also, helpful would-be honesty about the impoverishment from devaluation. Two techniques cloud reality. The IMF insists on using purchasing power parity, which delays the recognition of the cost of devaluation. The World Bank's poverty data come too late to inform the social consequences of these devaluations. In combination, these techniques cover up the consequences of a flawed currency system. The Egyptian pound has devalued from sixteen per dollar in 2022 to 50 per dollar now. The human consequence has been immediate, but the data will only reflect that over a period of years—too late to prevent the damage to the average Egyptian, and too late to prevent the rise in poverty.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.927,
+                0.506,
+                0.94
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.088,
+                0.852,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.104,
+                0.873,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.119,
+                0.878,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.137,
+                0.857,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.153,
+                0.834,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.17,
+                0.879,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.186,
+                0.819,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.217,
+                0.813,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.233,
+                0.879,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.249,
+                0.871,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.266,
+                0.843,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.282,
+                0.845,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.299,
+                0.841,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.316,
+                0.853,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.332,
+                0.877,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.348,
+                0.826,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.364,
+                0.695,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.395,
+                0.872,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.411,
+                0.808,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.428,
+                0.859,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.444,
+                0.814,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.46,
+                0.849,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.477,
+                0.869,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.494,
+                0.875,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.51,
+                0.871,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.525,
+                0.308,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.556,
+                0.856,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.572,
+                0.834,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.592,
+                0.256,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.62,
+                0.831,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.636,
+                0.849,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.653,
+                0.837,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.669,
+                0.869,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.686,
+                0.862,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.702,
+                0.866,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.72,
+                0.874,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.735,
+                0.839,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.751,
+                0.477,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.782,
+                0.873,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.798,
+                0.877,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.814,
+                0.868,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.831,
+                0.788,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.847,
+                0.856,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.864,
+                0.874,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.881,
+                0.819,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.897,
+                0.606,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.086,
+                0.876,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Turning to Nigeria, it has per capita income of roughly $1,500 or $4 per day. The median income is less because of the concentration of income and wealth at the top. The upside from currency reform would be massive. Nigerians working outside Nigeria routinely make 10 or 20 times as much. So, the challenge for the World Bank and others is to support programs in Nigeria that will allow for growth and higher per capita incomes for the average citizen. We embarked on that during my term as President but did not make much progress. I met multiple times with the previous Nigerian President and his cabinet and with the World Bank team. We identified several ingredients including currency stabilization and unification, oil sector reforms, tax reform, and agricultural liberalization including rice. These could transform Nigeria’s economy as much as China’s 1993 reforms launched its sustained 10% real growth rate.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.281,
+                0.612,
+                0.298
+            ],
+            "angle": 0,
+            "content": "Debt Restructurings Need to Reduce Unsustainable Debt"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.311,
+                0.865,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Let me turn to public debt, starting with the Latin debt crisis which I mentioned earlier. For several developing countries, reducing unsustainable debt is one of the key ingredients for a pathway to higher median income, our goal.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.375,
+                0.875,
+                0.541
+            ],
+            "angle": 0,
+            "content": "This is not a new problem. As I said at the start, Stan Fischer joined the World Bank in January 1988 at the peak of the Latin debt crisis. Bob Zoellick and I were at the U.S. Treasury. Each of us had been working on various aspects of the crisis. This evolved into the Brady Plan in late 1989 which created a path to securitize the syndicated bank loans and break the financial paralysis. Banks in the U.S., Japan, the UK, and continental Europe had different regulatory systems and treatments of a restructuring. To support the Brady plan, the World Bank played a major role in new resources and structural adjustment loans, while the Interamerican Development Bank underwent substantial governance reforms in 1988 so it could participate. Over a period of years, substantial reduction in net present value was achieved, allowing new investment in the 1990s and substantial increases in median income.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.553,
+                0.88,
+                0.686
+            ],
+            "angle": 0,
+            "content": "During my World Bank presidency, I encouraged substantial work toward debt reduction and debt transparency. However, progress was painfully slow. I used the severity of the Covid crisis to propose a debt payment moratorium. Kristalina and the IMF joined in this effort, but it was absorbed by the G20 Common Framework. The moratorium was not implemented broadly, the private sector did not participate, and the Common Framework was not able to achieve the goal of reducing debt materially or making debt burdens transparent and sustainable. This is in stark contrast to the Brady Plan's material debt reduction and increased transparency in the early 1990s.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.698,
+                0.878,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Countries applied to the Common Framework in 2020 and 2021, but many of those implementations are still incomplete. Chad was claimed as a completion, but did not realize meaningful debt relief. This is a pattern problem. There is intensive engagement by many creditors, consultants, advisors, multilateral and bilateral officials, lawyers, and economists but little or no benefit for the people of the country. In many cases, the World Bank's IDA adds more money, pleasing China, the IMF, the Paris Club, other creditors, and officials of the debtor government, but achieving little or nothing for per capita income or small business growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.844,
+                0.855,
+                0.911
+            ],
+            "angle": 0,
+            "content": "I strongly supported Zambia's efforts to obtain debt reduction through the Common Framework, but significant amounts of debt were excluded from the restructuring. Zambia worked toward debt relief for years but now face the risk that some of the limited debt reduction that was achieved will be reversed due to Value Recovery Instruments. I",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.927,
+                0.506,
+                0.94
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.088,
+                0.842,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.104,
+                0.871,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.121,
+                0.865,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.136,
+                0.867,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.153,
+                0.864,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.17,
+                0.811,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.186,
+                0.872,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.203,
+                0.856,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.22,
+                0.805,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.235,
+                0.857,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.253,
+                0.252,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.283,
+                0.61,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.313,
+                0.859,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.329,
+                0.863,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.346,
+                0.476,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.376,
+                0.822,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.393,
+                0.804,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.409,
+                0.87,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.425,
+                0.833,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.442,
+                0.856,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.458,
+                0.869,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.475,
+                0.863,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.492,
+                0.849,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.507,
+                0.824,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.524,
+                0.866,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.555,
+                0.875,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.571,
+                0.847,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.587,
+                0.872,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.603,
+                0.839,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.62,
+                0.857,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.637,
+                0.802,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.653,
+                0.877,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.67,
+                0.377,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.7,
+                0.793,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.716,
+                0.861,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.733,
+                0.842,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.749,
+                0.857,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.765,
+                0.851,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.782,
+                0.857,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.797,
+                0.874,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.814,
+                0.184,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.845,
+                0.799,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.861,
+                0.849,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.879,
+                0.817,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.894,
+                0.788,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.086,
+                0.881,
+                0.17
+            ],
+            "angle": 0,
+            "content": "discouraged those instruments because they carry significant downside risk for borrowers and impede the predictability and sustainability of debt reduction -- which is key to attracting new investment. The instruments sound attractive, especially to creditors, but they lead to delays in the restructuring and risk undermining the debt reduction itself. That has happened repeatedly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.182,
+                0.868,
+                0.25
+            ],
+            "angle": 0,
+            "content": "Ethiopia is another example of a stalled debt reduction. Bondholders are looking for a better deal than the one agreed to, after much reluctance and delay, by the official sector creditors. This violates the principle of comparable treatment, central to any successful debt restructuring or relief.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.262,
+                0.493,
+                0.28
+            ],
+            "angle": 0,
+            "content": "Debt Reduction Frameworks Not Working"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.292,
+                0.878,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Since the beginning of this debt reduction effort, there has been lip service paid to comparability of treatment but limited progress and very long delays. The Paris Club has authored numerous papers, but not a clear framework. The result has been multiple ways to measure comparability of treatment. This allows creditors to pick and choose, making it hard, perhaps purposely hard, to measure actual debt reduction and achieve it. As World Bank President, I advocated a single measure for comparability of treatment, specifically a reduction in net present value using a single discount rate. I still believe that this is a way to go.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.438,
+                0.849,
+                0.556
+            ],
+            "angle": 0,
+            "content": "Data sharing is another critical step toward successful debt restructurings. As President, I encouraged transparency practices and requirements in debt contracts to undo the damage from past non-disclosure obstacles including Ecuador, Jordan, Mongolia, Pakistan, and Angola. Specialists are still working in the dark on many large debt contracts, especially related to China’s lending programs. While many creditors are participating in the debt reconciliation process, China and some emerging creditors are still not participating. This leaves a giant sector of the debt burden non-transparent and hard to reconcile.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.567,
+                0.871,
+                0.684
+            ],
+            "angle": 0,
+            "content": "More recently private sector transactions to distressed or high-risk sovereigns have become less transparent, sometimes to the point of including non-disclosure clauses, making their benefits to the people of the country unclear and hard to evaluate. Sophisticated new collateralized transactions – I saw ones in Angola, Nigeria, and Senegal – are creating a new race toward seniority in the capital structure. This will add further complexity to restructurings as will the expansion of MDB guarantee products. Their sturdiness and value have not been tested in a restructuring context, and I am skeptical they are adding true value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.696,
+                0.875,
+                0.829
+            ],
+            "angle": 0,
+            "content": "Because of the lack of progress under the Common Framework, I proposed the Global Sovereign Debt Roundtable in 2022 that would bring together a broader group of stakeholders including debtors. They were excluded from full participation in the Paris Club and Common Framework processes. The GSDR was supposed to take the lead to achieve transparency and significant reduction in net present value: 1) using a single discount rate to measure comparability of treatment; 2) full buy-in by private sector creditors including those Chinese institutions that are treated as private sector; and 3) increased transparency in the amounts and contract terms of debt outstanding.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.841,
+                0.883,
+                0.909
+            ],
+            "angle": 0,
+            "content": "The GSDR effort has stalled relatively quickly. There is no clarity or consensus on the purpose. I have advocated ending both the Common Framework and the GSDR. This would allow space for new processes to be proposed that might be more successful in achieving debt restructurings that benefit development rather than just creditors.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.926,
+                0.506,
+                0.939
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.086,
+                0.878,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.103,
+                0.878,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.121,
+                0.861,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.136,
+                0.81,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.153,
+                0.209,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.184,
+                0.864,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.2,
+                0.862,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.217,
+                0.781,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.233,
+                0.297,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.263,
+                0.49,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.293,
+                0.782,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.31,
+                0.837,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.327,
+                0.859,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.344,
+                0.874,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.36,
+                0.835,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.376,
+                0.806,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.392,
+                0.861,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.411,
+                0.147,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.44,
+                0.842,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.457,
+                0.845,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.473,
+                0.823,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.49,
+                0.832,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.506,
+                0.823,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.522,
+                0.842,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.539,
+                0.747,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.569,
+                0.857,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.586,
+                0.842,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.602,
+                0.801,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.618,
+                0.867,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.634,
+                0.77,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.651,
+                0.859,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.667,
+                0.867,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.697,
+                0.819,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.714,
+                0.778,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.731,
+                0.865,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.747,
+                0.842,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.764,
+                0.865,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.78,
+                0.87,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.795,
+                0.843,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.812,
+                0.506,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.843,
+                0.819,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.859,
+                0.865,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.877,
+                0.878,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.893,
+                0.643,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.086,
+                0.877,
+                0.154
+            ],
+            "angle": 0,
+            "content": "With world interest rates much higher than in the post-Covid years, the focus now has shifted from the need for solvency to the imperative of plugging gaps in short-term liquidity, the proverbial kick-the-can. The problem is that this leaves longer-term debt unsustainable, making it difficult for the people of the country to attract and justify new investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.165,
+                0.872,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Under the present debt framework, I expect the slow growth I mentioned at the beginning of my remarks, only two percent per year for low-income countries, to persist. If so, this leaves billions of people falling even further behind in terms of incomes and broad living standards.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.229,
+                0.221,
+                0.246
+            ],
+            "angle": 0,
+            "content": "Conclusion"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.26,
+                0.877,
+                0.361
+            ],
+            "angle": 0,
+            "content": "To conclude, I wanted to share some thoughts and concerns on development. I focused on the increases in poverty under current development practices, the prospect that this will worsen, and two particular concerns – the damage from devaluation policies and the faults in the debt restructuring framework which favors China and other creditors over development. These problems will prevent broad-based economic growth, leaving hundreds of millions of people in abject poverty. The policies should be changed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.372,
+                0.804,
+                0.405
+            ],
+            "angle": 0,
+            "content": "Thank you for participating in the conference today and I am looking forward to our discussion.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.926,
+                0.505,
+                0.939
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.088,
+                0.875,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.103,
+                0.839,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.121,
+                0.826,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.137,
+                0.814,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.168,
+                0.868,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.184,
+                0.866,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.2,
+                0.869,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.23,
+                0.218,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.26,
+                0.877,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.278,
+                0.864,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.294,
+                0.872,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.31,
+                0.846,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.327,
+                0.868,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.343,
+                0.524,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.374,
+                0.801,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.391,
+                0.21,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

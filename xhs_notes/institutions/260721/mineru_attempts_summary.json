@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_003_mjodfs59/pdfs/0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d0939c3.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_003_mjodfs59/pdfs/0012-WorldBank_Regularization-and-the-Formation-of-Social-Capital-Evidence-_3cbcabf5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_003_mjodfs59/pdfs/0013-WorldBank_Stanley-Fischer-Memorial-Lecture-Public-Debt-and-Central-Ban_39314481.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

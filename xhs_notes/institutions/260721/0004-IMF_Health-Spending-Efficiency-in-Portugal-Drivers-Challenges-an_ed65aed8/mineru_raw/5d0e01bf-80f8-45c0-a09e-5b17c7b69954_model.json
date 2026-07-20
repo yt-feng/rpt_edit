@@ -1,0 +1,6348 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.039,
+                0.831,
+                0.077
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.078,
+                0.199,
+                0.755,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Health Spending\nEfficiency in Portugal:\nDrivers, Challenges and\nReform Priorities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.453,
+                0.235,
+                0.476
+            ],
+            "angle": 0,
+            "content": "Carolina Bloch",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.516,
+                0.225,
+                0.539
+            ],
+            "angle": 0,
+            "content": "SIP/2026/064",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.521,
+                0.684
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 28, 2026. This paper is also published separately as IMF Country Report No 26/148.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.821,
+                0.234,
+                0.923
+            ],
+            "angle": 0,
+            "content": "2026\nJUL",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.653,
+                0.811,
+                0.799,
+                0.927
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.919,
+                0.121,
+                0.985,
+                0.88
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.197,
+                0.55,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.251,
+                0.708,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.308,
+                0.756,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.365,
+                0.562,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.452,
+                0.236,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.515,
+                0.226,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.595,
+                0.499,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.614,
+                0.518,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.631,
+                0.512,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.647,
+                0.509,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.665,
+                0.467,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.82,
+                0.237,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.866,
+                0.229,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.127,
+                0.372,
+                0.143
+            ],
+            "angle": 0,
+            "content": "© 2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.777,
+                0.127,
+                0.875,
+                0.141
+            ],
+            "angle": 0,
+            "content": "SIP/2026/064"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.399,
+                0.195,
+                0.601,
+                0.23
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Paper\nEuropean Department"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.195,
+                0.246,
+                0.802,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Health Spending Efficiency in Portugal: Drivers, Challenges and Reform Priorities Prepared by Carolina Bloch"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.315,
+                0.299,
+                0.683,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Authorized for distribution by Jean-François Dauphin\nJuly 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.368,
+                0.845,
+                0.421
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 28, 2026. This paper is also published separately as IMF Country Report No 26/148.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.453,
+                0.883,
+                0.591
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: Portugal's health system is facing increasing spending pressures driven by population aging, constraints in the availability and deployment of health workers, and rising input costs, while access bottlenecks persist. Although health spending levels are broadly comparable to those of peer countries, recent spending growth (particularly in personnel, pharmaceuticals, and outsourced services) has not consistently translated into sustained improvements in access or in operational system performance. This paper analyzes the drivers of health spending growth in Portugal and the scope for efficiency gains, focusing on spending composition, input costs, and institutional and budgetary factors that affect how resources are allocated and used in the health sector.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.607,
+                0.816,
+                0.66
+            ],
+            "angle": 0,
+            "content": "RECOMMENDED CITATION: Bloch, Carolina. 2026. Health Spending Efficiency in Portugal: Drivers, Challenges and Reform Priorities. IMF Selected Issues Paper (SIP/26/064) Portugal. International Monetary Fund, Washington, DC.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.116,
+                0.676,
+                0.876,
+                0.812
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>JEL Classification Numbers:</td><td>H51, I18, D24, H68</td></tr><tr><td>Keywords:</td><td>Portugal, health spending efficiency, public health expenditure, population aging, healthcare workforce, pharmaceuticals, health system reform, spending reviews, fiscal sustainability, SNS.</td></tr><tr><td>Author&#x27;s E-Mail Address:</td><td>CDubeuxBloch@imf.org</td></tr></table>"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.402,
+                0.198,
+                0.598,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.423,
+                0.215,
+                0.577,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.198,
+                0.25,
+                0.801,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.397,
+                0.267,
+                0.602,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.3,
+                0.681,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.466,
+                0.318,
+                0.534,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.37,
+                0.844,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.389,
+                0.798,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.405,
+                0.84,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.454,
+                0.848,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.473,
+                0.881,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.489,
+                0.858,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.506,
+                0.855,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.525,
+                0.868,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.541,
+                0.855,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.56,
+                0.844,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.577,
+                0.211,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.61,
+                0.814,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.628,
+                0.814,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.645,
+                0.346,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.112,
+                0.195,
+                0.524,
+                0.222
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPERS"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.112,
+                0.301,
+                0.764,
+                0.426
+            ],
+            "angle": 0,
+            "content": "Health Spending Efficiency in\nPortugal: Drivers, Challenges\nand Reform Priorities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.455,
+                0.244,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Portugal",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.568,
+                0.409,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Prepared by Carolina Bloch \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.113,
+                0.862,
+                0.881,
+                0.928
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  The author would like to thank the Portuguese authorities and other counterparts for their time, valuable information, and insightful discussions during the September 2025 staff visit, including representatives from the Ministry of Finance, the Ministry of Health, ACSS, INFARMED, Conselho das Finanças Públicas, Tribunal de Contas, and NOVA School of Business and Economics. The author is also grateful to Mauricio Soto, Nick Carroll, Jean François Dauphin, and Gohar Minasyan for their helpful comments and guidance. Any remaining errors or omissions are the sole responsibility of the author."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.3,
+                0.762,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.345,
+                0.761,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.39,
+                0.585,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.455,
+                0.242,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.571,
+                0.407,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.081,
+                0.017,
+                0.177,
+                0.097
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.234,
+                0.063,
+                0.828,
+                0.091
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.22,
+                0.124,
+                0.481,
+                0.161
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.183,
+                0.417,
+                0.205
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.048,
+                0.209,
+                0.155,
+                0.227
+            ],
+            "angle": 0,
+            "content": "May 28, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.25,
+                0.371,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Approved By",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.436,
+                0.252,
+                0.696,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Prepared By Carolina Bloch (FAD).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.236,
+                0.272,
+                0.421,
+                0.29
+            ],
+            "angle": 0,
+            "content": "European Department",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.243,
+                0.317,
+                0.384,
+                0.34
+            ],
+            "angle": 0,
+            "content": "CONTENTS"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.217,
+                0.365,
+                0.9,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Acronyms 2"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.216,
+                0.402,
+                0.901,
+                0.554
+            ],
+            "angle": 0,
+            "content": "HEALTH SPENDING EFFICIENCY IN PORTUGAL: DRIVERS, CHALLENGES AND REFORM PRIORITIES 3\nA. Introduction 3\nB. Healthcare Model and Spending Composition 5\nC. Input-Related Cost Drivers 8\nD. System-Level and Budgeting Reforms and Constraints 11\nE. Conclusion and Policy Options to Enhance Health Spending Efficiency 13"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.218,
+                0.572,
+                0.28,
+                0.59
+            ],
+            "angle": 0,
+            "content": "BOXES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.592,
+                0.901,
+                0.611
+            ],
+            "angle": 0,
+            "content": "1. Overview of the Portuguese Health System 6",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.216,
+                0.612,
+                0.901,
+                0.631
+            ],
+            "angle": 0,
+            "content": "2. Portugal's Health Spending Review: Scope and Implementation Constraints ____ 13",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.218,
+                0.649,
+                0.294,
+                0.666
+            ],
+            "angle": 0,
+            "content": "FIGURES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.668,
+                0.902,
+                0.687
+            ],
+            "angle": 0,
+            "content": "1. Benchmarking and Recent Trends of Current Health Spending ____ 4",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.687,
+                0.901,
+                0.705
+            ],
+            "angle": 0,
+            "content": "2. Health Spending by Financing Schemes and Funding Sources ____ 7",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.706,
+                0.901,
+                0.725
+            ],
+            "angle": 0,
+            "content": "3. Composition of Current Health Expenditure in Portugal and EU Countries ____ 8",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.725,
+                0.901,
+                0.743
+            ],
+            "angle": 0,
+            "content": "4. Hospital Spending: Signs of High Costs and Continued Strain ____ 8",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.744,
+                0.901,
+                0.762
+            ],
+            "angle": 0,
+            "content": "5. Contributions of Main Spending Components to SNS CHE Growth, 2019-2024 ____ 9",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.763,
+                0.901,
+                0.781
+            ],
+            "angle": 0,
+            "content": "6. Employment and Compensation of Healthcare Professionals 10",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.782,
+                0.899,
+                0.801
+            ],
+            "angle": 0,
+            "content": "7. SNS Spending on Pharmaceuticals: Changes in Volume and Price ____ 11",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.819,
+                0.901,
+                0.838
+            ],
+            "angle": 0,
+            "content": "References 15",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.125,
+                0.478,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.188,
+                0.414,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.21,
+                0.153,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.237,
+                0.25,
+                0.37,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.436,
+                0.252,
+                0.696,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.238,
+                0.274,
+                0.418,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.241,
+                0.316,
+                0.385,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.576,
+                0.275,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.593,
+                0.548,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.886,
+                0.595,
+                0.899,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.613,
+                0.808,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.877,
+                0.614,
+                0.899,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.652,
+                0.291,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.669,
+                0.706,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.885,
+                0.671,
+                0.899,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.688,
+                0.703,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.886,
+                0.689,
+                0.898,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.708,
+                0.791,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.886,
+                0.709,
+                0.898,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.727,
+                0.701,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.886,
+                0.727,
+                0.899,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.745,
+                0.828,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.886,
+                0.746,
+                0.898,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.765,
+                0.694,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.876,
+                0.764,
+                0.9,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.784,
+                0.729,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.878,
+                0.784,
+                0.898,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.82,
+                0.306,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.874,
+                0.821,
+                0.901,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.159,
+                0.043,
+                0.237,
+                0.058
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.471,
+                0.104,
+                0.594,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Acronyms"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.164,
+                0.149,
+                0.901,
+                0.418
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>ADM</td><td>Assistência na Doença aos Militares (Health subsystem for the Armed Forces)</td></tr><tr><td>ADSE</td><td>Assistência na Doença aos Servidores do Estado (Health subsystem for civil servants)</td></tr><tr><td>CHE</td><td>Current Health Expenditure</td></tr><tr><td>CRI</td><td>Centros de Responsabilidade Integrada (Integrated Responsibility Centers)</td></tr><tr><td>ECG</td><td>Excess Cost Growth</td></tr><tr><td>INFARMED</td><td>Autoridade Nacional do Medicamento e Produtos de Saúde (National Authority of Medicines and Health Products)</td></tr><tr><td>LTC</td><td>Long-Term Care</td></tr><tr><td>MTEF</td><td>Medium-Term Expenditure Framework</td></tr><tr><td>PRR</td><td>Plano de Recuperação e Resiliência (Recovery and Resilience Plan)</td></tr><tr><td>SNS</td><td>Serviço Nacional de Saúde (National Health System)</td></tr><tr><td>ULS</td><td>Unidades Locais de Saúde (Local Health Units)</td></tr><tr><td>UNPP</td><td>United Nations World Population Prospects</td></tr><tr><td>WHO</td><td>World Health Organization</td></tr></table>"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.159,
+                0.934,
+                0.174,
+                0.955
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.197,
+                0.939,
+                0.434,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.473,
+                0.105,
+                0.592,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.772,
+                0.05,
+                0.848,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.091,
+                0.819,
+                0.141
+            ],
+            "angle": 0,
+            "content": "HEALTH SPENDING EFFICIENCY IN PORTUGAL: DRIVERS, CHALLENGES AND REFORM PRIORITIES \\( ^{1} \\)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.159,
+                0.877,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Portugal's health system is facing increasing spending pressures driven by population aging, constraints in the availability and deployment of health workers, and rising input costs, while access bottlenecks persist. Although health spending levels are broadly comparable to those of peer countries, recent spending growth (particularly in personnel, pharmaceuticals, and outsourced services) has not consistently translated into sustained improvements in access or in operational system performance. This paper analyzes the drivers of health spending growth in Portugal and the scope for efficiency gains, focusing on spending composition, input costs, and institutional and budgetary factors that affect how resources are allocated and used in the health sector.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.323,
+                0.308,
+                0.343
+            ],
+            "angle": 0,
+            "content": "A. Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.359,
+                0.88,
+                0.512
+            ],
+            "angle": 0,
+            "content": "1. Health spending efficiency has become a policy priority for Portugal amid rising fiscal pressures and rapid population aging. Nearly a quarter of the population is aged 65 or older, one of the highest shares in Europe. Aging is driving demand for chronic disease management and long-term care, and increasing the load on hospitals and primary care (Economic Policy Committee, Ageing Working Group, 2024). At the same time, technological change and higher expectations for quality and timely access contribute to further pushing costs up. Together with workforce constraints, higher input prices—as well as the need to address a persistent stock of arrears—they are expected to further raise overall health spending needs (OECD, 2023).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.526,
+                0.874,
+                0.697
+            ],
+            "angle": 0,
+            "content": "2. Total current health expenditure (CHE) has remained broadly stable over the past two decades, fluctuating around 12-14 percent of total government spending (Figure 1.A). Total (private and public) current health expenditure has been close to 10 percent of GDP, above the EU average. It has grown in real per-capita terms broadly in line with the EU-27 since 2000 (Figure 1.B), with only a few advanced European countries (such as Germany, France, Austria, and Belgium) allocating a larger share of national income to health. As population aging and excess cost growth are projected to increase public health spending by around 2 percentage points of GDP by 2050 under baseline policies (Figure 1.C), the health system is likely to remain an important source of fiscal pressure in the medium-term absent reforms.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.872,
+                0.878,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Prepared by Carolina Bloch (FAD). The findings (especially qualitative inputs) reflect discussions from meetings with government officials and other technical counterparts during an EUR staff visit in September 2025."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.093,
+                0.767,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.118,
+                0.819,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.16,
+                0.797,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.18,
+                0.855,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.199,
+                0.874,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.218,
+                0.863,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.236,
+                0.857,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.255,
+                0.839,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.275,
+                0.839,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.293,
+                0.592,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.323,
+                0.305,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.36,
+                0.139,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.361,
+                0.872,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.38,
+                0.874,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.398,
+                0.878,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.418,
+                0.831,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.437,
+                0.867,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.456,
+                0.795,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.474,
+                0.859,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.494,
+                0.674,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.527,
+                0.138,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.528,
+                0.871,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.546,
+                0.859,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.565,
+                0.861,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.585,
+                0.869,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.604,
+                0.828,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.623,
+                0.862,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.642,
+                0.846,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.66,
+                0.842,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.68,
+                0.505,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.122,
+                0.094,
+                0.491,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Figure 1. Benchmarking and Recent A. Health spending is stable relative to GDP but absorbs a growing share of government spending."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.194,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.172,
+                0.146,
+                0.444,
+                0.329
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.5,
+                0.094,
+                0.846,
+                0.141
+            ],
+            "angle": 0,
+            "content": "Trends of Current Health Spending\nB. . Per capita health spending has grown broadly in line with EU peers."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.539,
+                0.146,
+                0.812,
+                0.329
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.124,
+                0.344,
+                0.482,
+                0.388
+            ],
+            "angle": 0,
+            "content": "C. Population aging and cost pressures are expected to continue pushing public health spending upwards over the medium term."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.499,
+                0.344,
+                0.855,
+                0.375
+            ],
+            "angle": 0,
+            "content": "D. Portugal has moved closer to the efficiency frontier, but significant gaps remain."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.157,
+                0.395,
+                0.475,
+                0.577
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.529,
+                0.395,
+                0.815,
+                0.574
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.597,
+                0.56,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff estimates based on WHO, OECD and UNPP data."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.612,
+                0.869,
+                0.749
+            ],
+            "angle": 0,
+            "content": "Notes: Panel C (Projections): our approach is decomposing historical spending growth into an excess cost growth (ECG) component and a demographic component. The ECG component includes technological progress, Baumol's cost disease (i.e., wages rising faster than productivity in labor-intensive health services), rising demand for health services unrelated to demographic, and other unobserved components. The ECG is based on the average country specific growth rate of health expenditure/GDP during 1980–2019 holding the demographic profile constant. The demographic component is based on the size of the population age groups from the UN World Population Prospects by year, combined with age-health spending profiles developed by the OECD and National Transfer Accounts, to create an aging scaling factor. The aging scaling factor and the ECG are then combined to project health expenditure share estimate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.748,
+                0.871,
+                0.841
+            ],
+            "angle": 0,
+            "content": "Panel D: The frontier is estimated non-parametrically. Input-oriented gaps indicate how much spending per capita could be reduced to reach the best-practice frontier while keeping the outcome fixed (a leftward move toward the frontier). Results are sensitive to indicator choice and methodology; in particular, DEA-based estimates using cross-country macro data should be interpreted with caution and as indicative orders of magnitude rather than precise estimates (e.g., cross-country differences in needs, risk factors, and reporting are not fully controlled for). Countries circled in yellow have at least 22% of the population aged 65 or over (Portugal has 24%).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.116,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.615,
+                0.861,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.63,
+                0.865,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.645,
+                0.861,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.66,
+                0.861,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.676,
+                0.861,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.69,
+                0.824,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.706,
+                0.841,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.721,
+                0.845,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.736,
+                0.351,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.749,
+                0.866,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.765,
+                0.868,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.78,
+                0.83,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.795,
+                0.849,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.812,
+                0.854,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.826,
+                0.767,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.772,
+                0.049,
+                0.848,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.093,
+                0.881,
+                0.283
+            ],
+            "angle": 0,
+            "content": "3. Benchmarking against EU peers suggests that Portugal's health spending level is broadly consistent with its income level and demographic profile, but efficiency gaps persist. Aggregate health outcomes, while solid, are comparable to those of countries that spend less, indicating scope to improve how resources are allocated and managed rather than simply increasing spending to address growing needs. Efficiency frontier analysis\\( ^{2} \\) shows that despite improvement, Portugal still operates inside the frontier: between 2013 and 2023 Portugal moved closer to the curve that relates life expectancy at birth to health spending per capita; however, bearing in mind methodological limitations, estimates suggest that savings in the order of \\( \\frac{1}{4} \\) of current spending could be achieved while preserving outcome levels if Portugal were to operate at the frontier (Figure 1.D). This is consistent with similar estimates from Banco de Portugal 2023.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.297,
+                0.873,
+                0.507
+            ],
+            "angle": 0,
+            "content": "4. This paper looks at the main drivers of health spending growth in Portugal, assesses the scope for efficiency gains, and discusses policy implications. It focuses on separating activity/volume effects from cost-related drivers: e.g., whether higher hospital spending reflects more patients treated or higher unit costs, wage-bill growth is mainly due to salary increases or staffing expansion, and pharmaceutical outlays are rising because of greater consumption or higher prices. By linking these trends to key institutional and governance features, the analysis seeks to distinguish pressures that are largely structural or unavoidable (such as aging and the burden of chronic disease) from those that can be reduced through policies and improved management. The next three sections explore potential sources of inefficiency, focusing on spending composition, input cost drivers, and system-level constraints. The last section concludes with policy implications for containing fiscal pressures while considering access and quality concerns.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.519,
+                0.637,
+                0.539
+            ],
+            "angle": 0,
+            "content": "B. Healthcare Model and Spending Composition"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.555,
+                0.881,
+                0.765
+            ],
+            "angle": 0,
+            "content": "5. Portugal's health system relies on a public universal national health service, which is mostly tax-financed. Public health services are predominantly financed through general government schemes, with limited \"own revenues,\" especially since the elimination of moderating fees (Box 1). Government financing (tax-financed direct transfers from the State budget) accounts for around 59 percent of CHE (higher than the EU average), while social health insurance (schemes financed primarily through earmarked Social Security contributions) represents only about 3 percent (vs. over 40 percent in EU) (Figure 2). This financing structure implies that changes to SNS spending directly translate into pressures on the central budget, even though a significant share of overall health spending is borne by households through out-of-pocket payments, as discussed below. As a result, fiscal consolidation episodes tend to affect the health sector through budget envelopes rather than through contribution rates or earmarked pools.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.859,
+                0.871,
+                0.903
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  SNS accounts cover about 80 percent of government current health expenditure. The “Conta do SNS” perimeter is limited to SNS entities and therefore excludes other institutions recorded under the broader Health Program, including SGMS, IGAS, DGS, SICAD, ERS, INFARMED, and SPMS."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.935,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.094,
+                0.139,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.094,
+                0.826,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.113,
+                0.869,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.132,
+                0.83,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.15,
+                0.878,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.171,
+                0.856,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.19,
+                0.839,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.209,
+                0.854,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.849,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.246,
+                0.822,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.265,
+                0.741,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.3,
+                0.139,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.3,
+                0.857,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.319,
+                0.819,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.337,
+                0.839,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.356,
+                0.84,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.375,
+                0.872,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.395,
+                0.844,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.413,
+                0.846,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.432,
+                0.863,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.451,
+                0.841,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.47,
+                0.861,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.489,
+                0.699,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.52,
+                0.634,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.555,
+                0.138,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.557,
+                0.858,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.576,
+                0.792,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.595,
+                0.856,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.612,
+                0.856,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.632,
+                0.861,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.652,
+                0.877,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.67,
+                0.869,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.69,
+                0.845,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.709,
+                0.871,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.728,
+                0.832,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.747,
+                0.565,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.049,
+                0.193,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.296,
+                0.098,
+                0.704,
+                0.115
+            ],
+            "angle": 0,
+            "content": "Box 1. Overview of the Portuguese Health System"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.12,
+                0.868,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Portugal's public health system is built around the national health service (Serviço Nacional de Saúde, SNS), which guarantees universal access. General practitioners (family doctors) are intended to act as gatekeepers to specialist and hospital care. The SNS was created in 1979 with the prospect of providing free-at-point-of-use access while allowing complementary financing arrangements, including moderating fees, which were later mostly eliminated except for hospital visits without referrals. The Ministry of Health centralizes the resources and contracts annual budgets of around €14 billion (4.8 percent of GDP) with local health entities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.223,
+                0.862,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Since 2024, most public hospitals and primary care centers have been integrated into 39 Local Health Units (Unidades Locais de Saúde, ULS), which brought these entities together within single administrative and financial structures and now cover the entire country. These ULS are predominantly public providers within the SNS, while some hospitals have been managed under public–private partnership arrangements, and some specialized institutions (such as oncology institutes) remain outside the ULS model.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.31,
+                0.854,
+                0.377
+            ],
+            "angle": 0,
+            "content": "Alongside the SNS, several occupation-based and private schemes provide additional coverage, especially for faster access to elective care and diagnostics. These include ADSE for civil servants, ADM and SAD for military and security forces, and various corporate or mutual schemes (e.g., SAMS), as well as voluntary health insurance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.399,
+                0.878,
+                0.589
+            ],
+            "angle": 0,
+            "content": "6. Portugal stands out for the high share of health spending paid directly by households, reflecting a large recourse to private health providers paid out of pocket. Out-of-pocket spending amounts to around 30 percent of CHE, about 10 percentage points higher than the EU average and above Spain and Italy (Figure 2.A). This has implications for financial protection and equity in access, particularly if households are paying because timely care is not available in the SNS rather than out of provider preference. It also complicates how system performance is measured: part of the response to SNS constraints is an expansion of private utilization (including voluntary health insurance; Figure 2.B), which may relieve some pressure in the short run (although capacity constraints have also emerged in private providers in recent years), but can also weaken incentives to address bottlenecks in the public sector.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.099,
+                0.701,
+                0.114
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.122,
+                0.859,
+                0.133
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.138,
+                0.863,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.154,
+                0.865,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.171,
+                0.85,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.187,
+                0.832,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.202,
+                0.863,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.224,
+                0.859,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.24,
+                0.837,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.256,
+                0.855,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.272,
+                0.837,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.289,
+                0.736,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.312,
+                0.851,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.329,
+                0.844,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.345,
+                0.827,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.36,
+                0.244,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.4,
+                0.137,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.399,
+                0.874,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.42,
+                0.825,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.438,
+                0.847,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.458,
+                0.846,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.476,
+                0.875,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.495,
+                0.852,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.515,
+                0.847,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.533,
+                0.856,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.552,
+                0.862,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.572,
+                0.444,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.504,
+                0.111,
+                0.861,
+                0.142
+            ],
+            "angle": 0,
+            "content": "B. The share of household direct payments in CHE remains persistently high, while that of government has decreased."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.772,
+                0.049,
+                0.848,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.121,
+                0.09,
+                0.862,
+                0.437
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.45,
+                0.52,
+                0.466
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations based on WHO GHE database."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.465,
+                0.829,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Note: In the top graph of panel A, \"Voluntary Financing Arrangements\" includes household voluntary health insurance as well as out-of-pocket payments to providers (both private and public)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.516,
+                0.882,
+                0.783
+            ],
+            "angle": 0,
+            "content": "7. Since 2000, curative care has significantly shifted from inpatient to outpatient and day care, while preventive and long-term care have remained limited compared to peers. This evolution is consistent with past reforms aimed at expanding ambulatory care and integrating primary and secondary services. Relative to the EU, outpatient curative care absorbs a comparatively high share of CHE and inpatient spending is somewhat lower (Figure 3). While a lower reliance on inpatient care could reflect efficiency gains through substitution away from costly hospital admissions toward ambulatory treatment, this can also result from misallocation across levels of care: limited access to primary care and weak gatekeeping can push patients into hospital outpatient departments for services that could be delivered more cheaply in community care. Similarly, the relatively low provision of long-term care reflects limited formal capacity, resulting in a heavy reliance on family-based support and, in some cases, the use of hospital services for patients with long-term care needs. At the same time, notwithstanding some increase in recent years, the low levels of spending on preventive and long-term care suggests that the system remains more disease-centered than prevention-oriented, despite aging and the burden of chronic conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.938,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.518,
+                0.139,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.518,
+                0.876,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.538,
+                0.838,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.555,
+                0.83,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.576,
+                0.874,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.594,
+                0.857,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.614,
+                0.798,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.634,
+                0.844,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.652,
+                0.798,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.67,
+                0.824,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.689,
+                0.874,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.709,
+                0.868,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.727,
+                0.879,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.747,
+                0.817,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.766,
+                0.844,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.492,
+                0.565,
+                0.847,
+                0.612
+            ],
+            "angle": 0,
+            "content": "of High Costs and Continued Strain\nB. Hospital costs and length of stay are higher in Portugal than in EU peers"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.194,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.164,
+                0.093,
+                0.835,
+                0.112
+            ],
+            "angle": 0,
+            "content": "Figure 3. Composition of Current Health Expenditure in Portugal and EU Countries"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.382,
+                0.11,
+                0.619,
+                0.292
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.293,
+                0.689,
+                0.308
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff elaboration based on WHO Government Health Expenditure dataset."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.307,
+                0.866,
+                0.339
+            ],
+            "angle": 0,
+            "content": "Note: the shift to ULS and integrated healthcare is still at early stages and, as the data are from 2022, numbers do not necessarily reflect the current situation."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.359,
+                0.872,
+                0.55
+            ],
+            "angle": 0,
+            "content": "8. Spending and activity have increased, but access bottlenecks remain. Part of the post-2021 acceleration in the expansion of activity reflects catch-up from the pandemic and efforts to reduce backlogs. The authorities reported a sizable increase in hospital output (e.g., 5 percent increases in consultations and in surgeries between 2023 and 2024). However, despite higher resources absorbed by hospitals, long waits for elective surgery persist. This reflects continued capacity constraints, which are exacerbated by higher cost per patient and inpatient length of stay (Figure 4). This is compounded by continuing gaps in system gatekeeping: the authorities estimate that around 1.6 million SNS users do not have a family doctor, which increases reliance on emergency departments as an entry point. The authorities also highlighted that many hospital beds are occupied by patients who should be in long-term or home care, adding pressure to the system.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.124,
+                0.599,
+                0.455,
+                0.811
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.125,
+                0.823,
+                0.496,
+                0.839
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations based on WHO and OECD."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.535,
+                0.62,
+                0.812,
+                0.807
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.875,
+                0.446,
+                0.895
+            ],
+            "angle": 0,
+            "content": "C. Input-Related Cost Drivers"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.935,
+                0.131,
+                0.954
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.36,
+                0.139,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.361,
+                0.863,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.379,
+                0.848,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.399,
+                0.827,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.418,
+                0.821,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.437,
+                0.831,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.456,
+                0.861,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.475,
+                0.865,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.494,
+                0.8,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.514,
+                0.871,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.532,
+                0.868,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.875,
+                0.445,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.471,
+                0.331,
+                0.875,
+                0.38
+            ],
+            "angle": 0,
+            "content": "B. Wages and pharmaceuticals account for a large share of recent spending growth."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.772,
+                0.049,
+                0.848,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.879,
+                0.321
+            ],
+            "angle": 0,
+            "content": "9. The recent acceleration in SNS spending is concentrated on wages, medical goods (especially pharmaceuticals), and outsourcing. During 2019-24, SNS CHE increased by 20 percent in real terms (Figure 5.A). Almost half of the growth was explained by personnel spending, and around a third by purchase of medical goods (20 percent from pharmaceuticals) (Figure 5.B). The remaining 20 percent is linked to external provision and services, which include services and externally procured pharmaceuticals. As discussed below, each of these components is linked to concrete constraints identified by the authorities, particularly the management of the health workforce (including use of temporary staff), challenges in containing growth in volumes of pharmaceuticals, and fragmented procurement/clinical decisions outside standardized protocols. Figure 5 decomposes the recent evolution of SNS current health expenditure to help frame where fiscal pressure is coming from, where savings are most likely and determine what could be realistic magnitudes for efficiency gains in public spending.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.122,
+                0.335,
+                0.42,
+                0.392
+            ],
+            "angle": 0,
+            "content": "Figure 5. Contributions of Main Sp\nA. Spending growth between 2019 and 2024 is concentrated in personnel, medical goods, and external services."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.157,
+                0.4,
+                0.434,
+                0.628
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.477,
+                0.39,
+                0.868,
+                0.641
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.125,
+                0.659,
+                0.762,
+                0.675
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculation based on SNS accounts data provided by the Portuguese authorities."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.681,
+                0.872,
+                0.891
+            ],
+            "angle": 0,
+            "content": "10. Rising personnel costs reflect wage dynamics, staffing gaps, and heavy reliance on overtime and temporary work. The healthcare wage bill explains the largest share of spending growth since 2019. While recent trends reflect hiring more than wage increases (Figure 6.A), shortages persist in family medicine, obstetrics, and nursing, and overtime has risen sharply, increasing costs and risking undermining motivation and productivity. The lack of exclusivity for nurses and physicians, combined with a tight labor market, facilitates dual public/private practice and reduces effective availability for the SNS. This is compounded by the use of personnel outside the payroll through acquisition of services (tarefeiros) as a structural workaround for workforce and capacity constraints, which may raise costs and weaken accountability over performance. The result is that overall personnel-related spending keeps increasing, while staff output is broadly flat. Evidence suggests that productivity in the SNS has been declining since 2015 despite rising",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.935,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.094,
+                0.138,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.094,
+                0.839,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.114,
+                0.878,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.133,
+                0.833,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.151,
+                0.851,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.17,
+                0.814,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.19,
+                0.844,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.209,
+                0.814,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.228,
+                0.811,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.246,
+                0.849,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.265,
+                0.858,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.285,
+                0.863,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.304,
+                0.503,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.683,
+                0.151,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.682,
+                0.844,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.701,
+                0.845,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.721,
+                0.811,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.74,
+                0.813,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.759,
+                0.842,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.778,
+                0.851,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.797,
+                0.861,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.816,
+                0.865,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.835,
+                0.868,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.855,
+                0.817,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.872,
+                0.809,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.486,
+                0.38,
+                0.854,
+                0.41
+            ],
+            "angle": 0,
+            "content": "B. Healthcare professional remuneration divided by average annual wages."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.194,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.872,
+                0.13
+            ],
+            "angle": 0,
+            "content": "spending (Barros and Santos, 2024), implying that lower productivity is both a contributor to, and a consequence of, rising costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.138,
+                0.882,
+                0.349
+            ],
+            "angle": 0,
+            "content": "11. As the demand for more complex services grows with population aging and technology, so will the pressure to hire and motivate (including through higher pay) qualified professionals. Latest benchmarking data on healthcare workforce compensation suggests that salaries in Portugal may be less competitive than in peers (especially for nurses), which affects attraction and retention (Figure 6.B). Workforce aging and the emigration of many young health professionals to higher-paying countries leave mid-career gaps that make replacement and knowledge transfer difficult. Flexibility in training and task shifting to strengthen both the number and role of nurses could help but faces resistance from professional groups. These upward pressures related to salaries have already started to materialize through recent multi-year wage-increase agreements (on average, around 24 percent for nurses and 10 percent for doctors by 2027). It is likely that future pressures will increasingly come from compensation, in addition to employment.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.416,
+                0.823,
+                0.626
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.122,
+                0.645,
+                0.847,
+                0.737
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations based on OECD and Fiscal Council (original data from DGAEP for panel A). Notes (Panel A): Latest available data are from 2023 for Portugal, and variable for other countries. Remuneration comparisons should be read cautiously: data are not fully harmonized across countries and may differ in coverage (public vs. public+private), employment concept (headcount vs. FTE), and inclusion of supplements/overtime. In Portugal, dual practice and the public-private mix further complicate interpretation, especially for physicians and nurses."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.757,
+                0.861,
+                0.775
+            ],
+            "angle": 0,
+            "content": "12. Pharmaceuticals are a growing source of pressure, despite increased use of generics."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.771,
+                0.884,
+                0.889
+            ],
+            "angle": 0,
+            "content": "Recent growth appears to be driven primarily by volumes rather than prices, except in 2020 (Figure 7). Authorities identified hospital drugs (including oncology, diabetes, and rare diseases) as the main source of pressure, where both volume growth and the diffusion of expensive therapies matter. From an efficiency perspective, a volume-driven profile may reflect appropriate expansion of access and treatment intensity (including catch-up in activity after the pandemic). However, the volume growth could also stem from clinical practice variation and new therapies expanding beyond",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.095,
+                0.869,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.114,
+                0.335,
+                0.129
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.138,
+                0.791,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.158,
+                0.875,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.179,
+                0.839,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.197,
+                0.826,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.216,
+                0.845,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.235,
+                0.811,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.254,
+                0.859,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.273,
+                0.879,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.292,
+                0.831,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.31,
+                0.843,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.329,
+                0.855,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.757,
+                0.858,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.778,
+                0.809,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.796,
+                0.865,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.816,
+                0.852,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.834,
+                0.878,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.854,
+                0.838,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.873,
+                0.876,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.772,
+                0.049,
+                0.848,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.093,
+                0.836,
+                0.131
+            ],
+            "angle": 0,
+            "content": "initial indications which, while difficult to verify with data, was highlighted by the authorities as having important cost implications (\"health budget is ultimately determined at doctor's pen\").",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.198,
+                0.146,
+                0.801,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Figure 7. SNS Spending on Pharmaceuticals: Changes in Volume and Price"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.334,
+                0.177,
+                0.597,
+                0.352
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.125,
+                0.369,
+                0.752,
+                0.385
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff elaboration based on WHO and SNS Transparency Portal; see INFARMED data."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.403,
+                0.72,
+                0.424
+            ],
+            "angle": 0,
+            "content": "D. System-Level and Budgeting Reforms and Constraints"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.439,
+                0.88,
+                0.706
+            ],
+            "angle": 0,
+            "content": "13. In response to access bottlenecks and rise in chronic care needs, the authorities have initiated reforms to better integrate care and strengthen accountability. A key step has been the generalization of the ULS, integrating hospitals and primary care centers within single administrative and financial structures in the entire country (Goiana-da-Silva et al, 2024). This has also changed financing: from 2024, hospital contracting shifted from a volume-based approach (compromisso assistencial, under which transfers to providers were largely based on agreed activity volumes) to a capitation-based model. \\( ^{3} \\)  While these reforms strengthen the framework for analyzing and addressing efficiency, many are still at an early implementation phase. For example, analytical cost accounting is being designed and tested, aiming to produce comparable data across hospitals and ULS starting in 2026. More generally, frequent institutional changes have been identified as a cause of delay in the implementation of reforms and measures (Conselho das Finanças Públicas, 2025). As a result, early evidence on the impact of ULS integration and capitation contracting on efficiency will likely remain partial in the near term, and careful monitoring will be needed to distinguish possible reform implementation gaps from reform design limitations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.723,
+                0.881,
+                0.857
+            ],
+            "angle": 0,
+            "content": "14. Underbudgeting, bailouts, and arrears have been weakening efficiency incentives and SNS reform efforts. As overspending is regularly covered through end-year support, an underlying efficiency concern is that entities face weaker incentives to internalize cost control as they expect ex-post financing. This dynamic interacts with the contracting framework: counterparts noted that, under “contratos-programa,” ULSs often know at the start of the year that targets and budgets are not feasible, and that related spending will then “explode”, leading to government bailouts. In this setting, the shift to capitation-based contracting in 2024 is unlikely to deliver its intended efficiency",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.872,
+                0.86,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\)  Capitation allocates funding largely based on the covered population (with risk adjustment), rather than hospital activity volumes, to strengthen incentives for prevention and integrated care with each ULS."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.598,
+                0.939,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.855,
+                0.939,
+                0.875,
+                0.955
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.094,
+                0.834,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.115,
+                0.826,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.405,
+                0.717,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.44,
+                0.152,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.441,
+                0.859,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.46,
+                0.855,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.48,
+                0.794,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.498,
+                0.852,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.518,
+                0.839,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.536,
+                0.864,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.553,
+                0.878,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.574,
+                0.857,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.592,
+                0.866,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.612,
+                0.855,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.631,
+                0.843,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.649,
+                0.845,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.669,
+                0.816,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.687,
+                0.729,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.725,
+                0.149,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.725,
+                0.869,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.743,
+                0.873,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.762,
+                0.877,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.782,
+                0.839,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.801,
+                0.864,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.82,
+                0.859,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.839,
+                0.869,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.193,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.884,
+                0.208
+            ],
+            "angle": 0,
+            "content": "effects (better management of defined patient populations and cost control) if deficits and arrears are later socialized (and if providers price these risks into contracts). Finally, while Portugal has an ambitious pipeline of health investments under the PRR and national plans, the chronic under-execution of health infrastructure projects—reflecting, as in other sectors, weaknesses in planning, implementation and oversight (see 2025 PIMA)—masks inefficiencies as it offsets overruns in current health spending and adds to challenges in budgeting (Barros and Santos, 2025).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.225,
+                0.882,
+                0.378
+            ],
+            "angle": 0,
+            "content": "15. Program budgeting and a strengthened spending review process are important steps to enhance the credibility of reforms. Until the 2025 budget law, measures and targets in health plans and budgets were not systematically costed, which undermined prioritization (e.g., without costing, it is difficult to weigh community-care against hospital expansions) and translation of access commitments (e.g., reducing waiting lists) into credible delivery models (e.g., integrated and continuous care). Program budgeting, introduced in the 2026 budget cycle, is an opportunity to enhance planning. Ex-ante costing of reforms is also expected to improve as Portugal has been strengthening its spending review framework (Box 2).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.396,
+                0.882,
+                0.644
+            ],
+            "angle": 0,
+            "content": "16. The reform agenda relies heavily on better data infrastructure to support planning, monitoring, and accountability across public health entities. The government is rolling out a new waitlist management system, with improved tracking of waiting times, prioritization rules, and referral to private or social sector providers if the SNS cannot respond within the guaranteed time limit. Other operational reforms include efforts to clean and strengthen the national user registry, expand and harmonize electronic health records (including integration of private sector information). While these reforms are promising, fragmentation limits their impact, given the uneven capacity of institutions and personnel to work with different systems. Interoperability challenges persist because hospitals historically adopted different IT systems, and harmonizing data fields and standards remains work in progress even when digital coverage is high. Advancing digital transformation will also support authorities' efforts to improve planning, effectively implementing program budgeting and estimating savings from spending reviews more accurately (as well as strengthening monitoring of system performance).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.392,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.095,
+                0.861,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.115,
+                0.854,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.832,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.151,
+                0.859,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.17,
+                0.879,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.19,
+                0.723,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.226,
+                0.865,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.246,
+                0.863,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.266,
+                0.848,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.285,
+                0.878,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.304,
+                0.814,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.323,
+                0.842,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.341,
+                0.838,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.36,
+                0.522,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.396,
+                0.172,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.397,
+                0.848,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.417,
+                0.846,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.436,
+                0.862,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.858,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.473,
+                0.854,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.493,
+                0.779,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.512,
+                0.878,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.531,
+                0.844,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.55,
+                0.865,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.569,
+                0.795,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.588,
+                0.855,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.607,
+                0.83,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.626,
+                0.502,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.772,
+                0.049,
+                0.848,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.165,
+                0.099,
+                0.835,
+                0.116
+            ],
+            "angle": 0,
+            "content": "Box 2. Portugal's Health Spending Review: Scope and Implementation Constraints"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.121,
+                0.873,
+                0.251
+            ],
+            "angle": 0,
+            "content": "Portugal has been moving toward a more structured spending review framework, with clearer governance and a tighter link to the budget process. The 2024 cycle was the first under a new methodology, guided by a dedicated manual that standardized analytical steps and governance arrangements for reviews. Building on this experience, a decree adopted in July 2025 formally clarified roles, reporting obligations, and the intended integration of spending review outputs into annual budgets and medium-term expenditure frameworks (MTEF). The new decree also strengthens transparency requirements and introduces an incentive/adjustment logic. Documented and validated savings may partly revert to the entity/sector, while deviations from the planned trajectory should be justified and compensated through additional measures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.256,
+                0.874,
+                0.322
+            ],
+            "angle": 0,
+            "content": "The process is designed to start early. Under the July 2025 framework, spending review reports (diagnosis and policy options) are meant to be approved before the start of the budget year and factored into the draft budget and MTEF update. Topics are selected about two years ahead, based on fiscal relevance and government priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.327,
+                0.871,
+                0.394
+            ],
+            "angle": 0,
+            "content": "Health is among the priority spending areas. The 2024 health spending review focused on two intervention areas: (i) contracted care in dialysis and physical therapy/rehabilitation services; and (ii) medicines, with an emphasis on generics and biosimilars. The scope of the review of pharmaceutical spending will be expanded in 2026, and human resources in health is already being considered for the 2027 cycle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.399,
+                0.874,
+                0.53
+            ],
+            "angle": 0,
+            "content": "Initial savings estimates have not materialized as expected, largely due to implementation delays. Spending reviews produce estimate of savings, (e.g., about €70 million in the 2024 health spending review) but achieving them has proved difficult. Broadly, three constraints recur in discussions with stakeholders: (i) baseline construction remains difficult, including because of data access limits and reliance on historical extrapolation; (ii) limited comparable cost and activity data across providers weakens ex post verification and attribution; and (iii) frequent institutional/political changes can interrupt implementation momentum (precisely when sustained follow-through is needed to convert “identified measures” into realized savings and service improvements).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.121,
+                0.534,
+                0.864,
+                0.585
+            ],
+            "angle": 0,
+            "content": "References: Governo de Portugal, Conta Geral do Estado 2024 (2024) and Decreto-Lei n.º 87/2025, de 25 de julho (revisão da despesa pública) (2025), and Tribunal de Contas, Auditoria ao Exercício de Revisão da Despesa (Spending Review) (2024).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.597,
+                0.875,
+                0.618
+            ],
+            "angle": 0,
+            "content": "E. Conclusion and Policy Options to Enhance Health Spending Efficiency"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.626,
+                0.883,
+                0.817
+            ],
+            "angle": 0,
+            "content": "17. While Portugal's health expenditure is broadly in line with peers, recent spending acceleration and persistent access bottlenecks suggest scope for efficiency gains. Activity has recovered since the pandemic, but wait times remain high and hospitals report persistent congestion. Pressures are concentrated in personnel, pharmaceuticals, and outsourced services, pointing to challenges in how resources are deployed rather than overall spending levels. Key areas include the balance between hospital and non-hospital care, workforce management (including reliance on outsourcing), the use of clinical protocols to manage pharmaceutical spending, and fiscal governance arrangements to ensure that reforms translate into sustained savings. As the ULS and capitation reforms progress, improvements in costing, data, and accountability will be critical to monitor results and contain medium-term spending pressures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.834,
+                0.882,
+                0.91
+            ],
+            "angle": 0,
+            "content": "18. The ULS rollout and the shift to capitation-based contracting are steps toward a model that rewards integration and population management rather than activity alone. But the reforms are still recent, and key enablers are not yet fully operational. In particular, analytical cost accounting and interoperable information systems are still being developed, which limits near-term",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.939,
+                0.875,
+                0.955
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.1,
+                0.832,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.123,
+                0.852,
+                0.135
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.139,
+                0.869,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.154,
+                0.862,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.171,
+                0.811,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.187,
+                0.817,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.202,
+                0.807,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.22,
+                0.856,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.235,
+                0.852,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.259,
+                0.848,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.274,
+                0.871,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.29,
+                0.808,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.307,
+                0.279,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.33,
+                0.858,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.347,
+                0.849,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.362,
+                0.867,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.378,
+                0.716,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.401,
+                0.86,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.417,
+                0.816,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.433,
+                0.831,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.449,
+                0.835,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.465,
+                0.871,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.48,
+                0.816,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.496,
+                0.848,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.513,
+                0.316,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.536,
+                0.861,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.551,
+                0.817,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.569,
+                0.361,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.596,
+                0.872,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.627,
+                0.155,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.628,
+                0.835,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.645,
+                0.862,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.665,
+                0.794,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.685,
+                0.839,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.704,
+                0.87,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.72,
+                0.84,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.742,
+                0.879,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.76,
+                0.856,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.78,
+                0.841,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.799,
+                0.593,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.835,
+                0.878,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.854,
+                0.828,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.875,
+                0.854,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.893,
+                0.87,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.194,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.883,
+                0.187
+            ],
+            "angle": 0,
+            "content": "comparability of costs and activity across providers and makes it harder to attribute changes in spending and performance to specific measures. Moreover, while the elimination of moderating fees strengthened financial protection, it also reduced a potential demand-management instrument, increasing the importance of effective gatekeeping and supply-side controls to prevent avoidable utilization.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.206,
+                0.88,
+                0.358
+            ],
+            "angle": 0,
+            "content": "19. The short-term efficiency challenge is less about service volumes than throughput and patient flow. Personnel costs, medical goods (notably pharmaceuticals), and external provision account for most of the increase in SNS spending. This pattern is consistent with a system relying on costly workarounds (e.g., overtime, and outsourcing) and volume-driven growth in high-cost therapies. Gaps in primary care gatekeeping and limited long-term and home-care capacity continue to shift demand toward hospitals and emergency departments and reduce effective capacity for elective care. These constraints help explain why higher spending has not consistently translated into sustained improvements in access.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.377,
+                0.884,
+                0.643
+            ],
+            "angle": 0,
+            "content": "20. Policy options to improve health spending efficiency fall into two broad areas: completing ongoing reforms and addressing remaining incentive and capacity gaps. First, sustained implementation of reforms already underway is critical. These include the rollout of the ULS, the shift to capitation-based contracting, and the development of analytical cost accounting and interoperable information systems, which are essential to support better planning and accountability but are still at an early stage. Second, additional measures could help address persistent bottlenecks. These include strengthening primary care gatekeeping, expanding long-term and home-care capacity to reduce pressure on hospitals, and reinforcing clinical protocols and prescribing controls to limit volume-driven spending growth. As moderating fees were largely removed, these non-price-related instruments currently play a central role in limiting avoidable utilization while preserving access and financial protection. Over the medium term, authorities could also consider a carefully designed and targeted reintroduction of moderating fees to complement gatekeeping reforms as a demand-management tool, particularly for non-urgent or avoidable use of hospital and emergency services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.661,
+                0.874,
+                0.738
+            ],
+            "angle": 0,
+            "content": "21. Strengthening budgeting and spending review governance is central to sustaining efficiency gains. Repeated underbudgeting followed by ex-post bailouts weakens cost discipline and reduces incentives for providers to operate within budget constraints. Health budgets could be set using more transparent and objective criteria, with clearer expectations on expenditure paths.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.755,
+                0.871,
+                0.887
+            ],
+            "angle": 0,
+            "content": "22. The spending review framework has become more structured and better aligned with the budget cycle, but implementation remains a key challenge. Strengthening governance—particularly through a more prominent role for the Ministry of Finance and senior government coordination in monitoring implementation—would help ensure that identified measures translate into realized savings. Improving reporting on realized savings and linking them more clearly to budget decisions would also help move the process from identifying measures to demonstrating results.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.094,
+                0.836,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.114,
+                0.879,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.842,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.151,
+                0.855,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.17,
+                0.199,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.206,
+                0.876,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.841,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.247,
+                0.878,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.265,
+                0.818,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.285,
+                0.811,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.304,
+                0.821,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.322,
+                0.858,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.341,
+                0.495,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.377,
+                0.811,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.398,
+                0.838,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.417,
+                0.852,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.435,
+                0.852,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.802,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.473,
+                0.816,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.492,
+                0.876,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.511,
+                0.834,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.53,
+                0.829,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.55,
+                0.836,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.568,
+                0.875,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.588,
+                0.86,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.606,
+                0.881,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.626,
+                0.368,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.662,
+                0.841,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.681,
+                0.854,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.701,
+                0.869,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.719,
+                0.852,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.756,
+                0.868,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.777,
+                0.85,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.796,
+                0.831,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.815,
+                0.862,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.833,
+                0.835,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.851,
+                0.85,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.871,
+                0.174,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.772,
+                0.049,
+                0.848,
+                0.063
+            ],
+            "angle": 0,
+            "content": "PORTUGAL"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.433,
+                0.104,
+                0.568,
+                0.126
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.152,
+                0.88,
+                0.205
+            ],
+            "angle": 0,
+            "content": "Barros, Pedro Pita, and Carolina Santos. 2024. Orçamento do Estado para a Saúde 2025. Observatório da Despesa em Saúde, Nota 08. Nova SBE / BPI \"la Caixa\" Foundation Chair in Health Economics. November."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.218,
+                0.867,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Barros, Pedro Pita, and Carolina Santos. 2025. Orçamento do Estado para a Saúde: Ambição ou Ficção? Observatório da Despesa em Saúde, Nota 10. Nova SBE / BPI \"la Caixa\" Foundation Chair in Health Economics. October."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.283,
+                0.869,
+                0.32
+            ],
+            "angle": 0,
+            "content": "Banco de Portugal. 2023. \"A macro approach to the relative efficiency of the Portuguese health system.\" Banco de Portugal Economic Studies 9(4). October. (Cláudia Braz and Sónia Cabral)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.331,
+                0.856,
+                0.367
+            ],
+            "angle": 0,
+            "content": "Conselho das Finanças Públicas. 2025. Evolução do Desempenho do Serviço Nacional de Saúde em 2024. Relatório n.º 05/2025. July."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.379,
+                0.844,
+                0.416
+            ],
+            "angle": 0,
+            "content": "Economic Policy Committee, Ageing Working Group. 2024. 2024 Ageing Report: Country fiche—Portugal."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.426,
+                0.881,
+                0.531
+            ],
+            "angle": 0,
+            "content": "Goiana-da-Silva, Francisco, Juliana Sá, Miguel Cabral, Raisa Guedes, Rafael Vasconcelos, João Sarmento, Alexandre Morais Nunes, Rita Moreira, Marisa Miraldo, Hutan Ashrafian, Ara Darzi, and Fernando Araújo. 2024. \"The Portuguese NHS 2024 reform: transformation through vertical integration.\" Frontiers in Public Health 12:1389057. Published May 23.\n\ndoi:10.3389/fpubh.2024.1389057."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.54,
+                0.872,
+                0.596
+            ],
+            "angle": 0,
+            "content": "OECD/European Observatory on Health Systems and Policies. 2023. Portugal: Country Health Profile 2023. State of Health in the EU. OECD Publishing, Paris / European Observatory on Health Systems and Policies, Brussels."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.606,
+                0.832,
+                0.644
+            ],
+            "angle": 0,
+            "content": "Portugal. 2025. Decreto-Lei n.º 87/2025, de 25 de julho (Revisão da Despesa Pública). Diário da República, 1.ª série, n.º 142."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.654,
+                0.821,
+                0.691
+            ],
+            "angle": 0,
+            "content": "Portugal, Ministério das Finanças. 2024. Orçamento do Estado 2025: Relatório. (Prepared with information available up to 10 October 2024)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.702,
+                0.821,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Portugal, Ministério das Finanças. 2025. Orçamento do Estado 2026: Relatório. (Prepared with information available up to 9 October 2025)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.75,
+                0.834,
+                0.804
+            ],
+            "angle": 0,
+            "content": "Portugal, Ministério das Finanças. 2025. Conta Geral do Estado 2024: Situação Financeira das Administrações Públicas—Relatório (section on Revisão da Despesa Pública / Spending Review)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.816,
+                0.868,
+                0.852
+            ],
+            "angle": 0,
+            "content": "Tribunal de Contas. 2024. Auditoria ao Exercício de Revisão da Despesa (Spending Review). Relatório n.º 3/2024, 2.ª Secção. June."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.598,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.939,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "15"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.436,
+                0.105,
+                0.565,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

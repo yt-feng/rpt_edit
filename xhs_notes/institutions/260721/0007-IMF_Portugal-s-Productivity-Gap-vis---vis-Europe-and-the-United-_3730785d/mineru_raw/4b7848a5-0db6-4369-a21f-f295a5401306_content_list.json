@@ -1,0 +1,1723 @@
+[
+    {
+        "type": "text",
+        "text": "Portugal's Productivity Gap vis-à-vis Europe and the United States: A Firm- Level Analysis",
+        "text_level": 1,
+        "bbox": [
+            76,
+            198,
+            807,
+            414
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ippei Shibata",
+        "bbox": [
+            76,
+            452,
+            218,
+            476
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "SIP/2026/065",
+        "bbox": [
+            76,
+            515,
+            223,
+            537
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 28, 2026. This paper is also published separately as IMF Country Report No 26/148.",
+        "bbox": [
+            75,
+            594,
+            519,
+            683
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2026\nJUL",
+        "bbox": [
+            76,
+            820,
+            233,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/0ad9eadfbecfe46ced87ec9009b3334bee7555ad06f7c92b54a9f31daa0fe24c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            651,
+            810,
+            797,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            76,
+            37,
+            830,
+            75
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "SELECTED ISSUES PAPER",
+        "bbox": [
+            918,
+            119,
+            983,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Paper European Department",
+        "text_level": 1,
+        "bbox": [
+            398,
+            194,
+            599,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Portugal's Productivity Gap vis-à-vis Europe and the United States: A Firm-Level Analysis Prepared by Ippei Shibata",
+        "text_level": 1,
+        "bbox": [
+            163,
+            244,
+            833,
+            280
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Authorized for distribution by Jean-François Dauphin\nJuly 2026",
+        "bbox": [
+            313,
+            297,
+            683,
+            332
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 28, 2026. This paper is also published separately as IMF Country Report No 26/148.",
+        "bbox": [
+            125,
+            367,
+            844,
+            420
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT: Portugal's large GDP-per-capita gap with the highest-income euro area economies and the US is primarily driven by a productivity shortfall. At the EU level, European leading firms, particularly in the tech sector, trail leading global counterparts in productivity and innovation, partly reflecting far less R&D investment rooted in less reliance on equity. In Portugal, those factors are compounded by a broader lack of dynamism. Firms enter the market small and rarely scale up, resulting in a much smaller economic footprint of young high-growth firms than in European peers and—even more so—the US. This rarer occurrence of “gazelles” in Portugal partly reflects limited access to venture capital and inadequate human capital, as well as tax and regulatory obstacles to firms’ growth. Taken together, this comparative lack of dynamism of leading and young high-growth firms alike explains Portugal’s larger share of small firms. Potential policy remedies include streamlining Portugal’s product market regulations and red tape and improving young firms’ access to long-term risk capital through EU-level initiatives.",
+        "bbox": [
+            111,
+            450,
+            882,
+            643
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RECOMMENDED CITATION: Shibata, Ippei. 2026. \"Portugal's Productivity Gap vis-à-vis Europe and the United States: A Firm-Level Analysis.\" In Portugal: Selected Issues, IMF Country Report No. 26/065. Washington, DC: International Monetary Fund.",
+        "bbox": [
+            111,
+            659,
+            841,
+            710
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification Numbers:",
+        "bbox": [
+            125,
+            737,
+            326,
+            753
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "D24, G24, J24, L25, L26, O31, O47",
+        "bbox": [
+            383,
+            737,
+            633,
+            753
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Keywords:",
+        "bbox": [
+            125,
+            779,
+            205,
+            796
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Portugal; productivity gap; total factor productivity; firm dynamics; firm scale-up; young high-growth firms (gazelles); venture capital; R&D investment",
+        "bbox": [
+            383,
+            770,
+            839,
+            821
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Author's E-Mail Address:",
+        "bbox": [
+            125,
+            838,
+            303,
+            854
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ishibata@imf.org",
+        "bbox": [
+            383,
+            838,
+            506,
+            856
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "© 2026 International Monetary Fund",
+        "bbox": [
+            116,
+            125,
+            370,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "SIP/2026/065",
+        "bbox": [
+            776,
+            126,
+            875,
+            140
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "SELECTED ISSUES PAPERS",
+        "bbox": [
+            111,
+            194,
+            522,
+            220
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Portugal's Productivity Gap Vis-À-Vis Europe and the United States: A Firm-Level Analysis",
+        "text_level": 1,
+        "bbox": [
+            111,
+            300,
+            820,
+            426
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Portugal",
+        "bbox": [
+            111,
+            459,
+            267,
+            494
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Prepared by Ippei Shibata $^{1}$",
+        "bbox": [
+            109,
+            577,
+            392,
+            603
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ The author would like to thank Jean-François Dauphin, Romain Duval, Maryam Vaziri and the seminar participants at the Bank of Portugal.",
+        "bbox": [
+            111,
+            898,
+            877,
+            925
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "PORTUGAL",
+        "text_level": 2,
+        "bbox": [
+            220,
+            123,
+            480,
+            159
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SELECTED ISSUES",
+        "bbox": [
+            217,
+            183,
+            416,
+            203
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "May 28, 2026",
+        "bbox": [
+            47,
+            208,
+            153,
+            224
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Approved By",
+        "bbox": [
+            233,
+            250,
+            370,
+            270
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Prepared By Ippei Shibata (EUR).",
+        "bbox": [
+            434,
+            251,
+            684,
+            270
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "European Department",
+        "bbox": [
+            235,
+            271,
+            419,
+            287
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "CONTENTS",
+        "text_level": 2,
+        "bbox": [
+            241,
+            316,
+            383,
+            339
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "PORTUGAL'S PRODUCTIVITY GAP VIS-À-VIS EUROPE AND THE UNITED STATES:",
+        "text_level": 2,
+        "bbox": [
+            215,
+            383,
+            867,
+            401
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A FIRM-LEVEL ANALYSIS 2",
+        "bbox": [
+            215,
+            402,
+            898,
+            420
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A. Background and Motivation 2",
+        "bbox": [
+            215,
+            422,
+            898,
+            441
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "B. Challenges Faced by Firms to Scale Up in Portugal \\_\\_\\_\\_ 4",
+        "bbox": [
+            215,
+            445,
+            900,
+            464
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "C. Policy Options to Boost Productivity 6",
+        "bbox": [
+            215,
+            469,
+            900,
+            487
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "FIGURES",
+        "text_level": 2,
+        "bbox": [
+            217,
+            508,
+            292,
+            525
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Aggregate Productivity Gap: Portugal vis-à-vis Europe and the United States \\_\\_\\_\\_ 2",
+        "bbox": [
+            217,
+            527,
+            898,
+            546
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. European Listed Firms in International Comparison: Productivity, R&D, and Equity",
+        "bbox": [
+            218,
+            546,
+            870,
+            565
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Issuance 5",
+        "bbox": [
+            217,
+            566,
+            898,
+            583
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3. Firm Dynamics in Portugal \\_\\_\\_\\_ 4",
+        "bbox": [
+            217,
+            584,
+            898,
+            602
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. Gazelles in Portugal 6",
+        "bbox": [
+            217,
+            604,
+            898,
+            621
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5. Portugal's Innovation Ecosystem 8",
+        "bbox": [
+            217,
+            623,
+            900,
+            640
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ANNEX",
+        "text_level": 2,
+        "bbox": [
+            217,
+            659,
+            284,
+            676
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "I. Data Sources 11",
+        "bbox": [
+            215,
+            679,
+            898,
+            698
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "References 12",
+        "bbox": [
+            215,
+            715,
+            900,
+            734
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            80,
+            16,
+            176,
+            95
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            233,
+            61,
+            826,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "PORTUGAL'S PRODUCTIVITY GAP VIS-À-VIS EUROPE AND THE UNITED STATES: A FIRM-LEVEL ANALYSIS $^{1}$",
+        "text_level": 2,
+        "bbox": [
+            114,
+            88,
+            851,
+            140
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Portugal's large GDP-per-capita gap with the highest-income euro area economies and the US is primarily driven by a productivity shortfall. At the EU level, European leading firms, particularly in the tech sector, trail leading global counterparts in productivity and innovation, partly reflecting far less R&D investment rooted in less reliance on equity. In Portugal, those factors are compounded by a broader lack of dynamism. Firms enter the market small and rarely scale up, resulting in a much smaller economic footprint of young high-growth firms than in European peers and—even more so—the US. This rarer occurrence of “gazelles” in Portugal partly reflects limited access to venture capital and inadequate human capital, as well as tax and regulatory obstacles to firms’ growth. Taken together, this comparative lack of dynamism of leading and young high-growth firms alike explains Portugal’s larger share of small firms. Potential policy remedies include streamlining Portugal’s product market regulations and red tape and improving young firms’ access to long-term risk capital through EU-level initiatives.",
+        "bbox": [
+            112,
+            159,
+            872,
+            385
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A. Background and Motivation",
+        "text_level": 2,
+        "bbox": [
+            114,
+            398,
+            460,
+            417
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/77772924d860335e99aca1ff469dcb2323adcfd1fda2434d97cb9ce15d4ca531.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "gal vis-à-vis Europe and the United States\nThe GDP-per-capita gap vis-à-vis the US primarily reflects lower total-factor productivity (TFP)."
+        ],
+        "bbox": [
+            143,
+            482,
+            462,
+            671
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3139a3aafb5d9a55f5e7bfdb213fa2bd9b90ba60663968180aeaa5c9ff6148a2.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            534,
+            483,
+            859,
+            671
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1. Portugal's significant per-capita income gap with the highest-income euro area economies and the United States primarily reflects a wide productivity shortfall (Figure 1). In 2024, Portugal's income per capita in PPP terms stood nearly 45 and 21 percent below that of the US and the four largest euro area economies (Germany, France, Italy and Spain, or EA4), respectively. While Portugal's total working hours contributed positively to reducing the gap (at 4 and 15 percentage points, vis-à-vis US and EA4, respectively), both lower capital intensity and weaker total factor productivity explained most of the gap vis-à-vis the US and EA4, with the latter driving over four-fifths of it. In the second half of the 20th century, European economies significantly narrowed— and some of them closed—their hourly productivity gap with the US, often considered to define the \"global productivity frontier\". Meanwhile, after narrowing the gap vis-à-vis US to about 40 percent by 1990, the productivity gap of the Portuguese economy with respect to the US has remained flat over the past three decades while in other euro area countries saw a widening productivity gap in the late 1990s before stabilizing again in the 2010s.",
+        "bbox": [
+            112,
+            700,
+            883,
+            853
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            116,
+            47,
+            192,
+            61
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Prepared by Ippei Shibata (EUR).",
+        "bbox": [
+            114,
+            883,
+            341,
+            902
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            114,
+            933,
+            130,
+            954
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            936,
+            390,
+            954
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            112,
+            92,
+            877,
+            186
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "TFP of large firms lags US counterparts, particularly in tech...",
+        "bbox": [
+            117,
+            226,
+            449,
+            258
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0d42b628d1071c049c2b469d58f6547df4ee850b8c2096280d13831f64a9ca40.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Compustat and IMF staff calculations. Note: EU countries included are BEL, CHE, DEU, ESP, FRA, GBR, IRL, ITA, and NLD."
+        ],
+        "bbox": [
+            135,
+            256,
+            460,
+            444
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d5da6e96637f9463d3173643daf40fff87bba1c901634753144a278a1a0efb28.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Compustat and IMF staff calculations.\nNote: EU countries included are BEL, CHE, DEU, ESP, FRA, GBR, IRL, ITA, and NLD."
+        ],
+        "bbox": [
+            527,
+            261,
+            849,
+            445
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4307fac1432e90cbf10021c164bfb077015ecf2c0bed6183e734dc14e19fccc2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Listed European firms also issue less equity than US peers."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            333,
+            486,
+            655,
+            672
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2. Leading European firms in general are trailing their US competitors on both productivity growth and—even more so—R&D investment, especially in the tech sector (Figure 2). In non-tech sectors US listed firms increased their productivity by around 60 percent during 2005-23, while European listed firms achieved a cumulative productivity growth of just around 20 percent—one third of US gains—over the same period. $^{2}$ In the tech sector, US-listed firms increased their productivity by over 30 percent, while their European counterparts experienced a productivity decline of around 10 percent. This wide productivity growth gap partly reflects the lower R&D investment of European firms. For instance, European firms’ R&D investment is only about three fifths and two fifths of that for US firms in non-tech and tech sectors, respectively.",
+        "bbox": [
+            112,
+            698,
+            883,
+            869
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            771,
+            47,
+            846,
+            61
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Due to insufficient data, Portugal is not included in the sample of European countries used for this paragraph.",
+        "bbox": [
+            112,
+            883,
+            841,
+            902
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            596,
+            936,
+            834,
+            954
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            861,
+            933,
+            875,
+            954
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "...resulting in a higher share of small firms.",
+        "bbox": [
+            367,
+            496,
+            627,
+            512
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Related to this, leading European firms also issue significantly less equity, which is typically a key source of innovation financing as it is difficult to collateralize R&D investments. No Portuguese firm features among the top 100 global firms in terms of market capitalization. $^{3}$",
+        "bbox": [
+            112,
+            92,
+            874,
+            148
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3. This annex examines the underlying factors behind Portugal's productivity gap from a firm-level perspective. Drawing on IMF (2024) and Adilbish and others (2025), it analyzes these issues by focusing on firms behind the frontier (particularly young firms). It leverages extensive cross-country datasets at firm, sector, and aggregate levels (see Data Sources and References).",
+        "bbox": [
+            112,
+            156,
+            877,
+            233
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Figure 3. Firm Dynamics in Portugal",
+        "text_level": 2,
+        "bbox": [
+            349,
+            248,
+            647,
+            265
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Portuguese firms' entry rates are broadly similar to those in Europe and the US, but they enter smaller than in the US.",
+        "bbox": [
+            122,
+            268,
+            486,
+            299
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/957fd37d8f142a2e0558e449e1365167567c872a4c117d1d95bcdf869a2dc406.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: OECD DynEmp, BDS (US) and IMF staff calculations.\nNote: EU sample includes AT, BE, BG, CH, CY, CZ, DE, DK, ES, EE, FI, FR, GR, HR, HU, IS, IT, LT, LU, LV, MT, NL, NO, PL, PT, RO, SK, SI, SE, and TR. The sample for \"10+\" excludes CH and GR.",
+            "The exit rate of large firms is comparatively higher in Portugal..."
+        ],
+        "bbox": [
+            153,
+            306,
+            457,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8722eaa4ca223c6a61f586a2651d3063f827a45fb2c3550c5009b98aad0fa2c7.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: OECD DynEmp, BDS (US) and IMF staff calculations.\nNote: EU sample includes BE, BG, CY, CZ, DE, DK, ES, EE, FI, FR, GR, HR, HU, IS, IT, LT, LU, LV, MT, NL, NO, PL, PT, RO, SK, SI, SE. The sample for \"10+\" excludes GR."
+        ],
+        "bbox": [
+            531,
+            303,
+            848,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/032049476b835308b4d7a7cdb329f60e6363f920f74290b626243d6da290d1a4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            354,
+            522,
+            653,
+            698
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "B. Challenges Faced by Firms to Scale Up in Portugal",
+        "text_level": 2,
+        "bbox": [
+            114,
+            720,
+            678,
+            741
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4. The Portuguese economy is characterized by an overabundance of small firms",
+        "text_level": 2,
+        "bbox": [
+            114,
+            748,
+            810,
+            766
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "(Figure 3). While average entry and exit rates are broadly comparable across Portuguese, European and US firms, Portuguese and European firms tend to enter small: the entry rates of larger firms (those with 10 or more employees) are lower than in the US. Furthermore, Portuguese and European firms struggle to scale up and the exit rates for Portuguese large firms are comparatively higher than in the US and the EU. As a result, many Portuguese firms remain small, and a sizable fraction of the workforce is employed in small firms.",
+        "bbox": [
+            112,
+            766,
+            883,
+            845
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            116,
+            47,
+            192,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ PWC 2022 report.",
+        "bbox": [
+            114,
+            883,
+            246,
+            902
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            114,
+            933,
+            130,
+            954
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            936,
+            390,
+            954
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            112,
+            92,
+            867,
+            128
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "5. Young high-growth firms—so called “gazelles”—are rare in Portugal (Figure 4). We define “gazelles” as firms that are younger than 10 years old, achieve at least a 20 percent annualized sales growth for three consecutive years, and reach 100 employees at some point. On average, gazelles outperform mature large firms in sales growth by nearly 20 percentage points, although this overperformance has diminished compared to pre-GFC years. As a fraction of their birth cohort, Portuguese gazelles are rarer than in other countries. While a typical European country sees about 0.5 percent of a given cohort of firms grow into gazelles, only about 0.1 percent of new businesses in Portugal reach this status. On an encouraging note, high-tech firms have been increasing their share among gazelles in recent years.",
+        "bbox": [
+            112,
+            148,
+            875,
+            320
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "6. The scarcity of gazelles in Portugal could reflect in part financing challenges and less competition-friendly market regulation. Gazelles have higher average revenue per unit of assets than large mature firms. This, under some conditions, indicates greater marginal productivity of capital and higher returns on investment. Given that most young firms generally also face higher borrowing costs compared to their large mature counterparts, increasing venture capital investment, which is typically used to support risky ventures, could help foster the emergence of gazelles and boost productivity. Such venture capital investment is particularly important in industries (such as high tech) where hard-to-collateralize intangible capital is predominant. However, Portugal has significantly lower levels of venture capital investment than leading European countries and the US. Moreover, Portugal has a less competition-friendly product market than other EA countries, mainly reflecting its higher barriers to market entry and greater distortions by state involvement (IMF Portugal 2024 Article IV, Annex VII). In particular, the burdensome administrative and regulatory procedures needed to establish a new business, especially within the service sectors, hinder the entry of new companies.",
+        "bbox": [
+            112,
+            338,
+            875,
+            604
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "7. Portugal's innovation ecosystem—the interplay between R&D policies, tertiary education, and businesses—is lagging global and European technological frontiers (Figure 5). Despite some improvement, Portugal innovation outcomes are lagging European and global technological leaders. For instance, patent applications represent 54 percent of the EU average, although Portugal's direct and indirect government support for business R&D, particularly indirect support—including tax incentives for R&D investments, is higher than in most other European countries. Human capital, which IMF staff analysis finds to be an important driver of gazelles' emergence (Adilbish and others, 2025), remains hampered by educational mismatches: although the share of people aged 25-34 who have completed tertiary education almost reached the EU average (43 vs. 44 percent in 2024), there remains a significant mismatch between educational training and the skills required in the job market. Moreover, Portugal also has a much higher old-age dependency ratio compared to the EU average (38 vs. 34 percent in 2024), which is negatively correlated with gazelle formation (Figure 5). However, Portugal compares favorably to the EU average in several areas positively correlated with the formation of gazelles: its female labor force",
+        "bbox": [
+            112,
+            622,
+            879,
+            888
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            771,
+            47,
+            846,
+            61
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            861,
+            933,
+            875,
+            954
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "participation rate among 20-64 year-olds (81 vs. 75 percent in 2024), migrant share (16 vs. 14 percent in 2024), and the share of non-nationals with a college degree (37 vs. 31 percent in 2024).",
+        "bbox": [
+            114,
+            90,
+            859,
+            130
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Figure 4. Gazelles in Portugal",
+        "bbox": [
+            377,
+            142,
+            619,
+            159
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Gazelles are rarer in Portugal than in European peers....",
+        "bbox": [
+            124,
+            159,
+            460,
+            176
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3a512b88436a5c7c24841e5a9c43a41cabc6ff232c948900777b1cf21712928d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Orbis and IMF staff calculations. Note: EU countries included are AT, BE, CH, CZ, DE, DK, ES, FR, GB, GR, HU, IE, IS, IT, NL, PL, PT, RO, SE, SI, and SK.",
+            "Gazelles' overperformance vis-à-vis large firms is sizeable although smaller than before the GFC.",
+            "Gazelle Sales Growth Overperformance over Large Firms (Percentage points)"
+        ],
+        "bbox": [
+            129,
+            191,
+            444,
+            344
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/01e2b1fcbe9599db08cda9b08cd5caa393a169b4c7b76521a7554506acdb9593.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: EU countries included are AT, BE, CH, CZ, DE, DK, ES, FR, GB, GR, HU, IE, IS, IT, NL, PL, PT, RO, SE, SI, and SK.",
+            "While Portuguese gazelles are rare, the share of high-tech firms among them has grown in recent years...."
+        ],
+        "bbox": [
+            526,
+            195,
+            846,
+            361
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e602fd6e724fb691edfb3810cfd90fe2c47c52cb19b85f02645a75d9223c6c1a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Orbis and Imm. Stat. calculations.\n\nNote: EU countries include AT, BE, CH, CZ, DE, DK, ES, FR, GB, GR, HU, IE, IS, IT, NL, PL, PT, RO, SE, SI, and SK.",
+            "Gazelles have higher average revenue per unit of assets than large firms.",
+            "Average Revenue per Unit of Assets: Gazelle vs Large Firms (Percent)"
+        ],
+        "bbox": [
+            125,
+            429,
+            444,
+            598
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e5ed0ea771954d23b932ce37e32f5d3b2546a25e483dc81fd1429507c62c180f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: EU countries include AT, BE, CH, CZ, DE, DK, ES, FR, GB, GR, HU, IE, IS, IT, NL, PL, PT, RO, SE, SI, and SK.",
+            "Portuguese gazelles face higher borrowing costs than larger firms, albeit less so than their European peers.",
+            "Interest Rate Gap between Gazelle and Large Firms (Percentage points, by intangible asset share quintiles)"
+        ],
+        "bbox": [
+            517,
+            441,
+            834,
+            595
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f17cf367c66686825a6ff4417819de5c02746cad8234c50af672a2976d3ef9ec.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Aggregate venture capital investment is much smaller in Portugal than in leading advanced countries."
+        ],
+        "bbox": [
+            130,
+            659,
+            452,
+            844
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c7b892c6eedc9bbd480588cec95a712c87fca8e245cf2bdebcc88c887062dd8b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            524,
+            659,
+            843,
+            844
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "C. Policy Options to Boost Productivity",
+        "text_level": 2,
+        "bbox": [
+            114,
+            864,
+            514,
+            886
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            117,
+            47,
+            192,
+            61
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            116,
+            933,
+            130,
+            953
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "8. Closing Portugal's productivity gap vis-à-vis leading European economies and the US requires actions on both EU-level and domestic fronts to facilitate firms' scaling-up and strengthen the innovation ecosystem, including:",
+        "bbox": [
+            112,
+            92,
+            867,
+            150
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Reducing red tape and adjusting regulations to foster more competition. This would promote business formation and firms scaling up.",
+        "bbox": [
+            114,
+            164,
+            825,
+            202
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Working with EU partners to deepen the EU single market. Initiatives like the Competitiveness Compass and the introduction of a 28 $^{th}$ corporate regime should lower cross-country barriers to trade in goods and services, and thereby facilitate the expansion of highly productive young firms.",
+        "bbox": [
+            114,
+            217,
+            864,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Increasing the availability of long-term risk capital. This should include further developing the domestic venture capital market through enhanced information provision to investors, as well as advancing the EU saving and investment union. This is needed to ease financing constraints on the creation and growth of highly-productive young firms and, as such, a key complement to enhancing product-market integration.",
+        "bbox": [
+            114,
+            308,
+            857,
+            404
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Streamlining size-based tax and regulatory thresholds—with a focus on the size-dependent labor regulation and tax system. Priorities include abolishing progressive corporate income taxation, which discourages business growth.",
+        "bbox": [
+            114,
+            417,
+            808,
+            474
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Continuously increasing the highly-skilled labor force and reducing educational mismatches to spur productivity through better labor reallocation. Continuously improving the share of high-skilled labor force could promote the emergence of gazelles. Although the educational mismatch reflects both demand and supply side factors (Montt, 2015), reducing the educational mismatch could promote productivity through more efficient allocation of labor, including by further strengthening the links between firms and universities.",
+        "bbox": [
+            114,
+            489,
+            875,
+            604
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            771,
+            47,
+            846,
+            61
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            954
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            861,
+            933,
+            875,
+            954
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Figure 5. Portugal's Innovation Ecosystem",
+        "bbox": [
+            326,
+            94,
+            671,
+            109
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Portugal is lagging global technological frontiers on innovation outcomes...",
+        "bbox": [
+            122,
+            109,
+            441,
+            138
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d65755f40df2df60ab33d19d8c93ca201d40aebed2afdf7554b51f3e2a9f0d1a.jpg",
+        "content": "",
+        "chart_caption": [
+            "European Innovation Scoreboard, 2024"
+        ],
+        "chart_footnote": [
+            "Source: European Commission European Innovation Scoreboard (EIS), and IMF staff calculations. Note: Most underlying indicators are quantitative and not perception-based. The original scores are normalized and expressed as a share of the highest score in each category by IMF staff. For some countries, the values were imputed using the latest available data. Details for the underlying data are available in the EIS methodology report."
+        ],
+        "bbox": [
+            135,
+            157,
+            455,
+            297
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "...despite its large R&D indirect tax support.",
+        "bbox": [
+            516,
+            109,
+            779,
+            126
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Government Direct Funding and Tax Support for Business R&D (Percent of GDP)",
+        "bbox": [
+            524,
+            148,
+            857,
+            171
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/50a932e079e51c59edaf2f90f48bf9ce2359687f7d9781500c5668f1ba043fc4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            527,
+            159,
+            854,
+            328
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Human capital is important for gazelle formation.",
+        "text_level": 2,
+        "bbox": [
+            124,
+            353,
+            426,
+            369
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/179fb03cf8f86643a7a2cecaab92aebedd81ae712f65055858f1eb431a464817.jpg",
+        "content": "",
+        "chart_caption": [
+            "Determinants of Gazelle Formation"
+        ],
+        "chart_footnote": [
+            "Sources: Orbis, and IMI Start calculations.\nNote: Coefficients show the correlation of each variable on the number of gazelles depending on the unit of respective variables. For instance, for regressions on logs, coefficients are interpreted as the perchange in gazelle formations in response to 1 percent change of the regressor. Europe includes Austria, Belgium, the Czech Republic, Denmark, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, the Netherlands, Poland, Portugal, Romania, the Slovak Republic, Slovenia, Spain, Sweden, Switzerland, and the United Kingdom. FTE = Full-time equivalent.",
+            "Portugal faces a higher old-age dependency ratio and lower educational attainment among its young population than the EU average.",
+            "Portugal's Position for Gazelle Formation (Percent)"
+        ],
+        "bbox": [
+            140,
+            421,
+            460,
+            554
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f302a8d48fa61ea61405cd0458ab367bcdd55169bb4bc6c4724fc9c4ef144d5f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Eurostat and IMF staff calculations.",
+            "Note: Old-dependency ratio is population 65 years or over as a share of population 15 to 64 years. Migrant share is the share of foreign borns as a share of total population. Female labor force participation is for women between 20 and 64 years"
+        ],
+        "bbox": [
+            532,
+            424,
+            851,
+            547
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Mismatch in field of study is severe in Portugal.",
+        "text_level": 2,
+        "bbox": [
+            354,
+            604,
+            640,
+            619
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/33d20f235d701219dacaef3f7904007b8fdd80b3523ff2eb738701ff90c649db.jpg",
+        "content": "",
+        "chart_caption": [
+            "Field of Study Mismatch"
+        ],
+        "chart_footnote": [
+            "Source: OECD 2023 PIACC Survey."
+        ],
+        "bbox": [
+            344,
+            643,
+            663,
+            806
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            117,
+            49,
+            192,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            117,
+            934,
+            130,
+            954
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Annex I. Data Sources",
+        "text_level": 2,
+        "bbox": [
+            369,
+            94,
+            627,
+            114
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The analysis in this annex utilizes five distinct corporate datasets (see Adilbish and others (2025) for more details). Aggregate comparisons rely on three databases: (i) Business Dynamics Statistics (BDS), which provides aggregated firm-level data for the U.S. (see Decker and Haltiwanger (2024)), (ii) CompNet, which allows to replicate many of the data points available in BDS for European countries, and (iii) the OECD's DynEmp database, which tracks entry and exit similarly to BDS. Additionally, our two firm-level databases are (iv) Compustat, used to analyze the performance of listed firms in Europe and the U.S., and (v) Orbis, used for firm-level analysis of young high-growth firms. A few additional databases are also used including AMECO—an annual macro-economic database of the European Commission's Directorate General for Economic and Financial Affairs—, long-term productivity database to measure labor productivity, and Pitchbook for venture capital landscape. Finally, Portuguese innovation ecosystem was assessed using various data sources including the Program for the International Assessment of Adult Competencies (PIAAC), the European Innovation Scoreboard, WIPO Statistics Database, and the European University Association Autonomy Scoreboard.",
+        "bbox": [
+            112,
+            132,
+            877,
+            397
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            771,
+            47,
+            846,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            861,
+            934,
+            875,
+            954
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            433,
+            107,
+            565,
+            128
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Adilbish O. E., D. A. Cerdeiro, R. A Duval, G. H. Hong, L. Mazzone, L. Rotunno, H. H Toprak, and M. Vaziri. (2025). \"Europe's Productivity Weakness: Firm-Level Roots and Remedies\", IMF Working Papers 2025/040. https://doi.org/10.5089/9798229001441.001.",
+        "bbox": [
+            114,
+            148,
+            852,
+            205
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Decker, R.A., and J. Haltiwanger. (2024). \"Surging Business Formation in the Pandemic: A Brief Update.\" Brookings Papers on Economic Activity, Fall 2023: 249-302.",
+        "bbox": [
+            114,
+            224,
+            825,
+            263
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund. (2024). Europe's Declining Productivity Growth: Diagnoses and Remedies. Regional Economic Outlook Notes: Europe, 2024 Nov. https://www.imf.org/en/Publications/REO/EU/Issues/2024/10/24/regional-economic-outlook-Europe-october-2024.",
+        "bbox": [
+            114,
+            280,
+            821,
+            356
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Montt, Guillermo (2015). \"The causes and consequences of field-of-study mismatch: an analysis using PIAAC.\" OECD Social, Employment and Migration Working Papers No. 167.",
+        "bbox": [
+            114,
+            375,
+            841,
+            414
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            116,
+            47,
+            192,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            117,
+            938,
+            138,
+            954
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "PORTUGAL",
+        "bbox": [
+            772,
+            49,
+            846,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            854,
+            938,
+            874,
+            954
+        ],
+        "page_idx": 13
+    }
+]

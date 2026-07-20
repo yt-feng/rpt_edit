@@ -1,0 +1,3007 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.089,
+                0.082,
+                0.336,
+                0.141
+            ],
+            "angle": 0,
+            "content": "BIS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.382,
+                0.523,
+                0.446
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.729,
+                0.476,
+                0.949,
+                0.526
+            ],
+            "angle": 0,
+            "content": "No 129"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.084,
+                0.628,
+                0.8,
+                0.714
+            ],
+            "angle": 0,
+            "content": "A Mythos moment? Frontier AI and cyber risk"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.735,
+                0.91,
+                0.766
+            ],
+            "angle": 0,
+            "content": "Iñaki Aldasoro, Raphael Auer, Jon Frost, Fernando Pérez-Cruz",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.92,
+                0.229,
+                0.947
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.378,
+                0.529,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.476,
+                0.95,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.63,
+                0.797,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.675,
+                0.287,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.736,
+                0.908,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.92,
+                0.228,
+                0.948
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.318,
+                0.877,
+                0.469
+            ],
+            "angle": 0,
+            "content": "BIS Bulletins are written by staff members of the Bank for International Settlements, and from time to time by other economists, and are published by the Bank. The papers are on subjects of topical interest and are technical in character. The views expressed in this publication are those of the authors and do not necessarily reflect the views of the BIS or its member central banks. The authors thank Pablo Hernández de Cos, Byeungchun Kwon, Ulf Lewrick, Randy Miskanic, Vasily Pozdyshev, Kumar Rishabh, Vatsala Shreeti, Andras Valko and Leanne Zhang for helpful comments and suggestions, and Rudraksh Kansal, Byeungchun Kwon and Vivekananda Allam for excellent statistical assistance. They thank Nicola Faessler for administrative support.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.477,
+                0.678,
+                0.496
+            ],
+            "angle": 0,
+            "content": "The editors of the BIS Bulletin series are Gaston Gelos and Frank Smets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.662,
+                0.585,
+                0.68
+            ],
+            "angle": 0,
+            "content": "This publication is available on the BIS website (www.bis.org).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.739,
+                0.875,
+                0.775
+            ],
+            "angle": 0,
+            "content": "© Bank for International Settlements 2026. All rights reserved. Brief excerpts may be reproduced or translated provided the source is stated."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.864,
+                0.372,
+                0.9
+            ],
+            "angle": 0,
+            "content": "ISSN: 2708-0420 (online)\nISBN: 978-92-9259-970-6 (online)",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.32,
+                0.872,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.34,
+                0.872,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.357,
+                0.872,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.376,
+                0.872,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.394,
+                0.871,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.414,
+                0.872,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.433,
+                0.872,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.451,
+                0.779,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.48,
+                0.674,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.663,
+                0.583,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.866,
+                0.297,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.885,
+                0.369,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.873,
+                0.944
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.565,
+                0.086,
+                0.667,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Jon Frost\njon.frost@bis.org"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.119,
+                0.086,
+                0.241,
+                0.102
+            ],
+            "angle": 0,
+            "content": "Iñaki Aldasoro"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.354,
+                0.086,
+                0.469,
+                0.103
+            ],
+            "angle": 0,
+            "content": "Raphael Auer"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.111,
+                0.11,
+                0.241,
+                0.124
+            ],
+            "angle": 0,
+            "content": "inaki.aldasoro@bis.org"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.11,
+                0.469,
+                0.124
+            ],
+            "angle": 0,
+            "content": "raphael.auer@bis.org"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.716,
+                0.086,
+                0.892,
+                0.102
+            ],
+            "angle": 0,
+            "content": "Fernando Pérez-Cruz"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.733,
+                0.11,
+                0.892,
+                0.124
+            ],
+            "angle": 0,
+            "content": "fernando.perezcruz@bis.org"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.09,
+                0.187,
+                0.635,
+                0.211
+            ],
+            "angle": 0,
+            "content": "A Mythos moment? Frontier AI and cyber risk"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.267,
+                0.218,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Key takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.292,
+                0.877,
+                0.326
+            ],
+            "angle": 0,
+            "content": "- Frontier artificial intelligence (AI) models increase the speed, scale and complexity of cyber attacks, and they also strengthen cyber defence. But the costs are asymmetric and may favour attackers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.333,
+                0.876,
+                0.367
+            ],
+            "angle": 0,
+            "content": "- The medium-term impact on systemic cyber risk depends on the various actors' access to the most advanced tools, on compute power to run the tools and on economic incentives.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.374,
+                0.877,
+                0.409
+            ],
+            "angle": 0,
+            "content": "- Given the pace of recent developments, swift adoption of frontier AI models to review code bases and fix vulnerabilities is essential. International coordination can support authorities in addressing these issues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.437,
+                0.875,
+                0.549
+            ],
+            "angle": 0,
+            "content": "Among the most notable capabilities of frontier artificial intelligence (AI) models is their capacity to find vulnerabilities in software and hardware systems. Anthropic's Mythos, announced on 7 April 2026 and released only to select partners, is a case in point (Carlini et al (2026)). Mythos – and soon thereafter other frontier AI models, such as OpenAI's GPT-5.5 – is able to not only identify cyber vulnerabilities but also develop exploits to take advantage of them, and to autonomously carry out sophisticated multi-step, multi-vulnerability cyber attacks. Does this represent a \"Mythos moment\" – a wake-up call that requires a fundamental reconsideration of views on the robustness and resilience of financial market infrastructures?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.555,
+                0.875,
+                0.636
+            ],
+            "angle": 0,
+            "content": "The financial system is an obvious place of concern for information technology vulnerabilities. Banks, payment systems and other market infrastructures are among the most heavily targeted and most densely interconnected parts of the economy. They depend on long, complex chains of proprietary and open source software as well as third-party suppliers. A step change in attackers' capabilities could therefore have consequences that extend well beyond any single institution and bear directly on financial stability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.642,
+                0.875,
+                0.705
+            ],
+            "angle": 0,
+            "content": "This Bulletin sets out potential channels through which frontier AI models can affect cyber security risk at scale. It discusses the impact of new tools on the capabilities and incentives of both attackers and defenders and draws on available data. Finally, it discusses potential public policy responses to support financial stability.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.09,
+                0.727,
+                0.606,
+                0.744
+            ],
+            "angle": 0,
+            "content": "Performance of frontier AI models on cyber security tasks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.761,
+                0.888,
+                0.904
+            ],
+            "angle": 0,
+            "content": "Frontier AI models have significantly advanced cyber offensive capabilities. For instance, recent evaluations by the UK government's AI Security Institute (AISI) suggest that frontier models are improving cyber-relevant offensive tasks. AISI tests models on a suite of 95 narrow cyber tasks across four difficulty tiers in a “capture-the-flag” benchmark setting, in which a model must find and exploit a deliberately planted vulnerability to retrieve a hidden token. Mythos achieved a 68.6% pass rate for expert-level tasks – higher than any model before (AISI (2026a); Folkerts et al (2026)). Yet these capabilities do not appear to be unique to Mythos. OpenAI’s GPT-5.5, released just weeks after Mythos, performed even better, with a 71.4% pass rate (Graph 1.A; AISI (2026b)). Moreover, in a cyber range, ie long multi-step attack simulations, both Mythos and GPT-5.5 were able to achieve a full network takeover in some attempts (Graph 1.B).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.926,
+                0.16,
+                0.939
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.189,
+                0.634,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.268,
+                0.214,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.293,
+                0.873,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.311,
+                0.788,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.335,
+                0.873,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.352,
+                0.703,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.376,
+                0.874,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.394,
+                0.872,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.438,
+                0.871,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.456,
+                0.872,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.472,
+                0.871,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.487,
+                0.872,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.502,
+                0.871,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.519,
+                0.871,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.535,
+                0.871,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.556,
+                0.87,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.573,
+                0.872,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.587,
+                0.872,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.604,
+                0.872,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.62,
+                0.865,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.643,
+                0.872,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.659,
+                0.871,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.673,
+                0.872,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.689,
+                0.222,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.727,
+                0.603,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.763,
+                0.871,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.777,
+                0.871,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.793,
+                0.872,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.81,
+                0.871,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.826,
+                0.871,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.84,
+                0.872,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.857,
+                0.886,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.873,
+                0.871,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.888,
+                0.8,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.876,
+                0.26
+            ],
+            "angle": 0,
+            "content": "Cyber offence is unusually well suited for frontier AI tools. Unlike many tasks in which an AI system must navigate open-ended ambiguity, an attack unfolds as a structured, sequential workflow, codified in widely used industry frameworks (Hutchins et al (2011); Strom et al (2020)). Each stage generates machine-readable outputs (system logs, error messages, code, catalogued vulnerabilities) that a model can parse, reason over and act upon, with the success or failure of one step furnishing immediate feedback for the next. These tight feedback loops, comparatively rare in less structured domains, are precisely the conditions under which such models learn and improve most rapidly. The inflection point, which Mythos was the first model to reach, arrives not when a model can identify a single exploit, but when it can reliably link steps and adapt them to targets with limited human oversight. Encouragingly, the same properties operate in reverse: defenders can apply identical reasoning to anticipate, detect and remediate intrusions, so advances in model capabilities need not accrue to attackers alone.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.282,
+                0.533,
+                0.299
+            ],
+            "angle": 0,
+            "content": "Frontier AI models show impressive cyber capabilities"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.307,
+                0.478,
+                0.59
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.816,
+                0.284,
+                0.873,
+                0.299
+            ],
+            "angle": 0,
+            "content": "Graph 1",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.487,
+                0.31,
+                0.875,
+                0.337
+            ],
+            "angle": 0,
+            "content": "B. Mythos was the first model to complete all steps in a cyber range, and GPT-5.5 showed similar performance \\( ^{3} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.487,
+                0.337,
+                0.875,
+                0.604
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.606,
+                0.875,
+                0.667
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Measured pass rate (y-axis) of selected models on an advanced capture-the-flag challenge with a 50 million token budget, by date (x-axis).  \\( ^{2} \\)  GPT-5, Claude Sonnet 4.5, Codex 5.2, Claude Opus 4.6, Codex 5.3, GPT-5.4, GPT-5.4 Cyber, Opus-4.7. Dashed lines are a least-square fit for the expert and practitioner tasks, respectively  \\( ^{3} \\)  Mean number of steps completed in the 32-step corporate network attack simulation \"The Last Ones\", over 10 attempts, with a 100 million token budget per attempt. \"M3\", \"M5\", etc refer to selected milestones in the attack chain. The dashed lines represent the outcome of the best attempt (ie a full network takeover succeeded)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.672,
+                0.297,
+                0.686
+            ],
+            "angle": 0,
+            "content": "Source: AI Security Institute (2026b)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.707,
+                0.875,
+                0.819
+            ],
+            "angle": 0,
+            "content": "There are costs to mounting such an attack, but they are not prohibitive. A full attack chain consumes approximately 100 million tokens (a unit of input or output data). At current cloud prices, running such an attack on Claude Mythos Preview would cost some $5,000–$10,000, depending on the balance between input tokens (the code and data supplied to the model) and the more expensive output and reasoning tokens used to plan and execute it. Other frontier models such as Claude Opus 4.8, Gemini 3.5 and GPT 5.5 would cost about a fifth as much, and cheaper models such as Grok or DeepSeek can cost as little as $50–$100 per attack. As these costs fall, it becomes easier for less sophisticated actors to mount attacks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.825,
+                0.875,
+                0.889
+            ],
+            "angle": 0,
+            "content": "These developments have renewed public concern and policy discussions around cyber risk. Supervisors and banks have aired these concerns publicly: some central banks are reported to have questioned banks about their exposure to new models, and senior bank executives have described them as a serious threat while warning that more threats will follow (see eg Canepa (2026)).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.926,
+                0.16,
+                0.939
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.087,
+                0.871,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.103,
+                0.871,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.118,
+                0.871,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.135,
+                0.871,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.151,
+                0.871,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.167,
+                0.871,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.182,
+                0.872,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.198,
+                0.869,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.213,
+                0.872,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.23,
+                0.869,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.246,
+                0.605,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.284,
+                0.529,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.818,
+                0.285,
+                0.872,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.709,
+                0.872,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.725,
+                0.872,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.74,
+                0.872,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.755,
+                0.872,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.772,
+                0.872,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.789,
+                0.871,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.805,
+                0.828,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.826,
+                0.871,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.843,
+                0.871,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.859,
+                0.871,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.873,
+                0.727,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.087,
+                0.429,
+                0.104
+            ],
+            "angle": 0,
+            "content": "Incentives of attackers and defenders"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.12,
+                0.876,
+                0.264
+            ],
+            "angle": 0,
+            "content": "Whether frontier AI tools raise or lower systemic cyber risk depends on who gains access to them and the economic incentives they face. Cyber attackers are a heterogeneous group. State and state-sponsored actors pursue espionage, disruption (eg cyber warfare) or strategic advantage. Organised criminal groups seek financial gain, eg through ransomware and fraud. Firms may engage in industrial espionage. And individuals act for profit, notoriety or ideology. Alongside this sits a black market in which zero-day vulnerabilities (ie hidden flaws or bugs in a system that are unknown to the developer), stolen credentials and ready-made hacking tools are traded. At the same time, a sizeable and entirely legal market exists for cyber security and vulnerability discovery. In this latter market, firms seeking to defend themselves run bug bounty programmes that pay researchers to find and disclose flaws so that they can be fixed. \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.27,
+                0.876,
+                0.382
+            ],
+            "angle": 0,
+            "content": "Frontier AI models are being adopted by both attackers and defenders. These models can lower the cost of finding and exploiting vulnerabilities for attackers but can also help defenders discover and fix them. \\( ^{2} \\)  The economic costs are, nonetheless, asymmetric: a defender must protect every system continuously, whereas an attacker needs only one viable route in. Tools that cut the cost to find and exploit that route can therefore shift the balance towards offence even when both sides adopt frontier AI models at the same pace. Market intelligence also suggests that cyber defence strategies may increasingly imply larger costs for compute, given the need to detect and respond to (cheaper and more frequent) attacks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.388,
+                0.875,
+                0.467
+            ],
+            "angle": 0,
+            "content": "The cyber defence response is already visible in the data. The release of ever more capable AI tools has coincided with a marked increase in security bug fixes. For example, monthly bug fixes by Firefox jumped sixfold after the announcement of Mythos Preview (Graph 2.A). It is an open question whether the pace of fixes will remain structurally higher or will fall again as bugs are found and remedied. This will depend on the capacity of new models to find new bugs or alternatives for attacks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.473,
+                0.876,
+                0.617
+            ],
+            "angle": 0,
+            "content": "More generally, the pace at which new vulnerabilities are discovered and catalogued has been rising steadily for years and is now accelerating. This fits a longer-run pattern in the development of cyber tools. The number of critical common vulnerabilities and exposures (CVEs) published has been rising each year (Graph 2.B). \\( ^{3} \\)  A CVE is an identifier for each vulnerability discovered in a software system; each is assigned a Common Vulnerability Scoring System (CVSS) score that indicates its severity. A score climbs toward 10 when a flaw is easy to exploit, requires no special access and would cause severe damage, such as allowing full remote control of a machine. CVEs with a CVSS score of nine or higher are deemed critical. The number of critical CVEs reported has risen from about seven per day over 2018–21 to 10 per day in 2022–25, to almost 20 per day after 1 April 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.623,
+                0.876,
+                0.751
+            ],
+            "angle": 0,
+            "content": "Broadly speaking, data on CVEs fall into three distinct periods, each coinciding with a wave of AI-assisted coding tools. Between the first two periods (2018–21, 2022–25), the discrete jump in the number of CVEs may relate to the availability of GitHub Copilot (released in June 2021) or OpenAI's GPT application programming interface (API) (first available in June 2020). \\( ^{4} \\)  Over 2022–25, the annual count was broadly stable, as developers became accustomed to coding-assistant tools. The jump in reported CVEs in the second quarter of 2026 may relate to Mythos and other models for coding becoming available. But these counts should be interpreted with care: the number of published CVEs also reflects the growing size and reach of the software industry and the size of the security research community, not AI capabilities alone.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.773,
+                0.875,
+                0.813
+            ],
+            "angle": 0,
+            "content": "Another consequence of the availability of frontier AI models is that most bug bounty programmes are reducing payouts and are being reconsidered overall. See M Jackson, \"Bug bounty isn't dead, but the old model is breaking\", Aikido, 13 April 2026, www.aikido.dev/blog/bug-bounty-isnt-dead."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.818,
+                0.875,
+                0.859
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  Aldasoro et al (2024, 2025) discuss how generative AI can strengthen both cyber defence and offence, especially in social engineering, monitoring and data security settings. The same is likely to hold for frontier models (Carlini et al (2026)). Some argue that the capabilities and applications of AI in attacks exceed those for defence (Potter et al (2025))."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.864,
+                0.875,
+                0.891
+            ],
+            "angle": 0,
+            "content": "3 The data for the CVE were downloaded from the National Institute of Standards and Technology (NIST) National Vulnerability Database (NVD) REST API v2 (available at https://services.nvd.nist.gov/rest/json/cves/2.0, accessed on 18 May 2026)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.09,
+                0.896,
+                0.667,
+                0.91
+            ],
+            "angle": 0,
+            "content": "4 Unlike ChatGPT's release in November 2022, the API access to GPT went mostly unnoticed."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.926,
+                0.16,
+                0.939
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.087,
+                0.426,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.122,
+                0.871,
+                0.133
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.138,
+                0.871,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.153,
+                0.872,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.17,
+                0.871,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.185,
+                0.871,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.2,
+                0.871,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.217,
+                0.871,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.232,
+                0.872,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.249,
+                0.823,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.271,
+                0.871,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.286,
+                0.871,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.302,
+                0.871,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.319,
+                0.872,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.334,
+                0.872,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.351,
+                0.871,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.367,
+                0.862,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.389,
+                0.872,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.405,
+                0.872,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.42,
+                0.872,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.436,
+                0.872,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.453,
+                0.707,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.474,
+                0.871,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.491,
+                0.869,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.506,
+                0.872,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.522,
+                0.872,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.539,
+                0.871,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.554,
+                0.871,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.569,
+                0.871,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.586,
+                0.871,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.603,
+                0.363,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.624,
+                0.871,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.64,
+                0.872,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.656,
+                0.871,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.671,
+                0.871,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.687,
+                0.871,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.704,
+                0.872,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.719,
+                0.871,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.735,
+                0.863,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.085,
+                0.682,
+                0.104
+            ],
+            "angle": 0,
+            "content": "Security bug fixes and capabilities to identify vulnerabilities are growing"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.816,
+                0.089,
+                0.875,
+                0.104
+            ],
+            "angle": 0,
+            "content": "Graph 2"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.093,
+                0.141,
+                0.479,
+                0.326
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.33,
+                0.356,
+                0.343
+            ],
+            "angle": 0,
+            "content": "CVEs = common vulnerabilities and exposures"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.487,
+                0.114,
+                0.875,
+                0.142
+            ],
+            "angle": 0,
+            "content": "B. Mean of daily critical CVEs (CVSS >= 9.0) reported was stable in 2022–25, but jumped up in 2026 \\( ^{4} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.489,
+                0.142,
+                0.875,
+                0.325
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.345,
+                0.874,
+                0.371
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Firefox security bug fixes by month (all sources, all severities).  \\( ^{2} \\)  Mean of daily critical CVEs (ie those with a Common Vulnerability Scoring System (CVSS) score > = 9.0) per calendar year."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.376,
+                0.604,
+                0.391
+            ],
+            "angle": 0,
+            "content": "Sources: NIST National Vulnerability Database API (accessed 18 May 2026), BIS calculations."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.404,
+                0.875,
+                0.47
+            ],
+            "angle": 0,
+            "content": "Reported data breaches have risen in step and a growing share are fully automated. By a global estimate, 2025 recorded a significant jump (Graph 3.A), and breaches attributed to automated rather than human action became more common. These data are incomplete, however, and tend to reveal more about the type of incident than about the specific tools used, not least because attackers do not self-report.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.489,
+                0.747,
+                0.508
+            ],
+            "angle": 0,
+            "content": "Data breaches have been rising; since Mythos, market expectations have shifted"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.514,
+                0.875,
+                0.788
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.794,
+                0.876,
+                0.88
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Based on global data breaches collected from domestic and international law enforcement, forensic firms, law firms, cyber insurers, cyber security industry sharing groups and the Verizon Threat Research Advisory Center caseload.  \\( ^{2} \\)  Cumulative abnormal returns (CARs) are computed from a market model regression of each stock's daily log returns on Nasdaq 100 log returns, estimated over 2 December 2025 to 20 March 2026 (ie preceding the initial leak of information about Mythos). Abnormal returns are the residuals from this model evaluated over the event window; CARs are daily and are normalised to zero on 6 April 2026, so values from 7 April onwards measure cumulative abnormal performance since the eve of the announcement. \"Glasswing partners\" refers to selected known companies that were granted access to Mythos (Crowd Strike (CRWD) and Palo Alto (PANW))."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.884,
+                0.291,
+                0.897
+            ],
+            "angle": 0,
+            "content": "Sources: Verizon; LSEG Datastream.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.926,
+                0.16,
+                0.939
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.087,
+                0.678,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.405,
+                0.872,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.421,
+                0.872,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.438,
+                0.872,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.454,
+                0.842,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.491,
+                0.745,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.886,
+                0.289,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.876,
+                0.166
+            ],
+            "angle": 0,
+            "content": "Market reactions provide a complementary, forward-looking signal. The cumulative abnormal stock returns of a number of cyber security firms fell sharply with the announcement of Mythos (Graph 3.B). This was widely interpreted as a reflection of investor concerns about obsolescence of existing cyber security products and services. \\( ^{5} \\)  This is a notable reaction, given that a more dangerous threat environment might instead be expected to raise demand for such products.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.187,
+                0.388,
+                0.205
+            ],
+            "angle": 0,
+            "content": "Potential public policy responses"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.221,
+                0.875,
+                0.317
+            ],
+            "angle": 0,
+            "content": "The rapid evolution of AI-driven cyber attack capabilities calls for coordinated public policy responses. The private return to finding and disclosing a vulnerability may be smaller than its system-wide benefit, especially when many institutions share the same code or supplier. Firms may therefore underinvest in discovery and disclosure. This externality provides a direct rationale for coordinated scanning and information-sharing. In both the short and medium term, domestic and international coordination can mitigate risks to critical infrastructure and sustain trust in the stability of the financial system.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.323,
+                0.876,
+                0.45
+            ],
+            "angle": 0,
+            "content": "An initial safeguard is domestic cooperation, not least to ensure that defenders gain access to frontier models before attackers. The financial industry, central banks and financial supervisors can collaborate with national security agencies and other stakeholders to accelerate vulnerability remediation, strengthen core cyber hygiene practices and address exposures from in-house software dependencies, legacy systems, open source code, third parties and internet-facing assets. The same tools that lower costs for attackers can be used defensively, to find and fix flaws in firms' own systems before others do. Engaging critical suppliers, including cloud providers, and updating exercises to simulate third-party software compromises and compressed attacker timelines are also important.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.456,
+                0.877,
+                0.647
+            ],
+            "angle": 0,
+            "content": "Given the global nature of the risks involved and the interconnected nature of the global financial system, cross-border information-sharing is indispensable. Of course, there can be geopolitical constraints to cooperation in some areas, eg threat intelligence. Still, global forums can build on existing operational resilience frameworks, such as the Principles for Operational Resilience and Effective Practices for Cyber Incident Response and Recovery (FSB (2020, 2021)), or discuss AI-related operational risks reflected in risk identification, scenario analysis and resilience planning (BCBS (2021)). For financial market infrastructures, AI-driven threats can be mapped across the pillars to identify, protect, detect, respond and recover in the CPMI–IOSCO cyber resilience guidance (CPMI–IOSCO (2016)). The G7 (2026) already made a commitment to enhance information-sharing and identify best practices. It has also undertaken to reinforce the preparedness of the financial sector and to map the cyber security risks related to AI models. The cyber security agencies of the Five Eyes (2026) have also urged leaders to reduce attack surfaces and accelerate patching processes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.653,
+                0.876,
+                0.811
+            ],
+            "angle": 0,
+            "content": "In the medium term, resilience frameworks must adapt to the evolving threat environment shaped by AI. Regulators and standard-setting bodies can translate existing principles into practical toolkits for extreme scenario design, such as AI-enabled attack paths, and update them as threats evolve. Strengthened oversight of third-party and supply-chain risk is increasingly important as digital dependencies deepen. Operators of systemic infrastructures could be encouraged to participate in pretesting of new AI models, while volunteer pilots and shared assessments can accelerate collective learning. Demand for capacity building is likely to rise; \\( ^{6} \\) international initiatives can prototype AI-enhanced resilience tools and support jurisdictions with varying resources. Information-sharing arrangements may need recalibration to improve timeliness, reciprocity and legal protections, supported by interoperable taxonomies and secure channels.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.838,
+                0.874,
+                0.865
+            ],
+            "angle": 0,
+            "content": "5 An alternative, more benign interpretation is possible: demand for cyber security firm products may fall because the new AI models strengthen in-house cyber defences."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.871,
+                0.875,
+                0.911
+            ],
+            "angle": 0,
+            "content": "At the same, capacity building may need to recognise a complementarity between access to AI tools and in-house organisational capital. Implementation alone does not insulate firms' innovation from cyber risk; resilience against such risk is strongest when implementation is paired with internal AI development (Rishabh et al (2026))."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.926,
+                0.16,
+                0.939
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.087,
+                0.872,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.104,
+                0.871,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.119,
+                0.871,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.134,
+                0.872,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.15,
+                0.506,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.186,
+                0.386,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.222,
+                0.872,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.238,
+                0.871,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.254,
+                0.872,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.27,
+                0.871,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.286,
+                0.871,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.302,
+                0.778,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.324,
+                0.871,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.34,
+                0.871,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.355,
+                0.872,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.37,
+                0.872,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.388,
+                0.871,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.403,
+                0.871,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.419,
+                0.871,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.435,
+                0.6,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.457,
+                0.872,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.473,
+                0.87,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.489,
+                0.872,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.506,
+                0.871,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.521,
+                0.871,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.537,
+                0.871,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.553,
+                0.872,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.568,
+                0.872,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.584,
+                0.872,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.6,
+                0.872,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.616,
+                0.872,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.632,
+                0.241,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.653,
+                0.871,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.67,
+                0.871,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.686,
+                0.871,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.701,
+                0.872,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.717,
+                0.871,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.732,
+                0.871,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.75,
+                0.871,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.764,
+                0.871,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.781,
+                0.871,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.798,
+                0.339,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.875,
+                0.182
+            ],
+            "angle": 0,
+            "content": "The stakes for the financial system are especially high. Payment, trading and post-trade platforms operate at a very large scale and are tightly interconnected with billions of firms and individuals. Complex software stacks and intricate supply chains complicate patching and monitoring, and disruptions can be hard to detect and unwind. These same infrastructures are an attractive target for actors seeking to inflict large-scale economic damage. By learning, adapting and communicating effectively, authorities and the financial industry can turn this pivotal moment into durable gains in global cyber resilience.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.203,
+                0.194,
+                0.219
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.237,
+                0.872,
+                0.275
+            ],
+            "angle": 0,
+            "content": "AI Security Institute (AISI) (2026a): \"Our evaluation of Claude Mythos Preview's cyber capabilities,\" 13 April. —— (2026b): \"Our evaluation of OpenAI's GPT-5.5 cyber capabilities\", 30 April."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.282,
+                0.873,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Aldasoro, I, S Doerr, L Gambacorta, S Notra, T Oliviero and D Whyte (2024): \"Generative artificial intelligence and cyber security in central banking\", BIS Papers, no 145."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.321,
+                0.872,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Aldasoro, I, L Gambacorta, A Korinek, V Shreeti and M Stein (2025): \"Intelligent financial system: how AI is transforming finance\", Journal of Financial Stability, vol 81, 101472."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.359,
+                0.771,
+                0.376
+            ],
+            "angle": 0,
+            "content": "Basel Committee on Banking Supervision (BCBS) (2021): Principles for operational resilience."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.383,
+                0.873,
+                0.414
+            ],
+            "angle": 0,
+            "content": "Canepa, F (2026): \"ECB to quiz bankers about risks of Anthropic's new AI model, source says\", Reuters, 15 April."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.421,
+                0.873,
+                0.453
+            ],
+            "angle": 0,
+            "content": "Carlini, N, N Cheng, K Lucas, M Moore, M Nasr, V Prabhushankar, W Xiao et al (2026): \"Assessing Claude Mythos Preview's cybersecurity capabilities\", Anthropic, 7 April."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.46,
+                0.873,
+                0.506
+            ],
+            "angle": 0,
+            "content": "Committee on Payments and Market Infrastructures–International Organization of Securities Commissions (CPMI–IOSCO) (2016): \"Guidance on cyber resilience for financial market infrastructures\", CPMI Papers, no 146."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.515,
+                0.801,
+                0.53
+            ],
+            "angle": 0,
+            "content": "Financial Stability Board (FSB) (2020): Effective practices for cyber incident response and recovery."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.537,
+                0.684,
+                0.553
+            ],
+            "angle": 0,
+            "content": "(2021): \"Principles for operational resilience\", Compendium of Standards."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.56,
+                0.625,
+                0.577
+            ],
+            "angle": 0,
+            "content": "Five Eyes (2026): \"Five Eyes cyber security agencies statement\", 22 June."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.583,
+                0.874,
+                0.63
+            ],
+            "angle": 0,
+            "content": "Folkerts, L, W Payne, S Inman, P Giavridis, J Skinner, S Deverett, J Aung, E Zorer, M Schmatz, M Ghanem, J Wilkinson, A Steer, V Hong and J Wang (2026): \"Measuring AI agents' progress on multi-step cyber attack scenarios\", arXiv, 10.48550/arXiv.2603.11214."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.638,
+                0.735,
+                0.654
+            ],
+            "angle": 0,
+            "content": "G7 (2026): \"G7 Finance Ministers' and Central Bank Governors' Communiqué\", 19 May."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.661,
+                0.874,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Hutchins, E, M Cloppert and R Amin (2011): \"Intelligence-driven computer network defense informed by analysis of adversary campaigns and intrusion kill chains\", in J Ryan (ed), Leading issues in information warfare and security research, vol 1. Potter, Y, W Guo, Z Wang, T Shi, H Li, A Zhang, P G Kelley, K Thomas and D Song (2025): \"Frontier AI's impact on the cybersecurity landscape\", arXiv, 10.48550/arXiv.2504.05408."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.747,
+                0.873,
+                0.778
+            ],
+            "angle": 0,
+            "content": "Rishabh, K, R Mihet and J Jang-Jaccard (2026): \"Cyberrisk and AI Firms\", Review of Corporate Finance Studies, cfag018."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.785,
+                0.873,
+                0.817
+            ],
+            "angle": 0,
+            "content": "Strom, B, A Applebaum, D Miller, K Nickels, A Pennington and C Thomas (2020): \"MITRE ATT&CK: design and philosophy\", MITRE Corporation technical report, no MP180360R1."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.927,
+                0.16,
+                0.938
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.087,
+                0.872,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.103,
+                0.872,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.119,
+                0.872,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.134,
+                0.872,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.151,
+                0.872,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.166,
+                0.768,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.203,
+                0.193,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

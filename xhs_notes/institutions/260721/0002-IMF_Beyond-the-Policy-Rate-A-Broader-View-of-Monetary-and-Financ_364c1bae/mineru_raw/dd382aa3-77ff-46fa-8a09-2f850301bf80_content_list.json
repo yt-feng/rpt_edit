@@ -1,0 +1,2114 @@
+[
+    {
+        "type": "text",
+        "text": "Beyond the Policy Rate: A Broader View of Monetary and Financial Conditions",
+        "text_level": 1,
+        "bbox": [
+            76,
+            196,
+            816,
+            357
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nasir Rao and Anvar Muratkhanov",
+        "bbox": [
+            76,
+            397,
+            436,
+            420
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "SIP/2026/062",
+        "bbox": [
+            76,
+            460,
+            223,
+            482
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 14, 2026. This paper is also published separately as IMF Country Report No 26/164.",
+        "bbox": [
+            75,
+            594,
+            519,
+            683
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2026\nJUL",
+        "bbox": [
+            76,
+            820,
+            233,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/72c9c420477807bd5d4147998c3d2325cd10c93be1e1c5c9fe53d5e0883eaa60.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            651,
+            810,
+            797,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            76,
+            37,
+            830,
+            75
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "SELECTED ISSUES PAPER",
+        "bbox": [
+            918,
+            119,
+            983,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Paper Middle East and Central Asia",
+        "text_level": 1,
+        "bbox": [
+            395,
+            194,
+            602,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Beyond the Policy Rate: A Broader View of Monetary and Financial Conditions, Kyrgyz Republic Prepared by Nasir Rao and Anvar Muratkhanov\\*",
+        "text_level": 1,
+        "bbox": [
+            140,
+            244,
+            854,
+            280
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Authorized for distribution by Dmitry Gershenson\nJuly 2026",
+        "bbox": [
+            326,
+            297,
+            669,
+            332
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 14, 2026. This paper is also published separately as IMF Country Report No 26/164.",
+        "bbox": [
+            125,
+            367,
+            844,
+            420
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT: This study assesses the effective monetary stance in the Kyrgyz Republic amid excess liquidity, rapid household credit growth, and elevated inflation pressures. It develops a monthly Financial Conditions Index covering liquidity, market rates, monetary aggregates, credit dynamics, and external financial factors. The results show a marked easing in financial conditions since early 2024, driven by strong credit and money growth and lower market rates, despite a relatively tight policy rate. The findings underscore the need for stronger liquidity management, corridor operations, and targeted macroprudential tools.",
+        "bbox": [
+            111,
+            460,
+            870,
+            565
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RECOMMENDED CITATION: Rao, N.H. and Muratkhanov, A. (2026). Beyond the Policy Rate: A Broader View of Monetary and Financial Conditions, Kyrgyz Republic, IMF Selected Issues Paper, Middle East and Central Asia Department, SIP/2026/062. Washington, DC: International Monetary Fund.",
+        "bbox": [
+            111,
+            598,
+            883,
+            651
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification Numbers:",
+        "bbox": [
+            125,
+            678,
+            326,
+            695
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "E52, E43, E51, E66, G32",
+        "bbox": [
+            383,
+            678,
+            563,
+            695
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Keywords:",
+        "bbox": [
+            125,
+            720,
+            205,
+            737
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Monetary Policy, Interest Rates, Money Supply, Financial Conditions, and Liquidity Management",
+        "bbox": [
+            383,
+            712,
+            784,
+            747
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Author's E-Mail Address:",
+        "bbox": [
+            125,
+            763,
+            303,
+            779
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "NRao@imf.org, AMuratkhanov@imf.org",
+        "bbox": [
+            383,
+            763,
+            665,
+            780
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "© 2026 International Monetary Fund",
+        "bbox": [
+            116,
+            126,
+            370,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "SIP/2026/062",
+        "bbox": [
+            774,
+            126,
+            875,
+            140
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Beyond the Policy Rate: A Broader View of Monetary and Financial Conditions",
+        "text_level": 1,
+        "bbox": [
+            112,
+            300,
+            779,
+            425
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Kyrgyz Republic",
+        "bbox": [
+            111,
+            454,
+            356,
+            486
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Prepared by Nasir Rao and Anvar Muratkhanov $^{1}$",
+        "bbox": [
+            109,
+            568,
+            611,
+            592
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "SELECTED ISSUES PAPERS",
+        "bbox": [
+            111,
+            194,
+            522,
+            220
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ The authors would like to thank Subir Lall and Dmitry Gershenson for their helpful comments and valuable guidance.",
+        "bbox": [
+            111,
+            910,
+            800,
+            926
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "KYRGYZ REPUBLIC",
+        "text_level": 1,
+        "bbox": [
+            218,
+            123,
+            650,
+            160
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SELECTED ISSUES",
+        "text_level": 2,
+        "bbox": [
+            217,
+            181,
+            415,
+            203
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "May 14, 2026",
+        "bbox": [
+            44,
+            205,
+            151,
+            224
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Approved By",
+        "bbox": [
+            233,
+            250,
+            370,
+            270
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Middle East and",
+        "bbox": [
+            233,
+            271,
+            370,
+            287
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Prepared By Nasir Rao and Anvar Muratkhanov (all MCD)",
+        "bbox": [
+            434,
+            251,
+            870,
+            270
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Central Asia",
+        "bbox": [
+            233,
+            290,
+            338,
+            306
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Department",
+        "bbox": [
+            233,
+            309,
+            339,
+            325
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "CONTENTS",
+        "text_level": 2,
+        "bbox": [
+            241,
+            354,
+            383,
+            377
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "BEYOND THE POLICY RATE: A BROADER VIEW OF MONETARY AND FINANCIAL",
+        "text_level": 2,
+        "bbox": [
+            217,
+            398,
+            859,
+            417
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "CONDITIONS 2",
+        "bbox": [
+            215,
+            422,
+            883,
+            441
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A. Introduction 2",
+        "bbox": [
+            215,
+            446,
+            880,
+            464
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "B. Methodology and Results 4",
+        "bbox": [
+            215,
+            468,
+            882,
+            487
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "C. Conclusion and Policy Recommendations \\_\\_\\_\\_ 7",
+        "bbox": [
+            215,
+            489,
+            882,
+            510
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ANNEX",
+        "text_level": 2,
+        "bbox": [
+            215,
+            530,
+            285,
+            549
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "I. Methodology \\_\\_\\_\\_ 9",
+        "bbox": [
+            215,
+            550,
+            882,
+            569
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "REFERENCES",
+        "text_level": 2,
+        "bbox": [
+            217,
+            587,
+            325,
+            604
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "References 13",
+        "bbox": [
+            215,
+            606,
+            883,
+            625
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            80,
+            16,
+            176,
+            95
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            233,
+            61,
+            826,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "BEYOND THE POLICY RATE: A BROADER VIEW OF MONETARY AND FINANCIAL CONDITIONS $^{1}$",
+        "text_level": 1,
+        "bbox": [
+            114,
+            95,
+            800,
+            154
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "This study assesses the effective monetary stance in the Kyrgyz Republic amid persistent excess liquidity, rapid household credit growth, and elevated inflation pressures. It constructs a monthly Financial Conditions Index (FCI) that captures liquidity conditions, market rates, monetary aggregates, credit dynamics, and external financial factors. The results point to a marked easing in financial conditions since early 2024, driven by strong credit and monetary expansion and declining market rates, despite a relatively tight policy rate. Neutral rate estimates and the real policy rate gap corroborate that monetary conditions have at times remained accommodative in real terms, underscoring the need to complement interest-rate policy with stronger liquidity management, improved corridor operations, and targeted macroprudential tools to safeguard price stability.",
+        "bbox": [
+            112,
+            174,
+            874,
+            344
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A. Introduction",
+        "text_level": 2,
+        "bbox": [
+            114,
+            357,
+            285,
+            375
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1. The Kyrgyz Republic's post-COVID experience shows why monetary stance must be assessed beyond the policy rate. Although the National Bank of the Kyrgyz Republic (NBKR) has",
+        "bbox": [
+            114,
+            392,
+            859,
+            430
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "maintained a relatively tight headline policy rate, the operational stance – captured by short-term market rates – has remained accommodative amid persistent excess liquidity driven by NBKR's domestic gold purchases, capitalization of state-owned banks to support directed lending, and the placement of government deposits in the banking system. As shown in Text Figure 1, broad money growth has accelerated, with M2X reaching 50 percent of GDP, indicating a sizable expansion of system-wide liquidity. Consequently, money",
+        "bbox": [
+            112,
+            431,
+            434,
+            695
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6252a600635c04b8c05f12d78c7ca320d0022837819db2bc63c5e721f4169f86.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            447,
+            439,
+            877,
+            679
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "market rates (interbank rate) have stayed well below the policy rate, implying looser effective financing conditions despite a restrictive signal. This wedge weakens transmission and complicates interest-rate calibration amid strong domestic demand.",
+        "bbox": [
+            112,
+            696,
+            867,
+            752
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2. Easy liquidity conditions have fueled rapid credit growth, sustaining demand and price pressures. Following the initial cost-push inflation surge triggered by external shocks in 2020–22, inflation dynamics increasingly reflects domestic demand pressures. Credit growth has outpaced nominal GDP, with households relying more heavily on short-term consumer loans and mortgages. New lending has also shifted sharply toward households, whose share in total new credit reached",
+        "bbox": [
+            112,
+            768,
+            877,
+            863
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            116,
+            47,
+            241,
+            61
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Prepared by Nasir Rao and Anvar Muratkhanov (all MCD).",
+        "bbox": [
+            114,
+            885,
+            504,
+            902
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            114,
+            933,
+            130,
+            954
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            954
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "historically high levels in 2024–25, while corporate lending expanded more moderately. As shown in Text Figure 2, total new bank lending now exceeds 25 percent of GDP, underscoring rapid financial deepening but also rising macro-financial vulnerabilities.",
+        "bbox": [
+            112,
+            92,
+            877,
+            148
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3. Credit expansion has been accompanied by a rapid buildup of excess liquidity, which is sterilized primarily through short-term instruments. While the NBKR's absorption operations have been extensive, heavy reliance on overnight placements makes sterilization highly reversible and vulnerable to shifts in banks' behavior and market sentiment. Excess liquidity rose sharply during 2021–25, from around KGS 30 billion (3.8 percent of GDP) in 2021 to nearly KGS 150 billion (9.2 percent of GDP) most recently. Although this liquidity is formally absorbed by the NBKR, more than 80 percent is placed in overnight deposits and can quickly re-enter the system through renewed credit expansion (Text Figure 3). This combination can keep financing conditions easier than intended, reinforce demand pressures, and complicate the pursuit of price stability.",
+        "bbox": [
+            112,
+            164,
+            880,
+            335
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/da6d85c239e43dc94ed8cad5bac42a4d7ff3d7d6a9321fa56ecc039c64b7235a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            117,
+            345,
+            509,
+            588
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/742b361ef72d2a31e60afc5a0b9ff762d672f419683b0e78abd5f6802b6f5299.jpg",
+        "content": "",
+        "chart_caption": [
+            "Text Figure 3. Excess Liquidity and Structure of Sterilization (in bn KGS)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            514,
+            376,
+            893,
+            589
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "4. These developments highlight the limitations of using the policy rate alone to assess monetary stance. With a persistent structural liquidity surplus, the NBKR has effectively operated as a net borrower from banks, with no refinancing to banks since 2022, underscoring ample liquidity in the system (Text Figure 4). In this environment, the interest rate corridor floor has become the operative anchor for short-term market rates. When the corridor floor was lowered, interbank rates and short-term yields fell even though the headline policy rate was unchanged (Text Figure 5). As a result, the policy signal became divergent from the financing conditions faced by households and firms in practice (Text Box 1), underscoring the need for a broader measure – such as an FCI – that captures liquidity, market rates, credit dynamics, and external financial influences.",
+        "bbox": [
+            112,
+            608,
+            877,
+            779
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            720,
+            47,
+            844,
+            63
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            862,
+            933,
+            875,
+            954
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Text Figure 4. Composition of Net NBKR",
+        "text_level": 2,
+        "bbox": [
+            107,
+            92,
+            439,
+            109
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Liabilities to Banks (borrowing from banks minus lending",
+        "bbox": [
+            109,
+            111,
+            486,
+            127
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/40d3b0782794506f20d1e871da0ec96768906192f21eb3929ddf1fc4293ffe46.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: NBKR and IMF staff calculations."
+        ],
+        "bbox": [
+            109,
+            127,
+            496,
+            276
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f75d451a4018271b5e598050791ce24cbd3c7e6f8e9b52e4fbb8ab3e822ff5ce.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: NBKR and IMF staff calculations."
+        ],
+        "bbox": [
+            509,
+            90,
+            888,
+            273
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Text Box 1. Why the Policy Rate Loses Traction Under Surplus Liquidity",
+        "text_level": 2,
+        "bbox": [
+            194,
+            316,
+            800,
+            334
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In an interest rate corridor system, the policy rate is meant to guide short-term market rates through active interbank trading. This mechanism works best when banks have a structural need to borrow liquidity. When the system is in persistent surplus, banks hold ample reserves and interbank activity becomes thin. Instead of borrowing from each other, banks place excess funds at the central bank deposit facility, earning the corridor floor rate. As a result, money market rates are pulled toward the floor rather than the headline policy rate.",
+        "bbox": [
+            120,
+            351,
+            866,
+            464
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In such conditions, the central bank effectively becomes a net borrower from the banking system and the corridor floor – not the policy rate – anchors short-term pricing. Unless excess liquidity is absorbed durably, policy rate changes may have limited influence on interbank rates, short-term yields, and the financing conditions faced by households and firms. Empirical evidence supports this mechanism, excess liquidity weakens monetary transmission (Saxegaard, 2006), large inflows can delink funding costs from the policy rate (Barajas et al., 2016), and banks with higher reserves may reduce credit supply less after rate hikes (Fricke et al., 2024).",
+        "bbox": [
+            120,
+            479,
+            866,
+            614
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "5. This study develops a Financial Conditions Index (FCI) for the Kyrgyz Republic to provide a high-frequency, comprehensive gauge of the effective monetary stance beyond the policy rate. To support and interpret the FCI signals, it also presents an indicative estimate of the real neutral interest rate and compares it with the ex-ante real policy rate. Together, these tools help assess whether overall monetary conditions are effectively restrictive or accommodative in real terms and whether the policy signal is aligned with financing conditions faced by households and firms. This integrated framework is particularly useful in episodes when excess liquidity and strong credit growth weaken the pass-through of the policy rate to market rates and inflation outcomes. By combining a broad conditions-based measure with a real-rate benchmark, it helps identify when tightening “on paper” may not translate into tighter conditions in practice.",
+        "bbox": [
+            112,
+            646,
+            880,
+            837
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "B. Methodology and Results",
+        "text_level": 2,
+        "bbox": [
+            114,
+            849,
+            415,
+            869
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Financial Condition Index",
+        "text_level": 2,
+        "bbox": [
+            114,
+            885,
+            336,
+            901
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            116,
+            47,
+            240,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            114,
+            934,
+            130,
+            953
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "6. The FCI draws on methodologies used in recent IMF analytical work. The index is constructed at monthly frequency and combines indicators covering policy instruments, market interest rates, monetary aggregates, credit dynamics, exchange rate movements, and global financial conditions (Text Table 1). $^{2}$ Each series is transformed so that higher values indicate tighter financial conditions and then standardized using \"Z\" scores to ensure comparability across variables measured in different units. The resulting FCI provides a consistent measure of how overall financial conditions evolve over time and complements the neutral-rate benchmark in assessing whether the effective monetary stance is restrictive or accommodative in practice.",
+        "bbox": [
+            112,
+            92,
+            882,
+            244
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/19008d6fb1b7a79cba233d5a7d926f81c13ac715bd505459f7e139f4599e455e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"6\">Text Table 1. Components of Financial Condition Index.</td></tr><tr><td>Policy Rate</td><td>Market Interest rates</td><td>Monetary Aggregates</td><td>Banking Credit</td><td>Exchange rate</td><td>External Indicators</td></tr><tr><td>NBKR&#x27;s policy rate</td><td>NBKR&#x27;s interbank rate, government securities rate, banking lending rate, and banking deposit rate</td><td>Monetary base and broad money</td><td>Business credits and household credits</td><td>Nominal effective exchange rate</td><td>Fed rate</td></tr></table>",
+        "bbox": [
+            119,
+            255,
+            877,
+            449
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "7. The weights of the FCI components are derived using three complementary",
+        "text_level": 2,
+        "bbox": [
+            114,
+            459,
+            789,
+            477
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "approaches. An equal-weight specification provides a transparent baseline, treating each indicator as equally important. Principal component analysis (PCA) is then used to extract the common underlying factor across the data, capturing shared variation in financial conditions. Finally, structural VAR (SVAR) assigns weights based on the cumulative impact of each component on real GDP growth. To keep the SVAR tractable given the large number of underlying indicators, it is implemented in two stages: PCA is first applied within key groups (market interest rates, monetary aggregates, and banking credit) to construct representative sub-indices, which are then included in the SVAR alongside real GDP growth. This multi-method approach enhances robustness by combining a transparent benchmark, a purely statistical summary measure, and an economically interpretable weighting scheme based on the estimated output effects of financial shocks.",
+        "bbox": [
+            112,
+            478,
+            870,
+            669
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "8. Results across all three approaches point to a notable easing in financial conditions from early 2024 (Figure 6). The FCI decomposition suggests that this easing has been driven mainly by faster credit growth and monetary expansion, alongside a decline in market interest rates, even as the policy rate contribution remained tightening (Figure 7). This pattern indicates that the restrictive policy signal was partly offset by liquidity and credit dynamics, leaving overall financing conditions more accommodative than implied by the policy rate alone.",
+        "bbox": [
+            112,
+            683,
+            875,
+            797
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            720,
+            47,
+            844,
+            61
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Policy rate, market interest rates, and external indicators are expressed in percent levels; monetary aggregates and banking credit are expressed as percent of GDP and measured as year-over-year growth; and the exchange rate is measured as month-over-month growth.",
+        "bbox": [
+            112,
+            857,
+            870,
+            904
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            596,
+            938,
+            834,
+            954
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            862,
+            934,
+            875,
+            954
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Source: Country authorities and IMF staff calculations.",
+        "bbox": [
+            460,
+            546,
+            733,
+            560
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6adb1f844c281b8d703e6d53411c7af94ca93630f8d28eabc2fc40359863824f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: IMF staff calculations."
+        ],
+        "bbox": [
+            124,
+            90,
+            496,
+            276
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7a22093e08c95e2b02d060d709369ce659e203138fb1ee303c02d084c5c668f5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Text Figure 7. FCI Decomposition (higher value = tighter financial conditions)"
+        ],
+        "chart_footnote": [
+            "Source: IMF staff calculations."
+        ],
+        "bbox": [
+            519,
+            108,
+            888,
+            279
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "9. Lower FCI values – indicating looser financial conditions – are associated with higher subsequent inflation. With headline inflation already above the NBKR's medium-term target range",
+        "bbox": [
+            114,
+            316,
+            874,
+            354
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "of 5–7 percent, this pattern suggests that inflation persistence reflects not only exogenous cost-push shocks but also sustained domestic demand supported by still-easy financial conditions. This is confirmed by both the visual relationship in Text Figure 8 and by a simple regression where the sixth lag of the FCI is statistically significant for inflation. In this environment, excess liquidity and strong credit dynamics can weaken the pass-through of the policy rate to market",
+        "bbox": [
+            114,
+            354,
+            437,
+            580
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/48419a4267bc5e09f5ebe8ed40b93728b7b541334d56cf20f2f9303aa9c858d7.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            452,
+            359,
+            870,
+            564
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "pricing and borrowing conditions. The FCI therefore provides a useful leading indicator of inflationary pressures and complements the policy rate in assessing the effective monetary stance and near-term inflation risks.",
+        "bbox": [
+            114,
+            580,
+            857,
+            637
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Real Neutral Rate",
+        "text_level": 2,
+        "bbox": [
+            114,
+            652,
+            269,
+            670
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "10. Rolling Taylor-rule estimates suggest that the current real neutral interest rate is around 2 percent. This estimation focuses on the period after the NBKR introduced its medium-term inflation objective of 5–7 percent and strengthened its interest rate based monetary policy framework. Results also suggest that the neutral rate was higher earlier in the sample averaging around 3 percent during 2014-19, before gradually declining in recent years (Text Figure 9). This is broadly consistent with earlier evidence for the Kyrgyz Republic – range of 3.5 to 4 percent at the end of 2019 determined by Teodoru and Toktonalieva (2020).",
+        "bbox": [
+            112,
+            686,
+            862,
+            820
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            117,
+            47,
+            240,
+            61
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            116,
+            933,
+            130,
+            954
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "11. The real policy rate gap, defined as the difference between the ex-ante real policy rate $^{3}$ and the estimated real neutral rate, is currently negative, suggesting that monetary conditions remain accommodative in real terms despite elevated nominal policy rates (Text Figure 10). Movements in the real policy rate gap closely track the FCI, reinforcing the conclusion that effective financing conditions have loosened at times even when the policy rate signal remained tight. By contrast, the positive real rate gap in 2023–24 coincided with a tightening in financial conditions and a decline in inflation toward its medium-term target, underscoring the effectiveness of a sufficiently restrictive stance when real rates rise above the neutral benchmark.",
+        "bbox": [
+            112,
+            92,
+            870,
+            244
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4f2f3aef544b6faa3a21d3a88de07ee51f639d0153ceaa3019e2cae6f7f9249a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            120,
+            256,
+            513,
+            452
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0feb28478e1c8a5292e425e504c5489e6c1437a001f5dd0637203a491c2bf051.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            519,
+            256,
+            898,
+            450
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "C. Conclusion and Policy Recommendations",
+        "text_level": 2,
+        "bbox": [
+            114,
+            468,
+            568,
+            488
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "12. Overall, the analysis suggests that financial conditions in the Kyrgyz Republic have been more accommodative than implied by the headline policy rate alone. The constructed FCI indicates that conditions have eased since early 2024 despite a relatively tight policy signal, consistent with the decline in the real policy rate gap toward accommodative territory in real terms. Ample liquidity, declining market interest rates, and rapid household credit growth have supported domestic demand and weakened the pass-through of monetary tightening to market rates and borrowing conditions. In this context, maintaining a sufficiently restrictive real stance remains important to curb inflationary pressures, particularly amid strengthening demand and the announced increases in public sector wages.",
+        "bbox": [
+            112,
+            503,
+            875,
+            675
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "13. Strengthening monetary policy transmission will require a multi-instrument policy response that addresses liquidity conditions, operational implementation, and credit dynamics. First, improving the durability of liquidity absorption is critical under persistent structural surplus: greater use of longer-tenor sterilization instruments, stronger liquidity forecasting, and reduced reliance on overnight operations would limit reversibility and prevent excess funds from quickly re-entering the system during demand upswings. Second, refining the corridor framework – including a higher corridor floor and a more symmetric design – would help anchor money market rates closer to the intended stance rather than the lower bound. Third, stronger coordination between the NBKR and the public sector- particularly the Ministry of Finance, given its role in state-owned bank capitalization and fiscal cash management – would reduce autonomous liquidity fluctuations through improved information sharing, more predictable placement of government deposits, and better alignment of fiscal operations with monetary objectives. Finally, given rapid household credit expansion, targeted macroprudential measures could complement monetary policy by containing demand-driven pressures and limiting risks to price stability. Together, these measures would narrow the wedge between the policy signal and effective financing conditions, strengthening the overall effectiveness of monetary policy.",
+        "bbox": [
+            112,
+            689,
+            880,
+            824
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            720,
+            47,
+            844,
+            61
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ The real policy rate is calculated by adjusting the nominal policy rate by the NBKR's one-year-ahead inflation forecasts, which incorporate inflation expectations of domestic households and firms collected by the NSC and subsequently processed by the NBKR. Inflation forecast figures are obtained from the quarterly Monetary Policy Reports published on the NBKR's website.",
+        "bbox": [
+            114,
+            844,
+            844,
+            902
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            954
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            861,
+            934,
+            875,
+            954
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            112,
+            92,
+            870,
+            263
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            116,
+            47,
+            241,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            117,
+            933,
+            130,
+            954
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Annex I. Methodology",
+        "text_level": 1,
+        "bbox": [
+            364,
+            93,
+            630,
+            116
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "A. Estimating the FCI Weights",
+        "text_level": 2,
+        "bbox": [
+            114,
+            130,
+            429,
+            151
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Principal Component Analysis (PCA)",
+        "text_level": 2,
+        "bbox": [
+            114,
+            166,
+            426,
+            184
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "1. PCA is used to summarize a large set of financial indicators into a small number of common factors while retaining as much information as possible. Technically, principal components are obtained from the eigen-decomposition of the correlation matrix of standardized variables. The first principal component captures the largest share of common variation across indicators and is interpreted as the PCA-based measure of overall financial conditions.",
+        "bbox": [
+            112,
+            200,
+            877,
+            296
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The eigenvalue of the first principal component is 4.22; with eleven standardized indicators, this implies that it explains about 38 percent of the total variance. Text Table 1 reports the corresponding factor loadings, which indicate that the common factor is driven primarily by domestic interest rates and liquidity conditions, reflecting their dominant contribution to overall variation in the data. Credit variables also load positively but play a more secondary role, while the exchange rate and external financial conditions contribute relatively little. Overall, the PCA-based FCI therefore mainly reflects domestic monetary and liquidity dynamics in the Kyrgyz Republic.",
+        "bbox": [
+            112,
+            311,
+            883,
+            444
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/27a9f0ae0dcf3381f63541dbe1d29054f28e364eb6bcc32f549a8cae70a2e2a3.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Table 1. Variables Loadings in PC1.</td></tr><tr><td>Indicator</td><td>Loadings</td></tr><tr><td>Policy Rate</td><td></td></tr><tr><td>NBKR&#x27;s Policy Rate</td><td>0.422</td></tr><tr><td>Market Interest Rates</td><td></td></tr><tr><td>NBKR&#x27;s Interbank Rate</td><td>0.406</td></tr><tr><td>Government Securities Rate</td><td>0.361</td></tr><tr><td>Banking Lending Rate</td><td>-0.000</td></tr><tr><td>Banking Deposit Rate</td><td>0.263</td></tr><tr><td>Monetary Aggregates</td><td></td></tr><tr><td>Monetary Base</td><td>0.415</td></tr><tr><td>Broad Money</td><td>0.417</td></tr><tr><td>Banking Credit</td><td></td></tr><tr><td>Business Credits</td><td>0.233</td></tr><tr><td>Household Credits</td><td>0.218</td></tr><tr><td>Exchange Rate</td><td></td></tr><tr><td>NEER</td><td>0.015</td></tr><tr><td>External Factor</td><td></td></tr><tr><td>FED rate</td><td>-0.095</td></tr></table>",
+        "bbox": [
+            300,
+            455,
+            696,
+            892
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            720,
+            47,
+            844,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            954
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            861,
+            934,
+            875,
+            954
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Structural VAR",
+        "text_level": 2,
+        "bbox": [
+            114,
+            92,
+            248,
+            109
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. The structural VAR (SVAR) framework is used to derive economically grounded weights of FCI. A two-stage approach is adopted. First, PCA is applied within key blocks to construct composite indicators for market rates, monetary aggregates, and banking credit. These composites are then included in a monthly SVAR together with the policy rate, the exchange rate (NEER), the U.S. federal funds rate, and real GDP growth.",
+        "bbox": [
+            112,
+            126,
+            877,
+            220
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The estimated SVAR has the following form:",
+        "bbox": [
+            114,
+            236,
+            455,
+            253
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA y _ {t} = c + B (L) y _ {t - 1} + D x _ {t} + \\varepsilon_ {t},\n$$",
+        "text_format": "latex",
+        "bbox": [
+            372,
+            271,
+            625,
+            289
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "where $y_{t}$ is the vector of variables in the system, A is the contemporaneous impact matrix, $B(L)$ is a matrix polynomial in the lag operator with six lags, $x_{t}$ is a vector of exogenous controls, and $\\varepsilon_{t}$ is the vector of structural shocks. All variables are expressed in standardized form. The system vector is:",
+        "bbox": [
+            112,
+            304,
+            870,
+            359
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\ny _ {t} = [ f e d \\_ r a t e, n e e r _ {t}, p o l i c y, m a r k e t \\_ r a t e s _ {t}, m o n e t \\_ a g g r, b a n k \\_ c r e d i t _ {t}, g d p _ {g r o w t h _ {t}} ] ^ {\\prime}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            143,
+            376,
+            851,
+            397
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The model is estimated over period 2002M01–2025M6 and includes two exogenous dummy variables: (i) a COVID-19 dummy and (ii) a post-2022 dummy capturing the period when the war in Ukraine significantly boosted domestic economic activity through the re-export flows.",
+        "bbox": [
+            112,
+            410,
+            867,
+            467
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Identification and restrictions",
+        "text_level": 2,
+        "bbox": [
+            114,
+            482,
+            372,
+            500
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3. Identification follows a recursive (Cholesky) structure, with A restricted to be lower triangular with ones on the diagonal (variables ordered from most exogenous to most endogenous):",
+        "bbox": [
+            112,
+            516,
+            879,
+            554
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA = \\left( \\begin{array}{c c c c c c c} 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ a _ {2 1} & 1 & 0 & 0 & 0 & 0 & 0 \\\\ a _ {3 1} & a _ {3 2} & 1 & 0 & 0 & 0 & 0 \\\\ a _ {4 1} & a _ {4 2} & a _ {4 3} & 1 & 0 & 0 & 0 \\\\ a _ {5 1} & a _ {5 2} & a _ {5 3} & a _ {5 4} & 1 & 0 & 0 \\\\ a _ {6 1} & a _ {6 2} & a _ {6 3} & a _ {6 4} & a _ {6 5} & 1 & 0 \\\\ a _ {7 1} & a _ {7 2} & a _ {7 3} & a _ {7 4} & a _ {7 5} & a _ {7 6} & 1 \\end{array} \\right)\n$$",
+        "text_format": "latex",
+        "bbox": [
+            334,
+            566,
+            660,
+            681
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The ordering used is:",
+        "bbox": [
+            114,
+            699,
+            281,
+            715
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. Fed rate → 2) NEER → 3) Policy rate → 4) Market rates (PCA composite) → 5) Monetary aggregates (PCA composite) → 6) Banking Credits (PCA composite) → 7) Real GDP growth. This implies GDP is allowed to respond contemporaneously to all financial shocks, while external variable is most exogenous.",
+        "bbox": [
+            143,
+            727,
+            862,
+            803
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In addition to the contemporaneous recursive structure, we imposed a block-exogeneity restriction reflecting the small-open-economy assumption. Although included in the system vector to capture external financial shocks, the U.S. federal funds rate is treated as strictly block-exogenous: its equation contains only its own lags (and a constant), while coefficients on all lagged domestic",
+        "bbox": [
+            112,
+            819,
+            870,
+            893
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            116,
+            47,
+            241,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            117,
+            938,
+            138,
+            954
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            954
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "variables and dummy variables are restricted to zero. This ensures that innovations to the Fed rate reflect purely external financial shocks, with no feedback from the domestic economy on any horizon.",
+        "bbox": [
+            112,
+            92,
+            861,
+            147
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "SVAR-based weights are obtained from the 12-month cumulative impulse response of real GDP to a one-standard-deviation shock in each financial indicator. This assigns larger weights to indicators whose shocks have a stronger cumulative impact on real activity over one year.",
+        "bbox": [
+            112,
+            164,
+            877,
+            220
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The SVAR results indicate that banking credit is the dominant driver of real activity, receiving the largest weight in the FCI. The policy rate and the exchange rate play a secondary but still important role, while market interest rates and external indicator contribute more moderately. The market rates show the lowest effect.",
+        "bbox": [
+            112,
+            236,
+            883,
+            311
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/7939bbcf8b4e292eeb33a690d01264c9c2087e10cf0e24ef75581f9013916ade.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Text Table 2. SVAR-based weights.</td></tr><tr><td>Indicator</td><td>Weight</td></tr><tr><td>Policy rate</td><td>0.263</td></tr><tr><td>Market rates Indicator</td><td>0.016</td></tr><tr><td>Monetary aggregates Indicator</td><td>0.082</td></tr><tr><td>Banking credit indicator</td><td>0.403</td></tr><tr><td>NEER</td><td>0.132</td></tr><tr><td>Fed rate</td><td>0.099</td></tr></table>",
+        "bbox": [
+            308,
+            325,
+            687,
+            563
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "B. Estimating Real Neutral Rate",
+        "text_level": 2,
+        "bbox": [
+            114,
+            594,
+            444,
+            614
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The estimation is based on a standard inertial Taylor rule in which the policy rate responds to deviations of inflation from its target and output from potential, while also displaying interest-rate smoothing. The rule is specified as:",
+        "bbox": [
+            112,
+            630,
+            862,
+            686
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni _ {t} = \\rho i _ {t - 1} + (1 - \\rho) [ r ^ {*} + \\pi^ {*} + \\alpha (\\pi_ {t} - \\pi^ {*}) + \\beta \\tilde {y} _ {t} ] + \\varepsilon_ {t},\n$$",
+        "text_format": "latex",
+        "bbox": [
+            284,
+            702,
+            710,
+            720
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "where $i_{t}$ denotes the nominal policy rate, $\\pi_{t}$ the inflation rate, $\\pi^{*}$ the inflation target, and $\\tilde{y}_{t}$ the output gap. The parameter $\\rho$ captures policy inertia, while $\\alpha$ and $\\beta$ measure the response to the inflation gap and the output gap, respectively. The real neutral interest rate $r^{*}$ is defined as the real rate that prevails when inflation is at its target and the output gap is closed.",
+        "bbox": [
+            112,
+            770,
+            867,
+            845
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Under these neutral conditions, $\\pi_{t} = \\pi^{*}$ and $\\tilde{y}_{t} = 0$ , the steady-state policy rate satisfies",
+        "bbox": [
+            114,
+            859,
+            779,
+            878
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            720,
+            47,
+            844,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            852,
+            938,
+            874,
+            954
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni ^ {*} = r ^ {*} + \\pi^ {*}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            444,
+            92,
+            550,
+            109
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This identity forms the basis for recovering the neutral rate from the estimated policy rule. Assuming a constant inflation target, the Taylor rule can be rewritten in a form suitable for estimation:",
+        "bbox": [
+            112,
+            126,
+            880,
+            164
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni _ {t} = k + \\rho i _ {t - 1} + \\gamma (\\pi_ {t} - \\pi^ {*}) + \\delta \\tilde {y} _ {t} + u _ {t},\n$$",
+        "text_format": "latex",
+        "bbox": [
+            341,
+            179,
+            655,
+            198
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Where:",
+        "bbox": [
+            114,
+            213,
+            176,
+            229
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\nk = (1 - \\rho) (r ^ {*} + \\pi^ {*}), \\gamma = (1 - \\rho) \\alpha , \\delta = (1 - \\rho) \\beta .\n$$",
+        "text_format": "latex",
+        "bbox": [
+            303,
+            247,
+            692,
+            266
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The real neutral interest rate is obtained from the estimated coefficients as",
+        "bbox": [
+            114,
+            281,
+            686,
+            299
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{r} ^ {*} = \\frac {k}{1 - \\rho} - \\pi^ {*}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            437,
+            319,
+            557,
+            354
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "According to the approach proposed by Tiedemann, Bizimana, and Arzoumanian (2025), the model is initially estimated by ordinary least squares for the sample period 2014Q1–2019Q4. To allow for time variation in the neutral rate, the Taylor rule is subsequently estimated recursively using an expanding-window approach. In each step, one additional quarterly observation is added to the sample, and the model is re-estimated. This procedure continues until the final estimation window 2014Q1–2025Q3. For each estimation window, the real neutral interest rate is recovered using the coefficient mapping described above, generating a time series of neutral-rate estimates.",
+        "bbox": [
+            112,
+            376,
+            867,
+            508
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            114,
+            47,
+            241,
+            61
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            117,
+            936,
+            138,
+            954
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            936,
+            390,
+            954
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            431,
+            94,
+            566,
+            114
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "Barajas, Adolfo, Emilio Fernández-Corugedo, and Roberto Steiner. 2016. \"Credit, Liquidity, and Banking Crises.\" IMF Working Paper 16/106. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            125,
+            882,
+            162
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "Fricke, Daniel, Thomas Kick, and Alexander Schiersch. 2024. \"Banks' Liquidity and the Transmission of Monetary Policy.\" Journal of Banking & Finance 158: 107003.",
+        "bbox": [
+            114,
+            181,
+            883,
+            219
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "Gumata, Nombulelo, Nir Klein, and Eliphas Ndou. 2012. \"A Financial Conditions Index for South Africa.\" IMF Working Paper 12/196. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            239,
+            882,
+            281
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Kara, Hakan, Pınar Özlü, and Derya Ünalmış. 2015. \"Türkiye için Finansal Koşullar Endeksi (Financial Conditions Index for Turkey).\" Central Bank Review 15 (3): 41–73.",
+        "bbox": [
+            114,
+            300,
+            882,
+            342
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "Osorio, Carolina, Runchana Pongsaparn, and D. Filiz Unsal. 2011. \"A Quantitative Assessment of Financial Conditions in Asia.\" IMF Working Paper 11/170. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            361,
+            883,
+            424
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Pham Thi Tuyet Trinh, and Nguyen Thien Kim. 2015. \"Broad Monetary Condition Index: An Indicator for Short-Run Monetary Management in Vietnam.\" Working Paper. Hanoi.",
+        "bbox": [
+            114,
+            444,
+            882,
+            486
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Saxegaard, Magnus. 2006. \"Excess Liquidity and Effectiveness of Monetary Policy: Evidence from Sub-Saharan Africa.\" IMF Working Paper 06/115. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            507,
+            882,
+            542
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "Teodoru, Iuliana Ruxandra, and Asel Toktonalieva. 2020. \"Estimating the Neutral Interest Rate in the Kyrgyz Republic.\" IMF Working Paper 20/087. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            565,
+            882,
+            608
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "Tiedemann, Johanna, Olivier Bizimana, and Shant Arzoumanian. 2025. \"Measuring Monetary Policy Stance in Sub-Saharan African Emerging and Frontier Markets.\" IMF Working Paper 25/160. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            626,
+            883,
+            691
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Yaaba, Baba N. 2013. \"Monetary Policy Rule: A Broad Monetary Conditions Index for Nigeria.\" CBN Journal of Applied Statistics 4 (1): 35–53. Abuja: Central Bank of Nigeria.",
+        "bbox": [
+            114,
+            709,
+            883,
+            752
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "International Monetary Fund. 2019. Mauritius: Selected Issues—Estimating a Financial Conditions Index for Mauritius. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            770,
+            883,
+            811
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund. 2023. Regional Economic Outlook: Middle East and Central Asia—Safeguarding Macroeconomic Stability amid Continued Uncertainty. Washington: International Monetary Fund, May.",
+        "bbox": [
+            114,
+            830,
+            883,
+            895
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            720,
+            47,
+            844,
+            61
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            596,
+            936,
+            834,
+            954
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            852,
+            936,
+            875,
+            954
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "International Monetary Fund. 2024. Oman: Selected Issues—Monetary Policy Transmission in Oman. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            109,
+            880,
+            148
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "International Monetary Fund. 2025. Qatar: Selected Issues—Financial Conditions and Their Growth Implications for Qatar. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            169,
+            880,
+            210
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "KYRGYZ REPUBLIC",
+        "bbox": [
+            116,
+            47,
+            241,
+            61
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            117,
+            938,
+            138,
+            954
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 16
+    }
+]

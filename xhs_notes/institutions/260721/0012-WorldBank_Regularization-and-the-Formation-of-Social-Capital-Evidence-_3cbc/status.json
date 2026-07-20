@@ -1,0 +1,104 @@
+{
+  "source_pdf": "/tmp/pdf_batch_003_mjodfs59/pdfs/0012-WorldBank_Regularization-and-the-Formation-of-Social-Capital-Evidence-_3cbcabf5.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界银行",
+  "cover_short_title": "普通身份，隐藏的巨大",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界银行：正规化与社会资本形成证据",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0012-WorldBank_Regularization-and-the-Formation-of-Social-Capital-Evidence-_3cbcabf5.pdf",
+    "cleaned_source_title": "0012-WorldBank_Regularization-and-the-Formation-of-Social-Capital-Evidence-_3cbcabf5",
+    "institution_name": "世界银行",
+    "required_terms": [],
+    "deterministic_fallback": "世界银行：0012WorldBankRegularization",
+    "raw_candidates": [
+      "世界银行：正规化与社会资本形成证据",
+      "世界银行：合法身份四年后社会融入高0.95个标准差",
+      "世界银行：合法身份回报四年后才显现-信任与归属感"
+    ],
+    "cleaned_candidates": [
+      "世界银行：正规化与社会资本形成证据",
+      "世界银行：合法身份四年后社会融入高0.95个标准差",
+      "世界银行：合法身份回报四年后才显现-信任与归属感",
+      "世界银行：0012WorldBankRegularization",
+      "世界银行：2018年7月，哥伦比亚政府意外宣布"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界银行：合法身份四年后社会融入高0.95个标准差",
+        "reasons": [
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：合法身份回报四年后才显现-信任与归属感",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：0012WorldBankRegularization",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：2018年7月，哥伦比亚政府意外宣布",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界银行：正规化与社会资本形成证据",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界银行：正规化与社会资本形成证据"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

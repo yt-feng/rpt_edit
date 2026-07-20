@@ -1,0 +1,97 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_igegf90d/pdfs/0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "国际清算银行",
+  "cover_short_title": "AI时代的“特洛伊木",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "国际清算银行：前沿AI与网络风险的Mythos时刻",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd.pdf",
+    "cleaned_source_title": "0001-BIS_A-Mythos-moment-Frontier-AI-and-cyber-risk_e87055dd",
+    "institution_name": "国际清算银行",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "国际清算银行：AI0001BISAMythosmoment",
+    "raw_candidates": [
+      "国际清算银行：前沿AI与网络风险的Mythos时刻",
+      "国际清算银行：前沿AI改写网络攻防成本方程",
+      "国际清算银行：AI攻击成本低至50美元-网络攻防天平倾斜"
+    ],
+    "cleaned_candidates": [
+      "国际清算银行：前沿AI与网络风险的Mythos时刻",
+      "国际清算银行：前沿AI改写网络攻防成本方程",
+      "国际清算银行：AI攻击成本低至50美元-网络攻防天平倾斜",
+      "国际清算银行：AI0001BISAMythosmoment",
+      "国际清算银行：前沿AI正在改写网络攻防的成本方程"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "国际清算银行：前沿AI改写网络攻防成本方程",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "国际清算银行：AI攻击成本低至50美元-网络攻防天平倾斜",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "国际清算银行：AI0001BISAMythosmoment",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.35"
+        ]
+      },
+      {
+        "title": "国际清算银行：前沿AI正在改写网络攻防的成本方程",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "国际清算银行：前沿AI与网络风险的Mythos时刻",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "国际清算银行：前沿AI与网络风险的Mythos时刻"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

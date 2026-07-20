@@ -1,0 +1,5910 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.04,
+                0.831,
+                0.077
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.079,
+                0.2,
+                0.77,
+                0.307
+            ],
+            "angle": 0,
+            "content": "Informal Economy in the\nKyrgyz Republic"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.38,
+                0.466,
+                0.403
+            ],
+            "angle": 0,
+            "content": "Farid Talishli and Anvar Muratkhanov",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.443,
+                0.225,
+                0.465
+            ],
+            "angle": 0,
+            "content": "SIP/2026/063",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.52,
+                0.684
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 14, 2026. This paper is also published separately as IMF Country Report No 26/164.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.822,
+                0.234,
+                0.922
+            ],
+            "angle": 0,
+            "content": "2026\nJUL",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.653,
+                0.811,
+                0.799,
+                0.927
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.919,
+                0.122,
+                0.984,
+                0.88
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.199,
+                0.773,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.255,
+                0.548,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.38,
+                0.465,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.443,
+                0.226,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.595,
+                0.499,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.614,
+                0.518,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.631,
+                0.511,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.647,
+                0.509,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.666,
+                0.466,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.82,
+                0.238,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.866,
+                0.224,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.127,
+                0.372,
+                0.143
+            ],
+            "angle": 0,
+            "content": "© 2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.777,
+                0.127,
+                0.875,
+                0.141
+            ],
+            "angle": 0,
+            "content": "SIP/2026/063"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.354,
+                0.195,
+                0.646,
+                0.23
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Paper\nMiddle East and Central Asia Department",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.278,
+                0.247,
+                0.721,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Informal Economy in the Kyrgyz Republic, Kyrgyz Republic Prepared by Farid Talishli and Anvar Muratkhanov*",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.329,
+                0.299,
+                0.67,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Authorized for distribution by Dmitry Gershenson\nJuly 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.368,
+                0.845,
+                0.421
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 14, 2026. This paper is also published separately as IMF Country Report No 26/164.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.456,
+                0.881,
+                0.611
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: Informality remains a major structural challenge in the Kyrgyz Republic, constraining productivity, inclusive growth, revenue mobilization, and social protection. It reflects a combination of weak human capital, institutional shortcomings, fragmented tax regimes, labor market rigidities, and limited access to finance. This paper argues that reducing informality requires a gradual and comprehensive reform strategy centered on private-sector-led growth. Policy priorities include strengthening governance and institutions, improving the business environment, enhancing tax policy and administration, modernizing labor market and social protection systems, investing in education and skills development, and expanding access to finance while preserving financial stability. Well-sequenced reforms would support sustainable formalization and stronger long-term growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.629,
+                0.866,
+                0.68
+            ],
+            "angle": 0,
+            "content": "RECOMMENDED CITATION: Talishli, F. and Muratkhanov, A. (2026). Informal Economy in the Kyrgyz Republic, IMF Selected Issues Paper, Middle East and Central Asia Department, SIP/2026/063. Washington, DC: International Monetary Fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.128,
+                0.704,
+                0.327,
+                0.72
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.385,
+                0.704,
+                0.564,
+                0.72
+            ],
+            "angle": 0,
+            "content": "E26, J46, D73, O15, H26",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.127,
+                0.746,
+                0.206,
+                0.762
+            ],
+            "angle": 0,
+            "content": "Keywords:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.385,
+                0.737,
+                0.837,
+                0.771
+            ],
+            "angle": 0,
+            "content": "Informal Economy, Informal Employment, Labor Markets, Human Capital, Governance, Tax Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.128,
+                0.788,
+                0.304,
+                0.804
+            ],
+            "angle": 0,
+            "content": "Author's E-Mail Address:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.385,
+                0.788,
+                0.684,
+                0.805
+            ],
+            "angle": 0,
+            "content": "FTalishli@imf.org, AMuratkhanov@imf.org",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.401,
+                0.197,
+                0.598,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.355,
+                0.214,
+                0.643,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.281,
+                0.249,
+                0.718,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.311,
+                0.266,
+                0.688,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.331,
+                0.3,
+                0.666,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.465,
+                0.318,
+                0.534,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.37,
+                0.844,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.389,
+                0.798,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.405,
+                0.839,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.459,
+                0.875,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.477,
+                0.864,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.495,
+                0.864,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.511,
+                0.842,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.529,
+                0.845,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.545,
+                0.878,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.563,
+                0.842,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.58,
+                0.842,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.113,
+                0.596,
+                0.168,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.63,
+                0.824,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.647,
+                0.863,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.666,
+                0.343,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.13,
+                0.705,
+                0.325,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.705,
+                0.562,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.13,
+                0.748,
+                0.205,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.74,
+                0.835,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.757,
+                0.614,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.79,
+                0.302,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.79,
+                0.681,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.196,
+                0.524,
+                0.222
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPERS",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.113,
+                0.302,
+                0.655,
+                0.387
+            ],
+            "angle": 0,
+            "content": "Informal Ecomony in the\nKyrgyz Republic"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.413,
+                0.357,
+                0.445
+            ],
+            "angle": 0,
+            "content": "Kyrgyz Republic",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.526,
+                0.638,
+                0.55
+            ],
+            "angle": 0,
+            "content": "Prepared by Farid Talishli and Anvar Muratkhanov \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.112,
+                0.911,
+                0.802,
+                0.927
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  The authors would like to thank Subir Lall and Dmitry Gershenson for their helpful comments and valuable guidance."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.199,
+                0.519,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.303,
+                0.653,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.346,
+                0.478,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.414,
+                0.354,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.53,
+                0.634,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "index",
+            "bbox": [
+                0.216,
+                0.399,
+                0.884,
+                0.489
+            ],
+            "angle": 0,
+            "content": "INFORMAL ECONOMY IN THE KYRGYZ REPUBLIC ____ 2\nA. Introduction ____ 2\nB. Labor Market and the Main Drivers of Informality in Kyrgyz Republic ____ 2\nC. Discussion and Policy Recommendations ____ 10"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.081,
+                0.017,
+                0.177,
+                0.097
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.234,
+                0.063,
+                0.828,
+                0.09
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.22,
+                0.124,
+                0.651,
+                0.161
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.184,
+                0.416,
+                0.204
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.207,
+                0.153,
+                0.224
+            ],
+            "angle": 0,
+            "content": "May 14, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.25,
+                0.371,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Approved By",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.436,
+                0.252,
+                0.892,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Prepared By Farid Talishli and Anvar Muratkhanov (all MCD)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.272,
+                0.371,
+                0.289
+            ],
+            "angle": 0,
+            "content": "Middle East and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.236,
+                0.291,
+                0.339,
+                0.307
+            ],
+            "angle": 0,
+            "content": "Central Asia",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.236,
+                0.31,
+                0.34,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Department",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.242,
+                0.355,
+                0.384,
+                0.377
+            ],
+            "angle": 0,
+            "content": "CONTENTS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.218,
+                0.51,
+                0.326,
+                0.526
+            ],
+            "angle": 0,
+            "content": "REFERENCES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.529,
+                0.883,
+                0.546
+            ],
+            "angle": 0,
+            "content": "References 13",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.126,
+                0.651,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.186,
+                0.415,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.208,
+                0.151,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.237,
+                0.25,
+                0.37,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.436,
+                0.253,
+                0.891,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.238,
+                0.272,
+                0.368,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.238,
+                0.293,
+                0.336,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.239,
+                0.313,
+                0.337,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.24,
+                0.355,
+                0.385,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.512,
+                0.323,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.529,
+                0.306,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.858,
+                0.53,
+                0.882,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.242,
+                0.064
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.096,
+                0.81,
+                0.122
+            ],
+            "angle": 0,
+            "content": "INFORMAL ECONOMY IN THE KYRGYZ REPUBLIC \\( ^{1} \\)"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.139,
+                0.288,
+                0.158
+            ],
+            "angle": 0,
+            "content": "A. Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.175,
+                0.881,
+                0.308
+            ],
+            "angle": 0,
+            "content": "1. Informality is very common in developing countries. According to World Bank research, in developing countries, 70 percent of workers and 30 percent of production are concentrated in the informal economy (The World Bank 2018). The literature indicates that informality results from a combination of factors. Although informality exists everywhere, it is more prevalent in low-income and developing countries and is mainly driven by suboptimal education systems, gaps in tax and social protection system design, deficiencies in labor market regulations, limited access to finance, and weak institutions and governance (IMF 2021).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.323,
+                0.88,
+                0.436
+            ],
+            "angle": 0,
+            "content": "2. Informality has a negative effect on economic development through several channels. Firms in the informal sector tend to be small, as they have limited access to credit, advanced technologies, and international markets. High levels of informality narrow the tax base, limiting government resources for investment in human capital and public infrastructure—both important for long-term economic development. In addition, high informality creates distortions in taxation, as formal firms and workers are excessively taxed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.451,
+                0.877,
+                0.567
+            ],
+            "angle": 0,
+            "content": "3. People working in informal sector are more prone to poverty rather than those working in the formal sector. Empirical research suggests a significant correlation between informal employment and poverty or vulnerability (ILO, 2014). Most people working in the informal economy have low literacy levels, limited skills, and inadequate training opportunities. They typically lack state-provided protection and security—such as minimum wages, social protection, and job stability—which makes them highly vulnerable to poverty and economic shocks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.58,
+                0.881,
+                0.696
+            ],
+            "angle": 0,
+            "content": "4. At the same time, informality in low-income and developing economies provides employment opportunities and income for individuals in contexts where formal jobs are scarce. Many studies suggest that policy should not focus on eliminating informality immediately, but rather on gradually making formality more attractive by improving institutions, reducing regulatory burdens, and expanding access to social protection (World Bank 2018). Blunt efforts to eliminate informality may instead lead to higher unemployment, increased poverty, and rising crime.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.707,
+                0.847,
+                0.728
+            ],
+            "angle": 0,
+            "content": "B. Labor Market and the Main Drivers of Informality in Kyrgyz Republic"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.743,
+                0.865,
+                0.858
+            ],
+            "angle": 0,
+            "content": "5. Informality in Kyrgyzstan is a complex phenomenon driven by multiple, interrelated factors. As in many developing and transition economies, low educational attainment is strongly associated with informal employment. Global evidence shows that around 45 percent of informal workers have only primary education or less, compared with about 7 percent of formal workers (OECD, 2024), a pattern that is also relevant for Kyrgyzstan given the concentration of low-skilled labor in informal activities, particularly in agriculture, trade, and services. In addition, the role of",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.116,
+                0.886,
+                0.522,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Prepared by Farid Talishli and Anvar Muratkhanov (all MCD)."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.116,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.938,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.1,
+                0.807,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.139,
+                0.284,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.177,
+                0.138,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.176,
+                0.868,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.196,
+                0.878,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.214,
+                0.845,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.234,
+                0.854,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.252,
+                0.849,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.271,
+                0.858,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.291,
+                0.495,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.323,
+                0.138,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.325,
+                0.868,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.342,
+                0.816,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.362,
+                0.835,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.381,
+                0.857,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.4,
+                0.876,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.418,
+                0.474,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.452,
+                0.143,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.453,
+                0.866,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.472,
+                0.795,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.492,
+                0.874,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.51,
+                0.835,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.53,
+                0.812,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.549,
+                0.723,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.581,
+                0.137,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.581,
+                0.832,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.601,
+                0.832,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.62,
+                0.858,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.639,
+                0.815,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.658,
+                0.856,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.677,
+                0.876,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.705,
+                0.843,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.745,
+                0.138,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.181,
+                0.745,
+                0.862,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.764,
+                0.85,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.784,
+                0.85,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.802,
+                0.836,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.821,
+                0.851,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.84,
+                0.839,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.064
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.856,
+                0.169
+            ],
+            "angle": 0,
+            "content": "structural and institutional factors—such as tax policy, labor market rigidities, weak institutional capacity, and regulatory and financial market constraints—in sustaining high levels of informality. These factors are particularly salient in the Kyrgyz context, where small firms and self-employed workers often face significant barriers to formalization.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.183,
+                0.881,
+                0.279
+            ],
+            "angle": 0,
+            "content": "6. The economy of the Kyrgyz Republic is characterized by a high level of informality and informal employment. The informal economy employs about 65 percent of the workforce and accounts for an estimated 19 percent of GDP. Informal activity is mainly concentrated in trade, construction, and services (Text Figure 1). It is associated with limited social protection, low wages, minimal job security, and an uneven tax burden between formal and informal businesses.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.121,
+                0.283,
+                0.878,
+                0.584
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.549,
+                0.383,
+                0.565
+            ],
+            "angle": 0,
+            "content": "Source: National Statistical Committee."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.567,
+                0.434,
+                0.584
+            ],
+            "angle": 0,
+            "content": "Note: Excluding 332 thousand workers abroad."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.601,
+                0.881,
+                0.678
+            ],
+            "angle": 0,
+            "content": "7. The Kyrgyz Republic has a young and growing population, with one of the highest shares of youth in the region (Text Figures 2-3). While this demographic trend represents potential for economic growth, most new entrants to the labor market end up in the informal sector. According to the World Bank, about 50,000 people enter the labor market every year.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.122,
+                0.684,
+                0.499,
+                0.719
+            ],
+            "angle": 0,
+            "content": "Text Figure 2: Population Tree of the Kyrgyz Republic in 2024."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.123,
+                0.715,
+                0.499,
+                0.862
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.863,
+                0.382,
+                0.879
+            ],
+            "angle": 0,
+            "content": "Source: National Statistical Committee."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.509,
+                0.684,
+                0.876,
+                0.72
+            ],
+            "angle": 0,
+            "content": "Text Figure 3: Share of Youth in Working Age Population, 2023."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.509,
+                0.722,
+                0.877,
+                0.857
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.509,
+                0.862,
+                0.874,
+                0.909
+            ],
+            "angle": 0,
+            "content": "Source: National Statistical Committee and IMF staff calculations.\nNote: Youth Age is 15-24 years, working age is 15-64."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.935,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.095,
+                0.839,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.114,
+                0.854,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.133,
+                0.842,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.152,
+                0.531,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.185,
+                0.138,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.185,
+                0.878,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.204,
+                0.841,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.223,
+                0.831,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.242,
+                0.859,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.262,
+                0.791,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.6,
+                0.845,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.621,
+                0.819,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.642,
+                0.877,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.659,
+                0.764,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.242,
+                0.064
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.865,
+                0.264
+            ],
+            "angle": 0,
+            "content": "8. The weak quality of education in Kyrgyz Republic limits human capital development and contributes to high informality in the labor market. Although the Kyrgyz Republic spends one of the highest shares of GDP on education in the region (around 6 percent, Text Figure 4), outcomes remain weak (World Bank, 2021). Government funding covers 11 years of schooling, but learning-adjusted years of schooling average only 8.4 years. \\( ^{2} \\)  Moreover, 64 percent of primary school graduates are not proficient in reading comprehension, and the primary completion rate is 93 percent—both below regional averages (World Bank 2019). Limited access to quality vocational training and higher education worsens skills mismatches, as young people often lack the qualifications demanded by employers.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.242,
+                0.267,
+                0.757,
+                0.5
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.508,
+                0.878,
+                0.661
+            ],
+            "angle": 0,
+            "content": "9. Many young people in the Kyrgyz Republic still face difficulties when moving from school to higher education and work because of weak learning outcomes. Although NEET rates have declined since 2021 and remain one of the lowest in the CCA region, it is still relatively high with 16.7 percent of youth aged 15–24 disengaged from productive activities \\( ^{34} \\) . While the government is investing in youth education, employment, and entrepreneurship, mismatches between curricula and labor market continue to hinder transitions into work. Limited access to inclusive and effective career guidance and skills training constrains opportunities for upskilling and reskilling (World Bank, 2024; International Labor Organization, 2023; ADB, 2023).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.675,
+                0.836,
+                0.751
+            ],
+            "angle": 0,
+            "content": "10. Weak education outcomes are also reflected in the Kyrgyz Republic's lower performance on the Human Development Index compared with both CCA and Emerging Europe countries (Text Figure 5). Low human development is strongly associated with high informality, as limited education and skills reduce both workers' and firms' incentives and",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.802,
+                0.836,
+                0.834
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  The Kyrgyz Republic began transitioning to a 12-year schooling system in 2025 under the national education transformation program “Altyn Kazyk”."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.837,
+                0.865,
+                0.883
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\)  NEET (Not in Education, Employment, or Training) is an indicator that measures the share of young people (15-24 years) who are not engaged in formal education, paid work, or job-related training. It is widely used to assess the degree of youth disengagement from learning and the labor market."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.886,
+                0.546,
+                0.904
+            ],
+            "angle": 0,
+            "content": "4 https://sustainabledevelopment-kyrgyzstan.github.io/en/8-6-1/"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.116,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.938,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.093,
+                0.138,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.095,
+                0.858,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.113,
+                0.857,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.83,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.15,
+                0.859,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.17,
+                0.828,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.189,
+                0.859,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.209,
+                0.862,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.788,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.246,
+                0.415,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.509,
+                0.138,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.509,
+                0.847,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.528,
+                0.873,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.546,
+                0.849,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.566,
+                0.794,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.586,
+                0.822,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.605,
+                0.829,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.624,
+                0.872,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.644,
+                0.712,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.675,
+                0.785,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.694,
+                0.831,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.714,
+                0.823,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.734,
+                0.792,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.845,
+                0.064
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.093,
+                0.824,
+                0.131
+            ],
+            "angle": 0,
+            "content": "opportunities to operate in the formal sector. As shown in Text Figure 6, countries with lower Human Development Index scores tend to have higher levels of informal employment \\( ^{4} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.122,
+                0.137,
+                0.474,
+                0.173
+            ],
+            "angle": 0,
+            "content": "Text Figure 5. Human Development Index, 2023"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.121,
+                0.173,
+                0.491,
+                0.345
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.345,
+                0.37,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Source: Human Development Report"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.499,
+                0.17,
+                0.874,
+                0.342
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.498,
+                0.345,
+                0.866,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Source: Human Development Report, ILOSTAT, and IMF staff calculations."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.385,
+                0.872,
+                0.442
+            ],
+            "angle": 0,
+            "content": "11. The tax regime in the Kyrgyz Republic is broadly competitive. Tax rates and social contributions rates are relatively low compared to regional peers (Text Tables 1-2), yet tax revenues amount to roughly 20 percent of GDP, reflecting good tax administration.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.12,
+                0.446,
+                0.88,
+                0.764
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"8\">Text Table 1. Tax Rates in CCA Countries, in percent.</td></tr><tr><td></td><td>ARM</td><td>AZE</td><td>GEO</td><td>KAZ</td><td>KGZ</td><td>TJK</td><td>UZB</td></tr><tr><td>VAT</td><td>20</td><td>18</td><td>18</td><td>12</td><td>12</td><td>18</td><td>15</td></tr><tr><td>Corporate Income Tax</td><td>18</td><td>20</td><td>15</td><td>20</td><td>10 (general regime) or 2-</td><td>15</td><td>15</td></tr><tr><td>Personal Income Tax</td><td>20</td><td>14</td><td>20</td><td>10</td><td>10</td><td>13</td><td>12</td></tr><tr><td colspan=\"8\">Source: National Statistics.</td></tr><tr><td colspan=\"8\">Text Table 2. Social Contributions Rates in CCA Countries, in percent.</td></tr><tr><td></td><td>ARM</td><td>AZE</td><td>GEO</td><td>KAZ</td><td>KGZ</td><td>TJK</td><td>UZB</td></tr><tr><td>Employee</td><td>5</td><td>3</td><td>2</td><td>12</td><td>10</td><td>2</td><td>6</td></tr><tr><td>Employer</td><td>5</td><td>22</td><td>2</td><td>13</td><td>2.25</td><td>20</td><td>12</td></tr><tr><td>Total</td><td>10</td><td>25</td><td>4</td><td>25</td><td>12.25</td><td>22</td><td>18</td></tr><tr><td colspan=\"8\">Source: National Statistics.</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.774,
+                0.868,
+                0.851
+            ],
+            "angle": 0,
+            "content": "12. The Kyrgyz Republic's labor tax wedge – defined as the difference between the total cost of labor to employers and worker's after-tax earnings – is the lowest in the region (Text Figure 7). It indicates that compared to most neighboring countries, a smaller proportion of labor costs is taken through taxes and social contributions, making transition to formal employment",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.872,
+                0.835,
+                0.905
+            ],
+            "angle": 0,
+            "content": "\\( ^{5} \\)  Cross-country empirical analysis suggests that an additional year of expected schooling is associated with an estimated 8-percent decline in the share of informal employment."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.095,
+                0.821,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.115,
+                0.777,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.386,
+                0.829,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.405,
+                0.87,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.425,
+                0.674,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.775,
+                0.859,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.795,
+                0.866,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.815,
+                0.861,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.832,
+                0.833,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.093,
+                0.858,
+                0.13
+            ],
+            "angle": 0,
+            "content": "relatively less costly. As a result, the overall tax burden on labor is not excessive and is unlikely to constitute a significant obstacle to labor formalization.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.23,
+                0.135,
+                0.735,
+                0.385
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.231,
+                0.401,
+                0.718,
+                0.448
+            ],
+            "angle": 0,
+            "content": "Source: National Statistics and IMF Staff Calculations.\nNote: Labor Tax Wedge shows the difference between the total cost labor in official economy and after-tax earnings"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.456,
+                0.833,
+                0.493
+            ],
+            "angle": 0,
+            "content": "13. Notwithstanding the overall competitiveness of the tax regime, it remains highly fragmented and has been subject to frequent changes in recent years. This has created"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.477,
+                0.881,
+                0.589
+            ],
+            "angle": 0,
+            "content": "fragmented and has been subject to frequent changes in recent years. This has created uncertainty for businesses and weakened incentives for formalization. As discussed in the box below, the system includes multiple special tax regimes that increase compliance costs. Although recent reforms were intended to strengthen tax administration, the introduction of new procedures initially raised compliance costs and proved burdensome for businesses. Some of these procedures were later softened or eliminated.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.187,
+                0.602,
+                0.812,
+                0.62
+            ],
+            "angle": 0,
+            "content": "Text Box 1: Tax Fragmentation and Compliance Costs in the Kyrgyz Republic"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.625,
+                0.869,
+                0.69
+            ],
+            "angle": 0,
+            "content": "The Kyrgyz tax system is highly fragmented. In addition to the main national taxes—personal income tax, corporate income tax, VAT, excises, and the sales tax—there are numerous special tax regimes, including the patent regime, single tax regime, free economic zones, high-technology park regime, crypto-mining regime, electronic commerce regime, gambling activity regime, and trading zones regime (IMF, 2024).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.693,
+                0.856,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Businesses may operate under the patent, simplified, or general tax regime, but complexity goes well beyond this choice. Within each regime, tax obligations vary depending on several factors, including the type of activity, whether transactions are cash or non-cash, whether the final consumer is a registered taxpayer or an anonymous end-user, and whether the business operates in a special tax zone. This layered structure increases compliance complexity and raises administrative costs for firms.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.775,
+                0.853,
+                0.905
+            ],
+            "angle": 0,
+            "content": "The parallel operation of simplified and general corporate income tax regimes creates particularly strong distortions. While simplified regimes are intended to ease compliance and promote formalization among small businesses, they are widely used in sectors such as trade that already have high levels of informality. This encourages firms to remain small, split operations, or underreport turnover to stay below eligibility thresholds. As a result, incentives to move into the general tax regime remain weak, constraining productivity growth, distorting competition, and limiting the tax base. Over time, this fragmentation undermines full formalization and reinforces persistent informality, despite the overall competitiveness of the tax system.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.095,
+                0.854,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.114,
+                0.529,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.456,
+                0.83,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.476,
+                0.811,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.476,
+                0.811,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.497,
+                0.878,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.515,
+                0.851,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.534,
+                0.874,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.554,
+                0.851,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.573,
+                0.333,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.191,
+                0.604,
+                0.808,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.627,
+                0.843,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.643,
+                0.864,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.657,
+                0.865,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.673,
+                0.766,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.695,
+                0.816,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.711,
+                0.838,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.726,
+                0.822,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.743,
+                0.851,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.759,
+                0.693,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.777,
+                0.841,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.794,
+                0.845,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.81,
+                0.849,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.826,
+                0.832,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.841,
+                0.787,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.858,
+                0.809,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.875,
+                0.846,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.89,
+                0.229,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.134,
+                0.093,
+                0.862,
+                0.111
+            ],
+            "angle": 0,
+            "content": "Text Box 1: Tax Fragmentation and Compliance Costs in the Kyrgyz Republic (concluded)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.112,
+                0.876,
+                0.306
+            ],
+            "angle": 0,
+            "content": "In addition to fragmentation, the tax system is subject to frequent changes. The adoption of the new Tax Code in 2022 introduced important reforms, including expanded electronic reporting, a higher VAT registration threshold (from KGS 8 million to KGS 30 million), and a stronger legal framework to broaden the tax base. However, the transition also increased administrative burdens, as taxpayers had to adapt quickly to new rules, reporting formats, and accounting procedures. According to the World Bank's tax compliance cost survey, the average time legal entities spent on tax accounting rose from 44.2 working days in 2021 to 76.3 working days in 2023 (Box Figure 3). The 2023 World Bank Enterprise Survey shows that firms in the Kyrgyz Republic spend more than 280 hours per year preparing and paying taxes—more than twice the average in the Caucasus and Central Asia and Emerging Europe (Text Figure 11). About 25.8 percent of firms identify tax administration as a major constraint (Text Figure 12). High compliance costs, especially for small and medium-sized enterprises, weaken the perceived benefits of formality and reinforce incentives to remain outside the tax system.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.309,
+                0.866,
+                0.406
+            ],
+            "angle": 0,
+            "content": "A major driver of the increase in compliance time in 2023 was the introduction of electronic consignment notes to improve the traceability of goods. While this measure was intended to strengthen oversight, it substantially increased the time required to meet tax reporting obligations. The government has since streamlined the requirement, which now applies only to selected goods such as alcohol, tobacco, and petroleum products. Together with ongoing efforts to digitalize tax administration, compliance time is likely to decline relative to 2023, even though updated survey data are not yet available.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.14,
+                0.477,
+                0.36,
+                0.575
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.125,
+                0.405,
+                0.872,
+                0.618
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Box Figure 1: Time Cost of Tax Accounting for Legal Entities in the Kyrgyz Republic.(working days per year)</td><td>Box Figure 2: Time to Prepare, File, and Pay Taxes.(hours per year)</td><td>Box Figure 3: Percent of Firms Identifying Tax Administration as a Major or Very Severe Constraint.</td></tr><tr><td></td><td></td><td></td></tr></table>"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.383,
+                0.473,
+                0.612,
+                0.591
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.622,
+                0.472,
+                0.864,
+                0.592
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.652,
+                0.518,
+                0.687
+            ],
+            "angle": 0,
+            "content": "14. Social safety net programs play a limited role in the Kyrgyz Republic. In countries with weak"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.675,
+                0.519,
+                0.898
+            ],
+            "angle": 0,
+            "content": "role in the Kyrgyz Republic. In countries with weak social safety net where unemployment insurance, health coverage, pensions, and other benefits are limited or unreliable relative to the costs of formal contributions, workers generally prefer informal employment because formality does not significantly improve their income security or reduce risk (OECD 2025). The average unemployment benefit coverage in the Kyrgyz Republic is 0.3 percent, compared to 5.4 percent in other CCA countries and 20 percent in EMEU (Table 3). Unlike advanced economies, where these benefits",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.539,
+                0.651,
+                0.821,
+                0.686
+            ],
+            "angle": 0,
+            "content": "Text Table 3: Unemployed Benefit Coverage."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.54,
+                0.687,
+                0.829,
+                0.722
+            ],
+            "angle": 0,
+            "content": "(percentage of unemployed receiving unemployment benefits)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.541,
+                0.723,
+                0.834,
+                0.893
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>ARM</td><td>0.0</td></tr><tr><td>AZE</td><td>1.6</td></tr><tr><td>GEO</td><td>0.0</td></tr><tr><td>KAZ</td><td>23.2</td></tr><tr><td>KGZ</td><td>0.3</td></tr><tr><td>TJK</td><td>6.5</td></tr><tr><td>UZB</td><td>6.0</td></tr><tr><td>CCA average</td><td>5.4</td></tr><tr><td>Emerging Europe average</td><td>20.0</td></tr><tr><td colspan=\"2\">Source: ILOSTAT.</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.093,
+                0.861,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.117,
+                0.839,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.132,
+                0.801,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.148,
+                0.866,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.164,
+                0.866,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.18,
+                0.872,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.195,
+                0.859,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.21,
+                0.858,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.226,
+                0.861,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.243,
+                0.871,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.26,
+                0.811,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.275,
+                0.84,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.292,
+                0.285,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.31,
+                0.846,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.327,
+                0.832,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.344,
+                0.824,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.359,
+                0.821,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.376,
+                0.861,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.392,
+                0.688,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.652,
+                0.508,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.672,
+                0.516,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.673,
+                0.516,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.692,
+                0.492,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.71,
+                0.494,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.729,
+                0.498,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.749,
+                0.48,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.767,
+                0.427,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.786,
+                0.516,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.804,
+                0.474,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.824,
+                0.463,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.843,
+                0.474,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.862,
+                0.502,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.881,
+                0.444,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.652,
+                0.818,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.541,
+                0.67,
+                0.625,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.544,
+                0.69,
+                0.825,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.707,
+                0.728,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.064
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.092,
+                0.882,
+                0.131
+            ],
+            "angle": 0,
+            "content": "automatically expand during economic shocks to stabilize household income and consumption, they are static in the Kyrgyz Republic \\( ^{6} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.146,
+                0.404,
+                0.375
+            ],
+            "angle": 0,
+            "content": "15. Labor market rigidity is another key factor increasing the incentives for informal work. Based on the World Economic Forum's Global Competitiveness Index, the Kyrgyz Republic ranks below its regional peers on most labor market indicators, including active labor market policies, reliance on professional management, ease of hiring foreign labor, and hiring and firing procedures (Text Figure 8).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.388,
+                0.36,
+                0.425
+            ],
+            "angle": 0,
+            "content": "16. Institutional quality is closely tied to the extent of"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.429,
+                0.153,
+                0.879,
+                0.419
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.432,
+                0.392,
+                0.855,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Source: 2019 Global Competitiveness Report of World Economic Forum."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.426,
+                0.865,
+                0.539
+            ],
+            "angle": 0,
+            "content": "informal employment. Weak governance, poor rule of law, low regulatory quality, and high corruption incentivize firms and workers to operate outside the formal sector. The Kyrgyz Republic performs below most of its CCA peers on governance indicators (Text Figures 9-12), highlighting challenges in public service delivery, contract enforcement, regulatory predictability, and perceptions of corruption. These factors weaken trust in institutions and reduce incentives for formalization. \\( ^{7} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.547,
+                0.349,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Text Figure 9: Government Effectiveness."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.128,
+                0.583,
+                0.392,
+                0.6
+            ],
+            "angle": 0,
+            "content": "(higher value – better governance)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.122,
+                0.595,
+                0.462,
+                0.746
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.752,
+                0.448,
+                0.768
+            ],
+            "angle": 0,
+            "content": "Source: World Bank Government Indicators 2023."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.479,
+                0.548,
+                0.749,
+                0.585
+            ],
+            "angle": 0,
+            "content": "Text Figure 10: Rule of Law.\n(Higher value – better governance)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.478,
+                0.595,
+                0.813,
+                0.74
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.479,
+                0.752,
+                0.801,
+                0.767
+            ],
+            "angle": 0,
+            "content": "Source: World Bank Government Indicators 2023."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.796,
+                0.854,
+                0.868
+            ],
+            "angle": 0,
+            "content": "\\( ^{6} \\)  Kyrgyz republic faces challenges in determining and verifying eligibility for unemployment benefits (IMF 2025). Tracking informal workers and their pay is difficult, which increases the risk of ineligible claims for unemployment benefits (Brollo, Ibarra, and Campante Vale, 2024). Further complications arise from limited technical and administrative capacity to provide job search assistance and training, which are essential elements of an efficient unemployment benefit scheme.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.873,
+                0.881,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{7} \\)  Cross-country empirical analysis suggests that 10-point improvement in governance indicators is associated with an estimated 8.4-percent reduction in informality."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.935,
+                0.131,
+                0.954
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.094,
+                0.879,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.115,
+                0.37,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.146,
+                0.369,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.166,
+                0.387,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.185,
+                0.404,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.205,
+                0.363,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.224,
+                0.378,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.243,
+                0.359,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.262,
+                0.397,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.281,
+                0.365,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.3,
+                0.326,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.319,
+                0.382,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.338,
+                0.386,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.356,
+                0.367,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.388,
+                0.356,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.41,
+                0.344,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.429,
+                0.817,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.447,
+                0.863,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.465,
+                0.849,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.485,
+                0.787,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.504,
+                0.826,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.523,
+                0.228,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.796,
+                0.845,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.812,
+                0.853,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.826,
+                0.796,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.84,
+                0.847,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.855,
+                0.324,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.122,
+                0.092,
+                0.412,
+                0.129
+            ],
+            "angle": 0,
+            "content": "Text Figure 11: Regulatory Quality. (higher value – better governance)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.118,
+                0.127,
+                0.47,
+                0.301
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.317,
+                0.449,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Source: World Bank Government Indicators 2023."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.478,
+                0.093,
+                0.789,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Text Figure 12: Control of Corruption.\n(higher value – better governance)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.476,
+                0.125,
+                0.809,
+                0.302
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.479,
+                0.317,
+                0.801,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Source: World Bank Government Indicators 2023."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.35,
+                0.799,
+                0.367
+            ],
+            "angle": 0,
+            "content": "17. Low affordability and limited accessibility of financing is important factor of"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.367,
+                0.884,
+                0.56
+            ],
+            "angle": 0,
+            "content": "informality. Restricted access to finance discourages business expansion, constrains productivity-enhancing investment, and reduces incentives for firms to formalize, as informal operations often depend on alternative, non-bank financing arrangements that may be easier to obtain in the short term but ultimately limit long-term growth potential. According to the World Bank Enterprise Survey 2023–2024, the share of Kyrgyz firms that are fully credit constrained and identify access to finance as a major obstacle is higher than the CCA and Emerging Europe averages (Text Figures 16–17). Access to formal credit is particularly limited: only 21.5 percent of firms have a bank loan or line of credit and just 13.3 percent use bank financing for investment — one of the lowest shares in the region (Figures 13–16). These patterns suggest that most firms rely heavily on internal funds to meet both working capital and investment needs, reflecting limited availability of affordable formal credit.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.122,
+                0.573,
+                0.458,
+                0.61
+            ],
+            "angle": 0,
+            "content": "Text Figure 13: Percent of Firms that are Fully Credit Constrained."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.123,
+                0.621,
+                0.474,
+                0.795
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.798,
+                0.377,
+                0.815
+            ],
+            "angle": 0,
+            "content": "Source: World Bank Enterprise Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.484,
+                0.573,
+                0.843,
+                0.621
+            ],
+            "angle": 0,
+            "content": "Text Figure 14: Percent of Firms Identifying Access to Finance as a Major or Very Severe Constraint"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.483,
+                0.618,
+                0.874,
+                0.798
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.485,
+                0.798,
+                0.735,
+                0.815
+            ],
+            "angle": 0,
+            "content": "Source: World Bank Enterprise Survey."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.935,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.35,
+                0.796,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.37,
+                0.858,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.389,
+                0.852,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.409,
+                0.862,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.427,
+                0.878,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.446,
+                0.866,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.465,
+                0.839,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.485,
+                0.863,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.503,
+                0.846,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.523,
+                0.878,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.541,
+                0.874,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.118,
+                0.09,
+                0.486,
+                0.323
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.488,
+                0.091,
+                0.879,
+                0.323
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.34,
+                0.573,
+                0.361
+            ],
+            "angle": 0,
+            "content": "C. Discussion and Policy Recommendations \\( ^{8} \\)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.376,
+                0.872,
+                0.51
+            ],
+            "angle": 0,
+            "content": "18. Kyrgyz Republic is prone to informality due to a combination of weak human capital outcomes, institutional constraints, and limited incentives to formalize. Despite relatively low labor taxes, poor education quality, skills mismatches for a young and rapidly growing workforce, fragmented and frequently changing tax regimes, weak social protection, and rigid labor market regulations push many workers and firms into informal activity. Limited access to finance and weak governance further reinforce informality by raising the costs and lowering the perceived benefits of operating in the formal sector.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.525,
+                0.872,
+                0.678
+            ],
+            "angle": 0,
+            "content": "19. Reducing informality remains a key policy objective for the Kyrgyz Republic, given its implications for productivity, medium-term inclusive growth, revenue mobilization, and inequality. A comprehensive policy approach is needed, encompassing measures to foster private-sector-led growth, strengthen labor market institutions, improve tax and social safety net design, enhance governance, expand access to finance, and upgrade human capital. Reforms should be carefully designed and implemented gradually, given the importance of informal activities for the livelihoods of many households. Abrupt or poorly targeted efforts to eliminate informality could increase unemployment, poverty, inequality, and social tensions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.691,
+                0.882,
+                0.73
+            ],
+            "angle": 0,
+            "content": "20. A growth strategy centered on formal job creation would support reductions in inequality, poverty, and vulnerability over the medium term. In this context, reducing the state's",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.761,
+                0.874,
+                0.905
+            ],
+            "angle": 0,
+            "content": "\\( ^{8} \\)  The conclusion and results of this work are aligned with the strategic priorities outlined in the National Development Program of the Kyrgyz Republic until 2030 (NDP), which emphasizes improving human capital, reducing informality, increasing employment, and strengthening institutional quality. The NDP sets explicit targets—such as reducing informal employment to 58 percent, improving the country’s Human Development Index ranking, and expanding access to quality education and vocational training—that directly correspond to the main determinants of informality highlighted by our empirical findings. The NDP also prioritizes modernizing the education system (including transitioning to a 12-year school model, strengthening teacher qualifications, aligning curricula with labor-market needs, and expanding STEM and vocational education). Additionally, NDP commitments to improving public administration, reducing bureaucratic barriers, modernizing tax administration, and enhancing governance transparency."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.938,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.342,
+                0.569,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.377,
+                0.861,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.397,
+                0.861,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.417,
+                0.853,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.435,
+                0.846,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.455,
+                0.867,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.474,
+                0.869,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.494,
+                0.349,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.526,
+                0.149,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.525,
+                0.869,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.544,
+                0.831,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.564,
+                0.871,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.582,
+                0.85,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.602,
+                0.842,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.621,
+                0.853,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.64,
+                0.844,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.659,
+                0.604,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.691,
+                0.82,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.712,
+                0.878,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.721,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.866,
+                0.17
+            ],
+            "angle": 0,
+            "content": "footprint in the economy and creating greater space for private-sector activity would facilitate economic formalization. Continued efforts to improve the business environment—through clearer and more predictable regulations, lower administrative burdens, and stronger governance—would encourage firm growth and participation in the formal economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.184,
+                0.882,
+                0.28
+            ],
+            "angle": 0,
+            "content": "21. Labor market policies. Greater labor market flexibility, including through more adaptable employment contracts and streamlined hiring and firing procedures, could help reduce incentives for informal employment. These reforms should be complemented by stronger social protection and active labor market policies—such as job search assistance, vocational training, and reskilling programs—to support worker transitions and mitigate adjustment costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.294,
+                0.875,
+                0.464
+            ],
+            "angle": 0,
+            "content": "22. Tax policy and administration. Frequent changes to the tax system often create uncertainty and send wrong signals to businesses, weakening incentives to operate formally. A predictable and stable tax policy framework that balances simplicity with fairness is essential. While the tax system has improved in recent years, further reforms aimed at enhancing tax policy and administration could help strengthen compliance and incentives to formalize. Priority areas include simplifying and further digitizing tax administration, reducing compliance costs, and rationalizing the use of simplified tax regimes—particularly in sectors with high informality. Over time, greater convergence between simplified and general regimes would help reduce distortions and broaden the tax base.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.48,
+                0.873,
+                0.707
+            ],
+            "angle": 0,
+            "content": "23. Social protection and active labor market policies. Stronger and more modern social protection systems are essential for reducing informality and supporting inclusive labor market transitions. Expanding budget allocations for unemployment insurance, health coverage, and pensions would help ensure broader, more reliable coverage and reduce households' reliance on informal work as a coping strategy. Designing benefits to operate countercyclically—automatically expanding during economic downturns—would strengthen income stabilization and social resilience. At the same time, greater investment in active labor market policies, including job search assistance, vocational training, and reskilling programs, would facilitate mobility from informal to formal employment. These measures should be complemented by reforms that enhance labor market flexibility, such as more adaptable employment contracts and streamlined hiring and dismissal procedures, alongside the development of portable benefits systems to encourage formalization while protecting workers \\( ^{9} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.722,
+                0.878,
+                0.855
+            ],
+            "angle": 0,
+            "content": "24. Education and skills. Reforming education financing and strengthening skills development are critical for reducing informality over the medium term. Rather than focusing solely on increasing education budgets, greater emphasis should be placed on improving the efficiency and targeting of spending—particularly through investments in teacher training, curriculum modernization, and digital learning infrastructure. Expanding vocational and technical education, especially in close partnership with private sector employers, would help address persistent skills mismatches and facilitate smoother school-to-work transitions. Introducing performance-based budgeting that links",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.872,
+                0.836,
+                0.905
+            ],
+            "angle": 0,
+            "content": "\\( ^{9} \\)  Portable benefits are social protection benefits—such as health insurance—that stay with workers when they change jobs, helping protect them while supporting more flexible employment."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.939,
+                0.875,
+                0.955
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.095,
+                0.829,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.114,
+                0.859,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.134,
+                0.862,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.152,
+                0.607,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.185,
+                0.859,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.205,
+                0.857,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.224,
+                0.879,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.243,
+                0.82,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.263,
+                0.666,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.295,
+                0.154,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.294,
+                0.793,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.315,
+                0.833,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.334,
+                0.871,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.352,
+                0.838,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.371,
+                0.865,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.391,
+                0.852,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.41,
+                0.851,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.429,
+                0.855,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.447,
+                0.216,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.48,
+                0.841,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.5,
+                0.838,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.52,
+                0.821,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.539,
+                0.851,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.557,
+                0.862,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.576,
+                0.805,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.594,
+                0.868,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.615,
+                0.849,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.633,
+                0.83,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.653,
+                0.816,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.671,
+                0.817,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.69,
+                0.42,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.722,
+                0.152,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.724,
+                0.87,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.743,
+                0.874,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.763,
+                0.874,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.781,
+                0.834,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.8,
+                0.838,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.819,
+                0.836,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.836,
+                0.872,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.881,
+                0.169
+            ],
+            "angle": 0,
+            "content": "funding to measurable improvements in learning outcomes and employability could further enhance impact. In addition, increasing support for disadvantaged groups through targeted scholarships, career guidance, and skills training programs would help reduce disparities in access to formal employment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.183,
+                0.88,
+                0.393
+            ],
+            "angle": 0,
+            "content": "25. Governance and institutions. Strengthening governance and institutional capacity is central to reducing informality in the Kyrgyz Republic. Increased investment in public administration reform, digitalization of government services, and anti-corruption measures would improve regulatory quality, enhance transparency, and reduce compliance costs for formal firms. Strengthening contract enforcement, property rights, and the consistency of regulatory application would build trust in institutions and incentivize participation in the formal economy. At the same time, upgrading monitoring and data systems—particularly payroll and employment databases—would enable more regular, evidence-based reviews of public sector wages and employment trends, improving fiscal management and labor market oversight. Together, these reforms would support a more predictable business environment and reinforce incentives for firms and workers to operate formally.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.407,
+                0.875,
+                0.484
+            ],
+            "angle": 0,
+            "content": "26. Access to finance. Expanding access to finance would support the growth of small and medium-sized enterprises and facilitate their transition to the formal sector. Improved access to credit would lower barriers to formalization and increase its net benefits for both firms and workers. These measures should be implemented cautiously to avoid undermining financial sector stability.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.392,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.095,
+                0.812,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.113,
+                0.814,
+                0.129
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.133,
+                0.877,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.151,
+                0.272,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.185,
+                0.826,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.205,
+                0.874,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.223,
+                0.809,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.242,
+                0.781,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.26,
+                0.866,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.281,
+                0.848,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.299,
+                0.855,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.319,
+                0.875,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.338,
+                0.872,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.356,
+                0.854,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.374,
+                0.187,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.408,
+                0.839,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.427,
+                0.842,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.447,
+                0.871,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.465,
+                0.858,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.72,
+                0.049,
+                0.846,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.433,
+                0.095,
+                0.568,
+                0.115
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.127,
+                0.884,
+                0.191
+            ],
+            "angle": 0,
+            "content": "Arnold, J. M., A. Caldera Sánchez, P. Garda, A. González Pandiella, and S. Nieto Parra (2025). Towards Better Social Protection for More Workers in Latin America: Challenges and Policy Considerations. OECD Publishing."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.21,
+                0.84,
+                0.23
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank (2023). Skills and Employment Challenges in the Kyrgyz Republic. ADB."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.248,
+                0.882,
+                0.29
+            ],
+            "angle": 0,
+            "content": "Bizimana, O., and S. Arzoumanian (2023). Informality, Labor Market Dynamics, and Business Cycles in North Africa. IMF Working Paper."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.309,
+                0.882,
+                0.328
+            ],
+            "angle": 0,
+            "content": "International Labour Organization (2014). Transitioning from the Informal to the Formal Economy. ILO."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.347,
+                0.883,
+                0.389
+            ],
+            "angle": 0,
+            "content": "International Labour Organization (2017). Gender and the Informal Economy: Key Challenges and Policy Responses. ILO Working Paper No. 236 (Naoko Otobe)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.407,
+                0.883,
+                0.449
+            ],
+            "angle": 0,
+            "content": "International Labour Organization (2023). Labour Market Trends and Youth Transitions in the Kyrgyz Republic. ILO."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.467,
+                0.884,
+                0.51
+            ],
+            "angle": 0,
+            "content": "International Labour Organization (2023). Women and Men in the Informal Economy: A Statistical Update. ILO."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.528,
+                0.882,
+                0.571
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund (2022). Informality, Development, and the Business Cycle in North Africa. IMF Departmental Paper."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.589,
+                0.884,
+                0.631
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund (2023). Estimating the Elasticity of Formality with Respect to Taxes and Social Security Contributions. IMF Selected Issues Paper."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.65,
+                0.882,
+                0.67
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund (2024a). Tax Potential in the Kyrgyz Republic. IMF Selected Issues Paper."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.687,
+                0.882,
+                0.73
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund (2024b). Reducing Informality to Raise Productivity and Promote Inclusion in Uganda. IMF Selected Issues Paper."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.748,
+                0.883,
+                0.79
+            ],
+            "angle": 0,
+            "content": "Loayza, N. V. (2018). Informality: Why Is It So Widespread and How Can It Be Reduced? World Bank Research and Policy Brief."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.809,
+                0.884,
+                0.85
+            ],
+            "angle": 0,
+            "content": "Medina, L., and F. Schneider (2019). Shedding Light on the Shadow Economy: A Global Database and the Interaction with the Official One. CESifo Working Paper No. 7981."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.87,
+                0.882,
+                0.91
+            ],
+            "angle": 0,
+            "content": "Organisation for Economic Co-operation and Development (2024). Education, Skills, and Informality: Evidence from Global Labor Markets. OECD Publishing."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.598,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.938,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.436,
+                0.095,
+                0.564,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.05,
+                0.242,
+                0.063
+            ],
+            "angle": 0,
+            "content": "KYRGYZ REPUBLIC"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.095,
+                0.781,
+                0.112
+            ],
+            "angle": 0,
+            "content": "World Bank (2019). Learning for the Future: Education and Skills for Growth. World Bank."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.133,
+                0.816,
+                0.149
+            ],
+            "angle": 0,
+            "content": "World Bank (2021). Kyrgyz Republic: Education Sector Public Expenditure Review. World Bank."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.17,
+                0.788,
+                0.188
+            ],
+            "angle": 0,
+            "content": "World Bank (2022). The Long Shadow of Informality: Challenges and Policies. World Bank.",
+            "merge_prev": false
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.208,
+                0.882,
+                0.247
+            ],
+            "angle": 0,
+            "content": "World Bank (2024). Assessment of Tax Compliance Costs for Businesses in the Kyrgyz Republic, 2012–2023. World Bank."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.269,
+                0.682,
+                0.286
+            ],
+            "angle": 0,
+            "content": "World Bank (2024). Kyrgyz Republic Skills and Jobs Diagnostic. World Bank."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.307,
+                0.882,
+                0.347
+            ],
+            "angle": 0,
+            "content": "National Development Program of the Kyrgyz Republic (2030). National Development Program of the Kyrgyz Republic until 2030."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.939,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.172,
+                0.786,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,95 @@
+{
+  "source_pdf": "/tmp/pdf_batch_003_mjodfs59/pdfs/0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d0939c3.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界银行",
+  "cover_short_title": "便宜电不够用：AI算",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界银行：廉价电力不足以创造AI算力出口优势",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d0939c3.pdf",
+    "cleaned_source_title": "0011-WorldBank_Cheap-Energy-Might-Not-Be-Enough-A-Trade-Model-of-AI-Compute_9d0939c3",
+    "institution_name": "世界银行",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "世界银行：AI0011WorldBankCheap能源Mi",
+    "raw_candidates": [
+      "世界银行：廉价电力不足以创造AI算力出口优势",
+      "世界银行：硬件成本全球统一定价，算力成本差异仅12%-20%",
+      "世界银行：制度摩擦抹平廉价电力带来的AI算力出口优势"
+    ],
+    "cleaned_candidates": [
+      "世界银行：廉价电力不足以创造AI算力出口优势",
+      "世界银行：硬件成本全球统一定价，算力成本差异仅12%-20%",
+      "世界银行：制度摩擦抹平廉价电力带来的AI算力出口优势",
+      "世界银行：AI0011WorldBankCheap能源Mi",
+      "世界银行：便宜电力的AI算力出口优势，被制度摩擦完全抵消"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界银行：硬件成本全球统一定价，算力成本差异仅12%-20%",
+        "reasons": [
+          "missing_required_terms=AI",
+          "incomplete_last_segment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：AI0011WorldBankCheap能源Mi",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：便宜电力的AI算力出口优势，被制度摩擦完全抵消",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      }
+    ],
+    "selected_title": "世界银行：廉价电力不足以创造AI算力出口优势",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界银行：廉价电力不足以创造AI算力出口优势"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
