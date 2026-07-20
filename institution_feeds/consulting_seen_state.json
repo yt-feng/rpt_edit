@@ -412,6 +412,18 @@
     "bcg:https://www.bcg.com/publications/2026/how-ai-improves-defense-aviation-readiness": {
       "first_seen": "2026-07-18",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-most-ai-cost-reduction-programs-fall-short": {
+      "first_seen": "2026-07-20",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/future-economics-of-defense-aviation": {
+      "first_seen": "2026-07-20",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/building-enterprise-ai-agents-in-regulated-industries": {
+      "first_seen": "2026-07-20",
+      "status": "no_pdf"
     }
   }
 }
