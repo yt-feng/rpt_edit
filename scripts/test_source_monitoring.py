@@ -6,7 +6,13 @@ from unittest.mock import Mock, patch
 
 import requests
 
-from fetch_institution_latest_pdfs import INSTITUTIONS, collect_worldbank_items, http_get, http_post
+from fetch_institution_latest_pdfs import (
+    INSTITUTIONS,
+    collect_worldbank_items,
+    derive_imf_pdf_candidates,
+    http_get,
+    http_post,
+)
 from select_macro_trend_pdfs import sanitize_filename
 
 
@@ -41,6 +47,43 @@ class _FakeSession:
 
 
 class SourceMonitoringTests(unittest.TestCase):
+    def test_imf_working_paper_candidates_bypass_landing_page(self) -> None:
+        candidates = derive_imf_pdf_candidates({
+            "imfseries": ["IMF Working Papers"],
+            "seriesvolumeno": "Working Paper No. 2026/153",
+        })
+
+        self.assertEqual(
+            "https://www.imf.org/-/media/files/publications/wp/2026/english/"
+            "wpiea2026153-source-pdf.pdf",
+            candidates[0],
+        )
+        self.assertEqual(
+            "https://www.imf.org/-/media/files/publications/wp/2026/english/"
+            "wpiea2026153.pdf",
+            candidates[1],
+        )
+
+    def test_imf_series_candidates_cover_other_publication_families(self) -> None:
+        cases = [
+            ("Technical Assistance Reports", "Technical Assistance Report No. 2026/058", "tar/2026/english/tarea2026058.pdf"),
+            ("Selected Issues Papers", "Selected Issues Paper No. 2026/065", "selected-issues-papers/2026/english/sipea2026065.pdf"),
+            ("High Level Summary Technical Assistance Reports", "High Level Summary Technical Assistance Report No. 2026/039", "hls/2026/english/hlsea2026039.pdf"),
+            ("Policy Papers", "Policy Paper No. 2026/022", "pp/2026/english/ppea2026022.pdf"),
+        ]
+        for series, volume, suffix in cases:
+            with self.subTest(series=series):
+                candidates = derive_imf_pdf_candidates({"imfseries": [series], "seriesvolumeno": volume})
+                self.assertTrue(candidates[0].endswith(suffix))
+
+    def test_imf_country_report_is_not_guessed(self) -> None:
+        candidates = derive_imf_pdf_candidates({
+            "imfseries": ["IMF Staff Country Reports"],
+            "seriesvolumeno": "Country Report No. 2026/184",
+        })
+
+        self.assertEqual([], candidates)
+
     def test_long_selected_filename_keeps_pdf_extension(self) -> None:
         result = sanitize_filename("Goldman Sachs-" + ("very-long-title-" * 30), "report.pdf")
         self.assertTrue(result.endswith(".pdf"))

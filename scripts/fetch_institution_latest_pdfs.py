@@ -127,6 +127,8 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         # country reports, selected issues, FSAPs, Article IV, etc. To narrow (e.g.
         # only working papers) tighten this @imfcontenttype filter.
         "coveo_aq": '(@imflanguage=="ENG") AND (@syslanguage=="ENGLISH") AND (@imfcontenttype=="PUBS")',
+        # A zero-output run is only trustworthy when this source is healthy.
+        "required_for_clean_zero": True,
     },
     "bis": {
         "name_en": "BIS",
@@ -149,6 +151,7 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         # reviews. Publication paths vary by committee: /publ/, /bcbs/publ/,
         # /fsi/publ/ all carry the swap-htm-for-pdf convention.
         "include": r"bis\.org/(?:\w+/)?publ/",
+        "required_for_clean_zero": True,
     },
     "worldbank": {
         "name_en": "World Bank",
@@ -168,6 +171,7 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
             # Substantive research reports, not loan / project agreements.
             "docty_exact": "Policy Research Working Paper",
         },
+        "required_for_clean_zero": True,
     },
     "oecd": {
         "name_en": "OECD",
@@ -321,6 +325,7 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         # DDG is relevance-ranked; keep only reports whose URL/title mentions the
         # current or previous year so old evergreen reports are excluded.
         "recent_years": 2,
+        "required_for_clean_zero": True,
     },
     "bain": {
         "name_en": "Bain",
@@ -349,6 +354,7 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "sitemap_scan_limit": 40,
         # Only publications modified within this window, so we skip old reports.
         "sitemap_max_age_days": 120,
+        "required_for_clean_zero": True,
     },
 }
 # Sources the scheduled WeChat run pulls by default. Ordered by priority: when
@@ -380,7 +386,7 @@ def write_source_health_summary(source_checks: list[dict[str, Any]]) -> None:
     summary_path = os.getenv("GITHUB_STEP_SUMMARY")
     if not summary_path:
         return
-    status_label = {"ok": "OK", "empty": "EMPTY", "error": "ERROR"}
+    status_label = {"ok": "OK", "degraded": "DEGRADED", "empty": "EMPTY", "error": "ERROR"}
     lines = [
         "## Institution source health",
         "",
@@ -1070,6 +1076,55 @@ def _normalize_imf_host(url: str) -> str:
                   "https://www.imf.org", url, flags=re.I)
 
 
+IMF_SERIES_PDF_RULES: tuple[tuple[re.Pattern[str], str, str], ...] = (
+    (re.compile(r"high level summary technical assistance", re.I), "hls", "hlsea"),
+    (re.compile(r"selected issues paper", re.I), "selected-issues-papers", "sipea"),
+    (re.compile(r"technical notes? and manuals?", re.I), "tnm", "tnmea"),
+    (re.compile(r"staff discussion notes?", re.I), "sdn", "sdnea"),
+    (re.compile(r"(?:imf )?how[- ]to notes?", re.I), "howtonotes", "htnea"),
+    (re.compile(r"imf notes?", re.I), "imf-notes", "insea"),
+    (re.compile(r"policy papers?", re.I), "pp", "ppea"),
+    (re.compile(r"working papers?", re.I), "wp", "wpiea"),
+    (re.compile(r"technical assistance reports?", re.I), "tar", "tarea"),
+)
+
+
+def derive_imf_pdf_candidates(raw: dict[str, Any]) -> list[str]:
+    """Build official IMF media URLs from the series number in Coveo metadata.
+
+    IMF's Akamai landing pages can return 403 even though the public PDF media
+    host remains reachable. Coveo exposes stable series identifiers such as
+    ``Working Paper No. 2026/153``; most IMF publication families use a
+    deterministic media filename derived from that identifier.
+    """
+    volume = str(raw.get("seriesvolumeno") or "")
+    series_value = raw.get("imfseries") or ""
+    if isinstance(series_value, (list, tuple)):
+        series = " ".join(str(value) for value in series_value)
+    else:
+        series = str(series_value)
+    identity = f"{series} {volume}".strip()
+    number_match = re.search(r"\b(20\d{2})\s*/\s*(\d{1,4})\b", volume)
+    if not identity or not number_match:
+        return []
+
+    year = number_match.group(1)
+    number = f"{int(number_match.group(2)):03d}"
+    for pattern, path_token, filename_token in IMF_SERIES_PDF_RULES:
+        if not pattern.search(identity):
+            continue
+        stem = (
+            "https://www.imf.org/-/media/files/publications/"
+            f"{path_token}/{year}/english/{filename_token}{year}{number}"
+        )
+        # Newly released working papers often use -source-pdf while other IMF
+        # families generally use the plain filename. Try both, in likely order.
+        if path_token == "wp":
+            return [f"{stem}-source-pdf.pdf", f"{stem}.pdf"]
+        return [f"{stem}.pdf", f"{stem}-source-pdf.pdf"]
+    return []
+
+
 def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout: int, rows: int) -> list[dict[str, Any]]:
     """Query the IMF Coveo search API for the latest publications (newest first)."""
     token = os.getenv("IMF_COVEO_TOKEN") or cfg["coveo_token"]
@@ -1080,7 +1135,10 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
         "enableQuerySyntax": False,
         "sortCriteria": "@imfdate descending",
         "numberOfResults": rows,
-        "fieldsToInclude": ["title", "clickableuri", "imfdate", "imfcontenttype", "permanentid", "urihash"],
+        "fieldsToInclude": [
+            "title", "clickableuri", "imfdate", "imfcontenttype", "permanentid",
+            "urihash", "imfseries", "seriesvolumeno",
+        ],
     }
     resp = http_post(
         session,
@@ -1111,12 +1169,13 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
             except (ValueError, OSError):
                 date_iso = ""
         is_file = bool(re.search(r"\.(pdf|ashx)(\?|$)", landing, re.I))
+        pdf_candidates = [landing] if is_file else derive_imf_pdf_candidates(raw)
         items.append({
             "title": result.get("title") or raw.get("title") or landing,
             "source_url": landing,
             "guid": raw.get("permanentid") or raw.get("urihash") or landing,
             "date": date_iso,
-            "pdf_candidates": [landing] if is_file else [],
+            "pdf_candidates": pdf_candidates,
             "scrape_url": "" if is_file else landing,
         })
     log(f"  coveo -> {len(items)} publications (total {data.get('totalCount')})")
@@ -1352,6 +1411,9 @@ def main() -> int:
                 "status": "error",
                 "item_count": 0,
                 "new_pdf_count": 0,
+                "eligible_item_count": 0,
+                "resolution_failure_count": 0,
+                "required_for_clean_zero": bool(cfg.get("required_for_clean_zero")),
                 "error": str(exc),
             })
             continue
@@ -1364,6 +1426,9 @@ def main() -> int:
             )
 
         new_count = 0
+        eligible_count = 0
+        resolution_failure_count = 0
+        resolution_failure_samples: list[str] = []
         for item in items:
             if args.max_per_institution and new_count >= args.max_per_institution:
                 break
@@ -1381,8 +1446,11 @@ def main() -> int:
                 seen_items[dedup_key] = {"first_seen": today, "status": "too_old"}
                 continue
 
+            eligible_count += 1
             candidates = list(item["pdf_candidates"])
+            landing_attempted = False
             if not candidates and item.get("scrape_url"):
+                landing_attempted = True
                 try:
                     page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
                     page.raise_for_status()
@@ -1391,6 +1459,9 @@ def main() -> int:
                         item["title"] = _extract_html_title(page.text)
                 except Exception as exc:  # noqa: BLE001 - network error: retry next run
                     warn(f"  landing fetch failed, will retry next run: {item['source_url']}: {exc}")
+                    resolution_failure_count += 1
+                    if len(resolution_failure_samples) < 3:
+                        resolution_failure_samples.append(f"landing: {type(exc).__name__}: {exc}")
                     continue
             if cfg.get("pdf_exclude"):
                 candidates = [c for c in candidates if not re.search(cfg["pdf_exclude"], c, re.I)]
@@ -1408,10 +1479,41 @@ def main() -> int:
             filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
             dest = output_dir / filename
             used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
+            # A deterministic/direct candidate may have changed on the source site.
+            # If so, still try the landing page before declaring this item failed.
+            if (status != "ok" or used_url is None) and item.get("scrape_url") and not landing_attempted:
+                landing_attempted = True
+                try:
+                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
+                    page.raise_for_status()
+                    scraped_candidates = scrape_pdf_candidates(page.text, item["scrape_url"])
+                    if cfg.get("pdf_exclude"):
+                        scraped_candidates = [
+                            candidate for candidate in scraped_candidates
+                            if not re.search(cfg["pdf_exclude"], candidate, re.I)
+                        ]
+                    scraped_candidates = [candidate for candidate in scraped_candidates if candidate not in candidates]
+                    if scraped_candidates:
+                        used_url, status = download_pdf(
+                            session,
+                            scraped_candidates[:3],
+                            dest,
+                            args.request_timeout,
+                            max_bytes,
+                            impersonate=cfg.get("impersonate", False),
+                            profile=cfg.get("impersonate_profile"),
+                            proxy=cfg.get("_proxy"),
+                        )
+                except Exception as exc:  # noqa: BLE001 - retry the item next run
+                    if len(resolution_failure_samples) < 3:
+                        resolution_failure_samples.append(f"landing fallback: {type(exc).__name__}: {exc}")
             if status != "ok" or used_url is None:
                 # Could not download; do NOT mark seen so a transient failure is retried.
                 warn(f"  download failed ({status}): {title[:80]}")
                 skipped.append({"institution": key, "title": title, "reason": status, "source_url": item["source_url"]})
+                resolution_failure_count += 1
+                if len(resolution_failure_samples) < 3:
+                    resolution_failure_samples.append(f"download: {status}: {title[:80]}")
                 continue
 
             if used_url in used_pdf_urls:
@@ -1443,12 +1545,27 @@ def main() -> int:
             new_count += 1
             log(f"  saved {filename} ({record['bytes'] // 1024} KB) <- {used_url}")
 
+        health_detail = ""
+        if source_status == "ok" and resolution_failure_count:
+            source_status = "error" if resolution_failure_count >= eligible_count else "degraded"
+            health_detail = (
+                f"{resolution_failure_count}/{eligible_count} unseen recent item(s) "
+                "could not be resolved or downloaded"
+            )
+            if resolution_failure_samples:
+                health_detail += "; " + " | ".join(resolution_failure_samples)
+            github_warning(f"{cfg['name_en']} source health {source_status}: {health_detail}")
+
         source_checks.append({
             "institution": key,
             "institution_en": cfg["name_en"],
             "status": source_status,
             "item_count": len(items),
             "new_pdf_count": new_count,
+            "eligible_item_count": eligible_count,
+            "resolution_failure_count": resolution_failure_count,
+            "required_for_clean_zero": bool(cfg.get("required_for_clean_zero")),
+            "error": health_detail,
         })
         log(f"  {cfg['name_en']}: {new_count} new PDF(s)")
 
@@ -1474,11 +1591,23 @@ def main() -> int:
 
     write_github_output("pdf_count", str(len(downloaded)))
     write_github_output("source_error_count", str(sum(check["status"] == "error" for check in source_checks)))
+    write_github_output("source_degraded_count", str(sum(check["status"] == "degraded" for check in source_checks)))
     write_github_output("source_empty_count", str(sum(check["status"] == "empty" for check in source_checks)))
     write_github_output("output_dir", str(output_dir))
     write_github_output("date_folder", args.date)
     write_source_health_summary(source_checks)
     log(f"Done. Downloaded {len(downloaded)} new PDF(s), skipped {len(skipped)}.")
+    blocking_checks = [
+        check for check in source_checks
+        if check.get("required_for_clean_zero") and check["status"] != "ok"
+    ]
+    if not downloaded and blocking_checks:
+        names = ", ".join(f"{check['institution']}={check['status']}" for check in blocking_checks)
+        github_warning(
+            "Zero PDFs cannot be treated as a confirmed no-update run because "
+            f"required source health is degraded: {names}"
+        )
+        return 2
     return 0
 
 

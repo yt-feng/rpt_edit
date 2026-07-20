@@ -403,7 +403,7 @@ MinerU → KC 中文精译 → 微信公众号草稿 链路，把它们也加工
 
 | 机构 | 来源 | PDF 定位方式 |
 | --- | --- | --- |
-| IMF 国际货币基金组织 | Coveo 搜索 API（`imfproduction561s308u.org.coveo.com`，按 `@imfdate` 倒序、筛 English PUBS）。IMF 官网是 JS+Akamai，RSS 已废，但搜索后端 Coveo 不在 WAF 后 | 用 `curl_cffi`（Chrome 指纹）打开 imf.org 落地页，提取 `.pdf` / `.ashx`（含 JSON 内嵌链接） |
+| IMF 国际货币基金组织 | Coveo 搜索 API（`imfproduction561s308u.org.coveo.com`，按 `@imfdate` 倒序、筛 English PUBS）。IMF 官网是 JS+Akamai，RSS 已废，但搜索后端 Coveo 不在 WAF 后 | 优先根据 Coveo 的 `seriesvolumeno` / `imfseries` 推导 `/media/files/publications/` 官方 PDF；落地页抓取只作后备，避免 Akamai `403` 造成假空结果 |
 | World Bank 世界银行 | `search.worldbank.org/api/v2/wds` JSON API，默认只取 Policy Research Working Paper | API 直接返回 `pdfurl` |
 | BIS 国际清算银行 | 4 条 RSS：`bis_fsi_publs`（研究报告，含年报/Bulletin/FSI）、`wppubls`（工作论文）、`bcbspubls`（巴塞尔委员会）、`cgfs_publs`（CGFS） | 把 `.htm` 落地页直接换成 `.pdf` |
 | OECD 经合组织 | `oecd.org/en/publications.html` 列表页（服务端渲染）。Akamai 会拦 Chrome 指纹，但放行 Firefox 指纹（`impersonate_profile: firefox135`） | 打开报告页，提取 `/content/dam/` 下的 PDF |
@@ -452,6 +452,7 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 - 原始下载的 PDF 落在 `_institution_latest_pdfs/`，已加入 `.gitignore`，处理完即可丢弃；仓库里只保留 `institution_pdf_archive.jsonl` 中的原始链接和精译后产物。
 - 每个来源相互隔离：某个机构 feed 失败不会影响其它机构。
 - 网络错误（feed / 落地页拉取失败）不会写入 seen，下次运行会重试；只有“已下载”和“确认无 PDF”才会标记 seen。
+- source health 同时统计未 seen 且在时效窗口内的候选：全部解析/下载失败记为 `error`，部分失败记为 `degraded`。单次全程零下载时，IMF / World Bank / BIS 任一核心来源不健康会令 Action 失败，不能再以绿色的 0 篇冒充“确认没有更新”。
 - 复用的 secret 和主流程一致：`MINER_U`、`DEEPSEEK_API_KEY`、`WECHAT_MP_APPID`、`WECHAT_MP_APPSECRET`。微信上传仍走带 `wechat-draft` label 的固定 IP self-hosted runner。
 - 机构中文名通过 `scripts/institution_names.py` 推断（含 IMF / 世界银行 / BIS / 经合组织 / 亚洲开发银行 / 世界经济论坛 / 联合国贸发会议 / 世界贸易组织 / 布鲁盖尔研究所 / 兰德 / 布鲁金斯），公众号标题会自动带上机构名。
 - 调整抓取来源 / feed / 文档类型：编辑 `scripts/fetch_institution_latest_pdfs.py` 顶部的 `INSTITUTIONS` 配置。
@@ -491,6 +492,7 @@ wechat_drafts/consulting/<日期>/...               # 独立的一批公众号�
 
 - **时效性：不是"只抓当天发布"，而是"最新优先 + 旧报告过滤 + seen 去重"。** McKinsey 限定当年/去年，BCG 限定最近 120 天修改；首跑会抓当前这批近期报告，之后每天只增量抓新出现的（seen 去重保证不重复）。想更严格可调小 `recent_years`（改 1）或 `sitemap_max_age_days`（改 30/60）。这些常青站点没有可靠的"今天发布"信号，做不到严格的"仅当天"。
 - 同样过 `--title-guard` 标题敏感性审核；`--max-per-institution` 默认 5，控制每家每天量。
+- 麦肯锡和 BCG 是咨询流程的 clean-zero 核心来源：若全程零下载且 DDG/sitemap 为空或候选全部解析失败，Action 返回失败；两边发现源正常、候选均已处理时，0 篇仍是合法的正常结果。
 - 标题审核采用“双层、三道门”策略：原始英文/中文标题先经过确定性军事与政治敏感规则，再由 DeepSeek 补充审核；最终精修标题在写入 PDF 前再次执行确定性审核；微信上传脚本还会执行共享的最终标题策略。命中军事、国防、军用装备、武器、战争、战备或明确政治敏感议题时，整篇不进入微信草稿，但仍可留在 market views 原始信源汇总中。
 - 抓取 GET/API POST/PDF 下载对连接错误和 `408/425/429/5xx` 最多重试 3 次；DeepSeek 和微信 API 各有有界重试。单篇失败会记录并继续处理同批其他报告。
 - `xhs_notes/consulting/<日期>` 和 `kc_translated_reports/consulting/<日期>` 是 GitHub-hosted build job 到固定 IP runner 的关键交接；推送 8 次仍失败时 workflow 必须失败，不能继续显示绿色并上传旧数据。
