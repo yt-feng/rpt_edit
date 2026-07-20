@@ -104,21 +104,47 @@ jobs:
             exit 1
           fi
 
-          EXPECTED_DATE_FOLDER="$PRIMARY_DATE_FOLDER"
+          SOURCE_DIRS=()
           if [ "$BUILD_DATE_FOLDER" = "latest" ]; then
-            EXPECTED_DATE_FOLDER="$(find xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+            for SOURCE_ROOT in xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting; do
+              LATEST_SOURCE_DATE="$(find "$SOURCE_ROOT" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+              if [ -n "$LATEST_SOURCE_DATE" ]; then
+                SOURCE_DIRS+=("$SOURCE_ROOT/$LATEST_SOURCE_DATE")
+              fi
+            done
+          else
+            for SOURCE_ROOT in xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting; do
+              if [ -d "$SOURCE_ROOT/$BUILD_DATE_FOLDER" ]; then
+                SOURCE_DIRS+=("$SOURCE_ROOT/$BUILD_DATE_FOLDER")
+              fi
+            done
           fi
+          EXPECTED_DATE_FOLDER="$(printf '%s\n' "${SOURCE_DIRS[@]}" | awk -F/ '{print $NF}' | sort -n | tail -1)"
+
           OUTPUT_PDF="market_view_summaries/$EXPECTED_DATE_FOLDER/market_views_$EXPECTED_DATE_FOLDER.pdf"
+          REPORT_INPUTS="market_view_summaries/$EXPECTED_DATE_FOLDER/report_inputs.json"
+          CURRENT_INPUTS_FILE="$RUNNER_TEMP/market_views_current_inputs.txt"
+          find "${SOURCE_DIRS[@]}" -type f \( -name source_mineru.md -o -name wechat_article.md -o -name note.md \) -printf '%h\n' | sort -u > "$CURRENT_INPUTS_FILE"
+          CURRENT_INPUT_COUNT="$(wc -l < "$CURRENT_INPUTS_FILE" | tr -d ' ')"
+          CURRENT_INPUT_HASH="$(sha256sum "$CURRENT_INPUTS_FILE" | cut -d' ' -f1)"
+          RECORDED_INPUT_COUNT=0
+          RECORDED_INPUT_HASH=""
+          if [ -f "$REPORT_INPUTS" ]; then
+            read -r RECORDED_INPUT_COUNT RECORDED_INPUT_HASH < <(
+              python3 -c 'import hashlib,json,sys; data=json.load(open(sys.argv[1], encoding="utf-8")); paths=sorted({str(item.get("path") or "") for item in data if item.get("path")}); payload="".join(path + "\n" for path in paths).encode(); print(len(paths), hashlib.sha256(payload).hexdigest())' "$REPORT_INPUTS"
+            )
+          fi
+
           SHOULD_BUILD=true
           if [ "${{ github.event_name }}" = "schedule" ] && [ -f "$OUTPUT_PDF" ]; then
             PDF_BYTES="$(stat -c '%s' "$OUTPUT_PDF")"
-            if [ "$PDF_BYTES" -gt 1024 ]; then
+            if [ "$PDF_BYTES" -gt 1024 ] && [ "$CURRENT_INPUT_HASH" = "$RECORDED_INPUT_HASH" ]; then
               SHOULD_BUILD=false
-              echo "::notice::Fallback found the exact $EXPECTED_DATE_FOLDER PDF already present ($PDF_BYTES bytes); no rebuild needed."
+              echo "::notice::Fallback found the exact $EXPECTED_DATE_FOLDER PDF already current with all $CURRENT_INPUT_COUNT parsed reports ($PDF_BYTES bytes); no rebuild needed."
             fi
           fi
 
-          echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, should_build=$SHOULD_BUILD."
+          echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, current inputs=$CURRENT_INPUT_COUNT, recorded inputs=$RECORDED_INPUT_COUNT, should_build=$SHOULD_BUILD."
           echo "BUILD_DATE_FOLDER=$BUILD_DATE_FOLDER" >> "$GITHUB_ENV"
           echo "EXPECTED_DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
           echo "SHOULD_BUILD=$SHOULD_BUILD" >> "$GITHUB_ENV"
