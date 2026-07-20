@@ -109,6 +109,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 env:
   PYTHONUNBUFFERED: "1"
@@ -464,6 +465,30 @@ jobs:
         if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
           bash scripts/commit_output_dir.sh "$PACKAGE_DIR" "Package split publish-ready outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+
+  trigger-market-views:
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.resolve-inputs.outputs.commit_results == 'true' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger Market Views from complete bank inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          MODEL: ${{ needs.resolve-inputs.outputs.model }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          echo "::notice::All bank-report shards for $DATE_FOLDER are committed. Dispatching the matching Market Views issue now."
+          gh workflow run market-views-latex-pdf.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            -f date_folder=latest \
+            -f expected_bank_date="$DATE_FOLDER" \
+            -f model="$MODEL" \
+            -f deepseek_base_url="$DEEPSEEK_BASE_URL" \
+            -f compile_latex=false \
+            -f commit_results=true
 
   push-xhs-notes-wechat-drafts:
     needs: [resolve-inputs, select-macro-reports, package-publish-ready]

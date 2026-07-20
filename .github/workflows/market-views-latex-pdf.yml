@@ -1,5 +1,7 @@
 name: Market views daily PDF
 
+run-name: Market Views ${{ inputs.expected_bank_date || inputs.date_folder || 'fallback latest sources' }}
+
 on:
   workflow_dispatch:
     inputs:
@@ -7,6 +9,10 @@ on:
         description: "Dropbox output date folder under xhs_notes/dropbox, or latest"
         required: true
         default: "latest"
+      expected_bank_date:
+        description: "Optional completed bank date asserted by the upstream parser"
+        required: false
+        default: ""
       model:
         description: "DeepSeek model for synthesis"
         required: true
@@ -26,8 +32,10 @@ on:
         type: boolean
         default: true
   schedule:
-    # UTC 00:00 = Asia/Shanghai 08:00.
-    - cron: "0 0 * * *"
+    # Source-completion dispatch is primary. These off-peak schedules are missing-output fallbacks.
+    # UTC 02:23/06:23 = Asia/Shanghai 10:23/14:23.
+    - cron: "23 2 * * *"
+    - cron: "23 6 * * *"
 
 permissions:
   contents: write
@@ -66,18 +74,70 @@ jobs:
           git reset --hard origin/main
           git clean -fdx
 
+      - name: Resolve and validate primary bank source
+        env:
+          REQUESTED_DATE_FOLDER: ${{ github.event.inputs.date_folder || 'latest' }}
+          EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date || '' }}
+        run: |
+          BUILD_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
+          PRIMARY_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
+          if [ "$PRIMARY_DATE_FOLDER" = "latest" ]; then
+            PRIMARY_DATE_FOLDER="$(find xhs_notes/dropbox -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+          fi
+          if ! printf '%s\n' "$PRIMARY_DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'; then
+            echo "Invalid or missing primary bank date folder: $PRIMARY_DATE_FOLDER" >&2
+            exit 1
+          fi
+          if [ -n "$EXPECTED_BANK_DATE" ] && [ "$PRIMARY_DATE_FOLDER" != "$EXPECTED_BANK_DATE" ]; then
+            echo "Upstream completed bank date $EXPECTED_BANK_DATE, but latest committed bank date is $PRIMARY_DATE_FOLDER." >&2
+            exit 1
+          fi
+
+          PRIMARY_DIR="xhs_notes/dropbox/$PRIMARY_DATE_FOLDER"
+          if [ ! -d "$PRIMARY_DIR" ]; then
+            echo "Primary bank source folder does not exist: $PRIMARY_DIR" >&2
+            exit 1
+          fi
+          REPORT_COUNT="$(find "$PRIMARY_DIR" -type f \( -name source_mineru.md -o -name wechat_article.md -o -name note.md \) -printf '%h\n' | sort -u | wc -l | tr -d ' ')"
+          if [ "$REPORT_COUNT" -eq 0 ]; then
+            echo "Primary bank source has no parsed report folders: $PRIMARY_DIR" >&2
+            exit 1
+          fi
+
+          EXPECTED_DATE_FOLDER="$PRIMARY_DATE_FOLDER"
+          if [ "$BUILD_DATE_FOLDER" = "latest" ]; then
+            EXPECTED_DATE_FOLDER="$(find xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+          fi
+          OUTPUT_PDF="market_view_summaries/$EXPECTED_DATE_FOLDER/market_views_$EXPECTED_DATE_FOLDER.pdf"
+          SHOULD_BUILD=true
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -f "$OUTPUT_PDF" ]; then
+            PDF_BYTES="$(stat -c '%s' "$OUTPUT_PDF")"
+            if [ "$PDF_BYTES" -gt 1024 ]; then
+              SHOULD_BUILD=false
+              echo "::notice::Fallback found the exact $EXPECTED_DATE_FOLDER PDF already present ($PDF_BYTES bytes); no rebuild needed."
+            fi
+          fi
+
+          echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, should_build=$SHOULD_BUILD."
+          echo "BUILD_DATE_FOLDER=$BUILD_DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "EXPECTED_DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "SHOULD_BUILD=$SHOULD_BUILD" >> "$GITHUB_ENV"
+
       - name: Set up Python
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
 
       - name: Install Python dependencies
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         run: |
           pip install -r requirements.txt
           pip install reportlab pillow
 
       - name: Install Chinese font for fast PDF renderer
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         timeout-minutes: 5
         continue-on-error: true
         run: |
@@ -85,7 +145,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends fonts-noto-cjk
 
       - name: Optionally install minimal LaTeX
-        if: ${{ github.event.inputs.compile_latex == 'true' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && github.event.inputs.compile_latex == 'true' }}
         timeout-minutes: 12
         run: |
           echo "::notice::Installing XeLaTeX only because compile_latex=true. Fast ReportLab PDF is always generated even if this is skipped."
@@ -93,11 +153,12 @@ jobs:
           sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-recommended texlive-lang-chinese fonts-noto-cjk
 
       - name: Build market views data and LaTeX source
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
-          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          set -o pipefail
           MODEL="${{ github.event.inputs.model || 'deepseek-chat' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
           COMPILE_LATEX="${{ github.event.inputs.compile_latex || 'false' }}"
@@ -105,7 +166,7 @@ jobs:
           python scripts/build_market_views_pdf.py \
             --dropbox-output-root "xhs_notes/dropbox" \
             --extra-roots "xhs_notes/institutions,xhs_notes/consulting" \
-            --date-folder "$DATE_FOLDER" \
+            --date-folder "$BUILD_DATE_FOLDER" \
             --output-root "market_view_summaries" \
             --model "$MODEL" \
             --deepseek-base-url "$BASE_URL" \
@@ -125,11 +186,17 @@ jobs:
             echo "Could not resolve generated market_view_summaries date folder." >&2
             exit 1
           fi
+          if [ "$RESOLVED_DATE_FOLDER" != "$EXPECTED_DATE_FOLDER" ]; then
+            echo "Expected issue date $EXPECTED_DATE_FOLDER but builder resolved $RESOLVED_DATE_FOLDER." >&2
+            exit 1
+          fi
           echo "::notice::Resolved market views date folder: $RESOLVED_DATE_FOLDER"
           echo "DATE_FOLDER=$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Render fast PDF without LaTeX install
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         run: |
+          set -o pipefail
           echo "::notice::Rendering market_views_<date>.pdf with ReportLab."
           python scripts/render_market_views_reportlab_pdf.py \
             --summary-root "market_view_summaries" \
@@ -137,14 +204,22 @@ jobs:
           find market_view_summaries -name "*.pdf" -print
 
       - name: Verify PDF exists before upload and commit
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         run: |
-          if ! find market_view_summaries -name "market_views_*.pdf" -type f -size +1k | grep -q .; then
-            echo "No rendered market_views_*.pdf found. Failing the workflow so this is visible."
-            find market_view_summaries -maxdepth 3 -type f -print || true
+          PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
+          if [ ! -f "$PDF_PATH" ]; then
+            echo "Expected PDF was not rendered: $PDF_PATH" >&2
             exit 1
           fi
+          PDF_BYTES="$(stat -c '%s' "$PDF_PATH")"
+          if [ "$PDF_BYTES" -le 1024 ]; then
+            echo "Expected PDF is too small: $PDF_PATH ($PDF_BYTES bytes)" >&2
+            exit 1
+          fi
+          echo "::notice::Verified exact Market Views PDF: $PDF_PATH ($PDF_BYTES bytes)."
 
       - name: Upload market views PDF artifact
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         uses: actions/upload-artifact@v4
         with:
           name: market-views-pdf-${{ github.run_id }}
@@ -155,6 +230,6 @@ jobs:
           if-no-files-found: error
 
       - name: Commit generated market views PDF
-        if: ${{ github.event.inputs.commit_results == 'true' || github.event_name == 'schedule' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && (github.event.inputs.commit_results == 'true' || github.event_name == 'schedule') }}
         run: |
           bash scripts/commit_output_dir.sh "market_view_summaries" "Generate market views daily PDF" 8

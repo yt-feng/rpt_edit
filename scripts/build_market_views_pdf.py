@@ -131,6 +131,19 @@ def find_report_dirs(date_dir: Path) -> list[Path]:
     return unique
 
 
+def require_primary_report_dirs(root: Path, report_date: str) -> list[Path]:
+    primary_date_dir = root / report_date
+    if not primary_date_dir.exists():
+        raise RuntimeError(f"Primary bank source date folder not found: {primary_date_dir}")
+    report_dirs = find_report_dirs(primary_date_dir)
+    if not report_dirs:
+        raise RuntimeError(
+            f"Primary bank source date folder has no parsed report outputs: {primary_date_dir}. "
+            "Refusing to generate Market Views from auxiliary sources alone."
+        )
+    return report_dirs
+
+
 def latest_existing_date_dir(root: Path) -> Path | None:
     if not root.exists():
         return None
@@ -156,9 +169,14 @@ def report_date_from_path(report_dir: Path) -> str:
 def source_date_dirs(root: Path, extra_roots: list[Path], date_folder: str) -> tuple[str, list[Path]]:
     roots = [root, *extra_roots]
     if date_folder != "latest":
+        if not DATE_DIR_RE.match(date_folder):
+            raise RuntimeError(f"Invalid primary bank date folder: {date_folder}")
         report_date = date_folder
         return report_date, [source_root / report_date for source_root in roots]
 
+    primary_dir = latest_existing_date_dir(root)
+    if primary_dir is None:
+        raise RuntimeError(f"No date-named folders found under primary bank source root: {root}")
     report_date = latest_date_name(roots)
     date_dirs: list[Path] = []
     for source_root in roots:
@@ -1736,6 +1754,8 @@ def main() -> int:
     out_dir = Path(args.output_root) / report_date
     figures_dir = out_dir / "figures"
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    require_primary_report_dirs(root, report_date)
 
     report_dirs: list[Path] = []
     for source_dir in date_dirs:
