@@ -1,0 +1,528 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2vd_g3g0/pdfs/0001-16-GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview- maintain Buy on Kstar.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "数据中心电气赛道，下",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x2",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview- maintain Buy on Kstar.pdf",
+      "cleaned_source_title": "GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview- maintain Buy on Kstar",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国IndustrialTechDataCent",
+      "raw_candidates": [
+        "GS-中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+        "GS：数据中心电气股海外订单落地决定估值修复起点",
+        "GS：数据中心电气股报价回调29%，海外扩张是真正催化剂"
+      ],
+      "cleaned_candidates": [
+        "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+        "GS：数据中心电气股海外订单落地决定估值修复起点",
+        "GS：数据中心电气股报价回调29%，海外扩张是真正催化剂",
+        "GS：中国IndustrialTechDataCent",
+        "GS：Kstar已于今年5月推出AC-800VDC电源转换模块"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：数据中心电气股海外订单落地决定估值修复起点",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：数据中心电气股报价回调29%，海外扩张是真正催化剂",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国IndustrialTechDataCent",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Kstar已于今年5月推出AC-800VDC电源转换模块",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2vd_g3g0/pdfs/0002-17-GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "800G光模块放量，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：1.6T光模块爬坡-2Q26净利指引超预期44%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy-260720.pdf",
+      "cleaned_source_title": "GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Eoptolink300502Accelerat",
+      "raw_candidates": [
+        "GS：Eoptolink加速800G/1.6T光模块爬坡-2Q26净利指引超预期-买入",
+        "GS：Eoptolink加速800G/1.6T光模块爬坡-2Q26净利指引超预期44%",
+        "GS：Eoptolink加速800G/1.6T光模块爬坡-供应改善改写收入结构"
+      ],
+      "cleaned_candidates": [
+        "GS：1.6T光模块爬坡-2Q26净利指引超预期-买入",
+        "GS：1.6T光模块爬坡-2Q26净利指引超预期44%",
+        "GS：1.6T光模块爬坡-供应改善改写收入结构",
+        "GS：Eoptolink300502Accelerat",
+        "GS：将2026至2028年的盈利预测分别上调了7%、2%和2%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "incomplete_last_segment",
+        "forbidden_public_wording"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：1.6T光模块爬坡-2Q26净利指引超预期-买入",
+          "reasons": [
+            "incomplete_last_segment",
+            "forbidden_public_wording"
+          ]
+        },
+        {
+          "title": "GS：1.6T光模块爬坡-供应改善改写收入结构",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Eoptolink300502Accelerat",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：将2026至2028年的盈利预测分别上调了7%、2%和2%",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：1.6T光模块爬坡-2Q26净利指引超预期44%",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "44"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：1.6T光模块爬坡-2Q26净利指引超预期44%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2vd_g3g0/pdfs/0003-18-GS-China-Three things in China-260719.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "二季度GDP低于预期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国二季度GDP低于目标下限",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-GS-China-Three things in China-260719.pdf",
+      "cleaned_source_title": "GS-China-Three things in China",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国Threethingsin中国",
+      "raw_candidates": [
+        "GS：中国三件事",
+        "GS：中国二季度GDP低于目标下限",
+        "GS：中国GDP低于目标下限，政策加速窗口已打开"
+      ],
+      "cleaned_candidates": [
+        "GS：中国三件事",
+        "GS：中国二季度GDP低于目标下限",
+        "GS：中国GDP低于目标下限，政策加速窗口已打开",
+        "GS：中国Threethingsin中国",
+        "GS：中国二季度实际GDP同比增速从一季度的5.0%节奏变化至4.3%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "body_too_short"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国三件事",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国GDP低于目标下限，政策加速窗口已打开",
+          "reasons": [
+            "anchor_coverage=0.69"
+          ]
+        },
+        {
+          "title": "GS：中国Threethingsin中国",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国二季度实际GDP同比增速从一季度的5.0%节奏变化至4.3%",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国二季度GDP低于目标下限",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国二季度GDP低于目标下限"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2vd_g3g0/pdfs/0004-19-GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000-260719.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "国产AI芯片，拐点到",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国AI资本开支上修37%-55%驱动本土芯片增长",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000-260719.pdf",
+      "cleaned_source_title": "GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIIluvatar",
+      "raw_candidates": [
+        "GS：中国AI资本开支上行周期驱动增长",
+        "GS：中国AI资本开支上修37%-55%驱动本土芯片增长",
+        "GS：中国AI资本开支上行周期-本土芯片替代空间超50%"
+      ],
+      "cleaned_candidates": [
+        "GS：中国AI资本开支上行周期驱动增长",
+        "GS：中国AI资本开支上修37%-55%驱动本土芯片增长",
+        "GS：中国AI资本开支上行周期-本土芯片替代空间超50%",
+        "GS：AIIluvatar",
+        "GS：2025年，全球领先的AI芯片供应商在中国仍占据超过50%的市场"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：AIIluvatar",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：2025年，全球领先的AI芯片供应商在中国仍占据超过50%的市场",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国AI资本开支上修37%-55%驱动本土芯片增长",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "37",
+          "55"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国AI资本开支上修37%-55%驱动本土芯片增长"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2vd_g3g0/pdfs/0005-20-GS-Global Views-Renewed Escalation vs. Lower Inflation-260719.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "中东局势推高油价，美",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "资产定价->市场定价 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x3",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "金融条件->资金条件 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-GS-Global Views-Renewed Escalation vs. Lower Inflation-260719.pdf",
+      "cleaned_source_title": "GS-Global Views-Renewed Escalation vs. Lower Inflation",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：全球ViewsRenewedEscalationvs.Lower",
+      "raw_candidates": [
+        "GS全球展望：地缘升级与通胀降温",
+        "GS全球展望：油价不确定性偏向上行，通胀降温才是主线",
+        "GS全球展望：地缘升级推油价，但通胀降温才是真正主线"
+      ],
+      "cleaned_candidates": [
+        "GS：GS全球展望，地缘升级与通胀降温",
+        "GS：GS全球展望，油价不确定性偏向上行，通胀降温才是主线",
+        "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线",
+        "GS：全球ViewsRenewedEscalationvs.Lower",
+        "GS：4.美联储7月加息概率已归零，但政策沟通面临新挑战"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：GS全球展望，油价不确定性偏向上行，通胀降温才是主线",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "GS：全球ViewsRenewedEscalationvs.Lower",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：4.美联储7月加息概率已归零，但政策沟通面临新挑战",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [
+          "真正"
+        ],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
