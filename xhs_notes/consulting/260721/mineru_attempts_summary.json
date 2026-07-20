@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_17uca9ht/pdfs/0001-BCG_AI-First-Cost-Reduction-How-to-Drive-Sustained-Structural-Ad_428070e6.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_17uca9ht/pdfs/0002-BCG_Are-We-in-a-Defense-Tech-Bubble_dbcc3462.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

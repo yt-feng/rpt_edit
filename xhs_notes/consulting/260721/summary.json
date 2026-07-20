@@ -1,0 +1,203 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_17uca9ht/pdfs/0001-BCG_AI-First-Cost-Reduction-How-to-Drive-Sustained-Structural-Ad_428070e6.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "AI落地，成本领先正",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：AI优先的结构性成本削减路径",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_AI-First-Cost-Reduction-How-to-Drive-Sustained-Structural-Ad_428070e6.pdf",
+      "cleaned_source_title": "0001-BCG_AI-First-Cost-Reduction-How-to-Drive-Sustained-Structural-Ad_428070e6",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：0001BCGAIFirstCostRed",
+      "raw_candidates": [
+        "波士顿咨询：AI优先的结构性成本削减路径",
+        "波士顿咨询：仅5%公司规模化AI，成本降幅领先同行三倍",
+        "波士顿咨询：AI成本优势分水岭已现，领先者EBIT利润率高出1.6倍"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：AI优先的结构性成本削减路径",
+        "波士顿咨询：仅5%公司规模化AI，成本降幅领先同行三倍",
+        "波士顿咨询：AI成本优势分水岭已现，领先者EBIT利润率高出1.6倍",
+        "波士顿咨询：0001BCGAIFirstCostRed",
+        "波士顿咨询：只有5%的公司正在规模化地通过AI创造价值"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：仅5%公司规模化AI，成本降幅领先同行三倍",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI成本优势分水岭已现，领先者EBIT利润率高出1.6倍",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0001BCGAIFirstCostRed",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：只有5%的公司正在规模化地通过AI创造价值",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：AI优先的结构性成本削减路径",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：AI优先的结构性成本削减路径"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_17uca9ht/pdfs/0002-BCG_Are-We-in-a-Defense-Tech-Bubble_dbcc3462.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "国防航空真的泡沫了吗",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：国防科技泡沫的利润结构分析",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_Are-We-in-a-Defense-Tech-Bubble_dbcc3462.pdf",
+      "cleaned_source_title": "0002-BCG_Are-We-in-a-Defense-Tech-Bubble_dbcc3462",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0002BCGAreWeinaDefens",
+      "raw_candidates": [
+        "波士顿咨询：国防科技泡沫的利润结构分析",
+        "波士顿咨询：国防科技泡沫-传统平台仍占80%以上份额",
+        "波士顿咨询：国防科技泡沫-新赛道增速10倍但利润池不及传统"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：国防科技泡沫的利润结构分析",
+        "波士顿咨询：国防科技泡沫-传统平台仍占80%以上份额",
+        "波士顿咨询：国防科技泡沫-新赛道增速10倍但利润池不及传统",
+        "波士顿咨询：0002BCGAreWeinaDefens",
+        "波士顿咨询：1.新赛道增速是传统平台的10倍以上，但基数决定了天花板"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：国防科技泡沫-传统平台仍占80%以上份额",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "波士顿咨询：国防科技泡沫-新赛道增速10倍但利润池不及传统",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0002BCGAreWeinaDefens",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：1.新赛道增速是传统平台的10倍以上，但基数决定了天花板",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：国防科技泡沫的利润结构分析",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：国防科技泡沫的利润结构分析"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
