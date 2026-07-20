@@ -1,0 +1,105 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fef7wfn5/pdfs/0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "莱索托投了那么多钱，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "IMF：IMF莱索托公共研究技术援助报告",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d.pdf",
+    "cleaned_source_title": "0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0004IMFKingdomofLesotho",
+    "raw_candidates": [
+      "IMF莱索托公共研究技术援助报告",
+      "IMF莱索托公共研究执行率仅53%",
+      "IMF莱索托不缺研究缺执行"
+    ],
+    "cleaned_candidates": [
+      "IMF：IMF莱索托公共研究技术援助报告",
+      "IMF：IMF莱索托公共研究执行率仅53%",
+      "IMF：IMF莱索托不缺研究缺执行",
+      "IMF：0004IMFKingdomofLesotho",
+      "IMF：估算，莱索托的公共研究效率缺口约为49%（2019年数据）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：IMF莱索托公共研究执行率仅53%",
+        "reasons": [
+          "anchor_coverage=0.69"
+        ]
+      },
+      {
+        "title": "IMF：IMF莱索托不缺研究缺执行",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "IMF：0004IMFKingdomofLesotho",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：估算，莱索托的公共研究效率缺口约为49%（2019年数据）",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      }
+    ],
+    "selected_title": "IMF：IMF莱索托公共研究技术援助报告",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：IMF莱索托公共研究技术援助报告"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

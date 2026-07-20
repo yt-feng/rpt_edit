@@ -1,0 +1,3657 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.1,
+                0.422,
+                0.204
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND\nAFRITAC South"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.101,
+                0.259,
+                0.203
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.116,
+                0.225,
+                0.878,
+                0.316
+            ],
+            "angle": 0,
+            "content": "TECHNICAL ASSISTANCE\nREPORT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.394,
+                0.449,
+                0.434
+            ],
+            "angle": 0,
+            "content": "MAURITIUS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.438,
+                0.878,
+                0.509
+            ],
+            "angle": 0,
+            "content": "Report on the National Accounts Statistics Mission (May 18 – 22, 2026)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.527,
+                0.31,
+                0.553
+            ],
+            "angle": 0,
+            "content": "JUNE 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.59,
+                0.271,
+                0.61
+            ],
+            "angle": 0,
+            "content": "PREPARED BY",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.611,
+                0.214,
+                0.631
+            ],
+            "angle": 0,
+            "content": "Peter Lee",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.705,
+                0.37,
+                0.725
+            ],
+            "angle": 0,
+            "content": "AUTHORING DEPARTMENT",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.738,
+                0.472,
+                0.766
+            ],
+            "angle": 0,
+            "content": "Statistics Department",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.228,
+                0.878,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.278,
+                0.366,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.394,
+                0.452,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.438,
+                0.876,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.476,
+                0.634,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.528,
+                0.309,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.592,
+                0.269,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.608,
+                0.217,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.706,
+                0.369,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.737,
+                0.471,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.085,
+                0.364,
+                0.101
+            ],
+            "angle": 0,
+            "content": "©2026 International Monetary Fund",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.535,
+                0.905,
+                0.742
+            ],
+            "angle": 0,
+            "content": "The contents of this document constitute technical advice provided by the staff of the International Monetary Fund to the authorities of Statistics Mauritius (the \"CD recipient\") in response to their request for technical assistance. Unless the CD recipient specifically objects to such disclosure, this document (in whole or in part) or summaries thereof may be disclosed by the IMF to the IMF Executive Director for Mauritius, to other IMF Executive Directors and members of their staff, as well as to other agencies or instrumentalities of the CD recipient, and upon their request, to World Bank staff, and other technical assistance providers and donors with legitimate interest including members of the Steering Committee of AFRITAC South (see Staff Operational Guidance on the Dissemination of Capacity Development Information). Publication or Disclosure of this report (in whole or in part) to parties outside the IMF other than agencies or instrumentalities of the CD recipient, World Bank staff, other technical assistance providers and donors with legitimate interest including members of the Steering Committee of AFRITAC South shall require the explicit consent of the CD recipient and the IMF's Statistics department.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.755,
+                0.841,
+                0.789
+            ],
+            "angle": 0,
+            "content": "The analysis and policy considerations expressed in this publication are those of the IMF's Statistics Department.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.317,
+                0.82,
+                0.679,
+                0.906
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.086,
+                0.361,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.536,
+                0.897,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.553,
+                0.879,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.571,
+                0.867,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.588,
+                0.899,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.606,
+                0.884,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.623,
+                0.86,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.639,
+                0.886,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.657,
+                0.903,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.674,
+                0.877,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.69,
+                0.859,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.708,
+                0.9,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.726,
+                0.431,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.758,
+                0.839,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.774,
+                0.187,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.087,
+                0.396,
+                0.114
+            ],
+            "angle": 0,
+            "content": "Acknowledgments"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.132,
+                0.196,
+                0.148
+            ],
+            "angle": 0,
+            "content": "MEMBERS"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.124,
+                0.163,
+                0.203,
+                0.2
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.259,
+                0.162,
+                0.338,
+                0.2
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.14,
+                0.202,
+                0.188,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Angola"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.389,
+                0.163,
+                0.476,
+                0.2
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.266,
+                0.202,
+                0.331,
+                0.213
+            ],
+            "angle": 0,
+            "content": "Botswana"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.403,
+                0.202,
+                0.462,
+                0.213
+            ],
+            "angle": 0,
+            "content": "Comoros"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.527,
+                0.163,
+                0.606,
+                0.2
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.539,
+                0.201,
+                0.595,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Eswatini"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.795,
+                0.162,
+                0.876,
+                0.201
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.124,
+                0.221,
+                0.203,
+                0.259
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.259,
+                0.221,
+                0.338,
+                0.26
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.661,
+                0.162,
+                0.741,
+                0.2
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.132,
+                0.26,
+                0.194,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Mauritius"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.393,
+                0.221,
+                0.472,
+                0.26
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.675,
+                0.201,
+                0.729,
+                0.213
+            ],
+            "angle": 0,
+            "content": "Lesotho"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.796,
+                0.201,
+                0.875,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Madagascar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.257,
+                0.261,
+                0.339,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Mozambique"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.406,
+                0.26,
+                0.46,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Namibia"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.516,
+                0.221,
+                0.619,
+                0.259
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.532,
+                0.26,
+                0.602,
+                0.273
+            ],
+            "angle": 0,
+            "content": "Seychelles"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.657,
+                0.221,
+                0.744,
+                0.26
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.662,
+                0.26,
+                0.741,
+                0.272
+            ],
+            "angle": 0,
+            "content": "South Africa"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.792,
+                0.222,
+                0.88,
+                0.26
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.81,
+                0.26,
+                0.861,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Zambia"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.114,
+                0.281,
+                0.215,
+                0.318
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.13,
+                0.32,
+                0.198,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Zimbabwe"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.094,
+                0.384,
+                0.353,
+                0.399
+            ],
+            "angle": 0,
+            "content": "DEVELOPMENT PARTNERS"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.131,
+                0.415,
+                0.224,
+                0.466
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.3,
+                0.414,
+                0.379,
+                0.452
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.131,
+                0.471,
+                0.223,
+                0.507
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.286,
+                0.454,
+                0.39,
+                0.466
+            ],
+            "angle": 0,
+            "content": "European Union"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.454,
+                0.414,
+                0.547,
+                0.454
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.469,
+                0.454,
+                0.531,
+                0.467
+            ],
+            "angle": 0,
+            "content": "Germany"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.279,
+                0.476,
+                0.398,
+                0.505
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.608,
+                0.417,
+                0.716,
+                0.449
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.634,
+                0.453,
+                0.689,
+                0.465
+            ],
+            "angle": 0,
+            "content": "NORAD"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.782,
+                0.414,
+                0.862,
+                0.452
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.782,
+                0.453,
+                0.863,
+                0.465
+            ],
+            "angle": 0,
+            "content": "Saudi Arabia"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.155,
+                0.509,
+                0.2,
+                0.521
+            ],
+            "angle": 0,
+            "content": "SECO"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.287,
+                0.509,
+                0.391,
+                0.522
+            ],
+            "angle": 0,
+            "content": "United Kingdom"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.095,
+                0.959,
+                0.265,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.609,
+                0.96,
+                0.882,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.961,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.087,
+                0.395,
+                0.113
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.135,
+                0.192,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.387,
+                0.349,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.094,
+                0.087,
+                0.245,
+                0.112
+            ],
+            "angle": 0,
+            "content": "Contents"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.091,
+                0.127,
+                0.908,
+                0.291
+            ],
+            "angle": 0,
+            "content": "Acknowledgments....3   \nAcronyms....5   \nSummary of Mission Outcomes and Priority Recommendations....6   \nDetailed Technical Assessment and Recommendations....7   \nA.Financial Services Data....7   \nB.Global Business Companies....8   \nC. Officials Met During the Meeting....9"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.305,
+                0.153,
+                0.32
+            ],
+            "angle": 0,
+            "content": "Tables"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.092,
+                0.327,
+                0.907,
+                0.363
+            ],
+            "angle": 0,
+            "content": "1. Priority Recommendations....6\n2. Work Plan....7"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.266,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.608,
+                0.96,
+                0.882,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.891,
+                0.961,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.086,
+                0.244,
+                0.113
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.305,
+                0.151,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.961,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.089,
+                0.263,
+                0.113
+            ],
+            "angle": 0,
+            "content": "Acronyms"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.128,
+                0.433,
+                0.144
+            ],
+            "angle": 0,
+            "content": "SNA2008 System of National Accounts 2008",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.154,
+                0.78,
+                0.17
+            ],
+            "angle": 0,
+            "content": "AFS IMF's Regional Technical Assistance Center for Southern Africa- AFRITAC South",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.181,
+                0.305,
+                0.196
+            ],
+            "angle": 0,
+            "content": "BoM Bank of Mauritius",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.208,
+                0.637,
+                0.223
+            ],
+            "angle": 0,
+            "content": "COICOP Classification of Individual Consumption According to Purpose",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.234,
+                0.578,
+                0.249
+            ],
+            "angle": 0,
+            "content": "FISIM Financial Intermediation Services, Indirectly Measured",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.26,
+                0.409,
+                0.275
+            ],
+            "angle": 0,
+            "content": "FSC Financial Services Commission",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.287,
+                0.39,
+                0.302
+            ],
+            "angle": 0,
+            "content": "GBC Global Business Corporation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.094,
+                0.313,
+                0.35,
+                0.328
+            ],
+            "angle": 0,
+            "content": "GDP Gros Domestic Product",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.34,
+                0.321,
+                0.354
+            ],
+            "angle": 0,
+            "content": "GVA Gross Value Added",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.366,
+                0.497,
+                0.381
+            ],
+            "angle": 0,
+            "content": "IFRS International Financial Reporting Standards",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.393,
+                0.386,
+                0.407
+            ],
+            "angle": 0,
+            "content": "IMF International Monetary Fund",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.419,
+                0.707,
+                0.434
+            ],
+            "angle": 0,
+            "content": "ISIC International Standard Industrial Classification of All Economic Activities",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.446,
+                0.317,
+                0.461
+            ],
+            "angle": 0,
+            "content": "MoF Ministry of Finance",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.472,
+                0.411,
+                0.487
+            ],
+            "angle": 0,
+            "content": "MoU Memorandum of Understanding",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.498,
+                0.315,
+                0.513
+            ],
+            "angle": 0,
+            "content": "SM Statistics Mauritius",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.524,
+                0.333,
+                0.539
+            ],
+            "angle": 0,
+            "content": "TA Technical Assistance",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.266,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.608,
+                0.96,
+                0.882,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.088,
+                0.262,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.13,
+                0.43,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.155,
+                0.778,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.182,
+                0.133,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.183,
+                0.302,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.209,
+                0.634,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.235,
+                0.575,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.261,
+                0.405,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.288,
+                0.386,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.314,
+                0.347,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.34,
+                0.318,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.367,
+                0.495,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.393,
+                0.127,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.394,
+                0.382,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.42,
+                0.704,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.447,
+                0.133,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.17,
+                0.448,
+                0.312,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.473,
+                0.408,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.5,
+                0.124,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.5,
+                0.311,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.525,
+                0.121,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.526,
+                0.33,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.087,
+                0.905,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Summary of Mission Outcomes and Priority Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.122,
+                0.897,
+                0.207
+            ],
+            "angle": 0,
+            "content": "1. A technical assistance (TA) mission on the National Accounts, sponsored by IMF AFRITAC South (AFS), was conducted from May 18 – 22, 2026, at the request of Statistics Mauritius (SM). This mission assisted SM with the treatment of Global Business Corporations (GBCs) and the wider financial corporations' sector within estimates of gross domestic product (GDP), partly as a result of concerns raised by domestic users.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.219,
+                0.902,
+                0.287
+            ],
+            "angle": 0,
+            "content": "2. The mission met with key domestic users, in order to ascertain concerns. Discussions were held with the chief economic advisor to the Prime Minister, the Financial Secretary at the Ministry of Finance (MoF), staff from the Bank of Mauritius (BoM), and staff from the Financial Services Commission (FSC), where questions were raised regarding possible missing activities within banking and GBCs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.297,
+                0.899,
+                0.401
+            ],
+            "angle": 0,
+            "content": "3. The mission also met with two of the largest commercial banks in Mauritius, both with large cross-border activities, to identify possible missing activities. Both banks were confident that the questionnaires they receive from SM enable them to record, accurately and comprehensively, their range of activities, but the data they provide to the BoM are more granular and more timely. Better use of these data would, potentially, improve the quality and granularity of SM's financial data. One early benefit should be more accurate estimates of financial intermediation services indirectly measured (FISIM).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.411,
+                0.906,
+                0.515
+            ],
+            "angle": 0,
+            "content": "4. The majority of the recommendations of March 2025 mission regarding GBCs have been implemented. The exception is with regard to trading activities, where this has not yet been possible. The SM staff were considering using the sum-of-costs as a method for calculating output for these businesses, but this is not in line with the recommendations of the System of National Accounts 2025 (2025 SNA); therefore, the mission strongly recommended that the SNA should be followed. Further work will be required, in collaboration with the FSC, to better understand the data which they provide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.524,
+                0.889,
+                0.559
+            ],
+            "angle": 0,
+            "content": "5. To support progress in the above work areas, the mission recommended an updated action plan with the following priority recommendations:",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.093,
+                0.573,
+                0.372,
+                0.588
+            ],
+            "angle": 0,
+            "content": "TABLE 1. Priority Recommendations"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.095,
+                0.594,
+                0.902,
+                0.751
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>June 2026</td><td>Work collaboratively to understand more fully the GBC trading data</td><td>SM / FSC</td></tr><tr><td>September 2026</td><td>Incorporate more accurate estimates of FISIM in GDP estimates</td><td>SM</td></tr><tr><td>September 2026</td><td>Incorporate GBC trading activities in GDP, in line with SNA2008</td><td>SM</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.766,
+                0.881,
+                0.8
+            ],
+            "angle": 0,
+            "content": "6. Further details on the priority recommendations and the related actions/milestones can be found in the detailed work plan under Detailed Technical Assessment and Recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.266,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.608,
+                0.96,
+                0.882,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.961,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.087,
+                0.903,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.124,
+                0.113,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.124,
+                0.881,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.142,
+                0.891,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.158,
+                0.863,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.176,
+                0.89,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.193,
+                0.236,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.22,
+                0.112,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.22,
+                0.879,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.237,
+                0.897,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.254,
+                0.865,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.272,
+                0.78,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.299,
+                0.112,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.3,
+                0.887,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.316,
+                0.85,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.332,
+                0.896,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.351,
+                0.89,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.367,
+                0.872,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.384,
+                0.756,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.412,
+                0.112,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.413,
+                0.861,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.43,
+                0.882,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.447,
+                0.882,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.463,
+                0.851,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.48,
+                0.902,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.497,
+                0.682,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.526,
+                0.151,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.526,
+                0.886,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.542,
+                0.494,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.768,
+                0.114,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.768,
+                0.879,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.784,
+                0.843,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.093,
+                0.086,
+                0.804,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Detailed Technical Assessment and Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.094,
+                0.122,
+                0.253,
+                0.138
+            ],
+            "angle": 0,
+            "content": "TABLE 2. Work Plan",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.095,
+                0.144,
+                0.903,
+                0.513
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"3\">OUTCOME: Improved estimates of GBCs</td></tr><tr><td>H</td><td>Work with FSC to better understand the data supplied, particularly “other” categories.</td><td>June 2026</td></tr><tr><td>H</td><td>Include estimates of GBC trading in rebased GBC estimates.</td><td>September 2026</td></tr><tr><td colspan=\"3\">OUTCOME: Improved estimates of the wider financial sector</td></tr><tr><td>H</td><td>Work with BoM to expand data sharing, particular with regard to supervision data.</td><td>December 2026</td></tr><tr><td>H</td><td>Make use of available BoM data to improve estimates of FISIM</td><td>September 2026</td></tr><tr><td>H</td><td>Review industrial classification (and output calculation) of businesses in the “other financial corporations” area.</td><td>June 2026</td></tr><tr><td>H</td><td>Incorporate the results of the above classification review in GDP estimates.</td><td>September 2026</td></tr><tr><td>H</td><td>Work with FSC to develop a plan for handling the insurance industry’s move to IFRS17 reporting.</td><td>December 2026</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.529,
+                0.361,
+                0.544
+            ],
+            "angle": 0,
+            "content": "A. FINANCIAL SERVICES DATA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.555,
+                0.902,
+                0.625
+            ],
+            "angle": 0,
+            "content": "7. Banking – unusually, SM surveys banks rather than using data from the BoM directly. The survey questionnaires were discussed with the commercial banks, and they were comfortable and clear that all their activities could be and were covered by the questionnaire. They did, however, highlight that they provide more granular data to the BoM, more frequently than the annual and quarterly surveys from SM.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.634,
+                0.903,
+                0.703
+            ],
+            "angle": 0,
+            "content": "8. The mission discussed the methodology used by the SM in estimating the gross value added (GVA) of banks. The team have a good understanding of the concepts relating to FISIM, fees and commissions and the margin activities of the banking industry (net spread earnings) and are applying the methodology correctly, although refinements can be made.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.713,
+                0.898,
+                0.833
+            ],
+            "angle": 0,
+            "content": "9. With regard to FISIM, the SM is using the midpoint between loan and deposit rates as their reference rate. This is then applied to the stocks of loans and deposits and actual interest receipts and payments data. Whilst this is commonly used in other countries, the nature of the Mauritius financial system means that this is leading to particular challenges. Specifically, it is generating implausibly high deposit FISIM, which is then adjusted to bring it more into line with BoM data using a long-standing fixed factor of indeterminate provenance. For cross-border FISIM, a more granular, accurate reference rate is provided by the BoM. The SM will be using this rate in GDP estimates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.843,
+                0.895,
+                0.912
+            ],
+            "angle": 0,
+            "content": "10. The non-FISIM parts of bank output are estimated using data from the SM's survey of banks. This includes fees and commissions, which are explicitly collected on the questionnaire, as well as spread earnings on trading activities, which the banks confirmed are included in the data provided to the SM. The SM is using appropriate methodology to estimate these incomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.265,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.608,
+                0.959,
+                0.882,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.96,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.086,
+                0.801,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.125,
+                0.248,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.531,
+                0.358,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.556,
+                0.116,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.556,
+                0.873,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.574,
+                0.897,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.591,
+                0.868,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.608,
+                0.866,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.636,
+                0.112,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.636,
+                0.9,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.654,
+                0.825,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.669,
+                0.873,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.688,
+                0.531,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.715,
+                0.112,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.714,
+                0.879,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.733,
+                0.862,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.75,
+                0.893,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.767,
+                0.859,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.783,
+                0.879,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.801,
+                0.891,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.817,
+                0.526,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.845,
+                0.892,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.863,
+                0.886,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.879,
+                0.875,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.895,
+                0.686,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.085,
+                0.85,
+                0.118
+            ],
+            "angle": 0,
+            "content": "11. The output of the Central Bank is estimated using the sum-of-cost approach. This is in accordance with SNA guidance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.13,
+                0.897,
+                0.266
+            ],
+            "angle": 0,
+            "content": "12. The mission met with the BoM to discuss concerns and available data. At present the SM only makes use of the cross-border data, but highly granular data across the banking industry are held by the supervision department within the BoM. Currently the data sharing Memorandum of Understanding (MoU) with the BoM does not provide a facility for sharing of these detailed data. It would be beneficial for the SM to work closely with the BoM in order to increase the use made of these detailed data (amending the MoU as necessary). This would enable more detailed calculation of FISIM, more granular data on other banking activities, such as spread earnings and fees and commissions and, indeed, may obviate or at least reduce the need for the SM survey, reducing costs at the SM and the burden on businesses.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.277,
+                0.906,
+                0.363
+            ],
+            "angle": 0,
+            "content": "13. No obvious omissions in activities were identified. Through conversations with commercial banks and the BoM, there are no particular activities currently excluded from the GDP estimates in this area, but better use of the BoM data and more granular calculation of FISIM would lead to quality improvements. It should be noted that, after the end of the mission, some users in Mauritius still believe that some activities are missing, as a result, further TA may be requested on this issue.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.373,
+                0.906,
+                0.493
+            ],
+            "angle": 0,
+            "content": "14. Insurance – the mission reviewed the insurance methodology used by the SM. The current methodology was found to be in line with the SNA-defined insurance algorithms, for both life and non-life. The FSC highlighted that the insurance industry in Mauritius has recently moved to the IFRS 17 reporting standards, which poses challenges for national accountants, as some of the required variables are no longer explicitly identified. At present, businesses are dual reporting on the old and new bases, but this will not be a permanent arrangement. The SM will need to work closely with the FSC to develop a plan to deal with this, as it is a challenge for both institutions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.503,
+                0.882,
+                0.623
+            ],
+            "angle": 0,
+            "content": "15. Other financial institutions – the mission reviewed the classification of businesses in this industry. The SM provided the list of businesses in their survey universe, along with their current classification according to the International Standard Industrial Classification, revision 4 (ISIC Rev.4). The review consisted of an internet search of the businesses' websites, this led to some questions regarding classification, which, if they lead to a change, would, in some cases lead to a change in the calculation of output (for example, changing from funds to fund managers or vice versa). The SM needs to carry out further investigations following up with the questions raised by the mission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.638,
+                0.277,
+                0.653
+            ],
+            "angle": 0,
+            "content": "Recommended Actions:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.662,
+                0.858,
+                0.692
+            ],
+            "angle": 0,
+            "content": "- SM to collaborate with BoM to increase data sharing and make better use of such data in the GDP estimates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.695,
+                0.857,
+                0.726
+            ],
+            "angle": 0,
+            "content": "- SM to refine reference rate calculations, taking account of different currencies and types of loans / deposits, removing fixed adjustment factors when possible.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.727,
+                0.771,
+                0.742
+            ],
+            "angle": 0,
+            "content": "■ SM to collaborate with the FSC to develop a handling plan for the transition to IFRS17.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.744,
+                0.695,
+                0.759
+            ],
+            "angle": 0,
+            "content": "■ SM to investigate ISIC classification questions for other financial institutions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.774,
+                0.398,
+                0.789
+            ],
+            "angle": 0,
+            "content": "B. GLOBAL BUSINESS COMPANIES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.801,
+                0.866,
+                0.852
+            ],
+            "angle": 0,
+            "content": "16. Given Mauritius's status as an international financial center, GBCs are of particular significance in the local economy. An earlier mission in March 2025 made several recommendations regarding appropriate methodology for incorporating these businesses correctly in GDP estimates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.863,
+                0.891,
+                0.914
+            ],
+            "angle": 0,
+            "content": "17. The SM has implemented the recommendations in every area, with the exception of trading companies, which are not yet incorporated. There were questions regarding the results obtained using the correct methodology, which was leading to the consideration of using the sum-of-cost approach, as per",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.266,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.608,
+                0.96,
+                0.882,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.961,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.087,
+                0.847,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.104,
+                0.35,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.13,
+                0.124,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.13,
+                0.894,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.149,
+                0.87,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.165,
+                0.881,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.183,
+                0.885,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.201,
+                0.88,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.217,
+                0.885,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.234,
+                0.883,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.251,
+                0.726,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.278,
+                0.144,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.279,
+                0.859,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.297,
+                0.898,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.313,
+                0.903,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.331,
+                0.88,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.349,
+                0.593,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.374,
+                0.131,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.375,
+                0.872,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.392,
+                0.874,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.41,
+                0.874,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.427,
+                0.9,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.444,
+                0.902,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.462,
+                0.886,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.478,
+                0.384,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.504,
+                0.125,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.505,
+                0.869,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.521,
+                0.819,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.54,
+                0.877,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.556,
+                0.868,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.573,
+                0.876,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.592,
+                0.851,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.607,
+                0.651,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.639,
+                0.275,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.663,
+                0.855,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.68,
+                0.203,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.7,
+                0.103,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.696,
+                0.854,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.713,
+                0.564,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.728,
+                0.769,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.749,
+                0.104,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.745,
+                0.691,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.776,
+                0.394,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.802,
+                0.821,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.82,
+                0.862,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.836,
+                0.825,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.862,
+                0.883,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.881,
+                0.882,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.898,
+                0.889,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.085,
+                0.882,
+                0.136
+            ],
+            "angle": 0,
+            "content": "non-market bodies. The impact of the changes already implemented were increases of an average of 0.9 per cent of GDP and, for the current account, an average of 0.7 percent of GDP for the years 2018–2023, mainly as a result of increased exports of services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.147,
+                0.906,
+                0.232
+            ],
+            "angle": 0,
+            "content": "18. The mission discussed the available data with the FSC. A concern raised by the SM and the mission related to “other” categories within income and expenditure data provided by the FSC. FSC believed that these relate to revaluations. The mission took the view that, whilst this may be true in some cases, a deeper understanding is needed in some categories, particularly relating to expenditure. The SM will need to work with the FSC to understand these data more fully, in advance of incorporation into GDP estimates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.243,
+                0.898,
+                0.328
+            ],
+            "angle": 0,
+            "content": "19. The mission discussed the methodology with the SM team. The sum-of-cost approach, whilst an expedient way of achieving plausible results, is not in line with the guidance in the SNA and should not be used. Once the data are fully understood and analyzed, they should be incorporated into GDP estimates using the SNA guidance. Specifically, this is a margin-based activity, so the output should be valued as the margin on traded products.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.339,
+                0.902,
+                0.442
+            ],
+            "angle": 0,
+            "content": "20. Management companies – key economic advisors raised concerns that some of these companies, which provide support functions to GBCs and others, are missed from the accounts. As a result of meetings with the FSC and discussions with the SM team, it appears that this is not the case as these businesses are incorporated within the administrative and support services industry. Specifically, those providing management services to cross-border businesses are licensed by the FSC and are included in the data they provide. Those which only provide services domestically are included in the SM survey.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.456,
+                0.278,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Recommended Actions:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.48,
+                0.78,
+                0.496
+            ],
+            "angle": 0,
+            "content": "SM to work with the FSC to develop a complete understanding of the GBC trading data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.497,
+                0.781,
+                0.513
+            ],
+            "angle": 0,
+            "content": "■ SM to incorporate these market bodies in the GDP estimates in line with SNA guidance.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.527,
+                0.449,
+                0.542
+            ],
+            "angle": 0,
+            "content": "C. OFFICIALS MET DURING THE MEETING"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.094,
+                0.55,
+                0.904,
+                0.893
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Name</td><td>Institution</td><td>Email</td></tr><tr><td>Acharuz Anandsing</td><td>Ministry of Finance</td><td>aacharuz@govmu.org</td></tr><tr><td>Gnany Gilbert</td><td>Prime Minister&#x27;s Office</td><td>ggnany@govmu.org</td></tr><tr><td>Hittoo Ram</td><td>Ministry of Finance</td><td>rhittoo@govmu.org</td></tr><tr><td>Dawoonauth Mukesh</td><td>Statistics Mauritius</td><td>mdawoonauth@govmu.org</td></tr><tr><td>Bhonoo Sanjev</td><td>Statistics Mauritius</td><td>sbhonoo@govmu.org</td></tr><tr><td>Ramphul Dhanwantee</td><td>Statistics Mauritius</td><td>dhramphul@govmu.org</td></tr><tr><td>Papiah Sattyabhamah</td><td>Statistics Mauritius</td><td>sbhonoo@govmu.org</td></tr><tr><td>Pampusa Marjorie</td><td>Bank of Mauritius</td><td>Marjorie.Pampusa@bom.mu</td></tr><tr><td>Audit Dooneshsingh</td><td>Bank of Mauritius</td><td>Dooneshsingh.Audit@bom.mu</td></tr><tr><td>Jugoo Satishingh</td><td>Bank of Mauritius</td><td>Satishingh.Jugoo@bom.mu</td></tr><tr><td>Rutha Chandradeo</td><td>Bank of Mauritius</td><td>chandradeo.rutha@bom.mu</td></tr><tr><td>Mautadin Bihisht</td><td>Bank of Mauritius</td><td>Bihisht.Mautadin@bom.mu</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.266,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.608,
+                0.96,
+                0.882,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.961,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.086,
+                0.876,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.104,
+                0.878,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.121,
+                0.472,
+                0.133
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.148,
+                0.126,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.149,
+                0.868,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.166,
+                0.902,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.183,
+                0.872,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.201,
+                0.902,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.216,
+                0.865,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.243,
+                0.129,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.245,
+                0.881,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.262,
+                0.879,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.278,
+                0.893,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.296,
+                0.888,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.314,
+                0.295,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.34,
+                0.129,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.341,
+                0.842,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.357,
+                0.894,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.375,
+                0.885,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.391,
+                0.858,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.409,
+                0.898,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.426,
+                0.863,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.457,
+                0.275,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.48,
+                0.778,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.497,
+                0.778,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.53,
+                0.445,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "bbox": [
+                0.095,
+                0.084,
+                0.903,
+                0.189
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Name</td><td>Institution</td><td>Email</td></tr><tr><td>Beegoo Ghanish</td><td>Bank of Mauritius</td><td>Ghanish.Beegoo@bom.mu&gt;</td></tr><tr><td>Lamothe Sebastien</td><td>Financial Services Commission</td><td>slamothe@fscmauritius.org</td></tr><tr><td>Jhoomuck Kavish</td><td>Financial Services Commission</td><td>kjhoomuck@fscmauritius.org</td></tr></table>",
+            "cell_merge": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.96,
+                0.265,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF | AFRITAC South"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.96,
+                0.873,
+                0.974
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.884,
+                0.96,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "10"
+        }
+    ]
+]

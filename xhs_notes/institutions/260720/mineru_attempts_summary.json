@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0007-IMF_Mauritius-Technical-Assistance-Report-Report-on-National-Acc_5c436158.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0009-IMF_Tariff-Pass-Through-and-Import-Reallocation_47fc25e9.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

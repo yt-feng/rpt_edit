@@ -1,0 +1,126 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fef7wfn5/pdfs/0001-IMF_Beyond-the-First-Bond-Market-Access-and-Debt-Dynamics-in-Fro_3a9b0ab9.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "首次发债之后，是天堂",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x3",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x3",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x2",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "投资->研究 x1",
+    "金融条件->资金条件 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "IMF：前沿地区首次发债后的债务动态",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-IMF_Beyond-the-First-Bond-Market-Access-and-Debt-Dynamics-in-Fro_3a9b0ab9.pdf",
+    "cleaned_source_title": "0001-IMF_Beyond-the-First-Bond-Market-Access-and-Debt-Dynamics-in-Fro_3a9b0ab9",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0001IMFBeyondtheFirstBond市场",
+    "raw_candidates": [
+      "IMF：前沿地区首次发债后的债务动态",
+      "IMF：前沿地区发债后债务加速积累-财政纪律松弛",
+      "IMF：前沿地区发债后更脆弱-增长未改善"
+    ],
+    "cleaned_candidates": [
+      "IMF：前沿地区首次发债后的债务动态",
+      "IMF：前沿地区发债后债务加速积累-财政纪律松弛",
+      "IMF：前沿地区发债后更脆弱-增长未改善",
+      "IMF：0001IMFBeyondtheFirstBond市场",
+      "IMF：IMF最新工作论文对2005至2023年间新兴市场和发展中地区"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：前沿地区发债后债务加速积累-财政纪律松弛",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "IMF：前沿地区发债后更脆弱-增长未改善",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "IMF：0001IMFBeyondtheFirstBond市场",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：IMF最新工作论文对2005至2023年间新兴市场和发展中地区",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：前沿地区首次发债后的债务动态",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：前沿地区首次发债后的债务动态"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

@@ -1,0 +1,114 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fef7wfn5/pdfs/0002-IMF_Closing-the-Gap-A-LIC-s-Policy-Options-Under-an-Aid-Shock_97055ee1.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "外国援助断了怎么办？",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x2",
+    "经济->宏观环境 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "IMF：援助依赖型地区的三条出路",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-IMF_Closing-the-Gap-A-LIC-s-Policy-Options-Under-an-Aid-Shock_97055ee1.pdf",
+    "cleaned_source_title": "0002-IMF_Closing-the-Gap-A-LIC-s-Policy-Options-Under-an-Aid-Shock_97055ee1",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0002IMFClosingtheGapALICs政策",
+    "raw_candidates": [
+      "IMF：援助依赖型地区的三条出路",
+      "IMF：利比里亚案例-3%GDP援助削减的三种选择",
+      "IMF：援助依赖型地区-借款与支出削减的代价对比"
+    ],
+    "cleaned_candidates": [
+      "IMF：援助依赖型地区的三条出路",
+      "IMF：利比里亚案例-3%GDP援助削减的三种选择",
+      "IMF：援助依赖型地区-借款与支出削减的代价对比",
+      "IMF：0002IMFClosingtheGapALICs政策",
+      "IMF：2010至2022年间，其净援助相当于国民总收入的22%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：利比里亚案例-3%GDP援助削减的三种选择",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：援助依赖型地区-借款与支出削减的代价对比",
+        "reasons": [
+          "anchor_coverage=0.55"
+        ]
+      },
+      {
+        "title": "IMF：0002IMFClosingtheGapALICs政策",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：2010至2022年间，其净援助相当于国民总收入的22%",
+        "reasons": [
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：援助依赖型地区的三条出路",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：援助依赖型地区的三条出路"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

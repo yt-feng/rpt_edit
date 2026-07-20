@@ -1,0 +1,2189 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TECHNICAL ASSISTANCE REPORT"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                224,
+                877,
+                315
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MAURITIUS"
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                393,
+                448,
+                432
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Report on the National Accounts Statistics Mission (May 18 – 22, 2026)"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                437,
+                877,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JUNE 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                526,
+                309,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PREPARED BY"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                589,
+                270,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Peter Lee"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                609,
+                213,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AUTHORING DEPARTMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                703,
+                369,
+                724
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Statistics Department"
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                737,
+                470,
+                765
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND\nAFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                99,
+                421,
+                203
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                99,
+                258,
+                202
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                84,
+                363,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The contents of this document constitute technical advice provided by the staff of the International Monetary Fund to the authorities of Statistics Mauritius (the \"CD recipient\") in response to their request for technical assistance. Unless the CD recipient specifically objects to such disclosure, this document (in whole or in part) or summaries thereof may be disclosed by the IMF to the IMF Executive Director for Mauritius, to other IMF Executive Directors and members of their staff, as well as to other agencies or instrumentalities of the CD recipient, and upon their request, to World Bank staff, and other technical assistance providers and donors with legitimate interest including members of the Steering Committee of AFRITAC South (see Staff Operational Guidance on the Dissemination of Capacity Development Information). Publication or Disclosure of this report (in whole or in part) to parties outside the IMF other than agencies or instrumentalities of the CD recipient, World Bank staff, other technical assistance providers and donors with legitimate interest including members of the Steering Committee of AFRITAC South shall require the explicit consent of the CD recipient and the IMF's Statistics department."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                533,
+                904,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analysis and policy considerations expressed in this publication are those of the IMF's Statistics Department."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                753,
+                840,
+                788
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                    }
+                ]
+            },
+            "bbox": [
+                315,
+                819,
+                678,
+                904
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Acknowledgments"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                86,
+                394,
+                112
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MEMBERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                131,
+                194,
+                147
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/fef411f35aa5d62836abc0811b180fdd21c594bb97b0df95373f3b2ee2bf44cf.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                122,
+                162,
+                201,
+                199
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a1e8570f2b339dd315d798bf9248d3ef2a0c59984e0ea17486e16949ff57805e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Angola"
+                    }
+                ]
+            },
+            "bbox": [
+                258,
+                161,
+                337,
+                199
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a973ca322fb97fd3f4a0d4d1b2891c0c229ee6529582a84f750828e0821d989b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Botswana"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Comoros"
+                    }
+                ]
+            },
+            "bbox": [
+                388,
+                162,
+                475,
+                199
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/dcbdfd7d726fa49687cba64f738c95617bb6c968bd8441d173f0ecfb1ea90448.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Eswatini"
+                    }
+                ]
+            },
+            "bbox": [
+                526,
+                162,
+                605,
+                199
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ac6aa8146b90f9d4a3e49bfa15854726803e4af40e378513733fbf3dbf42be30.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                794,
+                161,
+                875,
+                200
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3c733aaa2b88e88ca3db938c01a679ebbcffad409ac51202f2d8fccf14c49e7d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                122,
+                219,
+                201,
+                258
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/18cb16d7106e989b0c6101f1ddb53e8ce8e4b0d6d1358c78618d606adf651939.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                258,
+                219,
+                337,
+                259
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0304fd5448603c1ba5c467dca21b21f1cefc810dca7028c00598e176b4bd8056.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Mauritius"
+                    }
+                ]
+            },
+            "bbox": [
+                660,
+                161,
+                739,
+                199
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/527743351147664108ffa9d81a08ff46bbeb432d6315322d73606e9baa96a20f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Lesotho"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Madagascar"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Mozambique"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Namibia"
+                    }
+                ]
+            },
+            "bbox": [
+                391,
+                219,
+                470,
+                259
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/7bac4ddf6068f8c3a6417126852d4b75e993451fe3b178ed762086e1bbfd97f3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Seychelles"
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                219,
+                618,
+                258
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/627ca0d0d984c357b0b8f4c8253908121db89a0037e5ae043b4bf5ce48d1f037.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "South Africa"
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                219,
+                742,
+                259
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/52ce07a5e9a0cdb581b72d2bcf7fe46bd167a8d4a7684936af267c991763c0f0.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Zambia"
+                    }
+                ]
+            },
+            "bbox": [
+                791,
+                221,
+                878,
+                259
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/8e47bf2a406650881a8fe38d1e981522045aada19a22fae2f059b19799ca5da5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Zimbabwe"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                280,
+                213,
+                317
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DEVELOPMENT PARTNERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                92,
+                382,
+                352,
+                398
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b005bed822d87e68efc11984db43607f032b1d80471d8b2330095228955382d8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                129,
+                414,
+                223,
+                464
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2d5a68f7314eee51b3ec5ef7c978fcb0f7c253950dd2983d6711eda97356e433.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                299,
+                413,
+                378,
+                451
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/cffd3fd20864138b8c613c49a6d29e3eed86ee39da835924d645474b3a46e925.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "European Union"
+                    }
+                ]
+            },
+            "bbox": [
+                129,
+                470,
+                221,
+                506
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/024bc475c65b13b3bdd2db0d2fedff2780ccd3cf90d5cc4897f1e9bf30c1b18b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Germany"
+                    }
+                ]
+            },
+            "bbox": [
+                453,
+                413,
+                546,
+                453
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6580434faa45bc0affbd3444d39a4ed19d7750fb5d591ab405701b2d5c80a653.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                278,
+                475,
+                396,
+                504
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/632cf5ff9a506a2eaaa0020fb947a2b579a202e0d386a239eff30da0df92fdd9.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "NORAD"
+                    }
+                ]
+            },
+            "bbox": [
+                606,
+                416,
+                715,
+                448
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/21d7d3443be1a9d4f56c10b36b1dec966ba1cec9a1338fadceef3c9592c5a64f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Saudi Arabia"
+                    },
+                    {
+                        "type": "text",
+                        "content": "SECO"
+                    },
+                    {
+                        "type": "text",
+                        "content": "United Kingdom"
+                    }
+                ]
+            },
+            "bbox": [
+                781,
+                413,
+                860,
+                451
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                958,
+                263,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                608,
+                959,
+                880,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                890,
+                960,
+                904,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Contents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                92,
+                86,
+                243,
+                111
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Acknowledgments....3   \nAcronyms....5   \nSummary of Mission Outcomes and Priority Recommendations....6   \nDetailed Technical Assessment and Recommendations....7   \nA.Financial Services Data....7   \nB.Global Business Companies....8   \nC. Officials Met During the Meeting....9"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                126,
+                907,
+                290
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tables"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                304,
+                152,
+                319
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Priority Recommendations....6\n2. Work Plan....7"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                326,
+                905,
+                362
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                958,
+                265,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                606,
+                959,
+                880,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                890,
+                960,
+                904,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Acronyms"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                87,
+                262,
+                112
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SNA2008 System of National Accounts 2008"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                127,
+                431,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AFS IMF's Regional Technical Assistance Center for Southern Africa- AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                153,
+                779,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BoM Bank of Mauritius"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                180,
+                304,
+                195
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "COICOP Classification of Individual Consumption According to Purpose"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                206,
+                636,
+                222
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FISIM Financial Intermediation Services, Indirectly Measured"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                233,
+                576,
+                248
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FSC Financial Services Commission"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                259,
+                408,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GBC Global Business Corporation"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                286,
+                389,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GDP Gros Domestic Product"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                312,
+                349,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GVA Gross Value Added"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                338,
+                319,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IFRS International Financial Reporting Standards"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                365,
+                495,
+                380
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                392,
+                384,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ISIC International Standard Industrial Classification of All Economic Activities"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                418,
+                705,
+                432
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MoF Ministry of Finance"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                445,
+                315,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MoU Memorandum of Understanding"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                470,
+                410,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SM Statistics Mauritius"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                497,
+                314,
+                512
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TA Technical Assistance"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                523,
+                332,
+                538
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                890,
+                960,
+                904,
+                972
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                958,
+                265,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                606,
+                959,
+                880,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Mission Outcomes and Priority Recommendations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                86,
+                904,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. A technical assistance (TA) mission on the National Accounts, sponsored by IMF AFRITAC South (AFS), was conducted from May 18 – 22, 2026, at the request of Statistics Mauritius (SM). This mission assisted SM with the treatment of Global Business Corporations (GBCs) and the wider financial corporations' sector within estimates of gross domestic product (GDP), partly as a result of concerns raised by domestic users."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                121,
+                895,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. The mission met with key domestic users, in order to ascertain concerns. Discussions were held with the chief economic advisor to the Prime Minister, the Financial Secretary at the Ministry of Finance (MoF), staff from the Bank of Mauritius (BoM), and staff from the Financial Services Commission (FSC), where questions were raised regarding possible missing activities within banking and GBCs."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                218,
+                900,
+                286
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. The mission also met with two of the largest commercial banks in Mauritius, both with large cross-border activities, to identify possible missing activities. Both banks were confident that the questionnaires they receive from SM enable them to record, accurately and comprehensively, their range of activities, but the data they provide to the BoM are more granular and more timely. Better use of these data would, potentially, improve the quality and granularity of SM's financial data. One early benefit should be more accurate estimates of financial intermediation services indirectly measured (FISIM)."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                296,
+                897,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. The majority of the recommendations of March 2025 mission regarding GBCs have been implemented. The exception is with regard to trading activities, where this has not yet been possible. The SM staff were considering using the sum-of-costs as a method for calculating output for these businesses, but this is not in line with the recommendations of the System of National Accounts 2025 (2025 SNA); therefore, the mission strongly recommended that the SNA should be followed. Further work will be required, in collaboration with the FSC, to better understand the data which they provide."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                410,
+                905,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. To support progress in the above work areas, the mission recommended an updated action plan with the following priority recommendations:"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                523,
+                887,
+                558
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/7b08a77b235118b96621caecf34f1b79e141f8628dfc306ad7a341e714f19309.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "TABLE 1. Priority Recommendations"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>June 2026</td><td>Work collaboratively to understand more fully the GBC trading data</td><td>SM / FSC</td></tr><tr><td>September 2026</td><td>Incorporate more accurate estimates of FISIM in GDP estimates</td><td>SM</td></tr><tr><td>September 2026</td><td>Incorporate GBC trading activities in GDP, in line with SNA2008</td><td>SM</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                94,
+                593,
+                900,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6. Further details on the priority recommendations and the related actions/milestones can be found in the detailed work plan under Detailed Technical Assessment and Recommendations."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                765,
+                880,
+                799
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                958,
+                265,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                606,
+                959,
+                880,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                890,
+                960,
+                904,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Detailed Technical Assessment and Recommendations"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                92,
+                85,
+                803,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TABLE 2. Work Plan"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                121,
+                252,
+                137
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/1320c8eee9cadbf49aaeb277e88595ffaa6311f50490b813d25bb94db2d32a31.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"3\">OUTCOME: Improved estimates of GBCs</td></tr><tr><td>H</td><td>Work with FSC to better understand the data supplied, particularly “other” categories.</td><td>June 2026</td></tr><tr><td>H</td><td>Include estimates of GBC trading in rebased GBC estimates.</td><td>September 2026</td></tr><tr><td colspan=\"3\">OUTCOME: Improved estimates of the wider financial sector</td></tr><tr><td>H</td><td>Work with BoM to expand data sharing, particular with regard to supervision data.</td><td>December 2026</td></tr><tr><td>H</td><td>Make use of available BoM data to improve estimates of FISIM</td><td>September 2026</td></tr><tr><td>H</td><td>Review industrial classification (and output calculation) of businesses in the “other financial corporations” area.</td><td>June 2026</td></tr><tr><td>H</td><td>Incorporate the results of the above classification review in GDP estimates.</td><td>September 2026</td></tr><tr><td>H</td><td>Work with FSC to develop a plan for handling the insurance industry’s move to IFRS17 reporting.</td><td>December 2026</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                94,
+                143,
+                902,
+                512
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A. FINANCIAL SERVICES DATA"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                527,
+                359,
+                543
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7. Banking – unusually, SM surveys banks rather than using data from the BoM directly. The survey questionnaires were discussed with the commercial banks, and they were comfortable and clear that all their activities could be and were covered by the questionnaire. They did, however, highlight that they provide more granular data to the BoM, more frequently than the annual and quarterly surveys from SM."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                554,
+                900,
+                624
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "8. The mission discussed the methodology used by the SM in estimating the gross value added (GVA) of banks. The team have a good understanding of the concepts relating to FISIM, fees and commissions and the margin activities of the banking industry (net spread earnings) and are applying the methodology correctly, although refinements can be made."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                633,
+                902,
+                702
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "9. With regard to FISIM, the SM is using the midpoint between loan and deposit rates as their reference rate. This is then applied to the stocks of loans and deposits and actual interest receipts and payments data. Whilst this is commonly used in other countries, the nature of the Mauritius financial system means that this is leading to particular challenges. Specifically, it is generating implausibly high deposit FISIM, which is then adjusted to bring it more into line with BoM data using a long-standing fixed factor of indeterminate provenance. For cross-border FISIM, a more granular, accurate reference rate is provided by the BoM. The SM will be using this rate in GDP estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                712,
+                897,
+                832
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "10. The non-FISIM parts of bank output are estimated using data from the SM's survey of banks. This includes fees and commissions, which are explicitly collected on the questionnaire, as well as spread earnings on trading activities, which the banks confirmed are included in the data provided to the SM. The SM is using appropriate methodology to estimate these incomes."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                841,
+                894,
+                910
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                958,
+                263,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                606,
+                958,
+                880,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                890,
+                959,
+                904,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "11. The output of the Central Bank is estimated using the sum-of-cost approach. This is in accordance with SNA guidance."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                84,
+                848,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "12. The mission met with the BoM to discuss concerns and available data. At present the SM only makes use of the cross-border data, but highly granular data across the banking industry are held by the supervision department within the BoM. Currently the data sharing Memorandum of Understanding (MoU) with the BoM does not provide a facility for sharing of these detailed data. It would be beneficial for the SM to work closely with the BoM in order to increase the use made of these detailed data (amending the MoU as necessary). This would enable more detailed calculation of FISIM, more granular data on other banking activities, such as spread earnings and fees and commissions and, indeed, may obviate or at least reduce the need for the SM survey, reducing costs at the SM and the burden on businesses."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                129,
+                895,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "13. No obvious omissions in activities were identified. Through conversations with commercial banks and the BoM, there are no particular activities currently excluded from the GDP estimates in this area, but better use of the BoM data and more granular calculation of FISIM would lead to quality improvements. It should be noted that, after the end of the mission, some users in Mauritius still believe that some activities are missing, as a result, further TA may be requested on this issue."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                275,
+                905,
+                362
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "14. Insurance – the mission reviewed the insurance methodology used by the SM. The current methodology was found to be in line with the SNA-defined insurance algorithms, for both life and non-life. The FSC highlighted that the insurance industry in Mauritius has recently moved to the IFRS 17 reporting standards, which poses challenges for national accountants, as some of the required variables are no longer explicitly identified. At present, businesses are dual reporting on the old and new bases, but this will not be a permanent arrangement. The SM will need to work closely with the FSC to develop a plan to deal with this, as it is a challenge for both institutions."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                372,
+                905,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "15. Other financial institutions – the mission reviewed the classification of businesses in this industry. The SM provided the list of businesses in their survey universe, along with their current classification according to the International Standard Industrial Classification, revision 4 (ISIC Rev.4). The review consisted of an internet search of the businesses' websites, this led to some questions regarding classification, which, if they lead to a change, would, in some cases lead to a change in the calculation of output (for example, changing from funds to fund managers or vice versa). The SM needs to carry out further investigations following up with the questions raised by the mission."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                502,
+                880,
+                621
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recommended Actions:"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                637,
+                275,
+                652
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- SM to collaborate with BoM to increase data sharing and make better use of such data in the GDP estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                661,
+                857,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- SM to refine reference rate calculations, taking account of different currencies and types of loans / deposits, removing fixed adjustment factors when possible."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                694,
+                855,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ SM to collaborate with the FSC to develop a handling plan for the transition to IFRS17."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                726,
+                769,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ SM to investigate ISIC classification questions for other financial institutions."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                743,
+                694,
+                758
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "B. GLOBAL BUSINESS COMPANIES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                772,
+                396,
+                788
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "16. Given Mauritius's status as an international financial center, GBCs are of particular significance in the local economy. An earlier mission in March 2025 made several recommendations regarding appropriate methodology for incorporating these businesses correctly in GDP estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                800,
+                865,
+                851
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "17. The SM has implemented the recommendations in every area, with the exception of trading companies, which are not yet incorporated. There were questions regarding the results obtained using the correct methodology, which was leading to the consideration of using the sum-of-cost approach, as per non-market bodies. The impact of the changes already implemented were increases of an average of 0.9 per cent of GDP and, for the current account, an average of 0.7 percent of GDP for the years 2018–2023, mainly as a result of increased exports of services."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                862,
+                890,
+                913
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                958,
+                265,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                606,
+                959,
+                880,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                890,
+                960,
+                904,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                90,
+                84,
+                880,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "18. The mission discussed the available data with the FSC. A concern raised by the SM and the mission related to “other” categories within income and expenditure data provided by the FSC. FSC believed that these relate to revaluations. The mission took the view that, whilst this may be true in some cases, a deeper understanding is needed in some categories, particularly relating to expenditure. The SM will need to work with the FSC to understand these data more fully, in advance of incorporation into GDP estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                146,
+                905,
+                231
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "19. The mission discussed the methodology with the SM team. The sum-of-cost approach, whilst an expedient way of achieving plausible results, is not in line with the guidance in the SNA and should not be used. Once the data are fully understood and analyzed, they should be incorporated into GDP estimates using the SNA guidance. Specifically, this is a margin-based activity, so the output should be valued as the margin on traded products."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                242,
+                897,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "20. Management companies – key economic advisors raised concerns that some of these companies, which provide support functions to GBCs and others, are missed from the accounts. As a result of meetings with the FSC and discussions with the SM team, it appears that this is not the case as these businesses are incorporated within the administrative and support services industry. Specifically, those providing management services to cross-border businesses are licensed by the FSC and are included in the data they provide. Those which only provide services domestically are included in the SM survey."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                338,
+                900,
+                441
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Recommended Actions:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                455,
+                277,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SM to work with the FSC to develop a complete understanding of the GBC trading data."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                479,
+                779,
+                495
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ SM to incorporate these market bodies in the GDP estimates in line with SNA guidance."
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                495,
+                779,
+                512
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "C. OFFICIALS MET DURING THE MEETING"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                526,
+                448,
+                541
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/6f7fa0ca8793202ac9c31a84dbec9dd010ed94a92327368d4253e4b7ef2b1f4a.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Name</td><td>Institution</td><td>Email</td></tr><tr><td>Acharuz Anandsing</td><td>Ministry of Finance</td><td>aacharuz@govmu.org</td></tr><tr><td>Gnany Gilbert</td><td>Prime Minister's Office</td><td>ggnany@govmu.org</td></tr><tr><td>Hittoo Ram</td><td>Ministry of Finance</td><td>rhittoo@govmu.org</td></tr><tr><td>Dawoonauth Mukesh</td><td>Statistics Mauritius</td><td>mdawoonauth@govmu.org</td></tr><tr><td>Bhonoo Sanjev</td><td>Statistics Mauritius</td><td>sbhonoo@govmu.org</td></tr><tr><td>Ramphul Dhanwantee</td><td>Statistics Mauritius</td><td>dhramphul@govmu.org</td></tr><tr><td>Papiah Sattyabhamah</td><td>Statistics Mauritius</td><td>sbhonoo@govmu.org</td></tr><tr><td>Pampusa Marjorie</td><td>Bank of Mauritius</td><td>Marjorie.Pampusa@bom.mu</td></tr><tr><td>Audit Dooneshsingh</td><td>Bank of Mauritius</td><td>Dooneshsingh.Audit@bom.mu</td></tr><tr><td>Jugoo Satishingh</td><td>Bank of Mauritius</td><td>Satishingh.Jugoo@bom.mu</td></tr><tr><td>Rutha Chandradeo</td><td>Bank of Mauritius</td><td>chandradeo.rutha@bom.mu</td></tr><tr><td>Mautadin Bihisht</td><td>Bank of Mauritius</td><td>Bihisht.Mautadin@bom.mu</td></tr><tr><td>Beegoo Ghanish</td><td>Bank of Mauritius</td><td>Ghanish.Beegoo@bom.mu&gt;</td></tr><tr><td>Lamothe Sebastien</td><td>Financial Services Commission</td><td>slamothe@fscmauritius.org</td></tr><tr><td>Jhoomuck Kavish</td><td>Financial Services Commission</td><td>kjhoomuck@fscmauritius.org</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                92,
+                549,
+                902,
+                892
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                958,
+                265,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                606,
+                959,
+                880,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                890,
+                960,
+                904,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                94,
+                83,
+                902,
+                187
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | AFRITAC South"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                959,
+                263,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                598,
+                959,
+                872,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                882,
+                959,
+                904,
+                972
+            ]
+        }
+    ]
+]

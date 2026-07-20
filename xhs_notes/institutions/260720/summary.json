@@ -1,0 +1,506 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "IMF",
+    "cover_short_title": "马来西亚预算改革",
+    "cover_subtitle": "从一年一议到三年规划",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "IMF：马来西亚实施中期支出框架",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383.pdf",
+      "cleaned_source_title": "0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383",
+      "institution_name": "IMF",
+      "required_terms": [],
+      "deterministic_fallback": "IMF：0006IMFMalaysiaImplemen",
+      "raw_candidates": [
+        "IMF：马来西亚实施中期支出框架",
+        "IMF：马来西亚中期支出框架-预算改革卡在年度思维",
+        "IMF：马来西亚中期支出框架-预算数据系统割裂成隐蔽障碍"
+      ],
+      "cleaned_candidates": [
+        "IMF：马来西亚实施中期支出框架",
+        "IMF：马来西亚中期支出框架-预算改革卡在年度思维",
+        "IMF：马来西亚中期支出框架-预算数据系统割裂成隐蔽障碍",
+        "IMF：0006IMFMalaysiaImplemen",
+        "IMF：一个项目在2025年签约、2026年和2027年仍需付款"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "IMF：0006IMFMalaysiaImplemen",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：一个项目在2025年签约、2026年和2027年仍需付款",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "IMF：马来西亚实施中期支出框架",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "IMF：马来西亚实施中期支出框架"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0007-IMF_Mauritius-Technical-Assistance-Report-Report-on-National-Acc_5c436158.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "IMF",
+    "cover_short_title": "毛里求斯GDP统计，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x2",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "IMF：IMF毛里求斯技术援助报告-国民账户",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0007-IMF_Mauritius-Technical-Assistance-Report-Report-on-National-Acc_5c436158.pdf",
+      "cleaned_source_title": "0007-IMF_Mauritius-Technical-Assistance-Report-Report-on-National-Acc_5c436158",
+      "institution_name": "IMF",
+      "required_terms": [],
+      "deterministic_fallback": "IMF：0007IMFMauritiusTechnic",
+      "raw_candidates": [
+        "IMF毛里求斯技术援助报告-国民账户",
+        "IMF：毛里求斯GDP统计缺口在GBC交易活动",
+        "IMF：毛里求斯GDP统计缺口不在银行在GBC交易"
+      ],
+      "cleaned_candidates": [
+        "IMF：IMF毛里求斯技术援助报告-国民账户",
+        "IMF：毛里求斯GDP统计缺口在GBC交易活动",
+        "IMF：毛里求斯GDP统计缺口不在银行在GBC交易",
+        "IMF：0007IMFMauritiusTechnic",
+        "IMF：2026年5月的这次实地评估发现，该国最大的两家商业银行均确认"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "IMF：毛里求斯GDP统计缺口在GBC交易活动",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：毛里求斯GDP统计缺口不在银行在GBC交易",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：0007IMFMauritiusTechnic",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：2026年5月的这次实地评估发现，该国最大的两家商业银行均确认",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "IMF：IMF毛里求斯技术援助报告-国民账户",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "IMF：IMF毛里求斯技术援助报告-国民账户"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "IMF",
+    "cover_short_title": "全球油价涨1块，国内",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "IMF：国际燃料与粮食价格传导研究",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf.pdf",
+      "cleaned_source_title": "0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+      "institution_name": "IMF",
+      "required_terms": [],
+      "deterministic_fallback": "IMF：0008IMFPumps和PlatesPass",
+      "raw_candidates": [
+        "IMF：国际燃料与粮食价格传导研究",
+        "IMF：国际油价涨1美元国内传导0.8美元",
+        "IMF：油价涨跌传导不对称-涨快跌慢"
+      ],
+      "cleaned_candidates": [
+        "IMF：国际燃料与粮食价格传导研究",
+        "IMF：国际油价涨1美元国内传导0.8美元",
+        "IMF：油价涨跌传导不对称-涨快跌慢",
+        "IMF：0008IMFPumps和PlatesPass",
+        "IMF：国际油价在2026年3月因中东局势和供应约束再度飙升"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "IMF：国际油价涨1美元国内传导0.8美元",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：油价涨跌传导不对称-涨快跌慢",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：0008IMFPumps和PlatesPass",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：国际油价在2026年3月因中东局势和供应约束再度飙升",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "IMF：国际燃料与粮食价格传导研究",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "IMF：国际燃料与粮食价格传导研究"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0009-IMF_Tariff-Pass-Through-and-Import-Reallocation_47fc25e9.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "IMF",
+    "cover_short_title": "关税加到谁头上？一篇",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "IMF：关税传导与进口重组",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0009-IMF_Tariff-Pass-Through-and-Import-Reallocation_47fc25e9.pdf",
+      "cleaned_source_title": "0009-IMF_Tariff-Pass-Through-and-Import-Reallocation_47fc25e9",
+      "institution_name": "IMF",
+      "required_terms": [],
+      "deterministic_fallback": "IMF：0009IMFTariffPassThrough",
+      "raw_candidates": [
+        "IMF：关税传导与进口重组",
+        "IMF：关税加征后进口价格下降但质量降级",
+        "IMF：进口商转向低价国，关税成本实为质量降级"
+      ],
+      "cleaned_candidates": [
+        "IMF：关税传导与进口重组",
+        "IMF：关税加征后进口价格下降但质量降级",
+        "IMF：进口商转向低价国，关税成本实为质量降级",
+        "IMF：0009IMFTariffPassThrough",
+        "IMF：基于2025年2月至12月的月度美国海关数据"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "IMF：关税加征后进口价格下降但质量降级",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：进口商转向低价国，关税成本实为质量降级",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：0009IMFTariffPassThrough",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：基于2025年2月至12月的月度美国海关数据",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "IMF：关税传导与进口重组",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "IMF：关税传导与进口重组"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "IMF",
+    "cover_short_title": "亚太金融一体化：贸易",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "金融->资金 x5",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "金融->资金 x2",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x3",
+      "金融->资金 x4",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x5",
+      "金融->资金 x2",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "金融->资金 x2",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x3",
+      "投资->研究 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x3",
+      "投资->研究 x3",
+      "金融->资金 x1",
+      "证券->标的 x3",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "投资->研究 x1"
+    ],
+    "wechat_title": "IMF：亚太资金一体化格局的变迁",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7.pdf",
+      "cleaned_source_title": "0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+      "institution_name": "IMF",
+      "required_terms": [],
+      "deterministic_fallback": "IMF：0010IMFTheChangingLands",
+      "raw_candidates": [
+        "IMF：亚太资金一体化格局的变迁",
+        "IMF：亚太资金一体化远未追上贸易脚步",
+        "IMF：剔除中港资金后亚太一体化更低"
+      ],
+      "cleaned_candidates": [
+        "IMF：亚太资金一体化格局的变迁",
+        "IMF：亚太资金一体化远未追上贸易脚步",
+        "IMF：剔除中港资金后亚太一体化更低",
+        "IMF：0010IMFTheChangingLands",
+        "IMF：以2014至2023年的平均流量来看"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "IMF：亚太资金一体化远未追上贸易脚步",
+          "reasons": [
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "IMF：剔除中港资金后亚太一体化更低",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "IMF：0010IMFTheChangingLands",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：以2014至2023年的平均流量来看",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "IMF：亚太资金一体化格局的变迁",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "IMF：亚太资金一体化格局的变迁"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

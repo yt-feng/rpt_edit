@@ -1,0 +1,74 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_0v72pru9/pdfs/0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "马来西亚预算改革",
+  "cover_subtitle": "从一年一议到三年规划",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "IMF：马来西亚实施中期支出框架",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383.pdf",
+    "cleaned_source_title": "0006-IMF_Malaysia-Implementing-a-Medium-term-Expenditure-Framework_d5fe3383",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0006IMFMalaysiaImplemen",
+    "raw_candidates": [
+      "IMF：马来西亚实施中期支出框架",
+      "IMF：马来西亚中期支出框架-预算改革卡在年度思维",
+      "IMF：马来西亚中期支出框架-预算数据系统割裂成隐蔽障碍"
+    ],
+    "cleaned_candidates": [
+      "IMF：马来西亚实施中期支出框架",
+      "IMF：马来西亚中期支出框架-预算改革卡在年度思维",
+      "IMF：马来西亚中期支出框架-预算数据系统割裂成隐蔽障碍",
+      "IMF：0006IMFMalaysiaImplemen",
+      "IMF：一个项目在2025年签约、2026年和2027年仍需付款"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0006IMFMalaysiaImplemen",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：一个项目在2025年签约、2026年和2027年仍需付款",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：马来西亚实施中期支出框架",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：马来西亚实施中期支出框架"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
