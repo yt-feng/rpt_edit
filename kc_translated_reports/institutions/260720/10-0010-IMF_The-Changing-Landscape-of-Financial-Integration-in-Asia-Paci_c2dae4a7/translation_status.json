@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260720/0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+  "title": "IMF：亚太资金一体化格局变迁",
+  "source_title": "0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+    "cleaned_source_title": "0010-IMF_The-Changing-Landscape-of-Financial-Integration-in-Asia-Paci_c2dae4a7",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0010IMFTheChangingLands",
+    "raw_candidates": [
+      "IMF：亚太资金一体化格局变迁",
+      "IMF：亚太资金一体化远落后贸易，区域分化明显",
+      "IMF：亚太资金一体化双速格局：发达深融，新兴滞后"
+    ],
+    "cleaned_candidates": [
+      "IMF：亚太资金一体化格局变迁",
+      "IMF：亚太资金一体化远落后贸易，区域分化明显",
+      "IMF：亚太资金一体化双速格局，发达深融，新兴滞后",
+      "IMF：0010IMFTheChangingLands",
+      "IMF：以2001至2023年为观察窗口"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：亚太资金一体化远落后贸易，区域分化明显",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "IMF：亚太资金一体化双速格局，发达深融，新兴滞后",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      },
+      {
+        "title": "IMF：0010IMFTheChangingLands",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：以2001至2023年为观察窗口",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：亚太资金一体化格局变迁",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：亚太资金一体化格局变迁"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_10.pdf",
+  "figure_count": 18,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

@@ -1,0 +1,78 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260720/0003-IMF_Graying-Asia-How-Aging-Is-Reshaping-Banking_9f6a1dc7",
+  "title": "IMF：老龄化重塑亚洲银行业",
+  "source_title": "0003-IMF_Graying-Asia-How-Aging-Is-Reshaping-Banking_9f6a1dc7",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-IMF_Graying-Asia-How-Aging-Is-Reshaping-Banking_9f6a1dc7",
+    "cleaned_source_title": "0003-IMF_Graying-Asia-How-Aging-Is-Reshaping-Banking_9f6a1dc7",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0003IMFGrayingAsiaHowAg",
+    "raw_candidates": [
+      "IMF：老龄化重塑亚洲银行业",
+      "IMF：老龄化压低亚洲银行贷存比，资产转向非贷款",
+      "IMF：亚洲一代人内从红利到后红利，银行资产配置承压"
+    ],
+    "cleaned_candidates": [
+      "IMF：老龄化重塑亚洲银行业",
+      "IMF：老龄化压低亚洲银行贷存比，资产转向非贷款",
+      "IMF：亚洲一代人内从红利到后红利，银行资产配置承压",
+      "IMF：0003IMFGrayingAsiaHowAg",
+      "IMF：基于覆盖46个地区、166家银行集团的全球面板数据，研究发现"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：老龄化压低亚洲银行贷存比，资产转向非贷款",
+        "reasons": [
+          "anchor_coverage=0.56"
+        ]
+      },
+      {
+        "title": "IMF：亚洲一代人内从红利到后红利，银行资产配置承压",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：0003IMFGrayingAsiaHowAg",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：基于覆盖46个地区、166家银行集团的全球面板数据，研究发现",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：老龄化重塑亚洲银行业",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：老龄化重塑亚洲银行业"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 19,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

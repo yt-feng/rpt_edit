@@ -1,0 +1,66 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260720/0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+  "title": "IMF：国际燃料与食品价格传导-3万组数据",
+  "source_title": "0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+    "cleaned_source_title": "0008-IMF_Pumps-and-Plates-Passthrough-of-International-Fuel-and-Food-_f3eea5cf",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0008IMFPumps和PlatesPass",
+    "raw_candidates": [
+      "IMF：国际燃料与食品价格传导",
+      "IMF：国际燃料与食品价格传导-3万组数据",
+      "IMF：国际燃料与食品价格传导-棘轮效应"
+    ],
+    "cleaned_candidates": [
+      "IMF：国际燃料与食品价格传导",
+      "IMF：国际燃料与食品价格传导-3万组数据",
+      "IMF：国际燃料与食品价格传导-棘轮效应",
+      "IMF：0008IMFPumps和PlatesPass",
+      "IMF：2026年3月，中东冲突与供给约束再度推高全球能源与食品价格"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0008IMFPumps和PlatesPass",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：2026年3月，中东冲突与供给约束再度推高全球能源与食品价格",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      }
+    ],
+    "selected_title": "IMF：国际燃料与食品价格传导-3万组数据",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：国际燃料与食品价格传导-3万组数据"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_08.pdf",
+  "figure_count": 26,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

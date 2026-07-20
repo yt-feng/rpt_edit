@@ -1,0 +1,76 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260720/0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+  "title": "IMF：莱索托公共研究技术援助报告",
+  "source_title": "0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+    "cleaned_source_title": "0004-IMF_Kingdom-of-Lesotho-Technical-Assistance-Report-Public-Invest_44cb6d5d",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0004IMFKingdomofLesotho",
+    "raw_candidates": [
+      "IMF：莱索托公共研究技术援助报告",
+      "IMF：莱索托研究效率缺口达49%，执行率仅53%",
+      "IMF：莱索托高研究低增长，效率折损近半"
+    ],
+    "cleaned_candidates": [
+      "IMF：莱索托公共研究技术援助报告",
+      "IMF：莱索托研究效率缺口达49%，执行率仅53%",
+      "IMF：莱索托高研究低增长，效率折损近半",
+      "IMF：0004IMFKingdomofLesotho",
+      "IMF：IMF财政事务部在2025年7月实地评估后发布的公共研究管理评"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：莱索托研究效率缺口达49%，执行率仅53%",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      },
+      {
+        "title": "IMF：莱索托高研究低增长，效率折损近半",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      },
+      {
+        "title": "IMF：0004IMFKingdomofLesotho",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：IMF财政事务部在2025年7月实地评估后发布的公共研究管理评",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      }
+    ],
+    "selected_title": "IMF：莱索托公共研究技术援助报告",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：莱索托公共研究技术援助报告"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_04.pdf",
+  "figure_count": 28,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
