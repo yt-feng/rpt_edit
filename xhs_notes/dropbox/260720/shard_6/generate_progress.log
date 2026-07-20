@@ -1,0 +1,14 @@
+Found 31 total PDFs; shard 6/40 has 1 PDFs, skips 0 already converted, will process 1 PDFs with batch_size=5.
+Running batch 1: 1 PDFs
+Found 1 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aj9o9f18/pdfs/0001-31-Nomura-USD CNY fix model-260720.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=9ae912d2-d839-4379-b999-242d2e046561
+MinerU states: waiting-file
+MinerU states: done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:292: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 1261160027cc968ade72cf6edeefdff571a2edaeda5b4135d6b3adf5345bb65c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Skip non-chart visual asset 7383fe6ff5cd67f88e34604aef2549f47a4ffa16d019ff142db0b0929ef4a7ff.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.13,contrast,large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260720/shard_6; successful_reports=1; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 1 report directories.
