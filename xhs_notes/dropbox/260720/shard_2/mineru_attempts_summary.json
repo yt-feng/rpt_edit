@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_u_n114_9/pdfs/0001-11-GS-Australia Metals - Mining-Gold-GMD merger appears accretive vs. baseline ASPIRE 500 and VAU outlooks- Reinstate GMD at Buy- RRL at Neutral-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_n114_9/pdfs/0002-12-GS-Base Metals Tracker- Copper- Physical Tightness vs. Fading Macro-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_n114_9/pdfs/0003-13-GS-China Brewing- Read across from Yanjing- Read across from Yanjing investor meeting- Widening divergence in key SKU performance-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_n114_9/pdfs/0004-14-GS-China Consumer Dashboard-2026Q2-Consumption momentum softened sequentially-260719.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_n114_9/pdfs/0005-15-GS-China Battery-Assessing implications of consumption tax resumption.CATL screens as most resilient - Buy A H-260719.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
