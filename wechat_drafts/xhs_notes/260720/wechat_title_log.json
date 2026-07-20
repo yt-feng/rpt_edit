@@ -1,0 +1,2217 @@
+{
+  "schema_version": 1,
+  "date_folder": "260720",
+  "source": "xhs_notes/dropbox",
+  "generated_at_utc": "2026-07-20T23:14:09Z",
+  "article_count": 31,
+  "uploaded_count": 31,
+  "articles": [
+    {
+      "source_report_name": "01-Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens-260720",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：亚洲量化策略，印度市场机会变宽",
+      "final_wechat_title": "伯恩斯坦：亚洲量化策略，印度市场机会变宽",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_0/0001-01-Bernstein-Asia-Quantitative-Strategy-India-Quant-Strategy--Time-to-add-m",
+      "generation_decision": {
+        "source_filename": "0001-01-Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens-260720.pdf",
+        "cleaned_source_title": "Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：AsiaQuantitative策略IndiaQuant策略",
+        "raw_candidates": [
+          "Bernstein-亚洲量化策略：印度市场机会变宽",
+          "Bernstein-印度市场机会变宽：估值18.6倍低于十年均值",
+          "Bernstein-印度市场机会变宽：外资流出逆转净流入18亿美元"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：亚洲量化策略，印度市场机会变宽",
+          "Bernstein：印度市场机会变宽，估值18.6倍低于十年均值",
+          "Bernstein：印度市场机会变宽，外资流出逆转净流入18亿美元",
+          "Bernstein：AsiaQuantitative策略IndiaQuant策略",
+          "Bernstein：这轮调整幅度不小——指数在2026年上半年以美元计下跌了10"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：印度市场机会变宽，估值18.6倍低于十年均值",
+            "reasons": [
+              "anchor_coverage=0.54",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：印度市场机会变宽，外资流出逆转净流入18亿美元",
+            "reasons": [
+              "anchor_coverage=0.54",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：AsiaQuantitative策略IndiaQuant策略",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：这轮调整幅度不小——指数在2026年上半年以美元计下跌了10",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：亚洲量化策略，印度市场机会变宽",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：亚洲量化策略，印度市场机会变宽"
+      }
+    },
+    {
+      "source_report_name": "02-Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026-260720",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：全球自动化-人形机器人-2026年技术前沿",
+      "final_wechat_title": "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_0/0002-02-Bernstein-Global-Automation-Humanoid-Robotics--The-technology-frontier-i",
+      "generation_decision": {
+        "source_filename": "0002-02-Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026-260720.pdf",
+        "cleaned_source_title": "Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：全球AutomationHumanoidRobotics",
+        "raw_candidates": [
+          "全球自动化-人形机器人-2026年技术前沿",
+          "全球自动化-人形机器人-2026年技术前沿：WAM模型迁移",
+          "全球自动化-人形机器人-2026年技术前沿：从VLA到WAM的拐点"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：全球自动化-人形机器人-2026年技术前沿",
+          "Bernstein：全球自动化-人形机器人-2026年技术前沿，WAM模型迁移",
+          "Bernstein：全球AutomationHumanoidRobotics",
+          "Bernstein：1.WAM的核心差异在于“预测物理可行结果”而非直接输出动作"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：全球AutomationHumanoidRobotics",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：1.WAM的核心差异在于“预测物理可行结果”而非直接输出动作",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：全球自动化-人形机器人-2026年技术前沿",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：全球自动化-人形机器人-2026年技术前沿"
+      }
+    },
+    {
+      "source_report_name": "03-Bernstein-China Internet- Is bad news now... good news--260720",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "研究笔记：中国互联网行业观察——市场情绪与估值变化",
+      "final_wechat_title": "伯恩斯坦：中国互联网行业观察，市场情绪与估值变化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_0/0003-03-Bernstein-China-Internet--Is-bad-news-now...-good-news--260720",
+      "generation_decision": {
+        "source_filename": "0003-03-Bernstein-China Internet- Is bad news now... good news--260720.pdf",
+        "cleaned_source_title": "Bernstein-China Internet- Is bad news now... good news",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：中国Internet",
+        "raw_candidates": [
+          "中国互联网：坏消息已变成好消息",
+          "中国互联网：坏消息已变成好消息-板块平均下跌16%",
+          "中国互联网：坏消息已变成好消息-市场对AI成本担忧过度"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：中国互联网，坏消息已变成好消息",
+          "Bernstein：中国互联网，坏消息已变成好消息-板块平均下跌16%",
+          "Bernstein：中国互联网，坏消息已变成好消息-市场对AI成本担忧过度",
+          "Bernstein：中国Internet",
+          "Bernstein：同时指出，阿里云在6月季度的收入增速已加速至45%左右"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：中国Internet",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：同时指出，阿里云在6月季度的收入增速已加速至45%左右",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：中国互联网，坏消息已变成好消息-板块平均下跌16%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "16"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：中国互联网，坏消息已变成好消息-板块平均下跌16%"
+      }
+    },
+    {
+      "source_report_name": "04-Bernstein-Global Energy Storage-Battery Weekly 20 July-260720",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：储能电池从汽车供应链独立",
+      "final_wechat_title": "伯恩斯坦：储能电池从汽车供应链独立",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_0/0004-04-Bernstein-Global-Energy-Storage-Battery-Weekly-20-July-260720",
+      "generation_decision": {
+        "source_filename": "0004-04-Bernstein-Global Energy Storage-Battery Weekly 20 July-260720.pdf",
+        "cleaned_source_title": "Bernstein-Global Energy Storage-Battery Weekly 20 July",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：全球能源StorageBatteryWeekly20July",
+        "raw_candidates": [
+          "Bernstein：全球储能电池周报",
+          "Bernstein：储能电池从汽车供应链独立",
+          "Bernstein：三星SDI为特斯拉建专用储能产线"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：全球储能电池周报",
+          "Bernstein：储能电池从汽车供应链独立",
+          "Bernstein：三星SDI为特斯拉建专用储能产线",
+          "Bernstein：全球能源StorageBatteryWeekly20July",
+          "Bernstein：这份Bernstein7月20日发布的全球储能周报"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "generic_series_title"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：全球储能电池周报",
+            "reasons": [
+              "generic_series_title",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：三星SDI为特斯拉建专用储能产线",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：全球能源StorageBatteryWeekly20July",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：这份Bernstein7月20日发布的全球储能周报",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：储能电池从汽车供应链独立",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：储能电池从汽车供应链独立"
+      }
+    },
+    {
+      "source_report_name": "05-Bernstein-Global Energy Storage-Quick Take- Global Energy Storage-China announces consumption tax on batteries-Implications-260720",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：全球储能-中国电池消费税影响",
+      "final_wechat_title": "伯恩斯坦：全球储能-中国电池消费税影响",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_0/0005-05-Bernstein-Global-Energy-Storage-Quick-Take--Global-Energy-Storage-China-",
+      "generation_decision": {
+        "source_filename": "0005-05-Bernstein-Global Energy Storage-Quick Take- Global Energy Storage-China announces consumption tax on batteries-Implications-260720.pdf",
+        "cleaned_source_title": "Bernstein-Global Energy Storage-Quick Take- Global Energy Storage-China announces consumption tax on batteries-Implications",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：全球能源StorageQuickTake",
+        "raw_candidates": [
+          "Bernstein-全球储能-中国电池消费税影响",
+          "Bernstein-中国电池消费税-终端价影响仅1-3%",
+          "Bernstein-中国电池消费税-意在反内卷非打压需求"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：全球储能-中国电池消费税影响",
+          "Bernstein：中国电池消费税-终端价影响仅1-3%",
+          "Bernstein：中国电池消费税-意在反内卷非打压需求",
+          "Bernstein：全球能源StorageQuickTake",
+          "Bernstein：中国财政部、海关总署与税务总局在2026年7月16日联合发布"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：中国电池消费税-终端价影响仅1-3%",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.58",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：中国电池消费税-意在反内卷非打压需求",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：全球能源StorageQuickTake",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：中国财政部、海关总署与税务总局在2026年7月16日联合发布",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：全球储能-中国电池消费税影响",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：全球储能-中国电池消费税影响"
+      }
+    },
+    {
+      "source_report_name": "06-Bernstein-Renesas Electronics Corp-6723.JP-Quick Take- Renesas Memory Interface IC Investigation Likely Manageable-260720",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：瑞萨存储器接口调查影响可控",
+      "final_wechat_title": "伯恩斯坦：瑞萨存储器接口调查影响可控",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_1/0001-06-Bernstein-Renesas-Electronics-Corp-6723.JP-Quick-Take--Renesas-Memory-In",
+      "generation_decision": {
+        "source_filename": "0001-06-Bernstein-Renesas Electronics Corp-6723.JP-Quick Take- Renesas Memory Interface IC Investigation Likely Manageable-260720.pdf",
+        "cleaned_source_title": "Bernstein-Renesas Electronics Corp-6723.JP-Quick Take- Renesas Memory Interface IC Investigation Likely Manageable",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：RenesasElectronicsCorp",
+        "raw_candidates": [
+          "瑞萨存储器接口调查影响可控",
+          "瑞萨调查影响有限-存储器接口仅占营收6%",
+          "瑞萨反垄断调查冲击小-核心看AI电源需求"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：瑞萨存储器接口调查影响可控",
+          "Bernstein：瑞萨调查影响有限-存储器接口仅占营收6%",
+          "Bernstein：瑞萨反垄断调查冲击小-核心看AI电源需求",
+          "Bernstein：RenesasElectronicsCorp",
+          "Bernstein：其一，存储器接口业务仅占瑞萨2025年营收约6%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：瑞萨调查影响有限-存储器接口仅占营收6%",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "Bernstein：瑞萨反垄断调查冲击小-核心看AI电源需求",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：RenesasElectronicsCorp",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：其一，存储器接口业务仅占瑞萨2025年营收约6%",
+            "reasons": [
+              "anchor_coverage=0.42"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：瑞萨存储器接口调查影响可控",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：瑞萨存储器接口调查影响可控"
+      }
+    },
+    {
+      "source_report_name": "07-GS-Americas Banks- Key Takeaways from TFC- FITB- and RF earnings-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：BofA，TFC、FITB和RF财报关键要点",
+      "final_wechat_title": "高盛：TFC、FITB和RF财报关键要点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_1/0002-07-Goldman-Sachs-Americas-Banks--Key-Takeaways-from-TFC--FITB--and-RF-earni",
+      "generation_decision": {
+        "source_filename": "0002-07-GS-Americas Banks- Key Takeaways from TFC- FITB- and RF earnings-260719.pdf",
+        "cleaned_source_title": "GS-Americas Banks- Key Takeaways from TFC- FITB- and RF earnings",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：AmericasBanksKeyTakeaway",
+        "raw_candidates": [
+          "GS-美国银行：TFC、FITB和RF财报关键要点",
+          "GS-美国银行：TFC、FITB和RF财报PPNR超预期",
+          "GS-美国银行：TFC、FITB和RF财报-资产结构主动重塑"
+        ],
+        "cleaned_candidates": [
+          "GS：BofA，TFC、FITB和RF财报关键要点",
+          "GS：BofA，TFC、FITB和RF财报PPNR超预期",
+          "GS：BofA，TFC、FITB和RF财报-资产结构主动重塑",
+          "GS：AmericasBanksKeyTakeaway",
+          "GS：TFC的2026年ROTCE预期反而从14%上调至14%以上"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：AmericasBanksKeyTakeaway",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：TFC的2026年ROTCE预期反而从14%上调至14%以上",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：BofA，TFC、FITB和RF财报关键要点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：BofA，TFC、FITB和RF财报关键要点"
+      }
+    },
+    {
+      "source_report_name": "08-GS-Americas Technology-Internet-Ridesharing - Delivery Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "研究笔记：美洲科技-互联网-出行与配送行业观察",
+      "final_wechat_title": "高盛：美洲科技-互联网-出行与配送行业观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_1/0003-08-Goldman-Sachs-Americas-Technology-Internet-Ridesharing---Delivery-Q2-26-",
+      "generation_decision": {
+        "source_filename": "0003-08-GS-Americas Technology-Internet-Ridesharing - Delivery Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719.pdf",
+        "cleaned_source_title": "GS-Americas Technology-Internet-Ridesharing - Delivery Q2-26 Preview- Analyzing the Industry Debates - Estimates",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：Americas科技InternetRidesh",
+        "raw_candidates": [
+          "GS-美洲科技-互联网-出行与配送Q2预览：分析行业辩论与估算",
+          "GS-美洲科技-互联网-出行与配送Q2预览：线上杂货2030年规模近4000亿美元",
+          "GS-美洲科技-互联网-出行与配送Q2预览：线上杂货渗透率被低估，增长加速"
+        ],
+        "cleaned_candidates": [
+          "GS：美洲科技-互联网-出行与配送Q2预览，分析行业辩论与估算",
+          "GS：美洲科技-互联网-出行与配送Q2预览",
+          "GS：美洲科技-互联网-出行与配送Q2预览，线上杂货渗透率被低估",
+          "GS：Americas科技InternetRidesh",
+          "GS：1.配送是增长主力，但真正被低估的是“频率”而非“用户”"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：美洲科技-互联网-出行与配送Q2预览",
+            "reasons": [
+              "anchor_coverage=0.62",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：美洲科技-互联网-出行与配送Q2预览，线上杂货渗透率被低估",
+            "reasons": [
+              "anchor_coverage=0.62",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：Americas科技InternetRidesh",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.配送是增长主力，但真正被低估的是“频率”而非“用户”",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：美洲科技-互联网-出行与配送Q2预览，分析行业辩论与估算",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：美洲科技-互联网-出行与配送Q2预览，分析行业辩论与估算"
+      }
+    },
+    {
+      "source_report_name": "09-GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "宏观环境观察：美洲科技互联网在线旅游Q2预览，行业讨论与估算分析",
+      "final_wechat_title": "高盛：宏观环境观察，美洲科技互联网在线旅游Q2预览，行业讨论与估算分析",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_1/0004-09-Goldman-Sachs-Americas-Technology-Internet-Online-Travel-Q2-26-Preview--",
+      "generation_decision": {
+        "source_filename": "0004-09-GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719.pdf",
+        "cleaned_source_title": "GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：Americas科技InternetOnlineTravelQ2",
+        "raw_candidates": [
+          "GS-美洲科技互联网在线旅游Q2预览：行业辩论与估算分析",
+          "GS-美洲科技互联网在线旅游Q2预览：夏季需求稳定但定价权分化",
+          "GS-美洲科技互联网在线旅游Q2预览：高端定价上移，大众预算再分配"
+        ],
+        "cleaned_candidates": [
+          "GS：美洲科技互联网在线旅游Q2预览，行业辩论与估算分析",
+          "GS：美洲科技互联网在线旅游Q2预览，夏季需求稳定但定价权分化",
+          "GS：美洲科技互联网在线旅游Q2预览，高端定价上移，大众预算再分配",
+          "GS：Americas科技InternetOnlineTravelQ2",
+          "GS：1.夏季出行没有崩，但消费者在重新分配预算"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：美洲科技互联网在线旅游Q2预览，夏季需求稳定但定价权分化",
+            "reasons": [
+              "anchor_coverage=0.61",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：美洲科技互联网在线旅游Q2预览，高端定价上移，大众预算再分配",
+            "reasons": [
+              "anchor_coverage=0.61",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：Americas科技InternetOnlineTravelQ2",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.夏季出行没有崩，但消费者在重新分配预算",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：美洲科技互联网在线旅游Q2预览，行业辩论与估算分析",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：美洲科技互联网在线旅游Q2预览，行业辩论与估算分析"
+      }
+    },
+    {
+      "source_report_name": "10-GS-Asia Economics Analyst-Korea-s Equity Rally-Household Wealth Gains amid Consumption Constraints-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：亚洲宏观环境分析，韩国市场上涨与家庭财富增长但消费受限",
+      "final_wechat_title": "高盛：亚洲宏观环境分析，韩国市场上涨与家庭财富增长但消费受限",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_1/0005-10-Goldman-Sachs-Asia-Economics-Analyst-Korea-s-Equity-Rally-Household-Weal",
+      "generation_decision": {
+        "source_filename": "0005-10-GS-Asia Economics Analyst-Korea-s Equity Rally-Household Wealth Gains amid Consumption Constraints-260719.pdf",
+        "cleaned_source_title": "GS-Asia Economics Analyst-Korea-s Equity Rally-Household Wealth Gains amid Consumption Constraints",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：AsiaEconomicsAnalystKore",
+        "raw_candidates": [
+          "GS-亚洲经济分析：韩国股市上涨与家庭财富增长但消费受限",
+          "GS：韩国股市涨110%但消费仅增0.3%",
+          "GS：韩国股市财富高度集中，消费传导受阻"
+        ],
+        "cleaned_candidates": [
+          "GS：亚洲宏观环境分析，韩国市场上涨与家庭财富增长但消费受限",
+          "GS：韩国市场涨110%但消费仅增0.3%",
+          "GS：韩国市场财富高度集中，消费传导受阻",
+          "GS：AsiaEconomicsAnalystKore",
+          "GS：韩国市场涨了110%，但消费只多花了0.3%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：韩国市场涨110%但消费仅增0.3%",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：韩国市场财富高度集中，消费传导受阻",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：AsiaEconomicsAnalystKore",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：韩国市场涨了110%，但消费只多花了0.3%",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：亚洲宏观环境分析，韩国市场上涨与家庭财富增长但消费受限",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：亚洲宏观环境分析，韩国市场上涨与家庭财富增长但消费受限"
+      }
+    },
+    {
+      "source_report_name": "11-GS-Australia Metals - Mining-Gold-GMD merger appears accretive vs. baseline ASPIRE 500 and VAU outlooks- Reinstate GMD at 报告观点- RRL at 报告观点-260720",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：澳洲金矿GMD合并具增值潜力",
+      "final_wechat_title": "高盛：澳洲金矿GMD合并具增值潜力",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_2/0001-11-Goldman-Sachs-Australia-Metals---Mining-Gold-GMD-merger-appears-accretiv",
+      "generation_decision": {
+        "source_filename": "0001-11-GS-Australia Metals - Mining-Gold-GMD merger appears accretive vs. baseline ASPIRE 500 and VAU outlooks- Reinstate GMD at Buy- RRL at Neutral-260720.pdf",
+        "cleaned_source_title": "GS-Australia Metals - Mining-Gold-GMD merger appears accretive vs. baseline ASPIRE 500 and VAU outlooks- Reinstate GMD at Buy- RRL at Neutral",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：AustraliaMetalsMiningGol",
+        "raw_candidates": [
+          "GS：澳洲金矿GMD合并具增值潜力",
+          "GS：GMD合并可节省3.5亿澳元资本支出",
+          "GS：GMD合并价值来自“不建”而非“多挖"
+        ],
+        "cleaned_candidates": [
+          "GS：澳洲金矿GMD合并具增值潜力",
+          "GS：GMD合并可节省3.5亿澳元资本支出",
+          "GS：GMD合并价值来自“不建”而非“多挖",
+          "GS：AustraliaMetalsMiningGol",
+          "GS：合并后的实体在近两年内可将黄金产量提升至约69万至78万盎司"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：GMD合并可节省3.5亿澳元资本支出",
+            "reasons": [
+              "anchor_coverage=0.31"
+            ]
+          },
+          {
+            "title": "GS：GMD合并价值来自“不建”而非“多挖",
+            "reasons": [
+              "anchor_coverage=0.31"
+            ]
+          },
+          {
+            "title": "GS：AustraliaMetalsMiningGol",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：合并后的实体在近两年内可将黄金产量提升至约69万至78万盎司",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：澳洲金矿GMD合并具增值潜力",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：澳洲金矿GMD合并具增值潜力"
+      }
+    },
+    {
+      "source_report_name": "12-GS-Base Metals Tracker- Copper- Physical Tightness vs. Fading Macro-260720",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：铜实物紧张与宏观退潮——AI叙事正重塑定价",
+      "final_wechat_title": "高盛：铜实物紧张与宏观退潮，AI叙事正重塑定价",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_2/0002-12-Goldman-Sachs-Base-Metals-Tracker--Copper--Physical-Tightness-vs.-Fading",
+      "generation_decision": {
+        "source_filename": "0002-12-GS-Base Metals Tracker- Copper- Physical Tightness vs. Fading Macro-260720.pdf",
+        "cleaned_source_title": "GS-Base Metals Tracker- Copper- Physical Tightness vs. Fading Macro",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：BaseMetalsTracker-Copper",
+        "raw_candidates": [
+          "GS：铜实物紧张与宏观退潮",
+          "GS：铜实物紧张vs宏观退潮-AI因子解释力上升",
+          "GS：铜实物紧张与宏观退潮-AI叙事正重塑定价"
+        ],
+        "cleaned_candidates": [
+          "GS：铜实物紧张与宏观退潮",
+          "GS：铜实物紧张vs宏观退潮-AI因子解释力上升",
+          "GS：铜实物紧张与宏观退潮-AI叙事正重塑定价",
+          "GS：BaseMetalsTracker-Copper",
+          "GS：上周铜价在每吨13,400至13,640美元之间剧烈摆动"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：BaseMetalsTracker-Copper",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：上周铜价在每吨13,400至13,640美元之间剧烈摆动",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：铜实物紧张与宏观退潮-AI叙事正重塑定价",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：铜实物紧张与宏观退潮-AI叙事正重塑定价"
+      }
+    },
+    {
+      "source_report_name": "13-GS-China Brewing- Read across from Yanjing- Read across from Yanjing investor meeting- Widening divergence in key SKU performance-260720",
+      "institution_name": "高盛",
+      "title_before_upload": "中国啤酒行业观察：燕京会议启示——核心SKU表现分化加剧",
+      "final_wechat_title": "高盛：中国啤酒行业观察，燕京会议启示，核心SKU表现分化加剧",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_2/0003-13-Goldman-Sachs-China-Brewing--Read-across-from-Yanjing--Read-across-from-",
+      "generation_decision": {
+        "source_filename": "0003-13-GS-China Brewing- Read across from Yanjing- Read across from Yanjing investor meeting- Widening divergence in key SKU performance-260720.pdf",
+        "cleaned_source_title": "GS-China Brewing- Read across from Yanjing- Read across from Yanjing investor meeting- Widening divergence in key SKU performance",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国BrewingReadacrossfromY",
+        "raw_candidates": [
+          "GS-中国啤酒-燕京会议启示-核心SKU表现分化加剧",
+          "GS-中国啤酒-燕京U8增速30%-核心SKU表现分化加剧",
+          "GS-中国啤酒-燕京U8逆势增长30%-华润微增青啤百威下滑"
+        ],
+        "cleaned_candidates": [
+          "GS：中国啤酒-燕京会议启示-核心SKU表现分化加剧",
+          "GS：中国啤酒-燕京U8增速30%-核心SKU表现分化加剧",
+          "GS：中国啤酒-燕京U8逆势增长30%-华润微增青啤百威下滑",
+          "GS：中国BrewingReadacrossfromY",
+          "GS：燕京啤酒旗下核心单品U8在2025年销量达到约90万千升后"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国啤酒-燕京U8增速30%-核心SKU表现分化加剧",
+            "reasons": [
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国啤酒-燕京U8逆势增长30%-华润微增青啤百威下滑",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国BrewingReadacrossfromY",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：燕京啤酒旗下核心单品U8在2025年销量达到约90万千升后",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国啤酒-燕京会议启示-核心SKU表现分化加剧",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国啤酒-燕京会议启示-核心SKU表现分化加剧"
+      }
+    },
+    {
+      "source_report_name": "14-GS-China Consumer Dashboard-2026Q2-Consumption momentum softened sequentially-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：中国消费仪表盘-2026Q2-消费动能环比出现变化",
+      "final_wechat_title": "高盛：中国消费仪表盘-2026Q2-消费动能环比出现变化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_2/0004-14-Goldman-Sachs-China-Consumer-Dashboard-2026Q2-Consumption-momentum-softe",
+      "generation_decision": {
+        "source_filename": "0004-14-GS-China Consumer Dashboard-2026Q2-Consumption momentum softened sequentially-260719.pdf",
+        "cleaned_source_title": "GS-China Consumer Dashboard-2026Q2-Consumption momentum softened sequentially",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国消费Dashboard2026Q2Consu",
+        "raw_candidates": [
+          "中国消费仪表盘-2026Q2-消费动能环比走弱",
+          "中国消费仪表盘-2026Q2-工资增速回升至5.6%但零售仅增0.2%",
+          "中国消费仪表盘-2026Q2-收入改善支出观望，储蓄率微升至32.6%"
+        ],
+        "cleaned_candidates": [
+          "GS：中国消费仪表盘-2026Q2-消费动能环比走弱",
+          "GS：中国消费仪表盘-2026Q2",
+          "GS：中国消费仪表盘-2026Q2-收入改善支出观望",
+          "GS：中国消费Dashboard2026Q2Consu",
+          "GS：农民工月均收入增速从3.2%微降至3.0%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国消费仪表盘-2026Q2",
+            "reasons": [
+              "anchor_coverage=0.63",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国消费仪表盘-2026Q2-收入改善支出观望",
+            "reasons": [
+              "anchor_coverage=0.63",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国消费Dashboard2026Q2Consu",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.42",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：农民工月均收入增速从3.2%微降至3.0%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国消费仪表盘-2026Q2-消费动能环比走弱",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国消费仪表盘-2026Q2-消费动能环比走弱"
+      }
+    },
+    {
+      "source_report_name": "15-GS-China Battery-Assessing implications of consumption tax resumption.CATL screens as most resilient - 报告观点A H-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：中国电池-消费税重启影响评估，CATL最具韧性",
+      "final_wechat_title": "高盛：中国电池-消费税重启影响评估，CATL最具韧性",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_2/0005-15-Goldman-Sachs-China-Battery-Assessing-implications-of-consumption-tax-re",
+      "generation_decision": {
+        "source_filename": "0005-15-GS-China Battery-Assessing implications of consumption tax resumption.CATL screens as most resilient - Buy A H-260719.pdf",
+        "cleaned_source_title": "GS-China Battery-Assessing implications of consumption tax resumption.CATL screens as most resilient - Buy A H",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国BatteryAssessingimplic",
+        "raw_candidates": [
+          "中国电池-消费税重启影响评估：CATL最具韧性",
+          "中国电池-消费税重启：CATL单位利润109元/kWh抗冲击",
+          "中国电池-消费税重启：二线厂利润垫仅8元，CATL韧性最强"
+        ],
+        "cleaned_candidates": [
+          "GS：中国电池-消费税重启影响评估，CATL最具韧性",
+          "GS：kWh抗冲击",
+          "GS：中国电池-消费税重启，二线厂利润垫仅8元，CATL韧性最强",
+          "GS：中国BatteryAssessingimplic",
+          "GS：2026年7月17日，中国财政部、海关总署与税务总局联合发布通知"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：kWh抗冲击",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国电池-消费税重启，二线厂利润垫仅8元，CATL韧性最强",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "GS：中国BatteryAssessingimplic",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：2026年7月17日，中国财政部、海关总署与税务总局联合发布通知",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国电池-消费税重启影响评估，CATL最具韧性",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国电池-消费税重启影响评估，CATL最具韧性"
+      }
+    },
+    {
+      "source_report_name": "16-GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview- maintain 报告观点on Kstar",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+      "final_wechat_title": "高盛：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_3/0001-16-Goldman-Sachs-China-Industrial-Tech-Data-Center-Electricals-What-to-expe",
+      "generation_decision": {
+        "source_filename": "0001-16-GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview- maintain Buy on Kstar.pdf",
+        "cleaned_source_title": "GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview- maintain Buy on Kstar",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国IndustrialTechDataCent",
+        "raw_candidates": [
+          "GS-中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+          "GS：数据中心电气股海外订单落地决定估值修复起点",
+          "GS：数据中心电气股报价回调29%，海外扩张是真正催化剂"
+        ],
+        "cleaned_candidates": [
+          "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+          "GS：数据中心电气股海外订单落地决定估值修复起点",
+          "GS：数据中心电气股报价回调29%，海外扩张是真正催化剂",
+          "GS：中国IndustrialTechDataCent",
+          "GS：Kstar已于今年5月推出AC-800VDC电源转换模块"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：数据中心电气股海外订单落地决定估值修复起点",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：数据中心电气股报价回调29%，海外扩张是真正催化剂",
+            "reasons": [
+              "anchor_coverage=0.31",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国IndustrialTechDataCent",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：Kstar已于今年5月推出AC-800VDC电源转换模块",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国工业科技-数据中心电气-2H26海外扩张与国内资本开支展望"
+      }
+    },
+    {
+      "source_report_name": "17-GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- 报告观点-260720",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：1.6T光模块爬坡-2Q26净利指引超预期44%",
+      "final_wechat_title": "高盛：1.6T光模块爬坡-2Q26净利指引超预期44%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_3/0002-17-Goldman-Sachs-Eoptolink--300502---Accelerated-ramp-up-of-800G-1.6T-optic",
+      "generation_decision": {
+        "source_filename": "0002-17-GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy-260720.pdf",
+        "cleaned_source_title": "GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：Eoptolink300502Accelerat",
+        "raw_candidates": [
+          "GS：Eoptolink加速800G/1.6T光模块爬坡-2Q26净利指引超预期-买入",
+          "GS：Eoptolink加速800G/1.6T光模块爬坡-2Q26净利指引超预期44%",
+          "GS：Eoptolink加速800G/1.6T光模块爬坡-供应改善改写收入结构"
+        ],
+        "cleaned_candidates": [
+          "GS：1.6T光模块爬坡-2Q26净利指引超预期-买入",
+          "GS：1.6T光模块爬坡-2Q26净利指引超预期44%",
+          "GS：1.6T光模块爬坡-供应改善改写收入结构",
+          "GS：Eoptolink300502Accelerat",
+          "GS：将2026至2028年的盈利预测分别上调了7%、2%和2%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "incomplete_last_segment",
+          "forbidden_public_wording"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：1.6T光模块爬坡-2Q26净利指引超预期-买入",
+            "reasons": [
+              "incomplete_last_segment",
+              "forbidden_public_wording"
+            ]
+          },
+          {
+            "title": "GS：1.6T光模块爬坡-供应改善改写收入结构",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：Eoptolink300502Accelerat",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：将2026至2028年的盈利预测分别上调了7%、2%和2%",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：1.6T光模块爬坡-2Q26净利指引超预期44%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "44"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：1.6T光模块爬坡-2Q26净利指引超预期44%"
+      }
+    },
+    {
+      "source_report_name": "18-GS-China-Three things in China-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：中国二季度GDP增速出现节奏变化",
+      "final_wechat_title": "高盛：中国二季度GDP增速出现节奏变化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_3/0003-18-Goldman-Sachs-China-Three-things-in-China-260719",
+      "generation_decision": {
+        "source_filename": "0003-18-GS-China-Three things in China-260719.pdf",
+        "cleaned_source_title": "GS-China-Three things in China",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国Threethingsin中国",
+        "raw_candidates": [
+          "GS：中国三件事",
+          "GS：中国二季度GDP低于目标下限",
+          "GS：中国GDP低于目标下限，政策加速窗口已打开"
+        ],
+        "cleaned_candidates": [
+          "GS：中国三件事",
+          "GS：中国二季度GDP低于目标下限",
+          "GS：中国GDP低于目标下限，政策加速窗口已打开",
+          "GS：中国Threethingsin中国",
+          "GS：中国二季度实际GDP同比增速从一季度的5.0%节奏变化至4.3%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国三件事",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国GDP低于目标下限，政策加速窗口已打开",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "GS：中国Threethingsin中国",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国二季度实际GDP同比增速从一季度的5.0%节奏变化至4.3%",
+            "reasons": [
+              "anchor_coverage=0.46"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国二季度GDP低于目标下限",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国二季度GDP低于目标下限"
+      }
+    },
+    {
+      "source_report_name": "19-GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at 报告观点with",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：中国AI基础设施研究投入上修37%-55%驱动本土芯片增长",
+      "final_wechat_title": "高盛：中国AI基础设施研究投入上修37%-55%驱动本土芯片增长",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_3/0004-19-Goldman-Sachs-Iluvatar--9903.HK--China-AI-Capex-upcycle-to-drive-growth-",
+      "generation_decision": {
+        "source_filename": "0004-19-GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000-260719.pdf",
+        "cleaned_source_title": "GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000",
+        "institution_name": "GS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "GS：AIIluvatar",
+        "raw_candidates": [
+          "GS：中国AI资本开支上行周期驱动增长",
+          "GS：中国AI资本开支上修37%-55%驱动本土芯片增长",
+          "GS：中国AI资本开支上行周期-本土芯片替代空间超50%"
+        ],
+        "cleaned_candidates": [
+          "GS：中国AI资本开支上行周期驱动增长",
+          "GS：中国AI资本开支上修37%-55%驱动本土芯片增长",
+          "GS：中国AI资本开支上行周期-本土芯片替代空间超50%",
+          "GS：AIIluvatar",
+          "GS：2025年，全球领先的AI芯片供应商在中国仍占据超过50%的市场"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：AIIluvatar",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：2025年，全球领先的AI芯片供应商在中国仍占据超过50%的市场",
+            "reasons": [
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：中国AI资本开支上修37%-55%驱动本土芯片增长",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "37",
+            "55"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：中国AI资本开支上修37%-55%驱动本土芯片增长"
+      }
+    },
+    {
+      "source_report_name": "20-GS-Global Views-Renewed Escalation vs. Lower Inflation-260719",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线",
+      "final_wechat_title": "高盛：全球展望，地缘升级推油价，但通胀降温才是真正主线",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_3/0005-20-Goldman-Sachs-Global-Views-Renewed-Escalation-vs.-Lower-Inflation-260719",
+      "generation_decision": {
+        "source_filename": "0005-20-GS-Global Views-Renewed Escalation vs. Lower Inflation-260719.pdf",
+        "cleaned_source_title": "GS-Global Views-Renewed Escalation vs. Lower Inflation",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：全球ViewsRenewedEscalationvs.Lower",
+        "raw_candidates": [
+          "GS全球展望：地缘升级与通胀降温",
+          "GS全球展望：油价不确定性偏向上行，通胀降温才是主线",
+          "GS全球展望：地缘升级推油价，但通胀降温才是真正主线"
+        ],
+        "cleaned_candidates": [
+          "GS：GS全球展望，地缘升级与通胀降温",
+          "GS：GS全球展望，油价不确定性偏向上行，通胀降温才是主线",
+          "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线",
+          "GS：全球ViewsRenewedEscalationvs.Lower",
+          "GS：4.美联储7月加息概率已归零，但政策沟通面临新挑战"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：GS全球展望，油价不确定性偏向上行，通胀降温才是主线",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "GS：全球ViewsRenewedEscalationvs.Lower",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：4.美联储7月加息概率已归零，但政策沟通面临新挑战",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [
+            "真正"
+          ],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：GS全球展望，地缘升级推油价，但通胀降温才是真正主线"
+      }
+    },
+    {
+      "source_report_name": "21-GS-Kweichow Moutai-600519-Market-oriented plan -5-Second round of unexpected ex-factory and suggested retail price hike of Feitian in July 2026-报告观点-260720",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：贵州茅台市场化计划-2026年7月飞天二次调价",
+      "final_wechat_title": "高盛：贵州茅台市场化计划-2026年7月飞天二次调价",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_4/0001-21-Goldman-Sachs-Kweichow-Moutai-600519-Market-oriented-plan--5-Second-roun",
+      "generation_decision": {
+        "source_filename": "0001-21-GS-Kweichow Moutai-600519-Market-oriented plan -5-Second round of unexpected ex-factory and suggested retail price hike of Feitian in July 2026-Buy-260720.pdf",
+        "cleaned_source_title": "GS-Kweichow Moutai-600519-Market-oriented plan -5-Second round of unexpected ex-factory and suggested retail price hike of Feitian in July 2026-Buy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：KweichowMoutai600519市场or",
+        "raw_candidates": [
+          "贵州茅台市场化计划-2026年7月飞天二次提价",
+          "贵州茅台一年两涨飞天-出厂价累计上调17%",
+          "GS：茅台打破提价间隔-一年内两次提价"
+        ],
+        "cleaned_candidates": [
+          "GS：贵州茅台市场化计划-2026年7月飞天二次提价",
+          "GS：贵州茅台一年两涨飞天-出厂价累计上调17%",
+          "GS：茅台打破提价间隔-一年内两次提价",
+          "GS：KweichowMoutai600519市场or",
+          "GS：7月17日，贵州茅台宣布飞天茅台出厂价和i茅台建议零售价再次上调"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：贵州茅台一年两涨飞天-出厂价累计上调17%",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：茅台打破提价间隔-一年内两次提价",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：KweichowMoutai600519市场or",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：7月17日，贵州茅台宣布飞天茅台出厂价和i茅台建议零售价再次上调",
+            "reasons": [
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：贵州茅台市场化计划-2026年7月飞天二次提价",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：贵州茅台市场化计划-2026年7月飞天二次提价"
+      }
+    },
+    {
+      "source_report_name": "22-GS-Powering Up Europe- EU Electrification Plan supports our thesis-260720",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：欧洲电气化计划支撑其论点",
+      "final_wechat_title": "高盛：欧洲电气化计划支撑其论点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_4/0002-22-Goldman-Sachs-Powering-Up-Europe--EU-Electrification-Plan-supports-our-t",
+      "generation_decision": {
+        "source_filename": "0002-22-GS-Powering Up Europe- EU Electrification Plan supports our thesis-260720.pdf",
+        "cleaned_source_title": "GS-Powering Up Europe- EU Electrification Plan supports our thesis",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：PoweringUpEurope",
+        "raw_candidates": [
+          "GS：欧洲电气化计划支撑其论点",
+          "GS：欧洲电气化计划需2.2-3.5万亿欧元研究",
+          "GS：欧洲缺的不是电力，是电网研究缺口"
+        ],
+        "cleaned_candidates": [
+          "GS：欧洲电气化计划支撑其论点",
+          "GS：欧洲电气化计划需2.2-3.5万亿欧元研究",
+          "GS：欧洲缺的不是电力，是电网研究缺口",
+          "GS：PoweringUpEurope",
+          "GS：7月17日，欧盟委员会发布了一份加速能源需求电气化的战略文件"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：欧洲电气化计划需2.2-3.5万亿欧元研究",
+            "reasons": [
+              "anchor_coverage=0.55"
+            ]
+          },
+          {
+            "title": "GS：欧洲缺的不是电力，是电网研究缺口",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：PoweringUpEurope",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：7月17日，欧盟委员会发布了一份加速能源需求电气化的战略文件",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：欧洲电气化计划支撑其论点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：欧洲电气化计划支撑其论点"
+      }
+    },
+    {
+      "source_report_name": "23-JPM-Equity Strategy The maturing stage of AI-momentum unwind- Inflation rates rolling- Earnings to offer a support-260720",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：AI动量退潮进入成熟阶段，通胀回落，盈利提供支撑",
+      "final_wechat_title": "摩根大通：AI动量退潮进入成熟阶段，通胀回落，盈利提供支撑",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_4/0003-23-JPM-Equity-Strategy-The-maturing-stage-of-AI-momentum-unwind--Inflation-",
+      "generation_decision": {
+        "source_filename": "0003-23-JPM-Equity Strategy The maturing stage of AI-momentum unwind- Inflation rates rolling- Earnings to offer a support-260720.pdf",
+        "cleaned_source_title": "JPM-Equity Strategy The maturing stage of AI-momentum unwind- Inflation rates rolling- Earnings to offer a support",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：AIEquity策略Thematuringsta",
+        "raw_candidates": [
+          "JPM：AI动量退潮进入成熟阶段，通胀回落，盈利提供支撑",
+          "JPM：AI动量退潮成熟阶段，通胀见顶，盈利支撑市场",
+          "JPM：AI回调非终点，通胀回落与盈利支撑下半导体夏季有望反弹"
+        ],
+        "cleaned_candidates": [
+          "JPM：AI动量退潮进入成熟阶段，通胀回落，盈利提供支撑",
+          "JPM：AI动量退潮成熟阶段，通胀见顶，盈利支撑市场",
+          "JPM：AI回调非终点，通胀回落与盈利支撑下半导体夏季有望反弹",
+          "JPM：AIEquity策略Thematuringsta",
+          "JPM：AI不确定性篮子相对市场表现年内已跑输超过20%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：AI动量退潮成熟阶段，通胀见顶，盈利支撑市场",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "JPM：AI回调非终点，通胀回落与盈利支撑下半导体夏季有望反弹",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：AIEquity策略Thematuringsta",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：AI不确定性篮子相对市场表现年内已跑输超过20%",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：AI动量退潮进入成熟阶段，通胀回落，盈利提供支撑",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：AI动量退潮进入成熟阶段，通胀回落，盈利提供支撑"
+      }
+    },
+    {
+      "source_report_name": "24-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks-260720",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：美国关税影响追踪-洛杉矶港进口未来两周先升后降",
+      "final_wechat_title": "高盛：美国关税影响追踪-洛杉矶港进口未来两周先升后降",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_4/0004-24-Goldman-Sachs-US-Tariff-Impact-Tracker--Imports-into-LA-Mixed-Over-Next-",
+      "generation_decision": {
+        "source_filename": "0004-24-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks-260720.pdf",
+        "cleaned_source_title": "GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：USTariffImpactTracker",
+        "raw_candidates": [
+          "GS：美国关税影响追踪-洛杉矶港进口未来两周先升后降",
+          "GS：洛杉矶港进口未来两周环比先升3%再降7%",
+          "GS：洛杉矶港进口短暂反弹-关税不确定性下的供应链喘息窗口"
+        ],
+        "cleaned_candidates": [
+          "GS：美国关税影响追踪-洛杉矶港进口未来两周先升后降",
+          "GS：洛杉矶港进口未来两周环比先升3%再降7%",
+          "GS：洛杉矶港进口短暂反弹-关税不确定性下的供应链喘息窗口",
+          "GS：USTariffImpactTracker",
+          "GS：2026年4月2日“解放日”关税一周年后"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：洛杉矶港进口未来两周环比先升3%再降7%",
+            "reasons": [
+              "anchor_coverage=0.48",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：洛杉矶港进口短暂反弹-关税不确定性下的供应链喘息窗口",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：USTariffImpactTracker",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：2026年4月2日“解放日”关税一周年后",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：美国关税影响追踪-洛杉矶港进口未来两周先升后降",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：美国关税影响追踪-洛杉矶港进口未来两周先升后降"
+      }
+    },
+    {
+      "source_report_name": "25-JPM-US Equity Strategy Hyperscalers vs. AI Hardware- AI Capex - Monetization- Momentum Unwind- 2Q Earnings-260720",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：美国市场策略，超大规模云厂商与AI硬件-资本开支",
+      "final_wechat_title": "摩根大通：美国市场策略，超大规模云厂商与AI硬件-资本开支",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_4/0005-25-JPM-US-Equity-Strategy-Hyperscalers-vs.-AI-Hardware--AI-Capex---Monetiza",
+      "generation_decision": {
+        "source_filename": "0005-25-JPM-US Equity Strategy Hyperscalers vs. AI Hardware- AI Capex - Monetization- Momentum Unwind- 2Q Earnings-260720.pdf",
+        "cleaned_source_title": "JPM-US Equity Strategy Hyperscalers vs. AI Hardware- AI Capex - Monetization- Momentum Unwind- 2Q Earnings",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：USEquity策略Hyperscalersvs.AI硬件",
+        "raw_candidates": [
+          "JPM美国权益策略：超大规模云厂商与AI硬件-资本开支-货币化-动量出清-二季度财报",
+          "JPM美国权益策略：超大规模云厂商与AI硬件-资本开支-货币化-动量出清-二季度财报-8700亿美元",
+          "JPM美国权益策略：超大规模云厂商与AI硬件-资本开支-货币化-动量出清-二季度财报-叙事从硬件转向货币化"
+        ],
+        "cleaned_candidates": [
+          "JPM：JPM美国权益策略，超大规模云厂商与AI硬件-资本开支",
+          "JPM：USEquity策略Hyperscalersvs.AI硬件",
+          "JPM：AI叙事正从硬件转向谁真正赚到了钱"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：USEquity策略Hyperscalersvs.AI硬件",
+            "reasons": [
+              "listing_suffix",
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：AI叙事正从硬件转向谁真正赚到了钱",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：JPM美国权益策略，超大规模云厂商与AI硬件-资本开支",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：JPM美国权益策略，超大规模云厂商与AI硬件-资本开支"
+      }
+    },
+    {
+      "source_report_name": "26-MS-Semiconductors - North America Selloff of US memory stocks creates a compelling entry point-260720",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：半导体-美国存储器报价回调带来观察窗口",
+      "final_wechat_title": "摩根士丹利：半导体-美国存储器报价回调带来观察窗口",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_5/0001-26-Morgan-Stanley-Semiconductors---North-America-Selloff-of-US-memory-stock",
+      "generation_decision": {
+        "source_filename": "0001-26-MS-Semiconductors - North America Selloff of US memory stocks creates a compelling entry point-260720.pdf",
+        "cleaned_source_title": "MS-Semiconductors - North America Selloff of US memory stocks creates a compelling entry point",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：半导体NorthAmericaSellof",
+        "raw_candidates": [
+          "半导体-美国存储器报价回调创造入场点",
+          "存储器不缺需求缺供给-美国报价回调创造入场点"
+        ],
+        "cleaned_candidates": [
+          "MS：半导体-美国存储器报价回调创造入场点",
+          "MS：存储器不缺需求缺供给-美国报价回调创造入场点",
+          "MS：半导体NorthAmericaSellof",
+          "MS：数据中心内存价格三季度环比上涨至少25%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：存储器不缺需求缺供给-美国报价回调创造入场点",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "MS：半导体NorthAmericaSellof",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：数据中心内存价格三季度环比上涨至少25%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：半导体-美国存储器报价回调创造入场点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：半导体-美国存储器报价回调创造入场点"
+      }
+    },
+    {
+      "source_report_name": "27-NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown-260719",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：安踏体育，行业节奏变化下的韧性表现",
+      "final_wechat_title": "野村：安踏体育，行业节奏变化下的韧性表现",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_5/0002-27-Nomura-ANTA-Sports-Products-2020.HK-Resilient-performance-amid-sector-sl",
+      "generation_decision": {
+        "source_filename": "0002-27-NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown-260719.pdf",
+        "cleaned_source_title": "NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：ANTASportsProductsResili",
+        "raw_candidates": [
+          "安踏体育：行业放缓下的韧性表现",
+          "安踏体育：行业放缓下韧性跑赢板块",
+          "安踏体育：行业放缓下份额逆势增长"
+        ],
+        "cleaned_candidates": [
+          "NOM：安踏体育，行业放缓下的韧性表现",
+          "NOM：安踏体育，行业放缓下韧性跑赢板块",
+          "NOM：安踏体育，行业放缓下份额逆势增长",
+          "NOM：ANTASportsProductsResili",
+          "NOM：安踏体育7月17日披露的第二季度运营数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：安踏体育，行业放缓下韧性跑赢板块",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "NOM：安踏体育，行业放缓下份额逆势增长",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "NOM：ANTASportsProductsResili",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：安踏体育7月17日披露的第二季度运营数据",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "NOM：安踏体育，行业放缓下的韧性表现",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：安踏体育，行业放缓下的韧性表现"
+      }
+    },
+    {
+      "source_report_name": "28-NOM-China batteries-China to levy consumption tax on Li-ion batteries-260719",
+      "institution_name": "野村",
+      "title_before_upload": "行业观察：中国拟对锂电池征收消费税",
+      "final_wechat_title": "野村：中国拟对锂电池征收消费税",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_5/0003-28-Nomura-China-batteries-China-to-levy-consumption-tax-on-Li-ion-batteries",
+      "generation_decision": {
+        "source_filename": "0003-28-NOM-China batteries-China to levy consumption tax on Li-ion batteries-260719.pdf",
+        "cleaned_source_title": "NOM-China batteries-China to levy consumption tax on Li-ion batteries",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：中国batteries中国tolevyconsu",
+        "raw_candidates": [
+          "中国拟对锂电池征收消费税",
+          "锂电池消费税落地-成本影响有限",
+          "锂电池消费税-龙头可转嫁成本"
+        ],
+        "cleaned_candidates": [
+          "NOM：中国拟对锂电池征收消费税",
+          "NOM：锂电池消费税落地-成本影响有限",
+          "NOM：锂电池消费税-龙头可转嫁成本",
+          "NOM：中国batteries中国tolevyconsu",
+          "NOM：2026年7月17日，中国财政部、海关总署和税务总局联合宣布"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：锂电池消费税落地-成本影响有限",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "NOM：锂电池消费税-龙头可转嫁成本",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "NOM：中国batteries中国tolevyconsu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：2026年7月17日，中国财政部、海关总署和税务总局联合宣布",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "NOM：中国拟对锂电池征收消费税",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：中国拟对锂电池征收消费税"
+      }
+    },
+    {
+      "source_report_name": "29-NOM-Laopu Gold-6181.HK-Sales to be dragged by weak gold price-260719",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：老铺黄金，金价节奏变化影响销售，调整盈利预测",
+      "final_wechat_title": "野村：老铺黄金，金价节奏变化影响销售，调整盈利预测",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_5/0004-29-Nomura-Laopu-Gold-6181.HK-Sales-to-be-dragged-by-weak-gold-price-260719",
+      "generation_decision": {
+        "source_filename": "0004-29-NOM-Laopu Gold-6181.HK-Sales to be dragged by weak gold price-260719.pdf",
+        "cleaned_source_title": "NOM-Laopu Gold-6181.HK-Sales to be dragged by weak gold price",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：LaopuGoldSalestobedragge",
+        "raw_candidates": [
+          "老铺黄金：金价疲软拖累销售",
+          "老铺黄金：金价疲软拖累销售，下调盈利预测",
+          "老铺黄金：短期不确定性来自金价，而非品牌"
+        ],
+        "cleaned_candidates": [
+          "NOM：老铺黄金，金价疲软拖累销售",
+          "NOM：老铺黄金，金价疲软拖累销售，下调盈利预测",
+          "NOM：老铺黄金，短期不确定性来自金价，而非品牌",
+          "NOM：LaopuGoldSalestobedragge",
+          "NOM：管理层在7月16日的读者电话会上透露"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：老铺黄金，短期不确定性来自金价，而非品牌",
+            "reasons": [
+              "anchor_coverage=0.36",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：LaopuGoldSalestobedragge",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：管理层在7月16日的读者电话会上透露",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "NOM：老铺黄金，金价疲软拖累销售，下调盈利预测",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：老铺黄金，金价疲软拖累销售，下调盈利预测"
+      }
+    },
+    {
+      "source_report_name": "30-NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent-260720",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：亚洲图表警报，TACO不确定性上升但不太可能立即爆发",
+      "final_wechat_title": "野村：亚洲图表警报，TACO不确定性上升但不太可能立即爆发",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_5/0005-30-Nomura-Asia-Chart-Alert-TACO-risks-are-rising-but-unlikely-imminent-2607",
+      "generation_decision": {
+        "source_filename": "0005-30-NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent-260720.pdf",
+        "cleaned_source_title": "NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：AsiaChartAlertTACOrisksa",
+        "raw_candidates": [
+          "亚洲图表警报：TACO风险上升但不太可能立即爆发",
+          "亚洲图表警报：TACO风险升至2.0标准差，油价需再涨10%才触发",
+          "亚洲图表警报：美伊停火三周即失效，TACO风险上升但未到临界点"
+        ],
+        "cleaned_candidates": [
+          "NOM：亚洲图表警报，TACO风险上升但不太可能立即爆发",
+          "NOM：亚洲图表警报，TACO风险升至2.0标准差",
+          "NOM：亚洲图表警报，美伊停火三周即失效，TACO风险上升但未到临界点",
+          "NOM：AsiaChartAlertTACOrisksa",
+          "NOM：中东不确定性指标升至2.0标准差，但触发条件仍需油价再涨10%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：亚洲图表警报，TACO风险升至2.0标准差",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "NOM：亚洲图表警报，美伊停火三周即失效，TACO风险上升但未到临界点",
+            "reasons": [
+              "anchor_coverage=0.59"
+            ]
+          },
+          {
+            "title": "NOM：AsiaChartAlertTACOrisksa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：中东不确定性指标升至2.0标准差，但触发条件仍需油价再涨10%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "NOM：亚洲图表警报，TACO风险上升但不太可能立即爆发",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：亚洲图表警报，TACO风险上升但不太可能立即爆发"
+      }
+    },
+    {
+      "source_report_name": "31-NOM-USD CNY fix model-260720",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：美元/人民币中间价模型-预测值下调110基点",
+      "final_wechat_title": "野村：美元/人民币中间价模型-预测值下调110基点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260720/shard_6/0001-31-Nomura-USD-CNY-fix-model-260720",
+      "generation_decision": {
+        "source_filename": "0001-31-NOM-USD CNY fix model-260720.pdf",
+        "cleaned_source_title": "NOM-USD CNY fix model",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：USDCNYfixmodel",
+        "raw_candidates": [
+          "美元人民币中间价模型",
+          "美元人民币中间价模型-预测值下调110基点",
+          "美元人民币中间价模型-逆周期因子转向平滑"
+        ],
+        "cleaned_candidates": [
+          "NOM：美元人民币中间价模型",
+          "NOM：美元人民币中间价模型-预测值下调110基点",
+          "NOM：美元人民币中间价模型-逆周期因子转向平滑",
+          "NOM：USDCNYfixmodel",
+          "NOM：7月17日至20日的世界人工智能大会、7月下旬的政治局宏观环境工"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：USDCNYfixmodel",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "NOM：7月17日至20日的世界人工智能大会、7月下旬的政治局宏观环境工",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "NOM：美元人民币中间价模型-预测值下调110基点",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "110"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：美元人民币中间价模型-预测值下调110基点"
+      }
+    }
+  ]
+}
