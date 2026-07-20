@@ -1,0 +1,3384 @@
+{
+  "date_folder": "260720",
+  "max_reports": "all",
+  "selected_count": 31,
+  "successful_count": 31,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_0/0001-01-Bernstein-Asia-Quantitative-Strategy-India-Quant-Strategy--Time-to-add-m",
+      "title": "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到",
+      "source_title": "0001-01-Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-01-Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens-260720",
+        "cleaned_source_title": "Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens",
+        "institution_name": "伯恩斯坦",
+        "required_terms": [],
+        "deterministic_fallback": "伯恩斯坦：AsiaQuantitative策略IndiaQuant策略",
+        "raw_candidates": [
+          "亚洲量化策略印度量化策略：增加印度敞口时机已到",
+          "印度量化策略：18.6倍远期市盈率低于均值，增加敞口",
+          "印度量化策略：动量交易承压，估值回落至10年均值以下"
+        ],
+        "cleaned_candidates": [
+          "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到",
+          "伯恩斯坦：印度量化策略，18.6倍远期市盈率低于均值，增加敞口",
+          "伯恩斯坦：印度量化策略，动量交易承压，估值回落至10年均值以下",
+          "伯恩斯坦：AsiaQuantitative策略IndiaQuant策略",
+          "伯恩斯坦：这一趋势已在7月开始逆转（+18亿美元）"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "伯恩斯坦：印度量化策略，18.6倍远期市盈率低于均值，增加敞口",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：印度量化策略，动量交易承压，估值回落至10年均值以下",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：AsiaQuantitative策略IndiaQuant策略",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：这一趋势已在7月开始逆转（+18亿美元）",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 28,
+      "institution_name": "伯恩斯坦",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "投资->研究 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "金融->资金 x1",
+        "基金->产品 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x2",
+        "股价->报价 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x2",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x2",
+        "金融->资金 x2",
+        "股票|个股->公司 x2",
+        "下行|放缓->节奏变化 x1",
+        "拖累->影响 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "基金经理->组合负责人 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1"
+      ],
+      "output_dir": "kc_translated_reports/260720/01-0001-01-Bernstein-Asia-Quantitative-Strategy-India-Quant-Strategy--Time-to-add-m",
+      "pdf_path": "kc_translated_reports/260720/01-0001-01-Bernstein-Asia-Quantitative-Strategy-India-Quant-Strategy--Time-to-add-m/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_0/0002-02-Bernstein-Global-Automation-Humanoid-Robotics--The-technology-frontier-i",
+      "title": "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿",
+      "source_title": "0002-02-Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-02-Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026-260720",
+        "cleaned_source_title": "Bernstein-Global Automation-Humanoid Robotics- The technology frontier in 2026",
+        "institution_name": "伯恩斯坦",
+        "required_terms": [],
+        "deterministic_fallback": "伯恩斯坦：全球AutomationHumanoidRobotics",
+        "raw_candidates": [
+          "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿",
+          "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿-WAM提升泛化能力",
+          "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿-机器人脑模型转向世界模型"
+        ],
+        "cleaned_candidates": [
+          "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿",
+          "伯恩斯坦：全球AutomationHumanoidRobotics",
+          "伯恩斯坦：人形机器人，2026年的技术前沿"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "伯恩斯坦：全球AutomationHumanoidRobotics",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：人形机器人，2026年的技术前沿",
+            "reasons": [
+              "anchor_coverage=0.67",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "伯恩斯坦：全球自动化-人形机器人-2026年技术前沿"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 28,
+      "institution_name": "伯恩斯坦",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资启示->观察提示 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/02-0002-02-Bernstein-Global-Automation-Humanoid-Robotics--The-technology-frontier-i",
+      "pdf_path": "kc_translated_reports/260720/02-0002-02-Bernstein-Global-Automation-Humanoid-Robotics--The-technology-frontier-i/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_0/0003-03-Bernstein-China-Internet--Is-bad-news-now...-good-news--260720",
+      "title": "伯恩斯坦：中国互联网，坏消息现在是否是好消息",
+      "source_title": "0003-03-Bernstein-China Internet- Is bad news now... good news--260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-03-Bernstein-China Internet- Is bad news now... good news--260720",
+        "cleaned_source_title": "Bernstein-China Internet- Is bad news now... good news",
+        "institution_name": "伯恩斯坦",
+        "required_terms": [],
+        "deterministic_fallback": "伯恩斯坦：中国Internet",
+        "raw_candidates": [
+          "中国互联网：坏消息现在是否是好消息",
+          "中国互联网：坏消息变好消息-估值回落与AI催化",
+          "中国互联网：坏消息变好消息-腾讯Hy3与阿里云反弹"
+        ],
+        "cleaned_candidates": [
+          "伯恩斯坦：中国互联网，坏消息现在是否是好消息",
+          "伯恩斯坦：中国互联网，坏消息变好消息-估值回落与AI催化",
+          "伯恩斯坦：中国互联网，坏消息变好消息-腾讯Hy3与阿里云反弹",
+          "伯恩斯坦：中国Internet",
+          "伯恩斯坦：定价日期，2026年7月16日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "伯恩斯坦：中国互联网，坏消息变好消息-估值回落与AI催化",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：中国互联网，坏消息变好消息-腾讯Hy3与阿里云反弹",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：中国Internet",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：定价日期，2026年7月16日",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "伯恩斯坦：中国互联网，坏消息现在是否是好消息",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "伯恩斯坦：中国互联网，坏消息现在是否是好消息"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 17,
+      "institution_name": "伯恩斯坦",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "风险->不确定性 x1",
+        "负面->谨慎 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "股票|个股->公司 x1",
+        "股价->报价 x2",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "投资启示->观察提示 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资回报->回报表现 x1",
+        "sanitize_wechat_stock_line",
+        "投资回报->回报表现 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x4",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x3",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/03-0003-03-Bernstein-China-Internet--Is-bad-news-now",
+      "pdf_path": "kc_translated_reports/260720/03-0003-03-Bernstein-China-Internet--Is-bad-news-now/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_0/0004-04-Bernstein-Global-Energy-Storage-Battery-Weekly-20-July-260720",
+      "title": "伯恩斯坦：全球储能电池周报7月20日",
+      "source_title": "0004-04-Bernstein-Global Energy Storage-Battery Weekly 20 July-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-04-Bernstein-Global Energy Storage-Battery Weekly 20 July-260720",
+        "cleaned_source_title": "Bernstein-Global Energy Storage-Battery Weekly 20 July",
+        "institution_name": "伯恩斯坦",
+        "required_terms": [],
+        "deterministic_fallback": "伯恩斯坦：全球能源StorageBatteryWeekly20July",
+        "raw_candidates": [
+          "伯恩斯坦：全球储能电池周报7月20日",
+          "伯恩斯坦：全球储能电池周报-三星SDI为特斯拉建产线",
+          "伯恩斯坦：全球储能电池周报-三星SDI与特斯拉签3-5万亿韩元协议"
+        ],
+        "cleaned_candidates": [
+          "伯恩斯坦：全球储能电池周报7月20日",
+          "伯恩斯坦：全球储能电池周报-三星SDI为特斯拉建产线",
+          "伯恩斯坦：全球储能电池周报-三星SDI与特斯拉签3-5万亿韩元协议",
+          "伯恩斯坦：全球能源StorageBatteryWeekly20July",
+          "伯恩斯坦：电池周报7月20日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "伯恩斯坦：全球储能电池周报-三星SDI为特斯拉建产线",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：全球储能电池周报-三星SDI与特斯拉签3-5万亿韩元协议",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：全球能源StorageBatteryWeekly20July",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：电池周报7月20日",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          }
+        ],
+        "selected_title": "伯恩斯坦：全球储能电池周报7月20日",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "伯恩斯坦：全球储能电池周报7月20日"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 0,
+      "institution_name": "伯恩斯坦",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x2",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x3",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "remove_stock_parenthetical x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1"
+      ],
+      "output_dir": "kc_translated_reports/260720/04-0004-04-Bernstein-Global-Energy-Storage-Battery-Weekly-20-July-260720",
+      "pdf_path": "kc_translated_reports/260720/04-0004-04-Bernstein-Global-Energy-Storage-Battery-Weekly-20-July-260720/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_0/0005-05-Bernstein-Global-Energy-Storage-Quick-Take--Global-Energy-Storage-China-",
+      "title": "伯恩斯坦：全球储能-中国宣布对电池征收消费税-影响分析",
+      "source_title": "0005-05-Bernstein-Global Energy Storage-Quick Take- Global Energy Storage-China announces consumption tax on batteries-Implications-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-05-Bernstein-Global Energy Storage-Quick Take- Global Energy Storage-China announces consumption tax on batteries-Implications-260720",
+        "cleaned_source_title": "Bernstein-Global Energy Storage-Quick Take- Global Energy Storage-China announces consumption tax on batteries-Implications",
+        "institution_name": "伯恩斯坦",
+        "required_terms": [],
+        "deterministic_fallback": "伯恩斯坦：全球能源StorageQuickTake",
+        "raw_candidates": [
+          "伯恩斯坦：全球储能-中国宣布对电池征收消费税-影响分析",
+          "伯恩斯坦：全球储能-中国对电池征消费税-2026年2%税率影响",
+          "伯恩斯坦：全球储能-中国电池消费税-钠电池固态电池免税"
+        ],
+        "cleaned_candidates": [
+          "伯恩斯坦：全球储能-中国宣布对电池征收消费税-影响分析",
+          "伯恩斯坦：全球储能-中国对电池征消费税-2026年2%税率影响",
+          "伯恩斯坦：全球储能-中国电池消费税-钠电池固态电池免税",
+          "伯恩斯坦：全球能源StorageQuickTake",
+          "伯恩斯坦：自2026年9月1日起"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "伯恩斯坦：全球储能-中国对电池征消费税-2026年2%税率影响",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：全球储能-中国电池消费税-钠电池固态电池免税",
+            "reasons": [
+              "anchor_coverage=0.42",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：全球能源StorageQuickTake",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：自2026年9月1日起",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "伯恩斯坦：全球储能-中国宣布对电池征收消费税-影响分析",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "伯恩斯坦：全球储能-中国宣布对电池征收消费税-影响分析"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "伯恩斯坦",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "负面->谨慎 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "A股|港股->相关市场 x1",
+        "股价->报价 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "A股|港股->相关市场 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1"
+      ],
+      "output_dir": "kc_translated_reports/260720/05-0005-05-Bernstein-Global-Energy-Storage-Quick-Take--Global-Energy-Storage-China",
+      "pdf_path": "kc_translated_reports/260720/05-0005-05-Bernstein-Global-Energy-Storage-Quick-Take--Global-Energy-Storage-China/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_1/0001-06-Bernstein-Renesas-Electronics-Corp-6723.JP-Quick-Take--Renesas-Memory-In",
+      "title": "伯恩斯坦：瑞萨电子，内存接口IC调查影响料可控-营收占比6%",
+      "source_title": "0001-06-Bernstein-Renesas Electronics Corp-6723.JP-Quick Take- Renesas Memory Interface IC Investigation Likely Manageable-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-06-Bernstein-Renesas Electronics Corp-6723.JP-Quick Take- Renesas Memory Interface IC Investigation Likely Manageable-260720",
+        "cleaned_source_title": "Bernstein-Renesas Electronics Corp-6723.JP-Quick Take- Renesas Memory Interface IC Investigation Likely Manageable",
+        "institution_name": "伯恩斯坦",
+        "required_terms": [],
+        "deterministic_fallback": "伯恩斯坦：RenesasElectronicsCorp",
+        "raw_candidates": [
+          "瑞萨电子：内存接口IC调查影响料可控",
+          "瑞萨电子：内存接口IC调查影响料可控-营收占比6%",
+          "瑞萨电子：内存接口IC调查影响料可控-毛利率60-70%非异常"
+        ],
+        "cleaned_candidates": [
+          "伯恩斯坦：瑞萨电子，内存接口IC调查影响料可控",
+          "伯恩斯坦：瑞萨电子，内存接口IC调查影响料可控-营收占比6%",
+          "伯恩斯坦：瑞萨电子，内存接口IC调查影响料可控-毛利率60",
+          "伯恩斯坦：RenesasElectronicsCorp",
+          "伯恩斯坦：6,300.00JPY"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "伯恩斯坦：RenesasElectronicsCorp",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "伯恩斯坦：6,300.00JPY",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "伯恩斯坦：瑞萨电子，内存接口IC调查影响料可控-营收占比6%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "6"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "伯恩斯坦：瑞萨电子，内存接口IC调查影响料可控-营收占比6%"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 6,
+      "institution_name": "伯恩斯坦",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "负面->谨慎 x1",
+        "sanitize_wechat_stock_line",
+        "投资启示->观察提示 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x5",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x4",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1"
+      ],
+      "output_dir": "kc_translated_reports/260720/06-0001-06-Bernstein-Renesas-Electronics-Corp-6723",
+      "pdf_path": "kc_translated_reports/260720/06-0001-06-Bernstein-Renesas-Electronics-Corp-6723/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_1/0002-07-Goldman-Sachs-Americas-Banks--Key-Takeaways-from-TFC--FITB--and-RF-earni",
+      "title": "高盛：美洲银行-TFC、FITB和RF财报要点",
+      "source_title": "0002-07-GS-Americas Banks- Key Takeaways from TFC- FITB- and RF earnings-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-07-GS-Americas Banks- Key Takeaways from TFC- FITB- and RF earnings-260719",
+        "cleaned_source_title": "GS-Americas Banks- Key Takeaways from TFC- FITB- and RF earnings",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：AmericasBanksKeyTakeaway",
+        "raw_candidates": [
+          "美洲银行-TFC、FITB和RF财报要点",
+          "美洲银行-财报要点：净核销率低于预期50基点",
+          "美洲银行-财报要点：TFC下调2026年收入展望至3.5-4%"
+        ],
+        "cleaned_candidates": [
+          "高盛：美洲银行-TFC、FITB和RF财报要点",
+          "高盛：美洲银行-财报要点，净核销率低于预期50基点",
+          "高盛：美洲银行-财报要点，TFC下调2026年收入展望至3.5-4%",
+          "高盛：AmericasBanksKeyTakeaway",
+          "高盛：信贷方面，净核销率低于预期（50个基点，共识为55个基点）"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：美洲银行-财报要点，净核销率低于预期50基点",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：美洲银行-财报要点，TFC下调2026年收入展望至3.5-4%",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.47"
+            ]
+          },
+          {
+            "title": "高盛：AmericasBanksKeyTakeaway",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：信贷方面，净核销率低于预期（50个基点，共识为55个基点）",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：美洲银行-TFC、FITB和RF财报要点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：美洲银行-TFC、FITB和RF财报要点"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 0,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "投行->国际机构 x1",
+        "股价->报价 x1",
+        "风险->不确定性 x1",
+        "衰退|萎缩|收缩->调整 x1",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x2",
+        "股价->报价 x3",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x3",
+        "下行|放缓->节奏变化 x2",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_stock_parenthetical x1",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "remove_stock_parenthetical x1",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "拖累->影响 x1",
+        "sanitize_wechat_stock_line",
+        "remove_stock_parenthetical x1",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "风险->不确定性 x1",
+        "恶化->出现变化 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "证券->标的 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/07-0002-07-Goldman-Sachs-Americas-Banks--Key-Takeaways-from-TFC--FITB--and-RF-earni",
+      "pdf_path": "kc_translated_reports/260720/07-0002-07-Goldman-Sachs-Americas-Banks--Key-Takeaways-from-TFC--FITB--and-RF-earni/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_1/0003-08-Goldman-Sachs-Americas-Technology-Internet-Ridesharing---Delivery-Q2-26-",
+      "title": "高盛：美洲科技-网约车与配送Q2-26前瞻-行业争论与预估分析",
+      "source_title": "0003-08-GS-Americas Technology-Internet-Ridesharing - Delivery Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-08-GS-Americas Technology-Internet-Ridesharing - Delivery Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+        "cleaned_source_title": "GS-Americas Technology-Internet-Ridesharing - Delivery Q2-26 Preview- Analyzing the Industry Debates - Estimates",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：Americas科技InternetRidesh",
+        "raw_candidates": [
+          "高盛：美洲科技-网约车与配送Q2-26前瞻-行业争论与预估分析",
+          "高盛：美洲科技-网约车与配送Q2-26前瞻-生鲜杂货配送两位数增长",
+          "高盛：美洲科技-网约车与配送Q2-26前瞻-消费者疲软担忧未影响增长"
+        ],
+        "cleaned_candidates": [
+          "高盛：美洲科技-网约车与配送Q2-26前瞻-行业争论与预估分析",
+          "高盛：美洲科技-网约车与配送Q2-26前瞻-生鲜杂货配送两位数增长",
+          "高盛：美洲科技-网约车与配送Q2-26前瞻-消费者疲软担忧未影响增长",
+          "高盛：Americas科技InternetRidesh",
+          "高盛：网约车与配送行业2026年第二季度前瞻，行业争论与预估分析"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：美洲科技-网约车与配送Q2-26前瞻-生鲜杂货配送两位数增长",
+            "reasons": [
+              "anchor_coverage=0.62",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：美洲科技-网约车与配送Q2-26前瞻-消费者疲软担忧未影响增长",
+            "reasons": [
+              "anchor_coverage=0.62",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：Americas科技InternetRidesh",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：网约车与配送行业2026年第二季度前瞻，行业争论与预估分析",
+            "reasons": [
+              "anchor_coverage=0.67",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：美洲科技-网约车与配送Q2-26前瞻-行业争论与预估分析",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：美洲科技-网约车与配送Q2-26前瞻-行业争论与预估分析"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 22,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "投资->研究 x1",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x2",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/08-0003-08-Goldman-Sachs-Americas-Technology-Internet-Ridesharing---Delivery-Q2-26",
+      "pdf_path": "kc_translated_reports/260720/08-0003-08-Goldman-Sachs-Americas-Technology-Internet-Ridesharing---Delivery-Q2-26/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_1/0004-09-Goldman-Sachs-Americas-Technology-Internet-Online-Travel-Q2-26-Preview--",
+      "title": "高盛：美洲科技-互联网-在线旅游2026年第二季度预览",
+      "source_title": "0004-09-GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-09-GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+        "cleaned_source_title": "GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：Americas科技InternetOnlineTravelQ2",
+        "raw_candidates": [
+          "高盛：美洲科技-互联网-在线旅游2026年第二季度预览-行业争论与预测分析",
+          "高盛：在线旅游Q2预览-夏季需求稳定，6月预订趋势改善",
+          "高盛：在线旅游Q2预览-世界杯推动短期租赁需求，高端定价持续上行"
+        ],
+        "cleaned_candidates": [
+          "高盛：美洲科技-互联网-在线旅游2026年第二季度预览",
+          "高盛：在线旅游Q2预览-夏季需求稳定，6月预订趋势改善",
+          "高盛：在线旅游Q2预览-世界杯推动短期租赁需求，高端定价持续上行",
+          "高盛：Americas科技InternetOnlineTravelQ2",
+          "高盛：1)夏季旅游需求在全球范围内保持健康稳定，6月预订趋势改善"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：在线旅游Q2预览-夏季需求稳定，6月预订趋势改善",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：在线旅游Q2预览-世界杯推动短期租赁需求，高端定价持续上行",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：Americas科技InternetOnlineTravelQ2",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：1)夏季旅游需求在全球范围内保持健康稳定，6月预订趋势改善",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：美洲科技-互联网-在线旅游2026年第二季度预览",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：美洲科技-互联网-在线旅游2026年第二季度预览"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 24,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "remove_target_price_clause x1",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/09-0004-09-Goldman-Sachs-Americas-Technology-Internet-Online-Travel-Q2-26-Preview",
+      "pdf_path": "kc_translated_reports/260720/09-0004-09-Goldman-Sachs-Americas-Technology-Internet-Online-Travel-Q2-26-Preview/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_1/0005-10-Goldman-Sachs-Asia-Economics-Analyst-Korea-s-Equity-Rally-Household-Weal",
+      "title": "高盛：高盛亚洲宏观环境分析-韩国市场上涨与家庭财富增长",
+      "source_title": "0005-10-GS-Asia Economics Analyst-Korea-s Equity Rally-Household Wealth Gains amid Consumption Constraints-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-10-GS-Asia Economics Analyst-Korea-s Equity Rally-Household Wealth Gains amid Consumption Constraints-260719",
+        "cleaned_source_title": "GS-Asia Economics Analyst-Korea-s Equity Rally-Household Wealth Gains amid Consumption Constraints",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：AsiaEconomicsAnalystKore",
+        "raw_candidates": [
+          "高盛亚洲经济分析-韩国股市上涨与家庭财富增长",
+          "韩国股市上涨：家庭财富增长GDP的17%",
+          "韩国股市上涨：家庭财富增长与消费制约并存"
+        ],
+        "cleaned_candidates": [
+          "高盛：高盛亚洲宏观环境分析-韩国市场上涨与家庭财富增长",
+          "高盛：韩国市场上涨，家庭财富增长GDP的17%",
+          "高盛：韩国市场上涨，家庭财富增长与消费制约并存",
+          "高盛：AsiaEconomicsAnalystKore",
+          "高盛：尽管7月出现回调，KOSPI指数年初至今仍上涨约60%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：韩国市场上涨，家庭财富增长GDP的17%",
+            "reasons": [
+              "anchor_coverage=0.45",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：韩国市场上涨，家庭财富增长与消费制约并存",
+            "reasons": [
+              "anchor_coverage=0.45",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：AsiaEconomicsAnalystKore",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：尽管7月出现回调，KOSPI指数年初至今仍上涨约60%",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：高盛亚洲宏观环境分析-韩国市场上涨与家庭财富增长",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：高盛亚洲宏观环境分析-韩国市场上涨与家庭财富增长"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 14,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "股票市场|股市->市场 x1",
+        "sanitize_wechat_stock_line",
+        "经济体->地区 x1",
+        "股票市场|股市->市场 x1",
+        "股票|个股->公司 x2",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x2",
+        "股票|个股->公司 x4",
+        "sanitize_wechat_stock_line",
+        "股票市场|股市->市场 x1",
+        "股票|个股->公司 x2",
+        "sanitize_wechat_stock_line",
+        "股票市场|股市->市场 x1",
+        "股票|个股->公司 x2",
+        "sanitize_wechat_stock_line",
+        "股票市场|股市->市场 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "金融->资金 x1",
+        "股票市场|股市->市场 x3",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "经济体->地区 x2",
+        "金融->资金 x2",
+        "股票市场|股市->市场 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "金融->资金 x1",
+        "股票市场|股市->市场 x1",
+        "股票|个股->公司 x4",
+        "基金->产品 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "经济体->地区 x1",
+        "投资->研究 x2"
+      ],
+      "output_dir": "kc_translated_reports/260720/10-0005-10-Goldman-Sachs-Asia-Economics-Analyst-Korea-s-Equity-Rally-Household-Weal",
+      "pdf_path": "kc_translated_reports/260720/10-0005-10-Goldman-Sachs-Asia-Economics-Analyst-Korea-s-Equity-Rally-Household-Weal/kc_translated_report_10.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_2/0001-11-Goldman-Sachs-Australia-Metals---Mining-Gold-GMD-merger-appears-accretiv",
+      "title": "高盛：澳大利亚金属与矿业",
+      "source_title": "0001-11-GS-Australia Metals - Mining-Gold-GMD merger appears accretive vs. baseline ASPIRE 500 and VAU outlooks- Reinstate GMD at Buy- RRL a",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-11-GS-Australia Metals - Mining-Gold-GMD merger appears accretive vs. baseline ASPIRE 500 and VAU outlooks- Reinstate GMD at Buy- RRL a",
+        "cleaned_source_title": "GS-Australia Metals - Mining-Gold-GMD merger appears accretive vs. baseline ASPIRE 500 and VAU outlooks- Reinstate GMD at Buy- RRL a",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：AustraliaMetalsMiningGol",
+        "raw_candidates": [
+          "高盛：澳大利亚金属与矿业-GMD合并对ASPIRE 500和VAU展望具有增值效应",
+          "高盛：GMD合并增值效应显著-产量增3-8万盎司/年",
+          "高盛：GMD合并增值效应-产量增3-8万盎司/年且成本降10%"
+        ],
+        "cleaned_candidates": [
+          "高盛：澳大利亚金属与矿业",
+          "高盛：AustraliaMetalsMiningGol",
+          "高盛：年且成本降10%",
+          "高盛：公司组合，受限于总计约5亿澳元现金和约8.034亿股GMD股份"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：AustraliaMetalsMiningGol",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：年且成本降10%",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：公司组合，受限于总计约5亿澳元现金和约8.034亿股GMD股份",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：澳大利亚金属与矿业",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：澳大利亚金属与矿业"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_11.pdf",
+      "figure_count": 28,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x2",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x2",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "评级\\s*(?:上调|下调|维持|重申|恢复)?\\s*(?:至|为)?\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)->公司观点更新 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x2",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x1",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x1",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/11-0001-11-Goldman-Sachs-Australia-Metals---Mining-Gold-GMD-merger-appears-accretiv",
+      "pdf_path": "kc_translated_reports/260720/11-0001-11-Goldman-Sachs-Australia-Metals---Mining-Gold-GMD-merger-appears-accretiv/kc_translated_report_11.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_2/0002-12-Goldman-Sachs-Base-Metals-Tracker--Copper--Physical-Tightness-vs.-Fading",
+      "title": "高盛：高盛基本金属追踪-铜，实物紧张vs.宏观情绪消退",
+      "source_title": "0002-12-GS-Base Metals Tracker- Copper- Physical Tightness vs. Fading Macro-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-12-GS-Base Metals Tracker- Copper- Physical Tightness vs. Fading Macro-260720",
+        "cleaned_source_title": "GS-Base Metals Tracker- Copper- Physical Tightness vs. Fading Macro",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：BaseMetalsTracker-Copper",
+        "raw_candidates": [
+          "高盛基本金属追踪-铜：实物紧张vs.宏观情绪消退",
+          "高盛基本金属追踪-铜：实物紧张vs.宏观情绪消退-中国库存降至16.7万吨",
+          "高盛基本金属追踪-铜：实物紧张vs.宏观情绪消退-AI成关键驱动"
+        ],
+        "cleaned_candidates": [
+          "高盛：高盛基本金属追踪-铜，实物紧张vs.宏观情绪消退",
+          "高盛：高盛基本金属追踪-铜，实物紧张vs.宏观情绪消退-AI成关键驱动",
+          "高盛：BaseMetalsTracker-Copper",
+          "高盛：图表1，自2025年底以来"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：BaseMetalsTracker-Copper",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：图表1，自2025年底以来",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：高盛基本金属追踪-铜，实物紧张vs.宏观情绪消退",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：高盛基本金属追踪-铜，实物紧张vs.宏观情绪消退"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_12.pdf",
+      "figure_count": 28,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x2",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "A股|港股->相关市场 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "疲弱|乏力|低迷->仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "A股|港股->相关市场 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/12-0002-12-Goldman-Sachs-Base-Metals-Tracker--Copper--Physical-Tightness-vs",
+      "pdf_path": "kc_translated_reports/260720/12-0002-12-Goldman-Sachs-Base-Metals-Tracker--Copper--Physical-Tightness-vs/kc_translated_report_12.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_2/0003-13-Goldman-Sachs-China-Brewing--Read-across-from-Yanjing--Read-across-from-",
+      "title": "高盛：中国啤酒行业，燕京调研核心SKU表现分化加剧",
+      "source_title": "0003-13-GS-China Brewing- Read across from Yanjing- Read across from Yanjing investor meeting- Widening divergence in key SKU performance-26",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-13-GS-China Brewing- Read across from Yanjing- Read across from Yanjing investor meeting- Widening divergence in key SKU performance-26",
+        "cleaned_source_title": "GS-China Brewing- Read across from Yanjing- Read across from Yanjing investor meeting- Widening divergence in key SKU performance-26",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：中国BrewingReadacrossfromY",
+        "raw_candidates": [
+          "高盛-中国啤酒行业：燕京调研核心SKU表现分化加剧",
+          "高盛-中国啤酒行业：燕京U8销量增近30% SKU分化加剧",
+          "高盛-中国啤酒行业：燕京U8逆势增长 高端SKU分化加剧"
+        ],
+        "cleaned_candidates": [
+          "高盛：中国啤酒行业，燕京调研核心SKU表现分化加剧",
+          "高盛：中国啤酒行业，燕京U8销量增近30%SKU分化加剧",
+          "高盛：中国啤酒行业，燕京U8逆势增长高端SKU分化加剧",
+          "高盛：中国BrewingReadacrossfromY",
+          "高盛：燕京啤酒7月16日读者会议要点，1)U8在8"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：中国啤酒行业，燕京U8销量增近30%SKU分化加剧",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "高盛：中国啤酒行业，燕京U8逆势增长高端SKU分化加剧",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "高盛：中国BrewingReadacrossfromY",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：燕京啤酒7月16日读者会议要点，1)U8在8",
+            "reasons": [
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：中国啤酒行业，燕京调研核心SKU表现分化加剧",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：中国啤酒行业，燕京调研核心SKU表现分化加剧"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_13.pdf",
+      "figure_count": 3,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "证券->标的 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "股票|个股->公司 x3",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x3",
+        "股票|个股->公司 x4",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/13-0003-13-Goldman-Sachs-China-Brewing--Read-across-from-Yanjing--Read-across-from",
+      "pdf_path": "kc_translated_reports/260720/13-0003-13-Goldman-Sachs-China-Brewing--Read-across-from-Yanjing--Read-across-from/kc_translated_report_13.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_2/0004-14-Goldman-Sachs-China-Consumer-Dashboard-2026Q2-Consumption-momentum-softe",
+      "title": "高盛：中国消费全景-2026Q2消费动能环比放缓",
+      "source_title": "0004-14-GS-China Consumer Dashboard-2026Q2-Consumption momentum softened sequentially-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-14-GS-China Consumer Dashboard-2026Q2-Consumption momentum softened sequentially-260719",
+        "cleaned_source_title": "GS-China Consumer Dashboard-2026Q2-Consumption momentum softened sequentially",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：中国消费Dashboard2026Q2Consu",
+        "raw_candidates": [
+          "高盛：中国消费全景-2026Q2消费动能环比放缓",
+          "高盛：中国消费全景-2026Q2居民消费环比年化降至4.0%",
+          "高盛：中国消费全景-2026Q2零售销售增速骤降至0.2%"
+        ],
+        "cleaned_candidates": [
+          "高盛：中国消费全景-2026Q2消费动能环比放缓",
+          "高盛：中国消费全景-2026Q2居民消费环比年化降至4.0%",
+          "高盛：中国消费全景-2026Q2零售销售增速骤降至0.2%",
+          "高盛：中国消费Dashboard2026Q2Consu",
+          "高盛：居民名义消费增长从第一季度的3.6%小幅上升至第二季度的3.8%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：中国消费全景-2026Q2居民消费环比年化降至4.0%",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "高盛：中国消费全景-2026Q2零售销售增速骤降至0.2%",
+            "reasons": [
+              "anchor_coverage=0.61"
+            ]
+          },
+          {
+            "title": "高盛：中国消费Dashboard2026Q2Consu",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.44"
+            ]
+          },
+          {
+            "title": "高盛：居民名义消费增长从第一季度的3.6%小幅上升至第二季度的3.8%",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：中国消费全景-2026Q2消费动能环比放缓",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：中国消费全景-2026Q2消费动能环比放缓"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_14.pdf",
+      "figure_count": 28,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x3",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "下行|放缓->节奏变化 x2",
+        "sanitize_wechat_stock_line",
+        "疲弱|乏力|低迷->仍在调整 x2",
+        "sanitize_wechat_stock_line",
+        "疲弱|乏力|低迷->仍在调整 x1",
+        "下行|放缓->节奏变化 x1",
+        "拖累->影响 x1",
+        "仍在调整影响->仍在调整，并影响 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "疲弱|乏力|低迷->仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股票市场|股市->市场 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/14-0004-14-Goldman-Sachs-China-Consumer-Dashboard-2026Q2-Consumption-momentum-softe",
+      "pdf_path": "kc_translated_reports/260720/14-0004-14-Goldman-Sachs-China-Consumer-Dashboard-2026Q2-Consumption-momentum-softe/kc_translated_report_14.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_2/0005-15-Goldman-Sachs-China-Battery-Assessing-implications-of-consumption-tax-re",
+      "title": "高盛：中国电池，评估消费税恢复影响-宁德时代最具韧性",
+      "source_title": "0005-15-GS-China Battery-Assessing implications of consumption tax resumption.CATL screens as most resilient - Buy A H-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-15-GS-China Battery-Assessing implications of consumption tax resumption.CATL screens as most resilient - Buy A H-260719",
+        "cleaned_source_title": "GS-China Battery-Assessing implications of consumption tax resumption.CATL screens as most resilient - Buy A H",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：中国BatteryAssessingimplic",
+        "raw_candidates": [
+          "中国电池：评估消费税恢复影响-宁德时代最具韧性",
+          "中国电池：消费税恢复影响-宁德时代最具韧性-买入A/H",
+          "中国电池：消费税恢复影响-宁德时代最具韧性-2026年9月起征2%"
+        ],
+        "cleaned_candidates": [
+          "高盛：中国电池，评估消费税恢复影响-宁德时代最具韧性",
+          "高盛：中国BatteryAssessingimplic",
+          "高盛：中国电池，消费税恢复影响-宁德时代最具韧性",
+          "高盛：自2026年9月1日起，原锂电池和锂离子电池将适用2%的消费税"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：中国BatteryAssessingimplic",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：自2026年9月1日起，原锂电池和锂离子电池将适用2%的消费税",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：中国电池，评估消费税恢复影响-宁德时代最具韧性",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：中国电池，评估消费税恢复影响-宁德时代最具韧性"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_15.pdf",
+      "figure_count": 1,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x2",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/15-0005-15-Goldman-Sachs-China-Battery-Assessing-implications-of-consumption-tax-re",
+      "pdf_path": "kc_translated_reports/260720/15-0005-15-Goldman-Sachs-China-Battery-Assessing-implications-of-consumption-tax-re/kc_translated_report_15.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_3/0001-16-Goldman-Sachs-China-Industrial-Tech-Data-Center-Electricals-What-to-expe",
+      "title": "高盛：中国数据中心电气-2026下半年海外扩张与国内资本开支趋势",
+      "source_title": "0001-16-GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-16-GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview",
+        "cleaned_source_title": "GS-China Industrial Tech-Data Center Electricals-What to expect in 2H26 on overseas expansion and domestic capex trend- 2Q26 preview",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：中国IndustrialTechDataCent",
+        "raw_candidates": [
+          "高盛：中国数据中心电气-2026下半年海外扩张与国内资本开支趋势",
+          "高盛：中国数据中心电气-海外扩张与国内资本开支趋势-科士达等评级",
+          "高盛：中国数据中心电气-科士达等跌29%后海外扩张与国内资本开支趋势"
+        ],
+        "cleaned_candidates": [
+          "高盛：中国数据中心电气-2026下半年海外扩张与国内资本开支趋势",
+          "高盛：中国数据中心电气-海外扩张与国内资本开支趋势-科士达等评级",
+          "高盛：中国数据中心电气-科士达等跌29%后海外扩张与国内资本开支趋势",
+          "高盛：中国IndustrialTechDataCent",
+          "高盛：麦格米特自7月以来平均下跌29%，而沪深300指数下跌9%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：中国数据中心电气-海外扩张与国内资本开支趋势-科士达等评级",
+            "reasons": [
+              "anchor_coverage=0.70"
+            ]
+          },
+          {
+            "title": "高盛：中国数据中心电气-科士达等跌29%后海外扩张与国内资本开支趋势",
+            "reasons": [
+              "anchor_coverage=0.70"
+            ]
+          },
+          {
+            "title": "高盛：中国IndustrialTechDataCent",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：麦格米特自7月以来平均下跌29%，而沪深300指数下跌9%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：中国数据中心电气-2026下半年海外扩张与国内资本开支趋势",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：中国数据中心电气-2026下半年海外扩张与国内资本开支趋势"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_16.pdf",
+      "figure_count": 0,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "买入->观点偏积极 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "股票|个股->公司 x1",
+        "股价->报价 x1",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "买入->观点偏积极 x1",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "remove_stock_parenthetical x1",
+        "sanitize_wechat_stock_line",
+        "衰退|萎缩|收缩->调整 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x2",
+        "股价->报价 x1",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "买入->观点偏积极 x1",
+        "sanitize_wechat_stock_line",
+        "疲弱|乏力|低迷->仍在调整 x1",
+        "拖累->影响 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1"
+      ],
+      "output_dir": "kc_translated_reports/260720/16-0001-16-Goldman-Sachs-China-Industrial-Tech-Data-Center-Electricals-What-to-expe",
+      "pdf_path": "kc_translated_reports/260720/16-0001-16-Goldman-Sachs-China-Industrial-Tech-Data-Center-Electricals-What-to-expe/kc_translated_report_16.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_3/0002-17-Goldman-Sachs-Eoptolink--300502---Accelerated-ramp-up-of-800G-1.6T-optic",
+      "title": "高盛：1.6T光模块加速放量-2Q26净利润中值超预期44%",
+      "source_title": "0002-17-GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-17-GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy-260720",
+        "cleaned_source_title": "GS-Eoptolink -300502-- Accelerated ramp up of 800G 1.6T optical modules- 2Q26 NI guidance beat- Buy",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：Eoptolink300502Accelerat",
+        "raw_candidates": [
+          "高盛：Eoptolink 800G/1.6T光模块加速放量-买入",
+          "高盛：Eoptolink 800G/1.6T光模块加速放量-2Q26净利润指引超预期",
+          "高盛：Eoptolink 800G/1.6T光模块加速放量-2Q26净利润中值超预期44%"
+        ],
+        "cleaned_candidates": [
+          "高盛：1.6T光模块加速放量-买入",
+          "高盛：1.6T光模块加速放量-2Q26净利润指引超预期",
+          "高盛：1.6T光模块加速放量-2Q26净利润中值超预期44%",
+          "高盛：Eoptolink300502Accelerat",
+          "高盛：Eoptolink公布1H26净利润指引为70亿至90亿元人民币"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "incomplete_last_segment",
+          "forbidden_public_wording"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：1.6T光模块加速放量-买入",
+            "reasons": [
+              "incomplete_last_segment",
+              "forbidden_public_wording",
+              "anchor_coverage=0.43",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：Eoptolink300502Accelerat",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：Eoptolink公布1H26净利润指引为70亿至90亿元人民币",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：1.6T光模块加速放量-2Q26净利润中值超预期44%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2",
+            "44"
+          ],
+          "added_contrarian_terms": [
+            "超预期"
+          ],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：1.6T光模块加速放量-2Q26净利润中值超预期44%"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_17.pdf",
+      "figure_count": 1,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/17-0002-17-Goldman-Sachs-Eoptolink--300502---Accelerated-ramp-up-of-800G-1",
+      "pdf_path": "kc_translated_reports/260720/17-0002-17-Goldman-Sachs-Eoptolink--300502---Accelerated-ramp-up-of-800G-1/kc_translated_report_17.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_3/0003-18-Goldman-Sachs-China-Three-things-in-China-260719",
+      "title": "高盛：中国三件事-GDP不及预期",
+      "source_title": "0003-18-GS-China-Three things in China-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-18-GS-China-Three things in China-260719",
+        "cleaned_source_title": "GS-China-Three things in China",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：中国Threethingsin中国",
+        "raw_candidates": [
+          "高盛：中国三件事",
+          "高盛：中国三件事-GDP不及预期",
+          "高盛：中国三件事-二季度GDP低于目标下限"
+        ],
+        "cleaned_candidates": [
+          "高盛：中国三件事",
+          "高盛：中国三件事-GDP不及预期",
+          "高盛：中国三件事-二季度GDP低于目标下限",
+          "高盛：中国Threethingsin中国",
+          "高盛：6月宏观环境分化持续加剧，工业增加值增速升至同比5.3%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：中国三件事",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.36",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：中国三件事-二季度GDP低于目标下限",
+            "reasons": [
+              "anchor_coverage=0.55"
+            ]
+          },
+          {
+            "title": "高盛：中国Threethingsin中国",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：6月宏观环境分化持续加剧，工业增加值增速升至同比5.3%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：中国三件事-GDP不及预期",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：中国三件事-GDP不及预期"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_18.pdf",
+      "figure_count": 2,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "经济->宏观环境 x1",
+        "投资->研究 x1",
+        "疲弱|乏力|低迷->仍在调整 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "中国经济->中国宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "中国经济->中国宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "中国经济->中国宏观环境 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/18-0003-18-Goldman-Sachs-China-Three-things-in-China-260719",
+      "pdf_path": "kc_translated_reports/260720/18-0003-18-Goldman-Sachs-China-Three-things-in-China-260719/kc_translated_report_18.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_3/0004-19-Goldman-Sachs-Iluvatar--9903.HK--China-AI-Capex-upcycle-to-drive-growth-",
+      "title": "高盛：中国AI资本开支上行周期驱动增长-净利润年增119%",
+      "source_title": "0004-19-GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-19-GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000-260719",
+        "cleaned_source_title": "GS-Iluvatar -9903.HK- China AI Capex upcycle to drive growth ahead- Initiate at Buy with TP at HK-1-000",
+        "institution_name": "高盛",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "高盛：AIIluvatar",
+        "raw_candidates": [
+          "高盛-中国AI资本开支上行周期驱动增长-首次覆盖买入",
+          "高盛-中国AI资本开支上行周期驱动增长-净利润年增119%",
+          "高盛-中国AI资本开支上行周期驱动增长-本地芯片替代空间大"
+        ],
+        "cleaned_candidates": [
+          "高盛：中国AI资本开支上行周期驱动增长-更新公司观点",
+          "高盛：中国AI资本开支上行周期驱动增长-净利润年增119%",
+          "高盛：中国AI资本开支上行周期驱动增长-本地芯片替代空间大",
+          "高盛：AIIluvatar",
+          "高盛：55%，反映出中国强劲的AI研究势头"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：AIIluvatar",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：55%，反映出中国强劲的AI研究势头",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：中国AI资本开支上行周期驱动增长-净利润年增119%",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "119"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：中国AI资本开支上行周期驱动增长-净利润年增119%"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_19.pdf",
+      "figure_count": 11,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "投资->研究 x2",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x2",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "风险->不确定性 x2",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "拖累->影响 x1"
+      ],
+      "output_dir": "kc_translated_reports/260720/19-0004-19-Goldman-Sachs-Iluvatar--9903",
+      "pdf_path": "kc_translated_reports/260720/19-0004-19-Goldman-Sachs-Iluvatar--9903/kc_translated_report_19.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_3/0005-20-Goldman-Sachs-Global-Views-Renewed-Escalation-vs.-Lower-Inflation-260719",
+      "title": "高盛：全球观点，局势再度升级vs.通胀节奏变化",
+      "source_title": "0005-20-GS-Global Views-Renewed Escalation vs. Lower Inflation-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-20-GS-Global Views-Renewed Escalation vs. Lower Inflation-260719",
+        "cleaned_source_title": "GS-Global Views-Renewed Escalation vs. Lower Inflation",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：全球ViewsRenewedEscalationvs.Lower",
+        "raw_candidates": [
+          "全球观点：局势再度升级 vs. 通胀节奏变化",
+          "全球观点：中东升级推油价，通胀改善降加息概率",
+          "全球观点：美国通胀异常高，中东升级或推油价至100美元"
+        ],
+        "cleaned_candidates": [
+          "高盛：全球观点，局势再度升级vs.通胀节奏变化",
+          "高盛：全球观点，中东升级推油价，通胀改善降加息概率",
+          "高盛：全球观点，美国通胀异常高，中东升级或推油价至100美元",
+          "高盛：全球ViewsRenewedEscalationvs.Lower",
+          "高盛：2.我们估计，美国宏观环境在2025年上半年以约2.25%的趋势"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：全球观点，中东升级推油价，通胀改善降加息概率",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：全球观点，美国通胀异常高，中东升级或推油价至100美元",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：全球ViewsRenewedEscalationvs.Lower",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：2.我们估计，美国宏观环境在2025年上半年以约2.25%的趋势",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：全球观点，局势再度升级vs.通胀节奏变化",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：全球观点，局势再度升级vs.通胀节奏变化"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_20.pdf",
+      "figure_count": 10,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "股票|个股->公司 x1",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x3",
+        "拖累->影响 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "疲弱|乏力|低迷->仍在调整 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "投资组合->组合观察 x2",
+        "股价->报价 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "经济体->地区 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "中国经济->中国宏观环境 x1",
+        "经济->宏观环境 x1",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "推荐->提到 x1",
+        "经济->宏观环境 x2",
+        "股票|个股->公司 x1",
+        "收益率->回报表现 x1",
+        "风险->不确定性 x3"
+      ],
+      "output_dir": "kc_translated_reports/260720/20-0005-20-Goldman-Sachs-Global-Views-Renewed-Escalation-vs",
+      "pdf_path": "kc_translated_reports/260720/20-0005-20-Goldman-Sachs-Global-Views-Renewed-Escalation-vs/kc_translated_report_20.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_4/0001-21-Goldman-Sachs-Kweichow-Moutai-600519-Market-oriented-plan--5-Second-roun",
+      "title": "高盛：贵州茅台市场化计划第五步-飞天茅台第二轮意外提价",
+      "source_title": "0001-21-GS-Kweichow Moutai-600519-Market-oriented plan -5-Second round of unexpected ex-factory and suggested retail price hike of Feitian i",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-21-GS-Kweichow Moutai-600519-Market-oriented plan -5-Second round of unexpected ex-factory and suggested retail price hike of Feitian i",
+        "cleaned_source_title": "GS-Kweichow Moutai-600519-Market-oriented plan -5-Second round of unexpected ex-factory and suggested retail price hike of Feitian i",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：KweichowMoutai600519市场or",
+        "raw_candidates": [
+          "高盛:贵州茅台市场化计划第五步-飞天茅台第二轮意外提价",
+          "高盛:贵州茅台飞天茅台第二轮提价-出厂价涨7.9%零售价涨6.5%",
+          "高盛:贵州茅台年内二次提价-飞天茅台出厂价累计涨17%"
+        ],
+        "cleaned_candidates": [
+          "高盛：贵州茅台市场化计划第五步-飞天茅台第二轮意外提价",
+          "高盛：贵州茅台飞天茅台第二轮提价-出厂价涨7.9%零售价涨6.5%",
+          "高盛：贵州茅台年内二次提价-飞天茅台出厂价累计涨17%",
+          "高盛：KweichowMoutai600519市场or",
+          "高盛：最新动态，贵州茅台于7月17日正式宣布新一轮飞天茅台提价"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：贵州茅台飞天茅台第二轮提价-出厂价涨7.9%零售价涨6.5%",
+            "reasons": [
+              "anchor_coverage=0.43",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：贵州茅台年内二次提价-飞天茅台出厂价累计涨17%",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：KweichowMoutai600519市场or",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：最新动态，贵州茅台于7月17日正式宣布新一轮飞天茅台提价",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：贵州茅台市场化计划第五步-飞天茅台第二轮意外提价",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：贵州茅台市场化计划第五步-飞天茅台第二轮意外提价"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_21.pdf",
+      "figure_count": 2,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "收益率->回报表现 x1",
+        "风险->不确定性 x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/21-0001-21-Goldman-Sachs-Kweichow-Moutai-600519-Market-oriented-plan--5-Second-roun",
+      "pdf_path": "kc_translated_reports/260720/21-0001-21-Goldman-Sachs-Kweichow-Moutai-600519-Market-oriented-plan--5-Second-roun/kc_translated_report_21.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_4/0002-22-Goldman-Sachs-Powering-Up-Europe--EU-Electrification-Plan-supports-our-t",
+      "title": "高盛：赋能欧洲，欧盟电气化计划支持我们的观点",
+      "source_title": "0002-22-GS-Powering Up Europe- EU Electrification Plan supports our thesis-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-22-GS-Powering Up Europe- EU Electrification Plan supports our thesis-260720",
+        "cleaned_source_title": "GS-Powering Up Europe- EU Electrification Plan supports our thesis",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：PoweringUpEurope",
+        "raw_candidates": [
+          "赋能欧洲：欧盟电气化计划支持我们的观点",
+          "欧盟电气化计划：目标2040年电力消费占比46%",
+          "欧盟电气化计划：电力需求年增4-5%，需2.2万亿欧元投资"
+        ],
+        "cleaned_candidates": [
+          "高盛：赋能欧洲，欧盟电气化计划支持我们的观点",
+          "高盛：欧盟电气化计划，目标2040年电力消费占比46%",
+          "高盛：欧盟电气化计划，电力需求年增4-5%，需2.2万亿欧元研究",
+          "高盛：PoweringUpEurope",
+          "高盛：7月17日，欧盟委员会发布了关于如何加速能源需求电气化的战略"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：欧盟电气化计划，目标2040年电力消费占比46%",
+            "reasons": [
+              "anchor_coverage=0.40",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：欧盟电气化计划，电力需求年增4-5%，需2.2万亿欧元研究",
+            "reasons": [
+              "anchor_coverage=0.40",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：PoweringUpEurope",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：7月17日，欧盟委员会发布了关于如何加速能源需求电气化的战略",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：赋能欧洲，欧盟电气化计划支持我们的观点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：赋能欧洲，欧盟电气化计划支持我们的观点"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_22.pdf",
+      "figure_count": 0,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "投资周期->研究周期 x1",
+        "投资->研究 x2",
+        "sanitize_wechat_stock_line",
+        "投资组合->组合观察 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "证券->标的 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "股票|个股->公司 x3",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x3",
+        "股票|个股->公司 x4",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x2",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/22-0002-22-Goldman-Sachs-Powering-Up-Europe--EU-Electrification-Plan-supports-our-t",
+      "pdf_path": "kc_translated_reports/260720/22-0002-22-Goldman-Sachs-Powering-Up-Europe--EU-Electrification-Plan-supports-our-t/kc_translated_report_22.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_4/0003-23-JPM-Equity-Strategy-The-maturing-stage-of-AI-momentum-unwind--Inflation-",
+      "title": "摩根大通：权益策略-AI动量退潮进入成熟阶段-通胀率回落",
+      "source_title": "0003-23-JPM-Equity Strategy The maturing stage of AI-momentum unwind- Inflation rates rolling- Earnings to offer a support-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-23-JPM-Equity Strategy The maturing stage of AI-momentum unwind- Inflation rates rolling- Earnings to offer a support-260720",
+        "cleaned_source_title": "JPM-Equity Strategy The maturing stage of AI-momentum unwind- Inflation rates rolling- Earnings to offer a support",
+        "institution_name": "摩根大通",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "摩根大通：AIEquity策略Thematuringsta",
+        "raw_candidates": [
+          "摩根大通：权益策略-AI动量退潮进入成熟阶段-通胀率回落-盈利将提供支撑",
+          "摩根大通：权益策略-AI动量退潮进入成熟阶段-韩国市场跌25%SOX跌20%",
+          "摩根大通：权益策略-AI动量退潮进入成熟阶段-盈利支撑半导体买盘"
+        ],
+        "cleaned_candidates": [
+          "摩根大通：权益策略-AI动量退潮进入成熟阶段-通胀率回落",
+          "摩根大通：权益策略-AI动量退潮进入成熟阶段",
+          "摩根大通：权益策略-AI动量退潮进入成熟阶段-盈利支撑半导体买盘",
+          "摩根大通：AIEquity策略Thematuringsta",
+          "摩根大通：图4，美国与欧洲AI不确定性篮子自2025年1月以来相对市场"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "摩根大通：权益策略-AI动量退潮进入成熟阶段",
+            "reasons": [
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：权益策略-AI动量退潮进入成熟阶段-盈利支撑半导体买盘",
+            "reasons": [
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：AIEquity策略Thematuringsta",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：图4，美国与欧洲AI不确定性篮子自2025年1月以来相对市场",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "摩根大通：权益策略-AI动量退潮进入成熟阶段-通胀率回落",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "摩根大通：权益策略-AI动量退潮进入成熟阶段-通胀率回落"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_23.pdf",
+      "figure_count": 28,
+      "institution_name": "摩根大通",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "收益率->回报表现 x1",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "证券->标的 x1",
+        "sanitize_wechat_stock_line",
+        "证券->标的 x1",
+        "sanitize_wechat_stock_line",
+        "证券->标的 x1",
+        "sanitize_wechat_stock_line",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1"
+      ],
+      "output_dir": "kc_translated_reports/260720/23-0003-23-JPM-Equity-Strategy-The-maturing-stage-of-AI-momentum-unwind--Inflation",
+      "pdf_path": "kc_translated_reports/260720/23-0003-23-JPM-Equity-Strategy-The-maturing-stage-of-AI-momentum-unwind--Inflation/kc_translated_report_23.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_4/0004-24-Goldman-Sachs-US-Tariff-Impact-Tracker--Imports-into-LA-Mixed-Over-Next-",
+      "title": "高盛：美国关税影响追踪器，未来两周洛杉矶进口量表现不一",
+      "source_title": "0004-24-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-24-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks-260720",
+        "cleaned_source_title": "GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks",
+        "institution_name": "高盛",
+        "required_terms": [],
+        "deterministic_fallback": "高盛：USTariffImpactTracker",
+        "raw_candidates": [
+          "美国关税影响追踪器：未来两周洛杉矶进口量表现不一",
+          "美国关税影响追踪器：洛杉矶进口下周环比增3%后两周降7%",
+          "美国关税影响追踪器：洛杉矶进口量波动，贸易不确定性影响货运规划"
+        ],
+        "cleaned_candidates": [
+          "高盛：美国关税影响追踪器，未来两周洛杉矶进口量表现不一",
+          "高盛：美国关税影响追踪器，洛杉矶进口下周环比增3%后两周降7%",
+          "高盛：美国关税影响追踪器，洛杉矶进口量波动，贸易不确定性影响货运规划",
+          "高盛：USTariffImpactTracker",
+          "高盛：西海岸的铁路多式联运量同比增长+4%，此前一周为+13%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "高盛：美国关税影响追踪器，洛杉矶进口下周环比增3%后两周降7%",
+            "reasons": [
+              "anchor_coverage=0.59"
+            ]
+          },
+          {
+            "title": "高盛：美国关税影响追踪器，洛杉矶进口量波动，贸易不确定性影响货运规划",
+            "reasons": [
+              "anchor_coverage=0.59"
+            ]
+          },
+          {
+            "title": "高盛：USTariffImpactTracker",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "高盛：西海岸的铁路多式联运量同比增长+4%，此前一周为+13%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "高盛：美国关税影响追踪器，未来两周洛杉矶进口量表现不一",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "高盛：美国关税影响追踪器，未来两周洛杉矶进口量表现不一"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_24.pdf",
+      "figure_count": 20,
+      "institution_name": "高盛",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "(?:上调|下调|维持|重申|恢复)\\s*评级->更新公司观点 x1",
+        "经济->宏观环境 x1",
+        "衰退|萎缩|收缩->调整 x1",
+        "sanitize_wechat_stock_line",
+        "remove_stock_parenthetical x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/24-0004-24-Goldman-Sachs-US-Tariff-Impact-Tracker--Imports-into-LA-Mixed-Over-Next",
+      "pdf_path": "kc_translated_reports/260720/24-0004-24-Goldman-Sachs-US-Tariff-Impact-Tracker--Imports-into-LA-Mixed-Over-Next/kc_translated_report_24.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_4/0005-25-JPM-US-Equity-Strategy-Hyperscalers-vs.-AI-Hardware--AI-Capex---Monetiza",
+      "title": "摩根大通：超大规模云厂商资本支出指引聚焦变现证据，AI周期依然完好",
+      "source_title": "0005-25-JPM-US Equity Strategy Hyperscalers vs. AI Hardware- AI Capex - Monetization- Momentum Unwind- 2Q Earnings-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-25-JPM-US Equity Strategy Hyperscalers vs. AI Hardware- AI Capex - Monetization- Momentum Unwind- 2Q Earnings-260720",
+        "cleaned_source_title": "JPM-US Equity Strategy Hyperscalers vs. AI Hardware- AI Capex - Monetization- Momentum Unwind- 2Q Earnings",
+        "institution_name": "摩根大通",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "摩根大通：USEquity策略Hyperscalersvs.AI硬件",
+        "raw_candidates": [
+          "摩根大通：超大规模云厂商资本支出指引聚焦变现证据，AI周期依然完好",
+          "摩根大通：超大规模云厂商资本支出持续增长，AI变现信号或支撑盈利",
+          "摩根大通：超大规模云厂商资本支出与AI变现成财报季核心，动量因子回撤",
+          "摩根大通：美国股票策略-超大规模云厂商vs.AI硬件与资本支出变现及动量回撤",
+          "摩根大通：超大规模云厂商vs.AI硬件-资本支出与变现成财报季核心",
+          "摩根大通：超大规模云厂商资本支出指引聚焦变现证据-动量回撤未出清"
+        ],
+        "cleaned_candidates": [
+          "摩根大通：超大规模云厂商资本支出指引聚焦变现证据，AI周期依然完好",
+          "摩根大通：超大规模云厂商资本支出持续增长，AI变现信号或支撑盈利",
+          "摩根大通：超大规模云厂商资本支出与AI变现成财报季核心，动量因子回撤",
+          "摩根大通：美国公司策略-超大规模云厂商硬件与资本支出变现及动量回撤",
+          "摩根大通：超大规模云厂商硬件-资本支出与变现成财报季核心",
+          "摩根大通：超大规模云厂商资本支出指引聚焦变现证据-动量回撤未出清",
+          "摩根大通：USEquity策略Hyperscalersvs.AI硬件",
+          "摩根大通：这包括增量用例，例如Meta出售过剩AI计算能力的举措"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "摩根大通：超大规模云厂商资本支出持续增长，AI变现信号或支撑盈利",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：超大规模云厂商资本支出与AI变现成财报季核心，动量因子回撤",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：美国公司策略-超大规模云厂商硬件与资本支出变现及动量回撤",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：超大规模云厂商硬件-资本支出与变现成财报季核心",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：超大规模云厂商资本支出指引聚焦变现证据-动量回撤未出清",
+            "reasons": [
+              "missing_required_terms=AI",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：USEquity策略Hyperscalersvs.AI硬件",
+            "reasons": [
+              "listing_suffix",
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根大通：这包括增量用例，例如Meta出售过剩AI计算能力的举措",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "摩根大通：超大规模云厂商资本支出指引聚焦变现证据，AI周期依然完好",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "摩根大通：这包括增量用例，例如Meta出售过剩AI计算能力的举措",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "摩根大通：超大规模云厂商资本支出指引聚焦变现证据，AI周期依然完好",
+          "摩根大通：超大规模云厂商资本支出持续增长，AI变现信号或支撑盈利",
+          "摩根大通：超大规模云厂商资本支出与AI变现成财报季核心，动量因子回撤"
+        ],
+        "final_title_after_wording_guard": "摩根大通：超大规模云厂商资本支出指引聚焦变现证据，AI周期依然完好"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_25.pdf",
+      "figure_count": 8,
+      "institution_name": "摩根大通",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "投资->研究 x1",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "金融->资金 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "崩盘|崩溃|暴跌->明显波动 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "投资->研究 x2",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "衰退|萎缩|收缩->调整 x1",
+        "sanitize_wechat_stock_line",
+        "财经->研究 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "财经->研究 x1",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x2",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x2"
+      ],
+      "output_dir": "kc_translated_reports/260720/25-0005-25-JPM-US-Equity-Strategy-Hyperscalers-vs",
+      "pdf_path": "kc_translated_reports/260720/25-0005-25-JPM-US-Equity-Strategy-Hyperscalers-vs/kc_translated_report_25.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_5/0001-26-Morgan-Stanley-Semiconductors---North-America-Selloff-of-US-memory-stock",
+      "title": "摩根士丹利：半导体-美国存储股抛售创造有吸引力入场点",
+      "source_title": "0001-26-MS-Semiconductors - North America Selloff of US memory stocks creates a compelling entry point-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-26-MS-Semiconductors - North America Selloff of US memory stocks creates a compelling entry point-260720",
+        "cleaned_source_title": "MS-Semiconductors - North America Selloff of US memory stocks creates a compelling entry point",
+        "institution_name": "摩根士丹利",
+        "required_terms": [],
+        "deterministic_fallback": "摩根士丹利：半导体NorthAmericaSellof",
+        "raw_candidates": [
+          "半导体-美国存储股抛售创造有吸引力入场点",
+          "半导体-美国存储股抛售创造入场点：第三季度价格涨超25%",
+          "半导体-美国存储股抛售创造入场点：存储短缺持续至2027年"
+        ],
+        "cleaned_candidates": [
+          "摩根士丹利：半导体-美国存储股抛售创造有吸引力入场点",
+          "摩根士丹利：半导体-美国存储股抛售创造入场点，第三季度价格涨超25%",
+          "摩根士丹利：半导体-美国存储股抛售创造入场点，存储短缺持续至2027年",
+          "摩根士丹利：半导体NorthAmericaSellof",
+          "摩根士丹利：图1，DRAM估值倍数已大幅回调，现货价格继续走高"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "摩根士丹利：半导体NorthAmericaSellof",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "摩根士丹利：图1，DRAM估值倍数已大幅回调，现货价格继续走高",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "摩根士丹利：半导体-美国存储股抛售创造有吸引力入场点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "摩根士丹利：半导体-美国存储股抛售创造有吸引力入场点"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_26.pdf",
+      "figure_count": 9,
+      "institution_name": "摩根士丹利",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "买入->观点偏积极 x1",
+        "股价->报价 x1",
+        "拖累->影响 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "股价->报价 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x3",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/26-0001-26-Morgan-Stanley-Semiconductors---North-America-Selloff-of-US-memory-stock",
+      "pdf_path": "kc_translated_reports/260720/26-0001-26-Morgan-Stanley-Semiconductors---North-America-Selloff-of-US-memory-stock/kc_translated_report_26.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_5/0002-27-Nomura-ANTA-Sports-Products-2020.HK-Resilient-performance-amid-sector-sl",
+      "title": "野村：安踏体育-行业放缓下的韧性表现",
+      "source_title": "0002-27-NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-27-NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown-260719",
+        "cleaned_source_title": "NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown",
+        "institution_name": "野村",
+        "required_terms": [],
+        "deterministic_fallback": "野村：ANTASportsProductsResili",
+        "raw_candidates": [
+          "安踏体育-行业放缓下的韧性表现",
+          "安踏体育-2Q26销售跑赢行业彰显韧性",
+          "安踏体育-行业节奏变化中多品牌战略显韧性"
+        ],
+        "cleaned_candidates": [
+          "野村：安踏体育-行业放缓下的韧性表现",
+          "野村：安踏体育-2Q26销售跑赢行业彰显韧性",
+          "野村：安踏体育-行业节奏变化中多品牌战略显韧性",
+          "野村：ANTASportsProductsResili",
+          "野村：安踏公布了稳健的2Q26运营数据（7月17日）"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "野村：安踏体育-2Q26销售跑赢行业彰显韧性",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "野村：安踏体育-行业节奏变化中多品牌战略显韧性",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "野村：ANTASportsProductsResili",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "野村：安踏公布了稳健的2Q26运营数据（7月17日）",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "野村：安踏体育-行业放缓下的韧性表现",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "野村：安踏体育-行业放缓下的韧性表现"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_27.pdf",
+      "figure_count": 1,
+      "institution_name": "野村",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "经济->宏观环境 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/27-0002-27-Nomura-ANTA-Sports-Products-2020",
+      "pdf_path": "kc_translated_reports/260720/27-0002-27-Nomura-ANTA-Sports-Products-2020/kc_translated_report_27.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_5/0003-28-Nomura-China-batteries-China-to-levy-consumption-tax-on-Li-ion-batteries",
+      "title": "野村：中国对锂离子电池征收消费税",
+      "source_title": "0003-28-NOM-China batteries-China to levy consumption tax on Li-ion batteries-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-28-NOM-China batteries-China to levy consumption tax on Li-ion batteries-260719",
+        "cleaned_source_title": "NOM-China batteries-China to levy consumption tax on Li-ion batteries",
+        "institution_name": "野村",
+        "required_terms": [],
+        "deterministic_fallback": "野村：中国batteries中国tolevyconsu",
+        "raw_candidates": [
+          "中国对锂离子电池征收消费税",
+          "中国锂离子电池消费税：2%起征",
+          "中国锂离子电池消费税：每千瓦时成本增7元"
+        ],
+        "cleaned_candidates": [
+          "野村：中国对锂离子电池征收消费税",
+          "野村：中国锂离子电池消费税，2%起征",
+          "野村：中国锂离子电池消费税，每千瓦时成本增7元",
+          "野村：中国batteries中国tolevyconsu",
+          "野村：2026年7月17日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "野村：中国锂离子电池消费税，2%起征",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "野村：中国锂离子电池消费税，每千瓦时成本增7元",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "野村：中国batteries中国tolevyconsu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "野村：2026年7月17日",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "野村：中国对锂离子电池征收消费税",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "野村：中国对锂离子电池征收消费税"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_28.pdf",
+      "figure_count": 1,
+      "institution_name": "野村",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "sanitize_wechat_stock_line",
+        "remove_stock_parenthetical x1",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "证券->标的 x1",
+        "sanitize_wechat_stock_line",
+        "股票|个股->公司 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/28-0003-28-Nomura-China-batteries-China-to-levy-consumption-tax-on-Li-ion-batteries",
+      "pdf_path": "kc_translated_reports/260720/28-0003-28-Nomura-China-batteries-China-to-levy-consumption-tax-on-Li-ion-batteries/kc_translated_report_28.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_5/0004-29-Nomura-Laopu-Gold-6181.HK-Sales-to-be-dragged-by-weak-gold-price-260719",
+      "title": "野村：老铺黄金，金价疲软拖累销售，2026财年Q2承压",
+      "source_title": "0004-29-NOM-Laopu Gold-6181.HK-Sales to be dragged by weak gold price-260719",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-29-NOM-Laopu Gold-6181.HK-Sales to be dragged by weak gold price-260719",
+        "cleaned_source_title": "NOM-Laopu Gold-6181.HK-Sales to be dragged by weak gold price",
+        "institution_name": "野村",
+        "required_terms": [],
+        "deterministic_fallback": "野村：LaopuGoldSalestobedragge",
+        "raw_candidates": [
+          "老铺黄金：金价疲软拖累销售",
+          "老铺黄金：金价疲软拖累销售，2026财年Q2承压",
+          "老铺黄金：金价疲软拖累销售，管理层积极刺激消费"
+        ],
+        "cleaned_candidates": [
+          "野村：老铺黄金，金价疲软拖累销售",
+          "野村：老铺黄金，金价疲软拖累销售，2026财年Q2承压",
+          "野村：老铺黄金，金价疲软拖累销售，管理层积极刺激消费",
+          "野村：LaopuGoldSalestobedragge",
+          "野村：我们于7月16日与老铺黄金举行了读者电话会议"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "野村：LaopuGoldSalestobedragge",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "野村：我们于7月16日与老铺黄金举行了读者电话会议",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "野村：老铺黄金，金价疲软拖累销售，2026财年Q2承压",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "野村：老铺黄金，金价疲软拖累销售，2026财年Q2承压"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_29.pdf",
+      "figure_count": 2,
+      "institution_name": "野村",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "拖累->影响 x1",
+        "sanitize_wechat_stock_line",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "负面->谨慎 x1",
+        "sanitize_wechat_stock_line",
+        "投资者->读者 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "remove_target_price_clause x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x2",
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line",
+        "投资->研究 x2",
+        "sanitize_wechat_stock_line",
+        "财经->研究 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/29-0004-29-Nomura-Laopu-Gold-6181",
+      "pdf_path": "kc_translated_reports/260720/29-0004-29-Nomura-Laopu-Gold-6181/kc_translated_report_29.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_5/0005-30-Nomura-Asia-Chart-Alert-TACO-risks-are-rising-but-unlikely-imminent-2607",
+      "title": "野村：亚洲图表警报，TACO风险升至2.0标准差但不太可能迫在眉睫",
+      "source_title": "0005-30-NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-30-NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent-260720",
+        "cleaned_source_title": "NOM-Asia Chart Alert-TACO risks are rising but unlikely imminent",
+        "institution_name": "野村",
+        "required_terms": [],
+        "deterministic_fallback": "野村：AsiaChartAlertTACOrisksa",
+        "raw_candidates": [
+          "亚洲图表警报：TACO风险上升但不太可能迫在眉睫",
+          "亚洲图表警报：TACO风险升至2.0标准差但不太可能迫在眉睫",
+          "亚洲图表警报：美伊冲突推升TACO风险至2.0标准差但不太可能迫在眉睫"
+        ],
+        "cleaned_candidates": [
+          "野村：亚洲图表警报，TACO风险上升但不太可能迫在眉睫",
+          "野村：亚洲图表警报，TACO风险升至2.0标准差但不太可能迫在眉睫",
+          "野村：亚洲图表警报，美伊冲突推升TACO风险至2.0标准差但不太可能迫",
+          "野村：AsiaChartAlertTACOrisksa",
+          "野村：图1，自7月6日以来，我们的TACO指标已上升"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "野村：亚洲图表警报，美伊冲突推升TACO风险至2.0标准差但不太可能迫",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "野村：AsiaChartAlertTACOrisksa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "野村：图1，自7月6日以来，我们的TACO指标已上升",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "野村：亚洲图表警报，TACO风险升至2.0标准差但不太可能迫在眉睫",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2.0"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "野村：亚洲图表警报，TACO风险升至2.0标准差但不太可能迫在眉睫"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_30.pdf",
+      "figure_count": 1,
+      "institution_name": "野村",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "压力->不确定性 x1",
+        "sanitize_wechat_stock_line",
+        "风险->不确定性 x1",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/30-0005-30-Nomura-Asia-Chart-Alert-TACO-risks-are-rising-but-unlikely-imminent-2607",
+      "pdf_path": "kc_translated_reports/260720/30-0005-30-Nomura-Asia-Chart-Alert-TACO-risks-are-rising-but-unlikely-imminent-2607/kc_translated_report_30.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260720/shard_6/0001-31-Nomura-USD-CNY-fix-model-260720",
+      "title": "野村：美元人民币中间价模型预测6.7824",
+      "source_title": "0001-31-NOM-USD CNY fix model-260720",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-31-NOM-USD CNY fix model-260720",
+        "cleaned_source_title": "NOM-USD CNY fix model",
+        "institution_name": "野村",
+        "required_terms": [],
+        "deterministic_fallback": "野村：USDCNYfixmodel",
+        "raw_candidates": [
+          "野村：美元人民币中间价模型",
+          "野村：美元人民币中间价模型预测6.7824",
+          "野村：美元人民币中间价模型预测较前值下调110基点"
+        ],
+        "cleaned_candidates": [
+          "野村：美元人民币中间价模型",
+          "野村：美元人民币中间价模型预测6.7824",
+          "野村：美元人民币中间价模型预测较前值下调110基点",
+          "野村：USDCNYfixmodel",
+          "野村：模型预测，6.7824，前值为6.7934（节奏变化110个基点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "野村：USDCNYfixmodel",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "野村：模型预测，6.7824，前值为6.7934（节奏变化110个基点",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "野村：美元人民币中间价模型预测6.7824",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "6.7824"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "野村：美元人民币中间价模型预测6.7824"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_31.pdf",
+      "figure_count": 3,
+      "institution_name": "野村",
+      "article_style": false,
+      "stock_language_sanitized": [
+        "下行|放缓->节奏变化 x1",
+        "sanitize_wechat_stock_line",
+        "sanitize_wechat_stock_line"
+      ],
+      "output_dir": "kc_translated_reports/260720/31-0001-31-Nomura-USD-CNY-fix-model-260720",
+      "pdf_path": "kc_translated_reports/260720/31-0001-31-Nomura-USD-CNY-fix-model-260720/kc_translated_report_31.pdf"
+    }
+  ]
+}

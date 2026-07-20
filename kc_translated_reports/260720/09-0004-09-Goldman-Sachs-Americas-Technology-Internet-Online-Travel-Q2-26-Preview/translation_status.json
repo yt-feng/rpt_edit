@@ -1,0 +1,120 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260720/shard_1/0004-09-Goldman-Sachs-Americas-Technology-Internet-Online-Travel-Q2-26-Preview--",
+  "title": "高盛：美洲科技-互联网-在线旅游2026年第二季度预览",
+  "source_title": "0004-09-GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-09-GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates-260719",
+    "cleaned_source_title": "GS-Americas Technology-Internet-Online Travel Q2-26 Preview- Analyzing the Industry Debates - Estimates",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：Americas科技InternetOnlineTravelQ2",
+    "raw_candidates": [
+      "高盛：美洲科技-互联网-在线旅游2026年第二季度预览-行业争论与预测分析",
+      "高盛：在线旅游Q2预览-夏季需求稳定，6月预订趋势改善",
+      "高盛：在线旅游Q2预览-世界杯推动短期租赁需求，高端定价持续上行"
+    ],
+    "cleaned_candidates": [
+      "高盛：美洲科技-互联网-在线旅游2026年第二季度预览",
+      "高盛：在线旅游Q2预览-夏季需求稳定，6月预订趋势改善",
+      "高盛：在线旅游Q2预览-世界杯推动短期租赁需求，高端定价持续上行",
+      "高盛：Americas科技InternetOnlineTravelQ2",
+      "高盛：1)夏季旅游需求在全球范围内保持健康稳定，6月预订趋势改善"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：在线旅游Q2预览-夏季需求稳定，6月预订趋势改善",
+        "reasons": [
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：在线旅游Q2预览-世界杯推动短期租赁需求，高端定价持续上行",
+        "reasons": [
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：Americas科技InternetOnlineTravelQ2",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：1)夏季旅游需求在全球范围内保持健康稳定，6月预订趋势改善",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：美洲科技-互联网-在线旅游2026年第二季度预览",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：美洲科技-互联网-在线旅游2026年第二季度预览"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_09.pdf",
+  "figure_count": 24,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

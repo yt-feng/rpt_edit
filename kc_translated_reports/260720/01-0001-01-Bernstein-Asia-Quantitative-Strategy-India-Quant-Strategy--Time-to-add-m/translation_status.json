@@ -1,0 +1,119 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260720/shard_0/0001-01-Bernstein-Asia-Quantitative-Strategy-India-Quant-Strategy--Time-to-add-m",
+  "title": "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到",
+  "source_title": "0001-01-Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-01-Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens-260720",
+    "cleaned_source_title": "Bernstein-Asia Quantitative Strategy India Quant Strategy- Time to add more India exposure-The opportunity set widens",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：AsiaQuantitative策略IndiaQuant策略",
+    "raw_candidates": [
+      "亚洲量化策略印度量化策略：增加印度敞口时机已到",
+      "印度量化策略：18.6倍远期市盈率低于均值，增加敞口",
+      "印度量化策略：动量交易承压，估值回落至10年均值以下"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到",
+      "伯恩斯坦：印度量化策略，18.6倍远期市盈率低于均值，增加敞口",
+      "伯恩斯坦：印度量化策略，动量交易承压，估值回落至10年均值以下",
+      "伯恩斯坦：AsiaQuantitative策略IndiaQuant策略",
+      "伯恩斯坦：这一趋势已在7月开始逆转（+18亿美元）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：印度量化策略，18.6倍远期市盈率低于均值，增加敞口",
+        "reasons": [
+          "anchor_coverage=0.41"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：印度量化策略，动量交易承压，估值回落至10年均值以下",
+        "reasons": [
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：AsiaQuantitative策略IndiaQuant策略",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：这一趋势已在7月开始逆转（+18亿美元）",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：亚洲量化策略印度量化策略，增加印度敞口时机已到"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_01.pdf",
+  "figure_count": 28,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "金融->资金 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x2",
+    "股价->报价 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x2",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "金融->资金 x2",
+    "股票|个股->公司 x2",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "基金经理->组合负责人 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1"
+  ]
+}

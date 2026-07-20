@@ -1,0 +1,111 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260720/shard_5/0002-27-Nomura-ANTA-Sports-Products-2020.HK-Resilient-performance-amid-sector-sl",
+  "title": "野村：安踏体育-行业放缓下的韧性表现",
+  "source_title": "0002-27-NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown-260719",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-27-NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown-260719",
+    "cleaned_source_title": "NOM-ANTA Sports Products-2020.HK-Resilient performance amid sector slowdown",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：ANTASportsProductsResili",
+    "raw_candidates": [
+      "安踏体育-行业放缓下的韧性表现",
+      "安踏体育-2Q26销售跑赢行业彰显韧性",
+      "安踏体育-行业节奏变化中多品牌战略显韧性"
+    ],
+    "cleaned_candidates": [
+      "野村：安踏体育-行业放缓下的韧性表现",
+      "野村：安踏体育-2Q26销售跑赢行业彰显韧性",
+      "野村：安踏体育-行业节奏变化中多品牌战略显韧性",
+      "野村：ANTASportsProductsResili",
+      "野村：安踏公布了稳健的2Q26运营数据（7月17日）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：安踏体育-2Q26销售跑赢行业彰显韧性",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：安踏体育-行业节奏变化中多品牌战略显韧性",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：ANTASportsProductsResili",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：安踏公布了稳健的2Q26运营数据（7月17日）",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：安踏体育-行业放缓下的韧性表现",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：安踏体育-行业放缓下的韧性表现"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_27.pdf",
+  "figure_count": 1,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

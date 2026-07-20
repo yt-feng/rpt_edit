@@ -1,0 +1,116 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260720/shard_0/0003-03-Bernstein-China-Internet--Is-bad-news-now...-good-news--260720",
+  "title": "伯恩斯坦：中国互联网，坏消息现在是否是好消息",
+  "source_title": "0003-03-Bernstein-China Internet- Is bad news now... good news--260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-03-Bernstein-China Internet- Is bad news now... good news--260720",
+    "cleaned_source_title": "Bernstein-China Internet- Is bad news now... good news",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：中国Internet",
+    "raw_candidates": [
+      "中国互联网：坏消息现在是否是好消息",
+      "中国互联网：坏消息变好消息-估值回落与AI催化",
+      "中国互联网：坏消息变好消息-腾讯Hy3与阿里云反弹"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：中国互联网，坏消息现在是否是好消息",
+      "伯恩斯坦：中国互联网，坏消息变好消息-估值回落与AI催化",
+      "伯恩斯坦：中国互联网，坏消息变好消息-腾讯Hy3与阿里云反弹",
+      "伯恩斯坦：中国Internet",
+      "伯恩斯坦：定价日期，2026年7月16日"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：中国互联网，坏消息变好消息-估值回落与AI催化",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：中国互联网，坏消息变好消息-腾讯Hy3与阿里云反弹",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：中国Internet",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：定价日期，2026年7月16日",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：中国互联网，坏消息现在是否是好消息",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：中国互联网，坏消息现在是否是好消息"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 17,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股票|个股->公司 x1",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x4",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x3",
+    "sanitize_wechat_stock_line"
+  ]
+}
