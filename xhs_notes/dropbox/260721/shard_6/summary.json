@@ -1,0 +1,584 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0001-31-GS-Europe Branded Consumer Goods- Luxury Goods- Watches round-up June 2026- Swiss Watch Exports -11- y y- latest industry news wrap-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "瑞士腕表出口回暖，6",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：欧洲品牌消费品-奢侈品-手表行业6月回顾-瑞士手表出口",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-GS-Europe Branded Consumer Goods- Luxury Goods- Watches round-up June 2026- Swiss Watch Exports -11- y y- latest industry news wrap-260721.pdf",
+      "cleaned_source_title": "GS-Europe Branded Consumer Goods- Luxury Goods- Watches round-up June 2026- Swiss Watch Exports -11- y y- latest industry news wrap",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：EuropeBranded消费GoodsLuxu",
+      "raw_candidates": [
+        "GS：欧洲品牌消费品-奢侈品-手表行业6月回顾-瑞士手表出口",
+        "GS：瑞士手表出口6月同比增11%-中国内地与香港走势分化",
+        "GS：瑞士手表出口6月数据-价格带分化与二手市场增长"
+      ],
+      "cleaned_candidates": [
+        "GS：欧洲品牌消费品-奢侈品-手表行业6月回顾-瑞士手表出口",
+        "GS：瑞士手表出口6月同比增11%-中国内地与香港走势分化",
+        "GS：瑞士手表出口6月数据-价格带分化与二手市场增长",
+        "GS：EuropeBranded消费GoodsLuxu",
+        "GS：瑞士手表出口6月同比增11%，中国内地与香港走势分化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：瑞士手表出口6月同比增11%-中国内地与香港走势分化",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：瑞士手表出口6月数据-价格带分化与二手市场增长",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：EuropeBranded消费GoodsLuxu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：瑞士手表出口6月同比增11%，中国内地与香港走势分化",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：欧洲品牌消费品-奢侈品-手表行业6月回顾-瑞士手表出口",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：欧洲品牌消费品-奢侈品-手表行业6月回顾-瑞士手表出口"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0002-32-GS-GE Aerospace-GE.US-More upward estimate revisions-while market position remains strong-Buy-260719.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "GE 换了个打法，交",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-GS-GE Aerospace-GE.US-More upward estimate revisions-while market position remains strong-Buy-260719.pdf",
+      "cleaned_source_title": "GS-GE Aerospace-GE.US-More upward estimate revisions-while market position remains strong-Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：GEAerospaceMoreupwardest",
+      "raw_candidates": [
+        "GS：GE Aerospace二季度每股收益2.02美元高于市场预期",
+        "GS：GE Aerospace商用发动机服务收入同比增长27%",
+        "GS：GE Aerospace上调全年每股收益与自由现金流指引",
+        "GS：GE Aerospace上调每股收益与自由现金流指引",
+        "GS：GE Aerospace二季度每股收益2.02美元超预期",
+        "GS：GE Aerospace商用发动机售后市场收入增长27%"
+      ],
+      "cleaned_candidates": [
+        "GS：GEAerospace二季度每股收益2.02美元高于市场预期",
+        "GS：GEAerospace商用发动机服务收入同比增长27%",
+        "GS：GEAerospace上调全年每股收益与自由现金流指引",
+        "GS：GEAerospace上调每股收益与自由现金流指引",
+        "GS：GEAerospace二季度每股收益2.02美元超预期",
+        "GS：GEAerospace商用发动机售后市场收入增长27%",
+        "GS：GEAerospaceMoreupwardest",
+        "GS：收入126亿美元，同比增长24%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：GEAerospace二季度每股收益2.02美元高于市场预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GEAerospace商用发动机服务收入同比增长27%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GEAerospace上调全年每股收益与自由现金流指引",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GEAerospace上调每股收益与自由现金流指引",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GEAerospace二季度每股收益2.02美元超预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GEAerospace商用发动机售后市场收入增长27%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GEAerospaceMoreupwardest",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "126",
+          "24"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：收入126亿美元，同比增长24%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：GE Aerospace二季度每股收益2.02美元高于市场预期",
+        "GS：GE Aerospace商用发动机服务收入同比增长27%",
+        "GS：GE Aerospace上调全年每股收益与自由现金流指引"
+      ],
+      "pre_neutralization_title": "GS：收入126亿美元，同比增长24%",
+      "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0003-33-GS-Global Markets Daily- Can Japanese Savings Boost JGBs--260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本储蓄要回流买国债",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股票|个股->公司 x2",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "增持->观点偏积极 x2",
+      "股票|个股->公司 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "remove_stock_parenthetical x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x3",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-GS-Global Markets Daily- Can Japanese Savings Boost JGBs--260720.pdf",
+      "cleaned_source_title": "GS-Global Markets Daily- Can Japanese Savings Boost JGBs",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：全球MarketsDaily",
+      "raw_candidates": [
+        "GS：日本储蓄回流能否支撑国债市场",
+        "GS：日本储蓄回流与GPIF增配空间",
+        "GS：日本储蓄回流与国债市场信号效应"
+      ],
+      "cleaned_candidates": [
+        "GS：日本储蓄回流能否支撑国债市场",
+        "GS：日本储蓄回流与GPIF增配空间",
+        "GS：日本储蓄回流与国债市场信号效应",
+        "GS：全球MarketsDaily",
+        "GS：1.GPIF现有框架下约有750亿美元增配空间"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本储蓄回流与GPIF增配空间",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "GS：日本储蓄回流与国债市场信号效应",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "GS：全球MarketsDaily",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.GPIF现有框架下约有750亿美元增配空间",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本储蓄回流能否支撑国债市场",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0004-34-GS-Japan Automobiles-Asia Investor Feedback-Interest is Returning-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本汽车股，投资人兴",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：汽车行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-GS-Japan Automobiles-Asia Investor Feedback-Interest is Returning-260721.pdf",
+      "cleaned_source_title": "GS-Japan Automobiles-Asia Investor Feedback-Interest is Returning",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本AutomobilesAsiaInvesto",
+      "raw_candidates": [
+        "日本汽车-亚洲投资者反馈-兴趣回升",
+        "日本汽车：亚洲路演投资者兴趣回升",
+        "日本汽车：亚洲投资者关注整车与轮胎"
+      ],
+      "cleaned_candidates": [
+        "GS：日本汽车-亚洲参与者反馈-兴趣回升",
+        "GS：日本汽车，亚洲路演参与者兴趣回升",
+        "GS：日本汽车，亚洲参与者关注整车与轮胎",
+        "GS：日本AutomobilesAsiaInvesto",
+        "GS：日元持续贬值和4-6月美国市场稳健的销售数据"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本汽车，亚洲路演参与者兴趣回升",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "GS：日本汽车，亚洲参与者关注整车与轮胎",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本AutomobilesAsiaInvesto",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日元持续贬值和4-6月美国市场稳健的销售数据",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：汽车行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本汽车-亚洲参与者反馈-兴趣回升",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：汽车行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0005-35-GS-LONGFOR GROUP -0960.HK- 1H26 Preview- DP margin weakness persists despite IP growth and on-track deleveraging- Neutral-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "龙湖半年报前瞻：压力",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：龙湖集团2026上半年业绩预览-开发业务毛利率承压",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-GS-LONGFOR GROUP -0960.HK- 1H26 Preview- DP margin weakness persists despite IP growth and on-track deleveraging- Neutral-260720.pdf",
+      "cleaned_source_title": "GS-LONGFOR GROUP -0960.HK- 1H26 Preview- DP margin weakness persists despite IP growth and on-track deleveraging- Neutral",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：LONGFORGROUP1H26PreviewD",
+      "raw_candidates": [
+        "龙湖集团2026上半年业绩预览-开发业务毛利率承压",
+        "龙湖集团2026上半年业绩预览-合同销售同比下滑53%",
+        "龙湖集团2026上半年业绩预览-开发业务毛利率与销售数据"
+      ],
+      "cleaned_candidates": [
+        "GS：龙湖集团2026上半年业绩预览-开发业务毛利率承压",
+        "GS：龙湖集团2026上半年业绩预览-合同销售同比下滑53%",
+        "GS：龙湖集团2026上半年业绩预览-开发业务毛利率与销售数据",
+        "GS：LONGFORGROUP1H26PreviewD",
+        "GS：GS在最新报告中大幅下调龙湖集团2026至2028年盈利预测"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：龙湖集团2026上半年业绩预览-合同销售同比下滑53%",
+          "reasons": [
+            "anchor_coverage=0.61",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：LONGFORGROUP1H26PreviewD",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS在最新报告中大幅下调龙湖集团2026至2028年盈利预测",
+          "reasons": [
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：龙湖集团2026上半年业绩预览-开发业务毛利率承压",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：龙湖集团2026上半年业绩预览-开发业务毛利率承压"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

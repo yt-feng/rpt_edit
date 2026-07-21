@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0001-31-GS-Europe Branded Consumer Goods- Luxury Goods- Watches round-up June 2026- Swiss Watch Exports -11- y y- latest industry news wrap-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0002-32-GS-GE Aerospace-GE.US-More upward estimate revisions-while market position remains strong-Buy-260719.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0003-33-GS-Global Markets Daily- Can Japanese Savings Boost JGBs--260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0004-34-GS-Japan Automobiles-Asia Investor Feedback-Interest is Returning-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tdsajczj/pdfs/0005-35-GS-LONGFOR GROUP -0960.HK- 1H26 Preview- DP margin weakness persists despite IP growth and on-track deleveraging- Neutral-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
