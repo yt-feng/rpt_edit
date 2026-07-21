@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "date_folder": "260722",
+  "source": "kc_translated_reports/institutions",
+  "generated_at_utc": "2026-07-21T23:21:08Z",
+  "article_count": 6,
+  "uploaded_count": 6,
+  "articles": [
+    {
+      "source_report_name": "ADB Agricultural-Innovation-and-Women-s-Empowerment-Can-Improve- dcd52eb4",
+      "institution_name": "亚洲开发银行",
+      "title_before_upload": "亚洲开发银行：气候与产业转型数据与主题变化观察",
+      "final_wechat_title": "亚洲开发银行：气候与产业转型数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260722/01-0001-ADB_Agricultural-Innovation-and-Women-s-Empowerment-Can-Improve-_dcd52eb4",
+      "generation_decision": {
+        "source_filename": "0001-ADB_Agricultural-Innovation-and-Women-s-Empowerment-Can-Improve-_dcd52eb4",
+        "cleaned_source_title": "0001-ADB_Agricultural-Innovation-and-Women-s-Empowerment-Can-Improve-_dcd52eb4",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0001ADBAgriculturalI",
+        "raw_candidates": [
+          "亚洲开发银行：农业创新与女性赋权提升气候韧性",
+          "亚洲开发银行：农业创新与女性赋权-家庭资源错配致产量低30%",
+          "亚洲开发银行：农业创新与女性赋权-东南亚气候适应与研发市场失灵"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：农业创新与女性赋权提升气候韧性",
+          "亚洲开发银行：农业创新与女性赋权-家庭资源错配致产量低30%",
+          "亚洲开发银行：农业创新与女性赋权-东南亚气候适应与研发市场失灵",
+          "亚洲开发银行：0001ADBAgriculturalI",
+          "亚洲开发银行：[[KC_IMAGE_001]]"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：农业创新与女性赋权-家庭资源错配致产量低30%",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：农业创新与女性赋权-东南亚气候适应与研发市场失灵",
+            "reasons": [
+              "anchor_coverage=0.64"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0001ADBAgriculturalI",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：[[KC_IMAGE_001]]",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：气候与产业转型数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "亚洲开发银行：农业创新与女性赋权提升气候韧性",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "亚洲开发银行：气候与产业转型数据与主题变化观察"
+      }
+    },
+    {
+      "source_report_name": "ADB Social-Protection-Indicators-of-Coverage-and-Effectiveness-A 62c88397",
+      "institution_name": "亚洲开发银行",
+      "title_before_upload": "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+      "final_wechat_title": "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260722/02-0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397",
+      "generation_decision": {
+        "source_filename": "0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397",
+        "cleaned_source_title": "0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0002ADBSocialProtect",
+        "raw_candidates": [
+          "亚洲开发银行：社会保护覆盖与有效性指标",
+          "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+          "亚洲开发银行：社会保护指标需求导向与综合指数方法"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：社会保护覆盖与有效性指标",
+          "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+          "亚洲开发银行：社会保护指标需求导向与综合指数方法",
+          "亚洲开发银行：0002ADBSocialProtect",
+          "亚洲开发银行：亚洲开发银行（ADB）在2024年发布了社会保护覆盖与有"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：社会保护指标需求导向与综合指数方法",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0002ADBSocialProtect",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：亚洲开发银行（ADB）在2024年发布了社会保护覆盖与有",
+            "reasons": [
+              "anchor_coverage=0.64"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2024"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+        "body_heading_neutralization_changes": [
+          "统一框架支持跨国比较与政策对话->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BIS Dollarisation-and-monetary-control-what-lessons-for-the-rise 5d83616d",
+      "institution_name": "国际清算银行",
+      "title_before_upload": "国际清算银行：美元化与货币控制，存款美元化与稳定币流入的驱动因素高度相",
+      "final_wechat_title": "国际清算银行：货币市场与相关指标观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260722/03-0003-BIS_Dollarisation-and-monetary-control-what-lessons-for-the-rise_5d83616d",
+      "generation_decision": {
+        "source_filename": "0003-BIS_Dollarisation-and-monetary-control-what-lessons-for-the-rise_5d83616d",
+        "cleaned_source_title": "0003-BIS_Dollarisation-and-monetary-control-what-lessons-for-the-rise_5d83616d",
+        "institution_name": "国际清算银行",
+        "required_terms": [],
+        "deterministic_fallback": "国际清算银行：0003BISDollarisation",
+        "raw_candidates": [
+          "国际清算银行：美元化与货币控制",
+          "国际清算银行：稳定币与存款美元化驱动因素",
+          "国际清算银行：新兴市场美元化与货币政策影响"
+        ],
+        "cleaned_candidates": [
+          "国际清算银行：美元化与货币控制",
+          "国际清算银行：稳定币与存款美元化驱动因素",
+          "国际清算银行：新兴市场美元化与货币政策影响",
+          "国际清算银行：0003BISDollarisation",
+          "国际清算银行：国际清算银行（BIS）最新工作论文基于130多个地区的外"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "国际清算银行：稳定币与存款美元化驱动因素",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "国际清算银行：新兴市场美元化与货币政策影响",
+            "reasons": [
+              "anchor_coverage=0.71"
+            ]
+          },
+          {
+            "title": "国际清算银行：0003BISDollarisation",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "国际清算银行：国际清算银行（BIS）最新工作论文基于130多个地区的外",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "国际清算银行：货币市场与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "国际清算银行：美元化与货币控制",
+        "pre_upload_neutralization_title": "国际清算银行：美元化与货币控制，存款美元化与稳定币流入的驱动因素高度相",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "header_pre_neutralization_title": "存款美元化与稳定币流入的驱动因素高度相似",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "存款美元化与稳定币流入的驱动因素高度相似->研究主题与行业变化观察",
+          "资本管制对稳定币美元化效果有限->研究主题与行业变化观察",
+          "存款美元化对通胀不确定性的影响呈非线性特征->价格数据与市场变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "IMF Understanding-Economic-Growth-in-The-Gambia-Challenges-and-P 7b363594",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：行业规则与主题变化观察，政治转型后宏观环境指标出现广泛改善",
+      "final_wechat_title": "IMF：区域环境与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260722/04-0004-IMF_Understanding-Economic-Growth-in-The-Gambia-Challenges-and-P_7b363594",
+      "generation_decision": {
+        "source_filename": "0004-IMF_Understanding-Economic-Growth-in-The-Gambia-Challenges-and-P_7b363594",
+        "cleaned_source_title": "0004-IMF_Understanding-Economic-Growth-in-The-Gambia-Challenges-and-P_7b363594",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0004IMFUnderstandingEconomic增长",
+        "raw_candidates": [
+          "IMF：冈比亚宏观环境增长的结构性挑战与改革路径",
+          "IMF：冈比亚2017年后GDP增速升至5.2%的结构性挑战",
+          "IMF：冈比亚宏观环境增长的全要素生产率与改革路径"
+        ],
+        "cleaned_candidates": [
+          "IMF：冈比亚宏观环境增长的结构性挑战与改革路径",
+          "IMF：冈比亚2017年后GDP增速升至5.2%的结构性挑战",
+          "IMF：冈比亚宏观环境增长的全要素生产率与改革路径",
+          "IMF：0004IMFUnderstandingEconomic增长",
+          "IMF：通过事件研究法对比了2013-2016年与2018"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：冈比亚2017年后GDP增速升至5.2%的结构性挑战",
+            "reasons": [
+              "anchor_coverage=0.37"
+            ]
+          },
+          {
+            "title": "IMF：冈比亚宏观环境增长的全要素生产率与改革路径",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "IMF：0004IMFUnderstandingEconomic增长",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：通过事件研究法对比了2013-2016年与2018",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：区域环境与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：冈比亚宏观环境增长的结构性挑战与改革路径",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：行业规则与主题变化观察",
+        "pre_upload_neutralization_title": "IMF：行业规则与主题变化观察，政治转型后宏观环境指标出现广泛改善",
+        "header_pre_neutralization_title": "政治转型后宏观环境指标出现广泛改善",
+        "header_neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "政治转型后宏观环境指标出现广泛改善->区域环境与行业变化观察",
+          "外资与侨汇对增长的传导机制存在差异->研究主题与行业变化观察",
+          "潜在增长估计与结构性改革需求->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "OECD Artificial-intelligence-and-personal-finance 59b8acac",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：人工智能与个人财务，消费者使用AI管理个人财务带来可及性与个",
+      "final_wechat_title": "经合组织：人工智能与个人财务，消费者使用AI管理个人财务带来可及性与个",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260722/05-0005-OECD_Artificial-intelligence-and-personal-finance_59b8acac",
+      "generation_decision": {
+        "source_filename": "0005-OECD_Artificial-intelligence-and-personal-finance_59b8acac",
+        "cleaned_source_title": "0005-OECD_Artificial-intelligence-and-personal-finance_59b8acac",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0005OECD人工智能和personalfinance59",
+        "raw_candidates": [
+          "经合组织：人工智能与个人财务",
+          "经合组织：2025年AI个人财务使用调查",
+          "经合组织：AI个人财务应用与资金素养"
+        ],
+        "cleaned_candidates": [
+          "经合组织：人工智能与个人财务",
+          "经合组织：2025年AI个人财务使用调查",
+          "经合组织：AI个人财务应用与资金素养",
+          "经合组织：0005OECD人工智能和personalfinance59",
+          "经合组织：法国市场管理局2025年储蓄与研究晴雨表首次收集相关数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：2025年AI个人财务使用调查",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "经合组织：AI个人财务应用与资金素养",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "经合组织：0005OECD人工智能和personalfinance59",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "经合组织：法国市场管理局2025年储蓄与研究晴雨表首次收集相关数据",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：人工智能与个人财务",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：人工智能与个人财务",
+        "header_pre_neutralization_title": "消费者使用AI管理个人财务带来可及性与个性化机会",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "消费者使用AI管理个人财务带来可及性与个性化机会，也引入幻觉与偏见等不确定性->AI技术与行业应用观察",
+          "资金素养是安全使用AI的前提，低水平素养可能放大技术不确定性->AI技术与行业应用观察",
+          "政策制定者可利用AI设计个性化资金教育，但需保持人工监督->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "OECD Corporate-Tax-Statistics-2026 24c4d06d",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：统计方法与相关数据观察，企业所得税收入在低收入辖区显著增长",
+      "final_wechat_title": "经合组织：行业规则与相关数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260722/06-0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d",
+      "generation_decision": {
+        "source_filename": "0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d",
+        "cleaned_source_title": "0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0006OECD公司TaxStatistics202624c",
+        "raw_candidates": [
+          "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3.5%",
+          "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+          "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2%",
+          "经合组织：2026年企业税收统计",
+          "经合组织：2023年企业所得税收入占GDP比重为3.5%",
+          "经合组织：企业税收统计揭示跨国利润与活动地点错配"
+        ],
+        "cleaned_candidates": [
+          "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3",
+          "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+          "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2",
+          "经合组织：2026年企业税收统计",
+          "经合组织：2023年企业所得税收入占GDP比重为3.5%",
+          "经合组织：企业税收统计揭示跨国利润与活动地点错配",
+          "经合组织：0006OECD公司TaxStatistics202624c",
+          "经合组织：经合组织在2026年版企业税收统计中汇总了135个辖区的企业"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "bare_trailing_number"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3",
+            "reasons": [
+              "bare_trailing_number",
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：2026年企业税收统计",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：2023年企业所得税收入占GDP比重为3.5%",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "经合组织：企业税收统计揭示跨国利润与活动地点错配",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：0006OECD公司TaxStatistics202624c",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：经合组织在2026年版企业税收统计中汇总了135个辖区的企业",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：行业规则与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2023",
+            "3.1"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "经合组织：经合组织在2026年版企业税收统计中汇总了135个辖区的企业",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3.5%",
+          "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+          "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2%"
+        ],
+        "pre_neutralization_title": "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording",
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "经合组织：统计方法与相关数据观察",
+        "pre_upload_neutralization_title": "经合组织：统计方法与相关数据观察，企业所得税收入在低收入辖区显著增长",
+        "header_pre_neutralization_title": "企业所得税收入在低收入辖区显著增长，与高收入辖区差距收窄",
+        "header_neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "企业所得税收入在低收入辖区显著增长，与高收入辖区差距收窄->行业规则与相关数据观察"
+        ]
+      }
+    }
+  ]
+}
