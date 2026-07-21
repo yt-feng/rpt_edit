@@ -131,8 +131,7 @@ def find_report_dirs(date_dir: Path) -> list[Path]:
     return unique
 
 
-def require_primary_report_dirs(root: Path, report_date: str) -> list[Path]:
-    primary_date_dir = root / report_date
+def require_primary_report_dirs(primary_date_dir: Path) -> list[Path]:
     if not primary_date_dir.exists():
         raise RuntimeError(f"Primary bank source date folder not found: {primary_date_dir}")
     report_dirs = find_report_dirs(primary_date_dir)
@@ -1755,7 +1754,11 @@ def main() -> int:
     figures_dir = out_dir / "figures"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    require_primary_report_dirs(root, report_date)
+    if not date_dirs or date_dirs[0].parent != root:
+        raise RuntimeError(f"Primary bank source date folder could not be resolved under: {root}")
+    primary_date_dir = date_dirs[0]
+    require_primary_report_dirs(primary_date_dir)
+    log(f"Primary bank source date={primary_date_dir.name}; Market Views issue date={report_date}")
 
     report_dirs: list[Path] = []
     for source_dir in date_dirs:

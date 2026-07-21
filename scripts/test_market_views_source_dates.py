@@ -26,6 +26,9 @@ class SourceDateDirsTest(unittest.TestCase):
         self.make_dates(self.bank, "260718", "260719")
         self.make_dates(self.institutions, "260718", "260720")
         self.make_dates(self.consulting, "260717")
+        report_dir = self.bank / "260719" / "shard_0" / "bank-report"
+        report_dir.mkdir(parents=True)
+        (report_dir / "source_mineru.md").write_text("# Parsed bank report")
 
         report_date, source_dirs = source_date_dirs(
             self.bank,
@@ -42,6 +45,7 @@ class SourceDateDirsTest(unittest.TestCase):
                 self.consulting / "260717",
             ],
         )
+        self.assertEqual(require_primary_report_dirs(source_dirs[0]), [report_dir])
 
     def test_explicit_date_uses_the_same_date_for_every_source_root(self) -> None:
         self.make_dates(self.bank, "260718", "260719")
@@ -80,14 +84,14 @@ class SourceDateDirsTest(unittest.TestCase):
         (self.institutions / "260720" / "note.md").write_text("# Auxiliary only")
 
         with self.assertRaisesRegex(RuntimeError, "auxiliary sources alone"):
-            require_primary_report_dirs(self.bank, "260720")
+            require_primary_report_dirs(self.bank / "260720")
 
     def test_primary_bank_report_markers_are_accepted(self) -> None:
         report_dir = self.bank / "260720" / "shard_0" / "report-a"
         report_dir.mkdir(parents=True)
         (report_dir / "source_mineru.md").write_text("# Parsed bank report")
 
-        self.assertEqual(require_primary_report_dirs(self.bank, "260720"), [report_dir])
+        self.assertEqual(require_primary_report_dirs(self.bank / "260720"), [report_dir])
 
 
 if __name__ == "__main__":

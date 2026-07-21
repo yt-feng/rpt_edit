@@ -1,6 +1,6 @@
 name: Market views daily PDF
 
-run-name: Market Views ${{ inputs.expected_bank_date || inputs.date_folder || 'fallback latest sources' }}
+run-name: Market Views ${{ inputs.expected_bank_date || inputs.date_folder || github.event.workflow_run.name || 'source completion' }}
 
 on:
   workflow_dispatch:
@@ -31,11 +31,12 @@ on:
         required: true
         type: boolean
         default: true
-  schedule:
-    # Source-completion dispatch is primary. These off-peak schedules are missing-output fallbacks.
-    # UTC 02:23/06:23 = Asia/Shanghai 10:23/14:23.
-    - cron: "23 2 * * *"
-    - cron: "23 6 * * *"
+  workflow_run:
+    workflows:
+      - Final PDF to XHS notes
+      - Institution latest PDF to WeChat
+      - Consulting latest PDF to WeChat
+    types: [completed]
 
 permissions:
   contents: write
@@ -136,11 +137,11 @@ jobs:
           fi
 
           SHOULD_BUILD=true
-          if [ "${{ github.event_name }}" = "schedule" ] && [ -f "$OUTPUT_PDF" ]; then
+          if [ "${{ github.event_name }}" != "workflow_dispatch" ] && [ -f "$OUTPUT_PDF" ]; then
             PDF_BYTES="$(stat -c '%s' "$OUTPUT_PDF")"
             if [ "$PDF_BYTES" -gt 1024 ] && [ "$CURRENT_INPUT_HASH" = "$RECORDED_INPUT_HASH" ]; then
               SHOULD_BUILD=false
-              echo "::notice::Fallback found the exact $EXPECTED_DATE_FOLDER PDF already current with all $CURRENT_INPUT_COUNT parsed reports ($PDF_BYTES bytes); no rebuild needed."
+              echo "::notice::Source-completion refresh found the exact $EXPECTED_DATE_FOLDER PDF already current with all $CURRENT_INPUT_COUNT parsed reports ($PDF_BYTES bytes); no rebuild needed."
             fi
           fi
 
@@ -256,6 +257,6 @@ jobs:
           if-no-files-found: error
 
       - name: Commit generated market views PDF
-        if: ${{ env.SHOULD_BUILD != 'false' && (github.event.inputs.commit_results == 'true' || github.event_name == 'schedule') }}
+        if: ${{ env.SHOULD_BUILD != 'false' && (github.event.inputs.commit_results == 'true' || github.event_name != 'workflow_dispatch') }}
         run: |
           bash scripts/commit_output_dir.sh "market_view_summaries" "Generate market views daily PDF" 8
