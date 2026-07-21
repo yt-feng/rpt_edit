@@ -1,0 +1,73 @@
+{
+  "date_folder": "260722",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 1,
+  "selected_count": 1,
+  "include_institutions": [],
+  "institution_filtered_count": 0,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "image_upload_delay_seconds": 3.0,
+  "article_delay_seconds": 12.0,
+  "draft_delay_seconds": 90.0,
+  "draft_verify_delay_seconds": 8.0,
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "title_log": "wechat_drafts/consulting/260722/wechat_title_log.json",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit87gr6WjE8IU_r1PWtt6cxhW-5evMoMDOn88-KioM5FbW",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 1,
+      "payload_bytes": 7895,
+      "payload": "wechat_drafts/consulting/260722/draft_payload_01.json",
+      "titles": [
+        "波士顿咨询：AI技术与组织应用观察，公民AI认知快速成熟"
+      ],
+      "wechat_titles": [
+        "波士顿咨询：AI技术与组织应用观察，公民AI认知快速成熟"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 1,
+        "expected_article_count": 1,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ³¢å£«é¡¿å¨è¯¢ï¼AIææ¯ä¸ç»ç»åºç¨è§å¯ï¼å ¬æ°AIè®¤ç¥å¿«éæç"
+        ],
+        "create_time": 1784676960,
+        "update_time": 1784676961
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "波士顿咨询：AI技术与组织应用观察，公民AI认知快速成熟",
+      "wechat_title": "波士顿咨询：AI技术与组织应用观察，公民AI认知快速成熟",
+      "header_title": "公民AI认知快速成熟",
+      "digest": "AI技术与组织应用观察，公民AI认知快速成熟。",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Citizens-Are-Open-to-Public-AI-Services.-Governments-Must-Se 79cff553",
+      "report_dir": "kc_translated_reports/consulting/260722/01-0001-BCG_Citizens-Are-Open-to-Public-AI-Services",
+      "content_chars": 5293,
+      "content_bytes": 7349,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "wechat_drafts/consulting/260722/_assets/article_01_cover.jpg"
+    }
+  ]
+}
