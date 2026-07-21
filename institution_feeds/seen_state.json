@@ -2084,6 +2084,38 @@
     "oecd:https://www.oecd.org/en/publications/measurement-of-environmentally-sustainable-productivity-growth_0869e00a-en.html": {
       "first_seen": "2026-07-20",
       "status": "downloaded"
+    },
+    "imf:813d2f0ec367546cfa7c4a5e15e798009d5d892f92982446f95fecc23ec4": {
+      "first_seen": "2026-07-21",
+      "status": "downloaded"
+    },
+    "imf:f954a44c2b2fd5a82766ac88fd695d40fa4fc830fafe419de5f855ac7dfe": {
+      "first_seen": "2026-07-21",
+      "status": "too_old"
+    },
+    "imf:3fe4a16bfc73a30e7436bd15257a9deca003d5e544ef2ebfce96fda3fadd": {
+      "first_seen": "2026-07-21",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publ/work1370.htm": {
+      "first_seen": "2026-07-21",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/corporate-tax-statistics-2026_73af6222-en.html": {
+      "first_seen": "2026-07-21",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/artificial-intelligence-and-personal-finance_2858fdf4-en.html": {
+      "first_seen": "2026-07-21",
+      "status": "downloaded"
+    },
+    "adb:1162286": {
+      "first_seen": "2026-07-21",
+      "status": "downloaded"
+    },
+    "adb:1154681": {
+      "first_seen": "2026-07-21",
+      "status": "downloaded"
     }
   }
 }
