@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Agricultural-Innovation-and-Women-s-Empowerment-Can-Improve-_dcd52eb4.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n1ovs592/pdfs/0001-ADB_Agricultural-Innovation-and-Women-s-Empowerment-Can-Improve-_dcd52eb4.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n1ovs592/pdfs/0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/BIS_Dollarisation-and-monetary-control-what-lessons-for-the-rise_5d83616d.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n1ovs592/pdfs/0003-BIS_Dollarisation-and-monetary-control-what-lessons-for-the-rise_5d83616d.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Understanding-Economic-Growth-in-The-Gambia-Challenges-and-P_7b363594.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n1ovs592/pdfs/0004-IMF_Understanding-Economic-Growth-in-The-Gambia-Challenges-and-P_7b363594.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Artificial-intelligence-and-personal-finance_59b8acac.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n1ovs592/pdfs/0005-OECD_Artificial-intelligence-and-personal-finance_59b8acac.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Corporate-Tax-Statistics-2026_24c4d06d.pdf",
+          "batch_file": "/tmp/pdf_batch_002_owib878h/pdfs/0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

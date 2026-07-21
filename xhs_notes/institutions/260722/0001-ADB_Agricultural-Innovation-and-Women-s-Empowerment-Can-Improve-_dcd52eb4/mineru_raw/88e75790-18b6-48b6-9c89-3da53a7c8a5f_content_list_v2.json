@@ -1,0 +1,2302 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No. 2026-11 (July)"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                156,
+                223,
+                173
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Points"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                196,
+                164,
+                211
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Climate vulnerability and structural gender inequality reinforce each other in Southeast Asian smallholder agriculture, generating measurable welfare, and productivity losses."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                214,
+                280,
+                298
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Standard household-level interventions fail because they ignore documented intra-household resource misallocation. Male- and female-managed plots within the same household receive unequal inputs despite identical shock exposure."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                298,
+                287,
+                405
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Three forms of agricultural innovation, i.e., biological, digital, and financial, offer evidence-based pathways to address both constraints simultaneously."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                405,
+                275,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Immediate actions include increasing public agricultural research and development investment in women's crops, expanding price-information technology to female smallholders, and disbursing agricultural subsidies directly into women's mobile money accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                476,
+                285,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Medium-term reforms require formalizing women's land tenure rights and incorporating gender markers into regional climate finance."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                596,
+                280,
+                668
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                312,
+                197,
+                868,
+                337
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ngawang Dendup, Junior Research Economist, Asian Development Bank Institute\nRaja Rajendra Timilsina, Junior Research Economist, Asian Development Bank Institute\nDil B Rahul, Vice Chair of Research and Senior Research Economist,"
+                    }
+                ]
+            },
+            "bbox": [
+                314,
+                367,
+                907,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Asian Development Bank Institute"
+                    }
+                ]
+            },
+            "bbox": [
+                332,
+                410,
+                573,
+                424
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Marie Lotfi Fard, Master's Degree in Public Policy, University of Tokyo/Sciences Po, Paris"
+                    }
+                ]
+            },
+            "bbox": [
+                315,
+                423,
+                907,
+                439
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "INTRODUCTION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                315,
+                483,
+                507,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Southeast Asia's economic dynamism rests on an agricultural foundation that is under growing climate stress and constrained by persistent gender inequality. The region is among the world's most climate-exposed, with Myanmar, the Philippines, and Viet Nam regularly appearing in global climate risk indices, while agriculture employs a disproportionately large share of the female labor force. Yet the interventions commonly deployed fail to reach the women who safeguard the region's food security."
+                    }
+                ]
+            },
+            "bbox": [
+                312,
+                514,
+                912,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite agriculture's centrality to Southeast Asian economies, public investment in the sector remains inadequate. South-eastern Asia's Agriculture Orientation Index, defined as the ratio of agriculture's share of government spending to its share of gross domestic product (GDP), has stagnated since 2015, indicating that budget allocations are not keeping pace with the sector's economic and social weight (FAO 2023). Therefore, this policy brief draws on evidence from development economics to argue that climate vulnerability and gender inequality are not separate problems requiring isolated responses. They are structurally linked, and agricultural innovation offers a lever to address both simultaneously. The brief identifies five concrete interventions: increasing public agricultural research and development (R&D) investment in crops grown by women; expanding market price-information technology to female smallholders; disbursing government subsidies directly into women's private mobile money accounts; formalizing women's land tenure rights; and incorporating gender markers into regional climate finance."
+                    }
+                ]
+            },
+            "bbox": [
+                310,
+                627,
+                912,
+                831
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "THE DUAL CONSTRAINT"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                314,
+                853,
+                600,
+                872
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                892,
+                260,
+                939
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBInstitute"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                29,
+                321,
+                118
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "policy\nbrief"
+                    }
+                ]
+            },
+            "bbox": [
+                645,
+                27,
+                914,
+                167
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "A dual constraint framework describes a situation in which two mutually reinforcing structural barriers operate simultaneously, such that addressing either one in isolation fails to generate sustained improvement. This concept captures Southeast Asia's"
+                    }
+                ]
+            },
+            "bbox": [
+                312,
+                885,
+                912,
+                931
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Asian Development Bank Institute\nISSN 2411-6734\nDOI: https://doi.org/10.56506/YPPJ2077"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                793,
+                253,
+                857
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CC BY NC SA"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                859,
+                211,
+                890
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "development challenge well. The first constraint is climate vulnerability: rainfall variability, temperature extremes, and intensifying storms already reduce agricultural yields and income, and these impacts are projected to worsen significantly over the coming decades (IPCC 2023). The second is structural gender inequality: customary land tenure systems, biased credit markets, limited extension service access, and intra-household resource misallocation collectively prevent female farmers from operating at full productivity. Addressing these constraints in isolation leads to maladaptation."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                173,
+                489,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "About  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "75\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of the region's GDP depends heavily on sectors tied to natural capital, including agriculture. In Southeast Asia this dependence is particularly acute: smallholder agriculture sustains livelihoods for hundreds of millions of people, and the sector is simultaneously the region's primary source of female employment and its most climate-exposed economic activity (ADB 2025) (Figure 1)."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                344,
+                489,
+                461
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Evidence supports that these two constraints amplify each other. When a drought strikes, households facing resource constraints tend to concentrate inputs on male-managed plots only, widening the intra-household productivity gap."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                472,
+                487,
+                546
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Interventions that address only one constraint will be undermined by the other. A climate resilience program that disburses resources at the household level will, under documented intra-household dynamics, reproduce existing resource allocation failures. A gender-equity intervention that does not account for climate exposure will see its gains eroded during subsequent climate shocks. Agricultural innovation is the entry point where both constraints can be addressed together."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                558,
+                489,
+                602
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/59315ca96751807a6d0830bbc72a1a21f98e27ecd7937b97e26c222d44d8fbee.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: Climate Vulnerability, Gender Inequality, and Maladaptation in Southeast Asian Agriculture Creates a Self-Reinforcing Hotspot"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Author."
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                689,
+                453,
+                904
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                505,
+                172,
+                912,
+                261
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "QUANTIFYING THE DUAL CONSTRAINT"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                282,
+                741,
+                321
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Climate Vulnerability and Agriculture"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                326,
+                845,
+                346
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Southeast Asia is one of the world's most climate risk-exposed regions. Myanmar, the Philippines, and Viet Nam rank among the 10 countries most affected by extreme weather events over the past decade (Germanwatch 2026). Across the region, rainfall variability, rising temperatures, sea-level rise, and more frequent cyclones are reducing crop yields, destroying infrastructure, and pushing vulnerable households into poverty (Table 1)."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                359,
+                912,
+                475
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For smallholder agriculture, climate shocks operate through two channels. The first is a direct productivity channel: droughts reduce yields, floods destroy standing crops, and heat stress accelerates soil moisture loss. The second is a human capital channel: resource scarcity following a climate shock has been shown to trigger gender-biased nutritional rationing, with households allocating nutrition away from daughters and toward sons, producing lasting disadvantages for girls in health and education (Maccini and Yang 2009). Agricultural income shocks further reduce human capital investment in girls by increasing their domestic labor burden and rates of early marriage (Shah and Steinberg 2017). Climate change therefore functions as a multiplier of gender inequality."
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                486,
+                912,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Measuring climate stress accurately matters for policy design. Precipitation-based drought indices capture historical variability well, while satellite-based tools such as the United States' National Oceanic and Atmospheric Administration Vegetation Health Index provide continuous, spatially disaggregated stress measures (Nordstrom and Cotton 2023). A combination of both approaches is appropriate for regional policy design."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                715,
+                912,
+                832
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Gender Inequality and Development Pressure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                507,
+                854,
+                715,
+                892
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Gender inequality in Southeast Asian agriculture is not only an equity concern: it is a source of aggregate inefficiency. Closing the farm productivity gender gap could increase agricultural value-added by 0.47 GDP points in lower-middle-income countries (FAO 2023). Gender-based discrimination imposes an economic cost per capita ranging from roughly $200 in Cambodia to over $6,000 in more prosperous economies such as Singapore, and reductions in discrimination are associated with GDP growth gains (OECD 2021)."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                898,
+                912,
+                931
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBIstitute"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                72,
+                213,
+                122
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBI Policy Brief No. 2026-11 (July)"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                957,
+                295,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                957,
+                954,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c47c236fda0757eeb2e10846d1ed4a7b97620a74f60a1d82dbbe2bde41114486.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1: Top 10 Countries with the Highest Climate Risk Index Scores, 2024"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* Southeast Asian country."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Germanwatch (2026). https://www.germanwatch.org/en/cri."
+                    }
+                ],
+                "html": "<table><tr><td>Global Rank</td><td>Country</td><td>Region</td><td>Income Group</td></tr><tr><td>1</td><td>St. Vincent and the Grenadines</td><td>Caribbean</td><td>Upper-middle</td></tr><tr><td>2</td><td>Grenada</td><td>Caribbean</td><td>Upper-middle</td></tr><tr><td>3</td><td>Chad</td><td>Sub-Saharan Africa</td><td>Low</td></tr><tr><td>4</td><td>Papua New Guinea</td><td>Pacific</td><td>Lower-middle</td></tr><tr><td>5</td><td>Niger</td><td>Sub-Saharan Africa</td><td>Low</td></tr><tr><td>6</td><td>Nepal</td><td>South Asia</td><td>Lower-middle</td></tr><tr><td>7</td><td>Philippines*</td><td>Southeast Asia</td><td>Lower-middle</td></tr><tr><td>8</td><td>Malawi</td><td>Sub-Saharan Africa</td><td>Low</td></tr><tr><td>9</td><td>Myanmar*</td><td>Southeast Asia</td><td>Lower-middle</td></tr><tr><td>10</td><td>Viet Nam*</td><td>Southeast Asia</td><td>Lower-middle</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                176,
+                191,
+                816,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                84,
+                458,
+                489,
+                574
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The agriculture sector remains heavily female-staffed but male-controlled. In Indonesia, only 13% of women have ownership or secure rights over agricultural land, compared to 52% of men (ASEAN and UN Women 2024). Women are overrepresented in agriculture, household services, food processing, and textiles, all of which are systematically underserved by both private innovation and public extension systems (OECD 2024)."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                586,
+                489,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Gender gaps in access to credit, extension services, and market information further depress female farm productivity. These gaps reflect structural features of customary tenure systems, intra-household bargaining environments, and directed innovation markets rather than individual choices or differences in human capital."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                715,
+                489,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "with pooled resources and shared preferences. Under this assumption, it does not matter who receives an income transfer or subsidy, as the allocation outcome is assumed to be identical regardless of the recipient. Most agricultural development programs and climate adaptation packages are designed on this basis. The empirical work of 3 decades has rejected this."
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                457,
+                912,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the same household, plots managed by women yield approximately 30% less than plots managed by men, not because women are less productive farmers, but because households allocate too much labor and too little fertilizer to male-managed plots relative to female-managed ones. The estimated efficiency loss from this misallocation is equivalent to roughly 6% of total household agricultural output (Udry 1996). Farm production decisions are also driven by household demographic composition rather than by prices and technology alone, and female labor is effectively constrained to the family farm because the cost of hiring outside help is prohibitive, depressing productivity on women-managed plots (LaFave and Thomas 2016). Household-level aid is therefore likely to bypass women-managed plots, reproducing rather than correcting the misallocation the literature documents."
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                571,
+                914,
+                816
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "WHY STANDARD SOLUTIONS FAIL"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                824,
+                480,
+                844
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Unitary Household Model"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                87,
+                854,
+                361,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The unitary household model is a standard assumption in development economics whereby all members of a household are treated as a single decision-making unit"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                885,
+                489,
+                929
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Structural Barriers to Female Agricultural Investment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                507,
+                840,
+                769,
+                878
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Even where women are motivated to invest in their plots, two structural features of the institutional environment frequently prevent them from doing so."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                885,
+                912,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBIInstitute"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                72,
+                215,
+                122
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                957,
+                685,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                957,
+                954,
+                971
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The first is insecure land tenure. Farmers who lack secure tenure shorten fallow periods out of fear that idle plots will be claimed by others, even though fallowing is essential for soil regeneration. This constraint falls disproportionately on women, whose tenure within customary systems is often contingent on social and political status. As a result, climate adaptation strategies such as cover cropping, mulching, and controlled fallowing are effectively unavailable to female farmers with insecure tenure, since all require a credible multi-year investment horizon (Goldstein and Udry 2008)."
+                    }
+                ]
+            },
+            "bbox": [
+                82,
+                172,
+                489,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The second is directed innovation. Private R&D investment flows toward technologies serving the largest and most profitable markets. When commercially dominant crops are exposed to temperature stress, innovation in those crops accelerates; when the same shocks affect subsistence vegetables and orphan crops, no equivalent private response materializes (Moscona and Sastry 2022). The crops that women disproportionately grow in Southeast Asian smallholder systems, including cassava, sweet potato, leafy vegetables, and legumes, have smaller market footprints and are therefore the least served by new climate-resilient varieties. This constitutes a market failure in R&D that public investment is required to correct."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                343,
+                489,
+                532
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EVIDENCE-BASED INNOVATION PATHWAYS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                554,
+                453,
+                592
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The literature identifies three types of agricultural innovation with demonstrated capacity to address the dual constraint. Biological innovation involves the development of climate-resilient crop varieties and improved agronomic techniques targeted at the crops female smallholders grow. Digital innovation encompasses market information technologies and mobile communication tools that reduce information asymmetries between farmers and buyers. Financial innovation involves redesigning disbursement mechanisms, particularly through mobile money, to ensure that resources reach women as individual decision-making agents rather than being absorbed into household budgets outside their control."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                601,
+                489,
+                788
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Biological Innovation: Correcting the Research and Development Market Failure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                812,
+                468,
+                848
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private R&D investment responds to market incentives rather than social need. When temperature shocks affect commercially dominant crops, private firms develop heat-tolerant varieties; when the same shocks affect orphan crops or subsistence vegetables, no equivalent response materializes. The commercial crops that attract private investment are also the crops for which climate adaptation technologies are most available, compounding the disadvantage of female farmers."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                857,
+                489,
+                931
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2039ec8ad74dbd8e795b8d896ec04bcda416ca664eb888f71ebbb456aa0819e6.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2: Cereal Yield, Cambodia, India, Malaysia, Philippines, Thailand, Viet Nam (in kg per hectare)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank (2026). https://data.worldbank.org/indicator/AG.YLD.CREL.KG."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                526,
+                224,
+                897,
+                381
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                444,
+                912,
+                502
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Green Revolution illustrates both the potential and the limits of directed biological innovation. Global cereal yields rose from roughly 1.5 tons to nearly 4 tons per hectare between 1961 and 2016, driven by public and private investment in high-yielding cereal varieties (World Bank 2026). However, this gain is concentrated in wheat, rice, and maize. Horticulture, root crops, and food processing, i.e., sectors where female labor in Southeast Asia is concentrated, received a fraction of equivalent research investment. The resulting yield gap reflects not differences in farmer ability but differences in the technological resources available to different crop categories (Figure 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                514,
+                912,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Public R&D can correct this market failure. When women participate in variety selection, the resulting seeds are better suited to the mixed-crop, risk-averse, labor-constrained farming systems that female smallholders typically manage."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                714,
+                912,
+                788
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Digital Innovation: Reducing Information Asymmetries"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                507,
+                810,
+                764,
+                850
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A significant constraint on female agricultural productivity is the absence of real-time market price information, which would allow smallholders to identify the highest-value market for their produce and avoid exploitation by intermediaries who benefit from the information gap."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                857,
+                912,
+                931
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBIstitute"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                72,
+                213,
+                122
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBI Policy Brief No. 2026-11 (July)"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                957,
+                295,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                958,
+                954,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/6b4a17247b9cd79b193269cb35f8be86d505e8b684e120d57c716a059274b701.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2: Mobile Wallet Payment Usage Rates in Southeast Asian Countries"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "QR = quick response."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Visa (2024). https://www.visa.com.ph/content/dam/VCOM/regional/ap/singapore/global-elements/documents/visa-cpa-2024-report-ipvmc.pdf."
+                    }
+                ],
+                "html": "<table><tr><td>Country</td><td>Mobile Wallet Payment Usage</td><td>QR Payment Usage</td><td>Mobile Wallet Online/In-App</td></tr><tr><td>Southeast Asia (aggregate)</td><td>79%</td><td>n.a.</td><td>n.a.</td></tr><tr><td>Indonesia</td><td>92%</td><td>66%</td><td>76%</td></tr><tr><td>Malaysia</td><td>87%</td><td>68%</td><td>63%</td></tr><tr><td>Philippines</td><td>87%</td><td>n.a.</td><td>62%</td></tr><tr><td>Viet Nam</td><td>n.a.</td><td>62%</td><td>n.a.</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                179,
+                191,
+                816,
+                302
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Access to real-time price information has been shown to reduce price dispersion substantially, increase producer profits, and lower consumer prices, with gains persisting beyond the initial period of technology adoption (Jensen 2007). In the Philippine agricultural context, mobile phone access raises the farmgate prices that producers receive, and the gains accrue to the individual who controls the device (Lee and Bellemare 2013). Distributing price-information tools to farm households rather than to individual women will therefore not deliver the intended benefits if the device is controlled by the male household head."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                372,
+                489,
+                546
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Financial Innovation: Reaching Women as Individual Agents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                84,
+                569,
+                436,
+                607
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The third innovation pathway addresses the intra-household resource control problem. The relevant question is not how much money reaches the household but whether the delivery channel ensures that women retain control over resources intended for them."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                614,
+                489,
+                688
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mobile money has been shown to allow households to smooth consumption entirely in response to negative income shocks, by reducing the transaction cost of receiving transfers from geographically dispersed network members (Jack and Suri 2014). This matters in agricultural contexts where income shocks tend to be spatially correlated: a drought affects an entire region simultaneously, making local risk-sharing networks less effective precisely when they are most needed. Mobile money extends the geographic reach of these networks. Experimental evidence further shows that disbursing funds directly into women's individual accounts significantly increases the share of resources that women retain and invest in productive activities (Riley 2022)."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                700,
+                489,
+                902
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mobile wallet payment usage has reached 79% across Southeast Asia, and above 85% in Indonesia, Malaysia, and the Philippines (Visa 2024). This infrastructure is already in place and can be directly leveraged for agricultural subsidy disbursement and insurance payouts without requiring new technical investment (Table 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                372,
+                912,
+                460
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "POLICY RECOMMENDATIONS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                482,
+                852,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The five recommendations below are organized by implementation horizon. Immediate actions can be initiated through administrative decisions or platform-level redesign within a 1-to-2-year window. Medium-term reforms require legislative or regulatory change and are best framed as 3-to-5-year targets."
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                514,
+                912,
+                602
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Immediate Actions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                507,
+                626,
+                682,
+                644
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Increase Public Agricultural Research and Development Investment in Women's Crops"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                507,
+                656,
+                902,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private R&D investment tends to follow large commercial markets, systematically bypassing the crops that female smallholders in Southeast Asia grow most, such as cassava, leafy vegetables, legumes, and root crops. Because these crops generate lower commercial returns, private firms have little incentive to develop climate-resilient varieties for them. Public research institutions should fill this gap. National agricultural research agencies should substantially increase the share of R&D budgets allocated to horticulture and climate-substitute crops and involve women farmers directly in participatory variety selection. Publicly funded climate-adapted seeds for underserved crops would reach the farming systems where the yield gap is currently widest."
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                700,
+                912,
+                902
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBIstitute"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                72,
+                215,
+                122
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                957,
+                685,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                957,
+                954,
+                971
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Expand Market Price Information Tools to Female Smallholders"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                84,
+                171,
+                433,
+                205
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Information asymmetries between smallholders and intermediaries reduce the prices farmers receive in fragmented rural markets. Mobile-based applications displaying current farmgate and wholesale prices across nearby markets have been shown to reduce price dispersion. Research also shows that the device holder captures the benefit, meaning that when women own and operate the technology themselves, income gains accrue to them directly. Distribution programs should therefore target individual female farmers rather than farm households, and digital literacy support should accompany device provision."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                215,
+                489,
+                388
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disburse Agricultural Subsidies and Loans Directly into Women's Mobile Accounts"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                413,
+                458,
+                447
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mobile wallet infrastructure is already operating at scale across Southeast Asia. Agricultural subsidies and loans disbursed at the household level are vulnerable to intra-household reallocation, whereby resources intended for female farmers are redirected before reaching the plot. Disbursing directly into individual accounts registered to women removes this risk without requiring new technical investment. Governments should require individual female account registration as a condition for subsidy receipt and simplify account-opening requirements for rural women in coordination with financial regulators."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                458,
+                489,
+                618
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Medium-Term Reforms"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                640,
+                294,
+                659
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Formalize Women's Land Tenure Rights"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                670,
+                438,
+                687
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Farmers who lack secure tenure cannot make multi-year soil investments, such as cover cropping, fallowing, or perennial planting, even when those investments would raise long-term yields. This constraint falls disproportionately on women, whose rights within customary tenure systems are often contingent rather than formally recognized. Countries across Southeast Asia should accelerate land certification programs with explicit mandates to register plots in women's names and should review national land laws to close the gap between formal property rights and customary practice."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                701,
+                489,
+                788
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                172,
+                912,
+                247
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Incorporate Gender Markers into Regional Climate Finance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                507,
+                271,
+                776,
+                306
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Climate adaptation finance that reaches the household but bypasses the female member's decision-making authority is unlikely to correct the resource misallocation that reduces female agricultural productivity. Gender markers are reporting requirements attached to climate finance flows that track whether women are direct beneficiaries and decision-makers. Association of Southeast Asian Nations member states and development finance institutions should require gender markers as a standard condition for regional agricultural climate finance, consistent with existing frameworks such as the United Nations Framework Convention on Climate Change Gender Action Plan."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                315,
+                912,
+                502
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CONCLUSION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                525,
+                673,
+                544
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Southeast Asia's agricultural sector cannot afford to address climate vulnerability and gender inequality as separate policy problems. The evidence reviewed in this brief demonstrates that both constraints share the same root causes, including intra-household misallocation, insecure land rights, and market failures in directed innovation, and respond to the same set of targeted interventions. The five recommendations presented here are grounded in causal evidence and can be implemented using infrastructure, institutions, and finance mechanisms that already exist in the region. What is required is the political will to redesign how resources are directed, delivered, and tracked, so that they reach the female farmers whose productivity gains would generate the largest returns for the region's food security and economic resilience."
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                558,
+                912,
+                789
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBIstitute"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                73,
+                213,
+                122
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBI Policy Brief No. 2026-11 (July)"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                957,
+                295,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                958,
+                954,
+                971
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "REFERENCES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                100,
+                180,
+                248,
+                199
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Asian Development Bank (ADB). 2025. Asia-Pacific Climate Report 2025. Manila: ADB. https://www.adb.org/sites/default/files/publication/1094721/asia-pacific-climate-report-2025.pdf."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                208,
+                895,
+                234
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ASEAN. 2024. ASEAN Gender Outlook 2024. Jakarta: ASEAN Secretariat. https://data.unwomen.org/sites/default/files/documents/Publications/2024/ASEAN-gender-outlook_2024.pdf."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                236,
+                895,
+                260
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Food and Agriculture Organization (FAO). 2023. The Status of Women in Agrifood Systems. Rome: FAO. https://openknowledge.fao.org/items/adc0741f-9de2-4d09-ae68-b19cc871601a."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                262,
+                895,
+                287
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "——. 2023. Government Expenditures in Agriculture (2001–2022): Global and Regional Trends. Rome: FAO. https://doi.org/10.4060/cc9148en."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                288,
+                895,
+                313
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Germanwatch. 2026. Climate Risk Index 2026. Bonn: Germanwatch. https://www.germanwatch.org/en/cri."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                315,
+                766,
+                330
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Goldstein, M., and C. Udry. 2008. The Profits of Power: Land Rights and Agricultural Investment in Ghana. Journal of Political Economy 116(6): 981–1022."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                332,
+                895,
+                357
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Jack, W., and T. Suri. 2014. Risk Sharing and Transactions Costs: Evidence from Kenya's Mobile Money Revolution. American Economic Review 104(1): 183–223."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                359,
+                895,
+                382
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Jensen, R. 2007. The Digital Provide: Information (Technology), Market Performance, and Welfare in the South Indian Fisheries Sector. Quarterly Journal of Economics 122(3): 879–924."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                385,
+                895,
+                410
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "LaFave, D., and D. Thomas. 2016. Farms, Families, and Markets: New Evidence on Completeness of Markets in Agricultural Settings. Econometrica 84(5): 1917–1960."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                412,
+                895,
+                437
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Lee, J., and M. F. Bellemare. 2013. Look Who's Talking: The Impacts of the Intrahousehold Allocation of Mobile Phones on Agricultural Prices. Journal of Development Studies 49(5): 624–640."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                439,
+                895,
+                463
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Maccini, S., and D. Yang. 2009. Under the Weather: Health, Schooling, and Economic Consequences of Early-Life Rainfall. American Economic Review 99(3): 1006–1026."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                464,
+                894,
+                489
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Moscona, J., and K. Sastry. 2022. Does Directed Innovation Mitigate Climate Damage? Evidence from US Agriculture. Quarterly Journal of Economics 138(2): 637–701."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                492,
+                895,
+                517
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Nordstrom, E., and M. Cotton. 2023. Satellite-Based Vegetation Health Indices for Agricultural Monitoring. Working Paper."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                518,
+                865,
+                533
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "OECD. 2021. SIGI 2021 Regional Report for Southeast Asia. Paris: OECD Publishing. https://doi.org/10.1787/236f41d0-en."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                535,
+                850,
+                549
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "—. 2024. SIGI 2024 Regional Report for Southeast Asia. Paris: OECD Publishing. https://doi.org/10.1787/7fc15e1c-en."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                551,
+                850,
+                565
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Riley, E. 2022. Resisting Social Pressure in the Household Using Mobile Money: Experimental Evidence on Microenterprise Investment in Uganda. Working Paper."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                567,
+                895,
+                592
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Shah, M., and B. M. Steinberg. 2017. Drought of Opportunities: Contemporaneous and Long-Term Impacts of Rainfall Shocks on Human Capital. Journal of Political Economy 125(2): 527–561."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                594,
+                895,
+                618
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Udry, C. 1996. Gender, Agricultural Production, and the Theory of the Household. Journal of Political Economy 104(5): 1010–1046."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                620,
+                894,
+                634
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Visa. 2024. The Future of Commerce on the Cusp of Change: Visa Consumer Payment Attitudes Study 2024. Singapore: Visa. https://www.visa.com.ph/content/dam/VCOM/regional/ap/singapore/global-elements/documents/visa-cpa-2024-report-ipvmc.pdf."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                636,
+                895,
+                671
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Asian Development Bank Institute"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                97,
+                788,
+                292,
+                800
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBI, located in Tokyo, is the think tank of the Asian Development Bank (ADB). Its mission is to identify effective development strategies and improve development management in ADB's developing member countries."
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                802,
+                490,
+                839
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBI Policy Briefs are based on events organized or co-organized by ADBI. The series is designed to provide concise, nontechnical accounts of policy issues of topical interest, with a view to facilitating informed debate."
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                847,
+                490,
+                884
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The views expressed in this publication are those of the authors and do not necessarily reflect the views and policies of ADBI, ADB, or its Board or Governors or the governments they represent."
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                892,
+                492,
+                929
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBI encourages printing or copying information exclusively for personal and noncommercial use with proper acknowledgment of ADBI. Users are restricted from reselling, redistributing, or creating derivative works for commercial purposes without the express, written consent of ADBI."
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                790,
+                900,
+                838
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Asian Development Bank Institute\nKasumigaseki Building 8F\n3-2-5 Kasumigaseki, Chiyoda-ku\nTokyo 100-6008\nJapan\nTel: +813 3593 5500\nwww.adbi.org"
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                848,
+                700,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ADBInstitute"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                72,
+                213,
+                122
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                958,
+                685,
+                971
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                957,
+                954,
+                970
+            ]
+        }
+    ]
+]

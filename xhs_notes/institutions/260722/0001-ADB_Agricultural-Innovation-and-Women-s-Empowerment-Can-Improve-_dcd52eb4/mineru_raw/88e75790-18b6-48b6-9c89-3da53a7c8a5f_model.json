@@ -1,0 +1,6283 @@
+[
+    [
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.086,
+                0.893,
+                0.261,
+                0.94
+            ],
+            "angle": 0,
+            "content": "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.086,
+                0.03,
+                0.322,
+                0.12
+            ],
+            "angle": 0,
+            "content": "ADBInstitute"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.646,
+                0.028,
+                0.915,
+                0.168
+            ],
+            "angle": 0,
+            "content": "policy\nbrief"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.158,
+                0.224,
+                0.174
+            ],
+            "angle": 0,
+            "content": "No. 2026-11 (July)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.197,
+                0.166,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Key Points"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.215,
+                0.282,
+                0.299
+            ],
+            "angle": 0,
+            "content": "• Climate vulnerability and structural gender inequality reinforce each other in Southeast Asian smallholder agriculture, generating measurable welfare, and productivity losses.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.299,
+                0.288,
+                0.406
+            ],
+            "angle": 0,
+            "content": "- Standard household-level interventions fail because they ignore documented intra-household resource misallocation. Male- and female-managed plots within the same household receive unequal inputs despite identical shock exposure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.406,
+                0.277,
+                0.477
+            ],
+            "angle": 0,
+            "content": "- Three forms of agricultural innovation, i.e., biological, digital, and financial, offer evidence-based pathways to address both constraints simultaneously.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.478,
+                0.287,
+                0.596
+            ],
+            "angle": 0,
+            "content": "- Immediate actions include increasing public agricultural research and development investment in women's crops, expanding price-information technology to female smallholders, and disbursing agricultural subsidies directly into women's mobile money accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.597,
+                0.282,
+                0.669
+            ],
+            "angle": 0,
+            "content": "- Medium-term reforms require formalizing women's land tenure rights and incorporating gender markers into regional climate finance.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.314,
+                0.198,
+                0.87,
+                0.338
+            ],
+            "angle": 0,
+            "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.315,
+                0.368,
+                0.909,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Ngawang Dendup, Junior Research Economist, Asian Development Bank Institute\nRaja Rajendra Timilsina, Junior Research Economist, Asian Development Bank Institute\nDil B Rahul, Vice Chair of Research and Senior Research Economist,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.333,
+                0.411,
+                0.574,
+                0.425
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank Institute",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.316,
+                0.424,
+                0.909,
+                0.441
+            ],
+            "angle": 0,
+            "content": "Marie Lotfi Fard, Master's Degree in Public Policy, University of Tokyo/Sciences Po, Paris",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.316,
+                0.484,
+                0.509,
+                0.502
+            ],
+            "angle": 0,
+            "content": "INTRODUCTION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.313,
+                0.516,
+                0.914,
+                0.618
+            ],
+            "angle": 0,
+            "content": "Southeast Asia's economic dynamism rests on an agricultural foundation that is under growing climate stress and constrained by persistent gender inequality. The region is among the world's most climate-exposed, with Myanmar, the Philippines, and Viet Nam regularly appearing in global climate risk indices, while agriculture employs a disproportionately large share of the female labor force. Yet the interventions commonly deployed fail to reach the women who safeguard the region's food security.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.312,
+                0.629,
+                0.914,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Despite agriculture's centrality to Southeast Asian economies, public investment in the sector remains inadequate. South-eastern Asia's Agriculture Orientation Index, defined as the ratio of agriculture's share of government spending to its share of gross domestic product (GDP), has stagnated since 2015, indicating that budget allocations are not keeping pace with the sector's economic and social weight (FAO 2023). Therefore, this policy brief draws on evidence from development economics to argue that climate vulnerability and gender inequality are not separate problems requiring isolated responses. They are structurally linked, and agricultural innovation offers a lever to address both simultaneously. The brief identifies five concrete interventions: increasing public agricultural research and development (R&D) investment in crops grown by women; expanding market price-information technology to female smallholders; disbursing government subsidies directly into women's private mobile money accounts; formalizing women's land tenure rights; and incorporating gender markers into regional climate finance.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.315,
+                0.854,
+                0.6,
+                0.873
+            ],
+            "angle": 0,
+            "content": "THE DUAL CONSTRAINT"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.313,
+                0.886,
+                0.914,
+                0.932
+            ],
+            "angle": 0,
+            "content": "A dual constraint framework describes a situation in which two mutually reinforcing structural barriers operate simultaneously, such that addressing either one in isolation fails to generate sustained improvement. This concept captures Southeast Asia's"
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.086,
+                0.794,
+                0.255,
+                0.858
+            ],
+            "angle": 0,
+            "content": "© 2026 Asian Development Bank Institute\nISSN 2411-6734\nDOI: https://doi.org/10.56506/YPPJ2077"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.089,
+                0.86,
+                0.213,
+                0.891
+            ],
+            "angle": 0,
+            "content": "CC BY NC SA"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.156,
+                0.225,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.199,
+                0.163,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.217,
+                0.259,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.23,
+                0.275,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.241,
+                0.244,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.252,
+                0.279,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.265,
+                0.245,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.277,
+                0.255,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.289,
+                0.224,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.301,
+                0.262,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.312,
+                0.262,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.324,
+                0.259,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.336,
+                0.259,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.348,
+                0.256,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.359,
+                0.285,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.372,
+                0.277,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.384,
+                0.246,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.395,
+                0.259,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.407,
+                0.267,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.419,
+                0.264,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.431,
+                0.232,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.443,
+                0.235,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.454,
+                0.264,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.466,
+                0.27,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.478,
+                0.268,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.49,
+                0.282,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.502,
+                0.27,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.514,
+                0.285,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.526,
+                0.282,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.538,
+                0.237,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.55,
+                0.279,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.562,
+                0.236,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.573,
+                0.281,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.587,
+                0.21,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.597,
+                0.241,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.609,
+                0.279,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.621,
+                0.242,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.633,
+                0.237,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.645,
+                0.236,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.656,
+                0.203,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.316,
+                0.199,
+                0.726,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.316,
+                0.235,
+                0.828,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.316,
+                0.271,
+                0.869,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.308,
+                0.622,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.369,
+                0.874,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.384,
+                0.906,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.398,
+                0.771,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.337,
+                0.412,
+                0.57,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.425,
+                0.906,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.484,
+                0.507,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.518,
+                0.909,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.532,
+                0.909,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.546,
+                0.91,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.561,
+                0.909,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.575,
+                0.909,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.589,
+                0.909,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.604,
+                0.378,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.632,
+                0.909,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.646,
+                0.909,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.66,
+                0.909,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.675,
+                0.909,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.689,
+                0.909,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.702,
+                0.91,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.717,
+                0.909,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.732,
+                0.91,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.745,
+                0.91,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.76,
+                0.909,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.775,
+                0.909,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.789,
+                0.909,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.803,
+                0.909,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.818,
+                0.583,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.855,
+                0.597,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.073,
+                0.215,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.174,
+                0.49,
+                0.333
+            ],
+            "angle": 0,
+            "content": "development challenge well. The first constraint is climate vulnerability: rainfall variability, temperature extremes, and intensifying storms already reduce agricultural yields and income, and these impacts are projected to worsen significantly over the coming decades (IPCC 2023). The second is structural gender inequality: customary land tenure systems, biased credit markets, limited extension service access, and intra-household resource misallocation collectively prevent female farmers from operating at full productivity. Addressing these constraints in isolation leads to maladaptation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.345,
+                0.49,
+                0.462
+            ],
+            "angle": 0,
+            "content": "About \\(75\\%\\) of the region's GDP depends heavily on sectors tied to natural capital, including agriculture. In Southeast Asia this dependence is particularly acute: smallholder agriculture sustains livelihoods for hundreds of millions of people, and the sector is simultaneously the region's primary source of female employment and its most climate-exposed economic activity (ADB 2025) (Figure 1).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.473,
+                0.489,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Evidence supports that these two constraints amplify each other. When a drought strikes, households facing resource constraints tend to concentrate inputs on male-managed plots only, widening the intra-household productivity gap.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.559,
+                0.49,
+                0.603
+            ],
+            "angle": 0,
+            "content": "Interventions that address only one constraint will be undermined by the other. A climate resilience program that disburses resources at the household level will, under",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.086,
+                0.637,
+                0.475,
+                0.68
+            ],
+            "angle": 0,
+            "content": "Figure 1: Climate Vulnerability, Gender Inequality, and Maladaptation in Southeast Asian Agriculture Creates a Self-Reinforcing Hotspot"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.102,
+                0.69,
+                0.455,
+                0.906
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.087,
+                0.918,
+                0.174,
+                0.93
+            ],
+            "angle": 0,
+            "content": "Source: Author."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.173,
+                0.914,
+                0.262
+            ],
+            "angle": 0,
+            "content": "documented intra-household dynamics, reproduce existing resource allocation failures. A gender-equity intervention that does not account for climate exposure will see its gains eroded during subsequent climate shocks. Agricultural innovation is the entry point where both constraints can be addressed together.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.51,
+                0.284,
+                0.742,
+                0.322
+            ],
+            "angle": 0,
+            "content": "QUANTIFYING THE\nDUAL CONSTRAINT"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.51,
+                0.328,
+                0.846,
+                0.347
+            ],
+            "angle": 0,
+            "content": "Climate Vulnerability and Agriculture"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.36,
+                0.914,
+                0.476
+            ],
+            "angle": 0,
+            "content": "Southeast Asia is one of the world's most climate risk-exposed regions. Myanmar, the Philippines, and Viet Nam rank among the 10 countries most affected by extreme weather events over the past decade (Germanwatch 2026). Across the region, rainfall variability, rising temperatures, sea-level rise, and more frequent cyclones are reducing crop yields, destroying infrastructure, and pushing vulnerable households into poverty (Table 1).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.487,
+                0.914,
+                0.705
+            ],
+            "angle": 0,
+            "content": "For smallholder agriculture, climate shocks operate through two channels. The first is a direct productivity channel: droughts reduce yields, floods destroy standing crops, and heat stress accelerates soil moisture loss. The second is a human capital channel: resource scarcity following a climate shock has been shown to trigger gender-biased nutritional rationing, with households allocating nutrition away from daughters and toward sons, producing lasting disadvantages for girls in health and education (Maccini and Yang 2009). Agricultural income shocks further reduce human capital investment in girls by increasing their domestic labor burden and rates of early marriage (Shah and Steinberg 2017). Climate change therefore functions as a multiplier of gender inequality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.716,
+                0.914,
+                0.833
+            ],
+            "angle": 0,
+            "content": "Measuring climate stress accurately matters for policy design. Precipitation-based drought indices capture historical variability well, while satellite-based tools such as the United States' National Oceanic and Atmospheric Administration Vegetation Health Index provide continuous, spatially disaggregated stress measures (Nordstrom and Cotton 2023). A combination of both approaches is appropriate for regional policy design.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.509,
+                0.855,
+                0.716,
+                0.893
+            ],
+            "angle": 0,
+            "content": "Gender Inequality and Development Pressure"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.9,
+                0.914,
+                0.932
+            ],
+            "angle": 0,
+            "content": "Gender inequality in Southeast Asian agriculture is not only an equity concern: it is a source of aggregate",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.088,
+                0.958,
+                0.297,
+                0.973
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Brief No. 2026-11 (July)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.958,
+                0.955,
+                0.971
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.176,
+                0.486,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.19,
+                0.486,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.205,
+                0.485,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.218,
+                0.486,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.233,
+                0.486,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.247,
+                0.485,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.262,
+                0.486,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.276,
+                0.486,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.289,
+                0.487,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.304,
+                0.486,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.319,
+                0.255,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.346,
+                0.487,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.36,
+                0.487,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.375,
+                0.485,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.39,
+                0.486,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.403,
+                0.487,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.418,
+                0.487,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.433,
+                0.485,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.446,
+                0.162,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.476,
+                0.485,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.489,
+                0.485,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.504,
+                0.486,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.518,
+                0.486,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.533,
+                0.211,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.561,
+                0.485,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.574,
+                0.486,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.59,
+                0.486,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.175,
+                0.909,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.189,
+                0.91,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.204,
+                0.91,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.219,
+                0.909,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.233,
+                0.909,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.247,
+                0.824,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.284,
+                0.737,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.305,
+                0.739,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.328,
+                0.845,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.361,
+                0.909,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.376,
+                0.909,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.39,
+                0.909,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.404,
+                0.909,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.418,
+                0.91,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.433,
+                0.909,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.447,
+                0.91,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.461,
+                0.894,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.489,
+                0.91,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.503,
+                0.909,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.518,
+                0.909,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.533,
+                0.909,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.546,
+                0.909,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.56,
+                0.911,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.575,
+                0.909,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.59,
+                0.909,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.604,
+                0.91,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.619,
+                0.909,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.632,
+                0.91,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.646,
+                0.911,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.661,
+                0.91,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.675,
+                0.911,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.689,
+                0.642,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.718,
+                0.909,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.732,
+                0.909,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.746,
+                0.909,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.76,
+                0.91,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.774,
+                0.91,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.789,
+                0.91,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.803,
+                0.909,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.817,
+                0.884,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.857,
+                0.712,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.875,
+                0.711,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.903,
+                0.91,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.917,
+                0.908,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.086,
+                0.073,
+                0.216,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIInstitute"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.086,
+                0.173,
+                0.665,
+                0.189
+            ],
+            "angle": 0,
+            "content": "Table 1: Top 10 Countries with the Highest Climate Risk Index Scores, 2024"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.178,
+                0.192,
+                0.818,
+                0.39
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Global Rank</td><td>Country</td><td>Region</td><td>Income Group</td></tr><tr><td>1</td><td>St. Vincent and the Grenadines</td><td>Caribbean</td><td>Upper-middle</td></tr><tr><td>2</td><td>Grenada</td><td>Caribbean</td><td>Upper-middle</td></tr><tr><td>3</td><td>Chad</td><td>Sub-Saharan Africa</td><td>Low</td></tr><tr><td>4</td><td>Papua New Guinea</td><td>Pacific</td><td>Lower-middle</td></tr><tr><td>5</td><td>Niger</td><td>Sub-Saharan Africa</td><td>Low</td></tr><tr><td>6</td><td>Nepal</td><td>South Asia</td><td>Lower-middle</td></tr><tr><td>7</td><td>Philippines*</td><td>Southeast Asia</td><td>Lower-middle</td></tr><tr><td>8</td><td>Malawi</td><td>Sub-Saharan Africa</td><td>Low</td></tr><tr><td>9</td><td>Myanmar*</td><td>Southeast Asia</td><td>Lower-middle</td></tr><tr><td>10</td><td>Viet Nam*</td><td>Southeast Asia</td><td>Lower-middle</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.087,
+                0.392,
+                0.231,
+                0.405
+            ],
+            "angle": 0,
+            "content": "* Southeast Asian country."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.407,
+                0.447,
+                0.42
+            ],
+            "angle": 0,
+            "content": "Source: Germanwatch (2026). https://www.germanwatch.org/en/cri."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.459,
+                0.49,
+                0.575
+            ],
+            "angle": 0,
+            "content": "inefficiency. Closing the farm productivity gender gap could increase agricultural value-added by 0.47 GDP points in lower-middle-income countries (FAO 2023). Gender-based discrimination imposes an economic cost per capita ranging from roughly $200 in Cambodia to over $6,000 in more prosperous economies such as Singapore, and reductions in discrimination are associated with GDP growth gains (OECD 2021).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.587,
+                0.49,
+                0.704
+            ],
+            "angle": 0,
+            "content": "The agriculture sector remains heavily female-staffed but male-controlled. In Indonesia, only 13% of women have ownership or secure rights over agricultural land, compared to 52% of men (ASEAN and UN Women 2024). Women are overrepresented in agriculture, household services, food processing, and textiles, all of which are systematically underserved by both private innovation and public extension systems (OECD 2024).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.716,
+                0.49,
+                0.804
+            ],
+            "angle": 0,
+            "content": "Gender gaps in access to credit, extension services, and market information further depress female farm productivity. These gaps reflect structural features of customary tenure systems, intra-household bargaining environments, and directed innovation markets rather than individual choices or differences in human capital.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.458,
+                0.914,
+                0.561
+            ],
+            "angle": 0,
+            "content": "with pooled resources and shared preferences. Under this assumption, it does not matter who receives an income transfer or subsidy, as the allocation outcome is assumed to be identical regardless of the recipient. Most agricultural development programs and climate adaptation packages are designed on this basis. The empirical work of 3 decades has rejected this.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.573,
+                0.915,
+                0.818
+            ],
+            "angle": 0,
+            "content": "Within the same household, plots managed by women yield approximately 30% less than plots managed by men, not because women are less productive farmers, but because households allocate too much labor and too little fertilizer to male-managed plots relative to female-managed ones. The estimated efficiency loss from this misallocation is equivalent to roughly 6% of total household agricultural output (Udry 1996). Farm production decisions are also driven by household demographic composition rather than by prices and technology alone, and female labor is effectively constrained to the family farm because the cost of hiring outside help is prohibitive, depressing productivity on women-managed plots (LaFave and Thomas 2016). Household-level aid is therefore likely to bypass women-managed plots, reproducing rather than correcting the misallocation the literature documents.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.825,
+                0.482,
+                0.845
+            ],
+            "angle": 0,
+            "content": "WHY STANDARD SOLUTIONS FAIL"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.855,
+                0.362,
+                0.874
+            ],
+            "angle": 0,
+            "content": "The Unitary Household Model"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.886,
+                0.49,
+                0.931
+            ],
+            "angle": 0,
+            "content": "The unitary household model is a standard assumption in development economics whereby all members of a household are treated as a single decision-making unit",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.508,
+                0.841,
+                0.771,
+                0.879
+            ],
+            "angle": 0,
+            "content": "Structural Barriers to Female Agricultural Investment"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.886,
+                0.914,
+                0.931
+            ],
+            "angle": 0,
+            "content": "Even where women are motivated to invest in their plots, two structural features of the institutional environment frequently prevent them from doing so.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.086,
+                0.958,
+                0.687,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.958,
+                0.956,
+                0.972
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.46,
+                0.486,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.475,
+                0.485,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.489,
+                0.487,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.504,
+                0.486,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.518,
+                0.486,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.533,
+                0.486,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.547,
+                0.486,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.561,
+                0.427,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.588,
+                0.487,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.604,
+                0.485,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.618,
+                0.485,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.632,
+                0.485,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.647,
+                0.485,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.66,
+                0.487,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.675,
+                0.486,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.689,
+                0.394,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.718,
+                0.486,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.732,
+                0.486,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.746,
+                0.487,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.76,
+                0.486,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.775,
+                0.485,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.788,
+                0.478,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.461,
+                0.91,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.475,
+                0.91,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.49,
+                0.909,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.504,
+                0.909,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.519,
+                0.91,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.533,
+                0.909,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.546,
+                0.833,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.574,
+                0.909,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.589,
+                0.909,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.604,
+                0.909,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.618,
+                0.908,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.631,
+                0.909,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.646,
+                0.909,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.66,
+                0.911,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.675,
+                0.909,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.689,
+                0.909,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.704,
+                0.909,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.717,
+                0.909,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.732,
+                0.909,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.746,
+                0.909,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.76,
+                0.909,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.774,
+                0.909,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.789,
+                0.91,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.803,
+                0.79,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.827,
+                0.479,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.857,
+                0.358,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.888,
+                0.486,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.903,
+                0.486,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.917,
+                0.487,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.843,
+                0.768,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.862,
+                0.724,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.889,
+                0.909,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.903,
+                0.91,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.917,
+                0.792,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.073,
+                0.215,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.084,
+                0.173,
+                0.49,
+                0.333
+            ],
+            "angle": 0,
+            "content": "The first is insecure land tenure. Farmers who lack secure tenure shorten fallow periods out of fear that idle plots will be claimed by others, even though fallowing is essential for soil regeneration. This constraint falls disproportionately on women, whose tenure within customary systems is often contingent on social and political status. As a result, climate adaptation strategies such as cover cropping, mulching, and controlled fallowing are effectively unavailable to female farmers with insecure tenure, since all require a credible multi-year investment horizon (Goldstein and Udry 2008).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.344,
+                0.49,
+                0.533
+            ],
+            "angle": 0,
+            "content": "The second is directed innovation. Private R&D investment flows toward technologies serving the largest and most profitable markets. When commercially dominant crops are exposed to temperature stress, innovation in those crops accelerates; when the same shocks affect subsistence vegetables and orphan crops, no equivalent private response materializes (Moscona and Sastry 2022). The crops that women disproportionately grow in Southeast Asian smallholder systems, including cassava, sweet potato, leafy vegetables, and legumes, have smaller market footprints and are therefore the least served by new climate-resilient varieties. This constitutes a market failure in R&D that public investment is required to correct.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.555,
+                0.454,
+                0.593
+            ],
+            "angle": 0,
+            "content": "EVIDENCE-BASED INNOVATION PATHWAYS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.602,
+                0.49,
+                0.789
+            ],
+            "angle": 0,
+            "content": "The literature identifies three types of agricultural innovation with demonstrated capacity to address the dual constraint. Biological innovation involves the development of climate-resilient crop varieties and improved agronomic techniques targeted at the crops female smallholders grow. Digital innovation encompasses market information technologies and mobile communication tools that reduce information asymmetries between farmers and buyers. Financial innovation involves redesigning disbursement mechanisms, particularly through mobile money, to ensure that resources reach women as individual decision-making agents rather than being absorbed into household budgets outside their control.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.813,
+                0.47,
+                0.85
+            ],
+            "angle": 0,
+            "content": "Biological Innovation: Correcting the Research and Development Market Failure"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.858,
+                0.49,
+                0.932
+            ],
+            "angle": 0,
+            "content": "Private R&D investment responds to market incentives rather than social need. When temperature shocks affect commercially dominant crops, private firms develop heat-tolerant varieties; when the same shocks affect orphan crops or subsistence vegetables, no equivalent",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.508,
+                0.172,
+                0.889,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Figure 2: Cereal Yield, Cambodia, India, Malaysia, Philippines, Thailand, Viet Nam (in kg per hectare)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.527,
+                0.225,
+                0.898,
+                0.382
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.509,
+                0.387,
+                0.912,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Source: World Bank (2026). https://data.worldbank.org/indicator/AG.YLD.CREL.KG."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.445,
+                0.913,
+                0.504
+            ],
+            "angle": 0,
+            "content": "response materializes. The commercial crops that attract private investment are also the crops for which climate adaptation technologies are most available, compounding the disadvantage of female farmers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.516,
+                0.914,
+                0.704
+            ],
+            "angle": 0,
+            "content": "The Green Revolution illustrates both the potential and the limits of directed biological innovation. Global cereal yields rose from roughly 1.5 tons to nearly 4 tons per hectare between 1961 and 2016, driven by public and private investment in high-yielding cereal varieties (World Bank 2026). However, this gain is concentrated in wheat, rice, and maize. Horticulture, root crops, and food processing, i.e., sectors where female labor in Southeast Asia is concentrated, received a fraction of equivalent research investment. The resulting yield gap reflects not differences in farmer ability but differences in the technological resources available to different crop categories (Figure 2).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.715,
+                0.914,
+                0.789
+            ],
+            "angle": 0,
+            "content": "Public R&D can correct this market failure. When women participate in variety selection, the resulting seeds are better suited to the mixed-crop, risk-averse, labor-constrained farming systems that female smallholders typically manage.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.509,
+                0.812,
+                0.766,
+                0.851
+            ],
+            "angle": 0,
+            "content": "Digital Innovation: Reducing Information Asymmetries"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.858,
+                0.914,
+                0.932
+            ],
+            "angle": 0,
+            "content": "A significant constraint on female agricultural productivity is the absence of real-time market price information, which would allow smallholders to identify the highest-value market for their produce and avoid exploitation by intermediaries who benefit from the information gap.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.087,
+                0.958,
+                0.297,
+                0.973
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Brief No. 2026-11 (July)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.959,
+                0.956,
+                0.971
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.175,
+                0.487,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.19,
+                0.486,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.204,
+                0.485,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.218,
+                0.486,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.233,
+                0.486,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.247,
+                0.486,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.262,
+                0.486,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.276,
+                0.487,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.29,
+                0.486,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.304,
+                0.485,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.319,
+                0.453,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.347,
+                0.487,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.361,
+                0.487,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.375,
+                0.487,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.39,
+                0.486,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.404,
+                0.485,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.418,
+                0.487,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.433,
+                0.485,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.446,
+                0.485,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.46,
+                0.487,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.476,
+                0.486,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.49,
+                0.485,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.504,
+                0.487,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.519,
+                0.485,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.558,
+                0.451,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.576,
+                0.218,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.602,
+                0.487,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.618,
+                0.487,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.632,
+                0.486,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.646,
+                0.486,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.661,
+                0.485,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.675,
+                0.486,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.689,
+                0.486,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.703,
+                0.486,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.717,
+                0.487,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.732,
+                0.487,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.747,
+                0.486,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.761,
+                0.486,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.775,
+                0.295,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.814,
+                0.408,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.833,
+                0.467,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.86,
+                0.486,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.875,
+                0.485,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.889,
+                0.485,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.903,
+                0.486,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.917,
+                0.487,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.446,
+                0.911,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.461,
+                0.909,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.476,
+                0.909,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.49,
+                0.871,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.518,
+                0.911,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.532,
+                0.91,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.546,
+                0.91,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.561,
+                0.91,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.576,
+                0.909,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.589,
+                0.911,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.604,
+                0.91,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.618,
+                0.91,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.631,
+                0.911,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.645,
+                0.911,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.661,
+                0.909,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.675,
+                0.909,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.69,
+                0.661,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.717,
+                0.909,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.732,
+                0.91,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.746,
+                0.909,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.76,
+                0.91,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.775,
+                0.637,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.813,
+                0.764,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.833,
+                0.741,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.861,
+                0.909,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.874,
+                0.909,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.888,
+                0.91,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.903,
+                0.909,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.916,
+                0.891,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.073,
+                0.216,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.087,
+                0.173,
+                0.655,
+                0.189
+            ],
+            "angle": 0,
+            "content": "Table 2: Mobile Wallet Payment Usage Rates in Southeast Asian Countries"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.18,
+                0.192,
+                0.818,
+                0.303
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Country</td><td>Mobile Wallet Payment Usage</td><td>QR Payment Usage</td><td>Mobile Wallet Online/In-App</td></tr><tr><td>Southeast Asia (aggregate)</td><td>79%</td><td>n.a.</td><td>n.a.</td></tr><tr><td>Indonesia</td><td>92%</td><td>66%</td><td>76%</td></tr><tr><td>Malaysia</td><td>87%</td><td>68%</td><td>63%</td></tr><tr><td>Philippines</td><td>87%</td><td>n.a.</td><td>62%</td></tr><tr><td>Viet Nam</td><td>n.a.</td><td>62%</td><td>n.a.</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.088,
+                0.304,
+                0.203,
+                0.316
+            ],
+            "angle": 0,
+            "content": "QR = quick response."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.318,
+                0.881,
+                0.332
+            ],
+            "angle": 0,
+            "content": "Source: Visa (2024). https://www.visa.com.ph/content/dam/VCOM/regional/ap/singapore/global-elements/documents/visa-cpa-2024-report-ipvmc.pdf."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.373,
+                0.49,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Access to real-time price information has been shown to reduce price dispersion substantially, increase producer profits, and lower consumer prices, with gains persisting beyond the initial period of technology adoption (Jensen 2007). In the Philippine agricultural context, mobile phone access raises the farmgate prices that producers receive, and the gains accrue to the individual who controls the device (Lee and Bellemare 2013). Distributing price-information tools to farm households rather than to individual women will therefore not deliver the intended benefits if the device is controlled by the male household head.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.57,
+                0.438,
+                0.608
+            ],
+            "angle": 0,
+            "content": "Financial Innovation: Reaching Women as Individual Agents"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.615,
+                0.49,
+                0.689
+            ],
+            "angle": 0,
+            "content": "The third innovation pathway addresses the intra-household resource control problem. The relevant question is not how much money reaches the household but whether the delivery channel ensures that women retain control over resources intended for them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.701,
+                0.49,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Mobile money has been shown to allow households to smooth consumption entirely in response to negative income shocks, by reducing the transaction cost of receiving transfers from geographically dispersed network members (Jack and Suri 2014). This matters in agricultural contexts where income shocks tend to be spatially correlated: a drought affects an entire region simultaneously, making local risk-sharing networks less effective precisely when they are most needed. Mobile money extends the geographic reach of these networks. Experimental evidence further shows that disbursing funds directly into women's individual accounts significantly increases the share of resources that women retain and invest in productive activities (Riley 2022).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.373,
+                0.914,
+                0.461
+            ],
+            "angle": 0,
+            "content": "Mobile wallet payment usage has reached 79% across Southeast Asia, and above 85% in Indonesia, Malaysia, and the Philippines (Visa 2024). This infrastructure is already in place and can be directly leveraged for agricultural subsidy disbursement and insurance payouts without requiring new technical investment (Table 2).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.51,
+                0.483,
+                0.853,
+                0.502
+            ],
+            "angle": 0,
+            "content": "POLICY RECOMMENDATIONS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.516,
+                0.914,
+                0.604
+            ],
+            "angle": 0,
+            "content": "The five recommendations below are organized by implementation horizon. Immediate actions can be initiated through administrative decisions or platform-level redesign within a 1-to-2-year window. Medium-term reforms require legislative or regulatory change and are best framed as 3-to-5-year targets.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.509,
+                0.627,
+                0.683,
+                0.645
+            ],
+            "angle": 0,
+            "content": "Immediate Actions"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.508,
+                0.657,
+                0.903,
+                0.691
+            ],
+            "angle": 0,
+            "content": "Increase Public Agricultural Research and Development Investment in Women's Crops"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.701,
+                0.914,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Private R&D investment tends to follow large commercial markets, systematically bypassing the crops that female smallholders in Southeast Asia grow most, such as cassava, leafy vegetables, legumes, and root crops. Because these crops generate lower commercial returns, private firms have little incentive to develop climate-resilient varieties for them. Public research institutions should fill this gap. National agricultural research agencies should substantially increase the share of R&D budgets allocated to horticulture and climate-substitute crops and involve women farmers directly in participatory variety selection. Publicly funded climate-adapted seeds for underserved crops would reach the farming systems where the yield gap is currently widest.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.086,
+                0.958,
+                0.687,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.958,
+                0.956,
+                0.972
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.375,
+                0.486,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.39,
+                0.487,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.404,
+                0.485,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.417,
+                0.486,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.433,
+                0.485,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.446,
+                0.487,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.461,
+                0.487,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.475,
+                0.486,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.49,
+                0.486,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.504,
+                0.487,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.519,
+                0.486,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.532,
+                0.295,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.571,
+                0.435,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.59,
+                0.27,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.617,
+                0.487,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.632,
+                0.487,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.646,
+                0.487,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.661,
+                0.486,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.675,
+                0.426,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.704,
+                0.485,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.718,
+                0.487,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.732,
+                0.487,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.746,
+                0.487,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.761,
+                0.485,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.775,
+                0.486,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.789,
+                0.486,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.803,
+                0.485,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.817,
+                0.486,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.832,
+                0.486,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.846,
+                0.485,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.86,
+                0.486,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.875,
+                0.486,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.889,
+                0.459,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.375,
+                0.909,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.39,
+                0.909,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.404,
+                0.909,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.418,
+                0.91,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.433,
+                0.909,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.447,
+                0.891,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.485,
+                0.85,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.517,
+                0.91,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.533,
+                0.909,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.546,
+                0.909,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.561,
+                0.909,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.574,
+                0.91,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.589,
+                0.755,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.628,
+                0.681,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.658,
+                0.875,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.676,
+                0.899,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.703,
+                0.91,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.718,
+                0.91,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.732,
+                0.91,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.746,
+                0.91,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.76,
+                0.91,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.774,
+                0.91,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.789,
+                0.91,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.803,
+                0.911,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.817,
+                0.911,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.832,
+                0.91,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.846,
+                0.91,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.86,
+                0.91,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.875,
+                0.909,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.888,
+                0.677,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.074,
+                0.215,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.172,
+                0.434,
+                0.206
+            ],
+            "angle": 0,
+            "content": "Expand Market Price Information Tools to Female Smallholders"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.216,
+                0.49,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Information asymmetries between smallholders and intermediaries reduce the prices farmers receive in fragmented rural markets. Mobile-based applications displaying current farmgate and wholesale prices across nearby markets have been shown to reduce price dispersion. Research also shows that the device holder captures the benefit, meaning that when women own and operate the technology themselves, income gains accrue to them directly. Distribution programs should therefore target individual female farmers rather than farm households, and digital literacy support should accompany device provision.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.414,
+                0.46,
+                0.448
+            ],
+            "angle": 0,
+            "content": "Disburse Agricultural Subsidies and Loans\nDirectly into Women's Mobile Accounts"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.459,
+                0.49,
+                0.619
+            ],
+            "angle": 0,
+            "content": "Mobile wallet infrastructure is already operating at scale across Southeast Asia. Agricultural subsidies and loans disbursed at the household level are vulnerable to intra-household reallocation, whereby resources intended for female farmers are redirected before reaching the plot. Disbursing directly into individual accounts registered to women removes this risk without requiring new technical investment. Governments should require individual female account registration as a condition for subsidy receipt and simplify account-opening requirements for rural women in coordination with financial regulators.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.642,
+                0.295,
+                0.661
+            ],
+            "angle": 0,
+            "content": "Medium-Term Reforms"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.671,
+                0.439,
+                0.688
+            ],
+            "angle": 0,
+            "content": "Formalize Women's Land Tenure Rights"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.702,
+                0.49,
+                0.789
+            ],
+            "angle": 0,
+            "content": "Farmers who lack secure tenure cannot make multi-year soil investments, such as cover cropping, fallowing, or perennial planting, even when those investments would raise long-term yields. This constraint falls disproportionately on women, whose rights within customary tenure systems are often contingent rather",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.173,
+                0.914,
+                0.248
+            ],
+            "angle": 0,
+            "content": "than formally recognized. Countries across Southeast Asia should accelerate land certification programs with explicit mandates to register plots in women's names and should review national land laws to close the gap between formal property rights and customary practice.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.508,
+                0.272,
+                0.778,
+                0.307
+            ],
+            "angle": 0,
+            "content": "Incorporate Gender Markers into Regional Climate Finance"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.316,
+                0.914,
+                0.504
+            ],
+            "angle": 0,
+            "content": "Climate adaptation finance that reaches the household but bypasses the female member's decision-making authority is unlikely to correct the resource misallocation that reduces female agricultural productivity. Gender markers are reporting requirements attached to climate finance flows that track whether women are direct beneficiaries and decision-makers. Association of Southeast Asian Nations member states and development finance institutions should require gender markers as a standard condition for regional agricultural climate finance, consistent with existing frameworks such as the United Nations Framework Convention on Climate Change Gender Action Plan.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.51,
+                0.526,
+                0.674,
+                0.545
+            ],
+            "angle": 0,
+            "content": "CONCLUSION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.559,
+                0.914,
+                0.79
+            ],
+            "angle": 0,
+            "content": "Southeast Asia's agricultural sector cannot afford to address climate vulnerability and gender inequality as separate policy problems. The evidence reviewed in this brief demonstrates that both constraints share the same root causes, including intra-household misallocation, insecure land rights, and market failures in directed innovation, and respond to the same set of targeted interventions. The five recommendations presented here are grounded in causal evidence and can be implemented using infrastructure, institutions, and finance mechanisms that already exist in the region. What is required is the political will to redesign how resources are directed, delivered, and tracked, so that they reach the female farmers whose productivity gains would generate the largest returns for the region's food security and economic resilience.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.088,
+                0.958,
+                0.297,
+                0.973
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Brief No. 2026-11 (July)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.959,
+                0.956,
+                0.972
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.174,
+                0.431,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.191,
+                0.295,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.218,
+                0.486,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.233,
+                0.486,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.247,
+                0.486,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.261,
+                0.486,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.276,
+                0.485,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.29,
+                0.486,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.304,
+                0.486,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.319,
+                0.486,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.332,
+                0.485,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.347,
+                0.485,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.361,
+                0.486,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.376,
+                0.294,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.415,
+                0.458,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.433,
+                0.435,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.46,
+                0.486,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.475,
+                0.486,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.489,
+                0.487,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.504,
+                0.486,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.517,
+                0.486,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.532,
+                0.486,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.546,
+                0.487,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.56,
+                0.487,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.575,
+                0.485,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.59,
+                0.486,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.603,
+                0.469,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.643,
+                0.292,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.672,
+                0.437,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.703,
+                0.486,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.718,
+                0.485,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.732,
+                0.487,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.746,
+                0.486,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.761,
+                0.485,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.775,
+                0.486,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.175,
+                0.911,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.19,
+                0.91,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.205,
+                0.91,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.217,
+                0.91,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.233,
+                0.908,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.274,
+                0.762,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.291,
+                0.776,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.318,
+                0.91,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.333,
+                0.909,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.347,
+                0.91,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.361,
+                0.91,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.375,
+                0.91,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.389,
+                0.911,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.404,
+                0.91,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.418,
+                0.91,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.433,
+                0.91,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.447,
+                0.91,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.461,
+                0.909,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.475,
+                0.91,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.49,
+                0.77,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.528,
+                0.671,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.56,
+                0.909,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.575,
+                0.909,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.589,
+                0.91,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.603,
+                0.91,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.618,
+                0.91,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.631,
+                0.91,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.646,
+                0.911,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.661,
+                0.909,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.675,
+                0.911,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.689,
+                0.909,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.703,
+                0.91,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.717,
+                0.91,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.732,
+                0.91,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.746,
+                0.91,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.76,
+                0.91,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.776,
+                0.747,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.088,
+                0.073,
+                0.215,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBInstitute"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.102,
+                0.181,
+                0.25,
+                0.2
+            ],
+            "angle": 0,
+            "content": "REFERENCES"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.209,
+                0.897,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank (ADB). 2025. Asia-Pacific Climate Report 2025. Manila: ADB. https://www.adb.org/sites/default/files/publication/1094721/asia-pacific-climate-report-2025.pdf."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.237,
+                0.897,
+                0.261
+            ],
+            "angle": 0,
+            "content": "ASEAN. 2024. ASEAN Gender Outlook 2024. Jakarta: ASEAN Secretariat. https://data.unwomen.org/sites/default/files/documents/Publications/2024/ASEAN-gender-outlook_2024.pdf."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.263,
+                0.896,
+                0.288
+            ],
+            "angle": 0,
+            "content": "Food and Agriculture Organization (FAO). 2023. The Status of Women in Agrifood Systems. Rome: FAO. https://openknowledge.fao.org/items/adc0741f-9de2-4d09-ae68-b19cc871601a."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.29,
+                0.896,
+                0.315
+            ],
+            "angle": 0,
+            "content": "——. 2023. Government Expenditures in Agriculture (2001–2022): Global and Regional Trends. Rome: FAO. https://doi.org/10.4060/cc9148en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.316,
+                0.768,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Germanwatch. 2026. Climate Risk Index 2026. Bonn: Germanwatch. https://www.germanwatch.org/en/cri."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.333,
+                0.897,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Goldstein, M., and C. Udry. 2008. The Profits of Power: Land Rights and Agricultural Investment in Ghana. Journal of Political Economy 116(6): 981–1022."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.36,
+                0.896,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Jack, W., and T. Suri. 2014. Risk Sharing and Transactions Costs: Evidence from Kenya's Mobile Money Revolution. American Economic Review 104(1): 183–223."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.386,
+                0.897,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Jensen, R. 2007. The Digital Provide: Information (Technology), Market Performance, and Welfare in the South Indian Fisheries Sector. Quarterly Journal of Economics 122(3): 879–924."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.413,
+                0.896,
+                0.438
+            ],
+            "angle": 0,
+            "content": "LaFave, D., and D. Thomas. 2016. Farms, Families, and Markets: New Evidence on Completeness of Markets in Agricultural Settings. Econometrica 84(5): 1917–1960."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.44,
+                0.896,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Lee, J., and M. F. Bellemare. 2013. Look Who's Talking: The Impacts of the Intrahousehold Allocation of Mobile Phones on Agricultural Prices. Journal of Development Studies 49(5): 624–640."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.466,
+                0.895,
+                0.491
+            ],
+            "angle": 0,
+            "content": "Maccini, S., and D. Yang. 2009. Under the Weather: Health, Schooling, and Economic Consequences of Early-Life Rainfall. American Economic Review 99(3): 1006–1026."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.493,
+                0.896,
+                0.518
+            ],
+            "angle": 0,
+            "content": "Moscona, J., and K. Sastry. 2022. Does Directed Innovation Mitigate Climate Damage? Evidence from US Agriculture. Quarterly Journal of Economics 138(2): 637–701."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.519,
+                0.867,
+                0.534
+            ],
+            "angle": 0,
+            "content": "Nordstrom, E., and M. Cotton. 2023. Satellite-Based Vegetation Health Indices for Agricultural Monitoring. Working Paper."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.536,
+                0.851,
+                0.55
+            ],
+            "angle": 0,
+            "content": "OECD. 2021. SIGI 2021 Regional Report for Southeast Asia. Paris: OECD Publishing. https://doi.org/10.1787/236f41d0-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.138,
+                0.552,
+                0.852,
+                0.566
+            ],
+            "angle": 0,
+            "content": "—. 2024. SIGI 2024 Regional Report for Southeast Asia. Paris: OECD Publishing. https://doi.org/10.1787/7fc15e1c-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.568,
+                0.896,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Riley, E. 2022. Resisting Social Pressure in the Household Using Mobile Money: Experimental Evidence on Microenterprise Investment in Uganda. Working Paper."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.595,
+                0.896,
+                0.619
+            ],
+            "angle": 0,
+            "content": "Shah, M., and B. M. Steinberg. 2017. Drought of Opportunities: Contemporaneous and Long-Term Impacts of Rainfall Shocks on Human Capital. Journal of Political Economy 125(2): 527–561."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.621,
+                0.895,
+                0.636
+            ],
+            "angle": 0,
+            "content": "Udry, C. 1996. Gender, Agricultural Production, and the Theory of the Household. Journal of Political Economy 104(5): 1010–1046."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.637,
+                0.896,
+                0.672
+            ],
+            "angle": 0,
+            "content": "Visa. 2024. The Future of Commerce on the Cusp of Change: Visa Consumer Payment Attitudes Study 2024. Singapore: Visa. https://www.visa.com.ph/content/dam/VCOM/regional/ap/singapore/global-elements/documents/visa-cpa-2024-report-ipvmc.pdf."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.099,
+                0.789,
+                0.294,
+                0.801
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank Institute"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.097,
+                0.803,
+                0.492,
+                0.84
+            ],
+            "angle": 0,
+            "content": "ADBI, located in Tokyo, is the think tank of the Asian Development Bank (ADB). Its mission is to identify effective development strategies and improve development management in ADB's developing member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.097,
+                0.848,
+                0.492,
+                0.885
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Briefs are based on events organized or co-organized by ADBI. The series is designed to provide concise, nontechnical accounts of policy issues of topical interest, with a view to facilitating informed debate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.097,
+                0.894,
+                0.493,
+                0.93
+            ],
+            "angle": 0,
+            "content": "The views expressed in this publication are those of the authors and do not necessarily reflect the views and policies of ADBI, ADB, or its Board or Governors or the governments they represent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.791,
+                0.901,
+                0.839
+            ],
+            "angle": 0,
+            "content": "ADBI encourages printing or copying information exclusively for personal and noncommercial use with proper acknowledgment of ADBI. Users are restricted from reselling, redistributing, or creating derivative works for commercial purposes without the express, written consent of ADBI.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.506,
+                0.849,
+                0.702,
+                0.93
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank Institute\nKasumigaseki Building 8F\n3-2-5 Kasumigaseki, Chiyoda-ku\nTokyo 100-6008\nJapan\nTel: +813 3593 5500\nwww.adbi.org",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.087,
+                0.959,
+                0.687,
+                0.972
+            ],
+            "angle": 0,
+            "content": "Agricultural Innovation and Women's Empowerment Can Improve Climate Resilience in Southeast Asia"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.958,
+                0.956,
+                0.971
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.181,
+                0.25,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.792,
+                0.29,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.805,
+                0.49,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.817,
+                0.49,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.829,
+                0.489,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.85,
+                0.49,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.862,
+                0.49,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.874,
+                0.451,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.897,
+                0.49,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.907,
+                0.49,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.919,
+                0.342,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.794,
+                0.898,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.805,
+                0.898,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.817,
+                0.898,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.828,
+                0.859,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.851,
+                0.699,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.863,
+                0.64,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.874,
+                0.674,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.885,
+                0.593,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.507,
+                0.896,
+                0.541,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.908,
+                0.612,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.507,
+                0.918,
+                0.583,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
