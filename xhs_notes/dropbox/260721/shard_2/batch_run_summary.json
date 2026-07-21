@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 55,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-Bernstein-Puma（PUM.GR）Puma： Inventory analysis ~ good progress on inventory purr~ge-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e4it1625/pdfs/0001-11-Bernstein-Puma-PUM.GR-Puma- Inventory analysis - good progress on inventory purr-ge-260721.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-Bernstein-Sea Ltd（SE.US）Sea Ltd： E~commerce battle continues， but the noise is fading-260720.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e4it1625/pdfs/0002-12-Bernstein-Sea Ltd-SE.US-Sea Ltd- E-commerce battle continues- but the noise is fading-260720.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-Bernstein-U.S. Beverages， Household & Personal Care Products U.S. HPC Scanner Update： beauty remains the bright spot as household demand stays soft-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e4it1625/pdfs/0003-13-Bernstein-U.S. Beverages- Household - Personal Care Products U.S. HPC Scanner Update- beauty remains the bright spot as household demand stays soft-260721.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-Bernstein-U.S. Beverages， Household & Personal Care Products U.S. Beverages Scanner Update： Soft drinks remain resilient-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e4it1625/pdfs/0004-14-Bernstein-U.S. Beverages- Household - Personal Care Products U.S. Beverages Scanner Update- Soft drinks remain resilient-260721.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-Bernstein-U.S. Healthcare Services： A summary of our teach in on specialty pharmacy-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e4it1625/pdfs/0005-15-Bernstein-U.S. Healthcare Services- A summary of our teach in on specialty pharmacy-260721.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
