@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "date_folder": "260722",
+  "source": "kc_translated_reports/ark",
+  "generated_at_utc": "2026-07-21T23:55:02Z",
+  "article_count": 1,
+  "uploaded_count": 1,
+  "articles": [
+    {
+      "source_report_name": "ARK The-DeFi-Quarterly-Q2-2026 bf78e16134d55367",
+      "institution_name": "",
+      "title_before_upload": "木头姐ARK：DeFi季度报告2026年第二季度",
+      "final_wechat_title": "木头姐ARK：DeFi季度报告2026年第二季度",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/ark/260722/01-0001-ARK_The-DeFi-Quarterly-Q2-2026_bf78e16134d55367",
+      "generation_decision": {
+        "source_filename": "0001-ARK_The-DeFi-Quarterly-Q2-2026_bf78e16134d55367",
+        "cleaned_source_title": "0001-ARK_The-DeFi-Quarterly-Q2-2026_bf78e16134d55367",
+        "institution_name": "木头姐ARK",
+        "required_terms": [],
+        "deterministic_fallback": "木头姐ARK：0001ARKTheDeFiQuarterlyQ2202",
+        "raw_candidates": [
+          "木头姐ARK:DeFi季度报告2026年第二季度",
+          "木头姐ARK:DeFi季度报告-稳定币市值1800亿美元",
+          "木头姐ARK:DeFi季度报告-代币化国债TVL突破50亿美元"
+        ],
+        "cleaned_candidates": [
+          "木头姐ARK：DeFi季度报告2026年第二季度",
+          "木头姐ARK：DeFi季度报告-稳定币市值1800亿美元",
+          "木头姐ARK：DeFi季度报告-代币化国债TVL突破50亿美元",
+          "木头姐ARK：0001ARKTheDeFiQuarterlyQ2202",
+          "木头姐ARK：2026年第二季度DeFi生态数据全景"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "木头姐ARK：DeFi季度报告-稳定币市值1800亿美元",
+            "reasons": [
+              "anchor_coverage=0.47"
+            ]
+          },
+          {
+            "title": "木头姐ARK：DeFi季度报告-代币化国债TVL突破50亿美元",
+            "reasons": [
+              "anchor_coverage=0.47"
+            ]
+          },
+          {
+            "title": "木头姐ARK：0001ARKTheDeFiQuarterlyQ2202",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.33"
+            ]
+          }
+        ],
+        "selected_title": "木头姐ARK：DeFi季度报告2026年第二季度",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "木头姐ARK：DeFi季度报告2026年第二季度",
+        "header_pre_neutralization_title": "稳定币与RWA代币化推动链上资金结构变化",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "稳定币与RWA代币化推动链上资金结构变化->研究主题与行业变化观察",
+          "借贷协议与预测市场呈现差异化增长->研究主题与行业变化观察"
+        ]
+      }
+    }
+  ]
+}
