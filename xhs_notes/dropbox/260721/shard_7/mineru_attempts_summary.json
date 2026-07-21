@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rw2ztj8r/pdfs/0001-36-GS-Oil Comment- Hedging Escalation With Diesel Length-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rw2ztj8r/pdfs/0002-37-JPM-Financial Software-Examining AI Across Intapp and SS-C-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rw2ztj8r/pdfs/0003-38-GS-Urban Outfitters Inc. -URBN.US- Anthropologie reset building and UO brand driving profit improvement- upgrade to Buy-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rw2ztj8r/pdfs/0004-39-GS-Ulta Beauty Inc. -ULTA.US- Promotional event analysis- takeaways from IR call- and updating estimates-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rw2ztj8r/pdfs/0005-40-JPM-Lithium-June China Export Import Data-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
