@@ -1,0 +1,204 @@
+{
+  "created_at_utc": "2026-07-21T23:35:22.373779+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260721",
+  "output_dir": "publish_ready_zips/260721",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 11,
+  "skipped_shards": [],
+  "total_files": 1063,
+  "total_renamed_markdown_count": 275,
+  "total_raw_file_bytes": 146966774,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260721/publish_ready_260721_part001.zip",
+      "size_bytes": 86757388,
+      "file_count": 710,
+      "renamed_markdown_count": 180,
+      "raw_file_bytes": 94252586,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260721/publish_ready_260721_part002.zip",
+      "size_bytes": 48965472,
+      "file_count": 353,
+      "renamed_markdown_count": 95,
+      "raw_file_bytes": 52714188,
+      "shards": [
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14163901,
+      "reports": [
+        "0001-01-Bernstein-Domino-s-Pizza-Inc-DPZ.US-Domino-s--DPZ---2Q26--Better-than-fe",
+        "0002-02-Bernstein-European-Utilities---Clean-Energy-District-Cooling--Europe-s-h",
+        "0003-03-Bernstein-EU-Semiconductors-EU-Japan-semis--Hybrid-Bonding---Bullish-log",
+        "0004-04-Bernstein-Global-Luxury-Goods--June-Swiss-watch-exports--Global-demand-r",
+        "0005-05-Bernstein-Global-Memory-Korea-Memory-Export-Tracker--Jun---Strong-HBM-in"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17231688,
+      "reports": [
+        "0001-06-Bernstein-Global-Energy-Storage--Data-center-battery-intensity-rises-as-",
+        "0002-07-Bernstein-Japan-Quant---Fundamental-Tech-Strategy-Japan-Tech-Strategy-3Q",
+        "0003-08-Bernstein-Japan-Consumer---European-General-Retail---Japan-Semiconductor",
+        "0004-09-Bernstein-Global-Semiconductor-Capital-Equipment-China-WFE-Import-Tracke",
+        "0005-10-Bernstein-Schindler-SCHP.SW-Schindler-Q2-26--Solid-execution-but-growth-"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9034707,
+      "reports": [
+        "0001-51-Nomura-Samsung-Biologics-207940.KS-Acquiring-peptide-CDMO-company--PolyP",
+        "0002-52-Nomura-Strategy-Trade-Hong-Kong-rates--Enter-receive-5yfwd5y-IRS-positio",
+        "0003-53-Nomura-USD-CNY-fix-model-Projection--6.7708-260721",
+        "0004-54-Nomura-Xtep-1368.HK-Core-brand-sales-dropped-in-2Q26-260719",
+        "0005-55-UBS-US-Semiconductors-and-Semi-Equipment-SemiBytes-Thoughts-on-Kimi-K3--"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13984812,
+      "reports": [
+        "0001-11-Bernstein-Puma-PUM.GR-Puma--Inventory-analysis---good-progress-on-invent",
+        "0002-12-Bernstein-Sea-Ltd-SE.US-Sea-Ltd--E-commerce-battle-continues--but-the-no",
+        "0003-13-Bernstein-U.S.-Beverages--Household---Personal-Care-Products-U.S.-HPC-Sc",
+        "0004-14-Bernstein-U.S.-Beverages--Household---Personal-Care-Products-U.S.-Bevera",
+        "0005-15-Bernstein-U.S.-Healthcare-Services--A-summary-of-our-teach-in-on-special"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12889119,
+      "reports": [
+        "0001-16-Bernstein-U.S.-SMID-Cap-Software-and-Cybersecurity-Cybersecurity-Mid--26",
+        "0002-17-Bernstein-U.S.-IT-Hardware-Global-Memory-New-Memory-LTAs-Part-3-Bull-vs-",
+        "0003-18-Bernstein-UnitedHealth-Group-Inc-UNH.US-UNH-2Q26--MA-recovery-on-track--",
+        "0004-19-Bernstein-Weekend-Healthcare-Pulse--Surf-s-up-or-is-that-a-Blue-Wave-Our",
+        "0005-20-Bernstein-Volvo-Car-AB-VOLCARB.SS-Volvo-Cars-Q2-2026--Summer-break--Unde"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10307885,
+      "reports": [
+        "0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260",
+        "0002-22-Deutsche-Bank-FX-Blog-The-dollar-is-getting-riskier-in-the-global-race-f",
+        "0003-23-Deutsche-Bank-Focus-Germany-The-scramble-toward-2029-260720",
+        "0004-24-Deutsche-Bank-APAC-Industrials--Foreign-shareholding-quarterly-watch-2Q2",
+        "0005-25-Goldman-Sachs-CHINA-MATTERS-Time-to-Ease-260720"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12932545,
+      "reports": [
+        "0001-26-Goldman-Sachs-CHINA-HUMANOID-ROBOT--WAIC-2026-TAKEAWAYS-Embodied-AI-Take",
+        "0002-27-Goldman-Sachs-CHINA-PROPERTY-WEEKLY-WRAP-Week-29-Wrap-Market-activities-",
+        "0003-28-Goldman-Sachs-China-Jinmao--0817.HK-1H26-Preview--consolidate-contract-s",
+        "0004-29-Goldman-Sachs-CHINA-RESOURCES-MIXC-LIFESTYLE--1209.HK-1H26-Preview--On-t",
+        "0005-30-Goldman-Sachs-China-Spirits-Tracker--Feitian-wholesale-price-trended-up-"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 71,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9168699,
+      "reports": [
+        "0001-31-Goldman-Sachs-Europe-Branded-Consumer-Goods--Luxury-Goods--Watches-round",
+        "0002-32-Goldman-Sachs-GE-Aerospace-GE.US-More-upward-estimate-revisions-while-ma",
+        "0003-33-Goldman-Sachs-Global-Markets-Daily--Can-Japanese-Savings-Boost-JGBs--260",
+        "0004-34-Goldman-Sachs-Japan-Automobiles-Asia-Investor-Feedback-Interest-is-Retur",
+        "0005-35-Goldman-Sachs-LONGFOR-GROUP--0960.HK--1H26-Preview--DP-margin-weakness-p"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15768901,
+      "reports": [
+        "0001-36-Goldman-Sachs-Oil-Comment--Hedging-Escalation-With-Diesel-Length-260720",
+        "0002-37-J.P.-Morgan-Financial-Software-Examining-AI-Across-Intapp-and-SS-C-26072",
+        "0003-38-Goldman-Sachs-Urban-Outfitters-Inc.--URBN.US--Anthropologie-reset-buildi",
+        "0004-39-Goldman-Sachs-Ulta-Beauty-Inc.--ULTA.US--Promotional-event-analysis--tak",
+        "0005-40-J.P.-Morgan-Lithium-June-China-Export-Import-Data-260720"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18118676,
+      "reports": [
+        "0001-41-Morgan-Stanley-Apple--Inc.---North-America-The-Right-Chips-For-the-AI-Jo",
+        "0002-42-J.P.-Morgan-Global-LNG-Supply---Shipping-Tracker-Qatar-s-winter-supply-c",
+        "0003-43-Morgan-Stanley-G10-FX-Strategy-FX-Positioning-Indicates-Investors-Increa",
+        "0004-44-Morgan-Stanley-Global-eCommerce-The-Agentic-Era-Catalyzing-Growth-and-In",
+        "0005-45-Morgan-Stanley-Global-Thematics---North-America-AI-Adoption-and-the-Futu"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13365841,
+      "reports": [
+        "0001-46-Morgan-Stanley-Space-Exploration-Technologies-Corp.---North-America-Spac",
+        "0002-47-Morgan-Stanley-US-Equity-Strategy---North-America-Weekly-Warm-up-Broaden",
+        "0003-48-Morgan-Stanley-Microsoft-Battle-of-the-AI-Stack-Infrastructure-to-Knowle",
+        "0004-49-Nomura-China-healthcare-Read-across-on-Samsung-Bio-s-acquisition-offer-f",
+        "0005-50-Nomura-Global-AI-Trend-Tracker-Moonshot-s-Kimi-K3---China-s-DeepSeek-2.0"
+      ]
+    }
+  ]
+}
