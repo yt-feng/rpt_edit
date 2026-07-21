@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260722/0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/mineru_raw/images/37e377a0ff5172c7e73f54ae1a076955a96d1e23c986759a43d0b97577697b53.jpg",
+    "path": "kc_translated_reports/institutions/260722/02-0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.16,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260722/0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/mineru_raw/images/97ae673de4c8e77e531855102be7613f7713313d63f5d0b8417d17a952de6e5c.jpg",
+    "path": "kc_translated_reports/institutions/260722/02-0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.21,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260722/0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/mineru_raw/images/84531b47d5a76fbdd5b1b6eebef5f6420e0139f2ecb3d1168fa6f73434f1eb46.jpg",
+    "path": "kc_translated_reports/institutions/260722/02-0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=3;non_chart_context,chart_context,chart_ratio,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260722/0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/mineru_raw/images/05630465dea5e2c62e09b6ec9b6d96bcac523cc3193c7bd044dca1bafbc4684d.jpg",
+    "path": "kc_translated_reports/institutions/260722/02-0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.14,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260722/0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/mineru_raw/images/f40ae309d94beffec7fe46b43fa6d6308817de2c2551717c3a9880bf52be36a8.jpg",
+    "path": "kc_translated_reports/institutions/260722/02-0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.14,large"
+  }
+]

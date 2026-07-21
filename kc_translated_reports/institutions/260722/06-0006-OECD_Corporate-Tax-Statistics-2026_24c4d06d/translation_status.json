@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260722/0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d",
+  "title": "经合组织：统计方法与相关数据观察",
+  "source_title": "0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d",
+    "cleaned_source_title": "0006-OECD_Corporate-Tax-Statistics-2026_24c4d06d",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0006OECD公司TaxStatistics202624c",
+    "raw_candidates": [
+      "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3.5%",
+      "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+      "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2%",
+      "经合组织：2026年企业税收统计",
+      "经合组织：2023年企业所得税收入占GDP比重为3.5%",
+      "经合组织：企业税收统计揭示跨国利润与活动地点错配"
+    ],
+    "cleaned_candidates": [
+      "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3",
+      "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+      "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2",
+      "经合组织：2026年企业税收统计",
+      "经合组织：2023年企业所得税收入占GDP比重为3.5%",
+      "经合组织：企业税收统计揭示跨国利润与活动地点错配",
+      "经合组织：0006OECD公司TaxStatistics202624c",
+      "经合组织：经合组织在2026年版企业税收统计中汇总了135个辖区的企业"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "bare_trailing_number"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3",
+        "reasons": [
+          "bare_trailing_number",
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：2026年企业税收统计",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：2023年企业所得税收入占GDP比重为3.5%",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "经合组织：企业税收统计揭示跨国利润与活动地点错配",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：0006OECD公司TaxStatistics202624c",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：经合组织在2026年版企业税收统计中汇总了135个辖区的企业",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：统计方法与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2023",
+        "3.1"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "经合组织：经合组织在2026年版企业税收统计中汇总了135个辖区的企业",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "经合组织：2026年企业税收统计显示全球企业所得税收入占GDP比重为3.5%",
+      "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+      "经合组织：全球法定企业所得税税率在2020至2026年间稳定在21.2%"
+    ],
+    "pre_neutralization_title": "经合组织：2023年低收入辖区企业所得税占GDP比重升至3.1%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "经合组织：统计方法与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_06.pdf",
+  "figure_count": 28,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

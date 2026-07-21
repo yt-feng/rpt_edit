@@ -1,0 +1,72 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260722/0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397",
+  "title": "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+  "source_title": "0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397",
+    "cleaned_source_title": "0002-ADB_Social-Protection-Indicators-of-Coverage-and-Effectiveness-A_62c88397",
+    "institution_name": "亚洲开发银行",
+    "required_terms": [],
+    "deterministic_fallback": "亚洲开发银行：0002ADBSocialProtect",
+    "raw_candidates": [
+      "亚洲开发银行：社会保护覆盖与有效性指标",
+      "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+      "亚洲开发银行：社会保护指标需求导向与综合指数方法"
+    ],
+    "cleaned_candidates": [
+      "亚洲开发银行：社会保护覆盖与有效性指标",
+      "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+      "亚洲开发银行：社会保护指标需求导向与综合指数方法",
+      "亚洲开发银行：0002ADBSocialProtect",
+      "亚洲开发银行：亚洲开发银行（ADB）在2024年发布了社会保护覆盖与有"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "亚洲开发银行：社会保护指标需求导向与综合指数方法",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：0002ADBSocialProtect",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：亚洲开发银行（ADB）在2024年发布了社会保护覆盖与有",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      }
+    ],
+    "selected_title": "亚洲开发银行：2024年社会保护覆盖与有效性评估框架",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2024"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "亚洲开发银行：2024年社会保护覆盖与有效性评估框架"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 5,
+  "institution_name": "亚洲开发银行",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
