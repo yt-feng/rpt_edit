@@ -1,0 +1,134 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0002-22-DB-FX Blog-The dollar is getting riskier in the global race for capital-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "DB",
+  "cover_short_title": "美元正在变“贵”也更",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资组合->组合观察 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "投资者->读者 x2",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "DB：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-22-DB-FX Blog-The dollar is getting riskier in the global race for capital-260720.pdf",
+    "cleaned_source_title": "DB-FX Blog-The dollar is getting riskier in the global race for capital",
+    "institution_name": "DB",
+    "required_terms": [],
+    "deterministic_fallback": "DB：FXBlogThedollarisgett",
+    "raw_candidates": [
+      "美元在全球资本竞争中的不确定性结构变化",
+      "美元：外国美债持有比例降至30%，净股权流入超6000亿美元",
+      "美元：从地缘政治锚定转向科技周期锚定"
+    ],
+    "cleaned_candidates": [
+      "DB：美元在全球资本竞争中的不确定性结构变化",
+      "DB：美元，外国美债持有比例降至30%",
+      "DB：美元，从地缘政治锚定转向科技周期锚定",
+      "DB：FXBlogThedollarisgett",
+      "DB：1.外国对美债的持有比例已从峰值50%降至约30%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "DB：美元，外国美债持有比例降至30%",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "DB：美元，从地缘政治锚定转向科技周期锚定",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "DB：FXBlogThedollarisgett",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "DB：1.外国对美债的持有比例已从峰值50%降至约30%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "DB：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "DB：美元在全球资本竞争中的不确定性结构变化",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "DB：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "507",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

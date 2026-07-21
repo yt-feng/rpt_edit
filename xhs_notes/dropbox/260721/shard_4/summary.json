@@ -1,0 +1,523 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0001-21-CITI-China Materials-Glass Fiber - E-Fabric-Weekly Snapshot-20260716-260719.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "玻纤市场分化，电子纱",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：截至7月16日当周中国玻纤市场，粗纱承压电子纱偏强",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-CITI-China Materials-Glass Fiber - E-Fabric-Weekly Snapshot-20260716-260719.pdf",
+      "cleaned_source_title": "CITI-China Materials-Glass Fiber - E-Fabric-Weekly Snapshot",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国MaterialsGlassFiberEFa",
+      "raw_candidates": [
+        "中国玻纤市场周度快照：粗纱承压电子纱偏强",
+        "截至7月16日当周中国玻纤市场：粗纱承压电子纱偏强",
+        "中国玻纤市场周度快照：粗纱与电子纱结构性分化"
+      ],
+      "cleaned_candidates": [
+        "Citi：中国玻纤市场周度快照，粗纱承压电子纱偏强",
+        "Citi：截至7月16日当周中国玻纤市场，粗纱承压电子纱偏强",
+        "Citi：中国玻纤市场周度快照，粗纱与电子纱结构性分化",
+        "Citi：中国MaterialsGlassFiberEFa",
+        "Citi：截至7月16日当周"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：中国MaterialsGlassFiberEFa",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：截至7月16日当周",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：截至7月16日当周中国玻纤市场，粗纱承压电子纱偏强",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "16",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：截至7月16日当周中国玻纤市场，粗纱承压电子纱偏强"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0002-22-DB-FX Blog-The dollar is getting riskier in the global race for capital-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "美元正在变“贵”也更",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "金融->资金 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "投资者->读者 x2",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "DB：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-DB-FX Blog-The dollar is getting riskier in the global race for capital-260720.pdf",
+      "cleaned_source_title": "DB-FX Blog-The dollar is getting riskier in the global race for capital",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：FXBlogThedollarisgett",
+      "raw_candidates": [
+        "美元在全球资本竞争中的不确定性结构变化",
+        "美元：外国美债持有比例降至30%，净股权流入超6000亿美元",
+        "美元：从地缘政治锚定转向科技周期锚定"
+      ],
+      "cleaned_candidates": [
+        "DB：美元在全球资本竞争中的不确定性结构变化",
+        "DB：美元，外国美债持有比例降至30%",
+        "DB：美元，从地缘政治锚定转向科技周期锚定",
+        "DB：FXBlogThedollarisgett",
+        "DB：1.外国对美债的持有比例已从峰值50%降至约30%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：美元，外国美债持有比例降至30%",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：美元，从地缘政治锚定转向科技周期锚定",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：FXBlogThedollarisgett",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：1.外国对美债的持有比例已从峰值50%降至约30%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "DB：美元在全球资本竞争中的不确定性结构变化",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "DB：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0003-23-DB-Focus Germany-The scramble toward 2029-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "德国2029年：一场",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "世界经济->全球宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：德国聚焦-2029年冲刺",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-DB-Focus Germany-The scramble toward 2029-260720.pdf",
+      "cleaned_source_title": "DB-Focus Germany-The scramble toward 2029",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：FocusGermanyThescrambletoward",
+      "raw_candidates": [
+        "德国聚焦-2029年冲刺",
+        "德国国防支出计划2029年达GDP3.5%",
+        "德国国防预算扩张与2029年财政锚点"
+      ],
+      "cleaned_candidates": [
+        "DB：德国聚焦-2029年冲刺",
+        "DB：德国国防支出计划2029年达GDP3.5%",
+        "DB：德国国防预算扩张与2029年财政锚点",
+        "DB：FocusGermanyThescrambletoward",
+        "DB：德国国防支出计划在2029年前达到GDP的3.5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：德国国防支出计划2029年达GDP3.5%",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "DB：德国国防预算扩张与2029年财政锚点",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "DB：FocusGermanyThescrambletoward",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：德国国防支出计划在2029年前达到GDP的3.5%",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        }
+      ],
+      "selected_title": "DB：德国聚焦-2029年冲刺",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "DB：德国聚焦-2029年冲刺"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0004-24-DB-APAC Industrials- Foreign shareholding quarterly watch-2Q26-Sequential improvements led by Hengli and Shuanghuan-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "外资正在悄悄回补这些",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：亚太工业外资持股季度观察-二季度恒力与双环领涨",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-DB-APAC Industrials- Foreign shareholding quarterly watch-2Q26-Sequential improvements led by Hengli and Shuanghuan-260720.pdf",
+      "cleaned_source_title": "DB-APAC Industrials- Foreign shareholding quarterly watch-2Q26-Sequential improvements led by Hengli and Shuanghuan",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：APACIndustrials",
+      "raw_candidates": [
+        "亚太工业外资持股季度观察-二季度恒力与双环领涨",
+        "亚太工业外资持股季度观察-二季度外资持股比例回升至7.5%",
+        "亚太工业外资持股季度观察-恒力液压与双环传动外资持股回升"
+      ],
+      "cleaned_candidates": [
+        "DB：亚太工业外资持股季度观察-二季度恒力与双环领涨",
+        "DB：亚太工业外资持股季度观察-二季度外资持股比例回升至7.5%",
+        "DB：亚太工业外资持股季度观察-恒力液压与双环传动外资持股回升",
+        "DB：APACIndustrials",
+        "DB：这是该系列数据自2024年8月披露频率从日度调整为季度以来"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：亚太工业外资持股季度观察-二季度外资持股比例回升至7.5%",
+          "reasons": [
+            "anchor_coverage=0.65",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：亚太工业外资持股季度观察-恒力液压与双环传动外资持股回升",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "DB：APACIndustrials",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：这是该系列数据自2024年8月披露频率从日度调整为季度以来",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：亚太工业外资持股季度观察-二季度恒力与双环领涨",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "DB：亚太工业外资持股季度观察-二季度恒力与双环领涨"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0005-25-GS-CHINA MATTERS-Time to Ease-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "Q2经济减速，政策窗",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "中国经济->中国宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "国内经济->国内宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "GS：行业规则与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-GS-CHINA MATTERS-Time to Ease-260720.pdf",
+      "cleaned_source_title": "GS-CHINA MATTERS-Time to Ease",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国MATTERSTimetoEase",
+      "raw_candidates": [
+        "中国宏观环境与政策宽松窗口",
+        "中国宏观环境调整与政策宽松窗口打开",
+        "中国宏观环境分化与政策宽松路径"
+      ],
+      "cleaned_candidates": [
+        "GS：中国宏观环境与政策宽松窗口",
+        "GS：中国宏观环境调整与政策宽松窗口打开",
+        "GS：中国宏观环境分化与政策宽松路径",
+        "GS：中国MATTERSTimetoEase",
+        "GS：二季度中国实际GDP环比年化增速从一季度的5.3%降至3.6%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国MATTERSTimetoEase",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：二季度中国实际GDP环比年化增速从一季度的5.3%降至3.6%",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：行业规则与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国宏观环境与政策宽松窗口",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "GS：行业规则与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

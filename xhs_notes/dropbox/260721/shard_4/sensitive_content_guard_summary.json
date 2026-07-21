@@ -1,0 +1,1591 @@
+[
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x1",
+      "after_deepseek:投资者->读者 x26",
+      "after_deepseek:收益率->回报表现 x2",
+      "after_deepseek:唯一->相对少见 x1",
+      "after_deepseek:绝对->相对 x2",
+      "after_deepseek:投资->研究 x48"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "LY",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:唯一->相对少见 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资->研究 x1",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "准备",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "挑战",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "69",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "保持",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "放在",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0002-22-Deutsche-Bank-FX-Blog-The-dollar-is-getting-riskier-in-the-global-race-f/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x1",
+      "after_deepseek:投资机会->研究线索 x2",
+      "after_deepseek:投资者->读者 x28",
+      "after_deepseek:投资->研究 x32"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0002-22-Deutsche-Bank-FX-Blog-The-dollar-is-getting-riskier-in-the-global-race-f/note.md",
+    "changed": true,
+    "local_changes": [
+      "投资->研究 x1",
+      "after_deepseek:投资者->读者 x3",
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "一句话",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0002-22-Deutsche-Bank-FX-Blog-The-dollar-is-getting-riskier-in-the-global-race-f/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "人民币",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0002-22-Deutsche-Bank-FX-Blog-The-dollar-is-getting-riskier-in-the-global-race-f/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资者->读者 x13",
+      "after_deepseek:投资->研究 x10"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0002-22-Deutsche-Bank-FX-Blog-The-dollar-is-getting-riskier-in-the-global-race-f/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1",
+      "顶级->高质量 x1",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "方式",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0002-22-Deutsche-Bank-FX-Blog-The-dollar-is-getting-riskier-in-the-global-race-f/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1",
+      "投资->研究 x3",
+      "after_deepseek:投资->研究 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "崩盘",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "功",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0003-23-Deutsche-Bank-Focus-Germany-The-scramble-toward-2029-260720/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x1",
+      "after_deepseek:投资机会->研究线索 x2",
+      "after_deepseek:投资者->读者 x23",
+      "after_deepseek:投资->研究 x32"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "sb",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0003-23-Deutsche-Bank-Focus-Germany-The-scramble-toward-2029-260720/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "借钱",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0003-23-Deutsche-Bank-Focus-Germany-The-scramble-toward-2029-260720/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "党",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0003-23-Deutsche-Bank-Focus-Germany-The-scramble-toward-2029-260720/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:绝对->相对 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0003-23-Deutsche-Bank-Focus-Germany-The-scramble-toward-2029-260720/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0003-23-Deutsche-Bank-Focus-Germany-The-scramble-toward-2029-260720/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "党",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "借钱",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "党",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0004-24-Deutsche-Bank-APAC-Industrials--Foreign-shareholding-quarterly-watch-2Q2/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资者->读者 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "LY",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0004-24-Deutsche-Bank-APAC-Industrials--Foreign-shareholding-quarterly-watch-2Q2/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "系统",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0004-24-Deutsche-Bank-APAC-Industrials--Foreign-shareholding-quarterly-watch-2Q2/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "唯一->相对少见 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "公开信",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0004-24-Deutsche-Bank-APAC-Industrials--Foreign-shareholding-quarterly-watch-2Q2/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资逻辑->研究逻辑 x2",
+      "after_deepseek:投资者->读者 x16",
+      "after_deepseek:抄底->底部观察 x1",
+      "after_deepseek:最全->较完整 x1",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "space",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0004-24-Deutsche-Bank-APAC-Industrials--Foreign-shareholding-quarterly-watch-2Q2/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "最高",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0004-24-Deutsche-Bank-APAC-Industrials--Foreign-shareholding-quarterly-watch-2Q2/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1",
+      "抄底->底部观察 x1",
+      "绝对->相对 x1",
+      "投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "密传",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "测试",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "制造",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0005-25-Goldman-Sachs-CHINA-MATTERS-Time-to-Ease-260720/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资->研究 x5"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sb",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0005-25-Goldman-Sachs-CHINA-MATTERS-Time-to-Ease-260720/note.md",
+    "changed": true,
+    "local_changes": [
+      "收益率->回报表现 x1",
+      "唯一->相对少见 x1",
+      "after_deepseek:投资->研究 x2"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "额度",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0005-25-Goldman-Sachs-CHINA-MATTERS-Time-to-Ease-260720/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "贷款",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "额度",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0005-25-Goldman-Sachs-CHINA-MATTERS-Time-to-Ease-260720/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:收益率->回报表现 x1",
+      "after_deepseek:投资->研究 x2"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "space",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0005-25-Goldman-Sachs-CHINA-MATTERS-Time-to-Ease-260720/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政治局",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260721/shard_4/0005-25-Goldman-Sachs-CHINA-MATTERS-Time-to-Ease-260720/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "暴跌->明显回落 x1",
+      "收益率->回报表现 x2",
+      "投资->研究 x7",
+      "after_deepseek:投资->研究 x7"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "额度",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  }
+]

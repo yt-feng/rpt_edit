@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0001-21-CITI-China Materials-Glass Fiber - E-Fabric-Weekly Snapshot-20260716-260719.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0002-22-DB-FX Blog-The dollar is getting riskier in the global race for capital-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0003-23-DB-Focus Germany-The scramble toward 2029-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0004-24-DB-APAC Industrials- Foreign shareholding quarterly watch-2Q26-Sequential improvements led by Hengli and Shuanghuan-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_umqdhcgd/pdfs/0005-25-GS-CHINA MATTERS-Time to Ease-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
