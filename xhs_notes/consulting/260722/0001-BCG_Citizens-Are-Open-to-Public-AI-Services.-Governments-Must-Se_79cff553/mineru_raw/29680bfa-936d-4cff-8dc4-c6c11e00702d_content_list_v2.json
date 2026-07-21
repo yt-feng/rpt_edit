@@ -1,0 +1,3973 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 DIGITAL GOVERNMENT CITIZEN SURVEY REPORT"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                122,
+                655,
+                143
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens Are Open to Public AI Services. Governments Must Seize the Opportunity."
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                147,
+                934,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                354,
+                176,
+                373
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Miguel Carrasco, Dr. Lars Littig, Heidi Kim, Rami Mourtada, and Joseph Hsiao"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                386,
+                660,
+                406
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "CENTER FOR\nDigital Government"
+                    }
+                ]
+            },
+            "bbox": [
+                223,
+                53,
+                389,
+                78
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Table of Contents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                62,
+                43,
+                485,
+                86
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "03 Introduction\n07 Fertile Ground to Build On\n09 Getting the Next Decade Right\n14 Standing Still Is Not an Option\n15 Citizens’ Concerns and Call to Action"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                131,
+                1000,
+                516
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/15f759b66afb8a6e1195ca3bd2ae2e83dd439a5e070ef3a73a0758e54b5ad42b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                277
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                318,
+                364,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Since 2012, BCG has conducted a biennial global survey of citizens' attitudes toward digital service delivery by governments. (See the sidebar “About This Report.”) The results of the 2026 Digital Government Citizen Survey present governments with both an opportunity and a challenge. The digital transformation in government services over the past decade has been profound, resulting in improved adoption, usage, and reliability. During that time, adoption has risen 15 percentage points as citizens have engaged with their governments in new ways online, with approximately 45% of them—including 42% in countries surveyed in both 2016 and 2026—now using those services weekly. (See Exhibit 1.) Advances in private sector offerings have continued to lift expectations, and more citizens are pegging their expectations for their government’s digital offerings to the quality of private sector services they use."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                366,
+                480,
+                583
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens Want Governments to Take the Next Leap"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                600,
+                465,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As governments have proactively invested in more expansive, more personalized digital offerings and as citizens have come to depend on those services, citizens' satisfaction with them has waned, falling 13 percentage points since 2016. As these offerings grow more sophisticated, they also become more intricate, with more moving parts that can break down. Consequently, despite the services' central role in people's daily lives, citizens are expressing greater dissatisfaction with usability problems that make the products more difficult to navigate and operate. The proportion of citizens who reported problem-free use of these government tools dropped 5 percentage points over the decade, contributing to an overall decline in citizens' satisfaction with the digital services that their governments provide."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                665,
+                475,
+                866
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/19f5b04dac2a0c0721a03797d575fc02426aa3af7f6562090fbf9881ff235725.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                552,
+                395,
+                643,
+                455
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "About This Report"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                552,
+                472,
+                818,
+                497
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG conducts its Digital Government Citizen Survey (DGCS) every two years. Since the inaugural edition in 2012, the survey has grown into a preeminent resource for identifying citizens' opinions and beliefs about government digital service delivery. The 2026 survey is the most expansive one yet, representing citizens' viewpoints from 88% of OECD countries, accounting for 70% of the world's population."
+                    }
+                ]
+            },
+            "bbox": [
+                549,
+                523,
+                875,
+                653
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The DGCS is an online survey that uses random sampling to collect input from respondents who self-identify as regular internet users. The data reflects respondents' views on government digital services at a specific point in time. The local context in which citizens and government operate shapes these views. The sampling methodology filters respondents to balance demographic attributes such as location and gender. This approach allows the results to be statistically representative of the general population with a margin of error of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\pm 5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "."
+                    }
+                ]
+            },
+            "bbox": [
+                551,
+                665,
+                880,
+                839
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                945,
+                927,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A Decade of Digital Progress Has Lifted Usage, Adoption, and Service Quality, but Satisfaction Has Not Kept Pace"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                64,
+                843,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Service usage"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                128,
+                211,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who use e-services weekly or more frequently (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                143,
+                233,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Service adoption  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                260,
+                127,
+                396,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Average respondents who use surveyed government e-services (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                252,
+                143,
+                403,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Government vs. private sector"
+                    }
+                ]
+            },
+            "bbox": [
+                438,
+                128,
+                557,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No problem"
+                    }
+                ]
+            },
+            "bbox": [
+                623,
+                127,
+                715,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Net respondents who rate government e-services as better than private sector e-services (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                423,
+                156,
+                574,
+                203
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who report no issue when using an online government service (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                581,
+                143,
+                757,
+                178
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Net satisfaction"
+                    }
+                ]
+            },
+            "bbox": [
+                779,
+                127,
+                902,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Net respondents who are satisfied with online government services (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                768,
+                143,
+                915,
+                179
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a3f7c1434fd899e27d069b642161ca3d0471f95e79c32f519f5c691cc821042d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                99,
+                239,
+                215,
+                341
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/fb6b8ed35b234d624da02e61f32b92dfc08510a243b6322357003ca24b2824e6.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                267,
+                244,
+                559,
+                369
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6b8560398d0a93fb59caed77072e9823392d3d921d8dc3b2a3d88eed722688e1.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                611,
+                239,
+                727,
+                341
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/de7dcb9a003965245f013cfdda109b16ef619fd9447bfa4f4e8c139db0202cc0.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: 2016 and 2026 BCG Digital Government Citizen Surveys."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Percentage changes shown in the green ovals compare survey results for 2016 and 2026 for the matched set of countries surveyed in both years. pp = percentage points."
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Service adoption reflects online usage rate based on the 30 services surveyed."
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                187,
+                897,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The emergence and subsequent expansion of AI represents an inflection point in digital transformation that can accelerate the full realization of this new era of possibility, elevating government services, improving their delivery, and reviving citizen enthusiasm. But as AI transitions from broad abstraction to visible direct impact—more negative than positive for some—public sentiment is likely to harden further overall. Public backlash to AI infrastructure (for example, data centers) and its effect on the cost of living has rapidly changed the context that governments operate within, reinforcing the need to ground government AI strategy in citizen sentiment."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                466,
+                478,
+                626
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At the same time, however, the continued expansion of AI in tools and services that touch every aspect of daily life will further raise citizens' public sector expectations, potentially widening the gap between citizens' expectation and governments' service delivery. Fortunately, AI also offers governments the opportunity to reimagine their digital offerings to meet those rapidly rising expectations. Our 2026 survey makes clear that people's receptiveness to AI and their expectations of public digital services have evolved in a way that should spur governments to fully actualize their AI strategies without delay. This conducive environment reflects a targeted emphasis, previously seen in the 2024 survey, on building citizen confidence in AI through increased exposure and proficiency, as well as on implementing guardrails to guide governments in the safe deployment and use of AI."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                637,
+                484,
+                854
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Today, citizens are increasingly ready to take the next step in the AI era. In fact, this year's survey shows a correlation between lower citizen satisfaction in digital government services and a sense that government is moving too slowly in adopting AI to transform its services—a correlation not present when citizens feel that government is moving too quickly."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                466,
+                927,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For governments, the challenge and the opportunity that AI transformation presents is clear: they must move beyond merely setting a foundation for incorporating AI in digital service delivery. Building the tech foundation, devising governance frameworks, and establishing guardrails are necessary steps in reimagining digital services in the age of AI. But these building blocks are not the finish line. They are the launching pad for what comes next—and today, citizens expect their governments to take that next giant leap. For governments, the mandate to embrace AI to scale up their digital transformation means that standing still is no longer an option."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                565,
+                931,
+                725
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                46,
+                147,
+                61
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                946,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                945,
+                927,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens' Relationship Beliefs About AI Are Evolving"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                43,
+                475,
+                96
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens' views of AI are not uniform across all regions. (See the sidebar “Attitudes About AI Depend on Where You Are.”) But some broader trends transcend regional differences. In the most recent survey, the proportion of regular AI users rose sharply—by 26 percentage points—with nearly two-thirds (64%) of citizens reporting that they use AI tools at least once a week. (See Exhibit 2.) The survey also showed a 4-percentage-point decrease in “don’t know” responses about AI’s potential risks and rewards. The crystallizing of citizens’ opinions about AI appears to be a natural effect of meaningful exposure to the technology. The observed decline in “don’t know” responses thus signals broadening exposure across the population. Accompanying this spike in familiarity is a growing receptiveness to AI that could enable governments to deepen their integration of AI into their digital offerings. Overall attitudes have become more positive over the past two years, as 70% of citizens now hold a neutral-to-positive view of AI, up 5 percentage points since 2024."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                110,
+                482,
+                368
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The survey results reveal that individuals are increasing their active use of AI and that the increased exposure is affecting how they feel about the technology. No matter where governments are in their digital service transformation, they have an opportunity to take bold steps thanks to evidence that citizens' attitudes are open, evolving, and growing more receptive to the idea that government deployment of AI could improve and transform digital services that they rely on. At the same time, the variability of these attitudes should encourage governments to act. Later, through exposure and time, those opinions about AI may become far less malleable, potentially reducing the inclination to support government exploration."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                110,
+                927,
+                282
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                401,
+                149,
+                417
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens’ AI Proficiency Is Growing Fast, with Experts Almost Seven Times as Positive About AI’s Benefits as Those with No AI Experience"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                420,
+                909,
+                473
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents' self-assessed level of AI knowledge (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                483,
+                458,
+                500
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who view the benefits of using AI in government as outweighing the risks (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                519,
+                483,
+                887,
+                513
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5881a6d801debbfd3efdc68c8e57d905350f7e263d835913511c720b9e9b7162.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: 2024 and 2026 BCG Digital Government Citizen Surveys."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: pp = percentage points."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                507,
+                915,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " As used in this exhibit, “proficient” encompasses “intermediate,” “advanced,” and “expert.”"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                774,
+                576,
+                788
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                946,
+                927,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: 2024 and 2026 BCG Digital Government Citizen Surveys."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                807,
+                435,
+                819
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Attitudes About AI Depend on Where You Are"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                52,
+                919,
+                84
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite exhibiting an overall trajectory of increasing openness to AI, citizens' attitudes about the technology varied significantly by region. (See the exhibit.) In the Americas, public opinion showed a notably positive shift, with a 5-percentage-point increase in respondents who said that AI's benefits outweigh its risks. These gains came in part at the expense of “don’t know” responses in the 2024 survey and in part from a decline in the percentage of responses asserting that the risks presented by AI are greater than the potential rewards."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                110,
+                482,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the US, the overall perception that the benefits of AI outweigh the risks has risen, but these findings are tempered by concerns within specific demographics, such as an apparent drop in optimism among younger citizens about the influence of AI. For example, in spring 2026, graduating students at US colleges such as Stanford University and the University of Central Florida repeatedly booed tech executive speakers who praised AI, reflecting growing anxiety about AI's impact on the entry-level job market. Protests against the construction and impact of data centers are growing, too. These objections"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                252,
+                480,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "underscore the importance of demographics: the opinion of younger citizens and college graduates entering the workforce has changed quickly, even as overall sentiment has trended toward greater AI acceptance. Factoring in short-term divergence will be key to governments' thinking, as will acknowledging that citizens' AI sentiment may differ by age or other demographic variable."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                110,
+                924,
+                211
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the Middle East and Africa, the survey found that positive sentiment has dampened, with a decrease of 9 percentage points over the past two years among those who said that they viewed AI as a net positive. Most of this dip in support for AI consisted of a shifted from a positive position on the impact of AI to a neutral one. A smaller proportion of respondents moved went further, seeing the risks of the technology as outweighing the rewards. Even so, respondents in the Middle East and Africa continue to express the greatest comfort with AI of any regional population. In Asia Pacific and Europe, attitudes about AI were largely unchanged from 2024."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                223,
+                927,
+                382
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regional Attitudes Toward AI Are Converging, with the Americas Growing More Positive and the Middle East and Africa More Cautious"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                431,
+                927,
+                483
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who view the benefits of AI as exceeding the risks, by region (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                497,
+                636,
+                513
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a3e0486e96b4aad871c7aa3d1cbf5246dd017b3724eed5146fd83da72100ce7d.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                63,
+                527,
+                929,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Notes: We assigned the 44 countries included in this survey to the following regions: Americas: (Argentina, Brazil, Canada, Chile, Mexico, US); Asia-Pacific (Australia, Bangladesh, China, India, Indonesia, Japan, Kazakhstan, Malaysia, New Zealand, Philippines, Singapore, South Korea, Sri Lanka, Thailand, Vietnam); Europe (Austria, Denmark, Estonia, France, Germany, Greece, Italy, Netherlands, Norway, Spain, Sweden, Switzerland, Turkey, UK); Middle East and Africa (Egypt, Kenya, Kuwait, Morocco, Nigeria, Qatar, Saudi Arabia, South Africa, UAE). pp = percentage points."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                814,
+                912,
+                864
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                945,
+                927,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6176003e5c72861c049875c5068b66a6c6e0d12650d14811ed423586f3af6204.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                998,
+                349
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Fertile Ground to Build On"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                388,
+                699,
+                425
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The 2026 survey data shows a 10-percentage-point rise in the proportion of proficient AI users over the past two years. Today, 64% of citizens identify themselves as intermediate, advanced, or expert users of AI. This expanded number of proficient users is an important strategic input for governments, as the data indicates that expert users are almost seven times as likely to have a positive view of AI as those who have no experience with the technology. The growth in highly proficient users can thus be a key enabler for governments strategizing about adding AI use cases across their digital services."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                451,
+                480,
+                596
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens' Comfort with Agentic AI Is Growing"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                614,
+                386,
+                665
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the public release of ChatGPT in November 2022, followed by Claude and Gemini, access to AI became ubiquitous. People—first English speakers, and then others—began using the natural language tool en masse, in part because chat interfaces such as ChatGPT and Claude Chat spoke their language. Each AI tool that followed in the wake of the original version of AI adopted the same format: they used natural language and typically responded to user prompts by returning outputs. The latest frontier is agentic AI, also known as AI agents, a more sophisticated version of the technology. Advances in AI now allow AI agents not just to come up with answers, but to act autonomously on individuals’ behalf."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                680,
+                478,
+                853
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As this more autonomous version of AI emerged, industry observers assumed that users would be slow to adopt it, given agentic AI's increasingly immersive and imposing nature. But this has not been the case. In a short amount of time, citizens are demonstrating growing comfort with agentic AI use cases—situations where AI has permission to act directly on an individual's behalf. (See Exhibit 3.) As citizens' exposure to AI has increased, particularly in real-world use cases, they increasingly care more about the benefits that the specific use case provides than about the underlying technology that makes it possible."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                451,
+                924,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Abu Dhabi, the capital emirate of the UAE, the government's TAMM platform introduced AutoGov, an AI agent that autonomously manages multiple recurring government services. These include renewing licenses, processing utility payments, and scheduling routine health-care appointments, without resident having to initiate each transaction. The technology runs quietly in the background of daily life, notifying the user at each step. TAMM exemplifies how agentic AI can shift a government service from reactive to anticipatory, while residents retain the ability to customize their automation settings and override at any point."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                623,
+                929,
+                782
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                945,
+                927,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens Are Increasingly Comfortable with Deployment of Agentic AI in Citizen-Facing Use Cases, but Less So for Internal Operations"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                63,
+                907,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents' comfort or discomfort with AI deployment for specific types of tasks (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                127,
+                697,
+                143
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bfef92dfc5f8944a3002e8d7a902240d857efb45817ca8856a9c7f47f595d6fd.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 2026 BCG Digital Government Citizen Survey."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Three of the top four use cases involve agentic AI. Percentages in the “comfortable” column combine survey responses of “very comfortable” and “somewhat comfortable”; percentages in the “uncomfortable” column combine survey responses of “somewhat uncomfortable” and “very uncomfortable.” Bars do not sum to 100% because “I don’t know” responses are excluded."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                142,
+                927,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The dawn of agentic AI also enabled programs like the ALERTCalifornia network, which uses AI to process live feeds from more than 1,200 high-definition cameras to help detect wildfires while they are still small. The cameras, which possess a 360° viewing range, sweep sensitive areas in the state every two minutes, allowing AI to identify spikes in heat or the presence of smoke. AI agents then alert authorities accelerating the dispatch of firefighters by as much as 45 minutes—a huge boost to public safety in fire-prone areas."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                580,
+                480,
+                711
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The 2026 survey showed that citizens' comfort with AI usage exists on a continuum. respondents were broadly most comfortable with citizen-facing AI use cases, such as 24-7 access to help and information via chatbots (66%). Three of the four most highly rated use cases deploy agentic AI to perform such tasks as providing virtual assistance, detecting fraud, and delivering personalized services. Citizens' receptiveness dipped in assessing AI-supported internal operations, however, although 57% of respondents remained comfortable with scenarios that involved using AI to facilitate administrative tasks. These users"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                722,
+                485,
+                866
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "expressed some reservation about government use of AI to generate images or to synthesize social media content for purposes of assessing public sentiment. Their greatest reservations came in response to the use case in which AI was empowered to decide on access to public services."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                580,
+                915,
+                653
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A Strong Digital Foundation Informs AI Attitudes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                512,
+                671,
+                912,
+                722
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The rapidly evolving opportunities presented by AI arise on a foundation laid by the expansion of digital delivery over the past decade. During that period, citizens learned to transact with their government online, built familiarity with digital channels, and gained confidence in the results. Today, as governments' strategic imperative shifts toward AI adoption and its capacity to further transform digital service delivery, those earlier experiences inform citizens' receptiveness to AI's potential."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                737,
+                929,
+                853
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                46,
+                147,
+                61
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                945,
+                927,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a3e6e0e2e4fa8f4d63747072f79c17dd0d9d4c04ca36d607bebf9bb445910530.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                405
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Getting the Next Decade Right"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                445,
+                791,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens are growing more comfortable with using AI beyond basic functions, as the survey showed that 60% of users at intermediate or higher levels of proficiency were willing to allow AI agents to act on their behalf. (See Exhibit 4.) Among less proficient users, which represent a minority of all users, 36% of respondents shared more advanced users' willingness to empower AI agents. The growing overall receptiveness to deeper AI use and to agentic AI opens new avenues to service transformation."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                508,
+                480,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The observed continuity between greater exposure to and experience with AI and increasing comfort with the technology breaks down, however, at the top of the distribution. The 2026 survey shows that proficient users who reach expert level become more circumspect about unconditional acceptance of the technology. But expert users' caution with regard to the use of AI is quite distinct from novice users' uneasiness about it. Novices' reluctance is largely a perception problem, whereas expert users' guardedness reflects a deep knowledge of the real risks that the technology poses. Their deeper exposure and related understanding make those experts, despite being a minority of all users now, a leading indicator. As proficiency rises, sentiment among the broader public will likely evolve toward more qualified skepticism, so governments should plan for and address that trajectory. Expert users scrutinize deployments rigorously, spot failure faster, and define the direction in which broader citizen confidence will move as proficiency continues to rise."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                652,
+                480,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                512,
+                508,
+                929,
+                653
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                945,
+                927,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 4"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                46,
+                149,
+                61
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens’ Willingness to Empower AI Agents Grows with Their Proficiency Until Expert Level, at Which Point Concerns Resurface"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                63,
+                905,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Permission that respondents are willing to grant to AI agents, by proficiency level (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                126,
+                690,
+                143
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/71355494de290c6484469684478df4f9fac3b522dcde0a4426b395dd8aea2957.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 2026 BCG Digital Government Citizen Survey.\nNote: Because of rounding, not all bar segment totals add up to 100%."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                161,
+                921,
+                414
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Humans as a Backstop"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                488,
+                389,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Although 65% of citizens surveyed are comfortable with citizen-facing AI involvement in government service delivery, respondents retain a strong desire to have a human arbiter oversee anything beyond basic services. Nearly two-thirds (65%) of citizens want a human to be involved—either in every transaction that incorporates AI assistance or, at a minimum, as the final authority in complex cases, leaving AI to handle basic transactions. While 22% of citizens endorse full AI autonomy in digital service delivery, most citizens remain circumspect. Since 2024, the data shows a 5-percentage-point rise in support for using AI to conduct basic transactions. This represents a shift toward greater permissiveness, but it falls short of broad approval for having autonomous AI handle complex services without human oversight."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                524,
+                478,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For governments, the continuing need for human oversight means that a full autonomous handoff to AI agents is not the ultimate goal. Instead, governments should calibrate their AI approach by identifying key points in the digital delivery"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                737,
+                468,
+                796
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "process where humans can provide AI oversight and add value. An effective strategy that meets citizens' current comfort level and addresses future requirements for human supervision is the “bounded delegation” model, which delegates discrete tasks to AI but preserves oversight as a matter of human discretion. This model accommodates citizens' preferences for AI participation to be clearly identified, for its scope to be explicitly defined, and for human intervention to be baked in to mitigate any errors or misjudgments."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                524,
+                929,
+                653
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To meet citizens where they are, governments should target low-complexity services that will help build delivery credibility, but they should also pursue complex, high-value services from the outset, as those promise to deliver the greatest value. The amount of AI autonomy in each process, however, should increase in stages. In areas where public opinion is not yet fully receptive, governments should identify points for human oversight, thereby ensuring that humans remain in the loop, rather than granting full autonomy to the AI tools. (See the sidebar “Regional Breakdown of Attitudes Toward AI Agents.”)"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                665,
+                931,
+                825
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                894,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regional Breakdown of Attitudes Toward AI Agents"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                49,
+                831,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A broad shift toward greater citizen receptiveness to AI manifests itself in varying levels of regional support for allowing agentic AI to perform more autonomous forms of government service delivery. (See the exhibit.) Globally, most citizens expressed a desire for human oversight over AI, whether for all interactions or for complex services only. Regionally, the Middle East and Africa reported the highest level of AI comfort, with more than three-quarters of respondents (78%) saying that they were open to direct AI involvement in service delivery."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                152,
+                473,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Asia-Pacific, two-thirds of citizens said that they felt comfortable with some AI agent involvement in service delivery. The majority expressed a preference for a hybrid approach that uses both AI agents and humans, while support for polar extremes—AI agent only or humans only—remained low."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                152,
+                926,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Europe was the most cautious region overall, with more than one-third of respondents preferring a human-only approach or a human-led approach in which AI tools play a support role. The Americas exhibited the second strongest support for AI agents after the Middle East and Africa, with one in four respondents describing themselves as comfortable with the use of autonomous AI agents for all sorts of tasks."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                237,
+                924,
+                340
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Appetite for AI in Government Is High Across Regions, Particularly for Simple Services"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                374,
+                796,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents' preferred level of AI involvement in government service delivery, by region (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                445,
+                744,
+                462
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/35cb6a98d58117ccb945486d5e7858ba6b5c3a8a4425272507fba7f3a8213150.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                82,
+                475,
+                929,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: 2026 BCG Digital Government Citizen Survey.\nNote: Because of rounding, not all bar segment totals add up to 100%."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                772,
+                458,
+                797
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                946,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                945,
+                927,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Service Reliability and Satisfaction Rise Together"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                43,
+                436,
+                96
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For governments engaged in strategic planning for AI adoption in their digital services, the 2026 survey shows a definite link between citizens' satisfaction with digital services and the reliability of those offerings. The best-performing services earned a 15-percentage-point satisfaction premium. The most direct way to improve citizens' online experience is by providing clearer digital journeys and fewer errors."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                110,
+                482,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Usability and reliability in the user experience are particularly important as governments look to expand AI adoption in their digital offerings. As governments approach the AI inflection point in their digital transformations, they should avoid treating AI as a shortcut; any effort to paper AI tools over a spotty digital foundation will undermine system reliability and user confidence. Building a solid foundational user experience thus remains crucial as AI is layered on top. That’s because poorly deployed AI amplifies existing frictions and leads to unexpected and undesirable outcomes, diminishing user satisfaction and damaging citizen trust."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                224,
+                475,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To see how adding AI can compound faults in a government's digital infrastructure, consider the experience of a European government that launched a well-intentioned effort to identify instances of possible fraud in a child benefits program. Errors in the self-learning algorithm quickly spiraled into misjudgments that had significant negative consequences. Parents who made minor mistakes on forms were flagged as probable fraudsters, resulting in fines and loss of services. Tens of thousands of families were falsely accused and assessed severe penalties with little explanation or opportunity to correct the record. When the faults in the black box system finally became clear, public outrage toppled the government. The foundational fault compounded into an error that had significant financial repercussions for the government, with a total cost estimated to exceed $13 billion."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                110,
+                929,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This is why sequencing is critical. Governments should avoid trying to use AI to compensate for a broken service. Instead, it should aim to reinvent the service, making AI integral to the redesign. Opting for an AI-first approach in hopes that it will improve a faulty existing system will ultimately erode the digital foundation and forfeit any trust premium that AI could generate."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                338,
+                927,
+                426
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                946,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens indicate that their\ngovernments have more to lose\nby seeming sluggish than by\nappearing too ambitious in\ntheir responsible AI deployment."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                72,
+                880,
+                290
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b0cd0ee0501073cf8249fd896492cac1faf096c457c92319ba77e7462b38c9ed.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                302,
+                1000,
+                873
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Standing Still Is Not an Option"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                46,
+                791,
+                86
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Widespread access to an array of private sector services that citizens use in their day-to-day life has raised the bar for governments' digital performance. This year's survey again shows that citizens now peg their expectations to private sector standards. Nearly three-quarters of respondents said that they expect their government's online services to function at the same level as those provided by global digital leaders like Google and Amazon or by the best banks, airlines, and other private sector institutions."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                110,
+                478,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens' expectation that public services should equal the best private sector services puts pressure on governments to further improve their digital offerings. Although government performance vis-à-vis private sector performance has remained essentially flat over the past two years, that won't matter if citizens' expectations are pegged to private sector digital leaders that continue to innovate at a rapid pace: simply maintaining current service levels will mean falling behind. Consequently, governments must accelerate their progress if they are to meet users' baseline expectations for their services."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                252,
+                484,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For governments, pressure to keep up with the private sector in services and user experience is spilling over into citizens' expectations for AI adoption as well. The countries where citizens feel that their government's AI adoption is happening at about the right pace are the countries where citizens have the highest satisfaction with their government's digital services overall. (See Exhibit 5.) A deeper dive into these findings, however, suggests that moving too slowly and moving too fast generate different reactions from citizens. In countries where citizens perceive their government to be moving too slowly, they also register a noticeably lower level of digital satisfaction; but in countries where citizens consider their government to be moving too fast, they show no corresponding drop in satisfaction."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                110,
+                931,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Although there appears to be more tolerance for governments moving too fast today, the risk of negative fallout from that perception is likely to increase over time, and governments need to address those concerns before they backfire in the future. Governments that proceed full-speed ahead without addressing underlying citizen concerns could trigger a backlash similar to the one that has occurred on US college campuses. Currently, however, governments appear to have more to lose by not acting and seeming sluggish to their constituents than by being too ambitious in their responsible AI deployment."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                309,
+                932,
+                454
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 5"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                482,
+                147,
+                498
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Satisfaction with Digital Services Is Higher When Citizens Are Comfortable with the Pace of AI Adoption"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                499,
+                847,
+                552
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/461057eb55d01a2e6e5cb9da241a1d0cb351072cd98fb0e825ec76536b67005e.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 2026 BCG Digital Government Citizen Survey.\nNote: The highlighted ovals denote a separate classification of countries by their citizens' predominant pace sentiment (tan = \"too slow\"; green = \"about right\"). A separate analysis finds \"too slow\" sentiment to be negatively associated with net satisfaction; \"too fast\" sentiment shows no comparable association and therefore does not form a distinct cluster on this exhibit."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                575,
+                929,
+                848
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4c4628430c8c40743c02aae0b3f83fe020be841bd1e85bd73fd7b14efb6ccbbc.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                222
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens' Concerns and Call to Action"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                246,
+                922,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The survey indicates that citizens' receptiveness to AI is at an all-time high. Will governments use that mandate to deepen AI adoption across their digital offerings? As proficiency has risen, individuals have become more comfortable with agentic AI use cases, lifting AI optimism overall. (See Exhibit 6.) This moment is ripe for further action because AI optimism has risen even as popular sentiment with regard to digital delivery has dipped over the past two years, a sign that the public views AI as a viable solution to current shortcomings in digital services, rather than as part of the existing digital architecture."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                294,
+                484,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These concurrent shifts show that citizens are looking for improvement in digital delivery and that they see AI as the potential catalyst of that change. Over the past decade, however, we’ve seen that the moment to capitalize on such a confluence of public opinion is finite and subject to further alteration."
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                294,
+                931,
+                368
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 6"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                467,
+                149,
+                482
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens’ Rising Receptiveness to AI Is Accompanied by Declining Satisfaction with Governments’ Digital Service Performance"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                485,
+                892,
+                537
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e4b77c3b1a626f3c3183edb6e19f524e67046ebdaaf83f772e5d74fbcffcb960.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: 2024 and 2026 BCG Digital Government Citizen Surveys."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Notes: Only regions represented in the chart are included in the color key legend. The “Change vs. 2024” figures are not specific to the countries listed; instead, they reflect the percentage-point change across all 44 countries surveyed in 2024 and 2026. pp = percentage points."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                548,
+                927,
+                868
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Coordinated Action Across Government Agencies Is Needed"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                43,
+                347,
+                123
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The conditions for capitalizing on AI and reaping outsized gains exist, but they may not last. Citizens' biggest concerns about AI have remained the same over the past two surveys, but the concerns involve different parts of government and require coordination between the center of government, digital agencies, and ministries or departments responsible for service delivery. Regional differences in citizens' concerns are another a significant variable. (See the sidebar \"Regional Breakdown of Concerns About AI.\")"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                137,
+                480,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Approximately 32% of citizens are most concerned about job losses, and roughly 30% worry about the accuracy of AI results. (See Exhibit 7.) Concerns about potential for labor market disruption have eased slightly (down 2.6 percentage points since 2024), while concerns about accuracy have increased slightly (up 2.3 percentage points). The remaining citizen concerns show a shift from ethical worries such as bias and IP risks in previous surveys to more technical concerns in 2026, including issues surrounding transparency (up 2.2 percentage points), large volumes of data (up 1.8 percentage points), and individuals' capability (up 1.2 percentage points)."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                281,
+                480,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                529,
+                137,
+                934,
+                197
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If they are to gain trust in the AI journey, citizens need to see progress across the full spectrum of concerns that matter to them, although no single public or private actor can address all of these concerns. The labor market and potential job losses are policy matters best addressed by the government, while accuracy concerns fall under the purview of a regulatory body and tech providers. Issues of bias touch on each of these areas. Coordinated action across different tiers of government, public and private sectors, and functions of government is essential to address these multifaceted citizen concerns and is key to advancing from isolated AI wins to system-wide impact."
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                209,
+                947,
+                369
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 7"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                416,
+                147,
+                431
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Job Loss and Results Accuracy Top Citizens' Concerns About Governments' AI Use, Indicating Movement from Ethical to Operational Issues"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                62,
+                434,
+                952,
+                487
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents' concerns about specific AI-related issues in 2024 and 2026 (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                498,
+                621,
+                514
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ee24fc21d274f1c3460acd36d1a4d553daf57e5d054bf9b7d524699cf414e49e.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                65,
+                525,
+                929,
+                810
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: 2024 and 2026 BCG Digital Government Citizen Surveys.\nNote: Survey respondents were asked to select their top two concerns."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                821,
+                457,
+                845
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regional Breakdown of Concerns About AI"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                49,
+                862,
+                85
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f193aecb9bed4a5df9b87473cc4f7e5215a4b232424db610a1ff00433af1dc5e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                105,
+                927,
+                334
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizens in different major geographic regions vary in their appraisal of the most pressing concerns that AI raises. (See the exhibit.) In the Middle East and Africa, the chief concerns are economic, not procedural. Worries about job losses due to AI exceed the global average in this region, while concerns about service delivery are below the global average. European citizens, on the other hand, require a narrative centered on highly visible service delivery, owing to heightened concerns about transparency, ethics, and bias. Citizens in Europe are seeking reassurance about controls, accountability, and oversight. Asia-Pacific and the Americas fall somewhere in between, with concerns about economics and governance tracking closely to global averages. In these regions, a balanced narrative that addresses both of these angles is appropriate. Respondents in the Americas expressed the biggest concern for intellectual property issues, bias, and discrimination."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                366,
+                477,
+                483
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                512,
+                367,
+                926,
+                482
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Considering Regional AI Attitudes Is Crucial in Balancing Citizens' Economic and Governance Concerns"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                514,
+                887,
+                565
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/553a61dffaad4b50f1f33f83b6a757771615c676d8c7b5777e1f41c46e1a7357.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 2026 BCG Digital Government Citizen Survey."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                576,
+                929,
+                863
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Because there is no shortcut to improving trust, governments must think holistically about regulatory rules and oversight, transparency, and human review. No single lever is sufficient, and public attitudes toward AI show that citizens prioritize tangible accountability mechanisms that they can directly see. Around one-third of respondents support visible measures, including appeal with human review, public performance reporting, and independent audits. (See Exhibit 8.) In contrast, technical documentation and back-office assurances that were less visible to end users ranked lower in citizen support. Operationally, this means that prioritizing design visibility into accountability measures is an important element in addressing both citizens' concerns and the problems they see."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                53,
+                475,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In fact, citizens' responses to different survey questions confirm that people revert to the same instinctive preference for visible human involvement, whether the question involves identifying which AI use cases they feel comfortable with or what forms of oversight they prefer. Citizens feel comfort and express trust in proportion to what they can see and control."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                252,
+                470,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Public attitudes toward\nAI show that citizens\nprioritize tangible\naccountability mechanisms\nthat they can directly see."
+                    }
+                ]
+            },
+            "bbox": [
+                539,
+                112,
+                905,
+                256
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 8"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                388,
+                147,
+                403
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizen-Facing Safeguards Build More Trust in Government AI Than Back-End Process Assurance Does"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                405,
+                855,
+                458
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Factors that would increase respondents' trust in AI use by governments (%)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                475,
+                591,
+                491
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Citizen-facing"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                87,
+                527,
+                189,
+                543
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Process assurance"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                609,
+                173,
+                634
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7f918bd80608171def5defa4c91c04520e9368104aa82ad8b5f0a108a5893d0a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                231,
+                494,
+                927,
+                683
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Independent prelaunch testing"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                613,
+                442,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: 2026 BCG Digital Government Citizen Survey.\nNote: Survey respondents were asked to select the two factors that they considered most important."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                688,
+                621,
+                713
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                945,
+                926,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Six Steps to Maximize AI's Potential for Transformation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                43,
+                475,
+                93
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For governments, capitalizing on this window of opportunity requires adopting a structured approach to strategic action, not pursuing isolated initiatives. Insights from the survey point to six steps that leaders can take to maximize AI's potential for digital transformation:"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                110,
+                480,
+                183
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Stabilize foundations and reinvent services. Don't build AI over a broken service. Where digital foundations are weak, reinvent the service with AI integrated into the redesign to maintain problem-free usage, satisfaction, and trust."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                196,
+                477,
+                254
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Prioritize thoughtfully across use cases. Lead with citizen-facing services where AI visibly helps citizens, but don’t stop there. Address the full suite of services, from simple to complex, in parallel, including back-office and high-value complex services. Governments can adopt a measured, deliberate approach in pursuing any use case, but they should sequence their approach after factoring in considerations such as resource availability and tailor their deployment accordingly."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                267,
+                472,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Delegate responsibilities to AI with human oversight. Use case by use case, think through what role humans should play, keeping people at the decision points that matter rather than applying blanket oversight or autonomy. This approach positions humans to take on roles that are more valuable to service delivery—interacting with citizens and thereby boosting performance and satisfaction."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                410,
+                475,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Build AI proficiency. Invest in citizen and workforce AI literacy, recognizing that proficiency shifts attitudes and unlocks comfort with deeper AI use. Executing this step requires building internal AI literacy to meet growing external proficiency, upskilling across the board—particularly to work with service delivery agents—and elevating customer experience."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                524,
+                482,
+                624
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Tailor the delivery to regional concerns. Meet the reality on the ground by sequencing the rollout of service use cases. Calibrate complexity and agentification to match these local concerns and environments, and tailor the narrative to suit specific populations."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                637,
+                477,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Elevate trust by making government accountability visible. Prioritize the levers that citizens can see and contest, including appeal with human review, public performance reporting, and independent audits. Citizens favor these over less-visible technical or back-office assurances."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                722,
+                460,
+                810
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The High Stakes of Taking the Right Steps at the Right Time"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                512,
+                43,
+                845,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For governments, the 2026 survey shows that now is the moment to look to the future and boldly embrace what AI can do to transform not just the services they provide, but the lives of the citizens they serve. Citizens are giving governments a mandate to do just that, further transforming the digital services that they rely on. As governments embark on this next step, the potential benefits and the risks are great. Simple user errors can lead to spiraling problems, and missteps such as moving too fast and not meeting citizens' expectations can erode public trust and have significant adverse consequences. To ensure citizens' comfort and optimism, governments must act diligently and responsively, taking the right steps at the right time. They must also move decisively, as the survey findings make clear that the current level of positive sentiment may not last. Recognition of that fact makes it even more important for leaders to seize the moment and explore the frontier of agentic AI to expand what's possible for their citizens."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                139,
+                929,
+                382
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "About the Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                46,
+                504,
+                84
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1b428d28daf1ae8137e5aa55bff82d5df7c98153215e47942991491ec69f671e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                105,
+                211,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Miguel Carrasco is a managing director and senior partner in the Sydney office of Boston Consulting Group. He is the founder of BCG's Center for Digital Government and director of the Center for Public Impact. You may contact him by email at carrasco.miguel@bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                224,
+                465,
+                298
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/46f2ae5fe6054bffceefd26136bce3bf3d0ed088b1e09dfaf495227e61ca6150.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                332,
+                211,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Heidi Kim is a managing director and partner in BCG X's Manhattan Beach office. Her work focuses on innovation, technology, and bringing world-class customer experiences to government. You may contact her by email at kim.heidi@bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                451,
+                457,
+                525
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/153ad4f9892efdbed3082f5bfe0d255f96534835065e6b224b87e82ced3631ab.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                546,
+                211,
+                649
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Joseph Hsiao is a senior manager in BCG's Sydney office and leads the Center for Digital Government's Vantage team. He focuses on developing BCG perspectives and intellectual properties, including BCG's flagship Digital Government Citizen Survey since 2018. You may contact him by email at hsiao.joseph@bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                665,
+                445,
+                753
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ce69f6fabab1cde74eda4f15651242cde14fc9bf6d9052e938cf2490587aa8a8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                515,
+                105,
+                660,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dr. Lars Littig is a managing director and senior partner in the firm's Middle East offices. He is the leader of BCG's Center for Digital Government across the Europe, Middle East, South America, and Africa region and of the Technology & Digital Advantage practice in the Middle East. You may contact him by email at littig.lars@bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                224,
+                924,
+                312
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/56c71fb8ac1966c825ddf0b47e005729ea9d39f3dbd452848636a2fd6cb13587.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                517,
+                332,
+                658,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Rami Mourtada is a partner and director in the firm's Middle East offices, as a core member of BCG's Technology Advantage and Public Sector practices. He leads BCG's digital transformation topic in the region and is part of BCG's Center for Digital Government. You may contact him by email at mourtada.rami@bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                451,
+                929,
+                525
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Acknowledgments"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                631,
+                724,
+                653
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The authors would like to express their sincere gratitude to Hassan Abdelkhalek, Khushee Verma, Elliot Hannon, Maureen Ton, Tanya Sharma, Raghav Sharma, Faisal Faraz, Hannah Coatsolonia, Angela Everitt, and members of the BCG design studios and editorial team for their invaluable contributions to this work. Their thoughtful input, expertise, and generous support throughout the development of this report and the interactive dashboard have been greatly appreciated."
+                    }
+                ]
+            },
+            "bbox": [
+                499,
+                665,
+                914,
+                782
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | CENTER FOR DIGITAL GOVERNMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                478,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "CITIZENS ARE OPEN TO PUBLIC AI SERVICES. GOVERNMENTS MUST SEIZE THE OPPORTUNITY."
+                    }
+                ]
+            },
+            "bbox": [
+                586,
+                947,
+                868,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                110,
+                255,
+                124
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Where Strategic Clarity Meets Applied AI"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                137,
+                373,
+                152
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We are navigating an era of unprecedented change and disruption—powered by technology, marked by complexity, where change amplifies at scale. To lead, companies need a partner that can bridge the gap between ambition and outcomes. BCG is built for this moment. We bring strategic clarity, rooted in over 60 years of deep domain knowledge, to ensure leaders make the right choices. We combine it with applied AI, shaped and wielded by our practitioners, teaming shoulder-to-shoulder with your teams to deliver transformative impact at scale. The result? Stronger returns, transferred capabilities, and change that sticks. We are BCG."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                152,
+                475,
+                312
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Center for Digital Government"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                514,
+                110,
+                741,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG's Center for Digital Government partners with leaders in government and society to unlock the potential of digital, data, and technologies to transform the public sector and deliver better outcomes for citizens through best-in-class government digital services."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                137,
+                919,
+                211
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "CENTER FOR\nDigital Government"
+                    }
+                ]
+            },
+            "bbox": [
+                524,
+                51,
+                682,
+                76
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                851,
+                478,
+                923
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "© Boston Consulting Group 2026. All rights reserved. 7/26"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                936,
+                458,
+                951
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/62483b7280b1c1161300033d7db161d8774a61145d4d26c7d7c4e3ef1ee55776.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                4,
+                1000,
+                1000
+            ]
+        }
+    ]
+]
