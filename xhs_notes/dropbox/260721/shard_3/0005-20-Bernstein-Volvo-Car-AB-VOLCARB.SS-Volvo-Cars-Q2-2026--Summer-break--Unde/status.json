@@ -1,0 +1,122 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_rqf7b3eq/pdfs/0005-20-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform--260721.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "沃尔沃Q2：最坏的时",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "恶化->出现变化 x1",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Bernstein：沃尔沃汽车业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform--260721.pdf",
+    "cleaned_source_title": "Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：VolvoCarABVolvoCarsQ22026",
+    "raw_candidates": [
+      "沃尔沃汽车二季度业绩低于预期",
+      "沃尔沃汽车二季度营收低于预期6%",
+      "沃尔沃汽车二季度业绩与市场环境变化"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：沃尔沃汽车二季度业绩低于预期",
+      "Bernstein：沃尔沃汽车二季度营收低于预期6%",
+      "Bernstein：沃尔沃汽车二季度业绩与市场环境变化",
+      "Bernstein：VolvoCarABVolvoCarsQ22026",
+      "Bernstein：1.二季度EBIT低于预期25%，中国市场零售销量下降37%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：沃尔沃汽车二季度业绩与市场环境变化",
+        "reasons": [
+          "anchor_coverage=0.69"
+        ]
+      },
+      {
+        "title": "Bernstein：VolvoCarABVolvoCarsQ22026",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：1.二季度EBIT低于预期25%，中国市场零售销量下降37%",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：沃尔沃汽车业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "6"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Bernstein：沃尔沃汽车二季度营收低于预期6%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Bernstein：沃尔沃汽车业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "572",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

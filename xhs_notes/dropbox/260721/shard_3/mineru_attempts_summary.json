@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rqf7b3eq/pdfs/0001-16-Bernstein-U.S. SMID-Cap Software and Cybersecurity Cybersecurity Mid--26 CISO survey- AI-driven demand continues--260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rqf7b3eq/pdfs/0002-17-Bernstein-U.S. IT Hardware-Global Memory-New Memory LTAs Part 3-Bull vs Bear Debate Webinar slides-transcript and summary-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rqf7b3eq/pdfs/0003-18-Bernstein-UnitedHealth Group Inc-UNH.US-UNH 2Q26- MA recovery on track- Optum Insights and non-MA UHC present upside- Increase PT to -512-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rqf7b3eq/pdfs/0004-19-Bernstein-Weekend Healthcare Pulse- Surf-s up or is that a Blue Wave-Our Healthcare Policy Outlook as we enter midterm season-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rqf7b3eq/pdfs/0005-20-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform--260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

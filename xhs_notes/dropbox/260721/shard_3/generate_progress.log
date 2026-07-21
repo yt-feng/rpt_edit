@@ -1,0 +1,91 @@
+Found 55 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rqf7b3eq/pdfs/0001-16-Bernstein-U.S. SMID-Cap Software and Cybersecurity Cybersecurity Mid--26 CISO survey- AI-driven demand continues--260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rqf7b3eq/pdfs/0002-17-Bernstein-U.S. IT Hardware-Global Memory-New Memory LTAs Part 3-Bull vs Bear Debate Webinar slides-transcript and summary-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rqf7b3eq/pdfs/0003-18-Bernstein-UnitedHealth Group Inc-UNH.US-UNH 2Q26- MA recovery on track- Optum Insights and non-MA UHC present upside- Increase PT to -512-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rqf7b3eq/pdfs/0004-19-Bernstein-Weekend Healthcare Pulse- Surf-s up or is that a Blue Wave-Our Healthcare Policy Outlook as we enter midterm season-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rqf7b3eq/pdfs/0005-20-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform--260721.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=78b1f6b1-e389-47cf-8562-7cec31577981
+MinerU states: running, running, running, running, pending
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, done, running, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 4dc8dc71c3c0921aa0b1cda7bb62b5acfba51862fcc4654fdbd00d1284531817.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset 4fbf71db3e424b6bf3db506ea93f9fc7d3fab2aaf7b1b0df59e8ad46ef0d54b1.jpg: score=0;odd_ratio:5.10,edge:0.16,contrast
+Skip non-chart visual asset eca9148326c0cca016afc427158c67ab0c5724c6dfc2bf7f800b9f3ceb7ba315.jpg: score=-100;too_small:96x92
+Skip non-chart visual asset 41f6166b8e996755b932f1fc65dd8bcc9a3cf8c64f2726ddf0bc68bdb600ed95.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset f5ef4f82fc3906788fd7c99b0a3204f8ba00be8a84815973d5b2cd2d5b13216c.jpg: score=-100;too_small:93x90
+Skip non-chart visual asset aab4d57e37323e8ad13ee99c884f81cf7e2a519d0b4e1a359c9f11fb503e93c4.jpg: score=-100;too_small:1015x73
+Skip non-chart visual asset 6cd63bb4f372a6bb382f78f72dffaa00c3c1e4601bfeefa7edee4dddaef00bf0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,contrast
+Skip non-chart visual asset 2dbee7617d98a5252bfd355b5b36f53d942e72f320dc2e02b610aea8bc1b9236.jpg: score=1;odd_ratio:4.97,edge:0.24,contrast,large
+Skip non-chart visual asset 9d74d40a9947f9c146f4c4028aee19561755582c9fc3de7174ee9b464864215a.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Skip non-chart visual asset 22818f33fc773929d2dc065cd1e295b14e146837009dc75865d9e5fad72629d0.jpg: score=-100;too_small:93x90
+Skip non-chart visual asset 2175bc194ae20d3a9e4b2e3da1056b67dd6ac989bb2fca6e60607de5de4e31dc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,contrast
+Skip non-chart visual asset 854a1a53cf008e6dc3dc59de81bb45e2987462cb4b926caa081c4f1f1ab914ba.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,contrast
+Neutralized WeChat title while keeping the report: 伯恩斯坦：2026年中CISO调查显示AI驱动网络安全支出加速 -> 伯恩斯坦：AI与网络安全技术应用观察
+Skip non-chart visual asset efbc58aabe61c4bc296d0c6a18a6f77bf47141995ecd145aafca7c01fd02285f.jpg: score=0;square_without_chart_hint,edge:0.20,contrast
+Skip non-chart visual asset 5ee4e848798b17aaee76dad70f1733573ab5bbffad540a2d14448cee9e92457b.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset ce617f3900b90f5aeb81aad077529bc1a1fbfefc9e8bba2fbae9e12c1b1f4ef7.jpg: score=-100;too_small:276x126
+Skip non-chart visual asset d3f90e520a6627206bfdbfb73a05ffb234a4a653ef050fd3f9eb0f5a24f6332f.jpg: score=-1;square_without_chart_hint,edge:0.26
+Skip non-chart visual asset c5e0474af1bdc6b63ff3649e387b7269bb3af9c2afedfb165a0cb6dcd78ffa41.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset b128723f31a76199c6eddca25eaf0fba6803c6123f03179217953d46ff3b43bc.jpg: score=1;odd_ratio:4.99,edge:0.21,contrast,large
+Skip non-chart visual asset d25d5af8edb85d2b2b6640f9004cbde64ff8bc7e299ca815b762655c82777b5b.jpg: score=-100;too_small:282x153
+Skip non-chart visual asset ea79b34881062a6a2c2707ae1d57780ddc1d2b63e5ba141d49ef6038cc0369f0.jpg: score=-100;too_small:93x96
+Skip non-chart visual asset 8191e406467095cfaf716b5d51fb2a053cafdc1dd96d5a250e95e0473e4f6212.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.46,large
+Skip non-chart visual asset c9b6f1463dabd73273c257e2c582544a8e42e50409a6ad1e0c2c089e15ca604f.jpg: score=0;square_without_chart_hint,edge:0.21,contrast
+Skip non-chart visual asset c0a683ae6b3ccade082bbdd53b1858af43d5e4fd117a204e270a9aa8d3039534.jpg: score=-100;too_small:93x95
+Skip non-chart visual asset ace9444bf068c2c1e257a1088f4c68b19fc65cc7d99f23c59cda18386b7c1128.jpg: score=-1;square_without_chart_hint,edge:0.17
+Skip non-chart visual asset 1e7853cf952e805bf8e89fe1d81e178534026c349fb744723ee087b623a1652e.jpg: score=-100;too_small:93x93
+Skip non-chart visual asset d2047e0077a65d6220404ed1e4d6e7f7aefcf92378dc1251f5204fd2d82ad028.jpg: score=-100;too_small:93x89
+Skip non-chart visual asset 2755c9e9e08a3c76a81e9914040c38854a5e3ea59b027b578bf48726edac8e71.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 3183b73805e25dae3d0a3cf93391a4d94de0a3eeddb6df0a65b63b73ce154e2b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,contrast
+Skip non-chart visual asset b4fd42133ab812bbbc347690f378d09d3e59a11e05e07a179fd4b649c2d91d79.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,contrast
+Skip non-chart visual asset 4c2ebb7501f3dc0cf03c2c3c59b569cfba8992fb8b456db0fea3cd4e559847dc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,contrast
+Skip non-chart visual asset b7522befd8d28f25cfe849af0fa0c1919ab0ad0780544e34cc0713af13c51f59.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.59,contrast
+Skip non-chart visual asset 70375e30826f7e8af3560673c7a1937104606cdb0681f2a2dc723505dcc5296a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,contrast
+Skip non-chart visual asset c7e23c6a761588464d14417080f9975949d75bec9b8c6830619483b07d09f3e8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,contrast
+Skip non-chart visual asset d4996933667ed7559fcb04889284210543f97ef895cde3bed1fd07596f746034.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,contrast
+Skip non-chart visual asset 234f1fb4a263ae1673f99349de5bb69958ebb0178183c06a63ae42db5b62cb8c.jpg: score=-1;odd_ratio:6.62,edge:0.14
+Skip non-chart visual asset 84f57699f745a804806e285652968b8548b6b363f1b627229accea563afd937c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset a8f36e504c0ed335826bdd13123c182dccb699e1df04bf76eebcb41b00e0bdb4.jpg: score=-100;too_small:401x75
+Skip non-chart visual asset 6c5eaf060c09eb96bac7749e80dab36ec1b99babf52d7f1b1eabd6fabd01e969.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Skip non-chart visual asset dd58fe71b5bf8dce94047993cd8589aee5a45c4c52acd76f853a4a6867954958.jpg: score=1;odd_ratio:4.93,edge:0.23,contrast,large
+Skip non-chart visual asset 2ed169963d995353843a54bf42a954a20ca9057521e5c2c05a39a53b29514a17.jpg: score=0;square_without_chart_hint,edge:0.40,large
+Skip non-chart visual asset 2e1b309496b08cdceb172e9300b5b63a2e2c88f811473507924488d1be47aa48.jpg: score=-100;too_small:1331x142
+Skip non-chart visual asset 5daea8519b8ec7bd13fbf21ff829711739084698f3bbf5a6455c74a155860e05.jpg: score=0;odd_ratio:6.83,edge:0.34,contrast
+Skip non-chart visual asset 4f6ba0737b14c0fe061c0e6e361a0c67ac1093e652244cf7a337e99832f0416f.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.48,contrast,large
+Skip non-chart visual asset 7f275aefb875be2bbf1a0b1940d77dedacdacb348c8602e11b22ccfdadf7cb13.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset d1e057666eed2ff71d65919271314b688595cfa967a6666675d7000a1091b431.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,contrast
+Skip non-chart visual asset 4d53ced6e79f9e5fe3be2dfe094d38cdbd8ecae6619ae2ecc768aec0e5de6931.jpg: score=-100;too_small:562x162
+Skip non-chart visual asset 199d90fa8bd615f4c2698752f2c243ef0a27dfbcbd43c5e90b5069d8d747ba86.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,contrast
+Skip non-chart visual asset dab72f115a7c1f31dfcf334255cd112b57fe7a71f2594097713714939028bc18.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.47,contrast,large
+Skip non-chart visual asset 87f6d359bd3ea77a8ab7e34faeedaa35b60ff29e2a8f7551931fe3e59253c57f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.60,contrast
+Skip non-chart visual asset 78d3773502c33aec6dc9b4ee96a83745c0e0339778e8354d223b2907e30ead2e.jpg: score=-100;too_small:1331x168
+Skip non-chart visual asset 67855799c1d084ce682fdd1b9a956533e210bfc49adae16cbcb3da7b55030261.jpg: score=-100;too_small:462x134
+Skip non-chart visual asset 368a5f1db3f6f218dcee54c5c676ad5f09f56c94a8a8a8c7f74b623eac20889e.jpg: score=-100;too_small:398x251
+Skip non-chart visual asset 15d8e32a91d77d54d2011b9b0596fca650ca08455823ee7f6c669056ce40b6ab.jpg: score=-100;too_small:465x128
+Skip non-chart visual asset 8c37b9a754374566e110f626710ae6fdd970fd47f138304b00336e650e7e972a.jpg: score=0;square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset 6a5ad74d286a861472d0b57596568fbd7fb683d3533fad1dc16ab5984894ca6a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,contrast
+Skip non-chart visual asset dd2ab2f82476d6a8673f8b9732d094071e2c5fd213e076f49faafde45e07b6df.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,contrast
+Skip non-chart visual asset a0ea13e317b0f2afbe0ea363745b07a26d9103893450f50bc15dae2fcab417bf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Neutralized WeChat title while keeping the report: 伯恩斯坦：联合健康MA业务复苏符合预期 -> 伯恩斯坦：联合健康MA业务与近期数据观察
+Skip non-chart visual asset aa5971d1f6058233c64861546b2cb7a3c1830f05e7932b969d982a97fc12b787.jpg: score=0;square_without_chart_hint,edge:0.22,contrast
+Neutralized WeChat title while keeping the report: 伯恩斯坦：伯恩斯坦周末医疗政策周报，中期选举与医疗政策展望 -> 伯恩斯坦：行业规则与主题变化观察
+Skip non-chart visual asset 2ee6e408cb390b3804245add412abf8e1897163286158fc848fd9017bce802ce.jpg: score=-100;too_small:462x131
+Skip non-chart visual asset 4b79da2909f726940312e46bf55f0bcc484e8ac466101d8a381ce9303042d92b.jpg: score=-1;odd_ratio:6.62,edge:0.14
+Skip non-chart visual asset 95d9ad428fdbf5499b3b70f3b2467049a7b8e68ec22041c619d19edf237801c0.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 6d6214e87b7c63c979224ba91c40b09bc2214c2cb6ab51b5e3eddffb109ea4b0.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset d33bae6667c57fdb5bd3e28066c0fdcdc1e593949792c543745ae91c58250f97.jpg: score=-100;too_small:96x89
+Skip non-chart visual asset ea17de2b180260c973693edb72b42f7f890e7a9fdd1b9538caf30b8f353651fc.jpg: score=1;odd_ratio:4.93,edge:0.22,contrast,large
+Skip non-chart visual asset e3d387c615b6af510e8f1b873ce8f391e60b1fbc2005d974c125f03f28e7ff40.jpg: score=-100;too_small:401x162
+Skip non-chart visual asset e0e579a0157b6c328e078ab379d7ac9e275276249fa4373c4e7092568cff8be6.jpg: score=-100;too_small:96x92
+Skip non-chart visual asset 1fe35d027ca65a7d1f57b222e55696273b3d9ae06417ac3ee3da98afc81fe6f4.jpg: score=-100;too_small:96x93
+Skip non-chart visual asset c5ea059e0eba5deed6d1c9f407dcb6a0490378aec7982632e00952257eb1856f.jpg: score=-100;too_small:1037x168
+Neutralized WeChat title while keeping the report: 伯恩斯坦：沃尔沃汽车二季度营收低于预期6% -> 伯恩斯坦：沃尔沃汽车业务与季度数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260721/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
