@@ -460,7 +460,7 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 - World Bank 的 WDS `docdt` 比实际发布滞后数月，因此该来源不按日期过滤（`recency_filter=False`），只按 `docdt` 倒序取最新若干篇并靠 seen 去重；其余来源按 `since_days` 过滤。
 - 依赖 `curl_cffi`（已加入 `requirements.txt`）：IMF / WEF 用 Chrome TLS 指纹，OECD 用 Firefox 指纹（Akamai 对 Chrome 指纹更严）。未安装时对无指纹要求的来源无影响。整条链路不需要无头浏览器。
 - **微信公众号合规：RAND / Brookings 已从默认抓取名单移除；精译步骤仍保留 `--exclude-institutions "rand,brookings"` 双保险，即使手动抓了也不翻译、不上公众号。**
-- **标题敏感性审核：精译步骤加了 `--title-guard`，先用确定性规则阻断军事、国防、战备和明确政治敏感标题，再用 DeepSeek 审核是否唱衰中国、攻击中国制度或涉及其他敏感议题。判为 SENSITIVE 的不翻译、不进草稿箱；DeepSeek 报错会作为该篇失败记录，不会放行，也不会终止同批其他文章。被跳过的记录在 `kc_translated_reports/institutions/<日期>/translation_summary.json` 的 `sensitive_skipped` 里。**
+- **标题中性化：`--title-guard` 现在是“改标题、不丢文章”。DeepSeek 只能用日期、数字、技术、对象和行业事实生成标题；共享确定性规则再移除正向/负向评价、对立式钩子和政治军事标签。涉及中国宏观、人民币汇率、信贷、债务、权益、房地产、就业、财政或监管时，公开标题改写成不带立场的研究主题，正文和报告仍正常生成。模型失误时使用确定性的中性后备标题。`translation_summary.json` 记录 `title_neutralized_count`；历史 `sensitive_skipped` 字段保留但不再因标题增加。**
 - market views 汇总 PDF 不做敏感过滤，当天抓到的机构全部纳入，见 §3.3。
 
 ### 3.9 Consulting latest PDF to WeChat（MBB：麦肯锡 / BCG，贝恩暂缓）
@@ -491,9 +491,9 @@ wechat_drafts/consulting/<日期>/...               # 独立的一批公众号�
 说明：
 
 - **时效性：不是"只抓当天发布"，而是"最新优先 + 旧报告过滤 + seen 去重"。** McKinsey 限定当年/去年，BCG 限定最近 120 天修改；首跑会抓当前这批近期报告，之后每天只增量抓新出现的（seen 去重保证不重复）。想更严格可调小 `recent_years`（改 1）或 `sitemap_max_age_days`（改 30/60）。这些常青站点没有可靠的"今天发布"信号，做不到严格的"仅当天"。
-- 同样过 `--title-guard` 标题敏感性审核；`--max-per-institution` 默认 5，控制每家每天量。
+- 同样过 `--title-guard` 标题中性化；`--max-per-institution` 默认 5，控制每家每天量。
 - 麦肯锡和 BCG 是咨询流程的 clean-zero 核心来源：若全程零下载且 DDG/sitemap 为空或候选全部解析失败，Action 返回失败；两边发现源正常、候选均已处理时，0 篇仍是合法的正常结果。
-- 标题审核采用“双层、三道门”策略：原始英文/中文标题先经过确定性军事与政治敏感规则，再由 DeepSeek 补充审核；最终精修标题在写入 PDF 前再次执行确定性审核；微信上传脚本还会执行共享的最终标题策略。命中军事、国防、军用装备、武器、战争、战备或明确政治敏感议题时，整篇不进入微信草稿，但仍可留在 market views 原始信源汇总中。
+- 标题采用“模型中性约束 + 生成后确定性降温 + 上传前兜底”三层策略。命中军事、政治、中国系统性议题或任何好坏评价时，整篇仍进入微信草稿，只把公开标题改成完整的行业、技术、运营、数据或区域研究主题；正文 H1 及其余可见小标题同步检查和改写。标题规则不能删除文章、跳过报告或减少草稿数量。market views 继续保留原始信源标题。
 - 抓取 GET/API POST/PDF 下载对连接错误和 `408/425/429/5xx` 最多重试 3 次；DeepSeek 和微信 API 各有有界重试。单篇失败会记录并继续处理同批其他报告。
 - `xhs_notes/consulting/<日期>` 和 `kc_translated_reports/consulting/<日期>` 是 GitHub-hosted build job 到固定 IP runner 的关键交接；推送 8 次仍失败时 workflow 必须失败，不能继续显示绿色并上传旧数据。
 - MBB 也并入 market views 汇总 PDF（§3.3 的 `--extra-roots` 已含 `xhs_notes/consulting`）。
@@ -689,6 +689,7 @@ scripts/prune_generated_date_dirs.py --keep 3
 2. 本地高风险词替换：如买入、卖出、稳赚、保本、抄底、上车等。
 3. free-api 敏感词检测。
 4. 命中后调用 DeepSeek 改写。
+5. 微信标题额外执行不依赖模型的中性化：移除正负评价和敏感标签，必要时退回完整的事实型主题标题；标题问题不得减少发文量。
 
 敏感词处理脚本：
 

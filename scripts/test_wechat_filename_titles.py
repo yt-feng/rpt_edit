@@ -18,6 +18,7 @@ from wechat_title_optimizer import (
     clean_filename_wechat_title,
     choose_filename_anchored_title,
     decide_filename_anchored_title,
+    ensure_publishable_neutral_title,
     filename_title_fallback,
     required_filename_terms,
     strip_source_filename_noise,
@@ -49,9 +50,10 @@ class WeChatFilenameTitleTests(unittest.TestCase):
         self.assertIn("原始 PDF 文件名标题是最高权重", prompt)
         self.assertIn("忠实底稿", prompt)
         self.assertIn("数据增强版", prompt)
-        self.assertIn("反常识增强版", prompt)
+        self.assertIn("主题增强版", prompt)
         self.assertIn("通胀读数达到4%", prompt)
-        self.assertIn("可用钩子证据", prompt)
+        self.assertIn("可用事实型钩子证据", prompt)
+        self.assertIn("不评价好坏", prompt)
 
     def test_off_topic_clickbait_cannot_replace_filename_topic(self) -> None:
         selected = choose_filename_anchored_title(
@@ -65,7 +67,7 @@ class WeChatFilenameTitleTests(unittest.TestCase):
         )
         self.assertEqual(EXPECTED_TITLE, selected)
 
-    def test_hook_can_win_when_it_keeps_the_full_filename_anchor(self) -> None:
+    def test_contrarian_hook_never_beats_the_faithful_anchor(self) -> None:
         sharpened = "巴克莱：日本市场策略-公司谨慎和通胀压力反而加大"
         selected = choose_filename_anchored_title(
             [EXPECTED_TITLE, sharpened, EXPECTED_TITLE],
@@ -73,7 +75,26 @@ class WeChatFilenameTitleTests(unittest.TestCase):
             "巴克莱",
             evidence_text="公司态度反而更加谨慎，通胀压力继续加大。",
         )
-        self.assertEqual(sharpened, selected)
+        self.assertEqual(EXPECTED_TITLE, selected)
+
+    def test_publishable_guard_neutralizes_the_filename_anchor(self) -> None:
+        selected, changes = ensure_publishable_neutral_title(
+            EXPECTED_TITLE,
+            "巴克莱",
+            SOURCE_FILENAME,
+        )
+        self.assertEqual("巴克莱：企业经营与价格数据观察", selected)
+        self.assertTrue(changes)
+
+    def test_publishable_guard_repairs_malformed_title_without_failure(self) -> None:
+        selected, changes = ensure_publishable_neutral_title(
+            "波士顿咨询：BCG与AI0002CEOs和BoardsAre",
+            "波士顿咨询",
+            "BCG_CEOs-and-Boards-Are-Aligned-on-AI-in-Theory-but-Divided-in-Practice.pdf",
+        )
+        self.assertEqual("波士顿咨询：AI技术与相关数据观察", selected)
+        self.assertTrue(any(change.startswith("quality_fallback:") for change in changes))
+        self.assertEqual([], title_quality_issues(selected, "波士顿咨询"))
 
     def test_unsupported_contrarian_hook_is_rejected(self) -> None:
         invented = "巴克莱：日本市场策略-公司谨慎和通胀压力反而加大"

@@ -42,6 +42,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     find_recent_draft_by_titles,
     is_article_size_error,
     log,
+    neutralize_markdown_headings,
     parse_selection_limit,
     pollinations_context_snippets,
     payload_article_titles,
@@ -59,7 +60,6 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     upload_cover_material,
     utf8_byte_count,
     verify_draft_get,
-    wechat_title_policy_skip_reason,
     write_json,
     write_wechat_title_log,
 )
@@ -67,6 +67,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
 from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
 from sensitive_content_guard import sanitize_wechat_stock_language  # noqa: E402
 from wechat_article_quality import sanitize_wechat_article_markdown  # noqa: E402
+from wechat_title_optimizer import ensure_publishable_neutral_title  # noqa: E402
 
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
@@ -162,7 +163,14 @@ def xhs_raw_article_title(markdown: str, fallback: str) -> str:
 
 def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> str:
     raw_title = xhs_raw_article_title(markdown, fallback)
-    return sharpen_wechat_title(ensure_title_has_institution(raw_title, institution_name), institution_name)
+    sharpened = sharpen_wechat_title(ensure_title_has_institution(raw_title, institution_name), institution_name)
+    neutralized, _changes = ensure_publishable_neutral_title(
+        sharpened,
+        institution_name,
+        fallback,
+        WECHAT_TITLE_MAX_CHARS,
+    )
+    return neutralized
 
 
 def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
@@ -181,7 +189,26 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
     )
     source_report_name = source_report_name_from_xhs_dir(report_dir)
     raw_title = xhs_raw_article_title(markdown, report_dir.name)
-    title = xhs_article_title(markdown, report_dir.name, institution_name)
+    title_before_neutralization = sharpen_wechat_title(
+        ensure_title_has_institution(raw_title, institution_name),
+        institution_name,
+    )
+    title, title_neutralization_changes = ensure_publishable_neutral_title(
+        title_before_neutralization,
+        institution_name,
+        source_report_name,
+        WECHAT_TITLE_MAX_CHARS,
+    )
+    raw_title_decision = status.get("wechat_title_decision", {})
+    title_decision = dict(raw_title_decision) if isinstance(raw_title_decision, dict) else {}
+    if title_neutralization_changes:
+        title_decision["pre_upload_neutralization_title"] = title_before_neutralization
+        title_decision["neutralization_changes"] = list(dict.fromkeys([
+            *(title_decision.get("neutralization_changes") or []),
+            *title_neutralization_changes,
+        ]))
+        title_decision["selection_reason"] = "deterministic_neutralization"
+        title_decision["selected_title"] = title
     return {
         "report_dir": str(report_dir),
         "wechat_markdown": str(markdown_path),
@@ -190,7 +217,7 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
         "raw_title": raw_title,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
-        "title_decision": status.get("wechat_title_decision", {}),
+        "title_decision": title_decision,
         "generation_failure_reason": generation_failure_skip_reason(markdown),
     }
 
@@ -316,9 +343,30 @@ def build_article(
     )
     source_report_name = source_report_name_from_xhs_dir(report_dir)
     raw_title = xhs_raw_article_title(markdown, report_dir.name)
-    title = xhs_article_title(markdown, report_dir.name, institution_name)
+    title_before_neutralization = sharpen_wechat_title(
+        ensure_title_has_institution(raw_title, institution_name),
+        institution_name,
+    )
+    title, title_neutralization_changes = ensure_publishable_neutral_title(
+        title_before_neutralization,
+        institution_name,
+        source_report_name,
+        WECHAT_TITLE_MAX_CHARS,
+    )
     wechat_title = title
-    title_decision = status.get("wechat_title_decision", {})
+    raw_title_decision = status.get("wechat_title_decision", {})
+    title_decision = dict(raw_title_decision) if isinstance(raw_title_decision, dict) else {}
+    if title_neutralization_changes:
+        title_decision["pre_upload_neutralization_title"] = title_before_neutralization
+        title_decision["neutralization_changes"] = list(dict.fromkeys([
+            *(title_decision.get("neutralization_changes") or []),
+            *title_neutralization_changes,
+        ]))
+        title_decision["selection_reason"] = "deterministic_neutralization"
+        title_decision["selected_title"] = wechat_title
+    markdown, heading_neutralization_changes = neutralize_markdown_headings(markdown, wechat_title)
+    if heading_neutralization_changes:
+        title_decision["body_heading_neutralization_changes"] = heading_neutralization_changes
 
     image_urls: dict[str, str] = {}
     uploaded_images: list[dict[str, str]] = []
@@ -560,15 +608,17 @@ def main() -> int:
         return 0
 
     input_selected_count = len(selected)
-    skipped_title_policy: list[dict[str, str]] = []
+    skipped_generation_failures: list[dict[str, str]] = []
     allowed_selected: list[Path] = []
     for report_dir in selected:
         metadata = xhs_article_title_metadata(report_dir)
-        reason = metadata.get("generation_failure_reason") or wechat_title_policy_skip_reason(metadata["wechat_title"])
+        # A contentious title is deterministically rewritten and the article is
+        # retained. Only an actually missing/failed article body is skipped.
+        reason = metadata.get("generation_failure_reason")
         if reason:
             record = dict(metadata)
             record["skip_reason"] = reason
-            skipped_title_policy.append(record)
+            skipped_generation_failures.append(record)
             log(
                 "Skipped WeChat draft article before upload: "
                 f"{metadata['wechat_title']} ({reason})"
@@ -584,7 +634,7 @@ def main() -> int:
             date_dir.name,
             "xhs_notes/dropbox",
             [],
-            skipped_title_policy,
+            skipped_generation_failures,
         )
         summary = {
             "date_folder": date_dir.name,
@@ -594,22 +644,25 @@ def main() -> int:
             "max_articles": "all" if max_articles is None else max_articles,
             "input_selected_count": input_selected_count,
             "selected_count": 0,
-            "skipped_title_policy_count": len(skipped_title_policy),
-            "skipped_title_policy": skipped_title_policy,
+            "skipped_title_policy_count": 0,
+            "skipped_title_policy": [],
+            "skipped_generation_failure_count": len(skipped_generation_failures),
+            "skipped_generation_failures": skipped_generation_failures,
             "draft_count": 0,
-            "status": "skipped_title_policy",
-            "message": f"All selected xhs report articles were blocked by WeChat title policy from {date_dir}",
+            "status": "skipped_generation_failure",
+            "message": f"All selected xhs report article bodies were missing or failed generation under {date_dir}",
             "title_log": str(title_log_path),
             "drafts": [],
             "articles": [],
         }
         write_json(summary_path, summary)
-        log(f"All selected xhs report articles blocked by title policy; wrote skip summary: {summary_path}")
+        log(f"All selected xhs report article bodies failed generation; wrote skip summary: {summary_path}")
         return 0
 
     log(
         f"Selected {len(selected)} xhs WeChat articles from {date_dir} "
-        f"(skipped_title_policy={len(skipped_title_policy)}/{input_selected_count})"
+        f"(skipped_generation_failures={len(skipped_generation_failures)}/{input_selected_count}; "
+        "title issues are rewritten without reducing article count)"
     )
 
     session: requests.Session | None = None
@@ -716,7 +769,7 @@ def main() -> int:
         date_dir.name,
         "xhs_notes/dropbox",
         built_articles,
-        skipped_title_policy,
+        skipped_generation_failures,
     )
     summary = {
         "date_folder": date_dir.name,
@@ -726,8 +779,10 @@ def main() -> int:
         "max_articles": "all" if max_articles is None else max_articles,
         "input_selected_count": input_selected_count,
         "selected_count": len(selected),
-        "skipped_title_policy_count": len(skipped_title_policy),
-        "skipped_title_policy": skipped_title_policy,
+        "skipped_title_policy_count": 0,
+        "skipped_title_policy": [],
+        "skipped_generation_failure_count": len(skipped_generation_failures),
+        "skipped_generation_failures": skipped_generation_failures,
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
         "max_body_chars": args.max_body_chars,

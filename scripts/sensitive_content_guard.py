@@ -229,14 +229,357 @@ WECHAT_BLOCKED_TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
         "politically_sensitive",
         re.compile(
             r"(?:政治|政党|选举|议会|政变|地缘政治|制裁|主权争端|领土争端|台海|"
-            r"台湾问题|台独|新疆|疆独|西藏|藏独|港独|人权指控|颜色革命)"
+            r"台湾问题|台独|新疆|疆独|西藏|藏独|港独|人权指控|颜色革命|"
+            r"习近平|特朗普|拜登|普京|泽连斯基|政府|国务院|当局|政策|监管|改革|"
+            r"外管局|管制|暂停令|反恐|恐怖主义|关税|税收|税制|消费税|征税|征收|"
+            r"贸易战|出口管制|台湾)"
             r"|\b(?:geopolitic(?:s|al)?|political\s+part(?:y|ies)|elections?|parliament|"
             r"coup|sanctions?|sovereignty\s+disputes?|territorial\s+disputes?|"
-            r"Taiwan\s+Strait|Xinjiang|Tibet|human\s+rights\s+allegations?)\b",
+            r"Taiwan\s+Strait|Xinjiang|Tibet|human\s+rights\s+allegations?|Xi\s+Jinping|"
+            r"Trump|Biden|Putin|Zelensky|government|polic(?:y|ies)|regulat(?:ion|ory)|"
+            r"reforms?|tariffs?|tax(?:es|ation)?|trade\s+war|export\s+controls?|"
+            r"counter[- ]terroris(?:m|t)|terroris(?:m|t)|Taiwan)\b",
             re.I,
         ),
     ),
 ]
+
+# Public-account titles should describe a topic, not judge whether it is good,
+# bad, right, wrong, safe, dangerous, winning, or losing.  This deliberately
+# includes positive framing too: replacing one strong opinion with its opposite
+# is not neutralization.
+WECHAT_TITLE_EVALUATIVE_RE = re.compile(
+    r"(?:不好|不行|负面|唱衰|风险|危机|警告|问题|挑战|困境|压力|冲击|拖累|"
+    r"疲弱|乏力|低迷|恶化|衰退|崩盘|崩溃|暴跌|下行|放缓|收缩|萎缩|通缩|"
+    r"失业|违约|债务|赤字|亏损|泡沫|过剩|瓶颈|缺口|短缺|限制|封锁|担忧|差异|分歧|"
+    r"不确定|不及预期|低于预期|未达|落后|弱于|受损|去杠杆|杠杆|失败|受挫|"
+    r"下滑|下降|下跌|减少|走弱|走低|回落|降温|缩水|挤出|吃掉|负增长|"
+    r"高估|低估|误判|悖论|分水岭|触底|反而|不是|而是|未兑现|痛点|暴露|"
+    r"考验|谨慎|质疑|侵蚀|紧张|警报|爆发|回调|退潮|折扣|更弱|偏弱|较弱|"
+    r"疑虑|脱节|疲软|受限|不足|差距|断崖|中断|损害|威胁|争议|争论|抛售|"
+    r"恐慌|波动|未获|未对齐|不改|不稳|不佳|趋弱|走软|动能减弱|按兵不动|"
+    r"管制|暂停|激进|收紧|转负|大降|大涨|加剧|"
+    r"真正|意外|赢家|输家|健康重置|利好|向好|改善|修复|回升|复苏|强劲|"
+    r"亮眼|超预期|高于预期|领先|胜出|红利|机遇|机会|突破|创新高|创纪录|"
+    r"稳健|韧性|乐观|积极|增长|上升|上涨|增加|走高|正增长|受益|支撑|"
+    r"驱动|催化|盈利|净利润|超配|领先|引领|成功|护城河|巩固|增值|潜力|"
+    r"最具|强于|优于|符合预期|达标|可控|可期|加速|扩张|扩大|上修|下修|上调|下调|"
+    r"恢复|提高|降低|有限|偏少|较少|高企|升至|降至|上涨空间|下行空间|上行空间|"
+    r"惊喜|吸睛|崛起|发力|跑赢|看好|看空|多头|空头|入场点|势在必行|"
+    r"赋能|完好|强化|重构|重塑|推动|关键|支持|底部|涨幅|英雄|自我造血|"
+    r"全球首发|新前沿|先求稳再求快|时机已到|冷静|沉着|从容|"
+    r"是否|为什么|为何|何时|何处|如何|怎么|怎样|能否|会否|谁将|"
+    r"需要关注|值得关注|实为|但|却|然而|vs\.?|VS\.?|"
+    r"(?:(?:同比|环比)?(?:增|降)(?=\d))|"
+    r"\b(?:risk|crisis|warning|problem|challenge|pressure|shock|drag|weak(?:ness)?|"
+    r"recession|collapse|crash|slowdown|contraction|deflation|default|debt|deficit|"
+    r"loss|bubble|overcapacity|bottleneck|shortage|restriction|concern|uncertain|"
+    r"underperform|overperform|deleverag(?:e|ing)|failure|winner|loser|mispricing|"
+    r"undervalued|overvalued|recovery|rebound|resilient|positive|negative|strong|"
+    r"beat|miss|upside|downside|benefit|surprise|opportunit(?:y|ies)|threat|"
+    r"improv(?:e|ement)|growth|decline|fall|rise|increase|decrease)\b)",
+    re.I,
+)
+WECHAT_TITLE_CHINA_TOPIC_RE = re.compile(
+    r"(?:中国|国内|内地|大陆|人民币|A股|港股|\bChina\b|\bChinese\b|\bMainland\b|"
+    r"\bRMB\b|\bCNY\b)",
+    re.I,
+)
+WECHAT_TITLE_SYSTEMIC_TOPIC_RE = re.compile(
+    r"(?:宏观|权益策略|市场策略|人民币|汇率|货币|信贷|债务|债券|杠杆|财政|监管|政策|"
+    r"地产|房地产|房价|楼市|就业|资本流动|资金流动|A股|港股|"
+    r"\bmacro\b|\bequit(?:y|ies)\b|\bcurrency\b|\bforex\b|\bFX\b|\bcredit\b|"
+    r"\bdebt\b|\bbonds?\b|\bleverag(?:e|ing)\b|\bfiscal\b|\bregulat(?:ion|ory)\b|\bpolicy\b|"
+    r"\bproperty\b|\breal estate\b|\bemployment\b|\bcapital flows?\b)",
+    re.I,
+)
+
+NEUTRAL_TITLE_TECH_TERMS = (
+    "AI",
+    "AGI",
+    "ASIC",
+    "CCL",
+    "CPI",
+    "CPO",
+    "CPU",
+    "CSRD",
+    "DRAM",
+    "EBO",
+    "ESS",
+    "GPU",
+    "HBM",
+    "HDD",
+    "HDI",
+    "IGBT",
+    "LLM",
+    "MLCC",
+    "NAND",
+    "NEV",
+    "NPU",
+    "PCB",
+    "IC",
+    "SaaS",
+    "SSD",
+    "TPU",
+    "VDC",
+    "WAIC",
+)
+
+
+def wechat_title_neutrality_issues(title: str) -> list[str]:
+    """Return deterministic reasons why a title needs neutral rewriting."""
+    normalized = re.sub(r"\s+", " ", title or "").strip()
+    if not normalized:
+        return []
+    issues: list[str] = []
+    blocked_reason = blocked_wechat_title_reason(normalized)
+    if blocked_reason:
+        issues.append(blocked_reason)
+    if WECHAT_TITLE_EVALUATIVE_RE.search(normalized):
+        issues.append("evaluative_or_adversarial_wording")
+    if re.search(r"[?？]", normalized):
+        issues.append("question_framing")
+    if WECHAT_TITLE_CHINA_TOPIC_RE.search(normalized) and WECHAT_TITLE_SYSTEMIC_TOPIC_RE.search(normalized):
+        issues.append("china_systemic_topic")
+    return list(dict.fromkeys(issues))
+
+
+def _split_wechat_title(title: str, institution_name: str = "") -> tuple[str, str]:
+    normalized = re.sub(r"\s+", " ", title or "").replace(":", "：").strip(" ，,。；;：:、-—")
+    prefix = institution_name.strip(" ：:，,、-—")
+    body = normalized
+    if "：" in normalized:
+        head, tail = normalized.split("：", 1)
+        if len(head) <= 16:
+            if not prefix:
+                prefix = head.strip()
+            body = tail.strip()
+    return prefix, body.strip(" ，,。；;：:、-—")
+
+
+def _neutral_title_subject(body: str) -> str:
+    match = re.match(
+        r"^([\u4e00-\u9fffA-Za-z0-9.·&]{2,16}?)(?=(?:"
+        r"20\d{2}年?(?:第?[一二三四1-4]季度|[上下]半年)?|"
+        r"[1-4]Q\d{2}|Q[1-4]|[12]H\d{2}|[1-4]季度|"
+        r"第?[一二三四]季度|上半年|下半年|"
+        r"(?:[一二三四五六七八九十\d]+重)?护城河|"
+        r"AI需求|PCB|CCL|HBM|DRAM|NAND|储能|零售|竞争性定价|先进封装|"
+        r"研发|风险|更新|回应|善举|引领|打造|激进|先求稳|自我造血|全球首发|"
+        r"盈利|业绩|财报|收入|营收|订单|业务|"
+        r"产品|需求|供应|利润|数据|表现|增长|下降|回升|"
+        r"走弱|改善|估值|周期))",
+        body,
+        flags=re.I,
+    )
+    subject = match.group(1).strip() if match else ""
+    if not subject:
+        first_clause = re.split(r"[，,；;\-—]", body, maxsplit=1)[0].strip()
+        company_like = re.search(
+            r"(?:集团|科技|电源|汽车|电信|外科|办公|电路|电器|银行|保险|软件|"
+            r"股份|控股|国际|山泉|茅台|黄金|产品|体育|电子|公司)$",
+            first_clause,
+        )
+        short_brand = re.fullmatch(
+            r"(?:3M|GSK|SAP|IBM|AMD|ARM|ASML|LVMH|SK|LG|BYD)",
+            first_clause,
+            flags=re.I,
+        )
+        if 2 <= len(first_clause) <= 16 and (company_like or short_brand):
+            subject = first_clause
+    if not subject:
+        return ""
+    if "与" in subject:
+        return ""
+    if re.search(
+        r"(?:策略|市场|行业|宏观|月度|周度|追踪|监测|展望|更新|分析|观察|预览|主题|"
+        r"报告|简报|图表|全景|三件事|系列|生产率|资本支出|市场化计划)",
+        subject,
+        flags=re.I,
+    ):
+        return ""
+    if subject in {
+        "化工",
+        "半导体",
+        "电池",
+        "储能",
+        "消费",
+        "医疗",
+        "能源",
+        "材料",
+        "基础材料",
+        "稀土",
+        "生物制药",
+        "创业成本",
+    } or subject.endswith(("公用事业", "成本")):
+        return ""
+    if re.search(r"(?:美国|全球|亚洲|欧洲|日本|韩国|美洲)", subject) or re.match(
+        r"^中国(?!中免|燃气|联通)", subject
+    ):
+        return ""
+    if WECHAT_TITLE_EVALUATIVE_RE.search(subject):
+        return ""
+    if WECHAT_TITLE_SYSTEMIC_TOPIC_RE.fullmatch(subject) or blocked_wechat_title_reason(subject):
+        return ""
+    if subject.startswith("中国") and re.search(
+        r"(?:家电|汽车|半导体|芯片|零售|消费|能源|软件|医药|医疗|房地产|市场)$",
+        subject,
+    ):
+        return ""
+    return subject
+
+
+def _neutral_title_topic(body: str) -> str:
+    """Build a complete, factual fallback without asking a model to improvise."""
+    compact = re.sub(r"\s+", "", body or "")
+    has = lambda pattern: re.search(pattern, compact, flags=re.I) is not None
+
+    if has(r"(?:军用|军事|国防|防务|战备|军工|武器|战争|defen[cs]e|military|warfare)"):
+        if has(r"(?:飞机|航空|aircraft|aviation)"):
+            return "航空运维与AI技术应用观察" if has(r"AI|人工智能") else "航空运维与技术应用观察"
+        return "技术应用与行业运营观察"
+    if has(r"(?:反洗钱|反恐融资|anti.?money.?laundering|counter.?terrorist.?financ)"):
+        return "合规治理与组织流程观察"
+    if has(r"(?:关税|贸易战|出口管制|tariff|tradewar|exportcontrol)"):
+        return "跨境贸易与行业变化观察"
+    if has(r"(?:消费税|征税|征收|税收|(?<![A-Za-z])tax(?:es|ation)?(?![A-Za-z]))"):
+        return "行业规则与相关数据观察"
+    if has(r"(?:政策|监管|改革|polic(?:y|ies)|regulat(?:ion|ory)|reforms?)"):
+        return "行业规则与主题变化观察"
+    if has(r"(?:政治|政党|选举|议会|地缘政治|制裁|台海|新疆|西藏|人权|习近平|"
+           r"特朗普|拜登|普京|泽连斯基|政府|国务院|当局|politic|election|geopolitic|"
+           r"sanction|Taiwan|Xinjiang|Tibet|Trump|Biden|Putin|Zelensky|government)"):
+        if has(r"(?:外管局|外汇|人民币|汇率|forex|currency)"):
+            return "货币市场与相关指标观察"
+        if has(r"(?:债券|债务|bond|debt)"):
+            return "公共部门资金与相关数据观察"
+        if has(r"AI|人工智能|GenAI"):
+            return "AI技术与组织应用观察"
+        return "区域环境与行业变化观察"
+
+    if has(r"(?:人民币|汇率|货币|外汇|currency|forex|\bFX\b|\bRMB\b|\bCNY\b)"):
+        if has(r"(?:估值|定价|valuation|pricing)"):
+            return "货币定价框架与相关指标观察"
+        return "货币市场与相关指标观察"
+    if has(r"(?:中国宏观|国内宏观|China.?macro)") and has(r"(?:信贷|预期|credit|expectation)"):
+        return "近期数据与市场预期比较观察"
+    if has(r"(?:中国宏观|国内宏观|China.?macro)"):
+        return "近期数据与市场变化观察"
+    if has(r"(?:权益策略|A股|港股|equity)") and has(r"AI|人工智能"):
+        return "AI主题与市场结构变化观察"
+    if has(r"(?:通胀|价格|inflation)") and has(r"(?:公司|企业|corporate|business)"):
+        return "企业经营与价格数据观察"
+    if has(r"(?:通胀|价格|inflation)") and has(
+        r"(?:基础材料|金属|钢铁|铁矿石|铜|铝|materials?|metals?|steel|ironore)"
+    ):
+        return "基础材料行业与价格数据观察"
+    if has(r"(?:通胀|价格|inflation)"):
+        return "价格数据与市场变化观察"
+    if has(r"(?:(?<![A-Za-z])ETF(?![A-Za-z])|基金|AUM|产品新规)"):
+        return "相关产品规则与数据观察"
+    if has(r"(?:信贷|债务|杠杆|credit|debt|leverage)"):
+        return "资金结构与相关数据观察"
+    if has(r"(?:债券|bond)"):
+        return "资金工具与相关数据观察"
+    if has(r"(?:房地产|房价|楼市|地产|property|realestate)"):
+        return "城市与住房数据变化观察"
+    if has(r"(?:家电|homeappliance)") and has(r"(?:零售|retail)"):
+        month = re.search(r"(?:^|[^\d])(1[0-2]|0?[1-9])月", compact)
+        return f"家电零售{month.group(1)}月数据观察" if month else "家电零售与月度数据观察"
+    if has(r"(?:月度|季度|[1-4]Q\d{2}|[12]H\d{2})") and has(r"(?:数据|追踪|同比|环比)"):
+        return "月度与季度数据变化观察"
+    if has(r"(?:可持续|sustainab)") and has(r"(?:生产率|productivity)"):
+        return "可持续生产率衡量方法观察"
+    if has(r"(?:老龄化|人口结构|aging)") and has(r"(?:银行业|banking)"):
+        return "人口结构与银行服务观察"
+    if has(r"(?:统计|核算|GDP|statistics?|accounting)"):
+        return "统计方法与相关数据观察"
+
+    technical_matches: list[tuple[int, str]] = []
+    for term in NEUTRAL_TITLE_TECH_TERMS:
+        match = re.search(rf"(?<![A-Za-z]){re.escape(term)}(?![A-Za-z])", body, re.I)
+        if not match and term == "AI":
+            match = re.search(r"AI(?=[\u4e00-\u9fff])", body, re.I)
+        if match:
+            technical_matches.append((match.start(), term))
+    technical = [term for _position, term in sorted(technical_matches)][:2]
+    subject = _neutral_title_subject(compact)
+    if subject:
+        period = "季度" if has(r"(?:[1-4]Q\d{2}|季度|quarter)") else "近期"
+        if technical:
+            return f"{subject}与{'、'.join(technical)}及{period}数据观察"
+        return f"{subject}业务与{period}数据观察"
+
+    topic_mappings = (
+        (r"可持续|CSRD|sustainab", "可持续报告流程"),
+        (r"基础材料|金属|钢铁|铁矿石|稀土|铜|铝|materials?|metals?|steel|ironore", "基础材料行业"),
+        (r"半导体|芯片|semiconductor", "半导体行业"),
+        (r"存储|memory|DRAM|NAND|SSD|HDD", "存储行业"),
+        (r"电池|储能|battery|ESS", "电池储能"),
+        (r"光模块|光互连|通信设备|数据中心|telecom|optical|datacenter", "数字基础设施"),
+        (r"网络|网安|cyber", "网络安全"),
+        (r"汽车|新能源车|automotive|vehicle", "汽车行业"),
+        (r"小鹏|理想汽车|优步|网约车|共享出行|Uber|rideshar", "出行服务"),
+        (r"家电|homeappliance", "家电行业"),
+        (r"机器人|robot", "机器人行业"),
+        (r"电商|零售|retail|e-commerce", "零售行业"),
+        (r"能源|原油|天然气|电气化|energy|oil|gas|electrification", "能源行业"),
+        (r"供应链|supplychain", "供应链"),
+        (r"企业软件|软件|software|SaaS", "软件行业"),
+        (r"旅游|tourism|travel", "旅游行业"),
+        (r"医药|医疗|生物制药|biotech|healthcare", "医疗行业"),
+        (r"保险|养老金|养老|insurance|pension", "保险与养老服务"),
+        (r"资金流|capitalflow|fundflow", "资金流向"),
+        (r"奢侈品|腕表|珠宝|服装|体育用品|luxury|watch|apparel", "消费品牌"),
+        (r"食品|饮料|啤酒|白酒|消费品|food|beverage|consumer", "消费行业"),
+        (r"大宗商品|commodity", "大宗商品"),
+        (r"生产率|劳工|劳动力|竞业|productivity|labor", "组织管理与生产率"),
+        (r"创业|初创|entrepreneur|startup", "创业与企业发展"),
+        (r"统计|核算|GDP|statistics?|accounting", "统计方法"),
+        (r"脱碳|碳信用|气候|decarbon|climate|carbon", "气候与产业转型"),
+        (r"航运|港口|shipping|port", "运输与供应链"),
+        (r"认证|标准|accredit|certif|standards?", "认证与标准体系"),
+        (r"进口|出口|跨境贸易|imports?|exports?|trade", "跨境贸易"),
+    )
+    parts: list[str] = []
+    for pattern, label in topic_mappings:
+        if has(pattern) and label not in parts:
+            parts.append(label)
+        if len(parts) >= 2:
+            break
+    if technical and parts:
+        return f"{'、'.join(technical)}与{parts[0]}技术应用观察"
+    if technical:
+        return f"{'、'.join(technical)}技术与行业应用观察"
+    if parts:
+        if parts[:2] == ["半导体行业", "存储行业"]:
+            return "半导体与存储行业数据观察"
+        primary = parts[0]
+        return f"{primary}数据与主题变化观察"
+
+    # Never perform word-by-word substitutions here. They can leave fragments
+    # such as "X变化Y" or retain a contentious premise around the removed word.
+    # A closed, grammatical fallback is less specific but always publishable;
+    # the full report and article body remain available to the reader.
+    return "研究主题与行业变化观察"
+
+
+def neutralize_wechat_title(title: str, institution_name: str = "") -> tuple[str, list[str]]:
+    """Rewrite a contentious title into a neutral one without dropping its article."""
+    prefix, body = _split_wechat_title(title, institution_name)
+    normalized = f"{prefix}：{body}" if prefix and body else (body or prefix)
+    issues = wechat_title_neutrality_issues(normalized)
+    if not issues:
+        return normalized, []
+
+    neutral_body = _neutral_title_topic(body)
+    neutralized = f"{prefix}：{neutral_body}" if prefix else neutral_body
+    # The fallback vocabulary above is intentionally closed. Keep this final
+    # guard anyway so future regex additions cannot accidentally leave a
+    # non-neutral title in the public draft.
+    if wechat_title_neutrality_issues(neutralized):
+        neutralized = f"{prefix}：研究主题与行业变化观察" if prefix else "研究主题与行业变化观察"
+    return neutralized, [f"neutralized:{issue}" for issue in issues]
 
 PROTECTED_TERMS = {
     "投研": "__PROTECT_TOUYAN__",
@@ -251,7 +594,7 @@ def log(message: str) -> None:
 
 
 def blocked_wechat_title_reason(title: str) -> str | None:
-    """Return a deterministic block reason for a public-account title."""
+    """Return the legacy reason code that triggers a public-title rewrite."""
     normalized = re.sub(r"\s+", " ", title or "").strip()
     if not normalized:
         return None

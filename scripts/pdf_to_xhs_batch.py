@@ -35,6 +35,7 @@ from wechat_title_optimizer import (
     build_filename_title_repair_prompt,
     build_filename_title_translation_prompt,
     decide_filename_anchored_title,
+    ensure_publishable_neutral_title,
     extract_title_candidates,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
@@ -660,7 +661,7 @@ def wechat_title_from_filename(
             args,
             f"WeChat filename title: {source_filename[:40]}",
             temperature=0.25,
-            system_content="你是中文标题编辑，以原始 PDF 文件名为最高权重锚点，只输出严格 JSON。",
+            system_content="你是中文标题编辑，以原始 PDF 文件名为语义锚点，公开标题必须事实化、无立场、无好坏判断，只输出严格 JSON。",
         )
         candidates = extract_title_candidates(raw)
     except Exception as exc:
@@ -692,7 +693,7 @@ def wechat_title_from_filename(
             args,
             f"WeChat title repair: {source_filename[:40]}",
             temperature=0.15,
-            system_content="你是中文标题纠错编辑，只输出严格 JSON；每个标题必须完整、自然、可独立理解。",
+            system_content="你是中文标题纠错编辑，只输出严格 JSON；标题必须完整、自然、事实化、无立场、无好坏判断。",
         )
         repair_candidates = extract_title_candidates(repair_raw)
         repaired, repaired_decision = decide_filename_anchored_title(
@@ -940,6 +941,23 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     )
     if title_stock_changes:
         status["wechat_title_stock_language_sanitized"] = title_stock_changes[:20]
+    title_before_neutralization = refined_wechat_title
+    refined_wechat_title, title_neutralization_changes = ensure_publishable_neutral_title(
+        refined_wechat_title,
+        institution_name,
+        pdf_path.name,
+    )
+    if title_neutralization_changes:
+        status["wechat_title_neutralization_changes"] = title_neutralization_changes
+        title_decision["pre_neutralization_title"] = title_before_neutralization
+        title_decision["pre_neutralization_selection_reason"] = title_decision.get("selection_reason", "")
+        title_decision["selection_reason"] = "deterministic_neutralization"
+        title_decision["neutralization_changes"] = title_neutralization_changes
+        title_decision["selected_title"] = refined_wechat_title
+        log(
+            "Neutralized WeChat title while keeping the report: "
+            f"{title_before_neutralization[:80]} -> {refined_wechat_title[:80]}"
+        )
     title_decision["final_title_after_wording_guard"] = refined_wechat_title
     wechat_article = replace_first_markdown_heading(wechat_article, refined_wechat_title)
     status["wechat_title"] = refined_wechat_title

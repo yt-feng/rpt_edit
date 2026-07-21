@@ -11,7 +11,11 @@ import json
 import re
 from typing import Any
 
-from sensitive_content_guard import sanitize_wechat_stock_language
+from sensitive_content_guard import (
+    neutralize_wechat_title,
+    sanitize_wechat_stock_language,
+    wechat_title_neutrality_issues,
+)
 
 
 INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
@@ -154,7 +158,8 @@ GENERIC_SERIES_TITLE_RE = re.compile(
 CONCRETE_TITLE_SIGNAL_RE = re.compile(
     r"(?:增长|下降|回落|回升|走弱|改善|加速|放缓|分化|挤出|转向|"
     r"拐点|触底|超预期|低于预期|高于预期|未到|决定|创(?:新高|纪录)|"
-    r"压力|韧性|关键变量|分水岭|同比|环比|\d)",
+    r"压力|韧性|关键变量|分水岭|变化|数据|指标|框架|技术|流程|治理|运营|"
+    r"应用|方法|规则|结构|组织|AI|同比|环比|\d)",
     re.I,
 )
 TITLE_DANGLING_SUFFIX_RE = re.compile(
@@ -227,7 +232,6 @@ BIG_NAME_TERMS = [
     "洪灏",
     "邢自强",
     "辜朝明",
-    "特朗普",
     "马斯克",
     "鲍威尔",
 ]
@@ -1067,6 +1071,41 @@ def title_quality_issues(
     return list(dict.fromkeys(issues))
 
 
+def ensure_publishable_neutral_title(
+    title: str,
+    institution_name: str = "",
+    source_filename: str = "",
+    max_chars: int = 35,
+) -> tuple[str, list[str]]:
+    """Return a complete neutral title; title defects must never drop an article."""
+    cleaned = clean_filename_wechat_title(title, institution_name, max_chars=max_chars)
+    neutralized, changes = neutralize_wechat_title(cleaned, institution_name)
+    neutralized = clean_filename_wechat_title(
+        neutralized,
+        institution_name,
+        max_chars=max_chars,
+    )
+    issues = title_quality_issues(neutralized, institution_name, source_filename)
+    if not issues:
+        return neutralized, changes
+
+    required_terms = required_filename_terms(source_filename, institution_name)
+    term_block = "、".join(required_terms[:3])
+    safe_body = f"{term_block}技术与相关数据观察" if term_block else "研究主题与相关数据观察"
+    fallback = clean_filename_wechat_title(safe_body, institution_name, max_chars=max_chars)
+    fallback, fallback_neutralization = neutralize_wechat_title(fallback, institution_name)
+    fallback = clean_filename_wechat_title(fallback, institution_name, max_chars=max_chars)
+    fallback_issues = title_quality_issues(fallback, institution_name, source_filename)
+    if fallback_issues:
+        fallback = clean_filename_wechat_title(
+            "行业技术与相关数据观察",
+            institution_name,
+            max_chars=max_chars,
+        )
+    quality_change = f"quality_fallback:{','.join(issues)}"
+    return fallback, list(dict.fromkeys([*changes, *fallback_neutralization, quality_change]))
+
+
 def ensure_required_filename_terms(
     candidate: str,
     required_terms: list[str],
@@ -1122,7 +1161,7 @@ def evidence_title_fallback(
         return fallback
     institution = canonicalize_institution_title_name(institution_name)
     term_block = "与".join(required_terms)
-    safe_body = f"{term_block}主题进展与关键变化" if term_block else "本期主题进展与关键变化"
+    safe_body = f"{term_block}技术与相关数据观察" if term_block else "研究主题与相关数据观察"
     return clean_filename_wechat_title(safe_body, institution, max_chars=max_chars)
 
 
@@ -1270,7 +1309,7 @@ def decide_filename_anchored_title(
         coverage = filename_anchor_coverage(candidate, anchor)
         signals = _title_hook_signals(candidate, faithful)
         data_bonus = min(len(signals["added_numbers"]), 2) * 12
-        contrast_bonus = min(len(signals["added_contrarian_terms"]), 2) * 9
+        contrast_bonus = -min(len(signals["added_contrarian_terms"]), 2) * 15
         name_bonus = min(len(signals["added_big_names"]), 2) * 5
         existing_data_bonus = 3 if re.search(r"(?:\d+(?:\.\d+)?%?|20\d{2}|Q[1-4])", candidate) else 0
         concrete_bonus = 10 if generic_source and CONCRETE_TITLE_SIGNAL_RE.search(candidate) else 0
@@ -1404,7 +1443,8 @@ def title_score(title: str, institution_name: str = "", source_keywords: list[st
     search_hits = [term for term in SEARCH_TERMS if term.lower() in cleaned.lower()]
     score += min(len(search_hits), 4) * 2
     contrarian_hits = [term for term in CONTRARIAN_TERMS if term in cleaned]
-    score += min(len(contrarian_hits), 3) * 3
+    score -= min(len(contrarian_hits), 3) * 3
+    score -= len(wechat_title_neutrality_issues(cleaned)) * 12
     if re.search(r"(?:\d+(?:\.\d+)?%?|\bQ[1-4]\b|20\d{2}|[A-Za-z]{2,}\d+)", cleaned):
         score += 2
     for keyword in source_keywords[:10]:
@@ -1494,42 +1534,45 @@ def build_filename_title_translation_prompt(
         if not clause:
             continue
         has_data = re.search(r"(?:\d+(?:\.\d+)?%?|20\d{2}|Q[1-4]|同比|环比)", clause)
-        has_contrast = any(term in clause for term in CONTRARIAN_TERMS) or re.search(r"(?:但|却|然而)", clause)
-        if has_data or has_contrast:
+        has_concrete_topic = re.search(r"(?:AI|半导体|汽车|软件|能源|供应链|消费|零售|企业|市场)", clause, re.I)
+        if has_data or has_concrete_topic:
             hook_snippets.append(clause[:90])
         if len(hook_snippets) >= 5:
             break
     return f"""
-你是微信公众号标题编辑。原始 PDF 文件名标题是最高权重的语义底稿；正文摘录只能用于补充文件名已经指向的数据节点、反常识差异或人物钩子，不能重新概括一篇与文件名不同的标题。
+你是微信公众号标题编辑。原始 PDF 文件名标题是最高权重的语义底稿；正文摘录只能用于补充文件名已经指向的数据节点、时间范围、技术或行业事实，不能重新概括一篇与文件名不同的标题。
 
 硬性规则：
-1. 只返回 JSON：{{"titles":["忠实底稿","数据增强版","反常识增强版"]}}，固定三个候选，不要解释。
-2. 删除文件扩展名、开头归档编号和末尾发布日期；不要删除文件名中的主题、地区、公司、数据或判断。
+1. 只返回 JSON：{{"titles":["忠实底稿","数据增强版","主题增强版"]}}，固定三个候选，不要解释。
+2. 删除文件扩展名、开头归档编号和末尾发布日期；保留文件名中的主题、地区、公司和数据。原题中的好坏评价或敏感标签必须中性化，不要求逐字保留。
 3. 已识别机构必须写中文名，并放在唯一的中文冒号前。不要保留英文机构简称。
-4. 第一个候选通常是忠实中文底稿：按原文件名顺序完整翻译，允许为自然中文调整词序，但不能另选角度。若文件名只是 Insights、Notes、Viewpoint、Thoughts on 等系列名，三个候选都必须结合正文写出本期真正对象和结论，不能直译成“宏观观察笔记”“洞察”“对某事的思考”。
-5. 第二个候选优先补充正文摘录中明确出现的数据节点；第三个候选优先补充明确的反常识差异、大机构或知名人物。只要下方“可用钩子证据”非空，至少一个增强版必须把其中最锐利、最易懂的一项写进标题；没有可靠钩子时才重复忠实底稿，严禁编造。
-6. 两个增强版仍必须保留底稿中的地区/对象、主题和核心判断；钩子只能补充或锐化，不能替换文件名命题。
+4. 第一个候选通常是忠实中文底稿：按原文件名顺序完整翻译，允许为自然中文和中性表达调整词序，但不能另选角度。若文件名只是 Insights、Notes、Viewpoint、Thoughts on 等系列名，三个候选都必须结合正文写出本期实际对象和事实主题，不能直译成“宏观观察笔记”“洞察”“对某事的思考”。
+5. 第二个候选优先补充正文摘录中明确出现的日期或数据节点；第三个候选优先补充对象、技术、行业或研究范围。只使用事实型钩子，不使用冲突、警告、输赢、好坏或立场型钩子；没有可靠事实时可以重复忠实底稿，严禁编造。
+6. 两个增强版仍必须保留底稿中的地区/对象和研究主题；钩子只能补充事实，不能加入好坏判断，也不能把标题写成争辩或结论宣判。
 7. 原文件名如果包含“主标题：副标题”或明显的双层结构，中文标题使用“主标题-副标题”；不要生成第二个冒号。
 8. 尽量控制在 20-35 个字符。过长时只能压缩“报告、更新、研究”等文体词或使用更短的直译，不能截断句子，不能另选角度。
 9. 下方“必须原样保留的技术词”只包含定义主题的技术缩写，每一个都必须出现在三个候选中。例如原名是“PCB CCL update”，不得写成只有“CCL更新”，必须同时保留 PCB 和 CCL。交易所后缀 HK/US/TT/UN，以及 EPS、ROIC、FX、USD、CIO、IT 等可自然译成中文，不要求机械保留英文。
 10. Research note、quick note、industry update、sector view 只是文档类型，不是读者关心的主题。不要翻成“研究笔记、行业观察、研究观察、观察笔记”；直接从真正的对象和结论开始。
 11. 常用专有名词和技术缩写可保留，例如 AI、GDP、CPI、GPU；其余普通英文必须译成简体中文。删除 1880.HK、MSFT.US 等上市代码，不得出现 TourismGroupDutyFree、WhereAreWe 这类英文文件名残片。
 12. Key Stock Ideas 必须按语义写成“核心公司线索”或具体公司变化，不得写“股票观点、推荐、买入”等措辞。
-13. 不要直接写“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”；使用“宏观环境、研究、资金、公司、报价、市场、回报表现、市场定价”等中性表述。
-14. 不要输出“报告指出、报告认为、核心观点、关键要点、研报速览”等正文概括措辞。
-15. 输出前逐条自检：冒号或短横线后的每个分句都必须完整；不得以“关键、核心、以及、和、与、但、而是、的、为”结尾；标题正文不能只有 AI、更新、观察等一个词。读者必须能直接看懂“谁/什么主题发生了什么”。
+13. 标题只能陈述“谁、什么主题、哪组数据、哪个时间范围”，不评价好坏。禁止风险、危机、警告、问题、挑战、压力、拖累、疲弱、低迷、恶化、衰退、亏损、短缺、去杠杆、误判、高估、低估、赢家、输家、健康、改善、修复、回升、强劲、超预期、韧性，以及“不是……而是……”等对立式表达。
+14. 涉及中国宏观、人民币汇率、信贷、债务、权益、房地产、就业、财政或监管时，公开标题不要突出“中国/人民币/信贷/去杠杆”等容易引发立场争议的标签；改写为“近期数据、货币定价框架、资金结构、市场主题、城市与住房数据”等纯研究对象。文章正文仍可忠实介绍报告。
+15. 原报告涉及军事、国防、战争、选举、政党、制裁、地缘政治等议题时，标题不要出现这些词；只写报告中可公开表达的行业、技术、运营、数据或区域研究主题，例如“航空运维与AI技术应用观察”。不要因此放弃生成标题。
+16. 不要直接写“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”；使用“宏观环境、研究、资金、公司、报价、市场、回报表现、市场定价”等中性表述。
+17. 不要输出“报告指出、报告认为、核心观点、关键要点、研报速览”等正文概括措辞。
+18. 输出前逐条自检：冒号或短横线后的每个分句都必须完整；不得以“关键、核心、以及、和、与、但、而是、的、为”结尾；标题正文不能只有 AI、更新、观察等一个词。读者必须能直接看懂研究对象和事实主题，且不能感到标题在要求其认同某种立场。
 
 已识别机构：{institution_name or "未知"}
 原始文件名：{source_filename}
 去除编号和日期后的文件名：{cleaned_filename}
 待翻译的文件名正文：{filename_body or cleaned_filename}
 必须原样保留的技术词：{"、".join(required_terms) or "无"}
-文件名是否只是系列名：{"是，必须从正文补足本期主题和结论" if generic_series_source else "否，以文件名命题为最高权重"}
+文件名是否只是系列名：{"是，必须从正文补足本期对象和事实主题" if generic_series_source else "否，以文件名命题为最高权重"}
 
-可用钩子证据（只可从这里选，不得改数字或扩大含义）：
+可用事实型钩子证据（只可从这里选，不得改数字或扩大含义）：
 {chr(10).join(f"- {item}" for item in hook_snippets) or "无"}
 
-正文第一段摘录（只用于验证数据或反常识钩子，不能替代文件名命题）：
+正文第一段摘录（只用于验证日期、数据、技术或行业事实，不能替代文件名命题）：
 {article_excerpt[:1800] or "无"}
 """.strip()
 
@@ -1555,9 +1598,12 @@ def build_filename_title_repair_prompt(
 4. 任何短横线或逗号后的分句都必须完整，控制在 20-35 个字符，宁可重写短句，绝不从中间截断。
 5. 不要写研究笔记、行业观察、宏观观察笔记、报告解读、核心观点、关键要点。
 6. Key Stock Ideas 写成“核心公司线索”或具体公司变化，不写股票观点、推荐、买入、卖出、目标价。
-7. 原文件名若只是系列名称，必须依据正文摘录写本期实际主题和结论，不能翻译系列名充数。
+7. 原文件名若只是系列名称，必须依据正文摘录写本期实际对象和事实主题，不能翻译系列名充数。
 8. 不直接写经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价，改用中性表述。
-9. 不得编造正文没有的数据、人物或反常识判断。
+9. 只写研究对象、时间、数据或主题，不评价好坏，不制造冲突。禁止风险、危机、警告、问题、挑战、压力、疲弱、低迷、恶化、衰退、亏损、短缺、去杠杆、误判、高估、低估、赢家、输家、健康、改善、修复、回升、强劲、超预期、韧性及“不是……而是……”句式。
+10. 涉及中国宏观、人民币汇率、信贷、债务、权益、房地产、就业、财政或监管时，标题改用“近期数据、货币定价框架、资金结构、市场主题、城市与住房数据”等不带立场的研究对象；正文仍保留报告内容。
+11. 涉及军事、国防、战争、选举、政党、制裁、地缘政治等议题时，公开标题只写可公开表达的行业、技术、运营、数据或区域主题，不出现敏感标签，也不能放弃生成。
+12. 不得编造正文没有的数据、人物或判断。
 
 原始文件名：{source_filename}
 必须保留的技术缩写：{"、".join(required_terms) or "无"}
@@ -1584,12 +1630,14 @@ def build_wechat_title_refinement_prompt(
 2. 每个标题优先 18-34 个中文字符，最长 42 个字符。
 3. 最多一个中文冒号。
 4. 如果有机构名，只保留中文机构名，不要写 GS、JPM、JEF、NOM、BARC、MS、DB、Citi 等英文简称。
-5. 标题要包含一个清晰钩子：大机构/大人物、可搜索主题词、反常识判断、市场误判、数据节点、政策/行业变量，至少命中其中两个。
+5. 标题要包含一个清晰但中性的事实钩子：大机构/大人物、可搜索主题词、数据节点、时间范围、技术或行业对象，至少命中其中两个。不要使用反常识宣判、市场误判、输赢或冲突型钩子。
 6. 不要用“核心观点”“关键要点”“研报速览”“一文看懂”“震惊”“爆了”等机械或廉价词。
 7. 单一公司/个股报告的标题只能写公司情况、行业变化、业务进展或竞争格局；禁止写目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO。
 8. 不要直接输出“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”等直白词；用“宏观环境、研究、观察、资金、公司、报价、市场、回报表现、市场定价”等中性表达。
-9. 涉及中国、国内、内地、大陆、人民币、A股、港股时，必须使用中性客观表达，不写负面判断。
-10. 不要夸大原文证据。
+9. 所有标题都不得评价好坏。禁止风险、危机、警告、问题、挑战、压力、拖累、疲弱、低迷、恶化、衰退、亏损、短缺、去杠杆、误判、高估、低估、赢家、输家、健康、改善、修复、回升、强劲、超预期、韧性，以及“不是……而是……”等对立式表达。
+10. 涉及中国宏观、人民币汇率、信贷、债务、权益、房地产、就业、财政或监管时，改写为“近期数据、货币定价框架、资金结构、市场主题、城市与住房数据”等纯研究对象，不在标题突出容易引发立场争议的标签。
+11. 涉及军事、国防、战争、选举、政党、制裁、地缘政治等议题时，公开标题只写行业、技术、运营、数据或区域研究主题，不出现敏感标签，但仍需生成可发布标题。
+12. 不要夸大原文证据。
 
 已识别机构：{institution_name or "未知"}
 原报告标题：{source_title}

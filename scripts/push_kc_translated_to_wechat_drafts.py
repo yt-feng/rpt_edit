@@ -33,10 +33,14 @@ from institution_names import ensure_title_has_institution, infer_institution_na
 from wechat_title_optimizer import (
     clean_wechat_title as optimizer_clean_wechat_title,
     evidence_title_fallback,
+    ensure_publishable_neutral_title,
     extract_wechat_keywords,
     title_quality_issues,
 )
-from sensitive_content_guard import blocked_wechat_title_reason, sanitize_wechat_stock_language
+from sensitive_content_guard import (
+    neutralize_wechat_title,
+    sanitize_wechat_stock_language,
+)
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
 
 
@@ -81,25 +85,6 @@ WECHAT_REQUEST_RETRY_BASE_SECONDS = 1.5
 WECHAT_REQUEST_RETRY_MAX_SECONDS = 20.0
 WECHAT_RETRYABLE_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 WECHAT_RETRYABLE_ERRCODES = {-1}
-WECHAT_TITLE_CHINA_RE = re.compile(
-    r"(中国|大陆|内地|北京|人民币|A股|港股|\bChina\b|\bChinese\b|\bMainland\b|"
-    r"\bBeijing\b|\bRMB\b|\bCNY\b|Hong Kong|\bHK\b|Taiwan)",
-    re.I,
-)
-WECHAT_TITLE_CHINA_NEGATIVE_RE = re.compile(
-    r"(负面|下行|放缓|收缩|疲弱|低迷|恶化|危机|风险|压力|冲击|衰退|萎缩|通缩|失业|"
-    r"违约|债务|赤字|亏损|暴跌|崩盘|崩溃|泡沫|过剩|瓶颈|缺口|短缺|限制|封锁|"
-    r"拖累|警告|担忧|不确定|不及预期|risk|slowdown|slump|weak|weakness|crisis|"
-    r"recession|contraction|deflation|default|debt|deficit|loss|crash|collapse|"
-    r"bubble|overcapacity|bottleneck|shortage|restriction|concern|uncertain)",
-    re.I,
-)
-WECHAT_TITLE_CHINA_POLITICAL_RE = re.compile(
-    r"(政治|政策|监管|管控|管制|供给侧|改革|政府|国务院|中央|官方|当局|审查|国安|"
-    r"关税|贸易战|出口管制|资本管制|制裁|禁令|politic|policy|regulation|regulatory|"
-    r"government|authority|official|censorship|tariff|trade war|export control|sanction|\bban\b)",
-    re.I,
-)
 MID_ARTICLE_CTA_RE = re.compile(
     r"(扫码|社群|知识星球|星球|加微信|朋友圈|设为星标|设置星标|每日汇编|每天会把|"
     r"每天我会|国际信源汇编|完整报告与\s*KC评论|完整报告和\s*KC评论|更多国际信源|"
@@ -132,12 +117,6 @@ INSTITUTION_KEY_TO_CN = {
     "ark": "木头姐ARK",
     "ark invest": "木头姐ARK",
 }
-WECHAT_TITLE_STRONG_CHINA_SENSITIVE_RE = re.compile(
-    r"(中共|共产党|党中央|政治局|习近平|反腐|国安法|台湾|台海|新疆|西藏|人权|民主|"
-    r"抗议|示威|镇压|南海|军事|CCP|Communist Party|Xi Jinping|Taiwan|Taiwan Strait|"
-    r"Xinjiang|Tibet|human rights|democracy|protest|crackdown|South China Sea|military)",
-    re.I,
-)
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
 MD_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^\)]+)\)")
@@ -205,54 +184,8 @@ def normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", text or "").strip()
 
 
-def regex_matches(pattern: re.Pattern[str], text: str) -> list[str]:
-    matches: list[str] = []
-    for match in pattern.finditer(text or ""):
-        value = normalize_space(match.group(0))
-        if value and value not in matches:
-            matches.append(value)
-    return matches
-
-
-def wechat_title_policy_skip_reason(title: str) -> str:
-    normalized = normalize_space(title)
-    if not normalized:
-        return ""
-
-    blocked_reason = blocked_wechat_title_reason(normalized)
-    if blocked_reason:
-        return "public_account_sensitive_title=" + blocked_reason
-
-    strong_sensitive = regex_matches(WECHAT_TITLE_STRONG_CHINA_SENSITIVE_RE, normalized)
-    if strong_sensitive:
-        return "china_political_sensitive_terms=" + ",".join(strong_sensitive[:6])
-
-    china_terms = regex_matches(WECHAT_TITLE_CHINA_RE, normalized)
-    if not china_terms:
-        return ""
-
-    negative_terms = regex_matches(WECHAT_TITLE_CHINA_NEGATIVE_RE, normalized)
-    if negative_terms:
-        return (
-            "china_negative_title_terms="
-            + ",".join(china_terms[:4])
-            + ";negative="
-            + ",".join(negative_terms[:6])
-        )
-
-    political_terms = regex_matches(WECHAT_TITLE_CHINA_POLITICAL_RE, normalized)
-    if political_terms:
-        return (
-            "china_political_policy_terms="
-            + ",".join(china_terms[:4])
-            + ";sensitive="
-            + ",".join(political_terms[:6])
-        )
-
-    return ""
-
-
-def all_reports_skipped_by_translation_title_guard(summary: Any) -> bool:
+def legacy_all_reports_skipped_by_translation_title_guard(summary: Any) -> bool:
+    """Recognize pre-neutralization historical summaries during maintenance runs."""
     if not isinstance(summary, dict):
         return False
     selected_count = int(summary.get("selected_count") or 0)
@@ -840,6 +773,36 @@ def title_from_markdown(markdown: str, fallback: str) -> str:
         return truncate_chars(headings[0], RAW_MARKDOWN_TITLE_MAX_CHARS)
     combined = f"{headings[0]}：{headings[1]}"
     return truncate_chars(combined, RAW_MARKDOWN_TITLE_MAX_CHARS)
+
+
+def replace_first_markdown_heading(markdown: str, title: str) -> str:
+    """Keep the visible in-article heading aligned with the public title."""
+    lines = (markdown or "").splitlines()
+    for index, raw in enumerate(lines):
+        if re.match(r"^\s*#{1,6}\s+", raw):
+            lines[index] = f"# {title}"
+            return "\n".join(lines).strip() + "\n"
+    return f"# {title}\n\n{(markdown or '').strip()}\n"
+
+
+def neutralize_markdown_headings(markdown: str, title: str) -> tuple[str, list[str]]:
+    """Neutralize every visible Markdown heading while retaining all sections."""
+    lines = replace_first_markdown_heading(markdown, title).splitlines()
+    changes: list[str] = []
+    first_heading_seen = False
+    for index, raw in enumerate(lines):
+        match = re.match(r"^(\s*#{1,6})\s+(.+?)\s*$", raw)
+        if not match:
+            continue
+        if not first_heading_seen:
+            first_heading_seen = True
+            continue
+        heading_title = match.group(2).strip()
+        neutral_heading, heading_changes = neutralize_wechat_title(heading_title)
+        if heading_changes:
+            lines[index] = f"{match.group(1)} {neutral_heading}"
+            changes.append(f"{heading_title}->{neutral_heading}")
+    return "\n".join(lines).strip() + "\n", changes
 
 
 def clean_digest_candidate(text: str) -> str:
@@ -2277,8 +2240,16 @@ def translated_article_title_metadata(
         institution_name,
     )
     wechat_title = fit_wechat_title(title, institution_name)
+    title_before_neutralization = wechat_title
+    wechat_title, title_neutralization_changes = neutralize_wechat_title(
+        wechat_title,
+        institution_name,
+    )
+    wechat_title = fit_wechat_title(wechat_title, institution_name)
     final_title_issues = title_quality_issues(wechat_title, institution_name, source_report_name)
+    initial_title_quality_issues = list(final_title_issues)
     if final_title_issues:
+        failed_title = wechat_title
         decision = status.get("wechat_title_decision", {}) if isinstance(status, dict) else {}
         generated_title = str(decision.get("selected_title") or "") if isinstance(decision, dict) else ""
         fallback_candidates = [
@@ -2289,15 +2260,59 @@ def translated_article_title_metadata(
             if not fallback_candidate:
                 continue
             repaired_title = fit_wechat_title(fallback_candidate, institution_name)
+            repaired_title, repaired_neutralization_changes = neutralize_wechat_title(
+                repaired_title,
+                institution_name,
+            )
+            repaired_title = fit_wechat_title(repaired_title, institution_name)
             if not title_quality_issues(repaired_title, institution_name, source_report_name):
                 wechat_title = repaired_title
+                title_before_neutralization = failed_title
+                title_neutralization_changes = list(dict.fromkeys([
+                    *title_neutralization_changes,
+                    *repaired_neutralization_changes,
+                    f"quality_fallback:{','.join(initial_title_quality_issues)}",
+                ]))
                 final_title_issues = []
                 break
     if final_title_issues:
-        raise RuntimeError(
-            f"WeChat title failed final completeness gate: {final_title_issues}; title={wechat_title!r}"
+        failed_title = wechat_title
+        wechat_title, quality_fallback_changes = ensure_publishable_neutral_title(
+            wechat_title,
+            institution_name,
+            source_report_name,
+            WECHAT_TITLE_MAX_CHARS,
         )
-    header_title = content_header_title(raw_title, wechat_title)
+        title_before_neutralization = failed_title
+        title_neutralization_changes = list(dict.fromkeys([
+            *title_neutralization_changes,
+            *quality_fallback_changes,
+        ]))
+        final_title_issues = []
+    raw_title_decision = status.get("wechat_title_decision", {}) if isinstance(status, dict) else {}
+    title_decision = dict(raw_title_decision) if isinstance(raw_title_decision, dict) else {}
+    if title_neutralization_changes:
+        title_decision["pre_upload_neutralization_title"] = title_before_neutralization
+        title_decision["neutralization_changes"] = list(dict.fromkeys([
+            *(title_decision.get("neutralization_changes") or []),
+            *title_neutralization_changes,
+        ]))
+        title_decision["selection_reason"] = "deterministic_neutralization"
+        title_decision["selected_title"] = wechat_title
+
+    raw_header_title = content_header_title(raw_title, wechat_title)
+    neutral_header_title, header_neutralization_changes = ensure_publishable_neutral_title(
+        raw_header_title,
+        institution_name,
+        source_report_name,
+        WECHAT_TITLE_MAX_CHARS,
+    )
+    header_title = strip_title_institution_prefix(
+        fit_wechat_title(neutral_header_title, institution_name)
+    )
+    if header_neutralization_changes:
+        title_decision["header_pre_neutralization_title"] = raw_header_title
+        title_decision["header_neutralization_changes"] = header_neutralization_changes
     return {
         "report_dir": str(report_dir),
         "raw_title": raw_title,
@@ -2306,7 +2321,7 @@ def translated_article_title_metadata(
         "header_title": header_title,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
-        "title_decision": status.get("wechat_title_decision", {}) if isinstance(status, dict) else {},
+        "title_decision": title_decision,
     }
 
 
@@ -2335,6 +2350,9 @@ def build_article(
     wechat_title = title_metadata["wechat_title"]
     header_title = title_metadata["header_title"]
     title_decision = title_metadata["title_decision"]
+    markdown, heading_neutralization_changes = neutralize_markdown_headings(markdown, wechat_title)
+    if heading_neutralization_changes:
+        title_decision["body_heading_neutralization_changes"] = heading_neutralization_changes
     figure_paths = load_figure_paths(report_dir)
 
     tokens = []
@@ -2635,7 +2653,7 @@ def main() -> int:
     report_dirs = find_report_dirs(date_dir)
     if not report_dirs:
         translation_summary = read_json(date_dir / "translation_summary.json")
-        if not all_reports_skipped_by_translation_title_guard(translation_summary):
+        if not legacy_all_reports_skipped_by_translation_title_guard(translation_summary):
             raise RuntimeError(f"No translated reports found under {date_dir}")
         summary_path = output_dir / "wechat_draft_summary.json"
         title_log_path = write_wechat_title_log(output_dir, date_dir.name, str(root), [], [])
@@ -2645,14 +2663,14 @@ def main() -> int:
             "publish": args.publish,
             "selected_count": 0,
             "draft_count": 0,
-            "status": "skipped_translation_title_guard",
-            "message": "All translated reports were blocked by the upstream title guard.",
+            "status": "skipped_legacy_translation_title_guard",
+            "message": "This historical run predates title neutralization and contains no translated reports.",
             "title_log": str(title_log_path),
             "drafts": [],
             "articles": [],
         }
         write_json(summary_path, summary)
-        log(f"All translated reports blocked by upstream title guard; wrote skip summary: {summary_path}")
+        log(f"Historical run has no translated reports after its legacy title guard; wrote summary: {summary_path}")
         return 0
 
     included_institutions = parse_institution_filter(args.include_institutions)
@@ -2675,64 +2693,19 @@ def main() -> int:
         raise RuntimeError(f"No translated reports selected from {date_dir}")
 
     input_selected_count = len(selected)
-    skipped_title_policy: list[dict[str, str]] = []
-    allowed_selected: list[Path] = []
     for report_dir in selected:
         metadata = translated_article_title_metadata(report_dir)
-        reason = wechat_title_policy_skip_reason(metadata["wechat_title"])
-        if reason:
-            record = dict(metadata)
-            record["skip_reason"] = reason
-            skipped_title_policy.append(record)
+        neutralization_changes = (metadata.get("title_decision") or {}).get("neutralization_changes") or []
+        if neutralization_changes:
             log(
-                "Skipped WeChat draft article by title policy: "
-                f"{metadata['wechat_title']} ({reason})"
+                "Kept WeChat article after deterministic title neutralization: "
+                f"{metadata['wechat_title']} ({', '.join(neutralization_changes)})"
             )
-        else:
-            allowed_selected.append(report_dir)
-    selected = allowed_selected
-
-    if not selected:
-        status = "skipped_institution_filter" if included_institutions and institution_filtered_count else "skipped_title_policy"
-        message = (
-            f"No selected translated reports matched --include-institutions={args.include_institutions} from {date_dir}"
-            if status == "skipped_institution_filter"
-            else f"All selected translated reports were blocked by WeChat title policy from {date_dir}"
-        )
-        summary_path = output_dir / "wechat_draft_summary.json"
-        title_log_path = write_wechat_title_log(
-            output_dir,
-            date_dir.name,
-            str(root),
-            [],
-            skipped_title_policy,
-        )
-        summary = {
-            "date_folder": date_dir.name,
-            "dry_run": args.dry_run,
-            "publish": args.publish,
-            "max_articles": "all" if max_articles is None else max_articles,
-            "input_selected_count": input_selected_count,
-            "selected_count": 0,
-            "include_institutions": sorted(included_institutions),
-            "institution_filtered_count": institution_filtered_count,
-            "skipped_title_policy_count": len(skipped_title_policy),
-            "skipped_title_policy": skipped_title_policy,
-            "draft_count": 0,
-            "status": status,
-            "message": message,
-            "title_log": str(title_log_path),
-            "drafts": [],
-            "articles": [],
-        }
-        write_json(summary_path, summary)
-        log(f"{message}; wrote skip summary: {summary_path}")
-        return 0
 
     log(
         f"Selected {len(selected)} translated reports from {date_dir} "
-        f"(institution_filtered={institution_filtered_count}, "
-        f"skipped_title_policy={len(skipped_title_policy)}/{input_selected_count})"
+        f"(institution_filtered={institution_filtered_count}; "
+        "title issues are rewritten without reducing article count)"
     )
 
     session: requests.Session | None = None
@@ -2876,7 +2849,6 @@ def main() -> int:
         date_dir.name,
         str(root),
         built_articles,
-        skipped_title_policy,
     )
     summary = {
         "date_folder": date_dir.name,
@@ -2887,8 +2859,10 @@ def main() -> int:
         "selected_count": len(selected),
         "include_institutions": sorted(included_institutions),
         "institution_filtered_count": institution_filtered_count,
-        "skipped_title_policy_count": len(skipped_title_policy),
-        "skipped_title_policy": skipped_title_policy,
+        # Kept for consumers of older summaries. Title policy never skips a
+        # current article; every title is rewritten or given a safe fallback.
+        "skipped_title_policy_count": 0,
+        "skipped_title_policy": [],
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
         "max_body_chars": args.max_body_chars,

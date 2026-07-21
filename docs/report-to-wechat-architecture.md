@@ -4,7 +4,7 @@
 工作流、脚本边界、持久化状态、失败语义或恢复方式发生变化时，必须同步更新本文档和
 `docs/pipeline-overview-v2.md` 的对应入口说明。
 
-最后更新：2026-07-20。
+最后更新：2026-07-21。
 
 ## 1. 目标与范围
 
@@ -13,7 +13,7 @@
 1. 从 Dropbox 或公开信源发现 PDF。
 2. 用 MinerU 提取正文和原始图表。
 3. 用 DeepSeek 生成短版中文文章、标题和 KC 评论。
-4. 用确定性规则与模型审核过滤不适合公众号的标题。
+4. 用模型约束和确定性规则把公众号标题统一改成中性事实表达。
 5. 生成 KC 中文汇编 PDF 和公众号 HTML。
 6. 通过固定 IP self-hosted runner 慢速上传微信公众号草稿，并用 `draft/get` 校验。
 
@@ -28,7 +28,7 @@ flowchart LR
   B --> C["Transient PDFs"]
   C --> D["MinerU: Markdown + charts"]
   D --> E["DeepSeek: note + WeChat article"]
-  E --> F["Deterministic title guard + model guard"]
+  E --> F["Neutral title generation + deterministic cooling"]
   F --> G["KC translated artifacts"]
   G --> H["Commit required handoff to origin/main"]
   H --> I["Fixed-IP self-hosted runner"]
@@ -57,8 +57,8 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | `scripts/run_pdf_to_xhs_in_batches.py` | 分片、稳定编号、已有产物跳过和 batch 汇总 |
 | `scripts/pdf_to_xhs_batch.py` | MinerU、短版文章、标题候选、图表和逐篇状态 |
 | `scripts/deepseek_http.py` | DeepSeek 瞬时网络错误和可重试 HTTP 状态的有界退避 |
-| `scripts/sensitive_content_guard.py` | 荐股措辞、严格词语和公众号敏感标题的确定性规则 |
-| `scripts/build_kc_translated_reports.py` | 精译、文章化、标题双层审核和 KC PDF |
+| `scripts/sensitive_content_guard.py` | 荐股措辞、严格词语、标题中性化审计和确定性降温 |
+| `scripts/build_kc_translated_reports.py` | 精译、文章化、标题生成与中性化和 KC PDF |
 | `scripts/commit_output_dir.sh` | 并发环境中的 fetch/reset/add/commit/push 重试和关键交接校验 |
 | `scripts/push_kc_translated_to_wechat_drafts.py` | HTML、三张正文图、慢速图片上传、草稿创建与回读校验 |
 
@@ -92,12 +92,13 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 
 ## 5. 内容与标题不变量
 
-- 标题以原始 PDF 文件名为最高权重，DeepSeek 只负责翻译、压缩和补充有证据的数字或反常识钩子。
+- 标题以原始 PDF 文件名为最高语义权重，DeepSeek 只负责翻译、压缩和补充有证据的日期、数字、技术或行业事实；公众号中性化规则的优先级高于逐字保留原题。
 - 标题必须完整、自然、可独立理解，目标长度 20-35 个中文字。
-- 先执行不依赖模型的敏感标题规则，再执行 DeepSeek 审核。
-- 军事、国防、军用装备、武器、战争、战备，以及明确政治敏感议题的标题直接阻断进入微信。
-- 标题审核在原始标题和最终精修标题各执行一次，防止翻译或精修阶段重新引入敏感词。
-- 微信上传脚本还会执行第三次最终标题策略过滤；KC 精译和 XHS 直传两条路径共用该规则。
+- 标题只陈述机构、研究对象、时间、数据、技术和行业主题，不作好坏评价。正向和负向评价词都要移除，也不使用警告、输赢、误判、危机或“不是……而是……”等对立式钩子。
+- 涉及中国宏观、人民币汇率、信贷、债务、权益、房地产、就业、财政或监管时，公开标题退回“近期数据、货币定价框架、资金结构、市场主题、城市与住房数据”等不带立场的研究对象；正文仍保留报告内容。
+- 军事、国防、战争、选举、政党、制裁和地缘政治等标签不进入公开标题；标题改写为可公开表达的行业、技术、运营、数据或区域研究主题。
+- 标题敏感或评价性措辞只触发改写，不触发丢弃报告。若模型无法给出合格标题，使用确定性的“机构名 + 中性研究主题”后备标题，文章照常进入草稿。
+- 生成端、KC 精译上传端和 XHS 直传端共用同一中性化函数；上传前会重写正文第一个 H1，并逐一检查其余 H2/H3，防止外层标题已降温而正文可见小标题仍保留评价性或敏感措辞。标题改写永远不能成为删除文章、跳过报告或减少草稿数量的理由。
 - 个股报告不得出现目标价、评级、买入、卖出或推荐措辞。
 - 正文不放中间 CTA；只保留 KC 评论和最结尾统一文字 `更新信息参见ΚСⅾеѕk․сοｍ`。
 - 正文默认三张图，优先原报告图表；缺图时生成与相邻段落相关的图，并分散插入正文。
@@ -162,9 +163,9 @@ strict handoff 会让 build job 失败并阻止微信 job。先解决并发 push
 - source manifest 和 source health。
 - `mineru_attempts_summary.json`。
 - `summary.json` / `batch_run_summary.json`。
-- `translation_summary.json`，含成功、失败和敏感标题跳过明细。
+- `translation_summary.json`，含成功、失败和标题中性化数量；旧的 `sensitive_skipped` 字段仅为兼容历史读取，标题不再造成跳过。
 - `wechat_draft_summary.json`，含 payload、`media_id` 和 `draft/get` 文章数。
-- 微信标题日志，便于连续观察 DeepSeek 标题质量。
+- 微信标题日志，记录原始候选、最终标题、`neutralization_changes` 和质量兜底原因，便于连续观察 DeepSeek 标题质量。
 
 不要仅依据 workflow 绿色图标判断业务成功；要核对报告数量、草稿文章数量和 `media_id`。
 
@@ -175,7 +176,7 @@ strict handoff 会让 build job 失败并阻止微信 job。先解决并发 push
 1. 新外部请求是否定义了超时、可重试条件、最大次数和永久错误行为。
 2. 单篇失败是否会影响同批其他文章。
 3. 失败是否会错误写 seen 或造成重复草稿。
-4. 标题是否同时经过原题和最终题两次审核。
+4. 标题是否同时经过模型中性约束、生成后确定性降温和上传前兜底，且没有减少文章数量。
 5. 关键产物是否已经进入远端 `main` 才启动 self-hosted runner。
 6. 微信是否执行慢速上传和 `draft/get` 校验。
 7. 是否补充了定向测试。

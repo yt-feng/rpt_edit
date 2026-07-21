@@ -49,9 +49,13 @@ from wechat_title_optimizer import (
     build_filename_title_repair_prompt,
     build_filename_title_translation_prompt,
     decide_filename_anchored_title,
+    ensure_publishable_neutral_title,
     extract_title_candidates,
 )
-from sensitive_content_guard import blocked_wechat_title_reason, sanitize_wechat_stock_language
+from sensitive_content_guard import (
+    sanitize_wechat_stock_language,
+    wechat_title_neutrality_issues,
+)
 from wechat_article_quality import (
     WECHAT_EDITORIAL_GUARD_ZH,
     WECHAT_EDITOR_SYSTEM_PROMPT,
@@ -129,13 +133,6 @@ PDF_FOOTER_DISCLAIMER = (
     "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
     "This is not investment, legal, tax, accounting, or other professional advice."
 )
-
-
-class SensitiveTitleError(RuntimeError):
-    def __init__(self, title: str, reason: str) -> None:
-        super().__init__(f"blocked WeChat title ({reason}): {title}")
-        self.title = title
-        self.reason = reason
 
 
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
@@ -779,38 +776,13 @@ def call_deepseek(
 
 
 def title_is_sensitive(title: str, args: argparse.Namespace) -> bool:
-    """Ask DeepSeek whether a report title is China-sensitive.
+    """Compatibility helper: detect titles that need deterministic cooling.
 
-    Used to gate the WeChat draft path: a title that disparages China / touches
-    sensitive political topics must not reach the 公众号 draft box. API errors are
-    fatal so an exhausted DeepSeek balance cannot be mistaken for sensitive titles.
-    Unclear verdicts still fail closed and skip only that report.
+    The report is no longer skipped. The caller rewrites its public title while
+    retaining the report and article body.
     """
-    title = (title or "").strip()
-    if not title:
-        return False
-    deterministic_reason = blocked_wechat_title_reason(title)
-    if deterministic_reason:
-        log(f"  [title-guard] deterministic block ({deterministic_reason}): {title[:100]}")
-        return True
-    prompt = (
-        "你是中国大陆微信公众号合规审核员。下面是一篇外文研究报告的标题。"
-        "判断该标题是否涉及军事、国防、军用装备、武器、战争、战备，"
-        "或包含对中国不友好、负面唱衰、攻击中国制度或政策，"
-        "或涉及选举、政党、地缘政治及其他敏感政治议题"
-        "（如台独、疆独、藏独、人权指控等）。"
-        "只回答一个英文单词：SENSITIVE 或 SAFE。\n\n标题：" + title
-    )
-    try:
-        verdict = call_deepseek(prompt, args, f"title guard: {title[:40]}", temperature=0.0).upper()
-    except Exception as exc:  # noqa: BLE001 - make quota/API issues visible
-        raise RuntimeError(f"title guard failed for {title[:80]}: {exc}") from exc
-    if "SENSITIVE" in verdict:
-        return True
-    if "SAFE" in verdict:
-        return False
-    log(f"  [title-guard] unclear verdict {verdict!r}; skipping to stay safe")
-    return True
+    del args
+    return bool(wechat_title_neutrality_issues(title))
 
 
 def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chunk_total: int) -> str:
@@ -919,14 +891,17 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 - 语言要像人工编辑润色过：句长有变化，不要整齐排比，不要用模板化转折堆段落。
 
 格式要求：
-1. 第一行必须是 `# {{机构中文名}}：{{短标题}}`，标题短、清楚、有传播性；优先 20-35 个中文字符，最多一个冒号。
-   - 标题必须包含至少两个钩子：机构/人物 big name、可搜索主题词、反常识判断、市场误判、数据节点、政策/行业变量。
+1. 第一行必须是 `# {{机构中文名}}：{{短标题}}`，标题短、清楚、事实化；优先 20-35 个中文字符，最多一个冒号。
+   - 标题只使用机构/人物、可搜索主题词、日期、数据节点、技术或行业对象等中性事实钩子，不用反常识宣判、市场误判、输赢、警告或好坏判断。
    - 不要写英文机构简称或 ticker，例如 GS、JPM、JEF、NOM、BARC、MS、DB、Citi；不要写“核心观点”“关键要点”“研报速览”。
-   - 冒号后不要重复机构或来源类型，禁止“联合国贸发会议：联合国贸发报告，……”“麦肯锡：麦肯锡报告称，……”这类写法；冒号后直接写判断或变量。
-   - 标题不要把三段以上信息塞满；只保留主判断，其余放在开头自然展开。
+   - 冒号后不要重复机构或来源类型，禁止“联合国贸发会议：联合国贸发报告，……”“麦肯锡：麦肯锡报告称，……”这类写法；冒号后直接写研究对象或事实主题。
+   - 标题不评价好坏；正向和负向评价词、对立式句型都不能出现。涉及中国宏观、人民币汇率、信贷、债务、权益、房地产、就业、财政或监管时，改写为近期数据、货币定价框架、资金结构、市场主题、城市与住房数据等不带立场的对象。
+   - 军事、国防、战争、选举、政党、制裁和地缘政治等标签不进入标题；只写可公开表达的行业、技术、运营、数据或区域研究主题，但仍须生成文章。
+   - 原始标题不适合直接公开时，只改写标题；绝不能拒绝、略过或删除报告，正文仍须完整生成。
+   - 标题不要把三段以上信息塞满；只保留一个事实主题，其余放在开头自然展开。
 2. 正文控制在 900-1200 个中文字符，写成短导读，不要展开成完整长文。
 3. 开头 1-2 段要自然带出 4-6 个长尾关键词，例如国家/行业/政策/数据/公司/技术词，让读者从搜一搜进入也能立刻判断相关性。
-4. 使用 3 个 `##` 小节，每个小节标题都要是 action title，读标题就知道结论。
+4. 使用 3 个 `##` 小节，每个小节标题都要是完整、中性的事实句，读标题就知道本节对象和信息，不使用好坏评价或冲突式措辞。
 5. 每个小节只保留 1 段，段落要像专业报告导读，避免散乱摘抄。
 6. 插入 1-2 条 `> KC评论：...`。KC评论要用大白话解释“这对市场/企业/政策观察意味着什么”，不要空泛，也不要夹带 CTA。
 7. 如有可用图表占位符，只能从这些 token 里选 1-3 个并原样插入，单独成行：{token_text}
@@ -996,7 +971,7 @@ def wechat_title_from_filename(
             args,
             f"WeChat filename title: {source_filename[:40]}",
             temperature=0.25,
-            system_content="你是中文标题编辑，以原始 PDF 文件名为最高权重锚点，只输出严格 JSON。",
+            system_content="你是中文标题编辑，以原始 PDF 文件名为语义锚点，公开标题必须事实化、无立场、无好坏判断，只输出严格 JSON。",
         )
         candidates = extract_title_candidates(raw)
     except Exception as exc:
@@ -1028,7 +1003,7 @@ def wechat_title_from_filename(
             args,
             f"WeChat title repair: {source_filename[:40]}",
             temperature=0.15,
-            system_content="你是中文标题纠错编辑，只输出严格 JSON；每个标题必须完整、自然、可独立理解。",
+            system_content="你是中文标题纠错编辑，只输出严格 JSON；标题必须完整、自然、事实化、无立场、无好坏判断。",
         )
         repair_candidates = extract_title_candidates(repair_raw)
         repaired, repaired_decision = decide_filename_anchored_title(
@@ -1282,10 +1257,23 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         args,
     )
     display_title, title_stock_changes = sanitize_wechat_stock_language(display_title, strict_wording=False)
-    if args.title_guard:
-        blocked_reason = blocked_wechat_title_reason(display_title)
-        if blocked_reason:
-            raise SensitiveTitleError(display_title, blocked_reason)
+    title_before_neutralization = display_title
+    display_title, title_neutralization_changes = ensure_publishable_neutral_title(
+        display_title,
+        institution_name,
+        source_title,
+    )
+    if title_neutralization_changes:
+        log(
+            "  [title-neutralizer] "
+            f"{title_before_neutralization[:80]} -> {display_title[:80]} "
+            f"({', '.join(title_neutralization_changes)})"
+        )
+        title_decision["pre_neutralization_title"] = title_before_neutralization
+        title_decision["pre_neutralization_selection_reason"] = title_decision.get("selection_reason", "")
+        title_decision["selection_reason"] = "deterministic_neutralization"
+        title_decision["neutralization_changes"] = title_neutralization_changes
+        title_decision["selected_title"] = display_title
     title_decision["final_title_after_wording_guard"] = display_title
     translated_md = replace_first_heading(translated_md, display_title)
     translated_md, stock_changes_after_title = sanitize_wechat_stock_language(
@@ -1337,7 +1325,7 @@ def main() -> int:
                         help="Skip filename-anchored DeepSeek fine-tuning and use the deterministic filename fallback.")
     parser.set_defaults(title_refine=True)
     parser.add_argument("--title-guard", action="store_true",
-                        help="Use deterministic and DeepSeek checks to block military/politically sensitive WeChat titles.")
+                        help="Audit and deterministically neutralize evaluative, military, or political WeChat titles without dropping reports.")
     args = parser.parse_args()
 
     max_reports = parse_selection_limit(args.max_reports, "--max-reports")
@@ -1394,30 +1382,17 @@ def main() -> int:
 
     summary: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
-    sensitive_skipped: list[dict[str, Any]] = []
     for idx, report_dir in enumerate(selected, 1):
         try:
             if args.title_guard:
                 title = report_title(report_dir)
-                if title_is_sensitive(title, args):
-                    reason = blocked_wechat_title_reason(title) or "deepseek_title_guard"
-                    log(f"Skipping sensitive title, not sending to WeChat ({reason}): {title}")
-                    sensitive_skipped.append({
-                        "source_report_dir": str(report_dir),
-                        "title": title,
-                        "reason": reason,
-                    })
-                    continue
+                issues = wechat_title_neutrality_issues(title)
+                if issues:
+                    log(
+                        "Title will be neutralized while keeping the report: "
+                        f"{title} ({', '.join(issues)})"
+                    )
             summary.append(process_report(report_dir, out_dir, idx, args))
-        except SensitiveTitleError as exc:
-            report_out_dir = out_dir / f"{idx:02d}-{slug(report_dir.name)}"
-            shutil.rmtree(report_out_dir, ignore_errors=True)
-            log(f"Skipping sensitive refined title, not sending to WeChat ({exc.reason}): {exc.title}")
-            sensitive_skipped.append({
-                "source_report_dir": str(report_dir),
-                "title": exc.title,
-                "reason": exc.reason,
-            })
         except Exception as exc:
             log(f"ERROR processing {report_dir}: {exc}")
             failures.append({"source_report_dir": str(report_dir), "error": str(exc)})
@@ -1429,18 +1404,25 @@ def main() -> int:
         "max_reports": "all" if max_reports is None else max_reports,
         "selected_count": len(selected),
         "successful_count": len(summary),
-        "sensitive_skipped_count": len(sensitive_skipped),
-        "sensitive_skipped": sensitive_skipped,
+        "title_neutralized_count": sum(
+            1
+            for item in summary
+            if (item.get("wechat_title_decision") or {}).get("neutralization_changes")
+        ),
+        # Retained for readers of older summaries. Title sensitivity now causes
+        # deterministic rewriting, never article suppression.
+        "sensitive_skipped_count": 0,
+        "sensitive_skipped": [],
         "failures": failures,
         "reports": summary,
     }
     (out_dir / "translation_summary.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     if not summary:
-        if sensitive_skipped:
-            log(f"No translated reports: all {len(sensitive_skipped)} selected title(s) were China-sensitive and skipped. Not an error.")
-            return 0
         return 2
-    log(f"Done. Generated {len(summary)} translated report PDF(s) under {out_dir} (skipped {len(sensitive_skipped)} sensitive).")
+    log(
+        f"Done. Generated {len(summary)} translated report PDF(s) under {out_dir} "
+        f"(neutralized {payload['title_neutralized_count']} title(s))."
+    )
     return 0
 
 
