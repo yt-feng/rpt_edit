@@ -1,0 +1,123 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_htc1la7b/pdfs/0003-08-Bernstein-Japan Consumer - European General Retail - Japan Semiconductors-Seven - i Holdings Deep Dive- So- what is going on- SoftBank for defense- -abka for growth-2.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "Seven & i ",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "买入->观点偏积极 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Bernstein：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-08-Bernstein-Japan Consumer - European General Retail - Japan Semiconductors-Seven - i Holdings Deep Dive- So- what is going on- SoftBank for defense- -abka for growth-2.pdf",
+    "cleaned_source_title": "Bernstein-Japan Consumer - European General Retail - Japan Semiconductors-Seven - i Holdings Deep Dive- So- what is going on- SoftBank for defense- -abka for growth-2",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：日本消费EuropeanGeneralRetail日本半导体",
+    "raw_candidates": [
+      "Bernstein：Seven & i防御融资与海外扩张",
+      "Bernstein：Seven & i获软银3000亿日元防御融资",
+      "Bernstein：Seven & i便利店客流量与北美业务观察"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：Seven&i防御融资与海外扩张",
+      "Bernstein：Seven&i获软银3000亿日元防御融资",
+      "Bernstein：Seven&i便利店客流量与北美业务观察",
+      "Bernstein：日本消费EuropeanGeneralRetail日本半导体",
+      "Bernstein：节奏变化不确定性被ACT此前每股2700日元（区间1900"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：Seven&i获软银3000亿日元防御融资",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "Bernstein：Seven&i便利店客流量与北美业务观察",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "Bernstein：日本消费EuropeanGeneralRetail日本半导体",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：节奏变化不确定性被ACT此前每股2700日元（区间1900",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Bernstein：Seven&i防御融资与海外扩张",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "560",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

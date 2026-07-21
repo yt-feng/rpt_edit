@@ -1,0 +1,657 @@
+# Japan Quant & Fundamental Tech Strategy
+
+# Japan Tech Strategy 3Q26: Tech leadership to broaden out...selectively rotate
+
+![](images/67d7835d3d13a26113594575cd1f34144fd71c6a99b3deb7929a77ee4ee7d9e2.jpg)
+
+Rupal Agarwal
++65 6326 7641
+rupal.agarwal@bernsteinsg.com
+
+![](images/03ee3649e970361fdb3222305ac196e9744e4b5e0cff13004ec0c6d462ff34fa.jpg)
+
+David Dai, CFA
+
++852 2918 5704
+
+david.dai@bernsteinsg.com
+
+![](images/f94ca0ae538e84528d136eb6bbde97ce84dda8a4b8c9a1e44f3d3e1eb108be64.jpg)
+
+Jay Huang, Ph.D.
+
++852 2123 2631
+
+jay.huang@bernsteinsg.com
+
+![](images/f8d008871743b9a38e82945ad72b3462f91b67c95f081f65d19b1c48c6069396.jpg)
+
+Robin Zhu
+
++852 2123 2659
+
+robin.zhu@bernsteinsg.com
+
+![](images/d912cff63f3b6ac0778a86236b9bd55c10d813cac53e0d69d6ffeb3bba8d7795.jpg)
+
+Cheng Zhang, CFA, CQF
+
++852 2123 2636
+
+cheng.zhang@bernsteinsg.com
+
+The Japan tech sector has had a strong start to the year, up 14% on equal-weighted and 60% on cap-weighted basis, ie. dominated by large-caps. In this report, we collaborate with our fundamental analysts to present opportunities from here.
+
+Top-down view: The sector looks reasonable on an earnings multiple, trading at 18.2x fwd. PE i.e. -0.2SD below 10yr avg; but trading at a record high revenue multiple (2.5x PS). The earnings expectations for the sector are now at record high, though relative to market there is still room for upward revisions to continue. In 1H26, sub-sector dispersion has been high with Semis, Factory Automation and Electronic Equipment outperforming sharply while IT Services, Software and Entertainment lagging. The winning sub-sectors are becoming increasingly vulnerable given elevated valuations and extreme bullish sentiment while losing sub-sectors like IT Services, Software and Entertainment have fallen to attractive valuations, extreme downgrades and low crowding. July has seen strong intra-sector rotation, and we believe that has legs, though more selectively given there has not been clear inflection in either valuation or earnings. Factor-wise, Momentum and GARP have been the only styles generating alpha in 2026, while Quality and Low Volatility have underperformed sharply. Although momentum remains supported by earnings strength and reasonable valuations (unlike the valuation bubble in Asia ex China Tech), revisions are reaching extreme levels, increasing reversal risk. We believe the underperformance of high yield is inconsistent with supportive valuations and robust upgrades. Hence, we recommend being more selective on momentum exposure from here while looking for opportunities within the laggard space, especially focusing on stocks where earnings momentum is improving. Interestingly, the intra-sector dispersion is not as extreme as in Asia ex Japan tech sector, however the high correlation between AI/tech trade in the region is likely to create similar rotation pressure. We show our updated screens in Exhibit 18-Exhibit 19. For our Asia Tech screens, see - Asia Tech Strategy 3Q26.
+
+Japan Semis: The sector has corrected sharply after a strong rally especially those who benefit from AI narrative. The AI demand drives up capex expectations on memory and advanced logic, and benefits both front and backend equipment names alike. We prefer equipment names given the secular capex cycle for DRAM, advanced logic, and China capex. TEL, Kokusai and Screen also benefit from price hikes and margin expansion, while DISCO and Advantest benefit from the structural backend adoption, and Lasertec from Intel capex and EUV penetration. We like Renesas (Outperform) as we are constructive on power semis given the rise of AI power demand. Ibiden (Outperform) and Hoya (Outperform) remain backed by solid fundamentals, with Ibiden supported by CPU demand amid an ABF supply-demand shortage over 2027-28, and Hoya by strong EUV blank and HDD substrate demand, alongside growing focus on future pricing upside. SoftBank (Outperform) is another beneficiary of the CPU upcycle through its ownership of Arm. Sumco (Market-Perform) is mainly geared to potential price hikes from Chinese vendors, while the narrative may gradually shift toward a raw wafer shortage next year, which is not our base case given China supply but is helping the stock in the short term. [continued]...
+
+## ...[continued]
+
+Japan Video Gaming: The recent rally in Japan Video Gaming stocks coincided with the detonation of extreme semis sentiment and positioning, but was overdue in our view, with valuations falling to multi-year lows. Capcom has one of the strongest new game line-ups for 2027, and we're hopeful the GTA VI release in November will be a clearing event as far as capital allocation within global video gaming is concerned. Konami will likely scale back monetisation after the World Cup, but should also continue to grow earnings meaningfully ahead of street expectations.
+
+Japan Factory Automation: 2025 was the year of inflection, as global factory automation demand returned to growth. 2026 is the year of acceleration. We forecast global factory automation demand to grow double-digit in 2026, driven by acceleration in U.S. and Europe, improvement in Japan, as well as continued strength in China. Despite the negative impacts arising from the recent relapse of the conflict in the Middle East, which remains a macro risk, we expect this headwind to gradually mitigate. With reduced trade policy uncertainty, the gradual release of pent-up CAPEX demand since 2024 is expected to result in an elongated upcycle with normal peak growth rate. Our top pick remains Keyence. Following the 4Q FY3/26 results, Street expectations have increased significantly, although they remain 6% below our estimates for FY3/27 EPS. In our view, both the valuation and current Street expectations are in favor of Keyence. Looking ahead, we believe the key catalyst for further re-rating will be accelerating revenue growth, which we expect to peak at 25% YoY in the December-2026 quarter.
+
+BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="3">Ticker</td><td rowspan="3">Rating</td><td colspan="4">17 Jul 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td></td><td rowspan="2">ClosingPrice</td><td rowspan="2">PriceTarget</td><td rowspan="2">Perf.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Cur</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td><td></td></tr><tr><td>6954.JP (Fanuc)</td><td>O</td><td>JPY</td><td>6,637.00</td><td>7,000.00</td><td>33.9%</td><td>JPY</td><td>178.47</td><td>207.32</td><td>193.15</td><td>37.2</td><td>32.0</td><td>34.4</td><td></td></tr><tr><td>6273.JP (SMC)</td><td>O</td><td>JPY</td><td>69,230</td><td>78,000</td><td>(1.7)%</td><td>JPY</td><td>2,640.86</td><td>2,975.39</td><td>3,256.00</td><td>26.2</td><td>23.3</td><td>21.3</td><td></td></tr><tr><td>6861.JP (Keyence)</td><td>O</td><td>JPY</td><td>70,880</td><td>86,000</td><td>(12.9)%</td><td>JPY</td><td>1,835.63</td><td>2,248.48</td><td>2,494.78</td><td>38.6</td><td>31.5</td><td>28.4</td><td></td></tr><tr><td>6324.JP (HDSI)</td><td>O</td><td>JPY</td><td>6,470.00</td><td>7,800.00</td><td>106.2%</td><td>JPY</td><td>16.99</td><td>57.37</td><td>79.51</td><td>380.8</td><td>112.8</td><td>81.4</td><td></td></tr><tr><td>6857.JP (Advantest)</td><td>O</td><td>JPY</td><td>27,505</td><td>39,200</td><td>105.6%</td><td>JPY</td><td>514.52</td><td>735.65</td><td>870.09</td><td>53.5</td><td>37.4</td><td>31.6</td><td></td></tr><tr><td>6146.JP (DISCO)</td><td>O</td><td>JPY</td><td>64,780</td><td>85,000</td><td>10.9%</td><td>JPY</td><td>1,246.28</td><td>1,733.62</td><td>2,127.33</td><td>52.0</td><td>37.4</td><td>30.5</td><td></td></tr><tr><td>6920.JP (Lasertec)</td><td>O</td><td>JPY</td><td>41,890</td><td>50,000</td><td>99.4%</td><td>JPY</td><td>937.82</td><td>893.18</td><td>976.61</td><td>44.7</td><td>46.9</td><td>42.9</td><td></td></tr><tr><td>8035.JP (Tokyo Electron)</td><td>O</td><td>JPY</td><td>65,100</td><td>59,200</td><td>93.4%</td><td>JPY</td><td>1,250.88</td><td>1,504.14</td><td>1,848.77</td><td>52.0</td><td>43.3</td><td>35.2</td><td></td></tr><tr><td>6525.JP (Kokusai)</td><td>O</td><td>JPY</td><td>8,801.00</td><td>8,240.00</td><td>123.1%</td><td>JPY</td><td>128.63</td><td>200.23</td><td>260.07</td><td>68.4</td><td>44.0</td><td>33.8</td><td></td></tr><tr><td>7735.JP (Screen)</td><td>M</td><td>JPY</td><td>16,510</td><td>12,600</td><td>134.6%</td><td>JPY</td><td>486.61</td><td>572.60</td><td>662.24</td><td>33.9</td><td>28.8</td><td>24.9</td><td></td></tr><tr><td>SONY (Sony )</td><td>M</td><td>USD</td><td>21.12</td><td>22.00</td><td>(27.9)%</td><td>USD</td><td>1.08</td><td>1.25</td><td>1.30</td><td>19.6</td><td>16.9</td><td>16.2</td><td></td></tr><tr><td>6758.JP (Sony)</td><td>M</td><td>JPY</td><td>3,470.00</td><td>3,500.00</td><td>(39.6)%</td><td>JPY</td><td>171.30</td><td>198.75</td><td>207.66</td><td>20.3</td><td>17.5</td><td>16.7</td><td></td></tr><tr><td>6723.JP (Renesas)</td><td>O</td><td>JPY</td><td>3,822.00</td><td>6,300.00</td><td>60.2%</td><td>JPY</td><td>181.61</td><td>244.76</td><td>298.54</td><td>21.0</td><td>15.6</td><td>12.8</td><td></td></tr><tr><td>7741.JP (Hoya)</td><td>O</td><td>JPY</td><td>25,215</td><td>33,100</td><td>(2.7)%</td><td>JPY</td><td>744.42</td><td>802.89</td><td>946.43</td><td>33.9</td><td>31.4</td><td>26.6</td><td></td></tr><tr><td>4062.JP (Ibiden)</td><td>O</td><td>JPY</td><td>15,685</td><td>23,900</td><td>358.6%</td><td>JPY</td><td>214.91</td><td>259.64</td><td>411.19</td><td>73.0</td><td>60.4</td><td>38.1</td><td></td></tr><tr><td>3436.JP (SUMCO)</td><td>M</td><td>JPY</td><td>3,914.00</td><td>3,190.00</td><td>186.7%</td><td>JPY</td><td>(33.61)</td><td>(57.32)</td><td>47.60</td><td>(116.5)</td><td>(68.3)</td><td>82.2</td><td></td></tr><tr><td>9984.JP (SoftBank)</td><td>O</td><td>JPY</td><td>5,424.00</td><td>11,200</td><td>52.9%</td><td>JPY</td><td>872.47</td><td>282.49</td><td>159.10</td><td>6.2</td><td>19.2</td><td>34.1</td><td></td></tr><tr><td>9697.JP (Capcom)</td><td>O</td><td>JPY</td><td>3,412.00</td><td>4,600.00</td><td>(63.9)%</td><td>JPY</td><td>115.85</td><td>130.50</td><td>153.47</td><td>29.5</td><td>26.1</td><td>22.2</td><td></td></tr><tr><td>7974.JP (Nintendo)</td><td>O</td><td>JPY</td><td>7,294.00</td><td>10,300</td><td>(84.1)%</td><td>JPY</td><td>364.51</td><td>350.74</td><td>423.85</td><td>20.0</td><td>20.8</td><td>17.2</td><td></td></tr><tr><td>9766.JP (Konami)</td><td>O</td><td>JPY</td><td>18,875</td><td>26,800</td><td>(48.9)%</td><td>JPY</td><td>551.00</td><td>737.79</td><td>896.16</td><td>34.3</td><td>25.6</td><td>21.1</td><td></td></tr><tr><td>9684.JP (Square Enix)</td><td>M</td><td>JPY</td><td>2,551.00</td><td>2,550.00</td><td>(64.9)%</td><td>JPY</td><td>82.08</td><td>106.81</td><td>121.75</td><td>31.1</td><td>23.9</td><td>21.0</td><td></td></tr><tr><td>7832.JP (Bandai Namco)</td><td>M</td><td>JPY</td><td>4,189.00</td><td>4,700.00</td><td>(48.2)%</td><td>JPY</td><td>217.49</td><td>206.36</td><td>223.90</td><td>19.3</td><td>20.3</td><td>18.7</td><td></td></tr><tr><td></td><td></td><td></td><td>--</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>JPL</td><td></td><td></td><td>2,545.21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,457.69</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended
+
+6723.JP, 9984.JP estimate is Adjusted EPS; 6723.JP, 9984.JP valuation is Adjusted P/E (x); 6954.JP, 6273.JP, 6861.JP, 7974.JP, 9684.JP, 7832.JP base year is 2026;
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## INVESTMENT IMPLICATIONS
+
+Japan Factory Automation: Keyence Outperform with PT = ¥86,000; FANUC Outperform with PT = ¥7,000; Harmonic Drive Outperform with PT = ¥7,800; SMC Outperform with PT = ¥78,000;
+
+Japan Semis: Kokusai: Outperform, PT=¥8,240.00; Tokyo Electron: Outperform, PT=¥59,200; DISCO: Outperform, PT=¥85,000; Advantest: Outperform, PT=¥39,200; Screen: Market-Perform, PT=¥12,600; Lasertec: Outperform, PT=¥50,000; Renesas: Outperform, PT=¥6,300.00; Hoya: Outperform, PT=¥33,100; Ibiden: Outperform, PT=¥23,900; SoftBank: Outperform, PT = ¥11,200; SUMCO: Market-Perform, PT=¥3,190.00;
+
+Japan Gaming: Sony Market-Perform, PT=¥3,500.00; Nintendo Outperform with PT=¥10300; Capcom Outperform with PT=¥4,600; Bandai Market-Perform with PT=¥4,700; Konami Outperform with PT=¥26,800; Square Enix Market-Perform with PT=¥2,550
+
+## DETAILS
+
+Some historical context-Over the long-term, the Japan tech sector has been a big source of alpha - since 1989 Japan tech has delivered $6\%$ CAGR vs. $0.8\%$ by the market (in dollar terms). The sector has done well even in recent times, generating $13\%$ CAGR since COVID bottom compared to the broader market which has given $11\%$ annualized returns. The historical consistency has been strong as the sector has generated positive returns in 8 out of the last 10yrs, with double-digit returns in 7 yrs. 2017 $(+50\%)$ , 2019 $(+52\%)$ and 2020 $(+46\%)$ were outstanding years for Japan tech followed by 2025 at $45\%$ . (Exhibit 1)
+
+Japan tech sector has shown good momentum in 2026 so far and is up 14% on equal-weighted basis and 60% on cap-weighted basis, ie. large-caps have continued to dominate. The divergence within the sector has been sharp - Semiconductors, Factory Automation and Electronic Equipment have done well in both Q1 and Q2 while IT Services, Software and Entertainment names have been under tremendous pressure. Semiconductors was the best performing sub-sector within Japan tech with 74% alpha, which is largely attributed to Q2 outperformance of 54%. Factory Automation Equipment generated +56% relative outperformance in 1H26 led by 44% alpha in Q2. Electronic Equipment takes the third place, seeing relative performance of +5% in Q1 and +26% in Q2 2026. Sub-sectors like Entertainment, Software and IT services have underperformed the market in 2026, due to weak earnings support. In July, sub-sector rotation happened where laggard sub-sectors (Software +14%, IT Services +15% and Entertainment +11%) outperformed while winning sectors start to underperform. YTD, among the top 10 largest names, KIOXIA (729%) has had a phenomenal run followed by Murata (+241%), Tokyo Electron (+118%) and Renesas (+118%) while Sony, Nintendo have all been down -21% and -37% respectively.(Exhibit 2-Exhibit 4)
+
+In this note, we join hands with our fundamental tech analysts in Japan to highlight the opportunities going forward. We define Japan tech universe as the combination of stocks within Technology sector, stocks within Entertainment industry as well as stocks within Factory Automation Equipment sub-industry.
+
+EXHIBIT 1: Japan tech sector has been a big source of alpha over the long-term. Since 1989, the sector has generated 6%CAGR vs. 0.8% by the market. Since 2010, tech sector has delivered 9%CAGR vs. 5% by market
+
+Japan Tech vs. MSCI Japan Performance  
+![](images/31de91a45c44301b7d1d583ee35e772dcc03c68facf532670e55cf2ee89b037f.jpg)  
+Returns are in USD. Data till Jun 30 $^{th}$ 2026
+Source: Bloomberg, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 2: In 1H26, the sector was up +14% on equal-weighted basis and +60% on cap-weighted basis vs. the market, up +15%
+
+![](images/3e4c7d6a0073ea0cacc0ccf1ca2c0fa285ee74b4e062cb99faff6dbe520c3b5f.jpg)  
+Data til Jun 30 $^{th}$ 2026. Returns are in USD
+Source: IBES, MSCI, FactSet, Bernstein analysis  
+EXHIBIT 3: In 1H26, Semis, Factory automation and Electronic Equipment have been the best performing sub-sectors, including Q1 and Q2. While IT Services and Software have been the worst performing sub-sectors. Jul saw sub-sector rotation happen where laggard sub-sectors (Software, IT Services and Entertainment) outperformed  
+Japan Tech Industry Performance rel. to the Market YTD 2026
+
+![](images/cda4b184d66685b5f23df8f2d447a0aeb4fae89362a8a5b21a8195918e38298a.jpg)
+
+Returns are in USD. Performance of all sub sectors are relative to MSCI APxJ Index (Market Cap weighted). Data till Jul 17 $^{th}$ 2026
+Source: Bloomberg, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 4: YTD, among the top 10 largest names, KIOXIA (729%) led followed by Murata (+241%), Tokyo Electron (+118%) and Renesas (+118%). Sony, Nintendo have been down -21% and -37% respectively
+
+Performance of 10 Largest Japan Tech Stocks YTD2026  
+![](images/bca7ad8d7c3b091ddf147f914e4eb9e37af2274a02623bec42dd8c3b5918eb92.jpg)  
+Returns are in USD. Japan Tech performance is market cap weighted. Data till Jun 30 $^{th}$ 2026 Source: IBES, MSCI, FactSet, Bernstein analysis
+
+## REASONABLE VALUATIONS AND CONTINUED EARNINGS UPGRADE
+
+On PE terms, Japan tech is still cheap, trading at 18.2x fwd ie. -0.2SD below its 10yr average and below average premium to the market (21% vs. 24%). However, on P/S, the sector is expensive, trading at 2.5x PS vs. 1.4x for the market ie.73% premium (vs. avg. premium of 64%) and at +2.6SD above 5yr average and at +2.9SD above 10yr avg. The expensive tech cohort (top quintile) has seen de-rating and is now trading at an 86% premium to the sector vs. 10yr average of 167% on revenue multiple. Do note, the record high valuations for the expensive tech portfolio was 7.5xPS in 2021, while the cohort is now at 4.6xPS. (Exhibit 5 - Exhibit 6).
+
+Earnings upgrade cycle has been a key support for the sector but it is reaching historical peak. However, relative to market, sector remains in upgrade cycle with room for upward revisions to continue. (Exhibit 7). Overall, the sector looks reasonably valued on earnings but stretched on revenue multiples. While continued upward revisions remains a key support relative to the market; the extreme earnings expectations raise concern of peak upgrade cycle.
+
+EXHIBIT 5: Japan tech is trading at 18.2x PE ie. -0.2SD below its 10yr average. It is trading at average premium to the market (21% vs. 24%)  
+![](images/45efaf6bb71d8c86c93d5ed435bd74e689df974a6fd721f0fde91ad1fe0c504e.jpg)  
+Data till Jun 30 $^{th}$ 2026  
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 6: On P/S, the sector is expensive, trading at 2.5x PS ie. +2.6SD above 5yr average and at +2.9SD above 10yr avg. However, relative to the market (1.4x) it is trading at 73% premium which is above avg. premium of 64%  
+![](images/90f3443cf318854e9b9217d310efd72bc116ecd475d880cf77590cefb92ffd4e.jpg)  
+Data till Jun 30 $^{th}$ 2026  
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 7: Strong upgrade cycle has been a key driver for Japan tech. The earnings expectations now look extreme, though relative to market there is still room for upward revisions to continue
+
+Japan Tech Earnings Revisions Balance
+
+![](images/bb0f3917154ee8b1c4ea45b111bec83f7a98b2ad45e9cb24ea53b3309a6a2bd7.jpg)  
+Data till Jun 30 $^{th}$ 2026  
+Source: IBES, MSCI, FactSet, Bernstein analysis  
+Japan Tech Earnings Revisions Balance rel. to the Market
+
+![](images/27394cfc75724fe2731151ab2627eca37295ef9acc9d19848838b34c8c6b423f.jpg)
+
+## SUB-SECTOR LEVEL ANALYSIS - VALUATIONS, EARNINGS, CROWDING
+
+Compared to valuations at end of last quarter, some hot sub-sectors are at extreme valuations. On 12m fwd. PE, Electronic Equipment and Semis are expensive now, trading at +1.4SD/+1.5SD above 10yr mean; though not at extreme. Factory Automation Equipment have peaked in valuations and dropped to +0.5SD level. IT Services saw the biggest de-rating and dropped from +1SD at the end of 2025 to -2SD now. Software/Entertainment/Tech Hardware are also cheap, trading at -1.2/-1/-00.8SD below the 10yr average (Exhibit 8). On Price to Sale, Electronic Equipment, Factory Automation Equipment and Semis are extremely expensive, trading at record high multiple. All other sub-sectors are reasonably valued, especially Entertainment and IT services that has fallen to average valuations and Software which is quite cheap (-0.9SD). (Exhibit 9). Hence, the intra-sector valuation dispersion has widened with winning sub-sectors looking stretched while non-performing sub-sectors falling to attractive valuations. Japan tech sector upgrade cycle was quite broad-based with upward revisions for Electronic Equipment, IT services, Factory automation, Software and Semis. Hence, not just the winning sub-sectors but even the losing sub-sectors ie. IT services and software are seeing upward revisions. However, Tech hardware and Entertainment has been in net downgrade with bearish sentiment towards Entertainment looking extreme. Crowding has been increasing in Electronic Equipment, Factory Automation Equipment and Semis; though not at extreme yet. IT Services, Software and Entertainment have fallen to quite unloved territory(Exhibit 10-Exhibit 11)
+
+Overall, winning sub-sectors such as Electronic equipment, Factory Automation Equipment and Semiconductors are vulnerable due to extreme valuation, record high bullish earnings expectations while some losing sub-sectors such as Entertainment, IT services and Software have the potential to make a comeback due to attractive valuations, potential earnings recovery and poor investor interest. We recommend some intra-sector rotation though selectively as there is no clear inflection on winners vs. loosers on earnings or valuations.
+
+12m Fwd. PE - Technology Hardware, Storage & Peripherals
+
+12m Fwd. PE - Semiconductors & Semiconductor Equipment
+
+EXHIBIT 8: Electronic Equipment, Semis are expensive but not extreme yet; trading at +1.4SD/+1.5SD above 10yr mean. However, Factory Automation has peaked in valuations, now trading at +0.5SD relative to 10yr average. IT Services saw the biggest de-rating, dropped from +1SD at the end of 2025 to -2SD now. Software/Entertainment/Tech Hardware are also cheap, trading at -1.2/-1/-0.8SD below the 10yr average
+
+12m Fwd. PE - Electronic Equipment, Instruments & Components
+
+![](images/782ba4bf63ccdf28d2e43e41ab06808153aca2606d413e5c173acb1d7542cbd5.jpg)
+
+![](images/ac720cec323275d7ea1a57c083c44aeb4c2e798dd292a91d420136019d3953fc.jpg)  
+12m Fwd. PE - Factory Automation Equipment
+
+![](images/348ab19c33fa1fbe89849c18b7677480b2b99d1db8fc19fe6df7c9044683cc18.jpg)
+
+![](images/921dcd25572189add353cf3f6f7201da2892ff92255df38c862924c9a663be2a.jpg)
+
+![](images/502c918c1f6f3504956194fbfcad2052b17ea5332965a462844da1e8baf856b1.jpg)
+
+![](images/0464a6f21e02b45dc95b4606d98bcedb165162e979fb74de82494b18ea8411d3.jpg)
+
+![](images/1e40b37db717d440d4bc7c95ece0c66249805cac58c8f75c5220ad11a79bda51.jpg)
+
+Data till Jun 30 $^{th}$ 2026
+
+Source: MSCI, FactSet, Bernstein analysis
+
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+PS - Factory Automation Equipment
+
+EXHIBIT 9: On Price to Sales, Electronic Equipment, Factory Automation Equipment and Semis are trading at record high valuations while IT Services and Entertainment has fallen near 10yr average and Software has dropped closer to COVID lows
+
+PS - Electronic Equipment, Instruments & Components
+
+![](images/9a38b3bd4c4efd17acc290e87a8c446e1fa043c4dfa1ee2aaf854d0dcafbc0b3.jpg)
+
+![](images/60e6de4d96c8cb421993cb4461175815fb6466db93fd308fd655f3b347349dd0.jpg)
+
+![](images/4a6161551c102150e69b1aa2da54464852079c1f6ebfa117e3055f090df3e3b7.jpg)
+
+![](images/3f042c24e3f41104a78f3e8e51fea9b3cc0cc5038b648c5fbaf51ddd9b0ca0c4.jpg)
+
+![](images/5fab95777131619f2feea23399466db705653d201e4015e42dc7c98d399a77b6.jpg)
+
+PS - Semiconductors & Semiconductor Equipment  
+![](images/fcf14e92f35855eae11f5c5fac29c9d9c7305da26dde480bb145ebedaa0f71bd.jpg)
+
+![](images/8bd73df2324439c5eff2170632e76877684b65d38c6b2c72bd03ea5464523037.jpg)  
+Data till Jun 30 $^{th}$ 2026
+
+EXHIBIT 10: Electronic equipment, IT Services, Factory Automation Equipment, Software and Semiconductors remain in earnings upgrades cycle (though inching towards record high). Technology Hardware is seeing moderation in earnings while Entertainment is at extreme downgrades.
+
+Earnings Revisions Balance - Electronic Equipment, Instruments & Components
+
+![](images/9583b56474664bb8707412f27ec11c30a128839936820bbf191655e3fa5b4289.jpg)  
+Earnings Revisions Balance - IT Services
+
+![](images/38fb0e64e4a345f250d2f8493ade27478ba0abb3004df6a625a133e99b2aeb4d.jpg)  
+Earnings Revisions Balance - Factory Automation Equipment
+
+![](images/23034308ce48e6838b526b6271e0e9e774227069e9d0004129b409c7af84e15e.jpg)  
+Earnings Revisions Balance - Software
+
+![](images/accb1b4e954d104b39d2cc5bd70403bcbabac19e72d2a996955c22363f99970a.jpg)  
+Earnings Revisions Balance - Technology Hardware, Storage & Peripherals
+
+![](images/1f446813e099ed404d1ae5c0dd015ec7bc74cb865c23d1b4419253bd3676a332.jpg)  
+Earnings Revisions Balance - Semiconductors & Semiconductor Equipment
+
+![](images/bba347d25f4fb0babc743b6275f1df01c2e91e696acb17e29b6c8d579ee35dc2.jpg)  
+Earnings Revisions Balance - Entertainment
+
+![](images/c45357984a7fef766840aa63695f500d3826c22bcd0d866bfb250e4901466d9f.jpg)  
+Data till Jun 30 $^{th}$ 2026  
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 11: Crowding has been increasing in Electronic Equipment, Factory Automation Equipment and Semis; though not at extreme yet. IT Services, Software and Entertainment have fallen to quite unloved territory
+
+Crowding - Electronic Equipment, Instruments & Components
+
+![](images/1845fd2b333fb100b09b43b187ec285ed35d9a8435bd5f1dab407a3565272c0b.jpg)
+
+![](images/01b8915a45efee4b72c9b6e0cd47a030ec15c593bb2f77022fe62ada2e4867d1.jpg)
+
+![](images/3a50d8fefb9684f7120d5d41b689a7d72a3bafb649bc5d4302a128e204cc9cfe.jpg)
+
+![](images/f1b51ca46ee915bd2b8dbaf0cb62571d873ea465015628971a73539f5a6d0fdd.jpg)  
+Crowding - Technology Hardware, Storage & Peripherals
+
+![](images/b81d305b861cf24f65accd125ac9c6330099cdb7ec2c2ae2f213b59bc2d42c4e.jpg)
+
+![](images/afeb0c55beebfc900309a3793534eb41022029e10bf1db3d81505eec01f5757a.jpg)
+
+![](images/859fdc73a22fde1cdf85e9fb1996c98ccd843688c150142d772aac78f0950435.jpg)  
+Data till Jun 30 $^{th}$ 2026  
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+## THE FACTOR VIEW WITHIN TECH
+
+1H26, Equal weighted tech sector was up 14% YTD with GARP names leading (35-47% alpha) followed by Momentum with 29% outperformance relative to market. The worst hit styles were quality (-17%) and Low vol (-19%). Till Feb, Japan tech was doing quite well, up 11%, led by high vol (19%), momentum/growth (17%), value (+15%) and high yield (13%). During the war, as expected low vol, high yield, quality were least impacted though even cheap growth names showed similar resilience. Since Q2, momentum (+10%) and GARP (+7) have been the only styles outperforming the market. In Jul, high yield (+5%) outperformed the most, while growth names also outperformed moderately( Exhibit 12).
+
+Combining the performance with the valuations/earnings/crowding aspects - we note that all style portfolios within Japan tech have been in a valuation de-rating cycle, all value/quality portfolios have now dropped below 10yr average. Growth and momentum have seen de-rating but still not cheap though not too stretched either. However, earnings revisions upgrades are ubiquitous - high yield has been in a strong upgrade cycle and there is still room for upward revisions to continue. The underperformance of quality is not aligning with the attractive valuations and upward earnings revision, however, there is little room for earnings upgrades to continue given it is at historical high. Hence, we are less convinced of an earning led recovery for quality stocks. Momentum and cheap growth stocks have been most resilient since beginning of the year and while valuations are reasonable, earnings upgrades are at record high, except for GARP cheap tercile. Similar to Asia ex Japan tech (see here), the upgrade cycle has not showed a clear peak, hence we recommend being more selective on momentum tech names but adding the laggards, especially the high yielding names where room for upward revisions is still strong. We show factor ranking for our Bernstein coverage tech names in Exhibit 17 and preferred screens of selective momentum and high yield in (Exhibit 18-Exhibit 19).
+
+EXHIBIT 12: 1H 2026, GARP (35-47%) led followed by Momentum with 29% relative to market. The rest styles other than momentum and growth have underperformed the market, and ROIC (-18%) and Low vol (-21%) saw the weakest performance. In Jul, high yield (+5%) outperformed the most
+
+Japan Tech Factor Performance rel. to Tech Sector 2026 YTD
+
+![](images/4eb22e8a9894b71774cad9bfba4924e4cea4ceb942404899c5cc5ac3ed347591.jpg)  
+Data till Jul 17 $^{th}$ 2026  
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 13: Japan tech momentum is valued above the mean, seeing upward revisions hitting historical high with increasing crowding level
+
+12m Fwd. PE - Japan Tech Momentum
+
+![](images/950d628a6fe38f84140de82ef9f46957caeabf697529a766148776bb9fa6b6fd.jpg)
+
+Data till Jun 30 $^{th}$ 2026
+
+![](images/6cf434935bf1b43ede04c725b6570f8edcbfafba0f029a2ae5c1a7b7e31b2350.jpg)  
+Source: IBES, MSCI, FactSet, Bernstein analysis  
+Earnings Revisions Balance - Japan Tech Momentum  
+Crowding - Japan Tech Momentum
+
+![](images/e0d7ae0703fd3791aa593850d4ccf3d2a02638d797902fdc27871a1a702e72d1.jpg)
+
+Earnings Revisions Balance - GARP ex expensive
+
+EXHIBIT 14: Japan tech growth and GARP portfolios have been in a de-rating cycle and parts of the growth trade are now cheap. Overall, all growth portfolios have been showing very strong earning upgrades trend
+
+![](images/286b2cbebed130ab5f96dd569ce0a982c6f16fed213562679e8036ff87d26da4.jpg)
+
+![](images/fdfa045f706a731eec67ac8b390e7736b79a0fa35105562722c0780fc05103d8.jpg)
+
+![](images/e2f6982f4e2935868b328b006dd32a1ee82347c904849d425d8d26320f120b4d.jpg)  
+12m Fwd. PE - GARP Cheap Tercile
+
+![](images/43c708d7ae677c6d16dcede413168de842c085623dca88e0bdf8a6752e33d176.jpg)  
+Earnings Revisions Balance - FY0FY3 Growth
+
+![](images/7a13b6ae7ef5ae6a6d142ddd067447378bf462ec7a22d61257c0626a2f901860.jpg)
+
+![](images/1c4258be51c6636c4cbdfa76ab3118d28f331ebdb3dc1eb77a7736ba16d113a0.jpg)
+
+![](images/da98f3c68bbfa4dc7696debcd9102a101be74028ceef011de6a8421b2699bbe9.jpg)  
+Earnings Revisions Balance - GARP Cheap Tercile
+
+![](images/0340c7ac532ec3efff446fb7d282858c58ecd42c7a25ebb2058a707b094183b4.jpg)
+
+![](images/d86c71e7474426470eace1500553067be2c8bf4659d0b2ddc08a4878143ff3c6.jpg)  
+Data till Jun 30 $^{th}$ 2026
+
+![](images/14bd3753fa63f5373af980118f352d9985abfa1b24e98247259851dc9dca1623.jpg)
+
+![](images/fc494fd640afcd838cb8237501fff6a74534b16a9f210c7399e101628195946c.jpg)
+
+![](images/335ff010a91a6e454d2fbca1531a0fc2bc907920e18511e15a72883baf3e1767.jpg)  
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 15: High yielding stocks have historically worked well within Japan tech over the long-term. The portfolio is undervalued, seeing strong earnings supports with renowned investor interests - we believe these names can continue to do well
+
+12m Fwd. PE - Japan Tech FCFDY
+
+![](images/62aef6e969c07e3d4a20a1590337b14769be1774a08de8b541aba645070089f0.jpg)  
+Earnings Revisions Balance - Japan Tech FCFDY
+
+![](images/bc05fb08ce4670de96169f154628eafb7b4970b7d91a75a03403152e05e87f30.jpg)  
+Crowding - Japan Tech FCFDY
+
+![](images/ed27ca7f2c140564f78b2accd5daa6d28de6faffc91ebd2614ccfc0b8ac65909.jpg)
+
+Data till Jun 30 $^{th}$ 2026
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 16: Japan tech quality and QARP portfolios have also been in a de-rating cycle and now trading below the mean. Earnings revisions have continued to trend upward, reaching historical high. However, QARP cheap tercile is already seeing weakness in earnings upgrades.
+
+![](images/c15d32a0618b09ea2f11836becd18e77189fc56910c23b08ae7e8c787bb87980.jpg)
+
+![](images/039ec9a0493f419d6ed51ee4d1fcaae038c483e92ba16dfd024d73a24eaad5ea.jpg)
+
+![](images/a6f26ca8324af549c182d7c6f94a46c724d4f576eb9963c8cf6a2bc0e8d62925.jpg)
+
+![](images/f1f4462c4ef8d0f970649bc9e596c8470c3fed0c480a6dd0e2f2c1da35258eeb.jpg)
+
+![](images/4a7327acb32a0ed417ed7cc835522ebf77185ede9010b2bcfa3a1f8ff85dd47b.jpg)
+
+![](images/59b681e36204353aa7be42af3d66e8346618f8b7525b80d8d8b6a794ad0f58c4.jpg)
+
+![](images/2a7e60028fab6b2b8572fc54272407353c784da898b75a7985caae838b2ffcce.jpg)
+
+![](images/ad223a3bea3f8de3b7ce99b575c6098f3e4dfecf834f898dd64b61d54dd8c373.jpg)
+
+![](images/4f364fdfbf123234e2fa2ae8cdd90b99665f2851a640315dad389cb3efec059f.jpg)
+
+![](images/1304c832b8143023bb4cfcb8138aca119ecfdf42504d209291fa93f41f26d73c.jpg)
+
+![](images/444e4fbf46f07757943216e6f076aad9b4ebc24353684913b38cad1ecce05a1b.jpg)
+
+![](images/f3ac19569031c9ee0d995451fcf4c02250e24c6e01578f9f3d5e2e92d6a8f213.jpg)  
+Data till Jun 30 $^{th}$ 2026
+
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 17: Bernstein covered Japan tech names with factor rankings
+
+<table><tr><td>GICSINDNAME</td><td>SEDOL</td><td>CO_NAME</td><td>Mcap (USD mn)</td><td>12m Fwd. PE</td><td>PEF_10yr _zscore</td><td>GARP</td><td>QARP</td><td>Value</td><td>FCF yld</td><td>Div. yield</td><td>Growth</td><td>ROIC</td><td>Low Vol</td><td>Momentum</td><td>Global Crowding Deciles (1= Most Crowded, 10=Least Crowded)</td><td>EPS 6m momentum</td><td>Bernstein rating</td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>649099</td><td>KEYENCE CORP</td><td>121,301</td><td>36x</td><td>-0.4</td><td>0</td><td>0</td><td>3</td><td>2</td><td>3</td><td>2</td><td>2</td><td>2</td><td>2</td><td>10</td><td>15%</td><td>O</td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>645610</td><td>IBIDEN CO</td><td>41,281</td><td>62x</td><td>4.0</td><td>1</td><td>0</td><td>3</td><td>3</td><td>3</td><td>1</td><td>2</td><td>3</td><td>1</td><td>1</td><td>40%</td><td>O</td></tr><tr><td>Entertainment</td><td>663955</td><td>NINTENDO CO</td><td>53,977</td><td>18x</td><td>-0.6</td><td>0</td><td>1</td><td>1</td><td>2</td><td>1</td><td>3</td><td>1</td><td>1</td><td>3</td><td>10</td><td>-2%</td><td>O</td></tr><tr><td>Entertainment</td><td>649668</td><td>KONAMI GROUP CORP</td><td>15,597</td><td>19x</td><td>-0.6</td><td>0</td><td>0</td><td>2</td><td>2</td><td>2</td><td>2</td><td>1</td><td>2</td><td>3</td><td>6</td><td>17%</td><td>O</td></tr><tr><td>Entertainment</td><td>617369</td><td>CAPCOM CO</td><td>9,878</td><td>18x</td><td>-0.7</td><td>0</td><td>1</td><td>2</td><td>3</td><td>2</td><td>2</td><td>1</td><td>1</td><td>3</td><td>7</td><td>11%</td><td>O</td></tr><tr><td>Entertainment</td><td>682150</td><td>SONY GROUP CORP</td><td>124,112</td><td>15x</td><td>-0.6</td><td>0</td><td>0</td><td>3</td><td>1</td><td>3</td><td>2</td><td>2</td><td>2</td><td>3</td><td>6</td><td>5%</td><td>M</td></tr><tr><td>Entertainment</td><td>630926</td><td>SQUARE ENIX HOLDINGS CO</td><td>5,451</td><td>23x</td><td>0.5</td><td>0</td><td>0</td><td>2</td><td>1</td><td>2</td><td>2</td><td>2</td><td>1</td><td>3</td><td>7</td><td>20%</td><td>M</td></tr><tr><td>Entertainment</td><td>B0JDQD</td><td>BANDAI NAMCO HOLDINGS</td><td>15,134</td><td>16x</td><td>-1.1</td><td>0</td><td>1</td><td>2</td><td>1</td><td>2</td><td>3</td><td>1</td><td>1</td><td>3</td><td>8</td><td>7%</td><td>M</td></tr><tr><td>Factory Automation Equipment</td><td>635693</td><td>FANUC</td><td>44,457</td><td>32x</td><td>0.1</td><td>0</td><td>0</td><td>3</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>1</td><td>4</td><td>16%</td><td>O</td></tr><tr><td>Factory Automation Equipment</td><td>676396</td><td>SMC CORP</td><td>28,012</td><td>23x</td><td>-0.2</td><td>0</td><td>0</td><td>2</td><td>3</td><td>2</td><td>3</td><td>2</td><td>2</td><td>2</td><td>7</td><td>14%</td><td>O</td></tr><tr><td>Factory Automation Equipment</td><td>610817</td><td>HARMONIC DRIVE SYSTEMS</td><td>4,617</td><td>89x</td><td>-0.2</td><td>1</td><td>0</td><td>3</td><td>3</td><td>3</td><td>1</td><td>3</td><td>3</td><td>1</td><td>4</td><td>212%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>650626</td><td>LASERTEC CORP</td><td>28,833</td><td>48x</td><td>0.4</td><td>0</td><td>0</td><td>3</td><td>2</td><td>3</td><td>2</td><td>1</td><td>3</td><td>1</td><td>6</td><td>4%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>644150</td><td>HOYA CORP</td><td>54,034</td><td>30x</td><td>0.2</td><td>0</td><td>0</td><td>3</td><td>2</td><td>3</td><td>2</td><td>1</td><td>2</td><td>2</td><td>2</td><td>16%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>689567</td><td>TOKYO ELECTRON</td><td>223,882</td><td>39x</td><td>2.5</td><td>1</td><td>0</td><td>3</td><td>3</td><td>2</td><td>1</td><td>1</td><td>3</td><td>1</td><td>7</td><td>38%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>627094</td><td>DISCO CORP</td><td>54,237</td><td>42x</td><td>1.4</td><td>1</td><td>0</td><td>3</td><td>3</td><td>3</td><td>1</td><td>1</td><td>3</td><td>1</td><td>5</td><td>34%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>663567</td><td>RENESAS ELECTRONICS CORP</td><td>55,327</td><td>21x</td><td>0.1</td><td>1</td><td>0</td><td>3</td><td>2</td><td>3</td><td>1</td><td>3</td><td>3</td><td>1</td><td>6</td><td>34%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>687049</td><td>ADVANTEST CORP</td><td>145,657</td><td>38x</td><td>0.9</td><td>1</td><td>0</td><td>3</td><td>3</td><td>3</td><td>1</td><td>1</td><td>3</td><td>1</td><td>5</td><td>68%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>BNGHNG</td><td>KOKUSAI ELECTRIC</td><td>15,904</td><td>40x</td><td>0.1</td><td>1</td><td>0</td><td>3</td><td>3</td><td>3</td><td>1</td><td>2</td><td>3</td><td>1</td><td>3</td><td>50%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>BOMOC8</td><td>SUMCO</td><td>8,681</td><td>89x</td><td>2.3</td><td>1</td><td>0</td><td>3</td><td>3</td><td>3</td><td>1</td><td>3</td><td>3</td><td>1</td><td>8</td><td>-29%</td><td>M</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>625102</td><td>SCREEN HOLDINGS CO</td><td>20,898</td><td>25x</td><td>2.6</td><td>0</td><td>0</td><td>2</td><td>2</td><td>2</td><td>2</td><td>1</td><td>3</td><td>1</td><td>5</td><td>-37%</td><td>M</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>BMGYJO</td><td>KIOXIA HOLDINGS</td><td>301,326</td><td>8x</td><td>-1.7</td><td>1</td><td>0</td><td>3</td><td>3</td><td>3</td><td>1</td><td>1</td><td>3</td><td>1</td><td>4</td><td>1417%</td><td>U</td></tr></table>
+
+Data as of Jun 30 $^{th}$ 2026. For factor ranking, 1- highest, 3- lowest; For low vol, 1-lowest, 3-highest. Analyst Ratings: O= Outperform, M=Market-Perform (Bernstein Brand)/N=Neutral (Autonomous Brand), U= Underperform rating. Further details of the research and important disclosures of the above covered securities are available on the Bernstein website: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action
+
+Source: IBES, MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 18: Japan tech - selectively follow the trend, where EPS momentum is improving
+
+<table><tr><td>GICSINDNAME</td><td>SEDOL</td><td>CO_NAME</td><td>Mcap (USD mn)</td><td>12m Fwd. PE</td><td>PS</td><td>PE_10yr_z score</td><td>PS_10yr_z score</td><td>EPS 6m momentum</td><td>EPS 12m momentum</td><td>Bernstein rating</td></tr><tr><td>Factory Automation Equipment</td><td>635693</td><td>FANUC</td><td>44,457</td><td>32x</td><td>8.0x</td><td>0.1</td><td>1.0</td><td>16%</td><td>13%</td><td>O</td></tr><tr><td>Factory Automation Equipment</td><td>610817</td><td>HARMONIC DRIVE SYSTEMS</td><td>4,617</td><td>89x</td><td>12.4x</td><td>-0.2</td><td>0.6</td><td>212%</td><td>76%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>BNGHNG</td><td>KOKUSAI ELECTRIC</td><td>15,904</td><td>40x</td><td>10.8x</td><td>0.1</td><td>6.9</td><td>50%</td><td>15%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>689567</td><td>TOKYO ELECTRON</td><td>223,882</td><td>39x</td><td>14.4x</td><td>2.5</td><td>4.8</td><td>38%</td><td>13%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>627094</td><td>DISCO CORP</td><td>54,237</td><td>42x</td><td>20.2x</td><td>1.4</td><td>2.6</td><td>34%</td><td>25%</td><td>O</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>663567</td><td>RENESAS ELECTRONICS CORP</td><td>55,327</td><td>21x</td><td>6.3x</td><td>0.1</td><td>4.5</td><td>34%</td><td>8%</td><td>O</td></tr><tr><td>Factory Automation Equipment</td><td>698604</td><td>YASKAWA ELECTRIC CORP</td><td>11,531</td><td>32x</td><td>3.4x</td><td>0.1</td><td>1.6</td><td>28%</td><td>12%</td><td></td></tr><tr><td>Factory Automation Equipment</td><td>616005</td><td>CKD CORP</td><td>3,121</td><td>23x</td><td>3.2x</td><td>0.5</td><td>4.7</td><td>49%</td><td>17%</td><td></td></tr><tr><td>Factory Automation Equipment</td><td>686913</td><td>THK CO</td><td>5,366</td><td>24x</td><td>3.6x</td><td>0.4</td><td>4.9</td><td>119%</td><td>44%</td><td></td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>BW4F6F</td><td>RS TECHNOLOGIES CO</td><td>1,190</td><td>16x</td><td>2.5x</td><td>0.2</td><td>-0.1</td><td>13%</td><td>4%</td><td></td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>689430</td><td>TOKYO SEIMITSU CO</td><td>5,237</td><td>24x</td><td>4.9x</td><td>2.4</td><td>3.9</td><td>24%</td><td>6%</td><td></td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>687866</td><td>TOWA CORP</td><td>1,545</td><td>25x</td><td>4.6x</td><td>0.3</td><td>1.4</td><td>24%</td><td>19%</td><td></td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>635427</td><td>FERROTEC CORPORATION</td><td>2,763</td><td>16x</td><td>1.5x</td><td>1.4</td><td>2.4</td><td>24%</td><td>9%</td><td></td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>656730</td><td>MICRONICS JAPAN CO</td><td>4,098</td><td>26x</td><td>8.4x</td><td>1.0</td><td>3.5</td><td>95%</td><td>46%</td><td></td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>609665</td><td>RORZE CORP</td><td>5,253</td><td>25x</td><td>6.5x</td><td>2.9</td><td>3.6</td><td>18%</td><td>10%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>604410</td><td>ANRITSU CORP</td><td>3,675</td><td>31x</td><td>4.8x</td><td>0.5</td><td>3.4</td><td>24%</td><td>18%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>663854</td><td>NICHICON CORP</td><td>1,787</td><td>30x</td><td>1.6x</td><td>0.2</td><td>5.3</td><td>35%</td><td>21%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>665768</td><td>OKI ELECTRIC INDUSTRY CO</td><td>1,876</td><td>15x</td><td>0.7x</td><td>0.7</td><td>4.6</td><td>13%</td><td>5%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>686930</td><td>TDK CORP</td><td>42,699</td><td>25x</td><td>2.7x</td><td>2.4</td><td>3.6</td><td>12%</td><td>10%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>643794</td><td>HORIBA</td><td>7,123</td><td>21x</td><td>3.3x</td><td>1.9</td><td>4.6</td><td>22%</td><td>13%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>657066</td><td>MARUWA CO LTD</td><td>5,390</td><td>31x</td><td>11.7x</td><td>2.4</td><td>3.0</td><td>28%</td><td>5%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>642844</td><td>HIOKI E E CORP</td><td>1,051</td><td>20x</td><td>3.9x</td><td>0.3</td><td>1.9</td><td>37%</td><td>11%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>BVVQ8X</td><td>MACNICA HOLDINGS</td><td>3,464</td><td>14x</td><td>0.5x</td><td>1.2</td><td>2.3</td><td>17%</td><td>5%</td><td></td></tr></table>
+
+Data till Jun 30 $^{th}$ 2026. Valuation zscore above +1.5 SD and below -1.5 SD are highlighted in red and green respectively. Analyst Ratings: O= Outperform, M=Market-Perform (Bernstein Brand)/N=Neutral (Autonomous Brand), U = Underperform rating. Further details of the research and important disclosures of the above covered securities are available on the Bernstein website: https://bernstein-autonomous.bluematrix.com/sellside/ Disclosures.action
+Source: MSCI, FactSet, Bernstein analysis
+
+EXHIBIT 19: Japan tech laggard - Add cheap/high yield names
+
+<table><tr><td>GICSINDNAME</td><td>SEDOL</td><td>CO_NAME</td><td>Mcap (USD mn)</td><td>12m Fwd. PE</td><td>PS</td><td>PE_10yr_zscore</td><td>PS_10yr_zscore</td><td>EPS 6m momentum</td><td>EPS 12m momentum</td><td>Bernstein rating</td></tr><tr><td>Entertainment</td><td>663955</td><td>NINTENDO CO</td><td>53,977</td><td>18x</td><td>3.4x</td><td>-0.6</td><td>-1.0</td><td>-2%</td><td>5%</td><td>O</td></tr><tr><td>Factory Automation Equipment</td><td>686913</td><td>THK CO</td><td>5,366</td><td>24x</td><td>3.6x</td><td>0.4</td><td>4.9</td><td>119%</td><td>44%</td><td></td></tr><tr><td>Entertainment</td><td>625313</td><td>DAIICHIKOSHO CO</td><td>1,095</td><td>13x</td><td>1.1x</td><td>-0.3</td><td>-1.6</td><td>2%</td><td>1%</td><td></td></tr><tr><td>Software</td><td>BHHDV3</td><td>WINGARC1ST</td><td>505</td><td>10x</td><td>2.6x</td><td>-4.8</td><td>-1.7</td><td>10%</td><td>0%</td><td></td></tr><tr><td>IT Services</td><td>664268</td><td>BIPROGY</td><td>2,599</td><td>12x</td><td>1.0x</td><td>-2.3</td><td>-0.3</td><td>8%</td><td>-1%</td><td></td></tr><tr><td>IT Services</td><td>B2Q4CR</td><td>TIS</td><td>4,451</td><td>11x</td><td>1.2x</td><td>-2.3</td><td>-0.4</td><td>8%</td><td>5%</td><td></td></tr><tr><td>IT Services</td><td>625569</td><td>DTS CORP</td><td>1,009</td><td>12x</td><td>1.2x</td><td>-1.5</td><td>-0.2</td><td>3%</td><td>-76%</td><td></td></tr><tr><td>IT Services</td><td>663960</td><td>NIPPON SYSTEM DEV</td><td>1,304</td><td>13x</td><td>1.6x</td><td>-2.8</td><td>-1.3</td><td>4%</td><td>-4%</td><td></td></tr><tr><td>Software</td><td>612528</td><td>TREND MICRO</td><td>5,186</td><td>19x</td><td>2.7x</td><td>-2.3</td><td>-2.3</td><td>9%</td><td>-18%</td><td></td></tr><tr><td>IT Services</td><td>622158</td><td>FUTURE CORP</td><td>899</td><td>9x</td><td>1.8x</td><td>-2.4</td><td>-0.6</td><td>7%</td><td>-5%</td><td></td></tr><tr><td>IT Services</td><td>654468</td><td>NS SOLUTIONS CORP</td><td>3,826</td><td>18x</td><td>1.6x</td><td>0.1</td><td>0.8</td><td>6%</td><td>-3%</td><td></td></tr><tr><td>IT Services</td><td>626705</td><td>OTSUKA CORP</td><td>6,485</td><td>15x</td><td>0.8x</td><td>-2.4</td><td>-1.8</td><td>0%</td><td>-4%</td><td></td></tr><tr><td>IT Services</td><td>B05MTT</td><td>TECHMATRIX CORPORATION</td><td>476</td><td>11x</td><td>1.0x</td><td>-2.3</td><td>-1.8</td><td>9%</td><td>-2%</td><td></td></tr><tr><td>Software</td><td>654358</td><td>DIGITAL ARTS</td><td>322</td><td>12x</td><td>4.6x</td><td>-1.8</td><td>-1.5</td><td>36%</td><td>14%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>642938</td><td>MAXELL</td><td>615</td><td>10x</td><td>0.6x</td><td>-0.3</td><td>0.1</td><td>7%</td><td>4%</td><td></td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>602730</td><td>AMANO CORP</td><td>1,593</td><td>13x</td><td>1.4x</td><td>-1.5</td><td>-0.8</td><td>4%</td><td>-4%</td><td></td></tr><tr><td>Technology Hardware, Storage &amp; Peripherals</td><td>673822</td><td>RICOH CO</td><td>4,929</td><td>12x</td><td>0.3x</td><td>-0.5</td><td>-0.9</td><td>9%</td><td>-1%</td><td></td></tr><tr><td>Technology Hardware, Storage &amp; Peripherals</td><td>614650</td><td>BROTHER INDUSTRIES</td><td>5,822</td><td>13x</td><td>1.0x</td><td>0.5</td><td>1.6</td><td>17%</td><td>12%</td><td></td></tr><tr><td>Technology Hardware, Storage &amp; Peripherals</td><td>617232</td><td>CANON INC</td><td>34,032</td><td>10x</td><td>0.8x</td><td>-1.3</td><td>-0.9</td><td>1%</td><td>-6%</td><td></td></tr></table>
+
+Data till Jun 30 $^{th}$ 2026. Valuation zscore above +1.5 SD and below -1.5 SD are highlighted in red and green respectively. Analyst Ratings: O= Outperform, M=Market-Perform (Bernstein Brand)/N=Neutral (Autonomous Brand), U = Underperform rating. Further details of the research and important disclosures of the above covered securities are available on the Bernstein website: https://bernstein-autonomous.bluematrix.com/sellside/ Disclosures.action
+Source: MSCI, FactSet, Bernstein analysis
+
+## I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+## VALUATION METHODOLOGY
+
+This research publication covers six or more companies. For valuation methodology and other company disclosures: Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## RISKS
+
+This research publication covers six or more companies. For risks and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+## EQUITY RATINGS DEFINITIONS
+
+## Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+\- Outperform: Stock will outpace the market index by more than 15 pp
+
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp
+
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 600 Financials Price Return Index (E600BK) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 600 Insurance Price Return Index (E600IN) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp
+
+\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp
+
+\- Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+## AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+## CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+## DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+As of June 30, 2026. All figures are updated quarterly.
+
+## PRICE CHARTS/ RATINGS AND PRICE TARGET HISTORY
+
+This research publication covers six or more companies. For price chart and other company disclosures, please visit https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action or you can write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## CONFLICTS OF INTEREST
+
+Bernstein Autonomous LLP or BSG France SA, beneficially, has either a net long or short position of 0.5% or more of the total issued share capital of a class of common equity securities of the following MiFID eligible securities: SMC Corporation.
+
+SG and/or its affiliates beneficially own 0.5% or more of [the total issued share capital/any class of common equity securities] with a net [long/short] position of: SMC Corporation, Advantest Corp, Kokusai Electric Corp, Renesas Electronics Corp and Ibiden Co Ltd.
+
+SG and/or its affiliates beneficially own 1% or more of a class of common equity securities of the following companies: Kokusai Electric Corp, Renesas Electronics Corp and Ibiden Co Ltd.
+
+Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from SoftBank Group Corp.
+
+Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Screen Holdings Co Ltd, Sony Group Corp and SoftBank Group Corp.
+
+Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from Tokyo Electron Ltd and SoftBank Group Corp.
+
+Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with Tokyo Electron Ltd and SoftBank Group Corp.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Screen Holdings Co Ltd, Sony Group Corp and SoftBank Group Corp.
+
+Affiliates of Bernstein managed or co-managed in the past twelve months a public offering of securities of SoftBank Group Corp.
+
+## OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA
+
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco
+
++33 BSG France S.A.; Paris, France
+
++34 BSG France S.A.; Madrid, Spain
+
++41 Bernstein Autonomous LLP; Geneva, Switzerland
+
++49 BSG France S.A.; Frankfurt, Germany
+
++91 Bernstein (India) Private Limited; Mumbai, India
+
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China
+
++65 Bernstein (Singapore) Private Limited; Singapore
+
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+## CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+## II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+## III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.
+
+\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the "PRC") in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;
+
+• dealing in a financial product;
+
+\- making a market for a financial product; and
+
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).
+
+\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.
+
+• SCB India does not have any disciplinary history as on the date of this report.
+
+\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company
+
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;
+
+\- is not engaged in any investment banking activities for Indian companies, as such;
+
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;
+
+\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;
+
+• have not received compensation for brokerage services from the subject company in the past twelve months;
+
+\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and
+
+\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.
+
+\- do not have any conflict of interest in the subject company as of the date of this report.
+
+\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.
+
+\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.
+
+\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com
+
+\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.
+
+\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+## LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of Societe
+
+## Generale.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
