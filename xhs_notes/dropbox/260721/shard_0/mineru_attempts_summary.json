@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_f48by0x2/pdfs/0001-01-Bernstein-Domino-s Pizza Inc-DPZ.US-Domino-s -DPZ-- 2Q26 -Better than feared- but MORE to go-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f48by0x2/pdfs/0002-02-Bernstein-European Utilities - Clean Energy District Cooling- Europe-s heatwaves are testing the network -and reinforcing its growth potential-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f48by0x2/pdfs/0003-03-Bernstein-EU Semiconductors EU Japan semis- Hybrid Bonding - Bullish logic adoption despite HBM uncertainties- Raising Besi PT to -310-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f48by0x2/pdfs/0004-04-Bernstein-Global Luxury Goods- June Swiss watch exports -Global demand remains on track for a fragile recovery-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f48by0x2/pdfs/0005-05-Bernstein-Global Memory-Korea Memory Export Tracker -Jun-- Strong HBM in 2Q26- esp. for Samsung-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

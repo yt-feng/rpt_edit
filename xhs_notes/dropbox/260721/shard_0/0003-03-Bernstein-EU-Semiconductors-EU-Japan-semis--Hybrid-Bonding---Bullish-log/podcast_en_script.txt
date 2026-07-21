@@ -1,0 +1,24 @@
+EN_A: So there’s this new research report on advanced semiconductor packaging, and it’s all about something called hybrid bonding. What exactly is it, and why should we care?
+EN_B: Hybrid bonding is basically the ultimate technology for stacking chips on top of each other. The report’s main takeaway is that adoption in logic chips is now a very clear trend, but for HBM memory, the timing is still very uncertain.
+EN_A: So what’s the big question this report is trying to answer? Is it just about how big the market is going to be?
+EN_B: That’s part of it. But the real question is: where is the demand for hybrid bonding actually going to come from? Is it going to be driven by logic chips, or by high-bandwidth memory? The drivers for each are completely different.
+EN_A: On the logic side, why is the path so clear?
+EN_B: Because logic chips need to connect different computing chiplets at super high speeds. For example, stacking a CPU on a GPU, or putting memory directly on top of a compute chip. Older technologies just can’t keep up. Hybrid bonding gives you much higher connection density with lower power consumption.
+EN_A: So which companies are pushing this forward?
+EN_B: TSMC is the clear leader. The report expects their hybrid bonding capacity to grow eightfold by 2028 from 2025 levels. The main drivers are AMD, Apple, Google, and eventually Nvidia. Even Intel is planning to restart its capacity expansion from 2027.
+EN_A: What does that mean for the equipment makers? How big is this opportunity?
+EN_B: The report forecasts that just the logic hybrid bonding equipment market could hit 887 million dollars by 2028. And the total hybrid bonding market, including HBM, could surge to 1.4 billion dollars by then.
+EN_A: That sounds very optimistic. So where’s the uncertainty on the HBM side?
+EN_B: The problem is that the current technology used for HBM, called thermal compression bonding, is already very good and very mature. Plus, industry standards might actually relax the height limits, so there’s no urgent need to switch. Samsung might start using hybrid bonding in its HBM4E in 2027, but if that product only uses 12 layers, the switch could be pushed back to 2028 with HBM5.
+EN_A: So this report is actually more conservative than the market on HBM hybrid bonding adoption?
+EN_B: Exactly. The report believes that even by 2028, most HBM will still use the old technology. Hybrid bonding might only be used for the top few layers. But even so, the HBM hybrid bonding market could still reach nearly 500 million dollars by 2028.
+EN_A: And what about a specific equipment maker like Besi? What’s the report’s view on them?
+EN_B: The report is very bullish on Besi. It sees them as the biggest structural beneficiary of the hybrid bonding trend and raised their price target to 310 euros. If they can hold a 76% market share by 2028, their hybrid bonding business alone could generate over a billion dollars in revenue.
+EN_A: Wait a minute. You said the report raised the price target, but also said the HBM timing is uncertain. Isn’t that a contradiction?
+EN_B: That’s the most interesting part. The reason they raised the forecast is that the demand from logic chips is coming in much stronger than expected, and that more than makes up for any delay in HBM. But the report leaves a couple of big questions unanswered.
+EN_A: Like what?
+EN_B: The report doesn’t fully explore what happens if HBM adoption is delayed even further, or if TSMC’s capacity ramp-up slows down. It also just touches on the specific opportunity for a company like DISCO in the hybrid bonding supply chain.
+EN_A: So to understand those risks, and which companies win in different scenarios, you’d need to read the full report?
+EN_B: Absolutely. This report gives you a very clear framework and a core thesis, but all the numbers are based on specific assumptions. For anyone who really wants to understand this space, the full report has much more detailed capacity models and risk analysis.
+EN_A: Great. Thanks for breaking that down. If you want to get the full report or join our discussion community, just check the show notes.
+EN_B: See you next time.

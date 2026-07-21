@@ -1,0 +1,118 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_f48by0x2/pdfs/0005-05-Bernstein-Global Memory-Korea Memory Export Tracker -Jun-- Strong HBM in 2Q26- esp. for Samsung-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "HBM出货数据出炉，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Bernstein：HBM与存储行业技术应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-05-Bernstein-Global Memory-Korea Memory Export Tracker -Jun-- Strong HBM in 2Q26- esp. for Samsung-260720.pdf",
+    "cleaned_source_title": "Bernstein-Global Memory-Korea Memory Export Tracker -Jun-- Strong HBM in 2Q26- esp. for Samsung",
+    "institution_name": "Bernstein",
+    "required_terms": [
+      "HBM"
+    ],
+    "deterministic_fallback": "Bernstein：HBM全球MemoryKoreaMemoryExp",
+    "raw_candidates": [
+      "Bernstein：全球存储-韩国HBM出口追踪-6月三星HBM强劲",
+      "Bernstein：韩国6月HBM出口预示三星二季度收入超预期",
+      "Bernstein：韩国HBM出口数据与三星HBM4加速导入"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：全球存储-韩国HBM出口追踪-6月三星HBM强劲",
+      "Bernstein：韩国6月HBM出口预示三星二季度收入超预期",
+      "Bernstein：韩国HBM出口数据与三星HBM4加速导入",
+      "Bernstein：HBM全球MemoryKoreaMemoryExp",
+      "Bernstein：韩国6月HBM出口数据预示三星二季度收入超预期"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：韩国6月HBM出口预示三星二季度收入超预期",
+        "reasons": [
+          "anchor_coverage=0.37",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：韩国HBM出口数据与三星HBM4加速导入",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：HBM全球MemoryKoreaMemoryExp",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：韩国6月HBM出口数据预示三星二季度收入超预期",
+        "reasons": [
+          "anchor_coverage=0.37",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：HBM与存储行业技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Bernstein：全球存储-韩国HBM出口追踪-6月三星HBM强劲",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Bernstein：HBM与存储行业技术应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "492",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
