@@ -1,0 +1,29 @@
+Found 55 total PDFs; shard 10/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d7tb5rfn/pdfs/0001-51-Nomura-Samsung Biologics-207940.KS-Acquiring peptide CDMO company -PolyPeptide--260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d7tb5rfn/pdfs/0002-52-Nomura-Strategy Trade-Hong Kong rates- Enter receive 5yfwd5y IRS position-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d7tb5rfn/pdfs/0003-53-Nomura-USD CNY fix model-Projection- 6.7708-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d7tb5rfn/pdfs/0004-54-Nomura-Xtep-1368.HK-Core brand sales dropped in 2Q26-260719.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d7tb5rfn/pdfs/0005-55-UBS-US Semiconductors and Semi Equipment SemiBytes-Thoughts on Kimi K3- MU- Analog- Cash Flow- Crowding-260720.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=914d5431-62fb-4ae0-b436-b57665e314e3
+MinerU states: running, pending, pending, running, waiting-file
+MinerU states: done, running, running, done, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset cfa97bcfd69ea396471eeade3e8cab52ea94380ec2cac87cb0e27e2d5ad52527.jpg: score=-100;too_small:1409x104
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 0e2ea064b2bbba9bff10eb26f0170d53987269dbdab2cfda1cdb4d7bbdbe2b83.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.23,contrast,large
+Skip non-chart visual asset 3f588140f211e140baaa17ed759fdde869f40432d892721cc0a6f4617a545b57.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset a15dcdee6c35a742f9afcd68413d5d2c149abc21e380bdcc75b0b8a94c726e4e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,contrast
+Skip non-chart visual asset 4881e73427fc6940e17189dc812c47a5333aa61cffa12e47726d2f05d35d6173.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset 2d34435a2182c787cfed6ca778aff1dcd10e18d55fca827ba4a3a85ca9543a2c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset 10e051793af76ada01e371e525c825bbc2ed38f375e458a68f1e704e28f67f49.jpg: score=-100;too_small:729x151
+Skip non-chart visual asset 497902c4fe9b4ff73e0431e7cd6dad56a97af872f43dbfb3eec70b43f16648cf.jpg: score=-100;too_small:1412x115
+Skip non-chart visual asset 88420c7c9f405846e5f912501b941f05042249e494e63a4f515b08eda4997195.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.30
+Neutralized WeChat title while keeping the report: 野村：特步核心品牌二季度销售额同比下滑 -> 野村：月度与季度数据变化观察
+Skip non-chart visual asset 7646258edf653a64355b59c0bea42ec19251f6c1c988dfa31f3c5e2ae2cc53e7.jpg: score=0;odd_ratio:7.58,edge:0.28,contrast
+Skip non-chart visual asset a44c964f538633312aedc127a3ad828d08ab21390533fcb5d9be5b7e4b45bd0a.jpg: score=1;chart_ratio
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260721/shard_10; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
