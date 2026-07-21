@@ -1,0 +1,94 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_tzeial20/pdfs/0005-45-MS-Global Thematics - North America AI Adoption and the Future of Work-Sector Deep Dive-260719.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "AI正在重塑职场：这",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：全球主题-北美AI采用与未来工作行业深度研究",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-45-MS-Global Thematics - North America AI Adoption and the Future of Work-Sector Deep Dive-260719.pdf",
+    "cleaned_source_title": "MS-Global Thematics - North America AI Adoption and the Future of Work-Sector Deep Dive",
+    "institution_name": "MS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "MS：AI全球ThematicsNorthAmeri",
+    "raw_candidates": [
+      "全球主题-北美AI采用与未来工作行业深度研究",
+      "全球主题-北美AI采用与未来工作行业深度研究-2026年调查",
+      "全球主题-北美AI采用与未来工作行业深度研究-五行业就业与生产率"
+    ],
+    "cleaned_candidates": [
+      "MS：全球主题-北美AI采用与未来工作行业深度研究",
+      "MS：AI全球ThematicsNorthAmeri",
+      "MS：AI采用对五行业就业与生产率影响的调查发现"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：AI全球ThematicsNorthAmeri",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：AI采用对五行业就业与生产率影响的调查发现",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：全球主题-北美AI采用与未来工作行业深度研究",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：全球主题-北美AI采用与未来工作行业深度研究"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "488",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

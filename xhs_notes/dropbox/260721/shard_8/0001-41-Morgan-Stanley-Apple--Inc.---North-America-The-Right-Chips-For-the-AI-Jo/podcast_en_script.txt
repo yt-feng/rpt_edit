@@ -1,0 +1,22 @@
+EN_A: So there's been a lot of buzz about Apple's AI chip performance. Is it true the M2 Ultra is struggling?
+EN_B: Yeah, a report last week said Apple's M2 Ultra AI server chip is having a hard time, and that Apple is even looking at buying chip companies. But we haven't seen any deal happening, and Apple hasn't commented.
+EN_A: But Apple is known for its chip design. From the A4 to the M series, they've been unbeatable. What's going wrong?
+EN_B: That's the key point. Apple's strength has always been in power-efficient chips for iPhones and Macs. AI server chips are a different ball game. They need massive performance for complex inference tasks, which is not Apple's core expertise.
+EN_A: So the real question this report tries to answer is: Does Apple have the right chips for its AI ambitions?
+EN_B: Exactly. The report is titled "The Right Chips For the AI Job?" If the chips aren't good enough, Apple's Private Cloud Compute faces two bad choices. One, use underperforming chips, which would slow down Siri AI. Two, push more work to Google Cloud, which is very expensive.
+EN_A: Wait, Private Cloud Compute? I know about on-device AI, but what is this?
+EN_B: It's Apple's cloud-based AI processing. Some complex Siri requests can't run on your phone, so they go to the cloud. Apple promises the data stays in its private cloud. But that only works if they have their own powerful server chips. Without them, the user experience suffers.
+EN_A: So what is Apple doing about it? I heard about a project called Baltra.
+EN_B: Right, Baltra is Apple's first custom AI server chip. It's expected to go into small volume production in the first half of 2027. But here's the catch: it's Apple's first high-power chip, so it's experimental. The real hope is the second generation in 2028, which might have power levels close to NVIDIA's GPUs.
+EN_A: And what about the M2 Ultra? Isn't it already in some AI servers?
+EN_B: It is, but that's the problem. The M series chips are primarily designed for Macs and workstations, not dedicated AI servers. Apple is essentially using a "part-time" chip for AI tasks. It works, but not as well as a purpose-built AI chip.
+EN_A: So what does this mean for users? Will the new Siri AI features coming this fall be affected?
+EN_B: Possibly. If the chips are underpowered, complex queries might take longer. And if Apple has to use Google Cloud more, costs go up, which could hit margins or service pricing. But Apple's AI strategy is still very focused on on-device processing, so the cloud impact might not be immediate.
+EN_A: What should investors watch to track Apple's AI chip progress?
+EN_B: The report lists four key signposts. First, TSMC's SoIC packaging bookings, which show M-series scale. Second, CoWoS packaging orders, which would mean Apple is moving toward NVIDIA-like power levels. Third, the tape-out progress of the second-gen ASIC, expected in 2027. And fourth, Apple's capital expenditure trajectory, which should accelerate if AI chips ramp up.
+EN_A: Are there any big questions the report doesn't fully answer?
+EN_B: Yes, a few. For example, will Apple actually acquire a chip company? The report says "no knowledge," but the rumor is still out there. Also, can the second-gen ASIC really match NVIDIA's performance? We'll need to see the tape-out results in 2027. And how will Apple's chip strategy affect its partnership with Broadcom? These are all open questions worth following.
+EN_A: So Apple's AI chip journey is just beginning, and it's full of uncertainty.
+EN_B: Absolutely, but that's also where the opportunity lies. If you want the full details on those four signposts, plus Apple's chip history and financial models, the complete report has all that. Join our community to get the full breakdown.
+EN_A: Great conversation. Thanks for joining us today.
+EN_B: Thanks for having me. See you next time.
