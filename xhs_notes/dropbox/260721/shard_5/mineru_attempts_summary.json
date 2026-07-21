@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_xt12869q/pdfs/0001-26-GS-CHINA HUMANOID ROBOT- WAIC 2026 TAKEAWAYS-Embodied AI Takes Center Stage-key takeaways validate our selective investment approach-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xt12869q/pdfs/0002-27-GS-CHINA PROPERTY WEEKLY WRAP-Week 29 Wrap-Market activities and sentiment sequentially improved at margin-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xt12869q/pdfs/0003-28-GS-China Jinmao -0817.HK-1H26 Preview- consolidate contract sales performance to support earnings- improvement- Buy-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xt12869q/pdfs/0004-29-GS-CHINA RESOURCES MIXC LIFESTYLE -1209.HK-1H26 Preview- On-track delivery of double-digit profit growth on the back of solid commercial segment- Buy-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xt12869q/pdfs/0005-30-GS-China Spirits Tracker- Feitian wholesale price trended up- channel feedback post price hike-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

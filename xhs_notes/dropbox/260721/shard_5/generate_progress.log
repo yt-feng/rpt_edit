@@ -1,0 +1,31 @@
+Found 55 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xt12869q/pdfs/0001-26-Goldman Sachs-CHINA HUMANOID ROBOT- WAIC 2026 TAKEAWAYS-Embodied AI Takes Center Stage-key takeaways validate our selective investment approach-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xt12869q/pdfs/0002-27-Goldman Sachs-CHINA PROPERTY WEEKLY WRAP-Week 29 Wrap-Market activities and sentiment sequentially improved at margin-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xt12869q/pdfs/0003-28-Goldman Sachs-China Jinmao -0817.HK-1H26 Preview- consolidate contract sales performance to support earnings- improvement- Buy-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xt12869q/pdfs/0004-29-Goldman Sachs-CHINA RESOURCES MIXC LIFESTYLE -1209.HK-1H26 Preview- On-track delivery of double-digit profit growth on the back of solid commercial segment- Buy-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xt12869q/pdfs/0005-30-Goldman Sachs-China Spirits Tracker- Feitian wholesale price trended up- channel feedback post price hike-260720.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=dedf9328-0409-4582-a88c-b91711f335f7
+MinerU states: running, running, pending, pending, pending
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 3db2b5e50747dc27cc7f719cef724b7e05439a226fffdc3994b7f5f7bc497146.jpg: score=-100;too_small:1156x106
+Skip non-chart visual asset 0f79f427181d84c2110f54bca252d2ca7a4b449595f3482cbc2f7eb598f57b73.jpg: score=-100;too_small:1156x109
+Neutralized WeChat title while keeping the report: 高盛：中国房地产周报-第29周-市场活动与情绪边际改善 -> 高盛：城市与住房数据变化观察
+Skip non-chart visual asset 58221262c63146132a09bf03f774fd97ee0fdd55bf3c1d231e1e6b3ba19017d6.jpg: score=-100;too_small:1156x109
+Skip non-chart visual asset e47e6ae78e7f7a6bd266035c45c9db89b4646b4e3d265b51fda1bb40265e36e6.jpg: score=-1;square_without_chart_hint,edge:0.25
+Skip non-chart visual asset b84805634517c3f56f4a7fda5c2085fbb49efe323fe476757800da0dc841fb38.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：华润万象生活1H26商业板块支撑双位数利润增长 -> 高盛：华润万象生活业务与近期数据观察
+Skip non-chart visual asset 6f883b2ce9c2c70ef7f33aebf4f8bed099daa0c498d55770aae3ae1293578cd8.jpg: score=-2;square_without_chart_hint,large
+Skip non-chart visual asset 7deaabdd88e7d71e9e4ea542ea666463a377428b391d2693211e73c7b8ea9c1d.jpg: score=-1;square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 4fec992eb464a5edbff899b009553ef89e27110d74c70fbcf4aa4713bce97cbc.jpg: score=-1;square_without_chart_hint,edge:0.31
+Skip non-chart visual asset c6b92045529ca452aa35fe2058dd6fcf1f0deb74bef4da737438fbba65cebe88.jpg: score=0;odd_ratio:6.11,edge:0.20,contrast
+Skip non-chart visual asset 1cd4aa3f4e259ca87d12b4a06305803415628bfcfeccc7db2fea9e7a2c5f1085.jpg: score=-100;too_small:1156x109
+Skip non-chart visual asset 18362cc9f56cfd81eaf285ef24c63212b2116cfb5e5d225cddda66a060a514af.jpg: score=0;odd_ratio:5.82,edge:0.39,contrast
+Neutralized WeChat title while keeping the report: 高盛：高盛中国白酒追踪-飞天茅台批发价回升与渠道反馈 -> 高盛：消费行业数据与主题变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260721/shard_5; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
