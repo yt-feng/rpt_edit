@@ -1,0 +1,91 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_zj7kxc5z/pdfs/0001-11-CITI-Gotion High Tech -002074- Key Takeaways from China ESS and Battery Chain Tour-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "某电池龙头上半年出货",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Citi：国轩高科-中国储能与电池产业链调研核心要点",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-11-CITI-Gotion High Tech -002074- Key Takeaways from China ESS and Battery Chain Tour-260720.pdf",
+    "cleaned_source_title": "CITI-Gotion High Tech -002074- Key Takeaways from China ESS and Battery Chain Tour",
+    "institution_name": "Citi",
+    "required_terms": [],
+    "deterministic_fallback": "Citi：GotionHighTech002074",
+    "raw_candidates": [
+      "国轩高科-中国储能与电池产业链调研核心要点",
+      "国轩高科-中国储能与电池产业链调研-2026年上半年出货65GWh",
+      "国轩高科-中国储能与电池产业链调研-储能电池产能利用率满产"
+    ],
+    "cleaned_candidates": [
+      "Citi：国轩高科-中国储能与电池产业链调研核心要点",
+      "Citi：国轩高科-中国储能与电池产业链调研",
+      "Citi：国轩高科-中国储能与电池产业链调研-储能电池产能利用率满产",
+      "Citi：GotionHighTech002074",
+      "Citi：国轩高科2026年储能电池出货目标45GWh，产能利用率已达满产"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Citi：GotionHighTech002074",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：国轩高科2026年储能电池出货目标45GWh，产能利用率已达满产",
+        "reasons": [
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：国轩高科-中国储能与电池产业链调研核心要点",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Citi：国轩高科-中国储能与电池产业链调研核心要点"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "437",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

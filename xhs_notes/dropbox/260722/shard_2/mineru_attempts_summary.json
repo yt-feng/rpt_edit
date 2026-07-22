@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_zj7kxc5z/pdfs/0001-11-CITI-Gotion High Tech -002074- Key Takeaways from China ESS and Battery Chain Tour-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zj7kxc5z/pdfs/0002-12-CITI-Siemens -SIEGn.DE- EDA software in focus following Kimi K3-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zj7kxc5z/pdfs/0003-13-DB-Asia Chart Alert-The RMB flow story still has legs-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zj7kxc5z/pdfs/0004-14-DB-Yum China-9987.HK-Pre-2Q-in line with guidance-Expect more color on debt financing and weather impact-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zj7kxc5z/pdfs/0005-15-GS-Americas Technology-Software-Revisiting Moats VI- The lag between AI spend and Security AI spend- and when to look for an inflection-260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
