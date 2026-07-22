@@ -1,0 +1,569 @@
+[
+  {
+    "item": "0001-41-J.P.-Morgan-Kweichow-Moutai-Co---A-600519-Second-price-hike-in-2026-and-",
+    "source_pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0001-41-JPM-Kweichow Moutai Co - A-600519-Second price hike in 2026 and our take-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "茅台又涨价了，这次是",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：贵州茅台2026年第二次提价",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-JPM-Kweichow Moutai Co - A-600519-Second price hike in 2026 and our take-260720.pdf",
+      "cleaned_source_title": "JPM-Kweichow Moutai Co - A-600519-Second price hike in 2026 and our take",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：KweichowMoutaiCoA600519",
+      "raw_candidates": [
+        "贵州茅台2026年第二次提价",
+        "贵州茅台2026年7月提价每瓶100元",
+        "贵州茅台提价与渠道策略分析"
+      ],
+      "cleaned_candidates": [
+        "JPM：贵州茅台2026年第二次提价",
+        "JPM：贵州茅台2026年7月提价每瓶100元",
+        "JPM：贵州茅台提价与渠道策略分析",
+        "JPM：KweichowMoutaiCoA600519",
+        "JPM：茅台在2026年7月宣布了年内第二次飞天茅台出厂价与直销零售"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：贵州茅台2026年7月提价每瓶100元",
+          "reasons": [
+            "anchor_coverage=0.69"
+          ]
+        },
+        {
+          "title": "JPM：贵州茅台提价与渠道策略分析",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "JPM：KweichowMoutaiCoA600519",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：茅台在2026年7月宣布了年内第二次飞天茅台出厂价与直销零售",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        }
+      ],
+      "selected_title": "JPM：贵州茅台2026年第二次提价",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：贵州茅台2026年第二次提价"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-42-J.P.-Morgan-Victory-Giant-Technology---H-2476.HK-Near-term-headwinds--bu",
+    "source_pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0002-42-JPM-Victory Giant Technology - H-2476.HK-Near-term headwinds- but capacity leadership remains the key differentiator- reiterate OW-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "AI PCB 龙头，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：AIPCB产能规模决定供应商长期份额",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-JPM-Victory Giant Technology - H-2476.HK-Near-term headwinds- but capacity leadership remains the key differentiator- reiterate OW-260720.pdf",
+      "cleaned_source_title": "JPM-Victory Giant Technology - H-2476.HK-Near-term headwinds- but capacity leadership remains the key differentiator- reiterate OW",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：VictoryGiant科技HNearter",
+      "raw_candidates": [
+        "JPM：AI PCB产能规模决定供应商长期份额",
+        "JPM：VGT产能扩张支撑未来份额回升",
+        "JPM：Kyber延迟影响被其他项目部分对冲",
+        "Victory Giant Technology：短期逆风与产能领导力",
+        "Victory Giant Technology：AI PCB产能规模决定供应商份额",
+        "Victory Giant Technology：产能与份额长期竞争逻辑"
+      ],
+      "cleaned_candidates": [
+        "JPM：AIPCB产能规模决定供应商长期份额",
+        "JPM：VGT产能扩张支撑未来份额回升",
+        "JPM：Kyber延迟影响被其他项目部分对冲",
+        "JPM：VictoryGiantTechnology",
+        "JPM：VictoryGiant科技HNearter",
+        "JPM：将2026-2028年盈利预测下调5%至13%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：VGT产能扩张支撑未来份额回升",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "JPM：Kyber延迟影响被其他项目部分对冲",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：VictoryGiantTechnology",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：VictoryGiant科技HNearter",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：将2026-2028年盈利预测下调5%至13%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：AIPCB产能规模决定供应商长期份额",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "JPM：将2026-2028年盈利预测下调5%至13%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "JPM：AI PCB产能规模决定供应商长期份额",
+        "JPM：VGT产能扩张支撑未来份额回升",
+        "JPM：Kyber延迟影响被其他项目部分对冲"
+      ],
+      "final_title_after_wording_guard": "JPM：AIPCB产能规模决定供应商长期份额"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-43-JEF-China---Technology-WAIC-KTA--Determined-but-More-Pragmatic--Da",
+    "source_pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0003-43-JEF-China - Technology-WAIC KTA- Determined but More Pragmatic- Data Semi in Focus-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "WAIC上的中国AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JEF：中国AI策略转向务实-数据半导体成核心",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-JEF-China - Technology-WAIC KTA- Determined but More Pragmatic- Data Semi in Focus-260720.pdf",
+      "cleaned_source_title": "JEF-China - Technology-WAIC KTA- Determined but More Pragmatic- Data Semi in Focus",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：中国科技WAICKTA",
+      "raw_candidates": [
+        "JEF：中国AI策略转向务实-数据半导体成核心",
+        "JEF：WAIC 2026中国AI策略转向开源与数据基础设施",
+        "JEF：中国AI策略务实转向-半导体与数据基础设施"
+      ],
+      "cleaned_candidates": [
+        "JEF：中国AI策略转向务实-数据半导体成核心",
+        "JEF：WAIC2026中国AI策略转向开源与数据基础设施",
+        "JEF：中国AI策略务实转向-半导体与数据基础设施",
+        "JEF：中国科技WAICKTA",
+        "JEF：但代价是功耗高达1.7MW，是RubinNVL72的7.4倍"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：WAIC2026中国AI策略转向开源与数据基础设施",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：中国AI策略务实转向-半导体与数据基础设施",
+          "reasons": [
+            "anchor_coverage=0.59"
+          ]
+        },
+        {
+          "title": "JEF：中国科技WAICKTA",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：但代价是功耗高达1.7MW，是RubinNVL72的7.4倍",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：中国AI策略转向务实-数据半导体成核心",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JEF：中国AI策略转向务实-数据半导体成核心"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-44-JEF-China---Autos---Auto-Parts-China-EV-Monthly-Chartbook--The-Sum",
+    "source_pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0004-44-JEF-China - Autos - Auto Parts China EV Monthly Chartbook- The Summer Lull-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "国内车市冰火两重天，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "恶化->出现变化 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JEF：中国电动汽车月度图册-夏季淡季",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-JEF-China - Autos - Auto Parts China EV Monthly Chartbook- The Summer Lull-260720.pdf",
+      "cleaned_source_title": "JEF-China - Autos - Auto Parts China EV Monthly Chartbook- The Summer Lull",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：中国汽车AutoParts中国EVMonthl",
+      "raw_candidates": [
+        "中国电动汽车月度图册-夏季淡季",
+        "中国电动汽车6月出口创纪录国内零售下滑",
+        "中国电动汽车出口增长与国内零售分化"
+      ],
+      "cleaned_candidates": [
+        "JEF：中国电动汽车月度图册-夏季淡季",
+        "JEF：中国电动汽车6月出口创纪录国内零售下滑",
+        "JEF：中国电动汽车出口增长与国内零售分化",
+        "JEF：中国汽车AutoParts中国EVMonthl",
+        "JEF：中国电动汽车市场在2026年6月呈现出一个清晰的二元格局"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：中国电动汽车6月出口创纪录国内零售下滑",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：中国电动汽车出口增长与国内零售分化",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：中国汽车AutoParts中国EVMonthl",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：中国电动汽车市场在2026年6月呈现出一个清晰的二元格局",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：中国电动汽车月度图册-夏季淡季",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JEF：中国电动汽车月度图册-夏季淡季"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-45-J.P.-Morgan-Weichai-Power---A-000338-Fireside-chat-and-management-update",
+    "source_pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0005-45-JPM-Weichai Power - A-000338-Fireside chat and management update support the AIDC thesis- price reset creates an attractive entry point- 1H26 preview-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "潍柴周期还没结束，别",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：潍柴动力AIDC主题与1H26展望",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-JPM-Weichai Power - A-000338-Fireside chat and management update support the AIDC thesis- price reset creates an attractive entry point- 1H26 preview-260720.pdf",
+      "cleaned_source_title": "JPM-Weichai Power - A-000338-Fireside chat and management update support the AIDC thesis- price reset creates an attractive entry point- 1H26 preview",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：WeichaiPowerA000338Fir",
+      "raw_candidates": [
+        "潍柴动力AIDC主题与1H26展望",
+        "潍柴动力AIDC执行进展与市场情绪",
+        "潍柴动力AIDC产能扩张与数据中心需求"
+      ],
+      "cleaned_candidates": [
+        "JPM：潍柴动力AIDC主题与1H26展望",
+        "JPM：潍柴动力AIDC执行进展与市场情绪",
+        "JPM：潍柴动力AIDC产能扩张与数据中心需求",
+        "JPM：WeichaiPowerA000338Fir",
+        "JPM：H股已回调约20-25%，同期MSCI中国指数仅下跌7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：潍柴动力AIDC执行进展与市场情绪",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "JPM：潍柴动力AIDC产能扩张与数据中心需求",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "JPM：WeichaiPowerA000338Fir",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：H股已回调约20-25%，同期MSCI中国指数仅下跌7%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：潍柴动力AIDC主题与1H26展望",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：潍柴动力AIDC主题与1H26展望"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

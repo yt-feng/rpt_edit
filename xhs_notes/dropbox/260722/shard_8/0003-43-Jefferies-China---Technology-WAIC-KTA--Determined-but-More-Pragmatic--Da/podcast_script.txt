@@ -1,0 +1,57 @@
+ZH_A: 最近世界人工智能大会刚刚结束，有一份外资投行的深度研报很有意思。
+ZH_B: 对，这次大会的关键词变了，不是单纯的“追赶”，而是“务实”。
+ZH_A: 务实？怎么理解这个转变？
+ZH_B: 中国AI策略变得更聪明了。它不再只盯着美国，而是把重心放到出口AI和算力到新兴市场。
+ZH_A: 出口AI到新兴市场？这意味着什么？
+ZH_B: 这意味着中国AI公司必须保持开源。开源对商业化没那么有利，但能快速占领市场。这叫一石二鸟。
+ZH_A: 那美国那边会怎么反应？
+ZH_B: 报告认为美国最可能的反应是收紧出口管制，防止AI芯片流入中国。同时要求所有美国AI公司在模型里加入防蒸馏功能。
+ZH_A: 防蒸馏功能？这个有意思。那回到硬件，中国在算力上有什么新动作？
+ZH_B: 华为发布了Atlas 950超级节点，连接了1024颗昇腾950 GPU。它的算力比英伟达的Rubin NVL72还高，但功耗是7.4倍。
+ZH_A: 功耗这么大，那这个方案可行吗？
+ZH_B: 所以报告看好中国的IDC数据中心公司。另外，中国GPU厂商在搞3D DRAM堆叠技术，把DDR5直接堆在GPU上。
+ZH_A: 为什么要这么做？
+ZH_B: 因为HBM被限制。他们用14纳米工艺的GPU，配合3D DRAM，带宽能达到20TB每秒以上，接近HBM4的水平。这完全是为推理需求设计的。
+ZH_A: 所以投资重点还是在半导体设备和制造上？
+ZH_B: 没错。报告特别提到了中微公司和华虹半导体。逻辑和存储的产能扩张会是最大的投资主题。
+ZH_A: 除了硬件，软件和数据方面呢？
+ZH_B: 中国在数据生成和标注上正在快速追赶。今年可能会成立一家中央国企，专门负责跨行业的高质量数据集收集和交易。
+ZH_A: 这有点像国家队的“数据要素”战略。
+ZH_B: 对。而且中国在AI代理的“驾驭”能力上也很强，比如上下文管理、子代理编排这些。报告认为，驾驭能力和模型智能同样重要。
+ZH_A: 那这次大会机器人主题怎么样？
+ZH_B: 机器人展区占了四分之一，但人形机器人明显少了。大家更务实，转向了轮式机器人。
+ZH_A: 为什么是轮式机器人？
+ZH_B: 成本更低，更容易商业化。报告认为人形机器人至少还要五年，而轮式机器人现在就能落地。
+ZH_A: 最后一个问题，AI手机有进展吗？
+ZH_B: 有公司展示了自研的AI手机，但报告认为体验还不够差异化。生态也是个问题，大厂可能封杀它的API。
+ZH_A: 听起来完整的报告里还有更多细节。
+ZH_B: 是的，比如具体的选股逻辑和估值方法，我们这里没有展开。如果你想看完整版，可以去我们的社群获取。
+
+EN_A: So, the World AI Conference just wrapped up. One global investment bank put out a pretty interesting report on it.
+EN_B: It really caught my attention. The key takeaway is that China's AI strategy is becoming more pragmatic.
+EN_A: Pragmatic? In what way?
+EN_B: Instead of just trying to beat the US head-on, they are focusing on exporting AI and computing power to emerging markets.
+EN_A: So what does that actually mean for the companies involved?
+EN_B: It means they have to stay open-source. That is not great for making money directly, but it helps them capture a huge market. It is a two-birds-one-stone strategy.
+EN_A: And how do you think the US will respond to that?
+EN_B: The report suggests two things. First, tighter export controls on AI chips. Second, forcing US AI companies to add anti-distillation features to their models.
+EN_A: Anti-distillation? That is a new one for me. Let us talk about hardware. What is new on the compute side?
+EN_B: Huawei launched the Atlas 950 SuperPod. It connects over a thousand of their Ascend GPUs. It actually has more raw compute than Nvidia's latest system, but it uses over seven times the power.
+EN_A: That is a lot of power. Is that even viable?
+EN_B: That is why the report likes Chinese data center players. Also, some Chinese GPU makers are stacking DDR5 memory directly on top of their chips to get around the HBM ban.
+EN_A: And that works?
+EN_B: They are using 14-nanometer GPUs, but with this 3D DRAM stacking, they can get memory bandwidth close to HBM4. It is a clever workaround focused on inference, not training.
+EN_A: So the big investment theme is still semiconductor equipment and foundries?
+EN_B: Exactly. The report names companies like AMEC and SMIC as top picks. Capacity expansion in both logic and memory is where the big money will go.
+EN_A: What about the software and data side of things?
+EN_B: China is catching up fast on data generation. The government might set up a state-owned enterprise this year to handle high-quality data collection and trading across industries.
+EN_A: So they are basically nationalizing the data pipeline.
+EN_B: In a way, yes. And they are also very strong on the "agent harness" side, like managing context and orchestrating sub-agents. The report says that is just as important as model intelligence.
+EN_A: And robotics? Was that a big theme at the conference?
+EN_B: It was huge, taking up a quarter of the exhibition space. But the focus has shifted away from humanoids.
+EN_A: Really? I thought that was the hype.
+EN_B: They are getting more realistic. Now it is all about wheeled robots. They are cheaper, easier to make, and easier to commercialize. The report thinks humanoids are still five years away.
+EN_A: What about AI smartphones? Any progress there?
+EN_B: One company showed a prototype, but the report is not impressed. The experience is not that different from cloud-based services, and the ecosystem is a big challenge.
+EN_A: Sounds like there is a lot more detail in the full report.
+EN_B: Definitely. We did not get into the specific stock valuations or the full risk analysis. If you want the complete picture, you should check out the full report in our community.

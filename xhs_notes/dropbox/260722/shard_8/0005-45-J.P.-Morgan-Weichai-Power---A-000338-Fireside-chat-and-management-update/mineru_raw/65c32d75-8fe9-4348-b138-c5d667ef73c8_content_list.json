@@ -1,0 +1,2313 @@
+[
+    {
+        "type": "text",
+        "text": "This material is neither intended to be distributed to Mainland China investors nor to provide securities investment consultancy services within the territory of Mainland China. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM.",
+        "bbox": [
+            135,
+            54,
+            954,
+            81
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Weichai Power - A/H",
+        "text_level": 1,
+        "bbox": [
+            135,
+            114,
+            460,
+            141
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fireside chat and management update support the AIDC thesis; price reset creates an attractive entry point; 1H26 preview",
+        "text_level": 2,
+        "bbox": [
+            135,
+            150,
+            620,
+            211
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Recent investor engagement around Weichai Power remains high despite recent price swings, as reflected in strong participation at the fireside chat with Phil Buller (JPM European Capital Goods Analyst, covering Siemens). The session, which drew over 130 sign-ups, focused on the global AIDC cycle, architecture shifts, and sector risk/reward—key themes directly relevant to Weichai's positioning and outlook. In addition, we highlight our update call with Weichai's management that provided incremental color on AIDC execution, orderbook trends, and margin outlook. Weichai's US market entry is progressing on track, as the 2.5MW gas engine product for AIDC was officially launched at the end of June, with customer validation and US EPA certification now underway and expected to take 2-3 months, i.e., by August. Initial shipments will follow certification, and Weichai is already engaging directly with major US data center customers. Weichai's flexible go-to-market approach – including both direct sales and partnerships – positions the company to capture incremental demand as US supply constraints persist. Last but not least, concerns about weak 1H26 and 2Q26 delivery have weighed on the share price in light of the soft domestic ICE truck sales in May/June. Against this backdrop, Weichai's parent company's 1H26 beat provides positive read-throughs as we note Weichai Group's revenue rose 22% Y/Y to over Rmb200B and data center product revenue was up 140% Y/Y.",
+        "bbox": [
+            133,
+            225,
+            687,
+            572
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Stock view: Since the early May peak, Weichai has corrected by c. 20-25%, underperforming MSCI China (-7%) over the same period. This pullback has been driven in part by investor concerns around 1H26 delivery and the risk of a miss versus expectations, as well as broader debate on cycle sustainability and overcapacity. Despite the recent pullback, Weichai has still recorded c. 50% gains on average YTD (A/H), outperforming MSCI China (-12%) and ranking as a top performer in the China industrials universe. At current levels, our price target of Rmb49 for the A shares and HK\\$52 for the H shares implies 80% and 75% upside, respectively. The stock trades at c. 12x FY27E P/E with a current yield of c. 4%. We view the current reset as an opportunity, with upside to our price target supported by a more resilient delivery profile, margin discipline, and a multi-year growth runway.",
+        "bbox": [
+            133,
+            579,
+            687,
+            796
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fireside chat with Phill Buller underscores that AIDC BTM overcapacity fears may be overblown",
+        "text_level": 2,
+        "bbox": [
+            133,
+            802,
+            684,
+            841
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Recent discussion with Phil Buller (JPM European Capital Goods Analyst, covering Siemens) provided timely perspective on the global AIDC cycle",
+        "bbox": [
+            133,
+            845,
+            687,
+            881
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Infrastructure, Industrials & Transport",
+        "text_level": 2,
+        "bbox": [
+            715,
+            231,
+            908,
+            260
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Karen Li, CFA AC  \n(852) 2800-8589  \nkaren.yy.li@JPM.com  \nJPM Securities (Asia Pacific) Limited/  \nJPM Broking (Hong Kong) Limited",
+        "bbox": [
+            715,
+            262,
+            955,
+            329
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mufan Shi\n(852) 2800-8502\nmufan.shi@JPM.com\nJPM Securities (Asia Pacific) Limited/\nJPM Broking (Hong Kong) Limited",
+        "bbox": [
+            715,
+            331,
+            954,
+            398
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jenny Qiu, CFA  \n(852) 2800 8503  \njenny.qiu@JPM.com  \nJPM Securities (Asia Pacific) Limited/  \nJPM Broking (Hong Kong) Limited",
+        "bbox": [
+            715,
+            400,
+            954,
+            467
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Neil Zhang  \n(852) 2800-8598  \nneil.zhang@JPM.com  \nJPM Securities (Asia Pacific) Limited/  \nJPM Broking (Hong Kong) Limited",
+        "bbox": [
+            715,
+            467,
+            954,
+            536
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Beatrice Lam  \n(852) 2800-8738  \nbeatrice.lam@JPM.com  \nJPM Securities (Asia Pacific) Limited/  \nJPM Broking (Hong Kong) Limited",
+        "bbox": [
+            715,
+            537,
+            955,
+            606
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Phil Buller (44-20) 3493-9403 phil.buller@JPM.com JPM Securities plc",
+        "bbox": [
+            715,
+            606,
+            859,
+            664
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "000338.SZ, 000338 CH Overweight",
+        "text_level": 2,
+        "bbox": [
+            717,
+            670,
+            862,
+            704
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Price: Rmb24.29  \n20 Jul 2026  \nPrice Target: Rmb49.00  \nPT End Date: 30 Jun 2027",
+        "bbox": [
+            717,
+            704,
+            875,
+            757
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2338.HK, 2338 HK Overweight",
+        "text_level": 2,
+        "bbox": [
+            717,
+            780,
+            849,
+            815
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Price: HK\\$29.66\n20 Jul 2026\nPrice Target: HK\\$52.00\nPT End Date: 30 Jun 2027",
+        "bbox": [
+            717,
+            815,
+            875,
+            868
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "See page 9 for analyst certification and important disclosures, including non-US analyst disclosures.",
+        "text_level": 2,
+        "bbox": [
+            135,
+            891,
+            851,
+            909
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+        "bbox": [
+            133,
+            908,
+            957,
+            954
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            135,
+            3,
+            346,
+            42
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            718,
+            6,
+            926,
+            34
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": ".com",
+        "bbox": [
+            928,
+            967,
+            968,
+            980
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "and the current investor debate around overcapacity in behind-the-meter (BTM) power solutions. Phil argued that the market's concerns about imminent oversupply are not supported by the underlying demand and supply data. He pointed to persistent supply bottlenecks, robust order growth, and the structural nature of the data center power upcycle as evidence that the risk of true overcapacity remains a post-2030 issue. Phil's analysis suggests that the current correction is more sentiment-driven than a reflection of deteriorating fundamentals, and that leading suppliers – including Weichai – are well positioned to defend margins and sustain growth as the cycle matures.",
+        "bbox": [
+            135,
+            132,
+            689,
+            298
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- The architecture shift in data centers is driving a structural demand upcycle. Phil's analysis points to a step-change in data center design, with rack power density expected to rise from \\~10kW historically to 50kW today and potentially 600kW+ by decade-end. This transformation is creating hardware bottlenecks and sharply higher power requirements, forcing hyperscalers to rethink capex and power planning. The long-term US target of 320GW (nearly one-third of current US electricity consumption) underpins a multi-year demand cycle for power equipment, with implications for both global and China-based suppliers. Phil highlighted that order growth remains robust, with European equipment firms reporting strong data center-related order momentum and fundamentals outpacing market pricing.",
+        "bbox": [
+            135,
+            307,
+            689,
+            506
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Order backlogs and pricing power are holding up, with overcapacity risk a post-2030 issue. US data center power demand is poised to grow at a c.22% CAGR, with supply still lagging orders—last year saw c55GW delivered vs. c100GW new orders, and this year 110–120GW new orders vs. 64–65GW deliveries. Phil’s view is that backlogs will likely keep expanding, supporting pricing power for leading suppliers. The overcapacity debate is nuanced: while market volatility reflects concerns about supply catching up, the risk of true overcapacity is more of a post-2030 issue, especially for high-value large-frame turbines and engines.",
+        "bbox": [
+            135,
+            516,
+            689,
+            681
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Phil Buller sees the market underestimating the durability of the AIDC cycle and margin resilience. Phil argued that the combination of architecture-driven demand, grid bottlenecks, and hyperscaler capex cycles will support continued growth and pricing power for leading suppliers. He emphasized that the current correction is more about sentiment reset than a fundamental inflection, and that the cycle's durability and margin profile remain underappreciated by the market.",
+        "bbox": [
+            135,
+            690,
+            691,
+            809
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Weichai's latest update demonstrates that strategic progress and execution remain on track",
+        "text_level": 2,
+        "bbox": [
+            135,
+            817,
+            624,
+            854
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The most recent management call suggests continued progress on AIDC execution, with shipment guidance reaffirmed and the US gas engine certification process advancing as planned. The update also highlighted Weichai's flexible go-to-market strategy in the US, ongoing capacity expansion, and a robust order pipeline with top-tier data center customers.",
+        "bbox": [
+            133,
+            859,
+            689,
+            943
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            5,
+            230,
+            39
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            5,
+            506,
+            28
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            36,
+            947,
+            57
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            89,
+            942,
+            101,
+            954
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- AIDC execution and product roadmap are supporting robust growth and order visibility. Weichai is tracking in line with its 2026 AIDC shipment guidance of 3,500–4,000 units, with 1H26 deliveries and a back-half weighted ramp supported by a strong order pipeline. Diesel backup engines remain the near-term volume anchor, while gas engines are driving higher profitability (GPM 40–50%) and have already secured significant 2027 orders with leading cloud customers. The 2.5MW gas engine is now positioned as the mainstream data center solution, with US certification underway, and the 5.5MW model is set to scale from 2027.",
+        "bbox": [
+            135,
+            132,
+            689,
+            282
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Capacity expansion and flexible manufacturing are positioning Weichai to capture incremental demand. The company is on track to reach 8,000-10,000 units of AIDC-related capacity by end-2027, with flexible lines supporting both diesel and gas products. SOFC capacity is also ramping, with 30MW in 2026 and 200MW in 2027, and management is prepared to accelerate investment if market demand warrants. This manufacturing agility underpins Weichai's ability to respond quickly to shifts in customer requirements and market opportunities.",
+        "bbox": [
+            135,
+            293,
+            689,
+            440
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Technology leadership, supply chain control, and new energy initiatives are strengthening Weichai's competitive edge. Weichai's integrated approach – leveraging mature platforms, rapid capacity buildout, and a predominantly domestic supply chain – continues to deliver cost and service advantages over global peers. The company's direct engagement in North America and exclusive diesel partnership with Generac support both margin capture and aftermarket monetization, with recurring service revenue poised to become a larger share of the profit pool. SOFC and new energy initiatives are expanding the long-term growth runway, while the legacy engine business remains a stable profit base as the profit mix shifts toward AIDC and new energy solutions.",
+        "bbox": [
+            135,
+            452,
+            689,
+            650
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Margin trends remain robust, with mix shift and scale supporting profitability. Diesel backup engine GPM is holding at c. 35-40%, while gas engines are delivering 40-50% GPMs, driving blended margin improvement. SOFC is not poised as a material profit contributor in coming years, but management sees breakeven at 100MW and GPM potential of 30–40%+ at scale. Aftermarket revenue is poised to rise as the installed base grows, with management targeting 20%-30% of lifecycle value from services and parts.",
+        "bbox": [
+            135,
+            659,
+            689,
+            793
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1H26 preview; positive read-throughs from the parent-co earnings beat",
+        "text_level": 2,
+        "bbox": [
+            135,
+            802,
+            671,
+            838
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Recent investor concerns have centered on a weaker 2Q26 print, driven by the sluggish domestic ICE HDT sales in May-June – particularly soft LNG truck volumes – which has weighed on Weichai's share price in recent months. However, we believe these concerns are overdone, as we believe Weichai's AIDC business fundamentals remain robust and continue to anchor the company's growth and margin profile into 2H26. Furthermore, we see positive read-throughs from the better-than-expected parent-co's 1H26 print, released on July 18 (link).",
+        "bbox": [
+            133,
+            844,
+            691,
+            927
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            5,
+            230,
+            39
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            5,
+            509,
+            28
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            36,
+            947,
+            57
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            942,
+            954,
+            954
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            135,
+            132,
+            687,
+            182
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- 1H26 earnings preview. We expect Weichai's 2Q and 1H26 profit to rise by $12\\% - 15\\%$ Y/Y. This is underpinned by broad-based sector momentum, with excavator sales up $26\\%$ Y/Y, loader sales up $27\\%$ Y/Y, and HDT volumes up $21\\%$ Y/Y in 1H26. Market expectations are muted and we see scope for an earnings beat, mainly on the margin front.",
+        "bbox": [
+            135,
+            193,
+            689,
+            278
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Parent company's 1H26 beat provide positive read-throughs. Weichai Group reported headline revenue surpassing Rmb200B for the first time in 1H26, up $22\\%$ Y/Y (an acceleration from the $14\\%$ Y/Y rise in 2025), with all major operating metrics at record highs. Power and energy revenue rose $30\\%$ Y/Y, and data center product revenue grew by $140\\%$ Y/Y, highlighting the acceleration in strategic growth areas. Engine market share increased across core segments, export mix improved, and the new energy business is gaining traction, supporting the group's resilience and long-term growth curve. Management reaffirmed the full-year Rmb400B revenue target (JPM notes this refers to the group level) and outlined priorities for accelerating new energy launches, and expanding high-end power markets. While the exact breakdown is not disclosed, Weichai Power's revenue typically forms around $65\\%$ of the group total, and the listed company's earnings trajectory remains the key read-through for overall group performance.",
+        "bbox": [
+            135,
+            288,
+            689,
+            536
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            89,
+            5,
+            230,
+            39
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            5,
+            506,
+            29
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            36,
+            947,
+            57
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            89,
+            942,
+            101,
+            953
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/7ba213d5b21634b817336844b0b650a5ea2b67228669a54adbbf0677aee5de85.jpg",
+        "table_caption": [
+            "Table 1: AIDC power sector valuation comparison",
+            "Source: Bloomberg Finance L.P. Data as of 20 Jul 2026. JPM estimates. Consensus estimates for not covered (NC) companies, JPM estimates for all others."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">BBG Ticker</td><td rowspan=\"2\">JPM rating</td><td rowspan=\"2\">Last Price LC</td><td rowspan=\"2\">JPM PT LC</td><td rowspan=\"2\">Upside/Downside</td><td rowspan=\"2\">Mkt Cap US$Mn</td><td rowspan=\"2\">YTD Stock perf.</td><td colspan=\"2\">P/E (x)</td><td colspan=\"2\">EPS growth Y/Y</td><td colspan=\"2\">PEG</td><td colspan=\"2\">ROE (%)</td><td colspan=\"2\">P/B (x)</td></tr><tr><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td></tr><tr><td>Weichai Power-H</td><td>2338 HK</td><td>OW</td><td>29.66</td><td>52.00</td><td>75%</td><td>31,386</td><td>57%</td><td>14.2</td><td>12.5</td><td>22%</td><td>14%</td><td>0.6</td><td>0.9</td><td>15.9</td><td>16.6</td><td>2.2</td><td>2.0</td></tr><tr><td>Weichai Power-A</td><td>000338 CH</td><td>OW</td><td>24.29</td><td>49.00</td><td>102%</td><td>31,386</td><td>41%</td><td>13.5</td><td>11.8</td><td>22%</td><td>14%</td><td>0.6</td><td>0.9</td><td>15.9</td><td>16.6</td><td>2.1</td><td>1.9</td></tr><tr><td>Yingliu</td><td>603308 CH</td><td>OW</td><td>43.90</td><td>95.00</td><td>116%</td><td>4,405</td><td>5%</td><td>45.3</td><td>28.7</td><td>92%</td><td>58%</td><td>0.5</td><td>0.5</td><td>11.7</td><td>16.8</td><td>5.1</td><td>4.6</td></tr><tr><td>Techtronic</td><td>669 HK</td><td>OW</td><td>129.60</td><td>179.00</td><td>38%</td><td>30,220</td><td>44%</td><td>20.7</td><td>17.8</td><td>21%</td><td>16%</td><td>1.0</td><td>1.1</td><td>19.9</td><td>20.5</td><td>3.9</td><td>3.5</td></tr><tr><td>HD Hyundai Electric</td><td>267260 KS</td><td>OW</td><td>760,000.00</td><td>1375000.00</td><td>81%</td><td>18,489</td><td>-2%</td><td>27.2</td><td>20.8</td><td>41%</td><td>31%</td><td>0.7</td><td>0.7</td><td>42.7</td><td>42.3</td><td>10.2</td><td>7.7</td></tr><tr><td>Hyosung Heavy Industri</td><td>298040 KS</td><td>OW</td><td>#######</td><td>4100000.00</td><td>60%</td><td>16,122</td><td>43%</td><td>30.1</td><td>21.1</td><td>53%</td><td>43%</td><td>0.6</td><td>0.5</td><td>29.2</td><td>31.6</td><td>7.8</td><td>5.8</td></tr><tr><td colspan=\"18\">Gas/diesel engine manufacturers and OEMs</td></tr><tr><td>Caterpillar</td><td>CAT US</td><td>OW</td><td>880.28</td><td>1165.00</td><td>32%</td><td>405,450</td><td>54%</td><td>35.0</td><td>28.9</td><td>34%</td><td>21%</td><td>1.0</td><td>1.4</td><td>97.3</td><td>173.1</td><td>65.5</td><td>41.1</td></tr><tr><td>Cummins</td><td>CMI US</td><td>N</td><td>648.48</td><td>725.00</td><td>12%</td><td>89,483</td><td>27%</td><td>22.2</td><td>19.9</td><td>27%</td><td>11%</td><td>0.8</td><td>1.8</td><td>30.4</td><td>28.5</td><td>6.2</td><td>5.2</td></tr><tr><td>Generac</td><td>GNRC US</td><td>OW</td><td>214.91</td><td>267.00</td><td>24%</td><td>12,651</td><td>58%</td><td>24.3</td><td>22.7</td><td>40%</td><td>7%</td><td>0.6</td><td>3.1</td><td>18.8</td><td>17.8</td><td>4.3</td><td>3.7</td></tr><tr><td>Wartsila</td><td>WRT 1VFH</td><td>N</td><td>30.67</td><td>30.60</td><td>0%</td><td>20,743</td><td>2%</td><td>29.2</td><td>27.1</td><td>13%</td><td>8%</td><td>2.3</td><td>3.6</td><td>19.1</td><td>19.9</td><td>6.0</td><td>5.4</td></tr><tr><td>China Yuchai Internatic</td><td>CYD US</td><td>NC</td><td>43.90</td><td>NA</td><td>NA</td><td>1,647</td><td>24%</td><td>14.1</td><td>11.2</td><td>29%</td><td>26%</td><td>0.5</td><td>0.4</td><td>8.4</td><td>9.4</td><td>1.1</td><td>1.0</td></tr><tr><td>Weichai Heavy Machine</td><td>000880 CH</td><td>NC</td><td>20.12</td><td>NA</td><td>NA</td><td>1,379</td><td>-26%</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>Shanghai New Power AI</td><td>600841 CH</td><td>NC</td><td>5.42</td><td>NA</td><td>NA</td><td>929</td><td>-11%</td><td>21.3</td><td>10.5</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>5.0</td><td>10.0</td><td>1.1</td><td>1.1</td></tr><tr><td>Tellhow Sci-Tech</td><td>600590 CH</td><td>NC</td><td>7.57</td><td>NA</td><td>NA</td><td>954</td><td>-20%</td><td>17.8</td><td>12.7</td><td>NA</td><td>40%</td><td>NA</td><td>0.3</td><td>10.0</td><td>12.9</td><td>1.8</td><td>1.6</td></tr><tr><td>Shanghai Cooltech</td><td>300153 CH</td><td>NC</td><td>19.31</td><td>NA</td><td>NA</td><td>913</td><td>-34%</td><td>41.1</td><td>25.1</td><td>45%</td><td>64%</td><td>NA</td><td>0.4</td><td>15.0</td><td>21.8</td><td>6.2</td><td>5.4</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>25.6</td><td>19.8</td><td>16%</td><td>25%</td><td>1.0</td><td>1.6</td><td>25.5</td><td>36.7</td><td>11.5</td><td>8.1</td></tr><tr><td colspan=\"18\">Turbine Components/OEM</td></tr><tr><td>Howmet</td><td>HWM US</td><td>OW</td><td>272.43</td><td>310.00</td><td>14%</td><td>109,001</td><td>33%</td><td>53.9</td><td>46.0</td><td>37%</td><td>17%</td><td>1.5</td><td>2.7</td><td>34.3</td><td>34.7</td><td>NA</td><td>NA</td></tr><tr><td>GE Vernova</td><td>GEV US</td><td>OW</td><td>1057.84</td><td>1302.00</td><td>23%</td><td>284,263</td><td>62%</td><td>31.8</td><td>38.8</td><td>378%</td><td>-18%</td><td>0.1</td><td>-2.1</td><td>39.8</td><td>36.1</td><td>16.6</td><td>12.2</td></tr><tr><td>Siemens Energy</td><td>ENR GY</td><td>OW</td><td>152.64</td><td>235.00</td><td>54%</td><td>150,235</td><td>27%</td><td>31.0</td><td>23.5</td><td>204%</td><td>32%</td><td>0.2</td><td>0.7</td><td>34.4</td><td>33.9</td><td>9.2</td><td>7.0</td></tr><tr><td>Mitsubishi Heavy Indus</td><td>7011 JP</td><td>NC</td><td>3681.00</td><td>NA</td><td>NA</td><td>76,459</td><td>-4%</td><td>42.9</td><td>30.3</td><td>7%</td><td>42%</td><td>6.3</td><td>0.7</td><td>11.6</td><td>13.0</td><td>4.8</td><td>3.8</td></tr><tr><td>Baker Hughes</td><td>BKR US</td><td>OW</td><td>55.95</td><td>74.00</td><td>32%</td><td>55,506</td><td>23%</td><td>24.1</td><td>21.2</td><td>-6%</td><td>14%</td><td>-3.7</td><td>1.5</td><td>11.1</td><td>11.4</td><td>2.5</td><td>2.4</td></tr><tr><td>Doosan Enerbility</td><td>034020 KS</td><td>OW</td><td>64900.00</td><td>130000.00</td><td>100%</td><td>28,099</td><td>-14%</td><td>126.8</td><td>62.0</td><td>NA</td><td>104%</td><td>NA</td><td>0.6</td><td>4.1</td><td>7.9</td><td>5.1</td><td>4.7</td></tr><tr><td>Caterpillar</td><td>CAT US</td><td>OW</td><td>880.28</td><td>1165.00</td><td>32%</td><td>405,450</td><td>54%</td><td>35.0</td><td>28.9</td><td>34%</td><td>21%</td><td>1.0</td><td>1.4</td><td>97.3</td><td>173.1</td><td>65.5</td><td>41.1</td></tr><tr><td>Yantai Jereh</td><td>002353 CH</td><td>N</td><td>114.77</td><td>110.00</td><td>-4%</td><td>17,362</td><td>62%</td><td>33.9</td><td>28.8</td><td>14%</td><td>18%</td><td>2.4</td><td>1.6</td><td>14.1</td><td>14.5</td><td>4.3</td><td>3.8</td></tr><tr><td>Dongfang Electric</td><td>1072 HK</td><td>NC</td><td>20.78</td><td>NA</td><td>NA</td><td>12,435</td><td>-17%</td><td>12.9</td><td>10.5</td><td>21%</td><td>23%</td><td>0.6</td><td>0.5</td><td>10.5</td><td>11.7</td><td>1.3</td><td>1.2</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>42.3</td><td>30.5</td><td>93%</td><td>29%</td><td>1.0</td><td>0.6</td><td>27.9</td><td>37.7</td><td>13.7</td><td>9.5</td></tr><tr><td colspan=\"18\">SOFC</td></tr><tr><td>Bloom Energy</td><td>BE US</td><td>OW</td><td>214.96</td><td>267.00</td><td>24%</td><td>61,144</td><td>147%</td><td>100.9</td><td>42.7</td><td>433%</td><td>137%</td><td>0.2</td><td>0.3</td><td>64.9</td><td>75.7</td><td>49.0</td><td>23.4</td></tr><tr><td>Ceres Power</td><td>CWR LN</td><td>NC</td><td>362.60</td><td>NA</td><td>NA</td><td>1,044</td><td>70%</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>-3.8</td><td>0.5</td><td>6.5</td><td>5.9</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>100.9</td><td>42.7</td><td>433%</td><td>137%</td><td>0.2</td><td>0.3</td><td>30.5</td><td>38.1</td><td>27.8</td><td>14.7</td></tr></table>",
+        "bbox": [
+            137,
+            148,
+            954,
+            569
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            5,
+            230,
+            39
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            5,
+            509,
+            28
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            36,
+            947,
+            57
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            944,
+            942,
+            954,
+            953
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/9c39882c6bd8c4b8896bb9628e02997ec40a3eda149fbd12a4148481690856ae.jpg",
+        "table_caption": [
+            "Table 2: Machinery sector valuation comparison"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td>BBG</td><td>JPM rating</td><td>Last Price</td><td>JPM PT</td><td>Upside/</td><td>Mkt Cap</td><td>YTD</td><td colspan=\"2\">P/E (x)</td><td colspan=\"2\">EV/EBITDA</td><td colspan=\"2\">Dividend yield</td><td colspan=\"2\">ROE (%)</td><td colspan=\"2\">P/B (x)</td></tr><tr><td>Ticker</td><td></td><td>LC</td><td>LC</td><td>Downside</td><td>US$Mn</td><td>Stock perf.</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td></tr><tr><td>Weichai Power-H</td><td>2338 HK</td><td>OW</td><td>29.66</td><td>52.00</td><td>75%</td><td>31,386</td><td>57%</td><td>14.2</td><td>12.5</td><td>7.5</td><td>6.4</td><td>4.1</td><td>4.6</td><td>15.9</td><td>16.6</td><td>2.2</td><td>2.0</td></tr><tr><td>Weichai Power-A</td><td>000338 CH</td><td>OW</td><td>24.29</td><td>49.00</td><td>102%</td><td>31,386</td><td>41%</td><td>13.5</td><td>11.8</td><td>7.5</td><td>6.4</td><td>4.3</td><td>4.9</td><td>15.9</td><td>16.6</td><td>2.1</td><td>1.9</td></tr><tr><td>Sinotruk</td><td>3808 HK</td><td>OW</td><td>36.34</td><td>47.00</td><td>29%</td><td>12,797</td><td>32%</td><td>10.2</td><td>9.0</td><td>6.8</td><td>6.2</td><td>4.7</td><td>6.3</td><td>17.9</td><td>18.5</td><td>1.7</td><td>1.4</td></tr><tr><td>CRRC-H</td><td>1766 HK</td><td>OW</td><td>4.81</td><td>8.00</td><td>66%</td><td>24,357</td><td>20%</td><td>6.6</td><td>6.3</td><td>7.1</td><td>6.9</td><td>7.5</td><td>7.7</td><td>9.9</td><td>9.7</td><td>0.6</td><td>0.6</td></tr><tr><td>CRRC-A</td><td>601766 CH</td><td>OW</td><td>6.03</td><td>10.00</td><td>66%</td><td>24,356</td><td>12%</td><td>9.6</td><td>9.1</td><td>7.1</td><td>6.9</td><td>5.1</td><td>5.3</td><td>9.9</td><td>9.7</td><td>0.9</td><td>0.9</td></tr><tr><td>ZZ CRRC-H</td><td>3898 HK</td><td>OW</td><td>33.70</td><td>50.00</td><td>48%</td><td>8,158</td><td>10%</td><td>8.5</td><td>7.2</td><td>8.2</td><td>7.2</td><td>4.4</td><td>5.1</td><td>8.2</td><td>8.0</td><td>0.8</td><td>0.8</td></tr><tr><td>ZZ CRRC-A</td><td>688187 CH</td><td>OW</td><td>48.08</td><td>68.00</td><td>41%</td><td>8,157</td><td>-6%</td><td>14.0</td><td>12.0</td><td>8.2</td><td>7.2</td><td>2.6</td><td>3.1</td><td>10.3</td><td>11.2</td><td>1.4</td><td>1.3</td></tr><tr><td>SANY Heavy-A</td><td>600031 CH</td><td>OW</td><td>19.56</td><td>31.00</td><td>58%</td><td>26,335</td><td>-7%</td><td>15.9</td><td>12.4</td><td>10.0</td><td>8.1</td><td>3.1</td><td>4.0</td><td>12.3</td><td>14.6</td><td>1.9</td><td>1.7</td></tr><tr><td>SANY Heavy-H</td><td>6031 HK</td><td>OW</td><td>20.06</td><td>34.00</td><td>69%</td><td>26,335</td><td>11%</td><td>14.1</td><td>11.0</td><td>10.0</td><td>8.1</td><td>3.5</td><td>4.6</td><td>12.3</td><td>14.6</td><td>1.7</td><td>1.5</td></tr><tr><td>SANY Heavy Equipment</td><td>631 HK</td><td>NC</td><td>7.22</td><td>NA</td><td>NA</td><td>3,029</td><td>17%</td><td>8.7</td><td>6.6</td><td>6.4</td><td>4.9</td><td>5.8</td><td>7.4</td><td>16.4</td><td>19.9</td><td>1.4</td><td>1.2</td></tr><tr><td>XCMG</td><td>000425 CH</td><td>OW</td><td>8.69</td><td>13.00</td><td>50%</td><td>15,037</td><td>25%</td><td>11.1</td><td>9.0</td><td>10.1</td><td>8.1</td><td>3.2</td><td>4.0</td><td>14.4</td><td>16.1</td><td>1.5</td><td>1.4</td></tr><tr><td>Zhejiang Dingli</td><td>603338 CH</td><td>N</td><td>51.87</td><td>52.00</td><td>0%</td><td>3,881</td><td>-8%</td><td>11.8</td><td>10.4</td><td>9.0</td><td>8.0</td><td>2.6</td><td>2.9</td><td>18.4</td><td>18.6</td><td>2.1</td><td>1.8</td></tr><tr><td>Zoomlion-H</td><td>1157 HK</td><td>NC</td><td>6.99</td><td>NA</td><td>NA</td><td>9,122</td><td>10%</td><td>9.2</td><td>7.7</td><td>11.4</td><td>9.7</td><td>6.6</td><td>7.7</td><td>9.4</td><td>10.8</td><td>0.9</td><td>0.8</td></tr><tr><td>Zoomlion-A</td><td>000157 CH</td><td>NC</td><td>7.38</td><td>NA</td><td>NA</td><td>9,122</td><td>14%</td><td>10.9</td><td>9.1</td><td>11.4</td><td>9.7</td><td>5.5</td><td>6.4</td><td>9.2</td><td>10.9</td><td>1.1</td><td>1.0</td></tr><tr><td>Hangcha Group</td><td>603298 CH</td><td>NC</td><td>26.77</td><td>NA</td><td>NA</td><td>5,181</td><td>1%</td><td>14.2</td><td>12.6</td><td>9.7</td><td>9.8</td><td>1.9</td><td>2.2</td><td>18.7</td><td>18.2</td><td>2.6</td><td>2.3</td></tr><tr><td>Anhui Heli</td><td>600761 CH</td><td>NC</td><td>16.94</td><td>NA</td><td>NA</td><td>2,229</td><td>19%</td><td>10.9</td><td>9.7</td><td>6.6</td><td>6.4</td><td>2.8</td><td>3.1</td><td>11.6</td><td>11.8</td><td>1.3</td><td>1.2</td></tr><tr><td>Jiangsu Hengli</td><td>601100 CH</td><td>OW</td><td>103.51</td><td>121.00</td><td>17%</td><td>20,506</td><td>-6%</td><td>41.2</td><td>33.3</td><td>30.0</td><td>24.9</td><td>1.0</td><td>1.3</td><td>18.3</td><td>20.0</td><td>7.1</td><td>6.2</td></tr><tr><td>CIMC-ENRIC</td><td>3899 HK</td><td>OW</td><td>7.55</td><td>13.00</td><td>72%</td><td>2,033</td><td>20%</td><td>9.9</td><td>7.2</td><td>6.5</td><td>5.2</td><td>4.9</td><td>6.8</td><td>10.7</td><td>13.6</td><td>1.1</td><td>1.1</td></tr><tr><td>Komatsu</td><td>6301 JP</td><td>NC</td><td>6251.00</td><td>NA</td><td>NA</td><td>35,806</td><td>25%</td><td>15.0</td><td>13.7</td><td>9.4</td><td>8.8</td><td>3.1</td><td>3.3</td><td>10.3</td><td>NA</td><td>1.5</td><td>1.5</td></tr><tr><td>HCM</td><td>6305 JP</td><td>NC</td><td>5114.00</td><td>NA</td><td>NA</td><td>6,773</td><td>10%</td><td>12.9</td><td>10.8</td><td>7.1</td><td>6.2</td><td>3.7</td><td>4.1</td><td>9.1</td><td>NA</td><td>1.1</td><td>1.1</td></tr><tr><td>HD Hyundai Heavy</td><td>329180 KS</td><td>OW</td><td>449500.00</td><td>870000.00</td><td>94%</td><td>31,876</td><td>12%</td><td>14.0</td><td>12.9</td><td>8.2</td><td>7.6</td><td>1.9</td><td>1.9</td><td>26.3</td><td>NA</td><td>3.3</td><td>2.8</td></tr><tr><td>UN TRACTOR</td><td>UNTR IJ</td><td>OW</td><td>26200.00</td><td>42000.00</td><td>60%</td><td>5,444</td><td>11%</td><td>7.2</td><td>4.8</td><td>3.4</td><td>2.6</td><td>6.5</td><td>5.5</td><td>12.5</td><td>17.0</td><td>0.9</td><td>0.8</td></tr><tr><td>Caterpillar</td><td>CAT US</td><td>OW</td><td>880.28</td><td>1165.00</td><td>32%</td><td>405,450</td><td>54%</td><td>35.0</td><td>28.9</td><td>23.9</td><td>20.0</td><td>0.7</td><td>0.8</td><td>97.3</td><td>173.1</td><td>65.5</td><td>41.1</td></tr><tr><td>Cummins</td><td>CMI US</td><td>N</td><td>648.48</td><td>725.00</td><td>12%</td><td>89,483</td><td>27%</td><td>22.2</td><td>19.9</td><td>14.0</td><td>12.8</td><td>1.3</td><td>1.3</td><td>30.4</td><td>28.5</td><td>6.2</td><td>5.2</td></tr><tr><td>Terex</td><td>TEX US</td><td>N</td><td>65.39</td><td>80.00</td><td>22%</td><td>7,468</td><td>22%</td><td>13.0</td><td>11.3</td><td>9.9</td><td>8.7</td><td>1.2</td><td>1.3</td><td>15.3</td><td>12.3</td><td>1.4</td><td>1.3</td></tr><tr><td>Oshkosh</td><td>OSK US</td><td>N</td><td>143.66</td><td>145.00</td><td>1%</td><td>8,957</td><td>14%</td><td>16.4</td><td>12.6</td><td>9.9</td><td>8.6</td><td>1.6</td><td>1.7</td><td>11.8</td><td>14.2</td><td>1.8</td><td>1.7</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>14.2</td><td>12.0</td><td>10.0</td><td>8.7</td><td>3.6</td><td>4.1</td><td>17.4</td><td>21.9</td><td>4.4</td><td>3.2</td></tr></table>",
+        "bbox": [
+            137,
+            146,
+            954,
+            481
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Finance L.P. Data as of 20 Jul 2026. JPM estimates. Consensus estimates for not covered (NC) companies, JPM estimates for all others. Note: For Japanese companies, next FY figures taken because FY ends in March. Past results are not an indicator of future performance. Sinotruk is covered by Nick Lai; CIMC ENRIC is covered by Beatrice Lam; UN TRACTOR is covered by Arnanto Januri; Caterpillar, Cummins and Oshkosh are covered by Tami Zakaria.",
+        "bbox": [
+            135,
+            498,
+            944,
+            536
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b4d5e0724f8c1c7ae29b914019052f42efeecc3f9472c021a9ac79d93596971a.jpg",
+        "content": "",
+        "chart_caption": [
+            "China's HDT sales trends at a glance",
+            "Figure 1: HDT monthly sales volume and Y/Y change %"
+        ],
+        "chart_footnote": [
+            "Source: CAAM."
+        ],
+        "bbox": [
+            138,
+            606,
+            503,
+            760
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/89df226e34ddda29ac324d010c1f4e7562b07b798593c242b901f92008f517ea.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: LNG and Diesel price gap"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg."
+        ],
+        "bbox": [
+            514,
+            614,
+            862,
+            756
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            5,
+            230,
+            39
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            5,
+            506,
+            28
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            36,
+            947,
+            57
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            89,
+            942,
+            101,
+            954
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7c3ffc0ec497d383900ba3f7c991d5d6ee8d34efb966636db489c75e3e7a7231.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3: China's electric HDT domestic penetration (%)"
+        ],
+        "chart_footnote": [
+            "Source: CAAM."
+        ],
+        "bbox": [
+            140,
+            146,
+            496,
+            297
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d45311acc0fcaf78b326228846ba0b454eabec9a65bafd71e8dacb4c5d5e6653.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: China's LNG HDT domestic penetration (%)"
+        ],
+        "chart_footnote": [
+            "Source: CAAM."
+        ],
+        "bbox": [
+            513,
+            144,
+            870,
+            298
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Weichai Power - A (Overweight; Price Target: Rmb49.00)",
+        "text_level": 2,
+        "bbox": [
+            135,
+            411,
+            594,
+            429
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Investment Thesis",
+        "text_level": 2,
+        "bbox": [
+            135,
+            435,
+            271,
+            449
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Weichai is a leading HDT engine provider, with a \\~40% domestic market share. Investors have started to recognize the company's transition from a cyclical, legacy engine story to a multi-year growth platform anchored by AIDC and new energy solutions. The re-rating is still at an early stage, with the market's attention so far focused on the strong momentum in AIDC backup engines, but not yet fully reflecting the scale of the aftermarket opportunity, which could potentially grow to 5x the size of new product sales over the coming years and is not yet modeled in consensus. More importantly, Weichai is moving into the AIDC primary power segment for overseas markets, leveraging its SOFC and gas engine technology to address the next phase of global data center investment. We maintain our bullish view on Weichai.",
+        "bbox": [
+            133,
+            452,
+            947,
+            563
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Valuation",
+        "text_level": 2,
+        "bbox": [
+            135,
+            594,
+            214,
+            609
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our Jun-27 PT of Rmb49 is based on our DCF valuation. Key assumptions include:",
+        "bbox": [
+            135,
+            612,
+            691,
+            628
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- A WACC of $8.1\\%$ , driven by a cost of equity of $8.6\\%$ and a beta of 0.9x (latest Bloomberg data).",
+        "bbox": [
+            133,
+            635,
+            800,
+            652
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Cost of debt at 5% and a tax rate of 25%.",
+        "bbox": [
+            135,
+            659,
+            436,
+            675
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• Target debt-to-capital of 10% and terminal growth of 3%.",
+        "bbox": [
+            135,
+            682,
+            545,
+            699
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- A $5\\%$ A/H discount to value the A-shares.",
+        "bbox": [
+            135,
+            706,
+            442,
+            722
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Risks to Rating and Price Target",
+        "text_level": 2,
+        "bbox": [
+            135,
+            730,
+            374,
+            744
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Key downside risks include: (1) a slower-than-expected recovery in heavy-duty truck sales; (2) weaker-than-expected market-share gains; and (3) weaker-than-expected performance at Kion.",
+        "bbox": [
+            133,
+            747,
+            913,
+            780
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Weichai Power - H (Overweight; Price Target: HK\\$52.00)",
+        "text_level": 2,
+        "bbox": [
+            135,
+            855,
+            591,
+            873
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Investment Thesis",
+        "text_level": 2,
+        "bbox": [
+            135,
+            878,
+            271,
+            894
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Weichai is a leading HDT engine provider, with a $\\sim 40\\%$ domestic market share. Investors have started to recognize the company's transition from a cyclical, legacy engine story to a multi-year growth platform anchored by AIDC and new energy solutions. The re-rating is still at an early stage, with the market's attention so far focused on the strong momentum in AIDC backup engines, but not yet fully reflecting the scale of the aftermarket opportunity, which could potentially grow to 5x the size of new product sales over the coming years and is not yet modeled in consensus. More importantly, Weichai is moving into the AIDC primary power segment for overseas markets, leveraging its SOFC and gas engine technology to address the next phase of global data center investment. We maintain our bullish view on Weichai.",
+        "bbox": [
+            135,
+            896,
+            919,
+            929
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            5,
+            230,
+            39
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            5,
+            509,
+            29
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            36,
+            947,
+            57
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            944,
+            940,
+            954,
+            954
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            133,
+            132,
+            947,
+            212
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Valuation",
+        "text_level": 2,
+        "bbox": [
+            135,
+            225,
+            212,
+            240
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our Jun-27 PT of HK\\$52 is based on our DCF valuation. Key assumptions include:",
+        "bbox": [
+            135,
+            243,
+            691,
+            259
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- A WACC of $8.1\\%$ , driven by a cost of equity of $8.6\\%$ and a beta of 0.9x (latest Bloomberg data).",
+        "bbox": [
+            135,
+            266,
+            800,
+            283
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Cost of debt at 5% and a tax rate of 25%.",
+        "bbox": [
+            135,
+            289,
+            434,
+            306
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Target debt-to-capital of 10% and terminal growth of 3%.",
+        "bbox": [
+            135,
+            313,
+            545,
+            329
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Risks to Rating and Price Target",
+        "text_level": 2,
+        "bbox": [
+            137,
+            337,
+            374,
+            353
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Key downside risks include: (1) a slower-than-expected recovery in heavy-duty truck sales; (2) weaker-than-expected market-share gains; and (3) weaker-than-expected performance at Kion.",
+        "bbox": [
+            135,
+            355,
+            913,
+            387
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            506,
+            61
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            828,
+            36,
+            947,
+            57
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            89,
+            951,
+            101,
+            962
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            84,
+            140,
+            905,
+            250
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            86,
+            256,
+            883,
+            297
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            86,
+            306,
+            250,
+            320
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to Weichai Power - A, Weichai Power - H or related entities.",
+        "bbox": [
+            84,
+            338,
+            908,
+            369
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Market Maker/ Liquidity Provider (Hong Kong): JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited and/or an affiliate is a market maker and/or liquidity provider in the securities of Weichai Power - A, Weichai Power - H or related entities and/or warrants or options thereon, which are listed or traded on The Stock Exchange of Hong Kong Limited.",
+        "bbox": [
+            84,
+            372,
+            903,
+            414
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: Weichai Power - A, Weichai Power - H or related entities.",
+        "bbox": [
+            86,
+            417,
+            897,
+            445
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: Weichai Power - A, Weichai Power - H or related entities.",
+        "bbox": [
+            86,
+            449,
+            898,
+            492
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from Weichai Power - A, Weichai Power - H or related entities.",
+        "bbox": [
+            86,
+            494,
+            872,
+            525
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from Weichai Power - A, Weichai Power - H or related entities.",
+        "bbox": [
+            86,
+            527,
+            888,
+            557
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Debt Position: JPM may hold a position in the debt securities of Weichai Power - A, Weichai Power - H or related entities, if any.",
+        "bbox": [
+            84,
+            560,
+            898,
+            588
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailingresearch.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            84,
+            596,
+            890,
+            677
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            508,
+            61
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            37,
+            900,
+            57
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            897,
+            952,
+            908,
+            962
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9b24fa8e5eaa7699bb03e1fbf2b45c08620956f3c433a848d46d172c480aaa45.jpg",
+        "content": "",
+        "chart_caption": [
+            "Weichai Power - A (000338.SZ, 000338 CH) Price Chart"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            91,
+            159,
+            576,
+            381
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/6fee330a70ed147a67a3d67a3cd14eb4679c327f3b13a19616e192d3d4ac45e4.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price (Rmb)</td><td>Price Target (Rmb)</td></tr><tr><td>05-Nov-23</td><td>OW</td><td>14.10</td><td>18.6</td></tr><tr><td>28-Feb-24</td><td>OW</td><td>16.68</td><td>22</td></tr><tr><td>09-Apr-24</td><td>OW</td><td>17.75</td><td>25</td></tr><tr><td>27-Sep-24</td><td>OW</td><td>13.80</td><td>27</td></tr><tr><td>25-Oct-24</td><td>OW</td><td>13.33</td><td>24</td></tr><tr><td>03-Dec-24</td><td>OW</td><td>13.63</td><td>21</td></tr><tr><td>30-Mar-25</td><td>OW</td><td>16.30</td><td>24</td></tr><tr><td>14-Oct-25</td><td>OW</td><td>14.28</td><td>25</td></tr><tr><td>09-Nov-25</td><td>OW</td><td>18.27</td><td>31</td></tr><tr><td>28-Jan-26</td><td>OW</td><td>24.01</td><td>36</td></tr><tr><td>29-Mar-26</td><td>OW</td><td>23.50</td><td>38</td></tr><tr><td>30-Apr-26</td><td>OW</td><td>30.15</td><td>49</td></tr></table>",
+        "bbox": [
+            584,
+            134,
+            848,
+            331
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/994bc9f1553136079d4f481240f04009937aead3c13006d7f5ca3b12535b2010.jpg",
+        "content": "",
+        "chart_caption": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Dec 03, 2014. All share prices are as of market close on the previous business day.",
+            "Weichai Power - H (2338.HK, 2338 HK) Price Chart"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            93,
+            442,
+            576,
+            666
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/04a691d2a1afc142c085debe1d53a3084c6051a0491e38ec79543e29e1163f76.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Aug 29, 2007. All share prices are as of market close on the previous business day."
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price (HK$)</td><td>Price Target (HK$)</td></tr><tr><td>05-Nov-23</td><td>OW</td><td>12.10</td><td>18.6</td></tr><tr><td>28-Feb-24</td><td>OW</td><td>15.54</td><td>22</td></tr><tr><td>09-Apr-24</td><td>OW</td><td>16.40</td><td>23</td></tr><tr><td>27-Sep-24</td><td>OW</td><td>12.64</td><td>25</td></tr><tr><td>25-Oct-24</td><td>OW</td><td>11.80</td><td>22</td></tr><tr><td>03-Dec-24</td><td>OW</td><td>11.14</td><td>19</td></tr><tr><td>30-Mar-25</td><td>OW</td><td>16.76</td><td>22</td></tr><tr><td>14-Oct-25</td><td>OW</td><td>14.60</td><td>22.8</td></tr><tr><td>09-Nov-25</td><td>OW</td><td>20.34</td><td>31</td></tr><tr><td>28-Jan-26</td><td>OW</td><td>26.72</td><td>36</td></tr><tr><td>29-Mar-26</td><td>OW</td><td>26.92</td><td>40</td></tr><tr><td>30-Apr-26</td><td>OW</td><td>36.12</td><td>52</td></tr></table>",
+        "bbox": [
+            584,
+            417,
+            848,
+            614
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period.",
+        "bbox": [
+            86,
+            708,
+            885,
+            735
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JPM ratings or designations: $\\mathrm{OW} =$ Overweight, $\\mathrm{N} =$ Neutral, $\\mathrm{UW} =$ Underweight, $\\mathrm{NR} =$ Not Rated",
+        "bbox": [
+            86,
+            735,
+            723,
+            750
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            757,
+            656,
+            771
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            84,
+            771,
+            903,
+            934
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            506,
+            61
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            36,
+            901,
+            57
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            91,
+            951,
+            107,
+            963
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            131,
+            861,
+            159
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: Li, Karen : COSCO SHIPPING Holdings Co Ltd - A (601919.SS), COSCO SHIPPING Holdings Co Ltd - H (1919.HK), CRRC Corp - A (601766.SS), CRRC Corp - H (1766.HK), Cathay Pacific Airways (0293.HK), China Merchants Port Holdings (0144.HK), Estun Automation - A (002747.SZ), Evergreen Marine (2603.TW), Full Truck Alliance (YMM), Hongfa Technology - A (600885.SS), International Container Terminal Services Inc (ICT.PS), J&T Express - H (1519.HK), JD Logistics (2618.HK), Jiangsu Hengli Hydraulic - A (601100.SS), Leader Harmonious Drive System Co. (688017.SS), MTR Corp (0066.HK), Orient Overseas International Limited (OOIL) (0316.HK), S.F. Holding - A (002352.SZ), S.F. Holding - H (6936.HK), ST Engineering (STEG.SI), Sany Heavy Industry - A (600031.SS), Sany Heavy Industry - H (6031.HK), Shenzhen Inovance Technology Co. Ltd - A (300124.SZ), Singapore Airlines (SIAL.SI), T.S. Lines (2510.HK), Techtronic Industries (0669) (0669.HK), UBTECH Robotics - H (9880.HK), Weichai Power - A (000338.SZ), Weichai Power - H (2338.HK), XCMG - A (000425.SZ), Yiheda Automation - A (301029.SZ), ZTO Express (ZTO), ZTO Express - H (2057.HK), Zhejiang Dingli Machinery - A (603338.SS), Zhejiang Sanhua Intelligent Controls - A (002050.SZ), Zhejiang Sanhua Intelligent Controls - H (2050.HK), Zhuzhou CRRC Times Electric Co (3898) (3898.HK), Zhuzhou CRRC Times Electric Co - A (688187.SS)",
+        "bbox": [
+            84,
+            167,
+            893,
+            329
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "JPM Equity Research Ratings Distribution, as of July 04, 2026",
+        "text_level": 2,
+        "bbox": [
+            93,
+            341,
+            540,
+            356
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/a17b5ccb04e85b01990ab5884c8c54a7dbee237808784896d8a1dc83dad224ea.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding.",
+            "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months.",
+            "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+        "bbox": [
+            81,
+            358,
+            625,
+            432
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            84,
+            533,
+            903,
+            615
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            623,
+            356,
+            637
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            86,
+            636,
+            898,
+            666
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            84,
+            680,
+            893,
+            710
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+        "bbox": [
+            84,
+            716,
+            908,
+            771
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            86,
+            779,
+            220,
+            793
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            84,
+            798,
+            849,
+            827
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            84,
+            833,
+            898,
+            864
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            84,
+            878,
+            885,
+            922
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            509,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            36,
+            901,
+            57
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            892,
+            952,
+            908,
+            963
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            86,
+            140,
+            900,
+            170
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            84,
+            185,
+            897,
+            240
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            86,
+            256,
+            857,
+            297
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            86,
+            313,
+            887,
+            342
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            84,
+            358,
+            897,
+            440
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-",
+        "bbox": [
+            86,
+            456,
+            906,
+            510
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            86,
+            510,
+            810,
+            525
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            84,
+            532,
+            903,
+            574
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            84,
+            579,
+            901,
+            623
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            84,
+            628,
+            906,
+            765
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            771,
+            527,
+            786
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            86,
+            784,
+            874,
+            824
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits,",
+        "bbox": [
+            84,
+            824,
+            908,
+            935
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            506,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            36,
+            901,
+            57
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            91,
+            952,
+            107,
+            962
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is",
+        "bbox": [
+            86,
+            505,
+            906,
+            533
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            86,
+            132,
+            901,
+            172
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            86,
+            172,
+            848,
+            199
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            86,
+            199,
+            903,
+            238
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            88,
+            238,
+            609,
+            252
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            86,
+            251,
+            895,
+            278
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            86,
+            279,
+            901,
+            332
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            86,
+            332,
+            893,
+            385
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für",
+        "bbox": [
+            88,
+            385,
+            890,
+            413
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            86,
+            412,
+            906,
+            505
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            86,
+            532,
+            903,
+            586
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Morgan Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-",
+        "bbox": [
+            86,
+            596,
+            898,
+            679
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.i.sharma@impehase.com; +912261575002. Grievance Officer: Ramprasadh K. jinimpl research feedback@inmorgan.com;",
+        "bbox": [
+            86,
+            677,
+            895,
+            726
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "+912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            86,
+            731,
+            901,
+            773
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            86,
+            771,
+            879,
+            798
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            88,
+            798,
+            898,
+            851
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            86,
+            851,
+            879,
+            878
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            88,
+            878,
+            898,
+            918
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            509,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            36,
+            901,
+            57
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            892,
+            952,
+            908,
+            962
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            86,
+            132,
+            880,
+            172
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            86,
+            172,
+            906,
+            211
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            88,
+            212,
+            867,
+            252
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "ref_text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            86,
+            252,
+            903,
+            359
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA). Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            86,
+            359,
+            903,
+            519
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            86,
+            519,
+            906,
+            559
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            86,
+            557,
+            906,
+            719
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            86,
+            717,
+            885,
+            760
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the",
+        "bbox": [
+            84,
+            766,
+            908,
+            930
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            506,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            36,
+            901,
+            57
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            89,
+            952,
+            107,
+            962
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            84,
+            131,
+            906,
+            454
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            84,
+            469,
+            903,
+            579
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            84,
+            583,
+            893,
+            655
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            84,
+            668,
+            903,
+            752
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised July 04, 2026.",
+        "bbox": [
+            86,
+            757,
+            336,
+            771
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            86,
+            775,
+            885,
+            832
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Karen Li, CFA (852) 2800-8589  \nkaren.yy.li@JPM.com",
+        "bbox": [
+            88,
+            37,
+            230,
+            72
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 20 July 2026",
+        "bbox": [
+            343,
+            37,
+            509,
+            61
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            36,
+            901,
+            57
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            893,
+            951,
+            908,
+            963
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "T",
+        "bbox": [
+            926,
+            967,
+            937,
+            980
+        ],
+        "page_idx": 14
+    }
+]

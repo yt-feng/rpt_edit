@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0001-41-JPM-Kweichow Moutai Co - A-600519-Second price hike in 2026 and our take-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "茅台又涨价了，这次是",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：贵州茅台2026年第二次提价",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-41-JPM-Kweichow Moutai Co - A-600519-Second price hike in 2026 and our take-260720.pdf",
+    "cleaned_source_title": "JPM-Kweichow Moutai Co - A-600519-Second price hike in 2026 and our take",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：KweichowMoutaiCoA600519",
+    "raw_candidates": [
+      "贵州茅台2026年第二次提价",
+      "贵州茅台2026年7月提价每瓶100元",
+      "贵州茅台提价与渠道策略分析"
+    ],
+    "cleaned_candidates": [
+      "JPM：贵州茅台2026年第二次提价",
+      "JPM：贵州茅台2026年7月提价每瓶100元",
+      "JPM：贵州茅台提价与渠道策略分析",
+      "JPM：KweichowMoutaiCoA600519",
+      "JPM：茅台在2026年7月宣布了年内第二次飞天茅台出厂价与直销零售"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：贵州茅台2026年7月提价每瓶100元",
+        "reasons": [
+          "anchor_coverage=0.69"
+        ]
+      },
+      {
+        "title": "JPM：贵州茅台提价与渠道策略分析",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "JPM：KweichowMoutaiCoA600519",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：茅台在2026年7月宣布了年内第二次飞天茅台出厂价与直销零售",
+        "reasons": [
+          "anchor_coverage=0.54"
+        ]
+      }
+    ],
+    "selected_title": "JPM：贵州茅台2026年第二次提价",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：贵州茅台2026年第二次提价"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "421",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

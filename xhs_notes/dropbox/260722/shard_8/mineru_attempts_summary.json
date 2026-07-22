@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0001-41-JPM-Kweichow Moutai Co - A-600519-Second price hike in 2026 and our take-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0002-42-JPM-Victory Giant Technology - H-2476.HK-Near-term headwinds- but capacity leadership remains the key differentiator- reiterate OW-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0003-43-JEF-China - Technology-WAIC KTA- Determined but More Pragmatic- Data Semi in Focus-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0004-44-JEF-China - Autos - Auto Parts China EV Monthly Chartbook- The Summer Lull-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_n04v7ayb/pdfs/0005-45-JPM-Weichai Power - A-000338-Fireside chat and management update support the AIDC thesis- price reset creates an attractive entry point- 1H26 preview-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

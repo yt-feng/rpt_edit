@@ -1,0 +1,28 @@
+EN_A: So, the World AI Conference just wrapped up. One global investment bank put out a pretty interesting report on it.
+EN_B: It really caught my attention. The key takeaway is that China's AI strategy is becoming more pragmatic.
+EN_A: Pragmatic? In what way?
+EN_B: Instead of just trying to beat the US head-on, they are focusing on exporting AI and computing power to emerging markets.
+EN_A: So what does that actually mean for the companies involved?
+EN_B: It means they have to stay open-source. That is not great for making money directly, but it helps them capture a huge market. It is a two-birds-one-stone strategy.
+EN_A: And how do you think the US will respond to that?
+EN_B: The report suggests two things. First, tighter export controls on AI chips. Second, forcing US AI companies to add anti-distillation features to their models.
+EN_A: Anti-distillation? That is a new one for me. Let us talk about hardware. What is new on the compute side?
+EN_B: Huawei launched the Atlas 950 SuperPod. It connects over a thousand of their Ascend GPUs. It actually has more raw compute than Nvidia's latest system, but it uses over seven times the power.
+EN_A: That is a lot of power. Is that even viable?
+EN_B: That is why the report likes Chinese data center players. Also, some Chinese GPU makers are stacking DDR5 memory directly on top of their chips to get around the HBM ban.
+EN_A: And that works?
+EN_B: They are using 14-nanometer GPUs, but with this 3D DRAM stacking, they can get memory bandwidth close to HBM4. It is a clever workaround focused on inference, not training.
+EN_A: So the big investment theme is still semiconductor equipment and foundries?
+EN_B: Exactly. The report names companies like AMEC and SMIC as top picks. Capacity expansion in both logic and memory is where the big money will go.
+EN_A: What about the software and data side of things?
+EN_B: China is catching up fast on data generation. The government might set up a state-owned enterprise this year to handle high-quality data collection and trading across industries.
+EN_A: So they are basically nationalizing the data pipeline.
+EN_B: In a way, yes. And they are also very strong on the "agent harness" side, like managing context and orchestrating sub-agents. The report says that is just as important as model intelligence.
+EN_A: And robotics? Was that a big theme at the conference?
+EN_B: It was huge, taking up a quarter of the exhibition space. But the focus has shifted away from humanoids.
+EN_A: Really? I thought that was the hype.
+EN_B: They are getting more realistic. Now it is all about wheeled robots. They are cheaper, easier to make, and easier to commercialize. The report thinks humanoids are still five years away.
+EN_A: What about AI smartphones? Any progress there?
+EN_B: One company showed a prototype, but the report is not impressed. The experience is not that different from cloud-based services, and the ecosystem is a big challenge.
+EN_A: Sounds like there is a lot more detail in the full report.
+EN_B: Definitely. We did not get into the specific stock valuations or the full risk analysis. If you want the complete picture, you should check out the full report in our community.
