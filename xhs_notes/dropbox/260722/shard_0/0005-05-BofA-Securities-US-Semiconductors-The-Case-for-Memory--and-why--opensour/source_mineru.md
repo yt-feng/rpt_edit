@@ -1,0 +1,462 @@
+US Semiconductors
+
+# The Case for Memory, and why “open-source” expands TAM
+
+Industry Overview
+
+## Chinese Open LLMs are no threat to memory demand
+
+Latest releases in open-source models, including China's Kimi K3 launched July 16, reinforce our bullish thesis on memory/MU. From a high level, we view the aggressive Chinese open-model API pricing (up to 5-350x cheaper than Western models) as reflective of business-model choices, not necessarily reflective of hardware costs. Importantly, these models, using various efficiency techniques (more below), are able to reduce compute/GPU intensity, but require the same or more memory as their model weights and active parameters increase. We also flag that every open-weight download also creates a new customer-side memory socket that wouldn't exist in a closed-model setting.
+
+## Chinese models charge less, but still require same memory
+
+Chinese open-model API pricing is aggressive, with Tencent Hunyuan at \$0.06/mn input vs. Claude Opus 4.8 at \$15/mn, and even Moonshot AI's latest Kimi K3 charging only \$3/mn despite 'similar' performance. However, we flag API price is a business-model choice, not necessarily a hardware-cost read-through. For instance, Kimi K3 still requires \~1.4 TB of HBM per serving instance to run. This is similar to OpenAI's 'oss-120b' open model with the same MXFP4 native precision (for like-for-like compression) with 120B total parameters (23x smaller than Kimi K3) requiring \~63GB of weight memory to run (22x smaller). In other words, often times API pricing actually scales with total memory weight and active parameters, even for open Chinese LLMs. "Open" refers to weight distribution, not deployment cost, and customers still need to purchase HBM, DRAM, NAND to run the model on their own hardware.
+
+## Efficiency techniques, subsidies likely help lower pricing
+
+Where Chinese models do have pricing/cost advantage is often not hardware-related. We estimate Chinese cost advantage in architectural efficiency (MoE sparsity, MLA/hybrid attention, native FP8/MXFP4 quantization, as well as up to 1.5-2x advantage in physical infra efficiency (lower Chinese electricity, labor, and land costs). Rest of the pricing differential could come from state-linked capital subsidies and cloud revenue/FCF at Chinese CSPs (Alibaba, Tencent, Baidu). Interestingly, Moonshot's Kimi K3 paused new subscriptions within just 48 hours of K3's launch, likely as GPU capacity ran out (or to cut costs/losses), and Xiaomi in May 2026 cut its MiMo model pricing by $99\%$ (likely unprofitable), likely as an effort to grab market share.
+
+## CXMT not a threat, reit. MU Buy ahead of buyback resume
+
+We reiterate Buy on MU with \$1,550 PO. While China-based CXMT is aggressively expanding capacity (now low-10% of global wafer capacity), we view limited competition in AI memory. CXMT primarily addresses the underserved consumer/commodity DRAM segment, not HBM3E/HBM4. It also remains unclear whether US OEMs will receive gov't approval to source from CXMT any time soon. Critically, MU's CHIPS Act buyback restrictions expire around Dec-26 (two years after the first funding tranche received Dec-24), opening the door to large-scale repurchases – given its \$120-130bn/yr+ FCF outlook over the next few years. A 40% payout policy would result in \~\$50-60bn/yr of buybacks, or \~5-6% of its \~\$1Tn market cap per year.
+
+## 20 July 2026
+
+Equity
+United States
+Semiconductors
+
+Vivek Arya
+Research Analyst
+BofAS
+vivek.arya@bofa.com
+
+Duksan Jang
+Research Analyst
+BofAS
+duksan.jang@bofa.com
+
+Michael Mani
+Research Analyst
+BofAS
+michael.mani@bofa.com
+
+Liam Pharr
+Research Analyst
+BofAS
+liam.pharr@bofa.com
+
+CXMT: ChangXin Memory Technologies
+
+## Contents
+
+Memory is still critical in open models 3
+Chinese models charge less, but may not cost much less 3
+Open models continue to grow in weight size 4
+Open models expand memory endpoints vs. closed 5
+Scaling gains much faster than efficiency gains 6
+China models create disruption but also expand market, beneficial for semis 8
+Glossary: 9
+
+## Memory is still critical in open models
+
+## Chinese models charge less, but may not cost much less
+
+Chinese open-model API pricing is very competitive. Latest Kimi K3 charges \$3/M input and \$15/M output vs. Claude Opus 4.8 and GPT-5.6 at roughly 5x that.
+
+However, we flag API price is a business-model choice, not necessarily a hardware-cost readout. Kimi K3 still requires a 64+ accelerator super-node with \~1.4 TB of HBM per serving instance to run – that memory content is required whether Moonshot charges \$3 or \$30 per million tokens.
+
+OpenAI's similar open model with MXFP4 native precision (for like-for-like compression) with 120B total parameters (23x smaller than Kimi K3) requires \~63GB of weight memory to run (22x smaller), in-line with the memory requirements of K3 if model sizes were the same.
+
+Exhibit 1: Global token usage increased on average by +6% per week since 2025, or +9% per week since 2026, with China models accounting for \~70% of the tokens in July 2026
+Weekly Token Usage by Major Models (API) via OpenRouter
+
+![](images/56a1cd91cdde436cf45d5795d3beaa3e3d459c9343d93413888896e2da89fcf9.jpg)  
+Source: BofA Global Research, OpenRouter  
+BofA GLOBAL RESEARCH
+
+## Cost advantage often comes from non-hardware efficiency
+
+We suspect much of Chinese LLM cost advantages (up to 5-50x vs. western) actually come from non-hardware efficiencies.
+
+## Architectural efficiency (2-3x)
+
+\- Extreme MoE sparsity: Qwen3-Coder-Next activates just 3B of 80B total parameters (\~3.75%); Kimi K3 activates \~1.8%. Compute per decoded token in Chinese LLMs is a fraction of what a comparable dense model would need.
+
+\- MLA/hybrid attention: DeepSeek's MLA and Kimi's KDA compress KV cache 10-90x vs. standard attention, so batch density is also much higher — more concurrent users per GPU.
+
+\- Native low-bit quantization: Kimi K2 Thinking ships W4A16, K3 ships MXFP4, DeepSeek trains natively in FP8. That's another 2x throughput vs. FP16 of Meta Llama 4 or Google Gemma 4 open models.
+
+Combined, net architectural efficiency could reach 2-3x per token vs. an equivalently sized Western model that ships in BF16/FP8 native, without these efficiency gains.
+
+Input-side infrastructure cost (\~1.5-2x)
+
+\- Chinese electricity: \~\$0.05-0.08/kWh vs. \~\$0.10-0.15/kWh in US hyperscaler zones
+
+\- Chinese labor: Engineering salaries 40-60% lower than US equivalents
+
+\- Land/real estate: Data center capex and related land/shell/power spend meaningfully lower in interior China (Ningxia, Guizhou)
+
+Combined, net input-cost advantage could also reach 1.5-2x per token, depending on the underlying compute bill.
+
+Competition, subsidies for market share
+
+Lastly, we flag Moonshot AI paused new subscriptions within just 48 hours of K3's launch, because GPU capacity ran out or potentially just to cut costs/losses.
+
+If K3's low price genuinely reflected proportional hardware savings, we expect Moonshot to have provisioned enough capacity. As such, actual hardware cost per query at Kimi K3 could be higher than the much cheaper API price implies, and Moonshot may be subsidizing to grab market share.
+
+There are similar cases, such as Xiaomi cutting its MiMo model pricing by 99% in May 2026, likely as an effort to grab market share.
+
+Exhibit 2: Open models continue to grow in weight size (i.e. memory), with their API input/output cost generally also increasing with the weight Key Open Models Pricing and Weight Memory
+
+<table><tr><td>Model</td><td>Input $/M tokens</td><td>Output $/M tokens</td><td>Weight Memory (GB)</td><td>Input $/B tokens / Weight Memory (GB)</td><td>Access</td></tr><tr><td>Kimi K3</td><td>3</td><td>15</td><td>1400</td><td>$2.14</td><td>Open Weight</td></tr><tr><td>DeepSeek-V3.2</td><td>0.28</td><td>0.42</td><td>336</td><td>$0.83</td><td>Open Weight</td></tr><tr><td>DeepSeek-V4-Flash</td><td>0.14</td><td>0.28</td><td>142</td><td>$0.99</td><td>Open Weight</td></tr><tr><td>Qwen3-235B (Alibaba API)</td><td>0.5</td><td>1.5</td><td>118</td><td>$4.24</td><td>Open Weight</td></tr><tr><td>GLM-4.5 (Z.ai API)</td><td>0.6</td><td>2.2</td><td>178</td><td>$3.37</td><td>Open Weight</td></tr><tr><td>gpt-oss-120b (via provider)</td><td>0.15</td><td>0.6</td><td>63</td><td>$2.38</td><td>Open Weight</td></tr><tr><td>GPT-5.6 Sol</td><td>1.25</td><td>10</td><td>N/A - closed</td><td></td><td>Closed</td></tr><tr><td>Claude Opus 4.8</td><td>15</td><td>75</td><td>N/A - closed</td><td></td><td>Closed</td></tr><tr><td>Claude Sonnet 5</td><td>3</td><td>15</td><td>N/A - closed</td><td></td><td>Closed</td></tr><tr><td>Gemini 3 Pro</td><td>1.25</td><td>10</td><td>N/A - closed</td><td></td><td>Closed</td></tr><tr><td>Grok 4</td><td>3</td><td>15</td><td>N/A - closed</td><td></td><td>Closed</td></tr></table>
+
+Source: BofA Global Research estimates  
+BofA GLOBAL RESEARCH
+
+## Open models continue to grow in weight size
+
+Frontier open-weight model size continues to increase sharply (closed models often do not publish model weight data):
+
+\- DeepSeek-V3 at 671B (Dec 2024)
+
+\- Kimi K2 at 1T (mid-2025)
+
+\- DeepSeek-V4-Pro at 1.6T (Apr 2026)
+
+\- Kimi K3 at 2.8T parameters (Jul 16, 2026) — the largest open-weight model ever released
+
+## Larger weights flow directly to memory demand.
+
+In fact, the MIT Data Provenance audit documents a 17x increase in average open model size from 2019-2025. Even in native MXFP4 (4-bit), Kimi K3's weights now occupy \~1.4 TB and Moonshot's own guidance requires 64+ accelerators per serving instance.
+
+Weight memory scales with total parameters (such as K3's 2.8T parameters), not active parameters.
+
+Even with industry compression/quantization from FP8 to MXFP4 delivering a 2x saving, model sizes have grown \~4x more in parameter growth, more than offsetting the
+
+efficiency gains from compression. For instance, Kimi K3 (July 2026) in native MXFP4 requires 2x the memory of DeepSeek-V3 in FP8 (December 2024).
+
+## Active parameters reduce compute, not memory
+
+With the use of MoE (i.e. using just active parameters), Kimi K3 activates only 16 of 896 experts at a time, i.e. it only activates 50B of its total 2.8T parameters per token. This greatly reduces the total compute requirement during the inference process.
+
+However, the model still needs to keep nearly the entire expert pool (i.e. the entire model weight) resident in nearby memory. In fact, HBM capacity scales much more closely with total parameters, than with active parameters.
+
+This is because MoE routers select experts dynamically per token, so every expert (i.e. total weight) must remain resident in fast memory regardless of activation sparsity. As a result, doubling total parameters requires double HBM per instance, which is why K3 needs 64+ accelerators while V3 needed just 8.
+
+## Larger model weight drives multi-tier memory
+
+Lastly, larger weights force multi-tier memory hierarchies: hot experts in HBM, inactive experts spilled to CPU LPDDR5X/DDR5, cold KV cache to enterprise NAND. Every tier gets more content per deployment.
+
+Exhibit 3: Open MoE model total parameters and active parameters per token continue to scale upward, resulting in larger weight for memory storage
+Open MoE models total parameters (bn) vs. active parameters per token (bn)  
+![](images/4f3f13a508dbc5dd01a14cfde83c159c5c1485cb66474fa62500bd10424fc73a.jpg)  
+Source: BofA Global Research estimates  
+BofA GLOBAL RESEARCH
+
+## Open models expand memory endpoints vs. closed
+
+The mechanism is simple: a closed model has one deployment footprint; an open model has as many footprints as it has downloads.
+
+For instance when OpenAI serves GPT-5.6 (closed model), the model weights live in a small number of Microsoft Azure data centers. Every user in the world — millions of them — hits that same shared HBM pool. Total memory content is set by peak concurrent demand across all users combined, and can be amortized because usage patterns diversify across time zones and workloads.
+
+But when Moonshot releases Kimi K3 weights (open model), or DeepSeek releases V3, or OpenAI releases gpt-oss-120b, the weights get downloaded and loaded into memory on every buyer's own hardware. An enterprise running gpt-oss-120b needs its own 80 GB of HBM3E. A sovereign cloud running DeepSeek-V3 provisions its own 8× H200 cluster (\~1.1 TB of HBM). Moonshot's own guidance for K3 calls for 64+
+
+accelerators per serving instance — and that footprint gets replicated by every enterprise, government, and cloud that downloads the weights. None of that memory would have been purchased if the same intelligence were only available through a closed API, because the customer would have rented compute cycles rather than owned the hardware.
+
+As a result for open models, both model weights and KV cache must be resident in fast memory to serve inference — they cannot be shared across separately owned clusters. Unlike a shared API where 10,000 users effectively share one copy of the weights in HBM, 10,000 enterprises self-hosting the same open model means 10,000 copies of the weights loaded into 10,000 separate HBM pools. Each deployment also needs its own KV cache capacity scaled to its own user base — and at the 128K–1M context windows common in 2026, KV cache per active user session can exceed 40 GB, so this scales with concurrency on every endpoint independently.
+
+## Memory endpoints benefit from cheaper API pricing
+
+Open models having separate memory endpoints also benefit end memory deployment, as Chinese LLM labs charge cheaper API pricing and thus drive overall demand up. In other words:
+
+\- Cheaper Chinese API pricing = more inference workload volume + more open-weight enterprise self-hosting + more memory sockets deployed globally.
+
+While frontier model labs are spending capital to grab share, the market is likely expanding its aggregate compute and memory capacity in the process; and every enterprise that downloads Qwen, GLM, Hunyuan, or MiMo instead of paying for Claude Opus creates a new customer-side memory footprint that wouldn't exist in a pure closed-API world.
+
+Overall, closed models consolidate memory demand; open models multiply it — and the compression from efficiency innovations doesn't offset multiplication by endpoint count.
+
+## Scaling gains much faster than efficiency gains
+
+Lastly, we highlight workload intensity and overall demand gained by Jevons Paradox are far greater than the efficiency gains from MoE, quantization, KV cache compression techniques.
+
+Exhibit 4: Latest multi-agent workloads generate up to 200,000x more output tokens per query than traditional non-reasoning chat workloads (GPT-4o)
+Tokens per query by different model workloads
+
+![](images/12332ea2cdb096ef7d4ccb34c203cf6b0c52aa7a1b74e9bbd4921db378a220f0.jpg)  
+Source: BofA Global Research estimates  
+BofA GLOBAL RESEARCH
+
+Exhibit 5: Newer releases of open models generally feature much larger total parameters, context windows, and weight memory gen-over-gen
+List of key LLMs and their model weights
+
+<table><tr><td>Model</td><td>Developer</td><td>Origin</td><td>Release</td><td>Openness Category</td><td>Architecture</td><td>Total Params</td><td>Context Window</td><td>Native Precision</td><td>Weight Memory (FP8, GB)</td><td>Weight Memory (4-bit, GB)</td></tr><tr><td>DeepSeek-V3.2</td><td>DeepSeek AI</td><td>China</td><td>Late 2025</td><td>Open Weight (permissive)</td><td>MoE</td><td>671B</td><td>128K</td><td>FP8</td><td>671</td><td>336</td></tr><tr><td>DeepSeek-V4-Pro</td><td>DeepSeek AI</td><td>China</td><td>Apr-26</td><td>Open Weight (permissive)</td><td>MoE</td><td>1.6T</td><td>1M</td><td>FP8</td><td>1600</td><td>800</td></tr><tr><td>Qwen3.6-35B-A3B</td><td>Alibaba</td><td>China</td><td>Apr-26</td><td>Open Weight (permissive)</td><td>MoE</td><td>35B</td><td>128K</td><td>BF16</td><td>35</td><td>16</td></tr><tr><td>Kimi K2</td><td>Moonshot AI</td><td>China</td><td>Mid 2025</td><td>Open Weight (permissive)</td><td>MoE</td><td>1T</td><td>128K</td><td>BF16</td><td>1000</td><td>500</td></tr><tr><td>Kimi K3</td><td>Moonshot AI</td><td>China</td><td>16-Jul-26</td><td>Open Weight (permissive)</td><td>MoE</td><td>2.8T</td><td>1M</td><td>MXFP4</td><td>2800</td><td>1400</td></tr><tr><td>GLM-4.5</td><td>Zhipu AI (Z.ai)</td><td>China</td><td>Jul-25</td><td>Open Weight (permissive)</td><td>MoE + MTP</td><td>355B</td><td>128K</td><td>BF16 / FP8</td><td>355</td><td>178</td></tr><tr><td>GLM-4.7</td><td>Zhipu AI (Z.ai)</td><td>China</td><td>2026</td><td>Open Weight (permissive)</td><td>MoE</td><td>~360B</td><td>~204K</td><td>BF16 / FP8</td><td>360</td><td>180</td></tr><tr><td>MiniMax-M2</td><td>MiniMax</td><td>China</td><td>Oct-25</td><td>Open Weight (permissive)</td><td>MoE</td><td>230B</td><td>~200K</td><td>FP8</td><td>230</td><td>115</td></tr><tr><td>gpt-oss-120b</td><td>OpenAI</td><td>US</td><td>Aug-25</td><td>Open Weight (permissive)</td><td>MoE</td><td>120B</td><td>128K</td><td>MXFP4</td><td>120</td><td>63</td></tr><tr><td>gpt-oss-20b</td><td>OpenAI</td><td>US</td><td>Aug-25</td><td>Open Weight (permissive)</td><td>MoE</td><td>20B</td><td>128K</td><td>MXFP4</td><td>20</td><td>12</td></tr><tr><td>Llama 4 Scout</td><td>Meta</td><td>US</td><td>2025</td><td>Open Weight (restricted)</td><td>MoE</td><td>109B</td><td>10M</td><td>BF16</td><td>109</td><td>55</td></tr><tr><td>Llama 4 Maverick</td><td>Meta</td><td>US</td><td>2025</td><td>Open Weight (restricted)</td><td>MoE</td><td>400B</td><td>1M+</td><td>BF16</td><td>400</td><td>200</td></tr><tr><td>Llama 4 Behemoth</td><td>Meta</td><td>US</td><td>Paused May 2026</td><td>Open Weight (restricted)</td><td>MoE (teacher)</td><td>~2T</td><td>N/A</td><td>BF16</td><td>2000</td><td>1000</td></tr><tr><td>Mistral Large 3</td><td>Mistral AI</td><td>France/EU</td><td>2025-2026</td><td>Open Weight (restricted)</td><td>Dense/MoE</td><td>~123B</td><td>128K</td><td>BF16</td><td>123</td><td>62</td></tr><tr><td>Gemma 4 26B-A4B</td><td>Google</td><td>US</td><td>Apr-26</td><td>Open Weight (restricted)</td><td>MoE</td><td>26B</td><td>128K</td><td>BF16</td><td>26</td><td>13</td></tr><tr><td>GPT-5.6 Sol</td><td>OpenAI</td><td>US</td><td>9-Jul-26</td><td>Closed</td><td>Undisclosed</td><td>Not disclosed</td><td>1.05M (128K output)</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>GPT-5.5 / 5.5 Pro</td><td>OpenAI</td><td>US</td><td>23-Apr-26</td><td>Closed</td><td>Undisclosed</td><td>Not disclosed</td><td>1M</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Claude Fable 5</td><td>Anthropic</td><td>US</td><td>9-Jun-26</td><td>Closed</td><td>Undisclosed</td><td>Not disclosed</td><td>1M</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Claude Mythos 5</td><td>Anthropic</td><td>US</td><td>9-Jun-26</td><td>Closed</td><td>Undisclosed</td><td>Not disclosed</td><td>1M</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Claude Opus 4.8</td><td>Anthropic</td><td>US</td><td>28-May-26</td><td>Closed</td><td>Undisclosed</td><td>Not disclosed</td><td>1M / 128K output</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Claude Sonnet 5</td><td>Anthropic</td><td>US</td><td>30-Jun-26</td><td>Closed</td><td>Undisclosed</td><td>Not disclosed</td><td>1M / 128K output</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Gemini 3 Pro</td><td>Google DeepMind</td><td>US</td><td>Nov-25</td><td>Closed</td><td>Sparse MoE (multimodal)</td><td>Not disclosed</td><td>1M / 64K output</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Gemini 3.1 Pro</td><td>Google DeepMind</td><td>US</td><td>2026 (Preview)</td><td>Closed</td><td>Sparse MoE</td><td>Not disclosed</td><td>1M</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Gemini 3.5 Flash</td><td>Google DeepMind</td><td>US</td><td>2026</td><td>Closed</td><td>Sparse MoE</td><td>Not disclosed</td><td>1M</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Grok 4</td><td>xAI</td><td>US</td><td>9-Jul-25</td><td>Closed</td><td>MoE (undisclosed)</td><td>Not disclosed</td><td>256K (2M in fast-reasoning)</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Grok 4.20</td><td>xAI</td><td>US</td><td>10-Mar-26</td><td>Closed</td><td>MoE (4-agent)</td><td>~3T (est.)</td><td>2M</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr><tr><td>Grok 4.3</td><td>xAI</td><td>US</td><td>2026</td><td>Closed</td><td>MoE (reasoning)</td><td>Not disclosed</td><td>Undisclosed</td><td>Not disclosed</td><td>N/A</td><td>N/A</td></tr></table>
+
+Source: BofA Global Research estimates  
+BofA GLOBAL RESEARCH
+
+## China models create disruption but also expand market, beneficial for semis
+
+While there is no perfect way to rank models, we rely on third party benchmarks that rank models along various AI, coding and agentic scores.
+
+The most recent ranking (as of Jul-4) suggests that per the AI index:
+
+1. US frontier models from Anthropic and OpenAI retain the lead, especially after the approval given to Anthropic's Fable 5 model;
+
+2. China-based models now occupy 8 of the top 16 spots. The highest spot is occupied by GLM 5.2, a 750 Billion parameter/1mn context window open weight model delivered by Zhipu or Z.ai. The success of Chinese models indicates that last year's shock waves created by the success of China's DeepSeek was a sign of things to come, and not just a one off. It's debatable how much western model distillation was used in training the China models, per media reports, but the fact is China's models are likely only months and not years behind US technology despite China not having access to the latest in compute, networking and memory chips;
+
+3. NVDA is also becoming a major contributor to the open source community. We believe NVDA's efforts not only help it improve its hardware, but they also help to expand the medium/smaller size AI adopters who lack resources in engaging with frontier labs.
+
+As reference in Open-Source Models - the model's weights, code, and training methodology are broadly available, allowing developers to inspect, modify, fine-tune, and self-host the model. Open-source models typically maximize transparency, innovation, and ecosystem adoption, but offer less direct control to the creator.
+
+Open-Weight Models - the trained model weights are released for download and deployment, but parts of the training data, code, or methodology may remain proprietary. Open-weight models strike a balance between openness and commercialization by enabling self-hosting while preserving some intellectual property.
+
+Proprietary (Closed) Models - Neither the model weights nor training details are publicly available; customers access the model only through APIs or cloud services. Proprietary models typically offer the strongest monetization and control, but may face greater pricing pressure as open-source and open-weight alternatives improve.
+
+Exhibit 6: AI ranking between top proprietary, open source and open weight models
+Models shaded in red are from China, the green shaded model ifs from Nvidia
+
+<table><tr><td>Model Name</td><td>Lab</td><td>Intelligence Score (Rank)</td></tr><tr><td>Claude Fable 5</td><td>Anthropic</td><td>60 (1)</td></tr><tr><td>Claude Opus 4.8</td><td>Anthropic</td><td>56 (2)</td></tr><tr><td>GPT 5.5</td><td>Open AI</td><td>55 (3)</td></tr><tr><td>Claude Sonnet</td><td>Anthropic</td><td>53 (4)</td></tr><tr><td>GLM 5.2</td><td>Zhipu.ai (China)</td><td>51 (5)</td></tr><tr><td>Gemini 3.5</td><td>Google</td><td>50 (6)</td></tr><tr><td>Gemini 3.1</td><td>Google</td><td>46 (7)</td></tr><tr><td>Qwen 3.7</td><td>Alibaba (China)</td><td>46 (8)</td></tr><tr><td>MiniMax M3</td><td>MiniMax (China)</td><td>44 (9)</td></tr><tr><td>DeepSeek V4 Pro</td><td>DeepSeek (China)</td><td>44 (10)</td></tr><tr><td>Muse Spark</td><td>Meta</td><td>43 (11)</td></tr><tr><td>Kimi K2.6</td><td>Moonshot (China)</td><td>43 (12)</td></tr><tr><td>MiMo V2.5</td><td>Xiaomi (China)</td><td>42 (13)</td></tr><tr><td>DepSeek V4 Flash</td><td>DeepSeek (China)</td><td>40 (14)</td></tr><tr><td>GPT 5.4</td><td>Open AI</td><td>40 (15)</td></tr><tr><td>Nemotron 3 Ultra</td><td>Nvidia</td><td>38 (16)</td></tr></table>
+
+Source: Artificial Intelligence Index, BofA Global Research  
+BofA GLOBAL RESEARCH
+
+## Glossary:
+
+AIME – American Invitational Mathematics Examination
+
+BF16 – Brain Float 16-bit
+
+CHIPS Act – Creating Helpful Incentives to Produce Semiconductors Act
+
+CPU – Central Processing Unit
+
+CSA – Compressed Sparse Attention (DeepSeek)
+
+CSP – Cloud Service Provider
+
+CXL – Compute Express Link
+
+CXMT – ChangXin Memory Technologies
+
+DDR5 – Double Data Rate 5th generation
+
+DRAM – Dynamic Random Access Memory
+
+EECS – Electrical Engineering and Computer Science (UC Berkeley)
+
+FP4 / FP8 / FP16 – Floating Point 4-bit / 8-bit / 16-bit
+
+GLM – General Language Model (Zhipu / Z.ai)
+
+GPQA – Graduate-level Google-Proof Q&A
+
+GPU – Graphics Processing Unit
+
+GQA – Grouped-Query Attention
+
+HBM – High Bandwidth Memory
+
+HBM3E / HBM4 – High Bandwidth Memory, 3rd-gen Extended / 4th generation
+
+HCA – Heavily Compressed Attention (DeepSeek)
+
+HLE – Humanity's Last Exam
+
+INT4 – Integer 4-bit
+
+KDA – Kimi Delta Attention (Moonshot)
+
+KV cache – Key-Value cache
+
+LLM – Large Language Model
+
+LPDDR5X – Low-Power DDR5 Extended
+
+MHA – Multi-Head Attention
+
+MIT – Massachusetts Institute of Technology (also open-source software license)
+
+MLA – Multi-head Latent Attention (DeepSeek)
+
+MMLU – Massive Multitask Language Understanding
+
+MoE – Mixture of Experts
+
+MQA – Multi-Query Attention
+
+MTP – Multi-Token Prediction
+
+MU – Micron Technology
+
+MXFP4 – Microscaling FP4 (OCP standard)
+
+NAND – Not-AND flash memory
+
+NVFP4 – NVIDIA FP4
+
+NVLink-C2C – NVIDIA Link Chip-to-Chip
+
+OEM – Original Equipment Manufacturer
+
+oss – open-source software (e.g., gpt-oss)
+
+PO – Price Objective
+
+PTQ – Post-Training Quantization
+
+QAD – Quantization-Aware Distillation
+
+QAT – Quantization-Aware Training
+
+SMIC – Semiconductor Manufacturing International Corporation
+
+SSD – Solid State Drive
+
+SWE-Bench – Software Engineering Benchmark
+
+TSMC – Taiwan Semiconductor Manufacturing Company
+
+W4A16 – 4-bit Weights, 16-bit Activations
+
+WFE – Wafer Fab Equipment
+
+YMTC – Yangtze Memory Technologies Corporation
+
+<table><tr><td colspan="5">Exhibit 7: Stocks mentioned</td></tr><tr><td colspan="5">Prices and ratings for stocks mentioned in this report</td></tr><tr><td>BofA Ticker</td><td>Bloomberg ticker</td><td>Company name</td><td>Price</td><td>Rating</td></tr><tr><td>MU</td><td>MU US</td><td>Micron</td><td>US$ 865.46</td><td>C-1-7</td></tr><tr><td colspan="5">Source: BofA Global Research</td></tr></table>
+
+## Price objective basis & risk
+
+## Micron Technology, Inc (MU)
+
+Our \$1550 PO is based on a sum-of-parts valuation that values: (1) traditional cyclical memory business at \$1,040/sh at 3x CY28E P/B, toward the high-end of MU's long-term range 0.8x-3.1x as we are potentially in a memory upcycle, and (2) AI HBM business at 31x CY28E PE, in-line with AI compute peer group median.
+
+Downside risks: (1) larger than expected memory ASP decline, (2) greater competition from China newcomers, (3) share loss to large competitors, (4) softening of demand across major end markets such as data center, smartphones, or PCs.
+
+## Analyst Certification
+
+I, Vivek Arya, hereby certify that the views expressed in this research report accurately reflect my personal views about the subject securities and issuers. I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report.
+
+US - Semiconductors and Semiconductor Capital Equipment Coverage Cluster
+
+<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td colspan="5">BUY</td></tr><tr><td></td><td>Advanced Energy Industries</td><td>AEIS</td><td>AEIS US</td><td>Duksan Jang</td></tr><tr><td></td><td>Advanced Micro Devices, Inc</td><td>AMD</td><td>AMD US</td><td>Vivek Arya</td></tr><tr><td></td><td>Allegro Microsystems</td><td>ALGM</td><td>ALGM US</td><td>Vivek Arya</td></tr><tr><td></td><td>Analog Devices Inc.</td><td>ADI</td><td>ADI US</td><td>Vivek Arya</td></tr><tr><td></td><td>Applied Materials, Inc.</td><td>AMAT</td><td>AMAT US</td><td>Vivek Arya</td></tr><tr><td></td><td>Broadcom Inc</td><td>AVGO</td><td>AVGO US</td><td>Vivek Arya</td></tr><tr><td></td><td>Cadence</td><td>CDNS</td><td>CDNS US</td><td>Vivek Arya</td></tr><tr><td></td><td>Camtek</td><td>CAMT</td><td>CAMT US</td><td>Michael Mani</td></tr><tr><td></td><td>Credo Technology</td><td>CRDO</td><td>CRDO US</td><td>Vivek Arya</td></tr><tr><td></td><td>Intel</td><td>INTC</td><td>INTC US</td><td>Vivek Arya</td></tr><tr><td></td><td>KLA Corporation</td><td>KLAC</td><td>KLAC US</td><td>Vivek Arya</td></tr><tr><td></td><td>Lam Research Corp.</td><td>LRCX</td><td>LRCX US</td><td>Vivek Arya</td></tr><tr><td></td><td>M/A-Com</td><td>MTSI</td><td>MTSI US</td><td>Vivek Arya</td></tr><tr><td></td><td>Marvell Technology, Inc.</td><td>MRVL</td><td>MRVL US</td><td>Vivek Arya</td></tr><tr><td></td><td>Microchip</td><td>MCHP</td><td>MCHP US</td><td>Vivek Arya</td></tr><tr><td></td><td>Micron Technology, Inc</td><td>MU</td><td>MU US</td><td>Vivek Arya</td></tr><tr><td></td><td>MKS Instruments</td><td>MKSI</td><td>MKSI US</td><td>Michael Mani</td></tr><tr><td></td><td>Nova</td><td>NVMI</td><td>NVMI US</td><td>Michael Mani</td></tr><tr><td></td><td>NVIDIA Corporation</td><td>NVDA</td><td>NVDA US</td><td>Vivek Arya</td></tr><tr><td></td><td>onsemi</td><td>ON</td><td>ON US</td><td>Vivek Arya</td></tr><tr><td></td><td>Quantinuum</td><td>QNT</td><td>QNT US</td><td>Vivek Arya</td></tr><tr><td></td><td>Synopsys</td><td>SNPS</td><td>SNPS US</td><td>Vivek Arya</td></tr><tr><td></td><td>Teradyne</td><td>TER</td><td>TER US</td><td>Vivek Arya</td></tr><tr><td></td><td>Texas Instruments Inc.</td><td>TXN</td><td>TXN US</td><td>Vivek Arya</td></tr><tr><td colspan="5">NEUTRAL</td></tr><tr><td></td><td>Ambarella</td><td>AMBA</td><td>AMBA US</td><td>Vivek Arya</td></tr><tr><td></td><td>Ambiq Micro, Inc.</td><td>AMBQ</td><td>AMBQ US</td><td>Vivek Arya</td></tr><tr><td></td><td>Arm Holdings</td><td>ARM</td><td>ARM US</td><td>Vivek Arya</td></tr><tr><td></td><td>Astera Labs Inc</td><td>ALAB</td><td>ALAB US</td><td>Vivek Arya</td></tr><tr><td></td><td>Coherent Corp</td><td>COHR</td><td>COHR US</td><td>Vivek Arya</td></tr><tr><td></td><td>Lumentum Holdings</td><td>LITE</td><td>LITE US</td><td>Vivek Arya</td></tr><tr><td></td><td>NXP Semiconductors NV</td><td>NXPI</td><td>NXPI US</td><td>Vivek Arya</td></tr><tr><td colspan="5">UNDERPERFORM</td></tr><tr><td></td><td>Axcelis Technologies</td><td>ACLS</td><td>ACLS US</td><td>Duksan Jang</td></tr><tr><td></td><td>GlobalFoundries</td><td>GFS</td><td>GFS US</td><td>Vivek Arya</td></tr><tr><td></td><td>Lattice Semiconductor</td><td>LSCC</td><td>LSCC US</td><td>Duksan Jang</td></tr><tr><td></td><td>Qualcomm</td><td>QCOM</td><td>QCOM US</td><td>Vivek Arya</td></tr><tr><td></td><td>Skyworks Solutions, Inc.</td><td>SWKS</td><td>SWKS US</td><td>Vivek Arya</td></tr><tr><td colspan="5">RVW</td></tr><tr><td></td><td>Wolfspeed Inc</td><td>WOLF</td><td>WOLF US</td><td>Vivek Arya</td></tr></table>
+
+## Important Disclosures
+
+## Disclosures
+
+Micron (MU) Price Chart  
+![](images/32beb0d6a549f9685b9631f9236e2528fdf881c43803e6a7b312922844eb62c1.jpg)  
+B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating
+
+The Investment Opinion System is contained at the end of the report under the heading "Fundamental Equity Opinion Key". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report.
+
+Equity Investment Rating Distribution: Technology Group (as of 30 Jun 2026)
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>243</td><td>60.60%</td><td>Buy</td><td>123</td><td>50.62%</td></tr><tr><td>Hold</td><td>87</td><td>21.70%</td><td>Hold</td><td>45</td><td>51.72%</td></tr><tr><td>Sell</td><td>71</td><td>17.71%</td><td>Sell</td><td>21</td><td>29.58%</td></tr></table>
+
+Equity Investment Rating Distribution: Global Group (as of 30 Jun 2026)
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>1987</td><td>56.11%</td><td>Buy</td><td>1190</td><td>59.89%</td></tr><tr><td>Hold</td><td>797</td><td>22.51%</td><td>Hold</td><td>496</td><td>62.23%</td></tr><tr><td>Sell</td><td>757</td><td>21.38%</td><td>Sell</td><td>391</td><td>51.65%</td></tr></table>
+
+$^{R1}$ Issuers that were investment banking clients of BofA or one of its affiliates within the past 12 months. For purposes of this Investment Rating Distribution, the coverage universe includes only stocks. A stock rated Neutral is included as a Hold, and a stock rated Underperform is included as a Sell.
+
+FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation).
+
+<table><tr><td>Investment rating</td><td>Total return expectation (within 12-month period of date of initial rating)</td><td>Ratings dispersion guidelines for coverage cluster $^{R2}$ </td></tr><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>
+
+$^{R2}$ Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster.
+
+INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock.
+
+Price Charts for the securities referenced in this research report are available on the Price Charts website, or call 1-800-MERRILL to have them mailed.
+
+BofAS or one of its affiliates acts as a market maker for the equity securities recommended in the report: Micron.
+
+The issuer is or was, within the last 12 months, an investment banking client of BofAS and/or one or more of its affiliates: Micron.
+
+BofAS or an affiliate has received compensation from the issuer for non-investment banking services or products within the past 12 months: Micron.
+
+The issuer is or was, within the last 12 months, a non-securities business client of BofAS and/or one or more of its affiliates: Micron.
+
+BofAS or an affiliate has received compensation for investment banking services from this issuer within the past 12 months: Micron.
+
+BofAS or an affiliate expects to receive or intends to seek compensation for investment banking services from this issuer or an affiliate of the issuer within the next three months: Micron.
+
+BofAS together with its affiliates beneficially owns one percent or more of the common stock of this issuer. If this report was issued on or after the 9th day of the month, it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of a month reflect the ownership position at the end of the second month preceding the date of the report: Micron.
+
+BofAS or one of its affiliates is willing to sell to, or buy from, clients the common equity of the issuer on a principal basis: Micron.
+
+The issuer is or was, within the last 12 months, a securities business client (non-investment banking) of BofAS and/or one or more of its affiliates: Micron.
+
+BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.
+
+## Other Important Disclosures
+
+From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits.
+
+Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.
+
+The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.
+
+Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.
+
+Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments.
+
+Refer to BofA Global Research policies relating to conflicts of interest.
+
+"BofA" includes BofA, Inc. ("BofAS") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. "BofA" is a global brand for BofA Global Research.
+
+Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:
+
+BofAS and/or BofA, Pierce, Fenner & Smith Incorporated ("MLPF&S") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA ("BofASE") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASDisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.
+
+This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.
+
+## General Investment Related Disclosures:
+
+Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA.
+
+this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.
+
+Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.
+
+This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating.
+
+BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to "short" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting "shortselling" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.
+
+Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.
+
+BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.
+
+BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information.
+
+In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.
+
+## Copyright and General Information:
+
+Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.
+
+Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and
+
+employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.
+
+This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.
+
+Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.
+
+Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.
+
+The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content
+
+contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.
+
+All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.
+
+Subject to the quiet period applicable under laws of the various jurisdictions in which we distribute research reports and other legal and BofA policy-related restrictions on the publication of research reports, fundamental equity reports are produced on a regular basis as necessary to keep the investment recommendation current.
+
+Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.
+
+In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.
+
+Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.

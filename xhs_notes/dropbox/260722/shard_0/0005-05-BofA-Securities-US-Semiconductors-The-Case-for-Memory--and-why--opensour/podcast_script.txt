@@ -1,0 +1,103 @@
+ZH_A: 最近中国开源大模型的API定价低得惊人，有些甚至比西方模型便宜几百倍。这是不是意味着，这些模型对硬件的需求也更低？
+
+ZH_B: 这恰恰是这份报告要纠正的一个核心误解。定价是商业模式选择，不代表硬件成本更低。
+
+ZH_A: 所以你是说，这些模型虽然收费低，但它们对内存的需求并没有减少？
+
+ZH_B: 没错。以Kimi K3为例，它每服务实例仍需要大约1.4TB的HBM。这个内存消耗是固定的，不管它收3美元还是30美元。
+
+ZH_A: 那它们的定价优势到底从哪来？
+
+ZH_B: 主要来自三个非硬件因素。第一是架构效率，比如MoE稀疏性、MLA注意力机制，这能带来2到3倍的每token效率提升。第二是基础设施成本，中国的电力和人力成本比美国低40%到60%。第三是补贴竞争，有些公司可能是为了抢市场份额而亏本定价。
+
+ZH_A: 这意味着什么？对投资者来说，关键判断是什么？
+
+ZH_B: 关键在于，这些开源模型实际上在扩大内存的总体市场。每个下载权重的企业都需要自己部署硬件，这创造了新的内存端点。
+
+ZH_A: 能具体解释一下吗？
+
+ZH_B: 封闭模型只有一个部署，所有用户共享一个HBM池。但开源模型不同，每个企业下载权重，就要在自己的硬件上加载一份模型权重。十万个企业自托管，就是十万份独立的HBM需求。
+
+ZH_A: 这听起来像内存需求的多倍乘数效应。
+
+ZH_B: 对。而且模型权重还在快速增长。Kimi K3有2.8万亿参数，是DeepSeek-V3的4倍多。即使有量化压缩，内存需求仍在增长。
+
+ZH_A: 那MoE技术呢？它只激活部分参数，不是能省内存吗？
+
+ZH_B: 这是一个关键误解。MoE节省的是计算，不是内存。因为路由器动态选择专家，所有专家权重必须常驻在HBM中。总参数翻倍，HBM需求就翻倍。
+
+ZH_A: 所以模型越大，内存需求越大，和激活参数多少无关。
+
+ZH_B: 完全正确。而且更大的权重还会推动多层内存架构，热专家用HBM，冷专家用CPU内存，冷KV缓存用企业级NAND。每层都有需求。
+
+ZH_A: 那中国本土的内存厂商，比如CXMT，会不会形成竞争？
+
+ZH_B: 报告认为威胁有限。CXMT主要做消费级DRAM，不是AI内存需要的HBM3E或HBM4。而且美国OEM短期内不太可能获得政府批准采购CXMT的产品。
+
+ZH_A: 所以AI内存市场仍然由美光这类厂商主导。
+
+ZH_B: 对。报告还提到一个催化剂，美光的芯片法案回购限制将在2026年12月到期，之后可能启动大规模回购。
+
+ZH_A: 有多大？
+
+ZH_B: 按照40%的派息比例，每年回购规模可能在500到600亿美元，相当于市值的5%到6%。
+
+ZH_A: 那你觉得还有哪些问题，报告没有完全展开？
+
+ZH_B: 有两个值得关注。第一，这些中国模型的补贴能持续多久，如果资本退潮，定价和需求会怎么变化。第二，开源模型的多端点效应到底能放大多少内存需求，在更大的模型规模下会不会出现新的瓶颈。
+
+ZH_A: 这些悬念听起来都值得去读完整报告。感谢你今天的分享。
+
+ZH_B: 谢谢。如果听众想深入了解这些模型的具体参数对比和内存需求测算，可以阅读完整报告。
+
+EN_A: So Chinese open-source AI models are charging a fraction of what Western models do. Does that mean they need less hardware?
+
+EN_B: That is exactly the misconception this report wants to correct. Pricing is a business model choice, not a reflection of hardware cost.
+
+EN_A: So even though they charge less, the memory requirement stays the same?
+
+EN_B: Correct. Take Kimi K3 for example. Each serving instance still needs about 1.4 terabytes of HBM. That memory footprint does not change whether they charge three dollars or thirty dollars per million tokens.
+
+EN_A: Then where does their pricing advantage come from?
+
+EN_B: Three main factors that are not hardware related. First, architectural efficiency like MoE sparsity and MLA attention, which gives them two to three times more efficiency per token. Second, infrastructure costs. Electricity and engineering salaries in China are 40 to 60 percent lower. Third, competition and subsidies. Some companies are likely pricing below cost just to grab market share.
+
+EN_A: What does this mean for investors? What is the key takeaway?
+
+EN_B: The key insight is that these open-source models are actually expanding the total addressable market for memory. Every enterprise that downloads the weights needs to deploy its own hardware, creating new memory endpoints.
+
+EN_A: Can you explain that mechanism?
+
+EN_B: With a closed model, all users share one HBM pool in a few data centers. But with open models, every company that self-hosts needs its own copy of the weights in its own HBM. Ten thousand enterprises mean ten thousand separate HBM deployments.
+
+EN_A: So it is a multiplier effect for memory demand.
+
+EN_B: Exactly. And model weights are growing fast. Kimi K3 has 2.8 trillion parameters, more than four times larger than DeepSeek-V3. Even with quantization, memory demand is still rising.
+
+EN_A: But MoE only activates a fraction of parameters. Doesnt that save memory?
+
+EN_B: This is a common misunderstanding. MoE saves compute, not memory. Because the router selects experts dynamically, all expert weights must stay in HBM at all times. Double the total parameters, double the HBM requirement.
+
+EN_A: So bigger models always mean more memory, regardless of active parameters.
+
+EN_B: Precisely. And larger weights also drive multi-tier memory architectures. Hot experts in HBM, cold experts spilled to CPU memory, cold KV cache to enterprise NAND. Every tier gets more content per deployment.
+
+EN_A: What about Chinese memory maker CXMT? Could that be a competitive threat?
+
+EN_B: The report sees limited risk. CXMT mainly serves consumer DRAM, not the HBM3E or HBM4 needed for AI. And US OEMs are unlikely to get government approval to source from CXMT anytime soon.
+
+EN_A: So the AI memory market still belongs to companies like Micron.
+
+EN_B: Yes. And the report highlights a catalyst. Microns CHIPS Act buyback restrictions expire around December 2026, which could unlock large share repurchases.
+
+EN_A: How large are we talking?
+
+EN_B: At a 40 percent payout ratio, annual buybacks could be 50 to 60 billion dollars, or about 5 to 6 percent of market cap per year.
+
+EN_A: What questions does the report leave unanswered?
+
+EN_B: Two things worth watching. First, how sustainable are the Chinese model subsidies? If capital dries up, pricing and demand could shift. Second, how far does the multi-endpoint effect really go? At even larger model sizes, we might see new bottlenecks.
+
+EN_A: Those sound like good reasons to read the full report. Thanks for the insights.
+
+EN_B: Thank you. For anyone who wants to see the detailed model comparisons and memory demand estimates, the full report has all the numbers.

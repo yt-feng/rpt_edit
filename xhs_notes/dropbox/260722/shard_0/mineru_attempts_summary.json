@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_pqw6brce/pdfs/0001-01-BARC-U.S. Software-The Q2 On-Cycle Earnings Guide - Too Early to Get Excited-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pqw6brce/pdfs/0002-02-Bernstein-Horizon Robotics-9660.HK-Horizon 1H26 preliminary results- revenue miss- resilient margin-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pqw6brce/pdfs/0003-03-Bernstein-Americas Healthcare- Generic Pharmaceuticals- 2Q EPS preview-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pqw6brce/pdfs/0004-04-Bernstein-Japan Autos - Auto Parts- FY3 27 Q1 Preview-Honda- Suzuki- and Toyota Tsusho poised for strong results-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pqw6brce/pdfs/0005-05-BofA-US Semiconductors-The Case for Memory- and why -opensource- expands TAM-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
