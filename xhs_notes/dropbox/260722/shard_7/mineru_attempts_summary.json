@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_zb9c5jb1/pdfs/0001-36-JPM-Copper Dashboard-Global inventory eases on China destocking- tariff front running continues as US stocks continue to build-remain constructive on most copper.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zb9c5jb1/pdfs/0002-37-JPM-Deye-A-605117-Takes from our fireside chat- Resilient demand outlook-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zb9c5jb1/pdfs/0003-38-JPM-Electronic Components Sector-FC-BGA -ABF- substrate technology seminar report-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zb9c5jb1/pdfs/0004-39-JPM-Hardware - Networking-Channel Talk- Takeaways from a Discussion with a Large U.S. VAR on Enterprise Spending and OEM Trends-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zb9c5jb1/pdfs/0005-40-JPM-Korea Equity Strategy-Update on the de-leveraging process in Korea-260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

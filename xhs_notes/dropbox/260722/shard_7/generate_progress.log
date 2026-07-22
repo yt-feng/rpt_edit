@@ -1,0 +1,40 @@
+Found 78 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zb9c5jb1/pdfs/0001-36-J.P. Morgan-Copper Dashboard-Global inventory eases on China destocking- tariff front running continues as US stocks continue to build-remain constructive on most copper.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zb9c5jb1/pdfs/0002-37-J.P. Morgan-Deye-A-605117-Takes from our fireside chat- Resilient demand outlook-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zb9c5jb1/pdfs/0003-38-J.P. Morgan-Electronic Components Sector-FC-BGA -ABF- substrate technology seminar report-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zb9c5jb1/pdfs/0004-39-J.P. Morgan-Hardware - Networking-Channel Talk- Takeaways from a Discussion with a Large U.S. VAR on Enterprise Spending and OEM Trends-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zb9c5jb1/pdfs/0005-40-J.P. Morgan-Korea Equity Strategy-Update on the de-leveraging process in Korea-260721.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=0bef8c33-9d8e-45a5-a42e-a296690ac38e
+MinerU states: running, pending, running, pending, pending
+MinerU states: running, done, running, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset bb8d385da6c776dbc5d8a8e05b07fa14b3a09e3a5f5e751b89070c8613b6cee7.jpg: score=0;odd_ratio:6.14,edge:0.34,contrast
+Skip non-chart visual asset 13be27e00e1a94b467ff97cf50345c9bee9dcfcc11ad2d8583dacd37ed5da909.jpg: score=-100;too_small:982x165
+Skip non-chart visual asset 478882d7bf86890b7e2f35be15f9af9ba316827d32cb2d49d5ec7667a21f38df.jpg: score=1;odd_ratio:5.41,edge:0.38,contrast,large
+Skip non-chart visual asset 1b97b2c02455fc468801ca59dc4efe1d88b4030a7beedec4503f7e2928c6570b.jpg: score=0;square_without_chart_hint,edge:0.41,large
+Skip non-chart visual asset 684e760314b2eee6813da0dade36b81dbfcdd439bb909f0aa065ccacbf11d1fe.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 71e16c5eefd9ac5cd9262e8a1f39932c3a16051865f740c7e0570f6190ff377c.jpg: score=0;square_without_chart_hint,edge:0.11,large
+Skip non-chart visual asset 76df313ec14f080fc92e05f5c4f017f6989aa5d325be5c854b02e666292baa65.jpg: score=-100;too_small:1451x175
+Skip non-chart visual asset 67efe534369e3bdf8b2ea0557fe792e96838e81872a85199d78d99d2f540d324.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,contrast
+Skip non-chart visual asset f7e81abec703c16d0713a5e9f892c0f6f91d6b97c6c70b4c4afb03ba7f136471.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,contrast
+Neutralized WeChat title while keeping the report: 摩根大通：铜市监测-全球库存因中国去库缓解-美国关税囤货持续 -> 摩根大通：跨境贸易与行业变化观察
+Skip non-chart visual asset 3b1161eb30d802ad38935f0247ba3cabd7169ad71f5ec402c00d777aa8e628ee.jpg: score=-100;too_small:540x101
+Skip non-chart visual asset 5f99c5fdedabef69bd9f2f433bab845f86596297c3f7a5d80c892fbf890814ce.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 8b291534d2eeacc1ec4fcc0e9072f3f0f825da5e9dc1499f3c089da08325f8a6.jpg: score=-100;too_small:982x164
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset 43b68a56af605a4e63beb74d6503b0f2751fbc5bf0557691179ad3e785aeae5a.jpg: score=-100;too_small:982x170
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset 34f8c462f4efbc10787dd92612f9758aca27675ac394004d641aa4ef0a8cde70.jpg: score=-100;too_small:982x168
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset 505bfbf5ce804a49f4e9eff64a7b39b9177d18c2065ada00a5af3fc9610317b0.jpg: score=1;chart_ratio
+Skip non-chart visual asset d3e32e2dda2804005044a4e554b877b272ca8c03edb9290135bcca166d7d6735.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset 555a4be265e70db951ff56284137a779532e29e65dc62fd96d3bf00d8b0053d9.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset 4a9f1e5da43a05bc8de20c1d4aa531693eea7077c4f0c6d8361ff02ce8d47e34.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 摩根大通：韩国市场去杠杆进程与资金结构变化 -> 摩根大通：资金结构与相关数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260722/shard_7; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

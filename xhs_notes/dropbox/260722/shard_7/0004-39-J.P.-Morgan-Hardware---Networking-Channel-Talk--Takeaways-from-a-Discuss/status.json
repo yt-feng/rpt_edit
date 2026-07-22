@@ -1,0 +1,87 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_zb9c5jb1/pdfs/0004-39-JPM-Hardware - Networking-Channel Talk- Takeaways from a Discussion with a Large U.S. VAR on Enterprise Spending and OEM Trends-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "企业IT支出，正在“",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：硬件与网络渠道交流，美国大型VAR谈企业支出与OEM趋势",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-39-JPM-Hardware - Networking-Channel Talk- Takeaways from a Discussion with a Large U.S. VAR on Enterprise Spending and OEM Trends-260720.pdf",
+    "cleaned_source_title": "JPM-Hardware - Networking-Channel Talk- Takeaways from a Discussion with a Large U.S. VAR on Enterprise Spending and OEM Trends",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：硬件NetworkingChannelTalk",
+    "raw_candidates": [
+      "硬件与网络渠道交流：美国大型VAR谈企业支出与OEM趋势",
+      "硬件与网络渠道交流：美国大型VAR谈企业支出与OEM趋势-订单积压至2026下半年",
+      "硬件与网络渠道交流：美国大型VAR谈企业支出与OEM趋势-AI安全与本地部署回流"
+    ],
+    "cleaned_candidates": [
+      "JPM：硬件与网络渠道交流，美国大型VAR谈企业支出与OEM趋势",
+      "JPM：硬件NetworkingChannelTalk",
+      "JPM：12个月的积压订单被VAR描述为“前所未有”"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：硬件NetworkingChannelTalk",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：12个月的积压订单被VAR描述为“前所未有”",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：硬件与网络渠道交流，美国大型VAR谈企业支出与OEM趋势",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：硬件与网络渠道交流，美国大型VAR谈企业支出与OEM趋势"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "482",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
