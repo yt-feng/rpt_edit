@@ -1,0 +1,429 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0001-06-CITI-Alibaba Group Holding -BABA.US- Thoughts on Qwen 3.8 Max Preview and Implications from Kimi K3 Release-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "阿里和月之暗面，谁更",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：阿里巴巴Qwen3.8Max预览与KimiK3发布影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-06-CITI-Alibaba Group Holding -BABA.US- Thoughts on Qwen 3.8 Max Preview and Implications from Kimi K3 Release-260720.pdf",
+      "cleaned_source_title": "CITI-Alibaba Group Holding -BABA.US- Thoughts on Qwen 3.8 Max Preview and Implications from Kimi K3 Release",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：AlibabaGroupHolding",
+      "raw_candidates": [
+        "阿里巴巴Qwen 3.8 Max预览与Kimi K3发布影响",
+        "阿里巴巴Qwen 3.8 Max与Kimi K3发布-2026年7月中国AI竞争",
+        "阿里巴巴Qwen 3.8 Max与Kimi K3发布-中国AI平台竞争趋势"
+      ],
+      "cleaned_candidates": [
+        "Citi：阿里巴巴Qwen3.8Max预览与KimiK3发布影响",
+        "Citi：阿里巴巴Qwen3.8Max与KimiK3发布",
+        "Citi：AlibabaGroupHolding",
+        "Citi：2026年7月，阿里巴巴和月之暗面先后发布了各自的大模型新版本"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：AlibabaGroupHolding",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：2026年7月，阿里巴巴和月之暗面先后发布了各自的大模型新版本",
+          "reasons": [
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：阿里巴巴Qwen3.8Max预览与KimiK3发布影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：阿里巴巴Qwen3.8Max预览与KimiK3发布影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0002-07-CITI-China Battery Materials-What-s New at 2026 China ESS and Battery Chain Tour- Meeting with Lithium Expert-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "锂电专家最新判断：2",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：中国电池材料-2026年储能与电池产业链调研-锂专家交流",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-07-CITI-China Battery Materials-What-s New at 2026 China ESS and Battery Chain Tour- Meeting with Lithium Expert-260720.pdf",
+      "cleaned_source_title": "CITI-China Battery Materials-What-s New at 2026 China ESS and Battery Chain Tour- Meeting with Lithium Expert",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国BatteryMaterialsWhatsNewat2026",
+      "raw_candidates": [
+        "中国电池材料-2026年储能与电池产业链调研-锂专家交流",
+        "中国电池材料-2026年储能与电池产业链调研-锂市场信号",
+        "中国电池材料-2026年储能与电池产业链调研-锂供需缺口与库存信号"
+      ],
+      "cleaned_candidates": [
+        "Citi：中国电池材料-2026年储能与电池产业链调研-锂专家交流",
+        "Citi：中国电池材料-2026年储能与电池产业链调研-锂市场信号",
+        "Citi：中国电池材料-2026年储能与电池产业链调研",
+        "Citi：中国BatteryMaterialsWhatsNewat2026",
+        "Citi：Citi于7月13日举办2026年中国储能与电池产业链调研"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：中国电池材料-2026年储能与电池产业链调研-锂市场信号",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：中国电池材料-2026年储能与电池产业链调研",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：中国BatteryMaterialsWhatsNewat2026",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Citi于7月13日举办2026年中国储能与电池产业链调研",
+          "reasons": [
+            "anchor_coverage=0.58",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：中国电池材料-2026年储能与电池产业链调研-锂专家交流",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：中国电池材料-2026年储能与电池产业链调研-锂专家交流"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0003-08-CITI-China Automation and Machinery-China Tower Crane Shipment YoY Turned Positive for the First Time Since Jul-23-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "塔吊出货转正，工程机",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：中国塔式起重机出货量同比增速自2023年7月首次转正",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-08-CITI-China Automation and Machinery-China Tower Crane Shipment YoY Turned Positive for the First Time Since Jul-23-260720.pdf",
+      "cleaned_source_title": "CITI-China Automation and Machinery-China Tower Crane Shipment YoY Turned Positive for the First Time Since Jul-23",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国Automation和Machinery中国",
+      "raw_candidates": [
+        "中国塔式起重机出货量同比增速转正",
+        "中国塔式起重机出货量同比增速自2023年7月首次转正",
+        "中国工程机械塔吊出货量同比增速转正"
+      ],
+      "cleaned_candidates": [
+        "Citi：中国塔式起重机出货量同比增速转正",
+        "Citi：中国塔式起重机出货量同比增速自2023年7月首次转正",
+        "Citi：中国工程机械塔吊出货量同比增速转正",
+        "Citi：中国Automation和Machinery中国",
+        "Citi：中国塔式起重机出货量同比增速自2023年7月以来首次转正"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：中国工程机械塔吊出货量同比增速转正",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        },
+        {
+          "title": "Citi：中国Automation和Machinery中国",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：中国塔式起重机出货量同比增速自2023年7月首次转正",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2023",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：中国塔式起重机出货量同比增速自2023年7月首次转正"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0004-09-CITI-China Property-Update to 1H26 Preview- Potential to Exceed our Bearish Estimates-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "地产1H26业绩前瞻",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "Citi：城市与住房数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-09-CITI-China Property-Update to 1H26 Preview- Potential to Exceed our Bearish Estimates-260720.pdf",
+      "cleaned_source_title": "CITI-China Property-Update to 1H26 Preview- Potential to Exceed our Bearish Estimates",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国地产更新to1H26Preview",
+      "raw_candidates": [
+        "Citi：中国房地产1H26业绩预览",
+        "Citi：中国房地产1H26业绩预览-盈利弱于预期",
+        "Citi：中国房地产1H26业绩预览-销售拐点与政策窗口"
+      ],
+      "cleaned_candidates": [
+        "Citi：中国房地产1H26业绩预览",
+        "Citi：中国房地产1H26业绩预览-盈利弱于预期",
+        "Citi：中国房地产1H26业绩预览-销售拐点与政策窗口",
+        "Citi：中国地产更新to1H26Preview",
+        "Citi：Citi在最新一期中国房地产行业报告中更新了19家主要房企的1H26"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：中国地产更新to1H26Preview",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "Citi：Citi在最新一期中国房地产行业报告中更新了19家主要房企的1H26",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        }
+      ],
+      "selected_title": "Citi：城市与住房数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：中国房地产1H26业绩预览-盈利弱于预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "Citi：城市与住房数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0005-10-CITI-Zai Lab -ZLAB.US- Our Quick Thoughts and Expectations for Upcoming Zoci DLL3 Data at ESMO-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "DLL3 ADC 一",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：再鼎医药ZociDLL3数据ESMO预告",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-10-CITI-Zai Lab -ZLAB.US- Our Quick Thoughts and Expectations for Upcoming Zoci DLL3 Data at ESMO-260720.pdf",
+      "cleaned_source_title": "CITI-Zai Lab -ZLAB.US- Our Quick Thoughts and Expectations for Upcoming Zoci DLL3 Data at ESMO",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：ZaiLab-OurQuickThoughts",
+      "raw_candidates": [
+        "再鼎医药Zoci DLL3数据ESMO预告",
+        "再鼎医药DLL3 ADC一线SCLC数据ESMO首次披露",
+        "再鼎医药Zoci DLL3 ADC一线SCLC疗效与PFS展望"
+      ],
+      "cleaned_candidates": [
+        "Citi：再鼎医药ZociDLL3数据ESMO预告",
+        "Citi：再鼎医药DLL3ADC一线SCLC数据ESMO首次披露",
+        "Citi：再鼎医药ZociDLL3ADC一线SCLC疗效与PFS展望",
+        "Citi：ZaiLab-OurQuickThoughts",
+        "Citi：预计入组患者约30-40例，其中一线患者占相当比例"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：再鼎医药DLL3ADC一线SCLC数据ESMO首次披露",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "Citi：再鼎医药ZociDLL3ADC一线SCLC疗效与PFS展望",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "Citi：ZaiLab-OurQuickThoughts",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：预计入组患者约30-40例，其中一线患者占相当比例",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：再鼎医药ZociDLL3数据ESMO预告",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：再鼎医药ZociDLL3数据ESMO预告"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

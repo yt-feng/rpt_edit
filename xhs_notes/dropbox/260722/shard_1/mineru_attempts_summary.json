@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0001-06-CITI-Alibaba Group Holding -BABA.US- Thoughts on Qwen 3.8 Max Preview and Implications from Kimi K3 Release-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0002-07-CITI-China Battery Materials-What-s New at 2026 China ESS and Battery Chain Tour- Meeting with Lithium Expert-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0003-08-CITI-China Automation and Machinery-China Tower Crane Shipment YoY Turned Positive for the First Time Since Jul-23-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0004-09-CITI-China Property-Update to 1H26 Preview- Potential to Exceed our Bearish Estimates-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0005-10-CITI-Zai Lab -ZLAB.US- Our Quick Thoughts and Expectations for Upcoming Zoci DLL3 Data at ESMO-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_t7p1nfih/pdfs/0005-10-CITI-Zai Lab -ZLAB.US- Our Quick Thoughts and Expectations for Upcoming Zoci DLL3 Data at ESMO-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "DLL3 ADC 一",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Citi：再鼎医药ZociDLL3数据ESMO预告",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-10-CITI-Zai Lab -ZLAB.US- Our Quick Thoughts and Expectations for Upcoming Zoci DLL3 Data at ESMO-260720.pdf",
+    "cleaned_source_title": "CITI-Zai Lab -ZLAB.US- Our Quick Thoughts and Expectations for Upcoming Zoci DLL3 Data at ESMO",
+    "institution_name": "Citi",
+    "required_terms": [],
+    "deterministic_fallback": "Citi：ZaiLab-OurQuickThoughts",
+    "raw_candidates": [
+      "再鼎医药Zoci DLL3数据ESMO预告",
+      "再鼎医药DLL3 ADC一线SCLC数据ESMO首次披露",
+      "再鼎医药Zoci DLL3 ADC一线SCLC疗效与PFS展望"
+    ],
+    "cleaned_candidates": [
+      "Citi：再鼎医药ZociDLL3数据ESMO预告",
+      "Citi：再鼎医药DLL3ADC一线SCLC数据ESMO首次披露",
+      "Citi：再鼎医药ZociDLL3ADC一线SCLC疗效与PFS展望",
+      "Citi：ZaiLab-OurQuickThoughts",
+      "Citi：预计入组患者约30-40例，其中一线患者占相当比例"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Citi：再鼎医药DLL3ADC一线SCLC数据ESMO首次披露",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "Citi：再鼎医药ZociDLL3ADC一线SCLC疗效与PFS展望",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "Citi：ZaiLab-OurQuickThoughts",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：预计入组患者约30-40例，其中一线患者占相当比例",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：再鼎医药ZociDLL3数据ESMO预告",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Citi：再鼎医药ZociDLL3数据ESMO预告"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "599",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
