@@ -1,0 +1,514 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0001-BCG_AI-in-the-Public-Sector_c0fd96a4.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "国家治理的“幸福账本",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济体->地区 x1",
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "经济->宏观环境 x2",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_AI-in-the-Public-Sector_c0fd96a4.pdf",
+      "cleaned_source_title": "0001-BCG_AI-in-the-Public-Sector_c0fd96a4",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：0001BCGAIinthePublicSectorc0",
+      "raw_candidates": [
+        "波士顿咨询：AI在公共部门的应用",
+        "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
+        "波士顿咨询：AI在公共部门的应用-143国福祉与GDP补充评估"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：AI在公共部门的应用",
+        "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
+        "波士顿咨询：AI在公共部门的应用-143国福祉与GDP补充评估",
+        "波士顿咨询：0001BCGAIinthePublicSectorc0",
+        "波士顿咨询：AI技术与相关数据观察"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：0001BCGAIinthePublicSectorc0",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI技术与相关数据观察",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2019"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0002-BCG_Advancing-Africa-s-AI-and-Digital-Economy_0ab2755e.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "非洲AI破局：从数字",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x2",
+      "经济->宏观环境 x1",
+      "投资回报->回报表现 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_Advancing-Africa-s-AI-and-Digital-Economy_0ab2755e.pdf",
+      "cleaned_source_title": "0002-BCG_Advancing-Africa-s-AI-and-Digital-Economy_0ab2755e",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：0002BCGAdvancingAfricasAI",
+      "raw_candidates": [
+        "波士顿咨询：非洲AI与数字宏观环境",
+        "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%",
+        "波士顿咨询：非洲AI与数字宏观环境-市场碎片化与人才外流"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：非洲AI与数字宏观环境",
+        "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%",
+        "波士顿咨询：非洲AI与数字宏观环境-市场碎片化与人才外流",
+        "波士顿咨询：0002BCGAdvancingAfricasAI",
+        "波士顿咨询：非洲拥有约6.2万名AI专家，仅占全球AI劳动力的5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：0002BCGAdvancingAfricasAI",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：非洲拥有约6.2万名AI专家，仅占全球AI劳动力的5%",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2050",
+          "8.5"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0003-BCG_Are-Insurers-Talent-Models-Ready-for-AI_0bad6198.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "AI正在重塑保险业的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：保险公司人才模式与AI适配性",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-BCG_Are-Insurers-Talent-Models-Ready-for-AI_0bad6198.pdf",
+      "cleaned_source_title": "0003-BCG_Are-Insurers-Talent-Models-Ready-for-AI_0bad6198",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：AI0003BCGAreInsurersTal",
+      "raw_candidates": [
+        "波士顿咨询：保险公司人才模式与AI适配性",
+        "波士顿咨询：保险公司人才模式面临AI重塑（2025）",
+        "波士顿咨询：AI时代保险公司人才模式与专业判断重构"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：保险公司人才模式与AI适配性",
+        "波士顿咨询：保险公司人才模式面临AI重塑（2025）",
+        "波士顿咨询：AI时代保险公司人才模式与专业判断重构",
+        "波士顿咨询：AI0003BCGAreInsurersTal",
+        "波士顿咨询：估算，AI潜在价值的约70%来自变革管理、人才与运营模式"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：保险公司人才模式面临AI重塑（2025）",
+          "reasons": [
+            "anchor_coverage=0.62",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI0003BCGAreInsurersTal",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：估算，AI潜在价值的约70%来自变革管理、人才与运营模式",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：保险公司人才模式与AI适配性",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：保险公司人才模式与AI适配性"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "AI算力缺口下，澳洲",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b.pdf",
+      "cleaned_source_title": "0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0004BCGAustraliasDigi",
+      "raw_candidates": [
+        "波士顿咨询：澳大利亚数字基础设施挑战",
+        "波士顿咨询：澳大利亚数据中心面临能源与规划约束",
+        "波士顿咨询：澳大利亚数据中心市场增长与电力瓶颈"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：澳大利亚数字基础设施挑战",
+        "波士顿咨询：澳大利亚数据中心面临能源与规划约束",
+        "波士顿咨询：澳大利亚数据中心市场增长与电力瓶颈",
+        "波士顿咨询：0004BCGAustraliasDigi",
+        "波士顿咨询：全球数据中心市场容量预计到2030年将增长近2.5倍"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：澳大利亚数据中心面临能源与规划约束",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "波士顿咨询：澳大利亚数据中心市场增长与电力瓶颈",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0004BCGAustraliasDigi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：全球数据中心市场容量预计到2030年将增长近2.5倍",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：澳大利亚数字基础设施挑战",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0005-BCG_CEOs-Are-Starting-to-See-Value-from-AI.-Now-Comes-Execution_4e3e156d.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "CEO们终于看到AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-BCG_CEOs-Are-Starting-to-See-Value-from-AI.-Now-Comes-Execution_4e3e156d.pdf",
+      "cleaned_source_title": "0005-BCG_CEOs-Are-Starting-to-See-Value-from-AI.-Now-Comes-Execution_4e3e156d",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：AI0005BCGCEOsAreStartin",
+      "raw_candidates": [
+        "波士顿咨询：CEO从AI中看到价值与执行差距",
+        "波士顿咨询：2026年CEO调查显示AI执行差距扩大",
+        "波士顿咨询：AI规模化落地的组织瓶颈与执行差距"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：CEO从AI中看到价值与执行差距",
+        "波士顿咨询：2026年CEO调查显示AI执行差距扩大",
+        "波士顿咨询：AI规模化落地的组织瓶颈与执行差距",
+        "波士顿咨询：AI0005BCGCEOsAreStartin",
+        "波士顿咨询：1.组织障碍已超过技术约束，成为限制AI财务影响的主要因素"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：2026年CEO调查显示AI执行差距扩大",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI规模化落地的组织瓶颈与执行差距",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI0005BCGCEOsAreStartin",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：1.组织障碍已超过技术约束，成为限制AI财务影响的主要因素",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：CEO从AI中看到价值与执行差距",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

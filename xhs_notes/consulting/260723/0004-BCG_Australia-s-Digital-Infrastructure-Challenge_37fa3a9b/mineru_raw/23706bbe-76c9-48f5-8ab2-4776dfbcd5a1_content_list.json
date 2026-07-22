@@ -1,0 +1,2537 @@
+[
+    {
+        "type": "text",
+        "text": "BCG",
+        "bbox": [
+            80,
+            113,
+            228,
+            165
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Australia's Digital Infrastructure Challenge:",
+        "text_level": 1,
+        "bbox": [
+            76,
+            236,
+            549,
+            310
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Can data centres unlock sustainable long-term growth?",
+        "bbox": [
+            78,
+            337,
+            593,
+            360
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MAY 2026",
+        "bbox": [
+            78,
+            386,
+            178,
+            405
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/85e89984bd7cb2e064b1f3561bce738f7ef8dfcfe62e5d9f471cc067dbb3435c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            424,
+            1000,
+            998
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/4941b6306d9f0b3cd0c909ef7e4736acdfa35cd2da9811249def7520a45f92ca.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            2,
+            990,
+            997
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            248,
+            968
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "About this report",
+        "text_level": 2,
+        "bbox": [
+            78,
+            149,
+            349,
+            175
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI is driving an unprecedented surge in demand for computing power and the data centres that underpin it. Deploying new applications, managing growing data volumes and building new models all depend on reliable, large-scale digital infrastructure.",
+        "bbox": [
+            76,
+            186,
+            566,
+            248
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In this report, we explore the role that digital infrastructure could play in Australia's future economic development. We examine the growth of the global data centre market, Australia's competitive position, and the opportunities associated with a thriving domestic digital infrastructure sector. We also consider the emerging challenges, system constraints and trade-offs that are becoming more pronounced as demand for computing capacity accelerates both locally and globally.",
+        "bbox": [
+            76,
+            254,
+            625,
+            362
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This report draws on BCG experience, analysis and frameworks, including interviews with over 20 senior digital infrastructure executives and a survey with senior executives across relevant industries.",
+        "bbox": [
+            76,
+            367,
+            627,
+            414
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            80,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            493,
+            958,
+            504,
+            969
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Executive summary",
+        "text_level": 2,
+        "bbox": [
+            80,
+            109,
+            390,
+            135
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As generative AI accelerates and new applications scale rapidly, global demand for computing power is still outpacing supply, even though computing capacity is expected to be 2.5X by 2030.",
+        "bbox": [
+            76,
+            160,
+            465,
+            222
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Australia is already one of the largest data centre locations in Asia Pacific, with approximately 1.8 GW of installed capacity in 2025 and the potential to capture even more growth and associated investment. Australia’s renewable energy potential, strong subsea connectivity, and stable and secure political, business and regulatory environment provide the foundations for a thriving data centre destination that addresses secure sovereign needs and can meet both Asia Pacific and global demand.",
+        "bbox": [
+            76,
+            229,
+            475,
+            379
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "By strengthening its digital infrastructure market, Australia could build a reliable capability for its industries to increasingly rely on, and attract global investment from data centre developers, hyperscalers and colocation providers.",
+        "bbox": [
+            78,
+            386,
+            460,
+            463
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The opportunity is significant: developing 2.5 GW of additional compute capacity by 2030 could generate \\$100+ billion in locally-retained economic impact from the construction of data centres and new energy generation to match, and indirectly stimulated local supply chain activity. Once operational, approx. \\$8 billion - \\$10 billion per year in local economic activity could be stimulated by ongoing data centre operations.",
+        "bbox": [
+            76,
+            470,
+            464,
+            606
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To date, various structural factors have helped to attract digital infrastructure investment into Australia. However, as GenAI drives unprecedented growth in data centre market capacity, and in an increasingly competitive regional market, these factors alone will not be enough to continue to secure investment.",
+        "bbox": [
+            76,
+            613,
+            444,
+            719
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Australia is now approaching an important inflection point. As demand for digital infrastructure accelerates, a number of emerging pressures and constraints that have not materially affected growth are becoming more pronounced. Australia has an opportunity to position itself to capture this opportunity, but will need to proactively address four key challenges:",
+        "bbox": [
+            76,
+            727,
+            480,
+            848
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- The power paradox - managing the increasing need for electricity availability: Data centres are becoming a large and fast-growing source of electricity demand at the same time as Australia is navigating the broader energy transition. Australia’s renewable and storage pipeline is strong, but new Final Investment Decisions (FIDs) of wind, solar and gas have largely stalled in recent years due to challenging economics, permitting and community issues. Data centre demand could accelerate the build-out by underwriting projects and unlocking economic viability. However, the pace of demand growth relative to the time required to deliver new supply creates a growing challenge. Realising the data centre opportunity for Australia will require careful balancing of energy reliability, affordability, decarbonisation and investment considerations, particularly as governments, energy providers and the technology sector navigate how new AI and therefore energy demand interacts with an already evolving energy system.",
+        "bbox": [
+            509,
+            160,
+            916,
+            516
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- The chicken-or-egg dilemma - investment sequencing and delivery certainty: The scale and speed of investment required to support future data centre growth is creating increasing interdependencies between developers, customers, energy providers and governments. Developers are often hesitant to commit significant upfront capital without long-term customer commitments, while customers seek greater certainty around delivery timelines, power availability and infrastructure readiness before making long-term decisions. As demand accelerates, balancing these competing risk positions is becoming more important, particularly in an environment where approval processes, energy delivery timelines and market signals continue to evolve.",
+        "bbox": [
+            509,
+            520,
+            913,
+            784
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            493,
+            958,
+            504,
+            968
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- The shackles of micro decisions - managing concentration and long-term infrastructure planning: Data centre investment is increasingly concentrating in major hubs such as Sydney and Melbourne, where existing infrastructure, connectivity and demand present strong commercial advantages, but the cumulative impact can place increasing pressure on energy, land and network infrastructure in a relatively small number of locations. This raises broader questions around how growth could be balanced across the country; how infrastructure planning could better align across energy, connectivity and land use; and how the trade-offs between market-led development and more coordinated long-term planning approaches could be reconciled.",
+        "bbox": [
+            84,
+            159,
+            486,
+            424
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- The data centre race - competing for global data centre investment: Competition for data centre investment across the Asia-Pacific region is intensifying as governments move to capture growing AI and digital infrastructure demand. While Australia has many structural advantages, longer and more fragmented approval and grid connection processes could create challenges for time-sensitive investment decisions, particularly relative to faster-moving Asian markets. As competition intensifies, Australia will increasingly need to balance speed, coordination, regulatory detail and long-term infrastructure planning if it seeks to remain competitive in an increasingly contested Asia-Pacific market.",
+        "bbox": [
+            84,
+            427,
+            468,
+            675
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Addressing these four challenges is achievable but will require coordinated action. With its Asia Pacific peers already active in this attractive global market, Australia will need to act decisively to capture this new economic opportunity. Australia could also miss an important opportunity to bring economic activity and digital infrastructure and capabilities to communities outside the popular data-centre hubs of Sydney and Melbourne.",
+        "bbox": [
+            76,
+            689,
+            468,
+            826
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/4ebc29a9d67d27edc1ed480c4bfbbb761bbb91a5140ac9e35dd733a9693748ca.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            508,
+            0,
+            1000,
+            1000
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            80,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1. Context: Demand for computing power is growing rapidly",
+        "text_level": 1,
+        "bbox": [
+            76,
+            106,
+            769,
+            167
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Global demand for computing power is driving demand for data centre capacity",
+        "text_level": 2,
+        "bbox": [
+            76,
+            178,
+            454,
+            214
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The rapid adoption of AI, the expansion of digital services and continued cloud migration are driving computing demand at an unprecedented pace worldwide. As a result, global data centre market capacity is projected to grow by nearly 2.5X from 87 GW today to 233 GW by 2030 (see Exhibit 1).",
+        "bbox": [
+            76,
+            222,
+            470,
+            314
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This growth is likely to be driven by hyperscalers, including companies that build their own data centre capacity and companies that lease capacity.",
+        "bbox": [
+            76,
+            320,
+            470,
+            368
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Growth is also likely to come from co-location operators, which build shared digital infrastructure for hyperscalers, enterprise and edge customers, and AI-focused cloud providers (including Neoclouds), which require specialised infrastructure to facilitate high-performance computing operations. Other companies, such as OpenAI and Anthropic, are investing billions into computing power globally by partnering with hyperscalers, tech giants and colocation providers.",
+        "bbox": [
+            501,
+            178,
+            895,
+            329
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1: The market for data centres is set to grow nearly 2.5x in five years",
+        "bbox": [
+            78,
+            390,
+            660,
+            407
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Global data centre market capacity (GW, critical IT load)",
+        "bbox": [
+            78,
+            421,
+            339,
+            449
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aee27bc55d43fa6301f7de7c235db7bf58aa6e014f39395a1ce27919fd1429bf.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Global outlook excludes China and crypto Source: datacenterHawk; BCG Global Data Center Model"
+        ],
+        "bbox": [
+            78,
+            421,
+            903,
+            743
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "With this unprecedented level of investment accelerating the development of digital infrastructure globally, questions are emerging about an AI investment bubble. The potential for market correction is indicated by various signals, such as peaking capital expenditure (as hyperscalers build ahead of demand), weaker near-term monetisation, and development execution risks (due to bottlenecks and rising build complexity).",
+        "bbox": [
+            76,
+            806,
+            488,
+            942
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A significant share of contracted capacity is underwritten by AI companies whose valuations remain largely unrealised — creating a circular dynamic in which rising equity enables new infrastructure commitments, which in turn justify further build-out.",
+        "bbox": [
+            501,
+            806,
+            875,
+            898
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "CONTEXT: DEMAND FOR COMPUTING POWER IS GROWING RAPIDLY",
+        "bbox": [
+            78,
+            64,
+            441,
+            79
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            491,
+            958,
+            504,
+            969
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "However, the sector fundamentals remain robust. Despite debate around the current investment cycle, there are strong signals that data centre demand will remain sustainable. Vacancy rates are very low and pipelines are largely pre-sold, de-risking near-term occupancy for quality assets. The AI mix is still evolving — inference workloads are still expanding, sustaining megawatt demand even as the workload profile evolves.",
+        "bbox": [
+            76,
+            107,
+            470,
+            243
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Critically, data centre capacity is flexible and easily repurposed even if large-scale AI training normalises. Sites can pivot to enterprise AI, cloud, storage and traditional workloads, meaning demand is broader than any single use case. Even in a moderation scenario, value does not disappear; it shifts toward enabling layers (power solutions, cooling retrofits, and operations software) reinforcing the resilience of the broader ecosystem (see Exhibit 2).",
+        "bbox": [
+            503,
+            107,
+            913,
+            244
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 2: Data centre economics remain strong with pre-sold pipelines and rising AI demand",
+        "text_level": 2,
+        "bbox": [
+            78,
+            277,
+            790,
+            294
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Signals DC bubble may burst soon",
+        "text_level": 2,
+        "bbox": [
+            86,
+            319,
+            370,
+            336
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Demand visibility is weaker than supply momentum: training/inference demand is real, but monetisation is still forming; a slowdown in enterprise ROI realisation would flow quickly into capacity deferrals",
+        "bbox": [
+            91,
+            344,
+            457,
+            395
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Deployment bottlenecks can strand capacity: grid access, permitting, and energisation sequencing can delay usable MW, pushing out revenue while capex is already sunk",
+        "bbox": [
+            91,
+            399,
+            450,
+            449
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Higher build complexity increases execution risk: rising rack densities and cooling transitions (liquid/hybrid) increase commissioning risk and extend time-to-stabilised operations",
+        "bbox": [
+            91,
+            454,
+            423,
+            505
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Significant share of contracted capacity is underwritten by AI companies: valuations remain largely paper-based/ unrealised - creating a circular dynamic where rising equity enables new infrastructure commitments, which in turn justify further build-out",
+        "bbox": [
+            91,
+            509,
+            441,
+            585
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Source: Industry interviews; BCG analysis",
+        "bbox": [
+            78,
+            597,
+            277,
+            610
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The global data infrastructure landscape is being reshaped by AI workloads, energy availability and regulatory shifts",
+        "text_level": 2,
+        "bbox": [
+            76,
+            649,
+            457,
+            703
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Historically, data centres had to be built in proximity to end-users to overcome latency constraints (delays in data travelling between locations). However, a growing share of workloads – particularly in GenAI – are increasingly latency-tolerant, which means the need to develop digital infrastructure near end-users is not as much of a constraint. For example, AI model training workloads are insensitive to latency, which means data centres serving these workloads can be located anywhere in the world (see Exhibit 3). This shift allows developers to exercise greater flexibility when selecting sites.",
+        "bbox": [
+            78,
+            710,
+            483,
+            772
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            78,
+            771,
+            470,
+            892
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "→ Signals DC bubble may stay resilient",
+        "text_level": 2,
+        "bbox": [
+            506,
+            319,
+            805,
+            337
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Vacancy is ultra-low and pipelines are largely pre-sold: current market tightness and pre-leasing de-risk near-term occupancy for quality assets",
+        "bbox": [
+            503,
+            344,
+            859,
+            383
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- AI mix shift is still early: the share of AI (especially inference) is expanding, creating sustained MW pull even as the workload profile evolves",
+        "bbox": [
+            503,
+            386,
+            849,
+            426
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Capacity is flexible and repurposable: even if \"training\" normalises, sites can pivot to enterprise AI, cloud, storage, and traditional workloads; demand is broader than one use case",
+        "bbox": [
+            503,
+            428,
+            854,
+            480
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- The value moves to enabling layers, not a hard stop: even in a moderation scenario, spend rotates toward power solutions, cooling retrofits, modular adds, operations software, and maintenance (i.e., resilience of ecosystem value pools)",
+        "bbox": [
+            503,
+            483,
+            851,
+            548
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "While more traditional enterprise (including cloud) and high-performance computing workloads are likely to remain important drivers of demand, latency-tolerant GenAI inference workloads are likely to be a key force behind data centre capacity expansion and are estimated to account for approximately three-quarters of global market growth (2026-2030). $^{1}$ This is largely due to the increasing adoption of GenAI inference use cases (including agentic AI) and a consistent rise in demand for GenAI model training. Australian-hosted data centres could theoretically serve selection of these workloads for customers both locally and in most parts of the Asia-Pacific region.",
+        "bbox": [
+            503,
+            649,
+            919,
+            846
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "CONTEXT: DEMAND FOR COMPUTING POWER IS GROWING RAPIDLY",
+        "bbox": [
+            78,
+            64,
+            441,
+            78
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "1. BCG Global Data Center Model; excludes China.",
+        "bbox": [
+            80,
+            935,
+            369,
+            948
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            248,
+            968
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            491,
+            958,
+            504,
+            970
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/1becfaace7b0d571c26d824cf63313b3a559a6798f94341afef1045254e5e4cb.jpg",
+        "image_caption": [
+            "Exhibit 3: A growing share of workloads – particularly in GenAI – are latency-tolerant and will drive future growth",
+            "Note: Mapped workloads are illustrative & non-exhaustive, acceptable latencies are indicative ranges; RTT = round-trip time (ms), metric for latency; CAGR = compound annual growth rate; HPC = high-performance computing; growth rates exclude China. CAGRs represent global market.\nSource: Desktop research; expert interviews; BCG Global Data Center model, March 2026 update; BCG analysis"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            86,
+            164,
+            916,
+            537
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GenAI training and inference workloads require energy-intensive, high-density computing clusters that can scale over time. With power availability the number one constraint on new capacity, the market is shifting towards the development of larger and more centralised data centre campuses. However, global grid connection timelines can often stretch for years and are constraining data centre expansion despite strong growth in demand.",
+        "bbox": [
+            76,
+            627,
+            480,
+            764
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "At the same time, regulators in some countries are tightening data sovereignty and residency requirements, increasing the need for in-country or in-region data centre capacity for select workloads. Additionally, some governments are positioning data centres as critical national infrastructure with policy support and streamlined planning pathways.",
+        "bbox": [
+            76,
+            771,
+            473,
+            878
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "These combined factors of latency-tolerant AI workloads, global energy constraints and increased regulatory requirements are reshaping the investment landscape for digital infrastructure. As a result, capital is increasingly flowing into markets that can deliver viable sites alongside a credible combination of power availability, connectivity and political stability.",
+        "bbox": [
+            503,
+            627,
+            875,
+            750
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "CONTEXT: DEMAND FOR COMPUTING POWER IS GROWING RAPIDLY",
+        "bbox": [
+            78,
+            64,
+            441,
+            79
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            491,
+            956,
+            504,
+            969
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The Asia-Pacific region is becoming increasingly competitive for data centre investment",
+        "text_level": 2,
+        "bbox": [
+            76,
+            108,
+            413,
+            162
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Data centre developers, and hyperscalers in particular, typically prioritise investing in markets that offer speed of execution, cost competitiveness and greater policy predictability. As a result, more capital is flowing into digital infrastructure hubs in the Asia-Pacific. Asia-Pacific markets are using different approaches to attract future investment, which will be increasingly GenAI-focused (Exhibit 4). For example, Singapore is a leading regional hub despite land and power constraints, with data centre investment supported by tightly managed capacity releases, selective approvals, and a strong emphasis on efficiency and sustainability. Malaysia is positioning itself as a major regional market and as Singapore's ‘overflow’ by offering robust tax incentives and sustainable-development guidelines. India is strengthening its position as a hub for digital infrastructure with an emerging national policy framework and established state-level incentives aiming at capturing global AI and cloud investment.",
+        "bbox": [
+            76,
+            170,
+            483,
+            470
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The competitive dynamics are continuing to expand across the Asia-Pacific. Japan is aligning its data centre strategy with decarbonisation priorities, supporting regional expansion beyond Tokyo with grid-planning initiatives. South Korea is dispersing capacity beyond Seoul via grid access reforms and a 2025 Power Grid Special Act. Thailand and Indonesia are also mobilising; Thailand with sovereign cloud initiatives and BOI tax exemptions, and Indonesia using a centralised National Data Centre strategy backed by licensing simplification and proposed tax incentives for providers and equipment importers.",
+        "bbox": [
+            503,
+            108,
+            913,
+            289
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Across the region, the pattern is consistent: markets with clear, integrated policy frameworks spanning strategy, infrastructure and incentives are capturing higher levels of investment.",
+        "bbox": [
+            503,
+            296,
+            883,
+            358
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/3dd2cec561f4f8055c75c50bff0ba442f099ba58c53992e2d37ee65670e3e702.jpg",
+        "table_caption": [
+            "Exhibit 4: Data centre investment settings across the Asia-Pacific"
+        ],
+        "table_footnote": [
+            "Source: Government websites; BCG analysis"
+        ],
+        "table_body": "<table><tr><td></td><td>Strategy &amp; CoordinationNational data centre strategy and policy direction</td><td>EnablersEase of permitting, grid access, land and infrastructure readiness</td><td>IncentivesPublic investments and financial incentives for data centres</td></tr><tr><td>Singapore</td><td>Selective capacity allocation reinforces Singapore&#x27;s role as a trusted, sustainability-led hub</td><td>Strong planning discipline and high efficiency standards support green development</td><td>Energy-efficient equipment grants covering 30-70% of cost, capped at SGD$30k per company</td></tr><tr><td>Malaysia</td><td>AI-related projects prioritised; non-AI data centers face constraints</td><td>Scalable capacity, renewable energy access, and supportive permitting underpin growth</td><td>Investment Tax Allowance or reduced corporate tax rates for 5-10 years</td></tr><tr><td>India</td><td>National capacity target under policy draft and state-led support drive development</td><td>Planned plug-and-play zones and pre-provisioned infrastructure improve delivery readiness</td><td>Proposed tax holiday for 20 years underway</td></tr><tr><td>Japan</td><td>Decarbonisation and energy-security priorities increasingly shape DC strategy</td><td>Regional siting and grid-planning initiatives support expansion beyond Tokyo/Osaka</td><td>Government support increasingly favors energy-efficient and regionally distributed digital infrastructure</td></tr><tr><td>South Korea</td><td>No specific data center strategy or capacity targets in place</td><td>Grid access granted outside the metro area to disperse new DC beyond Seoul</td><td>Free Economic Zones, high-tech infrastructure incentives, and 2025 Power Grid Special Act grid-expansion initiatives</td></tr><tr><td>Thailand</td><td>Government remains supportive of cloud and AI infrastructure investment</td><td>Industrial estates, cloud infrastructure programs, and sovereign-cloud initiatives improve deployment readiness</td><td>BOI incentives support qualifying projects through tax exemptions, import-duty relief, and foreign ownership flexibility</td></tr><tr><td>Indonesia</td><td>Centralised National Data Centre (PDN) strategy supports public-private digital infrastructure expansion</td><td>Gov. commitment for licensing simplification and digital infrastructure build-out continue to improve investment readiness</td><td>Foreign ownership flexibility and proposed tax incentives for DCs providers &amp; equipment importers</td></tr></table>",
+        "bbox": [
+            80,
+            530,
+            915,
+            889
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "CONTEXT: DEMAND FOR COMPUTING POWER IS GROWING RAPIDLY",
+        "bbox": [
+            78,
+            64,
+            441,
+            79
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            248,
+            968
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            491,
+            958,
+            504,
+            970
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            918,
+            968
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Australia already has a strong foundation for digital infrastructure investment, combining political stability, a transparent regulatory environment and high investor confidence. Its access to renewable resources (and an existing pre-FID pipeline of renewable projects), align with hyperscaler sustainability commitments, while robust subsea connectivity ensures strong integration into global data flows. It is already a data-centre home to major hyperscalers and colocation providers, and its high-value domestic tech sector consumes efficient economic output per unit of energy. Further, as training and inference workloads become increasingly location-agnostic, Australia is presented with an opportunity to attract investment and to compete beyond its domestic market.",
+        "bbox": [
+            78,
+            108,
+            429,
+            379
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/2f967982aa83d299608d320931c6ff4ef1ecf0b05a4f2b15383b3d41f5bd5688.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            571,
+            1,
+            1000,
+            1000
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "CONTEXT: DEMAND FOR COMPUTING POWER IS GROWING RAPIDLY",
+        "bbox": [
+            78,
+            65,
+            439,
+            78
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            80,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            493,
+            956,
+            504,
+            968
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/db6321a996464f7da64cd30bed4d8f88abcfa86e961a2ae9104cf70e344d5977.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            1000
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2. The opportunity: \\$100 billion and more in onshore economic activity",
+        "text_level": 1,
+        "bbox": [
+            76,
+            108,
+            774,
+            165
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Australia's data centre capacity is set to more than double in the next five years",
+        "bbox": [
+            76,
+            178,
+            449,
+            214
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Australia's data centre market capacity is projected to more than double from 2025-2030 (see Exhibit 5). This increase is underpinned by large-scale colocation buildouts, sustained low vacancy and growing hyperscaler leasing demand, as well as the expansion of hyperscale self-build campuses.",
+        "bbox": [
+            76,
+            222,
+            472,
+            314
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "As capacity increases, and if Australia became a destination for GenAI computing power within the Asia-Pacific region, it could target a share of the significant demand growth expected to 2030 by hosting GenAI inference and training workloads from across the Asia Pacific (excluding China).",
+        "bbox": [
+            76,
+            320,
+            465,
+            412
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Australia is already one of the largest data centre markets in the Asia Pacific, with approximately 1.8 GW of installed capacity (see Exhibit 5) and is amongst the countries with highest data centre capacities per capita globally. Growth has largely been driven by surging AI and machine learning demand, rapid public cloud adoption, 5G-driven network traffic, and increasing data sovereignty requirements that compel onshore investment in digital infrastructure.",
+        "bbox": [
+            503,
+            178,
+            883,
+            329
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 5: Australia's data centre capacity is set to double in five years",
+        "bbox": [
+            78,
+            451,
+            612,
+            468
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Australian data centre market forecast scenarios (GW, critical IT load)",
+        "bbox": [
+            76,
+            489,
+            436,
+            519
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6f1bad434136bd71ad7b7368dec1eab7007192fa876ec07861137cb450abcc93.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: datacenterHawk; BCG Global Data Center Model; BCG analysis"
+        ],
+        "bbox": [
+            81,
+            557,
+            875,
+            794
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "THE OPPORTUNITY: \\$100 BILLION AND MORE IN ONSHORE ECONOMIC ACTIVITY",
+        "bbox": [
+            76,
+            65,
+            504,
+            79
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            488,
+            956,
+            509,
+            969
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/67717f1d97bb644d518f2d1cdb9ed2238784be33553965d563f99993804ac7e8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            11,
+            0,
+            1000,
+            398
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Data centre investment could generate substantial economic value for Australia",
+        "text_level": 2,
+        "bbox": [
+            78,
+            451,
+            455,
+            487
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "If Australia's data centre capacity doubles in five years as expected, it could equate to an additional 2.5 GW of data centre capacity and \\$160+ billion in total economic activity (onshore and offshore, 2026-30). This is comprised of both early-stage investment in data centre construction, IT equipment, the new energy generation infrastructure needed to support it as well as the total operating expenses incurred as facilities are commissioned and staffed during this time.",
+        "bbox": [
+            78,
+            495,
+            472,
+            645
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In addition, the ongoing annual running costs after 2030 for the additional 2.5 GW of capacity could generate a recurring \\$13-16 billion per year in economic activity - a recurring stream driven by energy costs, facility maintenance and IT equipment servicing.",
+        "bbox": [
+            78,
+            652,
+            447,
+            744
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Within each of these components, economic impact divides into direct and indirect effects. Direct impact covers the spend that flows immediately into Australian businesses - construction firms, energy developers, maintenance providers and operators.",
+        "bbox": [
+            78,
+            751,
+            482,
+            828
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Indirect impact captures the multiplier effect as that direct spend ripples through the broader economy: construction services procure materials and labour, energy operators invest in grid infrastructure, professional services firms support project delivery. Across the full investment cycle, these indirect effects reflect the deep supply chain integration that large-scale infrastructure investment can generate.",
+        "bbox": [
+            504,
+            451,
+            908,
+            572
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "However, not all gross spend remains in Australia. IT equipment is almost entirely imported and generates minimal domestic economic activity. Construction and energy capex can only partially be retained onshore. In contrast, energy operating expenditure can largely be retained domestically, making it a particularly high-value component of the ongoing economic case.",
+        "bbox": [
+            504,
+            579,
+            888,
+            700
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "After adjusting for these retention rates, the total Australian-focused economic impact from an additional 2.5GW of data centre capacity is estimated at \\$100-120 billion from capital investment and operating expenditure in total across 2026 to 2030. In addition, this capacity would then also yield an economic impact of \\$8-10 billion per year from ongoing operations after 2030 - underscoring the long-term, compounding nature of the economic opportunity.",
+        "bbox": [
+            504,
+            707,
+            883,
+            858
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            80,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            488,
+            958,
+            508,
+            969
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 6: Australia has a \\$100+ billion economic opportunity (onshore) from data centre investment",
+        "text_level": 2,
+        "bbox": [
+            78,
+            108,
+            841,
+            125
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/1a5748895eb55712fc5561a63dc1db8c6e93f106b871b32d30f972ecbce61bca.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Illustrative &quot;one-off&quot; economic impact (2026–2030)</td></tr><tr><td>2.5 GW of data centre compute capacity requiring ~19TWh of energy per year $^{3}$ </td><td>Gross impact(direct &amp; indirect $^{2}$ )</td><td>Australia-retained impact(direct &amp; indirect)</td></tr><tr><td>Data centre construction $^{1}$ </td><td>$57–69b</td><td>$40–48b</td></tr><tr><td>IT equipment $^{3}$ </td><td>$15–25b</td><td></td></tr><tr><td>New energy generation construction $^{4}$ </td><td>$51–63b</td><td>$38–46b</td></tr><tr><td>Data centre opex spend (cumulative across &#x27;26-30, as capacity ramps up)</td><td>$36–45b</td><td>$23–28b</td></tr><tr><td>Total &#x27;one-off&#x27; economic impact to 2030 - approx:</td><td>$160–200b</td><td>$100–120b</td></tr></table>",
+        "bbox": [
+            93,
+            153,
+            887,
+            314
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/34c5eebe2ffe103e129d5a08217f22828cf98ef83863a00cc886a02ea5ef5d30.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Illustrative ongoing annual economic impact from data centre operations</td><td>Gross impact (direct &amp; indirect)</td><td>Australia-retained impact (direct &amp; indirect)</td></tr><tr><td>General maintenance (general facility and mechanical maintenance)</td><td>$5–6b</td><td>$1–2b</td></tr><tr><td>IT equipment maintenance (maintenance and repairs of servers and network infrastructure)</td><td>$2–3b</td><td>$0.5–1b</td></tr><tr><td>Energy OPEX $^{5}$ </td><td>$6–7b</td><td>$6–7b</td></tr><tr><td>Ongoing annual economic impact per year - approx:</td><td>$13–16b</td><td>$8–10b</td></tr></table>",
+        "bbox": [
+            93,
+            322,
+            887,
+            491
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "1. \\$/MW data centre capex spend for Australian developments (Cushman and Wakefield, Turner and Townsend) 2. Indirect impacts estimate domestic upstream supply chain activity stimulated by direct investment. Multipliers derived from Australian Bureau of Statistics National Accounts I-O tables, limitations outlined by ABS apply to multiplier estimates 3. Servers assumed \\$13m-22m/MW, no replacements considered 4. Assumes all data centre development is matched with incremental firmed renewable energy generation, capex includes (wind & solar + gas & battery firming) & transmission upgrades 5. Assumes avg. IT load factor = 0.8, PUE = 1.2, occupancy = 0.9, energy pricing of \\$125–140/MWh based on ASX energy futures & allowance for average transmission costs.\nNote: Data centre capacity refers to peak IT capacity. Model estimates gross economic activity, excluding opportunity costs. Induced impacts & downstream value-chain impacts and are not considered.\nSource: Gartner, The Datacenter as a Computer: Designing Warehouse-Scale Machines, Cushman and Wakefield, Turner & Townsend, AEMO, Australian Bureau of Statistics, Mandala Partners, desktop research, expert interviews, BCG Global Data Centre model, BCG analysis",
+        "bbox": [
+            88,
+            501,
+            883,
+            583
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "It should be noted that the above \\$ estimates outline economic activity — spanning construction, jobs, and supply chain stimulus — and do not directly indicate GDP contribution to Australia.",
+        "bbox": [
+            76,
+            649,
+            475,
+            710
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Globally, investors and operators are actively seeking stable, renewably-powered locations for digital infrastructure. Australia is well placed to compete for this investment, which could anchor long-term digital and economic competitiveness across the Asia-Pacific region. The extent to which Australia realises this potential depends on the pace and consistency of action taken now.",
+        "bbox": [
+            76,
+            717,
+            468,
+            840
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\"Australia has always been a fast adopter - but we've traditionally been on the receiving end of technology built elsewhere. AI is different. For the first time, the intelligence generation will shape not only the digital tools we are using, but also our national identity and prosperity. Australia's land mass, renewable energy, infrastructure maturity and regulatory stability make it genuinely competitive as a destination for a regional infrastructure hub for the AI age, enabling us to secure our future geopolitically, economically and socially - and that's a window we haven't had before.\"",
+        "bbox": [
+            550,
+            660,
+            880,
+            855
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Jack Dan, Chief Strategy Officer, CDC",
+        "bbox": [
+            550,
+            868,
+            816,
+            886
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "THE OPPORTUNITY: \\$100 BILLION AND MORE IN ONSHORE ECONOMIC ACTIVITY",
+        "bbox": [
+            78,
+            65,
+            504,
+            79
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            488,
+            956,
+            508,
+            969
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "3. Building Australia's digital infrastructure advantage: four challenges to overcome",
+        "text_level": 1,
+        "bbox": [
+            78,
+            108,
+            754,
+            166
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To capitalise on the opportunity that stems from building digital infrastructure, Australia will need to create the best possible position to secure future investment by addressing four challenges:",
+        "bbox": [
+            78,
+            178,
+            455,
+            240
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- The power paradox - managing the increasing need for electricity availability",
+        "bbox": [
+            84,
+            248,
+            433,
+            280
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- The chicken-or-egg dilemma - investment sequencing and delivery certainty",
+        "bbox": [
+            86,
+            285,
+            437,
+            317
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- The shackles of micro decisions - managing concentration and long-term infrastructure planning",
+        "bbox": [
+            86,
+            322,
+            385,
+            370
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- The data centre race - competing for global data centre investment",
+        "bbox": [
+            84,
+            375,
+            401,
+            407
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The power paradox - managing the increasing need for electricity availability",
+        "text_level": 2,
+        "bbox": [
+            76,
+            432,
+            462,
+            469
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Data centres currently account for around 2% of electricity consumption in the National Electricity Market (NEM), with AEMO projecting this share to increase to around 6% of total NEM grid-supplied electricity by 2030. Demand growth is expected to be concentrated in Sydney and Melbourne, where data centres could account for approximately 8-11% of local electricity consumption. $^{2}$ Australia has a strong pipeline of renewable generation and storage projects, but the timing mismatch between rapidly growing demand and the pace of new supply creates a growing challenge for the sector.",
+        "bbox": [
+            76,
+            476,
+            473,
+            657
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Growth will need to be carefully managed to avoid placing pressure on power systems and electricity prices. Australia is simultaneously replacing retiring generation and adding new capacity to meet electrification and data centre demand, which makes sustained, well-sequenced delivery of new supply essential.",
+        "bbox": [
+            76,
+            664,
+            431,
+            770
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The Australian Government has set expectations for large developments to be accompanied by plans for additional electricity supply that avoid upward price pressure. $^{3}$ The Government also expects data centres to support grid stability with demand flexibility and peak-load management, where feasible. However, given that hyperscale facilities require continuous, reliable energy — and that AI inference workloads are less flexible than AI training — any measures would need to be carefully designed to preserve data centre service reliability and investment viability.",
+        "bbox": [
+            503,
+            178,
+            916,
+            344
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Energy network planning will also need to evolve alongside energy demand growth. The large, continuous load profile of data centres has the potential to either place pressure on existing network capacity or support more efficient utilisation of infrastructure, depending on location and system design. Considerations include managing impacts on consumer electricity costs, maintaining grid stability during major outage events, and ensuring clear connection and coordination requirements between networks and large energy users.",
+        "bbox": [
+            503,
+            351,
+            916,
+            516
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Growing data centre demand could also support broader investment in generation, storage and transmission infrastructure. Data centres typically fund their own connections and may contribute to adjacent network upgrades, while their willingness to contract for long-term power supply could help improve the economics of new generation projects that might not proceed otherwise. However, these outcomes are not guaranteed, and without careful coordination between generation, networks and large-load connections, rapid energy demand growth could place additional pressure on energy infrastructure delivery, system reliability and electricity costs.",
+        "bbox": [
+            503,
+            523,
+            890,
+            733
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Compounding electricity supply constraints, the shift toward AI-optimised, high-density compute increasingly requires water-cooled infrastructure, placing additional pressure on water access and environmental approvals—particularly in regions already facing resource scarcity.",
+        "bbox": [
+            504,
+            740,
+            880,
+            832
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "BUILDING AUSTRALIA'S DIGITAL INFRASTRUCTURE ADVANTAGE: FOUR CHALLENGES TO OVERCOME",
+        "bbox": [
+            78,
+            65,
+            606,
+            78
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "2. Data Centre Energy Demand, Oxford Economics Australia, July 2025 to inform AEMO's 2026 Integrated System Plan, https://www.aemo.com.au/-/media/files/stakeholder\\_consultation/consultations/nem-consultations/2024/2025-iasr-scenarios/final-docs/oxford-economics-australia-data-centre-energy-consumption-report.pdf.",
+        "bbox": [
+            76,
+            884,
+            913,
+            919
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "3. Expectations of data centres and AI infrastructure developers, Department of Industry, Science and Resources, March 2026, https://www.industry.gov.au/publications/expectations-data-centres-and-ai-infrastructure-developers.",
+        "bbox": [
+            76,
+            918,
+            875,
+            942
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            248,
+            968
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            488,
+            958,
+            509,
+            969
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\"We can produce power at scale, but the real test is whether we can offer energy that is price-competitive, available within an investor's planning horizon, and scalable enough to support gigawatt-level demand.\"",
+        "bbox": [
+            96,
+            164,
+            403,
+            243
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Senior leader, Australian energy provider \"There's a problem in regional data centre investment - operators won't commit without proven infrastructure and demand, while infrastructure won't be built without anchor tenants.\"",
+        "bbox": [
+            98,
+            255,
+            382,
+            273
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            521,
+            164,
+            800,
+            242
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Senior leader, Australian energy provider",
+        "bbox": [
+            522,
+            255,
+            805,
+            273
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The chicken-or-egg dilemma - investment sequencing and delivery certainty",
+        "text_level": 2,
+        "bbox": [
+            76,
+            331,
+            465,
+            368
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To date, Australia's data centre market has benefited from relatively strong fundamentals, including available land, access to power, strong connectivity and a stable investment environment. These conditions have supported a market where data centre developers, hyperscalers and investors have generally been able to make long-term investment decisions with a relatively high degree of confidence, helping projects progress despite the inherent interdependencies and uncertainties between customer demand, infrastructure delivery and capital deployment.",
+        "bbox": [
+            76,
+            375,
+            468,
+            555
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "However, as the sector scales, emerging constraints across power availability, grid connections, planning approvals and delivery timelines are beginning to change the equation. Developers are becoming more cautious about committing significant upfront capital without long-term customer commitments, while hyperscale customers are increasingly seeking greater certainty around timing, reliability and infrastructure readiness before entering large long-term agreements. The result is a chicken-or-egg problem with investment vs. delivery. Even relatively small increases in uncertainty around infrastructure availability or project delivery can influence how quickly investment decisions are made and where globally-mobile capital is ultimately deployed.",
+        "bbox": [
+            76,
+            562,
+            482,
+            787
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Australia is already seeing progress in a number of these areas, but maintaining investment confidence as the market matures will become increasingly important to support future growth. How governments, infrastructure providers, developers and customers navigate these evolving interdependencies will play an important role in determining how quickly new capacity can be brought online.",
+        "bbox": [
+            76,
+            794,
+            449,
+            931
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The shackles of micro-decisions - managing concentration and long-term infrastructure planning",
+        "text_level": 2,
+        "bbox": [
+            504,
+            331,
+            826,
+            385
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Building a data centre includes navigating planning requirements for energy, water, land and digital infrastructure, with different processes for each requirement and no coordination across stages or requirements. Data centre locations have typically been decided by developers on a project-by-project basis, based on access to power, connectivity, water and workforce, as well as proximity to end-user demand. This has led to a bias toward establishing data hubs in metropolitan areas such as Sydney and Melbourne.",
+        "bbox": [
+            504,
+            393,
+            906,
+            558
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This approach has worked at smaller scales, but system-level impacts are becoming more pronounced as data centres increase in size and concentration. With so many project-level decisions across energy, water, land and digital infrastructure, and uncertainty around which proposals will proceed versus those that constitute ‘phantom demand’ (connection requests unlikely to actually materialise on the grid), visibility is limited on the cumulative impacts of infrastructure across utilities and local communities. This can contribute to social licence challenges and misalignment between local and state planning priorities. Alongside physical infrastructure gaps, a shortage of skilled workers is emerging as a binding constraint on construction timelines and operational readiness, with demand for talent far outpacing the current domestic pipeline. This skills gap is felt most acutely in regional areas, where thinner local labour markets and limited access to specialised training institutions make it harder to attract and retain the workforce needed to support new developments—further entrenching the concentration of infrastructure in major cities.",
+        "bbox": [
+            503,
+            565,
+            918,
+            910
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "BUILDING AUSTRALIA'S DIGITAL INFRASTRUCTURE ADVANTAGE: FOUR CHALLENGES TO OVERCOME",
+        "bbox": [
+            78,
+            65,
+            604,
+            79
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            488,
+            958,
+            509,
+            969
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/cd96ac87ab6e1f5eaaa474d4d2e94f4565c8484eec9435e73352c8546577bbc8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            13,
+            0,
+            998,
+            301
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Overseas, countries are starting to use integrated planning and, in some cases, identify sites in advance. For example, Finland has identified construction-ready data centre sites that provide clear access to power, water, connectivity, natural cooling and offtake of industrial heat. Similarly in Malaysia, the southern state of Johor has developed large-scale industrial parks that cluster data centre development in locations with pre-positioned power capacity and supporting infrastructure.",
+        "bbox": [
+            76,
+            331,
+            478,
+            482
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "More integrated planning across energy, water, land and digital infrastructure could improve these impacts and support more efficient and lower-cost deployment of shared infrastructure. Without some degree of coordination, it is incumbent upon each data centre developer to consider broader social license and sector viability issues.",
+        "bbox": [
+            76,
+            489,
+            470,
+            596
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\"Too many infrastructure decisions are still made one project at a time. When energy, connectivity, and land use aren't planned together, we miss opportunities to build smarter, more resilient systems. Coordinated planning is what turns digital infrastructure into a foundation for longterm economic growth and Aldriven transformation.\"",
+        "bbox": [
+            96,
+            715,
+            408,
+            837
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Steven Miller, Area Vice President, Microsoft Australia and New Zealand",
+        "bbox": [
+            96,
+            854,
+            359,
+            886
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The data centre race - competing for global data centre investment",
+        "text_level": 2,
+        "bbox": [
+            503,
+            331,
+            846,
+            368
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Competition for global data centre and AI infrastructure investment is intensifying across the Asia-Pacific region. Australia continues to benefit from strong structural advantages, including political stability, connectivity and renewable energy potential, but project delivery timelines can be longer and less predictable than in some competing markets. At the same time, several regional markets are increasingly positioning and promoting themselves directly to hyperscalers and global investors as preferred destinations for AI and digital infrastructure investment.",
+        "bbox": [
+            503,
+            375,
+            893,
+            555
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "As investment cycles accelerate and AI-driven demand grows, speed to operation is becoming increasingly important for developers and hyperscalers. In addition to securing power, water and connectivity, project timelines can also be influenced by planning and grid connection approval processes, which often involve multiple jurisdictions, agencies and infrastructure providers.",
+        "bbox": [
+            503,
+            562,
+            898,
+            684
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Australia is already seeing progress in streamlining approvals, clarifying policy settings and improving coordination across different levels of government and industry. Internationally, some jurisdictions are also experimenting with more integrated approaches to permitting, infrastructure planning and investment promotion as they compete to capture globally mobile capital.",
+        "bbox": [
+            503,
+            691,
+            897,
+            812
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "As competition for investment continues to increase, balancing efficient delivery processes, regulatory detail, infrastructure readiness and international competitiveness will become increasingly important to Australia's ability to capture a greater share of global data centre and AI infrastructure growth.",
+        "bbox": [
+            503,
+            819,
+            911,
+            910
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            488,
+            958,
+            509,
+            970
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            956,
+            916,
+            968
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "4. Conclusion",
+        "text_level": 2,
+        "bbox": [
+            78,
+            109,
+            300,
+            134
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Global data centre capacity is expected to grow rapidly through to 2030, driven by accelerating demand for cloud services, AI training and inference workloads, and broader digital adoption across the economy. As one of the larger data centre markets in the Asia-Pacific region, Australia is well-positioned to participate in this growth, supported by strong renewable energy potential, extensive subsea connectivity, and a stable political and regulatory environment that global investors value.",
+        "bbox": [
+            76,
+            164,
+            478,
+            315
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The opportunity for Australia is significant. Growth in digital infrastructure has the potential to stimulate substantial economic activity, strengthen sovereign digital capability, support AI adoption across industries, and expand investment into energy, connectivity and supporting infrastructure. Increasingly location-flexible AI workloads also create opportunities for Australia to compete for a larger share of Asia-Pacific and global demand over time.",
+        "bbox": [
+            76,
+            321,
+            452,
+            472
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "At the same time, the sector is approaching an important inflection point locally. As data centre demand accelerates, emerging pressures around energy availability, investment sequencing, infrastructure concentration, planning and delivery timelines are becoming more pronounced. These are not simple challenges to navigate, nor are there straightforward solutions. Many of the trade-offs emerging in Australia are also being observed internationally as governments, energy providers, hyperscalers and infrastructure developers adapt to the scale and pace of AI-driven growth.",
+        "bbox": [
+            76,
+            479,
+            475,
+            660
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Australia is already seeing progress across a number of these areas, and the country retains many of the structural advantages that have supported growth in the sector to date. However, as competition for global digital infrastructure investment intensifies, how Australia balances infrastructure readiness, delivery certainty, energy transition priorities, regional development opportunities and international competitiveness will increasingly shape its ability to capture future investment.",
+        "bbox": [
+            76,
+            666,
+            480,
+            817
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The next few years will determine how Australia positions itself for the next phase of global digital infrastructure and AI development and shapes its potential as a trusted digital infrastructure destination for the Asia-Pacific region.",
+        "bbox": [
+            78,
+            822,
+            460,
+            900
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/ce1e65eeaeb4c044bd29cc8595800b438ab3e4354d2214ff3c5eefa73134c145.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            508,
+            0,
+            998,
+            997
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "CONCLUSION",
+        "bbox": [
+            78,
+            65,
+            156,
+            78
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            956,
+            246,
+            968
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/dbfdff4a4f9db5be70dc916ec8c174d0a9186110ec39406ab776a4d010cab8f7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            998
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "About the Authors",
+        "text_level": 2,
+        "bbox": [
+            76,
+            108,
+            369,
+            138
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/1948e9ad27d22fef1281434567177ba60d25112956e71d7d19861b9738d698a6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            78,
+            162,
+            207,
+            252
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Chris Mattey is a Managing Director and Partner of the Sydney office of Boston Consulting Group. Contact Chris by email at mattey.chris@bcg.com",
+        "bbox": [
+            225,
+            158,
+            486,
+            244
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/090cdccab5a5dac89701407ed1043441493eb0c1c3508e36ba4e8681e7a817d0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            521,
+            160,
+            648,
+            250
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Shruti Gangwal is a Partner of the Sydney office of Boston Consulting Group. Contact Shruti by email at gangwal.shruti@bcg.com",
+        "bbox": [
+            651,
+            158,
+            901,
+            227
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/13270e5f27eb9bcf2e210572ba5c100801471ebc5f19d20abe18f300e2b7253e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            78,
+            275,
+            207,
+            369
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Matt Abel is a Managing Director and Senior Partner of the Perth office of Boston Consulting Group. Contact Matt by email at abel.matthew@bcg.com",
+        "bbox": [
+            222,
+            275,
+            491,
+            360
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/a1244c15ec14921ad488280fcc0e548bd0074fa876f7f9fd6a1a4943380248e4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            522,
+            277,
+            647,
+            369
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Anna Green is a Managing Director and Senior Partner of the Sydney office of Boston Consulting Group. Contact Anna by email at green.anna@bcg.com",
+        "bbox": [
+            222,
+            393,
+            475,
+            477
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Whitney Merchant is a Managing Director and Partner of the Sydney office of Boston Consulting Group. Contact Whitney by email at merchant.whitney@bcg.com",
+        "bbox": [
+            651,
+            275,
+            898,
+            360
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/45d245c11a386cf7b66127dd867bf5f0664bc24e4634d91b8fad9b4ffaac9945.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            78,
+            393,
+            205,
+            486
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/f811ca13072b04df3f3b44aace168d9659655fba096e0128ebb6ab26f6eff458.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            519,
+            393,
+            648,
+            486
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Blake Nicholson is an Associate of the Auckland office of Boston Consulting Group. Contact Blake by email at nicholson.blake@bcg.com",
+        "bbox": [
+            651,
+            392,
+            929,
+            460
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/0518cc61b698e44b1b2974495dcbc2bf61de63417cd422eb9fac837134592b96.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            78,
+            511,
+            205,
+            603
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Joe Butler is a Managing Director and Partner of the Perth office of Boston Consulting Group. Contact Joe by email at butler.joseph@bcg.com",
+        "bbox": [
+            225,
+            509,
+            495,
+            579
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/cbd31641eda3d191eca54d2d9fa51f6a65392626d9c6f01043c31836a46d7623.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            522,
+            513,
+            643,
+            602
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Ant Roediger a Managing Director and Senior Partner of the Sydney office of Boston Consulting Group. Contact Ant by email at roediger.anthony@bcg.com",
+        "bbox": [
+            651,
+            510,
+            931,
+            579
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/4d258b61efdbfebc4f6b8a865c51f6d6c789ee177e70706c4a05ca43ffaafbd1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            78,
+            628,
+            207,
+            719
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Jan Koeleman is a Principal of the Melbourne office of Boston Consulting Group. Contact Jan by email at koeleman.jan@bcg.com",
+        "bbox": [
+            225,
+            627,
+            503,
+            696
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/785161f93bc394e119ac0df35db4711031bccbb241ad7bf74db5ac1dfb63339b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            522,
+            631,
+            645,
+            719
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Miguel Carrasco is a Managing Director and Senior Partner of the Sydney office of Boston Consulting Group. Contact Miguel by email at carrasco.miguel@bcg.com",
+        "bbox": [
+            651,
+            627,
+            900,
+            713
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/b70e93fccc929823011fc6f0c1ab7589dcd767bd3adac9d9318e18dc936b5735.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            78,
+            749,
+            202,
+            837
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Richard Hobbs is a Partner of the Auckland office of Boston Consulting Group. Contact Richard by email at hobbs.richard@bcg.com",
+        "bbox": [
+            225,
+            744,
+            491,
+            813
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/b49114823183dc418598fd4b61150e998c0b5c7803310047960d41795eb6f2a0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            521,
+            745,
+            640,
+            837
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Olivia Loa is a Senior Analyst - BCG Vantage of the Houston office of Boston Consulting Group. Contact Olivia by email at loa.olivia@bcg.com",
+        "bbox": [
+            651,
+            745,
+            928,
+            813
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_footnote",
+        "text": "The authors are grateful to a number of colleagues for their support and assistance, including Dina Fichera and Sophie Hilton for marketing coordination, Eliza Spring for editing and Debbie Spears for design and layout.",
+        "bbox": [
+            75,
+            883,
+            859,
+            919
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            78,
+            955,
+            246,
+            969
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "DATA CENTRES AS STRATEGIC INFRASTRUCTURE",
+        "bbox": [
+            638,
+            955,
+            918,
+            969
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we work closely with clients to embrace a transformational approach aimed at benefiting all stakeholders – empowering organisations to grow, build sustainable competitive advantage, and drive positive societal impact.",
+        "bbox": [
+            76,
+            292,
+            478,
+            440
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Our diverse, global teams bring deep industry and functional expertise and a range of perspectives that question the status quo and spark change. BCG delivers solutions through leading-edge management consulting, technology and design, and corporate and digital ventures. We work in a uniquely collaborative model across the firm and throughout all levels of the client organisation, fueled by the goal of helping our clients thrive and enabling them to make the world a better place.",
+        "bbox": [
+            78,
+            447,
+            465,
+            613
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "For information or permission to reprint, please contact BCG at permissions@bcg.com.",
+        "bbox": [
+            78,
+            703,
+            433,
+            737
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com.",
+        "bbox": [
+            78,
+            745,
+            434,
+            794
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Follow Boston Consulting Group on Facebook, LinkedIn and X (formerly known as Twitter).",
+        "bbox": [
+            78,
+            803,
+            433,
+            837
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "© Boston Consulting Group 2026. All rights reserved.",
+        "bbox": [
+            78,
+            846,
+            339,
+            878
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "05/26",
+        "bbox": [
+            78,
+            888,
+            130,
+            903
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            746,
+            956,
+            918,
+            968
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/8a2989c7a8aad76eeb71df43f63a4fda1edb3fdafdb38e2da8854407404fdc94.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            2,
+            1000,
+            1000
+        ],
+        "page_idx": 21
+    }
+]

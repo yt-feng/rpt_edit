@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0001-BCG_AI-in-the-Public-Sector_c0fd96a4.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0002-BCG_Advancing-Africa-s-AI-and-Digital-Economy_0ab2755e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0003-BCG_Are-Insurers-Talent-Models-Ready-for-AI_0bad6198.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_aybulytw/pdfs/0005-BCG_CEOs-Are-Starting-to-See-Value-from-AI.-Now-Comes-Execution_4e3e156d.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
