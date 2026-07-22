@@ -1,0 +1,33 @@
+Found 78 total PDFs; shard 14/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h5_qafe8/pdfs/0001-71-Morgan Stanley-WAIC Takeaways-Implications for Auto Parts-260720.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h5_qafe8/pdfs/0002-72-Morgan Stanley-Top 10 Brands Ranked by Turnover-Key Takeaways-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h5_qafe8/pdfs/0003-73-Nomura-China consumer-Europe marketing feedback-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h5_qafe8/pdfs/0004-74-Nomura-Global AI Trend Tracker-AI Expert Call -70-Glass bridge and advanced packaging-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h5_qafe8/pdfs/0005-75-Nomura-Asia Chart Alert-Nomura-s leading index of Asian exports-260721.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=ff161d31-cc85-49c0-a11c-de304c1b8c02
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: running, done, running, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 3810713a3d2852735f6133ccfe5ca35759cd35dadffce71381f6352b4d4a3bf7.jpg: score=1;large
+Skip non-chart visual asset 76c718ace0a06a3d58c951159a9eb521d1e406fd7b671bf5b38e9c29f87115df.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset 8a328e3385c7ebbbda0a64f32855d14c3636e46d9839d65cd6133dd5d97b0b37.jpg: score=-100;too_small:515x137
+Skip non-chart visual asset 819e76d5c55ce66fcb623052ecfe1b81931508ce53c56e9e5a201f3b247697e1.jpg: score=1;large
+Skip non-chart visual asset 1360794a8c2401870f0f5af5f8d2e01fac9cec5c0769037522fa30c618930c60.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 8f944afe11da6d7c34664fbcb93f69c4c39c82ff8431e8793a22ed8d4e965f39.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset cf4111f80c918192cf6fbc423ddc79ddd069c76667b080aa4b1ee4c64e79b1a8.jpg: score=2;chart_ratio,large
+Neutralized WeChat title while keeping the report: 摩根士丹利：十大品牌营收排名关键结论 -> 摩根士丹利：十大品牌业务与近期数据观察
+Skip non-chart visual asset 806bcce7abb3bd0c1865aa383a16902646b61cca2993790b79437e7ad32c5422.jpg: score=-100;too_small:1409x112
+MinerU result contained no standalone chart images; creating title card only.
+Skip non-chart visual asset ecf77effa40a74783e617ca26ec841927d4f56f1ee4a3573c06813b03a86f9bc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Neutralized WeChat title while keeping the report: 野村：亚洲图表警报-野村亚洲出口领先指标 -> 野村：跨境贸易数据与主题变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260722/shard_14; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

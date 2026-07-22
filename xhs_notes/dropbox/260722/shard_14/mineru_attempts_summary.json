@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_h5_qafe8/pdfs/0001-71-MS-WAIC Takeaways-Implications for Auto Parts-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h5_qafe8/pdfs/0002-72-MS-Top 10 Brands Ranked by Turnover-Key Takeaways-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h5_qafe8/pdfs/0003-73-NOM-China consumer-Europe marketing feedback-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h5_qafe8/pdfs/0004-74-NOM-Global AI Trend Tracker-AI Expert Call -70-Glass bridge and advanced packaging-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h5_qafe8/pdfs/0005-75-NOM-Asia Chart Alert-NOM-s leading index of Asian exports-260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
