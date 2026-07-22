@@ -1,0 +1,18 @@
+EN_A: I just came back from WAIC 2026 and it felt like the whole China AI chip story had shifted. What was the big takeaway?
+EN_B: The shift is decisive. It's no longer about who has the fastest single chip. It's about system-level deployment and turning AI compute into a real token economy. That's the headline.
+EN_A: So what does that mean for the baseline of chip performance?
+EN_B: The new baseline is effective Hopper-class compute. And the Prefill/Decode disaggregation architecture is now standard, not experimental. That's a huge change from last year.
+EN_A: And what did you see in terms of actual hardware at the show?
+EN_B: The biggest architectural development was the super-node. We saw solutions spanning dozens to thousands of cards. This is the industry's answer to process node constraints and the arrival of trillion-parameter models like Kimi K3.
+EN_A: So what does that mean for investors?
+EN_B: It means you can't just focus on chip specs anymore. Liquid cooling, optical interconnects, orthogonal cabinet designs — these are no longer differentiators. They're minimum requirements. The real question is ecosystem maturity.
+EN_A: And what about the application layer? Did Agentic AI play a big role?
+EN_B: Absolutely. That's the key driver for infrastructure demand going forward. AI agents consume tokens at rates orders of magnitude higher than humans. China is pushing the token factory concept to make AI compute affordable and ubiquitous.
+EN_A: Sounds exciting. But there must be some caveats.
+EN_B: For sure. The report highlights that the ecosystem is still immature in critical areas. We don't have industry standards for heterogeneous scheduling, token quality measurement, or the optimal super-node scale for different verticals. These are all open questions.
+EN_A: So what questions does the report leave unanswered?
+EN_B: One big one is the optimal super-node size. From dozens to thousands of cards, what's the sweet spot for different industries? That's still being figured out. Another is the full impact of the token economy on traditional cloud providers. The report hints at it but doesn't fully explore it.
+EN_A: And what about stock picks? Any clear winners?
+EN_B: The report favors a few names in the domestic AI supply chain. One tier-2 AI chip player with secured supply and wins at top CSPs is a top pick. Back-end service providers for advanced packaging and testing, and semiconductor equipment makers, are also expected to benefit from strong capex.
+EN_A: That sounds like a lot to dig into. Where can our listeners find more?
+EN_B: Join our community or read the full report. There's a lot more detail on company valuations and risks that we didn't cover today. It's worth a deep dive.

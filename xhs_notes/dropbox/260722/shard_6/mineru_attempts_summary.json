@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_lb7nssjs/pdfs/0001-31-JPM-China AI chip-Key takeaways from WAIC 2026- China-s AI infrastructure shifts-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lb7nssjs/pdfs/0002-32-HSBC-Trade without AI-What happens if the boom fades--260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lb7nssjs/pdfs/0003-33-HSBC-Global Equity Strategy-The five C-s for a broadening-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lb7nssjs/pdfs/0004-34-JPM-China Metals Activity Tracker-China high frequency data implies higher rates of copper - aluminium consumption in June-July- China copper premium hit -100 t las.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lb7nssjs/pdfs/0005-35-JPM-China Bubble - Brew-1H26 Preview- Tea brands hit the brakes- Luckin hits the gas-260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

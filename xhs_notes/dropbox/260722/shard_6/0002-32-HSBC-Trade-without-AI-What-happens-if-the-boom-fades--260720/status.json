@@ -1,0 +1,135 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_lb7nssjs/pdfs/0002-32-HSBC-Trade without AI-What happens if the boom fades--260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "HSBC",
+  "cover_short_title": "全球贸易的AI引擎，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资周期->研究周期 x1",
+    "sanitize_wechat_stock_line",
+    "投资周期->研究周期 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "投资周期->研究周期 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "风险->不确定性 x1",
+    "不确定性提示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "投资周期->研究周期 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "HSBC：全球贸易与AI周期关联加深",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-32-HSBC-Trade without AI-What happens if the boom fades--260720.pdf",
+    "cleaned_source_title": "HSBC-Trade without AI-What happens if the boom fades",
+    "institution_name": "HSBC",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "HSBC：贸易withoutAIWhathappensif",
+    "raw_candidates": [
+      "全球贸易与AI周期关联加深",
+      "AI商品贡献2025年贸易增长超40%",
+      "亚洲AI出口依赖度与贸易增长分化"
+    ],
+    "cleaned_candidates": [
+      "HSBC：全球贸易与AI周期关联加深",
+      "HSBC：AI商品贡献2025年贸易增长超40%",
+      "HSBC：亚洲AI出口依赖度与贸易增长分化",
+      "HSBC：贸易withoutAIWhathappensif",
+      "HSBC：AI相关商品在全球商品贸易中的占比已从2024年平均14%上升至"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "HSBC：AI商品贡献2025年贸易增长超40%",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "HSBC：亚洲AI出口依赖度与贸易增长分化",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "HSBC：贸易withoutAIWhathappensif",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "HSBC：AI相关商品在全球商品贸易中的占比已从2024年平均14%上升至",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "HSBC：全球贸易与AI周期关联加深",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "HSBC：全球贸易与AI周期关联加深"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "496",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
