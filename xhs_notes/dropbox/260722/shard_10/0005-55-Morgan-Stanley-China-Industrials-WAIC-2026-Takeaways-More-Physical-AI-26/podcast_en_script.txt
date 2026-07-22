@@ -1,0 +1,25 @@
+EN_A: Welcome back to the show. We just got back from WAIC 2026 in Shanghai, and a major report came out on what they call "Physical AI." What exactly does that mean?
+EN_B: It means AI that moves beyond software into the real world. Think industrial robots, humanoid robots, and smart hardware that can sense and act. At WAIC, companies in this space made up 24% of all exhibitors, making it the most crowded category.
+EN_A: 24% is huge. But what is the core question this report is trying to answer? Is it just about how far Physical AI has come?
+EN_B: Not exactly. The report's main question is: how is the deployment of Physical AI changing industrial investment and business models? It's not about concepts. It's about real-world rollout, equipment upgrades, and a shift in how companies make money.
+EN_A: Let's start with industrial AI. The report says it's moving from "decision support" to "engineering automation." That sounds like a big leap. How is that happening?
+EN_B: One key insight is the use of "world models" and "digital twins." For example, a Chinese pipeline company uses a digital twin to monitor and predict system behavior. But more cutting-edge is something like Siemens' "Eigen Engineering" agent, which understands natural language and can automatically complete programming tasks.
+EN_A: So what does that mean for a factory floor? Does it replace a lot of human labor?
+EN_B: Yes, but more importantly, it boosts efficiency. One AI-assisted inspection company has cut deployment time to under a month. Another flexible manufacturing system can adapt to a new product in just eight hours. That means factories can respond to market changes much faster.
+EN_A: What about the equipment itself? The report says a lot of existing machines can't even collect data.
+EN_B: That's the second key insight: equipment upgrades are a must. Many Chinese factories have old machines with no data connectivity. Before you can deploy AI, you have to digitalize the equipment first. This could drive a new round of industrial capital spending, and the report thinks it might prolong the current high cycle.
+EN_A: And the business model? I noticed the report mentions "subscription-based monetization."
+EN_B: Right, that's the third insight. Industrial AI used to be a one-off project fee. Now it's moving to annual subscriptions. Because AI agents need continuous training and inference, they consume tokens over time. Combine that with hardware sales, and you naturally get a recurring revenue model.
+EN_A: Is this still early stage?
+EN_B: Absolutely. The report says the transition is still in its infancy. But as solutions scale, service revenue will become a much bigger piece of the pie. The full report goes into more detail on that.
+EN_A: Let's talk about humanoid robots. They were huge at WAIC. Is this really the "year of deployment"?
+EN_B: Yes, the industry consensus is that 2026 is the year for real-world deployment. The most common use cases are pick-and-place tasks, like moving boxes or sorting packages. But the market is very fragmented because each deployment requires a lot of custom engineering.
+EN_A: What about the data bottleneck? The report keeps emphasizing that.
+EN_B: Data is the universally cited bottleneck. To solve the scarcity, the industry is now collecting training data without using humanoid robots directly, using things like first-person video or a "Universal Manipulation Interface." This has created a wave of data infrastructure startups, but the report says their services are very similar, so price competition will be intense.
+EN_A: So where is the real differentiation?
+EN_B: It's in the proprietary data pipeline. How you label, decompose, analyze, and rate the data. That's the moat for integrators and model companies. But the report also notes that big tech players, like Ant Group, are circling. They might enter more aggressively once the technical path converges, focusing on the "brain" layer.
+EN_A: So the competition is shifting from hardware to data and software. One last thing: the report mentions world models and tactile sensors but doesn't fully unpack them.
+EN_B: Exactly. World models were a major theme at WAIC, but the report says VLA models combined with reinforcement learning are still the more practical path. World models have potential but need more data. Tactile sensors are also very early, with high costs and technical hurdles. The full report dives deeper into those areas.
+EN_A: If our listeners want to learn more, like the specific investment logic and risks, where can they go?
+EN_B: The full report includes analysis of multiple listed companies and detailed industry ratings. If you're interested in the investment opportunities in industrial AI or humanoid robots, feel free to join our community or contact your investment advisor for the complete version.
+EN_A: That's all for today. Thanks for listening, and we'll see you next time.

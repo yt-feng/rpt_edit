@@ -1,0 +1,99 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_0ta9an_1/pdfs/0005-55-MS-China Industrials-WAIC 2026 Takeaways-More Physical AI-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "WAIC 2026 ",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资组合->组合观察 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：中国工业-WAIC2026物理AI迭代",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-MS-China Industrials-WAIC 2026 Takeaways-More Physical AI-260720.pdf",
+    "cleaned_source_title": "MS-China Industrials-WAIC 2026 Takeaways-More Physical AI",
+    "institution_name": "MS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "MS：中国IndustrialsWAIC2026",
+    "raw_candidates": [
+      "中国工业-WAIC 2026 物理 AI 迭代",
+      "WAIC 2026 物理 AI 加速-参展商超千家",
+      "中国工业物理 AI 迭代-机器人赛道占24%"
+    ],
+    "cleaned_candidates": [
+      "MS：中国工业-WAIC2026物理AI迭代",
+      "MS：WAIC2026物理AI加速-参展商超千家",
+      "MS：中国工业物理AI迭代-机器人赛道占24%",
+      "MS：中国IndustrialsWAIC2026",
+      "MS：2026年世界人工智能大会（WAIC）在上海落下帷幕"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：WAIC2026物理AI加速-参展商超千家",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国工业物理AI迭代-机器人赛道占24%",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "MS：中国IndustrialsWAIC2026",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "MS：2026年世界人工智能大会（WAIC）在上海落下帷幕",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：中国工业-WAIC2026物理AI迭代",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：中国工业-WAIC2026物理AI迭代"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "511",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
