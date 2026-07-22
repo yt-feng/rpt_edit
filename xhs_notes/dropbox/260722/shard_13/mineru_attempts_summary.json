@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_svnsy178/pdfs/0001-66-MS-Refiners -Golden Age-- Pushback - Feedback-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_svnsy178/pdfs/0002-67-MS-Tesla Inc-TSLA.US--Rolling Through the Sunshine State-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_svnsy178/pdfs/0003-68-MS-SpaceX-SPCX.US-Stefan-Boltzmann-Das ist super cool-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_svnsy178/pdfs/0004-69-MS-Semiconductors-Disti Survey 2Q-26- Broadly Holding Up-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_svnsy178/pdfs/0005-70-MS-US Rates Strategy-Option Menu - Trade Ideas for Your Rates View-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
