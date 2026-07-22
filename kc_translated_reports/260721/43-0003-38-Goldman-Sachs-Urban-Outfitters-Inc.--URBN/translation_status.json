@@ -1,0 +1,174 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260721/shard_7/0003-38-Goldman-Sachs-Urban-Outfitters-Inc.--URBN.US--Anthropologie-reset-buildi",
+  "title": "高盛：3个月日均交易量，8920万美元",
+  "source_title": "0003-38-GS-Urban Outfitters Inc. -URBN.US- Anthropologie reset building and UO brand driving profit improvement- upgrade to Buy-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-38-GS-Urban Outfitters Inc. -URBN.US- Anthropologie reset building and UO brand driving profit improvement- upgrade to Buy-260720",
+    "cleaned_source_title": "GS-Urban Outfitters Inc. -URBN.US- Anthropologie reset building and UO brand driving profit improvement- upgrade to Buy",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：UrbanOutfittersInc.",
+    "raw_candidates": [
+      "高盛：Urban Outfitters上调评级至买入",
+      "高盛：Anthropologie品类调整与UO品牌利润改善",
+      "高盛：Urban Outfitters品牌复苏推动利润上行",
+      "高盛：Urban Outfitters上调至买入",
+      "高盛：Urban Outfitters上调至买入-上行空间27%",
+      "高盛：Urban Outfitters-Anthropologie调整与UO利润改善"
+    ],
+    "cleaned_candidates": [
+      "高盛：UrbanOutfitters评级",
+      "高盛：Anthropologie品类调整与UO品牌利润改善",
+      "高盛：UrbanOutfitters品牌复苏推动利润上行",
+      "高盛：UrbanOutfitters上调至买入",
+      "高盛：UrbanOutfitters上调至买入-上行空间27%",
+      "高盛：UrbanOutfitters",
+      "高盛：UrbanOutfittersInc.",
+      "高盛：3个月日均交易量，8920万美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english",
+      "english_heavy_fragment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：UrbanOutfitters评级",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：Anthropologie品类调整与UO品牌利润改善",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：UrbanOutfitters品牌复苏推动利润上行",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：UrbanOutfitters上调至买入",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "forbidden_public_wording",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：UrbanOutfitters上调至买入-上行空间27%",
+        "reasons": [
+          "long_untranslated_english",
+          "forbidden_public_wording",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：UrbanOutfitters",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：UrbanOutfittersInc.",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：3个月日均交易量，8920万美元",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "3",
+        "8920"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "高盛：3个月日均交易量，8920万美元",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "高盛：Urban Outfitters上调评级至买入",
+      "高盛：Anthropologie品类调整与UO品牌利润改善",
+      "高盛：Urban Outfitters品牌复苏推动利润上行"
+    ],
+    "final_title_after_wording_guard": "高盛：3个月日均交易量，8920万美元"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_43.pdf",
+  "figure_count": 28,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "买入->观点偏积极 x2",
+    "股价->报价 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资组合->组合观察 x1",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1"
+  ]
+}

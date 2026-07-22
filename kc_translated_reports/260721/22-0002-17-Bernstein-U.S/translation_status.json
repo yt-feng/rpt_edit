@@ -1,0 +1,111 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260721/shard_3/0002-17-Bernstein-U.S.-IT-Hardware-Global-Memory-New-Memory-LTAs-Part-3-Bull-vs-",
+  "title": "伯恩斯坦：美国IT硬件-全球存储-新型存储LTA第三部分-多空辩论",
+  "source_title": "0002-17-Bernstein-U.S. IT Hardware-Global Memory-New Memory LTAs Part 3-Bull vs Bear Debate Webinar slides-transcript and summary-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-17-Bernstein-U.S. IT Hardware-Global Memory-New Memory LTAs Part 3-Bull vs Bear Debate Webinar slides-transcript and summary-260720",
+    "cleaned_source_title": "Bernstein-U.S. IT Hardware-Global Memory-New Memory LTAs Part 3-Bull vs Bear Debate Webinar slides-transcript and summary",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：.IT硬件全球MemoryNewMemoryLTAsPart",
+    "raw_candidates": [
+      "美国IT硬件-全球存储-新型存储LTA第三部分-多空辩论",
+      "美国IT硬件-全球存储-新型存储LTA第三部分-7月9日网络研讨会",
+      "美国IT硬件-全球存储-新型存储LTA第三部分-超大规模云与AI基础设施"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：美国IT硬件-全球存储-新型存储LTA第三部分-多空辩论",
+      "伯恩斯坦：美国IT硬件-全球存储-新型存储LTA第三部分",
+      "伯恩斯坦：.IT硬件全球MemoryNewMemoryLTAsPart",
+      "伯恩斯坦：第一部分，多空辩论....3"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：美国IT硬件-全球存储-新型存储LTA第三部分",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：.IT硬件全球MemoryNewMemoryLTAsPart",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：第一部分，多空辩论....3",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：美国IT硬件-全球存储-新型存储LTA第三部分-多空辩论",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：美国IT硬件-全球存储-新型存储LTA第三部分-多空辩论"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_22.pdf",
+  "figure_count": 9,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1"
+  ]
+}

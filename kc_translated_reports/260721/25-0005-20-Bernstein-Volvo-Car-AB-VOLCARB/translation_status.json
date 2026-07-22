@@ -1,0 +1,117 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260721/shard_3/0005-20-Bernstein-Volvo-Car-AB-VOLCARB.SS-Volvo-Cars-Q2-2026--Summer-break--Unde",
+  "title": "伯恩斯坦：沃尔沃汽车2026年第二季度业绩与暑假调整",
+  "source_title": "0005-20-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform--260721",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform--260721",
+    "cleaned_source_title": "Bernstein-Volvo Car AB-VOLCARB.SS-Volvo Cars Q2 2026- Summer break -Underperform",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：VolvoCarABVolvoCarsQ22026",
+    "raw_candidates": [
+      "沃尔沃汽车2026年第二季度业绩与暑假调整",
+      "沃尔沃汽车2026年第二季度息税前利润低于预期25%",
+      "沃尔沃汽车2026年第二季度市场层面挑战与成本削减进展"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：沃尔沃汽车2026年第二季度业绩与暑假调整",
+      "伯恩斯坦：沃尔沃汽车2026年第二季度息税前利润低于预期25%",
+      "伯恩斯坦：沃尔沃汽车2026年第二季度市场层面挑战与成本削减进展",
+      "伯恩斯坦：VolvoCarABVolvoCarsQ22026",
+      "伯恩斯坦：沃尔沃汽车2026年第二季度，暑假（跑输大市）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：沃尔沃汽车2026年第二季度息税前利润低于预期25%",
+        "reasons": [
+          "anchor_coverage=0.65"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：沃尔沃汽车2026年第二季度市场层面挑战与成本削减进展",
+        "reasons": [
+          "anchor_coverage=0.65"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：VolvoCarABVolvoCarsQ22026",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：沃尔沃汽车2026年第二季度，暑假（跑输大市）",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：沃尔沃汽车2026年第二季度业绩与暑假调整",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：沃尔沃汽车2026年第二季度业绩与暑假调整"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_25.pdf",
+  "figure_count": 1,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "股价->报价 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "收益率->回报表现 x3",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

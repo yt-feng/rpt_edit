@@ -1,0 +1,109 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260721/shard_4/0001-21-CITI-China-Materials-Glass-Fiber---E-Fabric-Weekly-Snapshot-20260716-260",
+  "title": "花旗：中国材料-玻璃纤维与电子布周度快照-7月16日价格分化",
+  "source_title": "0001-21-CITI-China Materials-Glass Fiber - E-Fabric-Weekly Snapshot-20260716-260719",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-21-CITI-China Materials-Glass Fiber - E-Fabric-Weekly Snapshot-20260716-260719",
+    "cleaned_source_title": "CITI-China Materials-Glass Fiber - E-Fabric-Weekly Snapshot",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：中国MaterialsGlassFiberEFa",
+    "raw_candidates": [
+      "中国材料-玻璃纤维与电子布周度快照",
+      "中国材料-玻璃纤维与电子布周度快照-7月16日价格分化",
+      "中国材料-玻璃纤维与电子布周度快照-粗纱承压电子纱稳"
+    ],
+    "cleaned_candidates": [
+      "花旗：中国材料-玻璃纤维与电子布周度快照",
+      "花旗：中国材料-玻璃纤维与电子布周度快照-7月16日价格分化",
+      "花旗：中国材料-玻璃纤维与电子布周度快照-粗纱承压电子纱稳",
+      "花旗：中国MaterialsGlassFiberEFa",
+      "花旗：截至7月16日当周，中国玻璃纤维市场仍呈分化态势"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：中国MaterialsGlassFiberEFa",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：截至7月16日当周，中国玻璃纤维市场仍呈分化态势",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：中国材料-玻璃纤维与电子布周度快照-7月16日价格分化",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "16",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "花旗：中国材料-玻璃纤维与电子布周度快照-7月16日价格分化"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_26.pdf",
+  "figure_count": 5,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "金融->资金 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "金融->资金 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x2"
+  ]
+}

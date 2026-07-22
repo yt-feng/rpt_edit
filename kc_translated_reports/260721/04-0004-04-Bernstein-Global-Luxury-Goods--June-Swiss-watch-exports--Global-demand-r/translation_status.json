@@ -1,0 +1,124 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260721/shard_0/0004-04-Bernstein-Global-Luxury-Goods--June-Swiss-watch-exports--Global-demand-r",
+  "title": "伯恩斯坦：消费品牌数据与主题变化观察",
+  "source_title": "0004-04-Bernstein-Global Luxury Goods- June Swiss watch exports -Global demand remains on track for a fragile recovery-260721",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-04-Bernstein-Global Luxury Goods- June Swiss watch exports -Global demand remains on track for a fragile recovery-260721",
+    "cleaned_source_title": "Bernstein-Global Luxury Goods- June Swiss watch exports -Global demand remains on track for a fragile recovery",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：全球LuxuryGoods",
+    "raw_candidates": [
+      "全球奢侈品-6月瑞士手表出口-全球需求仍处于脆弱复苏轨道",
+      "全球奢侈品-6月瑞士手表出口同比增长11.2%-经日历调整后增长1.1%",
+      "全球奢侈品-6月瑞士手表出口-剔除法国后经日历调整后下降4%"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：全球奢侈品-6月瑞士手表出口-全球需求仍处于脆弱复苏轨道",
+      "伯恩斯坦：全球奢侈品-6月瑞士手表出口同比增长11.2%",
+      "伯恩斯坦：全球奢侈品-6月瑞士手表出口-剔除法国后经日历调整后下降4%",
+      "伯恩斯坦：全球LuxuryGoods",
+      "伯恩斯坦：6月瑞士手表出口同比增长11.2%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：全球奢侈品-6月瑞士手表出口同比增长11.2%",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：全球奢侈品-6月瑞士手表出口-剔除法国后经日历调整后下降4%",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：全球LuxuryGoods",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：6月瑞士手表出口同比增长11.2%",
+        "reasons": [
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：消费品牌数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "伯恩斯坦：全球奢侈品-6月瑞士手表出口-全球需求仍处于脆弱复苏轨道",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "伯恩斯坦：消费品牌数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_04.pdf",
+  "figure_count": 3,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "宏观环境环境->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x5",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1"
+  ]
+}

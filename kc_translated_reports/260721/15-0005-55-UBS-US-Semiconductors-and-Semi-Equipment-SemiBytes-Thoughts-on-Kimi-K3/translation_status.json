@@ -1,0 +1,111 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260721/shard_10/0005-55-UBS-US-Semiconductors-and-Semi-Equipment-SemiBytes-Thoughts-on-Kimi-K3--",
+  "title": "瑞银：美国半导体及半导体设备SemiBytes",
+  "source_title": "0005-55-UBS-US Semiconductors and Semi Equipment SemiBytes-Thoughts on Kimi K3- MU- Analog- Cash Flow- Crowding-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-UBS-US Semiconductors and Semi Equipment SemiBytes-Thoughts on Kimi K3- MU- Analog- Cash Flow- Crowding-260720",
+    "cleaned_source_title": "UBS-US Semiconductors and Semi Equipment SemiBytes-Thoughts on Kimi K3- MU- Analog- Cash Flow- Crowding",
+    "institution_name": "瑞银",
+    "required_terms": [],
+    "deterministic_fallback": "瑞银：US半导体和SemiEquipmentSemiB",
+    "raw_candidates": [
+      "美国半导体及半导体设备SemiBytes：Kimi K3、MU、模拟芯片、现金流与拥挤度",
+      "美国半导体SemiBytes：Kimi K3开源模型与MU现金流分析",
+      "美国半导体设备SemiBytes：Kimi K3、模拟芯片复苏与拥挤度观察"
+    ],
+    "cleaned_candidates": [
+      "瑞银：美国半导体及半导体设备SemiBytes",
+      "瑞银：美国半导体SemiBytes",
+      "瑞银：美国半导体设备SemiBytes",
+      "瑞银：US半导体和SemiEquipmentSemiB",
+      "瑞银：该公司在2026年12月9日之前仍受限于公司回购，但从那时起"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "瑞银：美国半导体SemiBytes",
+        "reasons": [
+          "anchor_coverage=0.71"
+        ]
+      },
+      {
+        "title": "瑞银：US半导体和SemiEquipmentSemiB",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.35"
+        ]
+      },
+      {
+        "title": "瑞银：该公司在2026年12月9日之前仍受限于公司回购，但从那时起",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "瑞银：美国半导体及半导体设备SemiBytes",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "瑞银：美国半导体及半导体设备SemiBytes"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 28,
+  "institution_name": "瑞银",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股票|个股->公司 x2",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}
