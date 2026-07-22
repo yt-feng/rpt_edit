@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_mjw2a_we/pdfs/0001-56-MS-China Gold - Jewelry-Key read-across from major Chinese jewelry players- SSSG and mall trends-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mjw2a_we/pdfs/0002-57-MS-China Property-Weekly Database Tracker -29-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mjw2a_we/pdfs/0003-58-MS-Global EM Strategist-A Systematic FX Strategy-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mjw2a_we/pdfs/0004-59-MS-Erasca- Inc.-ERAS.US--0015 Update- Path Clarifies- -4001 Next Catalyst-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mjw2a_we/pdfs/0005-60-MS-Corning Inc -GLW.US-Q2 Preview- Catching a Breath- but Still in the Lead-260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
