@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "date_folder": "260723",
+  "source": "kc_translated_reports/institutions",
+  "generated_at_utc": "2026-07-22T23:17:39Z",
+  "article_count": 4,
+  "uploaded_count": 4,
+  "articles": [
+    {
+      "source_report_name": "ADB The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits- 69e27b46",
+      "institution_name": "亚洲开发银行",
+      "title_before_upload": "亚洲开发银行：能源行业数据与主题变化观察",
+      "final_wechat_title": "亚洲开发银行：能源行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260723/01-0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46",
+      "generation_decision": {
+        "source_filename": "0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46",
+        "cleaned_source_title": "0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0001ADBTheClimateResilient能源",
+        "raw_candidates": [
+          "亚洲开发银行：气候韧性能源适应迫在眉睫",
+          "亚洲开发银行：2024年亚太能源系统气候适应与四重障碍",
+          "亚洲开发银行：亚太能源系统气候适应融资与技术部署滞后"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：气候韧性能源适应迫在眉睫",
+          "亚洲开发银行：2024年亚太能源系统气候适应与四重障碍",
+          "亚洲开发银行：亚太能源系统气候适应融资与技术部署滞后",
+          "亚洲开发银行：0001ADBTheClimateResilient能源",
+          "亚洲开发银行：2024年全球平均地表温度较工业化前水平升高1.55°C"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：2024年亚太能源系统气候适应与四重障碍",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：亚太能源系统气候适应融资与技术部署滞后",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0001ADBTheClimateResilient能源",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：2024年全球平均地表温度较工业化前水平升高1.55°C",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：能源行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "亚洲开发银行：气候韧性能源适应迫在眉睫",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "亚洲开发银行：能源行业数据与主题变化观察",
+        "header_pre_neutralization_title": "能源系统面临从资源供应到终端需求的全链条气候不确定性",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "能源系统面临从资源供应到终端需求的全链条气候不确定性->能源系统面临从资源业务与近期数据观察",
+          "三大利益相关方需协同行动：政府主导信息与战略，供应商推动融资与技术，消费者提供反馈与倡导->三大利益相关方需协同行动：区域环境与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BIS What-drives-exchange-rate-pass-throughs-Evidence-from-a-non- 76b8cb24",
+      "institution_name": "国际清算银行",
+      "title_before_upload": "国际清算银行：货币市场与相关指标观察，地区规模和通胀水平是汇率传导的核",
+      "final_wechat_title": "国际清算银行：货币市场与相关指标观察，地区规模和通胀水平是汇率传导的核",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260723/02-0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24",
+      "generation_decision": {
+        "source_filename": "0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24",
+        "cleaned_source_title": "0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24",
+        "institution_name": "国际清算银行",
+        "required_terms": [],
+        "deterministic_fallback": "国际清算银行：0002BISWhatdrivesexc",
+        "raw_candidates": [
+          "国际清算银行：汇率传导效应的驱动因素",
+          "国际清算银行：汇率传导效应-通胀低于5%时传导温和",
+          "国际清算银行：汇率传导效应-地区规模与通胀为核心驱动"
+        ],
+        "cleaned_candidates": [
+          "国际清算银行：汇率传导效应的驱动因素",
+          "国际清算银行：汇率传导效应-通胀低于5%时传导温和",
+          "国际清算银行：汇率传导效应-地区规模与通胀为核心驱动",
+          "国际清算银行：0002BISWhatdrivesexc",
+          "国际清算银行：[[KC_IMAGE_001]]"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "国际清算银行：汇率传导效应-通胀低于5%时传导温和",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "国际清算银行：汇率传导效应-地区规模与通胀为核心驱动",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "国际清算银行：0002BISWhatdrivesexc",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "国际清算银行：[[KC_IMAGE_001]]",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "国际清算银行：货币市场与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "国际清算银行：汇率传导效应的驱动因素",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "国际清算银行：货币市场与相关指标观察",
+        "header_pre_neutralization_title": "地区规模和通胀水平是汇率传导的核心驱动因素",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "地区规模和通胀水平是汇率传导的核心驱动因素->货币市场与相关指标观察",
+          "汇率波动性与传导效应呈现U型非线性关系->货币市场与相关指标观察",
+          "政策框架对汇率传导效应具有显著影响->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "IMF Strengthening-Domestic-Revenue-Mobilization-in-The-Gambia 43916c75",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：行业规则与主题变化观察，税收潜力约12.6%GDP",
+      "final_wechat_title": "IMF：行业规则与相关数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260723/03-0003-IMF_Strengthening-Domestic-Revenue-Mobilization-in-The-Gambia_43916c75",
+      "generation_decision": {
+        "source_filename": "0003-IMF_Strengthening-Domestic-Revenue-Mobilization-in-The-Gambia_43916c75",
+        "cleaned_source_title": "0003-IMF_Strengthening-Domestic-Revenue-Mobilization-in-The-Gambia_43916c75",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0003IMFStrengtheningDom",
+        "raw_candidates": [
+          "国际货币基金组织：冈比亚国内收入动员改革路径",
+          "国际货币基金组织：冈比亚税收潜力约12.6%GDP与征管效率",
+          "国际货币基金组织：冈比亚2026-2030年税收比率目标15%GDP"
+        ],
+        "cleaned_candidates": [
+          "IMF：国际货币基金组织，冈比亚国内收入动员改革路径",
+          "IMF：国际货币基金组织，冈比亚税收潜力约12.6%GDP与征管效率",
+          "IMF：国际货币基金组织，冈比亚2026",
+          "IMF：0003IMFStrengtheningDom",
+          "IMF：2025年冈比亚税收收入约占GDP的13%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：国际货币基金组织，冈比亚税收潜力约12.6%GDP与征管效率",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币基金组织，冈比亚2026",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0003IMFStrengtheningDom",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2025年冈比亚税收收入约占GDP的13%",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：行业规则与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：国际货币基金组织，冈比亚国内收入动员改革路径",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:china_systemic_topic",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：行业规则与主题变化观察",
+        "pre_upload_neutralization_title": "IMF：行业规则与主题变化观察，税收潜力约12.6%GDP",
+        "header_pre_neutralization_title": "税收潜力约12.6%GDP，实际征管效率高于同类国家",
+        "header_neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "税收潜力约12.6%GDP，实际征管效率高于同类国家->行业规则与相关数据观察",
+          "2026-2030年DRMS目标：税收比率提升至15%GDP->2026-2030年DRMS目标：行业规则与相关数据观察",
+          "征管运营强度指数低于同类国家，数字化工具是突破口->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "OECD Financing-Southeast-Asia-s-Blue-Economy d608a663",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：研究主题与行业变化观察，官方发展援助规模有限且分配不均",
+      "final_wechat_title": "经合组织：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260723/04-0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663",
+      "generation_decision": {
+        "source_filename": "0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663",
+        "cleaned_source_title": "0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0004OECDFinancingSouth",
+        "raw_candidates": [
+          "经合组织：东南亚蓝色宏观环境融资缺口",
+          "经合组织：东南亚蓝色宏观环境融资缺口近2.1万亿美元",
+          "经合组织：东南亚蓝色宏观环境融资与2030年目标"
+        ],
+        "cleaned_candidates": [
+          "经合组织：东南亚蓝色宏观环境融资缺口",
+          "经合组织：东南亚蓝色宏观环境融资缺口近2.1万亿美元",
+          "经合组织：东南亚蓝色宏观环境融资与2030年目标",
+          "经合组织：0004OECDFinancingSouth",
+          "经合组织：东南亚蓝色宏观环境面临近2.1万亿美元融资缺口"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：0004OECDFinancingSouth",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2.1"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "经合组织：东南亚蓝色宏观环境融资缺口近2.1万亿美元",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "经合组织：研究主题与行业变化观察",
+        "pre_upload_neutralization_title": "经合组织：研究主题与行业变化观察，官方发展援助规模有限且分配不均",
+        "header_pre_neutralization_title": "官方发展援助规模有限且分配不均",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "官方发展援助规模有限且分配不均->研究主题与行业变化观察",
+          "资本可获得性在区域内呈现显著差异->研究主题与行业变化观察"
+        ]
+      }
+    }
+  ]
+}
