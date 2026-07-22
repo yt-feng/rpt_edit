@@ -1,0 +1,34 @@
+Found 78 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6rr8h7bt/pdfs/0001-21-Goldman Sachs-CHINA NEW ENERGY VEHICLE WEEKLY CHARTBOOK 2026 Week 29 - NEV orders -31- wow -5- yoy on strong XPeng Mona L03 demand- PV retail yoy decline narrowing-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6rr8h7bt/pdfs/0002-22-Goldman Sachs-Guangdong Songfa Ceramics Co -603268.SS- Private placement-s issue price finalized at Rmb146 shr- implying 2- discount to base price- Buy-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6rr8h7bt/pdfs/0003-23-Goldman Sachs-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-end-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6rr8h7bt/pdfs/0004-24-Goldman Sachs-First Tractor -0038.HK-High-HP momentum builds into 2Q26- reiterate Buy-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6rr8h7bt/pdfs/0005-25-Goldman Sachs-NATURAL GAS ANALYST-Slower Hormuz Export Ramp Leads Us to Raise Our Near-Term TTF Forecast-260721.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=d7517691-0c13-43b5-a11d-ee79d5ebe208
+MinerU states: running, pending, pending, pending, waiting-file
+MinerU states: done, running, running, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 00f3df562b6a7725b7ab7696bfd3c781f4f0b5b8d1f4ea8f109b438cbc5f045b.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.39,contrast,large
+Skip non-chart visual asset 50a828a592fe44634a0a4b74f617d22d4f1e24f57618207c056a79bcd488a1a5.jpg: score=1;square_without_chart_hint,edge:0.37,contrast,large
+Skip non-chart visual asset a53d0250e95bddae562811417e0936f4ac4c498464608ad96d333244ebb8b9b1.jpg: score=0;odd_ratio:10.52,edge:0.23,contrast
+Skip non-chart visual asset 7ac75c117fe17bb7291b5ba4286991ad6dfccb1b03508eaeac15da5c3c0c9ec1.jpg: score=-100;too_small:1159x104
+Skip non-chart visual asset 5b6beeb442f4031a018e7b475d26884aa4b456f307c7df792eb7a10e33aa9576.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 5afb412b170ceac9e8479485fbd5c8017e7323b6564903a99b7c27d7c14ff271.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset ce88171b8be07d5e8dd5de079f7585fc9e555126a46fec9697cd90560b1729df.jpg: score=-100;too_small:523x129
+Skip non-chart visual asset 28365ba1929d09587183b6eb09803f8a4346e5e389471e153a470eced702cd58.jpg: score=-100;too_small:1156x109
+Skip non-chart visual asset bbee7f7c054f60fb29e5ed52ff9af7ec9a79e11aad2288cf1d5899867c0e82f6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 19644dc11ea5a46ae110e63d2f74b53fdfe795f891296f31ca9ed912030f8245.jpg: score=-100;too_small:1159x107
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Neutralized WeChat title while keeping the report: 高盛：日本航空航天与国防，2026年政策框架获批，安保三文件修订成焦点 -> 高盛：航空运维与技术应用观察
+Skip non-chart visual asset bf9886edd860ad7e783e1db3a4e488de219f116bcc9f18453da212f3e957ff2f.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset 3376e4bea41be137a6fd91f7ac9ac4ecd0cde18e7dec19907830d5e3c788c29a.jpg: score=-100;too_small:1026x87
+Skip non-chart visual asset 30d4621f408ddbc080d766ccec395aea57a17a0d13c604c47ad9bf9e01e6838c.jpg: score=0;odd_ratio:6.53,edge:0.45,contrast
+Neutralized WeChat title while keeping the report: 高盛：第一拖拉机高端马力段增长延续至二季度 -> 高盛：第一拖拉机高端马力段业务与季度数据观察
+Neutralized WeChat title while keeping the report: 高盛：霍尔木兹出口延迟至2026年10月，上调TTF预测 -> 高盛：霍尔木兹出口延迟至业务与近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260722/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

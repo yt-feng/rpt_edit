@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_6rr8h7bt/pdfs/0003-23-GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-end-260721.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "日本国防政策迎来关键",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x4",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x5",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:military_or_defense"
+  ],
+  "wechat_title": "GS：航空运维与技术应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-end-260721.pdf",
+    "cleaned_source_title": "GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-end",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：日本AerospaceDefense",
+    "raw_candidates": [
+      "日本航空航天与国防：2026年政策框架获批，安保三文件修订成焦点",
+      "日本航空航天与国防：2026年政策框架获批，安保三文件修订年底前完成",
+      "日本航空航天与国防：2026年政策框架获批，17个战略研究领域确立"
+    ],
+    "cleaned_candidates": [
+      "GS：日本航空航天与国防，2026年政策框架获批，安保三文件修订成焦点",
+      "GS：日本航空航天与国防，2026年政策框架获批",
+      "GS：日本AerospaceDefense",
+      "GS：7月21日，日本政府通过内阁决议批准了2026年宏观环境财政运营"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：日本航空航天与国防，2026年政策框架获批",
+        "reasons": [
+          "anchor_coverage=0.66",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：日本AerospaceDefense",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.03",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：7月21日，日本政府通过内阁决议批准了2026年宏观环境财政运营",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：航空运维与技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：日本航空航天与国防，2026年政策框架获批，安保三文件修订成焦点",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:military_or_defense"
+    ],
+    "final_title_after_wording_guard": "GS：航空运维与技术应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "536",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

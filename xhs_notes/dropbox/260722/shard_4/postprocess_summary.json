@@ -1,0 +1,521 @@
+[
+  {
+    "item": "0001-21-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-29---N",
+    "source_pdf": "/tmp/pdf_batch_001_6rr8h7bt/pdfs/0001-21-GS-CHINA NEW ENERGY VEHICLE WEEKLY CHARTBOOK 2026 Week 29 - NEV orders -31- wow -5- yoy on strong XPeng Mona L03 demand- PV retail yoy decline narrowing-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "小鹏Mona L03",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国新能源车周度图册2026年第29周",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-GS-CHINA NEW ENERGY VEHICLE WEEKLY CHARTBOOK 2026 Week 29 - NEV orders -31- wow -5- yoy on strong XPeng Mona L03 demand- PV retail yoy decline narrowing-260721.pdf",
+      "cleaned_source_title": "GS-CHINA NEW ENERGY VEHICLE WEEKLY CHARTBOOK 2026 Week 29 - NEV orders -31- wow -5- yoy on strong XPeng Mona L03 demand- PV retail yoy decline narrowing",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国NEW能源VEHICLEWEEKLYCHARTBOOK202",
+      "raw_candidates": [
+        "中国新能源车周度图册2026年第29周-新能源车订单环比增长31%同比增5%受小鹏Mona L03需求推动-乘用车零售同比降幅收窄",
+        "中国新能源车周度图册2026年第29周-7月第三周订单环比增长31%小鹏Mona L03录得5.92万辆订单",
+        "中国新能源车周度图册2026年第29周-新能源车订单与乘用车零售数据及新车型上市观察"
+      ],
+      "cleaned_candidates": [
+        "GS：中国新能源车周度图册2026年第29周",
+        "GS：中国NEW能源VEHICLEWEEKLYCHARTBOOK202",
+        "GS：2026年7月第三周新能源车订单环比增长31%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国NEW能源VEHICLEWEEKLYCHARTBOOK202",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：2026年7月第三周新能源车订单环比增长31%",
+          "reasons": [
+            "anchor_coverage=0.39"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国新能源车周度图册2026年第29周",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国新能源车周度图册2026年第29周"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-22-Goldman-Sachs-Guangdong-Songfa-Ceramics-Co--603268.SS--Private-placement",
+    "source_pdf": "/tmp/pdf_batch_001_6rr8h7bt/pdfs/0002-22-GS-Guangdong Songfa Ceramics Co -603268.SS- Private placement-s issue price finalized at Rmb146 shr- implying 2- discount to base price- Buy-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "造船巨头定增落定，释",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：松发股份定增定价每股146元-折价约2%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-GS-Guangdong Songfa Ceramics Co -603268.SS- Private placement-s issue price finalized at Rmb146 shr- implying 2- discount to base price- Buy-260721.pdf",
+      "cleaned_source_title": "GS-Guangdong Songfa Ceramics Co -603268.SS- Private placement-s issue price finalized at Rmb146 shr- implying 2- discount to base price- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：GuangdongSongfaCeramicsC",
+      "raw_candidates": [
+        "松发股份定增定价完成-每股146元",
+        "松发股份定增定价每股146元-折价约2%",
+        "松发股份定增定价完成-三期产能扩张执行"
+      ],
+      "cleaned_candidates": [
+        "GS：松发股份定增定价完成-每股146元",
+        "GS：松发股份定增定价每股146元-折价约2%",
+        "GS：松发股份定增定价完成-三期产能扩张执行",
+        "GS：GuangdongSongfaCeramicsC",
+        "GS：7月21日收盘后，松发股份（恒力重工）公告了定向增发的最终发行价"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：松发股份定增定价完成-三期产能扩张执行",
+          "reasons": [
+            "anchor_coverage=0.60",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GuangdongSongfaCeramicsC",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月21日收盘后，松发股份（恒力重工）公告了定向增发的最终发行价",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：松发股份定增定价每股146元-折价约2%",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：松发股份定增定价每股146元-折价约2%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-23-Goldman-Sachs-Japan-Aerospace---Defense--Basic-policy-framework-for-2026",
+    "source_pdf": "/tmp/pdf_batch_001_6rr8h7bt/pdfs/0003-23-GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-end-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本国防政策迎来关键",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x4",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x5",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:military_or_defense"
+    ],
+    "wechat_title": "GS：航空运维与技术应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-end-260721.pdf",
+      "cleaned_source_title": "GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-end",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本AerospaceDefense",
+      "raw_candidates": [
+        "日本航空航天与国防：2026年政策框架获批，安保三文件修订成焦点",
+        "日本航空航天与国防：2026年政策框架获批，安保三文件修订年底前完成",
+        "日本航空航天与国防：2026年政策框架获批，17个战略研究领域确立"
+      ],
+      "cleaned_candidates": [
+        "GS：日本航空航天与国防，2026年政策框架获批，安保三文件修订成焦点",
+        "GS：日本航空航天与国防，2026年政策框架获批",
+        "GS：日本AerospaceDefense",
+        "GS：7月21日，日本政府通过内阁决议批准了2026年宏观环境财政运营"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本航空航天与国防，2026年政策框架获批",
+          "reasons": [
+            "anchor_coverage=0.66",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本AerospaceDefense",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.03",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月21日，日本政府通过内阁决议批准了2026年宏观环境财政运营",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：航空运维与技术应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本航空航天与国防，2026年政策框架获批，安保三文件修订成焦点",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:military_or_defense"
+      ],
+      "final_title_after_wording_guard": "GS：航空运维与技术应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-24-Goldman-Sachs-First-Tractor--0038.HK-High-HP-momentum-builds-into-2Q26--",
+    "source_pdf": "/tmp/pdf_batch_001_6rr8h7bt/pdfs/0004-24-GS-First Tractor -0038.HK-High-HP momentum builds into 2Q26- reiterate Buy-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "拖拉机行业悄悄变了，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：第一拖拉机高端马力段业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-GS-First Tractor -0038.HK-High-HP momentum builds into 2Q26- reiterate Buy-260721.pdf",
+      "cleaned_source_title": "GS-First Tractor -0038.HK-High-HP momentum builds into 2Q26- reiterate Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：FirstTractorHighHPmoment",
+      "raw_candidates": [
+        "第一拖拉机高端马力段增长延续至二季度",
+        "第一拖拉机高端马力段二季度产量同比增长41%",
+        "第一拖拉机高端马力段占比创历史新高"
+      ],
+      "cleaned_candidates": [
+        "GS：第一拖拉机高端马力段增长延续至二季度",
+        "GS：第一拖拉机高端马力段二季度产量同比增长41%",
+        "GS：第一拖拉机高端马力段占比创历史新高",
+        "GS：FirstTractorHighHPmoment",
+        "GS：GS预计该公司二季度收入同比增长25%，核心息税前利润增长40%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：第一拖拉机高端马力段二季度产量同比增长41%",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "GS：第一拖拉机高端马力段占比创历史新高",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "GS：FirstTractorHighHPmoment",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS预计该公司二季度收入同比增长25%，核心息税前利润增长40%",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：第一拖拉机高端马力段业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：第一拖拉机高端马力段增长延续至二季度",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：第一拖拉机高端马力段业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-25-Goldman-Sachs-NATURAL-GAS-ANALYST-Slower-Hormuz-Export-Ramp-Leads-Us-to-",
+    "source_pdf": "/tmp/pdf_batch_001_6rr8h7bt/pdfs/0005-25-GS-NATURAL GAS ANALYST-Slower Hormuz Export Ramp Leads Us to Raise Our Near-Term TTF Forecast-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "欧洲气价要撑到冬天了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x3",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：霍尔木兹出口延迟至业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-GS-NATURAL GAS ANALYST-Slower Hormuz Export Ramp Leads Us to Raise Our Near-Term TTF Forecast-260721.pdf",
+      "cleaned_source_title": "GS-NATURAL GAS ANALYST-Slower Hormuz Export Ramp Leads Us to Raise Our Near-Term TTF Forecast",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：NATURALGASANALYSTSlowerH",
+      "raw_candidates": [
+        "GS：霍尔木兹出口延迟推高TTF预测",
+        "GS：霍尔木兹出口延迟至2026年10月，上调TTF预测",
+        "GS：霍尔木兹出口延迟与欧洲天然气冬季定价"
+      ],
+      "cleaned_candidates": [
+        "GS：霍尔木兹出口延迟推高TTF预测",
+        "GS：霍尔木兹出口延迟至2026年10月，上调TTF预测",
+        "GS：霍尔木兹出口延迟与欧洲天然气冬季定价",
+        "GS：NATURALGASANALYSTSlowerH",
+        "GS：1.冬季储气库缓冲空间被压缩至近14年低位"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：霍尔木兹出口延迟与欧洲天然气冬季定价",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "GS：NATURALGASANALYSTSlowerH",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.冬季储气库缓冲空间被压缩至近14年低位",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：霍尔木兹出口延迟至业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "10",
+          "2026"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：霍尔木兹出口延迟至2026年10月，上调TTF预测",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：霍尔木兹出口延迟至业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
