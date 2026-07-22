@@ -1,0 +1,22 @@
+Found 78 total PDFs; shard 15/40 has 3 PDFs, skips 0 already converted, will process 3 PDFs with batch_size=5.
+Running batch 1: 3 PDFs
+Found 3 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 3 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cvayhnu7/pdfs/0001-76-Nomura-Yuanjie Semiconductor Technology-688498.SS-Strong 1H26 profit alert reaffirms secular optical market trend-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cvayhnu7/pdfs/0002-77-Nomura-Strategy Trade Short USD CNH- Strong trade inflows and potential DeepSeek 2.0-related inflows-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cvayhnu7/pdfs/0003-78-Nomura-USD CNY fix model Projection- 6.776-260722.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=a7437bac-c788-4e3f-82d5-2874d765db50
+MinerU states: pending, pending, waiting-file
+MinerU states: pending, pending, pending
+MinerU states: pending, pending, pending
+MinerU states: pending, pending, pending
+MinerU states: running, running, pending
+MinerU states: done, done, done
+Skip non-chart visual asset 6580ecc92f55ea13581deb1ce6e638b120e46c7eb3c78e0b5de967f4c1b288ce.jpg: score=-100;too_small:1409x98
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset fed4f4d6138732f6e1dc10fc848f5324b465caab1ccd9b45e6ece7da50d65b21.jpg: score=-100;too_small:434x195
+Neutralized WeChat title while keeping the report: 野村：离岸人民币-贸易流入与AI相关流入 -> 野村：货币市场与相关指标观察
+Skip non-chart visual asset 7f55de3b2c058aacc4e9c3b295c30aec6df284cc9ccf05783eebac97ddacc4ec.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260722/shard_15; successful_reports=3; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 3 report directories.

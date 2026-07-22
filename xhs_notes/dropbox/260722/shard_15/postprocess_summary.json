@@ -1,0 +1,306 @@
+[
+  {
+    "item": "0001-76-NOM-Yuanjie-Semiconductor-Technology-688498.SS-Strong-1H26-profit-ale",
+    "source_pdf": "/tmp/pdf_batch_001_cvayhnu7/pdfs/0001-76-NOM-Yuanjie Semiconductor Technology-688498.SS-Strong 1H26 profit alert reaffirms secular optical market trend-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "激光芯片的业绩暴增，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：源杰半导体上半年业绩预告确认光芯片需求周期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-76-NOM-Yuanjie Semiconductor Technology-688498.SS-Strong 1H26 profit alert reaffirms secular optical market trend-260721.pdf",
+      "cleaned_source_title": "NOM-Yuanjie Semiconductor Technology-688498.SS-Strong 1H26 profit alert reaffirms secular optical market trend",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：Yuanjie半导体科技Strong1H26pr",
+      "raw_candidates": [
+        "源杰半导体上半年业绩预告确认光芯片需求周期",
+        "源杰半导体2026上半年营收预增339%-364%",
+        "源杰半导体光芯片产品升级与产能扩张观察"
+      ],
+      "cleaned_candidates": [
+        "NOM：源杰半导体上半年业绩预告确认光芯片需求周期",
+        "NOM：源杰半导体2026上半年营收预增339%-364%",
+        "NOM：源杰半导体光芯片产品升级与产能扩张观察",
+        "NOM：Yuanjie半导体科技Strong1H26pr",
+        "NOM：源杰半导体在7月21日收盘后发布了一份超出市场预期的上半年业绩预"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：源杰半导体2026上半年营收预增339%-364%",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "NOM：源杰半导体光芯片产品升级与产能扩张观察",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "NOM：Yuanjie半导体科技Strong1H26pr",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：源杰半导体在7月21日收盘后发布了一份超出市场预期的上半年业绩预",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        }
+      ],
+      "selected_title": "NOM：源杰半导体上半年业绩预告确认光芯片需求周期",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：源杰半导体上半年业绩预告确认光芯片需求周期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-77-NOM-Strategy-Trade-Short-USD-CNH--Strong-trade-inflows-and-potential-",
+    "source_pdf": "/tmp/pdf_batch_001_cvayhnu7/pdfs/0002-77-NOM-Strategy Trade Short USD CNH- Strong trade inflows and potential DeepSeek 2.0-related inflows-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "人民币迎来关键支撑位",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "NOM：货币市场与相关指标观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-77-NOM-Strategy Trade Short USD CNH- Strong trade inflows and potential DeepSeek 2.0-related inflows-260721.pdf",
+      "cleaned_source_title": "NOM-Strategy Trade Short USD CNH- Strong trade inflows and potential DeepSeek 2.0-related inflows",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：策略贸易ShortUSDCNH",
+      "raw_candidates": [
+        "NOM：策略交易做空美元/离岸人民币-贸易流入与AI相关流入",
+        "NOM：企业结汇与AI技术突破支撑人民币升值路径",
+        "NOM：6月企业净外汇结算818亿美元与AI模型发布"
+      ],
+      "cleaned_candidates": [
+        "NOM：离岸人民币-贸易流入与AI相关流入",
+        "NOM：企业结汇与AI技术突破支撑人民币升值路径",
+        "NOM：6月企业净外汇结算818亿美元与AI模型发布",
+        "NOM：策略贸易ShortUSDCNH",
+        "NOM：5，时间窗口设定在10月底"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：企业结汇与AI技术突破支撑人民币升值路径",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：6月企业净外汇结算818亿美元与AI模型发布",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：策略贸易ShortUSDCNH",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：5，时间窗口设定在10月底",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：货币市场与相关指标观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：离岸人民币-贸易流入与AI相关流入",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "NOM：货币市场与相关指标观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-78-NOM-USD-CNY-fix-model-Projection--6.776-260722",
+    "source_pdf": "/tmp/pdf_batch_001_cvayhnu7/pdfs/0003-78-NOM-USD CNY fix model Projection- 6.776-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "人民币中间价，一个值",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：7月某日中间价模型预测6.7760",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-78-NOM-USD CNY fix model Projection- 6.776-260722.pdf",
+      "cleaned_source_title": "NOM-USD CNY fix model Projection- 6.776",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.776",
+      "raw_candidates": [
+        "NOM：USD/CNY中间价模型预测6.776",
+        "NOM：7月某日中间价模型预测6.7760",
+        "NOM：USD/CNY中间价模型与定价框架"
+      ],
+      "cleaned_candidates": [
+        "NOM：CNY中间价模型预测6.776",
+        "NOM：7月某日中间价模型预测6.7760",
+        "NOM：CNY中间价模型与定价框架",
+        "NOM：USDCNYfixmodelProjection-6.776",
+        "NOM：1.模型预测与实际中间价存在系统性偏差"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：CNY中间价模型与定价框架",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        },
+        {
+          "title": "NOM：USDCNYfixmodelProjection-6.776",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "NOM：1.模型预测与实际中间价存在系统性偏差",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        }
+      ],
+      "selected_title": "NOM：7月某日中间价模型预测6.7760",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "6.7760",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：7月某日中间价模型预测6.7760"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
