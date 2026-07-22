@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0001-61-MS-Global Technology Webcast-ASML Management Roadshow-Memory Innovation and Apple AI-260721.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "AI投研 | 存储芯",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "崩盘|崩溃|暴跌->明显波动 x1",
+    "sanitize_wechat_stock_line",
+    "崩盘|崩溃|暴跌->明显波动 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "崩盘|崩溃|暴跌->明显波动 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-61-MS-Global Technology Webcast-ASML Management Roadshow-Memory Innovation and Apple AI-260721.pdf",
+    "cleaned_source_title": "MS-Global Technology Webcast-ASML Management Roadshow-Memory Innovation and Apple AI",
+    "institution_name": "MS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "MS：AI全球科技WebcastASMLManage",
+    "raw_candidates": [
+      "全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+      "全球技术网络研讨会-ASML路演-存储创新与苹果AI-2026年定价见顶",
+      "全球技术网络研讨会-ASML路演-存储创新与苹果AI-中国AI与DRAM进展"
+    ],
+    "cleaned_candidates": [
+      "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+      "MS：全球技术网络研讨会-ASML路演-存储创新与苹果AI",
+      "MS：AI全球科技WebcastASMLManage",
+      "MS：全球半导体技术网络研讨会聚焦ASML、存储创新与AI"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：AI全球科技WebcastASMLManage",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：全球半导体技术网络研讨会聚焦ASML、存储创新与AI",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      }
+    ],
+    "selected_title": "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "514",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,577 @@
+[
+  {
+    "item": "0001-61-Morgan-Stanley-Global-Technology-Webcast-ASML-Management-Roadshow-Memory",
+    "source_pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0001-61-MS-Global Technology Webcast-ASML Management Roadshow-Memory Innovation and Apple AI-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "AI投研 | 存储芯",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "sanitize_wechat_stock_line",
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-61-MS-Global Technology Webcast-ASML Management Roadshow-Memory Innovation and Apple AI-260721.pdf",
+      "cleaned_source_title": "MS-Global Technology Webcast-ASML Management Roadshow-Memory Innovation and Apple AI",
+      "institution_name": "MS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "MS：AI全球科技WebcastASMLManage",
+      "raw_candidates": [
+        "全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+        "全球技术网络研讨会-ASML路演-存储创新与苹果AI-2026年定价见顶",
+        "全球技术网络研讨会-ASML路演-存储创新与苹果AI-中国AI与DRAM进展"
+      ],
+      "cleaned_candidates": [
+        "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+        "MS：全球技术网络研讨会-ASML路演-存储创新与苹果AI",
+        "MS：AI全球科技WebcastASMLManage",
+        "MS：全球半导体技术网络研讨会聚焦ASML、存储创新与AI"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：AI全球科技WebcastASMLManage",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：全球半导体技术网络研讨会聚焦ASML、存储创新与AI",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        }
+      ],
+      "selected_title": "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：全球技术网络研讨会-ASML管理层路演-存储创新与苹果AI"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-62-Morgan-Stanley-Gold-and-Silver--When-Will-ETF-Buying-Resume--260720",
+    "source_pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0002-62-MS-Gold and Silver- When Will ETF Buying Resume--260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "黄金白银：ETF何时",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：黄金与白银-ETF资金回流时机",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-62-MS-Gold and Silver- When Will ETF Buying Resume--260720.pdf",
+      "cleaned_source_title": "MS-Gold and Silver- When Will ETF Buying Resume",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Gold和Silver",
+      "raw_candidates": [
+        "黄金与白银-ETF资金回流时机",
+        "黄金与白银-ETF资金回流时机与央行购金分化",
+        "黄金与白银-ETF资金回流与央行购金结构性分化"
+      ],
+      "cleaned_candidates": [
+        "MS：黄金与白银-ETF资金回流时机",
+        "MS：黄金与白银-ETF资金回流时机与央行购金分化",
+        "MS：黄金与白银-ETF资金回流与央行购金结构性分化",
+        "MS：Gold和Silver",
+        "MS：2026年3月至4月"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Gold和Silver",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2026年3月至4月",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：黄金与白银-ETF资金回流时机",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：黄金与白银-ETF资金回流时机"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-63-Morgan-Stanley-Greater-China-Technology-Hardware-TFT-LCD-Panel-Prices-fo",
+    "source_pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0003-63-MS-Greater China Technology Hardware-TFT-LCD Panel Prices for July 2026- TVs -2-- Monitors and NBs Flat MoM-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "📺 面板价格7月转跌",
+    "cover_subtitle": "IT面板持平，后市怎么看？",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：TFT-LCD面板价格7月TV环比跌2%IT持平",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-63-MS-Greater China Technology Hardware-TFT-LCD Panel Prices for July 2026- TVs -2-- Monitors and NBs Flat MoM-260720.pdf",
+      "cleaned_source_title": "MS-Greater China Technology Hardware-TFT-LCD Panel Prices for July 2026- TVs -2-- Monitors and NBs Flat MoM",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国科技硬件TFTLCDPa",
+      "raw_candidates": [
+        "MS：TFT-LCD面板价格7月TV环比跌2%IT持平",
+        "MS：TFT-LCD面板价格7月TV跌2%IT面板持平",
+        "MS：TFT-LCD面板价格7月TV跌2%IT面板价格不变",
+        "大中华科技硬件-TFT-LCD面板价格7月TV跌2%IT持平",
+        "大中华科技硬件-TFT-LCD面板价格7月TV环比跌2%IT持平",
+        "大中华科技硬件-TFT-LCD面板价格7月TV跌2%IT面板持平"
+      ],
+      "cleaned_candidates": [
+        "MS：TFT-LCD面板价格7月TV环比跌2%IT持平",
+        "MS：TFT-LCD面板价格7月TV跌2%IT面板持平",
+        "MS：TFT-LCD面板价格7月TV跌2%IT面板价格不变",
+        "MS：大中华科技硬件-TFT",
+        "MS：Greater中国科技硬件TFTLCDPa",
+        "MS：TFT-LCD面板价格7月出现分化，TV面板环比下跌2%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：大中华科技硬件-TFT",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Greater中国科技硬件TFTLCDPa",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：TFT-LCD面板价格7月出现分化，TV面板环比下跌2%",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        }
+      ],
+      "selected_title": "MS：TFT-LCD面板价格7月TV环比跌2%IT持平",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：TFT-LCD面板价格7月出现分化，TV面板环比下跌2%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "MS：TFT-LCD面板价格7月TV环比跌2%IT持平",
+        "MS：TFT-LCD面板价格7月TV跌2%IT面板持平",
+        "MS：TFT-LCD面板价格7月TV跌2%IT面板价格不变"
+      ],
+      "final_title_after_wording_guard": "MS：TFT-LCD面板价格7月TV环比跌2%IT持平"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-64-Morgan-Stanley-Section-338-Tariffs-and-Canada--Limited-Macro-Effect--Ris",
+    "source_pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0004-64-MS-Section 338 Tariffs and Canada- Limited Macro Effect- Rising Strategic Risks-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "加拿大关税冲击：宏观",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x2",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：跨境贸易与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-64-MS-Section 338 Tariffs and Canada- Limited Macro Effect- Rising Strategic Risks-260721.pdf",
+      "cleaned_source_title": "MS-Section 338 Tariffs and Canada- Limited Macro Effect- Rising Strategic Risks",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Section338Tariffs和Canada",
+      "raw_candidates": [
+        "第338条关税与加拿大-有限宏观影响-上升战略不确定性",
+        "第338条关税对加拿大宏观影响有限-2026年8月生效",
+        "第338条关税与加拿大-中间品与消费品关税篮子覆盖"
+      ],
+      "cleaned_candidates": [
+        "MS：第338条关税与加拿大-有限宏观影响-上升战略不确定性",
+        "MS：第338条关税对加拿大宏观影响有限-2026年8月生效",
+        "MS：第338条关税与加拿大-中间品与消费品关税篮子覆盖",
+        "MS：Section338Tariffs和Canada",
+        "MS：美国依据1930年关税法第338条"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：第338条关税对加拿大宏观影响有限-2026年8月生效",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：第338条关税与加拿大-中间品与消费品关税篮子覆盖",
+          "reasons": [
+            "anchor_coverage=0.42",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Section338Tariffs和Canada",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：美国依据1930年关税法第338条",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：跨境贸易与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：第338条关税与加拿大-有限宏观影响-上升战略不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：跨境贸易与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-65-Morgan-Stanley-Morgan-Stanley-Global-Macro-Forum-Reading-the-Signals--Mo",
+    "source_pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0005-65-MS-MS Global Macro Forum-Reading the Signals- Moonshot- Macro Data- and Bank Earnings-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "美国银行Q2交卷，利",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资银行->国际机构 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "投资周期->研究周期 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "通缩->价格变化 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：MS全球宏观论坛-信号解读-登月计划",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-65-MS-MS Global Macro Forum-Reading the Signals- Moonshot- Macro Data- and Bank Earnings-260720.pdf",
+      "cleaned_source_title": "MS-MS Global Macro Forum-Reading the Signals- Moonshot- Macro Data- and Bank Earnings",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：MorganStanley全球MacroF",
+      "raw_candidates": [
+        "MS全球宏观论坛-信号解读-登月计划-宏观数据与银行财报",
+        "MS全球宏观论坛-六月通胀数据与银行财报超预期",
+        "MS全球宏观论坛-通胀信号与AI模型进展"
+      ],
+      "cleaned_candidates": [
+        "MS：MS全球宏观论坛-信号解读-登月计划",
+        "MS：MS全球宏观论坛-六月通胀数据与银行财报超预期",
+        "MS：MS全球宏观论坛-通胀信号与AI模型进展",
+        "MS：MorganStanley全球MacroF",
+        "MS：国际机构业务钱包同比增长46%，其中股权资本市场增长87%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：MS全球宏观论坛-六月通胀数据与银行财报超预期",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MS全球宏观论坛-通胀信号与AI模型进展",
+          "reasons": [
+            "anchor_coverage=0.61",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MorganStanley全球MacroF",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：国际机构业务钱包同比增长46%，其中股权资本市场增长87%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：MS全球宏观论坛-信号解读-登月计划",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：MS全球宏观论坛-信号解读-登月计划"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0001-61-MS-Global Technology Webcast-ASML Management Roadshow-Memory Innovation and Apple AI-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0002-62-MS-Gold and Silver- When Will ETF Buying Resume--260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0003-63-MS-Greater China Technology Hardware-TFT-LCD Panel Prices for July 2026- TVs -2-- Monitors and NBs Flat MoM-260720.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0004-64-MS-Section 338 Tariffs and Canada- Limited Macro Effect- Rising Strategic Risks-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yk9ap254/pdfs/0005-65-MS-MS Global Macro Forum-Reading the Signals- Moonshot- Macro Data- and Bank Earnings-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
