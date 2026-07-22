@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_npwkz7_6/pdfs/0001-26-GS-Japan Economic Flash-Basic Policies and Growth Strategy Outline Takaichi Administration-s Fiscal Shift-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_npwkz7_6/pdfs/0002-27-GS-Korea Financials - Fintech- HK SG marketing feedback-A solid value choice to weather turbulent markets-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_npwkz7_6/pdfs/0003-28-GS-Yingliu -603308.SS-- 2Q26 Preview- Slight capacity expansion in June with more to come in 2H26- with long-term agreements extended- Buy-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_npwkz7_6/pdfs/0004-29-GS-South Korea- Moderate Pullback in Early July Exports- Weighed Down by Ex-chip Demand-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_npwkz7_6/pdfs/0005-30-HSBC-Asia AI watch-Reinforcing the case for monetary tightening-260720.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
