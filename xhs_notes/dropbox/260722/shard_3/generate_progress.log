@@ -1,0 +1,33 @@
+Found 78 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u4w9eadx/pdfs/0001-16-Goldman Sachs-CHINA CONSUMER DURABLES RVC 2Q26 preview- Domestic demand better-than-feared- still robust overseas demand- stable pricing margin- Buy Roborock-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u4w9eadx/pdfs/0002-17-Goldman Sachs-CHINA MERCHANTS PROP OPERATION -001914.SZ- Weak shareholder return outlook and asset impairment risk overhang- downgrade to Sell-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u4w9eadx/pdfs/0003-18-Goldman Sachs-CHINA CONSUMER DURABLES- APPLIANCE TRACKER June 2026- Domestic showing early bottoming out signs with easing comps- resilient overseas on share gains-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u4w9eadx/pdfs/0004-19-Goldman Sachs-CHINA SOFTWARE WAIC 2026- new AI product launches- Kingsoft Office down to Sell on stretched valuation-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u4w9eadx/pdfs/0005-20-Goldman Sachs-Canada Economics Comment- New US Tariff Threats Raise Downside Growth Risks- Strengthen Case for BoC to Remain on Hold-260721.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=50c41d77-6219-4f47-a631-14eef3fbd894
+MinerU states: running, pending, running, pending, pending
+MinerU states: done, running, running, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset ad0508f798fbc3f9514dfb55d3dcaf00e3735abc9faf0df0901d1e8db4170fc6.jpg: score=-100;too_small:1417x103
+Skip non-chart visual asset c0a1bf4bcdc6384e1c538d57094fe6bd0b25f6dc7049d4ea3b321da2453ad7e5.jpg: score=0;odd_ratio:5.83,edge:0.38,contrast
+Skip non-chart visual asset 16202739695a02aecccc062fa865d4f3410a8bb1aea5f4d03bee1259f4e16cbe.jpg: score=-100;too_small:1159x107
+Neutralized WeChat title while keeping the report: 高盛：中国消费耐用品RVC二季度预览，国内需求好于预期，海外需求稳健 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset 6601bca2a6906e6929df92981e397dd5d3097068e0b33aa8b09c1041f19f07e7.jpg: score=-1;square_without_chart_hint,edge:0.26
+Skip non-chart visual asset d5d7aa7954d11441a9c0466ae16e9b49baa0a594812675acdc73ea96688203da.jpg: score=-100;too_small:1156x109
+Neutralized WeChat title while keeping the report: 高盛：招商积余股东回报前景与资产减值不确定性 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset 1ad40df4790c781c32481c7f10ca3bec813c6cc00079e0431d85cf3db8d974c9.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset 4093281177ca5e2a9805287998d9cfe76222f4bdbaa0d4e1ad7039143eca78c9.jpg: score=0;odd_ratio:5.78,edge:0.38,contrast
+Neutralized WeChat title while keeping the report: 高盛：中国家用电器6月追踪，国内初现筑底迹象，出口韧性来自份额扩张 -> 高盛：跨境贸易数据与主题变化观察
+Skip non-chart visual asset a942223e0c3e7c91df97393f9529ed1418b88fc7646f2a42ccaebd79cafb2810.jpg: score=-100;too_small:484x106
+Skip non-chart visual asset f9eb0a4d916f65eb72be1d5551d6c066bff60103307415d44ac5f80aa1bcf430.jpg: score=1;square_without_chart_hint,edge:0.46,contrast,large
+Skip non-chart visual asset d3ac72e31b79526d2e755ad0b0cd4039da301902c0f4a51dd868f3c82db770d4.jpg: score=2;edge:0.33
+Skip non-chart visual asset e60d6fe7b4664dd0c47ea8a318e9ac9e863429d65a1e2f3cb386b24a078fe0bc.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.46,contrast,large
+Skip non-chart visual asset 11412faf8cff746016e0fbf94b16c36997f936e10842e311887e2a36e1a30e30.jpg: score=-100;too_small:481x106
+Neutralized WeChat title while keeping the report: 高盛：加拿大宏观环境评论-美国新关税威胁增加增长下行风险 -> 高盛：跨境贸易与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260722/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

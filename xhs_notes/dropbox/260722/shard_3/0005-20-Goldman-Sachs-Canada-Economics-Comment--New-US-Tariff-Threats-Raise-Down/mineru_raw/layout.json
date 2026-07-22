@@ -1,0 +1,4294 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        47,
+                        60,
+                        488,
+                        101
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                60,
+                                488,
+                                101
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        60,
+                                        488,
+                                        101
+                                    ],
+                                    "type": "text",
+                                    "content": "Canada Economics Comment: New US Tariff Threats Raise Downside Growth Risks, Strengthen Case for BoC to Remain on Hold"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        46,
+                        135,
+                        427,
+                        275
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                46,
+                                135,
+                                427,
+                                275
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        46,
+                                        135,
+                                        427,
+                                        275
+                                    ],
+                                    "type": "text",
+                                    "content": "BOTTOM LINE: The White House announced new tariffs on $20bn of Canadian goods yesterday, which are due to take effect after a 30-day window on August 19. If implemented, we estimate that these tariffs would lower GDP by 0.2-0.3%, although we see limited upside to inflation under our baseline assumption for limited retaliation. While it remains unclear whether the Trump administration will implement these tariffs at the end of the 30-day window, especially given ongoing USMCA negotiations, growth headwinds from increased trade tensions reduce the likelihood that the BoC will begin raising the policy rate toward the midpoint of its 2.25-3.25% neutral rate range in the near term. We continue to expect that the BoC will remain on hold at 2.25% in 2026."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        283,
+                        120,
+                        296
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                283,
+                                120,
+                                296
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        283,
+                                        120,
+                                        296
+                                    ],
+                                    "type": "text",
+                                    "content": "MAIN POINTS:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        441,
+                        172,
+                        527,
+                        205
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                441,
+                                172,
+                                527,
+                                205
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        441,
+                                        172,
+                                        527,
+                                        205
+                                    ],
+                                    "type": "text",
+                                    "content": "Megan Peters  \n+44(20)7051-2058 |  \nmegan.l.peters@gs.com  \nGS International"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        441,
+                        136,
+                        518,
+                        168
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                441,
+                                136,
+                                518,
+                                168
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        441,
+                                        136,
+                                        518,
+                                        168
+                                    ],
+                                    "type": "text",
+                                    "content": "Joseph Briggs +1(212)902-2163 | joseph.briggs@gs.com GS & Co. LLC"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        305,
+                        427,
+                        362
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                305,
+                                427,
+                                362
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        305,
+                                        427,
+                                        362
+                                    ],
+                                    "type": "text",
+                                    "content": "1. The White House announced new tariffs on $20bn worth of Canadian goods yesterday, which are due to take effect after a 30-day window on August 19 (Exhibit 1). The announced tariffs would raise the effective tariff rate on Canadian imports by around "
+                                },
+                                {
+                                    "bbox": [
+                                        47,
+                                        305,
+                                        427,
+                                        362
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "2 \\frac{1}{2} \\mathrm{pp}"
+                                },
+                                {
+                                    "bbox": [
+                                        47,
+                                        305,
+                                        427,
+                                        362
+                                    ],
+                                    "type": "text",
+                                    "content": "."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        370,
+                        425,
+                        496
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                370,
+                                425,
+                                496
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        370,
+                                        425,
+                                        496
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Applying our estimated impulse from the 6pp increase in the effective tariff rate in 2025 to the announced tariffs, and adjusting for more limited retaliation, implies a 0.2-0.3pp drag on real GDP growth over the next 12 months. Our estimates incorporate a 0.2pp hit from weaker export growth and a 0.2pp drag on investment from heightened uncertainty, which are partly offset by Canadian consumers continuing to shift from US goods toward domestically-produced alternatives. Assuming Canadian retaliation remains limited, we see little upside risk to inflation. However, if Canada were to retaliate, our previous analysis suggests tariff increases would pass through to consumer prices within a few months."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        505,
+                        428,
+                        617
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                505,
+                                428,
+                                617
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        505,
+                                        428,
+                                        617
+                                    ],
+                                    "type": "text",
+                                    "content": "3. It remains unclear whether the Trump administration will implement these tariffs at the end of the 30-day window (either in full or in part), especially given ongoing USMCA negotiations. In a Tuesday morning interview, US Trade Representative Jamieson Greer described the tariffs as a “targeted measure” in response to Canadian trade barriers and said USMCA negotiations would continue. Canadian Prime Minister Mark Carney said Canada “stands ready to intensify” negotiations in a prepared statement posted Monday evening. Carney did not signal plans to retaliate, marking a departure from Canada’s response to US tariff announcements last year."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        625,
+                        427,
+                        681
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                625,
+                                427,
+                                681
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        625,
+                                        427,
+                                        681
+                                    ],
+                                    "type": "text",
+                                    "content": "4. The main implication for the Canadian outlook is that the escalation and added uncertainty are likely to weigh on investment and growth—whether or not the tariffs are implemented—thereby increasing dovish risks to the policy outlook. Our longstanding forecast that the BoC will remain on hold at 2.25% in 2026 partly"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        48,
+                        4,
+                        183,
+                        35
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                4,
+                                183,
+                                35
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        4,
+                                        183,
+                                        35
+                                    ],
+                                    "type": "text",
+                                    "content": "Goldman Research Sachs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        439,
+                        6,
+                        563,
+                        36
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                439,
+                                6,
+                                563,
+                                36
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        439,
+                                        6,
+                                        563,
+                                        36
+                                    ],
+                                    "type": "text",
+                                    "content": "Economics Research 21 July 2026 | 2:47PM EDT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        48,
+                        715,
+                        525,
+                        753
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                715,
+                                525,
+                                753
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        715,
+                                        525,
+                                        753
+                                    ],
+                                    "type": "text",
+                                    "content": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11
+                }
+            ],
+            "page_size": [
+                610,
+                774
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        47,
+                        60,
+                        488,
+                        101
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                60,
+                                488,
+                                101
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        60,
+                                        488,
+                                        101
+                                    ],
+                                    "type": "text",
+                                    "content": "Canada Economics Comment: New US Tariff Threats Raise Downside Growth Risks, Strengthen Case for BoC to Remain on Hold"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        46,
+                        135,
+                        427,
+                        275
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                46,
+                                135,
+                                427,
+                                275
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        46,
+                                        135,
+                                        427,
+                                        275
+                                    ],
+                                    "type": "text",
+                                    "content": "BOTTOM LINE: The White House announced new tariffs on $20bn of Canadian goods yesterday, which are due to take effect after a 30-day window on August 19. If implemented, we estimate that these tariffs would lower GDP by 0.2-0.3%, although we see limited upside to inflation under our baseline assumption for limited retaliation. While it remains unclear whether the Trump administration will implement these tariffs at the end of the 30-day window, especially given ongoing USMCA negotiations, growth headwinds from increased trade tensions reduce the likelihood that the BoC will begin raising the policy rate toward the midpoint of its 2.25-3.25% neutral rate range in the near term. We continue to expect that the BoC will remain on hold at 2.25% in 2026."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        283,
+                        120,
+                        296
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                283,
+                                120,
+                                296
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        283,
+                                        120,
+                                        296
+                                    ],
+                                    "type": "text",
+                                    "content": "MAIN POINTS:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        441,
+                        172,
+                        527,
+                        205
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                441,
+                                172,
+                                527,
+                                205
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        441,
+                                        172,
+                                        527,
+                                        205
+                                    ],
+                                    "type": "text",
+                                    "content": "Megan Peters  \n+44(20)7051-2058 |  \nmegan.l.peters@gs.com  \nGS International"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        441,
+                        136,
+                        518,
+                        168
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                441,
+                                136,
+                                518,
+                                168
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        441,
+                                        136,
+                                        518,
+                                        168
+                                    ],
+                                    "type": "text",
+                                    "content": "Joseph Briggs +1(212)902-2163 | joseph.briggs@gs.com GS & Co. LLC"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        305,
+                        427,
+                        362
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                305,
+                                427,
+                                362
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        305,
+                                        427,
+                                        362
+                                    ],
+                                    "type": "text",
+                                    "content": "1. The White House announced new tariffs on $20bn worth of Canadian goods yesterday, which are due to take effect after a 30-day window on August 19 (Exhibit 1). The announced tariffs would raise the effective tariff rate on Canadian imports by around "
+                                },
+                                {
+                                    "bbox": [
+                                        47,
+                                        305,
+                                        427,
+                                        362
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "2 \\frac{1}{2} \\mathrm{pp}"
+                                },
+                                {
+                                    "bbox": [
+                                        47,
+                                        305,
+                                        427,
+                                        362
+                                    ],
+                                    "type": "text",
+                                    "content": "."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        370,
+                        425,
+                        496
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                370,
+                                425,
+                                496
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        370,
+                                        425,
+                                        496
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Applying our estimated impulse from the 6pp increase in the effective tariff rate in 2025 to the announced tariffs, and adjusting for more limited retaliation, implies a 0.2-0.3pp drag on real GDP growth over the next 12 months. Our estimates incorporate a 0.2pp hit from weaker export growth and a 0.2pp drag on investment from heightened uncertainty, which are partly offset by Canadian consumers continuing to shift from US goods toward domestically-produced alternatives. Assuming Canadian retaliation remains limited, we see little upside risk to inflation. However, if Canada were to retaliate, our previous analysis suggests tariff increases would pass through to consumer prices within a few months."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        505,
+                        428,
+                        617
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                505,
+                                428,
+                                617
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        505,
+                                        428,
+                                        617
+                                    ],
+                                    "type": "text",
+                                    "content": "3. It remains unclear whether the Trump administration will implement these tariffs at the end of the 30-day window (either in full or in part), especially given ongoing USMCA negotiations. In a Tuesday morning interview, US Trade Representative Jamieson Greer described the tariffs as a “targeted measure” in response to Canadian trade barriers and said USMCA negotiations would continue. Canadian Prime Minister Mark Carney said Canada “stands ready to intensify” negotiations in a prepared statement posted Monday evening. Carney did not signal plans to retaliate, marking a departure from Canada’s response to US tariff announcements last year."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        625,
+                        427,
+                        681
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                625,
+                                427,
+                                681
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        625,
+                                        427,
+                                        681
+                                    ],
+                                    "type": "text",
+                                    "content": "4. The main implication for the Canadian outlook is that the escalation and added uncertainty are likely to weigh on investment and growth—whether or not the tariffs are implemented—thereby increasing dovish risks to the policy outlook. Our longstanding forecast that the BoC will remain on hold at 2.25% in 2026 partly"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        165,
+                        32,
+                        559,
+                        116
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                165,
+                                32,
+                                559,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        165,
+                                        32,
+                                        559,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "reflects our view that trade risks would limit the Governing Council's willingness to hike rates, and the BoC has repeatedly signaled this year that it “may need to cut the policy rate further” if “the United States imposes significant new trade restrictions on Canada.” While the latest news does not clear the bar for rate cuts, it reduces the likelihood that the BoC will begin normalizing back toward the midpoint of its 2.25-3.25% neutral rate range in 2026."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        60,
+                        147,
+                        553,
+                        368
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                48,
+                                129,
+                                375,
+                                141
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        129,
+                                        375,
+                                        141
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                48,
+                                                129,
+                                                375,
+                                                141
+                                            ],
+                                            "type": "text",
+                                            "content": "Exhibit 1: The White House Announced Tariffs on $20bn of Canadian Imports"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                60,
+                                147,
+                                553,
+                                368
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        147,
+                                        553,
+                                        368
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                60,
+                                                147,
+                                                553,
+                                                368
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "8c1283d9c1b000130ad82036899cc93e17949823dd88ae0ef7a2da642ff46e8c.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                49,
+                                374,
+                                291,
+                                386
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        374,
+                                        291,
+                                        386
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                49,
+                                                374,
+                                                291,
+                                                386
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: USITC, The White House, GS Global Investment Research"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        167,
+                        400,
+                        233,
+                        414
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                167,
+                                400,
+                                233,
+                                414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        167,
+                                        400,
+                                        233,
+                                        414
+                                    ],
+                                    "type": "text",
+                                    "content": "Joseph Briggs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        49,
+                        5,
+                        114,
+                        17
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                5,
+                                114,
+                                17
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        5,
+                                        114,
+                                        17
+                                    ],
+                                    "type": "text",
+                                    "content": "GS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        442,
+                        7,
+                        562,
+                        19
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                442,
+                                7,
+                                562,
+                                19
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        442,
+                                        7,
+                                        562,
+                                        19
+                                    ],
+                                    "type": "text",
+                                    "content": "Canada Economics Comment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        50,
+                        740,
+                        97,
+                        750
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                740,
+                                97,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        740,
+                                        97,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "21 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        555,
+                        741,
+                        562,
+                        750
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                555,
+                                741,
+                                562,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        555,
+                                        741,
+                                        562,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                610,
+                774
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        165,
+                        32,
+                        559,
+                        116
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                165,
+                                32,
+                                559,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        165,
+                                        32,
+                                        559,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "reflects our view that trade risks would limit the Governing Council's willingness to hike rates, and the BoC has repeatedly signaled this year that it “may need to cut the policy rate further” if “the United States imposes significant new trade restrictions on Canada.” While the latest news does not clear the bar for rate cuts, it reduces the likelihood that the BoC will begin normalizing back toward the midpoint of its 2.25-3.25% neutral rate range in 2026."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        60,
+                        147,
+                        553,
+                        368
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                48,
+                                129,
+                                375,
+                                141
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        129,
+                                        375,
+                                        141
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                48,
+                                                129,
+                                                375,
+                                                141
+                                            ],
+                                            "type": "text",
+                                            "content": "Exhibit 1: The White House Announced Tariffs on $20bn of Canadian Imports"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                60,
+                                147,
+                                553,
+                                368
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        147,
+                                        553,
+                                        368
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                60,
+                                                147,
+                                                553,
+                                                368
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "8c1283d9c1b000130ad82036899cc93e17949823dd88ae0ef7a2da642ff46e8c.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                49,
+                                374,
+                                291,
+                                386
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        374,
+                                        291,
+                                        386
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                49,
+                                                374,
+                                                291,
+                                                386
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: USITC, The White House, GS Global Investment Research"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        167,
+                        400,
+                        233,
+                        414
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                167,
+                                400,
+                                233,
+                                414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        167,
+                                        400,
+                                        233,
+                                        414
+                                    ],
+                                    "type": "text",
+                                    "content": "Joseph Briggs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        48,
+                        32,
+                        155,
+                        49
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                32,
+                                155,
+                                49
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        32,
+                                        155,
+                                        49
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosure Appendix"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        65,
+                        85,
+                        77
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                65,
+                                85,
+                                77
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        65,
+                                        85,
+                                        77
+                                    ],
+                                    "type": "text",
+                                    "content": "Reg AC"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        47,
+                        82,
+                        554,
+                        101
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                82,
+                                554,
+                                101
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        82,
+                                        554,
+                                        101
+                                    ],
+                                    "type": "text",
+                                    "content": "We, Joseph Briggs and Megan Peters, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        105,
+                        543,
+                        116
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                105,
+                                543,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        105,
+                                        543,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        119,
+                        417,
+                        130
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                119,
+                                417,
+                                130
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        119,
+                                        417,
+                                        130
+                                    ],
+                                    "type": "text",
+                                    "content": "Contributing Authors: Joseph Briggs GS & Co. LLC, Megan Peters GS International."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        133,
+                        549,
+                        152
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                133,
+                                549,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        133,
+                                        549,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        161,
+                        104,
+                        172
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                161,
+                                104,
+                                172
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        161,
+                                        104,
+                                        172
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        176,
+                        155,
+                        188
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                176,
+                                155,
+                                188
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        176,
+                                        155,
+                                        188
+                                    ],
+                                    "type": "text",
+                                    "content": "Regulatory disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        191,
+                        316,
+                        202
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                191,
+                                316,
+                                202
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        191,
+                                        316,
+                                        202
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosures required by United States laws and regulations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        202,
+                        557,
+                        238
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                202,
+                                557,
+                                238
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        202,
+                                        557,
+                                        238
+                                    ],
+                                    "type": "text",
+                                    "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        242,
+                        560,
+                        304
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                242,
+                                560,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        242,
+                                        560,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        312,
+                        536,
+                        323
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                312,
+                                536,
+                                323
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        312,
+                                        536,
+                                        323
+                                    ],
+                                    "type": "text",
+                                    "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        47,
+                        321,
+                        560,
+                        566
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                321,
+                                560,
+                                566
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        321,
+                                        560,
+                                        566
+                                    ],
+                                    "type": "text",
+                                    "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        564,
+                        562,
+                        721
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                564,
+                                562,
+                                721
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        564,
+                                        562,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        49,
+                        5,
+                        114,
+                        16
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                5,
+                                114,
+                                16
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        5,
+                                        114,
+                                        16
+                                    ],
+                                    "type": "text",
+                                    "content": "GS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        442,
+                        8,
+                        562,
+                        19
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                442,
+                                8,
+                                562,
+                                19
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        442,
+                                        8,
+                                        562,
+                                        19
+                                    ],
+                                    "type": "text",
+                                    "content": "Canada Economics Comment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        555,
+                        741,
+                        562,
+                        750
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                555,
+                                741,
+                                562,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        555,
+                                        741,
+                                        562,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12
+                },
+                {
+                    "bbox": [
+                        49,
+                        740,
+                        97,
+                        750
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                740,
+                                97,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        740,
+                                        97,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "21 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17
+                }
+            ],
+            "page_size": [
+                610,
+                774
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        48,
+                        32,
+                        155,
+                        49
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                32,
+                                155,
+                                49
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        32,
+                                        155,
+                                        49
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosure Appendix"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        65,
+                        85,
+                        77
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                65,
+                                85,
+                                77
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        65,
+                                        85,
+                                        77
+                                    ],
+                                    "type": "text",
+                                    "content": "Reg AC"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        47,
+                        82,
+                        554,
+                        101
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                82,
+                                554,
+                                101
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        82,
+                                        554,
+                                        101
+                                    ],
+                                    "type": "text",
+                                    "content": "We, Joseph Briggs and Megan Peters, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        105,
+                        543,
+                        116
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                105,
+                                543,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        105,
+                                        543,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        119,
+                        417,
+                        130
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                119,
+                                417,
+                                130
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        119,
+                                        417,
+                                        130
+                                    ],
+                                    "type": "text",
+                                    "content": "Contributing Authors: Joseph Briggs GS & Co. LLC, Megan Peters GS International."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        133,
+                        549,
+                        152
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                133,
+                                549,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        133,
+                                        549,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        161,
+                        104,
+                        172
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                161,
+                                104,
+                                172
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        161,
+                                        104,
+                                        172
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        176,
+                        155,
+                        188
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                176,
+                                155,
+                                188
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        176,
+                                        155,
+                                        188
+                                    ],
+                                    "type": "text",
+                                    "content": "Regulatory disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        191,
+                        316,
+                        202
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                191,
+                                316,
+                                202
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        191,
+                                        316,
+                                        202
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosures required by United States laws and regulations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        202,
+                        557,
+                        238
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                202,
+                                557,
+                                238
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        202,
+                                        557,
+                                        238
+                                    ],
+                                    "type": "text",
+                                    "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        242,
+                        560,
+                        304
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                242,
+                                560,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        242,
+                                        560,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        312,
+                        536,
+                        323
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                312,
+                                536,
+                                323
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        312,
+                                        536,
+                                        323
+                                    ],
+                                    "type": "text",
+                                    "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        47,
+                        321,
+                        560,
+                        566
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                321,
+                                560,
+                                566
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        321,
+                                        560,
+                                        566
+                                    ],
+                                    "type": "text",
+                                    "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        564,
+                        562,
+                        721
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                564,
+                                562,
+                                721
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        564,
+                                        562,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        48,
+                        33,
+                        239,
+                        43
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                33,
+                                239,
+                                43
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        33,
+                                        239,
+                                        43
+                                    ],
+                                    "type": "text",
+                                    "content": "available from GS International on request."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        47,
+                        557,
+                        109
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                47,
+                                557,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        47,
+                                        557,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        113,
+                        561,
+                        158
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                113,
+                                561,
+                                158
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        113,
+                                        561,
+                                        158
+                                    ],
+                                    "type": "text",
+                                    "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        167,
+                        216,
+                        178
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                167,
+                                216,
+                                178
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        167,
+                                        216,
+                                        178
+                                    ],
+                                    "type": "text",
+                                    "content": "Global product; distributing entities"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        177,
+                        562,
+                        273
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                177,
+                                562,
+                                273
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        177,
+                                        562,
+                                        273
+                                    ],
+                                    "type": "text",
+                                    "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        277,
+                        539,
+                        296
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                277,
+                                539,
+                                296
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        277,
+                                        539,
+                                        296
+                                    ],
+                                    "type": "text",
+                                    "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        299,
+                        554,
+                        335
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                299,
+                                554,
+                                335
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        299,
+                                        554,
+                                        335
+                                    ],
+                                    "type": "text",
+                                    "content": "European Economic Area: GS Bank Europe SE (\"GSBE\") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        345,
+                        140,
+                        356
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                345,
+                                140,
+                                356
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        345,
+                                        140,
+                                        356
+                                    ],
+                                    "type": "text",
+                                    "content": "General disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        355,
+                        561,
+                        400
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                355,
+                                561,
+                                400
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        355,
+                                        561,
+                                        400
+                                    ],
+                                    "type": "text",
+                                    "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        404,
+                        561,
+                        431
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                404,
+                                561,
+                                431
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        404,
+                                        561,
+                                        431
+                                    ],
+                                    "type": "text",
+                                    "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        434,
+                        562,
+                        462
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                434,
+                                562,
+                                462
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        434,
+                                        562,
+                                        462
+                                    ],
+                                    "type": "text",
+                                    "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        465,
+                        545,
+                        485
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                465,
+                                545,
+                                485
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        465,
+                                        545,
+                                        485
+                                    ],
+                                    "type": "text",
+                                    "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        489,
+                        562,
+                        508
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                489,
+                                562,
+                                508
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        489,
+                                        562,
+                                        508
+                                    ],
+                                    "type": "text",
+                                    "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        512,
+                        559,
+                        530
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                512,
+                                559,
+                                530
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        512,
+                                        559,
+                                        530
+                                    ],
+                                    "type": "text",
+                                    "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        535,
+                        543,
+                        554
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                535,
+                                543,
+                                554
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        535,
+                                        543,
+                                        554
+                                    ],
+                                    "type": "text",
+                                    "content": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        558,
+                        531,
+                        576
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                558,
+                                531,
+                                576
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        558,
+                                        531,
+                                        576
+                                    ],
+                                    "type": "text",
+                                    "content": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        580,
+                        562,
+                        634
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                580,
+                                562,
+                                634
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        580,
+                                        562,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        637,
+                        556,
+                        682
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                637,
+                                556,
+                                682
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        637,
+                                        556,
+                                        682
+                                    ],
+                                    "type": "text",
+                                    "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        686,
+                        555,
+                        723
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                686,
+                                555,
+                                723
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        686,
+                                        555,
+                                        723
+                                    ],
+                                    "type": "text",
+                                    "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        49,
+                        6,
+                        114,
+                        16
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                6,
+                                114,
+                                16
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        6,
+                                        114,
+                                        16
+                                    ],
+                                    "type": "text",
+                                    "content": "GS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        442,
+                        8,
+                        562,
+                        18
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                442,
+                                8,
+                                562,
+                                18
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        442,
+                                        8,
+                                        562,
+                                        18
+                                    ],
+                                    "type": "text",
+                                    "content": "Canada Economics Comment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        49,
+                        740,
+                        97,
+                        750
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                740,
+                                97,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        740,
+                                        97,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "21 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "bbox": [
+                        555,
+                        742,
+                        562,
+                        750
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                555,
+                                742,
+                                562,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        555,
+                                        742,
+                                        562,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 22
+                }
+            ],
+            "page_size": [
+                610,
+                774
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        48,
+                        33,
+                        239,
+                        43
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                33,
+                                239,
+                                43
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        33,
+                                        239,
+                                        43
+                                    ],
+                                    "type": "text",
+                                    "content": "available from GS International on request."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        47,
+                        557,
+                        109
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                47,
+                                557,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        47,
+                                        557,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        113,
+                        561,
+                        158
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                113,
+                                561,
+                                158
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        113,
+                                        561,
+                                        158
+                                    ],
+                                    "type": "text",
+                                    "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        167,
+                        216,
+                        178
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                167,
+                                216,
+                                178
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        167,
+                                        216,
+                                        178
+                                    ],
+                                    "type": "text",
+                                    "content": "Global product; distributing entities"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        177,
+                        562,
+                        273
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                177,
+                                562,
+                                273
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        177,
+                                        562,
+                                        273
+                                    ],
+                                    "type": "text",
+                                    "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        277,
+                        539,
+                        296
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                277,
+                                539,
+                                296
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        277,
+                                        539,
+                                        296
+                                    ],
+                                    "type": "text",
+                                    "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        299,
+                        554,
+                        335
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                299,
+                                554,
+                                335
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        299,
+                                        554,
+                                        335
+                                    ],
+                                    "type": "text",
+                                    "content": "European Economic Area: GS Bank Europe SE (\"GSBE\") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        345,
+                        140,
+                        356
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                345,
+                                140,
+                                356
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        345,
+                                        140,
+                                        356
+                                    ],
+                                    "type": "text",
+                                    "content": "General disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        355,
+                        561,
+                        400
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                355,
+                                561,
+                                400
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        355,
+                                        561,
+                                        400
+                                    ],
+                                    "type": "text",
+                                    "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        404,
+                        561,
+                        431
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                404,
+                                561,
+                                431
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        404,
+                                        561,
+                                        431
+                                    ],
+                                    "type": "text",
+                                    "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        434,
+                        562,
+                        462
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                434,
+                                562,
+                                462
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        434,
+                                        562,
+                                        462
+                                    ],
+                                    "type": "text",
+                                    "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        465,
+                        545,
+                        485
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                465,
+                                545,
+                                485
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        465,
+                                        545,
+                                        485
+                                    ],
+                                    "type": "text",
+                                    "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        489,
+                        562,
+                        508
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                489,
+                                562,
+                                508
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        489,
+                                        562,
+                                        508
+                                    ],
+                                    "type": "text",
+                                    "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        512,
+                        559,
+                        530
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                512,
+                                559,
+                                530
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        512,
+                                        559,
+                                        530
+                                    ],
+                                    "type": "text",
+                                    "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        535,
+                        543,
+                        554
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                535,
+                                543,
+                                554
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        535,
+                                        543,
+                                        554
+                                    ],
+                                    "type": "text",
+                                    "content": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        558,
+                        531,
+                        576
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                558,
+                                531,
+                                576
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        558,
+                                        531,
+                                        576
+                                    ],
+                                    "type": "text",
+                                    "content": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        580,
+                        562,
+                        634
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                580,
+                                562,
+                                634
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        580,
+                                        562,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        47,
+                        637,
+                        556,
+                        682
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                637,
+                                556,
+                                682
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        637,
+                                        556,
+                                        682
+                                    ],
+                                    "type": "text",
+                                    "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        686,
+                        555,
+                        723
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                686,
+                                555,
+                                723
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        686,
+                                        555,
+                                        723
+                                    ],
+                                    "type": "text",
+                                    "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        48,
+                        33,
+                        550,
+                        78
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                33,
+                                550,
+                                78
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        33,
+                                        550,
+                                        78
+                                    ],
+                                    "type": "text",
+                                    "content": "As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        82,
+                        550,
+                        118
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                82,
+                                550,
+                                118
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        82,
+                                        550,
+                                        118
+                                    ],
+                                    "type": "text",
+                                    "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        121,
+                        544,
+                        140
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                121,
+                                544,
+                                140
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        121,
+                                        544,
+                                        140
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        144,
+                        135,
+                        154
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                144,
+                                135,
+                                154
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        144,
+                                        135,
+                                        154
+                                    ],
+                                    "type": "text",
+                                    "content": "© 2026 GS."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        159,
+                        559,
+                        221
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                159,
+                                559,
+                                221
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        159,
+                                        559,
+                                        221
+                                    ],
+                                    "type": "text",
+                                    "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        50,
+                        6,
+                        113,
+                        16
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                6,
+                                113,
+                                16
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        6,
+                                        113,
+                                        16
+                                    ],
+                                    "type": "text",
+                                    "content": "GS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        442,
+                        8,
+                        562,
+                        18
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                442,
+                                8,
+                                562,
+                                18
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        442,
+                                        8,
+                                        562,
+                                        18
+                                    ],
+                                    "type": "text",
+                                    "content": "Canada Economics Comment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        50,
+                        740,
+                        97,
+                        750
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                740,
+                                97,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        740,
+                                        97,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "21 July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        555,
+                        741,
+                        562,
+                        750
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                555,
+                                741,
+                                562,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        555,
+                                        741,
+                                        562,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "5"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                610,
+                774
+            ],
+            "page_idx": 4,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        48,
+                        33,
+                        550,
+                        78
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                33,
+                                550,
+                                78
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        33,
+                                        550,
+                                        78
+                                    ],
+                                    "type": "text",
+                                    "content": "As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        82,
+                        550,
+                        118
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                82,
+                                550,
+                                118
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        82,
+                                        550,
+                                        118
+                                    ],
+                                    "type": "text",
+                                    "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        48,
+                        121,
+                        544,
+                        140
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                121,
+                                544,
+                                140
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        121,
+                                        544,
+                                        140
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        49,
+                        144,
+                        135,
+                        154
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                49,
+                                144,
+                                135,
+                                154
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        144,
+                                        135,
+                                        154
+                                    ],
+                                    "type": "text",
+                                    "content": "© 2026 GS."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        48,
+                        159,
+                        559,
+                        221
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                48,
+                                159,
+                                559,
+                                221
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        159,
+                                        559,
+                                        221
+                                    ],
+                                    "type": "text",
+                                    "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

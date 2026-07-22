@@ -1,0 +1,599 @@
+[
+  {
+    "item": "0001-16-Goldman-Sachs-CHINA-CONSUMER-DURABLES-RVC-2Q26-preview--Domestic-demand-",
+    "source_pdf": "/tmp/pdf_batch_001_u4w9eadx/pdfs/0001-16-GS-CHINA CONSUMER DURABLES RVC 2Q26 preview- Domestic demand better-than-feared- still robust overseas demand- stable pricing margin- Buy Roborock-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "清洁电器618超预期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-GS-CHINA CONSUMER DURABLES RVC 2Q26 preview- Domestic demand better-than-feared- still robust overseas demand- stable pricing margin- Buy Roborock-260721.pdf",
+      "cleaned_source_title": "GS-CHINA CONSUMER DURABLES RVC 2Q26 preview- Domestic demand better-than-feared- still robust overseas demand- stable pricing margin- Buy Roborock",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国消费DURABLESRVC2Q26previ",
+      "raw_candidates": [
+        "中国消费耐用品RVC二季度预览：国内需求好于预期，海外需求稳健，定价利润率稳定",
+        "中国消费耐用品RVC二季度预览：618期间清洁电器GMV同比增长超20%",
+        "中国消费耐用品RVC二季度预览：石头科技与科沃斯618表现强劲"
+      ],
+      "cleaned_candidates": [
+        "GS：中国消费耐用品RVC二季度预览，国内需求好于预期，海外需求稳健",
+        "GS：中国消费耐用品RVC二季度预览",
+        "GS：中国消费耐用品RVC二季度预览，石头科技与科沃斯618表现强劲",
+        "GS：中国消费DURABLESRVC2Q26previ",
+        "GS：年初至今两家公司报价下跌约30%，跑输消费耐用品同业和沪深300"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国消费耐用品RVC二季度预览",
+          "reasons": [
+            "anchor_coverage=0.52",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国消费耐用品RVC二季度预览，石头科技与科沃斯618表现强劲",
+          "reasons": [
+            "anchor_coverage=0.52",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国消费DURABLESRVC2Q26previ",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：年初至今两家公司报价下跌约30%，跑输消费耐用品同业和沪深300",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国消费耐用品RVC二季度预览，国内需求好于预期，海外需求稳健",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-17-Goldman-Sachs-CHINA-MERCHANTS-PROP-OPERATION--001914.SZ--Weak-shareholde",
+    "source_pdf": "/tmp/pdf_batch_001_u4w9eadx/pdfs/0002-17-GS-CHINA MERCHANTS PROP OPERATION -001914.SZ- Weak shareholder return outlook and asset impairment risk overhang- downgrade to Sell-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "这个物管公司，被外资",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x2",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-GS-CHINA MERCHANTS PROP OPERATION -001914.SZ- Weak shareholder return outlook and asset impairment risk overhang- downgrade to Sell-260721.pdf",
+      "cleaned_source_title": "GS-CHINA MERCHANTS PROP OPERATION -001914.SZ- Weak shareholder return outlook and asset impairment risk overhang- downgrade to Sell",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国MERCHANTSPROPOPERATION",
+      "raw_candidates": [
+        "GS：招商积余股东回报前景与资产减值不确定性",
+        "GS：招商积余资产减值与股息率约3%低于同行",
+        "GS：招商积余研究性房地产占比27%与运营走弱"
+      ],
+      "cleaned_candidates": [
+        "GS：招商积余股东回报前景与资产减值不确定性",
+        "GS：招商积余资产减值与股息率约3%低于同行",
+        "GS：招商积余研究性房地产占比27%与运营走弱",
+        "GS：中国MERCHANTSPROPOPERATION",
+        "GS：其当前约30%的派息率没有提升计划，未来三年预期股息率仅约3%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：招商积余资产减值与股息率约3%低于同行",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "GS：招商积余研究性房地产占比27%与运营走弱",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国MERCHANTSPROPOPERATION",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：其当前约30%的派息率没有提升计划，未来三年预期股息率仅约3%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：招商积余股东回报前景与资产减值不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-18-Goldman-Sachs-CHINA-CONSUMER-DURABLES--APPLIANCE-TRACKER-June-2026--Dome",
+    "source_pdf": "/tmp/pdf_batch_001_u4w9eadx/pdfs/0003-18-GS-CHINA CONSUMER DURABLES- APPLIANCE TRACKER June 2026- Domestic showing early bottoming out signs with easing comps- resilient overseas on share gains-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "6月家电数据回暖，出",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：跨境贸易数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-GS-CHINA CONSUMER DURABLES- APPLIANCE TRACKER June 2026- Domestic showing early bottoming out signs with easing comps- resilient overseas on share gains-260721.pdf",
+      "cleaned_source_title": "GS-CHINA CONSUMER DURABLES- APPLIANCE TRACKER June 2026- Domestic showing early bottoming out signs with easing comps- resilient overseas on share gains",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国消费DURABLESAPPLIANCETRACKERJune",
+      "raw_candidates": [
+        "中国家用电器6月追踪：国内初现筑底迹象，出口韧性来自份额扩张",
+        "中国家用电器6月追踪：国内出货降幅收窄至-7%，出口增速加快",
+        "中国家用电器6月追踪：海尔海信国内份额上升，美的格力承压"
+      ],
+      "cleaned_candidates": [
+        "GS：中国家用电器6月追踪，国内初现筑底迹象，出口韧性来自份额扩张",
+        "GS：中国家用电器6月追踪，国内出货降幅收窄至-7%，出口增速加快",
+        "GS：中国家用电器6月追踪，海尔海信国内份额上升，美的格力承压",
+        "GS：中国消费DURABLESAPPLIANCETRACKERJune",
+        "GS：6月空调国内出货量同比下降7%，较5月的-15%明显收窄"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国家用电器6月追踪，国内出货降幅收窄至-7%，出口增速加快",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国家用电器6月追踪，海尔海信国内份额上升，美的格力承压",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国消费DURABLESAPPLIANCETRACKERJune",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：6月空调国内出货量同比下降7%，较5月的-15%明显收窄",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：跨境贸易数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国家用电器6月追踪，国内初现筑底迹象，出口韧性来自份额扩张",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：跨境贸易数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-19-Goldman-Sachs-CHINA-SOFTWARE-WAIC-2026--new-AI-product-launches--Kingsof",
+    "source_pdf": "/tmp/pdf_batch_001_u4w9eadx/pdfs/0004-19-GS-CHINA SOFTWARE WAIC 2026- new AI product launches- Kingsoft Office down to Sell on stretched valuation-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "WAIC 2026 ",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "卖出->观点偏谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "卖出->观点偏谨慎 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国软件WAIC2026与金山办公评级调整",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-GS-CHINA SOFTWARE WAIC 2026- new AI product launches- Kingsoft Office down to Sell on stretched valuation-260721.pdf",
+      "cleaned_source_title": "GS-CHINA SOFTWARE WAIC 2026- new AI product launches- Kingsoft Office down to Sell on stretched valuation",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：中国软件WAIC2026",
+      "raw_candidates": [
+        "中国软件WAIC 2026与金山办公评级调整",
+        "中国软件WAIC 2026新品发布与金山办公估值调整",
+        "中国软件WAIC 2026 AI产品与金山办公评级观察"
+      ],
+      "cleaned_candidates": [
+        "GS：中国软件WAIC2026与金山办公评级调整",
+        "GS：中国软件WAIC2026新品发布与金山办公估值调整",
+        "GS：中国软件WAIC2026AI产品与金山办公评级观察",
+        "GS：中国软件WAIC2026",
+        "GS：2026年7月上海WAIC期间，GS团队观察到一系列AI新品发布"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国软件WAIC2026",
+          "reasons": [
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "GS：2026年7月上海WAIC期间，GS团队观察到一系列AI新品发布",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国软件WAIC2026与金山办公评级调整",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国软件WAIC2026与金山办公评级调整"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-20-Goldman-Sachs-Canada-Economics-Comment--New-US-Tariff-Threats-Raise-Down",
+    "source_pdf": "/tmp/pdf_batch_001_u4w9eadx/pdfs/0005-20-GS-Canada Economics Comment- New US Tariff Threats Raise Downside Growth Risks- Strengthen Case for BoC to Remain on Hold-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "美加贸易摩擦升级，经",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "拖累->影响 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x2",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：跨境贸易与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-GS-Canada Economics Comment- New US Tariff Threats Raise Downside Growth Risks- Strengthen Case for BoC to Remain on Hold-260721.pdf",
+      "cleaned_source_title": "GS-Canada Economics Comment- New US Tariff Threats Raise Downside Growth Risks- Strengthen Case for BoC to Remain on Hold",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：CanadaEconomicsComment",
+      "raw_candidates": [
+        "GS：加拿大经济评论-美国新关税威胁增加增长下行风险-强化加拿大央行维持利率不变理由",
+        "GS：美国对加拿大200亿美元商品关税威胁-加拿大央行维持利率不变理由增强",
+        "GS：加拿大经济评论-美国关税威胁与加拿大央行政策前景"
+      ],
+      "cleaned_candidates": [
+        "GS：加拿大宏观环境评论-美国新关税威胁增加增长下行风险",
+        "GS：美国对加拿大200亿美元商品关税威胁",
+        "GS：加拿大宏观环境评论-美国关税威胁与加拿大央行政策前景",
+        "GS：CanadaEconomicsComment",
+        "GS：美国白宫于7月18日宣布对价值200亿美元的加拿大商品加征关税"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：美国对加拿大200亿美元商品关税威胁",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：加拿大宏观环境评论-美国关税威胁与加拿大央行政策前景",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CanadaEconomicsComment",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：美国白宫于7月18日宣布对价值200亿美元的加拿大商品加征关税",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：跨境贸易与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：加拿大宏观环境评论-美国新关税威胁增加增长下行风险",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：跨境贸易与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

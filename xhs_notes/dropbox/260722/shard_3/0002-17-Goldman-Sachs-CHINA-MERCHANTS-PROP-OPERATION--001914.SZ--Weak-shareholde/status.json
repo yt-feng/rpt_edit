@@ -1,0 +1,133 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_u4w9eadx/pdfs/0002-17-GS-CHINA MERCHANTS PROP OPERATION -001914.SZ- Weak shareholder return outlook and asset impairment risk overhang- downgrade to Sell-260721.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "这个物管公司，被外资",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "卖出->观点偏谨慎 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "压力->不确定性 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-17-GS-CHINA MERCHANTS PROP OPERATION -001914.SZ- Weak shareholder return outlook and asset impairment risk overhang- downgrade to Sell-260721.pdf",
+    "cleaned_source_title": "GS-CHINA MERCHANTS PROP OPERATION -001914.SZ- Weak shareholder return outlook and asset impairment risk overhang- downgrade to Sell",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：中国MERCHANTSPROPOPERATION",
+    "raw_candidates": [
+      "GS：招商积余股东回报前景与资产减值不确定性",
+      "GS：招商积余资产减值与股息率约3%低于同行",
+      "GS：招商积余研究性房地产占比27%与运营走弱"
+    ],
+    "cleaned_candidates": [
+      "GS：招商积余股东回报前景与资产减值不确定性",
+      "GS：招商积余资产减值与股息率约3%低于同行",
+      "GS：招商积余研究性房地产占比27%与运营走弱",
+      "GS：中国MERCHANTSPROPOPERATION",
+      "GS：其当前约30%的派息率没有提升计划，未来三年预期股息率仅约3%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：招商积余资产减值与股息率约3%低于同行",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "GS：招商积余研究性房地产占比27%与运营走弱",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：中国MERCHANTSPROPOPERATION",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：其当前约30%的派息率没有提升计划，未来三年预期股息率仅约3%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：招商积余股东回报前景与资产减值不确定性",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "512",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

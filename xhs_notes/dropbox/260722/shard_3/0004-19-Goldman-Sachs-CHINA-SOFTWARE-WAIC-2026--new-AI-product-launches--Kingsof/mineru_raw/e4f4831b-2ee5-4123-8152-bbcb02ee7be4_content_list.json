@@ -1,0 +1,1794 @@
+[
+    {
+        "type": "text",
+        "text": "CHINA SOFTWARE",
+        "bbox": [
+            107,
+            84,
+            253,
+            101
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "WAIC 2026: new AI product launches; Kingsoft Office down to Sell on stretched valuation",
+        "text_level": 1,
+        "bbox": [
+            107,
+            109,
+            831,
+            160
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "During WAIC Shanghai 2026, we saw new product launches across AI foundation models, AI agents/ applications, and edge AI devices (e.g. AI smartphones, AI earphones). On enterprise software, Kingsoft Office launched WPS Comate as an AI agent to complete complicated tasks; Infinigence AI announced InfiniClawBox to help users on AI contract and document analysis. On multi-modal AI, we saw emerging new products, including Deemos Hyper3D Rodin for 3D content generation, and FrameX-AI video platform to generate interactive video content for users. With enhanced on-device AI models, we expect to see rising adoption of AI agents on edge devices for better experiences, like Nubia Doubao AI smartphones and Honor Robot Phone based on Qwen AI model. Overall, we are positive on the roll-out of agentic AI new products to drive queries and token consumption, and expect more focus on AI agent ROI for long-term adoption.",
+        "bbox": [
+            76,
+            224,
+            697,
+            441
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this report, we downgrade Kingsoft Office to Sell from Neutral on stretched valuation, considering that the WPS AI paying ratio and user adoption may take time to ramp up, which could suggest our previous assumptions on ToB (Business) and ToC (Consumer) subscription businesses may have been too aggressive. Our new TP is Rmb201 (vs. previously at Rmb326). More details within.",
+        "bbox": [
+            76,
+            448,
+            700,
+            540
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kingsoft Office (688111.SS): WPS AI paying ratio may take time to ramp;",
+        "bbox": [
+            78,
+            566,
+            661,
+            589
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Allen Chang\n+852-2978-2930 |\nallen.k.chang@gs.com\nGS (Asia) L.L.C.",
+        "bbox": [
+            720,
+            228,
+            852,
+            268
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Verena Jeng\n+852-2978-1681 | verena.jeng@gs.com\nGS (Asia) L.L.C.",
+        "bbox": [
+            718,
+            275,
+            913,
+            306
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ting Song\n+852-2978-6466 | ting.song@gs.com\nGS (Asia) L.L.C.",
+        "bbox": [
+            720,
+            311,
+            903,
+            344
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            23,
+            297,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research\n21 July 2026 | 4:53PM HKT",
+        "bbox": [
+            715,
+            25,
+            919,
+            64
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.",
+        "bbox": [
+            76,
+            880,
+            916,
+            974
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Down to Sell on stretched valuation",
+        "text_level": 2,
+        "bbox": [
+            78,
+            59,
+            372,
+            79
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/3b44eb2b995f46e2404a9c4551a9dca4eb4630f1d42d70f3169f9dfdd43f176a.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, GS estimates, FactSet. Price as of 20 Jul 2026 close."
+        ],
+        "table_body": "<table><tr><td>688111.SS</td><td>12m Price Target: Rmb201</td><td colspan=\"2\">Price: Rmb244.27</td><td colspan=\"2\">Downside: 17.7%</td></tr><tr><td rowspan=\"2\">Sell</td><td>GS Forecast</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>12/25</td><td>12/26E</td><td>12/27E</td><td>12/28E</td></tr><tr><td>Market cap: Rmb112.6bn / $16.6bn</td><td>Revenue (Rmb mn) New</td><td>5,928.7</td><td>7,264.7</td><td>8,881.4</td><td>11,192.7</td></tr><tr><td>Enterprise value: Rmb109.4bn / $16.2bn</td><td>Revenue (Rmb mn) Old</td><td>5,928.7</td><td>7,415.5</td><td>9,612.7</td><td>12,076.3</td></tr><tr><td>3m ADTV :Rmb2.2bn/ $325.4mn</td><td>EBITDA (Rmb mn)</td><td>1,390.8</td><td>2,193.5</td><td>2,875.4</td><td>3,798.0</td></tr><tr><td>China</td><td>EPS (Rmb) New</td><td>3.97</td><td>8.73</td><td>6.48</td><td>8.49</td></tr><tr><td rowspan=\"2\">Greater China Technology</td><td>EPS (Rmb) Old</td><td>3.97</td><td>8.87</td><td>7.18</td><td>9.41</td></tr><tr><td>P/E (X)</td><td>77.5</td><td>28.0</td><td>37.7</td><td>28.8</td></tr><tr><td rowspan=\"5\">M&amp;A Rank: 3</td><td>P/B (X)</td><td>11.1</td><td>6.9</td><td>6.0</td><td>5.1</td></tr><tr><td>Dividend yield (%)</td><td>0.0</td><td>0.5</td><td>0.5</td><td>0.6</td></tr><tr><td>CROCI (%)</td><td>34.1</td><td>35.2</td><td>20.7</td><td>22.6</td></tr><tr><td></td><td>3/26</td><td>6/26E</td><td>9/26E</td><td>12/26E</td></tr><tr><td>EPS (Rmb)</td><td>4.73</td><td>1.10</td><td>1.35</td><td>1.54</td></tr></table>",
+        "bbox": [
+            274,
+            102,
+            913,
+            347
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Kingsoft Office launched (1) the WPS AI agent Lingxi professional version for ToC (Consumer) users, and (2) WPS AI Comate for ToB (Business) clients during the WAIC. We remain positive on the continuous roll-out of AI features to drive users' WPS AI adoption with improving quality and efficiency, while we expect the paying ratio of WPS AI takes time to ramp up due to (1) emerging AI-native products from peers with competitive pricing, and (2) lack of AI user cases to deliver positive ROI to end users. On enterprise clients, the WPS 365 subscription business maintained strong growth, integrating the enterprise knowledge base and AI features, while the ToB subscription is still small at the current stage.",
+        "bbox": [
+            267,
+            373,
+            916,
+            532
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We revise down 2026-28E earnings by $2\\% - 10\\%$ mainly due to longer time to see AI adoption, reflecting lower revenues of ToB/ ToC subscription. Despite these cuts, our net income growth estimates remain strong, $+29\\%$ CAGR in 2026E-28E. With lower FCF of the updated DCF valuation, our 12M TP moved to Rmb201 (vs. previously at Rmb326), suggesting 31x our implied P/E (vs. 45x 2027E implied previously), which is in lower than the company's avg. -1std P/E at 44x and indicates the company's valuation is stretched. All said, our 12M TP moves to Rmb201 (vs. Rmb326 previously), implying $10\\%$ downside or $-9.5\\%$ total return potential (vs coverage average return at $62\\%$ ), and we downgrade Kingsoft Office from Neutral to Sell.",
+        "bbox": [
+            267,
+            542,
+            916,
+            703
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ToB/ ToC WPS AI new product launches: During WAIC in July 2026, the company released two AI agents, including (1) WPS AI agent Lingxi professional version for ToC users, targeting to complete more complicated office tasks through document/ code/browsers, and (2) WPS AI Comate for ToB clients, integrating enterprise knowledge. Management highlights the Lingxi AI agent acts like a “Personal AI Office assistant”, which is capable of understanding context, processing complicated tasks, and polishing final deliveries. We see companies are enhancing AI features to better improve users’ efficiency, while still taking time to see a growing paying ratio for WPS AI.",
+        "bbox": [
+            267,
+            713,
+            910,
+            854
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Earnings revision: We revise down Kingsoft Office earnings by 2%/10%/10% in 2026-28E mainly on lower revenues and lower-than-expected Non-OP. The revenues cut to ToC subscriptions reflects (1) longer-than-expected time to see WPS AI adoption and revenue contribution, and (2) weak spending by small enterprise clients. We revise up GM by 0.1ppts-0.2ppts in 2026-28E on mix changes and keep Opex ratio largely unchanged.",
+        "bbox": [
+            267,
+            864,
+            911,
+            936
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            269,
+            59,
+            880,
+            94
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/da09180ca84007eb32cb3886c477f6368f73f838b73a00458339018229c84763.jpg",
+        "table_caption": [
+            "Exhibit 1: Earnings revision"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Rmb m</td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td><td colspan=\"3\">2028E</td></tr><tr><td>New</td><td>Old</td><td>Diff %</td><td>New</td><td>Old</td><td>Diff %</td><td>New</td><td>Old</td><td>Diff %</td></tr><tr><td>Revenues</td><td>7,265</td><td>7,415</td><td>-2%</td><td>8,881</td><td>9,613</td><td>-8%</td><td>11,193</td><td>12,076</td><td>-7%</td></tr><tr><td>GP</td><td>6,232</td><td>6,358</td><td>-2%</td><td>7,586</td><td>8,195</td><td>-7%</td><td>9,552</td><td>10,297</td><td>-7%</td></tr><tr><td>OP</td><td>2,106</td><td>2,148</td><td>-2%</td><td>2,790</td><td>3,007</td><td>-7%</td><td>3,714</td><td>4,002</td><td>-7%</td></tr><tr><td>Net income</td><td>4,065</td><td>4,133</td><td>-2%</td><td>3,029</td><td>3,361</td><td>-10%</td><td>4,001</td><td>4,435</td><td>-10%</td></tr><tr><td>Margins</td><td colspan=\"3\"></td><td colspan=\"3\"></td><td colspan=\"3\"></td></tr><tr><td>GPM</td><td>85.8%</td><td>85.7%</td><td>0.1 ppts</td><td>85.4%</td><td>85.2%</td><td>0.2 ppts</td><td>85.3%</td><td>85.3%</td><td>0.1 ppts</td></tr><tr><td>NPM</td><td>56.0%</td><td>55.7%</td><td>0.2 ppts</td><td>34.1%</td><td>35.0%</td><td>-0.9 ppts</td><td>35.7%</td><td>36.7%</td><td>-1.0 ppts</td></tr></table>",
+        "bbox": [
+            277,
+            128,
+            906,
+            238
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/5e470da9bd1813d57e92cf1a7ed8505944bef591b598c75737d28f80b0370b8c.jpg",
+        "table_caption": [
+            "Exhibit 2: Revenues changes by segment"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Revenues (New, Rmb m)</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>ToC Subscription</td><td>3,283</td><td>3,626</td><td>4,456</td><td>5,573</td><td>7,091</td><td>8,892</td><td>10,713</td></tr><tr><td>ToB Subscription</td><td>1,007</td><td>1,492</td><td>2,019</td><td>2,555</td><td>3,379</td><td>4,353</td><td>5,606</td></tr><tr><td>ToB On-premise solution</td><td>614</td><td>621</td><td>600</td><td>564</td><td>532</td><td>506</td><td>482</td></tr><tr><td>Internet Advertising and Overseas</td><td>217</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td></tr><tr><td>Total</td><td>5,121</td><td>5,929</td><td>7,265</td><td>8,881</td><td>11,193</td><td>13,940</td><td>16,991</td></tr><tr><td>Revenues (Old, Rmb m)</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>ToC Subscription</td><td>3,283</td><td>3,626</td><td>4,585</td><td>6,212</td><td>7,751</td><td>9,579</td><td>11,605</td></tr><tr><td>ToB Subscription</td><td>1,007</td><td>1,492</td><td>2,041</td><td>2,629</td><td>3,567</td><td>4,718</td><td>6,239</td></tr><tr><td>ToB On-premise solution</td><td>614</td><td>621</td><td>600</td><td>582</td><td>568</td><td>557</td><td>548</td></tr><tr><td>Internet Advertising and Overseas</td><td>217</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td></tr><tr><td>Total</td><td>5,121</td><td>5,929</td><td>7,415</td><td>9,613</td><td>12,076</td><td>15,043</td><td>18,583</td></tr><tr><td>Change</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>ToC Subscription</td><td>0%</td><td>0%</td><td>-3%</td><td>-10%</td><td>-9%</td><td>-7%</td><td>-8%</td></tr><tr><td>ToB Subscription</td><td>0%</td><td>0%</td><td>-1%</td><td>-3%</td><td>-5%</td><td>-8%</td><td>-10%</td></tr><tr><td>ToB On-premise solution</td><td>0%</td><td>0%</td><td>0%</td><td>-3%</td><td>-6%</td><td>-9%</td><td>-12%</td></tr><tr><td>Internet Advertising and Overseas</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Total</td><td>0%</td><td>0%</td><td>-2%</td><td>-8%</td><td>-7%</td><td>-7%</td><td>-9%</td></tr></table>",
+        "bbox": [
+            279,
+            291,
+            906,
+            500
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "GS vs. consensus: Our NI estimate in 2026E is $24\\%$ higher than consensus mainly on higher non-OP, given the company's 1Q26 NI beat at Rmb2.2bn on higher-than-expected investment income, while the consensus hasn't fully reflected. Our NI estimates in 2027E is $5\\%$ higher than consensus on higher revenues on rising WPS 365 subscription revenues for ToB users, while we remain concern on the AI adoption and paying ratio of ToC users.",
+        "bbox": [
+            269,
+            523,
+            915,
+            630
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/44ebd153b6fc331d8f8c58a33c9232ea94fa32199e1199a65bfe88ca0a2e1e59.jpg",
+        "table_caption": [
+            "Exhibit 3: GSe vs. Bloomberg consensus"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research, Bloomberg"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Rmb m</td><td colspan=\"3\">2026E</td><td colspan=\"3\">2027E</td></tr><tr><td>GS</td><td>Cons.</td><td>Diff %</td><td>GS</td><td>Cons.</td><td>Diff %</td></tr><tr><td>Revenues</td><td>7,265</td><td>7,056</td><td>3%</td><td>8,881</td><td>8,394</td><td>6%</td></tr><tr><td>GP</td><td>6,232</td><td>6,061</td><td>3%</td><td>7,586</td><td>7,244</td><td>5%</td></tr><tr><td>OPM</td><td>2,106</td><td>2,012</td><td>5%</td><td>2,790</td><td>2,651</td><td>5%</td></tr><tr><td>Net income</td><td>4,065</td><td>3,291</td><td>24%</td><td>3,029</td><td>2,873</td><td>5%</td></tr><tr><td>Margins</td><td colspan=\"3\"></td><td colspan=\"3\"></td></tr><tr><td>GPM</td><td>85.8%</td><td>85.9%</td><td>-0.1 ppts</td><td>85.4%</td><td>86.3%</td><td>-0.9 ppts</td></tr><tr><td>OPM</td><td>29.0%</td><td>28.5%</td><td>0.5 ppts</td><td>31.4%</td><td>31.6%</td><td>-0.2 ppts</td></tr><tr><td>NPM</td><td>56.0%</td><td>46.6%</td><td>9.3 ppts</td><td>34.1%</td><td>34.2%</td><td>-0.1 ppts</td></tr></table>",
+        "bbox": [
+            277,
+            664,
+            686,
+            768
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Valuation: Our target price is derived from a DCF-based methodology to better capture long-term cash flow generation. We model stage 2 FCF growth in 2032E-2036E at 12% YoY (vs. previously at 25%, reflecting our lower estimates on ToB and ToC subscription business), and terminal growth at 2%, which is consistent with our China Tech coverage. We discount the value at a WACC of 12.1%, with a COE of 12.1% (beta at 1.4, risk free rate at 3.0%, market risk premium at 6.5%). Our DCF based target price is Rmb201 (vs. previously at Rmb326). Our TP implied 2027E P/E is 31x (vs. previously at 45x), which is lower than the company's avg. -1std P/E at 44x, indicating the company's valuation is",
+        "bbox": [
+            267,
+            795,
+            913,
+            936
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "stretched. With 18% TP downside, we downgrade Kingsoft Office to Sell.",
+        "bbox": [
+            269,
+            59,
+            800,
+            75
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "What would make us more positive/ Key upside risks:",
+        "text_level": 2,
+        "bbox": [
+            269,
+            88,
+            683,
+            104
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1) Faster-than-expected new membership system transition; if we see faster than expected paying ratio of ToC user growth, supported by new features, there's upside risk to our current estimates.",
+        "bbox": [
+            269,
+            116,
+            916,
+            169
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2) Faster-than-expected ToB customer adoption; if the company's WPS 365 subscription business penetrates enterprise clients faster than expected, we see upside risks to earnings estimates.",
+        "bbox": [
+            269,
+            180,
+            908,
+            234
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3) Faster-than-expected AI monetization. If the WPS AI adoption or user spending is higher than expected, it could cause upside risks to our current estimates.",
+        "bbox": [
+            269,
+            244,
+            887,
+            279
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/0878675ddcee0f35bef03671cadf6e2996aaabb03ae5f076fdb557b7fd4a8633.jpg",
+        "table_caption": [
+            "Exhibit 4: Kingsoft Office DCF valuation"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"11\">Stage 1</td><td colspan=\"5\">Stage 2</td></tr><tr><td>Rmb mn</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td><td>2032E</td><td>2033E</td><td>2034E</td><td>2035E</td><td>2036E</td></tr><tr><td colspan=\"17\">P&amp;L</td></tr><tr><td>Revenue</td><td>3,280</td><td>3,885</td><td>4,556</td><td>5,121</td><td>5,929</td><td>7,265</td><td>8,881</td><td>11,193</td><td>13,940</td><td>16,991</td><td>20,357</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>YoY</td><td>45%</td><td>18%</td><td>17%</td><td>12%</td><td>16%</td><td>23%</td><td>22%</td><td>26%</td><td>25%</td><td>22%</td><td>20%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Opex ratio</td><td>65.2%</td><td>66.3%</td><td>64.1%</td><td>61.3%</td><td>63.6%</td><td>56.8%</td><td>54.0%</td><td>52.2%</td><td>50.3%</td><td>48.5%</td><td>47.3%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>OP income</td><td>713</td><td>726</td><td>965</td><td>1,221</td><td>1,322</td><td>2,106</td><td>2,790</td><td>3,714</td><td>4,833</td><td>6,206</td><td>7,675</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>YoY</td><td>29%</td><td>2%</td><td>33%</td><td>27%</td><td>8%</td><td>59%</td><td>32%</td><td>33%</td><td>30%</td><td>28%</td><td>24%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Pretax income</td><td>1,119</td><td>1,198</td><td>1,390</td><td>1,750</td><td>1,953</td><td>4,461</td><td>3,329</td><td>4,396</td><td>5,817</td><td>6,807</td><td>8,244</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Net income</td><td>1,041</td><td>1,118</td><td>1,318</td><td>1,645</td><td>1,836</td><td>4,065</td><td>3,029</td><td>4,001</td><td>5,293</td><td>6,195</td><td>7,502</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>YoY</td><td>19%</td><td>7%</td><td>18%</td><td>25%</td><td>12%</td><td>121%</td><td>-25%</td><td>32%</td><td>32%</td><td>17%</td><td>21%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GPM</td><td>86.9%</td><td>85.0%</td><td>85.3%</td><td>85.1%</td><td>85.9%</td><td>85.8%</td><td>85.4%</td><td>85.3%</td><td>85.0%</td><td>85.0%</td><td>85.0%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>OPM</td><td>21.7%</td><td>18.7%</td><td>21.2%</td><td>23.9%</td><td>22.3%</td><td>29.0%</td><td>31.4%</td><td>33.2%</td><td>34.7%</td><td>36.5%</td><td>37.7%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NPM</td><td>31.7%</td><td>28.8%</td><td>28.9%</td><td>32.1%</td><td>31.0%</td><td>56.0%</td><td>34.1%</td><td>35.7%</td><td>38.0%</td><td>36.5%</td><td>36.9%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>R&amp;D spending (Rmb m)</td><td>1,082</td><td>1,331</td><td>1,472</td><td>1,696</td><td>2,095</td><td>2,128</td><td>2,420</td><td>2,929</td><td>3,503</td><td>4,095</td><td>4,784</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>R&amp;D%</td><td>33.0%</td><td>34.3%</td><td>32.3%</td><td>33.1%</td><td>35.3%</td><td>29.3%</td><td>27.2%</td><td>26.2%</td><td>25.1%</td><td>24.1%</td><td>23.5%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td># of ToC paying users (m units)</td><td>22.8</td><td>29.2</td><td>33.9</td><td>38.8</td><td>43.3</td><td>45.8</td><td>47.9</td><td>51.9</td><td>56.5</td><td>61.0</td><td>71.0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ToC ARPU (Rmb)</td><td>64</td><td>70</td><td>78</td><td>85</td><td>84</td><td>97</td><td>116</td><td>137</td><td>157</td><td>175</td><td>175</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td># of ToB paying users (m units)</td><td>5</td><td>7</td><td>9</td><td>9</td><td>11</td><td>12</td><td>13</td><td>15</td><td>17</td><td>19</td><td>22</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ToB ARPU (Rmb)</td><td>80</td><td>102</td><td>111</td><td>111</td><td>140</td><td>171</td><td>192</td><td>221</td><td>254</td><td>292</td><td>336</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"17\">Cash flow</td></tr><tr><td>CCC</td><td>(103)</td><td>(118)</td><td>(163)</td><td>(177)</td><td>(171)</td><td>(189)</td><td>(189)</td><td>(189)</td><td>(189)</td><td>(189)</td><td>(189)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Capex</td><td>(149)</td><td>(176)</td><td>(166)</td><td>(175)</td><td>(98)</td><td>(80)</td><td>(80)</td><td>(78)</td><td>(84)</td><td>(85)</td><td>(92)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Capex to revenues</td><td>5%</td><td>5%</td><td>4%</td><td>3%</td><td>2%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Free cash flow</td><td>1,715</td><td>1,427</td><td>1,892</td><td>2,021</td><td>2,404</td><td>4,239</td><td>2,881</td><td>4,142</td><td>5,188</td><td>6,267</td><td>7,394</td><td>8,248</td><td>9,200</td><td>10,263</td><td>11,448</td><td>12,770</td></tr><tr><td>YoY</td><td></td><td>-17%</td><td>33%</td><td>7%</td><td>19%</td><td>76%</td><td>-32%</td><td>44%</td><td>25%</td><td>21%</td><td>18%</td><td>12%</td><td>12%</td><td>12%</td><td>12%</td><td>12%</td></tr><tr><td>FCF yield</td><td>52%</td><td>37%</td><td>42%</td><td>39%</td><td>41%</td><td>58%</td><td>32%</td><td>37%</td><td>37%</td><td>37%</td><td>36%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Terminal growth</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2.0%</td></tr><tr><td>Terminal value</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>128,968</td></tr><tr><td>Discount factor</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1.00</td><td>0.89</td><td>0.80</td><td>0.71</td><td>0.63</td><td>0.56</td><td>0.50</td><td>0.45</td><td>0.40</td><td>0.36</td></tr><tr><td>Present value of FCF</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2,881</td><td>3,695</td><td>4,129</td><td>4,449</td><td>4,682</td><td>4,659</td><td>4,636</td><td>4,613</td><td>4,591</td><td>4,568</td></tr><tr><td>Enterprise value 2027E (Rmb m)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>89,038</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Cash and equivalents (net)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>4,824</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity value in 2027E (Rmb m)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>93,862</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Value per share (Rmb)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>201</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Implied 2027E P/E</td><td></td><td></td><td></td><td></td><td></td><td></td><td>31x</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Implied 2027E EV/S</td><td></td><td></td><td></td><td></td><td></td><td></td><td>10x</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"17\">WACC assumption (2027E)</td></tr><tr><td>Risk free rate</td><td>3.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Beta</td><td>1.40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Market risk premium</td><td>6.5%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Cost of equity</td><td>12.1%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Cost of debt</td><td>6.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Tax rate</td><td>15%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Long-run Debt to Asset ratio</td><td>0.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity /(debt+equity)</td><td>100.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>WACC</td><td>12.1%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            89,
+            314,
+            905,
+            700
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            905,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7bbc5a68c718f6bc47fc779581e2e18396d0c863e63a574965e3d938636029ff.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 5: Kingsoft Office 12M forward P/E"
+        ],
+        "chart_footnote": [
+            "Source: Eikon Datastream"
+        ],
+        "bbox": [
+            274,
+            90,
+            683,
+            282
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/e60d6fe7b4664dd0c47ea8a318e9ac9e863429d65a1e2f3cb386b24a078fe0bc.jpg",
+        "table_caption": [
+            "Exhibit 6: Kingsoft Office P&L summary"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Rmb mn</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"7\">Income statement</td></tr><tr><td>Revenue</td><td>4,556</td><td>5,121</td><td>5,929</td><td>7,265</td><td>8,881</td><td>11,193</td></tr><tr><td>Gross profit</td><td>3,886</td><td>4,360</td><td>5,096</td><td>6,232</td><td>7,586</td><td>9,552</td></tr><tr><td>Selling expense</td><td>(967)</td><td>(991)</td><td>(1,140)</td><td>(1,359)</td><td>(1,620)</td><td>(1,988)</td></tr><tr><td>G&amp;A expense</td><td>(444)</td><td>(403)</td><td>(474)</td><td>(568)</td><td>(667)</td><td>(806)</td></tr><tr><td>R&amp;D expense</td><td>(1,472)</td><td>(1,696)</td><td>(2,095)</td><td>(2,128)</td><td>(2,420)</td><td>(2,929)</td></tr><tr><td>OP income</td><td>965</td><td>1,221</td><td>1,322</td><td>2,106</td><td>2,790</td><td>3,714</td></tr><tr><td>Government subsidies</td><td>112</td><td>176</td><td>192</td><td>137</td><td>168</td><td>166</td></tr><tr><td>Pretax income</td><td>1,390</td><td>1,750</td><td>1,953</td><td>4,461</td><td>3,329</td><td>4,396</td></tr><tr><td>Net income</td><td>1,318</td><td>1,645</td><td>1,836</td><td>4,065</td><td>3,029</td><td>4,001</td></tr><tr><td>EBITDA</td><td>1,037</td><td>1,285</td><td>1,391</td><td>2,194</td><td>2,875</td><td>3,798</td></tr><tr><td>EPS (basic, Rmb)</td><td>2.85</td><td>3.56</td><td>3.97</td><td>8.73</td><td>6.48</td><td>8.49</td></tr><tr><td colspan=\"7\">Ratios</td></tr><tr><td>R&amp;D ratio</td><td>32%</td><td>33%</td><td>35%</td><td>29%</td><td>27%</td><td>26%</td></tr><tr><td>Opex ratio</td><td>64%</td><td>61%</td><td>64%</td><td>57%</td><td>54%</td><td>52%</td></tr><tr><td>Gov. subsidy to rev</td><td>2%</td><td>3%</td><td>3%</td><td>2%</td><td>2%</td><td>1%</td></tr><tr><td>Gov. subsidy to pre-tax income</td><td>8%</td><td>10%</td><td>10%</td><td>3%</td><td>5%</td><td>4%</td></tr><tr><td>Tax rate</td><td>5%</td><td>5%</td><td>7%</td><td>9%</td><td>9%</td><td>9%</td></tr><tr><td colspan=\"7\">Margins</td></tr><tr><td>Gross margin</td><td>85.3%</td><td>85.1%</td><td>85.9%</td><td>85.8%</td><td>85.4%</td><td>85.3%</td></tr><tr><td>Operating margin</td><td>21.2%</td><td>23.9%</td><td>22.3%</td><td>29.0%</td><td>31.4%</td><td>33.2%</td></tr><tr><td>Pretax margin</td><td>30.5%</td><td>34.2%</td><td>32.9%</td><td>61.4%</td><td>37.5%</td><td>39.3%</td></tr><tr><td>Net margin</td><td>28.9%</td><td>32.1%</td><td>31.0%</td><td>56.0%</td><td>34.1%</td><td>35.7%</td></tr><tr><td>EBITDA margin</td><td>22.8%</td><td>25.1%</td><td>23.5%</td><td>30.2%</td><td>32.4%</td><td>33.9%</td></tr><tr><td colspan=\"7\">YoY</td></tr><tr><td>Revenue</td><td>17%</td><td>12%</td><td>16%</td><td>23%</td><td>22%</td><td>26%</td></tr><tr><td>Gross profit</td><td>18%</td><td>12%</td><td>17%</td><td>22%</td><td>22%</td><td>26%</td></tr><tr><td>OP income</td><td>33%</td><td>27%</td><td>8%</td><td>59%</td><td>32%</td><td>33%</td></tr><tr><td>Pretax income</td><td>16%</td><td>26%</td><td>12%</td><td>128%</td><td>-25%</td><td>32%</td></tr><tr><td>Net income</td><td>18%</td><td>25%</td><td>12%</td><td>121%</td><td>-25%</td><td>32%</td></tr></table>",
+        "bbox": [
+            88,
+            344,
+            542,
+            609
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/f9eb0a4d916f65eb72be1d5551d6c066bff60103307415d44ac5f80aa1bcf430.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td></tr><tr><td>1,301</td><td>1,356</td><td>1,521</td><td>1,750</td><td>1,613</td><td>1,584</td><td>1,950</td><td>2,117</td></tr><tr><td>1,119</td><td>1,141</td><td>1,315</td><td>1,521</td><td>1,397</td><td>1,346</td><td>1,667</td><td>1,822</td></tr><tr><td>(217)</td><td>(261)</td><td>(290)</td><td>(371)</td><td>(273)</td><td>(297)</td><td>(351)</td><td>(438)</td></tr><tr><td>(104)</td><td>(115)</td><td>(122)</td><td>(133)</td><td>(134)</td><td>(129)</td><td>(151)</td><td>(154)</td></tr><tr><td>(470)</td><td>(488)</td><td>(536)</td><td>(601)</td><td>(572)</td><td>(459)</td><td>(536)</td><td>(561)</td></tr><tr><td>315</td><td>262</td><td>351</td><td>394</td><td>405</td><td>447</td><td>611</td><td>642</td></tr><tr><td>18</td><td>51</td><td>23</td><td>100</td><td>21</td><td>44</td><td>26</td><td>46</td></tr><tr><td>419</td><td>361</td><td>463</td><td>710</td><td>2,406</td><td>568</td><td>696</td><td>790</td></tr><tr><td>403</td><td>344</td><td>431</td><td>658</td><td>2,195</td><td>517</td><td>634</td><td>719</td></tr><tr><td>332</td><td>279</td><td>368</td><td>411</td><td>427</td><td>469</td><td>633</td><td>664</td></tr><tr><td>0.87</td><td>0.74</td><td>0.93</td><td>1.42</td><td>4.73</td><td>1.10</td><td>1.35</td><td>1.54</td></tr><tr><td colspan=\"8\"></td></tr><tr><td>-36%</td><td>-36%</td><td>-35%</td><td>-34%</td><td>-35%</td><td>-29%</td><td>-28%</td><td>-27%</td></tr><tr><td>62%</td><td>65%</td><td>63%</td><td>64%</td><td>61%</td><td>57%</td><td>54%</td><td>56%</td></tr><tr><td>1%</td><td>4%</td><td>1%</td><td>6%</td><td>1%</td><td>3%</td><td>1%</td><td>2%</td></tr><tr><td>4%</td><td>14%</td><td>5%</td><td>14%</td><td>1%</td><td>8%</td><td>4%</td><td>6%</td></tr><tr><td>6%</td><td>6%</td><td>7%</td><td>7%</td><td>9%</td><td>9%</td><td>9%</td><td>9%</td></tr><tr><td colspan=\"8\"></td></tr><tr><td>86.0%</td><td>84.1%</td><td>86.5%</td><td>86.9%</td><td>86.6%</td><td>85.0%</td><td>85.5%</td><td>86.1%</td></tr><tr><td>24.2%</td><td>19.3%</td><td>23.1%</td><td>22.5%</td><td>25.1%</td><td>28.2%</td><td>31.4%</td><td>30.3%</td></tr><tr><td>32.2%</td><td>26.6%</td><td>30.4%</td><td>40.6%</td><td>149.1%</td><td>35.8%</td><td>35.7%</td><td>37.3%</td></tr><tr><td>31.0%</td><td>25.4%</td><td>28.3%</td><td>37.6%</td><td>136.1%</td><td>32.6%</td><td>32.5%</td><td>34.0%</td></tr><tr><td>25.5%</td><td>20.6%</td><td>24.2%</td><td>23.5%</td><td>26.5%</td><td>29.6%</td><td>32.5%</td><td>31.4%</td></tr><tr><td colspan=\"8\"></td></tr><tr><td>6%</td><td>14%</td><td>25%</td><td>17%</td><td>24%</td><td>17%</td><td>28%</td><td>21%</td></tr><tr><td>8%</td><td>13%</td><td>27%</td><td>19%</td><td>25%</td><td>18%</td><td>27%</td><td>20%</td></tr><tr><td>6%</td><td>-2%</td><td>51%</td><td>-7%</td><td>29%</td><td>71%</td><td>74%</td><td>63%</td></tr><tr><td>8%</td><td>-5%</td><td>39%</td><td>9%</td><td>474%</td><td>57%</td><td>50%</td><td>11%</td></tr><tr><td>10%</td><td>-3%</td><td>35%</td><td>9%</td><td>445%</td><td>50%</td><td>47%</td><td>9%</td></tr></table>",
+        "bbox": [
+            553,
+            344,
+            906,
+            611
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/e08e387cd9431ba0ef3a45daf4afff95eacee86a711b88810077a60e143b23f0.jpg",
+        "table_caption": [
+            "Exhibit 7: Kingsoft Office Balance sheet and Cash flow statement"
+        ],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Rmb mn</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"7\">Balance Sheet</td></tr><tr><td>Cash and equivalents</td><td>3,478</td><td>898</td><td>694</td><td>3,353</td><td>4,824</td><td>7,621</td></tr><tr><td>Accounts receivable</td><td>569</td><td>510</td><td>641</td><td>752</td><td>951</td><td>1,195</td></tr><tr><td>Inventory</td><td>1</td><td>1</td><td>1</td><td>11</td><td>3</td><td>15</td></tr><tr><td>Other current assets</td><td>6,098</td><td>4,696</td><td>9,871</td><td>9,871</td><td>9,871</td><td>9,871</td></tr><tr><td>Current assets</td><td>10,147</td><td>6,105</td><td>11,206</td><td>13,986</td><td>15,649</td><td>18,701</td></tr><tr><td>Net PP&amp;E/Fixed assets</td><td>69</td><td>297</td><td>453</td><td>467</td><td>473</td><td>476</td></tr><tr><td>Net intangibles</td><td>87</td><td>79</td><td>73</td><td>59</td><td>47</td><td>37</td></tr><tr><td>Other long-term assets</td><td>3,671</td><td>9,432</td><td>6,423</td><td>6,423</td><td>6,423</td><td>6,423</td></tr><tr><td>Non-current assets</td><td>3,827</td><td>9,808</td><td>6,950</td><td>6,948</td><td>6,943</td><td>6,937</td></tr><tr><td>Total assets</td><td>13,974</td><td>15,913</td><td>18,156</td><td>20,935</td><td>22,592</td><td>25,638</td></tr><tr><td>Accounts payable</td><td>453</td><td>446</td><td>496</td><td>784</td><td>822</td><td>1,213</td></tr><tr><td>Short-term debt</td><td>140</td><td>213</td><td>106</td><td>106</td><td>106</td><td>106</td></tr><tr><td>Other current liabilities</td><td>2,560</td><td>2,804</td><td>3,340</td><td>2,375</td><td>1,511</td><td>886</td></tr><tr><td>Current liabilities</td><td>3,154</td><td>3,462</td><td>3,942</td><td>3,265</td><td>2,439</td><td>2,204</td></tr><tr><td>Long-term debt</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other long-term liabilities</td><td>801</td><td>1,014</td><td>1,361</td><td>1,361</td><td>1,361</td><td>1,361</td></tr><tr><td>Non-current liabilities</td><td>801</td><td>1,014</td><td>1,361</td><td>1,361</td><td>1,361</td><td>1,361</td></tr><tr><td>Total liabilities</td><td>3,954</td><td>4,476</td><td>5,302</td><td>4,626</td><td>3,800</td><td>3,565</td></tr><tr><td>Common stock</td><td>462</td><td>463</td><td>463</td><td>463</td><td>463</td><td>463</td></tr><tr><td>Retained earnings</td><td>4,294</td><td>5,533</td><td>6,956</td><td>10,411</td><td>12,895</td><td>16,176</td></tr><tr><td>Other common equity</td><td>5,193</td><td>5,360</td><td>5,434</td><td>5,434</td><td>5,434</td><td>5,434</td></tr><tr><td>Total common equity</td><td>9,949</td><td>11,356</td><td>12,853</td><td>16,309</td><td>18,792</td><td>22,073</td></tr><tr><td>Minority interest</td><td>71</td><td>81</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Total equity</td><td>10,020</td><td>11,437</td><td>12,853</td><td>16,309</td><td>18,792</td><td>22,073</td></tr><tr><td>BVPS</td><td>21.49</td><td>24.55</td><td>27.76</td><td>35.01</td><td>40.17</td><td>46.85</td></tr><tr><td colspan=\"7\">Cash conversion cycle</td></tr><tr><td>Net receivable days</td><td>43</td><td>38</td><td>35</td><td>35</td><td>35</td><td>35</td></tr><tr><td>Inventory days</td><td>1</td><td>1</td><td>0</td><td>2</td><td>2</td><td>2</td></tr><tr><td>Net payable days</td><td>207</td><td>216</td><td>206</td><td>226</td><td>226</td><td>226</td></tr><tr><td>Cash conversion cycle</td><td>(163)</td><td>(177)</td><td>(171)</td><td>(189)</td><td>(189)</td><td>(189)</td></tr><tr><td colspan=\"7\">Ratios</td></tr><tr><td>ROE (common equity)</td><td>14%</td><td>15%</td><td>15%</td><td>28%</td><td>17%</td><td>20%</td></tr><tr><td>ROA</td><td>10%</td><td>11%</td><td>11%</td><td>21%</td><td>14%</td><td>17%</td></tr><tr><td>Net debt</td><td>(3,338)</td><td>(685)</td><td>(588)</td><td>(3,247)</td><td>(4,719)</td><td>(7,515)</td></tr><tr><td>Net debt to total equity</td><td>-33%</td><td>-6%</td><td>-5%</td><td>-20%</td><td>-25%</td><td>-34%</td></tr><tr><td>Net cash per share (Rmb)</td><td>7.21</td><td>1.48</td><td>1.27</td><td>6.97</td><td>10.09</td><td>15.95</td></tr><tr><td>Total liabilities to total assets</td><td>28%</td><td>28%</td><td>29%</td><td>22%</td><td>17%</td><td>14%</td></tr><tr><td colspan=\"7\">Cash flow statement</td></tr><tr><td>Net income</td><td>1,318</td><td>1,645</td><td>1,836</td><td>4,065</td><td>3,029</td><td>4,001</td></tr><tr><td>Minority interest add-back</td><td>(3)</td><td>10</td><td>(15)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Depreciation and amortization add-back</td><td>72</td><td>64</td><td>68</td><td>87</td><td>86</td><td>84</td></tr><tr><td>(Increase)/decrease in working capital</td><td>78</td><td>52</td><td>(81)</td><td>167</td><td>(154)</td><td>135</td></tr><tr><td>Other operating cash flow items</td><td>593</td><td>424</td><td>692</td><td>(0)</td><td>-</td><td>-</td></tr><tr><td>Cash flow from operating</td><td>2,058</td><td>2,196</td><td>2,502</td><td>4,319</td><td>2,961</td><td>4,220</td></tr><tr><td>Capital expenditure</td><td>(166)</td><td>(175)</td><td>(98)</td><td>(80)</td><td>(80)</td><td>(78)</td></tr><tr><td>Other investment cash flow items</td><td>(5,044)</td><td>(4,099)</td><td>(1,869)</td><td>(1,000)</td><td>(800)</td><td>(800)</td></tr><tr><td>Cash flow from investing</td><td>(5,210)</td><td>(4,274)</td><td>(1,967)</td><td>(1,080)</td><td>(880)</td><td>(878)</td></tr><tr><td>Dividends paid</td><td>(337)</td><td>(406)</td><td>(482)</td><td>(580)</td><td>(610)</td><td>(545)</td></tr><tr><td>Change in common stock</td><td>1</td><td>1</td><td>1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Increase/(decrease) in short-term debt</td><td>(23)</td><td>72</td><td>(107)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Increase/(decrease) in long-term debt</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other financing cash flow items</td><td>(4,851)</td><td>(3,941)</td><td>(1,378)</td><td>(500)</td><td>(270)</td><td>(333)</td></tr><tr><td>Cash flow from financing</td><td>(5,210)</td><td>(4,274)</td><td>(1,967)</td><td>(1,080)</td><td>(880)</td><td>(878)</td></tr><tr><td>Net change in cash</td><td>(3,537)</td><td>(2,580)</td><td>(204)</td><td>2,659</td><td>1,471</td><td>2,796</td></tr><tr><td>FCF</td><td>1,892</td><td>2,021</td><td>2,404</td><td>4,239</td><td>2,881</td><td>4,142</td></tr><tr><td colspan=\"7\">Ratio</td></tr><tr><td>Capex to revenues</td><td>4%</td><td>3%</td><td>2%</td><td>1%</td><td>1%</td><td>1%</td></tr></table>",
+        "bbox": [
+            277,
+            88,
+            908,
+            840
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Price Target Risks and Methodology - Kingsoft Office",
+        "text_level": 2,
+        "bbox": [
+            269,
+            877,
+            669,
+            893
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Valuation methodology: We are Sell rated on Kingsoft Office with a 12-month target price of Rmb201, which is derived from a two-stage DCF, where we incorporate a WACC",
+        "bbox": [
+            269,
+            893,
+            911,
+            930
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "of 12.1% and a terminal growth at 2% YoY.",
+        "bbox": [
+            269,
+            59,
+            584,
+            75
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Key upside risks: 1) Faster-than-expected new membership system transition; 2) Faster-than-expected ToB customer adoption; and 3) Faster-than-expected AI monetization.",
+        "bbox": [
+            269,
+            88,
+            864,
+            140
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Investment Thesis - Kingsoft Office",
+        "text_level": 2,
+        "bbox": [
+            269,
+            164,
+            537,
+            180
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Kingsoft Office is the largest domestic office productivity software provider in terms of revenue in China. Its major office productivity software, called WPS, provides office software suites and offers additional value-add services such as cloud storage, document templates, and collaboration. We are Sell rated on Kingsoft Office. We may turn more positive if we see accelerated AI monetization. We view the current market valuation of Kingsoft Office as stretched with implied P/E lower than company's avg. -1std P/E.",
+        "bbox": [
+            269,
+            181,
+            903,
+            305
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            60,
+            253,
+            80
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            101,
+            138,
+            116
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We, Allen Chang, Verena Jeng and Ting Song, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+        "bbox": [
+            76,
+            122,
+            913,
+            157
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            162,
+            885,
+            175
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Allen Chang GS (Asia) L.L.C., Verena Jeng GS (Asia) L.L.C., Ting Song GS (Asia) L.L.C..",
+        "bbox": [
+            78,
+            180,
+            880,
+            194
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            198,
+            897,
+            222
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile",
+        "text_level": 2,
+        "bbox": [
+            78,
+            234,
+            207,
+            247
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+        "bbox": [
+            76,
+            246,
+            916,
+            304
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+        "bbox": [
+            76,
+            306,
+            908,
+            375
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+        "bbox": [
+            76,
+            380,
+            910,
+            404
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+        "bbox": [
+            78,
+            409,
+            704,
+            422
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank",
+        "text_level": 2,
+        "bbox": [
+            78,
+            433,
+            163,
+            446
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+        "bbox": [
+            76,
+            446,
+            911,
+            513
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Quantum",
+        "text_level": 2,
+        "bbox": [
+            78,
+            525,
+            155,
+            537
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+        "bbox": [
+            76,
+            537,
+            890,
+            561
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            571,
+            169,
+            585
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Logo disclosure",
+        "text_level": 2,
+        "bbox": [
+            80,
+            592,
+            200,
+            604
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Third party brands used in this report are the property of their respective owners, and are used here for informational purposes only. The use of such brands should not be viewed as an endorsement, affiliation or sponsorship by or for GS or any of its products/services.",
+        "bbox": [
+            78,
+            604,
+            901,
+            628
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The rating(s) for Kingsoft Office is/are relative to the other companies in its/their coverage universe: AAC, ACM Research, AMEC, ASMPT, AVC, AccoTest, Anji Micro, Asus, Auras, BOE, BYDE, Biren, CR Micro, Cambricon, Chenbro, China Mobile (HK), China Telecom, China Tower Corp., China Unicom, Chinasoft Intl, Compal, Desay SV, E Ink, E-Town Semis, EHang, Empyrean, Eoptolink, FOCI, Fositek, Foxconn Industrial Internet, Gigabyte, Gigadevice, Glodon Co., HTC Corp., Hikvision, Hon Hai, Horizon Robotics, Hua Hong, Huace Navigation, Huaqin Co.(A), Huaqin Co.(H), Hwatsing, Iluvatar, InnoScience, Inspur, Insta360, Inventec, JCET, Kematek, King Slide, Kingdee, Kingsoft Office, LandMark, Largan, Lenovo, Lingyi, Maxscend, Meitu, MetaX, Mitac, Montage (A), Montage (H), NAURA, NSIG, Nexchip, OmniVision, Pegatron, Pony AI Inc. (ADR), Pony AI Inc. (H), Quanta, RoboTechnik, Ruijie Networks, SG Micro, SICC, SMIC (A), SMIC (H), SZS, Sangfor, SenseTime, Shengyi Tech, Shennan Circuits, StarPower, Sunny Optical, TFC Optical, Thundersoft, Tongyu Communication, Transsion, UMT, UNIS, VPEC, Vanchip, VeriSilicon, Victory Giant, WNC, WUS, WeRide, Wistron, Wiwynn, YJ Semitech, YOFC, Yonyou, ZTE (A), ZTE (H), iFlytek",
+        "bbox": [
+            76,
+            633,
+            916,
+            733
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Company-specific regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            744,
+            387,
+            758
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.",
+        "bbox": [
+            78,
+            757,
+            903,
+            780
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS has received compensation for investment banking services in the past 12 months: Kingsoft Office (Rmb244.27)",
+        "bbox": [
+            78,
+            785,
+            785,
+            799
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Kingsoft Office (Rmb244.27)",
+        "bbox": [
+            78,
+            803,
+            911,
+            816
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS had an investment banking services client relationship during the past 12 months with: Kingsoft Office (Rmb244.27)",
+        "bbox": [
+            78,
+            821,
+            808,
+            834
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-investment banking securities-related services client relationship during the past 12 months with: Kingsoft Office (Rmb244.27)",
+        "bbox": [
+            78,
+            839,
+            852,
+            863
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-securities services client relationship during the past 12 months with: Kingsoft Office (Rmb244.27)",
+        "bbox": [
+            78,
+            868,
+            772,
+            882
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships",
+        "text_level": 2,
+        "bbox": [
+            78,
+            892,
+            501,
+            907
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS Investment Research global Equity coverage universe",
+        "bbox": [
+            78,
+            906,
+            465,
+            919
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/a942223e0c3e7c91df97393f9529ed1418b88fc7646f2a42ccaebd79cafb2810.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>50%</td><td>34%</td><td>16%</td></tr></table>",
+        "bbox": [
+            171,
+            61,
+            455,
+            109
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/11412faf8cff746016e0fbf94b16c36997f936e10842e311887e2a36e1a30e30.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>59%</td><td>43%</td></tr></table>",
+        "bbox": [
+            477,
+            61,
+            759,
+            109
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "As of July 1, 2026, GS Global Investment Research had investment ratings on 3,104 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+        "bbox": [
+            76,
+            122,
+            913,
+            179
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Price target and rating history chart(s)",
+        "text_level": 2,
+        "bbox": [
+            78,
+            189,
+            367,
+            205
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5f95178b479c34ce9618bce5a7d5e7d4cffbe6344ea8065edc2f419cbda7a746.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "bbox": [
+            84,
+            217,
+            491,
+            414
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Target price history table(s) Kingsoft Office (688111.SS)",
+        "text_level": 2,
+        "bbox": [
+            78,
+            460,
+            289,
+            489
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/d3ac72e31b79526d2e755ad0b0cd4039da301902c0f4a51dd868f3c82db770d4.jpg",
+        "table_caption": [
+            "Date of report Target price (Rmb) Closing price (Rmb)"
+        ],
+        "table_footnote": [
+            "Price targets shown in table(s) are unadjusted for corporate actions."
+        ],
+        "table_body": "<table><tr><td>25-Apr-26</td><td>326.00</td><td>249.12</td></tr><tr><td>09-Mar-26</td><td>346.00</td><td>281.09</td></tr><tr><td>08-Feb-26</td><td>365.00</td><td>303.62</td></tr><tr><td>28-Oct-25</td><td>430.00</td><td>337.21</td></tr><tr><td>20-Aug-25</td><td>422.00</td><td>300.99</td></tr><tr><td>28-Jul-25</td><td>440.00</td><td>301.53</td></tr><tr><td>28-Apr-25</td><td>446.00</td><td>283.23</td></tr><tr><td>27-Feb-25</td><td>491.00</td><td>352.50</td></tr><tr><td>05-Feb-25</td><td>472.00</td><td>371.11</td></tr><tr><td>11-Dec-24</td><td>417.00</td><td>333.01</td></tr><tr><td>22-Nov-24</td><td>373.00</td><td>305.50</td></tr><tr><td>27-Oct-24</td><td>328.00</td><td>264.50</td></tr><tr><td>26-Aug-24</td><td>324.00</td><td>190.00</td></tr><tr><td>22-Jul-24</td><td>357.00</td><td>208.24</td></tr><tr><td>04-Jul-24</td><td>415.00</td><td>191.42</td></tr><tr><td>25-Mar-24</td><td>482.00</td><td>319.00</td></tr><tr><td>04-Mar-24</td><td>427.00</td><td>289.45</td></tr><tr><td>04-Jan-24</td><td>475.00</td><td>271.75</td></tr><tr><td>14-Dec-23</td><td>546.00</td><td>336.94</td></tr><tr><td>28-Oct-23</td><td>539.00</td><td>293.12</td></tr></table>",
+        "bbox": [
+            78,
+            503,
+            320,
+            792
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            829,
+            253,
+            844
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            848,
+            516,
+            862
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            76,
+            859,
+            908,
+            907
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            78,
+            911,
+            859,
+            925
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            76,
+            60,
+            913,
+            128
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            78,
+            138,
+            875,
+            152
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            76,
+            150,
+            913,
+            458
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            76,
+            457,
+            916,
+            665
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            76,
+            669,
+            910,
+            748
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            76,
+            752,
+            916,
+            809
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions",
+        "text_level": 2,
+        "bbox": [
+            78,
+            820,
+            452,
+            834
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+        "bbox": [
+            76,
+            833,
+            919,
+            911
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+        "bbox": [
+            76,
+            916,
+            874,
+            929
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            898,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            76,
+            60,
+            892,
+            85
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            76,
+            89,
+            779,
+            113
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+        "bbox": [
+            76,
+            118,
+            913,
+            219
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            78,
+            229,
+            351,
+            243
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            242,
+            916,
+            364
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            368,
+            880,
+            393
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            76,
+            397,
+            903,
+            443
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            455,
+            230,
+            468
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            76,
+            467,
+            915,
+            523
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            76,
+            529,
+            915,
+            563
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            76,
+            568,
+            916,
+            603
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+        "bbox": [
+            76,
+            608,
+            916,
+            664
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            76,
+            669,
+            890,
+            694
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            76,
+            698,
+            916,
+            722
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            76,
+            727,
+            913,
+            751
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            76,
+            756,
+            916,
+            824
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            76,
+            828,
+            906,
+            885
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g.,",
+        "bbox": [
+            76,
+            888,
+            901,
+            925
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            76,
+            60,
+            903,
+            128
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            76,
+            133,
+            897,
+            179
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            183,
+            888,
+            205
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            78,
+            212,
+            220,
+            224
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            76,
+            229,
+            911,
+            309
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "China Software",
+        "bbox": [
+            813,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "21 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 11
+    }
+]
