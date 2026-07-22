@@ -1,0 +1,2466 @@
+[
+    {
+        "type": "text",
+        "text": "Global | Washington Strategy",
+        "text_level": 1,
+        "bbox": [
+            73,
+            107,
+            411,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "July 20, 2026",
+        "bbox": [
+            842,
+            117,
+            926,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "China's Tech Leadership: Our 10 Best Charts",
+        "text_level": 2,
+        "bbox": [
+            73,
+            153,
+            588,
+            178
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kimi K3 sharpens investor focus on China's tech rise, a theme we've flagged since 2025 (here, here & here). This note shares our 10 best charts. KTs: 1) 9 of top 10 research institutions Chinese; 2) \\~47% of top papers vs. US \\~9%; 3) R&D passed US; 4) #1 in patents; 5) DeepSeek tops OpenRouter; 6) import reliance falling; 7) leads defense tech; 8) \\~12x US clean tech capex; 9) near-peer in AI, biotech, semis, space, quantum; 10) #2 gov't space spender.",
+        "bbox": [
+            72,
+            188,
+            640,
+            304
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We view Chinese tech disruption as structural, not cyclical. Telecoms, autos, and AI mark early innings. We encourage investors to assess the impact on Western equities and consider direct China tech exposure.",
+        "bbox": [
+            73,
+            319,
+            639,
+            366
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1) China Leads the World's Highest-Impact Research Institutions. The Nature Index 2026 ranks nine Chinese institutions in the global top 10, with CAS at #1 and Zhejiang University displacing Harvard as the top academic institution.",
+        "bbox": [
+            73,
+            375,
+            639,
+            423
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nature Index: 2026 Research Leaders",
+        "bbox": [
+            75,
+            430,
+            268,
+            445
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/dae2a235e6a3b66b0912e33a6d4693691d61d0745b156edfbb2f965be003a680.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: The Nature Index; JEF."
+        ],
+        "table_body": "<table><tr><td>Position</td><td>Institution</td><td>Country</td></tr><tr><td>1</td><td>Chinese Academy of Sciences (CAS)</td><td>China</td></tr><tr><td>2</td><td>Zhejiang University (ZJU)</td><td>China</td></tr><tr><td>3</td><td>Harvard University</td><td>US</td></tr><tr><td>4</td><td>Tsinghua University</td><td>China</td></tr><tr><td>5</td><td>Shanghai Jiao Tong University (SJTU)</td><td>China</td></tr><tr><td>6</td><td>University of Science and Technology of China (USTC)</td><td>China</td></tr><tr><td>7</td><td>Peking University (China)</td><td>China</td></tr><tr><td>8</td><td>University of Chinese Academy of Sciences (UCAS)</td><td>China</td></tr><tr><td>9</td><td>Nanjing University (NJU)</td><td>China</td></tr><tr><td>10</td><td>Sichuan University (SCU)</td><td>China</td></tr></table>",
+        "bbox": [
+            78,
+            446,
+            624,
+            624
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2) China Has Overtaken the U.S. in High-Impact Research Across Critical Technologies. ASPI's Critical Technology Tracker shows China's share of top-10% most-cited publications rose from \\~5% in 2005 to \\~47% in 2025, while the U.S. share fell from \\~40% to \\~9%.",
+        "bbox": [
+            73,
+            637,
+            639,
+            684
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Publication rates for top 10% of publications (Percent)",
+        "bbox": [
+            73,
+            692,
+            350,
+            706
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ccc8752fcb16c18ad46bfbdc347d23efe245b15ae303cd3fe3217a75f4350061.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Australian Strategic Policy Institute"
+        ],
+        "bbox": [
+            81,
+            708,
+            616,
+            897
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Aniket Shah, PhD \\* | Head of Sust. & Transition Strategy\n+1 (212) 323-3976 | ashah14@JEF.com\nYujin Kim \\* | Sust. & Transition Strategy Associate\n+1 (212) 778-8314 | ykim4@JEF.com\nLuke Sussams ^ | Sust. & Transition Strategist\n44 (0)20 7548 4404 | lsussams@JEF.com\nCharles Boakye, CFA \\* | Sust. & Transition Strategist\n+1 (212) 336-6649 | cboakye@JEF.com\nJacqueline Murdock ^ | Sust. & Transition Strategy Associate\n+44 (0)20 7548 4165 | jmurdock@JEF.com\nAmani Mahmood ^ | Sust. & Transition Strategy Associate\n+44 (0)20 7548 5332 | amahmood@JEF.com\nAna Zotovic ‡ | Sust. & Transition Strategy Associate\n+1 (416) 847 7399 | azotovic@JEF.com",
+        "bbox": [
+            665,
+            632,
+            918,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            43,
+            277,
+            85
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy",
+        "bbox": [
+            740,
+            25,
+            924,
+            76
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Please see analyst certifications, important disclosure information, and information regarding the status of non-US analysts on pages 9 - 14 of this report. \\* JEF LLC / JEF Services, LLC ^ JEF International Limited ‡ JEF Securities, Inc.",
+        "bbox": [
+            73,
+            939,
+            739,
+            963
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "3) China Has Overtaken the U.S. in Gross R&D Spending on a PPP Basis. ITIF estimates China's PPP-adjusted R&D expenditure reached \\~\\$1030bn in 2024, edging past the U.S. at \\~\\$1010bn. China's real R&D spending has grown >12% annually since 2004-over 3x the U.S. pace.",
+        "bbox": [
+            73,
+            131,
+            639,
+            179
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Gross R&D expenditure, PPP-adjusted (\\$bn)",
+        "bbox": [
+            75,
+            188,
+            298,
+            201
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d39cd73bf2b27b2244ec99fd76ea01e06add9149106718c150cfba5f2c8d72ed.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: OECD, Information Technology and Innovation Foundation."
+        ],
+        "bbox": [
+            80,
+            192,
+            627,
+            380
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "4) China Files More Patents Than the Rest of the Top 10 Combined. WIPO data show China filed 1.80 million patent applications in 2024–3.6x the U.S. (503K), 4.3x Japan (421K), and more than the next nine countries combined.",
+        "bbox": [
+            73,
+            395,
+            637,
+            439
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Number of Patent Applications, 2024",
+        "bbox": [
+            75,
+            451,
+            265,
+            463
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ec3bbd2dfd7b1ff1534d30d05fcff40c2693ca3a72088a916a401d3ee408ad1c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: World Intellectual Property Organization",
+            "Number of Patent Applications in 2024"
+        ],
+        "bbox": [
+            83,
+            467,
+            624,
+            636
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            23,
+            926,
+            53
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            914,
+            946,
+            924,
+            958
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5e1e694597621e32a1d2322c2b6bd22c2c83bf2660c87328ad06ee47f1066351.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Normalized Token Usage, May 2025 – July 2026",
+            "Share of Key Sectors Where China Imports Twice as Much as It Exports (Percent)"
+        ],
+        "bbox": [
+            495,
+            463,
+            609,
+            576
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "5) DeepSeek Overtakes U.S. Frontier Labs in Usage on OpenRouter. DeepSeek's normalized token volume on OpenRouter rose from near-zero in early 2025 to \\~8,600 by July 2026, surpassing U.S. frontier models.",
+        "bbox": [
+            73,
+            131,
+            639,
+            178
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1e7163221d0a9488fa6271b8f2650b3505ef268e9326b83f98076368608b346d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: OpenRouter; JEF."
+        ],
+        "bbox": [
+            80,
+            201,
+            624,
+            381
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "6) China Is Rapidly Closing Import Dependence in Strategic Sectors. Rhodium data show the share of subsectors where China imports 2x+ what it exports has collapsed across eight strategic industries since 2004—including aerospace, advanced electronics, robotics, and power.",
+        "bbox": [
+            73,
+            390,
+            637,
+            435
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f259225e684d11913e6e24406e58cf1d5a046d4d0fdbe9d0402e9501294ba54c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            81,
+            461,
+            200,
+            575
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3e1a0219fb89557b1991ec0ff9f47faeafe773a832ffca4e6a5793681da93cd0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Biotech and medical devices"
+        ],
+        "bbox": [
+            219,
+            463,
+            340,
+            576
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dc363cb768cf3bb4daabf6b5bbde579bdbdf7868405841b0c7ce422f1b191db5.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Advanced electronics"
+        ],
+        "bbox": [
+            357,
+            463,
+            475,
+            576
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1770f39787d2bf61acea62ffb8b6636db3c5774174c7024f31ad20737e8d8176.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: ICT, Comtrade, Rhodium Group."
+        ],
+        "bbox": [
+            81,
+            580,
+            204,
+            694
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5a16bc8e5e8aaab08183c6e33dec3616d110498d26aa8feea8752aa871c01d94.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            221,
+            583,
+            340,
+            695
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/213fce359977512aea03f19e02322edda2a928f624a0632c702a977d4e0b7b92.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            355,
+            583,
+            478,
+            695
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3cc2d4a298f804916f73bf0e010fc85459a0ae0a78041c0a996e5541f6789e4e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            495,
+            583,
+            613,
+            695
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            23,
+            926,
+            53
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            914,
+            946,
+            924,
+            959
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "7) China Leads the U.S. in Research Across Nearly Every Key Defense Technology. ASPI data show China outpaces the U.S. in global research share across 18 defense-critical fields, including hypersonics, quantum computing, autonomous undersea vehicles, drone, and electronic warfare.",
+        "bbox": [
+            73,
+            131,
+            639,
+            179
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Research share across a range of key defense technologies (U.S. vs. China)",
+        "bbox": [
+            73,
+            187,
+            457,
+            201
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d49a263f27e46566f235239908339cd4acbd50f891ba09e3b10c2214f461bc0f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "United States China",
+            "Source: Australian Strategic Policy Institute"
+        ],
+        "bbox": [
+            78,
+            209,
+            606,
+            617
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            23,
+            926,
+            53
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            914,
+            946,
+            926,
+            958
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "8) China Dominates Clean Tech Factory Investment. BloombergNEF data show Mainland China's clean tech factory capex reached \\~\\$104bn in 2025e vs. \\~\\$9bn in the U.S.—a \\~12x gap. Chinese investment has averaged \\~\\$95bn/year since 2023, while U.S. spend remains in the single-digit billions through 2027e.",
+        "bbox": [
+            73,
+            131,
+            639,
+            194
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Clean Tech Factory Investment by Geography",
+        "bbox": [
+            75,
+            203,
+            309,
+            217
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/97e786eacd24c4568c99b9d34f4a01f6e9f5827143cc424696120afe284af461.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BloombergNEF; JEF."
+        ],
+        "bbox": [
+            80,
+            222,
+            624,
+            408
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "9) China Is the Only Serious Challenger to U.S. Tech Power Across All Five Frontier Sectors. The Belfer Center's 2025 Critical and Emerging Technologies Index scores the U.S. at \\~84 and China at \\~65 across AI, biotech, semiconductors, space, and quantum—far ahead of Europe (\\~42) and Japan (\\~24).",
+        "bbox": [
+            73,
+            419,
+            639,
+            479
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/28c06495bb7749ea73284e633f6fc5562156444d4f1c92997c180a3e30fb0d9d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Critical and Emerging Technologies Index, 2025"
+        ],
+        "chart_footnote": [
+            "AI Biotechnology Semiconductors Space Quantum",
+            "Source: Critical and Emerging Technology Index, Belfer Center for Science and International Affairs"
+        ],
+        "bbox": [
+            83,
+            505,
+            622,
+            668
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            23,
+            926,
+            53
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            914,
+            948,
+            924,
+            959
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "10) China Is Now the World's #2 Government Space Spender, Well Ahead of Europe and Russia. Novaspace data show China's 2024 government space spending reached \\~\\$19.9bn—second only to the U.S. (\\$79.7bn) and roughly 3x Japan (\\$6.8bn), the EU/ESA bloc (\\~\\$6.7bn), and Russia (\\~\\$4.0bn). China is now the only credible near-peer in state-backed space capacity.",
+        "bbox": [
+            73,
+            131,
+            639,
+            195
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "World government expenditures for space programs, 2024 (total: \\$135bn)",
+        "bbox": [
+            73,
+            203,
+            449,
+            217
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/14564c7aa5f3f70071174bac26bd60eb31c3671ef32c56bac9329a903e87f674.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Source: Novaspace"
+        ],
+        "content": "",
+        "bbox": [
+            78,
+            216,
+            626,
+            408
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our Featured Research",
+        "text_level": 2,
+        "bbox": [
+            75,
+            420,
+            216,
+            433
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• The Biggest Underappreciated Story of Our Time: China's Tech Prowess",
+        "bbox": [
+            75,
+            446,
+            518,
+            460
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• US–China 2026: Strategic Stability, Structural Rivalry",
+        "bbox": [
+            75,
+            461,
+            409,
+            476
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• US-China Tech Rivalry – Quantum",
+        "bbox": [
+            75,
+            478,
+            309,
+            492
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• US-China Tech Rivalry – Healthcare and Biotech",
+        "bbox": [
+            75,
+            494,
+            388,
+            508
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• US-China Tech Rivalry – Energy",
+        "bbox": [
+            75,
+            510,
+            293,
+            525
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• The Race of Our Lives Begins w/ Genesis Mission",
+        "bbox": [
+            75,
+            526,
+            391,
+            540
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• China's Tech Leadership: Is It Unstoppable?",
+        "bbox": [
+            75,
+            543,
+            359,
+            557
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "See our 40+ related research inside.",
+        "bbox": [
+            75,
+            569,
+            273,
+            584
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            914,
+            948,
+            924,
+            959
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our Related Research",
+        "text_level": 2,
+        "bbox": [
+            73,
+            131,
+            304,
+            152
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "1. An Overlooked Area of China's Industrial Policy: Food Supply Chains | REPLAY",
+        "bbox": [
+            73,
+            160,
+            552,
+            175
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "2. US-China Tech Rivalry: Tracking National Power Industries & Companies",
+        "bbox": [
+            73,
+            178,
+            524,
+            192
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3. EU Policy Trip: Tougher on China, But European Preference Will Be Costly",
+        "bbox": [
+            73,
+            197,
+            527,
+            212
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4. Top 5 Takeaways: China Energy Outlook with Dr. Michal Meidan, OIES",
+        "bbox": [
+            73,
+            214,
+            509,
+            228
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "5. China's Next-Generation Industrial Policy w/ Rhodium Group (RHG) | REPLAY",
+        "bbox": [
+            73,
+            232,
+            549,
+            247
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "6. 6 Charts Explaining Europe's Exposure to China",
+        "bbox": [
+            73,
+            250,
+            380,
+            266
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "7. US China Tech Rivalry – Strategic Industries of Tomorrow & Current Market Cap",
+        "bbox": [
+            73,
+            269,
+            568,
+            284
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "8. U.S.-China 2026: Strategic Stability, Structural Rivalry",
+        "bbox": [
+            73,
+            287,
+            416,
+            302
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "9. US-China Tech Rivalry – Who Will Win the Global Quantum Computing Race? | RECAP",
+        "bbox": [
+            73,
+            305,
+            596,
+            320
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "10. Expert Call Recap: China Energy Outlook",
+        "bbox": [
+            75,
+            323,
+            340,
+            338
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "11. The Investor Guide to China's Five-Year Plan: How it Works, Themes & Baskets",
+        "bbox": [
+            75,
+            341,
+            557,
+            355
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "12. Implications of China's New Five-Year Plan for Global Tech Investors |REPLAY",
+        "bbox": [
+            75,
+            359,
+            554,
+            373
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "13. Understanding China's Economy in the Context of the Five-Year Plan | RECAP",
+        "bbox": [
+            75,
+            377,
+            550,
+            391
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "14. Mineral War: China's Quest for Weapons of Mineral Distribution | RECAP",
+        "bbox": [
+            75,
+            395,
+            519,
+            410
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "15. REPLAY-US-China 2026: The Technological Race, Geopolitics & Market Implications",
+        "bbox": [
+            75,
+            413,
+            591,
+            428
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "16. Venezuela: Implications for China's Energy & US Tech Rivalry | Recap",
+        "bbox": [
+            75,
+            432,
+            501,
+            446
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "17. REPLAY-US-China Tech Rivalry: Healthcare and Biotech",
+        "bbox": [
+            75,
+            450,
+            432,
+            465
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "18. [WATCH] Data Over Vibes: A Practical Toolkit in Tracking US China Tech Rivalry",
+        "bbox": [
+            75,
+            468,
+            560,
+            483
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "19. Data Over Vibes – A Practical Toolkit in Tracking US China Tech Rivalry",
+        "bbox": [
+            75,
+            486,
+            516,
+            501
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "20. US-China Tech Rivalry – Energy for Industrialization & Compute | Recap",
+        "bbox": [
+            73,
+            505,
+            516,
+            518
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "21. US-China Tech Rivalry: The Race of Our Lives Begins w/ Genesis Mission",
+        "bbox": [
+            73,
+            522,
+            529,
+            536
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "22. US-China Tech Rivalry: Has China Commercialized Molten Salt Reactors | Recap",
+        "bbox": [
+            73,
+            540,
+            570,
+            554
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "23. Will China's Transition Slow – The Electrotech Revolution w/ Kingsmill Bond",
+        "bbox": [
+            73,
+            558,
+            545,
+            573
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "24. China's Tech Leadership: Is It Unstoppable + What Are the Implications? | Recap",
+        "bbox": [
+            73,
+            576,
+            563,
+            591
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "25. Recap—Trump-Xi Fallout? What's Next for US-China Trade",
+        "bbox": [
+            73,
+            593,
+            442,
+            609
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "26. [REPLAY] Non-Consensus Views & Insights on AI, China, Labour Economics & More",
+        "bbox": [
+            73,
+            613,
+            583,
+            627
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "27. The Biggest Underappreciated Story of Our Time: China's Tech Prowess",
+        "bbox": [
+            73,
+            631,
+            521,
+            646
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "28. Limited Progress & Lingering Questions: Rethinking EU-China Engagement",
+        "bbox": [
+            73,
+            649,
+            534,
+            664
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "29. Made in China 2025 w/ RAND China & Rhodium Group",
+        "bbox": [
+            73,
+            667,
+            421,
+            681
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "30. [WATCH] Decoding China's Industrial Policies",
+        "bbox": [
+            73,
+            685,
+            368,
+            699
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "31. [WATCH] China Virtual Summit: Geopolitical Rivalry & Strategic Priorities",
+        "bbox": [
+            73,
+            703,
+            519,
+            717
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "32. China Shock 2.0 & The Energy Transition",
+        "bbox": [
+            75,
+            721,
+            342,
+            736
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "33. [REPLAY] THE DOWNLOAD: AI Taking Over Jobs, US-China, US Supreme Court",
+        "bbox": [
+            73,
+            739,
+            555,
+            754
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "34. DEEP DIVE Geopolitics That Matters – US-China via 40+ Key Data Points",
+        "bbox": [
+            73,
+            758,
+            526,
+            772
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "35. US Companies Remain Cautious on the US-China Trade Outlook",
+        "bbox": [
+            73,
+            774,
+            477,
+            790
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "36. China Policy Uncertainty Matches US for the First Time Since Feb 2025",
+        "bbox": [
+            73,
+            793,
+            516,
+            808
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "37. [REPLAY] Impacts of the US-China Trade War, with JEF China Economist",
+        "bbox": [
+            75,
+            812,
+            524,
+            826
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "38. China Signals Willingness to Negotiate: 6 Messages from the PRC",
+        "bbox": [
+            73,
+            830,
+            486,
+            844
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "39. Recap – US-China Export Controls and Stock Market Implications",
+        "bbox": [
+            73,
+            848,
+            485,
+            862
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "40. Recap—US-China Tariff Policy: How It Works & What To Expect | Washington Series",
+        "bbox": [
+            73,
+            866,
+            583,
+            880
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "41. Where's the Debate #96: EU-China EV Probe May Have Implications for Green Deal",
+        "bbox": [
+            73,
+            884,
+            580,
+            899
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            73,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            914,
+            946,
+            924,
+            958
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "42. Beyond GDP Expert Recap – China's Gross Ecosystem Product (GEP)",
+        "bbox": [
+            73,
+            131,
+            506,
+            148
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "43. Expert Recaps: A Carbon Markets Overview and Deeper Look into China's ETS",
+        "bbox": [
+            73,
+            150,
+            552,
+            166
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "44. Where's the Debate? #21 China's Net-Zero Ambitions",
+        "bbox": [
+            73,
+            168,
+            414,
+            184
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            914,
+            946,
+            924,
+            958
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification:",
+        "text_level": 2,
+        "bbox": [
+            73,
+            155,
+            257,
+            172
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I, Aniket Shah, PhD, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            73,
+            172,
+            927,
+            213
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I, Yujin Kim, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            73,
+            213,
+            927,
+            253
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I, Luke Sussams, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            73,
+            254,
+            926,
+            294
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I, Charles Boakye, CFA, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            73,
+            294,
+            926,
+            335
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I, Jacqueline Murdock, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            73,
+            336,
+            926,
+            376
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I, Amani Mahmood, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            73,
+            376,
+            926,
+            417
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I, Ana Zotovic, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            73,
+            417,
+            927,
+            457
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US analysts: Luke Sussams is employed by JEF International Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+        "bbox": [
+            73,
+            457,
+            926,
+            499
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US analysts: Jacqueline Murdock is employed by JEF International Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+        "bbox": [
+            73,
+            499,
+            926,
+            552
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US analysts: Amani Mahmood is employed by JEF International Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+        "bbox": [
+            73,
+            553,
+            927,
+            606
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US analysts: Ana Zotovic is employed by JEF Securities, Inc., a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+        "bbox": [
+            73,
+            606,
+            926,
+            649
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement.",
+        "bbox": [
+            73,
+            649,
+            927,
+            703
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Investment Recommendation Record",
+        "text_level": 2,
+        "bbox": [
+            75,
+            721,
+            401,
+            739
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "(Article 3(1)e and Article 7 of MAR)",
+        "text_level": 2,
+        "bbox": [
+            75,
+            739,
+            273,
+            752
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Recommendation Published July 19, 2026 21:41 P.M.  \nRecommendation Distributed July 20, 2026 4:30 A.M.",
+        "bbox": [
+            73,
+            752,
+            490,
+            781
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Company Specific Disclosures",
+        "text_level": 2,
+        "bbox": [
+            75,
+            799,
+            340,
+            818
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Aniket Shah, PhD is not an Equity Research Analyst; and accordingly, is not subject to the analyst independence requirements in FINRA's equity research rule, Rule 2241. Any content authored by this person or the Sustainability & Transition Strategy team is not Equity Research. References to Equity Research content in this document, if any, are contributed by JEF Equity Research Analysts and identified as such.\n\\*\\*\\*",
+        "bbox": [
+            73,
+            831,
+            926,
+            882
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            73,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            914,
+            948,
+            924,
+            958
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Yujin Kim is not an Equity Research Analyst; and accordingly, is not subject to the analyst independence requirements in FINRA's equity research rule, Rule 2241. Any content authored by this person or the Sustainability & Transition Strategy team is not Equity Research. References to Equity Research content in this document, if any, are contributed by JEF Equity Research Analysts and identified as such.",
+        "bbox": [
+            73,
+            131,
+            926,
+            175
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Luke Sussams is not an Equity Research Analyst; and accordingly, is not subject to the analyst independence requirements in FINRA's equity research rule, Rule 2241. Any content authored by this person or the Sustainability & Transition Strategy team is not Equity Research. References to Equity Research content in this document, if any, are contributed by JEF Equity Research Analysts and identified as such.",
+        "bbox": [
+            73,
+            186,
+            927,
+            231
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Charles Boakye, CFA is not an Equity Research Analyst; and accordingly, is not subject to the analyst independence requirements in FINRA's equity research rule, Rule 2241. Any content authored by this person or the Sustainability & Transition Strategy team is not Equity Research. References to Equity Research content in this document, if any, are contributed by JEF Equity Research Analysts and identified as such.\n\\*\\*\\*",
+        "bbox": [
+            73,
+            240,
+            926,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Jacqueline Murdock is not an Equity Research Analyst; and accordingly, is not subject to the analyst independence requirements in FINRA's equity research rule, Rule 2241. Any content authored by this person or the Sustainability & Transition Strategy team is not Equity Research. References to Equity Research content in this document, if any, are contributed by JEF Equity Research Analysts and identified as such.",
+        "bbox": [
+            73,
+            294,
+            926,
+            340
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Ana Zotovic is not an Equity Research Analyst; and accordingly, is not subject to the analyst independence requirements in FINRA's equity research rule, Rule 2241. Any content authored by this person or the Sustainability & Transition Strategy team is not Equity Research. References to Equity Research content in this document, if any, are contributed by JEF Equity Research Analysts and identified as such.",
+        "bbox": [
+            73,
+            349,
+            927,
+            391
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Explanation of JEF Ratings",
+        "text_level": 2,
+        "bbox": [
+            75,
+            410,
+            354,
+            426
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of $15\\%$ or more within a 12-month period.",
+        "bbox": [
+            73,
+            426,
+            813,
+            439
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus $15\\%$ or minus $10\\%$ within a 12-month period.",
+        "bbox": [
+            73,
+            439,
+            873,
+            454
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus $10\\%$ or less within a 12-month period.",
+        "bbox": [
+            73,
+            454,
+            896,
+            468
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below \\$10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below \\$10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below \\$10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period.",
+        "bbox": [
+            73,
+            468,
+            926,
+            523
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies.",
+        "bbox": [
+            73,
+            522,
+            926,
+            548
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "CS - Coverage Suspended. JEF has suspended coverage of this company.",
+        "bbox": [
+            73,
+            549,
+            501,
+            562
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "NC - Not covered. JEF does not cover this company.",
+        "bbox": [
+            73,
+            562,
+            386,
+            576
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations.",
+        "bbox": [
+            73,
+            576,
+            924,
+            602
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided.",
+        "bbox": [
+            73,
+            604,
+            926,
+            631
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Valuation Methodology",
+        "text_level": 2,
+        "bbox": [
+            73,
+            642,
+            280,
+            659
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months. JEF Franchise Picks",
+        "bbox": [
+            73,
+            659,
+            927,
+            725
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a 15% stop loss, and the remainder will have a 20% stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value.",
+        "bbox": [
+            72,
+            728,
+            927,
+            825
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Risks which may impede the achievement of our Price Target",
+        "text_level": 2,
+        "bbox": [
+            73,
+            836,
+            606,
+            853
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk.",
+        "bbox": [
+            73,
+            853,
+            927,
+            909
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            73,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            909,
+            946,
+            924,
+            959
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            72,
+            131,
+            927,
+            216
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/84c0b52b4c76e39ce169ae50e53095ce0df77ba8d0ed695eee4a7d397f1997bf.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Distribution of Ratings</td><td colspan=\"2\">IB Serv./Past12 Mos.</td><td colspan=\"2\">JIL Mkt Serv./Past12 Mos.</td></tr><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2238</td><td>62.64%</td><td>387</td><td>17.29%</td><td>110</td><td>4.92%</td></tr><tr><td>HOLD</td><td>1174</td><td>32.86%</td><td>94</td><td>8.01%</td><td>15</td><td>1.28%</td></tr><tr><td>UNDERPERFORM</td><td>161</td><td>4.51%</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td></tr></table>",
+        "bbox": [
+            75,
+            238,
+            924,
+            351
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            23,
+            926,
+            53
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            909,
+            946,
+            924,
+            959
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Other Important Disclosure",
+        "text_level": 2,
+        "bbox": [
+            73,
+            153,
+            313,
+            172
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Other Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            73,
+            182,
+            237,
+            196
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+        "bbox": [
+            73,
+            196,
+            926,
+            236
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. (\"JEF\") companies: United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research).",
+        "bbox": [
+            73,
+            236,
+            926,
+            278
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.).",
+        "bbox": [
+            73,
+            278,
+            926,
+            318
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada.",
+        "bbox": [
+            73,
+            319,
+            927,
+            413
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010.",
+        "bbox": [
+            73,
+            413,
+            924,
+            441
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870",
+        "bbox": [
+            73,
+            441,
+            926,
+            468
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000.",
+        "bbox": [
+            73,
+            468,
+            926,
+            495
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950.",
+        "bbox": [
+            73,
+            495,
+            924,
+            522
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101.",
+        "bbox": [
+            73,
+            523,
+            926,
+            562
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance\\_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.",
+        "bbox": [
+            73,
+            562,
+            926,
+            632
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800.",
+        "bbox": [
+            73,
+            631,
+            924,
+            658
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE.",
+        "bbox": [
+            73,
+            659,
+            926,
+            686
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC (\"JRS\"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as \"JEF\". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section.",
+        "bbox": [
+            73,
+            686,
+            927,
+            809
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited (\"JIL\") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under \"company specific disclosures\".",
+        "bbox": [
+            73,
+            821,
+            927,
+            931
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            73,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            909,
+            946,
+            924,
+            958
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a \"permitted client\" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence.",
+        "bbox": [
+            72,
+            131,
+            927,
+            309
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In Singapore, JEF Singapore Limited (\"JSL\") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China (\"PRC\"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the \"Corporations Act\"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document. This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs.",
+        "bbox": [
+            72,
+            309,
+            927,
+            703
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports.",
+        "bbox": [
+            73,
+            703,
+            927,
+            783
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            73,
+            783,
+            926,
+            824
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements.",
+        "bbox": [
+            73,
+            825,
+            927,
+            865
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities.",
+        "bbox": [
+            73,
+            865,
+            927,
+            906
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            73,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            909,
+            946,
+            926,
+            959
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party.",
+        "bbox": [
+            73,
+            131,
+            927,
+            267
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws.",
+        "bbox": [
+            73,
+            267,
+            927,
+            350
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd\\_iapd\\_Brochure.aspx?BRCHR\\_VRSN\\_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF.",
+        "bbox": [
+            73,
+            350,
+            927,
+            390
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "© 2026 JEF",
+        "bbox": [
+            73,
+            390,
+            172,
+            403
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            75,
+            21,
+            211,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Washington Strategy July 20, 2026",
+        "bbox": [
+            796,
+            24,
+            926,
+            53
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 9 - 14 of this report.",
+        "bbox": [
+            75,
+            946,
+            406,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            909,
+            946,
+            926,
+            958
+        ],
+        "page_idx": 13
+    }
+]

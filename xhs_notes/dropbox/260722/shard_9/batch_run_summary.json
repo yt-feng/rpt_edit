@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 78,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 9,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/46-JEF-Meta Platforms（META.US）Vision Mini Dive： When AI Moves to the Face-260720.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0001-46-JEF-Meta Platforms-META.US-Vision Mini Dive- When AI Moves to the Face-260720.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/47-JEF-China's Tech Leadership： Our 10 Best Charts-260720.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0002-47-JEF-China-s Tech Leadership- Our 10 Best Charts-260720.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/48-JEF-China （PRC） - Internet：7 Takeaways Post K3 Release： Connect The Dots on Models， Cloud & Applications-260720.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0003-48-JEF-China -PRC- - Internet-7 Takeaways Post K3 Release- Connect The Dots on Models- Cloud - Applications-260720.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/49-JEF-Snowflake（SNOW.US）Databricks Sets the Bar； SNOW's Turn to Rerate-260720.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0004-49-JEF-Snowflake-SNOW.US-Databricks Sets the Bar- SNOW-s Turn to Rerate-260720.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/50-MS-Asia Summer School： S. Korea Batteries-260720.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0005-50-MS-Asia Summer School- S. Korea Batteries-260720.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

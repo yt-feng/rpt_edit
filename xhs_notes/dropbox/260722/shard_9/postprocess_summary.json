@@ -1,0 +1,542 @@
+[
+  {
+    "item": "0001-46-JEF-Meta-Platforms-META.US-Vision-Mini-Dive--When-AI-Moves-to-the-",
+    "source_pdf": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0001-46-JEF-Meta Platforms-META.US-Vision Mini Dive- When AI Moves to the Face-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "Meta AI 眼镜",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JEF：MetaAI眼镜硬件与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-46-JEF-Meta Platforms-META.US-Vision Mini Dive- When AI Moves to the Face-260720.pdf",
+      "cleaned_source_title": "JEF-Meta Platforms-META.US-Vision Mini Dive- When AI Moves to the Face",
+      "institution_name": "JEF",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "JEF：AIMetaPlatformsVisionMiniDive",
+      "raw_candidates": [
+        "Meta AI眼镜硬件收入机会",
+        "Meta AI眼镜硬件收入机会140至180亿美元",
+        "Meta AI眼镜硬件收入与AI代理变现前景"
+      ],
+      "cleaned_candidates": [
+        "JEF：MetaAI眼镜硬件收入机会",
+        "JEF：MetaAI眼镜硬件收入机会140至180亿美元",
+        "JEF：MetaAI眼镜硬件收入与AI代理变现前景",
+        "JEF：AIMetaPlatformsVisionMiniDive",
+        "JEF：MetaAI眼镜的硬件收入机会可达140至180亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：AIMetaPlatformsVisionMiniDive",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.31"
+          ]
+        }
+      ],
+      "selected_title": "JEF：MetaAI眼镜硬件与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "140",
+          "180"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JEF：MetaAI眼镜硬件收入机会140至180亿美元",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JEF：MetaAI眼镜硬件与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-47-JEF-China-s-Tech-Leadership--Our-10-Best-Charts-260720",
+    "source_pdf": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0002-47-JEF-China-s Tech Leadership- Our 10 Best Charts-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "中国科技，这次是真的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "财经->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JEF：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-47-JEF-China-s Tech Leadership- Our 10 Best Charts-260720.pdf",
+      "cleaned_source_title": "JEF-China-s Tech Leadership- Our 10 Best Charts",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：中国sTechLeadership",
+      "raw_candidates": [
+        "中国科技领导力-十张关键数据图表",
+        "中国科技领导力-2026年数据图表集",
+        "中国科技领导力-研究产出与产业自主化图表"
+      ],
+      "cleaned_candidates": [
+        "JEF：中国科技领导力-十张关键数据图表",
+        "JEF：中国科技领导力-2026年数据图表集",
+        "JEF：中国科技领导力-研究产出与产业自主化图表",
+        "JEF：中国sTechLeadership",
+        "JEF：发布于2026年7月，正值市场对中国科技公司关注度上升的时期"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：中国科技领导力-2026年数据图表集",
+          "reasons": [
+            "anchor_coverage=0.64"
+          ]
+        },
+        {
+          "title": "JEF：中国科技领导力-研究产出与产业自主化图表",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：中国sTechLeadership",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：发布于2026年7月，正值市场对中国科技公司关注度上升的时期",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JEF：中国科技领导力-十张关键数据图表",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JEF：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-48-JEF-China--PRC----Internet-7-Takeaways-Post-K3-Release--Connect-Th",
+    "source_pdf": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0003-48-JEF-China -PRC- - Internet-7 Takeaways Post K3 Release- Connect The Dots on Models- Cloud - Applications-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "K3 之后，中国模型",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JEF：中国大模型K3发布后智能与成本效率变化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-48-JEF-China -PRC- - Internet-7 Takeaways Post K3 Release- Connect The Dots on Models- Cloud - Applications-260720.pdf",
+      "cleaned_source_title": "JEF-China -PRC- - Internet-7 Takeaways Post K3 Release- Connect The Dots on Models- Cloud - Applications",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：中国PRCInternet7TakeawaysPostK3",
+      "raw_candidates": [
+        "JEF：中国大模型K3发布后智能与成本效率变化",
+        "JEF：中国大模型K3发布后智能差距缩小与成本优势",
+        "JEF：中国大模型K3发布后模型迭代与融资动态"
+      ],
+      "cleaned_candidates": [
+        "JEF：中国大模型K3发布后智能与成本效率变化",
+        "JEF：中国大模型K3发布后智能差距缩小与成本优势",
+        "JEF：中国大模型K3发布后模型迭代与融资动态",
+        "JEF：中国PRCInternet7TakeawaysPostK3",
+        "JEF：列举了即将发布的Qwen3.8（2.4T参数）、"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：中国大模型K3发布后模型迭代与融资动态",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "JEF：中国PRCInternet7TakeawaysPostK3",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：列举了即将发布的Qwen3.8（2.4T参数）、",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：中国大模型K3发布后智能与成本效率变化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JEF：中国大模型K3发布后智能与成本效率变化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-49-JEF-Snowflake-SNOW.US-Databricks-Sets-the-Bar--SNOW-s-Turn-to-Rera",
+    "source_pdf": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0004-49-JEF-Snowflake-SNOW.US-Databricks Sets the Bar- SNOW-s Turn to Rerate-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "Databricks",
+    "cover_subtitle": "数据云需求水涨船高",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JEF：Snowflake",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-49-JEF-Snowflake-SNOW.US-Databricks Sets the Bar- SNOW-s Turn to Rerate-260720.pdf",
+      "cleaned_source_title": "JEF-Snowflake-SNOW.US-Databricks Sets the Bar- SNOW-s Turn to Rerate",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：SnowflakeDatabricksSetstheBar",
+      "raw_candidates": [
+        "Snowflake-Databricks估值上调与重估空间",
+        "Snowflake-Databricks融资估值1880亿美元提供参照",
+        "Snowflake-Databricks数据云需求与GPU算力驱动"
+      ],
+      "cleaned_candidates": [
+        "JEF：Snowflake-Databricks估值上调与重估空间",
+        "JEF：Snowflake",
+        "JEF：SnowflakeDatabricksSetstheBar",
+        "JEF：虽然融资方未披露最新财务数据，但截至2025年6月中旬"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english",
+        "english_heavy_fragment"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：Snowflake-Databricks估值上调与重估空间",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment"
+          ]
+        },
+        {
+          "title": "JEF：SnowflakeDatabricksSetstheBar",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment"
+          ]
+        },
+        {
+          "title": "JEF：虽然融资方未披露最新财务数据，但截至2025年6月中旬",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：Snowflake",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JEF：Snowflake"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-50-Morgan-Stanley-Asia-Summer-School--S.-Korea-Batteries-260720",
+    "source_pdf": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0005-50-MS-Asia Summer School- S. Korea Batteries-260720.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "韩国电池三重变局：E",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：电池储能数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-50-MS-Asia Summer School- S. Korea Batteries-260720.pdf",
+      "cleaned_source_title": "MS-Asia Summer School- S. Korea Batteries",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：AsiaSummerSchool",
+      "raw_candidates": [
+        "韩国电池产业：欧洲份额下滑与产能转换",
+        "韩国电池企业：美国市场调整与储能转型",
+        "韩国电池产业：电动车与储能双轨定位",
+        "韩国电池产业夏季学校",
+        "韩国电池产业：电动车与储能双轨定位",
+        "韩国电池产业：欧洲份额变化与产能转换"
+      ],
+      "cleaned_candidates": [
+        "MS：韩国电池产业，欧洲份额下滑与产能转换",
+        "MS：韩国电池企业，美国市场调整与储能转型",
+        "MS：韩国电池产业，电动车与储能双轨定位",
+        "MS：韩国电池产业夏季学校",
+        "MS：韩国电池产业，欧洲份额变化与产能转换",
+        "MS：AsiaSummerSchool",
+        "MS：MS在2026年7月发布的韩国电池产业夏季学校报告中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：韩国电池企业，美国市场调整与储能转型",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：韩国电池产业，电动车与储能双轨定位",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：韩国电池产业夏季学校",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：AsiaSummerSchool",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MS在2026年7月发布的韩国电池产业夏季学校报告中",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：电池储能数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：MS在2026年7月发布的韩国电池产业夏季学校报告中",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "韩国电池产业：欧洲份额下滑与产能转换",
+        "韩国电池企业：美国市场调整与储能转型",
+        "韩国电池产业：电动车与储能双轨定位"
+      ],
+      "pre_neutralization_title": "MS：韩国电池产业，欧洲份额下滑与产能转换",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：电池储能数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

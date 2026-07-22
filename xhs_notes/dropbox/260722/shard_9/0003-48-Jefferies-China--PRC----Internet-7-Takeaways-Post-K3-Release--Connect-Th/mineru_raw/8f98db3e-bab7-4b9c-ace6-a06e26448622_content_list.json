@@ -1,0 +1,2465 @@
+[
+    {
+        "type": "text",
+        "text": "7 Takeaways Post K3 Release: Connect The Dots on Models, Cloud & Applications",
+        "text_level": 2,
+        "bbox": [
+            75,
+            142,
+            600,
+            188
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Highlights (1) Moonshot AI: K3 is far from reaching upper limit in intelligence. ARR has fastest growth the next day; (2) More T-parameters China models (e.g. Qwen3.8, 2.4T) to come; (3) Updates from Zhipu and Stepfun; (4) Compute is focus on recent financing /KC Preview (link); (5)Token Expenditure Index remains soft; (6) Video models landscape do not see notable change;(7) Tencent's WorkBuddy gains traction; (8) Reaffirm Buy on BABA's full stack capabilities",
+        "bbox": [
+            74,
+            198,
+            630,
+            324
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this report, we provide investors with data points on model pricing by companies, pricing comparison between China and US, model intelligence from Artificial Analysis, token consumption in OpenRouter, Token Expenditure Index trends and other industry data for analysis.",
+        "bbox": [
+            74,
+            338,
+            629,
+            397
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Closing the gap amid competition. Investors are surprised to see K3 (link) achieved new intelligence milestone and ranked at top positions in different metrics. According to Arena (Exhibit 5). This is the first time China takes the lead over US models in Frontend Code Arena vs early 2025 (DeepSeek-R1 is the last Chinese models came close with US models). Investors feedback is more about the closing of intelligence gap and anticipate more Chinese models (Exhibit 2) having T-parameter in coming months. Balance between intelligence and good to use amid supply constraints For Chinese models is expected.",
+        "bbox": [
+            74,
+            406,
+            630,
+            509
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Moonshot AI: Still far from the upper limit in model intelligence. ARR reached the fastest growth rate the next day. According to STAR Market Daily, President Mr.Zhang highlights (1) Scaling Law is valid. K3 is not the most intelligent model despite a big advancement is made vs K2.6; (2) It is still early to talk about the upper bound of model intelligence; (3) ARR experienced the fastest growth rate the next day post K3 release.",
+        "bbox": [
+            74,
+            517,
+            630,
+            591
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Latest strategies from Zhipu and Stepfun on industry trends. (1) Zhipu: (a) Scaling Law continues to accelerate across data, environment, RL and infra. (b) GLM-5.2 has less parameters vs K3. It can exceed K3 capabilities when scale to latter's level. Please refer to page 2 for details; (2) Stepfun: During WAIC (a) agents become the atomic unit of productivity; (b) integration between AI and terminals is the next focus; (c) AI coding exceeds human; (d) Agent-to-Agent is the next internet",
+        "bbox": [
+            74,
+            599,
+            630,
+            688
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Compute is the focus on recent financing by AI Lab and Kingsoft Cloud Preview. Recent financing of AI Lab (link) (1) DeepSeek (USD7bn, Jun-26); (2) Zhipu (USD4bn, Jul-26 and (3) MiniMax (USD2bn, Jul-26). We view new funding can strengthen respective computing needs amid surging demand. For Kingsoft Cloud, we adjust our revenue slightly in 2Q, factoring in the supply constraints issues with capex spending happened more in Jun vs Apr/May (link)",
+        "bbox": [
+            74,
+            695,
+            630,
+            771
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Token expenditure trends reflect highly cost efficient model is important. According to Silicon Data LLM Token Expenditure Index (Exhibit 4), the index continues to remain soft and ranged between 1.56 to 1.61 the week of 12 Jul (vs 1.63 to 1.65 the week of 5 Jul), vs 2.04 on 31 May. Based on Artificial Analysis, China models are highly cost-efficient vs US models and API cost is a fraction vs US models (Exhibit 3). We look into (1) Blended price vs Intelligence by models (Exhibit 1). The recent industry trends from US /China tech companies show the debate on Tokenmaxxing vs token spending means cost efficient models become increasing important in Coding and Agentic AI.",
+        "bbox": [
+            74,
+            778,
+            630,
+            895
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Video generation model landscape does not see to have notable change. According to Kimi's co-founder Mr. Zhou Xinyu, the current focus is model intelligence and video generation model",
+        "bbox": [
+            75,
+            903,
+            630,
+            933
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e3443364a7f8785b18ebc7f70894df72f58864e7ae2dd635bb8a19564b4f0e49.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 1 - Artificial Analysis Intelligence Index vs Blended Price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            662,
+            172,
+            910,
+            281
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/565b83fb3e99456df4b6e42a7d82404131bf2e4a32918eb4c3d092d33c834e18.jpg",
+        "table_caption": [
+            "Exhibit 2 - Total parameters for different flagship models"
+        ],
+        "table_footnote": [
+            "Source: JEF"
+        ],
+        "table_body": "<table><tr><td>Models</td><td>Total parameters</td></tr><tr><td>Kimi-3</td><td>2.8T</td></tr><tr><td>DeepSeek-V4-Pro</td><td>1.6T</td></tr><tr><td>Qwen3.7 Max</td><td>1.2T</td></tr><tr><td>GLM-5.2</td><td>744B</td></tr><tr><td>MiniMax M3</td><td>428B</td></tr><tr><td>Hy3</td><td>295B</td></tr></table>",
+        "bbox": [
+            662,
+            327,
+            910,
+            402
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7769f3d513defce8f4445ba9e5bf50579552378a74b139d5e44ec0ae815727c2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3 - Blended prices for China models vs US models (2Q26)"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            662,
+            447,
+            908,
+            543
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/96d2e8a289f2d2febe341cfe0b106cd829d22c1b82107f276a2760219c3aa4a6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 4 - Silicon Data LLM Token Expenditure Index"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg, JEF"
+        ],
+        "bbox": [
+            662,
+            590,
+            910,
+            693
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a51f81540523176957807ce7667028460d79eb8b6812905b9ff041f832a6a857.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 5 - Weekly token consumption over the past 12 months as of 13 Jul (tn)"
+        ],
+        "chart_footnote": [
+            "Source: OpenRouter, JEF"
+        ],
+        "bbox": [
+            662,
+            740,
+            908,
+            847
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Thomas Chong \\* | Equity Analyst 852 3743 8016 | thomas.chong@JEF.com",
+        "bbox": [
+            659,
+            874,
+            871,
+            899
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Zoey Zong \\* | Equity Analyst 852 3743 8163 | zoey.zong@JEF.com",
+        "bbox": [
+            659,
+            903,
+            853,
+            928
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            38,
+            284,
+            77
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "China (PRC) | Internet",
+        "bbox": [
+            75,
+            99,
+            337,
+            122
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research\nJuly 20, 2026",
+        "bbox": [
+            821,
+            94,
+            925,
+            122
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Please see analyst certifications, important disclosure information, and information regarding the status of non-US analysts on pages 11 - 15 of this report.  \n\\* JEF Hong Kong Limited",
+        "bbox": [
+            77,
+            942,
+            765,
+            965
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "is not top priority at the moment. According to Volcano Engine Conference (link) in Jun, it released Seedance 2.5 and considers video",
+        "bbox": [
+            75,
+            122,
+            630,
+            152
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Continued overleaf ...",
+        "bbox": [
+            75,
+            161,
+            198,
+            176
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            913,
+            951,
+            925,
+            961
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "generation represents over half of MaaS revenue (link). On the other hand, Kling raised new financing be used for business expansion, daily operations, working capital, team development and others (link)",
+        "bbox": [
+            75,
+            122,
+            657,
+            167
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Tencent's WorkBuddy is gaining traction. On application side, we expect Tencent's WorkBuddy continues to gain traction. According to Analysys (link), it highlights operating metrics for WorkBuddy in the segment (Mar-26). These include (1) number of desktop monthly visits reached 8.85m; (2) WorkBuddy is ahead of Trae (ByteDance), QClaw (Tencent) and Qoder Work (BABA). On the other hand, BABA releases Meoo (diverse AI enterprise apps) during WAIC. For Baidu, it highlights a number of AI showcases such as Baidu Drive, Baidu Wenku and Xiaodu during WAIC (link). On the other hand, Kingsoft Office held AI Productivity Conference last week and released AI products Lingxi Professional and WPS AI Hub (link)",
+        "bbox": [
+            74,
+            177,
+            657,
+            293
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "What's next to be anticipated? These include (1) With model iterations happen in less than 3 months, we expect upcoming models for Qwen (Qwen 3.8, 2.4T), MiniMax (M3 Pro), Zhipu (GLM) and Tencent (Hy4) are to be anticipated. For BABA, it highlights Qwen3.8 is open weight model (total parameters 2.4T) which will be released in near term. Its Qwen3.8-Max-Preview model is available in Token Plan, Qoder and Qoder Work. It is also available in PC and mobile of Qianwen; (2) a number of companies are expected to achieve over USD1bn ARR in 2026 or early 2027: (a) BABA; (b) Zhipu; (c) MiniMax; (d) Kling; (e) Volcano Engine. We expect Kimi ARR is to be watched out post release of K3. We view BABA to stand out on its full stack of capabilities with models, cloud, chips and applications.",
+        "bbox": [
+            74,
+            302,
+            657,
+            431
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Zhipu: Key Takeaways from Conference Call",
+        "text_level": 2,
+        "bbox": [
+            75,
+            441,
+            549,
+            462
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Scaling Law continues to accelerate. This can be seen in breakthrough made by OpenAI and Anthropic heading towards AGI.",
+        "bbox": [
+            77,
+            493,
+            655,
+            521
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Thoughts on K3. (1) K3 is successful in scaling and close to global frontier models; (2) GLM-5.2 has less parameters vs K3 (Exhibit 6). It expects to exceed K3 capabilities when it scales to K3 level",
+        "bbox": [
+            77,
+            523,
+            655,
+            565
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- GLM series. (1) Feb-26: GLM-5 vs GLM-4 series. It doubles no of parameters with pre-training of 30T tokens and adopts DSA architecture; (2) Apr-26/Jun-26: released GLM5.1/5.2 version. (a) GLM5.1 emphasizes on long horizon tasks; (b) GLM-5.2 extends to 1M context length and handles complicated coding work; (c) next version GLM-5.3 will have minor iterations and better coding experience; (d) next model series will have new architecture with bigger scale while maintain cost efficiencies",
+        "bbox": [
+            77,
+            566,
+            657,
+            654
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Multiple areas in scaling. These include (1) data; (2) environment; (3) RL (Reinforcement Learning); (4) Infra. On data, it covers pre-training/mid-training and SWE scaling can automatically create coding agent environment. On RL, the use of SAO technology drives better accuracy vs GRPO optimization in particular long horizon tasks. On Infra, (a) ZCube vs Clos: it lowers cost by 33% and throughout by 15%; (b) LayerSplit: reduce KV Cache and increase throughput by 132%; (c) prefill-decode separation; (d) DSA+IndexShare enhances efficiency",
+        "bbox": [
+            75,
+            656,
+            655,
+            743
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Touch High. On top of new models, other areas include (1) LLM-driven autonomous agent system (AAS) and (2) Recursive self-improvement (RSI)",
+        "bbox": [
+            77,
+            745,
+            655,
+            773
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            20,
+            217,
+            46
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            913,
+            951,
+            924,
+            961
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/dc4179b693d40f7493d01538ecba214582d3ff84323227da781680b76a164f62.jpg",
+        "table_caption": [
+            "Exhibit 6 - Comparison between GLM-5.2 vs K3"
+        ],
+        "table_footnote": [
+            "Source: Company, JEF"
+        ],
+        "table_body": "<table><tr><td></td><td>GLM-5.2</td><td>Kimi K3</td></tr><tr><td>Total no of parameters</td><td>744B</td><td>2.8T</td></tr><tr><td>Activated parameters</td><td>40B, 8/256 experts</td><td>16/896 experts</td></tr><tr><td>Training Tokens</td><td>30T+ tokens</td><td>na</td></tr><tr><td>Contexts</td><td>1M: texts</td><td>1M: multimodal</td></tr><tr><td>Core architecture</td><td>DSA + Index Share</td><td>KDA + AttnRes + Stable LatentMoE</td></tr><tr><td>API price (cache/input/output)</td><td>RMB2/8/28 USD0.26/1.4/4.4</td><td>RMB2/20/100 USD0.3/3.0/15.0</td></tr><tr><td>Open source</td><td>Release weights under MIT</td><td>Release open weights on 27 Jul</td></tr><tr><td>Deployment</td><td>8 cards</td><td>64+ supernode</td></tr><tr><td>Speed</td><td>Average 60 TPS High Speed 450 TPS</td><td>Average 20 TPS</td></tr></table>",
+        "bbox": [
+            80,
+            133,
+            642,
+            298
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/62f364b5545b1b207a946ef4bf4fa03263438ca271107901f957340263b96096.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 7 - Frontend Code Arena: US vs China"
+        ],
+        "chart_footnote": [
+            "SOURCE: ARENA WEBDEV AND CODE ARENA PUBLIC HISTORIES",
+            "Source: Arena, JEF"
+        ],
+        "bbox": [
+            86,
+            324,
+            642,
+            656
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Based on Artificial Analysis, China models DeepSeek, Qwen, Kimi, MiniMax and Zhipu are closing the gap with US models in terms of intelligence. China models are highly cost-efficient on Mixture of Experts (MoE) architecture, linear attention, and MFU (Model Flog Utilization). According to 2026 Stanford AI Index Report (Apr-26), the top US model leads Chinese models by 2.7%. Separately, Anthropic (1503), xAI (1495), Google (1494), OpenAI (1481), Alibaba (1449) and DeepSeek (1424) occupy the top tier of Arena Elo ratings as of Mar-26.",
+        "bbox": [
+            74,
+            678,
+            657,
+            765
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "China models are narrowing the gap with US models in terms of intelligence. On Input/Output API, China large models are highly efficient vs US models.",
+        "bbox": [
+            674,
+            680,
+            952,
+            739
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            75,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            913,
+            951,
+            925,
+            961
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 8 - Artificial Analysis Intelligence Index",
+        "bbox": [
+            75,
+            122,
+            328,
+            136
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Artificial Analysis Intelligence Index",
+        "bbox": [
+            94,
+            143,
+            318,
+            156
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Artificial Analysis Intelligence Index v4.1 incorporates 9 evaluations: GDPval-AA v2, $\\tau^3$ -Banking, Terminal-Bench v2.1, SciCode, Humanity's Last Exam, GPQA Diamond, CritPt, AA-Omniscience, AA-LCR",
+        "bbox": [
+            92,
+            158,
+            433,
+            184
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Artificial Analysis",
+        "bbox": [
+            795,
+            192,
+            900,
+            205
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d994646e196b3bd02dd20ea805a0f501f3c78892eced31577233b04268c73369.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Reasoning models are indicated by a lightbulb icon",
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            89,
+            194,
+            898,
+            358
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f96c52ab2011595f59b15defd84c91bce6b076f4eb1237bff33961cd7c1ca302.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 9 - Coding Cost Per Task Assessment: K3 vs Global Peers",
+            "Kimi Code Bench V2 · Score vs Cost per Task"
+        ],
+        "chart_footnote": [
+            "Source: Moonshot AI, JEF"
+        ],
+        "bbox": [
+            84,
+            417,
+            634,
+            660
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            915,
+            951,
+            924,
+            961
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9b72e738335d0cfd9648100c6cc9db54e24a2f2063807bcffbac3768ce7c9269.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 10 - Browsing Cost Per Task Assessment: K3 vs Global Peers"
+        ],
+        "chart_footnote": [
+            "Source: Moonshot AI, JEF"
+        ],
+        "bbox": [
+            82,
+            137,
+            630,
+            389
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Model Input/Output Price By Companies",
+        "text_level": 2,
+        "bbox": [
+            75,
+            403,
+            510,
+            423
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c515d6096d8f8e93a0285ea7a755ee5a5a1f9875b30303ad708566d106c954d6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 11 - DeepSeek: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            84,
+            458,
+            500,
+            638
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cd65b7c097b0713d7a8a3edb969ea2192676e6177f669fa4de44daa38df45676.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 12 - DeepSeek: Output price",
+            "Exhibit 13 - Kimi: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            519,
+            459,
+            940,
+            638
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a68e333ac3bc237a123bd7f47e0f0f404dc3eafc4af90e42eb9a5c18f8642324.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            84,
+            665,
+            494,
+            836
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/69540c9dea9a7e16e40d2e1452197a627d9b459883702c2c3eb87c447c698b8e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 14 - Kimi: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            521,
+            666,
+            932,
+            836
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            913,
+            951,
+            924,
+            961
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            75,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/58bde6f29002d0ec32f3bf951f0638f5a87a8ad2e31dfbd8223733523681ecd2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 15 - Zhipu: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            84,
+            136,
+            495,
+            305
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d8f7ca8a36a461719f6aea46033563be098063228a73725a51ca809539e9c6b0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Note: API price is the same across all context lengths in GLM-5.2 vs tiered pricing in GLM-5.1",
+            "Exhibit 16 - Zhipu: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF",
+            "Note: API price is the same across all context lengths in GLM-5.2 vs tiered pricing in GLM-5.1"
+        ],
+        "bbox": [
+            519,
+            136,
+            932,
+            305
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/12736c3fb1f984b39935ee8cca1d5d726333f2a9312886fa53e779fe1b917aaf.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 17 - Qwen: Input price"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            84,
+            341,
+            485,
+            453
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a9edc2babd3be8ca4c343eaf539ab17b8642237aec2b6f788b352715fafdbd87.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            92,
+            461,
+            485,
+            510
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d2fcbf9869d7dd373e4c7bc58e83dab6cde7fe3703d7dec7395d63f3b2995203.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 18 - Qwen: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            522,
+            339,
+            925,
+            510
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7b40bae89a8d748d4ea636546f9abd67675cb818447bd0474c71215d615004fc.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 19 - MiniMax: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF\nNote: > 512k input tokens for MiniMax-M3"
+        ],
+        "bbox": [
+            82,
+            538,
+            500,
+            710
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dab370f29e8237b2b07522de8f9986128fd0fbf500758b802ace04f0db329db6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 20 - MiniMax: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF  \nNote: >512k input tokens for MiniMax-M3"
+        ],
+        "bbox": [
+            521,
+            540,
+            937,
+            709
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            913,
+            951,
+            924,
+            961
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Source: Artificial Analysis, JEF\nNote: 32k < Input tokens <= 128k",
+        "bbox": [
+            77,
+            900,
+            224,
+            918
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0f04491d7e012464102e4578c6f9ebc98edef3df94b17207aa727cbf4354dd2e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 21 - Doubao Seed: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Company, JEF",
+            "Note: 128k < input tokens <= 256k for doubao-seed-2.0-pro, doubao-seed-1.8"
+        ],
+        "bbox": [
+            82,
+            136,
+            500,
+            307
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9cf578740547e561ffb372ef11899a14f668aea82159ca1f46a4bc76eef2a984.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 22 - Doubao Seed: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Company, JEF",
+            "Note: 128k < input tokens <= 256k for doubao-seed-2.0-pro, doubao-seed-1.8"
+        ],
+        "bbox": [
+            519,
+            136,
+            937,
+            307
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/785432bae0f6b5581177bd124331187c63b14faf8c80c184bbdeb80c9a62d0cb.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 23 - Xiaomi: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            82,
+            343,
+            490,
+            510
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f6f169ef8a4a305b760988d95225869dbbf6e2d91a733472b983fa09ed032583.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 24 - Xiaomi: Output price",
+            "Exhibit 25 - Tencent: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            519,
+            341,
+            929,
+            510
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ed3d52a1a618c26146d5e68e69f9246160ba98f1f71e6a4b41a90f8e6be7c2ca.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company, JEF"
+        ],
+        "bbox": [
+            84,
+            536,
+            502,
+            695
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dab5eb83834d016f7b70d684460270dbc31b18347f37346c6a93f9849a0ad3f7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 26 - Tencent: Output price"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            521,
+            537,
+            940,
+            697
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e0160ccfb1d0405f89cab6078cfb45d3e0cec8db0842208088739324d3b36da2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 27 - Baidu: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Company, JEF"
+        ],
+        "bbox": [
+            84,
+            725,
+            500,
+            894
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3dd54ac2e14b4f4b1a918d7b08ec1cf96b1c42757e44560a43dcda6fee100a5b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 28 - Baidu: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF\nNote: 32k < Input tokens <= 128k"
+        ],
+        "bbox": [
+            521,
+            725,
+            937,
+            894
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            913,
+            951,
+            924,
+            959
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/844f574dd212866eae420e1f25d913d27980138fca8f6f6c350b92d2a880676b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 29 - StepFun: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            80,
+            133,
+            490,
+            311
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/24907380e5e8f2477b810046d37922928e756532de82f9a6598bec7879987839.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 30 - StepFun: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            519,
+            133,
+            927,
+            310
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/534b6e7a7a2c857c381d354af44f8fc05ebf457ccd69a18fd7a08d3eedfe97fd.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 31 - OpenAI: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            84,
+            341,
+            500,
+            510
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cf0a05daccf6897d4b60ac3e9d4d65835818aee64e3f28be0468e43720deb887.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 32 - OpenAI: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            522,
+            339,
+            937,
+            510
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6034e230aad14dd99da1a267cf72774c464627db73fdcbc8e3686c3a2bae990d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 33 - Anthropic Claude Opus: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            84,
+            538,
+            500,
+            710
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2a2c4d0ea541ce278e25fe016f5c1d55741d98144e59e0404ef50468ff85ff04.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 34 - Anthropic Claude Opus: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            521,
+            538,
+            937,
+            710
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            20,
+            217,
+            46
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            913,
+            951,
+            924,
+            961
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3c39faf25b26bffe413a2bde095137eea7e51c928a24c4f6ad09e564059472b6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 35 - Anthropic Claude Sonnet: Input price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            84,
+            136,
+            489,
+            306
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2dfc454dc03c462a9c61450e1b2f94ce68f6fdb46c57cf68cf234df4a4638b6a.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 36 - Anthropic Claude Sonnet: Output price"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis, JEF"
+        ],
+        "bbox": [
+            522,
+            136,
+            925,
+            305
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            20,
+            217,
+            46
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            908,
+            951,
+            925,
+            961
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We would like to thank Fiona Fan, employee of Evalueserve Inc., for providing research support services to our preparation of this report. We would like to thank Han Wang, employee of Evalueserve Inc., for providing research support services to our preparation of this report. We would like to thank Erica Qiu, employee of Evalueserve Inc., for providing research support services to our preparation of this report.",
+        "bbox": [
+            74,
+            122,
+            858,
+            163
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Company Valuation/Risks",
+        "text_level": 2,
+        "bbox": [
+            75,
+            172,
+            311,
+            190
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "For Important Disclosure information on companies recommended in this report, please visit our website at https://avatar.bluematrix.com/sellside/Disclosures.action or call 212.284.2300.",
+        "bbox": [
+            75,
+            195,
+            925,
+            223
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification:",
+        "text_level": 2,
+        "bbox": [
+            75,
+            256,
+            264,
+            272
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "I, Thomas Chong, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            75,
+            273,
+            925,
+            311
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "I, Zoey Zong, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+        "bbox": [
+            75,
+            311,
+            925,
+            349
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US analysts: Thomas Chong is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+        "bbox": [
+            75,
+            350,
+            925,
+            400
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US analysts: Zoey Zong is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement.",
+        "bbox": [
+            74,
+            401,
+            927,
+            492
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Investment Recommendation Record",
+        "text_level": 2,
+        "bbox": [
+            77,
+            509,
+            413,
+            524
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "(Article 3(1)e and Article 7 of MAR)",
+        "text_level": 2,
+        "bbox": [
+            77,
+            525,
+            281,
+            538
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Recommendation Published July 19, 2026 16:18 P.M.",
+        "bbox": [
+            75,
+            538,
+            504,
+            549
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Recommendation Distributed July 19, 2026 16:18 P.M.",
+        "bbox": [
+            75,
+            551,
+            505,
+            564
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Company Specific Disclosures",
+        "text_level": 2,
+        "bbox": [
+            75,
+            582,
+            352,
+            598
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Within the past twelve months, Kuaishou Technology has been a client of JEF Financial Group Inc., its affiliates or subsidiaries and investment banking services are being or have been provided.",
+        "bbox": [
+            75,
+            598,
+            925,
+            624
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "JEF Financial Group Inc., its affiliates or subsidiaries is acting as a manager or co-manager in the underwriting or placement of securities for Kuaishou Technology or one of its affiliates.",
+        "bbox": [
+            75,
+            624,
+            925,
+            649
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Within the past 12 months, JEF Financial Group Inc., its affiliates or subsidiaries has received compensation from investment banking services from Kuaishou Technology.",
+        "bbox": [
+            75,
+            649,
+            925,
+            675
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "JEF International Ltd, its affiliates or subsidiaries has, or had, within the past 12 months an agreement to provide investment services to Kuaishou Technology.",
+        "bbox": [
+            75,
+            675,
+            925,
+            701
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "For Important Disclosure information on companies recommended in this report, please visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action or call 212.284.2300.",
+        "bbox": [
+            75,
+            706,
+            925,
+            736
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Explanation of JEF Ratings",
+        "text_level": 2,
+        "bbox": [
+            77,
+            757,
+            364,
+            774
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period.",
+        "bbox": [
+            75,
+            774,
+            836,
+            787
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period.",
+        "bbox": [
+            75,
+            787,
+            898,
+            800
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below \\$10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below \\$10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below \\$10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period.",
+        "bbox": [
+            75,
+            801,
+            925,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies.",
+        "bbox": [
+            75,
+            875,
+            925,
+            901
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "CS - Coverage Suspended. JEF has suspended coverage of this company.",
+        "bbox": [
+            75,
+            902,
+            517,
+            914
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            20,
+            217,
+            46
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            75,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            908,
+            951,
+            924,
+            961
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "NC - Not covered. JEF does not cover this company.",
+        "bbox": [
+            75,
+            122,
+            397,
+            136
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations.",
+        "bbox": [
+            74,
+            136,
+            925,
+            161
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided.",
+        "bbox": [
+            74,
+            161,
+            925,
+            188
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Valuation Methodology",
+        "text_level": 2,
+        "bbox": [
+            75,
+            198,
+            288,
+            214
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months.",
+        "bbox": [
+            74,
+            215,
+            925,
+            278
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "JEF Franchise Picks",
+        "text_level": 2,
+        "bbox": [
+            77,
+            279,
+            227,
+            291
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a 15% stop loss, and the remainder will have a 20% stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value.",
+        "bbox": [
+            74,
+            291,
+            927,
+            383
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Risks which may impede the achievement of our Price Target",
+        "text_level": 2,
+        "bbox": [
+            75,
+            392,
+            625,
+            409
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk.",
+        "bbox": [
+            72,
+            409,
+            927,
+            538
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Other Companies Mentioned in This Report",
+        "text_level": 2,
+        "bbox": [
+            75,
+            548,
+            465,
+            564
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Alibaba Group Holding Limited (BABA: \\$114.97, BUY)",
+        "bbox": [
+            116,
+            564,
+            423,
+            577
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Baidu Inc. (BIDU: \\$107.24, BUY)",
+        "bbox": [
+            116,
+            577,
+            305,
+            588
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Kingsoft Cloud (KC: \\$9.54, BUY)",
+        "bbox": [
+            116,
+            590,
+            306,
+            603
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Kuaishou Technology (1024 HK: HK\\$43.28, BUY)",
+        "bbox": [
+            116,
+            603,
+            399,
+            616
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Meitu Inc (1357 HK: HK\\$3.96, BUY)",
+        "bbox": [
+            116,
+            616,
+            325,
+            628
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- MiniMax Group Inc. (100 HK: HK\\$216.00, BUY)",
+        "bbox": [
+            116,
+            628,
+            389,
+            641
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Tencent Holdings Ltd. (700 HK: HK\\$461.60, BUY)",
+        "bbox": [
+            116,
+            641,
+            401,
+            654
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Xiaomi Corporation (1810 HK: HK\\$26.88, UNDERPERFORM)",
+        "bbox": [
+            116,
+            654,
+            462,
+            667
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/802ab08146a626aaabc5e3bb2d18661f71ef318273a70cd45d5a25f483f0f887.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Distribution of Ratings</td><td colspan=\"2\">IB Serv./Past12 Mos.</td><td colspan=\"2\">JIL Mkt Serv./Past12 Mos.</td></tr><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2237</td><td>62.63%</td><td>387</td><td>17.30%</td><td>110</td><td>4.92%</td></tr><tr><td>HOLD</td><td>1173</td><td>32.84%</td><td>94</td><td>8.01%</td><td>15</td><td>1.28%</td></tr><tr><td>UNDERPERFORM</td><td>162</td><td>4.54%</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td></tr></table>",
+        "bbox": [
+            77,
+            690,
+            922,
+            795
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            75,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            908,
+            950,
+            925,
+            961
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Other Important Disclosure",
+        "text_level": 2,
+        "bbox": [
+            75,
+            143,
+            322,
+            160
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Other Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            75,
+            170,
+            244,
+            183
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+        "bbox": [
+            74,
+            183,
+            925,
+            222
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. (\"JEF\") companies:",
+        "bbox": [
+            75,
+            221,
+            925,
+            246
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research).",
+        "bbox": [
+            75,
+            246,
+            925,
+            273
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.).",
+        "bbox": [
+            75,
+            273,
+            925,
+            311
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada.",
+        "bbox": [
+            75,
+            311,
+            925,
+            401
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010.",
+        "bbox": [
+            75,
+            400,
+            925,
+            425
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870",
+        "bbox": [
+            75,
+            425,
+            925,
+            452
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000.",
+        "bbox": [
+            75,
+            452,
+            925,
+            476
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950.",
+        "bbox": [
+            75,
+            476,
+            925,
+            503
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101.",
+        "bbox": [
+            75,
+            503,
+            925,
+            541
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance\\_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.",
+        "bbox": [
+            75,
+            541,
+            925,
+            605
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800.",
+        "bbox": [
+            75,
+            605,
+            925,
+            631
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE.",
+        "bbox": [
+            75,
+            631,
+            924,
+            656
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC (\"JRS\"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as \"JEF\". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section.",
+        "bbox": [
+            74,
+            656,
+            927,
+            774
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited (\"JIL\") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under \"company specific disclosures\".",
+        "bbox": [
+            74,
+            784,
+            927,
+            886
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a \"permitted client\" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited (\"JSL\") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China (\"PRC\"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the \"Corporations Act\"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document.",
+        "bbox": [
+            74,
+            886,
+            927,
+            939
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            20,
+            217,
+            46
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            75,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            908,
+            951,
+            925,
+            961
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            74,
+            122,
+            927,
+            481
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs.",
+        "bbox": [
+            74,
+            481,
+            927,
+            633
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports.",
+        "bbox": [
+            74,
+            633,
+            927,
+            711
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            75,
+            711,
+            925,
+            749
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements.",
+        "bbox": [
+            75,
+            749,
+            927,
+            787
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities.",
+        "bbox": [
+            75,
+            787,
+            925,
+            826
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party.",
+        "bbox": [
+            74,
+            826,
+            927,
+            916
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            20,
+            217,
+            46
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            75,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            908,
+            951,
+            925,
+            961
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            75,
+            122,
+            925,
+            161
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws.",
+        "bbox": [
+            75,
+            161,
+            925,
+            238
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd\\_iapd\\_Brochure.aspx?BRCHR\\_VRSN\\_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://avatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF.",
+        "bbox": [
+            75,
+            237,
+            925,
+            276
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "© 2026 JEF",
+        "bbox": [
+            75,
+            276,
+            177,
+            289
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "JEF",
+        "bbox": [
+            77,
+            19,
+            217,
+            46
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Internet Equity Research July 20, 2026",
+        "bbox": [
+            821,
+            21,
+            925,
+            63
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Please see important disclosure information on pages 11 - 15 of this report.",
+        "bbox": [
+            77,
+            950,
+            424,
+            962
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            908,
+            951,
+            924,
+            962
+        ],
+        "page_idx": 14
+    }
+]

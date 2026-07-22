@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_zlcc3aa1/pdfs/0003-48-JEF-China -PRC- - Internet-7 Takeaways Post K3 Release- Connect The Dots on Models- Cloud - Applications-260720.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JEF",
+  "cover_short_title": "K3 之后，中国模型",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JEF：中国大模型K3发布后智能与成本效率变化",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-48-JEF-China -PRC- - Internet-7 Takeaways Post K3 Release- Connect The Dots on Models- Cloud - Applications-260720.pdf",
+    "cleaned_source_title": "JEF-China -PRC- - Internet-7 Takeaways Post K3 Release- Connect The Dots on Models- Cloud - Applications",
+    "institution_name": "JEF",
+    "required_terms": [],
+    "deterministic_fallback": "JEF：中国PRCInternet7TakeawaysPostK3",
+    "raw_candidates": [
+      "JEF：中国大模型K3发布后智能与成本效率变化",
+      "JEF：中国大模型K3发布后智能差距缩小与成本优势",
+      "JEF：中国大模型K3发布后模型迭代与融资动态"
+    ],
+    "cleaned_candidates": [
+      "JEF：中国大模型K3发布后智能与成本效率变化",
+      "JEF：中国大模型K3发布后智能差距缩小与成本优势",
+      "JEF：中国大模型K3发布后模型迭代与融资动态",
+      "JEF：中国PRCInternet7TakeawaysPostK3",
+      "JEF：列举了即将发布的Qwen3.8（2.4T参数）、"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JEF：中国大模型K3发布后模型迭代与融资动态",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "JEF：中国PRCInternet7TakeawaysPostK3",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JEF：列举了即将发布的Qwen3.8（2.4T参数）、",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JEF：中国大模型K3发布后智能与成本效率变化",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JEF：中国大模型K3发布后智能与成本效率变化"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "461",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
