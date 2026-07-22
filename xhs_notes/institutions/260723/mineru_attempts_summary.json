@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0003-IMF_Strengthening-Domestic-Revenue-Mobilization-in-The-Gambia_43916c75.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

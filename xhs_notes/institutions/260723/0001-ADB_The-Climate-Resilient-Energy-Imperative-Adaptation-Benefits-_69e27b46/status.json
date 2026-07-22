@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "亚洲开发银行",
+  "cover_short_title": "能源系统，要撑住",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "亚洲开发银行：能源行业数据与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46.pdf",
+    "cleaned_source_title": "0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46",
+    "institution_name": "亚洲开发银行",
+    "required_terms": [],
+    "deterministic_fallback": "亚洲开发银行：0001ADBTheClimateResilient能源",
+    "raw_candidates": [
+      "亚洲开发银行：气候韧性能源系统适应行动框架",
+      "亚洲开发银行：2024年能源适应优先项覆盖率数据",
+      "亚洲开发银行：亚太能源基础设施气候适应行动框架"
+    ],
+    "cleaned_candidates": [
+      "亚洲开发银行：气候韧性能源系统适应行动框架",
+      "亚洲开发银行：2024年能源适应优先项覆盖率数据",
+      "亚洲开发银行：亚太能源基础设施气候适应行动框架",
+      "亚洲开发银行：0001ADBTheClimateResilient能源",
+      "亚洲开发银行：1.国家气候战略中能源适应优先级仍然偏低"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "亚洲开发银行：2024年能源适应优先项覆盖率数据",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：亚太能源基础设施气候适应行动框架",
+        "reasons": [
+          "anchor_coverage=0.54"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：0001ADBTheClimateResilient能源",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：1.国家气候战略中能源适应优先级仍然偏低",
+        "reasons": [
+          "anchor_coverage=0.23",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "亚洲开发银行：能源行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "亚洲开发银行：气候韧性能源系统适应行动框架",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "亚洲开发银行：能源行业数据与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

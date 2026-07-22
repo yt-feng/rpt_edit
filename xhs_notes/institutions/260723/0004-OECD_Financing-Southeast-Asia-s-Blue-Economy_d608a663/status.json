@@ -1,0 +1,122 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "东南亚的蓝色经济，钱",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x3",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x5",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "经合组织：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663.pdf",
+    "cleaned_source_title": "0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0004OECDFinancingSouth",
+    "raw_candidates": [
+      "经合组织：东南亚蓝色经济融资",
+      "经合组织：东南亚蓝色经济面临2.1万亿美元融资缺口",
+      "经合组织：东南亚蓝色经济融资缺口与政策瓶颈"
+    ],
+    "cleaned_candidates": [
+      "经合组织：东南亚蓝色宏观环境融资",
+      "经合组织：东南亚蓝色宏观环境面临2.1万亿美元融资缺口",
+      "经合组织：东南亚蓝色宏观环境融资缺口与政策瓶颈",
+      "经合组织：0004OECDFinancingSouth",
+      "经合组织：2022-2023年间"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：0004OECDFinancingSouth",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：2022-2023年间",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2.1"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "经合组织：东南亚蓝色宏观环境面临2.1万亿美元融资缺口",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "经合组织：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

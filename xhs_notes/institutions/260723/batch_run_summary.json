@@ -1,0 +1,46 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 4,
+  "pdf_count_before_skip": 4,
+  "pdf_count": 4,
+  "generated_report_count": 4,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 4,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46.pdf",
+          "batch_file": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0001-ADB_The-Climate-Resilient-Energy-Imperative-Adaptation-Benefits-_69e27b46.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24.pdf",
+          "batch_file": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Strengthening-Domestic-Revenue-Mobilization-in-The-Gambia_43916c75.pdf",
+          "batch_file": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0003-IMF_Strengthening-Domestic-Revenue-Mobilization-in-The-Gambia_43916c75.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663.pdf",
+          "batch_file": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0004-OECD_Financing-Southeast-Asia-s-Blue-Economy_d608a663.pdf",
+          "stable_index": "4"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

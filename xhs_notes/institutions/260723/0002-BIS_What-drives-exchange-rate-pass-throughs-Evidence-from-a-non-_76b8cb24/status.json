@@ -1,0 +1,116 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_d22ox2pw/pdfs/0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "国际清算银行",
+  "cover_short_title": "汇率传导到底谁说了算",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "国际清算银行：货币市场与相关指标观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24.pdf",
+    "cleaned_source_title": "0002-BIS_What-drives-exchange-rate-pass-throughs-Evidence-from-a-non-_76b8cb24",
+    "institution_name": "国际清算银行",
+    "required_terms": [],
+    "deterministic_fallback": "国际清算银行：0002BISWhatdrivesexc",
+    "raw_candidates": [
+      "国际清算银行：汇率传导驱动因素研究",
+      "国际清算银行：98国四十年数据揭示汇率传导核心因素",
+      "国际清算银行：通胀水平与宏观环境规模驱动汇率传导"
+    ],
+    "cleaned_candidates": [
+      "国际清算银行：汇率传导驱动因素研究",
+      "国际清算银行：98国四十年数据揭示汇率传导核心因素",
+      "国际清算银行：通胀水平与宏观环境规模驱动汇率传导",
+      "国际清算银行：0002BISWhatdrivesexc",
+      "国际清算银行：2.通胀低于5%时汇率传导效应显著受限"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "国际清算银行：98国四十年数据揭示汇率传导核心因素",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "国际清算银行：通胀水平与宏观环境规模驱动汇率传导",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "国际清算银行：0002BISWhatdrivesexc",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "国际清算银行：2.通胀低于5%时汇率传导效应显著受限",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      }
+    ],
+    "selected_title": "国际清算银行：货币市场与相关指标观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "国际清算银行：汇率传导驱动因素研究",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "国际清算银行：货币市场与相关指标观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
