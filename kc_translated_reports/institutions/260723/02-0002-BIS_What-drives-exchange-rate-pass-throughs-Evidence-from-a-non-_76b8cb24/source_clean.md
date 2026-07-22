@@ -1,0 +1,359 @@
+## BIS Working Papers No 1371
+
+BIS Working Papers are written by members of the Monetary and Economic Department of the Bank for International Settlements, and from time to time by other economists, and are published by the Bank. The papers are on subjects of topical interest and are technical in character. The views expressed in this publication are those of the authors and do not necessarily reflect the views of the BIS or its member central banks.
+
+This publication is available on the BIS website (www.bis.org).
+
+
+# What drives exchange rate pass-throughs? Evidence from a non-parametric method
+
+Emanuel Kohlscheen and Aaron Mehrotra $^{1,2}$
+
+## Abstract
+
+We provide new evidence on the drivers of the pass-through of exchange rate movements into consumer prices across four decades and close to a hundred countries, combining econometrics and random forests. Random forests are particularly useful for modelling highly non-linear relationships, as well as for identifying the relative importance of the different theoretical factors that can affect the degree of pass-through. We find that the size of the economy, which tends to be related to the extent of pricing-to-market, and the level of inflation emerge as the factors most strongly associated with exchange rate pass-through, followed by product homogeneity and the volatility of the exchange rate. As we show, several of these covariates display a non-linear relation with exchange rate pass-throughs. We also document important implications of macroeconomic policy regimes and outcomes, including those related to fiscal policy, for exchange rate pass-through.
+
+JEL Classification: E30; E31; E58; F31; F41.
+
+Keywords: inflation; exchange rate pass-through; Phillips curve.
+
+## 1. Introduction
+
+The extent to which exchange rates affect CPI inflation typically varies a great deal between countries and time periods. At the country level, identifying the impact of the exchange rate on inflation often involves substantial uncertainty, owing to the small number of time series observations and, at times, regime changes. At the same time, while there is a large empirical literature on measuring exchange rate pass-through, much less is known about precisely which factors drive its magnitude and the relative contribution of the different drivers.
+
+A better understanding of the relationship between exchange rate pass-through and the macroeconomic and structural characteristics of different economies is of particular interest post-pandemic. This stems from the sudden and largely unexpected return of higher inflation globally; the associated changes in pricing behaviour and the dramatic shift in the fiscal and monetary landscape; as well as the shifting patterns of trade and globalisation due to geopolitical fragmentation. This raises questions about how the relationship between exchange rates and consumer prices might change if macroeconomic or structural characteristics of the economies were to undergo persistent changes.
+
+The present study throws new light on these issues. It does so by analysing a broad panel of countries over the last 40 years in an empirical framework that, while taking advantage of the larger precision brought about by the large number of observations, also allows for heterogeneous pass-through slopes across countries. Moreover, and in contrast to previous research on exchange rate pass-through, the study uses random forests to quantify precisely the relative contribution of the different economic factors to exchange rate pass-through. The non-parametric approach is particularly useful for modelling highly non-linear relationships. While non-linear effects have been noted in previous studies on exchange rate pass-through (see e.g. Jašová et al (2019)), our study is to our knowledge the first to employ such techniques to model them.
+
+We first show that while the exchange rate pass-through is typically fast, its extent has declined over time. The first-stage Pesaran and Smith (1995) mean group estimators show a pass-through decline from 7.6% over the full sample to 4.4% during the last decade in advanced economies. The corresponding pass-through for a broad group of EMDEs has changed less over time, hovering at around 17–20%.
+
+We then show how non-parametric methods can enrich the analysis and interpretation further. More specifically, in the second step, we rely on the well-established technique of random forests (Breiman (2001)) to link the estimated pass-throughs to the potential factors that have been highlighted in the theoretical literature. This method has the key advantage that it is relatively transparent and does not require subtle tuning of the parameters (Athey and Imbens (2019)). $^{3}$
+
+The random forests approach pins down the size of the economy and the level of inflation as the factors most strongly associated with the extent of pass-through across countries and time. This is followed by the extent of product homogeneity and exchange rate volatility. Perhaps surprisingly, given its salience in the previous literature (e.g. Campa and Goldberg (2005, 2010) and Campa and Mínguez (2006)), the degree of trade openness emerges as the least important factor, among the key variables considered in this paper, in terms of its relationship with pass-through.
+
+We also highlight a number of additional findings.
+
+Interestingly, without imposing any prior or functional form, partial effects from our non-parametric method reveal that pass-throughs are modest as long as inflation stays below
+
+5%. This suggests that a successful pursuit of stable prices is key to assure a limited degree of exchange rate pass-through.
+
+Moreover, we find that the relationship between exchange rate volatility and pass-through is highly non-linear. The strength of the pass-through initially declines as exchange rate volatility rises from low levels, and it reaches a minimum for intermediate levels of exchange rate volatility. The degree of pass-through then increases again as exchange rate volatility rises further. The shape of this U-curve during the last 40 years, and its minimum, are precisely mapped by our data-driven method. Policymakers that wish to stabilise domestic inflation and/or better insulate their economies from global exchange rate movements could potentially assess FX market volatility against this benchmark.
+
+Finally, we analyse the effects of policy regimes and outcomes on exchange rate pass-through. We document that the degree of pass-through is lowest for small deviations of inflation from its target, when the de facto exchange rate regime is either a managed or a free float, and when fiscal policy credibility – proxied here by sound fiscal accounts – is high. To our knowledge, our paper is the first to provide evidence that the degree of pass-through is related to the fiscal health of the sovereign.
+
+Relation to the literature. As the extent of exchange rate pass-through is a central question in macroeconomics, both in open economy modelling and for policy making, the academic literature on the topic is very extensive. We do not aim to provide a full review of this literature here, but rather highlight a selection of papers which relate to ours more directly. $^{4}$
+
+Empirical studies generally concur that exchange rate pass-through has fallen significantly across the world. These include for instance Marazzi and Sheets (2007), Gust el al (2010), Frankel et al (2012) and Jašová et al (2019), among others. Furthermore, most papers conjecture that the fall is related to the drop in average inflation. Alternatively, Bergin and Feenstra (2009) attribute a large share of the decline in pass-through in the United States to increased trade with fixed exchange rate countries, most notably China.
+
+Relatedly, Devereux and Yetman (2010) show how the degree of exchange rate pass-through in an open economy is essentially driven by the speed of adjustment of prices. When the authors allow the frequency of price adjustments in their theoretical model to be endogenous, they find that pass-through is increasing in the average level of inflation. Also Taylor (2000), Choudhri et al. (2005) and Choudhri and Hakura (2006) reach similar conclusions using different methodologies. And, in the general equilibrium model of Devereux et al (2004), the degree of pass-through is tightly linked to monetary stability, with countries with lower money growth volatility featuring lower pass-throughs.
+
+Another stand of the literature emphasises the relevance of exchange rate volatility. Among earlier studies, Krugman (1987) and Froot and Klemperer (1989) posit that the extent of pass-through is connected to the variability of the exchange rate. Following this rationale, Flodén and Wilander (2006) elaborate that if economic agents use (S,s) type price adjustment rules, higher exchange rate variability would mean more frequent touching of adjustment thresholds, implying a higher pass-through. Kohlscheen (2010) finds that emerging markets with higher exchange rate volatility indeed had higher pass-through coefficients in the years that followed the inception of a floating regime. That said, the sample was limited to only eight of the larger emerging markets. $^{5}$
+
+On the other hand, Corsetti et al (2008) show within a theoretical model that even modest nominal frictions can generate stable local currency pricing, and thus a small pass-through coefficient. And Jiménez-Rodríguez and Morales-Zumaquero (2016) empirically document that – with the exception of Japan – larger exchange rate volatility reduced pass-throughs. Given these contrasting results, the effect of exchange rate volatility on pass-through remains a question of debate.
+
+There have been fewer attempts to relate the degree of pass-through to the structural characteristics of economies. Dornbusch (1987) and Menon (1995) link it to country size, indicating that pass-throughs would be smaller in large countries. This is because pricing-to-market is more pervasive in these. Similarly, Goldberg and Tille (2008) argue that the share of invoicing in the currency of the destination country would be higher for larger (destination) countries. $^{6}$ Campa and Goldberg (2005) however find no significant effect of country size in their analysis of the pass-through to import prices in 23 OECD countries.
+
+Further, Campa and Goldberg (2005) and Auer and Chaney (2009) point out that the pass-through coefficient should theoretically be lower if a large share of traded goods is differentiated, as opposed to homogeneous. Antoniades and Zaniboni (2016), and Chen and Juvenal (2016) indeed find a lower pass-through for higher quality goods in the cases of, respectively, retail prices in the United Arab Emirates and Argentine wine exports. On the other hand, Auer and Chaney (2009) report only weak empirical evidence for their theoretical prediction when analysing granular U.S. import data.
+
+The novelty of the current study is twofold. First, we provide novel estimates of pass-throughs relying on a large number of countries and observations, while at the same time allowing for heterogeneous effects across countries. Second, we link the estimated pass-throughs to various macroeconomic and structural factors with precision, using a well-established non-parametric method.
+
+While the random forest analysis confirms some of the findings from the previous literature, in particular the importance of the average level of inflation and country size for pass-throughs, it also provides a number of new findings. This stems from the ability of the method to pin down non-linear dependencies and minimums, for instance with respect to exchange rate variability. More specifically, we find an inflection point at an intermediate level of exchange rate volatility. For significantly lower or higher levels of volatility, the pass-through is found to be much higher. This finding enables the reconciliation of apparent contradictions in the previous literature regarding the relationship between exchange rate volatility and pass-through.
+
+Outline. The article proceeds as follows. Section 2 gives the background and presents the data that were used. Section 3 shows the first-stage econometric estimates. Section 4 explains the random forest method and shows the relative importance of the various factors as well as the partial effects of the key drivers of pass-throughs. Section 5 delves further into the importance of policy related variables for exchange rate pass-through. Section 6 concludes.
+
+## 2. Background and Data
+
+The analysis that follows is based on a comprehensive sample of countries for which the CPI index, the nominal effective exchange rate (NEER) and the output gap are available from the IMF's International Financial Statistics. We also exclude countries where there are less than 20 quarters of data within a given decade. The resulting sample of 98 economies is shown in Table A1 in the Appendix. The data used for estimating exchange rate pass-through are quarterly. The IMF's annual output gap is linearly interpolated to match this frequency. $^{7}$
+
+We classify all economies whose GDP in 2023 exceeded \$30,000 per capita as advanced economies. This group comprises 25 economies and includes countries whose income level is currently at or above those of Italy and South Korea. $^{8}$ The remaining countries are classified as emerging market and developing economies (EMDEs). $^{9}$
+
+Inflation declined sharply in both income groups in the 1990s. Figure 1 shows the evolution of medians by country group and decade. Among EMDEs, the decline continued into the following decade, as more countries adopted inflation targeting regimes. During the 2010s, median inflation touched a low of 1.6% in advanced economies and 3.7% in EMDEs.
+
+Figure 1 also shows corresponding evidence for nominal exchange rate volatility, measured by the average absolute log variation in the NEER. Exchange rate volatility has been low in advanced economies throughout the sample and declined further in the current millennium. By contrast, among EMDEs volatility increased during the crisis-prone 1990s. Since then, however, median exchange rate volatility has seen a sharp decline in this country group as well. While exchange rate volatility in EMEs was roughly double that of AEs in the 1980s and as much as 150% larger in the 1990s, the difference fell to 67% in the 2000s and then further to only 29% during the last decade.
+
+Note that the country coverage underlying these trends increases over time. Whereas 72 countries are included in the 1980s, the coverage increases to 98 countries by the 2010s – as data availability for EMDEs improves.
+
+
+[[KC_IMAGE_001]]
+
+
+## 3. Econometric Estimation of Pass-Throughs
+
+Pass-throughs are estimated using the Pesaran and Smith (1995) mean group estimator. This method has the key advantage that it allows for heterogeneity in the transmission of exchange rate changes to inflation across countries. In contrast, a typical panel data approach that imposes the same coefficient for every country would not allow us to explain heterogeneity in pass-throughs across countries in the second stage. To be more specific, our estimated equation is given by
+
+$$
+\pi_ {i, t} = \alpha^ {i} \cdot \pi_ {i, t - 1} + \beta^ {i} \cdot y g a p _ {i, t} + \sum_ {k = 0} ^ {4} \gamma_ {k} ^ {i} \cdot \varDelta e _ {i, t - k} + \theta_ {i} + \varepsilon_ {i, t},
+$$
+
+where $\pi_{i,t}$ is the log difference of the price level in country i at quarter t, $ygap_{i,t}$ is the output gap, $\Delta e_{i,t-k}$ is the log difference of the nominal effective exchange rate in country i at quarter t-k, $\theta_{i}$ is the country-specific intercept (i.e. country fixed effect) $^{10}$ and $\varepsilon_{i,t}$ the error term. The estimated coefficients are allowed to differ from country to country. That is, $\alpha^{i} = \alpha + \eta_{1i}$ , $\beta^{i} = \beta + \eta_{2i}$ and so on. We estimate the above relation with and without additional controls for the variation in Brent crude oil prices, the CBOE stock market volatility index and a dummy variable that takes the value one during the global financial crisis of 2008-09. $^{11}$
+
+The full sample results show that exchange rate pass-through is typically quite fast. $^{12}$ Table 1 shows the estimated mean effects for the full sample and by decade, as well as the resulting exchange rate pass-throughs within a 1-year horizon. The coefficients are computed as outlier-robust means. What is clear is that the bulk of the impact on inflation occurs within the same quarter of the exchange rate change, or in the quarter immediately after. The average 1-year pass-through for this broad sample of 98 countries is 13.4%, with a t-statistic of 9.6.
+
+Further, the control variables obtain the expected signs. The AR(1) term suggests significant persistence in inflation, while the output gap coefficient indicates that inflation is directly related to the degree of over- or underheating in the economy (with a t-statistic of 5.7) – an observation that is in line with a standard price Phillips curve.
+
+Estimation of Exchange Rate Pass Through (Pesaran-Smith mean group estimator)
+Dependent variable: CPI (log change), quarterly. Unbalanced panel.
+
+
+Note: Estimated on quarterly data. Robust standard errors are shown below coefficients. \*\*\*/\*\*/\* denote statistical significance at 1/5/10% confidence level.
+
+How do the results differ between advanced economies and EMDEs? Table 2 shows that the estimated 1-year pass-through in advanced economies, at 7.6%, is lower than the 17.1% estimated for EMDEs. What is more, the exchange rate pass-through in advanced economies reduced even further to 4.4% during the past decade. Among EMDEs, by contrast, the estimated 1-year pass-through during the 2010s falls within standard confidence intervals for the full sample – indicating no significant change in this very broad sample of countries.
+
+Table 2
+Advanced vs Developing Economies
+
+
+Note: Estimated on quarterly data. Robust standard errors are shown below coefficients. \*\*\*/\*\*/\* denote statistical significance at 1/5/10% confidence level.
+
+While the mean coefficients in Tables 1 and 2 above are obtained for each decade subsample, the methodology also yields country-specific estimates for each regression. These allow us to compute pass-through estimates for each country-decade in the sample. $^{13}$ We use this rich variation in the country-time specific estimates next, when examining which factors drive the degree of pass-through.
+
+## 4. What Drives Pass-Throughs?
+
+The econometric estimation above quantified pass-through for each country-decade. We examine how potential factors advanced in the literature are associated with the estimated pass-through coefficients.
+
+To this end, we use random forests, developed by Breiman (2001). These are flexible but highly disciplined classification algorithms based on an ensemble of regression trees. Essentially, what a regression tree does is to repeatedly split the sample of (332 pass-through) observations based on the explanatory variable and the associated threshold level that minimises the sum of squared prediction errors after the split. This is done exhaustively on the resulting subsamples so that a regression tree takes shape, until a stopping criterion is reached. Outcome predictions are then just the average pass-through over all the observations contained in a terminal node of the tree.
+
+To put it in mathematical terms, the splitting of observations at each node is based on a choice of predictor k and an associated threshold $t_{k}$ at which the split happens, selected according to the expression
+
+$$
+\arg \min (k, t _ {k}) \frac {(S _ {A} . M S E (S _ {A}) + S _ {B} . M S E (S _ {B}))}{s},
+$$
+
+where S corresponds to the number of observations in the training sample, i.e. the sample used to construct different candidate models. A and B represent the subsets of the training sample after a binary split.
+
+To ensure robustness, random forests are based on an ensemble of trees – where each tree is grown after a fraction of observations and of explanatory factors are randomly thrown out of the sample. As Susan Athey and Guido Imbens (2019) put it, a key advantage of random forests is that this simple method typically has “great out-of-sample performance without requiring subtle tuning” (p. 696). $^{14}$ In this sense, the methodology is more transparent than most alternatives. The fact that this data driven method is non-parametric and does not rely on any a priori imposition of functional form (such as linearity), also makes it appropriate to detect critical threshold values, asymmetries, and/or inflection points. Note however that the results of the approach should best be interpreted as associative patterns, and not as causal effects.
+
+We use five key covariates that have been put forth in the literature as potential explanatory factors for the degree of pass-through (in our case, for the 332 country-decade estimates). These are the average level of CPI inflation in the respective country-decade, exchange rate volatility (the coefficient of variation of the nominal effective exchange rate), trade openness (the trade-to-GDP ratio), the size of the economy (the log of constant USD GDP) and the degree of homogeneity of goods (proxied by the share of food and fuel products in imports). A priori, one would expect countries with low levels of inflation, those that are smaller and more open, and those that rely on less homogeneous goods – where price differentiation and markups are likely larger – to have a weaker pass-through from the exchange rate to consumer prices.
+
+The analysis suggests that the mean squared errors already come close to a minimum when around 20 regression trees are used. This is shown in Figure 2 which displays the mean squared prediction errors of the random forest model of pass-throughs, based on the five explanatory variables. However, there is little cost of adding more trees to obtain greater stability in model predictions. In what follows, we use an ensemble of 1,000 trees.
+
+Fig. 2 - Model cross-validation (bagging)
+
+[[KC_IMAGE_002]]
+
+
+Figure 3 shows the resulting pass-through predictor importance of the random forest model, that is, how much each covariate contributes to reducing the mean square errors of the model. This is based on the Shapley values for each observation – that is, indicators of how much each variable changes the predicted outcome when added to the remaining variables. In Figure 3, the mean of these absolute Shapley values is shown for each factor, without any directional interpretation. The figure shows that the size of the economy, which tends to be related with the extent of pricing-to-market, and the level of CPI inflation are most strongly associated with ERPTs, followed by the degree of homogeneity in imports and the volatility of the exchange rate.
+
+Fig. 3 - Mean Absolute Shapley Values by Factor (normalized)
+
+[[KC_IMAGE_003]]
+
+
+Importantly, we can go further in the analysis by eliciting the equivalent of partial effects in econometrics. As in the latter, these are the fitted pass-through models where all variables but one are kept constant at their respective sample medians.
+
+Figure 4 shows the resulting partial effects for mean inflation levels. All else equal, pass-throughs are minimised for average inflation levels below 5%. Above this level, pass-throughs clearly rise with inflation. At an inflation rate of 20%, the exchange rate pass-through is about twice as high as when inflation is near 2%. $^{15}$ This result suggests that maintaining low average inflation would be associated with exchange rate pass-through at moderate levels.
+
+
+[[KC_IMAGE_004]]
+
+
+How does pass-through vary with exchange rate volatility? The partial effects plotted in Figure 5 suggest an U-shape, with a minimum over the 40-year sample obtained at a NEER standard deviation of 8%. Compared to exchange rate volatility in the 2010s, this minimum corresponds to the 80 $^{th}$ percentile of the distribution over that decade (and close to the level experienced in Australia or Colombia). $^{16}$ $^{17}$ The degree of pass-through clearly increases as exchange rate volatility reduces to very low or rises to very high levels. Thus, at least part of the reduction in pass-through across time can be explained by the lower exchange rate volatility in recent decades (see Figure 1).
+
+The above result can be understood when one considers the differences in the perceived probability of reversion of exchange rate moves. In countries where the exchange rate is more firmly anchored (such as in some form of peg), exchange rate volatility is low and eventual exchange rate moves may be perceived as more unlikely to be reversed. Price setters may thus be more prone to adjust prices considering the new exchange rate. In turn, countries with very high exchange rate volatility may be countries where economic fundamentals are much weaker, and currency depreciations are followed by new depreciations, requiring adjustments to retail prices. By contrast in countries with intermediate levels of exchange rate volatility, such as in a successful float, price setters may opt for a wait-and-see mode in price adjustments, as the exchange rate movement could well be reversed.
+
+
+[[KC_IMAGE_005]]
+
+
+The joint importance of the former two factors is illustrated in Figure 6 in the form of a partial dependence plot. The figure confirms that the lowest pass throughs are attained when average inflation is low and exchange rate volatility is neither too low nor too high (yellow area in the graph). Further, exchange rate pass-through rises to higher levels when inflation is high and the (nominal) exchange rate volatility is very low (blue area in the graph).
+
+Fig. 6 - ERPT = f(inflation, vol NEER)
+
+[[KC_IMAGE_006]]
+
+
+Conforming to the theoretical prior, the pass-through also tends to increase as the degree of product homogeneity increases (Figure 7). When food and fuel account for up to a quarter of total imports – so that product homogeneity is low – the one-year pass through hovers around 15%. It then increases sharply for higher shares of homogeneous goods – to around 30%. This could reflect the fact that price differentiation or an increase in profit margins tends to be more difficult for less differentiated and less sophisticated goods. The number of suppliers for such goods may be large, compressing room for mark-ups.
+
+Further, the degree of pass-through declines with country size (as shown in Figure 8) – a result that is in line with the original conjecture of Dornbusch (1987) and of Menon (1995). This is partly because pricing-to-market is more likely to be a feature of larger economies.
+
+Fig. 7 - ERPT = f(product homogeneity)
+
+[[KC_IMAGE_007]]
+
+
+[[KC_IMAGE_008]]
+
+
+## 5. The role of policy choices
+
+The previous results already partly reflect the influence of macroeconomic policy, in particular the association of exchange rate pass-throughs with the average level of inflation and with exchange rate volatility.
+
+It is also of interest to consider the relationship of exchange rate pass-through with policy-related variables more explicitly. In what follows, we do this for four variables: the deviation of inflation from the central bank's target (i.e. the “inflation gap”), the de facto exchange rate regime, and the health of the government's fiscal accounts, as reflected in the level of public debt and deficits. Formally, we include additional variables one by one to the benchmark specification of the previous section.
+
+First, we consider the importance of inflation gaps – i.e. the deviation of actual inflation from the central bank's target – computed as country-decade averages. It is important to note that for this exercise we are restricted to the subsample of inflation targeting countries and times. Not surprisingly, the median inflation gap in the sample is low, at 0.7 percentage points, indicating that central banks that have formally pursued inflation targeting have by and large been successful in meeting their targets. That said, given some outliers among EMDEs, the average inflation gap in the sample is notably higher than the median.
+
+Fig. 9 - Model with Inflation Gap - Shapley Values by Factor
+
+[[KC_IMAGE_009]]
+
+
+Inflation gaps emerge as highly relevant predictors, when evaluating their importance based on Shapley values (Figure 9). We take this as prima facie evidence that – strictly within the group of inflation targeting countries – the strength of the monetary policy framework is highly relevant for the degree of pass-through.
+
+Further, partial effects show that the inflation gaps have a non-linear relationship with the degree of exchange rate pass-through (Figure 10). As inflation targeting regimes have generally been successful in stabilising inflation (see e.g. Duncan et al (2022)), most observations for inflation gaps in the data are small in magnitude. When inflation is below the central bank's target or in the presence of a positive but small inflation gap, the one-year pass-through hovers around 20%. The pass-through increases sharply when the inflation gap surpasses 2–3%.
+
+
+[[KC_IMAGE_010]]
+
+
+Overall, the results for inflation gaps are consistent with those obtained for the level of average inflation and underscore the importance of maintaining low inflation. From a more technical viewpoint, an important caveat is that the results with inflation gaps are based on a much smaller sample. This is because only 22% of the country-decade observations pertain to inflation targeters – thus allowing for the computation of inflation gaps.
+
+Besides including realised exchange rate volatility as in the baseline model, exchange rate regimes can also be considered within this framework. Here we use the “coarse” de facto exchange rate classification of Ilsetzki et al (2019) and (2021). The index in question takes values from 1 to 6, with higher values indicating more flexible exchange rate arrangements. $^{18}$
+
+The results with the exchange rate regime indicator are consistent with the prior ones based on exchange rate volatility. The pass-through is higher with more fixed exchange rate regimes, declining as one moves towards flexible arrangements. That said, the variation of pass-through is generally much smaller than the one obtained with exchange rate volatility itself (which is also included in the current model). The absolute Shapley value associated with the exchange rate regime is the third-highest, behind the size of the economy but before exchange rate volatility (see Graph A6 in the Appendix).
+
+Fig. 11 - ERPT = f(regime.llzetzki)
+
+[[KC_IMAGE_011]]
+
+
+Fig. 12 - ERPT = f(budget surplus / GDP)
+
+[[KC_IMAGE_012]]
+
+
+[[KC_IMAGE_013]]
+
+
+Finally, we contribute to the literature by examining the relationship between fiscal variables and the degree of exchange rate pass-through. Fiscal variables could matter for pass-through through their effects on inflation. Such effects are highlighted in the fiscal theory of price level (see eg Leeper (1991); Sims (1994); Cochrane (2003)). A higher price level is required to stabilise the real value of public debt when the fiscal authority does not raise future primary surpluses in response to higher fiscal deficits (i.e., when fiscal policy is not Ricardian). Leeper et al (2024) show that, in the absence of a commitment to time-inconsistent fiscal and monetary policies, the temptation to use inflation surprises to stabilise debt rises with the level of public debt. Banerjee et al (2022) document empirically that in “fiscally-led regimes”, where governments do not stabilise debt over time and monetary policy independence is in question, higher fiscal deficits lead to large increases in inflation. More generally, the level of public deficit and debt can proxy for the health of the fiscal accounts and thus for the broader credibility of macroeconomic policy.
+
+There is large variation in exchange rate pass-through across different sizes of headline budget deficits. High budget deficits are clearly associated with high exchange rate pass-throughs. When the deficit exceeds 5% of GDP, the coefficient hovers around 35%. This figure reduces as budgets move towards a surplus, falling to 17% when the budget surplus reaches 5% of GDP (Figure 12).
+
+Similar evidence obtains for government debt – i.e. the exchange rate pass-through tends to rise with the level of government debt (Figure 13). In terms of predictor importance, however, sovereign indebtedness on its own does not feature among the most prominent drivers of pass-throughs (Appendix Figure A.7).
+
+Overall, the results with public debt and deficits are consistent with the premise that fiscal fragilities affect inflation risks and could therefore also be reflected as stronger exchange rate pass-throughs. Notably, the results obtain even when we also include the average level of inflation in the model.
+
+## 6. Concluding Remarks
+
+We have documented how econometric estimates can be combined with modern non-parametric techniques to disentangle economic and structural drivers of exchange rate pass-through across countries and time. Using the random forest method, we have shown that the degree of pass-through is minimised when average inflation is close to the central bank's target. Importantly, we have also shown that previous, apparently contradictory results in the empirical literature, can be reconciled by the observation that the pass-through is a U-shaped function of exchange rate volatility.
+
+Additionally, we documented that pass-throughs are lower when overall macroeconomic policy credibility – including fiscal – is high, when product homogeneity is low, and when the economy in question is not too small. For most of these factors, we find an important degree of non-linearity, suggesting that non-parametric methods as the one used here are better suited for uncovering the empirical relationships.
+
+Our methodology that combines first-stage econometric estimates with a second-stage random forest based dissection of coefficients can easily be used to address other important questions in economics.
+
+## References
+
+
+Aron, J., R. MacDonald and J. Muellbauer (2014) Exchange rate pass-through in developing and emerging markets: a survey of conceptual, methodological and policy issues, and selected empirical findings. Journal of Development Studies, vol. 50, 1, 101-143.
+
+Athey, S. and G. W. Imbens (2019) Machine learning methods that economists should know about. Annual Review of Economics, vol. 11, pp. 685-725.
+
+Auer, R. and T. Chaney (2009) Exchange rate pass-through in a competitive model of pricing-to-market. Journal of Money, Credit and Banking, vol. 41, 1, 151-175.
+
+Banerjee, R., V. Boctor, A. Mehrotra and F. Zampolli (2022) Fiscal deficits and inflation risks: the role of fiscal and monetary policy regimes. BIS Working Paper no. 1028.
+
+Benigno, P. and E. Faia (2016) Globalization, pass-through, and inflation dynamics. International Journal of Central Banking, vol. 16, 263-306.
+
+Bergin, P.R. and R.C. Feenstra (2009) Pass-through of exchange rates and competition between floaters and fixers. Journal of Money, Credit and Banking, vol. 41, 11, 35-70.
+
+Breiman, L. (2001) Random forests. Machine Learning, vol. 45, pp. 5-32.
+
+Burstein, A. and G. Gopinath (2014) Handbook of International Economics, vol. 4, chapter 7.
+
+Campa, J.M. and Goldberg, L.S. (2005) Exchange rate pass-through into import prices. The Review of Economics and Statistics, vol. 87 (4), 679-690.
+
+Campa, J.M., Goldberg, L.S. (2010) The sensitivity of the CPI to exchange rates: distribution margins, imported inputs, and trade exposure. The Review of Economics and Statistics, vol. 92(2), 392-407.
+
+Campa, J.M. and J.M.G. Mínguez (2006) Differences in exchange rate pass-through in the euro area. European Economic Review, vol. 50, 121-145.
+
+Chakraborty, C. and A. Joseph (2017) Machine learning at central banks. Bank of England Working Paper no. 674.
+
+Cheik, N.B., Y.B. Zaied and H.B. Ameur (2023) Recent developments in exchange rate pass-through: what have we learned from uncertain times? Journal of International Money and Finance, vol. 131, 102805.
+
+Chen, N. and L. Juvenal (2016) Quality, trade, and exchange rate pass-through. Journal of International Economics, vol. 100, 61–80.
+
+Choudhri, E. U., H. Faruqee and D.S. Hakura (2005) Explaining the exchange rate pass-through in different prices. Journal of International Economics, vol. 65, 2, 349-374.
+
+Choudhri, E.U., Hakura, D.S. (2006) Exchange rate pass-through to domestic prices: does the inflationary environment matter? Journal of International Money and Finance, vol. 25, 614-639.
+
+Cochrane, J. H. (2023) The fiscal theory of the price level. Princeton University Press.
+
+
+Devereux, M.B., C. Engel and P.E. Storgaard (2004) Endogenous exchange rate pass-through when nominal prices are set in advance. Journal of International Economics, vol. 63, 2, 263-291.
+
+Devereux, M.B. and J. Yetman (2010) Price adjustment and exchange rate pass-through. Journal of International Money and Finance, vol. 29, 1, 181-200.
+
+Dornbusch, R., (1987) Exchange rates and prices. American Economic Review, vol. 77, 93-106.
+
+Duncan, R., E. Martinez-Garcia, and P. Toledo (2022) Just do IT? An assessment of inflation targeting in a global comparative case study," Globalization Institute Working Paper no. 418, Federal Reserve Bank of Dallas.
+
+
+Flodén, M., Wilander, F., (2006) State-dependent pricing, invoicing currency, and exchange rate pass-through. Journal of International Economics 70, 178–196.
+
+Froot, K., Klemperer, P. (1989) Exchange rate pass-through when market share matters. American Economic Review, 637–654.
+
+Frankel, J., D. Parsley and S. Wei (2012) Slow pass-through around the world: a new import for developing countries? Open Economies Review, vol. 23, 213–251.
+
+Goldberg, L. and C. Tille (2008) Vehicle currency use in international trade. Journal of International Economics, vol. 76, 2, 177–192.
+
+Gust, C., S. Leduc and R. Vigfusson (2010) Trade integration, competition, and the decline in exchange rate pass-through. Journal of Monetary Economics, vol. 57, 3, 309–324.
+
+Ilzetzki, E., C. Reinhart and K. Rogoff (2019) Exchange arrangements entering the 21st century: which anchor will hold? Quarterly Journal of Economics, vol. 134, 2, 599–646.
+
+Ilzetzki, E., C. Reinhart and K. Rogoff (2021) Rethinking exchange rate regimes (with Reinhart, C. and K. Rogoff). Handbook of International Economics, vol. 5, Gopinath, G., E. Helpman and K. Rogoff, eds.
+
+Jašová, M., R. Moessner and E. Takats (2019) Exchange rate pass-through: what has changed since the crisis? International Journal of Central Banking, 15, 3, 27–58.
+
+Jiménez-Rodríguez, R. and A. Morales-Zumaquero (2016) A new look at exchange rate pass-through in the G-7 countries. Journal of Policy Modelling, vol. 38, 985–1000.
+
+
+Krugman, P. (1987) Pricing to market when the exchange rate changes. In: Arndt, Richardson (Eds.), Real Financial Linkages among Open Economies. MIT Press, Cambridge/MA, pp. 49–70.
+
+Krugman, P. (1989) Exchange Rate Instability. MIT Press, Cambridge, MA.
+
+Leeper, E.M. (1991) Equilibria under ‘active’ and ‘passive’ monetary and fiscal policies. Journal of Monetary Economics, vol. 27, 1, 129–147.
+
+Leeper, E.M., L. Campbell and D. Liu (2021) Optimal time-consistent monetary, fiscal and debt maturity policy. Journal of Monetary Economics, vol. 117, 600-617.
+
+Marazzi, M. and N. Sheets (2007) Declining exchange rate pass-through to U.S. import prices: the potential role of global factors. Journal of International Money and Finance, vol. 26, 924–947.
+
+Menon, J. (1995) Exchange rate pass-through. Journal of Economic Surveys, vol. 9, 2, 197–231.
+
+Sims, C.A. (1994) A simple model for study of the determination of the price level and the interaction of monetary and fiscal policy. Economic Theory, vol. 4, 3, 381–399.
+
+Taylor, J. (2000) Low inflation, pass-through, and the pricing power of firms. European Economic Review, vol. 44, (7), 1389–1408.
+
+
+[[KC_IMAGE_014]]
+
+
+Fig. A2 - Example of Grown Regression Tree (only top)
+
+[[KC_IMAGE_015]]
+
+
+Fig. A3 – Volatility of NEERs (2010–2019)
+
+[[KC_IMAGE_016]]
+
+
+Fig. A4 - ERPT = f(vol NEER): varying inflation levels
+
+[[KC_IMAGE_017]]
+
+
+[[KC_IMAGE_018]]
+
+
+Fig. A6 - Model with ER Regime -Shapley Values by Factor
+
+[[KC_IMAGE_019]]
+
+
+Fig. A7 - Model with Debt - Shapley Values by Factor
+
+[[KC_IMAGE_020]]
+
+
+Table A1 - List of countries
+
+
+Estimation of Exchange Rate Pass Through (Pesaran-Smith mean group estimator) Version without additional control variables
+
+
+Note: Estimated on quarterly data. Robust standard errors are shown below coefficients. \*\*\*/\*\*/\* denote statistical significance at 1/5/10% confidence level.
+
+Advanced vs Developing Economies - without additional control variables
+Dependent variable: CPI (log change), quarterly.
+
+
+Note: Estimated on quarterly data. Robust standard errors are shown below coefficients. \*\*\*/\*\*/\* denote statistical significance at 1/5/10% confidence level.
