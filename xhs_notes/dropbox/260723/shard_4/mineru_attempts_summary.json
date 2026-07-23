@@ -1,0 +1,76 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 5,
+    "timed_out": true,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0001-21-GS-CHINA SPORTSWEAR-Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027-260722.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0002-22-GS-HUAMING -002270- Upgrade to Buy on attractive valuation post correction- while stable overseas growth driven by global grid upgrade remains intact-260722.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0003-23-GS-EUROPEAN ECONOMICS ANALYST-Euro Area-Higher Energy Prices Undo Recent Inflation Progress-260723.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0004-24-GS-China- Fiscal revenue and expenditure growth both improved in June- while land sales revenue contracted further-260722.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0005-25-GS-How China Is Buffering the Global Energy Supply Shock-260722.pdf",
+        "state": "pending",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0001-21-GS-CHINA SPORTSWEAR-Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0002-22-GS-HUAMING -002270- Upgrade to Buy on attractive valuation post correction- while stable overseas growth driven by global grid upgrade remains intact-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0003-23-GS-EUROPEAN ECONOMICS ANALYST-Euro Area-Higher Energy Prices Undo Recent Inflation Progress-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0004-24-GS-China- Fiscal revenue and expenditure growth both improved in June- while land sales revenue contracted further-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_pz3i4qk8/pdfs/0005-25-GS-How China Is Buffering the Global Energy Supply Shock-260722.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+Found 62 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0001-21-Goldman Sachs-CHINA SPORTSWEAR-Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0002-22-Goldman Sachs-HUAMING -002270- Upgrade to Buy on attractive valuation post correction- while stable overseas growth driven by global grid upgrade remains intact-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0003-23-Goldman Sachs-EUROPEAN ECONOMICS ANALYST-Euro Area-Higher Energy Prices Undo Recent Inflation Progress-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0004-24-Goldman Sachs-China- Fiscal revenue and expenditure growth both improved in June- while land sales revenue contracted further-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0005-25-Goldman Sachs-How China Is Buffering the Global Energy Supply Shock-260722.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=f7d2d50c-4113-4930-bd31-133c1373b04e
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU batch f7d2d50c-4113-4930-bd31-133c1373b04e had no parsing progress after 300s; switching token/retry path.
+5 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0001-21-Goldman Sachs-CHINA SPORTSWEAR-Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0002-22-Goldman Sachs-HUAMING -002270- Upgrade to Buy on attractive valuation post correction- while stable overseas growth driven by global grid upgrade remains intact-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0003-23-Goldman Sachs-EUROPEAN ECONOMICS ANALYST-Euro Area-Higher Energy Prices Undo Recent Inflation Progress-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0004-24-Goldman Sachs-China- Fiscal revenue and expenditure growth both improved in June- while land sales revenue contracted further-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pz3i4qk8/pdfs/0005-25-Goldman Sachs-How China Is Buffering the Global Energy Supply Shock-260722.pdf
+MinerU attempt 2 using MINER_U batch_id=fdf31e94-2610-46f0-b831-992a519ca83d
+MinerU states: running, running, running, pending, pending
+MinerU states: running, running, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 4b2e683aa9fdc906c54a3b2b4f5868b4b6466855f59d45a78ea4f19bb13aec22.jpg: score=-1;odd_ratio:6.12,edge:0.19
+Skip non-chart visual asset 232858fd2a18d1040329b8c7d4688974a1fc2cd7d8ad66ee8504775dc9b205f1.jpg: score=-100;too_small:1159x115
+Neutralized WeChat title while keeping the report: 高盛：中国运动服饰-下调滔搏宝胜预估以反映耐克终止线上销售 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset e2a063fb351a628e5013c315408383b95bf4103943e6b49d2c1331e1118d573c.jpg: score=-100;too_small:523x156
+Skip non-chart visual asset 3977d228bac031ad96bb0de38233612c893b42897ba3d79f65b77791d2cb445d.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.35,contrast,large
+Skip non-chart visual asset 61bb2e13c9e5d8020631d1e20fb2c3d363cdcc90be8f62d9af6c53ad78a20329.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.34,contrast,large
+Skip non-chart visual asset 3b7073ce9bcd8ba15527079e80a6c2fa78d9f290d86da9dde0ced08f0e8be51c.jpg: score=-100;too_small:1159x107
+Skip non-chart visual asset bde13bc25f9b6cc771e025007ea6e040180cbc8b3d9d7ac6cc48e67c4b000f88.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 高盛：华明装备估值回调后海外增长逻辑未变 -> 高盛：华明装备业务与近期数据观察
+Skip non-chart visual asset c1bca7417a727de6bf1819ba0a5e5102ba1c0dba07b2e61b8929a99989967584.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.14
+Skip non-chart visual asset 321ecd74ddee71e90bde8d75623caea212f3f4b9ad97edba578bacd0d315d940.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.17
+Skip non-chart visual asset 292128651e661d7907334c1f935e384b8846b7b72ad7e0e784398eff65c1d65e.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.15
+Skip non-chart visual asset 3a626c95bfc8b9b4cbe8d69e28edf277b21b9b989f7593bb66a1fac7d427904c.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.19
+Neutralized WeChat title while keeping the report: 高盛：能源价格上涨抵消欧元区近期通胀进展-6月数据 -> 高盛：价格数据与市场变化观察
+Neutralized WeChat title while keeping the report: 高盛：中国6月财政收入与支出增速均加快-土地收入降幅扩大 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset fc58a4714dbd410800a1ec40d3ef9d41b146f2593433bbf6fa3aefe058af6735.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.23,contrast,large
+Skip non-chart visual asset abe5c85cccc5bba180a5495812e8cd6e77237035be1a135bf715b8b40a10d016.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Neutralized WeChat title while keeping the report: 高盛：中国缓冲全球能源供应冲击 -> 高盛：能源行业数据与主题变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260723/shard_4; successful_reports=5; mineru_timed_out=True; mineru_attempts=2
+All batches completed successfully. Generated 5 report directories.
