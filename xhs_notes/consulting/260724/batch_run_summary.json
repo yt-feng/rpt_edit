@@ -1,0 +1,36 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 2,
+  "pdf_count_before_skip": 2,
+  "pdf_count": 2,
+  "generated_report_count": 2,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 2,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_European-Chemicals-2030-2040_7356a686.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nfcynfjr/pdfs/0001-BCG_European-Chemicals-2030-2040_7356a686.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nfcynfjr/pdfs/0002-BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff.pdf",
+          "stable_index": "2"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

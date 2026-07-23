@@ -1,0 +1,3908 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                46,
+                186,
+                87
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "European Chemicals 2030–2040"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                120,
+                803,
+                235
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategic Pathways to Rebuild Advantage"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                247,
+                788,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                310,
+                179,
+                328
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Jan Friese, Jan Beier, Hubert Schönberger, Christian Hoffmann, Julia Meisel, and Katarzyna Raszka"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                343,
+                648,
+                375
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                46,
+                161,
+                76
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Where Strategic Clarity Meets Applied AI"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                110,
+                371,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We are navigating an era of unprecedented change and disruption—powered by technology, marked by complexity, where change amplifies at scale. To lead, companies need a partner that can bridge the gap between ambition and outcomes. BCG is built for this moment. We bring strategic clarity, rooted in over 60 years of deep domain knowledge, to ensure leaders make the right choices. We combine it with applied AI, shaped and wielded by our practitioners, teaming shoulder-to-shoulder with your teams to deliver transformative impact at scale. The result? Stronger returns, transferred capabilities, and change that sticks. We are BCG."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                123,
+                477,
+                282
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Table of Contents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                46,
+                484,
+                84
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "03 Executive Summary\n04 A Structural Shift in Industry Economics\n06 The Diverging Outlook Across Chemical Segments\n07 A Limited Spectrum of Future Outcomes\n09 Strategic Choices Become More Selective\n10 Business Model Evolution\n12 Building Resilience Through No-Regret Moves\n14 Conclusion"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                117,
+                655,
+                439
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2d8c565d0b536eae0065f20e5d443b264095bb29d43b17163f57a99e12dc5e5a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                390
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Executive Summary"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                432,
+                544,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The European chemical industry is undergoing a structural reset. In recent years, higher energy and feedstock costs, tighter regulation, persistent global overcapacity, and shifting demand patterns have steadily eroded Europe's competitive position. These pressures are not cyclical. They reflect lasting changes in the economics of the chemical industry and in where value is created."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                508,
+                473,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Q2 2026, the global disruption to oil supply routes caused by developments in the Middle East resulted in an improvement in the competitive position of European chemical producers. This was largely due to tighter supply-demand balances worldwide and the renewed willingness of domestic customers to pay higher prices for reliable European supply. However, the improvement should be viewed as a temporary upturn rather than a structural recovery, given that the main problems facing European producers - weak demand, high input costs, global overcapacity, and lower-priced competition from Asia and the Middle East - remain unresolved."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                624,
+                480,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The effects of Europe's structural reset are already visible in lower plant utilization, margin pressure, closures, and divestments. Between 2020 and 2025, European utilization rates were roughly 10 percentage points below the 2015–2020 average. Yet the impact of these forces has been uneven. Differentiated, defensible segments with stronger innovation or customer proximity remain comparatively resilient, while energy-intensive and globally traded valuechains face a much tougher challenge to stay competitive. Portfolio averages are becoming less useful, and legacy assumptions about integrated value chains are under pressure. Strategic choices increasingly need to be made segment by segment and, in some cases, asset by asset."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                795,
+                473,
+                881
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                512,
+                508,
+                917,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Uncertainty persists, but the set of plausible industry outcomes is narrower than it might appear at first sight. Current trajectories suggest that competitive disadvantages among players could become visible across most major value chains by 2030. But by 2040, the resulting industry structure is likely to be far more entrenched. Across scenarios, the companies most likely to outperform will be those that move early to reshape their portfolios, improve structural costs, secure financially advantaged feedstock and energy, and build stronger positions in differentiated, defensible segments. Those that delay action now risk becoming trapped between rising costs and intensifying import pressures."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                624,
+                922,
+                796
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                946,
+                927,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                952,
+                868,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0049507c82bf4aa1c9f8270e5d111d45d3901b00a4bb998fe330a25899ab20a7.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                390
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A Structural Shift in Industry Economics"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                431,
+                594,
+                512
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The current situation is not the result of a single shock but is due to several structural shifts occurring at once. Any one of these shifts would be manageable in isolation but not when combined. Together, they are reshaping the economics of chemical production in Europe."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                552,
+                475,
+                625
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global capacity expansion, but particularly in Asia, has outpaced demand growth and created sustained overcapacity across multiple value chains. This has resulted in materially lower European utilization rates, weakening the cost efficiency of capital-intensive assets."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                637,
+                477,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Demand is gradually shifting toward circular and lower-carbon products, supported by regulation and customer commitments - although customer research suggests the willingness to pay a green premium remains limited and adoption is still at an early stage. However, these premiums are insufficient to offset the structural cost disadvantages faced by many European producers."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                722,
+                480,
+                824
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These cost disadvantages are pronounced. In 2025, European gas and power prices were still materially above those in the United States and the Middle East, with the largest impact felt in energy-intensive chains. This gap in energy prices directly affects commodity value chains where energy is a dominant cost component."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                837,
+                478,
+                881
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                512,
+                552,
+                910,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Import pressure is also becoming more visible in selected chains. In polypropylene, for example, China's share of Western European imports has increased significantly over the past decade. The absolute level remains modest, but the trend signals rising vulnerability to import-led price pressure."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                609,
+                931,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulation adds further cost pressure. Carbon pricing under the European Union's Emissions Trading System has increased by roughly €40 per ton over the past five years, alongside broader regulatory tightening."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                695,
+                926,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taken together, these pressures create a structural competitiveness gap that incremental improvement programs will not close."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                766,
+                922,
+                809
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                945,
+                927,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                46,
+                147,
+                61
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Burning Platform | Five forces pressuring the European chemical industry"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                63,
+                650,
+                117
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9dc73bb52637ebab31a07eee0053dd18ec73d3ee71a3aecbe46338a002c6d8ae.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                65,
+                195,
+                460,
+                749
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note: ME = Middle East  \nSource: BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                863,
+                238,
+                890
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Supply"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                584,
+                142,
+                647,
+                159
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global overcapacity & utilization pressure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                172,
+                816,
+                187
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Persistent overcapacities across value chain steps and in end markets (e.g., Auto in China)"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                189,
+                855,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European utilization 2020-25 down 10 ppts vs. 2015–20"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                214,
+                816,
+                241
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Demand"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                586,
+                284,
+                660,
+                299
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Evolving customer needs & regional shifts"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                313,
+                818,
+                329
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Trend towards circularity/ sustainability, lightweight, modularization – but not enough to counter other risks"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                331,
+                892,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": ">80% consumers are ready to accept a green premium"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                356,
+                892,
+                370
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2de4e584b44995c4f2ddc3c21a0b8e9fa4cb805aae626fbcf3e29e55430d5faa.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                510,
+                403,
+                559,
+                436
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cost competitiveness"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                584,
+                412,
+                763,
+                428
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Feedstock & energy costs"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                442,
+                699,
+                456
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Unit cost multiple times higher in Europe than in, e.g., ME or North America"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                458,
+                858,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European gas up to 4x more costly than US/ME, power 2x more than US in 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                483,
+                850,
+                512
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ed3ea53dc9a1a15288fa8c687cfe0d19f587b74f15a7e1e80e3a885287f00063.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                510,
+                545,
+                559,
+                577
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global dynamics"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                584,
+                554,
+                724,
+                570
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Import pressure & trade exposure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                583,
+                759,
+                598
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- New trade policies reshape trade flows (e.g., US)"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                601,
+                848,
+                615
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Insufficient foreign market demand drives search for alternatives"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                615,
+                853,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China doubled share of poly-propylene imports (3% to 6%) in Western Europe over past 10 years"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                639,
+                850,
+                667
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9240ac320902ddb43c444d0b0be5ce4ce6c2fef54008660ed15a80325e2ca8aa.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                510,
+                700,
+                559,
+                733
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                586,
+                709,
+                638,
+                726
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Carbon & regulatory cost exposure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                740,
+                766,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Increasing sectorial scope of Emissions Trading System (ETS)"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                757,
+                840,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Significant price increase of ETS 40€/ton over last five years"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                782,
+                855,
+                809
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/5189b04301a43da8fb28af839cdc862950ecab710ae5f0ee49d1ae53e74f33d3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                512,
+                832,
+                529,
+                846
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Select quantitative example"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                832,
+                719,
+                847
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                895,
+                951,
+                912,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/009b3ca950dba76beff0d98c10f02806d6d8e25246932cc21b93bafca0104e47.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                392
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Diverging Outlook Across Chemical Segments"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                430,
+                769,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The industry is separating into three broad groups: differentiated, defensible segments; pressured transition segments; and structurally exposed commodity chains."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                552,
+                440,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Segments with meaningful differentiation, innovation advantages, or strong customer proximity remain relatively well positioned and, in some cases, can strengthen over time. These differentiated, defensible segments are less exposed to global price competition and better able to sustain margins."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                609,
+                480,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A larger set of segments sits in a pressured transition zone. These businesses remain viable but face increasing pressure from cost disadvantages, regulatory exposure, or trade dynamics. Without active repositioning, their competitiveness is likely to erode."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                695,
+                473,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Structurally exposed commodity chains face the biggest challenge. These products tend to be energy-intensive, widely traded, and difficult to differentiate."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                780,
+                433,
+                824
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Many polymer value chains fall into this category and are expected to remain under structural pressure."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                552,
+                870,
+                582
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The divergence is driven by four structural variables: energy intensity, trade exposure, end-market cyclicality, and regulatory burden. Products with high energy intensity are directly affected by Europe's cost position. Chemicals that are easily transported face stronger import competition. Exposure to cyclical industries increases demand volatility, and a high carbon footprint raises regulatory costs."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                595,
+                912,
+                696
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Portfolio-level averages are becoming less useful. Strategic decisions increasingly need to be made at the segment, asset, and customer level."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                708,
+                902,
+                753
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                895,
+                952,
+                912,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/50920a1f0e4fbaf7149c90187067bf009430aa3ea5d9605a8742cc39752b642c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                391
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A Limited Spectrum of Future Outcomes"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                431,
+                547,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The range of plausible industry outcomes is limited, even if timing and magnitude remain uncertain. The main changes should become visible over the next decade across most value chains, with longer-term implications extending toward 2040."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                552,
+                477,
+                609
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/aa0bba01615748122193c8302e0f2a3a7e4d70ac39e6026f98c432f2a560cbf8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                624,
+                136,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In a regionalization scenario, security of supply concerns and policy measures increase the attractiveness of European production. Utilization improves in selected value chains, although the underlying cost gap with non-European players remains. The strategic implication for European chemical companies is to prioritize assets with security of supply relevance and policy support while taking a selective approach where structural disadvantages persist."
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                623,
+                477,
+                766
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3c6f38b70c4c825f353cd05452af9609a5e351cfcf3c6cd818c3d330e975543e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                781,
+                137,
+                828
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "In a cost-convergence scenario, lower"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                146,
+                781,
+                416,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European energy and feedstock prices narrow the competitiveness gap. However, persistent global overcapacity continues to limit margins. The implication is to use temporary input cost relief to accelerate restructuring rather than assume a return to historical margin levels."
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                793,
+                455,
+                881
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/740b9f9dbe6897406d0c86b924472007ae181ab1d14342fd383034e0f66dd002.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                515,
+                552,
+                584,
+                600
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "In a green-premium scenario, demand"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                593,
+                552,
+                868,
+                567
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "for low-carbon products grows fast enough to reward producers that can credibly differentiate themselves. Meanwhile, conventional product chains face increasing pressure. The implication is to invest selectively where willingness to pay can be demonstrated by customer segment rather than assumed at the market level."
+                    }
+                ]
+            },
+            "bbox": [
+                591,
+                563,
+                910,
+                667
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1e61f358042271f873ab2f80a52078f17b159ec9a3023a95ef30a1983c169a0b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                515,
+                681,
+                584,
+                728
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In an import-intensification scenario, sustained global overcapacity drives rising pressure from imports coming into Europe, accelerating market-share erosion across exposed value chains. The implication is to exit or resize the most exposed assets early, before import pressure removes any strategic optionality."
+                    }
+                ]
+            },
+            "bbox": [
+                591,
+                680,
+                921,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The above scenarios differ in who captures value, where margins settle, and how quickly restructuring occurs. None, however, restores the previous equilibrium."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                794,
+                905,
+                838
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                952,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                946,
+                927,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Scenarios | In different future scenarios, the five forces have a varying impact on the chemical industry"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                63,
+                749,
+                118
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/255ba01abbc67c4985169d253f0b876cf84ea2eac0a7217a8621572601483732.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                80,
+                211,
+                149,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Supply"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                267,
+                146,
+                290
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/341b257b4ed18b175c49a37b6ca827878efc0503e7e17a9ebdf92c66fc51ebd5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                80,
+                335,
+                154,
+                394
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Demand"
+                    }
+                ]
+            },
+            "bbox": [
+                82,
+                395,
+                157,
+                417
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/adafeace97e2dc54c8bff709407509e673d16483d28876fef80b2b197b4aaf1a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                82,
+                462,
+                132,
+                510
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4caecaadda65016c7d88f210320d94e976937f84739a838c6388ab853d9b28ea.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                208,
+                140,
+                238,
+                171
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Domestic prod. priority"
+                    }
+                ]
+            },
+            "bbox": [
+                243,
+                140,
+                354,
+                173
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EU regulation encourages local production and increasing asset utilization"
+                    }
+                ]
+            },
+            "bbox": [
+                201,
+                191,
+                319,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Customers choose domestic European supply, driven by de-risking and tariff considerations"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                319,
+                341,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic cooling results in commodity price reduction; feedstock & energy price gap closes"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                448,
+                349,
+                518
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/e69fde99dab4008568ebc5fe317361a5a3cec9adaba7396ba66f5e23c8810371.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                394,
+                142,
+                426,
+                170
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input price easing"
+                    }
+                ]
+            },
+            "bbox": [
+                394,
+                139,
+                526,
+                174
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cost comp."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                518,
+                137,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overcapacity persists in European market due to domestic and global sources"
+                    }
+                ]
+            },
+            "bbox": [
+                388,
+                191,
+                536,
+                248
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Local supply is more affordable, increasing its competitiveness with imports"
+                    }
+                ]
+            },
+            "bbox": [
+                386,
+                319,
+                519,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Europe is able to secure reliable sources of affordable energy and feedstock"
+                    }
+                ]
+            },
+            "bbox": [
+                386,
+                448,
+                546,
+                505
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/69722c61a67870345e492a8cb80c8161f73c886ee9ed220369e70932dd65ef57.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                584,
+                141,
+                608,
+                170
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Low-carbon transition"
+                    }
+                ]
+            },
+            "bbox": [
+                584,
+                139,
+                717,
+                173
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulation causes \"green\" chemicals to replace carbon-intensive; overcapacity persists"
+                    }
+                ]
+            },
+            "bbox": [
+                573,
+                191,
+                719,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Carbon-intensive chemicals lose relative competitiveness; import pressure for \"greener\" alternatives remains high"
+                    }
+                ]
+            },
+            "bbox": [
+                573,
+                319,
+                734,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Feedstock & energy price gap narrows but remains"
+                    }
+                ]
+            },
+            "bbox": [
+                574,
+                448,
+                729,
+                493
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Elimination of European overcapacity does not make up for increasing import volumes"
+                    }
+                ]
+            },
+            "bbox": [
+                759,
+                191,
+                917,
+                260
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f0ad95d4cedf4ca2f4df136c467dc81168076b7caa9ae88151552a677b5f1008.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                764,
+                143,
+                801,
+                170
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Oversupply Influx"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                139,
+                902,
+                172
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Feedstock and energy cost gap remains wide"
+                    }
+                ]
+            },
+            "bbox": [
+                759,
+                448,
+                917,
+                480
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6b98837661b2efd1fef5432e67c4fd278dadf48274aea3afb3106189d397263d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                82,
+                590,
+                149,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Increased import pressure due to persistent overcapacities outside of Europe"
+                    }
+                ]
+            },
+            "bbox": [
+                759,
+                319,
+                884,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global dynamics"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                646,
+                166,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Internal demand grows, but exports (of end products) decline"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                577,
+                352,
+                621
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exposure to imports continues but they have a lower input cost advantage"
+                    }
+                ]
+            },
+            "bbox": [
+                388,
+                577,
+                527,
+                634
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/55f158fc8e73f88fbd2179a8ea3ce177079c0b5d6c977e05746aa5c2d041d28c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                80,
+                722,
+                139,
+                778
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Carbon & regulatory cost base reduces"
+                    }
+                ]
+            },
+            "bbox": [
+                388,
+                707,
+                527,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Carbon & regulatory cost base remains unchanged"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                706,
+                342,
+                752
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy"
+                    }
+                ]
+            },
+            "bbox": [
+                82,
+                783,
+                137,
+                801
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "New rules reduce carbon allocations & limit certificates, raising prices - but CBAM acts as an equalizer between domestic & foreign producers"
+                    }
+                ]
+            },
+            "bbox": [
+                573,
+                706,
+                717,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Greater demand uncertainty due to green transition"
+                    }
+                ]
+            },
+            "bbox": [
+                574,
+                577,
+                702,
+                621
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Positive"
+                    }
+                ]
+            },
+            "bbox": [
+                448,
+                841,
+                507,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Imports replace regional production across multiple value chain steps, affecting demand stability"
+                    }
+                ]
+            },
+            "bbox": [
+                759,
+                577,
+                907,
+                648
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Implication for European chemical industry:"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                841,
+                359,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Carbon & regulatory cost base is unchanged"
+                    }
+                ]
+            },
+            "bbox": [
+                759,
+                706,
+                894,
+                752
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Neutral/constant"
+                    }
+                ]
+            },
+            "bbox": [
+                563,
+                841,
+                682,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note: CBAM = Carbon Border Adjustment Mechanism  \nSource: BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                873,
+                445,
+                904
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/edf9f3d24cf89afecc47da049ddca9c56e73d18afeeb2bbd8ae5da556cc69bf7.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                714,
+                840,
+                739,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Negative"
+                    }
+                ]
+            },
+            "bbox": [
+                744,
+                841,
+                810,
+                860
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                46,
+                149,
+                61
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                388,
+                951,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                894,
+                951,
+                912,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/39ec5343711c74cc8a29ff99b8316d305a576fcfb29149d4131fb863103ee862.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                963,
+                393
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategic Choices Become More Selective"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                431,
+                613,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Broad portfolio-level strategies are giving way to segment-specific and asset-specific decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                552,
+                384,
+                582
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For structurally exposed segments, the priority becomes disciplined value preservation rather than attempted value recovery. Actions to achieve this aim include reducing capacity, divesting assets, and resetting the cost base to limit ongoing value erosion."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                595,
+                480,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For pressured transition segments, the goal is to sustain competitiveness through tighter integration, selective partnerships, and rigorous operational improvement. These measures can enhance resilience and preserve optionality."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                680,
+                460,
+                738
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For differentiated, defensible segments, the focus shifts toward targeted growth. Investment in innovation, applications, and capacity can reinforce competitive advantages and capture higher-value opportunities."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                552,
+                927,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Across all segment types, execution discipline will determine whether strategy translates into resilience. Companies that combine cost transformation, portfolio reshaping, and operational improvement are more likely to succeed than those relying on isolated initiatives."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                624,
+                914,
+                695
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                945,
+                927,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4321ceaee6ea45e9d86f718a6e7ac61dbef64290d99ca2094f3e660ce814f75c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                391
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Business Model Evolution"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                431,
+                665,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The industry's strategic choices are crystallizing into three business models. Each one involves a different capital-allocation logic, operating model, and partnership agenda."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                508,
+                452,
+                554
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9d2881ca598248a493c949d4190dda4bdaee14f1c273343db74e5e67565fd410.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                567,
+                137,
+                615
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The scale-driven cost leader is one model. This is built around advantaged assets, high utilization, and strict operational discipline. The model is most relevant in commoditized value chains where cost position determines long-term viability."
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                565,
+                443,
+                653
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/eea286594a1478a6f097ba8e5b9772700d24c171c307961afcdbeee251531c3f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                665,
+                136,
+                714
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A second model is the integrated network player and involves using feedstock access, partnerships, and more stable downstream linkages to reduce volatility and improve resilience. This model can strengthen positioning in uncertain and fragmented value chains."
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                665,
+                472,
+                753
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/059269ef38a16e730d9acdd703931524d7932f7f61832b74475d7f82f303bff1.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                515,
+                510,
+                584,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A third model is the innovation-led specialist. It combines differentiated products, application expertise, and closer customer relationships to support margin quality and more stable demand."
+                    }
+                ]
+            },
+            "bbox": [
+                591,
+                508,
+                917,
+                568
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clarity of direction is essential. Trying to straddle all three models usually creates complexity without advantage."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                580,
+                895,
+                609
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                952,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                894,
+                952,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/cd37cd06841c30026faaf52cdcc75518d50fd339b419b24cddbf84b137827e73.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Response | Three distinct business models are emerging"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG"
+                    }
+                ],
+                "html": "<table><tr><td>Impact archetype</td><td>Pressured</td><td>Exposed</td><td>Resilient</td></tr><tr><td>How to react</td><td>Scale, Efficiency, and Cost Leader</td><td>Value Chain and Partnership Optimizer</td><td>Performance and Innovation Champion</td></tr><tr><td>Core logic:</td><td>Build or consolidate capacity to achieve competitive advantage (e.g., lowest cost) and resilience; become last-one-standing</td><td>Secure advantaged feedstock or downstream access through integration; build closed and stable value chains</td><td>Focus on innovation, customization &amp; market intimacy to sustain premium margins; develop specialty products</td></tr><tr><td>Example levers:</td><td>Operational ExcellenceOpEx EfficiencyCapEx DisciplineAsset Rationalization</td><td>Chain IntegrationStrategic AlliancesDigital &amp; AIOperational Excellence</td><td>Growth InvestmentInnovation EngineDigital and AIOperational Excellence</td></tr><tr><td>Enablers required:</td><td>Asset utilizationSimple product portfoliosStable demand (regional or export to cover fix costs)Low feedstock/energy cost</td><td>Predominantly regional value chain to limit logistics costLow feedstock cost for upstream chemicals &amp; low energy cost to ensure captive value chain economics</td><td>Customer proximity &amp; technical salesInnovation capabilitiesPricing power to ensure sufficiently high margins</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                105,
+                927,
+                508
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                46,
+                147,
+                61
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                951,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/22b0638a2a86d2d20648bc550b4eb29bf9fa2ed6e963e51af8cfe3b14cf9edb6.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                391
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Building Resilience Through No-Regret Moves"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                431,
+                690,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Even when companies are faced with uncertainty, some moves make sense across virtually every plausible scenario."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                552,
+                460,
+                582
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The starting point for developing resilience requires a hard-nosed portfolio analysis grounded in structural economics rather than legacy assumptions. Companies need to identify where they have a sustainable advantage and where they do not, and act accordingly."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                595,
+                445,
+                668
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Closing the cost gap is essential, through both operational improvements and structural cost reduction. This involves improving asset utilization, reducing overheads, and increasing productivity."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                680,
+                450,
+                738
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Securing access to feedstocks and energy can materially improve resilience while long-term contracts, recycling, and integration can reduce exposure to volatility."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                552,
+                887,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Partnerships can improve value-chain coordination and help stabilize demand in selected chains."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                609,
+                850,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Better use of data and analytics can improve yields, sharpen planning, reduce downtime, and lower working capital."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                652,
+                910,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "None of these moves change the external environment. When combined, however, they improve resilience and expand strategic options."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                695,
+                878,
+                738
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategic Imperative | No-regret actions required across scenarios, archetypes"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                64,
+                769,
+                116
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Checklist of revenue and growth actions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                143,
+                413,
+                159
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Focus portfolios on defensible value pools\nExit structurally disadvantaged products and prioritize higher-margin segments"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                193,
+                413,
+                235
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Invest selectively in resilient chemicals\nAllocate capital to segments with credible long-term advantage"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                247,
+                396,
+                288
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Accelerate digital and AI deployment\nEnhance efficiency, yield, and working capital through technology"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                300,
+                418,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Engage on trade and regulation\nActively shape policy and mitigate unfair trade exposure"
+                    }
+                ]
+            },
+            "bbox": [
+                87,
+                353,
+                428,
+                394
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Checklist of cost and efficiency actions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                529,
+                143,
+                842,
+                159
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Reset the cost base structurally\nDrive productivity and overhead reduction to close competitiveness gaps"
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                193,
+                840,
+                235
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Rationalize uncompetitive assets\nProactively close or divest persistently underperforming capacity"
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                247,
+                816,
+                288
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Secure feedstock and energy positions\nImprove resilience via contracts, recycling, or integration"
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                300,
+                840,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "√ Strengthen value chain partnerships\nStabilize demand and utilization through strategic alliances"
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                353,
+                835,
+                393
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 4"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                47,
+                147,
+                60
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/726930b6ee2713d9e5ce6802634046b92b798c411b47954f7c4927300f3eae4e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                998,
+                390
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                432,
+                327,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The European chemical industry cannot afford to wait for a cyclical rebound. It has to adapt to a structurally different competitive environment. The forces driving change are unlikely to reverse. Consequently, players must accept that the previous equilibrium is a thing of the past."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                508,
+                455,
+                583
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Based on current trajectories, the winners and losers from this transformation are likely to become visible by 2030. Furthermore, by 2040, the consequences of today's capital-allocation decisions will be deeply embedded in the industry's structures."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                595,
+                450,
+                668
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For companies, the implication is clear. Those that continue to rely on legacy assumptions and portfolio averages will find it increasingly difficult to compete. Those that move early to reallocate capital, reshape portfolios, and build stronger positions in differentiated, defensible segments will be better placed to create value."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                508,
+                914,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The question is no longer whether adjustment is needed. It is who will act quickly and decisively enough to benefit."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                609,
+                889,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SIDEBAR"
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                736,
+                181,
+                751
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9c76bb3a5ec63969f903b52466307b9bd9e668d34afffaa88bbe98eafed576a3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                105,
+                771,
+                233,
+                848
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Geopolitical disruption and volatility in hydrocarbon markets are persistent risks for European chemical companies. Given its reliance on imported hydrocarbons, Europe is structurally exposed to rising feedstock costs and energy price shocks. In an oversupplied global market, these are difficult to pass on, resulting in margin compression. Compared to regions with access to lower-cost domestic feedstocks, Europe's competitive position may further erode. Beyond cost impacts, ongoing uncertainty also raises the risk of supply disruptions in critical inputs. Taken together, these dynamics could significantly intensify the pressure on the industry to transform."
+                    }
+                ]
+            },
+            "bbox": [
+                260,
+                737,
+                873,
+                853
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                952,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                952,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                894,
+                952,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "About the Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                46,
+                504,
+                85
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4a5b36746dff5da6017cd13085d8cd7416dc94d886fb40cc402658e818b59a00.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Jan Friese\nManaging Director and Senior Partner\nFrankfurt\nfriese.jan@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                105,
+                213,
+                208
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1a97713f835f82b112a5f01245d8dda6542ac53410d1d7a02e1e4217f06fa153.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Jan Beier\nManaging Director and Partner\nCologne\nbeier.jan@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                104,
+                660,
+                208
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6912df11448e427298f47620dab21fb1db7dae470b9a44f0be369f0f05d9e4e2.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Hubert Schönberger\nSenior Director - Chemicals, BCG Vantage Munich\nschoenberger.hubert@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                318,
+                211,
+                422
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/174caaeeca2c27af7da6126a710f30cd327c307abe0d25e5bda753aac64b0929.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Christian Hoffmann\nPartner and Director, Chemicals\nHamburg\nhoffmann.christian@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                544,
+                321,
+                655,
+                423
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/28e1e15c5195a7d14eea6dc2bced9fe063317ef22f605dac5e0818825e7f13a2.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Julia Meisel\nSenior Manager - BCG Vantage\nDüsseldorf\nmeisel.julia@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                533,
+                213,
+                634
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/578e447299a51bfaf00ae2a99c351f195ae97c18e4830ef525ad4f1ca930ddff.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Katarzyna Raszka\nSenior Analyst - BCG Vantage\nDüsseldorf\nraszka.katarzyna@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                533,
+                660,
+                634
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                951,
+                243,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+                    }
+                ]
+            },
+            "bbox": [
+                389,
+                951,
+                870,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                43,
+                163,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                850,
+                478,
+                923
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "© Boston Consulting Group 2026. All rights reserved. 6/26"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                936,
+                460,
+                952
+            ]
+        }
+    ],
+    []
+]

@@ -1,0 +1,7571 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.047,
+                0.187,
+                0.088
+            ],
+            "angle": 0,
+            "content": "BCG",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.065,
+                0.121,
+                0.804,
+                0.236
+            ],
+            "angle": 0,
+            "content": "European Chemicals\n2030–2040"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.248,
+                0.789,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Strategic Pathways to Rebuild Advantage",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.311,
+                0.181,
+                0.329
+            ],
+            "angle": 0,
+            "content": "June 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.344,
+                0.649,
+                0.376
+            ],
+            "angle": 0,
+            "content": "By Jan Friese, Jan Beier, Hubert Schönberger, Christian Hoffmann, Julia Meisel, and Katarzyna Raszka",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.043,
+                0.192,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.063,
+                0.123,
+                0.807,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.182,
+                0.452,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.246,
+                0.788,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.311,
+                0.181,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.345,
+                0.646,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.361,
+                0.236,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.047,
+                0.163,
+                0.077
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.111,
+                0.373,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Where Strategic Clarity Meets Applied AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.124,
+                0.478,
+                0.284
+            ],
+            "angle": 0,
+            "content": "We are navigating an era of unprecedented change and disruption—powered by technology, marked by complexity, where change amplifies at scale. To lead, companies need a partner that can bridge the gap between ambition and outcomes. BCG is built for this moment. We bring strategic clarity, rooted in over 60 years of deep domain knowledge, to ensure leaders make the right choices. We combine it with applied AI, shaped and wielded by our practitioners, teaming shoulder-to-shoulder with your teams to deliver transformative impact at scale. The result? Stronger returns, transferred capabilities, and change that sticks. We are BCG.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.044,
+                0.166,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.111,
+                0.372,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.126,
+                0.442,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.141,
+                0.469,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.154,
+                0.459,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.17,
+                0.447,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.183,
+                0.467,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.198,
+                0.461,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.212,
+                0.449,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.226,
+                0.454,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.24,
+                0.447,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.253,
+                0.476,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.268,
+                0.475,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.047,
+                0.485,
+                0.085
+            ],
+            "angle": 0,
+            "content": "Table of Contents"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.078,
+                0.118,
+                0.657,
+                0.44
+            ],
+            "angle": 0,
+            "content": "03 Executive Summary\n04 A Structural Shift in Industry Economics\n06 The Diverging Outlook Across Chemical Segments\n07 A Limited Spectrum of Future Outcomes\n09 Strategic Choices Become More Selective\n10 Business Model Evolution\n12 Building Resilience Through No-Regret Moves\n14 Conclusion"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.047,
+                0.486,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "footer",
+            "bbox": [
+                0.878,
+                0.947,
+                0.929,
+                0.969
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.391
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.068,
+                0.433,
+                0.545,
+                0.472
+            ],
+            "angle": 0,
+            "content": "Executive Summary"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.51,
+                0.474,
+                0.611
+            ],
+            "angle": 0,
+            "content": "The European chemical industry is undergoing a structural reset. In recent years, higher energy and feedstock costs, tighter regulation, persistent global overcapacity, and shifting demand patterns have steadily eroded Europe's competitive position. These pressures are not cyclical. They reflect lasting changes in the economics of the chemical industry and in where value is created.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.625,
+                0.482,
+                0.782
+            ],
+            "angle": 0,
+            "content": "In Q2 2026, the global disruption to oil supply routes caused by developments in the Middle East resulted in an improvement in the competitive position of European chemical producers. This was largely due to tighter supply-demand balances worldwide and the renewed willingness of domestic customers to pay higher prices for reliable European supply. However, the improvement should be viewed as a temporary upturn rather than a structural recovery, given that the main problems facing European producers - weak demand, high input costs, global overcapacity, and lower-priced competition from Asia and the Middle East - remain unresolved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.796,
+                0.475,
+                0.882
+            ],
+            "angle": 0,
+            "content": "The effects of Europe's structural reset are already visible in lower plant utilization, margin pressure, closures, and divestments. Between 2020 and 2025, European utilization rates were roughly 10 percentage points below the 2015–2020 average. Yet the impact of these forces has been uneven. Differentiated, defensible segments with stronger innovation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.51,
+                0.918,
+                0.611
+            ],
+            "angle": 0,
+            "content": "or customer proximity remain comparatively resilient, while energy-intensive and globally traded valuechains face a much tougher challenge to stay competitive. Portfolio averages are becoming less useful, and legacy assumptions about integrated value chains are under pressure. Strategic choices increasingly need to be made segment by segment and, in some cases, asset by asset.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.625,
+                0.924,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Uncertainty persists, but the set of plausible industry outcomes is narrower than it might appear at first sight. Current trajectories suggest that competitive disadvantages among players could become visible across most major value chains by 2030. But by 2040, the resulting industry structure is likely to be far more entrenched. Across scenarios, the companies most likely to outperform will be those that move early to reshape their portfolios, improve structural costs, secure financially advantaged feedstock and energy, and build stronger positions in differentiated, defensible segments. Those that delay action now risk becoming trapped between rising costs and intensifying import pressures.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.244,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.953,
+                0.87,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.43,
+                0.547,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.511,
+                0.452,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.527,
+                0.44,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.541,
+                0.468,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.555,
+                0.459,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.569,
+                0.47,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.584,
+                0.443,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.598,
+                0.218,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.627,
+                0.409,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.641,
+                0.447,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.655,
+                0.481,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.67,
+                0.441,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.682,
+                0.467,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.697,
+                0.458,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.712,
+                0.464,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.726,
+                0.463,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.74,
+                0.448,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.755,
+                0.472,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.769,
+                0.404,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.797,
+                0.443,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.811,
+                0.436,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.825,
+                0.455,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.841,
+                0.472,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.854,
+                0.44,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.868,
+                0.463,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.512,
+                0.904,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.527,
+                0.917,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.54,
+                0.887,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.555,
+                0.885,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.569,
+                0.912,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.584,
+                0.88,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.598,
+                0.713,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.863,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.64,
+                0.879,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.905,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.668,
+                0.916,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.684,
+                0.909,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.698,
+                0.885,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.712,
+                0.912,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.726,
+                0.891,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.739,
+                0.885,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.754,
+                0.922,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.768,
+                0.911,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.782,
+                0.817,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.391
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.067,
+                0.432,
+                0.596,
+                0.513
+            ],
+            "angle": 0,
+            "content": "A Structural Shift\nin Industry Economics"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.553,
+                0.476,
+                0.626
+            ],
+            "angle": 0,
+            "content": "The current situation is not the result of a single shock but is due to several structural shifts occurring at once. Any one of these shifts would be manageable in isolation but not when combined. Together, they are reshaping the economics of chemical production in Europe.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.638,
+                0.478,
+                0.711
+            ],
+            "angle": 0,
+            "content": "Global capacity expansion, but particularly in Asia, has outpaced demand growth and created sustained overcapacity across multiple value chains. This has resulted in materially lower European utilization rates, weakening the cost efficiency of capital-intensive assets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.723,
+                0.481,
+                0.825
+            ],
+            "angle": 0,
+            "content": "Demand is gradually shifting toward circular and lower-carbon products, supported by regulation and customer commitments - although customer research suggests the willingness to pay a green premium remains limited and adoption is still at an early stage. However, these premiums are insufficient to offset the structural cost disadvantages faced by many European producers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.838,
+                0.48,
+                0.882
+            ],
+            "angle": 0,
+            "content": "These cost disadvantages are pronounced. In 2025, European gas and power prices were still materially above those in the United States and the Middle East, with the largest impact felt",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.553,
+                0.911,
+                0.597
+            ],
+            "angle": 0,
+            "content": "in energy-intensive chains. This gap in energy prices directly affects commodity value chains where energy is a dominant cost component.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.61,
+                0.932,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Import pressure is also becoming more visible in selected chains. In polypropylene, for example, China's share of Western European imports has increased significantly over the past decade. The absolute level remains modest, but the trend signals rising vulnerability to import-led price pressure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.514,
+                0.696,
+                0.927,
+                0.754
+            ],
+            "angle": 0,
+            "content": "Regulation adds further cost pressure. Carbon pricing under the European Union's Emissions Trading System has increased by roughly €40 per ton over the past five years, alongside broader regulatory tightening.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.767,
+                0.923,
+                0.81
+            ],
+            "angle": 0,
+            "content": "Taken together, these pressures create a structural competitiveness gap that incremental improvement programs will not close.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.878,
+                0.946,
+                0.928,
+                0.969
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.43,
+                0.488,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.475,
+                0.597,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.554,
+                0.449,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.569,
+                0.458,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.584,
+                0.473,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.598,
+                0.443,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.611,
+                0.273,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.64,
+                0.426,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.655,
+                0.47,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.669,
+                0.456,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.683,
+                0.475,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.697,
+                0.242,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.726,
+                0.474,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.741,
+                0.479,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.754,
+                0.464,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.769,
+                0.458,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.783,
+                0.435,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.797,
+                0.425,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.811,
+                0.207,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.84,
+                0.47,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.854,
+                0.463,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.869,
+                0.477,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.554,
+                0.907,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.569,
+                0.906,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.585,
+                0.625,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.612,
+                0.891,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.928,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.64,
+                0.897,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.893,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.669,
+                0.874,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.697,
+                0.909,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.712,
+                0.924,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.726,
+                0.886,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.74,
+                0.71,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.769,
+                0.847,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.782,
+                0.92,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.798,
+                0.606,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.047,
+                0.149,
+                0.062
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.066,
+                0.064,
+                0.652,
+                0.118
+            ],
+            "angle": 0,
+            "content": "The Burning Platform | Five forces pressuring the European chemical industry"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.067,
+                0.196,
+                0.461,
+                0.75
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.864,
+                0.239,
+                0.891
+            ],
+            "angle": 0,
+            "content": "Note: ME = Middle East  \nSource: BCG",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.586,
+                0.143,
+                0.648,
+                0.16
+            ],
+            "angle": 0,
+            "content": "Supply"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.511,
+                0.173,
+                0.818,
+                0.188
+            ],
+            "angle": 0,
+            "content": "Global overcapacity & utilization pressure"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.511,
+                0.19,
+                0.857,
+                0.216
+            ],
+            "angle": 0,
+            "content": "- Persistent overcapacities across value chain steps and in end markets (e.g., Auto in China)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.215,
+                0.817,
+                0.242
+            ],
+            "angle": 0,
+            "content": "European utilization 2020-25 down 10 ppts vs. 2015–20",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.587,
+                0.285,
+                0.661,
+                0.3
+            ],
+            "angle": 0,
+            "content": "Demand"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.511,
+                0.315,
+                0.819,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Evolving customer needs & regional shifts"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.332,
+                0.894,
+                0.357
+            ],
+            "angle": 0,
+            "content": "- Trend towards circularity/ sustainability, lightweight, modularization – but not enough to counter other risks",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.357,
+                0.894,
+                0.372
+            ],
+            "angle": 0,
+            "content": ">80% consumers are ready to accept a green premium",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.512,
+                0.404,
+                0.56,
+                0.437
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.586,
+                0.413,
+                0.764,
+                0.429
+            ],
+            "angle": 0,
+            "content": "Cost competitiveness"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.511,
+                0.443,
+                0.7,
+                0.457
+            ],
+            "angle": 0,
+            "content": "Feedstock & energy costs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.46,
+                0.859,
+                0.487
+            ],
+            "angle": 0,
+            "content": "- Unit cost multiple times higher in Europe than in, e.g., ME or North America",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.485,
+                0.852,
+                0.513
+            ],
+            "angle": 0,
+            "content": "European gas up to 4x more costly than US/ME, power 2x more than US in 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.512,
+                0.546,
+                0.561,
+                0.578
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.586,
+                0.555,
+                0.726,
+                0.571
+            ],
+            "angle": 0,
+            "content": "Global dynamics"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.511,
+                0.585,
+                0.761,
+                0.599
+            ],
+            "angle": 0,
+            "content": "Import pressure & trade exposure"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.511,
+                0.602,
+                0.85,
+                0.616
+            ],
+            "angle": 0,
+            "content": "- New trade policies reshape trade flows (e.g., US)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.511,
+                0.616,
+                0.854,
+                0.64
+            ],
+            "angle": 0,
+            "content": "- Insufficient foreign market demand drives search for alternatives",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.64,
+                0.851,
+                0.668
+            ],
+            "angle": 0,
+            "content": "China doubled share of poly-propylene imports (3% to 6%) in Western Europe over past 10 years",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.512,
+                0.701,
+                0.561,
+                0.734
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.587,
+                0.711,
+                0.64,
+                0.727
+            ],
+            "angle": 0,
+            "content": "Policy"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.511,
+                0.741,
+                0.767,
+                0.755
+            ],
+            "angle": 0,
+            "content": "Carbon & regulatory cost exposure"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.511,
+                0.758,
+                0.842,
+                0.783
+            ],
+            "angle": 0,
+            "content": "- Increasing sectorial scope of Emissions Trading System (ETS)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.783,
+                0.857,
+                0.81
+            ],
+            "angle": 0,
+            "content": "Significant price increase of ETS 40€/ton over last five years",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.513,
+                0.833,
+                0.531,
+                0.847
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.511,
+                0.833,
+                0.72,
+                0.848
+            ],
+            "angle": 0,
+            "content": "Select quantitative example",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.896,
+                0.952,
+                0.913,
+                0.965
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.05,
+                0.147,
+                0.061
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.065,
+                0.65,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.095,
+                0.464,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.867,
+                0.236,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.88,
+                0.16,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.583,
+                0.141,
+                0.65,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.175,
+                0.814,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.191,
+                0.854,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.533,
+                0.204,
+                0.79,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.215,
+                0.813,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.531,
+                0.23,
+                0.611,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.585,
+                0.285,
+                0.661,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.317,
+                0.814,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.333,
+                0.868,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.533,
+                0.346,
+                0.889,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.358,
+                0.889,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.585,
+                0.413,
+                0.764,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.445,
+                0.695,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.46,
+                0.856,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.533,
+                0.475,
+                0.703,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.486,
+                0.848,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.534,
+                0.5,
+                0.741,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.585,
+                0.555,
+                0.726,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.587,
+                0.757,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.603,
+                0.845,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.616,
+                0.851,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.533,
+                0.629,
+                0.632,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.64,
+                0.837,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.533,
+                0.655,
+                0.848,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.585,
+                0.708,
+                0.641,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.743,
+                0.762,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.759,
+                0.839,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.532,
+                0.771,
+                0.619,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.784,
+                0.856,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.532,
+                0.797,
+                0.595,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.835,
+                0.716,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.393
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.067,
+                0.431,
+                0.771,
+                0.514
+            ],
+            "angle": 0,
+            "content": "The Diverging Outlook Across Chemical Segments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.553,
+                0.441,
+                0.597
+            ],
+            "angle": 0,
+            "content": "The industry is separating into three broad groups: differentiated, defensible segments; pressured transition segments; and structurally exposed commodity chains.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.61,
+                0.481,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Segments with meaningful differentiation, innovation advantages, or strong customer proximity remain relatively well positioned and, in some cases, can strengthen over time. These differentiated, defensible segments are less exposed to global price competition and better able to sustain margins.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.696,
+                0.475,
+                0.768
+            ],
+            "angle": 0,
+            "content": "A larger set of segments sits in a pressured transition zone. These businesses remain viable but face increasing pressure from cost disadvantages, regulatory exposure, or trade dynamics. Without active repositioning, their competitiveness is likely to erode.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.781,
+                0.435,
+                0.825
+            ],
+            "angle": 0,
+            "content": "Structurally exposed commodity chains face the biggest challenge. These products tend to be energy-intensive, widely traded, and difficult to differentiate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.553,
+                0.871,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Many polymer value chains fall into this category and are expected to remain under structural pressure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.596,
+                0.914,
+                0.697
+            ],
+            "angle": 0,
+            "content": "The divergence is driven by four structural variables: energy intensity, trade exposure, end-market cyclicality, and regulatory burden. Products with high energy intensity are directly affected by Europe's cost position. Chemicals that are easily transported face stronger import competition. Exposure to cyclical industries increases demand volatility, and a high carbon footprint raises regulatory costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.709,
+                0.903,
+                0.754
+            ],
+            "angle": 0,
+            "content": "Portfolio-level averages are becoming less useful. Strategic decisions increasingly need to be made at the segment, asset, and customer level.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.896,
+                0.953,
+                0.913,
+                0.965
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.43,
+                0.775,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.473,
+                0.535,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.555,
+                0.398,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.569,
+                0.438,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.582,
+                0.427,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.612,
+                0.417,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.627,
+                0.453,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.641,
+                0.471,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.655,
+                0.454,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.669,
+                0.476,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.698,
+                0.455,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.711,
+                0.463,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.725,
+                0.425,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.741,
+                0.471,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.755,
+                0.18,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.783,
+                0.432,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.797,
+                0.423,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.811,
+                0.346,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.555,
+                0.835,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.569,
+                0.868,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.598,
+                0.857,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.612,
+                0.878,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.899,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.64,
+                0.888,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.911,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.67,
+                0.898,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.683,
+                0.849,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.712,
+                0.9,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.725,
+                0.878,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.741,
+                0.687,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.392
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.067,
+                0.432,
+                0.549,
+                0.512
+            ],
+            "angle": 0,
+            "content": "A Limited Spectrum\nof Future Outcomes"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.553,
+                0.478,
+                0.611
+            ],
+            "angle": 0,
+            "content": "The range of plausible industry outcomes is limited, even if timing and magnitude remain uncertain. The main changes should become visible over the next decade across most value chains, with longer-term implications extending toward 2040.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.625,
+                0.137,
+                0.672
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.146,
+                0.624,
+                0.478,
+                0.768
+            ],
+            "angle": 0,
+            "content": "In a regionalization scenario, security of supply concerns and policy measures increase the attractiveness of European production. Utilization improves in selected value chains, although the underlying cost gap with non-European players remains. The strategic implication for European chemical companies is to prioritize assets with security of supply relevance and policy support while taking a selective approach where structural disadvantages persist.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.782,
+                0.138,
+                0.829
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.147,
+                0.782,
+                0.417,
+                0.795
+            ],
+            "angle": 0,
+            "content": "In a cost-convergence scenario, lower"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.146,
+                0.794,
+                0.456,
+                0.882
+            ],
+            "angle": 0,
+            "content": "European energy and feedstock prices narrow the competitiveness gap. However, persistent global overcapacity continues to limit margins. The implication is to use temporary input cost relief to accelerate restructuring rather than assume a return to historical margin levels.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.554,
+                0.585,
+                0.601
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.594,
+                0.553,
+                0.869,
+                0.568
+            ],
+            "angle": 0,
+            "content": "In a green-premium scenario, demand"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.593,
+                0.564,
+                0.911,
+                0.668
+            ],
+            "angle": 0,
+            "content": "for low-carbon products grows fast enough to reward producers that can credibly differentiate themselves. Meanwhile, conventional product chains face increasing pressure. The implication is to invest selectively where willingness to pay can be demonstrated by customer segment rather than assumed at the market level.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.516,
+                0.682,
+                0.585,
+                0.73
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.593,
+                0.681,
+                0.922,
+                0.783
+            ],
+            "angle": 0,
+            "content": "In an import-intensification scenario, sustained global overcapacity drives rising pressure from imports coming into Europe, accelerating market-share erosion across exposed value chains. The implication is to exit or resize the most exposed assets early, before import pressure removes any strategic optionality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.514,
+                0.795,
+                0.907,
+                0.839
+            ],
+            "angle": 0,
+            "content": "The above scenarios differ in who captures value, where margins settle, and how quickly restructuring occurs. None, however, restores the previous equilibrium.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.244,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.953,
+                0.87,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.879,
+                0.947,
+                0.928,
+                0.969
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.43,
+                0.551,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.475,
+                0.541,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.555,
+                0.455,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.569,
+                0.458,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.584,
+                0.475,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.598,
+                0.466,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.625,
+                0.475,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.15,
+                0.641,
+                0.429,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.654,
+                0.473,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.669,
+                0.457,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.684,
+                0.455,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.697,
+                0.46,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.711,
+                0.454,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.726,
+                0.454,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.74,
+                0.409,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.754,
+                0.362,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.15,
+                0.784,
+                0.414,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.796,
+                0.448,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.811,
+                0.445,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.826,
+                0.452,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.839,
+                0.45,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.853,
+                0.436,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.868,
+                0.432,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.555,
+                0.866,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.568,
+                0.891,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.584,
+                0.904,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.598,
+                0.895,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.612,
+                0.908,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.626,
+                0.9,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.641,
+                0.88,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.655,
+                0.863,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.683,
+                0.863,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.698,
+                0.872,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.711,
+                0.875,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.726,
+                0.92,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.741,
+                0.903,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.754,
+                0.89,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.769,
+                0.874,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.796,
+                0.837,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.811,
+                0.904,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.826,
+                0.84,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.047,
+                0.15,
+                0.063
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.066,
+                0.064,
+                0.751,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Scenarios | In different future scenarios, the five forces have a varying impact on the chemical industry"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.082,
+                0.212,
+                0.151,
+                0.263
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.268,
+                0.147,
+                0.291
+            ],
+            "angle": 0,
+            "content": "Supply",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.082,
+                0.336,
+                0.155,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.083,
+                0.397,
+                0.159,
+                0.418
+            ],
+            "angle": 0,
+            "content": "Demand",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.083,
+                0.463,
+                0.134,
+                0.511
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.209,
+                0.141,
+                0.24,
+                0.172
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.245,
+                0.141,
+                0.356,
+                0.174
+            ],
+            "angle": 0,
+            "content": "Domestic prod. priority",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.202,
+                0.192,
+                0.321,
+                0.261
+            ],
+            "angle": 0,
+            "content": "EU regulation encourages local production and increasing asset utilization",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.201,
+                0.32,
+                0.342,
+                0.391
+            ],
+            "angle": 0,
+            "content": "Customers choose domestic European supply, driven by de-risking and tariff considerations",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.201,
+                0.449,
+                0.351,
+                0.519
+            ],
+            "angle": 0,
+            "content": "Economic cooling results in commodity price reduction; feedstock & energy price gap closes",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.396,
+                0.143,
+                0.427,
+                0.171
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.395,
+                0.14,
+                0.527,
+                0.175
+            ],
+            "angle": 0,
+            "content": "Input price easing",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.519,
+                0.139,
+                0.553
+            ],
+            "angle": 0,
+            "content": "Cost comp.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.389,
+                0.192,
+                0.537,
+                0.249
+            ],
+            "angle": 0,
+            "content": "Overcapacity persists in European market due to domestic and global sources",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.388,
+                0.32,
+                0.52,
+                0.391
+            ],
+            "angle": 0,
+            "content": "Local supply is more affordable, increasing its competitiveness with imports",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.388,
+                0.449,
+                0.547,
+                0.506
+            ],
+            "angle": 0,
+            "content": "Europe is able to secure reliable sources of affordable energy and feedstock",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.586,
+                0.142,
+                0.61,
+                0.171
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.585,
+                0.14,
+                0.718,
+                0.174
+            ],
+            "angle": 0,
+            "content": "Low-carbon transition",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.574,
+                0.192,
+                0.72,
+                0.262
+            ],
+            "angle": 0,
+            "content": "Regulation causes \"green\" chemicals to replace carbon-intensive; overcapacity persists",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.574,
+                0.32,
+                0.735,
+                0.404
+            ],
+            "angle": 0,
+            "content": "Carbon-intensive chemicals lose relative competitiveness; import pressure for \"greener\" alternatives remains high",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.575,
+                0.449,
+                0.73,
+                0.494
+            ],
+            "angle": 0,
+            "content": "Feedstock & energy price gap narrows but remains",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.761,
+                0.192,
+                0.918,
+                0.261
+            ],
+            "angle": 0,
+            "content": "Elimination of European overcapacity does not make up for increasing import volumes",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.765,
+                0.144,
+                0.802,
+                0.171
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.804,
+                0.14,
+                0.903,
+                0.173
+            ],
+            "angle": 0,
+            "content": "Oversupply Influx",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.761,
+                0.449,
+                0.918,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Feedstock and energy cost gap remains wide",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.083,
+                0.591,
+                0.151,
+                0.64
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.761,
+                0.32,
+                0.885,
+                0.391
+            ],
+            "angle": 0,
+            "content": "Increased import pressure due to persistent overcapacities outside of Europe",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.648,
+                0.167,
+                0.682
+            ],
+            "angle": 0,
+            "content": "Global dynamics",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.201,
+                0.578,
+                0.354,
+                0.623
+            ],
+            "angle": 0,
+            "content": "Internal demand grows, but exports (of end products) decline",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.389,
+                0.578,
+                0.528,
+                0.636
+            ],
+            "angle": 0,
+            "content": "Exposure to imports continues but they have a lower input cost advantage",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.082,
+                0.724,
+                0.14,
+                0.779
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.389,
+                0.708,
+                0.528,
+                0.738
+            ],
+            "angle": 0,
+            "content": "Carbon & regulatory cost base reduces",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.201,
+                0.707,
+                0.343,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Carbon & regulatory cost base remains unchanged",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.083,
+                0.784,
+                0.138,
+                0.802
+            ],
+            "angle": 0,
+            "content": "Policy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.574,
+                0.707,
+                0.718,
+                0.817
+            ],
+            "angle": 0,
+            "content": "New rules reduce carbon allocations & limit certificates, raising prices - but CBAM acts as an equalizer between domestic & foreign producers",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.575,
+                0.578,
+                0.703,
+                0.623
+            ],
+            "angle": 0,
+            "content": "Greater demand uncertainty due to green transition",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.449,
+                0.843,
+                0.508,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Positive",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.761,
+                0.578,
+                0.908,
+                0.649
+            ],
+            "angle": 0,
+            "content": "Imports replace regional production across multiple value chain steps, affecting demand stability",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.842,
+                0.36,
+                0.862
+            ],
+            "angle": 0,
+            "content": "Implication for European chemical industry:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.761,
+                0.707,
+                0.895,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Carbon & regulatory cost base is unchanged",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.564,
+                0.842,
+                0.683,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Neutral/constant",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.875,
+                0.447,
+                0.905
+            ],
+            "angle": 0,
+            "content": "Note: CBAM = Carbon Border Adjustment Mechanism  \nSource: BCG",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.715,
+                0.841,
+                0.741,
+                0.862
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.745,
+                0.842,
+                0.811,
+                0.862
+            ],
+            "angle": 0,
+            "content": "Negative",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.389,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.895,
+                0.952,
+                0.914,
+                0.966
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.067,
+                0.747,
+                0.087
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.095,
+                0.655,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.266,
+                0.15,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.398,
+                0.161,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.244,
+                0.142,
+                0.328,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.244,
+                0.157,
+                0.354,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.193,
+                0.299,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.207,
+                0.318,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.22,
+                0.31,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.232,
+                0.316,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.245,
+                0.277,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.321,
+                0.329,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.334,
+                0.338,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.348,
+                0.318,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.36,
+                0.335,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.374,
+                0.303,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.449,
+                0.322,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.463,
+                0.347,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.477,
+                0.313,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.487,
+                0.331,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.503,
+                0.31,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.406,
+                0.145,
+                0.417,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.432,
+                0.142,
+                0.525,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.405,
+                0.153,
+                0.417,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.43,
+                0.156,
+                0.492,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.518,
+                0.131,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.535,
+                0.14,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.193,
+                0.535,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.207,
+                0.524,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.219,
+                0.526,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.233,
+                0.488,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.389,
+                0.321,
+                0.475,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.389,
+                0.334,
+                0.515,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.347,
+                0.483,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.36,
+                0.504,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.389,
+                0.373,
+                0.477,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.45,
+                0.504,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.389,
+                0.463,
+                0.544,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.389,
+                0.475,
+                0.528,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.389,
+                0.49,
+                0.489,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.619,
+                0.142,
+                0.716,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.618,
+                0.156,
+                0.702,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.194,
+                0.702,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.582,
+                0.207,
+                0.698,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.22,
+                0.646,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.232,
+                0.692,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.578,
+                0.247,
+                0.713,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.322,
+                0.695,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.335,
+                0.73,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.576,
+                0.348,
+                0.69,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.361,
+                0.709,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.582,
+                0.374,
+                0.721,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.576,
+                0.387,
+                0.668,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.45,
+                0.706,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.465,
+                0.726,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.478,
+                0.636,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.193,
+                0.86,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.763,
+                0.206,
+                0.913,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.22,
+                0.908,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.233,
+                0.882,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.761,
+                0.244,
+                0.823,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.802,
+                0.14,
+                0.901,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.802,
+                0.156,
+                0.858,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.761,
+                0.449,
+                0.909,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.761,
+                0.464,
+                0.917,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.323,
+                0.878,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.336,
+                0.851,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.348,
+                0.852,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.763,
+                0.362,
+                0.862,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.763,
+                0.375,
+                0.881,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.648,
+                0.143,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.662,
+                0.167,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.581,
+                0.32,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.593,
+                0.351,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.606,
+                0.352,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.581,
+                0.525,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.593,
+                0.515,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.607,
+                0.516,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.619,
+                0.494,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.707,
+                0.527,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.39,
+                0.723,
+                0.513,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.708,
+                0.339,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.723,
+                0.327,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.735,
+                0.281,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.782,
+                0.14,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.709,
+                0.693,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.723,
+                0.714,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.735,
+                0.688,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.749,
+                0.704,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.76,
+                0.695,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.774,
+                0.702,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.576,
+                0.785,
+                0.702,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.575,
+                0.799,
+                0.646,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.576,
+                0.58,
+                0.69,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.577,
+                0.594,
+                0.685,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.576,
+                0.607,
+                0.701,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.452,
+                0.844,
+                0.505,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.581,
+                0.872,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.593,
+                0.897,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.765,
+                0.608,
+                0.904,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.619,
+                0.904,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.632,
+                0.875,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.846,
+                0.354,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.763,
+                0.709,
+                0.829,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.763,
+                0.723,
+                0.863,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.764,
+                0.736,
+                0.891,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.568,
+                0.847,
+                0.678,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.877,
+                0.443,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.892,
+                0.16,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.747,
+                0.846,
+                0.808,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "footer",
+            "bbox": [
+                0.878,
+                0.946,
+                0.929,
+                0.969
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.001,
+                0.964,
+                0.394
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.067,
+                0.432,
+                0.614,
+                0.512
+            ],
+            "angle": 0,
+            "content": "Strategic Choices\nBecome More Selective"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.553,
+                0.385,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Broad portfolio-level strategies are giving way to segment-specific and asset-specific decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.596,
+                0.481,
+                0.668
+            ],
+            "angle": 0,
+            "content": "For structurally exposed segments, the priority becomes disciplined value preservation rather than attempted value recovery. Actions to achieve this aim include reducing capacity, divesting assets, and resetting the cost base to limit ongoing value erosion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.681,
+                0.461,
+                0.739
+            ],
+            "angle": 0,
+            "content": "For pressured transition segments, the goal is to sustain competitiveness through tighter integration, selective partnerships, and rigorous operational improvement. These measures can enhance resilience and preserve optionality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.553,
+                0.928,
+                0.611
+            ],
+            "angle": 0,
+            "content": "For differentiated, defensible segments, the focus shifts toward targeted growth. Investment in innovation, applications, and capacity can reinforce competitive advantages and capture higher-value opportunities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.625,
+                0.915,
+                0.696
+            ],
+            "angle": 0,
+            "content": "Across all segment types, execution discipline will determine whether strategy translates into resilience. Companies that combine cost transformation, portfolio reshaping, and operational improvement are more likely to succeed than those relying on isolated initiatives.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.244,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.431,
+                0.473,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.476,
+                0.615,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.554,
+                0.368,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.569,
+                0.383,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.596,
+                0.437,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.612,
+                0.451,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.626,
+                0.478,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.64,
+                0.464,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.655,
+                0.161,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.683,
+                0.434,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.698,
+                0.417,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.712,
+                0.458,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.726,
+                0.45,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.555,
+                0.926,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.57,
+                0.909,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.584,
+                0.901,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.598,
+                0.691,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.911,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.639,
+                0.871,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.654,
+                0.871,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.668,
+                0.885,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.683,
+                0.781,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.392
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.068,
+                0.432,
+                0.667,
+                0.469
+            ],
+            "angle": 0,
+            "content": "Business Model Evolution"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.51,
+                0.453,
+                0.555
+            ],
+            "angle": 0,
+            "content": "The industry's strategic choices are crystallizing into three business models. Each one involves a different capital-allocation logic, operating model, and partnership agenda.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.568,
+                0.138,
+                0.616
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.146,
+                0.567,
+                0.444,
+                0.654
+            ],
+            "angle": 0,
+            "content": "The scale-driven cost leader is one model. This is built around advantaged assets, high utilization, and strict operational discipline. The model is most relevant in commoditized value chains where cost position determines long-term viability.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.667,
+                0.137,
+                0.715
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.146,
+                0.667,
+                0.473,
+                0.754
+            ],
+            "angle": 0,
+            "content": "A second model is the integrated network player and involves using feedstock access, partnerships, and more stable downstream linkages to reduce volatility and improve resilience. This model can strengthen positioning in uncertain and fragmented value chains.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.516,
+                0.511,
+                0.585,
+                0.559
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.593,
+                0.51,
+                0.918,
+                0.569
+            ],
+            "angle": 0,
+            "content": "A third model is the innovation-led specialist. It combines differentiated products, application expertise, and closer customer relationships to support margin quality and more stable demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.514,
+                0.581,
+                0.897,
+                0.611
+            ],
+            "angle": 0,
+            "content": "Clarity of direction is essential. Trying to straddle all three models usually creates complexity without advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.953,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.895,
+                0.953,
+                0.915,
+                0.965
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.433,
+                0.665,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.512,
+                0.447,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.527,
+                0.426,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.541,
+                0.451,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.569,
+                0.443,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.583,
+                0.435,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.597,
+                0.432,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.612,
+                0.44,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.626,
+                0.438,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.15,
+                0.64,
+                0.271,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.669,
+                0.437,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.683,
+                0.435,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.698,
+                0.43,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.15,
+                0.712,
+                0.412,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.725,
+                0.47,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.74,
+                0.424,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.512,
+                0.911,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.526,
+                0.905,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.541,
+                0.9,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.555,
+                0.916,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.583,
+                0.894,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.597,
+                0.868,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.047,
+                0.149,
+                0.062
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.068,
+                0.065,
+                0.769,
+                0.09
+            ],
+            "angle": 0,
+            "content": "Response | Three distinct business models are emerging"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.067,
+                0.106,
+                0.928,
+                0.51
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Impact archetype</td><td>Pressured</td><td>Exposed</td><td>Resilient</td></tr><tr><td>How to react</td><td>Scale, Efficiency, and Cost Leader</td><td>Value Chain and Partnership Optimizer</td><td>Performance and Innovation Champion</td></tr><tr><td>Core logic:</td><td>Build or consolidate capacity to achieve competitive advantage (e.g., lowest cost) and resilience; become last-one-standing</td><td>Secure advantaged feedstock or downstream access through integration; build closed and stable value chains</td><td>Focus on innovation, customization &amp; market intimacy to sustain premium margins; develop specialty products</td></tr><tr><td>Example levers:</td><td>Operational ExcellenceOpEx EfficiencyCapEx DisciplineAsset Rationalization</td><td>Chain IntegrationStrategic AlliancesDigital &amp; AIOperational Excellence</td><td>Growth InvestmentInnovation EngineDigital and AIOperational Excellence</td></tr><tr><td>Enablers required:</td><td>Asset utilizationSimple product portfoliosStable demand (regional or export to cover fix costs)Low feedstock/energy cost</td><td>Predominantly regional value chain to limit logistics costLow feedstock cost for upstream chemicals &amp; low energy cost to ensure captive value chain economics</td><td>Customer proximity &amp; technical salesInnovation capabilitiesPricing power to ensure sufficiently high margins</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.068,
+                0.528,
+                0.163,
+                0.542
+            ],
+            "angle": 0,
+            "content": "Source: BCG"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.952,
+                0.915,
+                0.965
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.392
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.067,
+                0.432,
+                0.692,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Building Resilience\nThrough No-Regret Moves"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.553,
+                0.461,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Even when companies are faced with uncertainty, some moves make sense across virtually every plausible scenario.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.596,
+                0.447,
+                0.669
+            ],
+            "angle": 0,
+            "content": "The starting point for developing resilience requires a hard-nosed portfolio analysis grounded in structural economics rather than legacy assumptions. Companies need to identify where they have a sustainable advantage and where they do not, and act accordingly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.681,
+                0.451,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Closing the cost gap is essential, through both operational improvements and structural cost reduction. This involves improving asset utilization, reducing overheads, and increasing productivity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.553,
+                0.888,
+                0.597
+            ],
+            "angle": 0,
+            "content": "Securing access to feedstocks and energy can materially improve resilience while long-term contracts, recycling, and integration can reduce exposure to volatility.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.514,
+                0.61,
+                0.852,
+                0.64
+            ],
+            "angle": 0,
+            "content": "Partnerships can improve value-chain coordination and help stabilize demand in selected chains.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.514,
+                0.653,
+                0.912,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Better use of data and analytics can improve yields, sharpen planning, reduce downtime, and lower working capital.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.696,
+                0.88,
+                0.739
+            ],
+            "angle": 0,
+            "content": "None of these moves change the external environment. When combined, however, they improve resilience and expand strategic options.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.952,
+                0.915,
+                0.965
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.429,
+                0.524,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.473,
+                0.694,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.555,
+                0.432,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.569,
+                0.458,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.598,
+                0.404,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.612,
+                0.42,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.625,
+                0.431,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.639,
+                0.443,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.655,
+                0.352,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.683,
+                0.448,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.698,
+                0.447,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.712,
+                0.409,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.726,
+                0.221,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.554,
+                0.885,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.569,
+                0.874,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.584,
+                0.833,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.612,
+                0.848,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.813,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.91,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.669,
+                0.872,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.697,
+                0.877,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.711,
+                0.872,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.726,
+                0.681,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.048,
+                0.149,
+                0.061
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.067,
+                0.065,
+                0.77,
+                0.117
+            ],
+            "angle": 0,
+            "content": "Strategic Imperative | No-regret actions required across scenarios, archetypes"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.087,
+                0.145,
+                0.414,
+                0.16
+            ],
+            "angle": 0,
+            "content": "Checklist of revenue and growth actions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.195,
+                0.415,
+                0.236
+            ],
+            "angle": 0,
+            "content": "√ Focus portfolios on defensible value pools\nExit structurally disadvantaged products and prioritize higher-margin segments",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.248,
+                0.398,
+                0.289
+            ],
+            "angle": 0,
+            "content": "√ Invest selectively in resilient chemicals\nAllocate capital to segments with credible long-term advantage",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.301,
+                0.42,
+                0.342
+            ],
+            "angle": 0,
+            "content": "√ Accelerate digital and AI deployment\nEnhance efficiency, yield, and working capital through technology",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.354,
+                0.429,
+                0.395
+            ],
+            "angle": 0,
+            "content": "√ Engage on trade and regulation\nActively shape policy and mitigate unfair trade exposure",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.53,
+                0.145,
+                0.843,
+                0.16
+            ],
+            "angle": 0,
+            "content": "Checklist of cost and efficiency actions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.53,
+                0.195,
+                0.842,
+                0.236
+            ],
+            "angle": 0,
+            "content": "√ Reset the cost base structurally\nDrive productivity and overhead reduction to close competitiveness gaps",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.531,
+                0.248,
+                0.817,
+                0.289
+            ],
+            "angle": 0,
+            "content": "√ Rationalize uncompetitive assets\nProactively close or divest persistently underperforming capacity",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.952,
+                0.915,
+                0.966
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.531,
+                0.301,
+                0.842,
+                0.342
+            ],
+            "angle": 0,
+            "content": "√ Secure feedstock and energy positions\nImprove resilience via contracts, recycling, or integration",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.53,
+                0.354,
+                0.836,
+                0.394
+            ],
+            "angle": 0,
+            "content": "√ Strengthen value chain partnerships\nStabilize demand and utilization through strategic alliances",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.067,
+                0.768,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.095,
+                0.333,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.145,
+                0.414,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.196,
+                0.411,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.209,
+                0.414,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.222,
+                0.346,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.248,
+                0.388,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.262,
+                0.397,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.275,
+                0.26,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.301,
+                0.374,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.315,
+                0.417,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.327,
+                0.252,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.355,
+                0.335,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.367,
+                0.427,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.381,
+                0.186,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.529,
+                0.145,
+                0.843,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.566,
+                0.195,
+                0.778,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.566,
+                0.209,
+                0.842,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.565,
+                0.221,
+                0.762,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.249,
+                0.79,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.262,
+                0.814,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.274,
+                0.735,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.565,
+                0.301,
+                0.825,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.566,
+                0.314,
+                0.84,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.328,
+                0.657,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.354,
+                0.811,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.566,
+                0.367,
+                0.834,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.567,
+                0.381,
+                0.685,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.001,
+                0.0,
+                0.999,
+                0.391
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.433,
+                0.328,
+                0.469
+            ],
+            "angle": 0,
+            "content": "Conclusion"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.51,
+                0.457,
+                0.584
+            ],
+            "angle": 0,
+            "content": "The European chemical industry cannot afford to wait for a cyclical rebound. It has to adapt to a structurally different competitive environment. The forces driving change are unlikely to reverse. Consequently, players must accept that the previous equilibrium is a thing of the past.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.596,
+                0.452,
+                0.669
+            ],
+            "angle": 0,
+            "content": "Based on current trajectories, the winners and losers from this transformation are likely to become visible by 2030. Furthermore, by 2040, the consequences of today's capital-allocation decisions will be deeply embedded in the industry's structures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.51,
+                0.915,
+                0.597
+            ],
+            "angle": 0,
+            "content": "For companies, the implication is clear. Those that continue to rely on legacy assumptions and portfolio averages will find it increasingly difficult to compete. Those that move early to reallocate capital, reshape portfolios, and build stronger positions in differentiated, defensible segments will be better placed to create value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.514,
+                0.61,
+                0.89,
+                0.64
+            ],
+            "angle": 0,
+            "content": "The question is no longer whether adjustment is needed. It is who will act quickly and decisively enough to benefit.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.737,
+                0.183,
+                0.752
+            ],
+            "angle": 0,
+            "content": "SIDEBAR",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.107,
+                0.772,
+                0.235,
+                0.85
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.261,
+                0.738,
+                0.875,
+                0.854
+            ],
+            "angle": 0,
+            "content": "Geopolitical disruption and volatility in hydrocarbon markets are persistent risks for European chemical companies. Given its reliance on imported hydrocarbons, Europe is structurally exposed to rising feedstock costs and energy price shocks. In an oversupplied global market, these are difficult to pass on, resulting in margin compression. Compared to regions with access to lower-cost domestic feedstocks, Europe's competitive position may further erode. Beyond cost impacts, ongoing uncertainty also raises the risk of supply disruptions in critical inputs. Taken together, these dynamics could significantly intensify the pressure on the industry to transform.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.244,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.953,
+                0.87,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.895,
+                0.953,
+                0.915,
+                0.965
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.431,
+                0.33,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.512,
+                0.44,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.527,
+                0.455,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.541,
+                0.433,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.555,
+                0.452,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.569,
+                0.368,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.598,
+                0.449,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.612,
+                0.433,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.626,
+                0.403,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.64,
+                0.412,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.655,
+                0.249,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.513,
+                0.906,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.526,
+                0.913,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.541,
+                0.889,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.554,
+                0.899,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.569,
+                0.872,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.583,
+                0.708,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.612,
+                0.886,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.887,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.737,
+                0.184,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.739,
+                0.874,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.754,
+                0.84,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.768,
+                0.865,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.782,
+                0.843,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.797,
+                0.858,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.811,
+                0.866,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.825,
+                0.83,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.84,
+                0.407,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.047,
+                0.505,
+                0.086
+            ],
+            "angle": 0,
+            "content": "About the Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.106,
+                0.214,
+                0.209
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.225,
+                0.323,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Jan Friese\nManaging Director and Senior Partner\nFrankfurt\nfriese.jan@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.105,
+                0.661,
+                0.209
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.225,
+                0.726,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Jan Beier\nManaging Director and Partner\nCologne\nbeier.jan@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.319,
+                0.213,
+                0.423
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.439,
+                0.347,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Hubert Schönberger\nSenior Director - Chemicals, BCG Vantage Munich\nschoenberger.hubert@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.545,
+                0.322,
+                0.656,
+                0.424
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.439,
+                0.731,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Christian Hoffmann\nPartner and Director, Chemicals\nHamburg\nhoffmann.christian@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.534,
+                0.214,
+                0.636
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.653,
+                0.277,
+                0.711
+            ],
+            "angle": 0,
+            "content": "Julia Meisel\nSenior Manager - BCG Vantage\nDüsseldorf\nmeisel.julia@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.535,
+                0.661,
+                0.636
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.652,
+                0.713,
+                0.712
+            ],
+            "angle": 0,
+            "content": "Katarzyna Raszka\nSenior Analyst - BCG Vantage\nDüsseldorf\nraszka.katarzyna@bcg.com"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.39,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "EUROPEAN CHEMICALS 2030–2040: STRATEGIC PATHWAYS TO REBUILD ADVANTAGE"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.952,
+                0.915,
+                0.965
+            ],
+            "angle": 0,
+            "content": "15"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.047,
+                0.505,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.065,
+                0.045,
+                0.164,
+                0.078
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.851,
+                0.48,
+                0.925
+            ],
+            "angle": 0,
+            "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.937,
+                0.461,
+                0.953
+            ],
+            "angle": 0,
+            "content": "© Boston Consulting Group 2026. All rights reserved. 6/26"
+        }
+    ],
+    []
+]

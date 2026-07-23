@@ -1,0 +1,6348 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.431,
+                0.232,
+                0.45
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.479,
+                0.779,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Is AI Computing Power\nBecoming a\nCommodity?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.657,
+                0.309,
+                0.676
+            ],
+            "angle": 0,
+            "content": "By Antti Belt and Allen Thomas",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.7,
+                0.362,
+                0.718
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 23, 2026 15 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.778,
+                0.956,
+                0.9
+            ],
+            "angle": 0,
+            "content": "The economics of enterprise AI are shifting fast. Until recently, flat-rate subscriptions allowed large enterprise users of AI tools to focus more on driving uptake than on managing the costs of AI. But that flat-fee era for enterprise users has ended, as AI labs such as Anthropic and OpenAI have shifted to metered pricing. The next development is likely to be dynamic pricing, under which prices surge at times of peak demand. For end users, the implication is clear: AI cost exposure is rising.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.436,
+                0.226,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.475,
+                0.783,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.527,
+                0.42,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.576,
+                0.445,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.66,
+                0.306,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.704,
+                0.358,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.781,
+                0.913,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.801,
+                0.934,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.82,
+                0.931,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.84,
+                0.953,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.86,
+                0.933,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.878,
+                0.106,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.955,
+                0.208
+            ],
+            "angle": 0,
+            "content": "Meeting that challenge will require a fundamental evolution in today's market for AI computing power (known as “AI compute”), away from heterogeneous contracts, opaque pricing, and limited tools to a system that is more liquid and transparent. How far the market moves toward complete commoditization is uncertain, owing to notable headwinds—among them the fact that AI compute is heterogeneous, varying across hardware generations, timing, and geography. But a shift is undoubtedly under way, and benchmarks and futures contracts for AI chip rentals are already emerging to enable price transparency and risk management.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.221,
+                0.946,
+                0.339
+            ],
+            "angle": 0,
+            "content": "As the market grows more liquid and efficient, it creates opportunities, not only for end users but also for data center players, AI labs, and other large users of AI compute. All told, BCG Institute estimates that this change could unlock as much as $140 billion in annual “dark value”—value that exists in virtually every industry due to inefficiencies in the supply and demand of capital, goods, and services. (See Exhibit 1.) In the AI compute market, dark value is likely to concentrate in two primary areas:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.369,
+                0.918,
+                0.427
+            ],
+            "angle": 0,
+            "content": "- Price optimization and trading across the three primary components of the market: AI chips—largely graphical processing units (GPUs)—AI compute rental rates for those chips, and end user tokens",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.444,
+                0.493,
+                0.463
+            ],
+            "angle": 0,
+            "content": "- Lower borrowing costs for data center players",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.493,
+                0.913,
+                0.533
+            ],
+            "angle": 0,
+            "content": "Players that move early will be in the best position to adapt to a rapidly changing market and unlock dark value in the AI compute market.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.566,
+                0.109,
+                0.579
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.582,
+                0.631,
+                0.602
+            ],
+            "angle": 0,
+            "content": "AI Market Evolution Can Release up to $140 Billion of Value"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.609,
+                0.191,
+                0.623
+            ],
+            "angle": 0,
+            "content": "DARK VALUE ($BILLIONS)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.048,
+                0.626,
+                0.728,
+                0.816
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.828,
+                0.321,
+                0.84
+            ],
+            "angle": 0,
+            "content": "Sources: LSEG; Goldman Sachs Global Institute; BCG analysis."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.927,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.94,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.949,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.952,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.148,
+                0.889,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.167,
+                0.91,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.189,
+                0.622,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.222,
+                0.941,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.242,
+                0.924,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.926,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.283,
+                0.918,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.301,
+                0.94,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.321,
+                0.243,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.37,
+                0.915,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.39,
+                0.902,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.409,
+                0.22,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.445,
+                0.489,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.496,
+                0.909,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.514,
+                0.457,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.567,
+                0.107,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.067,
+                0.838,
+                0.149
+            ],
+            "angle": 0,
+            "content": "The Challenges of Today's Market for AI Computing Power"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.174,
+                0.954,
+                0.235
+            ],
+            "angle": 0,
+            "content": "The market for AI compute is growing at a breakneck pace. BCG analysis projects that it will climb from $360 billion in 2025 to roughly $2.3 trillion in 2030. Yet players across the ecosystem face a number of structural challenges that a more liquid, transparent market could help address.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.262,
+                0.86,
+                0.329
+            ],
+            "angle": 0,
+            "content": "AI End Users: Increasing Exposure to AI Cost"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.358,
+                0.941,
+                0.398
+            ],
+            "angle": 0,
+            "content": "As pricing approaches evolve, end users are increasingly exposed to the wholesale market for AI compute that undergirds AI models.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.412,
+                0.95,
+                0.552
+            ],
+            "angle": 0,
+            "content": "End-user tokens are just a way of representing AI compute use. Every time an AI model provider like Anthropic or OpenAI answers a query, it uses AI compute, which has a cost. But until recently, flat subscription pricing largely insulated end users from the true costs of AI. To manage surges in end user demand, AI providers didn't raise prices; instead, they controlled demand directly. When AI compute capacity tightened, providers responded with rate limits, queue delays, or outright throttling. Users experienced worse service but ultimately paid the same flat subscription regardless of conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.565,
+                0.946,
+                0.667
+            ],
+            "angle": 0,
+            "content": "More recently, many providers have shifted to metered pricing. Anthropic began moving enterprise customers to a $20-per-seat base fee plus pay-per-token API rates in April 2026. The company explicitly tied the change to deepening crunch for AI compute. Similarly, OpenAI moved Codex from flat-message pricing to token metering in early April, GitHub tightened Copilot limits days later, and Windsurf replaced flat credits with hard weekly limits in March.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.679,
+                0.929,
+                0.759
+            ],
+            "angle": 0,
+            "content": "The next step in the market's evolution could be dynamic token pricing, where the price of inference (the computational process of running a trained AI model to generate a response) moves with the underlying supply of and demand for AI compute, much as wholesale electricity prices rise on hot afternoons and fall overnight.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.773,
+                0.952,
+                0.893
+            ],
+            "angle": 0,
+            "content": "With tokens, dynamic prices would reflect both demand-side workload characteristics and supply-side conditions. On the demand side, not all inference loads are equally valuable: a real-time customer-facing agent running at 9:00 AM and an overnight batch summarization job should not clear at the same price. On the supply side, available AI compute capacity fluctuates continuously. Buyers that can tolerate latency or can schedule work flexibly will pay less; those that need guaranteed throughput at a specific moment will pay a premium.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.064,
+                0.701,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.106,
+                0.838,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.175,
+                0.95,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.197,
+                0.937,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.215,
+                0.889,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.262,
+                0.859,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.298,
+                0.144,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.36,
+                0.937,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.379,
+                0.377,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.414,
+                0.927,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.435,
+                0.943,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.454,
+                0.948,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.475,
+                0.942,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.495,
+                0.908,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.513,
+                0.879,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.533,
+                0.274,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.566,
+                0.859,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.587,
+                0.923,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.606,
+                0.943,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.626,
+                0.938,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.647,
+                0.766,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.681,
+                0.884,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.701,
+                0.898,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.721,
+                0.923,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.74,
+                0.486,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.775,
+                0.949,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.794,
+                0.902,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.815,
+                0.933,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.834,
+                0.83,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.853,
+                0.925,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.873,
+                0.738,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.918,
+                0.147
+            ],
+            "angle": 0,
+            "content": "This market would work efficiently in a setting where models are substitutable. For example, a developer building a chatbot, a summarization tool, or a coding assistant can often run it on Claude, GPT, or an open-source alternative with comparable results. That keeps competition strong and ties prices closer to the provider's actual cost of AI compute in the moment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.161,
+                0.953,
+                0.282
+            ],
+            "angle": 0,
+            "content": "However, not all AI activity is substitutable. Deeper ecosystem integration—such as for custom silicon, fine-tuned models, data residency arrangements, and enterprise support agreements—creates switching costs that remove the substitutability on which spot market discipline depends. In these cases, token prices will reflect negotiated relationship value as much as marginal costs for AI compute, and they will behave less like wholesale electricity and more like a long-term utility contract: stickier, less transparent, and less responsive to real-time supply conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.295,
+                0.923,
+                0.336
+            ],
+            "angle": 0,
+            "content": "As enterprises scale their AI usage, a more developed market will help them adjust to dynamic pricing by adopting several practical measures:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.364,
+                0.907,
+                0.443
+            ],
+            "angle": 0,
+            "content": "- Time flexible workloads strategically. For substitutable, latency-tolerant jobs, enterprises should treat AI compute as they would any commodity that has predictable price cycles—scheduling batch work, model evaluations, and non-urgent processing to run when spot prices are low.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.458,
+                0.925,
+                0.537
+            ],
+            "angle": 0,
+            "content": "- Use futures markets to manage price risk on nonflexible workloads. In situations where enterprises can’t defer timing but providers remain substitutable, enterprises need visibility into real-time prices for AI compute and into financial instruments to hedge against cost volatility.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.552,
+                0.934,
+                0.651
+            ],
+            "angle": 0,
+            "content": "- Scrutinize committed capacity arrangements. For mission-critical workloads where the cost of switching providers is high, enterprises need to understand what they are actually paying for lock-in. It is crucial to negotiate committed capacity terms with full awareness of their alternatives and to avoid sleepwalking into pricing that is detached from the underlying costs of AI compute.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.681,
+                0.809,
+                0.784
+            ],
+            "angle": 0,
+            "content": "AI Labs and Other Large Users of AI Computing Power: Risk Management and Price Discovery"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.81,
+                0.935,
+                0.87
+            ],
+            "angle": 0,
+            "content": "AI labs, including Anthropic and OpenAI, need vast amounts of AI compute to train new frontier models and to run end users' inference workloads. Today's market structure presents them with two challenges.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.885,
+                0.955,
+                0.926
+            ],
+            "angle": 0,
+            "content": "First, price discovery is limited. The listed prices that are readily accessible on the websites of AI compute providers rarely match the real transaction price. Often, for AI labs and other large users",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.972,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.068,
+                0.914,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.091,
+                0.895,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.898,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.853,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.163,
+                0.929,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.182,
+                0.929,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.95,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.224,
+                0.935,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.242,
+                0.904,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.262,
+                0.905,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.296,
+                0.918,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.317,
+                0.487,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.365,
+                0.903,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.386,
+                0.9,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.405,
+                0.875,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.425,
+                0.201,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.46,
+                0.889,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.48,
+                0.92,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.5,
+                0.886,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.519,
+                0.154,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.553,
+                0.927,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.573,
+                0.913,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.594,
+                0.888,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.612,
+                0.93,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.632,
+                0.203,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.681,
+                0.78,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.714,
+                0.809,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.748,
+                0.453,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.813,
+                0.928,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.831,
+                0.931,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.853,
+                0.192,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.888,
+                0.937,
+                0.903
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.907,
+                0.95,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.953,
+                0.265
+            ],
+            "angle": 0,
+            "content": "of AI compute (such as autonomous vehicle players and biotech companies), providers strike prices bilaterally through negotiated discounts, reserved capacity commitments, and enterprise agreements that happen off-market and go unreported. Other markets have successfully created price discovery by establishing benchmarks. Price reporting agencies in markets such as crude oil collect real transaction data from market participants, standardize it, and publish it as a reference that the rest of the market can price against. A solid benchmark for AI compute would enable AI labs to assess whether they are paying a fair market price. At the same time, it would establish a reference price for futures markets while laying the foundation for price-indexed agreements, where fees track real supply and demand rather than trapping buyers in flat rates that are disconnected from market conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.28,
+                0.944,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Second, AI labs and other large consumers have limited tools for managing supply and price risk. That’s why they are not just buying what they need today, but instead striking long-term bilateral agreements that lock in capacity at fixed or predictable rates well before they know exactly how much they will need.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.373,
+                0.947,
+                0.532
+            ],
+            "angle": 0,
+            "content": "This race to lock up supply is evident in data center vacancy rates of 1%, with roughly 92% of new capacity already precommitted before it is even built. But the utilization rate for some GPU clusters that enterprise users of AI compute rent or own can be as low as 5%, according to Cast.AI. Utilization is likely much higher at leading AI labs, but even there the issue does not disappear entirely. That can look inefficient from the outside, especially when some capacity is consistently underused. But from the buyer's point of view, the alternative may be worse. Undercommitting could mean not having enough AI compute to train the next model, serve the next wave of users, or keep up with competitors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.546,
+                0.944,
+                0.625
+            ],
+            "angle": 0,
+            "content": "Those long-term contracts also help address price risk. According to the Silicon Data H100 rental index, the price of an H100 GPU has risen about 2.2% per month since January 2025. Over that same period, prices fell by as much as 11% at one point and rose to roughly 25% above their starting level at another.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.64,
+                0.779,
+                0.659
+            ],
+            "angle": 0,
+            "content": "A more developed market would enable two critical types of risk management:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.691,
+                0.926,
+                0.79
+            ],
+            "angle": 0,
+            "content": "- Supply Risk Management. In other markets, companies use long-term bilateral contracts for baseline supply planning, while a liquid short-term market lets buyers flex capacity up or down as demand changes. A secondary market enables this flexibility in both directions: companies that need more supply can buy it, and those with too much can sell the excess. The market for AI compute does not yet work that way.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.803,
+                0.925,
+                0.882
+            ],
+            "angle": 0,
+            "content": "- Pricing Risk Management. In commodities markets, futures allow firms to manage price risk by locking in future prices without physical procurement of commodities such as oil, gas, or wheat. A liquid financial market for AI compute would allow AI labs to better manage price volatility risk by hedging future costs of such power.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.904,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.091,
+                0.932,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.108,
+                0.941,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.13,
+                0.95,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.149,
+                0.866,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.168,
+                0.932,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.189,
+                0.923,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.209,
+                0.892,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.228,
+                0.924,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.248,
+                0.476,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.281,
+                0.942,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.301,
+                0.936,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.32,
+                0.935,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.339,
+                0.237,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.374,
+                0.945,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.394,
+                0.889,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.416,
+                0.88,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.436,
+                0.901,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.454,
+                0.923,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.474,
+                0.868,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.494,
+                0.924,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.512,
+                0.493,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.548,
+                0.942,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.566,
+                0.918,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.587,
+                0.899,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.608,
+                0.273,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.64,
+                0.776,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.692,
+                0.923,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.712,
+                0.893,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.732,
+                0.887,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.752,
+                0.904,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.771,
+                0.57,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.806,
+                0.923,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.826,
+                0.906,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.844,
+                0.901,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.864,
+                0.543,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.067,
+                0.799,
+                0.135
+            ],
+            "angle": 0,
+            "content": "Data Center Players: High Borrowing Costs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.164,
+                0.952,
+                0.263
+            ],
+            "angle": 0,
+            "content": "Until now, the AI data center market, being young, has relied heavily on financing via hyperscaler equity and cash flow. But as the market matures, the need for debt financing is likely to grow quickly. Hyperscalers and neoclouds today borrow at relatively high interest rates to cover their data center investments. Lenders prefer predictable cash flow and minimal performance risk, but AI data center financing today breaks both requirements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.277,
+                0.948,
+                0.417
+            ],
+            "angle": 0,
+            "content": "To understand why, consider the assets that secure data center loans today: GPU hardware and customer rental agreements. GPUs have uncertain residual value because they depreciate rapidly as new generations ship roughly every two years. Rental rates in customer contracts, meanwhile, have been volatile, with H100 hourly rates falling from around $8 per hour at a peak in early 2024 to $1.96 per hour by late 2025 before climbing back to $2.64 per hour in April 2026. In addition, these customer contracts often concentrate in one or two counterparties, magnifying the impact of any single renegotiation or default.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.43,
+                0.925,
+                0.471
+            ],
+            "angle": 0,
+            "content": "The emergence of forward markets for both GPU residual values and rental rates could change the equation by enabling two things:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.499,
+                0.915,
+                0.58
+            ],
+            "angle": 0,
+            "content": "- Hedging Residual Value. Without a market view on future residual value, lenders guess at depreciation and lend conservatively, keeping loan-to-value covenants tight and rates high. Establishing a forward curve for AI chips would permit data center players and lenders to hedge residual risk directly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.594,
+                0.936,
+                0.673
+            ],
+            "angle": 0,
+            "content": "- Hedging Rental Rates. Rental revenue services a company’s debt while the business is running. A liquid forward curve would allow companies to strike standardized contracts, giving them the same degree of revenue certainty that they now garner via large offtake agreements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.702,
+                0.929,
+                0.743
+            ],
+            "angle": 0,
+            "content": "Ultimately, the development of such financial tools would translate into lower borrowing costs, enabling data center players to reallocate capital toward building more data center capacity.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.814,
+                0.754,
+                0.856
+            ],
+            "angle": 0,
+            "content": "The Dark Value Opportunity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.881,
+                0.944,
+                0.921
+            ],
+            "angle": 0,
+            "content": "As the market for AI compute evolves, data centers, AI labs, and large end users will have access to new mechanisms for managing their investment and spending. Those mechanisms will enable",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.065,
+                0.801,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.104,
+                0.165,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.165,
+                0.943,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.185,
+                0.901,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.205,
+                0.929,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.226,
+                0.946,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.244,
+                0.576,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.278,
+                0.923,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.299,
+                0.883,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.319,
+                0.9,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.338,
+                0.933,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.359,
+                0.939,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.378,
+                0.943,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.397,
+                0.499,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.431,
+                0.921,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.451,
+                0.385,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.501,
+                0.895,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.521,
+                0.911,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.541,
+                0.889,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.561,
+                0.319,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.596,
+                0.878,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.616,
+                0.932,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.635,
+                0.816,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.657,
+                0.185,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.704,
+                0.925,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.725,
+                0.906,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.811,
+                0.753,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.883,
+                0.939,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.903,
+                0.941,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.894,
+                0.107
+            ],
+            "angle": 0,
+            "content": "them to unlock dark value in two areas: arbitrage and lower borrowing costs for data center players.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.135,
+                0.572,
+                0.173
+            ],
+            "angle": 0,
+            "content": "Optimization and Trading"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.198,
+                0.952,
+                0.277
+            ],
+            "angle": 0,
+            "content": "BCG's dark value research, finds that 3% to 4% of total market size in any industry is available for capture through arbitrage—an opportunity that arises from a market's complexity. Applied to an expected $2.2 to $2.4 trillion AI compute market by 2030, this implies a potential annual value of $66 billion to $97 billion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.292,
+                0.721,
+                0.312
+            ],
+            "angle": 0,
+            "content": "That value is distributed across the market's three primary components:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.342,
+                0.934,
+                0.381
+            ],
+            "angle": 0,
+            "content": "- AI Chips. This segment could yield $12 billion to $17 billion in annual dark value. Data center players would capture much of it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.396,
+                0.917,
+                0.456
+            ],
+            "angle": 0,
+            "content": "- AI Compute Rental. Rental of this sort is typically measured in GPU-hours. The total annual dark value would come in at $22 billion to $34 billion. AI labs and large AI compute users would be the primary beneficiaries of this value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.47,
+                0.912,
+                0.529
+            ],
+            "angle": 0,
+            "content": "- Tokens Consumed by End Users of AI Applications. Large enterprise users would be in a position to be well positioned to collect most of the annual dark value of $32 billion to $46 billion in this area.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.559,
+                0.956,
+                0.7
+            ],
+            "angle": 0,
+            "content": "Our estimate does not assume that everything will be optimized and traded. After all, most buyers of AI compute run AI workloads, and depending on the workload, arbitrage—especially geographic arbitrage—may not be feasible in practice for many of them. Some workloads cannot be transferred to a data center in another region, owing to cost constraints (data transfer fees can erase savings) or to the need for real-time turnaround. (See Exhibit 2.) This constraint may become less relevant over time, however, as companies such as Lumen Technologies advance AI infrastructure to support high-capacity, low-latency networking for moving massive AI data sets.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.889,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.089,
+                0.123,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.135,
+                0.57,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.198,
+                0.949,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.22,
+                0.94,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.239,
+                0.947,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.258,
+                0.277,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.293,
+                0.717,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.344,
+                0.931,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.364,
+                0.373,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.397,
+                0.915,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.416,
+                0.889,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.437,
+                0.511,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.472,
+                0.897,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.492,
+                0.907,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.512,
+                0.24,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.562,
+                0.95,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.583,
+                0.852,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.602,
+                0.941,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.622,
+                0.952,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.64,
+                0.877,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.661,
+                0.936,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.68,
+                0.929,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.11,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.042,
+                0.081,
+                0.637,
+                0.119
+            ],
+            "angle": 0,
+            "content": "Arbitrage Opportunity Depends on Workload Portability and Latency Requirements"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.045,
+                0.127,
+                0.727,
+                0.332
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.339,
+                0.714,
+                0.361
+            ],
+            "angle": 0,
+            "content": "Note: API = application programming interface; NAS = neural architecture search; RAG = retrieval-augmented generation; RLHF = reinforcement learning from human feedback."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.395,
+                0.576,
+                0.431
+            ],
+            "angle": 0,
+            "content": "Reduced Borrowing Costs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.457,
+                0.946,
+                0.537
+            ],
+            "angle": 0,
+            "content": "To estimate the potential financing savings for data center players, we drew on loan data from LSEG/Refinitiv. First we volume-weighted investment-grade loans to calculate the average spread over the secured overnight financing rate (SOFR). Then we analyzed a subset of data center companies, including CoreWeave and xAI, to estimate spreads specific to AI infrastructure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.55,
+                0.953,
+                0.632
+            ],
+            "angle": 0,
+            "content": "Assuming a $3.6 trillion investment in AI infrastructure from 2026 through 2030, we compared interest costs with no forward curve for AI compute versus an environment with a reliable forward curve. Under both scenarios, we held the financing structure constant: 70% loan-to-value, 4.5-year amortization (the median investment-grade tenor), and SOFR at 3.6%. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.662,
+                0.11,
+                0.676
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.043,
+                0.679,
+                0.705,
+                0.716
+            ],
+            "angle": 0,
+            "content": "Lower Interest Rates Can Save Data Center Players $116 Billion over the Next 4.5 Years"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.044,
+                0.724,
+                0.727,
+                0.821
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Without forward curve</td><td>With forward curve</td><td>Difference</td></tr><tr><td>All-in interest rate</td><td>6.43%</td><td>4.75%</td><td>1.68%</td></tr><tr><td>Interest as a percentage of principal</td><td>17.7%</td><td>13.1%</td><td>4.6%</td></tr><tr><td>Interest across $3.6 trillion buildout</td><td>~$446 billion</td><td>~$330 billion</td><td>$116 billion</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.221,
+                0.842,
+                0.554,
+                0.857
+            ],
+            "angle": 0,
+            "content": "~$26 billion saved per year, redeployable into added capacity"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.874,
+                0.147,
+                0.885
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.882,
+                0.641,
+                0.895
+            ],
+            "angle": 0,
+            "content": "Note: Assumptions: $3.6 trillion buildout (2026–2030); 70% loan-to-value; 4.5-year amortization; secured overnight financing rate at 3.6%."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.107,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.395,
+                0.576,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.459,
+                0.913,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.478,
+                0.941,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.499,
+                0.892,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.518,
+                0.884,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.553,
+                0.911,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.573,
+                0.947,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.592,
+                0.95,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.614,
+                0.832,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.666,
+                0.107,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.041,
+                0.067,
+                0.932,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Companies could deploy the total savings of $116 billion, about $26 billion annually, toward adding more capacity. If AI infrastructure investment comes in at the high end of analysts' projections—$6 trillion from 2026 through 2030—the reduction in borrowing cost would exceed $40 billion annually."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.216,
+                0.841,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Headwinds to the Development of a Liquid AI Computing Power Market"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.363,
+                0.952,
+                0.463
+            ],
+            "angle": 0,
+            "content": "Companies have made some moves to evolve the market. Amazon Web Services, for example, launched EC2 Spot Instances in 2009 as a bidding market for unused capacity, but it later shifted to a model based on long-term supply and demand for spare capacity. More recently, independent venues such as SF Compute have pushed the idea further by building a marketplace for GPU clusters with resale built in.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.477,
+                0.922,
+                0.517
+            ],
+            "angle": 0,
+            "content": "However, several factors have made such efforts—and the overall shift toward a more efficient market—challenging:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.547,
+                0.932,
+                0.707
+            ],
+            "angle": 0,
+            "content": "- Technical Complexity. AI compute differs along three dimensions. First, it can be cheaper or more available at certain times (for example off-peak hours, periods of low demand, seasonal lulls, or demand spikes immediately after the launch of a new AI model). Second, it can vary in quality. An H100 does not deliver the same performance as an H200. And non-GPU expenses such as CPU computing power, networking, storage, orchestration software, and support are often hidden, as are provider-specific factors such as downtime, setup time, debugging time, and the performance tuning required for networking and storage. Third, AI compute costs and availability differ by geographic location. (See Exhibit 4.)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.72,
+                0.935,
+                0.879
+            ],
+            "angle": 0,
+            "content": "- Lack of Consensus Benchmarks. A trusted benchmark for AI compute would enable all players across the ecosystem to compare offers, evaluate GPU-backed assets, or build the financial products to hedge price risk. In mature commodity markets such as oil, benchmarks may differ but they still give participants a common view of price. Benchmarks for AI compute are beginning to emerge, including the Ornn H100 Index and the Silicon Data H100 Rental Index, among others. But each benchmark uses a different methodology to collect data and normalize pricing on the basis of heterogeneous AI compute. As a result, the same GPU on the same day can fetch significantly different prices across indices. (See Exhibit 5.)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.892,
+                0.898,
+                0.932
+            ],
+            "angle": 0,
+            "content": "- Capital Availability. Although many AI labs and AI services companies are not yet highly profitable, equity funding is still available; and although debt is costly, they can often find",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.213,
+                0.834,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.255,
+                0.843,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.295,
+                0.229,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.366,
+                0.916,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.385,
+                0.943,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.406,
+                0.832,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.425,
+                0.947,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.444,
+                0.38,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.479,
+                0.919,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.498,
+                0.25,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.549,
+                0.918,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.569,
+                0.928,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.587,
+                0.913,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.607,
+                0.858,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.628,
+                0.895,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.648,
+                0.875,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.667,
+                0.897,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.686,
+                0.767,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.721,
+                0.872,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.741,
+                0.9,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.761,
+                0.927,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.781,
+                0.93,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.801,
+                0.904,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.82,
+                0.912,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.839,
+                0.906,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.858,
+                0.828,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.894,
+                0.878,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.914,
+                0.893,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.068,
+                0.886,
+                0.088
+            ],
+            "angle": 0,
+            "content": "alternatives. As a result, managing price risk has only recently become a major concern.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.102,
+                0.897,
+                0.202
+            ],
+            "angle": 0,
+            "content": "- Data Center Player Incentives. Data center players have historically leaned on long-term bilateral contracts and have had little reason to standardize pricing or to support open benchmarks. Going forward, however, some data center players may see strategic value in greater market transparency if it reduces their funding costs and helps them persuade enterprise customers to switch to them from competitors that price more opaquely.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.234,
+                0.11,
+                0.248
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.296,
+                0.229,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Time complexity"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.311,
+                0.269,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Daily price volatility of Nvidia H100 SXM $/HOUR PER 1 GPU"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.042,
+                0.336,
+                0.263,
+                0.478
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.282,
+                0.296,
+                0.465,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Quality complexity"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.281,
+                0.312,
+                0.5,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Average daily price aggregated globally $/HOUR PER 1 GPU"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.279,
+                0.336,
+                0.498,
+                0.478
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.525,
+                0.296,
+                0.706,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Geographic complexity"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.524,
+                0.311,
+                0.73,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Average daily price of Nvidia H100 SXM $/HOUR PER 1 GPU"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.521,
+                0.336,
+                0.73,
+                0.478
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.488,
+                0.564,
+                0.509
+            ],
+            "angle": 0,
+            "content": "Sources: AWS; GCP; Vast.ai, Runpod; Lambdalabs; Nebius; Cloudrift; Verda; BCG analysis. Note: Data used is from January 13, 2026, to April 8, 2026. Price is for spot instances. GPU = graphical processing unit."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.539,
+                0.109,
+                0.552
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 5"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.043,
+                0.555,
+                0.5,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Three H100 Indices Differ Markedly over Time"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.584,
+                0.729,
+                0.794
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.802,
+                0.721,
+                0.824
+            ],
+            "angle": 0,
+            "content": "Sources: Bloomberg daily SDH100RT (Silicon Data), ORNN H100 (Ornn Compute), and CIHOPUS (Compute Desk Hopper US H100/H200). October 1, 2024, to May 5, 2026; n = 575 common trading days."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.936,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.07,
+                0.882,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.105,
+                0.892,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.123,
+                0.874,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.144,
+                0.894,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.163,
+                0.868,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.183,
+                0.839,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.237,
+                0.107,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.542,
+                0.106,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.067,
+                0.85,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Lessons From Other Commodity Markets"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.174,
+                0.913,
+                0.234
+            ],
+            "angle": 0,
+            "content": "A number of the factors that complicate the development of a more transparent and liquid AI compute market are present in other markets as well. To understand how this market could evolve, it helps to take a look at two other markets: oil and power. (See Exhibit 6.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.266,
+                0.111,
+                0.28
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 6"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.043,
+                0.283,
+                0.721,
+                0.302
+            ],
+            "angle": 0,
+            "content": "How an Evolved AI Market Could Compare to Oil and Power Markets"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.045,
+                0.315,
+                0.728,
+                0.625
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Dimension</td><td></td><td>Power</td><td></td></tr><tr><td>Balancing marketHow short-term imbalances are managed</td><td>Inventories and logisticsImbalances are absorbed through onshore storage, floating storage, and refinery adjustments</td><td>System balancingThe day-ahead auction sets the baseline; intraday trading, ancillary services, and TSO grid balancing fine-tune the supply in real time</td><td>Schedulability and elasticityLoad management could involve queueing and scheduling jobs, preempting and checkpointing them, and moving them across regions</td></tr><tr><td>Physical marketShort-term trading and physical delivery</td><td>Spot cargo marketPrompt physical barrels trade on a cargo basis under defined delivery terms and inform benchmark grade assessments</td><td>Day-ahead marketAn hourly auction clears each day at zonal prices, with power delivered physically through the grid</td><td>PAYG, Spot, next-day blocksBuyers could take on-demand or preemptible capacity, or reserve next-day and short-window blocks with defined hardware, region, and SLA</td></tr><tr><td>Long-term contractsBilateral agreements for supply and capacity</td><td>Term supply agreementsProducers and buyers sign offtakes at fixed or indexed prices, setting volume and quality terms</td><td>Term supply agreementsUtilities and generators contract at fixed or indexed prices via renewable and firm PPAs</td><td>Reserved capacity and offtakesPlayers could commit through reserved instances, dedicated clusters, or private cloud</td></tr><tr><td>Financial marketHedging, price discovery, and investment</td><td>Futures, swaps, optionsTraders hedge and speculate, using futures alongside spreads, calendar swaps, and options</td><td>Futures, swaps, optionsMonthly, quarterly, and yearly futures trade occurs by location and product (base or peak), settling financially or physically</td><td>Futures, swaps, options (emerging)Cash-settled contracts on standardized AI compute indices could be split by region, accelerator class, workload, and term</td></tr><tr><td>Settlement mechanism and reference anchorHow value is measured and contracts are settled</td><td>Benchmark administratorPRAs such as S&amp;P Global Platts and Argus anchor value, with financial contracts cash-settled against them</td><td>Exchange spot priceExchanges with physical delivery—such as Nord Pool, EPEX, and PJM—set the reference price and settle against delivered power</td><td>Benchmark administratorPRAs could normalize workload performance across standardized specs, settling in cash with capacity rights over time</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.633,
+                0.148,
+                0.643
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.64,
+                0.657,
+                0.653
+            ],
+            "angle": 0,
+            "content": "Note: PPA = power purchase agreement; PRA = price reporting agency; SLA = service level agreement; TSO = transmission system operator."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.687,
+                0.108,
+                0.718
+            ],
+            "angle": 0,
+            "content": "Oil"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.748,
+                0.948,
+                0.868
+            ],
+            "angle": 0,
+            "content": "Like AI compute, oil is heterogeneous, with crude varying in chemical composition, sulfur content, and viscosity, as well as by origin, shipping costs, and delivery logistics. The oil market solves this issue through benchmarks. Price reporting agencies (PRAs) collect real transaction data from market participants, standardize it, and publish it as a reference for the rest of the market to price against. Although Brent and WTI together account for only a small percentage of global crude output, they serve as the pricing benchmark for the rest of the market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.88,
+                0.932,
+                0.922
+            ],
+            "angle": 0,
+            "content": "AI compute differs significantly from oil in terms of portability. Physical commodity markets use logistics—tankers and pipelines in oil—to link regions and to enable arbitrage that minimizes",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.065,
+                0.849,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.109,
+                0.246,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.177,
+                0.909,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.197,
+                0.892,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.216,
+                0.794,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.27,
+                0.107,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.686,
+                0.111,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.752,
+                0.944,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.77,
+                0.941,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.79,
+                0.91,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.809,
+                0.904,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.829,
+                0.907,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.848,
+                0.753,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.882,
+                0.927,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.903,
+                0.922,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.925,
+                0.108
+            ],
+            "angle": 0,
+            "content": "price differences. Oil moves easily, so a barrel in Houston and a barrel in Rotterdam are priced within a few dollars of each other and effectively share a global price.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.123,
+                0.112,
+                0.139
+            ],
+            "angle": 0,
+            "content": "Power"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.142,
+                0.949,
+                0.22
+            ],
+            "angle": 0,
+            "content": "Like AI compute, power is inherently regional. In many cases, power cannot easily move from where it is produced to where it is needed, so prices vary by location. Meanwhile, AI compute workloads must operate where the data is, so a GPU in Virginia is not interchangeable with one in Frankfurt.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.236,
+                0.951,
+                0.276
+            ],
+            "angle": 0,
+            "content": "Power illustrates how, under certain conditions, a regional commodity can still function efficiently. Three enablers keep regional price differences anchored to real costs:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.305,
+                0.929,
+                0.384
+            ],
+            "angle": 0,
+            "content": "- Physical Interconnection. When one region's price rises too far above another's, power flows from the cheaper region to the more expensive one. The added supply pushes the high price down, the reduced supply pushes the low price up, and the gap converges toward the cost of transmission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.399,
+                0.913,
+                0.439
+            ],
+            "angle": 0,
+            "content": "- Price Transparency. Real-time prices are published at every node, so suppliers know where to sell and buyers know where to source.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.453,
+                0.924,
+                0.514
+            ],
+            "angle": 0,
+            "content": "- Financial Markets. Traders can bet on regional price differences narrowing by buying in cheaper regions and selling in more expensive ones. This activity pushes prices toward each other and helps eliminate unjustified spreads, even without moving physical power.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.543,
+                0.912,
+                0.604
+            ],
+            "angle": 0,
+            "content": "These mechanisms operate only within connected systems. Regions without interconnection, such as California and New Zealand, can diverge freely. But within a connected grid, price differences largely indicate real congestion and losses rather than opacity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.617,
+                0.927,
+                0.678
+            ],
+            "angle": 0,
+            "content": "AI compute won't converge to a single global price, just as power doesn't. But AI compute can evolve into an efficient regional market complete with a series of supply and risk management solutions. (See the sidebar, “Building Blocks of a Liquid AI Computing Power Market.”)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.706,
+                0.817,
+                0.764
+            ],
+            "angle": 0,
+            "content": "- Building Blocks of a Liquid AI Computing Power Market"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.802,
+                0.804,
+                0.841
+            ],
+            "angle": 0,
+            "content": "An efficient and liquid AI compute market could include a number of valuable tools and solutions:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.872,
+                0.814,
+                0.931
+            ],
+            "angle": 0,
+            "content": "- PRAs to Create Standardized Benchmarks. PRAs would collect and normalize bilateral data into a reference price per GPU-hour that the rest of the market could then use as a reference. The benchmark should not be",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.922,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.088,
+                0.685,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.109,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.144,
+                0.907,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.899,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.184,
+                0.943,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.14,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.237,
+                0.948,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.258,
+                0.699,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.306,
+                0.924,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.325,
+                0.918,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.347,
+                0.92,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.367,
+                0.195,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.399,
+                0.91,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.42,
+                0.445,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.455,
+                0.875,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.476,
+                0.921,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.495,
+                0.834,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.544,
+                0.908,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.564,
+                0.868,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.585,
+                0.736,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.619,
+                0.907,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.638,
+                0.924,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.658,
+                0.833,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.707,
+                0.814,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.739,
+                0.219,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.804,
+                0.801,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.824,
+                0.269,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.873,
+                0.738,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.894,
+                0.81,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.913,
+                0.797,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.1,
+                0.068,
+                0.809,
+                0.127
+            ],
+            "angle": 0,
+            "content": "too general, as would be the case with a global H100 benchmark when AI compute is a regional asset. PRAs could also develop benchmarks for other elements of the market, such as AI chips or tokens.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.142,
+                0.822,
+                0.319
+            ],
+            "angle": 0,
+            "content": "- Long-Term Indexed Contracts. Volume-based commitments exist today, but most are set at fixed rates. In oil markets, a typical term contract is priced as “monthly average Dated Brent + $2.50/bbl,” rather than as “$80/bbl fixed for three years.” The buyer secures the volume, but the price moves with the market. Applying this model to AI compute, companies might agree to price a long-term contract at “OCPI H100 + provider differential,” which would allow data center players to raise long-term capital against indexed revenue while protecting AI labs and other AI compute buyers from overpaying if GPU prices fall.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.334,
+                0.806,
+                0.433
+            ],
+            "angle": 0,
+            "content": "- Financial Derivatives Tied to Benchmarks. Once a trusted benchmark is in place, swaps, futures, and options can refer to it directly. This enables hedging of both rental rates and residual values, which in turn is a key step toward compressing the credit spread on AI data center debt closer to investment grade.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.448,
+                0.803,
+                0.606
+            ],
+            "angle": 0,
+            "content": "- Cash Settlement Against a PRA Benchmark as the Link Between Physical and Financial Markets. Moving GPU-hours between buyer and seller to settle contracts is impractical, so instruments must cash-settle against a reference price. The PRA's normalization, adjusted for GPU region and provider quality, enables accurate settlement across heterogeneous transactions. This mirrors oil markets, where ICE Brent and NYMEX WTI futures settle against Platts and Argus benchmarks rather than physical delivery.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.621,
+                0.812,
+                0.799
+            ],
+            "angle": 0,
+            "content": "- Secondary Markets. Today, buyers that reserve more capacity than they ultimately use or complete workloads earlier than expected have little ability to recover value from unused commitments apart from reselling the capacity to original seller. A secondary market, similar to airline seat resale, would allow reservation holders to resell firm capacity to the larger market, whether to recoup costs or to profit from favorable price movements. It would also strengthen the connection between long-term contracted capacity and near-term spot pricing, making the benchmark more robust by expanding the pool of observable transactions.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.071,
+                0.782,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.089,
+                0.805,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.108,
+                0.58,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.144,
+                0.81,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.162,
+                0.817,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.183,
+                0.817,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.203,
+                0.777,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.222,
+                0.82,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.242,
+                0.811,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.263,
+                0.809,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.281,
+                0.762,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.299,
+                0.204,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.335,
+                0.804,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.356,
+                0.749,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.375,
+                0.797,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.395,
+                0.754,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.416,
+                0.275,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.45,
+                0.799,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.47,
+                0.763,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.49,
+                0.782,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.508,
+                0.751,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.529,
+                0.739,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.549,
+                0.77,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.566,
+                0.776,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.587,
+                0.185,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.623,
+                0.766,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.641,
+                0.759,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.661,
+                0.799,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.681,
+                0.808,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.701,
+                0.805,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.721,
+                0.763,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.741,
+                0.744,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.761,
+                0.805,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.78,
+                0.546,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.041,
+                0.068,
+                0.95,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Since players are already managing supply and price risk through tools such as long-term contracts, this market evolution is likely to take place in bursts over time, rather than all at once. Whether it ultimately converges on a fully commoditized market remains uncertain. Clearly, however, each stage of that evolution, greater dark value capture becomes possible."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.217,
+                0.786,
+                0.297
+            ],
+            "angle": 0,
+            "content": "Recommendations for Players\nAcross the Ecosystem"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.324,
+                0.933,
+                0.385
+            ],
+            "angle": 0,
+            "content": "We believe that all stakeholders need to prepare for a world of increasingly dynamic pricing, greater transparency, and a more sophisticated financial layer around physical AI compute. The specific actions that each stakeholder will take, however, differ.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.413,
+                0.316,
+                0.446
+            ],
+            "angle": 0,
+            "content": "AI End Users"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.474,
+                0.943,
+                0.515
+            ],
+            "angle": 0,
+            "content": "As AI labs shift toward metered and dynamic pricing, large AI end users can take three actions to manage their cost:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.543,
+                0.913,
+                0.624
+            ],
+            "angle": 0,
+            "content": "- Tier demand into separate baseload and flexible categories. AI end users should identify workload tiers—including high-value, customer-facing applications (baseload demand) that must be served regardless of price—and background tasks (batch summarization, internal research, and report generation) whose requirements are more flexible.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.637,
+                0.899,
+                0.698
+            ],
+            "angle": 0,
+            "content": "- Hedge baseload demand. Enterprises with large and growing AI cost lines should treat AI compute the same way they treat energy or foreign exchange exposure: by hedging systematically where doing so is material to earnings.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.712,
+                0.91,
+                0.772
+            ],
+            "angle": 0,
+            "content": "- Throttle flexible demand. End users can throttle, delay, or reroute flexible workloads when prices spike. In a price shock, companies should be in a position to scale down flexible consumption while preserving baseload.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.801,
+                0.839,
+                0.87
+            ],
+            "angle": 0,
+            "content": "AI Labs and Other Large AI Computing Power Users"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.214,
+                0.788,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.255,
+                0.577,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.325,
+                0.903,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.346,
+                0.927,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.366,
+                0.625,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.413,
+                0.315,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.477,
+                0.94,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.497,
+                0.22,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.546,
+                0.901,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.566,
+                0.91,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.587,
+                0.906,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.605,
+                0.73,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.64,
+                0.895,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.66,
+                0.832,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.679,
+                0.564,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.714,
+                0.907,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.735,
+                0.869,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.754,
+                0.443,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.802,
+                0.837,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.839,
+                0.302,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.953,
+                0.127
+            ],
+            "angle": 0,
+            "content": "AI compute is the single largest cost line for most of these players, often consuming a substantial share of early-stage capital. Managing that exposure actively, rather than treating it as a fixed input, is a strategic necessity. Several strategic steps are available:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.157,
+                0.934,
+                0.255
+            ],
+            "angle": 0,
+            "content": "- Structure contracts to match exposure. As benchmarks become trusted, buyers should push for indexed pricing (for example, “OCPI H100 + differential”) rather than fixed rates for long-term commitments. At minimum, buyers should use existing benchmarks to pressure-test and negotiate fixed-rate agreements so they aren't flying blind in their efforts to gauge fair value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.271,
+                0.932,
+                0.389
+            ],
+            "angle": 0,
+            "content": "- Manage AI compute exposure across the contract life cycle. Long-term fixed-rate contracts reduce price volatility during the term but introduce other risks, including renewal cliffs, exposure to spot pricing for overages, and potentially being locked into paying above market prices if overall prices fall. As benchmarks and derivatives mature, financial instruments tied to indices can hedge renewal risk, cap overage costs, and offset losses on above-market contracts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.403,
+                0.93,
+                0.484
+            ],
+            "angle": 0,
+            "content": "- Arbitrage across time, quality, and geography. As switching costs fall and AI chip substitutability increases, AI labs and other AI compute users should prepare to route workloads on the basis of price signals. Batch jobs can run overnight or in lower-cost regions; non-latency-sensitive training can move to off-peak windows.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.498,
+                0.926,
+                0.578
+            ],
+            "angle": 0,
+            "content": "- Optimize model and provider selection. Substitutability across frontier models creates real optionality. Routing each workload to the provider and model that offer the best price-performance at a given moment, rather than standardizing on a single vendor, can capture savings with minimal loss of quality.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.046,
+                0.608,
+                0.458,
+                0.643
+            ],
+            "angle": 0,
+            "content": "Data Center Players"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.669,
+                0.952,
+                0.709
+            ],
+            "angle": 0,
+            "content": "Data centers sit at the supply end of the market and stand to benefit most directly from the development of forward curves and financial instruments. They should make the following moves:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.738,
+                0.906,
+                0.838
+            ],
+            "angle": 0,
+            "content": "- Use forward curves to lower financing costs. If residual-value and rental-rate benchmarks gain liquidity, data center players should incorporate them into underwriting. They can present lenders with rental revenue and AI chip residual value projections on the basis of forward curves rather than bottom-up forecasts, compressing credit spreads toward those savings.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.853,
+                0.903,
+                0.932
+            ],
+            "angle": 0,
+            "content": "- Hedge residual value and rental rate risk. Another smart step is to transfer the two core balance-sheet risks (hardware depreciation and rental rate volatility) to financial counterparties as derivatives markets develop. By hedging in this way, data center players can offset their losses if GPU prices fall or rental rates drop.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "15"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.949,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.908,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.669,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.159,
+                0.93,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.179,
+                0.915,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.198,
+                0.897,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.219,
+                0.901,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.238,
+                0.126,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.272,
+                0.915,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.293,
+                0.877,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.312,
+                0.927,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.332,
+                0.926,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.351,
+                0.883,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.372,
+                0.161,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.404,
+                0.818,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.425,
+                0.863,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.446,
+                0.926,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.465,
+                0.631,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.501,
+                0.923,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.52,
+                0.862,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.54,
+                0.904,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.559,
+                0.398,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.607,
+                0.459,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.671,
+                0.897,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.691,
+                0.95,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.741,
+                0.904,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.761,
+                0.861,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.78,
+                0.898,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.799,
+                0.895,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.819,
+                0.146,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.854,
+                0.883,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.873,
+                0.82,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.893,
+                0.897,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.912,
+                0.624,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.478,
+                0.275,
+                0.494
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.104,
+                0.955,
+                0.244
+            ],
+            "angle": 0,
+            "content": "The market for AI compute is changing quickly, with benchmarks, futures contracts, and secondary markets already beginning to emerge. Whether the market moves toward true commoditization is a question mark. But the shift toward greater liquidity and transparency is unstoppable. Early movers—whether end users managing cost exposure, data center players unlocking cheaper financing, or AI labs securing supply—stand to capture disproportionate value as this shift unfolds. The era of opaque contracts and flat-rate pricing is ending. The question now is who will seize advantage in the new landscape.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.315,
+                0.247,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.396,
+                0.221,
+                0.504
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.245,
+                0.4,
+                0.355,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Antti Belt",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.434,
+                0.445,
+                0.474
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; BCG Institute Fellow Helsinki",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.397,
+                0.683,
+                0.504
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.706,
+                0.406,
+                0.866,
+                0.429
+            ],
+            "angle": 0,
+            "content": "Allen Thomas"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.439,
+                0.789,
+                0.49
+            ],
+            "angle": 0,
+            "content": "Consultant Chicago"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.591,
+                0.436,
+                0.61
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.626,
+                0.953,
+                0.746
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "16"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.107,
+                0.952,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.125,
+                0.947,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.145,
+                0.909,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.164,
+                0.907,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.184,
+                0.887,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.93,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.224,
+                0.405,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.313,
+                0.248,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.401,
+                0.353,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.436,
+                0.433,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.448,
+                0.441,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.46,
+                0.301,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.594,
+                0.433,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.628,
+                0.949,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.646,
+                0.9,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.667,
+                0.905,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.687,
+                0.913,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.706,
+                0.935,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.726,
+                0.594,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
