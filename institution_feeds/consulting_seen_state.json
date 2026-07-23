@@ -456,6 +456,18 @@
     "bcg:https://www.bcg.com/publications/2026/how-ceos-scale-ai-value": {
       "first_seen": "2026-07-22",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/large-cap-ceos-driving-growth-through-vitality": {
+      "first_seen": "2026-07-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/understanding-the-new-economics-of-ai-compute-markets": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/germany-european-chemicals-2030-2040": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
     }
   }
 }
