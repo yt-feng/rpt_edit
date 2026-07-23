@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 62,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 8,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/41-JPM-Shopify（SHOP.US） Expecting Upside to Guidance into 2Q Earnings； Focus on Growth Vectors， Gross Margins， Token Costs， & AI Leadership； Reit OW & Adding.pdf",
+          "batch_file": "/tmp/pdf_batch_001_1hebbon2/pdfs/0001-41-JPM-Shopify-SHOP.US- Expecting Upside to Guidance into 2Q Earnings- Focus on Growth Vectors- Gross Margins- Token Costs- - AI Leadership- Reit OW - Adding.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/42-JPM-Japan FX topic：Three key questions on GPIF-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_1hebbon2/pdfs/0002-42-JPM-Japan FX topic-Three key questions on GPIF-260721.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/43-JEF-Japan - Technology：Semiconductor Back~end Process and Package Trends-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_1hebbon2/pdfs/0003-43-JEF-Japan - Technology-Semiconductor Back-end Process and Package Trends-260721.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/44-JPM-Retail Radar Jul 22 – Momentum Cooldown, Hyperscaler Earnings-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_1hebbon2/pdfs/0004-44-JPM-Retail Radar Jul 22 - Momentum Cooldown- Hyperscaler Earnings-260722.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/45-JEF-YOFC （6869.HK）：China Supply Growth to Rapidly Eliminate Shortage； D G to HOLD-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_1hebbon2/pdfs/0005-45-JEF-YOFC -6869.HK--China Supply Growth to Rapidly Eliminate Shortage- D G to HOLD-260722.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

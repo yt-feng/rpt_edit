@@ -1,0 +1,579 @@
+[
+  {
+    "item": "0001-41-J.P.-Morgan-Shopify-SHOP.US--Expecting-Upside-to-Guidance-into-2Q-Earnin",
+    "source_pdf": "/tmp/pdf_batch_001_1hebbon2/pdfs/0001-41-JPM-Shopify-SHOP.US- Expecting Upside to Guidance into 2Q Earnings- Focus on Growth Vectors- Gross Margins- Token Costs- - AI Leadership- Reit OW - Adding.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "Shopify 财报",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "拖累->影响 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-JPM-Shopify-SHOP.US- Expecting Upside to Guidance into 2Q Earnings- Focus on Growth Vectors- Gross Margins- Token Costs- - AI Leadership- Reit OW - Adding.pdf",
+      "cleaned_source_title": "JPM-Shopify-SHOP.US- Expecting Upside to Guidance into 2Q Earnings- Focus on Growth Vectors- Gross Margins- Token Costs- - AI Leadership- Reit OW - Adding",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "JPM：AIShopifyExpectingUpside",
+      "raw_candidates": [
+        "Shopify二季度业绩前瞻与AI竞争格局分析",
+        "Shopify二季度GMV增长预期与AI成本影响",
+        "Shopify电商基础设施与AI差异化布局"
+      ],
+      "cleaned_candidates": [
+        "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+        "JPM：Shopify二季度GMV增长预期与AI成本影响",
+        "JPM：Shopify电商基础设施与AI差异化布局",
+        "JPM：AIShopifyExpectingUpside"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：Shopify二季度GMV增长预期与AI成本影响",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "JPM：Shopify电商基础设施与AI差异化布局",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "JPM：AIShopifyExpectingUpside",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.32"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：Shopify二季度业绩前瞻与AI竞争格局分析"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-42-J.P.-Morgan-Japan-FX-topic-Three-key-questions-on-GPIF-260721",
+    "source_pdf": "/tmp/pdf_batch_001_1hebbon2/pdfs/0002-42-JPM-Japan FX topic-Three key questions on GPIF-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "日本养老金的“回家”",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x1",
+      "股票|个股->公司 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x1",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x1",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x2",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：货币市场与相关指标观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-JPM-Japan FX topic-Three key questions on GPIF-260721.pdf",
+      "cleaned_source_title": "JPM-Japan FX topic-Three key questions on GPIF",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：日本FXtopicThreekeyquest",
+      "raw_candidates": [
+        "日本外汇主题-GPIF三个关键问题",
+        "日本外汇主题-GPIF三个关键问题-33.8万亿日元潜在买盘",
+        "日本外汇主题-GPIF三个关键问题-资产配置调整与时间窗口"
+      ],
+      "cleaned_candidates": [
+        "JPM：日本外汇主题-GPIF三个关键问题",
+        "JPM：日本外汇主题-GPIF三个关键问题-33.8万亿日元潜在买盘",
+        "JPM：日本外汇主题-GPIF三个关键问题-资产配置调整与时间窗口",
+        "JPM：日本FXtopicThreekeyquest",
+        "JPM：GPIF当前的国内债券配置为26.91%（截至2026年3月"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：日本FXtopicThreekeyquest",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：GPIF当前的国内债券配置为26.91%（截至2026年3月",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：货币市场与相关指标观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "33.8"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：日本外汇主题-GPIF三个关键问题-33.8万亿日元潜在买盘",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：货币市场与相关指标观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-43-JEF-Japan---Technology-Semiconductor-Back-end-Process-and-Package-",
+    "source_pdf": "/tmp/pdf_batch_001_1hebbon2/pdfs/0003-43-JEF-Japan - Technology-Semiconductor Back-end Process and Package Trends-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "AI不是计算设备，而",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-JEF-Japan - Technology-Semiconductor Back-end Process and Package Trends-260721.pdf",
+      "cleaned_source_title": "JEF-Japan - Technology-Semiconductor Back-end Process and Package Trends",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：日本科技半导体BackendProcess和P",
+      "raw_candidates": [
+        "日本技术-半导体后端工艺与封装趋势",
+        "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+        "日本先进封装技术路线与AI系统架构趋势"
+      ],
+      "cleaned_candidates": [
+        "JEF：日本技术-半导体后端工艺与封装趋势",
+        "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+        "JEF：日本先进封装技术路线与AI系统架构趋势",
+        "JEF：日本科技半导体BackendProcess和P",
+        "JEF：到2028年，市场预计扩大至3710亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：日本先进封装技术路线与AI系统架构趋势",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：日本科技半导体BackendProcess和P",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：到2028年，市场预计扩大至3710亿美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2025"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JEF：日本半导体后端工艺与封装趋势-2025年数据"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-44-JPM-Retail-Radar-Jul-22---Momentum-Cooldown--Hyperscaler-Earnings-260722",
+    "source_pdf": "/tmp/pdf_batch_001_1hebbon2/pdfs/0004-44-JPM-Retail Radar Jul 22 - Momentum Cooldown- Hyperscaler Earnings-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "散户资金在观望什么？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x3",
+      "卖出->观点偏谨慎 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "股票|个股->公司 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x3",
+      "股票|个股->公司 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x2",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：零售行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-JPM-Retail Radar Jul 22 - Momentum Cooldown- Hyperscaler Earnings-260722.pdf",
+      "cleaned_source_title": "JPM-Retail Radar Jul 22 - Momentum Cooldown- Hyperscaler Earnings",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：RetailRadarJul22Moment",
+      "raw_candidates": [
+        "JPM：零售雷达-动量降温与超大规模企业财报",
+        "JPM：零售资金净流入57亿美元-动量因子回撤14%",
+        "JPM：零售雷达-动量因子回撤与科技ETF流入转负"
+      ],
+      "cleaned_candidates": [
+        "JPM：零售雷达-动量降温与超大规模企业财报",
+        "JPM：零售资金净流入57亿美元-动量因子回撤14%",
+        "JPM：零售雷达-动量因子回撤与科技ETF流入转负",
+        "JPM：RetailRadarJul22Moment",
+        "JPM：7月16日至22日这一周，美国散户资金净流入57亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：零售资金净流入57亿美元-动量因子回撤14%",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：零售雷达-动量因子回撤与科技ETF流入转负",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：RetailRadarJul22Moment",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：7月16日至22日这一周，美国散户资金净流入57亿美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：零售行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：零售雷达-动量降温与超大规模企业财报",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：零售行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-45-JEF-YOFC--6869.HK--China-Supply-Growth-to-Rapidly-Eliminate-Shorta",
+    "source_pdf": "/tmp/pdf_batch_001_1hebbon2/pdfs/0005-45-JEF-YOFC -6869.HK--China Supply Growth to Rapidly Eliminate Shortage- D G to HOLD-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JEF",
+    "cover_short_title": "光纤龙头赚翻了，但拐",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JEF：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-JEF-YOFC -6869.HK--China Supply Growth to Rapidly Eliminate Shortage- D G to HOLD-260722.pdf",
+      "cleaned_source_title": "JEF-YOFC -6869.HK--China Supply Growth to Rapidly Eliminate Shortage- D G to HOLD",
+      "institution_name": "JEF",
+      "required_terms": [],
+      "deterministic_fallback": "JEF：YOFC-中国Supply增长toRapidl",
+      "raw_candidates": [
+        "长飞光纤：中国供给扩张将消除短缺",
+        "长飞光纤：2026年光纤均价预计达146元",
+        "长飞光纤：数据中心需求推动光纤价格创新高"
+      ],
+      "cleaned_candidates": [
+        "JEF：长飞光纤，中国供给扩张将消除短缺",
+        "JEF：长飞光纤，2026年光纤均价预计达146元",
+        "JEF：长飞光纤，数据中心需求推动光纤价格创新高",
+        "JEF：YOFC-中国Supply增长toRapidl",
+        "JEF：JEF最新研报指出，全球光纤产能到2028年将增长69%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JEF：长飞光纤，2026年光纤均价预计达146元",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：长飞光纤，数据中心需求推动光纤价格创新高",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：YOFC-中国Supply增长toRapidl",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JEF：JEF最新研报指出，全球光纤产能到2028年将增长69%",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JEF：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JEF：长飞光纤，中国供给扩张将消除短缺",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JEF：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
