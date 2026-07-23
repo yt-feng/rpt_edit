@@ -1,0 +1,76 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 5,
+    "timed_out": true,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0001-46-MS-General Motors Company-GM.UN-Beat- Raise- Repeat-260722.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0002-47-MS-Adobe Inc.-ADBE.US-Undergoing Multiple Transitions at Once Creates Heightened Execution Risk- Downgrade to Underweight-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0003-48-MS-China Autos - Shared Mobility-Reboot landed gradually- and narrow-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0004-49-MS-Internet-Where Are We Trading Now- Entering 2Q Earnings-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0005-50-MS-Horizon Robotics-9660.HK- 1H26 results alert -trough priced in- re-rating keyed to customer wins-260722.pdf",
+        "state": "pending",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0001-46-MS-General Motors Company-GM.UN-Beat- Raise- Repeat-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0002-47-MS-Adobe Inc.-ADBE.US-Undergoing Multiple Transitions at Once Creates Heightened Execution Risk- Downgrade to Underweight-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0003-48-MS-China Autos - Shared Mobility-Reboot landed gradually- and narrow-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0004-49-MS-Internet-Where Are We Trading Now- Entering 2Q Earnings-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltmx7ri3/pdfs/0005-50-MS-Horizon Robotics-9660.HK- 1H26 results alert -trough priced in- re-rating keyed to customer wins-260722.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

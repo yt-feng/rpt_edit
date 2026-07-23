@@ -1,0 +1,98 @@
+Found 62 total PDFs; shard 9/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0001-46-Morgan Stanley-General Motors Company-GM.UN-Beat- Raise- Repeat-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0002-47-Morgan Stanley-Adobe Inc.-ADBE.US-Undergoing Multiple Transitions at Once Creates Heightened Execution Risk- Downgrade to Underweight-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0003-48-Morgan Stanley-China Autos - Shared Mobility-Reboot landed gradually- and narrow-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0004-49-Morgan Stanley-Internet-Where Are We Trading Now- Entering 2Q Earnings-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0005-50-Morgan Stanley-Horizon Robotics-9660.HK- 1H26 results alert -trough priced in- re-rating keyed to customer wins-260722.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=4adbe49d-3d66-417e-b9e5-62e8e3e08cb9
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU batch 4adbe49d-3d66-417e-b9e5-62e8e3e08cb9 had no parsing progress after 300s; switching token/retry path.
+5 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0001-46-Morgan Stanley-General Motors Company-GM.UN-Beat- Raise- Repeat-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0002-47-Morgan Stanley-Adobe Inc.-ADBE.US-Undergoing Multiple Transitions at Once Creates Heightened Execution Risk- Downgrade to Underweight-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0003-48-Morgan Stanley-China Autos - Shared Mobility-Reboot landed gradually- and narrow-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0004-49-Morgan Stanley-Internet-Where Are We Trading Now- Entering 2Q Earnings-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ltmx7ri3/pdfs/0005-50-Morgan Stanley-Horizon Robotics-9660.HK- 1H26 results alert -trough priced in- re-rating keyed to customer wins-260722.pdf
+MinerU attempt 2 using MINER_U batch_id=029b19ae-411b-41fc-9b1d-d66a0a4da378
+MinerU states: running, running, pending, pending, pending
+MinerU states: done, running, running, running, running
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset 37f54f2e2209bdaa6532ddc6bae26d2a2e4bbedda66c79f3faf07cf3b1c91ce2.jpg: score=-100;too_small:449x156
+Skip non-chart visual asset 928ed09600df188f2f056f2c202b5c7a7c43355920b2ef5af2ed05922908cc17.jpg: score=-100;too_small:901x112
+Skip non-chart visual asset d09f2bc25480ac2e1c2e335d9ebfd7bbbf76e18e9fa3a9675a483a602661bdf3.jpg: score=-100;too_small:434x109
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 28b29b97e36d89dcc5f17e224805868cb744a41076ca1a25fcf0db3f97f0c495.jpg: score=-100;too_small:123x123
+Skip non-chart visual asset 2320d12e9b23614ba2b21a6ef750f90e252ae9f476d6debb6d10cc2f67080d25.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset 8848ad4530e0d14abba4be64cb09bf877d8f6ba4ce7d04bad67fc94d4c5e1ac0.jpg: score=1;large
+Skip non-chart visual asset 1c9f9e57ed60e80cf069931cb556296ba30368cfb65bd086e9c53679e21f36aa.jpg: score=-100;too_small:499x110
+Skip non-chart visual asset ac026235ed3b64708b3df39220054b657eaf0dd281f47d7cb38dc6cc4653839d.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.38,contrast,large
+Skip non-chart visual asset 54b7f40c78ef7cbfd78a2f3e8593c151527a9b8aa2638dbe47a5441f0d4b4cfc.jpg: score=-100;too_small:529x156
+Skip non-chart visual asset 50e4a4a6081d2375d28f2a0107af020716a682e12e596df83ef4f4bd45112c7b.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset ce8aec20211416617d64a3236a09f4fb2e236ce732707abdf36bf7ececb8e86d.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 8596a388df5fb390d4a6817894435dd9c17a6db676e2f02c8af88e289defc8cb.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.36,contrast,large
+Skip non-chart visual asset ef81cda8e9225e9d1687a565605b88a8b9b8f7f025b4d1d8d1c474ca50e8e3c4.jpg: score=-100;too_small:453x70
+Skip non-chart visual asset 4cbfd25f90ec834594e12b872aa5531f5091ba56544e7e2e8ef131b530239703.jpg: score=-100;too_small:526x145
+Skip non-chart visual asset aab7a10967350269bad323e35af4a48527d70e55ba62aef15bfaace39802cbe0.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset 0fa9ee7730863016b9c503253013016608fc20d2b6048956e8715175a2a3264c.jpg: score=-100;too_small:312x56
+Neutralized WeChat title while keeping the report: 摩根士丹利：通用汽车公司超预期与上调指引 -> 摩根士丹利：汽车行业数据与主题变化观察
+Skip non-chart visual asset dbe62e321b26ff1743467c9d6600ff3c20ab245d9c6171c641e910a43fa2cb93.jpg: score=-100;too_small:529x154
+Skip non-chart visual asset 567e21d437c613bb299a9eb96e5ac1bf7ceb023e5ee12bbd950022122987838a.jpg: score=1;square_without_chart_hint,edge:0.57,contrast,large
+Skip non-chart visual asset 3396a43aa7ed2043dc99d7191bb475b9061fa1b027ac02542dadd59c69524b59.jpg: score=-100;too_small:529x154
+Skip non-chart visual asset 4fe90c90bcd2bd9c9d64ced5e2ef4b8a621755f90cf21603e8232588af239200.jpg: score=-100;too_small:1292x68
+Skip non-chart visual asset faa88417199dae24aa628c9a77d5cfe8c952c45773dcd8cb872628cbbe706bcf.jpg: score=-100;too_small:449x201
+Skip non-chart visual asset 70b492403548d0a6064a77216fd351dfd871c0cc5a29ccbd754658e3f0d16930.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset 71c2d5461009ecc9d7c27f680331c1054ae8bdc2d2ed61a8cdc8a2486328264f.jpg: score=-100;too_small:462x71
+Skip non-chart visual asset a229f5238a36f34abb0f26a8d8c65cf749caa838d25097ec668ecbf5d5705e1f.jpg: score=1;large
+Skip non-chart visual asset a927fe70e178d812a2b46bdbf8413b5d0f6297369fd4e18abace3da542aab6fc.jpg: score=-100;too_small:504x112
+Skip non-chart visual asset 7e057d95f5a26ffe1752b23e5eabbf69eddf5d64d448d17886d9cd3b07e530e9.jpg: score=-100;too_small:437x109
+Skip non-chart visual asset ce26d50c4e03ec30dd379551f4134199915dbd82bbbe509a04e72a050d18a0f3.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset f6def2635038224502fe01d01b7e51453c1d8d4182791ffcde6bc9226ba66f14.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset a00af9451dd9315badd124a19b89a2f33b946525c94175ac4878bacdfbfa0662.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset aa064ecca8fcad4d2e733a0be64c356d3528d74f22a465fe7d154966bca8b458.jpg: score=-100;too_small:420x232
+Skip non-chart visual asset 5150bacbd55759ee9178ecca280e1c5508e50e5f70ce4fd779911d8662a71d84.jpg: score=-100;too_small:531x171
+Skip non-chart visual asset cc76f8a3fdb82b88e51787af52da23d68afb16655335ce7c28681d0087e60f5c.jpg: score=-100;too_small:899x140
+Skip non-chart visual asset 61a28540003bc95fe48a4119edba0a4921f2c9a605ac5ffad7bff0d573268bfd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.14,large
+Skip non-chart visual asset cdd99ad380d659cd7bb4ca6090802189aff465a74029c962a15098eb7f35ead6.jpg: score=1;large
+Skip non-chart visual asset c5e6d25ed72d7a77b6dbad931f47f9bd633c799a1fbe1e85194ed9dc31464e3b.jpg: score=2;chart_ratio,large
+Neutralized WeChat title while keeping the report: 摩根士丹利：Adobe三重转型叠加执行风险 -> 摩根士丹利：Adobe三重转型叠加执行业务与近期数据观察
+Skip non-chart visual asset 7c64006f257d6e5cebcf40953f8e83b0b8cd46a1ce44e9d7777a0d046d060759.jpg: score=1;large
+Skip non-chart visual asset 97e1c2654af9355346e6e37d0ebc25a4a0f2fd36254d6419f493bac415b81693.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset bf43f858b4b256629e8a3d0cb4f5a0361323fb0f38c537ea28a8547a902271f1.jpg: score=-100;too_small:515x134
+Skip non-chart visual asset bc59149ea04580535003c6f0331cb8ffa15041c68d09a3e25b10f7415d49a559.jpg: score=1;large
+Skip non-chart visual asset 248156f76372b7031f805973ac10eb1df231f615fe2ea855ac6b007d192f75aa.jpg: score=-4;odd_ratio:4.81,low_edge:0.03,large
+Skip non-chart visual asset d6bc61fbe5a82475c4208368ec3c41cdd39cac6bd1f550ac8de977ee0783f9d1.jpg: score=-100;too_small:334x48
+Skip non-chart visual asset 2f20f3caa01755eefe3286715f94686cfe1aa122a032c87707221a058eed31af.jpg: score=0;odd_ratio:7.00,edge:0.44,contrast
+Skip non-chart visual asset 7d1bd98c948efb265023b50f068780bab0e3cda6f3256e460ee2e87d62f126c5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.49,large
+Skip non-chart visual asset 88bbf49e1f30920d770178417931f13dda3fe34177a194ce69a207d5fd31c3a2.jpg: score=-100;too_small:1460x176
+Skip non-chart visual asset f8fea39fd2867fc63a6b17b8e088d3088b747c2e5ba5e315300cd05c5ecdc2e4.jpg: score=-100;too_small:692x132
+Skip non-chart visual asset f78bb9b4edbb3a47cf994f15ff04a5b4b18963555797abb3f736dba6d376a3ed.jpg: score=-100;too_small:518x135
+Skip non-chart visual asset 1ef57a374fc626c268ce822fe82c907f3641c830e8d7a6e3c8b13545f4123149.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset bafd7315ba882fc828b12e6fb13e6b11117e760aa3dea796c6aa18e19a4f48e7.jpg: score=1;large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260723/shard_9; successful_reports=5; mineru_timed_out=True; mineru_attempts=2
+All batches completed successfully. Generated 5 report directories.
