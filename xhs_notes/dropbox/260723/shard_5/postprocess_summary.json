@@ -1,0 +1,619 @@
+[
+  {
+    "item": "0001-26-Goldman-Sachs-JAPAN-TECHNOLOGY--SEMICONDUCTOR-CAPITAL-EQUIPMENT-June-SEA",
+    "source_pdf": "/tmp/pdf_batch_001_e41mhx9c/pdfs/0001-26-GS-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- Buy on Lasertec Ebara Disco To.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本半导体设备，淡季",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "remove_stock_parenthetical x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x3",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：半导体行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-GS-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- Buy on Lasertec Ebara Disco To.pdf",
+      "cleaned_source_title": "GS-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- Buy on Lasertec Ebara Disco To",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本科技半导体CAPITALEQUIPMENTJ",
+      "raw_candidates": [
+        "日本半导体设备前端设备需求强劲-GS上调盈利预测",
+        "日本半导体设备4-6月销售额同比增长27%-GS上调盈利预测",
+        "日本半导体设备前端设备需求驱动增长-GS修订盈利预测"
+      ],
+      "cleaned_candidates": [
+        "GS：日本半导体设备前端设备需求强劲-GS上调盈利预测",
+        "GS：日本半导体设备4-6月销售额同比增长27%-GS上调盈利预测",
+        "GS：日本半导体设备前端设备需求驱动增长-GS修订盈利预测",
+        "GS：日本科技半导体CAPITALEQUIPMENTJ",
+        "GS：日本半导体设备4-6月销售额同比增长27%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本半导体设备4-6月销售额同比增长27%-GS上调盈利预测",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "GS：日本半导体设备前端设备需求驱动增长-GS修订盈利预测",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "GS：日本科技半导体CAPITALEQUIPMENTJ",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本半导体设备4-6月销售额同比增长27%",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：半导体行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本半导体设备前端设备需求强劲-GS上调盈利预测",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：半导体行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-27-Goldman-Sachs-Japan-Banks--Asia-investor-feedback--Strong-interest-amid-",
+    "source_pdf": "/tmp/pdf_batch_001_e41mhx9c/pdfs/0002-27-GS-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本银行股，正在被全",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "金融机构->机构 x1",
+      "金融->资金 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-GS-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets-260722.pdf",
+      "cleaned_source_title": "GS-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本BanksAsiainvestorfeedb",
+      "raw_candidates": [
+        "GS：日本银行板块-亚洲投资者反馈与贷款增长利率正常化",
+        "GS：日本银行板块-贷款增速从5.9%升至8.4%支撑兴趣",
+        "GS：日本银行板块-五大顺风因素与利率正常化前景"
+      ],
+      "cleaned_candidates": [
+        "GS：日本银行板块-亚洲参与者反馈与贷款增长利率正常化",
+        "GS：日本银行板块-贷款增速从5.9%升至8.4%支撑兴趣",
+        "GS：日本银行板块-五大顺风因素与利率正常化前景",
+        "GS：日本BanksAsiainvestorfeedb",
+        "GS：城市银行在1-3月期间的贷款同比增速为5.9%，到4"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本银行板块-贷款增速从5.9%升至8.4%支撑兴趣",
+          "reasons": [
+            "anchor_coverage=0.32",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本银行板块-五大顺风因素与利率正常化前景",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本BanksAsiainvestorfeedb",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：城市银行在1-3月期间的贷款同比增速为5.9%，到4",
+          "reasons": [
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本银行板块-亚洲参与者反馈与贷款增长利率正常化",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-28-Goldman-Sachs-Japan-Economic-Flash-BOJ-July-MPM-Preview-We-Expect-Status",
+    "source_pdf": "/tmp/pdf_batch_001_e41mhx9c/pdfs/0003-28-GS-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本央行7月会议前瞻",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x2",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-GS-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes-260723.pdf",
+      "cleaned_source_title": "GS-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本EconomicFlashBOJJulyMP",
+      "raw_candidates": [
+        "日本央行7月会议预计维持利率不变",
+        "日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+        "日本央行7月会议预计维持利率不变-加息时点概率分布前移"
+      ],
+      "cleaned_candidates": [
+        "GS：日本央行7月会议预计维持利率不变",
+        "GS：日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+        "GS：日本央行7月会议预计维持利率不变-加息时点概率分布前移",
+        "GS：日本EconomicFlashBOJJulyMP",
+        "GS：日本央行7月会议预计维持利率不变，下次加息或在2027年1月"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本EconomicFlashBOJJulyMP",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "1",
+          "2027"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：日本央行7月会议预计维持利率不变-下次加息或在2027年1月"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-29-Goldman-Sachs-Japan-Technology--Hardware-Industrial-Electronics--GEV-2Q-",
+    "source_pdf": "/tmp/pdf_batch_001_e41mhx9c/pdfs/0004-29-GS-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "电网需求正在超预期爆",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-GS-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy-260723.pdf",
+      "cleaned_source_title": "GS-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本科技硬件IndustrialElectronicsGEV2",
+      "raw_candidates": [
+        "日本科技硬件-工业电子-GEV第二季度业绩映射-电网需求强劲利好日立能源",
+        "日本科技硬件-工业电子-GEV第二季度订单93%增长-电网需求强劲利好日立能源",
+        "日本科技硬件-工业电子-GEV数据中心订单超50亿美元-电网需求强劲利好日立能源"
+      ],
+      "cleaned_candidates": [
+        "GS：日本科技硬件-工业电子-GEV第二季度业绩映射",
+        "GS：日本科技硬件-工业电子-GEV第二季度订单93%增长",
+        "GS：日本科技硬件-工业电子-GEV数据中心订单超50亿美元",
+        "GS：日本科技硬件IndustrialElectronicsGEV2",
+        "GS：该季度订单达到63.47亿美元，同比增长93%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本科技硬件-工业电子-GEV数据中心订单超50亿美元",
+          "reasons": [
+            "anchor_coverage=0.60",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本科技硬件IndustrialElectronicsGEV2",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：该季度订单达到63.47亿美元，同比增长93%",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "93"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本科技硬件-工业电子-GEV第二季度订单93%增长",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-30-Goldman-Sachs-ServiceNow-Inc.--NOW.US--2Q26-EPS--The-AI-use-cases-are-be",
+    "source_pdf": "/tmp/pdf_batch_001_e41mhx9c/pdfs/0005-30-GS-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "ServiceNow",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-GS-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible-260722.pdf",
+      "cleaned_source_title": "GS-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIServiceNowInc.",
+      "raw_candidates": [
+        "GS：ServiceNow第二季度订阅收入同比增长23%",
+        "GS：ServiceNow AI年度合同价值突破10亿美元",
+        "GS：ServiceNow L1 ITSM产品自动解决率达80%至85%",
+        "GS：ServiceNow 2Q26 EPS与AI用例",
+        "GS：ServiceNow 2Q26订阅收入增23% AI ACV超10亿美元",
+        "GS：ServiceNow AI产品商用化与L1 ITSM自动解决率"
+      ],
+      "cleaned_candidates": [
+        "GS：ServiceNow第二季度订阅收入同比增长23%",
+        "GS：ServiceNowAI年度合同价值突破10亿美元",
+        "GS：ServiceNowL1ITSM产品自动解决率达80%至85%",
+        "GS：ServiceNow2Q26EPS与AI用例",
+        "GS：ServiceNow2Q26订阅收入增23%AIACV超10亿美",
+        "GS：ServiceNowAI产品商用化与L1ITSM自动解决率",
+        "GS：AIServiceNowInc.",
+        "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元"
+      ],
+      "faithful_candidate_missing_terms": [
+        "AI"
+      ],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：ServiceNow第二季度订阅收入同比增长23%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ServiceNowAI年度合同价值突破10亿美元",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ServiceNowL1ITSM产品自动解决率达80%至85%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ServiceNow2Q26EPS与AI用例",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ServiceNow2Q26订阅收入增23%AIACV超10亿美",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ServiceNowAI产品商用化与L1ITSM自动解决率",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AIServiceNowInc.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "10"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：ServiceNow第二季度订阅收入同比增长23%",
+        "GS：ServiceNow AI年度合同价值突破10亿美元",
+        "GS：ServiceNow L1 ITSM产品自动解决率达80%至85%"
+      ],
+      "final_title_after_wording_guard": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

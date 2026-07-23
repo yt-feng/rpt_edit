@@ -1,0 +1,74 @@
+Found 62 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0001-26-Goldman Sachs-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- Buy on Lasertec Ebara Disco To.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0002-27-Goldman Sachs-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0003-28-Goldman Sachs-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0004-29-Goldman Sachs-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0005-30-Goldman Sachs-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible-260722.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=599d7738-3346-4ca0-a70e-006be7dc28b1
+MinerU states: pending, pending, pending, pending, waiting-file
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU batch 599d7738-3346-4ca0-a70e-006be7dc28b1 had no parsing progress after 300s; switching token/retry path.
+5 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0001-26-Goldman Sachs-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- Buy on Lasertec Ebara Disco To.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0002-27-Goldman Sachs-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0003-28-Goldman Sachs-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0004-29-Goldman Sachs-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e41mhx9c/pdfs/0005-30-Goldman Sachs-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible-260722.pdf
+MinerU attempt 2 using MINER_U batch_id=58fd7b6d-59b5-4624-bbf8-4a5461a043b1
+MinerU states: running, pending, pending, pending, waiting-file
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset 08ea4c30408dd441d22c62a0d0f738d256d189406d3110c3d343fa0edeed15d3.jpg: score=-100;too_small:1415x154
+Skip non-chart visual asset 5a497714f0b2b79c569b1ed594ebd328d5837fe2e20b496c516088a739feca73.jpg: score=-100;too_small:1415x151
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 7e0f04f226a7bf80e9b2635614da76219a60df41d3e76be5d673216784c7041b.jpg: score=2;edge:0.31
+Skip non-chart visual asset fee4faf5ae3d63d8db0fe45fec0530c1b784ac6dcba08c0e5dc942d0fe2ea554.jpg: score=2;edge:0.33
+Skip non-chart visual asset 976e063d8c45e92d09a988afe6b1f7910ca0e7ec13ad4bcaf21374e7329ea4e5.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.29
+Skip non-chart visual asset 719442290c402697b1363d8f5d363872ecb29d018bb2a20c67c5223a4593555c.jpg: score=2;edge:0.29
+Skip non-chart visual asset b96c2e8a7baea4f27a5c9aa34e7286cff63c48aede544438d52570f94183dffa.jpg: score=-100;too_small:1415x154
+Skip non-chart visual asset 105a832048004fda8d34372ce0ff67c389af002193128f105d88ab9be4b217d0.jpg: score=-100;too_small:1156x106
+Skip non-chart visual asset 97348277af0a9fd6ef222b7707efeaa2f9fb45092ccdecb8a8111a5b706a4c15.jpg: score=2;edge:0.31
+Skip non-chart visual asset 6a006cd926087b9fbb7832c35acb0c53dfed8a3766645789f4cbf557d057d95b.jpg: score=2;edge:0.31
+Skip non-chart visual asset 1ede764c16994f35121b8d7a79e182f58acc3c418cce75af00eca1c4ac771900.jpg: score=-100;too_small:1415x151
+Skip non-chart visual asset 067bd51bf31bffa166152f8267b0078d29ba70c7c561e8ac4ddb67b171231cf6.jpg: score=-100;too_small:465x167
+Skip non-chart visual asset 72acddad804bcac919efffb6eb2d73fd77047e6630da1d79eb68257a0af75a2f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Neutralized WeChat title while keeping the report: 高盛：日本半导体设备前端设备需求强劲-高盛上调盈利预测 -> 高盛：半导体行业数据与主题变化观察
+Skip non-chart visual asset de7ce083fa314352864fbe9f55a67c35997c1ac363e3004527c220e9a31ec1dd.jpg: score=-100;too_small:1156x109
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Neutralized WeChat title while keeping the report: 高盛：日本银行板块-亚洲参与者反馈与贷款增长利率正常化 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset a845c031f7e29d40a7fc1366d90ac4eb69ec270427b79a861fed5df585a2c9ac.jpg: score=-1;square_without_chart_hint,edge:0.31
+Skip non-chart visual asset 7e82e63b22805cb9a58d68bf4dba1703a2b5521ab6c117d3d1ce750d09d2217f.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：日本科技硬件-工业电子-GEV第二季度订单93%增长 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset c6eff5ca96d95a4ac97ee4702ed92ed53e5eb18978f12b4721efd242ec5321a9.jpg: score=0;square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset d7a12d791ebeb969ac1d9216f978f261c78f45c7c7c16e3e4be70c71f94130e7.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 9c5d5d271e82bbced1099716bced47a76c06294d06a4ee6d0f7761508eadf3be.jpg: score=2;edge:0.16
+Skip non-chart visual asset 0e5e5e567cd24387ffc11e5e960523e4b86d70696906cb1c1fbec70b699b22b0.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.23,contrast,large
+Skip non-chart visual asset 8197a0f13503c65531de90df5ccee6f2b4b9fde5f62df74cbb6039cd29c0f6b9.jpg: score=-1;square_without_chart_hint,edge:0.29
+Skip non-chart visual asset d1250397b64b0e48a33d34540987580e14896266d06dbc1029a08f374bf0b973.jpg: score=-100;too_small:1162x107
+Skip non-chart visual asset c27fc8f63e192540f973085947b3346dcffdf167809698d6819ea413d4a49b05.jpg: score=-100;too_small:104x107
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260723/shard_5; successful_reports=5; mineru_timed_out=True; mineru_attempts=2
+All batches completed successfully. Generated 5 report directories.
