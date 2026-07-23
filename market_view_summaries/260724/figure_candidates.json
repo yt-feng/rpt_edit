@@ -1,6 +1,318 @@
 [
   {
-    "report_id": "R002",
+    "report_id": "R001",
+    "report_title": "MS：大中华半导体-2026上海WAIC要点",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0001-51-Morgan-Stanley-Greater-China-Semiconductors-2026-Shanghai-WAIC-takeaways/mineru_raw/images/ea2ee4f22925c994fbc4831c76f55f1b985808a3e9e4841a3f9c23ea3d16cce7.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Huawei showcased its new Atlas 950 SuperPod at 2026 WAIC Exhibit 2: NPU blade (tray) of Atlas 950 SuperPod Exhibit 3: The reverse side of Atlas 950 mainly showcases the optical interconnects adopted by UBlink",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F001",
+    "latex_path": "figures/fig_001.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "MS：大中华半导体-2026上海WAIC要点",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0001-51-Morgan-Stanley-Greater-China-Semiconductors-2026-Shanghai-WAIC-takeaways/mineru_raw/images/0e4eb0ce22ccfba6776cc82ed629b97d97cf2dabd6559da0045679c58d2e71b4.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Huawei showcased its new Atlas 950 SuperPod at 2026 WAIC Exhibit 2: NPU blade (tray) of Atlas 950 SuperPod Exhibit 3: The reverse side of Atlas 950 mainly showcases the optical interconnects adopted by UBlink ## A",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F002",
+    "latex_path": "figures/fig_002.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "MS：大中华半导体-2026上海WAIC要点",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0001-51-Morgan-Stanley-Greater-China-Semiconductors-2026-Shanghai-WAIC-takeaways/mineru_raw/images/e26d9de7e9756f384fb667ca0e431c16809c713c27f7227a8d78cee27ba01e3d.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: NPU blade (tray) of Atlas 950 SuperPod Exhibit 3: The reverse side of Atlas 950 mainly showcases the optical interconnects adopted by UBlink ## A flourishing SuperPod landscape If WAIC 2025 was primarily a showcase f",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F003",
+    "latex_path": "figures/fig_003.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "MS：大中华半导体-2026上海WAIC要点",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0001-51-Morgan-Stanley-Greater-China-Semiconductors-2026-Shanghai-WAIC-takeaways/mineru_raw/images/b834e21fb641ff2aa530035748c701e50d2dad5b29ac7892d2234f8cd2b64a67.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Comparison of some key SuperPod solutions at 2026 WAIC Exhibit 5: Enflame showed its SuperPod solution, co-developed with ZTE Exhibit 6: Midplane-free orthogonal designs at WAIC ## P/D disaggregation enables more eff",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F004",
+    "latex_path": "figures/fig_004.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "MS：大中华半导体-2026上海WAIC要点",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0001-51-Morgan-Stanley-Greater-China-Semiconductors-2026-Shanghai-WAIC-takeaways/mineru_raw/images/62dd0a52e01a6b83a9f71077c6d48e861dc0eb4bb319fd5c72496fe517927f81.jpg",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Enflame showed its SuperPod solution, co-developed with ZTE Exhibit 6: Midplane-free orthogonal designs at WAIC ## P/D disaggregation enables more efficient heterogeneous inference Reducing token costs while improvin",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F005",
+    "latex_path": "figures/fig_005.jpg"
+  },
+  {
+    "report_id": "R003",
+    "report_title": "MS：Lululemon美洲业务规模或需调整25%至60%",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0003-53-Morgan-Stanley-Lululemon-Athletica-Inc.-LULU.US-Underweight-Unpacked--Wh/mineru_raw/images/b1fa105106f8915862146218738dadc354fba4188a53e0a62bb71bf048bd7604.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 3: Our scale analysis indicates that LULU Americas has the characteristics of a business that is typically \\$3-7B in size – below its current \\$7B + levels.",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F006",
+    "latex_path": "figures/fig_006.jpg"
+  },
+  {
+    "report_id": "R003",
+    "report_title": "MS：Lululemon美洲业务规模或需调整25%至60%",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0003-53-Morgan-Stanley-Lululemon-Athletica-Inc.-LULU.US-Underweight-Unpacked--Wh/mineru_raw/images/d22032fa12b2b2229e88276759561f9f7130a0280e76ea8f22d7bd499990d1dd.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 3: Our scale analysis indicates that LULU Americas has the characteristics of a business that is typically \\$3-7B in size – below its current \\$7B + levels.",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F007",
+    "latex_path": "figures/fig_007.jpg"
+  },
+  {
+    "report_id": "R004",
+    "report_title": "MS：核心变化是业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0004-54-Morgan-Stanley-Salesforce--Inc.-CRM.US-When-Does-a-Willingness-to-Disrup/mineru_raw/images/df0ad5d0c296f38e18d9f30f1292e82e4d8f9d956e47cf4f26ee331e7236b64a.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Agentforce ARR Accelerating at \\$1B+ Scale",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F008",
+    "latex_path": "figures/fig_008.jpg"
+  },
+  {
+    "report_id": "R004",
+    "report_title": "MS：核心变化是业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0004-54-Morgan-Stanley-Salesforce--Inc.-CRM.US-When-Does-a-Willingness-to-Disrup/mineru_raw/images/1ef16c46e75f0380f1fa67157951d64559cf13d7723ca7ad80aabc54a8d32f1b.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Agentforce ARR Accelerating at \\$1B+ Scale Exhibit 4: Marketing & Commerce and Integration & Analytics Clouds (\\~30% of Revenue as of FY26) Weighing on Overall Growth",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F009",
+    "latex_path": "figures/fig_009.jpg"
+  },
+  {
+    "report_id": "R004",
+    "report_title": "MS：核心变化是业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0004-54-Morgan-Stanley-Salesforce--Inc.-CRM.US-When-Does-a-Willingness-to-Disrup/mineru_raw/images/eebbaf9e1a234e144087da7a920bc04ca688e69940b505bd2dbc22be364679fa.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 4: Marketing & Commerce and Integration & Analytics Clouds (\\~30% of Revenue as of FY26) Weighing on Overall Growth 2. Relative Moat / Journey Strength, Though Transition Still Difficult. In our AI-readiness work, Salesfo",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F010",
+    "latex_path": "figures/fig_010.jpg"
+  },
+  {
+    "report_id": "R004",
+    "report_title": "MS：核心变化是业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0004-54-Morgan-Stanley-Salesforce--Inc.-CRM.US-When-Does-a-Willingness-to-Disrup/mineru_raw/images/e40a3490621ac9c933b13f2a8f0eec02aa78cabcb4e24759303e7986e0726a92.jpg",
+    "label": "Exhibit 3",
+    "context": "Exhibit 5: Salesforce Moat & Journey Scores",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F011",
+    "latex_path": "figures/fig_011.jpg"
+  },
+  {
+    "report_id": "R004",
+    "report_title": "MS：核心变化是业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0004-54-Morgan-Stanley-Salesforce--Inc.-CRM.US-When-Does-a-Willingness-to-Disrup/mineru_raw/images/c1e286dd3eb186337656733043636c2b06a3a45f029c1661733cd7a03cb09973.jpg",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Salesforce Moat & Journey Scores Exhibit 6: CIOs Continue to Indicate Salesforce as a Key SaaS Partner for Building AI Applications 2Q26: Preferred Vendors for Building Custom AI Applications: Today vs. 3 Years Out",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F012",
+    "latex_path": "figures/fig_012.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0005-55-Morgan-Stanley-Tesla-Inc---North-America-The-Road-to-ROI-Patience-Requir/mineru_raw/images/ff15f1281561dfdaccf1bfbfa379f8b66886a5502746e21aa1a61f1050df602f.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: TSLA Robotaxi Fleet Size ('000)",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F013",
+    "latex_path": "figures/fig_013.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0005-55-Morgan-Stanley-Tesla-Inc---North-America-The-Road-to-ROI-Patience-Requir/mineru_raw/images/8f571b219fd01154a8a38d871762f7899c97400cbac86a6ca274492329fafa29.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: TSLA Robotaxi Fleet Size ('000) Exhibit 3: TSLA Robotaxi Passenger Miles (bn) \\- Cybercab: Testing and validating v15 FSD on new chassis. Cybercab manufacturing targets are now aligned to the projected growth rate of",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F014",
+    "latex_path": "figures/fig_014.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0005-55-Morgan-Stanley-Tesla-Inc---North-America-The-Road-to-ROI-Patience-Requir/mineru_raw/images/fe60a83ba7c10edaf730d78a6265c382aa2352121fea9890a15ce6d36db97c04.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 4: FSD Penetration",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F015",
+    "latex_path": "figures/fig_015.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0005-55-Morgan-Stanley-Tesla-Inc---North-America-The-Road-to-ROI-Patience-Requir/mineru_raw/images/3eac4ae1c9e87609d1dc2356c08429f3d13757d798ac1725d392250ec1e56c9a.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 5: Optimus Deployments",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F016",
+    "latex_path": "figures/fig_016.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+    "source_path": "xhs_notes/dropbox/260723/shard_10/0005-55-Morgan-Stanley-Tesla-Inc---North-America-The-Road-to-ROI-Patience-Requir/mineru_raw/images/ca06ac106690851bac9724361330efe92452e4b02464d3df0d9ba8a910890ab6.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 6: ESS Deployments",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F017",
+    "latex_path": "figures/fig_017.jpg"
+  },
+  {
+    "report_id": "R006",
+    "report_title": "MS：资金结构与相关数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_11/0001-56-Morgan-Stanley-The-Viewpoint--Three-Reasons-Why-Credit-Growth-is-Booming/mineru_raw/images/c175c52d378f4f60ae8fdcb0aebffc69c5e3d75d143dac749fe9c92baa457b1b.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Credit growth in Asia ex China at a 18-year high Bank credit is still the most important",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F018",
+    "latex_path": "figures/fig_018.jpg"
+  },
+  {
+    "report_id": "R006",
+    "report_title": "MS：资金结构与相关数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_11/0001-56-Morgan-Stanley-The-Viewpoint--Three-Reasons-Why-Credit-Growth-is-Booming/mineru_raw/images/e245382c40e6839126add988201ebe8726a697f292ab0b7cc74fd867e54c24d2.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Asia ex China's credit growth has accelerated to $8.5\\%$ Y, the highest in 18 years Exhibit 3: Meanwhile China, with its counter-cyclical growth model, is slowing leverage Exhibit 4: Real bank credit growth (deflated",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F019",
+    "latex_path": "figures/fig_019.jpg"
+  },
+  {
+    "report_id": "R006",
+    "report_title": "MS：资金结构与相关数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_11/0001-56-Morgan-Stanley-The-Viewpoint--Three-Reasons-Why-Credit-Growth-is-Booming/mineru_raw/images/b586813589921002e1be72098e202c07d38256870167bd32d121a91ee24216a0.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 5: Nominal industrial production growth has also risen to the highest levels since 2008 (excluding Covid base effects), adding to corporate credit demand",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F020",
+    "latex_path": "figures/fig_020.jpg"
+  },
+  {
+    "report_id": "R006",
+    "report_title": "MS：资金结构与相关数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_11/0001-56-Morgan-Stanley-The-Viewpoint--Three-Reasons-Why-Credit-Growth-is-Booming/mineru_raw/images/428c18617c496126f1ea24868d48a919218b791ce7be3e55d6ddef747477f946.jpg",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Meanwhile China, with its counter-cyclical growth model, is slowing leverage Exhibit 4: Real bank credit growth (deflated by GDP deflator) is also at the highest since 2008 Exhibit 5: Nominal industrial production gr",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F021",
+    "latex_path": "figures/fig_021.jpg"
+  },
+  {
+    "report_id": "R006",
+    "report_title": "MS：资金结构与相关数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_11/0001-56-Morgan-Stanley-The-Viewpoint--Three-Reasons-Why-Credit-Growth-is-Booming/mineru_raw/images/dda264d16534e64561d55f0f0cffc9c582f1566b7a1bd120504424360459c7ad.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 6: Bank credit remains the largest",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F022",
+    "latex_path": "figures/fig_022.jpg"
+  },
+  {
+    "report_id": "R007",
+    "report_title": "MS：Workday与AI及近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_11/0002-57-Morgan-Stanley-Workday-Inc-WDAY.US-Strong-Moat--But-AI-Journey-Will-Take/mineru_raw/images/e08c591b22fb580a3db844ef8c19736533439970d278921bbf9fee777c58f7b7.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Workday screens expensive on a EV/FCF-SBC basis... Exhibit 3: ...as well as on a GAAP P/E basis ## What Could Make Us More Constructive?",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F023",
+    "latex_path": "figures/fig_023.jpg"
+  },
+  {
+    "report_id": "R007",
+    "report_title": "MS：Workday与AI及近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_11/0002-57-Morgan-Stanley-Workday-Inc-WDAY.US-Strong-Moat--But-AI-Journey-Will-Take/mineru_raw/images/8df44470317e82e8ca0513478b9038534c7e163e93b3342dc0e3e0337708889f.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Workday screens expensive on a EV/FCF-SBC basis... Exhibit 3: ...as well as on a GAAP P/E basis ## What Could Make Us More Constructive? 1. Evidence that AI products are accelerating revenue. The most effective rebut",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F024",
+    "latex_path": "figures/fig_024.jpg"
+  },
+  {
+    "report_id": "R012",
     "report_title": "GS：华明装备业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0002-22-Goldman-Sachs-HUAMING--002270--Upgrade-to-Buy-on-attractive-valuation-po/mineru_raw/images/67f81ab6da25be50ebfbd608b5439dc19da68fa6494ab1c59977291d4fec8309.jpg",
     "label": "Exhibit 1",
@@ -9,11 +321,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F001",
-    "latex_path": "figures/fig_001.jpg"
+    "figure_id": "F025",
+    "latex_path": "figures/fig_025.jpg"
   },
   {
-    "report_id": "R002",
+    "report_id": "R012",
     "report_title": "GS：华明装备业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0002-22-Goldman-Sachs-HUAMING--002270--Upgrade-to-Buy-on-attractive-valuation-po/mineru_raw/images/4d1653275bf55730a0a0d9ae62f4441c2c5ab12cfc883ec68f694becb821b0ec.jpg",
     "label": "Exhibit 1",
@@ -22,11 +334,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F002",
-    "latex_path": "figures/fig_002.jpg"
+    "figure_id": "F026",
+    "latex_path": "figures/fig_026.jpg"
   },
   {
-    "report_id": "R002",
+    "report_id": "R012",
     "report_title": "GS：华明装备业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0002-22-Goldman-Sachs-HUAMING--002270--Upgrade-to-Buy-on-attractive-valuation-po/mineru_raw/images/83458e15a177eba00b8fe012eb9516e9b6cb0483ba4b3a2b1a6cff7e63925dfe.jpg",
     "label": "Exhibit 2",
@@ -35,11 +347,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F003",
-    "latex_path": "figures/fig_003.jpg"
+    "figure_id": "F027",
+    "latex_path": "figures/fig_027.jpg"
   },
   {
-    "report_id": "R002",
+    "report_id": "R012",
     "report_title": "GS：华明装备业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0002-22-Goldman-Sachs-HUAMING--002270--Upgrade-to-Buy-on-attractive-valuation-po/mineru_raw/images/657e8d2f5d8ac60da3a1d3fe7e3af4443ff1198b158c66cb1e59ace93bf43dfd.jpg",
     "label": "Exhibit 2",
@@ -48,11 +360,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F004",
-    "latex_path": "figures/fig_004.jpg"
+    "figure_id": "F028",
+    "latex_path": "figures/fig_028.jpg"
   },
   {
-    "report_id": "R002",
+    "report_id": "R012",
     "report_title": "GS：华明装备业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0002-22-Goldman-Sachs-HUAMING--002270--Upgrade-to-Buy-on-attractive-valuation-po/mineru_raw/images/bde13bc25f9b6cc771e025007ea6e040180cbc8b3d9d7ac6cc48e67c4b000f88.jpg",
     "label": "Exhibit 3",
@@ -61,11 +373,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F005",
-    "latex_path": "figures/fig_005.jpg"
+    "figure_id": "F029",
+    "latex_path": "figures/fig_029.jpg"
   },
   {
-    "report_id": "R003",
+    "report_id": "R013",
     "report_title": "GS：价格数据与市场变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0003-23-Goldman-Sachs-EUROPEAN-ECONOMICS-ANALYST-Euro-Area-Higher-Energy-Prices-/mineru_raw/images/eb19480c4257cc04f541ed9a15c398813294ab972ac98dbe78779f0f540fe06a.jpg",
     "label": "Exhibit 1",
@@ -74,11 +386,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F006",
-    "latex_path": "figures/fig_006.jpg"
+    "figure_id": "F030",
+    "latex_path": "figures/fig_030.jpg"
   },
   {
-    "report_id": "R003",
+    "report_id": "R013",
     "report_title": "GS：价格数据与市场变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0003-23-Goldman-Sachs-EUROPEAN-ECONOMICS-ANALYST-Euro-Area-Higher-Energy-Prices-/mineru_raw/images/500ff3ee2034a30bc4bac8b53d327b124abe9871563b8b3267049cf55ba49f4d.jpg",
     "label": "Exhibit 3",
@@ -87,11 +399,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F007",
-    "latex_path": "figures/fig_007.jpg"
+    "figure_id": "F031",
+    "latex_path": "figures/fig_031.jpg"
   },
   {
-    "report_id": "R003",
+    "report_id": "R013",
     "report_title": "GS：价格数据与市场变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0003-23-Goldman-Sachs-EUROPEAN-ECONOMICS-ANALYST-Euro-Area-Higher-Energy-Prices-/mineru_raw/images/292128651e661d7907334c1f935e384b8846b7b72ad7e0e784398eff65c1d65e.jpg",
     "label": "Exhibit 4",
@@ -100,11 +412,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F008",
-    "latex_path": "figures/fig_008.jpg"
+    "figure_id": "F032",
+    "latex_path": "figures/fig_032.jpg"
   },
   {
-    "report_id": "R003",
+    "report_id": "R013",
     "report_title": "GS：价格数据与市场变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0003-23-Goldman-Sachs-EUROPEAN-ECONOMICS-ANALYST-Euro-Area-Higher-Energy-Prices-/mineru_raw/images/c1bca7417a727de6bf1819ba0a5e5102ba1c0dba07b2e61b8929a99989967584.jpg",
     "label": "Exhibit 4",
@@ -113,11 +425,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F009",
-    "latex_path": "figures/fig_009.jpg"
+    "figure_id": "F033",
+    "latex_path": "figures/fig_033.jpg"
   },
   {
-    "report_id": "R003",
+    "report_id": "R013",
     "report_title": "GS：价格数据与市场变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0003-23-Goldman-Sachs-EUROPEAN-ECONOMICS-ANALYST-Euro-Area-Higher-Energy-Prices-/mineru_raw/images/4710ca7079e7b5adfa8a4f85ee2b99d3a5d5099fe6a74e39f80a225aee87b295.jpg",
     "label": "Exhibit 5",
@@ -126,11 +438,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F010",
-    "latex_path": "figures/fig_010.jpg"
+    "figure_id": "F034",
+    "latex_path": "figures/fig_034.jpg"
   },
   {
-    "report_id": "R004",
+    "report_id": "R014",
     "report_title": "GS：研究主题与行业变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0004-24-Goldman-Sachs-China--Fiscal-revenue-and-expenditure-growth-both-improved/mineru_raw/images/901097c51cb31e6dba071dbe8bf2e7c8c554299a2fe6701edc911df2f85da157.jpg",
     "label": "Exhibit 1",
@@ -139,11 +451,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F011",
-    "latex_path": "figures/fig_011.jpg"
+    "figure_id": "F035",
+    "latex_path": "figures/fig_035.jpg"
   },
   {
-    "report_id": "R004",
+    "report_id": "R014",
     "report_title": "GS：研究主题与行业变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0004-24-Goldman-Sachs-China--Fiscal-revenue-and-expenditure-growth-both-improved/mineru_raw/images/11cb9ea8e9d7daa89f2b24fd2908110eb9b420c0cdab4d8b35c864942d75501e.jpg",
     "label": "Exhibit 1",
@@ -152,11 +464,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F012",
-    "latex_path": "figures/fig_012.jpg"
+    "figure_id": "F036",
+    "latex_path": "figures/fig_036.jpg"
   },
   {
-    "report_id": "R004",
+    "report_id": "R014",
     "report_title": "GS：研究主题与行业变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0004-24-Goldman-Sachs-China--Fiscal-revenue-and-expenditure-growth-both-improved/mineru_raw/images/9922ddf77d7539253c3c5d7102ca89dec5ad4b2fdf24dcabc19e5ae5c8383917.jpg",
     "label": "Exhibit 2",
@@ -165,11 +477,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F013",
-    "latex_path": "figures/fig_013.jpg"
+    "figure_id": "F037",
+    "latex_path": "figures/fig_037.jpg"
   },
   {
-    "report_id": "R004",
+    "report_id": "R014",
     "report_title": "GS：研究主题与行业变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0004-24-Goldman-Sachs-China--Fiscal-revenue-and-expenditure-growth-both-improved/mineru_raw/images/625d3236969011abe21dfab0123d3d36036dc8476a9804c05f89b3575ff7434c.jpg",
     "label": "Exhibit 3",
@@ -178,11 +490,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F014",
-    "latex_path": "figures/fig_014.jpg"
+    "figure_id": "F038",
+    "latex_path": "figures/fig_038.jpg"
   },
   {
-    "report_id": "R004",
+    "report_id": "R014",
     "report_title": "GS：研究主题与行业变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0004-24-Goldman-Sachs-China--Fiscal-revenue-and-expenditure-growth-both-improved/mineru_raw/images/8d6984db8601929628b46f8b376e9664eaa2f25e26868352b25f2ff186e68ee2.jpg",
     "label": "Exhibit 4",
@@ -191,11 +503,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F015",
-    "latex_path": "figures/fig_015.jpg"
+    "figure_id": "F039",
+    "latex_path": "figures/fig_039.jpg"
   },
   {
-    "report_id": "R005",
+    "report_id": "R015",
     "report_title": "GS：能源行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0005-25-Goldman-Sachs-How-China-Is-Buffering-the-Global-Energy-Supply-Shock-2607/mineru_raw/images/88617dcae615c70d6aa8b01ca7cf91f4173b9f258918bfe715d24a39df251f4a.jpg",
     "label": "Exhibit 1",
@@ -204,11 +516,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F016",
-    "latex_path": "figures/fig_016.jpg"
+    "figure_id": "F040",
+    "latex_path": "figures/fig_040.jpg"
   },
   {
-    "report_id": "R005",
+    "report_id": "R015",
     "report_title": "GS：能源行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0005-25-Goldman-Sachs-How-China-Is-Buffering-the-Global-Energy-Supply-Shock-2607/mineru_raw/images/3b5e53e3ed211175441055290da98a3bdaf6b09974498d5496f1c27353f48932.jpg",
     "label": "Exhibit 2",
@@ -217,11 +529,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F017",
-    "latex_path": "figures/fig_017.jpg"
+    "figure_id": "F041",
+    "latex_path": "figures/fig_041.jpg"
   },
   {
-    "report_id": "R005",
+    "report_id": "R015",
     "report_title": "GS：能源行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0005-25-Goldman-Sachs-How-China-Is-Buffering-the-Global-Energy-Supply-Shock-2607/mineru_raw/images/abe5c85cccc5bba180a5495812e8cd6e77237035be1a135bf715b8b40a10d016.jpg",
     "label": "Exhibit 3",
@@ -230,11 +542,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F018",
-    "latex_path": "figures/fig_018.jpg"
+    "figure_id": "F042",
+    "latex_path": "figures/fig_042.jpg"
   },
   {
-    "report_id": "R005",
+    "report_id": "R015",
     "report_title": "GS：能源行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0005-25-Goldman-Sachs-How-China-Is-Buffering-the-Global-Energy-Supply-Shock-2607/mineru_raw/images/fc58a4714dbd410800a1ec40d3ef9d41b146f2593433bbf6fa3aefe058af6735.jpg",
     "label": "Exhibit 4",
@@ -243,11 +555,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F019",
-    "latex_path": "figures/fig_019.jpg"
+    "figure_id": "F043",
+    "latex_path": "figures/fig_043.jpg"
   },
   {
-    "report_id": "R005",
+    "report_id": "R015",
     "report_title": "GS：能源行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_4/0005-25-Goldman-Sachs-How-China-Is-Buffering-the-Global-Energy-Supply-Shock-2607/mineru_raw/images/d355072d06c5be4b41a75930ba7516e932f245aa7cfee75cb6d57a6bc50bd932.jpg",
     "label": "Exhibit 4",
@@ -256,11 +568,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F020",
-    "latex_path": "figures/fig_020.jpg"
+    "figure_id": "F044",
+    "latex_path": "figures/fig_044.jpg"
   },
   {
-    "report_id": "R006",
+    "report_id": "R016",
     "report_title": "半导体行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_5/0001-26-Goldman-Sachs-JAPAN-TECHNOLOGY--SEMICONDUCTOR-CAPITAL-EQUIPMENT-June-SEA/mineru_raw/images/022846138b9a7dc9e0db449ac4b4b163c125a6626d9d0ce61986b79ae662e397.jpg",
     "label": "Exhibit 1",
@@ -269,11 +581,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F021",
-    "latex_path": "figures/fig_021.jpg"
+    "figure_id": "F045",
+    "latex_path": "figures/fig_045.jpg"
   },
   {
-    "report_id": "R006",
+    "report_id": "R016",
     "report_title": "半导体行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_5/0001-26-Goldman-Sachs-JAPAN-TECHNOLOGY--SEMICONDUCTOR-CAPITAL-EQUIPMENT-June-SEA/mineru_raw/images/ebfe8c0bc5913c641bd77b39af8f7db6ba34d5be5d04079a525aaa3a1db15b0b.jpg",
     "label": "Exhibit 4",
@@ -282,11 +594,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F022",
-    "latex_path": "figures/fig_022.jpg"
+    "figure_id": "F046",
+    "latex_path": "figures/fig_046.jpg"
   },
   {
-    "report_id": "R008",
+    "report_id": "R018",
     "report_title": "GS：日本央行7月会议预计维持利率不变-下次调整或在2027年1月",
     "source_path": "xhs_notes/dropbox/260723/shard_5/0003-28-Goldman-Sachs-Japan-Economic-Flash-BOJ-July-MPM-Preview-We-Expect-Status/mineru_raw/images/03788dd667050f2ad46ff9ccf2364daae2f7fde18f59400f1c3fc61b6d4696c8.jpg",
     "label": "Exhibit 1",
@@ -295,11 +607,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F023",
-    "latex_path": "figures/fig_023.jpg"
+    "figure_id": "F047",
+    "latex_path": "figures/fig_047.jpg"
   },
   {
-    "report_id": "R008",
+    "report_id": "R018",
     "report_title": "GS：日本央行7月会议预计维持利率不变-下次调整或在2027年1月",
     "source_path": "xhs_notes/dropbox/260723/shard_5/0003-28-Goldman-Sachs-Japan-Economic-Flash-BOJ-July-MPM-Preview-We-Expect-Status/mineru_raw/images/e0b62ce6ae9741652e0fae0ae1b6898bba875ef43c2981bd7b858d5604ec2ce6.jpg",
     "label": "Exhibit 2",
@@ -308,11 +620,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F024",
-    "latex_path": "figures/fig_024.jpg"
+    "figure_id": "F048",
+    "latex_path": "figures/fig_048.jpg"
   },
   {
-    "report_id": "R008",
+    "report_id": "R018",
     "report_title": "GS：日本央行7月会议预计维持利率不变-下次调整或在2027年1月",
     "source_path": "xhs_notes/dropbox/260723/shard_5/0003-28-Goldman-Sachs-Japan-Economic-Flash-BOJ-July-MPM-Preview-We-Expect-Status/mineru_raw/images/19596da959b9e270f9bf0303a0da3461c8b8ce99cf78e8a5fab3c798e83543e3.jpg",
     "label": "Exhibit 3",
@@ -321,11 +633,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F025",
-    "latex_path": "figures/fig_025.jpg"
+    "figure_id": "F049",
+    "latex_path": "figures/fig_049.jpg"
   },
   {
-    "report_id": "R008",
+    "report_id": "R018",
     "report_title": "GS：日本央行7月会议预计维持利率不变-下次调整或在2027年1月",
     "source_path": "xhs_notes/dropbox/260723/shard_5/0003-28-Goldman-Sachs-Japan-Economic-Flash-BOJ-July-MPM-Preview-We-Expect-Status/mineru_raw/images/e554e07c33b42ae6d7b57457eca3c1cfbdaf1cfaddeb0459ed7dd7593aaf1990.jpg",
     "label": "Exhibit 3",
@@ -334,11 +646,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F026",
-    "latex_path": "figures/fig_026.jpg"
+    "figure_id": "F050",
+    "latex_path": "figures/fig_050.jpg"
   },
   {
-    "report_id": "R008",
+    "report_id": "R018",
     "report_title": "GS：日本央行7月会议预计维持利率不变-下次调整或在2027年1月",
     "source_path": "xhs_notes/dropbox/260723/shard_5/0003-28-Goldman-Sachs-Japan-Economic-Flash-BOJ-July-MPM-Preview-We-Expect-Status/mineru_raw/images/a1f082bddcd0469c317f6dddbfda5cf4b73f7a689fdf5f5e9256958f18d9699e.jpg",
     "label": "Exhibit 3",
@@ -347,11 +659,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "GS",
-    "figure_id": "F027",
-    "latex_path": "figures/fig_027.jpg"
+    "figure_id": "F051",
+    "latex_path": "figures/fig_051.jpg"
   },
   {
-    "report_id": "R011",
+    "report_id": "R021",
     "report_title": "HSBC：中国医疗健康非AI主题资金轮动",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0001-31-HSBC-China-Healthcare-Marketing-takeaways--The-best-non-AI-play-260721/mineru_raw/images/25f0dfe856df7fe154e9130068e941011bb54de87340836ca49c88b8a9f53b55.jpg",
     "label": "Exhibit 1",
@@ -360,11 +672,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F028",
-    "latex_path": "figures/fig_028.jpg"
+    "figure_id": "F052",
+    "latex_path": "figures/fig_052.jpg"
   },
   {
-    "report_id": "R014",
+    "report_id": "R024",
     "report_title": "HSBC：汉钟精机可持续业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0004-34-HSBC-Hanbell-Precise-Machinery-002158--Buy--Sustainable-growth-prospects/mineru_raw/images/a0aaa603c5d0898d2bec54dcc3fb0af1f079bb38575bdf32d4817778a31a3363.jpg",
     "label": "Exhibit 1",
@@ -373,11 +685,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F029",
-    "latex_path": "figures/fig_029.jpg"
+    "figure_id": "F053",
+    "latex_path": "figures/fig_053.jpg"
   },
   {
-    "report_id": "R014",
+    "report_id": "R024",
     "report_title": "HSBC：汉钟精机可持续业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0004-34-HSBC-Hanbell-Precise-Machinery-002158--Buy--Sustainable-growth-prospects/mineru_raw/images/3a8faac6657dcc7f7f8791bde56b35e704cae2e94b60f91eef31238a224fd352.jpg",
     "label": "Exhibit 2",
@@ -386,11 +698,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F030",
-    "latex_path": "figures/fig_030.jpg"
+    "figure_id": "F054",
+    "latex_path": "figures/fig_054.jpg"
   },
   {
-    "report_id": "R014",
+    "report_id": "R024",
     "report_title": "HSBC：汉钟精机可持续业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0004-34-HSBC-Hanbell-Precise-Machinery-002158--Buy--Sustainable-growth-prospects/mineru_raw/images/29c919becb5c02abc5832c0e3f00fcb61cd6816f300c0dae62909f5853986396.jpg",
     "label": "Exhibit 2",
@@ -399,11 +711,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F031",
-    "latex_path": "figures/fig_031.jpg"
+    "figure_id": "F055",
+    "latex_path": "figures/fig_055.jpg"
   },
   {
-    "report_id": "R014",
+    "report_id": "R024",
     "report_title": "HSBC：汉钟精机可持续业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0004-34-HSBC-Hanbell-Precise-Machinery-002158--Buy--Sustainable-growth-prospects/mineru_raw/images/15e6cc8e3de4249b9caad32e93b06bcb5a873edc7478af59c704b99441d34e93.jpg",
     "label": "Exhibit 4",
@@ -412,11 +724,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F032",
-    "latex_path": "figures/fig_032.jpg"
+    "figure_id": "F056",
+    "latex_path": "figures/fig_056.jpg"
   },
   {
-    "report_id": "R014",
+    "report_id": "R024",
     "report_title": "HSBC：汉钟精机可持续业务与近期数据观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0004-34-HSBC-Hanbell-Precise-Machinery-002158--Buy--Sustainable-growth-prospects/mineru_raw/images/665e03685f58910daec16b8f2d9a94b65c30d37efbfe95d0b7254169543b40c9.jpg",
     "label": "Exhibit 4",
@@ -425,11 +737,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F033",
-    "latex_path": "figures/fig_033.jpg"
+    "figure_id": "F057",
+    "latex_path": "figures/fig_057.jpg"
   },
   {
-    "report_id": "R015",
+    "report_id": "R025",
     "report_title": "城市与住房数据变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0005-35-HSBC-China-Real-Estate-Soft-1H26-earnings-priced-in--still-underwriting-/mineru_raw/images/a0c6095a13c2e0caf7335c30284bcb438e60f5075bc58e4fcae7af2c36ac8063.jpg",
     "label": "Figure 1",
@@ -438,11 +750,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F034",
-    "latex_path": "figures/fig_034.jpg"
+    "figure_id": "F058",
+    "latex_path": "figures/fig_058.jpg"
   },
   {
-    "report_id": "R015",
+    "report_id": "R025",
     "report_title": "城市与住房数据变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0005-35-HSBC-China-Real-Estate-Soft-1H26-earnings-priced-in--still-underwriting-/mineru_raw/images/51f6dfec6a62627669192fa5df390f24f29414f2e1a451a9087cc01fcea7f759.jpg",
     "label": "Figure 4",
@@ -451,11 +763,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F035",
-    "latex_path": "figures/fig_035.jpg"
+    "figure_id": "F059",
+    "latex_path": "figures/fig_059.jpg"
   },
   {
-    "report_id": "R015",
+    "report_id": "R025",
     "report_title": "城市与住房数据变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0005-35-HSBC-China-Real-Estate-Soft-1H26-earnings-priced-in--still-underwriting-/mineru_raw/images/465b9d71eda4769c0bcf3d5a6411c25a534d5885835abf7ee97f63884fa46f77.jpg",
     "label": "Figure 7",
@@ -464,11 +776,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F036",
-    "latex_path": "figures/fig_036.jpg"
+    "figure_id": "F060",
+    "latex_path": "figures/fig_060.jpg"
   },
   {
-    "report_id": "R015",
+    "report_id": "R025",
     "report_title": "城市与住房数据变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0005-35-HSBC-China-Real-Estate-Soft-1H26-earnings-priced-in--still-underwriting-/mineru_raw/images/a4b4561e9e204caabcc1d9beaedcf82dbde167b6443c4baa83a8c31c4d310520.jpg",
     "label": "Figure 7",
@@ -477,11 +789,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F037",
-    "latex_path": "figures/fig_037.jpg"
+    "figure_id": "F061",
+    "latex_path": "figures/fig_061.jpg"
   },
   {
-    "report_id": "R015",
+    "report_id": "R025",
     "report_title": "城市与住房数据变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_6/0005-35-HSBC-China-Real-Estate-Soft-1H26-earnings-priced-in--still-underwriting-/mineru_raw/images/b1af09daf752c9855bf1c52b82d0e87371dbb1f2f4438a0f3cc446cfcbf93809.jpg",
     "label": "Figure 8",
@@ -490,11 +802,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "HSBC",
-    "figure_id": "F038",
-    "latex_path": "figures/fig_038.jpg"
+    "figure_id": "F062",
+    "latex_path": "figures/fig_062.jpg"
   },
   {
-    "report_id": "R016",
+    "report_id": "R026",
     "report_title": "JPM：AI技术与行业应用观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0001-36-J.P.-Morgan-ASEAN---Taiwan-Telcos-Current-AI-token-offerings-are-unlikel/mineru_raw/images/40f10df3e697e0eb860fba3f28afdda10b8337a58a2d543122eb382657a898d5.jpg",
     "label": "Figure 1",
@@ -503,11 +815,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F039",
-    "latex_path": "figures/fig_039.jpg"
+    "figure_id": "F063",
+    "latex_path": "figures/fig_063.jpg"
   },
   {
-    "report_id": "R016",
+    "report_id": "R026",
     "report_title": "JPM：AI技术与行业应用观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0001-36-J.P.-Morgan-ASEAN---Taiwan-Telcos-Current-AI-token-offerings-are-unlikel/mineru_raw/images/5612c37ee8ff58c51be5ec09d3c2db352f05f0777bf1f30abae8f7f0431e4b53.jpg",
     "label": "Figure 1",
@@ -516,11 +828,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F040",
-    "latex_path": "figures/fig_040.jpg"
+    "figure_id": "F064",
+    "latex_path": "figures/fig_064.jpg"
   },
   {
-    "report_id": "R016",
+    "report_id": "R026",
     "report_title": "JPM：AI技术与行业应用观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0001-36-J.P.-Morgan-ASEAN---Taiwan-Telcos-Current-AI-token-offerings-are-unlikel/mineru_raw/images/72c87e60e5701d9fb034bad110b1aeb8e75e8583a97d2029ffe8251933d6bc97.jpg",
     "label": "Figure 2",
@@ -529,11 +841,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F041",
-    "latex_path": "figures/fig_041.jpg"
+    "figure_id": "F065",
+    "latex_path": "figures/fig_065.jpg"
   },
   {
-    "report_id": "R016",
+    "report_id": "R026",
     "report_title": "JPM：AI技术与行业应用观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0001-36-J.P.-Morgan-ASEAN---Taiwan-Telcos-Current-AI-token-offerings-are-unlikel/mineru_raw/images/08500ed8c81045ed3584c346349ccba50bc07ca51cbbe2eee7be25dd14fbfb4c.jpg",
     "label": "Figure 3",
@@ -542,11 +854,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F042",
-    "latex_path": "figures/fig_042.jpg"
+    "figure_id": "F066",
+    "latex_path": "figures/fig_066.jpg"
   },
   {
-    "report_id": "R018",
+    "report_id": "R028",
     "report_title": "零售行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0003-38-J.P.-Morgan-China-Logistics--Express-Parcel-and-Ecommerce-Incremental-qu/mineru_raw/images/999243353ee585236720901e3b4e73a42a9804675476fbda8630dd325aa25c59.jpg",
     "label": "Figure 1",
@@ -555,11 +867,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F043",
-    "latex_path": "figures/fig_043.jpg"
+    "figure_id": "F067",
+    "latex_path": "figures/fig_067.jpg"
   },
   {
-    "report_id": "R018",
+    "report_id": "R028",
     "report_title": "零售行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0003-38-J.P.-Morgan-China-Logistics--Express-Parcel-and-Ecommerce-Incremental-qu/mineru_raw/images/9fae3dedb0c8c48f32a26cdebf8debe6f5db69123f2ace8d1c2b5c1968050eb6.jpg",
     "label": "Figure 1",
@@ -568,11 +880,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F044",
-    "latex_path": "figures/fig_044.jpg"
+    "figure_id": "F068",
+    "latex_path": "figures/fig_068.jpg"
   },
   {
-    "report_id": "R018",
+    "report_id": "R028",
     "report_title": "零售行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0003-38-J.P.-Morgan-China-Logistics--Express-Parcel-and-Ecommerce-Incremental-qu/mineru_raw/images/e977f17140d045bcb93ac6164a785c0c7e982dcd15fbe601e587495f3cbc24fc.jpg",
     "label": "Figure 3",
@@ -581,11 +893,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F045",
-    "latex_path": "figures/fig_045.jpg"
+    "figure_id": "F069",
+    "latex_path": "figures/fig_069.jpg"
   },
   {
-    "report_id": "R018",
+    "report_id": "R028",
     "report_title": "零售行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0003-38-J.P.-Morgan-China-Logistics--Express-Parcel-and-Ecommerce-Incremental-qu/mineru_raw/images/c5ea8f0008f40b2bcf41db6657aa678451a28b850167abfe20b5e539293ede36.jpg",
     "label": "Figure 3",
@@ -594,11 +906,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F046",
-    "latex_path": "figures/fig_046.jpg"
+    "figure_id": "F070",
+    "latex_path": "figures/fig_070.jpg"
   },
   {
-    "report_id": "R018",
+    "report_id": "R028",
     "report_title": "零售行业数据与主题变化观察",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0003-38-J.P.-Morgan-China-Logistics--Express-Parcel-and-Ecommerce-Incremental-qu/mineru_raw/images/94bd43022db876ffee154415168ac31f33c37fce93c147a019a6b0a8ddb91380.jpg",
     "label": "Figure 4",
@@ -607,11 +919,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F047",
-    "latex_path": "figures/fig_047.jpg"
+    "figure_id": "F071",
+    "latex_path": "figures/fig_071.jpg"
   },
   {
-    "report_id": "R020",
+    "report_id": "R030",
     "report_title": "JPM：日本量化策略-日经反弹与AI半导体角色",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0005-40-J.P.-Morgan-Japan-Quant-Strategy-NKY-rallies---Sign-that-worst-is-over--/mineru_raw/images/76f1c554e26b606a192f271328dfa32e2a67ff112014d825de29edb52e71e7c8.jpg",
     "label": "Figure 1",
@@ -620,11 +932,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F048",
-    "latex_path": "figures/fig_048.jpg"
+    "figure_id": "F072",
+    "latex_path": "figures/fig_072.jpg"
   },
   {
-    "report_id": "R020",
+    "report_id": "R030",
     "report_title": "JPM：日本量化策略-日经反弹与AI半导体角色",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0005-40-J.P.-Morgan-Japan-Quant-Strategy-NKY-rallies---Sign-that-worst-is-over--/mineru_raw/images/4bf76e6b2185e33f9c70f66174e11756a7643ef63ff8119f23cacbea1fa869e8.jpg",
     "label": "Figure 1",
@@ -633,11 +945,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F049",
-    "latex_path": "figures/fig_049.jpg"
+    "figure_id": "F073",
+    "latex_path": "figures/fig_073.jpg"
   },
   {
-    "report_id": "R020",
+    "report_id": "R030",
     "report_title": "JPM：日本量化策略-日经反弹与AI半导体角色",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0005-40-J.P.-Morgan-Japan-Quant-Strategy-NKY-rallies---Sign-that-worst-is-over--/mineru_raw/images/1559db2e88fb7de6b5c49cf8580a2f46ce0febfd299fa60457c79c0e8f9241ff.jpg",
     "label": "Figure 2",
@@ -646,11 +958,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F050",
-    "latex_path": "figures/fig_050.jpg"
+    "figure_id": "F074",
+    "latex_path": "figures/fig_074.jpg"
   },
   {
-    "report_id": "R020",
+    "report_id": "R030",
     "report_title": "JPM：日本量化策略-日经反弹与AI半导体角色",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0005-40-J.P.-Morgan-Japan-Quant-Strategy-NKY-rallies---Sign-that-worst-is-over--/mineru_raw/images/1a2be8012776e5d477243b02b1a686310b5f8af7797a6834f2770a3f563d529a.jpg",
     "label": "Figure 3",
@@ -659,11 +971,11 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F051",
-    "latex_path": "figures/fig_051.jpg"
+    "figure_id": "F075",
+    "latex_path": "figures/fig_075.jpg"
   },
   {
-    "report_id": "R020",
+    "report_id": "R030",
     "report_title": "JPM：日本量化策略-日经反弹与AI半导体角色",
     "source_path": "xhs_notes/dropbox/260723/shard_7/0005-40-J.P.-Morgan-Japan-Quant-Strategy-NKY-rallies---Sign-that-worst-is-over--/mineru_raw/images/fa18fa6edb65f3790f2bf3fd1b7e0b34f887241290757cdc21b11343479e26d5.jpg",
     "label": "Figure 5",
@@ -672,11 +984,284 @@
     "source_group": "bank_research",
     "source_label": "投行/券商",
     "institution_name": "JPM",
-    "figure_id": "F052",
-    "latex_path": "figures/fig_052.jpg"
+    "figure_id": "F076",
+    "latex_path": "figures/fig_076.jpg"
   },
   {
-    "report_id": "R021",
+    "report_id": "R031",
+    "report_title": "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0001-41-J.P.-Morgan-Shopify-SHOP.US--Expecting-Upside-to-Guidance-into-2Q-Earnin/mineru_raw/images/b3cf3475c8b04db7dda9abfeb201833561c033f33a42491a34be56937433f24c.jpg",
+    "label": "Figure 1",
+    "context": "## Investment Thesis Shopify is a leading commerce enablement & infrastructure platform providing 2M+ merchants across 175+ countries tools to establish, scale, & manage their businesses. Shopify serves as a unified operating system for commerce across channel",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F077",
+    "latex_path": "figures/fig_077.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "JPM：货币市场与相关指标观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0002-42-J.P.-Morgan-Japan-FX-topic-Three-key-questions-on-GPIF-260721/mineru_raw/images/ccf62e7916df70a0e63486b2f2f4874849db82cea6edecbaac94d7ad0a361b0e.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: Cumulative flow into foreign bonds trillion yen No data for Pension Fund pre 2014 Figure 3: Cumulative flow into foreign equities trillion yen No data for Pension Fund pre 2014 Figure 4: $30\\%$ of lifers' security as",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F078",
+    "latex_path": "figures/fig_078.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "JPM：货币市场与相关指标观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0002-42-J.P.-Morgan-Japan-FX-topic-Three-key-questions-on-GPIF-260721/mineru_raw/images/4eba37326ac1294b265b962de3e2c42aa2dc5f3007110c0bfd0ebb760c6c6d1f.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: Cumulative flow into foreign bonds trillion yen No data for Pension Fund pre 2014 Figure 3: Cumulative flow into foreign equities trillion yen No data for Pension Fund pre 2014 Figure 4: $30\\%$ of lifers' security as",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F079",
+    "latex_path": "figures/fig_079.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "JPM：货币市场与相关指标观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0002-42-J.P.-Morgan-Japan-FX-topic-Three-key-questions-on-GPIF-260721/mineru_raw/images/35a2a410c8bba41e24477130b2880a31e27eca3fd2259790e55a7d50ce5aad69.jpg",
+    "label": "Figure 3",
+    "context": "Figure 5: Cumulative flow of foreign assets by Japanese pension funds trillion yen ## Disclosures",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F080",
+    "latex_path": "figures/fig_080.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "JPM：货币市场与相关指标观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0002-42-J.P.-Morgan-Japan-FX-topic-Three-key-questions-on-GPIF-260721/mineru_raw/images/40c504948eb4b8d89e8a711d9dde026bbfb45befc8371228f7128df712f67c23.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: $30\\%$ of lifers' security assets are in foreign securities, which is about JPY100 trillion trillion yen, $\\%$ As of January 2026 Figure 5: Cumulative flow of foreign assets by Japanese pension funds trillion yen ##",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F081",
+    "latex_path": "figures/fig_081.jpg"
+  },
+  {
+    "report_id": "R034",
+    "report_title": "JPM：零售行业数据与主题变化观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0004-44-JPM-Retail-Radar-Jul-22---Momentum-Cooldown--Hyperscaler-Earnings-260722/mineru_raw/images/8db0df2b6030279eb43fee179deb732e5fb9cf86c5d7147cc58238df6e89477e.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Momentum Crowding Figure 2: Momentum Unwind Now vs Feb-Mar'25 Figure 3: Frequent Negative High-Sigma Events in Momentum",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F082",
+    "latex_path": "figures/fig_082.jpg"
+  },
+  {
+    "report_id": "R034",
+    "report_title": "JPM：零售行业数据与主题变化观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0004-44-JPM-Retail-Radar-Jul-22---Momentum-Cooldown--Hyperscaler-Earnings-260722/mineru_raw/images/0563ff5f7c1972e0cd5869c423d2038436e909f847347c741d0f7dd5eaaed5dd.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Momentum Crowding Figure 2: Momentum Unwind Now vs Feb-Mar'25 Figure 3: Frequent Negative High-Sigma Events in Momentum Figure 4: Retail Imbalance in Tech ETFs Turned Negative As of July $22^{\\text{th}}$",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F083",
+    "latex_path": "figures/fig_083.jpg"
+  },
+  {
+    "report_id": "R034",
+    "report_title": "JPM：零售行业数据与主题变化观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0004-44-JPM-Retail-Radar-Jul-22---Momentum-Cooldown--Hyperscaler-Earnings-260722/mineru_raw/images/30b164dca48c6a9d39402cf3fc98fd87e7536090e12bdef2e25dcaec8a24cbda.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: Momentum Unwind Now vs Feb-Mar'25 Figure 3: Frequent Negative High-Sigma Events in Momentum Figure 4: Retail Imbalance in Tech ETFs Turned Negative As of July $22^{\\text{th}}$ Figure 5: Retail Investor Daily Purcha",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F084",
+    "latex_path": "figures/fig_084.jpg"
+  },
+  {
+    "report_id": "R034",
+    "report_title": "JPM：零售行业数据与主题变化观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0004-44-JPM-Retail-Radar-Jul-22---Momentum-Cooldown--Hyperscaler-Earnings-260722/mineru_raw/images/b4a12bdb48e7e210e43a9ecb7f6c2f16576458b92638447986569bb21d1e7de2.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: Frequent Negative High-Sigma Events in Momentum Figure 4: Retail Imbalance in Tech ETFs Turned Negative As of July $22^{\\text{th}}$ Figure 5: Retail Investor Daily Purchases by Stocks and ETFs \\$M, as of Jul 22 $^{th",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F085",
+    "latex_path": "figures/fig_085.jpg"
+  },
+  {
+    "report_id": "R034",
+    "report_title": "JPM：零售行业数据与主题变化观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_8/0004-44-JPM-Retail-Radar-Jul-22---Momentum-Cooldown--Hyperscaler-Earnings-260722/mineru_raw/images/3d560c23c594665af449fd286dd78190b580f567c77330e81461646aa0a05b3b.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: Retail Imbalance in Tech ETFs Turned Negative As of July $22^{\\text{th}}$ Figure 5: Retail Investor Daily Purchases by Stocks and ETFs \\$M, as of Jul 22 $^{th}$ ## Retail Cash Activity – Overview Figure 6: Retail Sin",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "JPM",
+    "figure_id": "F086",
+    "latex_path": "figures/fig_086.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "MS：汽车行业数据与主题变化观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0001-46-Morgan-Stanley-General-Motors-Company-GM.UN-Beat--Raise--Repeat-260722/mineru_raw/images/ac023b9ceddc5fc584a8fd3e6d3d64237ddb02aeab0a4c841efac074e5766886.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: 2027 MS EBIT Bridge Software and Services is an underappreciated growth driver. GM is positioning the digital services vector as an increasingly material and less-cyclical earnings engine, with 1mn new digital subscrip",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F087",
+    "latex_path": "figures/fig_087.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0002-47-Morgan-Stanley-Adobe-Inc.-ADBE.US-Undergoing-Multiple-Transitions-at-Onc/mineru_raw/images/c5e6d25ed72d7a77b6dbad931f47f9bd633c799a1fbe1e85194ed9dc31464e3b.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 2: Adobe Positioned at the Middle of the Pack on Both Moat and Journey",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F088",
+    "latex_path": "figures/fig_088.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0002-47-Morgan-Stanley-Adobe-Inc.-ADBE.US-Undergoing-Multiple-Transitions-at-Onc/mineru_raw/images/ce26d50c4e03ec30dd379551f4134199915dbd82bbbe509a04e72a050d18a0f3.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Adobe Positioned at the Middle of the Pack on Both Moat and Journey Along with Adobe's relative position in our Moat & Journey framework analysis, we downgrade to UW on the culmination of three impending transitions cr",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F089",
+    "latex_path": "figures/fig_089.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0002-47-Morgan-Stanley-Adobe-Inc.-ADBE.US-Undergoing-Multiple-Transitions-at-Onc/mineru_raw/images/37363b219f95182ebd4bce7d8f207eeff1cab87ff4c23532014cf6fcc2fe9bf7.jpg",
+    "label": "Exhibit 3",
+    "context": "Exhibit 4: Adobe Boasts Best in Class Margins Amongst SaaS Peers...",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F090",
+    "latex_path": "figures/fig_090.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0002-47-Morgan-Stanley-Adobe-Inc.-ADBE.US-Undergoing-Multiple-Transitions-at-Onc/mineru_raw/images/8069daf1899a04fbaaa6d9e794685eb92c96b0c6536ac36e6d750d4649abea13.jpg",
+    "label": "Exhibit 3",
+    "context": "Exhibit 4: Adobe Boasts Best in Class Margins Amongst SaaS Peers... Exhibit 5: ... Even After Materially Stepping Up R&D Spend as a % of Revenue Exhibit 6: Adobe Ranks Highly on GAAP GP/Employee...",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F091",
+    "latex_path": "figures/fig_091.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0002-47-Morgan-Stanley-Adobe-Inc.-ADBE.US-Undergoing-Multiple-Transitions-at-Onc/mineru_raw/images/8f91126cdf6c449e2fc4da53ddc4235cc6d3aac5ca52aa93a45f88089dd98e95.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Adobe Boasts Best in Class Margins Amongst SaaS Peers... Exhibit 5: ... Even After Materially Stepping Up R&D Spend as a % of Revenue Exhibit 6: Adobe Ranks Highly on GAAP GP/Employee... Exhibit 7: ... as Well as G",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F092",
+    "latex_path": "figures/fig_092.jpg"
+  },
+  {
+    "report_id": "R039",
+    "report_title": "MS：互联网板块进入二季度财报季",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0004-49-Morgan-Stanley-Internet-Where-Are-We-Trading-Now--Entering-2Q-Earnings-2/mineru_raw/images/4d9b7c5b502624abfd34687c19629a401b2b48b7ac063d09a2fa97a7a36752d9.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: NTM EV/EBITDA for AMZN/GOOGL/META vs. Historical Averages Exhibit 5: Internet names fell -4% last week (SPX/NDX -2/-4%) Exhibit 6: NTM EV/EBITDA Multiples Are -6%/-13% vs. 5/10-Year Averages...",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F093",
+    "latex_path": "figures/fig_093.jpg"
+  },
+  {
+    "report_id": "R039",
+    "report_title": "MS：互联网板块进入二季度财报季",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0004-49-Morgan-Stanley-Internet-Where-Are-We-Trading-Now--Entering-2Q-Earnings-2/mineru_raw/images/2419242dbd596d38bfdf2b697569e6c9f421c06af6a1337da66b81e6e94b1161.jpg",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Internet names fell -4% last week (SPX/NDX -2/-4%) Exhibit 6: NTM EV/EBITDA Multiples Are -6%/-13% vs. 5/10-Year Averages... Exhibit 7: ... and NTM EV/Sales Multiples Are +18%/+20% vs. 5/10-Year Averages",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F094",
+    "latex_path": "figures/fig_094.jpg"
+  },
+  {
+    "report_id": "R039",
+    "report_title": "MS：互联网板块进入二季度财报季",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0004-49-Morgan-Stanley-Internet-Where-Are-We-Trading-Now--Entering-2Q-Earnings-2/mineru_raw/images/86a85b06807508ce8b8fe185e4c5e093e12d8b3fbd0c1b4a61aa5d1d7704c1a8.jpg",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: NTM EV/EBITDA Multiples Are -6%/-13% vs. 5/10-Year Averages... Exhibit 7: ... and NTM EV/Sales Multiples Are +18%/+20% vs. 5/10-Year Averages Exhibit 8: Digital Media: Treating SBC as Cash Increases EV/EBITDA Multipl",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F095",
+    "latex_path": "figures/fig_095.jpg"
+  },
+  {
+    "report_id": "R039",
+    "report_title": "MS：互联网板块进入二季度财报季",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0004-49-Morgan-Stanley-Internet-Where-Are-We-Trading-Now--Entering-2Q-Earnings-2/mineru_raw/images/248156f76372b7031f805973ac10eb1df231f615fe2ea855ac6b007d192f75aa.jpg",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: ... and NTM EV/Sales Multiples Are +18%/+20% vs. 5/10-Year Averages Exhibit 8: Digital Media: Treating SBC as Cash Increases EV/EBITDA Multiples by \\~36%, on Average Exhibit 9: eCommerce: Treating SBC as Cash Incre",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F096",
+    "latex_path": "figures/fig_096.jpg"
+  },
+  {
+    "report_id": "R039",
+    "report_title": "MS：互联网板块进入二季度财报季",
+    "source_path": "xhs_notes/dropbox/260723/shard_9/0004-49-Morgan-Stanley-Internet-Where-Are-We-Trading-Now--Entering-2Q-Earnings-2/mineru_raw/images/7b5a68ca0b348584b2b498966a21d8c4aff827c08dc971aa9f8ceb6d0e89d0f1.jpg",
+    "label": "Exhibit 7",
+    "context": "Exhibit 10: Video Games: Treating SBC as Cash Increases EV/EBITDA Multiples by \\~22%, on Average",
+    "figure_type": "source_exhibit",
+    "source_group": "bank_research",
+    "source_label": "投行/券商",
+    "institution_name": "MS",
+    "figure_id": "F097",
+    "latex_path": "figures/fig_097.jpg"
+  },
+  {
+    "report_id": "R041",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0001-IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687/mineru_raw/images/3b48dc8262eca3b67d132f5fcafdf947949ce25f8f70fca5eeaa00a7bc438c39.jpg",
     "label": "Figure 1",
@@ -685,11 +1270,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F053",
-    "latex_path": "figures/fig_053.jpg"
+    "figure_id": "F098",
+    "latex_path": "figures/fig_098.jpg"
   },
   {
-    "report_id": "R021",
+    "report_id": "R041",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0001-IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687/mineru_raw/images/ee1b51a9ad1068004425d4a2fe6b0fbe68b537b89dc356df714a26ea35127bb5.jpg",
     "label": "Figure 2",
@@ -698,11 +1283,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F054",
-    "latex_path": "figures/fig_054.jpg"
+    "figure_id": "F099",
+    "latex_path": "figures/fig_099.jpg"
   },
   {
-    "report_id": "R021",
+    "report_id": "R041",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0001-IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687/mineru_raw/images/f817b6f63aab62ec0182670685a6d41391c000c611cad7e5aa742d26a48ac2c7.jpg",
     "label": "Figure 3",
@@ -711,11 +1296,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F055",
-    "latex_path": "figures/fig_055.jpg"
+    "figure_id": "F100",
+    "latex_path": "figures/fig_100.jpg"
   },
   {
-    "report_id": "R022",
+    "report_id": "R042",
     "report_title": "IMF：气候与产业转型数据与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9/mineru_raw/images/b8b74add0f6ad46d151c74bc4011749439adc012668b158134e81f100e85a8ac.jpg",
     "label": "Figure 1",
@@ -724,11 +1309,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F056",
-    "latex_path": "figures/fig_056.jpg"
+    "figure_id": "F101",
+    "latex_path": "figures/fig_101.jpg"
   },
   {
-    "report_id": "R022",
+    "report_id": "R042",
     "report_title": "IMF：气候与产业转型数据与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9/mineru_raw/images/4fd0448a0778958de60c448d46bcb1d413a4194dd2eede0fae3c5b0fbe03c681.jpg",
     "label": "Figure 1",
@@ -737,11 +1322,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F057",
-    "latex_path": "figures/fig_057.jpg"
+    "figure_id": "F102",
+    "latex_path": "figures/fig_102.jpg"
   },
   {
-    "report_id": "R022",
+    "report_id": "R042",
     "report_title": "IMF：气候与产业转型数据与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9/mineru_raw/images/874918933f479139765022bf196af1cec9acf281c4b7f81dd449c2d09d7792fe.jpg",
     "label": "Figure 2",
@@ -750,11 +1335,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F058",
-    "latex_path": "figures/fig_058.jpg"
+    "figure_id": "F103",
+    "latex_path": "figures/fig_103.jpg"
   },
   {
-    "report_id": "R022",
+    "report_id": "R042",
     "report_title": "IMF：气候与产业转型数据与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9/mineru_raw/images/a41a6221f540079c6bbb9b28c111560a5bec13b5ad04302826c00c3cca77d0b4.jpg",
     "label": "Figure 2",
@@ -763,11 +1348,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F059",
-    "latex_path": "figures/fig_059.jpg"
+    "figure_id": "F104",
+    "latex_path": "figures/fig_104.jpg"
   },
   {
-    "report_id": "R022",
+    "report_id": "R042",
     "report_title": "IMF：气候与产业转型数据与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9/mineru_raw/images/5b31b0503f528edc4ddd39f3c28869bd03da38f48bc968537242c18f6124c2d9.jpg",
     "label": "Figure 3",
@@ -776,11 +1361,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F060",
-    "latex_path": "figures/fig_060.jpg"
+    "figure_id": "F105",
+    "latex_path": "figures/fig_105.jpg"
   },
   {
-    "report_id": "R023",
+    "report_id": "R043",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1/mineru_raw/images/c6adff3653942648e3026a6df14973ec60c0597332223e307c6156340485d411.jpg",
     "label": "Figure 1",
@@ -789,11 +1374,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F061",
-    "latex_path": "figures/fig_061.jpg"
+    "figure_id": "F106",
+    "latex_path": "figures/fig_106.jpg"
   },
   {
-    "report_id": "R023",
+    "report_id": "R043",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1/mineru_raw/images/d92e51c7c1d92813f07ca82321aff1d64e5b9a759e9c681d6ab999e66427a0d9.jpg",
     "label": "Figure 2",
@@ -802,11 +1387,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F062",
-    "latex_path": "figures/fig_062.jpg"
+    "figure_id": "F107",
+    "latex_path": "figures/fig_107.jpg"
   },
   {
-    "report_id": "R023",
+    "report_id": "R043",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1/mineru_raw/images/621a0e05c11eb3e0c009cf405232e987a450fc79c242e541dbcbb14186b75693.jpg",
     "label": "Figure 3",
@@ -815,11 +1400,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F063",
-    "latex_path": "figures/fig_063.jpg"
+    "figure_id": "F108",
+    "latex_path": "figures/fig_108.jpg"
   },
   {
-    "report_id": "R023",
+    "report_id": "R043",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1/mineru_raw/images/d7ffb4cff1fe2f81eb4a4af778fdb510726fa67feb3408adeb592303624f8ea5.jpg",
     "label": "Figure 4",
@@ -828,11 +1413,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F064",
-    "latex_path": "figures/fig_064.jpg"
+    "figure_id": "F109",
+    "latex_path": "figures/fig_109.jpg"
   },
   {
-    "report_id": "R023",
+    "report_id": "R043",
     "report_title": "IMF：行业规则与主题变化观察",
     "source_path": "xhs_notes/institutions/260724/0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1/mineru_raw/images/efd30b8f993a8da0448a30dd9dc8a99f61c9002efe6bb6406218f0a6ed47b782.jpg",
     "label": "Figure 5",
@@ -841,11 +1426,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "IMF",
-    "figure_id": "F065",
-    "latex_path": "figures/fig_065.jpg"
+    "figure_id": "F110",
+    "latex_path": "figures/fig_110.jpg"
   },
   {
-    "report_id": "R024",
+    "report_id": "R044",
     "report_title": "世界银行：研究主题与行业变化观察",
     "source_path": "xhs_notes/institutions/260724/0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe/mineru_raw/images/c2f5d6853ff0f33a150917fd95ae1a39ccc4a94a9609bc6d74bba8ee43287825.jpg",
     "label": "Figure 1",
@@ -854,11 +1439,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F066",
-    "latex_path": "figures/fig_066.jpg"
+    "figure_id": "F111",
+    "latex_path": "figures/fig_111.jpg"
   },
   {
-    "report_id": "R024",
+    "report_id": "R044",
     "report_title": "世界银行：研究主题与行业变化观察",
     "source_path": "xhs_notes/institutions/260724/0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe/mineru_raw/images/d96e904f7250c8a3b988f63e3d9da74c77988907a470829b7f60efd3fe6aadeb.jpg",
     "label": "Figure 2",
@@ -867,11 +1452,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F067",
-    "latex_path": "figures/fig_067.jpg"
+    "figure_id": "F112",
+    "latex_path": "figures/fig_112.jpg"
   },
   {
-    "report_id": "R024",
+    "report_id": "R044",
     "report_title": "世界银行：研究主题与行业变化观察",
     "source_path": "xhs_notes/institutions/260724/0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe/mineru_raw/images/f9f2b3bc221ca739b828c57f830b0b7b6b917c0c8cd1943fa760ef33a53c8190.jpg",
     "label": "Figure 3",
@@ -880,11 +1465,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F068",
-    "latex_path": "figures/fig_068.jpg"
+    "figure_id": "F113",
+    "latex_path": "figures/fig_113.jpg"
   },
   {
-    "report_id": "R024",
+    "report_id": "R044",
     "report_title": "世界银行：研究主题与行业变化观察",
     "source_path": "xhs_notes/institutions/260724/0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe/mineru_raw/images/fdb5693f2812f328116b886473e39e32cbae6ed18879be6469d25cd96e74ea9a.jpg",
     "label": "Figure 4",
@@ -893,11 +1478,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F069",
-    "latex_path": "figures/fig_069.jpg"
+    "figure_id": "F114",
+    "latex_path": "figures/fig_114.jpg"
   },
   {
-    "report_id": "R025",
+    "report_id": "R045",
     "report_title": "世界银行：埃及公共就业保障的劳动力市场效应",
     "source_path": "xhs_notes/institutions/260724/0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198/mineru_raw/images/bf7acbb4eece500a6c60480654610f07ff7d2cd67b0861fbfbbfb280ac8b386f.jpg",
     "label": "Figure 1",
@@ -906,11 +1491,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F070",
-    "latex_path": "figures/fig_070.jpg"
+    "figure_id": "F115",
+    "latex_path": "figures/fig_115.jpg"
   },
   {
-    "report_id": "R025",
+    "report_id": "R045",
     "report_title": "世界银行：埃及公共就业保障的劳动力市场效应",
     "source_path": "xhs_notes/institutions/260724/0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198/mineru_raw/images/05e83e17c1c2ecc637cc4984e866aad45a2ab4320961843b639debc57a9f0e4a.jpg",
     "label": "Figure 2",
@@ -919,11 +1504,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F071",
-    "latex_path": "figures/fig_071.jpg"
+    "figure_id": "F116",
+    "latex_path": "figures/fig_116.jpg"
   },
   {
-    "report_id": "R025",
+    "report_id": "R045",
     "report_title": "世界银行：埃及公共就业保障的劳动力市场效应",
     "source_path": "xhs_notes/institutions/260724/0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198/mineru_raw/images/92ced6ae66c6cf1a8e02287fd95afda3e2b6e0cd908d0e242d9a8d9349a11f74.jpg",
     "label": "Figure 3",
@@ -932,11 +1517,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F072",
-    "latex_path": "figures/fig_072.jpg"
+    "figure_id": "F117",
+    "latex_path": "figures/fig_117.jpg"
   },
   {
-    "report_id": "R025",
+    "report_id": "R045",
     "report_title": "世界银行：埃及公共就业保障的劳动力市场效应",
     "source_path": "xhs_notes/institutions/260724/0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198/mineru_raw/images/f2a5db20d5ce1cae6d610f548843f229fd96fb72d1004cdbfa17bde1ec584fbd.jpg",
     "label": "Figure 3",
@@ -945,11 +1530,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F073",
-    "latex_path": "figures/fig_073.jpg"
+    "figure_id": "F118",
+    "latex_path": "figures/fig_118.jpg"
   },
   {
-    "report_id": "R025",
+    "report_id": "R045",
     "report_title": "世界银行：埃及公共就业保障的劳动力市场效应",
     "source_path": "xhs_notes/institutions/260724/0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198/mineru_raw/images/657112f752e3044531dc258896205a8d8768a240f70f2225ac8307a4f7773dd0.jpg",
     "label": "Figure 4",
@@ -958,11 +1543,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F074",
-    "latex_path": "figures/fig_074.jpg"
+    "figure_id": "F119",
+    "latex_path": "figures/fig_119.jpg"
   },
   {
-    "report_id": "R026",
+    "report_id": "R046",
     "report_title": "世界银行：南非保护区对收入鸟类与旅游的长期影响",
     "source_path": "xhs_notes/institutions/260724/0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c4/mineru_raw/images/5622c493f7b511b973d16f58cf15ae5d6cf03a94906ed300707b22821b879816.jpg",
     "label": "Figure 1",
@@ -971,11 +1556,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F075",
-    "latex_path": "figures/fig_075.jpg"
+    "figure_id": "F120",
+    "latex_path": "figures/fig_120.jpg"
   },
   {
-    "report_id": "R026",
+    "report_id": "R046",
     "report_title": "世界银行：南非保护区对收入鸟类与旅游的长期影响",
     "source_path": "xhs_notes/institutions/260724/0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c4/mineru_raw/images/16ad64f52696c9685152ae33960b3e79bd3151a341c4c0946a8b477a57ec7d8e.jpg",
     "label": "Figure 2",
@@ -984,11 +1569,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F076",
-    "latex_path": "figures/fig_076.jpg"
+    "figure_id": "F121",
+    "latex_path": "figures/fig_121.jpg"
   },
   {
-    "report_id": "R026",
+    "report_id": "R046",
     "report_title": "世界银行：南非保护区对收入鸟类与旅游的长期影响",
     "source_path": "xhs_notes/institutions/260724/0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c4/mineru_raw/images/0dd2c7fe779d0e1dcfab624e3b5a34f2bdbcf8a063042e224d5a59d2abdcd2c6.jpg",
     "label": "Figure 3",
@@ -997,11 +1582,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F077",
-    "latex_path": "figures/fig_077.jpg"
+    "figure_id": "F122",
+    "latex_path": "figures/fig_122.jpg"
   },
   {
-    "report_id": "R026",
+    "report_id": "R046",
     "report_title": "世界银行：南非保护区对收入鸟类与旅游的长期影响",
     "source_path": "xhs_notes/institutions/260724/0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c4/mineru_raw/images/b15505a4ed170c826bcc4505670becd1b29b3d625b9adb777244c35a67de1c93.jpg",
     "label": "Figure 4",
@@ -1010,11 +1595,11 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F078",
-    "latex_path": "figures/fig_078.jpg"
+    "figure_id": "F123",
+    "latex_path": "figures/fig_123.jpg"
   },
   {
-    "report_id": "R026",
+    "report_id": "R046",
     "report_title": "世界银行：南非保护区对收入鸟类与旅游的长期影响",
     "source_path": "xhs_notes/institutions/260724/0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c4/mineru_raw/images/3fdfc5ee17a0a136a2b3319523885d82a0c5e1e67bf974a5316161ba0faebfb3.jpg",
     "label": "Figure 5",
@@ -1023,215 +1608,85 @@
     "source_group": "institution",
     "source_label": "智库/国际机构",
     "institution_name": "世界银行",
-    "figure_id": "F079",
-    "latex_path": "figures/fig_079.jpg"
+    "figure_id": "F124",
+    "latex_path": "figures/fig_124.jpg"
   },
   {
-    "report_id": "R027",
-    "report_title": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
-    "source_path": "xhs_notes/consulting/260723/0001-BCG_AI-in-the-Public-Sector_c0fd96a4/mineru_raw/images/ed305c421fb1f5b4bf32d56f9b79ecda9c0f5ff284af6977d1dedca799c26d92.jpg",
+    "report_id": "R047",
+    "report_title": "波士顿咨询：欧洲化工2030-2040",
+    "source_path": "xhs_notes/consulting/260724/0001-BCG_European-Chemicals-2030-2040_7356a686/mineru_raw/images/9dc73bb52637ebab31a07eee0053dd18ec73d3ee71a3aecbe46338a002c6d8ae.jpg",
     "label": "EXHIBIT 1",
-    "context": "We also see countries with higher income levels that lag behind in well-being compared with lower-income countries. The US, for example, has a higher per-capita income than the Netherlands but a significantly lower SEDA score. South Africa has a higher income ",
+    "context": "Regulation adds further cost pressure. Carbon pricing under the European Union's Emissions Trading System has increased by roughly €40 per ton over the past five years, alongside broader regulatory tightening. Taken together, these pressures create a structura",
     "figure_type": "source_exhibit",
     "source_group": "consulting",
     "source_label": "战略咨询",
     "institution_name": "波士顿咨询",
-    "figure_id": "F080",
-    "latex_path": "figures/fig_080.jpg"
+    "figure_id": "F125",
+    "latex_path": "figures/fig_125.jpg"
   },
   {
-    "report_id": "R027",
-    "report_title": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
-    "source_path": "xhs_notes/consulting/260723/0001-BCG_AI-in-the-Public-Sector_c0fd96a4/mineru_raw/images/1f00281a53909b7066dd06838dd194a039f727b7b9dc4c281a679706f100525b.jpg",
-    "label": "EXHIBIT 2",
-    "context": "## Countries with Higher SEDA Scores Tend to Have Higher Social Equality Sources: SEDA 2019 (these scores mostly reflect 2017 data); BCG analysis. Countries Convert Wealth into Well-Being More Effectively When Social Equality Exceeds Income Equality Sources: U",
+    "report_id": "R048",
+    "report_title": "波士顿咨询：AI算力正成为商品",
+    "source_path": "xhs_notes/consulting/260724/0002-BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff/mineru_raw/images/5ef0f6543b8a3502029034f421d64b1d9a3010c1280f0b71effce0222cfa9692.jpg",
+    "label": "EXHIBIT 1",
+    "context": "Players that move early will be in the best position to adapt to a rapidly changing market and unlock dark value in the AI compute market. ## EXHIBIT 1 AI Market Evolution Can Release up to \\$140 Billion of Value DARK VALUE (\\$BILLIONS) Sources: LSEG; GS Globa",
     "figure_type": "source_exhibit",
     "source_group": "consulting",
     "source_label": "战略咨询",
     "institution_name": "波士顿咨询",
-    "figure_id": "F081",
-    "latex_path": "figures/fig_081.jpg"
+    "figure_id": "F126",
+    "latex_path": "figures/fig_126.jpg"
   },
   {
-    "report_id": "R027",
-    "report_title": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
-    "source_path": "xhs_notes/consulting/260723/0001-BCG_AI-in-the-Public-Sector_c0fd96a4/mineru_raw/images/7327479e14ea3e850c4b30d42ffa26d40e25a7e3ba6a4fe87ae64896b59306d3.jpg",
-    "label": "EXHIBIT 2",
-    "context": "Sources: UN World Happiness Report 2019; World Bank; SEDA 2019 (scores mostly reflect 2017 data); BCG analysis. Sources: UN World Happiness Report 2019; SEDA 2019 (scores mostly reflect 2017 data); BCG analysis. Note: The named countries are the 36 global powe",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F082",
-    "latex_path": "figures/fig_082.jpg"
-  },
-  {
-    "report_id": "R027",
-    "report_title": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
-    "source_path": "xhs_notes/consulting/260723/0001-BCG_AI-in-the-Public-Sector_c0fd96a4/mineru_raw/images/d19118b9b7ff3dc0f3bb337d8ae25ce819628af7ed1966ba91d24188ac58599f.jpg",
-    "label": "EXHIBIT 2",
-    "context": "Sources: UN World Happiness Report 2019; SEDA 2019 (scores mostly reflect 2017 data); BCG analysis. Note: The named countries are the 36 global powerhouses, derived from the 25 countries in our data set with the largest populations, accounting for 78% of the w",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F083",
-    "latex_path": "figures/fig_083.jpg"
-  },
-  {
-    "report_id": "R027",
-    "report_title": "波士顿咨询：AI在公共部门的应用-2019年SEDA福祉评估框架",
-    "source_path": "xhs_notes/consulting/260723/0001-BCG_AI-in-the-Public-Sector_c0fd96a4/mineru_raw/images/5e61bcf2848f7825792dadb705864949e71c05f6bf777eebba4951d0923b3cdb.jpg",
-    "label": "EXHIBIT 6",
-    "context": "## Of the countries in the top decile of SEDA scores, only three are not European. Performance varied considerably among countries in sub-Saharan Africa, many of which fall in either the weak but improving or the weak and losing ground quadrant. The worst perf",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F084",
-    "latex_path": "figures/fig_084.jpg"
-  },
-  {
-    "report_id": "R028",
-    "report_title": "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%",
-    "source_path": "xhs_notes/consulting/260723/0002-BCG_Advancing-Africa-s-AI-and-Digital-Economy_0ab2755e/mineru_raw/images/e73e1a9fc950e5530a65d468a06f478a1cc03429f89cafcec7c26ada9f99ca44.jpg",
-    "label": "Exhibit 1",
-    "context": "\\- Brain Drain. Tech talent is scarce. The continent’s 62,000 AI specialists (including, engineers, data scientists, and product managers) account for only around 5% of the global AI workforce. Many software developers work remotely for foreign companies (a 20",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F085",
-    "latex_path": "figures/fig_085.jpg"
-  },
-  {
-    "report_id": "R028",
-    "report_title": "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%",
-    "source_path": "xhs_notes/consulting/260723/0002-BCG_Advancing-Africa-s-AI-and-Digital-Economy_0ab2755e/mineru_raw/images/37f636692184a94a93f1560cd37fa723ef947e5d8225f7f2c0baf96045a7d2a3.jpg",
+    "report_id": "R048",
+    "report_title": "波士顿咨询：AI算力正成为商品",
+    "source_path": "xhs_notes/consulting/260724/0002-BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff/mineru_raw/images/23226fb303362b7a13dd0be83b213152bc0ec22868450873525834d24c5b75cd.jpg",
     "label": "Exhibit 2",
-    "context": "# Three Priorities to Advance Africa's Digital and AI ## Development Africa's challenge is not unique. A decade ago, several developing economies faced similar limitations. Yet they succeeded in establishing digital foundations that have enabled them to delive",
+    "context": "\\- Tokens Consumed by End Users of AI Applications. Large enterprise users would be in a position to be well positioned to collect most of the annual dark value of \\$32 billion to \\$46 billion in this area. Our estimate does not assume that everything will be ",
     "figure_type": "source_exhibit",
     "source_group": "consulting",
     "source_label": "战略咨询",
     "institution_name": "波士顿咨询",
-    "figure_id": "F086",
-    "latex_path": "figures/fig_086.jpg"
+    "figure_id": "F127",
+    "latex_path": "figures/fig_127.jpg"
   },
   {
-    "report_id": "R028",
-    "report_title": "波士顿咨询：非洲AI与数字宏观环境-2050年占比仅8.5%",
-    "source_path": "xhs_notes/consulting/260723/0002-BCG_Advancing-Africa-s-AI-and-Digital-Economy_0ab2755e/mineru_raw/images/efaadbd442e3419c0ec4e781193efd28c93a01f3f7646e68ec641219ce2a07d1.jpg",
-    "label": "Exhibit 3",
-    "context": "Even where infrastructure exists, off-the-shelf systems are often accessible only to a restricted set of players. This undermines ecosystem participation, inhibits competition, and leaves innovation potential largely untapped. OpenMRS, developed in Africa in 2",
+    "report_id": "R048",
+    "report_title": "波士顿咨询：AI算力正成为商品",
+    "source_path": "xhs_notes/consulting/260724/0002-BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff/mineru_raw/images/6bb3b084688d1cd3d0b8989fcd3f6d21d74b02e69c2a18bba013092da9390ecc.jpg",
+    "label": "EXHIBIT 4",
+    "context": "\\- Data Center Player Incentives. Data center players have historically leaned on long-term bilateral contracts and have had little reason to standardize pricing or to support open benchmarks. Going forward, however, some data center players may see strategic ",
     "figure_type": "source_exhibit",
     "source_group": "consulting",
     "source_label": "战略咨询",
     "institution_name": "波士顿咨询",
-    "figure_id": "F087",
-    "latex_path": "figures/fig_087.jpg"
+    "figure_id": "F128",
+    "latex_path": "figures/fig_128.jpg"
   },
   {
-    "report_id": "R029",
-    "report_title": "波士顿咨询：保险公司人才模式与AI适配性",
-    "source_path": "xhs_notes/consulting/260723/0003-BCG_Are-Insurers-Talent-Models-Ready-for-AI_0bad6198/mineru_raw/images/c45e35efd8d042d6705d833d68abeb6a05e6d2cbc8e95df11c2625a09d44e4eb.jpg",
-    "label": "Exhibit 1",
-    "context": "In dealing with this new environment, insurers face a choice. One option is to layer AI onto existing workflows and capture incremental efficiency. The other is to redesign the structure of work, the process of decision ownership, and the development and deplo",
+    "report_id": "R048",
+    "report_title": "波士顿咨询：AI算力正成为商品",
+    "source_path": "xhs_notes/consulting/260724/0002-BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff/mineru_raw/images/48c7314080ca2811c7bd677b35fecfa02172ce5f984525d1308b0526301f61df.jpg",
+    "label": "EXHIBIT 5",
+    "context": "Time complexity Daily price volatility of Nvidia H100 SXM \\$/HOUR PER 1 GPU Quality complexity Average daily price aggregated globally \\$/HOUR PER 1 GPU Geographic complexity Average daily price of Nvidia H100 SXM \\$/HOUR PER 1 GPU Sources: AWS; GCP; Vast.ai, ",
     "figure_type": "source_exhibit",
     "source_group": "consulting",
     "source_label": "战略咨询",
     "institution_name": "波士顿咨询",
-    "figure_id": "F088",
-    "latex_path": "figures/fig_088.jpg"
+    "figure_id": "F129",
+    "latex_path": "figures/fig_129.jpg"
   },
   {
-    "report_id": "R030",
-    "report_title": "波士顿咨询：研究主题与行业变化观察",
-    "source_path": "xhs_notes/consulting/260723/0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b/mineru_raw/images/4ebc29a9d67d27edc1ed480c4bfbbb761bbb91a5140ac9e35dd733a9693748ca.jpg",
-    "label": "Exhibit 1",
-    "context": "\\- The chicken-or-egg dilemma - investment sequencing and delivery certainty: The scale and speed of investment required to support future data centre growth is creating increasing interdependencies between developers, customers, energy providers and governmen",
+    "report_id": "R048",
+    "report_title": "波士顿咨询：AI算力正成为商品",
+    "source_path": "xhs_notes/consulting/260724/0002-BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff/mineru_raw/images/bfed14a51f72d8498617e039ca2d4f6d6f2b0e00eb99217fe917221cd71fa7a0.jpg",
+    "label": "EXHIBIT 5",
+    "context": "Quality complexity Average daily price aggregated globally \\$/HOUR PER 1 GPU Geographic complexity Average daily price of Nvidia H100 SXM \\$/HOUR PER 1 GPU Sources: AWS; GCP; Vast.ai, Runpod; Lambdalabs; Nebius; Cloudrift; Verda; BCG analysis. Note: Data used ",
     "figure_type": "source_exhibit",
     "source_group": "consulting",
     "source_label": "战略咨询",
     "institution_name": "波士顿咨询",
-    "figure_id": "F089",
-    "latex_path": "figures/fig_089.jpg"
-  },
-  {
-    "report_id": "R030",
-    "report_title": "波士顿咨询：研究主题与行业变化观察",
-    "source_path": "xhs_notes/consulting/260723/0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b/mineru_raw/images/aee27bc55d43fa6301f7de7c235db7bf58aa6e014f39395a1ce27919fd1429bf.jpg",
-    "label": "Exhibit 1",
-    "context": "Exhibit 1: The market for data centres is set to grow nearly 2.5x in five years Global data centre market capacity (GW, critical IT load) With this unprecedented level of investment accelerating the development of digital infrast",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F090",
-    "latex_path": "figures/fig_090.jpg"
-  },
-  {
-    "report_id": "R030",
-    "report_title": "波士顿咨询：研究主题与行业变化观察",
-    "source_path": "xhs_notes/consulting/260723/0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b/mineru_raw/images/1becfaace7b0d571c26d824cf63313b3a559a6798f94341afef1045254e5e4cb.jpg",
-    "label": "Exhibit 3",
-    "context": "Exhibit 3: A growing share of workloads – particularly in GenAI – are latency-tolerant and will drive future growth GenAI training and inference workloads require energy-intensive, high-density computing clusters that can scale o",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F091",
-    "latex_path": "figures/fig_091.jpg"
-  },
-  {
-    "report_id": "R030",
-    "report_title": "波士顿咨询：研究主题与行业变化观察",
-    "source_path": "xhs_notes/consulting/260723/0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b/mineru_raw/images/2f967982aa83d299608d320931c6ff4ef1ecf0b05a4f2b15383b3d41f5bd5688.jpg",
-    "label": "Exhibit 4",
-    "context": "Exhibit 4: Data centre investment settings across the Asia-Pacific Australia already has a strong foundation for digital infrastructure investment, combining political stability, a transparent regulatory environment and high invest",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F092",
-    "latex_path": "figures/fig_092.jpg"
-  },
-  {
-    "report_id": "R030",
-    "report_title": "波士顿咨询：研究主题与行业变化观察",
-    "source_path": "xhs_notes/consulting/260723/0004-BCG_Australia-s-Digital-Infrastructure-Challenge_37fa3a9b/mineru_raw/images/db6321a996464f7da64cd30bed4d8f88abcfa86e961a2ae9104cf70e344d5977.jpg",
-    "label": "Exhibit 5",
-    "context": "Australia already has a strong foundation for digital infrastructure investment, combining political stability, a transparent regulatory environment and high investor confidence. Its access to renewable resources (and an existing pre-FID pipeline of renewable ",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F093",
-    "latex_path": "figures/fig_093.jpg"
-  },
-  {
-    "report_id": "R031",
-    "report_title": "波士顿咨询：AI技术与行业应用观察",
-    "source_path": "xhs_notes/consulting/260723/0005-BCG_CEOs-Are-Starting-to-See-Value-from-AI.-Now-Comes-Execution_4e3e156d/mineru_raw/images/88bd9fd4a7830d0b2feefbdab6f67011d79da08943c94d05be888cdeb6522a8f.jpg",
-    "label": "Exhibit 1",
-    "context": "It’s tempting to assume the barriers to scaling AI are primarily technical: things like model performance, data architecture, tooling, or regulation. Those issues matter, but the CEOs in our survey were more likely to cite execution barriers inside the busines",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F094",
-    "latex_path": "figures/fig_094.jpg"
-  },
-  {
-    "report_id": "R031",
-    "report_title": "波士顿咨询：AI技术与行业应用观察",
-    "source_path": "xhs_notes/consulting/260723/0005-BCG_CEOs-Are-Starting-to-See-Value-from-AI.-Now-Comes-Execution_4e3e156d/mineru_raw/images/fd347ce04437942afe1e68cb5db9f08b687c98d48a4cb6118053b248a1e3a5f7.jpg",
-    "label": "EXHIBIT 2",
-    "context": "EXHIBIT 2 ## Many CEOs Recognize the Gaps in Scaling Value from AI, But Fewer Have Taken the Steps to Address Them Share of CEO respondents (%) People redesign—funding Fully fund people and change # Why AI Transformations Are Challenging",
-    "figure_type": "source_exhibit",
-    "source_group": "consulting",
-    "source_label": "战略咨询",
-    "institution_name": "波士顿咨询",
-    "figure_id": "F095",
-    "latex_path": "figures/fig_095.jpg"
+    "figure_id": "F130",
+    "latex_path": "figures/fig_130.jpg"
   }
 ]
