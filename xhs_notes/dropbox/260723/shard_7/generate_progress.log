@@ -1,0 +1,79 @@
+Found 62 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0001-36-J.P. Morgan-ASEAN - Taiwan Telcos-Current AI token offerings are unlikely to drive earnings growth at telcos-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0002-37-J.P. Morgan-ASMPT Ltd -0522.HK- New CEO announced- expect further emphasis on advanced packaging-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0003-38-J.P. Morgan-China Logistics- Express Parcel and Ecommerce-Incremental quality-led recovery in motion- with YMM and J-T now leading the sector-s next phase- 2Q26 previ.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0004-39-J.P. Morgan-China Pharmacy-Same-store recovery accelerated in 2Q26 amid consolidation-future growth driven by three reinforcing structural tailwinds-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0005-40-J.P. Morgan-Japan Quant Strategy-NKY rallies - Sign that worst is over- AI semiconductors a long way off from recapturing their leading role-260721.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=b25ef830-1c57-414a-81a4-a18e33660061
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU batch b25ef830-1c57-414a-81a4-a18e33660061 had no parsing progress after 300s; switching token/retry path.
+5 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0001-36-J.P. Morgan-ASEAN - Taiwan Telcos-Current AI token offerings are unlikely to drive earnings growth at telcos-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0002-37-J.P. Morgan-ASMPT Ltd -0522.HK- New CEO announced- expect further emphasis on advanced packaging-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0003-38-J.P. Morgan-China Logistics- Express Parcel and Ecommerce-Incremental quality-led recovery in motion- with YMM and J-T now leading the sector-s next phase- 2Q26 previ.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0004-39-J.P. Morgan-China Pharmacy-Same-store recovery accelerated in 2Q26 amid consolidation-future growth driven by three reinforcing structural tailwinds-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e_iljalm/pdfs/0005-40-J.P. Morgan-Japan Quant Strategy-NKY rallies - Sign that worst is over- AI semiconductors a long way off from recapturing their leading role-260721.pdf
+MinerU attempt 2 using MINER_U batch_id=32125f16-d6d5-4fbf-90b5-6bcc89da1ab8
+MinerU states: running, pending, pending, pending, pending
+MinerU states: running, done, running, running, running
+MinerU states: running, done, running, done, running
+MinerU states: running, done, running, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 1c0cbe774a9f27fc9ca5cdbcdd85745e14649e89897888dd054c5797ea3494ca.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset f13a3166b5a3475b0554471dd58c931f119bfeee962c453e6451772e72ab3709.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 4c64aef2a3bf4583fa3730e2eb82e3ff5a39715c7f06201cb393e51a0f1fb58b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.40,large
+Skip non-chart visual asset f6a2d6cec814df2122d01fb7c910f7c188f65969ae7bde57b218c8f634d910c7.jpg: score=-100;too_small:979x168
+Skip non-chart visual asset 5e9f4038bb4fa8022802a4ace5a4bf4973af5e2429b9ae3d5d577cf6b4c58492.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.27
+Neutralized WeChat title while keeping the report: 摩根大通：东南亚与台湾电信商AI代币业务截至2026年7月 -> 摩根大通：AI技术与行业应用观察
+Skip non-chart visual asset ff30b0789ceb76bf37f94d0f8e42b6cac58b28ff0ce00b2f215260e45d77e0d6.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset a1f2f6a5d3fff4397538dde8008b87b25b988e2dd9693a93b25c6eff53ae5347.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.27
+Skip non-chart visual asset 27b9212fbcea178462b4ad5a437196c8a05e894ef2560ab7da8bc8768db9eb7b.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Skip non-chart visual asset 4323d16a90b074a77c2d15c2a0f0b5a3b890a8b683f7b2a294ae231ed93dcc74.jpg: score=-100;too_small:448x90
+Skip non-chart visual asset 002eae4e597855d714c34bb00b4d9e55fe86cc29e951e2869d374d94dcb1f579.jpg: score=-100;too_small:1270x132
+Skip non-chart visual asset 5397140663250b762ad831d9ecbb3264c531b5fae7225c36bf17052d51d42829.jpg: score=-100;too_small:1395x140
+Skip non-chart visual asset e05b7e7f6e57855a258e7d928d344fd758d2c224e93a869d8b02a0fb92fbed88.jpg: score=0;square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 1c627221d7e67db2a4811d9b32b065c0f3c480f8a1cc0172dac545b2b366aeee.jpg: score=-100;too_small:448x184
+Skip non-chart visual asset 07559a65572f5caf38360215b73f3f7840258aa535c4fb33036bbbc2d9458459.jpg: score=-100;too_small:431x226
+Skip non-chart visual asset 265988f49059cd8b798b60a4edbe512e32feff636be449967185a46c9cf5dc75.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset ede0f7de3a3c9bc68c1210783039ba253466f3801f161a83a9517e72c8f6a39b.jpg: score=0;square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset af9e310e5180900c38bb5f5f0272ba6e99300c77a533cf80c38fedc438c1ab4e.jpg: score=0;square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset af798d61eff9e86380bd03c7ff68150833413fbedb542368d875d10c8cea1402.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 4002066b7a668e41eeec8aa946cd38a773a6553a0e1d7ee841d5c730f6168494.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,contrast
+Skip non-chart visual asset 6a0a186a049ecec012b289de6cafb9fae3f207b94527e062105c7234134a9a9d.jpg: score=-100;too_small:667x79
+Skip non-chart visual asset 82b55ab1a0981df88cdd866c38c7e9b25640fca0ae577d268a18bdd40e69cb6d.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset fb2121d42eaeedbc493a41fb65664ccb36b9de0452e60f2eee7a090ee5b1e791.jpg: score=-100;too_small:431x226
+Skip non-chart visual asset 41ee097472ef7d0d6591a769c3865d42b0bebb9ac3e7a39f665baf0b01c56679.jpg: score=-100;too_small:664x79
+Skip non-chart visual asset a2b74790d6c89c416d711874170bb89b6702b1b13f85dd81375b74ae697c230a.jpg: score=-100;too_small:924x162
+Neutralized WeChat title while keeping the report: 摩根大通：中国物流-快递与电商-质量驱动的盈利修复 -> 摩根大通：零售行业数据与主题变化观察
+Skip non-chart visual asset 49b3837220757b5fe24e89b7cdf11c7e5d072456de641c14c6133ed1fa40c9d9.jpg: score=-100;too_small:982x171
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Neutralized WeChat title while keeping the report: 摩根大通：中国药房，同店增长在2Q26加速 -> 摩根大通：研究主题与行业变化观察
+Skip non-chart visual asset cabdcd2dcef5f197226fa6c14ca19494c1e8dc5c5e858972870a952b0af91099.jpg: score=-100;too_small:982x167
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260723/shard_7; successful_reports=5; mineru_timed_out=True; mineru_attempts=2
+All batches completed successfully. Generated 5 report directories.

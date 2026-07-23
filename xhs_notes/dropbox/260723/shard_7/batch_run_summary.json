@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 62,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-JPM-ASEAN & Taiwan Telcos：Current AI token offerings are unlikely to drive earnings growth at telcos-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e_iljalm/pdfs/0001-36-JPM-ASEAN - Taiwan Telcos-Current AI token offerings are unlikely to drive earnings growth at telcos-260722.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-JPM-ASMPT Ltd （0522.HK） New CEO announced； expect further emphasis on advanced packaging-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e_iljalm/pdfs/0002-37-JPM-ASMPT Ltd -0522.HK- New CEO announced- expect further emphasis on advanced packaging-260721.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-JPM-China Logistics， Express Parcel and Ecommerce：Incremental quality~led recovery in motion， with YMM and J&T now leading the sector’s next phase； 2Q26 previ.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e_iljalm/pdfs/0003-38-JPM-China Logistics- Express Parcel and Ecommerce-Incremental quality-led recovery in motion- with YMM and J-T now leading the sector-s next phase- 2Q26 previ.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-JPM-China Pharmacy：Same~store recovery accelerated in 2Q26 amid consolidation；future growth driven by three reinforcing structural tailwinds-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e_iljalm/pdfs/0004-39-JPM-China Pharmacy-Same-store recovery accelerated in 2Q26 amid consolidation-future growth driven by three reinforcing structural tailwinds-260722.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-JPM-Japan Quant Strategy：NKY rallies – Sign that worst is over？ AI semiconductors a long way off from recapturing their leading role-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_e_iljalm/pdfs/0005-40-JPM-Japan Quant Strategy-NKY rallies - Sign that worst is over- AI semiconductors a long way off from recapturing their leading role-260721.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
