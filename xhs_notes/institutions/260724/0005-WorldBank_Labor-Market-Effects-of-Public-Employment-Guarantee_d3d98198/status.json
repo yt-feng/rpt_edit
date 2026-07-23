@@ -1,0 +1,91 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_2ez9br38/pdfs/0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界银行",
+  "cover_short_title": "埃及“铁饭碗”，如何",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界银行：埃及公共就业保障的劳动力市场效应",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198.pdf",
+    "cleaned_source_title": "0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198",
+    "institution_name": "世界银行",
+    "required_terms": [],
+    "deterministic_fallback": "世界银行：0005WorldBankLabor市场Ef",
+    "raw_candidates": [
+      "世界银行：埃及公共就业保障的劳动力市场效应",
+      "世界银行：1960年代埃及公共就业保障与劳动力再分配",
+      "世界银行：埃及公共就业保障对城市部门就业的影响"
+    ],
+    "cleaned_candidates": [
+      "世界银行：埃及公共就业保障的劳动力市场效应",
+      "世界银行：1960年代埃及公共就业保障与劳动力再分配",
+      "世界银行：埃及公共就业保障对城市部门就业的影响",
+      "世界银行：0005WorldBankLabor市场Ef",
+      "世界银行：1960年代初，埃及实施了一项具有典型意义的公共就业保障政策"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界银行：1960年代埃及公共就业保障与劳动力再分配",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "世界银行：埃及公共就业保障对城市部门就业的影响",
+        "reasons": [
+          "anchor_coverage=0.47"
+        ]
+      },
+      {
+        "title": "世界银行：0005WorldBankLabor市场Ef",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：1960年代初，埃及实施了一项具有典型意义的公共就业保障政策",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      }
+    ],
+    "selected_title": "世界银行：埃及公共就业保障的劳动力市场效应",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界银行：埃及公共就业保障的劳动力市场效应"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

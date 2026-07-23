@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2ez9br38/pdfs/0001-IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2ez9br38/pdfs/0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2ez9br38/pdfs/0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe098f.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2ez9br38/pdfs/0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe098f.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2ez9br38/pdfs/0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c492dd.pdf",
+          "batch_file": "/tmp/pdf_batch_002_gol5hgk7/pdfs/0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c492dd.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
