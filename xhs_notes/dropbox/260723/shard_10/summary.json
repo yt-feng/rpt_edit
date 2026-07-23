@@ -1,0 +1,568 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0001-51-MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "国产AI芯片竞争，已",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_title": "MS：大中华半导体-2026上海WAIC要点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-51-MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology-260721.pdf",
+      "cleaned_source_title": "MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国半导体2026Shang",
+      "raw_candidates": [
+        "大中华半导体-2026上海WAIC要点-SuperPods与中国规模扩展技术",
+        "大中华半导体-2026年WAIC：中国AI竞争转向系统级SuperPod",
+        "大中华半导体-2026年WAIC：华为Atlas 950实现1024 NPU互联"
+      ],
+      "cleaned_candidates": [
+        "MS：大中华半导体-2026上海WAIC要点",
+        "MS：大中华半导体-2026年WAIC",
+        "MS：Greater中国半导体2026Shang",
+        "MS：1.Atlas950实现1024NPU互联与统一内存语义"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：大中华半导体-2026年WAIC",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "MS：Greater中国半导体2026Shang",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：1.Atlas950实现1024NPU互联与统一内存语义",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：大中华半导体-2026上海WAIC要点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：大中华半导体-2026上海WAIC要点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0002-52-MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "蔚来芯片独立亮相，不",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：蔚来自研芯片向AI芯片平台演进",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-52-MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform-260721.pdf",
+      "cleaned_source_title": "MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform",
+      "institution_name": "MS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "MS：AINIOInc.",
+      "raw_candidates": [
+        "蔚来自研芯片向AI芯片平台演进",
+        "蔚来GeniTech获30亿元融资估值83亿元",
+        "蔚来芯片业务从自用扩展至AI平台化"
+      ],
+      "cleaned_candidates": [
+        "MS：蔚来自研芯片向AI芯片平台演进",
+        "MS：蔚来GeniTech获30亿元融资估值83亿元",
+        "MS：蔚来芯片业务从自用扩展至AI平台化",
+        "MS：AINIOInc.",
+        "MS：蔚来芯片业务从自用走向AI平台化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：蔚来GeniTech获30亿元融资估值83亿元",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：蔚来芯片业务从自用扩展至AI平台化",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "MS：AINIOInc.",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：蔚来芯片业务从自用走向AI平台化",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        }
+      ],
+      "selected_title": "MS：蔚来自研芯片向AI芯片平台演进",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：蔚来自研芯片向AI芯片平台演进"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0003-53-MS-Lululemon Athletica Inc.-LULU.US-Underweight Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Lululemon北",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Lululemon美洲业务规模或需调整25%至60%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-53-MS-Lululemon Athletica Inc.-LULU.US-Underweight Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU-260722.pdf",
+      "cleaned_source_title": "MS-Lululemon Athletica Inc.-LULU.US-Underweight Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：LululemonAthleticaInc.报告观点",
+      "raw_candidates": [
+        "MS：Lululemon美洲业务规模或需调整25%至60%",
+        "MS：Lululemon美洲业务可持续收入低于市场预期",
+        "MS：Lululemon美洲业务规模分析指向调整策略",
+        "Lululemon美洲业务规模调整可能性",
+        "Lululemon美洲业务规模或需调整25%至60%",
+        "Lululemon美洲业务规模与盈利预测分析"
+      ],
+      "cleaned_candidates": [
+        "MS：Lululemon美洲业务规模或需调整25%至60%",
+        "MS：Lululemon美洲业务可持续收入低于市场预期",
+        "MS：Lululemon美洲业务规模分析指向调整策略",
+        "MS：Lululemon美洲业务规模调整可能性",
+        "MS：Lululemon美洲业务规模与盈利预测分析",
+        "MS：LululemonAthleticaInc.报告观点",
+        "MS：Lululemon美洲业务规模可能需调整25%至60%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Lululemon美洲业务可持续收入低于市场预期",
+          "reasons": [
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "MS：Lululemon美洲业务规模分析指向调整策略",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "MS：Lululemon美洲业务规模调整可能性",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "MS：Lululemon美洲业务规模与盈利预测分析",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "MS：LululemonAthleticaInc.报告观点",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Lululemon美洲业务规模或需调整25%至60%",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：Lululemon美洲业务规模可能需调整25%至60%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "MS：Lululemon美洲业务规模或需调整25%至60%",
+        "MS：Lululemon美洲业务可持续收入低于市场预期",
+        "MS：Lululemon美洲业务规模分析指向调整策略"
+      ],
+      "final_title_after_wording_guard": "MS：Lululemon美洲业务规模或需调整25%至60%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0004-54-MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to Equal-weight-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Salesforce",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资周期->研究周期 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：核心变化是业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-54-MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to Equal-weight-260721.pdf",
+      "cleaned_source_title": "MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to Equal-weight",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SalesforceInc.WhenDoe",
+      "raw_candidates": [
+        "Salesforce传统业务抵消AI动能与货币化早期阶段",
+        "Salesforce主动颠覆自身迎接智能体时代但增长拐点未至",
+        "Salesforce AI年化收入突破10亿美元但整体订阅增速未回升",
+        "Salesforce主动颠覆自身迎接智能体时代",
+        "Salesforce AI年化收入突破10亿美元但增长拐点未至",
+        "Salesforce传统业务抵消AI动能与货币化早期阶段"
+      ],
+      "cleaned_candidates": [
+        "MS：Salesforce传统业务抵消AI动能与货币化早期阶段",
+        "MS：Salesforce主动颠覆自身迎接智能体时代但增长拐点未",
+        "MS：SalesforceAI年化收入突破10亿美元但整体订阅增",
+        "MS：Salesforce主动颠覆自身迎接智能体时代",
+        "MS：SalesforceAI年化收入突破10亿美元但增长拐点未",
+        "MS：SalesforceInc.WhenDoe",
+        "MS：核心变化是估值倍数从15倍FCF降至10倍FCF"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Salesforce传统业务抵消AI动能与货币化早期阶段",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Salesforce主动颠覆自身迎接智能体时代但增长拐点未",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SalesforceAI年化收入突破10亿美元但整体订阅增",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Salesforce主动颠覆自身迎接智能体时代",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SalesforceAI年化收入突破10亿美元但增长拐点未",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SalesforceInc.WhenDoe",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：核心变化是业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "10",
+          "15"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：核心变化是估值倍数从15倍FCF降至10倍FCF",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Salesforce传统业务抵消AI动能与货币化早期阶段",
+        "Salesforce主动颠覆自身迎接智能体时代但增长拐点未至",
+        "Salesforce AI年化收入突破10亿美元但整体订阅增速未回升"
+      ],
+      "pre_neutralization_title": "MS：核心变化是估值倍数从15倍FCF降至10倍FCF",
+      "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：核心变化是业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0005-55-MS-Tesla Inc - North America The Road to ROI-Patience Required-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "特斯拉烧钱换未来，值",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-55-MS-Tesla Inc - North America The Road to ROI-Patience Required-260723.pdf",
+      "cleaned_source_title": "MS-Tesla Inc - North America The Road to ROI-Patience Required",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：TeslaIncNorthAmericaT",
+      "raw_candidates": [
+        "特斯拉北美投资回报路径与资本开支周期",
+        "特斯拉2026-2027年资本开支超250亿美元与自由现金流承压",
+        "特斯拉Robotaxi与Optimus量产进展及能源业务毛利率变化"
+      ],
+      "cleaned_candidates": [
+        "MS：特斯拉北美研究回报路径与资本开支周期",
+        "MS：特斯拉2026",
+        "MS：特斯拉Robotaxi与Optimus量产进展及能源业务毛",
+        "MS：TeslaIncNorthAmericaT",
+        "MS：2026年资本开支指引超过250亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：特斯拉2026",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：特斯拉Robotaxi与Optimus量产进展及能源业务毛",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：TeslaIncNorthAmericaT",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2026年资本开支指引超过250亿美元",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：特斯拉北美研究回报路径与资本开支周期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

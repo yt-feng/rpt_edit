@@ -1,0 +1,76 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 5,
+    "timed_out": true,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0001-51-MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0002-52-MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0003-53-MS-Lululemon Athletica Inc.-LULU.US-Underweight Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU-260722.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0004-54-MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to Equal-weight-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0005-55-MS-Tesla Inc - North America The Road to ROI-Patience Required-260723.pdf",
+        "state": "pending",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0001-51-MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0002-52-MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0003-53-MS-Lululemon Athletica Inc.-LULU.US-Underweight Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0004-54-MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to Equal-weight-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ok8m7k8s/pdfs/0005-55-MS-Tesla Inc - North America The Road to ROI-Patience Required-260723.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

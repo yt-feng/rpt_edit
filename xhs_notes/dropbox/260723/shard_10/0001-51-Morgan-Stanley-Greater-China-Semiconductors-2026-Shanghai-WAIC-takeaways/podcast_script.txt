@@ -1,0 +1,99 @@
+ZH_A: 最近WAIC 2026刚结束，我看到了一份很详细的研报，里面提到一个关键变化——中国AI竞赛正在从芯片规格转向系统级能力。你能帮我们拆解一下，这个转向到底意味着什么？
+
+ZH_B: 没错，这个转向非常关键。简单说，去年WAIC大家还在比谁的AI加速器单卡更强，但今年几乎所有国内厂商都在展示SuperPod系统，也就是64卡、128卡甚至更大规模的计算集群。这说明竞争焦点已经变了。
+
+ZH_A: 所以不是比谁的芯片算力更强，而是比谁能把这些芯片更好连起来？
+
+ZH_B: 对，就是这个意思。报告里专门提到一个概念叫scale-up技术，就是芯片之间的互联、内存共享和系统可靠性。国内厂商虽然在芯片制程上受限，但在系统级设计上其实有优势，特别是在光互联和服务器机架设计上。
+
+ZH_A: 那这次WAIC最引人注目的是什么？有没有什么具体的产品值得关注？
+
+ZH_B: 最重磅的应该是华为的Atlas 950 SuperPod。它从去年384个NPU扩展到了1024个NPU，整整翻了两倍多。整个系统有16个计算柜，每个柜64个NPU，还配了4个专门的互联柜。算力方面，单柜FP8性能64 PFLOPS，整个系统接近1 EFLOPS。
+
+ZH_A: 1 EFLOPS？这个数字很大。那内存呢？大模型训练最吃内存了。
+
+ZH_B: 内存也相当夸张。每个计算柜大概6TB HBM，16个柜就是96TB。再加上内存池化技术，华为说总可寻址内存容量能达到256TB。这对于训练那些参数规模越来越大的模型来说，非常关键。
+
+ZH_A: 那除了华为，其他厂商表现怎么样？大家是不是都在做类似的事情？
+
+ZH_B: 是的，几乎每家都展示了SuperPod方案。比如摩尔线程有128到256卡的集群，燧原科技和中兴合作做了64卡的方案，还有MetaX也展示了类似的产品。不过报告也指出，这些方案很多看起来相似，因为都是和ODM厂商合作开发的。
+
+ZH_A: 那这样岂不是很难区分谁更好？大家看起来都一样。
+
+ZH_B: 对，所以差异化正在从硬件数量转向互联性能、软件优化和容错能力。报告里特别提到，华为的UnifiedBus 2.0是一个关键升级，它让整个SuperPod在逻辑上像一个统一的系统，而不是多个独立的机柜。
+
+ZH_A: 我注意到报告里还提到了一个叫P/D分离的概念，这是什么？
+
+ZH_B: 这是推理阶段的一个新思路。大模型推理分两个阶段：Prefill和Decode。Prefill是计算密集型的，Decode是带宽和延迟敏感的。传统上这两个阶段放在同一个加速器池里运行，会有资源竞争。P/D分离就是把它们分开，用不同的硬件资源来优化。
+
+ZH_A: 这个听起来很实用。报告里有具体效果数据吗？
+
+ZH_B: 有，一个配置是把90%的国产加速器用于Prefill，10%的H2O用于Decode，结果吞吐量提升54%，首token延迟降低64%。不过报告也强调，实际效果取决于模型架构和工作负载模式。
+
+ZH_A: 那这个P/D分离之后，还有什么更前沿的方向吗？
+
+ZH_B: 报告提到了Attention/FFN分离，就是把Decode阶段再进一步拆开。但报告说这还处于早期阶段，没有看到实际的演示和基准测试结果。这个方向非常值得关注，但需要更多验证。
+
+ZH_A: 最后，这份报告对投资者有什么建议？有没有提到哪些公司值得关注？
+
+ZH_B: 报告给出了明确的偏好。在国内AI计算领域，他们看好寒武纪、Iluvatar和Hygon，原因是订单可见性强、供应链稳定。在关键赋能领域，他们看好中芯国际的先进制程扩产。半导体设备方面，北方华创、中微公司、ACM Research和ASMPT都被列为优选。
+
+ZH_A: 那有没有什么问题是报告没有完全展开的？比如我们刚才提到的Attention/FFN分离？
+
+ZH_B: 对，Attention/FFN分离只是其中之一。还有一个是Agentic AI工作负载对CPU配置的影响。目前国内AI服务器GPU和CPU的比例大概是4:1或8:1，但如果Agentic AI需求增长，可能需要更多CPU资源。这个变化到底什么时候发生、影响多大，报告没有完全回答。
+
+ZH_A: 所以这份报告更像是提供了一个框架，而不是所有答案？
+
+ZH_B: 完全正确。它给出了WAIC 2026的关键趋势和投资逻辑，但很多细分方向还需要持续跟踪。如果你想深入了解这些悬念，比如P/D分离的具体实现细节，或者Attention/FFN分离的最新进展，我建议你去读完整报告。
+
+ZH_A: 好，那我们今天就聊到这里。感谢你的精彩解读，也欢迎大家去阅读完整报告，获取更多深度内容。
+
+EN_A: So the WAIC 2026 just wrapped up, and I came across a really detailed report. It says the AI competition in China is shifting from chip specs to system-level capabilities. Can you break that down for us?
+
+EN_B: Absolutely. Last year at WAIC, everyone was comparing how powerful their individual AI accelerators were. But this year, almost every domestic vendor was showing off SuperPod solutions — clusters of 64, 128, or even more accelerators working together. The focus has clearly moved from the chip to the system.
+
+EN_A: So it's not about who has the most powerful chip anymore, but who can connect them better?
+
+EN_B: Exactly. The report highlights a concept called scale-up technology. It's about interconnects, memory sharing, and system reliability. Chinese vendors may be limited at the chip level due to process constraints, but they have real strengths at the system level, especially in optical networking and server rack design.
+
+EN_A: What was the biggest highlight from WAIC this year? Any specific product that stood out?
+
+EN_B: The biggest one was definitely Huawei's Atlas 950 SuperPod. It went from 384 NPUs last year to 1,024 NPUs this year — more than double. The system has 16 computing cabinets, each with 64 NPUs, plus four dedicated interconnect cabinets. In terms of computing power, each cabinet delivers 64 PFLOPS for FP8, and the whole system approaches 1 EFLOPS.
+
+EN_A: 1 EFLOPS? That's a huge number. What about memory? Large model training is all about memory.
+
+EN_B: Memory is equally impressive. Each cabinet has about 6TB of HBM, so 16 cabinets give you 96TB. And with memory pooling, Huawei says the total addressable memory could reach 256TB. That's critical for training models with ever-growing parameter sizes.
+
+EN_A: What about other vendors? Are they all doing the same thing?
+
+EN_B: Pretty much. Almost every vendor showcased a SuperPod solution. Moore Threads had a 128 to 256 GPU cluster. Enflame partnered with ZTE on a 64-accelerator system. MetaX had a similar setup. But the report notes that many of these solutions look similar because they're co-developed with ODM partners.
+
+EN_A: So how do you tell them apart? They all look the same.
+
+EN_B: That's the key point. Differentiation is moving from hardware specs to interconnect performance, software optimization, and fault tolerance. The report highlights Huawei's UnifiedBus 2.0 as a key upgrade. It makes the entire SuperPod act like one unified system, not a bunch of separate cabinets.
+
+EN_A: I also noticed the report mentioned something called P/D disaggregation. What's that about?
+
+EN_B: It's a new approach to inference. Large model inference has two phases: prefilling and decoding. Prefilling is compute-intensive, while decoding is bandwidth and latency-sensitive. Traditionally, both run on the same accelerator pool, which creates resource contention. P/D disaggregation separates them, allowing operators to optimize each phase independently.
+
+EN_A: That sounds practical. Did the report have any specific performance numbers?
+
+EN_B: Yes. One configuration allocated 90% of domestic accelerators to prefilling and 10% of H2O to decoding. The result was a 54% increase in throughput and a 64% reduction in time-to-first-token. But the report also cautions that actual benefits depend on model architecture and workload patterns.
+
+EN_A: What's next after P/D disaggregation? Any even more advanced concepts?
+
+EN_B: The report mentions Attention/FFN disaggregation, which would further split the decoding phase. But it says this is still early stage — no real demonstrations or benchmark results were shown at WAIC. It's a direction to watch, but it needs more validation.
+
+EN_A: Finally, what does the report say about investment? Any companies it favors?
+
+EN_B: Yes, the report has clear preferences. In domestic AI computing, it favors Cambricon, Iluvatar, and Hygon, citing strong order visibility and stable supply chains. For enablers, it likes SMIC for advanced node capacity expansion. In semiconductor equipment, NAURA, AMEC, ACM Research, and ASMPT are all preferred picks.
+
+EN_A: Are there any questions the report doesn't fully answer? Like the Attention/FFN disaggregation we just talked about?
+
+EN_B: That's one. Another is how Agentic AI workloads might change the CPU-to-GPU ratio. Right now, it's about 4:1 or 8:1 in favor of GPUs. But if agentic workloads grow, you might need more CPU resources. When that shift will happen and how big it will be — the report doesn't fully answer that.
+
+EN_A: So the report is more of a framework than a complete answer?
+
+EN_B: Exactly. It captures the key trends from WAIC 2026 and lays out the investment logic. But many sub-directions still need ongoing tracking. If you want to dive deeper into those open questions, like the specifics of P/D disaggregation or the latest on Attention/FFN separation, I'd recommend reading the full report.
+
+EN_A: Great. Thanks for the insights. And to our listeners, if you want the full picture, go check out the complete report.
