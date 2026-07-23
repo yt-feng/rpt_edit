@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260724/0001-BCG_European-Chemicals-2030-2040_7356a686/mineru_raw/images/0049507c82bf4aa1c9f8270e5d111d45d3901b00a4bb998fe330a25899ab20a7.jpg",
+    "path": "kc_translated_reports/consulting/260724/01-0001-BCG_European-Chemicals-2030-2040_7356a686/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.13,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260724/0001-BCG_European-Chemicals-2030-2040_7356a686/mineru_raw/images/9dc73bb52637ebab31a07eee0053dd18ec73d3ee71a3aecbe46338a002c6d8ae.jpg",
+    "path": "kc_translated_reports/consulting/260724/01-0001-BCG_European-Chemicals-2030-2040_7356a686/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=8;chart_context,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260724/0001-BCG_European-Chemicals-2030-2040_7356a686/mineru_raw/images/4321ceaee6ea45e9d86f718a6e7ac61dbef64290d99ca2094f3e660ce814f75c.jpg",
+    "path": "kc_translated_reports/consulting/260724/01-0001-BCG_European-Chemicals-2030-2040_7356a686/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.27,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260724/0001-BCG_European-Chemicals-2030-2040_7356a686/mineru_raw/images/22b0638a2a86d2d20648bc550b4eb29bf9fa2ed6e963e51af8cfe3b14cf9edb6.jpg",
+    "path": "kc_translated_reports/consulting/260724/01-0001-BCG_European-Chemicals-2030-2040_7356a686/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.21,contrast,large"
+  }
+]
