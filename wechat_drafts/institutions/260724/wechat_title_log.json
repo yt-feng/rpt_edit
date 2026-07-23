@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "date_folder": "260724",
+  "source": "kc_translated_reports/institutions",
+  "generated_at_utc": "2026-07-23T23:12:42Z",
+  "article_count": 6,
+  "uploaded_count": 6,
+  "articles": [
+    {
+      "source_report_name": "IMF 2026-Guidance-Note-on-the-Fund-s-Transparency-Policy f492d687",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：行业规则与主题变化观察，国别文件发布采用“自愿但推定”原则",
+      "final_wechat_title": "IMF：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260724/01-0001-IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687",
+      "generation_decision": {
+        "source_filename": "0001-IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687",
+        "cleaned_source_title": "0001-IMF_2026-Guidance-Note-on-the-Fund-s-Transparency-Policy_f492d687",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0001IMF2026GuidanceNote",
+        "raw_candidates": [
+          "IMF：2026年透明度政策指引更新",
+          "IMF：2026年透明度政策指引-文件发布规则",
+          "IMF：2026年透明度政策指引-国别文件发布原则"
+        ],
+        "cleaned_candidates": [
+          "IMF：2026年透明度政策指引更新",
+          "IMF：2026年透明度政策指引-文件发布规则",
+          "IMF：2026年透明度政策指引-国别文件发布原则",
+          "IMF：0001IMF2026GuidanceNote",
+          "IMF：国际货币产品组织（IMF）于2026年7月1日发布新版透明度政"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0001IMF2026GuidanceNote",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织（IMF）于2026年7月1日发布新版透明度政",
+            "reasons": [
+              "anchor_coverage=0.64"
+            ]
+          }
+        ],
+        "selected_title": "IMF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：2026年透明度政策指引更新",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：行业规则与主题变化观察",
+        "pre_upload_neutralization_title": "IMF：行业规则与主题变化观察，国别文件发布采用“自愿但推定”原则",
+        "header_pre_neutralization_title": "国别文件发布采用“自愿但推定”原则，融资类文件推定力度更强",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "国别文件发布采用“自愿但推定”原则，融资类文件推定力度更强->研究主题与行业变化观察",
+          "修改规则收紧，新增保密信息移除与行政错误更正流程->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "IMF Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol 2f0484b9",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：气候与产业转型数据与主题变化观察",
+      "final_wechat_title": "IMF：气候与产业转型数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260724/02-0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9",
+      "generation_decision": {
+        "source_filename": "0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9",
+        "cleaned_source_title": "0002-IMF_Climate-Change-Macroeconomic-Risks-and-Adaptation-in-the-Sol_2f0484b9",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0002IMFClimateChangeMac",
+        "raw_candidates": [
+          "IMF：气候变化对所罗门群岛的宏观不确定性与适应策略",
+          "IMF：所罗门群岛气候变化宏观风险与适应策略（2026年7月）",
+          "IMF：所罗门群岛气候变化对GDP与渔业的影响评估"
+        ],
+        "cleaned_candidates": [
+          "IMF：气候变化对所罗门群岛的宏观不确定性与适应策略",
+          "IMF：所罗门群岛气候变化宏观风险与适应策略（2026年7月）",
+          "IMF：所罗门群岛气候变化对GDP与渔业的影响评估",
+          "IMF：0002IMFClimateChangeMac",
+          "IMF：国际货币产品组织（IMF）在2026年7月发布的国别报告中"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：所罗门群岛气候变化宏观风险与适应策略（2026年7月）",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "IMF：所罗门群岛气候变化对GDP与渔业的影响评估",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "IMF：0002IMFClimateChangeMac",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织（IMF）在2026年7月发布的国别报告中",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：气候与产业转型数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：气候变化对所罗门群岛的宏观不确定性与适应策略",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：气候与产业转型数据与主题变化观察",
+        "header_pre_neutralization_title": "气温上升将逐步侵蚀宏观环境增长",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "气温上升将逐步侵蚀宏观环境增长->研究主题与行业变化观察",
+          "渔业面临生物量下降与收入结构性不确定性->渔业面临生物量业务与近期数据观察",
+          "可持续林业管理可释放气候红利->可持续报告流程数据与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "WTO Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra 2b1704b1",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：行业规则与主题变化观察，全球贸易政策活动在2019年前后出现结",
+      "final_wechat_title": "IMF：行业规则与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260724/03-0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1",
+      "generation_decision": {
+        "source_filename": "0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1",
+        "cleaned_source_title": "0003-WTO_Updated-WTO-IMF-TPA-Index-shows-continued-rise-in-global-tra_2b1704b1",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0003WTOUpdatedWTOIMFTPA",
+        "raw_candidates": [
+          "世贸组织与IMF贸易政策活动指数显示全球贸易上升",
+          "世贸组织与IMF贸易政策活动指数揭示2019年结构性跃升",
+          "世贸组织与IMF贸易政策活动指数覆盖197国政策数据"
+        ],
+        "cleaned_candidates": [
+          "IMF：世贸组织与IMF贸易政策活动指数显示全球贸易上升",
+          "IMF：世贸组织与IMF贸易政策活动指数揭示2019年结构性跃升",
+          "IMF：世贸组织与IMF贸易政策活动指数覆盖197国政策数据",
+          "IMF：0003WTOUpdatedWTOIMFTPA",
+          "IMF：全球贸易政策活动指数揭示2019年以来结构性转变"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：世贸组织与IMF贸易政策活动指数揭示2019年结构性跃升",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "IMF：世贸组织与IMF贸易政策活动指数覆盖197国政策数据",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "IMF：0003WTOUpdatedWTOIMFTPA",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：全球贸易政策活动指数揭示2019年以来结构性转变",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          }
+        ],
+        "selected_title": "IMF：行业规则与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：世贸组织与IMF贸易政策活动指数显示全球贸易上升",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：行业规则与主题变化观察",
+        "pre_upload_neutralization_title": "IMF：行业规则与主题变化观察，全球贸易政策活动在2019年前后出现结",
+        "header_pre_neutralization_title": "全球贸易政策活动在2019年前后出现结构性跃升",
+        "header_neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "body_heading_neutralization_changes": [
+          "全球贸易政策活动在2019年前后出现结构性跃升->行业规则与主题变化观察",
+          "高频数据可实现贸易政策活动的实时预测->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "WorldBank Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced 26fe",
+      "institution_name": "世界银行",
+      "title_before_upload": "世界银行：研究主题与行业变化观察，流离失所原因不同",
+      "final_wechat_title": "世界银行：研究主题与行业变化观察，流离失所原因不同",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260724/04-0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe",
+      "generation_decision": {
+        "source_filename": "0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe098f",
+        "cleaned_source_title": "0004-WorldBank_Consequences-of-Growing-Up-Displaced-Evidence-from-Displaced_26fe098f",
+        "institution_name": "世界银行",
+        "required_terms": [],
+        "deterministic_fallback": "世界银行：0004WorldBankConsequen",
+        "raw_candidates": [
+          "世界银行：流离失所儿童发展差距与原因关联",
+          "世界银行：2025年1.23亿流离失所儿童发展差距研究",
+          "世界银行：哥伦比亚流离失所儿童认知与心理健康差异"
+        ],
+        "cleaned_candidates": [
+          "世界银行：流离失所儿童发展差距与原因关联",
+          "世界银行：2025年1.23亿流离失所儿童发展差距研究",
+          "世界银行：哥伦比亚流离失所儿童认知与心理健康差异",
+          "世界银行：0004WorldBankConsequen",
+          "世界银行：全球流离失所人口在2025年已达1.23亿"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界银行：2025年1.23亿流离失所儿童发展差距研究",
+            "reasons": [
+              "anchor_coverage=0.64"
+            ]
+          },
+          {
+            "title": "世界银行：哥伦比亚流离失所儿童认知与心理健康差异",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "世界银行：0004WorldBankConsequen",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界银行：全球流离失所人口在2025年已达1.23亿",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界银行：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "世界银行：流离失所儿童发展差距与原因关联",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "世界银行：研究主题与行业变化观察",
+        "header_pre_neutralization_title": "流离失所原因不同，儿童发展受损维度各异",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "流离失所原因不同，儿童发展受损维度各异->研究主题与行业变化观察",
+          "家庭财富无法解释发展差距，流离失所效应独立于贫困->研究主题与行业变化观察",
+          "合法身份与社会服务获取与难民儿童发展差距缩小显著相关->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "WorldBank Labor-Market-Effects-of-Public-Employment-Guarantee d3d98198",
+      "institution_name": "世界银行",
+      "title_before_upload": "世界银行：埃及公共就业保障对劳动力市场的再分配效应",
+      "final_wechat_title": "世界银行：埃及公共就业保障对劳动力市场的再分配效应",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260724/05-0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198",
+      "generation_decision": {
+        "source_filename": "0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198",
+        "cleaned_source_title": "0005-WorldBank_Labor-Market-Effects-of-Public-Employment-Guarantee_d3d98198",
+        "institution_name": "世界银行",
+        "required_terms": [],
+        "deterministic_fallback": "世界银行：0005WorldBankLabor市场Ef",
+        "raw_candidates": [
+          "世界银行：埃及公共就业保障对劳动力市场的再分配效应",
+          "世界银行：埃及公共就业保障对城市男性就业的再分配效应",
+          "世界银行：埃及公共就业保障对制造业与白领职业的就业再分配"
+        ],
+        "cleaned_candidates": [
+          "世界银行：埃及公共就业保障对劳动力市场的再分配效应",
+          "世界银行：埃及公共就业保障对城市男性就业的再分配效应",
+          "世界银行：埃及公共就业保障对制造业与白领职业的就业再分配",
+          "世界银行：0005WorldBankLabor市场Ef",
+          "世界银行：60学年地区中学供给差异作为政策暴露强度的代理变量"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界银行：埃及公共就业保障对城市男性就业的再分配效应",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "世界银行：埃及公共就业保障对制造业与白领职业的就业再分配",
+            "reasons": [
+              "anchor_coverage=0.53"
+            ]
+          },
+          {
+            "title": "世界银行：0005WorldBankLabor市场Ef",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界银行：60学年地区中学供给差异作为政策暴露强度的代理变量",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界银行：埃及公共就业保障对劳动力市场的再分配效应",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "世界银行：埃及公共就业保障对劳动力市场的再分配效应",
+        "body_heading_neutralization_changes": [
+          "公共就业保障的财政不确定性与制度演变->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "WorldBank The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and- 85c4",
+      "institution_name": "世界银行",
+      "title_before_upload": "世界银行：南非保护区对收入、鸟类与旅游的长期影响",
+      "final_wechat_title": "世界银行：南非保护区对收入、鸟类与旅游的长期影响",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260724/06-0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c4",
+      "generation_decision": {
+        "source_filename": "0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c492dd",
+        "cleaned_source_title": "0006-WorldBank_The-Long-Run-Impacts-of-Protected-Areas-on-Income-Birds-and-_85c492dd",
+        "institution_name": "世界银行",
+        "required_terms": [],
+        "deterministic_fallback": "世界银行：0006WorldBankTheLongRu",
+        "raw_candidates": [
+          "世界银行：南非保护区对收入、鸟类与旅游的长期影响",
+          "世界银行：南非保护区对家庭收入与鸟类多样性的长期影响",
+          "世界银行：南非保护区对收入、鸟类与旅游的长期效应"
+        ],
+        "cleaned_candidates": [
+          "世界银行：南非保护区对收入、鸟类与旅游的长期影响",
+          "世界银行：南非保护区对家庭收入与鸟类多样性的长期影响",
+          "世界银行：南非保护区对收入、鸟类与旅游的长期效应",
+          "世界银行：0006WorldBankTheLongRu",
+          "世界银行：研究使用南非2001年和2011年人口普查中4"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界银行：南非保护区对家庭收入与鸟类多样性的长期影响",
+            "reasons": [
+              "anchor_coverage=0.65"
+            ]
+          },
+          {
+            "title": "世界银行：0006WorldBankTheLongRu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界银行：研究使用南非2001年和2011年人口普查中4",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界银行：南非保护区对收入、鸟类与旅游的长期影响",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "世界银行：南非保护区对收入、鸟类与旅游的长期影响"
+      }
+    }
+  ]
+}
