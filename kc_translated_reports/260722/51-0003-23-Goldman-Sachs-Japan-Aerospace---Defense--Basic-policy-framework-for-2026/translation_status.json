@@ -1,0 +1,75 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_4/0003-23-Goldman-Sachs-Japan-Aerospace---Defense--Basic-policy-framework-for-2026",
+  "title": "高盛：航空运维与技术应用观察",
+  "source_title": "0003-23-GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-en",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-en",
+    "cleaned_source_title": "GS-Japan Aerospace - Defense- Basic policy framework for 2026 approved- focus on revision of three strategy documents toward year-en",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：日本AerospaceDefense",
+    "raw_candidates": [
+      "日本航空航天与国防：2026年基本政策框架获批",
+      "日本航空航天与国防：2026年政策框架获批-关注三大战略文件修订",
+      "日本航空航天与国防：2026年政策框架获批-聚焦战略研究领域与防卫能力转型"
+    ],
+    "cleaned_candidates": [
+      "高盛：日本航空航天与国防，2026年基本政策框架获批",
+      "高盛：日本航空航天与国防，2026年政策框架获批-关注三大战略文件修订",
+      "高盛：日本航空航天与国防，2026年政策框架获批",
+      "高盛：日本AerospaceDefense",
+      "高盛：7月21日，日本政府通过内阁决议批准了2026年宏观环境财政运营"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：日本AerospaceDefense",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：7月21日，日本政府通过内阁决议批准了2026年宏观环境财政运营",
+        "reasons": [
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：航空运维与技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：日本航空航天与国防，2026年基本政策框架获批",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:military_or_defense"
+    ],
+    "final_title_after_wording_guard": "高盛：航空运维与技术应用观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_51.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "经济->宏观环境 x2",
+    "投资->研究 x7",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_1/0001-06-CITI-Alibaba-Group-Holding--BABA.US--Thoughts-on-Qwen-3.8-Max-Preview-an",
+  "title": "花旗：阿里巴巴集团控股Qwen3.8Max预览与KimiK3发布影响",
+  "source_title": "0001-06-CITI-Alibaba Group Holding -BABA.US- Thoughts on Qwen 3.8 Max Preview and Implications from Kimi K3 Release-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-06-CITI-Alibaba Group Holding -BABA.US- Thoughts on Qwen 3.8 Max Preview and Implications from Kimi K3 Release-260720",
+    "cleaned_source_title": "CITI-Alibaba Group Holding -BABA.US- Thoughts on Qwen 3.8 Max Preview and Implications from Kimi K3 Release",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：AlibabaGroupHolding",
+    "raw_candidates": [
+      "阿里巴巴集团控股Qwen 3.8 Max预览与Kimi K3发布影响",
+      "阿里巴巴Qwen 3.8 Max预览版7月19日推出及Kimi K3发布",
+      "阿里巴巴Qwen 3.8 Max与Kimi K3模型参数及AI竞争趋势"
+    ],
+    "cleaned_candidates": [
+      "花旗：阿里巴巴集团控股Qwen3.8Max预览与KimiK3发布影响",
+      "花旗：阿里巴巴Qwen3.8Max预览版7月19日推出及KimiK3发",
+      "花旗：阿里巴巴Qwen3.8Max与KimiK3模型参数及AI竞争趋势",
+      "花旗：AlibabaGroupHolding",
+      "花旗：我们认为，阿里巴巴预览版2.4T参数Qwen3.8Max以及月之"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：阿里巴巴Qwen3.8Max预览版7月19日推出及KimiK3发",
+        "reasons": [
+          "anchor_coverage=0.66"
+        ]
+      },
+      {
+        "title": "花旗：阿里巴巴Qwen3.8Max与KimiK3模型参数及AI竞争趋势",
+        "reasons": [
+          "anchor_coverage=0.59"
+        ]
+      },
+      {
+        "title": "花旗：AlibabaGroupHolding",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：我们认为，阿里巴巴预览版2.4T参数Qwen3.8Max以及月之",
+        "reasons": [
+          "anchor_coverage=0.41"
+        ]
+      }
+    ],
+    "selected_title": "花旗：阿里巴巴集团控股Qwen3.8Max预览与KimiK3发布影响",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "花旗：阿里巴巴集团控股Qwen3.8Max预览与KimiK3发布影响"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_06.pdf",
+  "figure_count": 4,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "全球经济->全球宏观环境 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "全球经济->全球宏观环境 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

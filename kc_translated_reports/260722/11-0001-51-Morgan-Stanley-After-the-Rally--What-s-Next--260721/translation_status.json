@@ -1,0 +1,111 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_10/0001-51-Morgan-Stanley-After-the-Rally--What-s-Next--260721",
+  "title": "摩根士丹利：价格数据与市场变化观察",
+  "source_title": "0001-51-MS-After the Rally- What-s Next--260721",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-51-MS-After the Rally- What-s Next--260721",
+    "cleaned_source_title": "MS-After the Rally- What-s Next",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：AftertheRally-WhatsNext",
+    "raw_candidates": [
+      "大涨之后-何去何从",
+      "大涨之后-何去何从：JKM价格较年初上涨逾两倍",
+      "大涨之后-何去何从：美国LNG公司第二季度业绩预览"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：大涨之后-何去何从",
+      "摩根士丹利：大涨之后-何去何从，JKM价格较年初上涨逾两倍",
+      "摩根士丹利：大涨之后-何去何从，美国LNG公司第二季度业绩预览",
+      "摩根士丹利：AftertheRally-WhatsNext",
+      "摩根士丹利：自7月初以来，JKM价格上涨35%，目前较年初上涨逾两倍"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：AftertheRally-WhatsNext",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：自7月初以来，JKM价格上涨35%，目前较年初上涨逾两倍",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：价格数据与市场变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：大涨之后-何去何从，JKM价格较年初上涨逾两倍",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：价格数据与市场变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_11.pdf",
+  "figure_count": 24,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "增持->观点偏积极 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "增持->观点偏积极 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x1",
+    "股价->报价 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line"
+  ]
+}

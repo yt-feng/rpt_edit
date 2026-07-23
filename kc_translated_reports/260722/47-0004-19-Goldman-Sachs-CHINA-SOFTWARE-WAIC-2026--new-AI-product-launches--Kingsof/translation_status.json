@@ -1,0 +1,109 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_3/0004-19-Goldman-Sachs-CHINA-SOFTWARE-WAIC-2026--new-AI-product-launches--Kingsof",
+  "title": "高盛：中国软件WAIC2026新AI产品发布与金山办公估值调整",
+  "source_title": "0004-19-GS-CHINA SOFTWARE WAIC 2026- new AI product launches- Kingsoft Office down to Sell on stretched valuation-260721",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-19-GS-CHINA SOFTWARE WAIC 2026- new AI product launches- Kingsoft Office down to Sell on stretched valuation-260721",
+    "cleaned_source_title": "GS-CHINA SOFTWARE WAIC 2026- new AI product launches- Kingsoft Office down to Sell on stretched valuation",
+    "institution_name": "高盛",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "高盛：中国软件WAIC2026",
+    "raw_candidates": [
+      "中国软件WAIC 2026新AI产品发布与金山办公估值调整",
+      "中国软件WAIC 2026新AI产品发布及金山办公下调至卖出",
+      "中国软件WAIC 2026新AI产品发布与金山办公估值变化"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国软件WAIC2026新AI产品发布与金山办公估值调整",
+      "高盛：中国软件WAIC2026新AI产品发布及金山办公下调至卖出",
+      "高盛：中国软件WAIC2026新AI产品发布与金山办公估值变化",
+      "高盛：中国软件WAIC2026",
+      "高盛：WAIC2026，新AI产品发布"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国软件WAIC2026新AI产品发布及金山办公下调至卖出",
+        "reasons": [
+          "forbidden_public_wording"
+        ]
+      },
+      {
+        "title": "高盛：中国软件WAIC2026",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "高盛：WAIC2026，新AI产品发布",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      }
+    ],
+    "selected_title": "高盛：中国软件WAIC2026新AI产品发布与金山办公估值调整",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：中国软件WAIC2026新AI产品发布与金山办公估值调整"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_47.pdf",
+  "figure_count": 1,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "评级\\s*(?:上调|下调|维持|重申|恢复)?\\s*(?:至|为)?\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)->公司观点更新 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "卖出->观点偏谨慎 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资收益->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x4",
+    "卖出->观点偏谨慎 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

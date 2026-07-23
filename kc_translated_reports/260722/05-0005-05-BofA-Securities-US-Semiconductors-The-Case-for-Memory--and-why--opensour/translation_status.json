@@ -1,0 +1,109 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_0/0005-05-BofA-Securities-US-Semiconductors-The-Case-for-Memory--and-why--opensour",
+  "title": "美银：半导体行业数据与主题变化观察",
+  "source_title": "0005-05-BofA-US Semiconductors-The Case for Memory- and why -opensource- expands TAM-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-05-BofA-US Semiconductors-The Case for Memory- and why -opensource- expands TAM-260720",
+    "cleaned_source_title": "BofA-US Semiconductors-The Case for Memory- and why -opensource- expands TAM",
+    "institution_name": "美银",
+    "required_terms": [],
+    "deterministic_fallback": "美银：US半导体TheCaseforMemory",
+    "raw_candidates": [
+      "美国半导体-内存重要性及开源扩大TAM",
+      "美国半导体-7月Kimi K3发布强化内存需求",
+      "美国半导体-开源模型扩展内存端点与TAM"
+    ],
+    "cleaned_candidates": [
+      "美银：美国半导体-内存重要性及开源扩大TAM",
+      "美银：美国半导体-7月KimiK3发布强化内存需求",
+      "美银：美国半导体-开源模型扩展内存端点与TAM",
+      "美银：US半导体TheCaseforMemory",
+      "美银：亏损），而小米在2026年5月将其MiMo模型定价削减了99%（"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "美银：美国半导体-7月KimiK3发布强化内存需求",
+        "reasons": [
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "美银：美国半导体-开源模型扩展内存端点与TAM",
+        "reasons": [
+          "anchor_coverage=0.47"
+        ]
+      },
+      {
+        "title": "美银：US半导体TheCaseforMemory",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "美银：亏损），而小米在2026年5月将其MiMo模型定价削减了99%（",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "美银：半导体行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "美银：美国半导体-内存重要性及开源扩大TAM",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "美银：半导体行业数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_05.pdf",
+  "figure_count": 3,
+  "institution_name": "美银",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

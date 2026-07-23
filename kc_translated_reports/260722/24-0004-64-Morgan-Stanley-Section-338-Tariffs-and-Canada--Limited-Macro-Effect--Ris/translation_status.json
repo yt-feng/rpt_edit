@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_12/0004-64-Morgan-Stanley-Section-338-Tariffs-and-Canada--Limited-Macro-Effect--Ris",
+  "title": "摩根士丹利：跨境贸易与行业变化观察",
+  "source_title": "0004-64-MS-Section 338 Tariffs and Canada- Limited Macro Effect- Rising Strategic Risks-260721",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-64-MS-Section 338 Tariffs and Canada- Limited Macro Effect- Rising Strategic Risks-260721",
+    "cleaned_source_title": "MS-Section 338 Tariffs and Canada- Limited Macro Effect- Rising Strategic Risks",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：Section338Tariffs和Canada",
+    "raw_candidates": [
+      "第338条关税与加拿大：宏观影响有限，战略不确定性上升",
+      "第338条关税与加拿大：约200亿美元出口受冲击，宏观影响有限",
+      "第338条关税与加拿大：消费品和中间产品受影响最大"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：第338条关税与加拿大，宏观影响有限，战略不确定性上升",
+      "摩根士丹利：第338条关税与加拿大，约200亿美元出口受冲击",
+      "摩根士丹利：第338条关税与加拿大，消费品和中间产品受影响最大",
+      "摩根士丹利：Section338Tariffs和Canada",
+      "摩根士丹利：该行7月展望将2026年增长下调至0.7%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：第338条关税与加拿大，约200亿美元出口受冲击",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：第338条关税与加拿大，消费品和中间产品受影响最大",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：Section338Tariffs和Canada",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：该行7月展望将2026年增长下调至0.7%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：跨境贸易与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：第338条关税与加拿大，宏观影响有限，战略不确定性上升",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：跨境贸易与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_24.pdf",
+  "figure_count": 8,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x3",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "恶化->出现变化 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

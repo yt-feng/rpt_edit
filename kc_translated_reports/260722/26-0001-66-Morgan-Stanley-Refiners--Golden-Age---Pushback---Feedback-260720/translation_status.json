@@ -1,0 +1,91 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_13/0001-66-Morgan-Stanley-Refiners--Golden-Age---Pushback---Feedback-260720",
+  "title": "摩根士丹利：研究主题与行业变化观察",
+  "source_title": "0001-66-MS-Refiners -Golden Age-- Pushback - Feedback-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-66-MS-Refiners -Golden Age-- Pushback - Feedback-260720",
+    "cleaned_source_title": "MS-Refiners -Golden Age-- Pushback - Feedback",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：RefinersGoldenAge",
+    "raw_candidates": [
+      "炼油商黄金时代：质疑与反馈",
+      "炼油商黄金时代：亚洲炼厂开工率95%",
+      "炼油商黄金时代：亚洲燃料利润率五年升50%"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：炼油商黄金时代，质疑与反馈",
+      "摩根士丹利：炼油商黄金时代，亚洲炼厂开工率95%",
+      "摩根士丹利：炼油商黄金时代，亚洲燃料利润率五年升50%",
+      "摩根士丹利：RefinersGoldenAge",
+      "摩根士丹利：1.全球炼厂开工率仅为80%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：炼油商黄金时代，亚洲炼厂开工率95%",
+        "reasons": [
+          "anchor_coverage=0.55",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：炼油商黄金时代，亚洲燃料利润率五年升50%",
+        "reasons": [
+          "anchor_coverage=0.55",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：RefinersGoldenAge",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：1.全球炼厂开工率仅为80%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：炼油商黄金时代，质疑与反馈",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_26.pdf",
+  "figure_count": 12,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_4/0005-25-Goldman-Sachs-NATURAL-GAS-ANALYST-Slower-Hormuz-Export-Ramp-Leads-Us-to-",
+  "title": "高盛：跨境贸易数据与主题变化观察",
+  "source_title": "0005-25-GS-NATURAL GAS ANALYST-Slower Hormuz Export Ramp Leads Us to Raise Our Near-Term TTF Forecast-260721",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-25-GS-NATURAL GAS ANALYST-Slower Hormuz Export Ramp Leads Us to Raise Our Near-Term TTF Forecast-260721",
+    "cleaned_source_title": "GS-NATURAL GAS ANALYST-Slower Hormuz Export Ramp Leads Us to Raise Our Near-Term TTF Forecast",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：NATURALGASANALYSTSlowerH",
+    "raw_candidates": [
+      "霍尔木兹海峡出口节奏变化与TTF预测上调",
+      "霍尔木兹海峡出口推迟-2026年TTF预测上调至60欧元",
+      "霍尔木兹海峡出口节奏变化对欧洲天然气供需影响"
+    ],
+    "cleaned_candidates": [
+      "高盛：霍尔木兹海峡出口节奏变化与TTF预测上调",
+      "高盛：霍尔木兹海峡出口推迟-2026年TTF预测上调至60欧元",
+      "高盛：霍尔木兹海峡出口节奏变化对欧洲天然气供需影响",
+      "高盛：NATURALGASANALYSTSlowerH",
+      "高盛：兆瓦时，较当前2026年12月TTF价格基准情景低20%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：霍尔木兹海峡出口推迟-2026年TTF预测上调至60欧元",
+        "reasons": [
+          "anchor_coverage=0.68"
+        ]
+      },
+      {
+        "title": "高盛：霍尔木兹海峡出口节奏变化对欧洲天然气供需影响",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "高盛：NATURALGASANALYSTSlowerH",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：兆瓦时，较当前2026年12月TTF价格基准情景低20%",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：跨境贸易数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：霍尔木兹海峡出口节奏变化与TTF预测上调",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：跨境贸易数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_53.pdf",
+  "figure_count": 5,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

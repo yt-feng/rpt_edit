@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_6/0001-31-J.P.-Morgan-China-AI-chip-Key-takeaways-from-WAIC-2026--China-s-AI-infra",
+  "title": "摩根大通：AI、WAIC与半导体行业技术应用观察",
+  "source_title": "0001-31-JPM-China AI chip-Key takeaways from WAIC 2026- China-s AI infrastructure shifts-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-31-JPM-China AI chip-Key takeaways from WAIC 2026- China-s AI infrastructure shifts-260720",
+    "cleaned_source_title": "JPM-China AI chip-Key takeaways from WAIC 2026- China-s AI infrastructure shifts",
+    "institution_name": "摩根大通",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "摩根大通：中国AIchipKeytakeawaysfromWAIC20",
+    "raw_candidates": [
+      "中国AI芯片-WAIC 2026关键结论-AI基础设施转变",
+      "中国AI芯片-WAIC 2026关键结论-系统级部署与超级节点",
+      "中国AI芯片-WAIC 2026关键结论-芯片性能基线重置为Hopper级别"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：中国AI芯片-WAIC2026关键结论-AI基础设施转变",
+      "摩根大通：中国AI芯片-WAIC2026关键结论-系统级部署与超级节点",
+      "摩根大通：中国AI芯片-WAIC2026关键结论",
+      "摩根大通：中国AIchipKeytakeawaysfromWAIC20",
+      "摩根大通：3）让AI计算变得可负担且无处不在是驱动力"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：中国AI芯片-WAIC2026关键结论-系统级部署与超级节点",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国AI芯片-WAIC2026关键结论",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国AIchipKeytakeawaysfromWAIC20",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：3）让AI计算变得可负担且无处不在是驱动力",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：AI、WAIC与半导体行业技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：中国AI芯片-WAIC2026关键结论-AI基础设施转变",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：AI、WAIC与半导体行业技术应用观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_59.pdf",
+  "figure_count": 4,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x4",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x4",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "增持->观点偏积极 x1",
+    "减持->观点偏谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x3",
+    "增持->观点偏积极 x1",
+    "减持->观点偏谨慎 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "(?:投资建议|操作建议|买卖建议)->研究交流 x1",
+    "sanitize_wechat_stock_line",
+    "(?:投资建议|操作建议|买卖建议)->研究交流 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x2"
+  ]
+}

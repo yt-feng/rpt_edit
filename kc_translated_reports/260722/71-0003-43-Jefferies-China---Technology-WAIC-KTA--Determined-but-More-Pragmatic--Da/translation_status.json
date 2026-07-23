@@ -1,0 +1,123 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260722/shard_8/0003-43-Jefferies-China---Technology-WAIC-KTA--Determined-but-More-Pragmatic--Da",
+  "title": "杰富瑞：WAIC与半导体行业技术应用观察",
+  "source_title": "0003-43-JEF-China - Technology-WAIC KTA- Determined but More Pragmatic- Data Semi in Focus-260720",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-JEF-China - Technology-WAIC KTA- Determined but More Pragmatic- Data Semi in Focus-260720",
+    "cleaned_source_title": "JEF-China - Technology-WAIC KTA- Determined but More Pragmatic- Data Semi in Focus",
+    "institution_name": "杰富瑞",
+    "required_terms": [],
+    "deterministic_fallback": "杰富瑞：中国科技WAICKTA",
+    "raw_candidates": [
+      "中国科技-WAIC主题：坚定但更务实，数据与半导体聚焦",
+      "中国科技-WAIC主题：2026年数据与半导体成为焦点",
+      "中国科技-WAIC主题：开源模型与新兴市场AI出口战略"
+    ],
+    "cleaned_candidates": [
+      "杰富瑞：中国科技-WAIC主题，坚定但更务实，数据与半导体聚焦",
+      "杰富瑞：中国科技-WAIC主题，2026年数据与半导体成为焦点",
+      "杰富瑞：中国科技-WAIC主题，开源模型与新兴市场AI出口战略",
+      "杰富瑞：中国科技WAICKTA",
+      "杰富瑞：但其功耗是RubinNVL72的7.4倍（1.7MW）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "杰富瑞：中国科技-WAIC主题，2026年数据与半导体成为焦点",
+        "reasons": [
+          "anchor_coverage=0.61",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "杰富瑞：中国科技-WAIC主题，开源模型与新兴市场AI出口战略",
+        "reasons": [
+          "anchor_coverage=0.39",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "杰富瑞：中国科技WAICKTA",
+        "reasons": [
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "杰富瑞：但其功耗是RubinNVL72的7.4倍（1.7MW）",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "杰富瑞：WAIC与半导体行业技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "杰富瑞：中国科技-WAIC主题，坚定但更务实，数据与半导体聚焦",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "杰富瑞：WAIC与半导体行业技术应用观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_71.pdf",
+  "figure_count": 4,
+  "institution_name": "杰富瑞",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "(?:投资建议|操作建议|买卖建议)->研究交流 x1",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "股价->报价 x1"
+  ]
+}
