@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0004-59-NOM-USD CNY fix model -Projection-6.7716-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "人民币中间价，一个新",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:china_systemic_topic"
+  ],
+  "wechat_title": "NOM：货币市场与相关指标观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-59-NOM-USD CNY fix model -Projection-6.7716-260723.pdf",
+    "cleaned_source_title": "NOM-USD CNY fix model -Projection-6.7716",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：USDCNYfixmodelProjection6.7716",
+    "raw_candidates": [
+      "美元兑人民币中间价模型投影6.7716",
+      "美元兑人民币中间价模型投影6.7716-7月23日",
+      "美元兑人民币中间价模型与定价机制变化"
+    ],
+    "cleaned_candidates": [
+      "NOM：美元兑人民币中间价模型投影6.7716",
+      "NOM：美元兑人民币中间价模型投影6.7716-7月23日",
+      "NOM：美元兑人民币中间价模型与定价机制变化",
+      "NOM：USDCNYfixmodelProjection6.7716",
+      "NOM：但实际中间价6.7933与模型投影之间相差217个基点"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：美元兑人民币中间价模型与定价机制变化",
+        "reasons": [
+          "anchor_coverage=0.59"
+        ]
+      },
+      {
+        "title": "NOM：USDCNYfixmodelProjection6.7716",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "NOM：但实际中间价6.7933与模型投影之间相差217个基点",
+        "reasons": [
+          "anchor_coverage=0.35"
+        ]
+      }
+    ],
+    "selected_title": "NOM：货币市场与相关指标观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "23",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "NOM：美元兑人民币中间价模型投影6.7716-7月23日",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "NOM：货币市场与相关指标观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "442",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

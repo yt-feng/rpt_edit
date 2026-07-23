@@ -1,0 +1,76 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 5,
+    "timed_out": true,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0001-56-MS-The Viewpoint- Three Reasons Why Credit Growth is Booming-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0002-57-MS-Workday Inc-WDAY.US-Strong Moat- But AI Journey Will Take Time- Downgrade to Underweight-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0003-58-UBS-3M Company-MMM.US-Why Consensus is 10- too low- Raising target to -218-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0004-59-NOM-USD CNY fix model -Projection-6.7716-260723.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0005-60-NOM-Akeso-9926.HK-A positive OS update from HARMONi-260723.pdf",
+        "state": "pending",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0001-56-MS-The Viewpoint- Three Reasons Why Credit Growth is Booming-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0002-57-MS-Workday Inc-WDAY.US-Strong Moat- But AI Journey Will Take Time- Downgrade to Underweight-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0003-58-UBS-3M Company-MMM.US-Why Consensus is 10- too low- Raising target to -218-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0004-59-NOM-USD CNY fix model -Projection-6.7716-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dj2zkkdx/pdfs/0005-60-NOM-Akeso-9926.HK-A positive OS update from HARMONi-260723.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

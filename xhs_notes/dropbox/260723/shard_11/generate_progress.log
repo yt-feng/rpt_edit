@@ -1,0 +1,82 @@
+Found 62 total PDFs; shard 11/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0001-56-Morgan Stanley-The Viewpoint- Three Reasons Why Credit Growth is Booming-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0002-57-Morgan Stanley-Workday Inc-WDAY.US-Strong Moat- But AI Journey Will Take Time- Downgrade to Underweight-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0003-58-UBS-3M Company-MMM.US-Why Consensus is 10- too low- Raising target to -218-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0004-59-Nomura-USD CNY fix model -Projection-6.7716-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0005-60-Nomura-Akeso-9926.HK-A positive OS update from HARMONi-260723.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=f629b01d-1fca-4d4c-8b31-d2b066514d90
+MinerU states: pending, pending, pending, pending, waiting-file
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: pending, pending, pending, pending, pending
+MinerU batch f629b01d-1fca-4d4c-8b31-d2b066514d90 had no parsing progress after 300s; switching token/retry path.
+5 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0001-56-Morgan Stanley-The Viewpoint- Three Reasons Why Credit Growth is Booming-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0002-57-Morgan Stanley-Workday Inc-WDAY.US-Strong Moat- But AI Journey Will Take Time- Downgrade to Underweight-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0003-58-UBS-3M Company-MMM.US-Why Consensus is 10- too low- Raising target to -218-260721.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0004-59-Nomura-USD CNY fix model -Projection-6.7716-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dj2zkkdx/pdfs/0005-60-Nomura-Akeso-9926.HK-A positive OS update from HARMONi-260723.pdf
+MinerU attempt 2 using MINER_U batch_id=0f246a61-4403-4be3-858c-810016a8430d
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: done, done, running, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:293: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Neutralized WeChat title while keeping the report: 摩根士丹利：亚洲除中国外信贷增速创18年新高 -> 摩根士丹利：资金结构与相关数据观察
+Skip non-chart visual asset 8df52e12a560d9bbecae23481e27bb58b24e1b7e426d5b57b9645773df25e77d.jpg: score=-100;too_small:529x171
+Skip non-chart visual asset 33d6f67e30ec942e26d86b5d62fd50110fbb6f1a796fb1f0735d3dd114a65767.jpg: score=-100;too_small:529x151
+Skip non-chart visual asset 5c052ffba7e7411d7126368a4256a6f12f8f91dcba677841b38efc2eafb9134d.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 0e5d0f429504737ed104f55c5214e43b8098ca973fc1be1526283824b7c24360.jpg: score=1;large
+Skip non-chart visual asset 3710c059f77b3dd4483f7f623c3ba76affe65d068180c3ff4a971c3a5ce8995c.jpg: score=-100;too_small:529x154
+Skip non-chart visual asset 8e222433281aab50961b8445953b17c60bf23f0a3a2b421c46eed4de96779992.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 622a56a1891e5862c18f66dbc2d0ba7369cf23da429fe41fd7a4537c4be1d1ea.jpg: score=-100;too_small:437x106
+Skip non-chart visual asset e9c8a17434f1cb7e8422719c0dd611a95f3a8f524a3563bc1210a60053dc9cca.jpg: score=-100;too_small:504x115
+Skip non-chart visual asset 9299cf999a07e5b7dfe4d369f281580fbd5b14b1b0bfe5b704c3ff37fa47aeb7.jpg: score=-100;too_small:899x140
+Skip non-chart visual asset 85f1a030f6e7f48c8853478d2087d4898ddfc5d799c03fdfac39c9239ac4d2b7.jpg: score=-100;too_small:1295x68
+Skip non-chart visual asset d95b5e820dc3464dabb46673afab15be64f76613a245cf17c1b578e8472b4bf7.jpg: score=1;large
+Skip non-chart visual asset 8df44470317e82e8ca0513478b9038534c7e163e93b3342dc0e3e0337708889f.jpg: score=1;chart_ratio
+Skip non-chart visual asset 24259356c16eb4fbd5aee7d6b1bd708050c5a1f123257020f05a704b3051569e.jpg: score=-2;chart_ratio,square_without_chart_hint
+Skip non-chart visual asset e08c591b22fb580a3db844ef8c19736533439970d278921bbf9fee777c58f7b7.jpg: score=1;chart_ratio
+Skip non-chart visual asset 463fc9de76cec7b18d714c67c3cdbb556e39bf1c4bac678ec7c0276b2e5ed4f5.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.49,contrast,large
+Skip non-chart visual asset 63cb889f165875cf50ed6679002219bd6cdd3a232095ba679dda4a494bb2cb11.jpg: score=-100;too_small:432x67
+Skip non-chart visual asset 8446bc42b3c4cbeb6d88e9252f33bb1e383c622d8a7d9c5917dd1a1328b73ad4.jpg: score=0;chart_ratio,low_edge:0.03,large
+Skip non-chart visual asset 4dcdca6ba9563df7aff359c0c23803d2a6a6bcdb42563d9f7d67c5f6e2bca0db.jpg: score=-100;too_small:449x168
+Skip non-chart visual asset b29714ad6b12b06faf2edc5028992d244a8bc82dc912c7628078c87b976098d7.jpg: score=-100;too_small:417x232
+Neutralized WeChat title while keeping the report: 摩根士丹利：Workday护城河深厚但AI变现周期长 -> 摩根士丹利：Workday与AI及近期数据观察
+Skip non-chart visual asset dd2cacc3115cd4275ec7777d3ec3ac03ee3f884a3d4ddfdd5443e01de6cf1152.jpg: score=0;square_without_chart_hint,edge:0.23,large
+Skip non-chart visual asset f529965025dfa0e1c6efca9e14502a9d23b3ff07ed9821761a30832c1abfe64d.jpg: score=0;odd_ratio:7.58,edge:0.28,contrast
+Skip non-chart visual asset 5c475db56907eb32b51b7d64b80d0a2d23f47cc77d51b9686d733778916a6391.jpg: score=-100;too_small:442x90
+Skip non-chart visual asset 9af2c9b2763689c00c5a89a1f9d5e45b28cedca610cf93ab4cc994892c343f6f.jpg: score=-1;odd_ratio:7.58,edge:0.20
+Skip non-chart visual asset c90cb487d0c3cdb29915b2faa4731650c70c992ce3135c62194a5de2c1737180.jpg: score=-1;odd_ratio:7.35,edge:0.23
+Skip non-chart visual asset eb8455a8b6453d81d412eade1a2d8acfe87d0f6fe6ed497a80afab5be25fd277.jpg: score=-100;too_small:223x84
+Skip non-chart visual asset 90d27453721e79e9d57634e4ea8b7cb8df2f03a7ba34f186f69cc60179f2534e.jpg: score=2;edge:0.12
+Skip non-chart visual asset 4d6929adcaf10a0274aa664078e176fb2798dc239a403da960a1a102315a48b6.jpg: score=-100;too_small:1412x104
+Skip non-chart visual asset f97c1faafb4ef8012b9c270e0f006a330aa0071d31657655b0f550f96d5ed74d.jpg: score=0;square_without_chart_hint,edge:0.21,large
+Neutralized WeChat title while keeping the report: 瑞银：3M公司，二季度有机增长5.4%创近五年新高 -> 瑞银：3M公司业务与季度数据观察
+Skip non-chart visual asset f207bf7a82b0ac6e9d83c819ee79b8f823cad7f0037f3f6d78a0a92481b211fb.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,contrast
+Neutralized WeChat title while keeping the report: 野村：美元兑人民币中间价模型投影6.7716-7月23日 -> 野村：货币市场与相关指标观察
+Skip non-chart visual asset 537dc6683ee7f56889d9abedb6637a3d3e020422229dae93e424cce6185d7e87.jpg: score=-100;too_small:437x195
+Skip non-chart visual asset 8280328c6d44a34215655b434de7f467354bddb7b6bcd3199e05781cef522fef.jpg: score=-100;too_small:1409x84
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260723/shard_11; successful_reports=5; mineru_timed_out=True; mineru_attempts=2
+All batches completed successfully. Generated 5 report directories.
