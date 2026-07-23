@@ -2140,6 +2140,46 @@
     "adb:1162401": {
       "first_seen": "2026-07-22",
       "status": "downloaded"
+    },
+    "imf:0acff91b37a2ff6035c9285ffb1cb50e73262b68ceae3e57596358805308": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "imf:845674d55047ccfb74c53f3fb2eed8a2cec06161df11824a86bd968e25c2": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "imf:34803b0a5f1195d276436a6a4ce72114916a7aa464877f5a3d28a957fa58": {
+      "first_seen": "2026-07-23",
+      "status": "too_old"
+    },
+    "imf:757f2b7072a7812b0b9727c1df28947c3402b80d62ac7a13e3daca279f6a": {
+      "first_seen": "2026-07-23",
+      "status": "too_old"
+    },
+    "imf:48a2367f27ef2a25a8d5619fa430993700ef6a315a3d480fbcbbd503cd55": {
+      "first_seen": "2026-07-23",
+      "status": "too_old"
+    },
+    "worldbank:099836207232635550": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "worldbank:099718007232614921": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "worldbank:099444007232618273": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/blgrs_23jul26_462_e.htm": {
+      "first_seen": "2026-07-23",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/rese_23jul26_463_e.htm": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
     }
   }
 }
