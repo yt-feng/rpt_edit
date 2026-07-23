@@ -1,0 +1,543 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0001-31-HSBC-China Healthcare Marketing takeaways- The best non-AI play-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "AI退潮，医药板块成",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "HSBC：中国医疗健康非AI主题资金轮动",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-HSBC-China Healthcare Marketing takeaways- The best non-AI play-260721.pdf",
+      "cleaned_source_title": "HSBC-China Healthcare Marketing takeaways- The best non-AI play",
+      "institution_name": "HSBC",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "HSBC：AI中国HealthcareMarketingtakeaways",
+      "raw_candidates": [
+        "中国医疗健康非AI主题资金轮动",
+        "中国医疗健康板块6月反弹与CXO持仓变化",
+        "中国医疗健康非AI机会与资金结构观察"
+      ],
+      "cleaned_candidates": [
+        "HSBC：中国医疗健康非AI主题资金轮动",
+        "HSBC：中国医疗健康板块6月反弹与CXO持仓变化",
+        "HSBC：中国医疗健康非AI机会与资金结构观察",
+        "HSBC：AI中国HealthcareMarketingtakeaways",
+        "HSBC：中国医疗健康板块在AI叙事切换中的非AI机会"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：中国医疗健康板块6月反弹与CXO持仓变化",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "HSBC：AI中国HealthcareMarketingtakeaways",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：中国医疗健康板块在AI叙事切换中的非AI机会",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：中国医疗健康非AI主题资金轮动",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "HSBC：中国医疗健康非AI主题资金轮动"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0002-32-GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "模拟芯片复苏，TI率",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->公司观点更新 x1",
+      "sanitize_wechat_stock_line",
+      "remove_stock_parenthetical x2",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：德州仪器业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+      "cleaned_source_title": "GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：TexasInstrumentsInc.",
+      "raw_candidates": [
+        "德州仪器业绩与指引显示模拟芯片复苏势头",
+        "德州仪器第二季度营收54.6亿美元超预期",
+        "德州仪器工业与汽车终端市场同步复苏"
+      ],
+      "cleaned_candidates": [
+        "GS：德州仪器业绩与指引显示模拟芯片复苏势头",
+        "GS：德州仪器第二季度营收54.6亿美元超预期",
+        "GS：德州仪器工业与汽车终端市场同步复苏",
+        "GS：TexasInstrumentsInc.",
+        "GS：2.库存天数下降13天，但毛利率恢复速度仍存隐忧"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：德州仪器第二季度营收54.6亿美元超预期",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：德州仪器工业与汽车终端市场同步复苏",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：TexasInstrumentsInc.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：2.库存天数下降13天，但毛利率恢复速度仍存隐忧",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：德州仪器业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：德州仪器业绩与指引显示模拟芯片复苏势头",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：德州仪器业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0003-33-GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "特斯拉Q2利润为什么",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap-260722.pdf",
+      "cleaned_source_title": "GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：TeslaInc.(TSLA)Business",
+      "raw_candidates": [
+        "GS：特斯拉关键市场业务与技术进展及投资成本受关注",
+        "GS：特斯拉二季度利润率低于预期，市场关注业务进展",
+        "GS：特斯拉自动驾驶与机器人商业化进展及投入周期"
+      ],
+      "cleaned_candidates": [
+        "GS：特斯拉关键市场业务与技术进展及研究成本受关注",
+        "GS：特斯拉二季度利润率低于预期，市场关注业务进展",
+        "GS：特斯拉自动驾驶与机器人商业化进展及投入周期",
+        "GS：TeslaInc.(TSLA)Business",
+        "GS：FSD活跃订阅用户达到150万，环比增长16%，同比增长56%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：特斯拉二季度利润率低于预期，市场关注业务进展",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：特斯拉自动驾驶与机器人商业化进展及投入周期",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：TeslaInc.(TSLA)Business",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：FSD活跃订阅用户达到150万，环比增长16%，同比增长56%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：特斯拉关键市场业务与技术进展及研究成本受关注",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0004-34-HSBC-Hanbell Precise Machinery-002158--Buy- Sustainable growth prospects-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "这家公司，增长在后面",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：汉钟精机可持续业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-HSBC-Hanbell Precise Machinery-002158--Buy- Sustainable growth prospects-260721.pdf",
+      "cleaned_source_title": "HSBC-Hanbell Precise Machinery-002158--Buy- Sustainable growth prospects",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：HanbellPreciseMachinery002158",
+      "raw_candidates": [
+        "汉钟精机可持续增长前景",
+        "汉钟精机半导体真空泵收入2026年预计翻倍",
+        "汉钟精机数据中心磁悬浮压缩机市场2028年预计达169亿元"
+      ],
+      "cleaned_candidates": [
+        "HSBC：汉钟精机可持续增长前景",
+        "HSBC：汉钟精机半导体真空泵收入2026年预计翻倍",
+        "HSBC：汉钟精机数据中心磁悬浮压缩机市场2028年预计达169亿元",
+        "HSBC：HanbellPreciseMachinery002158",
+        "HSBC：测算，2028年全球数据中心磁悬浮压缩机市场规模可达169亿元人"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：汉钟精机半导体真空泵收入2026年预计翻倍",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "HSBC：汉钟精机数据中心磁悬浮压缩机市场2028年预计达169亿元",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "HSBC：HanbellPreciseMachinery002158",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：测算，2028年全球数据中心磁悬浮压缩机市场规模可达169亿元人",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：汉钟精机可持续业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：汉钟精机可持续增长前景",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：汉钟精机可持续业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0005-35-HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "地产板块的“K型复苏",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "HSBC：城市与住房数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery-260721.pdf",
+      "cleaned_source_title": "HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：中国房地产Soft1H26earningspricedin",
+      "raw_candidates": [
+        "中国房地产-2026上半年业绩已定价-仍押注2027年复苏",
+        "中国房地产-2026上半年业绩已定价-市场关注2027年复苏",
+        "中国房地产-二手房量价改善-市场关注2027年盈利修复"
+      ],
+      "cleaned_candidates": [
+        "HSBC：中国房地产-2026上半年业绩已定价-仍押注2027年复苏",
+        "HSBC：中国房地产-2026上半年业绩已定价-市场关注2027年复苏",
+        "HSBC：中国房地产-二手房量价改善-市场关注2027年盈利修复",
+        "HSBC：中国房地产Soft1H26earningspricedin",
+        "HSBC：7月17日，越秀地产发布盈利预警"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：中国房地产-二手房量价改善-市场关注2027年盈利修复",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：中国房地产Soft1H26earningspricedin",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：7月17日，越秀地产发布盈利预警",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：城市与住房数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：中国房地产-2026上半年业绩已定价-仍押注2027年复苏",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "HSBC：城市与住房数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

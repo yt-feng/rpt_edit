@@ -1,0 +1,76 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 5,
+    "timed_out": true,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0001-31-HSBC-China Healthcare Marketing takeaways- The best non-AI play-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0002-32-GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0003-33-GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap-260722.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0004-34-HSBC-Hanbell Precise Machinery-002158--Buy- Sustainable growth prospects-260721.pdf",
+        "state": "pending",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0005-35-HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery-260721.pdf",
+        "state": "pending",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0001-31-HSBC-China Healthcare Marketing takeaways- The best non-AI play-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0002-32-GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0003-33-GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0004-34-HSBC-Hanbell Precise Machinery-002158--Buy- Sustainable growth prospects-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8qvvc20k/pdfs/0005-35-HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery-260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
