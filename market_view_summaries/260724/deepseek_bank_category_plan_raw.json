@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "heading": "宏观与利率",
+      "report_ids": ["R003", "R008", "R015"]
+    },
+    {
+      "heading": "科技与AI",
+      "report_ids": ["R006", "R010", "R012", "R016", "R017", "R020"]
+    },
+    {
+      "heading": "能源与工业",
+      "report_ids": ["R002", "R005", "R014"]
+    },
+    {
+      "heading": "医疗与消费",
+      "report_ids": ["R011", "R018"]
+    },
+    {
+      "heading": "综合研究主题",
+      "report_ids": ["R001", "R004", "R007", "R009", "R013", "R019"]
+    }
+  ]
+}
