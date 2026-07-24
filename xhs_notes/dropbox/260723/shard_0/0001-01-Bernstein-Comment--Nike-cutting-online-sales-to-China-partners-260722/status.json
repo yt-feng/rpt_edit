@@ -1,0 +1,106 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_7lu8q6ky/pdfs/0001-01-Bernstein-Comment- Nike cutting online sales to China partners-260722.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "Nike 在中国砍掉",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：耐克在中国削减经销商线上销售渠道",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-01-Bernstein-Comment- Nike cutting online sales to China partners-260722.pdf",
+    "cleaned_source_title": "Bernstein-Comment- Nike cutting online sales to China partners",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：Comment",
+    "raw_candidates": [
+      "耐克在中国削减经销商线上销售渠道",
+      "耐克调整中国线上分销-2027年终止经销商渠道",
+      "耐克中国线上渠道策略-品牌方收回定价权"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：耐克在中国削减经销商线上销售渠道",
+      "Bernstein：耐克调整中国线上分销-2027年终止经销商渠道",
+      "Bernstein：耐克中国线上渠道策略-品牌方收回定价权",
+      "Bernstein：Comment",
+      "Bernstein：Bernstein测算的2至3个百分点的营收不确定性"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：耐克调整中国线上分销-2027年终止经销商渠道",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "Bernstein：耐克中国线上渠道策略-品牌方收回定价权",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：Comment",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：Bernstein测算的2至3个百分点的营收不确定性",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：耐克在中国削减经销商线上销售渠道",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：耐克在中国削减经销商线上销售渠道"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "470",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

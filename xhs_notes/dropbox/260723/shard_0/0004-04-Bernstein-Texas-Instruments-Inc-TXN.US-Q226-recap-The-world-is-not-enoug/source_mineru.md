@@ -1,0 +1,541 @@
+U.S. Semiconductors
+
+Texas Instruments Inc
+
+Rating
+
+Market-Perform
+
+Price Target
+
+TXN
+
+290.00 USD (250.00 OLD)
+
+![](images/eb0b6a78881e81fff557a8ce7073553e9b04d94da7f9c8eb5d65ef7310d5bedb.jpg)
+
+![](images/5804de50be86b844ffbab5c08315896e5c99d3704f9f9a3f58ff4fb72f1cab91.jpg)
+
+Stacy A. Rasgon, Ph.D.
++1 213 559 5917
+stacy.rasgon@bernsteinsg.com
+
+![](images/e4c0045a3bd6a0a824366458ef13554d4bf9fcb1c3e686f39d5536910d3e4eee.jpg)
+
+Alrick Shaw
++1 917 344 8454
+alrick.shaw@bernsteinsg.com
+
+Arpad von Nemes
++1 917 344 8461
+arpad.vonnemes@bernsteinsg.com
+
+Eva Zhang
++1 212 845 7839
+yiwei.zhang@bernsteinsg.com
+
+# Texas Instruments (TXN): Q226 recap - The world is not enough?
+
+Texas Instruments' Q2 results were strong (\$5,463M/\$2.14/61.4\% vs Street at \$5,234M/\$1.93/59.5\%, including a 5 cent benefit not in guidance) with continued industrial recovery and datacenter growth, and more positive auto performance. Industrial grew \~30\% YoY and \~10\% QoQ; Data center doubled Y/Y and rose\~20\% QoQ, and Automotive grew mid-teens \% YoY and climbed HSD\% QoQ. Personal electronics were flat YoY and were up HSD\% QoQ, while communications equipment continued to grow YoY and QoQ. Gross margins at 61.4\% were \~185bps above expectations on better revenues and loadings.
+
+Q3 guidance was well above consensus ( $5.90B$ / $2.40$ /\~62% vs Street $5.61B$ / $2.15$ /60.4%), seasonal to perhaps a touch above with similar drivers (industrial, datacenter, automotive etc, though with possibly weaker PE vs normal patterns). Capex was reiterated at in the $2$ - $3B$ range for the year, probably closer to the high end (vs \~ $4.6B$ in 2025).
+
+This was another solid print from the company as industrial strength persists, datacenter accelerates, and automotive grows more positive, and results were pretty clean; the only issue is that a strong beat was likely already expected given those dynamics are fairly well known at this point. From here the questions will probably center around how much longer the industrial cycle can continue (we note this was the company's strongest Q2 QoQ growth since 2009), how long it will take datacenter (currently low double digit % of sales?) to become truly meaningful, what happens to PE into year-end, and whether or not pricing actions can help drive gross margins higher; given we are moving into the 2H we would (as always) also watch seasonality into Q4 (which still appears to be mis-modeled by consensus, something to watch into October).
+
+Overall though we have few nitpicks to go after here and can see good things happening, though given valuation we prefer to look elsewhere in our space for now.
+
+Raising estimates and rolling valuation horizon forward to avg FY27/28, PT raised from \$250 to \$290 (30x, unchanged, on avg FY27/28 EPS). We rate TXN MP.
+
+## Investment Implications
+
+TXN (MP, \$290): TXN shares feel fully valued in the current environment.
+
+<table><tr><td>Reported EPS</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>TXN (USD)</td><td>5.45</td><td>8.33</td><td>9.16</td></tr><tr><td>OLD</td><td>--</td><td>7.62</td><td>8.22</td></tr></table>
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+![](images/d60a39b50ab8ccbbb5328794fde24d92f9f7c6d0cf92ea63ab63f329091710a8.jpg)
+
+<table><tr><td>Close Date</td><td>22 Jul 2026</td></tr><tr><td>TXN Close Price (USD)</td><td>294.19</td></tr><tr><td>Price Target (USD)</td><td>290.00</td></tr><tr><td>Upside/(Downside)</td><td>(1)%</td></tr><tr><td>52-Week Range</td><td>334.03/152.73</td></tr><tr><td>SPX</td><td>7,498.96</td></tr><tr><td>FYE</td><td>Dec</td></tr><tr><td>Div Yield</td><td>1.9%</td></tr><tr><td>Market Cap (USD) (M)</td><td>267,740</td></tr><tr><td>EV (USD) (M)</td><td>274,791</td></tr></table>
+
+<table><tr><td>Financials</td><td>F25A</td><td>F26E</td><td>F27E</td><td>CAGR</td></tr><tr><td>EBIT (M)</td><td>5,710</td><td>8,737</td><td>9,764</td><td>--</td></tr><tr><td>FCF (M)</td><td>2,603</td><td>8,159</td><td>9,523</td><td>--</td></tr><tr><td>Revenues (M)</td><td>17,682</td><td>21,661</td><td>23,171</td><td>--</td></tr></table>
+
+<table><tr><td>Performance</td><td>YTD</td><td>1M</td><td>6M</td><td>12M</td></tr><tr><td>Absolute (%)</td><td>69.6</td><td>(11.5)</td><td>50.9</td><td>36.9</td></tr><tr><td>SPX (%)</td><td>9.5</td><td>0.4</td><td>8.5</td><td>18.8</td></tr><tr><td>Relative (%)</td><td>60.0</td><td>(11.8)</td><td>42.4</td><td>18.0</td></tr></table>
+
+Price Performance, 1YR  
+Source: Bloomberg, Bernstein estimates and analysis.
+
+<table><tr><td>Valuation Metrics</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>Reported P/E (x)</td><td>54.0</td><td>35.3</td><td>32.1</td></tr></table>
+
+## DETAILS
+
+For our updated TXN model please click here: TXN model.
+
+Texas Instruments' Q2 results were strong (\$5,463M/\$2.14/61.4\% vs Street at \$5,234M/\$1.93/59.5\%, including a 5 cent benefit not in guidance) with continued industrial recovery and datacenter growth, and more positive auto performance. Industrial grew \~30\% YoY and \~10\% QoQ; Data center doubled Y/Y and rose\~20\% QoQ, and Automotive grew mid-teens\% YoY and climbed HSD\% QoQ. Personal electronics were flat YoY and were up HSD \% QoQ, while communications equipment continued to grow YoY and QoQ. Gross margins at 61.4\% were \~185bps above expectations on better revenues and loadings.
+
+\- Texas Instruments' results beat consensus on revenues and on EPS (\$5,463M/\$2.14 vs Street \$5,234M/\$1.93 and guidance \$5,200M/\$1.91) (Exhibit 1).
+
+\- Analog, Embedded and Other were all above expectations (Exhibit 2).
+
+\- Total revenue was up \~13% sequentially, better than typical seasonality (Exhibit 3) and grew \~23% YoY.
+
+\- Analog sales of \$4,365M were up \~11% QoQ and up \~26% YoY (Exhibit 5). Operating margins for the segment were 45.6%, up \~390bps QoQ.
+
+\- Embedded Processing sales of \$788M were up \~9% QoQ and up \~16% YoY (Exhibit 5). Segment operating margins came in at 21.3%, up \~440bps QoQ.
+
+\- Other Revenues of \$310M grew \~74% QoQ and were down \~2% YoY (Exhibit 5). Operating margins were 48.4% for the quarter.
+
+\- On a sequential basis, Datacenter revenue was up \~20%, Industrial was up \~10%, Auto was up HSD %, Personal Electronics was up HSD%, and Comms equipment grew as well. On a YoY basis, Datacenter grew the fastest (doubled), followed by Industrial (>30%), Auto (mid-teens %), Comms equipment (positive growth), and PE (\~flat) (Exhibit 6).
+
+\- Gross margins were 61.4% vs 58.0% last quarter (Exhibit 7), and were \~185bps above street expectations of 59.5% (Exhibit 8) due to higher revenue and loadings.
+
+\- Opex for the quarter came in at \$1,025M (excluding acquisition expenses of \$17M), higher than our estimate (\$1,010M) and consensus (\$1,006M).
+
+Q3 guidance was well above consensus on revenues and EPS, with margins also above (\$5.90B/\$2.40/\~62% vs Street \$5.61B/\$2.15/60.4%), seasonal to perhaps a touch above with similar drivers (industrial, datacenter, automotive etc, though with possibly weaker PE vs normal patterns). Capex was reiterated at in the \$2-\$3B range for the year, probably closer to the high end (vs \~\$4.6B in 2025).
+
+\- TXN sees Q326 at \$5.90B/\$2.40, well above Street expectations on revenues and EPS with Street at \$5,614M/\$2.15 (Exhibit 9). Revenues are seen up \~8% sequentially, seasonal to perhaps a bit above (Exhibit 4).
+
+\- Gross margins appear implicitly guided at \~62% or so (Exhibit 10, Exhibit 11), above consensus (60.4%).
+
+\- Opex is expected to be flattish QoQ (suggesting \~\$1,025M excluding acquisition charges, roughly in-line with consensus expectations of \$1,016M).
+
+\- EPS was guided to \$2.40 at the midpoint, above the Street at \$2.15 on higher revenues and margins.
+
+\- Management suggested that while Q3 is typically driven by personal electronics, strength will be more broad-based this time with continued upside in Industrial, Data Center and Automotive; it sounded like personal electronics will grow less than usual (unsurprising given the current memory dynamics).
+
+\- Capex for the year was reiterated to land between \$2B-\$3B, with capex focus shifting to assembly and test equipment. Management noted capex could possibly skew to high-end of this range given the demand profile.
+
+This was another solid print from the company as industrial strength persists, datacenter accelerates, and automotive grows more positive, and results were pretty clean; the only issue is that a strong beat was likely already expected given those dynamics are fairly well known at this point. From here the questions will probably center around how much longer the industrial cycle can continue (we note that this was the company's strongest Q2 QoQ growth since 2009), how long it will take datacenter (currently low double digit % of sales?) to become truly meaningful, what happens to PE into year-end, and whether or not pricing actions can help drive gross margins higher; given we are moving into the 2H we would (as always) also watch seasonality into Q4 (which still appears to be mis-modeled by consensus, something to watch into October). Overall though we have few nitpicks to go after here and can see good things happening, though given valuation we prefer to look elsewhere in our space for now.
+
+\- The analog recovery continues to pick up steam in industrial. Datacenter (power, etc), while not that big for the company (yet) remains (unsurprisingly) strong, doubling YoY in Q2 and accelerating from Q1 (where it rose 90% YoY). And automotive (which has been a touch squishier) seems to be growing more positive.
+
+\- From here questions will probably center around how much longer the industrial cycle (which has been going on for quite a few quarters) can persist (we note that this was the company's strongest Q2 QoQ growth since 2009...), how long it will take datacenter (we think currently low double-digit % of sales) to become truly meaningful, what happens to PE into year-end, and whether (or if) pricing can help to drive gross margins structurally higher (we note gross margins are likely going up a bit QoQ into Q3 but not a ton in the context of the sequential volume increase and supposed beginning of some pricing impact).
+
+\- Given we are moving into the 2H we would also (as always) call out a watch into Q4 seasonality, which once again may be mis-modeled by consensus; normal seasonal patterns into Q4 generally call for a high single to low double digit sequential decline (even an argument for lower PE exposure probably would not fully eliminate this), whereas consensus remains above this (something to watch into October) (Exhibit 12).
+
+\- Overall though we have few nitpicks to go after here, and can see good things happening as growth returns and FCF (and FCF/share) build to higher levels. Given valuations though (>30x our new 2027 EPS?) we prefer to look elsewhere for now (Exhibit 13).
+
+## Other Tidbits:
+
+\- Inventories on the balance sheet were down \$90M QoQ at \$4,605M vs last quarter at \$4,695M. Days of inventory came in at 196 vs. 209 last quarter (Exhibit 14). Inventory days are below their target range ("over 200 days").
+
+\- Cash return for the quarter totaled \$1,322M, combining dividends of \$1,295M and share repurchases of \$27M (Exhibit 15, Exhibit 16), while free cash flow grew again sequentially to \$2,738M vs \$1,399M last quarter (Exhibit 17).
+
+\- Over the last 12 months the company has returned \~90% of FCF, which has come down over the last quarters with FCF improving as the company is now nearing the end of its multi-year capex cycle (Exhibit 18).
+
+\- Capex was \$514M for the quarter, \~9% of revenue.
+
+We update our model, raising estimates. We roll our valuation horizon forward from FY27 to the average of FY27/28. We raise our price target to \$290 from \$250 previously (30x, unchanged, on avg FY27/28 EPS) and maintain our Market-Perform rating.
+
+• We update our model, raising estimates.
+
+\- Given we are halfway through the year, we roll our valuation horizon forward from FY27 to the average of FY27/28.
+
+\- We raise our FY2026 revenue estimate from \$20.7B to \$21.6B, FY2027 from \$21.7B to \$23.2B, and FY2028 from \$22.8B to \$24.3B.
+
+\- We raise our FY2026 GAAP diluted EPS estimate from \$7.62 to \$8.33, FY2027 from \$8.22 to \$9.16, and FY2028 from \$9.05 to \$9.94.
+
+\- We raise our price target from \$250 (\~30x, unchanged, on our FY27 GAAP diluted EPS of \$8.22) to \$290 (\~30x on the average of our FY27/28 GAAP diluted EPS estimates of \~\$9.55).
+
+• We maintain our Market-Perform rating.
+
+EXHIBIT 1: TXN Q2 results were above the high-end of the guidance and beat consensus both on top and bottom-line.
+
+<table><tr><td>Q226</td><td>Prior Guidance</td><td>Actual</td><td>Consensus</td><td>Actual vs. Consensus</td><td>Bernstein</td><td>Actual vs. Bernstein</td></tr><tr><td>Revenue ($M)</td><td>$5,200</td><td>$5,463</td><td>$5,234</td><td>$229</td><td>$5,201</td><td>$262</td></tr><tr><td>EPS</td><td>$1.91</td><td>$2.14</td><td>$1.93</td><td>$0.21</td><td>$1.91</td><td>$0.23</td></tr></table>
+
+Source: Company reports, Bloomberg, Bernstein estimates and analysis
+
+EXHIBIT 2: All segments were above expectations
+
+<table><tr><td>Q226 Actual vs Cons ($M)</td><td>Analog</td><td>Embedded</td><td>Other</td></tr><tr><td>Actual</td><td>$4,365</td><td>$788</td><td>$310</td></tr><tr><td>Consensus</td><td>$4,229</td><td>$775</td><td>$250</td></tr><tr><td>Difference</td><td>$136</td><td>$13</td><td>$60</td></tr><tr><td>Bernstein</td><td>$4,199</td><td>$752</td><td>$251</td></tr><tr><td>Difference</td><td>$166</td><td>$36</td><td>$59</td></tr></table>
+
+Source: Company reports, Bloomberg, Bernstein estimates and analysis
+
+EXHIBIT 3: Q2 revenues were up 13%, above seasonality (and the strongest since 2009)...  
+![](images/3344c5c4fb75e25c34aa0ce53633000cc7f75f3c89648b86a65a24caf2b54e53.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 4: ... with Q3 guided up \~8% QoQ, roughly in-line to above typical seasonality  
+![](images/542bc2ff60ed6ad1fe4c11f26073817e2b6ce44c515f9f0bf14849cd127ef868.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 5: Analog and Embedded were both up YoY and up QoQ, while Other revenue was up sequentially and down slightly YoY
+
+<table><tr><td>($MM)</td><td>Q122</td><td>Q222</td><td>Q322</td><td>Q422</td><td>Q123</td><td>Q223</td><td>Q323</td><td>Q423</td><td>Q124</td><td>Q224</td><td>Q324</td><td>Q424</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td></tr><tr><td colspan="19">Analog</td></tr><tr><td>Revenue ($M)</td><td>$ 3,816</td><td>$ 3,992</td><td>$ 3,993</td><td>$ 3,558</td><td>$ 3,289</td><td>$ 3,278</td><td>$ 3,353</td><td>$ 3,120</td><td>$ 2,836</td><td>$ 2,928</td><td>$ 3,223</td><td>$ 3,174</td><td>$ 3,210</td><td>$ 3,452</td><td>$ 3,729</td><td>$ 3,615</td><td>$ 3,924</td><td>$ 4,365</td></tr><tr><td>QoQ Growth</td><td>2%</td><td>5%</td><td>0%</td><td>(11%)</td><td>(8%)</td><td>(0%)</td><td>2%</td><td>(7%)</td><td>(9%)</td><td>3%</td><td>10%</td><td>(2%)</td><td>1%</td><td>8%</td><td>8%</td><td>(3%)</td><td>9%</td><td>11%</td></tr><tr><td>YoY Growth</td><td>16%</td><td>15%</td><td>13%</td><td>(5%)</td><td>(14%)</td><td>(18%)</td><td>(16%)</td><td>(12%)</td><td>(14%)</td><td>(11%)</td><td>(4%)</td><td>2%</td><td>13%</td><td>18%</td><td>16%</td><td>14%</td><td>22%</td><td>26%</td></tr><tr><td>Operating Profit ($M)</td><td>$ 2,150</td><td>$ 2,226</td><td>$ 2,185</td><td>$ 1,798</td><td>$ 1,574</td><td>$ 1,463</td><td>$ 1,504</td><td>$ 1,280</td><td>$ 1,008</td><td>$ 1,047</td><td>$ 1,316</td><td>$ 1,237</td><td>$ 1,206</td><td>$ 1,325</td><td>$ 1,486</td><td>$ 1,395</td><td>$ 1,638</td><td>$ 1,992</td></tr><tr><td>Operating Margin</td><td>56.3%</td><td>55.8%</td><td>54.7%</td><td>50.5%</td><td>47.9%</td><td>44.6%</td><td>44.9%</td><td>41.0%</td><td>35.5%</td><td>35.8%</td><td>40.8%</td><td>39.0%</td><td>37.6%</td><td>38.4%</td><td>39.8%</td><td>38.6%</td><td>41.7%</td><td>45.6%</td></tr><tr><td colspan="19">Embedded Processing</td></tr><tr><td>Revenue ($M)</td><td>$ 782</td><td>$ 821</td><td>$ 821</td><td>$ 837</td><td>$ 832</td><td>$ 894</td><td>$ 890</td><td>$ 752</td><td>$ 652</td><td>$ 615</td><td>$ 653</td><td>$ 613</td><td>$ 647</td><td>$ 679</td><td>$ 709</td><td>$ 662</td><td>$ 723</td><td>$ 788</td></tr><tr><td>QoQ Growth</td><td>2%</td><td>5%</td><td>-</td><td>2%</td><td>(1%)</td><td>7%</td><td>(0%)</td><td>(16%)</td><td>(13%)</td><td>(6%)</td><td>6%</td><td>(6%)</td><td>6%</td><td>5%</td><td>4%</td><td>(7%)</td><td>9%</td><td>9%</td></tr><tr><td>YoY Growth</td><td>2%</td><td>5%</td><td>11%</td><td>10%</td><td>6%</td><td>9%</td><td>8%</td><td>(10%)</td><td>(22%)</td><td>(31%)</td><td>(27%)</td><td>(18%)</td><td>(1%)</td><td>10%</td><td>9%</td><td>8%</td><td>12%</td><td>16%</td></tr><tr><td>Operating Profit ($M)</td><td>$ 315</td><td>$ 324</td><td>$ 321</td><td>$ 293</td><td>$ 237</td><td>$ 318</td><td>$ 258</td><td>$ 195</td><td>$ 105</td><td>$ 80</td><td>$ 109</td><td>$ 58</td><td>$ 40</td><td>$ 85</td><td>$ 108</td><td>$ 71</td><td>$ 122</td><td>$ 168</td></tr><tr><td>Operating Margin</td><td>40.3%</td><td>39.5%</td><td>39.1%</td><td>35.0%</td><td>28.5%</td><td>35.6%</td><td>29.0%</td><td>25.9%</td><td>16.1%</td><td>13.0%</td><td>16.7%</td><td>9.5%</td><td>6.2%</td><td>12.5%</td><td>15.2%</td><td>10.7%</td><td>16.9%</td><td>21.3%</td></tr><tr><td colspan="19">Other</td></tr><tr><td>Revenue ($M)</td><td>$ 307</td><td>$ 399</td><td>$ 427</td><td>$ 275</td><td>$ 258</td><td>$ 359</td><td>$ 289</td><td>$ 205</td><td>$ 173</td><td>$ 279</td><td>$ 275</td><td>$ 220</td><td>$ 212</td><td>$ 317</td><td>$ 304</td><td>$ 146</td><td>$ 178</td><td>$ 310</td></tr><tr><td>QoQ Growth</td><td>(1%)</td><td>30%</td><td>7%</td><td>(36%)</td><td>(6%)</td><td>39%</td><td>(19%)</td><td>(29%)</td><td>(16%)</td><td>61%</td><td>(1%)</td><td>(20%)</td><td>(4%)</td><td>50%</td><td>(4%)</td><td>(52%)</td><td>22%</td><td>74%</td></tr><tr><td>YoY Growth</td><td>27%</td><td>19%</td><td>20%</td><td>(11%)</td><td>(16%)</td><td>(10%)</td><td>(32%)</td><td>(25%)</td><td>(33%)</td><td>(22%)</td><td>(5%)</td><td>7%</td><td>23%</td><td>14%</td><td>11%</td><td>(34%)</td><td>(16%)</td><td>(2%)</td></tr><tr><td>Operating Profit ($M)</td><td>$ 98</td><td>$ 173</td><td>$ 172</td><td>$ 85</td><td>$ 123</td><td>$ 191</td><td>$ 130</td><td>$ 58</td><td>$ 173</td><td>$ 121</td><td>$ 129</td><td>$ 82</td><td>$ 78</td><td>$ 153</td><td>$ 69</td><td>$ 7</td><td>$ 48</td><td>$ 150</td></tr><tr><td>Operating Margin</td><td>31.9%</td><td>43.4%</td><td>40.3%</td><td>30.9%</td><td>47.7%</td><td>53.2%</td><td>45.0%</td><td>28.3%</td><td>100.0%</td><td>43.4%</td><td>46.9%</td><td>37.3%</td><td>36.8%</td><td>48.3%</td><td>22.7%</td><td>4.8%</td><td>27.0%</td><td>48.4%</td></tr><tr><td colspan="19">Total</td></tr><tr><td>Revenue ($M)</td><td>$ 4,905</td><td>$ 5,212</td><td>$ 5,241</td><td>$ 4,670</td><td>$ 4,379</td><td>$ 4,531</td><td>$ 4,532</td><td>$ 4,077</td><td>$ 3,661</td><td>$ 3,822</td><td>$ 4,151</td><td>$ 4,007</td><td>$ 4,069</td><td>$ 4,448</td><td>$ 4,742</td><td>$ 4,423</td><td>$ 4,825</td><td>$ 5,463</td></tr><tr><td>QoQ Growth</td><td>2%</td><td>6%</td><td>1%</td><td>(11%)</td><td>(6%)</td><td>3%</td><td>0%</td><td>(10%)</td><td>(10%)</td><td>4%</td><td>9%</td><td>(3%)</td><td>2%</td><td>9%</td><td>7%</td><td>(7%)</td><td>9%</td><td>13%</td></tr><tr><td>YoY Growth</td><td>14%</td><td>14%</td><td>13%</td><td>(3%)</td><td>(11%)</td><td>(13%)</td><td>(14%)</td><td>(13%)</td><td>(16%)</td><td>(16%)</td><td>(8%)</td><td>(2%)</td><td>11%</td><td>16%</td><td>14%</td><td>10%</td><td>19%</td><td>23%</td></tr><tr><td>Operating Profit ($M)</td><td>$ 2,563</td><td>$ 2,723</td><td>$ 2,678</td><td>$ 2,176</td><td>$ 1,934</td><td>$ 1,972</td><td>$ 1,892</td><td>$ 1,533</td><td>$ 1,286</td><td>$ 1,248</td><td>$ 1,554</td><td>$ 1,377</td><td>$ 1,324</td><td>$ 1,563</td><td>$ 1,663</td><td>$ 1,473</td><td>$ 1,808</td><td>$ 2,310</td></tr><tr><td>Operating Margin</td><td>52.3%</td><td>52.2%</td><td>51.1%</td><td>46.6%</td><td>44.2%</td><td>43.5%</td><td>41.7%</td><td>37.6%</td><td>35.1%</td><td>32.7%</td><td>37.4%</td><td>34.4%</td><td>32.5%</td><td>35.1%</td><td>35.1%</td><td>33.3%</td><td>37.5%</td><td>42.3%</td></tr></table>
+
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 6: Datacenter and Industrial grew the strongest in the quarter on a YoY basis  
+YoY and QoQ growth by end market in 2Q26  
+![](images/697a985b55ade54fd5d5d9f70b2dc665e67e83f37c6edd821f7a0bc67ffe7301.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 7: Gross margins were up \~335bps QoQ...  
+![](images/d53eb8a7cbc26b407d0fbb7181643416cf93cf29f1a30a5bd00398881f070351.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 8: ...and beat expectations by \~185bps
+
+<table><tr><td rowspan="2"></td><td colspan="3">Actual</td></tr><tr><td>Consensus</td><td>Actual</td><td>Δ (bps)</td></tr><tr><td>Q415</td><td>57.6%</td><td>58.5%</td><td>90</td></tr><tr><td>Q116</td><td>58.4%</td><td>60.6%</td><td>220</td></tr><tr><td>Q216</td><td>60.4%</td><td>61.2%</td><td>76</td></tr><tr><td>Q316</td><td>61.7%</td><td>62.0%</td><td>30</td></tr><tr><td>Q416</td><td>61.6%</td><td>62.5%</td><td>87</td></tr><tr><td>Q117</td><td>62.2%</td><td>63.0%</td><td>76</td></tr><tr><td>Q217</td><td>63.3%</td><td>64.3%</td><td>100</td></tr><tr><td>Q317</td><td>64.1%</td><td>64.5%</td><td>40</td></tr><tr><td>Q417</td><td>65.1%</td><td>65.1%</td><td>-</td></tr><tr><td>Q118</td><td>64.3%</td><td>64.6%</td><td>28</td></tr><tr><td>Q218</td><td>64.8%</td><td>65.2%</td><td>35</td></tr><tr><td>Q318</td><td>65.4%</td><td>65.8%</td><td>41</td></tr><tr><td>Q419</td><td>64.5%</td><td>64.8%</td><td>30</td></tr><tr><td>Q119</td><td>63.4%</td><td>62.9%</td><td>(53)</td></tr><tr><td>Q219</td><td>63.4%</td><td>64.3%</td><td>96</td></tr><tr><td>Q319</td><td>64.8%</td><td>64.9%</td><td>6</td></tr><tr><td>Q419</td><td>62.6%</td><td>62.6%</td><td>(3)</td></tr><tr><td>Q120</td><td>61.8%</td><td>62.7%</td><td>93</td></tr><tr><td>Q220</td><td>61.4%</td><td>64.3%</td><td>286</td></tr><tr><td>Q320</td><td>64.4%</td><td>64.3%</td><td>(14)</td></tr><tr><td>Q420</td><td>64.1%</td><td>64.9%</td><td>82</td></tr><tr><td>Q121</td><td>64.7%</td><td>65.2%</td><td>48</td></tr><tr><td>Q221</td><td>65.8%</td><td>67.2%</td><td>138</td></tr><tr><td>Q321</td><td>67.0%</td><td>67.9%</td><td>87</td></tr><tr><td>Q421</td><td>67.2%</td><td>69.3%</td><td>212</td></tr><tr><td>Q122</td><td>69.1%</td><td>70.2%</td><td>112</td></tr><tr><td>Q222</td><td>69.2%</td><td>69.6%</td><td>35</td></tr><tr><td>Q322</td><td>68.8%</td><td>69.0%</td><td>17</td></tr><tr><td>Q422</td><td>66.7%</td><td>66.1%</td><td>(64)</td></tr><tr><td>Q123</td><td>64.3%</td><td>65.4%</td><td>104</td></tr><tr><td>Q223</td><td>64.5%</td><td>64.2%</td><td>(31)</td></tr><tr><td>Q323</td><td>62.9%</td><td>62.1%</td><td>(79)</td></tr><tr><td>Q423</td><td>60.1%</td><td>59.6%</td><td>(46)</td></tr><tr><td>Q124</td><td>56.5%</td><td>57.2%</td><td>74</td></tr><tr><td>Q224</td><td>57.1%</td><td>57.8%</td><td>76</td></tr><tr><td>Q324</td><td>58.4%</td><td>59.6%</td><td>116</td></tr><tr><td>Q424</td><td>57.2%</td><td>57.7%</td><td>53</td></tr><tr><td>Q125</td><td>55.4%</td><td>56.8%</td><td>142</td></tr><tr><td>Q225</td><td>57.2%</td><td>57.9%</td><td>66</td></tr><tr><td>Q325</td><td>57.7%</td><td>57.4%</td><td>(31)</td></tr><tr><td>Q425</td><td>54.9%</td><td>55.9%</td><td>104</td></tr><tr><td>Q126</td><td>56.1%</td><td>58.0%</td><td>188</td></tr><tr><td>Q226</td><td>59.5%</td><td>61.4%</td><td>185</td></tr><tr><td>Average</td><td>62.2%</td><td>62.9%</td><td>65</td></tr></table>
+
+Source: Bloomberg, Company reports, Bernstein analysis
+
+EXHIBIT 9: Q326 guidance was above consensus on revenues, gross margin and on EPS Q226 Results, Q326 Guidance
+
+<table><tr><td>Metric</td><td>Q226 Results</td><td>Q326 Company Guidance</td><td>Guidance Midpoint</td><td>Prior Consensus Expectations for Q326</td></tr><tr><td>Revenue ($M)</td><td>$5,463</td><td>$5,650-$6,150</td><td>$5,900</td><td>$5,614</td></tr><tr><td>EPS</td><td>$2.14</td><td>$2.23-$2.57</td><td>$2.40</td><td>$2.15</td></tr><tr><td>Gross Margin (%)</td><td>61.4%</td><td colspan="2">~62% (implied)</td><td>60.4%</td></tr><tr><td>Opex</td><td>$1,025</td><td colspan="2">Flattish QoQ</td><td>$1,016</td></tr></table>
+
+Source: Company reports, Bloomberg estimates, Bernstein analysis
+
+EXHIBIT 10: The Q3 guide implies gross margins at \~62%, roughly up \~50bps sequentially
+
+<table><tr><td></td><td>Q226A</td><td>Q326 Implied Guidance</td><td>Δ</td></tr><tr><td>Revenue</td><td>$5,463</td><td>$5,900</td><td>8.0%</td></tr><tr><td>COGS</td><td>$2,111</td><td>$2,248</td><td>6.5%</td></tr><tr><td>Gross Profit</td><td>$3,352</td><td>$3,652</td><td>8.9%</td></tr><tr><td>Gross Margin %</td><td>61.4%</td><td>61.9%</td><td>54</td></tr><tr><td>R&amp;D+SG&amp;A</td><td>$1,025</td><td>$1,025</td><td>0.0%</td></tr><tr><td>Acquisition+Restructuring</td><td>$17</td><td>$17</td><td></td></tr><tr><td>Expenses</td><td>$1,042</td><td>$1,042</td><td>0.0%</td></tr><tr><td>Operating Profit</td><td>$2,310</td><td>$2,610</td><td>13.0%</td></tr><tr><td>Other Income + Interest expense</td><td>-$72</td><td>($72)</td><td></td></tr><tr><td>EBT</td><td>$2,238</td><td>$2,538</td><td>13.4%</td></tr><tr><td>Taxes</td><td>$258</td><td>$330</td><td>27.9%</td></tr><tr><td>Tax Rate</td><td>11.5%</td><td>13.0%</td><td>147</td></tr><tr><td>Net Income</td><td>$1,980</td><td>$2,208</td><td>11.5%</td></tr><tr><td>ASC 260</td><td>$0</td><td>$0</td><td></td></tr><tr><td>Net Income</td><td>$1,980</td><td>$2,208</td><td>11.5%</td></tr><tr><td>Diluted Shares</td><td>920</td><td>920</td><td>0.0%</td></tr><tr><td>EPS</td><td>$2.14</td><td>$2.40</td><td>12.1%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+<table><tr><td rowspan="2" colspan="2"></td><td colspan="4">Q326E Other Income + Net Interest Expense ($M)</td></tr><tr><td>-$90.0</td><td>-$80.0</td><td>-$70.0</td><td>-$60.0</td></tr><tr><td rowspan="5">Q2 tax rate</td><td>12.5%</td><td>62.0%</td><td>61.8%</td><td>61.6%</td><td>61.4%</td></tr><tr><td>12.8%</td><td>62.1%</td><td>61.9%</td><td>61.7%</td><td>61.6%</td></tr><tr><td>13.0%</td><td>62.2%</td><td>62.0%</td><td>61.9%</td><td>61.7%</td></tr><tr><td>13.3%</td><td>62.3%</td><td>62.2%</td><td>62.0%</td><td>61.8%</td></tr><tr><td>13.5%</td><td>62.5%</td><td>62.3%</td><td>62.1%</td><td>61.9%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+EXHIBIT 12: Q4 revenue estimates again appear potentially mismodeled, with street estimates only down \~LSD% sequentially, above pre-COVID seasonality of down \~HSD% to \~LDD%
+
+TXN Q4oQ3 Seasonality  
+![](images/2443dfd6701da475778a01250a34ede6a1315dc687b91ce9c61ffb70c360d6a3.jpg)  
+Q4oQ3 Sequential Revenue Growth Consensus QoQ Forecast 2013-2019 Avg Seasonality  
+Source: Company reports, Bloomberg, Bernstein analysis
+
+EXHIBIT 13: TXN remains richly valued  
+Texas Instruments Price-to-Forward Earnings  
+![](images/97686dfb8a6ad2ef014b06debd1c65cc68949c3ba04861005a8fcb5393f67f18.jpg)  
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 14: In Q2, TXN inventories declined \$90M QoQ, and inventory days declined to 196 days vs. 209 in Q1  
+![](images/56be06d35515581685e6b11cdc4331531de76963b73ded6286c30786731cdb14.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 15: Dividends have been increasing every year with annualized dividends in 2026 up \~4% YoY  
+TXN Annualized Dividend Per Share
+2013 - 2026 (Q2)  
+![](images/ca36f54157ee1c7bc07703d4e384a0fccef187afa5ce72e58c4666303c6e37c8.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 16: TXN bought back \$27M of shares in Q2  
+TXN Stock Repurchases (\$ Millions)  
+![](images/cf792dfe471b34ab02089e12b7939ab60c82d148da54969463adfb39399d3f5f.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 17: TXN FCF was up meaningfully QoQ in Q2 given higher revenues and CHIPS Act incentives  
+![](images/9fe914e8d2dfc2882847d8aa5029bb6a0e71bea5032b03ea869e07d541829588.jpg)  
+Since 2025 FCF includes CHIPS Act incentives (grants and investment tax credits) received Source: Company reports, Bernstein analysis
+
+EXHIBIT 18: TTM cash returns as % of FCF have been coming down as FCF has begun to inflect up, with Q2 at 89% TTM Cash Return as % of FCF  
+![](images/ddcea439ea890a1db055e9baa198996b3903f26fa913e6e2c359d121d3dc22d9.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 19: TXN Income Statement
+
+<table><tr><td colspan="17">Texas Instruments: Income Statement ($ MM)</td></tr><tr><td>TXN (Calendar Years)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Revenue</td><td>17,682.0</td><td>21,661.1</td><td>23,171.2</td><td>24,336.7</td><td>4,069.0</td><td>4,448.0</td><td>4,742.0</td><td>4,423.0</td><td>4,825.0</td><td>5,463.0</td><td>5,901.7</td><td>5,471.4</td><td>5,411.3</td><td>5,832.7</td><td>6,185.1</td><td>5,742.2</td></tr><tr><td>COGS</td><td>7,599.0</td><td>8,480.8</td><td>8,830.5</td><td>9,040.5</td><td>1,756.0</td><td>1,873.0</td><td>2,019.0</td><td>1,951.0</td><td>2,026.0</td><td>2,111.0</td><td>2,244.4</td><td>2,099.3</td><td>2,089.7</td><td>2,220.0</td><td>2,334.8</td><td>2,186.0</td></tr><tr><td>Gross Profit</td><td>10,083.0</td><td>13,180.4</td><td>14,340.7</td><td>15,296.2</td><td>2,313.0</td><td>2,575.0</td><td>2,723.0</td><td>2,472.0</td><td>2,799.0</td><td>3,352.0</td><td>3,657.3</td><td>3,372.1</td><td>3,321.6</td><td>3,612.6</td><td>3,850.2</td><td>3,556.3</td></tr><tr><td>R&amp;D</td><td>2,083.0</td><td>2,120.4</td><td>2,232.0</td><td>2,322.0</td><td>517.0</td><td>527.0</td><td>518.0</td><td>521.0</td><td>510.0</td><td>535.0</td><td>535.0</td><td>540.4</td><td>551.2</td><td>562.2</td><td>556.6</td><td>562.1</td></tr><tr><td>SG&amp;A</td><td>1,860.0</td><td>1,938.9</td><td>2,044.3</td><td>2,126.7</td><td>472.0</td><td>485.0</td><td>457.0</td><td>446.0</td><td>464.0</td><td>490.0</td><td>490.0</td><td>494.9</td><td>504.8</td><td>514.9</td><td>509.7</td><td>514.8</td></tr><tr><td>Other Operating Expenses</td><td>117.0</td><td>68.0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>85.0</td><td>32.0</td><td>17.0</td><td>17.0</td><td>17.0</td><td>17.0</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Total Operating Expenses</td><td>4,060.0</td><td>4,127.3</td><td>4,276.3</td><td>4,448.6</td><td>989.0</td><td>1,012.0</td><td>1,060.0</td><td>999.0</td><td>991.0</td><td>1,042.0</td><td>1,042.0</td><td>1,052.3</td><td>1,056.0</td><td>1,077.1</td><td>1,066.3</td><td>1,077.0</td></tr><tr><td>Operating Income</td><td>6,023.0</td><td>9,053.1</td><td>10,064.4</td><td>10,847.6</td><td>1,324.0</td><td>1,563.0</td><td>1,663.0</td><td>1,473.0</td><td>1,808.0</td><td>2,310.0</td><td>2,615.3</td><td>2,319.8</td><td>2,265.6</td><td>2,535.6</td><td>2,783.9</td><td>2,479.3</td></tr><tr><td>Other Income (Expense), Net</td><td>(313.0)</td><td>(316.0)</td><td>(300.0)</td><td>(300.0)</td><td>(48.0)</td><td>(85.0)</td><td>(79.0)</td><td>(101.0)</td><td>(94.0)</td><td>(72.0)</td><td>(75.0)</td><td>(75.0)</td><td>(75.0)</td><td>(75.0)</td><td>(75.0)</td><td>(75.0)</td></tr><tr><td>Pre-Tax Income</td><td>5,710.0</td><td>8,737.1</td><td>9,764.4</td><td>10,547.6</td><td>1,276.0</td><td>1,478.0</td><td>1,584.0</td><td>1,372.0</td><td>1,714.0</td><td>2,238.0</td><td>2,540.3</td><td>2,244.8</td><td>2,190.6</td><td>2,460.6</td><td>2,708.9</td><td>2,404.3</td></tr><tr><td>Tax provision (Benefit)</td><td>709.0</td><td>1,049.1</td><td>1,318.2</td><td>1,423.9</td><td>97.0</td><td>183.0</td><td>220.0</td><td>209.0</td><td>169.0</td><td>258.0</td><td>330.2</td><td>291.8</td><td>295.7</td><td>332.2</td><td>365.7</td><td>324.6</td></tr><tr><td>Earnings of Disc. Ops &amp; Other</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>GAAP Net Income</td><td>5,001.0</td><td>7,688.0</td><td>8,446.2</td><td>9,123.7</td><td>1,179.0</td><td>1,295.0</td><td>1,364.0</td><td>1,163.0</td><td>1,545.0</td><td>1,980.0</td><td>2,210.1</td><td>1,953.0</td><td>1,894.9</td><td>2,128.4</td><td>2,343.2</td><td>2,079.7</td></tr><tr><td>Impact of ASC 260 (assume 0.5% of Net Income)</td><td>$ (26.2)</td><td>$ (38.4)</td><td>$ (42.2)</td><td>$ (45.6)</td><td>(5.9)</td><td>(6.5)</td><td>(6.8)</td><td>(7.0)</td><td>(7.7)</td><td>(9.9)</td><td>(11.1)</td><td>(9.8)</td><td>(9.5)</td><td>(10.6)</td><td>(11.7)</td><td>(10.4)</td></tr><tr><td>GAAP EPS, Basic</td><td>$ 5.48</td><td>$ 8.39</td><td>$ 9.24</td><td>$ 10.03</td><td>$ 1.29</td><td>$ 1.42</td><td>$ 1.49</td><td>$ 1.27</td><td>$ 1.69</td><td>$ 2.16</td><td>$ 2.41</td><td>$ 2.13</td><td>$ 2.07</td><td>$ 2.33</td><td>$ 2.56</td><td>$ 2.28</td></tr><tr><td>GAAP EPS, Diluted</td><td>$ 5.45</td><td>$ 8.33</td><td>$ 9.16</td><td>$ 9.94</td><td>$ 1.28</td><td>$ 1.41</td><td>$ 1.48</td><td>$ 1.27</td><td>$ 1.68</td><td>$ 2.14</td><td>$ 2.39</td><td>$ 2.11</td><td>$ 2.05</td><td>$ 2.31</td><td>$ 2.54</td><td>$ 2.26</td></tr><tr><td>Shares Outstanding, Basic</td><td>909</td><td>911</td><td>910</td><td>906</td><td>910</td><td>908</td><td>909</td><td>907</td><td>909</td><td>912</td><td>912</td><td>912</td><td>911</td><td>910</td><td>909</td><td>908</td></tr><tr><td>Shares Outstanding, Diluted</td><td>913</td><td>919</td><td>918</td><td>914</td><td>916</td><td>912</td><td>914</td><td>911</td><td>914</td><td>920</td><td>920</td><td>920</td><td>919</td><td>918</td><td>917</td><td>916</td></tr><tr><td colspan="17"></td></tr><tr><td>Margins</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Gross Margin</td><td>57.0%</td><td>60.8%</td><td>61.9%</td><td>62.9%</td><td>56.8%</td><td>57.9%</td><td>57.4%</td><td>55.9%</td><td>58.0%</td><td>61.4%</td><td>62.0%</td><td>61.6%</td><td>61.4%</td><td>61.9%</td><td>62.3%</td><td>61.9%</td></tr><tr><td>PF Gross Margin</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>% R&amp;D</td><td>11.8%</td><td>9.8%</td><td>9.6%</td><td>9.5%</td><td>12.7%</td><td>11.8%</td><td>10.9%</td><td>11.8%</td><td>10.6%</td><td>9.8%</td><td>9.1%</td><td>9.9%</td><td>10.2%</td><td>9.6%</td><td>9.0%</td><td>9.8%</td></tr><tr><td>% SG&amp;A</td><td>10.5%</td><td>9.0%</td><td>8.8%</td><td>8.7%</td><td>11.6%</td><td>10.9%</td><td>9.6%</td><td>10.1%</td><td>9.6%</td><td>9.0%</td><td>8.3%</td><td>9.0%</td><td>9.3%</td><td>8.8%</td><td>8.2%</td><td>9.0%</td></tr><tr><td>% Other Op. Expenses</td><td>0.7%</td><td>0.3%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>1.8%</td><td>0.7%</td><td>0.4%</td><td>0.3%</td><td>0.3%</td><td>0.3%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Operating Margin</td><td>34.1%</td><td>41.8%</td><td>43.4%</td><td>44.6%</td><td>32.5%</td><td>35.1%</td><td>35.1%</td><td>33.3%</td><td>37.5%</td><td>42.3%</td><td>44.3%</td><td>42.4%</td><td>41.9%</td><td>43.5%</td><td>45.0%</td><td>43.2%</td></tr><tr><td>Tax Rate</td><td>12.4%</td><td>12.0%</td><td>13.5%</td><td>13.5%</td><td>7.6%</td><td>12.4%</td><td>13.9%</td><td>15.2%</td><td>9.9%</td><td>11.5%</td><td>13.0%</td><td>13.0%</td><td>13.5%</td><td>13.5%</td><td>13.5%</td><td>13.5%</td></tr><tr><td>Net Income Margin</td><td>28.3%</td><td>35.5%</td><td>36.5%</td><td>37.5%</td><td>29.0%</td><td>29.1%</td><td>28.8%</td><td>26.3%</td><td>32.0%</td><td>36.2%</td><td>37.4%</td><td>35.7%</td><td>35.0%</td><td>36.5%</td><td>37.9%</td><td>36.2%</td></tr><tr><td colspan="17"></td></tr><tr><td>Year over Year Growth (%)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Revenues</td><td>13.0%</td><td>22.5%</td><td>7.0%</td><td>5.0%</td><td>11.1%</td><td>16.4%</td><td>14.2%</td><td>10.4%</td><td>18.6%</td><td>22.8%</td><td>24.5%</td><td>23.7%</td><td>12.2%</td><td>6.8%</td><td>4.8%</td><td>5.0%</td></tr><tr><td>Operating Income</td><td>10.2%</td><td>50.3%</td><td>11.2%</td><td>7.8%</td><td>3.0%</td><td>25.2%</td><td>7.0%</td><td>7.0%</td><td>36.6%</td><td>47.8%</td><td>57.3%</td><td>57.5%</td><td>25.3%</td><td>9.8%</td><td>6.4%</td><td>6.9%</td></tr><tr><td>Net Income</td><td>4.2%</td><td>53.7%</td><td>9.9%</td><td>8.0%</td><td>6.7%</td><td>14.9%</td><td>0.1%</td><td>-3.5%</td><td>31.0%</td><td>52.9%</td><td>62.0%</td><td>67.9%</td><td>22.6%</td><td>7.5%</td><td>6.0%</td><td>6.5%</td></tr><tr><td>Shares Outstanding, Diluted</td><td>-0.6%</td><td>0.5%</td><td>-0.1%</td><td>-0.4%</td><td>-0.1%</td><td>-0.8%</td><td>-0.6%</td><td>-0.9%</td><td>-0.2%</td><td>0.8%</td><td>0.7%</td><td>1.0%</td><td>0.5%</td><td>-0.2%</td><td>-0.3%</td><td>-0.4%</td></tr><tr><td>GAAP EPS, Diluted</td><td>4.8%</td><td>52.8%</td><td>10.0%</td><td>8.5%</td><td>6.8%</td><td>15.8%</td><td>0.8%</td><td>-2.7%</td><td>31.3%</td><td>51.6%</td><td>61.0%</td><td>66.5%</td><td>22.0%</td><td>7.7%</td><td>6.4%</td><td>7.0%</td></tr><tr><td colspan="17"></td></tr><tr><td>Sequential Growth (%)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Revenue</td><td></td><td></td><td></td><td></td><td>1.5%</td><td>9.3%</td><td>6.6%</td><td>-6.7%</td><td>9.1%</td><td>13.2%</td><td>8.0%</td><td>-7.3%</td><td>-1.1%</td><td>7.8%</td><td>6.0%</td><td>-7.2%</td></tr><tr><td>Operating Income</td><td></td><td></td><td></td><td></td><td>-3.8%</td><td>18.1%</td><td>6.4%</td><td>-11.4%</td><td>22.7%</td><td>27.8%</td><td>13.2%</td><td>-11.3%</td><td>-2.3%</td><td>11.9%</td><td>9.8%</td><td>-10.9%</td></tr><tr><td>GAAP EPS, Diluted</td><td></td><td></td><td></td><td></td><td>-1.8%</td><td>10.3%</td><td>5.1%</td><td>-14.5%</td><td>32.5%</td><td>27.3%</td><td>11.6%</td><td>-11.6%</td><td>-2.9%</td><td>12.4%</td><td>10.2%</td><td>-11.1%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+EXHIBIT 20: TXN Balance Sheet and Cash Flow Statement
+
+<table><tr><td colspan="9">Texas Instruments: Balance Sheet ($ MM)</td><td colspan="4"></td><td colspan="4"></td></tr><tr><td>TXN (Calendar Years)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Cash &amp; Short Term Investments</td><td>4,881.0</td><td>9,441.9</td><td>11,464.0</td><td>13,661.9</td><td>5,005.0</td><td>5,359.0</td><td>5,186.0</td><td>4,881.0</td><td>5,103.0</td><td>7,001.0</td><td>7,656.8</td><td>9,441.9</td><td>9,338.4</td><td>9,524.1</td><td>9,921.6</td><td>11,464.0</td></tr><tr><td>Accounts Receivable</td><td>1,963.0</td><td>2,370.0</td><td>2,420.0</td><td>2,470.0</td><td>1,860.0</td><td>1,934.0</td><td>2,062.0</td><td>1,963.0</td><td>2,245.0</td><td>2,520.0</td><td>2,570.0</td><td>2,370.0</td><td>2,470.0</td><td>2,570.0</td><td>2,620.0</td><td>2,420.0</td></tr><tr><td>Inventories</td><td>4,804.0</td><td>4,665.2</td><td>4,857.7</td><td>4,964.7</td><td>4,687.0</td><td>4,812.0</td><td>4,829.0</td><td>4,804.0</td><td>4,695.0</td><td>4,605.0</td><td>4,738.3</td><td>4,665.2</td><td>4,759.8</td><td>4,810.0</td><td>4,929.1</td><td>4,857.7</td></tr><tr><td>Other Current Assets</td><td>2,102.0</td><td>1,631.0</td><td>1,631.0</td><td>1,631.0</td><td>1,534.0</td><td>2,379.0</td><td>1,799.0</td><td>2,102.0</td><td>1,753.0</td><td>1,631.0</td><td>1,631.0</td><td>1,631.0</td><td>1,631.0</td><td>1,631.0</td><td>1,631.0</td><td>1,631.0</td></tr><tr><td>Total Current Assets</td><td>13,750.0</td><td>18,108.1</td><td>20,372.7</td><td>22,727.6</td><td>13,086.0</td><td>14,484.0</td><td>13,876.0</td><td>13,750.0</td><td>13,796.0</td><td>15,757.0</td><td>16,596.1</td><td>18,108.1</td><td>18,199.2</td><td>18,535.2</td><td>19,101.7</td><td>20,372.7</td></tr><tr><td>Net PP&amp;E</td><td>12,320.0</td><td>12,185.4</td><td>12,179.8</td><td>12,204.9</td><td>11,811.0</td><td>12,321.0</td><td>12,348.0</td><td>12,320.0</td><td>12,145.0</td><td>11,911.0</td><td>12,040.0</td><td>12,185.4</td><td>12,202.3</td><td>12,211.8</td><td>12,205.6</td><td>12,179.8</td></tr><tr><td>Goodwill</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,362.0</td><td>4,362.0</td><td>4,362.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td><td>4,330.0</td></tr><tr><td>Other Long-Term Assets</td><td>4,185.0</td><td>3,384.0</td><td>3,384.0</td><td>3,384.0</td><td>4,498.0</td><td>3,766.0</td><td>4,418.0</td><td>4,185.0</td><td>4,122.0</td><td>3,884.0</td><td>4,134.0</td><td>3,384.0</td><td>3,634.0</td><td>3,884.0</td><td>4,134.0</td><td>3,384.0</td></tr><tr><td>Total Long-Term Assets</td><td>20,835.0</td><td>19,899.4</td><td>19,893.8</td><td>19,918.9</td><td>20,671.0</td><td>20,449.0</td><td>21,128.0</td><td>20,835.0</td><td>20,597.0</td><td>20,125.0</td><td>20,504.0</td><td>19,899.4</td><td>20,166.3</td><td>20,425.8</td><td>20,669.6</td><td>19,893.8</td></tr><tr><td>Total Assets</td><td>34,585.0</td><td>38,007.5</td><td>40,266.4</td><td>42,646.5</td><td>33,757.0</td><td>34,933.0</td><td>35,004.0</td><td>34,585.0</td><td>34,393.0</td><td>35,882.0</td><td>37,100.0</td><td>38,007.5</td><td>38,365.5</td><td>38,960.9</td><td>39,771.3</td><td>40,266.4</td></tr><tr><td>Accounts Payable</td><td>756.0</td><td>680.0</td><td>680.0</td><td>680.0</td><td>866.0</td><td>881.0</td><td>779.0</td><td>756.0</td><td>638.0</td><td>680.0</td><td>680.0</td><td>680.0</td><td>680.0</td><td>680.0</td><td>680.0</td><td>680.0</td></tr><tr><td>Short Term Debt</td><td>500.0</td><td>1,149.0</td><td>1,149.0</td><td>1,149.0</td><td>-</td><td>-</td><td>500.0</td><td>500.0</td><td>1,149.0</td><td>1,149.0</td><td>1,149.0</td><td>1,149.0</td><td>1,149.0</td><td>1,149.0</td><td>1,149.0</td><td>1,149.0</td></tr><tr><td>Other Current Liabilities</td><td>1,903.0</td><td>1,415.0</td><td>1,415.0</td><td>1,415.0</td><td>1,623.0</td><td>1,611.0</td><td>1,839.0</td><td>1,903.0</td><td>1,309.0</td><td>1,415.0</td><td>1,415.0</td><td>1,415.0</td><td>1,415.0</td><td>1,415.0</td><td>1,415.0</td><td>1,415.0</td></tr><tr><td>Total Current Liabilities</td><td>3,159.0</td><td>3,244.0</td><td>3,244.0</td><td>3,244.0</td><td>2,489.0</td><td>2,492.0</td><td>3,118.0</td><td>3,159.0</td><td>3,096.0</td><td>3,244.0</td><td>3,244.0</td><td>3,244.0</td><td>3,244.0</td><td>3,244.0</td><td>3,244.0</td><td>3,244.0</td></tr><tr><td>Long Term Debt</td><td>13,548.0</td><td>12,903.0</td><td>12,903.0</td><td>12,903.0</td><td>12,848.0</td><td>14,043.0</td><td>13,546.0</td><td>13,548.0</td><td>12,901.0</td><td>12,903.0</td><td>12,903.0</td><td>12,903.0</td><td>12,903.0</td><td>12,903.0</td><td>12,903.0</td><td>12,903.0</td></tr><tr><td>Other Long Term Liabilities</td><td>1,605.0</td><td>2,128.0</td><td>2,928.0</td><td>3,728.0</td><td>2,014.0</td><td>1,995.0</td><td>1,713.0</td><td>1,605.0</td><td>1,618.0</td><td>1,728.0</td><td>1,928.0</td><td>2,128.0</td><td>2,328.0</td><td>2,528.0</td><td>2,728.0</td><td>2,928.0</td></tr><tr><td>Total Liabilities</td><td>18,312.0</td><td>18,275.0</td><td>19,075.0</td><td>19,875.0</td><td>17,351.0</td><td>18,530.0</td><td>18,377.0</td><td>18,312.0</td><td>17,615.0</td><td>17,875.0</td><td>18,075.0</td><td>18,275.0</td><td>18,475.0</td><td>18,675.0</td><td>18,875.0</td><td>19,075.0</td></tr><tr><td>Shareholders&#x27; Equity</td><td>16,273.0</td><td>19,732.5</td><td>21,191.4</td><td>22,771.5</td><td>16,406.0</td><td>16,403.0</td><td>16,627.0</td><td>16,273.0</td><td>16,778.0</td><td>18,007.0</td><td>19,025.0</td><td>19,732.5</td><td>19,890.5</td><td>20,285.9</td><td>20,896.3</td><td>21,191.4</td></tr><tr><td>Total Liabilities &amp; Shareholders&#x27; Equity</td><td>34,585.0</td><td>38,007.5</td><td>40,266.4</td><td>42,646.5</td><td>33,757.0</td><td>34,933.0</td><td>35,004.0</td><td>34,585.0</td><td>34,393.0</td><td>35,882.0</td><td>37,100.0</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+<table><tr><td colspan="9">Texas Instruments: Cash Flow Statement ($MM)</td><td colspan="4"></td><td colspan="4"></td></tr><tr><td>TXN (Calendar Years)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Net Income</td><td>5,001.0</td><td>7,688.0</td><td>8,446.2</td><td>9,123.7</td><td>1,179.0</td><td>1,295.0</td><td>1,364.0</td><td>1,163.0</td><td>1,545.0</td><td>1,980.0</td><td>2,210.1</td><td>1,953.0</td><td>1,894.9</td><td>2,128.4</td><td>2,343.2</td><td>2,079.7</td></tr><tr><td>Depreciation &amp; Amortization</td><td>1,999.0</td><td>2,358.1</td><td>2,688.4</td><td>2,806.3</td><td>444.0</td><td>481.0</td><td>517.0</td><td>557.0</td><td>562.0</td><td>568.0</td><td>600.5</td><td>627.6</td><td>632.9</td><td>657.9</td><td>684.6</td><td>712.9</td></tr><tr><td>Share-based Comp</td><td>419.0</td><td>483.2</td><td>513.2</td><td>533.8</td><td>116.0</td><td>129.0</td><td>93.0</td><td>81.0</td><td>109.0</td><td>127.0</td><td>123.0</td><td>124.2</td><td>126.7</td><td>129.2</td><td>128.0</td><td>129.2</td></tr><tr><td>Other</td><td>(266.0)</td><td>321.8</td><td>557.5</td><td>643.0</td><td>(890.0)</td><td>(45.0)</td><td>216.0</td><td>453.0</td><td>(696.0)</td><td>28.0</td><td>(233.3)</td><td>1,223.1</td><td>(244.7)</td><td>(200.2)</td><td>(219.0)</td><td>1,221.4</td></tr><tr><td>Cash Flow from Operations</td><td>7,153.0</td><td>10,851.2</td><td>12,205.3</td><td>13,106.8</td><td>849.0</td><td>1,860.0</td><td>2,190.0</td><td>2,254.0</td><td>1,520.0</td><td>2,703.0</td><td>2,700.3</td><td>3,927.9</td><td>2,409.9</td><td>2,715.4</td><td>2,936.8</td><td>4,143.2</td></tr><tr><td>Capex</td><td>(4,550.0)</td><td>(2,692.5)</td><td>(2,682.8)</td><td>(2,831.4)</td><td>(1,123.0)</td><td>(1,305.0)</td><td>(1,197.0)</td><td>(925.0)</td><td>(676.0)</td><td>(514.0)</td><td>(729.5)</td><td>(773.0)</td><td>(649.8)</td><td>(667.4)</td><td>(678.5)</td><td>(687.0)</td></tr><tr><td>Other</td><td>3,111.0</td><td>(559.0)</td><td>-</td><td>-</td><td>2,376.0</td><td>(30.0)</td><td>516.0</td><td>249.0</td><td>629.0</td><td>(1,188.0)</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash Flow from Investments</td><td>(1,439.0)</td><td>(3,251.5)</td><td>(2,682.8)</td><td>(2,831.4)</td><td>1,253.0</td><td>(1,335.0)</td><td>(681.0)</td><td>(676.0)</td><td>(47.0)</td><td>(1,702.0)</td><td>(729.5)</td><td>(773.0)</td><td>(649.8)</td><td>(667.4)</td><td>(678.5)</td><td>(687.0)</td></tr><tr><td>Net Stock Repurchase</td><td>(1,477.0)</td><td>(385.0)</td><td>(2,600.0)</td><td>(3,200.0)</td><td>(653.0)</td><td>(302.0)</td><td>(119.0)</td><td>(403.0)</td><td>(158.0)</td><td>(27.0)</td><td>(100.0)</td><td>(100.0)</td><td>(650.0)</td><td>(650.0)</td><td>(650.0)</td><td>(650.0)</td></tr><tr><td>Dividends</td><td>(4,999.0)</td><td>(5,230.8)</td><td>(5,220.4)</td><td>(5,197.5)</td><td>(1,238.0)</td><td>(1,235.0)</td><td>(1,236.0)</td><td>(1,290.0)</td><td>(1,291.0)</td><td>(1,295.0)</td><td>(1,295.0)</td><td>(1,349.8)</td><td>(1,293.6)</td><td>(1,292.2)</td><td>(1,290.8)</td><td>(1,343.8)</td></tr><tr><td>Other</td><td>787.0</td><td>892.0</td><td>320.0</td><td>320.0</td><td>(648.0)</td><td>1,293.0</td><td>113.0</td><td>29.0</td><td>300.0</td><td>432.0</td><td>80.0</td><td>80.0</td><td>80.0</td><td>80.0</td><td>80.0</td><td>80.0</td></tr><tr><td>Cash Flow from Financing</td><td>(5,689.0)</td><td>(4,723.8)</td><td>(7,500.4)</td><td>(8,077.5)</td><td>(2,539.0)</td><td>(244.0)</td><td>(1,242.0)</td><td>(1,664.0)</td><td>(1,149.0)</td><td>(890.0)</td><td>(1,315.0)</td><td>(1,369.8)</td><td>(1,863.6)</td><td>(1,862.2)</td><td>(1,860.8)</td><td>(1,913.8)</td></tr><tr><td>Cash + STI at Beginning of Period</td><td>7,580.0</td><td>4,881.0</td><td>9,441.9</td><td>11,464.0</td><td>7,580.0</td><td>5,005.0</td><td>5,359.0</td><td>5,186.0</td><td>4,881.0</td><td>5,103.0</td><td>7,001.0</td><td>7,656.8</td><td>9,441.9</td><td>9,338.4</td><td>9,524.1</td><td>9,921.6</td></tr><tr><td>Cash + STI at End of Period</td><td>4,881.0</td><td>9,441.9</td><td>11,464.0</td><td>13,661.9</td><td>5,005.0</td><td>5,359.0</td><td>5,186.0</td><td>4,881.0</td><td>5,103.0</td><td>7,001.0</td><td>7,656.8</td><td>9,441.9</td><td>9,338.4</td><td>9,524.1</td><td>9,921.6</td><td>11,464.0</td></tr></table>
+
+<table><tr><td>TXN (Calendar Years)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Cash Flow from Operations</td><td>7,153.0</td><td>10,851.2</td><td>12,205.3</td><td>13,106.8</td><td>849.0</td><td>1,860.0</td><td>2,190.0</td><td>2,254.0</td><td>1,520.0</td><td>2,703.0</td><td>2,700.3</td><td>3,927.9</td><td>2,409.9</td><td>2,715.4</td><td>2,936.8</td><td>4,143.2</td></tr><tr><td>subtract Capex</td><td>(4,550.0)</td><td>(2,692.5)</td><td>(2,682.8)</td><td>(2,831.4)</td><td>(1,123.0)</td><td>(1,305.0)</td><td>(1,197.0)</td><td>(925.0)</td><td>(676.0)</td><td>(514.0)</td><td>(729.5)</td><td>(773.0)</td><td>(649.8)</td><td>(667.4)</td><td>(678.5)</td><td>(687.0)</td></tr><tr><td>FCF</td><td>2,603.0</td><td>8,158.7</td><td>9,522.5</td><td>10,275.4</td><td>(274.0)</td><td>555.0</td><td>993.0</td><td>1,329.0</td><td>844.0</td><td>2,189.0</td><td>1,970.8</td><td>3,154.9</td><td>1,760.1</td><td>2,047.9</td><td>2,258.3</td><td>3,456.2</td></tr><tr><td>FCF/Diluted Share</td><td>2.83</td><td>8.83</td><td>10.32</td><td>11.19</td><td>(0.30)</td><td>0.60</td><td>1.08</td><td>1.45</td><td>0.92</td><td>2.37</td><td>2.13</td><td>3.41</td><td>1.90</td><td>2.22</td><td>2.45</td><td>3.75</td></tr><tr><td>Operating Income</td><td>6,023.0</td><td>9,053.1</td><td>10,064.4</td><td>10,847.6</td><td>1,324.0</td><td>1,563.0</td><td>1,663.0</td><td>1,473.0</td><td>1,808.0</td><td>2,310.0</td><td>2,615.3</td><td>2,319.8</td><td>2,265.6</td><td>2,535.6</td><td>2,783.9</td><td>2,479.3</td></tr><tr><td>add back D&amp;A</td><td>1,999.0</td><td>2,358.1</td><td>2,688.4</td><td>2,806.3</td><td>444.0</td><td>481.0</td><td>517.0</td><td>557.0</td><td>562.0</td><td>568.0</td><td>600.5</td><td>627.6</td><td>632.9</td><td>657.9</td><td>684.6</td><td>712.9</td></tr><tr><td>EBITDA</td><td>8,022.0</td><td>11,411.2</td><td>12,752.8</td><td>13,653.9</td><td>1,768.0</td><td>2,044.0</td><td>2,180.0</td><td>2,030.0</td><td>2,370.0</td><td>2,878.0</td><td>3,215.8</td><td>2,947.4</td><td>2,898.6</td><td>3,193.5</td><td>3,468.6</td><td>3,192.2</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+## BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2"></td><td colspan="4">22 Jul 2026</td><td>TTM</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td></td><td></td><td rowspan="2">Closing Price</td><td rowspan="2">Price Target</td><td rowspan="2">Rel. Perf.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Ticker</td><td>Rating</td><td>Cur</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>TXN (Texas Instruments)</td><td>M</td><td>USD</td><td>294.19</td><td>290.00</td><td>18.0%</td><td>USD</td><td>5.45</td><td>8.33</td><td>9.16</td><td>54.0</td><td>35.3</td><td>32.1</td></tr><tr><td>OLD</td><td></td><td></td><td></td><td>250.00</td><td></td><td></td><td></td><td>7.62</td><td>8.22</td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,498.96</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+PRICE TARGET CHANGE / ESTIMATE CHANGE IN BOLD
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended Source: Bloomberg, Bernstein estimates and analysis.
+
+## I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+## VALUATION METHODOLOGY
+
+## Texas Instruments Inc
+
+For TXN, we assign a \~30x multiple to average of our FY27/28 GAAP dil. EPS estimates (\~\$9.55) to arrive at a price target of \$290.
+
+## RISKS
+
+## Texas Instruments Inc
+
+Upside risks include better than expected recovery, higher gross margins, or better cash generation and return. Downside risks include worse than expected recoveries, share losses (in China and/or elsewhere), or further gross margin degradation.
+
+RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+## EQUITY RATINGS DEFINITIONS
+
+## Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+\- Outperform: Stock will outpace the market index by more than 15 pp
+
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp
+
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 600 Financials Price Return Index (E600BK) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 600 Insurance Price Return Index (E600IN) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments, and the Bloomberg Japan Financials Large & Mid Cap Price Return Index (JPFILM) for Japanese Financials. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp
+
+\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp
+
+• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+## AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+## CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+## DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+As of June 30, 2026. All figures are updated quarterly.
+
+## PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY
+
+Prior to April 1, 2024, Bernstein & Co., LLC. issued the ratings and price target information in the graph(s) below for the following companies: Texas Instruments Inc.
+
+Texas Instruments Inc (TXN) Rating History for Bernstein as of 07/22/2026  
+![](images/69d883dd240dbfea9f1281db77b880d60b98597b25796a72952d3b2f287e68e9.jpg)  
+All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.
+
+## CONFLICTS OF INTEREST
+
+All statements in this report attributable to Gartner represent Bernstein's interpretation of data, research opinion or viewpoints published as part of a syndicated subscription service by Gartner, Inc., and have not been reviewed by Gartner. Each Gartner publication speaks as of its original publication date (and not as of the date of this report). The opinions expressed in Gartner publications are not representations of fact, and are subject to change without notice.
+
+Stacy A. Rasgon maintains long positions in various crypto currencies.
+
+Bernstein Autonomous LLP or BSG France SA, beneficially, has either a net long or short position of 0.5% or more of the total issued share capital of a class of common equity securities of the following MiFID eligible securities: Texas Instruments Inc.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Texas Instruments Inc.
+
+## OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA
+
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco
+
++33 BSG France S.A.; Paris, France
+
++34 BSG France S.A.; Madrid, Spain
+
++41 Bernstein Autonomous LLP; Geneva, Switzerland
+
++49 BSG France S.A.; Frankfurt, Germany
+
++91 Bernstein (India) Private Limited; Mumbai, India
+
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China
+
++65 Bernstein (Singapore) Private Limited; Singapore
+
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+## CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+## II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+## III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.
+
+\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the "PRC") in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;
+
+• dealing in a financial product;
+
+\- making a market for a financial product; and
+
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).
+
+\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.
+
+• SCB India does not have any disciplinary history as on the date of this report.
+
+\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company
+
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;
+
+\- is not engaged in any investment banking activities for Indian companies, as such;
+
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;
+
+\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;
+
+• have not received compensation for brokerage services from the subject company in the past twelve months;
+
+\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and
+
+\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.
+
+\- do not have any conflict of interest in the subject company as of the date of this report.
+
+\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.
+
+\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.
+
+\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com
+
+\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.
+
+\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+## LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of Societe
+
+## Generale.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
