@@ -263,6 +263,12 @@ jobs:
           name: selected-macro-pdfs-${{ github.run_id }}
           path: _selected_macro_pdfs
           if-no-files-found: error
+      - name: Upload lightweight selection manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: selected-macro-manifest-${{ github.run_id }}
+          path: _selected_macro_pdfs/selected_to_process_manifest.json
+          if-no-files-found: error
 
   process-shard:
     needs: [resolve-inputs, select-macro-reports]
@@ -293,19 +299,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Download selected macro PDFs artifact
+      - name: Download lightweight selection manifest
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/download-artifact@v4
         with:
-          name: selected-macro-pdfs-${{ github.run_id }}
-          path: _selected_macro_pdfs
+          name: selected-macro-manifest-${{ github.run_id }}
+          path: _selected_macro_manifest
       - name: Check for a matching completed shard
         id: completed
         if: ${{ steps.gate.outputs.run == 'true' }}
         run: |
           python scripts/check_completed_shard.py \
             --output-dir "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}" \
-            --current-manifest "_selected_macro_pdfs/selected_to_process_manifest.json" \
+            --current-manifest "_selected_macro_manifest/selected_to_process_manifest.json" \
             --shard-index "${{ matrix.shard_index }}" \
             --selected-count "${{ needs.select-macro-reports.outputs.selected_count }}" \
             --reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}" \
@@ -329,6 +335,12 @@ jobs:
       - name: Install Python dependencies
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         run: pip install -r requirements.txt
+      - name: Download selected macro PDFs artifact
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
       - name: Generate shard outputs
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
