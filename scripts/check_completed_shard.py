@@ -13,6 +13,16 @@ from typing import Any
 SUMMARY_LINE_RE = re.compile(r"^-\s*([^:]+):\s*(.*?)\s*$")
 LEADING_SEQUENCE_RE = re.compile(r"^\d+-")
 REQUIRED_REPORT_FILES = ("source_mineru.md", "wechat_article.md", "status.json")
+INSTITUTION_PREFIX_ALIASES = (
+    ("goldmansachs", "gs"),
+    ("morganstanley", "ms"),
+    ("jpmorgan", "jpm"),
+    ("bofasecurities", "bofa"),
+    ("deutschebank", "db"),
+    ("jefferies", "jef"),
+    ("barclays", "barc"),
+    ("nomura", "nom"),
+)
 
 
 def read_json(path: Path) -> Any:
@@ -33,8 +43,13 @@ def normalized_source_name(value: str) -> str:
     while LEADING_SEQUENCE_RE.match(name):
         name = LEADING_SEQUENCE_RE.sub("", name, count=1)
     # Batch staging replaces punctuation such as ：, ~, &, quotes and brackets
-    # with hyphens. Compare the stable letters/numbers/CJK payload instead.
-    return re.sub(r"[\W_]+", "", name.casefold(), flags=re.UNICODE)
+    # with hyphens. Dropbox normalization can also expand broker prefixes
+    # (for example GS -> GoldmanSachs). Compare one canonical payload.
+    normalized = re.sub(r"[\W_]+", "", name.casefold(), flags=re.UNICODE)
+    for alias, canonical in INSTITUTION_PREFIX_ALIASES:
+        if normalized.startswith(alias):
+            return canonical + normalized[len(alias) :]
+    return normalized
 
 
 def manifest_source_names(manifest_path: Path, shard_index: int, reports_per_shard: int) -> list[str]:

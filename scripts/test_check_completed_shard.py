@@ -83,6 +83,21 @@ class CompletedShardTests(unittest.TestCase):
             normalized_source_name(staged_name),
         )
 
+    def test_source_name_comparison_normalizes_institution_prefixes(self) -> None:
+        pairs = [
+            ("GS-China outlook.pdf", "GoldmanSachs-China outlook.pdf"),
+            ("MS-AI infrastructure.pdf", "MorganStanley-AI infrastructure.pdf"),
+            ("JPM-Japan FX.pdf", "JPMorgan-Japan FX.pdf"),
+            ("DB-Europe rates.pdf", "DeutscheBank-Europe rates.pdf"),
+            ("BARC-Hardware.pdf", "Barclays-Hardware.pdf"),
+        ]
+        for abbreviated, expanded in pairs:
+            with self.subTest(abbreviated=abbreviated):
+                self.assertEqual(
+                    normalized_source_name(abbreviated),
+                    normalized_source_name(expanded),
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
