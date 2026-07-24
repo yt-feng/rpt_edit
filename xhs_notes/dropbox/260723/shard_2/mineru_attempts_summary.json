@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_zadf_dnt/pdfs/0001-11-CITI-China Healthcare-1H26 Results Preview-BD Deals to alleviate Pharma sales-CDMOs solid-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zadf_dnt/pdfs/0002-12-CITI-Chagee Holdings -CHA.US- 2Q26E Earnings Preview- Reducing TP - Estimates-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zadf_dnt/pdfs/0003-13-CITI-Estun -002747- What-s New from Citi-s Call-Cost Reduction Drives GPM Expansion- KUKA Could be a Potential Threat-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zadf_dnt/pdfs/0004-14-CITI-China Renewable Energy-Strong PRC Inverter Export Demand Continued in June- Sungrow and Deye Improving Shareholder Returns-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zadf_dnt/pdfs/0005-15-CITI-Horizon Robotics -9660.HK- Expect -65- 1H GPM- 3 Catalysts on mean re-version-260721.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
