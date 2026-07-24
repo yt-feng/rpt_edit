@@ -118,6 +118,7 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | 单篇报告 | 捕获异常并写 `status.json`；继续同批其他报告 |
 | 空产物 | 一个 shard 有输入但最终没有 publish-ready 报告时返回失败，禁止假绿 |
 | 分片恢复 | 每个 shard 先下载独立的小型 manifest；只有摘要参数、当前对应 PDF 名单和必需文章文件全部一致时才跳过，校验不通过才下载完整 PDF artifact；`force_reprocess=true` 永不复用 |
+| Market Views 下游 | `workflow_run` 仅接受上游 `success`；失败或取消的恢复任务不得触发重复 PDF 构建 |
 | Git 交接 | 最多 8 次同步并推送；微信下游依赖的目录启用 strict handoff，推送失败则 job 失败 |
 | 汇总打包 | 仅当全部 shard 成功时执行；按当天目录稀疏检出，避免历史大文件使 checkout 超过 20 分钟；不完整结果不得进入微信上传 |
 | 微信 API | 网络、`-1 system busy` 和可重试状态最多 5 次；KC 精译与 XHS 直传默认均按图片 3 秒、文章 12 秒、草稿 90 秒、回读 8 秒 pacing |
