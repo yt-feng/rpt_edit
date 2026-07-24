@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from check_completed_shard import completed_shard_reason
+from check_completed_shard import completed_shard_reason, normalized_source_name
 
 
 class CompletedShardTests(unittest.TestCase):
@@ -74,6 +74,14 @@ class CompletedShardTests(unittest.TestCase):
             )
         self.assertFalse(complete)
         self.assertEqual("force_reprocess=true", reason)
+
+    def test_source_name_comparison_ignores_batch_punctuation_rewrites(self) -> None:
+        manifest_name = "01-BARC-A&T：Read~through（Q2）.pdf"
+        staged_name = "0001-01-BARC-A-T-Read-through-Q2-.pdf"
+        self.assertEqual(
+            normalized_source_name(manifest_name),
+            normalized_source_name(staged_name),
+        )
 
 
 if __name__ == "__main__":

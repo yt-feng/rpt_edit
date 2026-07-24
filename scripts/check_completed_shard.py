@@ -32,7 +32,9 @@ def normalized_source_name(value: str) -> str:
     name = Path(value).name
     while LEADING_SEQUENCE_RE.match(name):
         name = LEADING_SEQUENCE_RE.sub("", name, count=1)
-    return re.sub(r"\s+", " ", name).strip().casefold()
+    # Batch staging replaces punctuation such as ：, ~, &, quotes and brackets
+    # with hyphens. Compare the stable letters/numbers/CJK payload instead.
+    return re.sub(r"[\W_]+", "", name.casefold(), flags=re.UNICODE)
 
 
 def manifest_source_names(manifest_path: Path, shard_index: int, reports_per_shard: int) -> list[str]:
