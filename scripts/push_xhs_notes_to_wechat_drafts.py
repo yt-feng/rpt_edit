@@ -26,6 +26,10 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     DEFAULT_MAX_CONTENT_CHARS,
     DEFAULT_MIN_INLINE_IMAGES,
     DEFAULT_TRAILING_IMAGE,
+    DEFAULT_WECHAT_ARTICLE_DELAY_SECONDS,
+    DEFAULT_WECHAT_DRAFT_DELAY_SECONDS,
+    DEFAULT_WECHAT_DRAFT_VERIFY_DELAY_SECONDS,
+    DEFAULT_WECHAT_IMAGE_UPLOAD_DELAY_SECONDS,
     DISPLAY_TITLE_MAX_CHARS,
     MD_IMAGE_RE,
     WECHAT_AUTHOR_MAX_BYTES,
@@ -43,6 +47,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     is_article_size_error,
     log,
     neutralize_markdown_headings,
+    pacing_sleep,
     parse_selection_limit,
     pollinations_context_snippets,
     payload_article_titles,
@@ -458,6 +463,11 @@ def build_article(
             if metadata.get(key):
                 image_record[key] = metadata[key]
         uploaded_images.append(image_record)
+        pacing_sleep(
+            f"After uploading inline image {index}:{ref}",
+            args.image_upload_delay_seconds,
+            args.dry_run,
+        )
 
     cover_image = choose_cover_image(report_dir, [p for p in uploaded_paths if p.exists()])
     if args.dry_run:
@@ -466,6 +476,11 @@ def build_article(
         if session is None or access_token is None:
             raise RuntimeError("session and access_token are required outside dry-run")
         thumb_media_id = upload_cover_material(session, access_token, cover_image, args.timeout)
+        pacing_sleep(
+            f"After uploading cover image {index}",
+            args.image_upload_delay_seconds,
+            args.dry_run,
+        )
 
     content, visible_text_chars, body_image_count, fitted_image_count = render_fitted_wechat_html(
         markdown,
@@ -538,6 +553,26 @@ def main() -> int:
     parser.add_argument("--max-body-chars", type=int, default=DEFAULT_BODY_VISIBLE_CHARS)
     parser.add_argument("--max-content-chars", type=int, default=DEFAULT_MAX_CONTENT_CHARS)
     parser.add_argument("--max-content-bytes", type=int, default=DEFAULT_MAX_CONTENT_BYTES)
+    parser.add_argument(
+        "--image-upload-delay-seconds",
+        type=float,
+        default=DEFAULT_WECHAT_IMAGE_UPLOAD_DELAY_SECONDS,
+    )
+    parser.add_argument(
+        "--article-delay-seconds",
+        type=float,
+        default=DEFAULT_WECHAT_ARTICLE_DELAY_SECONDS,
+    )
+    parser.add_argument(
+        "--draft-delay-seconds",
+        type=float,
+        default=DEFAULT_WECHAT_DRAFT_DELAY_SECONDS,
+    )
+    parser.add_argument(
+        "--draft-verify-delay-seconds",
+        type=float,
+        default=DEFAULT_WECHAT_DRAFT_VERIFY_DELAY_SECONDS,
+    )
     parser.add_argument("--brand", default=BRAND)
     parser.add_argument("--author", default=AUTHOR)
     parser.add_argument("--disclaimer", default=BOTTOM_DISCLAIMER)
@@ -562,6 +597,14 @@ def main() -> int:
         raise ValueError("--min-inline-images must be non-negative")
     if args.max_body_chars < 200:
         raise ValueError("--max-body-chars must be at least 200")
+    for option in (
+        "image_upload_delay_seconds",
+        "article_delay_seconds",
+        "draft_delay_seconds",
+        "draft_verify_delay_seconds",
+    ):
+        if getattr(args, option) < 0:
+            raise ValueError(f"--{option.replace('_', '-')} must be non-negative")
     if not args.dry_run and (not args.wechat_appid or not args.wechat_secret):
         raise ValueError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
 
@@ -684,11 +727,20 @@ def main() -> int:
                 raise RuntimeError("session and access_token are required outside dry-run")
             trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
             log(f"Uploaded trailing image: {trailing_image_path}")
+            pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
 
-    built_articles = [
-        build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
-        for idx, report_dir in enumerate(selected, 1)
-    ]
+    built_articles = []
+    for idx, report_dir in enumerate(selected, 1):
+        log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")
+        built_articles.append(
+            build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
+        )
+        if idx < len(selected):
+            pacing_sleep(
+                f"After building WeChat article {idx}/{len(selected)}",
+                args.article_delay_seconds,
+                args.dry_run,
+            )
 
     drafts: list[dict[str, Any]] = []
 
@@ -723,6 +775,12 @@ def main() -> int:
             else:
                 reused_existing = False
                 try:
+                    log(f"Creating WeChat draft {len(drafts) + 1}")
+                    pacing_sleep(
+                        f"Before creating WeChat draft {len(drafts) + 1}",
+                        args.draft_delay_seconds,
+                        args.dry_run,
+                    )
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
                     if is_article_size_error(exc) and len(group) > 1:
@@ -735,6 +793,11 @@ def main() -> int:
                         create_draft(group[split_at:])
                         return
                     raise
+            pacing_sleep(
+                f"Before verifying WeChat draft {len(drafts) + 1}",
+                args.draft_verify_delay_seconds,
+                args.dry_run,
+            )
             draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
@@ -788,6 +851,10 @@ def main() -> int:
         "max_body_chars": args.max_body_chars,
         "max_content_chars": args.max_content_chars,
         "max_content_bytes": args.max_content_bytes,
+        "image_upload_delay_seconds": args.image_upload_delay_seconds,
+        "article_delay_seconds": args.article_delay_seconds,
+        "draft_delay_seconds": args.draft_delay_seconds,
+        "draft_verify_delay_seconds": args.draft_verify_delay_seconds,
         "min_inline_images": args.min_inline_images,
         "max_inline_images": args.max_inline_images,
         "body_hook": args.body_hook,

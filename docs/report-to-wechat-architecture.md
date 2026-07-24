@@ -61,6 +61,7 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | `scripts/build_kc_translated_reports.py` | 精译、文章化、标题生成与中性化和 KC PDF |
 | `scripts/commit_output_dir.sh` | 并发环境中的 fetch/reset/add/commit/push 重试和关键交接校验 |
 | `scripts/push_kc_translated_to_wechat_drafts.py` | HTML、三张正文图、慢速图片上传、草稿创建与回读校验 |
+| `scripts/push_xhs_notes_to_wechat_drafts.py` | 投行短版文章直传；与 KC 精译上传共用图片、文章、草稿和回读等待节奏 |
 
 主要入口：
 
@@ -117,7 +118,7 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | 空产物 | 一个 shard 有输入但最终没有 publish-ready 报告时返回失败，禁止假绿 |
 | Git 交接 | 最多 8 次同步并推送；微信下游依赖的目录启用 strict handoff，推送失败则 job 失败 |
 | 汇总打包 | 仅当全部 shard 成功时执行；按当天目录稀疏检出，避免历史大文件使 checkout 超过 20 分钟；不完整结果不得进入微信上传 |
-| 微信 API | 网络、`-1 system busy` 和可重试状态最多 5 次；图片和草稿提交有固定 pacing |
+| 微信 API | 网络、`-1 system busy` 和可重试状态最多 5 次；KC 精译与 XHS 直传默认均按图片 3 秒、文章 12 秒、草稿 90 秒、回读 8 秒 pacing |
 | 微信草稿 | `draft/add` 后等待并执行 `draft/get`；文章数不一致视为失败 |
 
 永久性认证、余额或参数错误不会被无限重试。所有重试必须有次数上限和最长等待时间。
