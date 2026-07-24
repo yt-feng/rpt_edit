@@ -1,0 +1,4948 @@
+{
+  "schema_version": 1,
+  "date_folder": "260723",
+  "source": "xhs_notes/dropbox",
+  "generated_at_utc": "2026-07-24T04:46:41Z",
+  "article_count": 62,
+  "uploaded_count": 62,
+  "articles": [
+    {
+      "source_report_name": "01-Bernstein-Comment- Nike cutting online sales to China partners-260722",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：耐克在中国削减经销商线上销售渠道",
+      "final_wechat_title": "伯恩斯坦：耐克在中国削减经销商线上销售渠道",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_0/0001-01-Bernstein-Comment--Nike-cutting-online-sales-to-China-partners-260722",
+      "generation_decision": {
+        "source_filename": "0001-01-Bernstein-Comment- Nike cutting online sales to China partners-260722.pdf",
+        "cleaned_source_title": "Bernstein-Comment- Nike cutting online sales to China partners",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：Comment",
+        "raw_candidates": [
+          "耐克在中国削减经销商线上销售渠道",
+          "耐克调整中国线上分销-2027年终止经销商渠道",
+          "耐克中国线上渠道策略-品牌方收回定价权"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：耐克在中国削减经销商线上销售渠道",
+          "Bernstein：耐克调整中国线上分销-2027年终止经销商渠道",
+          "Bernstein：耐克中国线上渠道策略-品牌方收回定价权",
+          "Bernstein：Comment",
+          "Bernstein：Bernstein测算的2至3个百分点的营收不确定性"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：耐克调整中国线上分销-2027年终止经销商渠道",
+            "reasons": [
+              "anchor_coverage=0.40"
+            ]
+          },
+          {
+            "title": "Bernstein：耐克中国线上渠道策略-品牌方收回定价权",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：Comment",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：Bernstein测算的2至3个百分点的营收不确定性",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：耐克在中国削减经销商线上销售渠道",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：耐克在中国削减经销商线上销售渠道",
+        "body_heading_neutralization_changes": [
+          "1. 经销商线上渠道成为品牌溢价受损的源头->研究主题与行业变化观察",
+          "2. 短期营收不确定性与长期品牌重塑的权衡->2.短期业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "02-Bernstein-China CDMO- Primer on Peptide CDMOs Part 1-Supply-side leaders differentiate in scale- cost- and technology breadth-260723",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：多肽CDMO供给端规模与成本分化",
+      "final_wechat_title": "伯恩斯坦：多肽CDMO供给端规模与成本分化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_0/0002-02-Bernstein-China-CDMO--Primer-on-Peptide-CDMOs-Part-1-Supply-side-leaders",
+      "generation_decision": {
+        "source_filename": "0002-02-Bernstein-China CDMO- Primer on Peptide CDMOs Part 1-Supply-side leaders differentiate in scale- cost- and technology breadth-260723.pdf",
+        "cleaned_source_title": "Bernstein-China CDMO- Primer on Peptide CDMOs Part 1-Supply-side leaders differentiate in scale- cost- and technology breadth",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：中国CDMOPrimeronPeptideCDMOsPart",
+        "raw_candidates": [
+          "中国多肽CDMO供给端规模与成本分化",
+          "全球多肽CDMO收入从10亿增至30亿美元",
+          "药明康德TIDES份额从11%升至54%"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：中国多肽CDMO供给端规模与成本分化",
+          "Bernstein：全球多肽CDMO收入从10亿增至30亿美元",
+          "Bernstein：药明康德TIDES份额从11%升至54%",
+          "Bernstein：中国CDMOPrimeronPeptideCDMOsPart",
+          "Bernstein：药明康德TIDES业务收入从1.2亿美元跃升至17亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：全球多肽CDMO收入从10亿增至30亿美元",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：药明康德TIDES份额从11%升至54%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：中国CDMOPrimeronPeptideCDMOsPart",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：药明康德TIDES业务收入从1.2亿美元跃升至17亿美元",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：中国多肽CDMO供给端规模与成本分化",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：中国多肽CDMO供给端规模与成本分化",
+        "body_heading_neutralization_changes": [
+          "4. 技术差异化从基础能力转向偶联与效率->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "03-BARC-IT Hardware and Communications Equipment-Read-through-AT-T Capex and iPhones-260722",
+      "institution_name": "巴克莱",
+      "title_before_upload": "BARC：IT硬件与通信设备-AT&T资本开支与iPhone销量启示",
+      "final_wechat_title": "巴克莱：IT硬件与通信设备-AT&T资本开支与iPhone销量启示",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_0/0003-03-Barclays-IT-Hardware-and-Communications-Equipment-Read-through-AT-T-Cape",
+      "generation_decision": {
+        "source_filename": "0003-03-BARC-IT Hardware and Communications Equipment-Read-through-AT-T Capex and iPhones-260722.pdf",
+        "cleaned_source_title": "BARC-IT Hardware and Communications Equipment-Read-through-AT-T Capex and iPhones",
+        "institution_name": "BARC",
+        "required_terms": [],
+        "deterministic_fallback": "BARC：IT硬件和CommunicationsEqui",
+        "raw_candidates": [
+          "IT硬件与通信设备-AT&T资本开支与iPhone销量启示",
+          "BARC：AT&T二季度资本开支57亿美元与iPhone销量340万部",
+          "AT&T资本开支与iPhone升级率3.2%对供应链影响"
+        ],
+        "cleaned_candidates": [
+          "BARC：IT硬件与通信设备-AT&T资本开支与iPhone销量启示",
+          "BARC：AT&T二季度资本开支57亿美元与iPhone销量340万部",
+          "BARC：AT&T资本开支与iPhone升级率3.2%对供应链影响",
+          "BARC：IT硬件和CommunicationsEqui",
+          "BARC：AT&T在7月22日发布的2026财年第二季度财报"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "BARC：AT&T二季度资本开支57亿美元与iPhone销量340万部",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BARC：AT&T资本开支与iPhone升级率3.2%对供应链影响",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BARC：IT硬件和CommunicationsEqui",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BARC：AT&T在7月22日发布的2026财年第二季度财报",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "BARC：IT硬件与通信设备-AT&T资本开支与iPhone销量启示",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "BARC：IT硬件与通信设备-AT&T资本开支与iPhone销量启示",
+        "body_heading_neutralization_changes": [
+          "1. AT&T 二季度智能手机销量持平，升级率降至 3.2%->1.AT&T业务与季度数据观察",
+          "2. 二季度资本开支超预期，但全年指引未变->2.业务与季度数据观察",
+          "3. iPhone 销量贡献持平，但结构信号值得关注->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "04-Bernstein-Texas Instruments Inc-TXN.US-Q226 recap-The world is not enough--260723",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：德州仪器Q2业绩回顾-世界不够大",
+      "final_wechat_title": "伯恩斯坦：德州仪器Q2业绩回顾-世界不够大",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_0/0004-04-Bernstein-Texas-Instruments-Inc-TXN.US-Q226-recap-The-world-is-not-enoug",
+      "generation_decision": {
+        "source_filename": "0004-04-Bernstein-Texas Instruments Inc-TXN.US-Q226 recap-The world is not enough--260723.pdf",
+        "cleaned_source_title": "Bernstein-Texas Instruments Inc-TXN.US-Q226 recap-The world is not enough",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：TexasInstrumentsIncQ226",
+        "raw_candidates": [
+          "德州仪器Q2业绩回顾-世界不够大",
+          "德州仪器Q2营收54.6亿美元-每股收益2.14美元",
+          "德州仪器Q2工业与数据中心驱动增长"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：德州仪器Q2业绩回顾-世界不够大",
+          "Bernstein：德州仪器Q2营收54.6亿美元-每股收益2.14美元",
+          "Bernstein：德州仪器Q2工业与数据中心驱动增长",
+          "Bernstein：TexasInstrumentsIncQ226",
+          "Bernstein：营收54.63亿美元，每股收益2.14美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：德州仪器Q2营收54.6亿美元-每股收益2.14美元",
+            "reasons": [
+              "anchor_coverage=0.36",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "Bernstein：德州仪器Q2工业与数据中心驱动增长",
+            "reasons": [
+              "anchor_coverage=0.36",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：TexasInstrumentsIncQ226",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：营收54.63亿美元，每股收益2.14美元",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：德州仪器Q2业绩回顾-世界不够大",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Bernstein：德州仪器Q2业绩回顾-世界不够大",
+        "body_heading_neutralization_changes": [
+          "1. 工业与数据中心成为增长双引擎->数字基础设施数据与主题变化观察",
+          "3. 库存改善与自由现金流回升->3.库存业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "05-Bernstein-Global Digital Assets Emerging AI Infra- The -third party capacity- trade has legs -continue to see strong deal traction and execution-260723",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：AI技术与行业应用观察",
+      "final_wechat_title": "伯恩斯坦：AI技术与行业应用观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_0/0005-05-Bernstein-Global-Digital-Assets-Emerging-AI-Infra--The--third-party-capa",
+      "generation_decision": {
+        "source_filename": "0005-05-Bernstein-Global Digital Assets Emerging AI Infra- The -third party capacity- trade has legs -continue to see strong deal traction and execution-260723.pdf",
+        "cleaned_source_title": "Bernstein-Global Digital Assets Emerging AI Infra- The -third party capacity- trade has legs -continue to see strong deal traction and execution",
+        "institution_name": "Bernstein",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "Bernstein：全球DigitalAssetsEmergingAIInfra",
+        "raw_candidates": [
+          "Bernstein：全球数字资产与新兴AI基础设施-第三方算力交易持续获执行支撑",
+          "Bernstein：比特币矿工签约7.5GW算力基础设施订单-第三方算力交易持续获执行支撑",
+          "Bernstein：全球数字资产与新兴AI基础设施-矿工电力接入优势与交付能力分析"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：全球数字资产与新兴AI基础设施-第三方算力交易持续获执行支撑",
+          "Bernstein：比特币矿工签约7.5GW算力基础设施订单",
+          "Bernstein：全球数字资产与新兴AI基础设施",
+          "Bernstein：全球DigitalAssetsEmergingAIInfra",
+          "Bernstein：这个时间差在AI算力需求爆发期可能价值数百亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：比特币矿工签约7.5GW算力基础设施订单",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：全球数字资产与新兴AI基础设施",
+            "reasons": [
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：全球DigitalAssetsEmergingAIInfra",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：这个时间差在AI算力需求爆发期可能价值数百亿美元",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：AI技术与行业应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "Bernstein：全球数字资产与新兴AI基础设施-第三方算力交易持续获执行支撑",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "Bernstein：AI技术与行业应用观察",
+        "body_heading_neutralization_changes": [
+          "1. 托管合同的宏观环境结构正在改善->研究主题与行业变化观察",
+          "3. 政治阻力反而强化了先发优势->区域环境与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "06-Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers-260723",
+      "institution_name": "伯恩斯坦",
+      "title_before_upload": "Bernstein：研究主题与行业变化观察",
+      "final_wechat_title": "伯恩斯坦：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_1/0001-06-Bernstein-Japan-Strategy-Q326--The-bright-spot-in-the-region-Ample-oppor",
+      "generation_decision": {
+        "source_filename": "0001-06-Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers-260723.pdf",
+        "cleaned_source_title": "Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers",
+        "institution_name": "Bernstein",
+        "required_terms": [],
+        "deterministic_fallback": "Bernstein：日本策略Q326",
+        "raw_candidates": [
+          "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+          "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+          "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好"
+        ],
+        "cleaned_candidates": [
+          "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+          "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+          "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好",
+          "Bernstein：日本策略Q326",
+          "Bernstein：进入7月，市场出现约6%的修正"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：日本策略Q326",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Bernstein：进入7月，市场出现约6%的修正",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Bernstein：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "3. 风格配置维持价值与成长杠铃，大盘股领先但中小盘机会浮现->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "07-BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns-260721",
+      "institution_name": "美银",
+      "title_before_upload": "BofA：美的集团业务与近期数据观察",
+      "final_wechat_title": "美银：美的集团业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_1/0002-07-BofA-Securities-Midea-Group--H-A---0300.HK-Improving-outlook-in-2H26--st",
+      "generation_decision": {
+        "source_filename": "0002-07-BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns-260721.pdf",
+        "cleaned_source_title": "BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns",
+        "institution_name": "BofA",
+        "required_terms": [],
+        "deterministic_fallback": "BofA：SecuritiesMideaGroupHA",
+        "raw_candidates": [
+          "BofA：美的集团下半年展望改善与股东回报",
+          "BofA：美的集团2026下半年展望改善与股东回报",
+          "BofA：美的集团下半年展望改善与2B业务结构分化"
+        ],
+        "cleaned_candidates": [
+          "BofA：美的集团下半年展望改善与股东回报",
+          "BofA：美的集团2026下半年展望改善与股东回报",
+          "BofA：美的集团下半年展望改善与2B业务结构分化",
+          "BofA：SecuritiesMideaGroupHA",
+          "BofA：美的2B业务（商业及工业解决方案）历史上保持超过10%的增长"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "BofA：SecuritiesMideaGroupHA",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BofA：美的2B业务（商业及工业解决方案）历史上保持超过10%的增长",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "BofA：美的集团业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "BofA：美的集团2026下半年展望改善与股东回报",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "BofA：美的集团业务与近期数据观察",
+        "body_heading_neutralization_changes": [
+          "2. 2B业务增速节奏变化，储能和库卡跑赢平均->2.2B业务与近期数据观察",
+          "3. 成本端不确定性缓解，利润率有望在下半年扩张->研究主题与行业变化观察",
+          "5. 一个可复用的观察框架：区分短期脉冲与结构性增长->5. 一个可复用的观察框架：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "08-BofA-NVIDIA Corporation-NVDA.OQ-More cores or faster cores- The NVDA vs AMD agentic CPU debate-260722",
+      "institution_name": "美银",
+      "title_before_upload": "BofA：AI、CPU技术与行业应用观察",
+      "final_wechat_title": "美银：AI、CPU技术与行业应用观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_1/0003-08-BofA-Securities-NVIDIA-Corporation-NVDA.OQ-More-cores-or-faster-cores--T",
+      "generation_decision": {
+        "source_filename": "0003-08-BofA-NVIDIA Corporation-NVDA.OQ-More cores or faster cores- The NVDA vs AMD agentic CPU debate-260722.pdf",
+        "cleaned_source_title": "BofA-NVIDIA Corporation-NVDA.OQ-More cores or faster cores- The NVDA vs AMD agentic CPU debate",
+        "institution_name": "BofA",
+        "required_terms": [
+          "CPU"
+        ],
+        "deterministic_fallback": "BofA：CPUSecuritiesNVIDIACorporat",
+        "raw_candidates": [
+          "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧",
+          "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧-7月22日Vera架构披露",
+          "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧-代理式AI工作负载决定设计哲学"
+        ],
+        "cleaned_candidates": [
+          "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧",
+          "BofA：CPUSecuritiesNVIDIACorporat",
+          "BofA：NVIDIA在7月22日首次详细披露了其VeraCPU架构"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "BofA：CPUSecuritiesNVIDIACorporat",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "BofA：NVIDIA在7月22日首次详细披露了其VeraCPU架构",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "BofA：AI、CPU技术与行业应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "BofA：AI、CPU技术与行业应用观察",
+        "body_heading_neutralization_changes": [
+          "4. BofA认为关键问题是定义AI服务器的核心KPI->AI技术与行业应用观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "09-BofA-Global Semiconductors-China Semicap Import Tracker -June 2026 down 1- yoy-260721",
+      "institution_name": "美银",
+      "title_before_upload": "BofA：半导体行业数据与主题变化观察",
+      "final_wechat_title": "美银：半导体行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_1/0004-09-BofA-Securities-Global-Semiconductors-China-Semicap-Import-Tracker--June",
+      "generation_decision": {
+        "source_filename": "0004-09-BofA-Global Semiconductors-China Semicap Import Tracker -June 2026 down 1- yoy-260721.pdf",
+        "cleaned_source_title": "BofA-Global Semiconductors-China Semicap Import Tracker -June 2026 down 1- yoy",
+        "institution_name": "BofA",
+        "required_terms": [],
+        "deterministic_fallback": "BofA：Securities全球半导体中国Semicap",
+        "raw_candidates": [
+          "BofA：全球半导体-中国半导体设备进口追踪-2026年6月同比下降1%",
+          "BofA：中国半导体设备进口6月环比增长45%但同比仍下降1%",
+          "BofA：中国半导体设备进口追踪-2026年6月数据与设备商销售关联"
+        ],
+        "cleaned_candidates": [
+          "BofA：全球半导体-中国半导体设备进口追踪-2026年6月同比下降1%",
+          "BofA：中国半导体设备进口6月环比增长45%但同比仍下降1%",
+          "BofA：中国半导体设备进口追踪-2026年6月数据与设备商销售关联",
+          "BofA：Securities全球半导体中国Semicap"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "BofA：中国半导体设备进口6月环比增长45%但同比仍下降1%",
+            "reasons": [
+              "anchor_coverage=0.48"
+            ]
+          },
+          {
+            "title": "BofA：中国半导体设备进口追踪-2026年6月数据与设备商销售关联",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "BofA：Securities全球半导体中国Semicap",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "BofA：半导体行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "BofA：全球半导体-中国半导体设备进口追踪-2026年6月同比下降1%",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "BofA：半导体行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 前道设备进口环比增长57%，光刻与热处理设备领涨->1.前道设备进口环比业务与近期数据观察",
+          "2. 后道设备分化明显，引线键合机同比大增153%->研究主题与行业变化观察",
+          "3. 光刻设备进口结构：荷兰机台占价值量95%，但单位数占比下降->3. 光刻设备进口结构：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "10-Bofa-Alphabet Capex increase steals the spotlight from strong Cloud acceleration- 报告观点-260723",
+      "institution_name": "美银",
+      "title_before_upload": "BofA：研究主题与行业变化观察",
+      "final_wechat_title": "美银：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_1/0005-10-Bofa-Alphabet-Capex-increase-steals-the-spotlight-from-strong-Cloud-acce",
+      "generation_decision": {
+        "source_filename": "0005-10-Bofa-Alphabet Capex increase steals the spotlight from strong Cloud acceleration- Buy-260723.pdf",
+        "cleaned_source_title": "Bofa-Alphabet Capex increase steals the spotlight from strong Cloud acceleration- Buy",
+        "institution_name": "BofA",
+        "required_terms": [],
+        "deterministic_fallback": "BofA：AlphabetCapexincreaseste",
+        "raw_candidates": [
+          "BofA：Alphabet资本开支上调与云业务加速",
+          "BofA：Alphabet二季度云收入增82%与资本开支上调",
+          "BofA：Alphabet云业务利润率与资本开支扩张"
+        ],
+        "cleaned_candidates": [
+          "BofA：Alphabet资本开支上调与云业务加速",
+          "BofA：Alphabet二季度云收入增82%与资本开支上调",
+          "BofA：Alphabet云业务利润率与资本开支扩张",
+          "BofA：AlphabetCapexincreaseste",
+          "BofA：云收入同比增长82%，超出市场预期的65%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "BofA：Alphabet二季度云收入增82%与资本开支上调",
+            "reasons": [
+              "anchor_coverage=0.63"
+            ]
+          },
+          {
+            "title": "BofA：Alphabet云业务利润率与资本开支扩张",
+            "reasons": [
+              "anchor_coverage=0.63"
+            ]
+          },
+          {
+            "title": "BofA：AlphabetCapexincreaseste",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.37"
+            ]
+          },
+          {
+            "title": "BofA：云收入同比增长82%，超出市场预期的65%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "BofA：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "BofA：Alphabet资本开支上调与云业务加速",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "BofA：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 搜索业务增长持平，AI变现叙事尚未兑现->1.搜索与AI及近期数据观察",
+          "3. 资本开支上调与自由现金流转负的时间差->研究主题与行业变化观察",
+          "4. 估值水平与增长预期的匹配度->4.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "11-CITI-China Healthcare-1H26 Results Preview-BD Deals to alleviate Pharma sales-CDMOs solid-260721",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：医疗行业数据与主题变化观察",
+      "final_wechat_title": "花旗：医疗行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_2/0001-11-CITI-China-Healthcare-1H26-Results-Preview-BD-Deals-to-alleviate-Pharma-",
+      "generation_decision": {
+        "source_filename": "0001-11-CITI-China Healthcare-1H26 Results Preview-BD Deals to alleviate Pharma sales-CDMOs solid-260721.pdf",
+        "cleaned_source_title": "CITI-China Healthcare-1H26 Results Preview-BD Deals to alleviate Pharma sales-CDMOs solid",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：中国Healthcare1H26ResultsP",
+        "raw_candidates": [
+          "中国医疗行业1H26业绩预览-BD交易与CDMO订单支撑",
+          "中国医疗行业1H26业绩预览-BD交易与CDMO订单支撑部分公司",
+          "中国医疗行业1H26业绩预览-CRO/CDMO订单积压驱动超预期"
+        ],
+        "cleaned_candidates": [
+          "Citi：中国医疗行业1H26业绩预览-BD交易与CDMO订单支撑",
+          "Citi：中国医疗行业1H26业绩预览-BD交易与CDMO订单支撑部分公司",
+          "Citi：CDMO订单积压驱动超预期",
+          "Citi：中国Healthcare1H26ResultsP",
+          "Citi：中国医疗行业1H26业绩分化，BD交易与CDMO订单支撑部分公司"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：CDMO订单积压驱动超预期",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中国Healthcare1H26ResultsP",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：医疗行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "Citi：中国医疗行业1H26业绩预览-BD交易与CDMO订单支撑",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "Citi：医疗行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "1. CRO/CDMO：订单积压驱动业绩超预期，市场关注指引上调->1. CRO/CDMO：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "12-CITI-Chagee Holdings -CHA.US- 2Q26E Earnings Preview- Reducing",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：霸王茶姬2026年第二季度业绩观察",
+      "final_wechat_title": "花旗：霸王茶姬2026年第二季度业绩观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_2/0002-12-CITI-Chagee-Holdings--CHA.US--2Q26E-Earnings-Preview--Reducing-TP---Esti",
+      "generation_decision": {
+        "source_filename": "0002-12-CITI-Chagee Holdings -CHA.US- 2Q26E Earnings Preview- Reducing TP - Estimates-260721.pdf",
+        "cleaned_source_title": "CITI-Chagee Holdings -CHA.US- 2Q26E Earnings Preview- Reducing TP - Estimates",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：ChageeHoldings",
+        "raw_candidates": [
+          "Citi：霸王茶姬2026年第二季度业绩预览",
+          "Citi：霸王茶姬二季度同店GMV同比降约15%",
+          "Citi：霸王茶姬下半年同店GMV降幅有望收窄"
+        ],
+        "cleaned_candidates": [
+          "Citi：霸王茶姬2026年第二季度业绩预览",
+          "Citi：霸王茶姬二季度同店GMV同比降约15%",
+          "Citi：霸王茶姬下半年同店GMV降幅有望收窄",
+          "Citi：ChageeHoldings",
+          "Citi：Citi同时将2026年和2027年的非GAAP净利润预测分别下调2"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：霸王茶姬二季度同店GMV同比降约15%",
+            "reasons": [
+              "anchor_coverage=0.31"
+            ]
+          },
+          {
+            "title": "Citi：霸王茶姬下半年同店GMV降幅有望收窄",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：ChageeHoldings",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：Citi同时将2026年和2027年的非GAAP净利润预测分别下调2",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：霸王茶姬2026年第二季度业绩预览",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：霸王茶姬2026年第二季度业绩预览",
+        "body_heading_neutralization_changes": [
+          "3. 收入分成模式调整对财务影响有限->3.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "13-CITI-Estun -002747- What-s New from Citi-s Call-Cost Reduction Drives GPM Expansion- KUKA Could be a Potential Threat-260721",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：研究主题与行业变化观察",
+      "final_wechat_title": "花旗：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_2/0003-13-CITI-Estun--002747--What-s-New-from-Citi-s-Call-Cost-Reduction-Drives-GP",
+      "generation_decision": {
+        "source_filename": "0003-13-CITI-Estun -002747- What-s New from Citi-s Call-Cost Reduction Drives GPM Expansion- KUKA Could be a Potential Threat-260721.pdf",
+        "cleaned_source_title": "CITI-Estun -002747- What-s New from Citi-s Call-Cost Reduction Drives GPM Expansion- KUKA Could be a Potential Threat",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：Estun002747",
+        "raw_candidates": [
+          "Citi：埃斯顿成本优化带动毛利率扩张，库卡构成潜在竞争",
+          "Citi：埃斯顿2026年第二季度毛利率升至33%-34%，成本削减驱动",
+          "Citi：埃斯顿工业机器人毛利率扩张，库卡成本优化加速"
+        ],
+        "cleaned_candidates": [
+          "Citi：埃斯顿成本优化带动毛利率扩张，库卡构成潜在竞争",
+          "Citi：埃斯顿2026年第二季度毛利率升至33%-34%，成本削减驱动",
+          "Citi：埃斯顿工业机器人毛利率扩张，库卡成本优化加速",
+          "Citi：Estun002747",
+          "Citi：与此同时，公司管理层维持2026年全年60亿元收入、31%毛利率"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：埃斯顿2026年第二季度毛利率升至33%-34%，成本削减驱动",
+            "reasons": [
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：埃斯顿工业机器人毛利率扩张，库卡成本优化加速",
+            "reasons": [
+              "anchor_coverage=0.52",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：Estun002747",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：与此同时，公司管理层维持2026年全年60亿元收入、31%毛利率",
+            "reasons": [
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "Citi：埃斯顿成本优化带动毛利率扩张，库卡构成潜在竞争",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "Citi：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 毛利率扩张主要来自零部件国产化与设计降本->研究主题与行业变化观察",
+          "2. 工业机器人出货量指引维持，国内市场份额领先->机器人行业数据与主题变化观察",
+          "3. 库卡成本优化加速，可能改变竞争格局->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "14-CITI-China Renewable Energy-Strong PRC Inverter Export Demand Continued in June- Sungrow and Deye Improving Shareholder Returns-260721",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：能源行业数据与主题变化观察",
+      "final_wechat_title": "花旗：能源行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_2/0004-14-CITI-China-Renewable-Energy-Strong-PRC-Inverter-Export-Demand-Continued-",
+      "generation_decision": {
+        "source_filename": "0004-14-CITI-China Renewable Energy-Strong PRC Inverter Export Demand Continued in June- Sungrow and Deye Improving Shareholder Returns-260721.pdf",
+        "cleaned_source_title": "CITI-China Renewable Energy-Strong PRC Inverter Export Demand Continued in June- Sungrow and Deye Improving Shareholder Returns",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：中国Renewable能源StrongPRCIn",
+        "raw_candidates": [
+          "中国可再生能源-逆变器出口6月增长-阳光电源与德业提升股东回报",
+          "中国逆变器出口6月同比增长34.1%-阳光电源与德业股份宣布回购与分红",
+          "中国可再生能源-逆变器出口与股东回报-大洋洲与非洲需求拉动增长"
+        ],
+        "cleaned_candidates": [
+          "Citi：中国可再生能源-逆变器出口6月增长-阳光电源与德业提升股东回报",
+          "Citi：中国逆变器出口6月同比增长34.1%",
+          "Citi：中国可再生能源-逆变器出口与股东回报-大洋洲与非洲需求拉动增长",
+          "Citi：中国Renewable能源StrongPRCIn",
+          "Citi：中国逆变器出口在6月录得34.1%的同比增长"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：中国逆变器出口6月同比增长34.1%",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中国可再生能源-逆变器出口与股东回报-大洋洲与非洲需求拉动增长",
+            "reasons": [
+              "anchor_coverage=0.54",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中国Renewable能源StrongPRCIn",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "Citi：中国逆变器出口在6月录得34.1%的同比增长",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：能源行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "Citi：中国可再生能源-逆变器出口6月增长-阳光电源与德业提升股东回报",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "Citi：能源行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "2. 组件出口量调整，但价格回升支撑金额->价格数据与市场变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "15-CITI-Horizon Robotics -9660.HK- Expect -65- 1H GPM- 3 Catalysts on mean re-version-260721",
+      "institution_name": "花旗",
+      "title_before_upload": "Citi：地平线机器人1H26毛利率预计超65%",
+      "final_wechat_title": "花旗：地平线机器人1H26毛利率预计超65%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_2/0005-15-CITI-Horizon-Robotics--9660.HK--Expect--65--1H-GPM--3-Catalysts-on-mean-",
+      "generation_decision": {
+        "source_filename": "0005-15-CITI-Horizon Robotics -9660.HK- Expect -65- 1H GPM- 3 Catalysts on mean re-version-260721.pdf",
+        "cleaned_source_title": "CITI-Horizon Robotics -9660.HK- Expect -65- 1H GPM- 3 Catalysts on mean re-version",
+        "institution_name": "Citi",
+        "required_terms": [],
+        "deterministic_fallback": "Citi：HorizonRoboticsExpect65",
+        "raw_candidates": [
+          "Citi：地平线机器人1H26毛利率预计超65%",
+          "Citi：地平线机器人1H26毛利率预计超65%-三个催化剂待兑现",
+          "Citi：地平线机器人1H26毛利率预计超65%-自动驾驶与市场份额扩张"
+        ],
+        "cleaned_candidates": [
+          "Citi：地平线机器人1H26毛利率预计超65%",
+          "Citi：地平线机器人1H26毛利率预计超65%-三个催化剂待兑现",
+          "Citi：地平线机器人1H26毛利率预计超65%-自动驾驶与市场份额扩张",
+          "Citi：HorizonRoboticsExpect65",
+          "Citi：地平线机器人1H26毛利率预计超65%，三个催化剂待兑现"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "Citi：HorizonRoboticsExpect65",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "Citi：地平线机器人1H26毛利率预计超65%",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "Citi：地平线机器人1H26毛利率预计超65%",
+        "body_heading_neutralization_changes": [
+          "1. 1H26运营收入有望触及指引上限，毛利率受产品组合与成本改善支撑->1.业务与近期数据观察",
+          "2. 全年收入增长目标维持50%，2H26加速依赖大众车型交付与比亚迪份额提升->2.全年业务与近期数据观察",
+          "3. 三个催化剂：L3/L4合作、比亚迪份额扩张与英伟达在中国ADAS市场的份额变化->3. 三个催化剂：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "16-DB-China NEV Weekly New Orders Monitor-China NEV demand leading indicator -weekly new orders--July 3rd week-260721",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：中国新能源车周度订单追踪-7月第三周",
+      "final_wechat_title": "德意志银行：中国新能源车周度订单追踪-7月第三周",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_3/0001-16-Deutsche-Bank-China-NEV-Weekly-New-Orders-Monitor-China-NEV-demand-leadi",
+      "generation_decision": {
+        "source_filename": "0001-16-DB-China NEV Weekly New Orders Monitor-China NEV demand leading indicator -weekly new orders--July 3rd week-260721.pdf",
+        "cleaned_source_title": "DB-China NEV Weekly New Orders Monitor-China NEV demand leading indicator -weekly new orders--July 3rd week",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：中国NEVWeeklyNewOrdersMonitor中国",
+        "raw_candidates": [
+          "中国新能源车周度订单追踪-7月第三周",
+          "中国新能源车7月第三周订单数据分化",
+          "中国新能源车周度订单-7月第三周品牌分化"
+        ],
+        "cleaned_candidates": [
+          "DB：中国新能源车周度订单追踪-7月第三周",
+          "DB：中国新能源车7月第三周订单数据分化",
+          "DB：中国新能源车周度订单-7月第三周品牌分化",
+          "DB：中国NEVWeeklyNewOrdersMonitor中国",
+          "DB：从总量看，比亚迪7月第三周新增订单4.79万辆"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：中国新能源车7月第三周订单数据分化",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "DB：中国NEVWeeklyNewOrdersMonitor中国",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：从总量看，比亚迪7月第三周新增订单4.79万辆",
+            "reasons": [
+              "anchor_coverage=0.31",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：中国新能源车周度订单追踪-7月第三周",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：中国新能源车周度订单追踪-7月第三周",
+        "body_heading_neutralization_changes": [
+          "1. 蔚来与理想在高端市场形成不同增长路径->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "17-DB-Airbus-AIR.PA -A mid-term guidance- a -5bn buyback and a flight plan beyond 2029-260722",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：空客2029年中期指引及50亿欧元回购计划",
+      "final_wechat_title": "德意志银行：空客2029年中期指引及50亿欧元回购计划",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_3/0002-17-Deutsche-Bank-Airbus-AIR.PA--A-mid-term-guidance--a--5bn-buyback-and-a-f",
+      "generation_decision": {
+        "source_filename": "0002-17-DB-Airbus-AIR.PA -A mid-term guidance- a -5bn buyback and a flight plan beyond 2029-260722.pdf",
+        "cleaned_source_title": "DB-Airbus-AIR.PA -A mid-term guidance- a -5bn buyback and a flight plan beyond 2029",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：AirbusAmidtermguidance",
+        "raw_candidates": [
+          "空客中期指引与50亿欧元回购计划",
+          "空客2029年中期指引及50亿欧元回购计划",
+          "空客中期指引与回购计划及宽体机增长"
+        ],
+        "cleaned_candidates": [
+          "DB：空客中期指引与50亿欧元回购计划",
+          "DB：空客2029年中期指引及50亿欧元回购计划",
+          "DB：空客中期指引与回购计划及宽体机增长",
+          "DB：AirbusAmidtermguidance",
+          "DB：空客在2026年7月业务更新中披露了2029年中期指引"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：空客中期指引与回购计划及宽体机增长",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "DB：AirbusAmidtermguidance",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：空客在2026年7月业务更新中披露了2029年中期指引",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：空客2029年中期指引及50亿欧元回购计划",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2029"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：空客2029年中期指引及50亿欧元回购计划",
+        "body_heading_neutralization_changes": [
+          "1. 中期指引符合预期，回购计划成为正向信号->研究主题与行业变化观察",
+          "2. 宽体机与售后服务构成2029年后增长主线->研究主题与行业变化观察",
+          "3. 防务与航天及直升机业务延续增长轨迹->技术应用与行业运营观察",
+          "4. 第二季度交付量驱动运营杠杆，外汇对冲构成影响->货币市场与相关指标观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "18-DB-China IP Retailer-IP Offline Sales-Jun 2026--Pop Mart Weakens While Peers 报告观点Up-260721",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：中国IP零售商6月线下销售分化",
+      "final_wechat_title": "德意志银行：中国IP零售商6月线下销售分化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_3/0003-18-Deutsche-Bank-China-IP-Retailer-IP-Offline-Sales-Jun-2026--Pop-Mart-Weak",
+      "generation_decision": {
+        "source_filename": "0003-18-DB-China IP Retailer-IP Offline Sales-Jun 2026--Pop Mart Weakens While Peers Hold Up-260721.pdf",
+        "cleaned_source_title": "DB-China IP Retailer-IP Offline Sales-Jun 2026--Pop Mart Weakens While Peers Hold Up",
+        "institution_name": "DB",
+        "required_terms": [],
+        "deterministic_fallback": "DB：中国IPRetailerIPOfflineSalesJun",
+        "raw_candidates": [
+          "中国IP零售商6月线下销售分化",
+          "泡泡玛特6月同店销售同比下滑16%",
+          "卡游6月同店销售同比反弹46%"
+        ],
+        "cleaned_candidates": [
+          "DB：中国IP零售商6月线下销售分化",
+          "DB：泡泡玛特6月同店销售同比下滑16%",
+          "DB：卡游6月同店销售同比反弹46%",
+          "DB：中国IPRetailerIPOfflineSalesJun",
+          "DB：中国IP零售的线下动能在2026年6月出现清晰分化"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：泡泡玛特6月同店销售同比下滑16%",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：卡游6月同店销售同比反弹46%",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：中国IPRetailerIPOfflineSalesJun",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：中国IP零售的线下动能在2026年6月出现清晰分化",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          }
+        ],
+        "selected_title": "DB：中国IP零售商6月线下销售分化",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "DB：中国IP零售商6月线下销售分化",
+        "body_heading_neutralization_changes": [
+          "1. 泡泡玛特6月同店销售同比下滑16%，Labubu 4.0未能扭转趋势->研究主题与行业变化观察",
+          "2. 名创优品中国区同店销售6月同比增长3%，大店策略支撑韧性->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "19-DB-Thematic Research-Time billionaires want more risk. Is AI to blame--260722",
+      "institution_name": "德意志银行",
+      "title_before_upload": "DB：AI技术与行业应用观察",
+      "final_wechat_title": "德意志银行：AI技术与行业应用观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_3/0004-19-Deutsche-Bank-Thematic-Research-Time-billionaires-want-more-risk.-Is-AI-",
+      "generation_decision": {
+        "source_filename": "0004-19-DB-Thematic Research-Time billionaires want more risk. Is AI to blame--260722.pdf",
+        "cleaned_source_title": "DB-Thematic Research-Time billionaires want more risk. Is AI to blame",
+        "institution_name": "DB",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "DB：AIThematicResearchTimeb",
+        "raw_candidates": [
+          "主题研究：时间亿万富翁寻求更高风险与AI角色",
+          "主题研究：美英年轻读者风险偏好上升与AI资金管理需求",
+          "主题研究：时间亿万富翁的风险偏好与AI规划需求"
+        ],
+        "cleaned_candidates": [
+          "DB：主题研究，时间亿万富翁寻求更高风险与AI角色",
+          "DB：主题研究，美英年轻读者风险偏好上升与AI资金管理需求",
+          "DB：主题研究，时间亿万富翁的风险偏好与AI规划需求",
+          "DB：AIThematicResearchTimeb",
+          "DB：年轻读者不确定性偏好上升与AI资金规划需求"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "DB：主题研究，美英年轻读者风险偏好上升与AI资金管理需求",
+            "reasons": [
+              "anchor_coverage=0.30",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：主题研究，时间亿万富翁的风险偏好与AI规划需求",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "DB：AIThematicResearchTimeb",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "DB：年轻读者不确定性偏好上升与AI资金规划需求",
+            "reasons": [
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "DB：AI技术与行业应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "DB：主题研究，时间亿万富翁寻求更高风险与AI角色",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "DB：AI技术与行业应用观察"
+      }
+    },
+    {
+      "source_report_name": "20-GS-CHINA CRO - CDMO-2Q 1H26 Preview-Resilient Order Momentum to Support Further Earnings Upgrades and Re-rating Sustainability-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "研究主题与行业变化观察",
+      "final_wechat_title": "高盛：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_3/0005-20-Goldman-Sachs-CHINA-CRO---CDMO-2Q-1H26-Preview-Resilient-Order-Momentum-",
+      "generation_decision": {
+        "source_filename": "0005-20-GS-CHINA CRO - CDMO-2Q 1H26 Preview-Resilient Order Momentum to Support Further Earnings Upgrades and Re-rating Sustainability-260722.pdf",
+        "cleaned_source_title": "GS-CHINA CRO - CDMO-2Q 1H26 Preview-Resilient Order Momentum to Support Further Earnings Upgrades and Re-rating Sustainability",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国CROCDMO2Q1H26PreviewRe",
+        "raw_candidates": [
+          "中国CRO-CDMO二季度预览：订单韧性支撑盈利上修与估值修复",
+          "中国CRO-CDMO二季度预览：订单增长20%-30%支撑盈利上修",
+          "中国CRO-CDMO二季度预览：GLP-1与ADC需求驱动订单韧性"
+        ],
+        "cleaned_candidates": [
+          "GS：中国CRO-CDMO二季度预览，订单韧性支撑盈利上修与估值修复",
+          "GS：中国CRO-CDMO二季度预览，订单增长20%",
+          "GS：中国CRO-CDMO二季度预览，GLP",
+          "GS：中国CROCDMO2Q1H26PreviewRe",
+          "GS：1.二季度订单增长预期集中在20%-30%区间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国CRO-CDMO二季度预览，订单增长20%",
+            "reasons": [
+              "anchor_coverage=0.54",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国CRO-CDMO二季度预览，GLP",
+            "reasons": [
+              "anchor_coverage=0.46",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国CROCDMO2Q1H26PreviewRe",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.二季度订单增长预期集中在20%-30%区间",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：中国CRO-CDMO二季度预览，订单韧性支撑盈利上修与估值修复",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 二季度订单增长预期集中在20%-30%区间->1.业务与季度数据观察",
+          "2. 人民币升值构成约1-5个百分点的收入仍在调整->货币市场与相关指标观察",
+          "3. 药明康德二季度财报最值得关注：指引上修与GLP-1积压转化->3.药明康德业务与季度数据观察",
+          "4. 康龙化成与凯莱英：订单加速后的盈利上修空间->4. 康龙化成与凯莱英：研究主题与行业变化观察",
+          "5. 估值修复的可持续性取决于盈利交付节奏->5.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "21-GS-CHINA SPORTSWEAR-Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "研究主题与行业变化观察",
+      "final_wechat_title": "高盛：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_4/0001-21-Goldman-Sachs-CHINA-SPORTSWEAR-Cutting-Topsports-Pou-Sheng-estimates-to-",
+      "generation_decision": {
+        "source_filename": "0001-21-GS-CHINA SPORTSWEAR-Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027-260722.pdf",
+        "cleaned_source_title": "GS-CHINA SPORTSWEAR-Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国SPORTSWEARCuttingTopsp",
+        "raw_candidates": [
+          "中国运动服饰-下调滔搏宝胜预估以反映耐克终止线上销售",
+          "中国运动服饰-耐克2027年终止线上销售影响滔搏宝胜预估",
+          "中国运动服饰-耐克线上授权终止对两家经销商利润影响差异"
+        ],
+        "cleaned_candidates": [
+          "GS：中国运动服饰-下调滔搏宝胜预估以反映耐克终止线上销售",
+          "GS：中国运动服饰-耐克2027年终止线上销售影响滔搏宝胜预估",
+          "GS：中国运动服饰-耐克线上授权终止对两家经销商利润影响差异",
+          "GS：中国SPORTSWEARCuttingTopsp",
+          "GS：耐克将从2027年1月1日起终止两家主要经销商在中国大陆的线上平"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国运动服饰-耐克2027年终止线上销售影响滔搏宝胜预估",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "GS：中国运动服饰-耐克线上授权终止对两家经销商利润影响差异",
+            "reasons": [
+              "anchor_coverage=0.33",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国SPORTSWEARCuttingTopsp",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：耐克将从2027年1月1日起终止两家主要经销商在中国大陆的线上平",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：中国运动服饰-下调滔搏宝胜预估以反映耐克终止线上销售",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 线上业务利润率差异决定利润冲击幅度->1.线上业务与近期数据观察",
+          "2. 耐克渠道改革为其他品牌创造窗口->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "22-GS-HUAMING -002270- Upgrade to 报告观点on attractive valuation post correction- while stable overseas growth driven by global grid upgrade remains intact-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：华明装备业务与近期数据观察",
+      "final_wechat_title": "高盛：华明装备业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_4/0002-22-Goldman-Sachs-HUAMING--002270--Upgrade-to-Buy-on-attractive-valuation-po",
+      "generation_decision": {
+        "source_filename": "0002-22-GS-HUAMING -002270- Upgrade to Buy on attractive valuation post correction- while stable overseas growth driven by global grid upgrade remains intact-260722.pdf",
+        "cleaned_source_title": "GS-HUAMING -002270- Upgrade to Buy on attractive valuation post correction- while stable overseas growth driven by global grid upgrade remains intact",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：HUAMING002270",
+        "raw_candidates": [
+          "华明装备估值回调后海外增长逻辑未变",
+          "华明装备估值回调后海外增长逻辑未变-2026至2030年净利润复合增速约17%",
+          "华明装备全球电网升级周期下的海外增长与市场份额提升"
+        ],
+        "cleaned_candidates": [
+          "GS：华明装备估值回调后海外增长逻辑未变",
+          "GS：华明装备全球电网升级周期下的海外增长与市场份额提升",
+          "GS：HUAMING002270",
+          "GS：预计华明装备2026至2030年净利润复合增速约17%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：华明装备全球电网升级周期下的海外增长与市场份额提升",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "GS：HUAMING002270",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：预计华明装备2026至2030年净利润复合增速约17%",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：华明装备业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：华明装备估值回调后海外增长逻辑未变",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：华明装备业务与近期数据观察",
+        "body_heading_neutralization_changes": [
+          "1. 国内主导地位为海外扩张提供基础->研究主题与行业变化观察",
+          "3. 估值已低于历史均值，但溢价仍有支撑->3.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "23-GS-EUROPEAN ECONOMICS ANALYST-Euro Area-Higher Energy Prices Undo Recent Inflation Progress-260723",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：价格数据与市场变化观察",
+      "final_wechat_title": "高盛：价格数据与市场变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_4/0003-23-Goldman-Sachs-EUROPEAN-ECONOMICS-ANALYST-Euro-Area-Higher-Energy-Prices-",
+      "generation_decision": {
+        "source_filename": "0003-23-GS-EUROPEAN ECONOMICS ANALYST-Euro Area-Higher Energy Prices Undo Recent Inflation Progress-260723.pdf",
+        "cleaned_source_title": "GS-EUROPEAN ECONOMICS ANALYST-Euro Area-Higher Energy Prices Undo Recent Inflation Progress",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：EUROPEANECONOMICSANALYST",
+        "raw_candidates": [
+          "GS：能源价格上涨抵消欧元区近期通胀进展",
+          "GS：能源价格上涨抵消欧元区近期通胀进展-6月数据",
+          "GS：能源价格上涨抵消欧元区通胀进展-模型分析"
+        ],
+        "cleaned_candidates": [
+          "GS：能源价格上涨抵消欧元区近期通胀进展",
+          "GS：能源价格上涨抵消欧元区近期通胀进展-6月数据",
+          "GS：能源价格上涨抵消欧元区通胀进展-模型分析",
+          "GS：EUROPEANECONOMICSANALYST",
+          "GS：1.模型确认直接效应迅速但间接效应在6月消退"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：EUROPEANECONOMICSANALYST",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：1.模型确认直接效应迅速但间接效应在6月消退",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：价格数据与市场变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "6"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：能源价格上涨抵消欧元区近期通胀进展-6月数据",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：价格数据与市场变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 模型确认直接效应迅速但间接效应在6月消退->研究主题与行业变化观察",
+          "2. 能源期货价格回升将通胀预测拉回欧洲央行基线->价格数据与市场变化观察",
+          "3. 核心商品通胀对能源价格上涨的反应比以往更温和->价格数据与市场变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "24-GS-China- Fiscal revenue and expenditure growth both improved in June- while land sales revenue contracted further-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：研究主题与行业变化观察",
+      "final_wechat_title": "高盛：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_4/0004-24-Goldman-Sachs-China--Fiscal-revenue-and-expenditure-growth-both-improved",
+      "generation_decision": {
+        "source_filename": "0004-24-GS-China- Fiscal revenue and expenditure growth both improved in June- while land sales revenue contracted further-260722.pdf",
+        "cleaned_source_title": "GS-China- Fiscal revenue and expenditure growth both improved in June- while land sales revenue contracted further",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：中国-Fiscalrevenue和expenditure增长",
+        "raw_candidates": [
+          "中国6月财政收入与支出增速均加快-土地收入降幅扩大",
+          "中国6月广义财政赤字收窄-土地收入降幅扩大至42.1%",
+          "中国6月财政收支增速分化-土地与房地产收入持续收缩"
+        ],
+        "cleaned_candidates": [
+          "GS：中国6月财政收入与支出增速均加快-土地收入降幅扩大",
+          "GS：中国6月广义财政赤字收窄-土地收入降幅扩大至42.1%",
+          "GS：中国6月财政收支增速分化-土地与房地产收入持续收缩",
+          "GS：中国-Fiscalrevenue和expenditure增长",
+          "GS：6月预算内财政收入同比增长8.7%，较5月的6.6%有所加快"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国6月广义财政赤字收窄-土地收入降幅扩大至42.1%",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "GS：中国6月财政收支增速分化-土地与房地产收入持续收缩",
+            "reasons": [
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国-Fiscalrevenue和expenditure增长",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：6月预算内财政收入同比增长8.7%，较5月的6.6%有所加快",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：中国6月财政收入与支出增速均加快-土地收入降幅扩大",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording",
+          "neutralized:china_systemic_topic"
+        ],
+        "final_title_after_wording_guard": "GS：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 预算内收支增速差距扩大，支出仍受约束->研究主题与行业变化观察",
+          "2. 土地收入降幅扩大，房地产相关收入持续调整->城市与住房数据变化观察",
+          "3. 广义财政赤字收窄，财政脉冲转负->研究主题与行业变化观察",
+          "4. 政策预期：宽松措辞加强，但大规模刺激概率有限->4. 政策预期：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "25-GS-How China Is Buffering the Global Energy Supply Shock-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：能源行业数据与主题变化观察",
+      "final_wechat_title": "高盛：能源行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_4/0005-25-Goldman-Sachs-How-China-Is-Buffering-the-Global-Energy-Supply-Shock-2607",
+      "generation_decision": {
+        "source_filename": "0005-25-GS-How China Is Buffering the Global Energy Supply Shock-260722.pdf",
+        "cleaned_source_title": "GS-How China Is Buffering the Global Energy Supply Shock",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：How中国IsBufferingthe全球能源S",
+        "raw_candidates": [
+          "中国缓冲全球能源供应冲击",
+          "中国能源进口下降与库存替代缓冲",
+          "中国能源体系调整与燃料替代机制"
+        ],
+        "cleaned_candidates": [
+          "GS：中国缓冲全球能源供应冲击",
+          "GS：中国能源进口下降与库存替代缓冲",
+          "GS：中国能源体系调整与燃料替代机制",
+          "GS：How中国IsBufferingthe全球能源S",
+          "GS：2026年二季度，中国原油净进口同比下降24%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：中国能源进口下降与库存替代缓冲",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：中国能源体系调整与燃料替代机制",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：How中国IsBufferingthe全球能源S",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "GS：2026年二季度，中国原油净进口同比下降24%",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：能源行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：中国缓冲全球能源供应冲击",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：能源行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 煤炭与石油有效去库存填补进口缺口->跨境贸易数据与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "26-GS-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- 报告观点on Lasertec Ebara Disco To",
+      "institution_name": "高盛",
+      "title_before_upload": "半导体行业数据与主题变化观察",
+      "final_wechat_title": "高盛：半导体行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_5/0001-26-Goldman-Sachs-JAPAN-TECHNOLOGY--SEMICONDUCTOR-CAPITAL-EQUIPMENT-June-SEA",
+      "generation_decision": {
+        "source_filename": "0001-26-GS-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- Buy on Lasertec Ebara Disco To.pdf",
+        "cleaned_source_title": "GS-JAPAN TECHNOLOGY- SEMICONDUCTOR CAPITAL EQUIPMENT-June SEAJ data- Front-end equipment leads strong demand- we revise GSe- Buy on Lasertec Ebara Disco To",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：日本科技半导体CAPITALEQUIPMENTJ",
+        "raw_candidates": [
+          "日本半导体设备前端设备需求强劲-GS上调盈利预测",
+          "日本半导体设备4-6月销售额同比增长27%-GS上调盈利预测",
+          "日本半导体设备前端设备需求驱动增长-GS修订盈利预测"
+        ],
+        "cleaned_candidates": [
+          "GS：日本半导体设备前端设备需求强劲-GS上调盈利预测",
+          "GS：日本半导体设备4-6月销售额同比增长27%-GS上调盈利预测",
+          "GS：日本半导体设备前端设备需求驱动增长-GS修订盈利预测",
+          "GS：日本科技半导体CAPITALEQUIPMENTJ",
+          "GS：日本半导体设备4-6月销售额同比增长27%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：日本半导体设备4-6月销售额同比增长27%-GS上调盈利预测",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "GS：日本半导体设备前端设备需求驱动增长-GS修订盈利预测",
+            "reasons": [
+              "anchor_coverage=0.71"
+            ]
+          },
+          {
+            "title": "GS：日本科技半导体CAPITALEQUIPMENTJ",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：日本半导体设备4-6月销售额同比增长27%",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：半导体行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：日本半导体设备前端设备需求强劲-GS上调盈利预测",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：半导体行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 前端设备需求在4-6月成为增长主力->1.前端设备业务与近期数据观察",
+          "2. 日元贬值假设调整带动盈利预测上修->2.日元贬值假设调整带动业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "27-GS-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "研究主题与行业变化观察",
+      "final_wechat_title": "高盛：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_5/0002-27-Goldman-Sachs-Japan-Banks--Asia-investor-feedback--Strong-interest-amid-",
+      "generation_decision": {
+        "source_filename": "0002-27-GS-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets-260722.pdf",
+        "cleaned_source_title": "GS-Japan Banks- Asia investor feedback- Strong interest amid loan growth- interest rate normalization- and active capital markets",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：日本BanksAsiainvestorfeedb",
+        "raw_candidates": [
+          "GS：日本银行板块-亚洲投资者反馈与贷款增长利率正常化",
+          "GS：日本银行板块-贷款增速从5.9%升至8.4%支撑兴趣",
+          "GS：日本银行板块-五大顺风因素与利率正常化前景"
+        ],
+        "cleaned_candidates": [
+          "GS：日本银行板块-亚洲参与者反馈与贷款增长利率正常化",
+          "GS：日本银行板块-贷款增速从5.9%升至8.4%支撑兴趣",
+          "GS：日本银行板块-五大顺风因素与利率正常化前景",
+          "GS：日本BanksAsiainvestorfeedb",
+          "GS：城市银行在1-3月期间的贷款同比增速为5.9%，到4"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：日本银行板块-贷款增速从5.9%升至8.4%支撑兴趣",
+            "reasons": [
+              "anchor_coverage=0.32",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：日本银行板块-五大顺风因素与利率正常化前景",
+            "reasons": [
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：日本BanksAsiainvestorfeedb",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：城市银行在1-3月期间的贷款同比增速为5.9%，到4",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：日本银行板块-亚洲参与者反馈与贷款增长利率正常化",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "3. 节奏变化不确定性与潜在上调空间并存->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "28-GS-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes-260723",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：日本央行7月会议预计维持利率不变-下次调整或在2027年1月",
+      "final_wechat_title": "高盛：日本央行7月会议预计维持利率不变-下次调整或在2027年1月",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_5/0003-28-Goldman-Sachs-Japan-Economic-Flash-BOJ-July-MPM-Preview-We-Expect-Status",
+      "generation_decision": {
+        "source_filename": "0003-28-GS-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes-260723.pdf",
+        "cleaned_source_title": "GS-Japan Economic Flash-BOJ July MPM Preview-We Expect Status Quo in July-and Maintain View on Roughly Semi-annual Rate Hikes",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：日本EconomicFlashBOJJulyMP",
+        "raw_candidates": [
+          "日本央行7月会议预计维持利率不变",
+          "日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+          "日本央行7月会议预计维持利率不变-加息时点概率分布前移"
+        ],
+        "cleaned_candidates": [
+          "GS：日本央行7月会议预计维持利率不变",
+          "GS：日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+          "GS：日本央行7月会议预计维持利率不变-加息时点概率分布前移",
+          "GS：日本EconomicFlashBOJJulyMP",
+          "GS：日本央行7月会议预计维持利率不变，下次加息或在2027年1月"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：日本EconomicFlashBOJJulyMP",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "1",
+            "2027"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "GS：日本央行7月会议预计维持利率不变-下次加息或在2027年1月",
+        "body_heading_neutralization_changes": [
+          "1. 宏观环境基本面符合央行评估，企业研究意愿保持积极->研究主题与行业变化观察",
+          "2. 原油价格低于4月展望报告，央行可能上调增长预测并小幅下调通胀预测->价格数据与市场变化观察",
+          "3. 调整节奏：半年度一次仍是基准情景，但不确定性显著上升->3. 调整节奏：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "29-GS-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy-260723",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：研究主题与行业变化观察",
+      "final_wechat_title": "高盛：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_5/0004-29-Goldman-Sachs-Japan-Technology--Hardware-Industrial-Electronics--GEV-2Q-",
+      "generation_decision": {
+        "source_filename": "0004-29-GS-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy-260723.pdf",
+        "cleaned_source_title": "GS-Japan Technology- Hardware-Industrial Electronics- GEV 2Q read-across- Strong power grid demand positive for Hitachi Energy",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：日本科技硬件IndustrialElectronicsGEV2",
+        "raw_candidates": [
+          "日本科技硬件-工业电子-GEV第二季度业绩映射-电网需求强劲利好日立能源",
+          "日本科技硬件-工业电子-GEV第二季度订单93%增长-电网需求强劲利好日立能源",
+          "日本科技硬件-工业电子-GEV数据中心订单超50亿美元-电网需求强劲利好日立能源"
+        ],
+        "cleaned_candidates": [
+          "GS：日本科技硬件-工业电子-GEV第二季度业绩映射",
+          "GS：日本科技硬件-工业电子-GEV第二季度订单93%增长",
+          "GS：日本科技硬件-工业电子-GEV数据中心订单超50亿美元",
+          "GS：日本科技硬件IndustrialElectronicsGEV2",
+          "GS：该季度订单达到63.47亿美元，同比增长93%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：日本科技硬件-工业电子-GEV数据中心订单超50亿美元",
+            "reasons": [
+              "anchor_coverage=0.60",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：日本科技硬件IndustrialElectronicsGEV2",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：该季度订单达到63.47亿美元，同比增长93%",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "93"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：日本科技硬件-工业电子-GEV第二季度订单93%增长",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 订单出货比达到1.7倍，积压订单同比增长65%->1.业务与近期数据观察",
+          "3. 美国市场变压器订单增长，全球生产体系布局见效->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "30-GS-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+      "final_wechat_title": "高盛：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_5/0005-30-Goldman-Sachs-ServiceNow-Inc.--NOW.US--2Q26-EPS--The-AI-use-cases-are-be",
+      "generation_decision": {
+        "source_filename": "0005-30-GS-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible-260722.pdf",
+        "cleaned_source_title": "GS-ServiceNow Inc. -NOW.US- 2Q26 EPS- The AI use cases are becoming more tangible",
+        "institution_name": "GS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "GS：AIServiceNowInc.",
+        "raw_candidates": [
+          "GS：ServiceNow第二季度订阅收入同比增长23%",
+          "GS：ServiceNow AI年度合同价值突破10亿美元",
+          "GS：ServiceNow L1 ITSM产品自动解决率达80%至85%",
+          "GS：ServiceNow 2Q26 EPS与AI用例",
+          "GS：ServiceNow 2Q26订阅收入增23% AI ACV超10亿美元",
+          "GS：ServiceNow AI产品商用化与L1 ITSM自动解决率"
+        ],
+        "cleaned_candidates": [
+          "GS：ServiceNow第二季度订阅收入同比增长23%",
+          "GS：ServiceNowAI年度合同价值突破10亿美元",
+          "GS：ServiceNowL1ITSM产品自动解决率达80%至85%",
+          "GS：ServiceNow2Q26EPS与AI用例",
+          "GS：ServiceNow2Q26订阅收入增23%AIACV超10亿美",
+          "GS：ServiceNowAI产品商用化与L1ITSM自动解决率",
+          "GS：AIServiceNowInc.",
+          "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元"
+        ],
+        "faithful_candidate_missing_terms": [
+          "AI"
+        ],
+        "faithful_candidate_quality_issues": [
+          "long_untranslated_english"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：ServiceNow第二季度订阅收入同比增长23%",
+            "reasons": [
+              "missing_required_terms=AI",
+              "long_untranslated_english",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：ServiceNowAI年度合同价值突破10亿美元",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.50",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：ServiceNowL1ITSM产品自动解决率达80%至85%",
+            "reasons": [
+              "missing_required_terms=AI",
+              "long_untranslated_english",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：ServiceNow2Q26EPS与AI用例",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：ServiceNow2Q26订阅收入增23%AIACV超10亿美",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：ServiceNowAI产品商用化与L1ITSM自动解决率",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：AIServiceNowInc.",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+        "selection_reason": "evidence_or_emergency_fallback",
+        "selected_quality_issues": [],
+        "needs_model_repair": true,
+        "hook_signals": {
+          "added_numbers": [
+            "10"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "GS：ServiceNow第二季度订阅收入同比增长23%",
+          "GS：ServiceNow AI年度合同价值突破10亿美元",
+          "GS：ServiceNow L1 ITSM产品自动解决率达80%至85%"
+        ],
+        "final_title_after_wording_guard": "GS：特别指出，AI年度合同价值（ACV）已超过10亿美元",
+        "body_heading_neutralization_changes": [
+          "1. L1 ITSM产品成为AI落地的关键节点->1.L1ITSM与AI及近期数据观察",
+          "3. 收入指引上调但幅度克制，反映需求环境仍存不确定性->3.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "31-HSBC-China Healthcare Marketing takeaways- The best non-AI play-260721",
+      "institution_name": "汇丰",
+      "title_before_upload": "HSBC：中国医疗健康非AI主题资金轮动",
+      "final_wechat_title": "汇丰：中国医疗健康非AI主题资金轮动",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_6/0001-31-HSBC-China-Healthcare-Marketing-takeaways--The-best-non-AI-play-260721",
+      "generation_decision": {
+        "source_filename": "0001-31-HSBC-China Healthcare Marketing takeaways- The best non-AI play-260721.pdf",
+        "cleaned_source_title": "HSBC-China Healthcare Marketing takeaways- The best non-AI play",
+        "institution_name": "HSBC",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "HSBC：AI中国HealthcareMarketingtakeaways",
+        "raw_candidates": [
+          "中国医疗健康非AI主题资金轮动",
+          "中国医疗健康板块6月反弹与CXO持仓变化",
+          "中国医疗健康非AI机会与资金结构观察"
+        ],
+        "cleaned_candidates": [
+          "HSBC：中国医疗健康非AI主题资金轮动",
+          "HSBC：中国医疗健康板块6月反弹与CXO持仓变化",
+          "HSBC：中国医疗健康非AI机会与资金结构观察",
+          "HSBC：AI中国HealthcareMarketingtakeaways",
+          "HSBC：中国医疗健康板块在AI叙事切换中的非AI机会"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "HSBC：中国医疗健康板块6月反弹与CXO持仓变化",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "HSBC：AI中国HealthcareMarketingtakeaways",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "HSBC：中国医疗健康板块在AI叙事切换中的非AI机会",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          }
+        ],
+        "selected_title": "HSBC：中国医疗健康非AI主题资金轮动",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "HSBC：中国医疗健康非AI主题资金轮动",
+        "body_heading_neutralization_changes": [
+          "2. 全球读者对CDMO和生物科技的兴趣上升->研究主题与行业变化观察",
+          "3. 反弹持续性的核心争论与催化剂时间表->研究主题与行业变化观察",
+          "4. 可复用的观察框架：从资金结构到催化剂映射->4. 可复用的观察框架：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "32-GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：德州仪器业务与近期数据观察",
+      "final_wechat_title": "高盛：德州仪器业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_6/0002-32-Goldman-Sachs-Texas-Instruments-Inc.--TXN.US---Strong-results-and-guidan",
+      "generation_decision": {
+        "source_filename": "0002-32-GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+        "cleaned_source_title": "GS-Texas Instruments Inc. -TXN.US-- Strong results and guidance suggests continued momentum in the analog recovery",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：TexasInstrumentsInc.",
+        "raw_candidates": [
+          "德州仪器业绩与指引显示模拟芯片复苏势头",
+          "德州仪器第二季度营收54.6亿美元超预期",
+          "德州仪器工业与汽车终端市场同步复苏"
+        ],
+        "cleaned_candidates": [
+          "GS：德州仪器业绩与指引显示模拟芯片复苏势头",
+          "GS：德州仪器第二季度营收54.6亿美元超预期",
+          "GS：德州仪器工业与汽车终端市场同步复苏",
+          "GS：TexasInstrumentsInc.",
+          "GS：2.库存天数下降13天，但毛利率恢复速度仍存隐忧"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：德州仪器第二季度营收54.6亿美元超预期",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：德州仪器工业与汽车终端市场同步复苏",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：TexasInstrumentsInc.",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：2.库存天数下降13天，但毛利率恢复速度仍存隐忧",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：德州仪器业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：德州仪器业绩与指引显示模拟芯片复苏势头",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：德州仪器业务与近期数据观察",
+        "body_heading_neutralization_changes": [
+          "1. 工业与汽车终端市场同时释放复苏信号->汽车行业数据与主题变化观察",
+          "2. 库存天数下降13天，但毛利率恢复速度仍存观察点->2.库存天数业务与近期数据观察",
+          "3. 模拟芯片板块的参照效应与公司间差异->半导体行业数据与主题变化观察",
+          "4. 数据中心收入环比增长20%，结构性需求持续->4.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "33-GS-Tesla Inc. (TSLA) Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap-260722",
+      "institution_name": "高盛",
+      "title_before_upload": "GS：研究主题与行业变化观察",
+      "final_wechat_title": "高盛：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_6/0003-33-Goldman-Sachs-Tesla-Inc.-TSLA-_-Business-and-technical-progress-in-key-m",
+      "generation_decision": {
+        "source_filename": "0003-33-GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap-260722.pdf",
+        "cleaned_source_title": "GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets- and costs of investments- remain in focus- 2Q wrap",
+        "institution_name": "GS",
+        "required_terms": [],
+        "deterministic_fallback": "GS：TeslaInc.(TSLA)Business",
+        "raw_candidates": [
+          "GS：特斯拉关键市场业务与技术进展及投资成本受关注",
+          "GS：特斯拉二季度利润率低于预期，市场关注业务进展",
+          "GS：特斯拉自动驾驶与机器人商业化进展及投入周期"
+        ],
+        "cleaned_candidates": [
+          "GS：特斯拉关键市场业务与技术进展及研究成本受关注",
+          "GS：特斯拉二季度利润率低于预期，市场关注业务进展",
+          "GS：特斯拉自动驾驶与机器人商业化进展及投入周期",
+          "GS：TeslaInc.(TSLA)Business",
+          "GS：FSD活跃订阅用户达到150万，环比增长16%，同比增长56%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "GS：特斯拉二季度利润率低于预期，市场关注业务进展",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：特斯拉自动驾驶与机器人商业化进展及投入周期",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：TeslaInc.(TSLA)Business",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "GS：FSD活跃订阅用户达到150万，环比增长16%，同比增长56%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "GS：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "GS：特斯拉关键市场业务与技术进展及研究成本受关注",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "GS：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "4. 竞争格局和技术研发需求对长期盈利增速构成制约->4.竞争格局和技术业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "34-HSBC-Hanbell Precise Machinery-002158--报告观点- Sustainable growth prospects-260721",
+      "institution_name": "汇丰",
+      "title_before_upload": "HSBC：汉钟精机可持续业务与近期数据观察",
+      "final_wechat_title": "汇丰：汉钟精机可持续业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_6/0004-34-HSBC-Hanbell-Precise-Machinery-002158--Buy--Sustainable-growth-prospects",
+      "generation_decision": {
+        "source_filename": "0004-34-HSBC-Hanbell Precise Machinery-002158--Buy- Sustainable growth prospects-260721.pdf",
+        "cleaned_source_title": "HSBC-Hanbell Precise Machinery-002158--Buy- Sustainable growth prospects",
+        "institution_name": "HSBC",
+        "required_terms": [],
+        "deterministic_fallback": "HSBC：HanbellPreciseMachinery002158",
+        "raw_candidates": [
+          "汉钟精机可持续增长前景",
+          "汉钟精机半导体真空泵收入2026年预计翻倍",
+          "汉钟精机数据中心磁悬浮压缩机市场2028年预计达169亿元"
+        ],
+        "cleaned_candidates": [
+          "HSBC：汉钟精机可持续增长前景",
+          "HSBC：汉钟精机半导体真空泵收入2026年预计翻倍",
+          "HSBC：汉钟精机数据中心磁悬浮压缩机市场2028年预计达169亿元",
+          "HSBC：HanbellPreciseMachinery002158",
+          "HSBC：测算，2028年全球数据中心磁悬浮压缩机市场规模可达169亿元人"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "HSBC：汉钟精机半导体真空泵收入2026年预计翻倍",
+            "reasons": [
+              "anchor_coverage=0.30"
+            ]
+          },
+          {
+            "title": "HSBC：汉钟精机数据中心磁悬浮压缩机市场2028年预计达169亿元",
+            "reasons": [
+              "anchor_coverage=0.30"
+            ]
+          },
+          {
+            "title": "HSBC：HanbellPreciseMachinery002158",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "HSBC：测算，2028年全球数据中心磁悬浮压缩机市场规模可达169亿元人",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "HSBC：汉钟精机可持续业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "HSBC：汉钟精机可持续增长前景",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "HSBC：汉钟精机可持续业务与近期数据观察",
+        "body_heading_neutralization_changes": [
+          "3. 工业热泵正在对冲中央空调市场的需求波动->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "35-HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery-260721",
+      "institution_name": "汇丰",
+      "title_before_upload": "城市与住房数据变化观察",
+      "final_wechat_title": "汇丰：城市与住房数据变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_6/0005-35-HSBC-China-Real-Estate-Soft-1H26-earnings-priced-in--still-underwriting-",
+      "generation_decision": {
+        "source_filename": "0005-35-HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery-260721.pdf",
+        "cleaned_source_title": "HSBC-China Real Estate-Soft 1H26 earnings priced in- still underwriting the 2027 recovery",
+        "institution_name": "HSBC",
+        "required_terms": [],
+        "deterministic_fallback": "HSBC：中国房地产Soft1H26earningspricedin",
+        "raw_candidates": [
+          "中国房地产-2026上半年业绩已定价-仍押注2027年复苏",
+          "中国房地产-2026上半年业绩已定价-市场关注2027年复苏",
+          "中国房地产-二手房量价改善-市场关注2027年盈利修复"
+        ],
+        "cleaned_candidates": [
+          "HSBC：中国房地产-2026上半年业绩已定价-仍押注2027年复苏",
+          "HSBC：中国房地产-2026上半年业绩已定价-市场关注2027年复苏",
+          "HSBC：中国房地产-二手房量价改善-市场关注2027年盈利修复",
+          "HSBC：中国房地产Soft1H26earningspricedin",
+          "HSBC：7月17日，越秀地产发布盈利预警"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "HSBC：中国房地产-二手房量价改善-市场关注2027年盈利修复",
+            "reasons": [
+              "anchor_coverage=0.38",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "HSBC：中国房地产Soft1H26earningspricedin",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "HSBC：7月17日，越秀地产发布盈利预警",
+            "reasons": [
+              "anchor_coverage=0.04",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "HSBC：城市与住房数据变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "HSBC：中国房地产-2026上半年业绩已定价-仍押注2027年复苏",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording",
+          "neutralized:china_systemic_topic"
+        ],
+        "final_title_after_wording_guard": "HSBC：城市与住房数据变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 二手房市场量价信号指向流动性改善->研究主题与行业变化观察",
+          "2. 高端项目需求保持韧性，头部企业份额持续集中->2.高端项目业务与近期数据观察",
+          "3. 公司盈利分化：研究物业和年轻土储成为缓冲垫->3. 公司盈利分化：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "36-JPM-ASEAN - Taiwan Telcos-Current AI token offerings are unlikely to drive earnings growth at telcos-260722",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：AI技术与行业应用观察",
+      "final_wechat_title": "摩根大通：AI技术与行业应用观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_7/0001-36-J.P.-Morgan-ASEAN---Taiwan-Telcos-Current-AI-token-offerings-are-unlikel",
+      "generation_decision": {
+        "source_filename": "0001-36-JPM-ASEAN - Taiwan Telcos-Current AI token offerings are unlikely to drive earnings growth at telcos-260722.pdf",
+        "cleaned_source_title": "JPM-ASEAN - Taiwan Telcos-Current AI token offerings are unlikely to drive earnings growth at telcos",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：ASEANTaiwanTelcosCurre",
+        "raw_candidates": [
+          "东南亚与台湾电信商AI代币业务盈利前景",
+          "东南亚与台湾电信商AI代币业务截至2026年7月",
+          "东南亚与台湾电信商AI代币业务与基础设施研究"
+        ],
+        "cleaned_candidates": [
+          "JPM：东南亚与台湾电信商AI代币业务盈利前景",
+          "JPM：东南亚与台湾电信商AI代币业务截至2026年7月",
+          "JPM：东南亚与台湾电信商AI代币业务与基础设施研究",
+          "JPM：ASEANTaiwanTelcosCurre",
+          "JPM：ST已披露到2027财年投入最高6亿新加坡元部署11MWAI"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：ASEANTaiwanTelcosCurre",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：ST已披露到2027财年投入最高6亿新加坡元部署11MWAI",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：AI技术与行业应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026",
+            "7"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "JPM：东南亚与台湾电信商AI代币业务截至2026年7月",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "JPM：AI技术与行业应用观察",
+        "body_heading_neutralization_changes": [
+          "2. 缺乏排他性合作意味着任何成功模式都会被复制->研究主题与行业变化观察",
+          "3. 自建AI基础设施的运营商可能从代币消费增长中获益->AI技术与行业应用观察",
+          "4. 报告偏好的运营商集中在具备差异化优势的标的->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "37-JPM-ASMPT Ltd -0522.HK- New CEO announced- expect further emphasis on advanced packaging-260721",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：ASMPT新CEO上任，聚焦先进封装与TCB业务",
+      "final_wechat_title": "摩根大通：ASMPT新CEO上任，聚焦先进封装与TCB业务",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_7/0002-37-J.P.-Morgan-ASMPT-Ltd--0522.HK--New-CEO-announced--expect-further-emphas",
+      "generation_decision": {
+        "source_filename": "0002-37-JPM-ASMPT Ltd -0522.HK- New CEO announced- expect further emphasis on advanced packaging-260721.pdf",
+        "cleaned_source_title": "JPM-ASMPT Ltd -0522.HK- New CEO announced- expect further emphasis on advanced packaging",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：ASMPTLtd-NewCEOannounced",
+        "raw_candidates": [
+          "ASMPT新CEO上任，聚焦先进封装与TCB业务",
+          "ASMPT新CEO八月上任，TCB业务迎HBM4与逻辑芯片订单",
+          "ASMPT新CEO来自晶圆代工背景，先进封装与TCB仍是核心"
+        ],
+        "cleaned_candidates": [
+          "JPM：ASMPT新CEO上任，聚焦先进封装与TCB业务",
+          "JPM：ASMPT新CEO八月上任",
+          "JPM：ASMPT新CEO来自晶圆代工背景，先进封装与TCB仍是核心",
+          "JPM：ASMPTLtd-NewCEOannounced",
+          "JPM：读者需要关注7月29日财报中关于TCB订单和SMT业务剥离"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：ASMPT新CEO八月上任",
+            "reasons": [
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：ASMPT新CEO来自晶圆代工背景，先进封装与TCB仍是核心",
+            "reasons": [
+              "anchor_coverage=0.68"
+            ]
+          },
+          {
+            "title": "JPM：ASMPTLtd-NewCEOannounced",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：读者需要关注7月29日财报中关于TCB订单和SMT业务剥离",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：ASMPT新CEO上任，聚焦先进封装与TCB业务",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：ASMPT新CEO上任，聚焦先进封装与TCB业务",
+        "body_heading_neutralization_changes": [
+          "2. TCB业务迎来多个催化剂，HBM4订单和逻辑芯片需求是重点->2.TCB与HBM及近期数据观察",
+          "3. 除TCB外，中国先进封装、主流市场复苏和光子学提供额外增长动力->研究主题与行业变化观察",
+          "4. 估值框架与不确定性：30倍远期PE，宏观环境和竞争格局是关键->4. 估值框架与不确定性：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "38-JPM-China Logistics- Express Parcel and Ecommerce-Incremental quality-led recovery in motion- with YMM and J-T now leading the sector-s next phase- 2Q26 previ",
+      "institution_name": "摩根大通",
+      "title_before_upload": "零售行业数据与主题变化观察",
+      "final_wechat_title": "摩根大通：零售行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_7/0003-38-J.P.-Morgan-China-Logistics--Express-Parcel-and-Ecommerce-Incremental-qu",
+      "generation_decision": {
+        "source_filename": "0003-38-JPM-China Logistics- Express Parcel and Ecommerce-Incremental quality-led recovery in motion- with YMM and J-T now leading the sector-s next phase- 2Q26 previ.pdf",
+        "cleaned_source_title": "JPM-China Logistics- Express Parcel and Ecommerce-Incremental quality-led recovery in motion- with YMM and J-T now leading the sector-s next phase- 2Q26 previ",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国LogisticsExpressParcel",
+        "raw_candidates": [
+          "中国物流-快递与电商-质量驱动的盈利修复-满帮与极兔引领下一阶段",
+          "中国物流-6月收入增速跑赢件量-通达系二季度利润增长92-152%",
+          "中国物流-快递行业从价格战转向质量战-满帮与极兔进入首选"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国物流-快递与电商-质量驱动的盈利修复",
+          "JPM：中国物流-6月收入增速跑赢件量-通达系二季度利润增长92",
+          "JPM：中国物流-快递行业从价格战转向质量战-满帮与极兔进入首选",
+          "JPM：中国LogisticsExpressParcel",
+          "JPM：JPM最新报告显示，6月行业收入同比增长7.7%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国物流-6月收入增速跑赢件量-通达系二季度利润增长92",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国物流-快递行业从价格战转向质量战-满帮与极兔进入首选",
+            "reasons": [
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：中国LogisticsExpressParcel",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：JPM最新报告显示，6月行业收入同比增长7.7%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：零售行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "JPM：中国物流-快递与电商-质量驱动的盈利修复",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "JPM：零售行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 6月数据确认收入增速持续跑赢件量->1.6月业务与近期数据观察",
+          "2. 通达系利润预告揭示盈利修复正在加速->2.通达系业务与近期数据观察",
+          "4. 电商数据验证需求修复但结构仍不均衡->4.电商业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "39-JPM-China Pharmacy-Same-store recovery accelerated in 2Q26 amid consolidation-future growth driven by three reinforcing structural tailwinds-260722",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：研究主题与行业变化观察",
+      "final_wechat_title": "摩根大通：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_7/0004-39-J.P.-Morgan-China-Pharmacy-Same-store-recovery-accelerated-in-2Q26-amid-",
+      "generation_decision": {
+        "source_filename": "0004-39-JPM-China Pharmacy-Same-store recovery accelerated in 2Q26 amid consolidation-future growth driven by three reinforcing structural tailwinds-260722.pdf",
+        "cleaned_source_title": "JPM-China Pharmacy-Same-store recovery accelerated in 2Q26 amid consolidation-future growth driven by three reinforcing structural tailwinds",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：中国PharmacySamestorerec",
+        "raw_candidates": [
+          "中国药房:同店增长在2Q26加速",
+          "中国药房:2Q26同店增长约5%-6%",
+          "中国药房:客流驱动同店增长加速"
+        ],
+        "cleaned_candidates": [
+          "JPM：中国药房，同店增长在2Q26加速",
+          "JPM：中国药房，2Q26同店增长约5%-6%",
+          "JPM：中国药房，客流驱动同店增长加速",
+          "JPM：中国PharmacySamestorerec",
+          "JPM：益丰二季度同店增速约6%，老百姓在5%至6%之间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：中国药房，2Q26同店增长约5%-6%",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.64"
+            ]
+          },
+          {
+            "title": "JPM：中国药房，客流驱动同店增长加速",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "JPM：中国PharmacySamestorerec",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：益丰二季度同店增速约6%，老百姓在5%至6%之间",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "JPM：中国药房，同店增长在2Q26加速",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "JPM：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 并购估值压缩至0.3至0.5倍市销率，加盟成为扩张主力->1.并购业务与近期数据观察",
+          "2. 非药品类扩张仍处早期，但已出现差异化信号->研究主题与行业变化观察",
+          "3. 自有品牌面临政策逆风，医保纳入率仅30%至40%->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "40-JPM-Japan Quant Strategy-NKY rallies - Sign that worst is over- AI semiconductors a long way off from recapturing their leading role-260721",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：日本量化策略-日经反弹与AI半导体角色",
+      "final_wechat_title": "摩根大通：日本量化策略-日经反弹与AI半导体角色",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_7/0005-40-J.P.-Morgan-Japan-Quant-Strategy-NKY-rallies---Sign-that-worst-is-over--",
+      "generation_decision": {
+        "source_filename": "0005-40-JPM-Japan Quant Strategy-NKY rallies - Sign that worst is over- AI semiconductors a long way off from recapturing their leading role-260721.pdf",
+        "cleaned_source_title": "JPM-Japan Quant Strategy-NKY rallies - Sign that worst is over- AI semiconductors a long way off from recapturing their leading role",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：AI日本Quant策略NKYralliesSig",
+        "raw_candidates": [
+          "日本量化策略-日经反弹与AI半导体角色",
+          "日本量化策略-日经反弹至66000点与AI半导体角色",
+          "日本量化策略-日经反弹与AI半导体尚未重掌主导"
+        ],
+        "cleaned_candidates": [
+          "JPM：日本量化策略-日经反弹与AI半导体角色",
+          "JPM：日本量化策略-日经反弹至66000点与AI半导体角色",
+          "JPM：日本量化策略-日经反弹与AI半导体尚未重掌主导",
+          "JPM：AI日本Quant策略NKYralliesSig",
+          "JPM：日股情绪接近零，AI半导体尚未重掌主导"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：日本量化策略-日经反弹至66000点与AI半导体角色",
+            "reasons": [
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "JPM：AI日本Quant策略NKYralliesSig",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：日股情绪接近零，AI半导体尚未重掌主导",
+            "reasons": [
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：日本量化策略-日经反弹与AI半导体角色",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：日本量化策略-日经反弹与AI半导体角色",
+        "body_heading_neutralization_changes": [
+          "3. “6月受创的老赢家”尚未恢复领涨地位->研究主题与行业变化观察",
+          "4. 卖压逐步见顶，但领涨群体仍然偏小->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "41-JPM-Shopify-SHOP.US- Expecting Upside to Guidance into 2Q Earnings- Focus on Growth Vectors- Gross Margins- Token Costs- - AI Leadership- Reit OW - Adding",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+      "final_wechat_title": "摩根大通：Shopify二季度业绩前瞻与AI竞争格局分析",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_8/0001-41-J.P.-Morgan-Shopify-SHOP.US--Expecting-Upside-to-Guidance-into-2Q-Earnin",
+      "generation_decision": {
+        "source_filename": "0001-41-JPM-Shopify-SHOP.US- Expecting Upside to Guidance into 2Q Earnings- Focus on Growth Vectors- Gross Margins- Token Costs- - AI Leadership- Reit OW - Adding.pdf",
+        "cleaned_source_title": "JPM-Shopify-SHOP.US- Expecting Upside to Guidance into 2Q Earnings- Focus on Growth Vectors- Gross Margins- Token Costs- - AI Leadership- Reit OW - Adding",
+        "institution_name": "JPM",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "JPM：AIShopifyExpectingUpside",
+        "raw_candidates": [
+          "Shopify二季度业绩前瞻与AI竞争格局分析",
+          "Shopify二季度GMV增长预期与AI成本影响",
+          "Shopify电商基础设施与AI差异化布局"
+        ],
+        "cleaned_candidates": [
+          "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+          "JPM：Shopify二季度GMV增长预期与AI成本影响",
+          "JPM：Shopify电商基础设施与AI差异化布局",
+          "JPM：AIShopifyExpectingUpside"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：Shopify二季度GMV增长预期与AI成本影响",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "JPM：Shopify电商基础设施与AI差异化布局",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "JPM：AIShopifyExpectingUpside",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.32"
+            ]
+          }
+        ],
+        "selected_title": "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JPM：Shopify二季度业绩前瞻与AI竞争格局分析",
+        "body_heading_neutralization_changes": [
+          "1. 二季度GMV增长有望超出管理层指引->1.业务与季度数据观察",
+          "2. 毛利率面临AI成本与产品结构双重不确定性->AI技术与行业应用观察",
+          "3. 平台型AI竞争的实际威胁可能被高估->AI技术与行业应用观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "42-JPM-Japan FX topic-Three key questions on GPIF-260721",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：货币市场与相关指标观察",
+      "final_wechat_title": "摩根大通：货币市场与相关指标观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_8/0002-42-J.P.-Morgan-Japan-FX-topic-Three-key-questions-on-GPIF-260721",
+      "generation_decision": {
+        "source_filename": "0002-42-JPM-Japan FX topic-Three key questions on GPIF-260721.pdf",
+        "cleaned_source_title": "JPM-Japan FX topic-Three key questions on GPIF",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：日本FXtopicThreekeyquest",
+        "raw_candidates": [
+          "日本外汇主题-GPIF三个关键问题",
+          "日本外汇主题-GPIF三个关键问题-33.8万亿日元潜在买盘",
+          "日本外汇主题-GPIF三个关键问题-资产配置调整与时间窗口"
+        ],
+        "cleaned_candidates": [
+          "JPM：日本外汇主题-GPIF三个关键问题",
+          "JPM：日本外汇主题-GPIF三个关键问题-33.8万亿日元潜在买盘",
+          "JPM：日本外汇主题-GPIF三个关键问题-资产配置调整与时间窗口",
+          "JPM：日本FXtopicThreekeyquest",
+          "JPM：GPIF当前的国内债券配置为26.91%（截至2026年3月"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：日本FXtopicThreekeyquest",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：GPIF当前的国内债券配置为26.91%（截至2026年3月",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：货币市场与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "33.8"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "JPM：日本外汇主题-GPIF三个关键问题-33.8万亿日元潜在买盘",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "JPM：货币市场与相关指标观察",
+        "body_heading_neutralization_changes": [
+          "2. 基本组合观察修订的时间表与不确定性->研究主题与行业变化观察",
+          "3. 日本其他机构读者的跟进意愿有限->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "43-JEF-Japan - Technology-Semiconductor Back-end Process and Package Trends-260721",
+      "institution_name": "杰富瑞",
+      "title_before_upload": "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+      "final_wechat_title": "杰富瑞：日本半导体后端工艺与封装趋势-2025年数据",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_8/0003-43-Jefferies-Japan---Technology-Semiconductor-Back-end-Process-and-Package-",
+      "generation_decision": {
+        "source_filename": "0003-43-JEF-Japan - Technology-Semiconductor Back-end Process and Package Trends-260721.pdf",
+        "cleaned_source_title": "JEF-Japan - Technology-Semiconductor Back-end Process and Package Trends",
+        "institution_name": "JEF",
+        "required_terms": [],
+        "deterministic_fallback": "JEF：日本科技半导体BackendProcess和P",
+        "raw_candidates": [
+          "日本技术-半导体后端工艺与封装趋势",
+          "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+          "日本先进封装技术路线与AI系统架构趋势"
+        ],
+        "cleaned_candidates": [
+          "JEF：日本技术-半导体后端工艺与封装趋势",
+          "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+          "JEF：日本先进封装技术路线与AI系统架构趋势",
+          "JEF：日本科技半导体BackendProcess和P",
+          "JEF：到2028年，市场预计扩大至3710亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JEF：日本先进封装技术路线与AI系统架构趋势",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：日本科技半导体BackendProcess和P",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：到2028年，市场预计扩大至3710亿美元",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2025"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "JEF：日本半导体后端工艺与封装趋势-2025年数据",
+        "body_heading_neutralization_changes": [
+          "1. 共封装光学并非替代铜互连，而是重新定义I/O角色->基础材料行业数据与主题变化观察",
+          "2. 边缘AI不是云AI的补充，而是从云AI的局限中必然产生的核心技术->AI技术与行业应用观察",
+          "3. 先进封装的技术路线正在发生潜在重构->3.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "44-JPM-Retail Radar Jul 22 - Momentum Cooldown- Hyperscaler Earnings-260722",
+      "institution_name": "摩根大通",
+      "title_before_upload": "JPM：零售行业数据与主题变化观察",
+      "final_wechat_title": "摩根大通：零售行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_8/0004-44-JPM-Retail-Radar-Jul-22---Momentum-Cooldown--Hyperscaler-Earnings-260722",
+      "generation_decision": {
+        "source_filename": "0004-44-JPM-Retail Radar Jul 22 - Momentum Cooldown- Hyperscaler Earnings-260722.pdf",
+        "cleaned_source_title": "JPM-Retail Radar Jul 22 - Momentum Cooldown- Hyperscaler Earnings",
+        "institution_name": "JPM",
+        "required_terms": [],
+        "deterministic_fallback": "JPM：RetailRadarJul22Moment",
+        "raw_candidates": [
+          "JPM：零售雷达-动量降温与超大规模企业财报",
+          "JPM：零售资金净流入57亿美元-动量因子回撤14%",
+          "JPM：零售雷达-动量因子回撤与科技ETF流入转负"
+        ],
+        "cleaned_candidates": [
+          "JPM：零售雷达-动量降温与超大规模企业财报",
+          "JPM：零售资金净流入57亿美元-动量因子回撤14%",
+          "JPM：零售雷达-动量因子回撤与科技ETF流入转负",
+          "JPM：RetailRadarJul22Moment",
+          "JPM：7月16日至22日这一周，美国散户资金净流入57亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JPM：零售资金净流入57亿美元-动量因子回撤14%",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：零售雷达-动量因子回撤与科技ETF流入转负",
+            "reasons": [
+              "anchor_coverage=0.31",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：RetailRadarJul22Moment",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JPM：7月16日至22日这一周，美国散户资金净流入57亿美元",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JPM：零售行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "JPM：零售雷达-动量降温与超大规模企业财报",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "JPM：零售行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 科技ETF流入转负，半导体ETF遭集中卖出->相关产品规则与数据观察",
+          "3. 半导体板块：短期技术面改善，但中期波动不确定性仍在->3. 半导体板块：短期技术面业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "45-JEF-YOFC -6869.HK--China Supply Growth to Rapidly Eliminate Shortage- D G to 报告观点-260722",
+      "institution_name": "杰富瑞",
+      "title_before_upload": "JEF：研究主题与行业变化观察",
+      "final_wechat_title": "杰富瑞：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_8/0005-45-Jefferies-YOFC--6869.HK--China-Supply-Growth-to-Rapidly-Eliminate-Shorta",
+      "generation_decision": {
+        "source_filename": "0005-45-JEF-YOFC -6869.HK--China Supply Growth to Rapidly Eliminate Shortage- D G to HOLD-260722.pdf",
+        "cleaned_source_title": "JEF-YOFC -6869.HK--China Supply Growth to Rapidly Eliminate Shortage- D G to HOLD",
+        "institution_name": "JEF",
+        "required_terms": [],
+        "deterministic_fallback": "JEF：YOFC-中国Supply增长toRapidl",
+        "raw_candidates": [
+          "长飞光纤：中国供给扩张将消除短缺",
+          "长飞光纤：2026年光纤均价预计达146元",
+          "长飞光纤：数据中心需求推动光纤价格创新高"
+        ],
+        "cleaned_candidates": [
+          "JEF：长飞光纤，中国供给扩张将消除短缺",
+          "JEF：长飞光纤，2026年光纤均价预计达146元",
+          "JEF：长飞光纤，数据中心需求推动光纤价格创新高",
+          "JEF：YOFC-中国Supply增长toRapidl",
+          "JEF：JEF最新研报指出，全球光纤产能到2028年将增长69%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "JEF：长飞光纤，2026年光纤均价预计达146元",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：长飞光纤，数据中心需求推动光纤价格创新高",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：YOFC-中国Supply增长toRapidl",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "JEF：JEF最新研报指出，全球光纤产能到2028年将增长69%",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "JEF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "JEF：长飞光纤，中国供给扩张将消除短缺",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "JEF：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 数据中心需求推动光纤均价创历史新高->1.业务与近期数据观察",
+          "2. 预制棒毛利率将从48%升至86%，但利润峰值在2026年->研究主题与行业变化观察",
+          "3. 2027至2028年供需关系将逆转，价格面临节奏变化不确定性->价格数据与市场变化观察",
+          "4. 观察框架：产能公告与运营商招标是领先指标->4. 观察框架：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "46-MS-General Motors Company-GM.UN-Beat- Raise- Repeat-260722",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：汽车行业数据与主题变化观察",
+      "final_wechat_title": "摩根士丹利：汽车行业数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_9/0001-46-Morgan-Stanley-General-Motors-Company-GM.UN-Beat--Raise--Repeat-260722",
+      "generation_decision": {
+        "source_filename": "0001-46-MS-General Motors Company-GM.UN-Beat- Raise- Repeat-260722.pdf",
+        "cleaned_source_title": "MS-General Motors Company-GM.UN-Beat- Raise- Repeat",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：GeneralMotorsCompanyBeat",
+        "raw_candidates": [
+          "通用汽车公司超预期与上调指引",
+          "通用汽车二季度超预期并上调2026年EBIT指引",
+          "通用汽车软件收入与国防业务成为估值重估关键"
+        ],
+        "cleaned_candidates": [
+          "MS：通用汽车公司超预期与上调指引",
+          "MS：通用汽车二季度超预期并上调2026年EBIT指引",
+          "MS：通用汽车软件收入与国防业务成为估值重估关键",
+          "MS：GeneralMotorsCompanyBeat",
+          "MS：公司将2026年EBIT指引中值上调5亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：通用汽车二季度超预期并上调2026年EBIT指引",
+            "reasons": [
+              "anchor_coverage=0.54"
+            ]
+          },
+          {
+            "title": "MS：通用汽车软件收入与国防业务成为估值重估关键",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：GeneralMotorsCompanyBeat",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：公司将2026年EBIT指引中值上调5亿美元",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：汽车行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "MS：通用汽车公司超预期与上调指引",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "MS：汽车行业数据与主题变化观察",
+        "body_heading_neutralization_changes": [
+          "1. 软件递延收入年底将达75亿美元，2027年实现两位数增长->1.软件递延业务与近期数据观察",
+          "2. 国防业务收入接近7亿美元，钠离子电池研究提供长期选择权->技术应用与行业运营观察",
+          "3. 电动车业务审查完成，资本回报不确定性消除->3.电动车业务与近期数据观察",
+          "4. 2027年初步展望：EBIT约160亿美元，多重因素支撑增长->4. 2027年初步展望：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "47-MS-Adobe Inc.-ADBE.US-Undergoing Multiple Transitions at Once Creates Heightened Execution Risk- Downgrade to 报告观点-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+      "final_wechat_title": "摩根士丹利：Adobe三重转型叠加执行业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_9/0002-47-Morgan-Stanley-Adobe-Inc.-ADBE.US-Undergoing-Multiple-Transitions-at-Onc",
+      "generation_decision": {
+        "source_filename": "0002-47-MS-Adobe Inc.-ADBE.US-Undergoing Multiple Transitions at Once Creates Heightened Execution Risk- Downgrade to Underweight-260721.pdf",
+        "cleaned_source_title": "MS-Adobe Inc.-ADBE.US-Undergoing Multiple Transitions at Once Creates Heightened Execution Risk- Downgrade to Underweight",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：AdobeInc.",
+        "raw_candidates": [
+          "Adobe 三重转型叠加执行风险",
+          "Adobe 三重转型与ARR增速放缓",
+          "Adobe 免费增值模式与AI投入观察"
+        ],
+        "cleaned_candidates": [
+          "MS：Adobe三重转型叠加执行风险",
+          "MS：Adobe三重转型与ARR增速放缓",
+          "MS：Adobe免费增值模式与AI投入观察",
+          "MS：AdobeInc.",
+          "MS：1.免费增值模式转型拉低了ARR可见度"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：Adobe三重转型与ARR增速放缓",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "MS：Adobe免费增值模式与AI投入观察",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：AdobeInc.",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：1.免费增值模式转型拉低了ARR可见度",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "MS：Adobe三重转型叠加执行风险",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "MS：Adobe三重转型叠加执行业务与近期数据观察",
+        "body_heading_neutralization_changes": [
+          "1. 免费增值模式转型拉低了 ARR 可见度->研究主题与行业变化观察",
+          "2. 利润率已近峰值，再研究空间有限->2.业务与近期数据观察",
+          "3. 领导层交接在关键节点增加了执行难度->研究主题与行业变化观察",
+          "4. 一个可复用的观察框架：护城河与旅程评分->4. 一个可复用的观察框架：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "48-MS-China Autos - Shared Mobility-Reboot landed gradually- and narrow-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：中国汽车共享出行逐步落地与窄化",
+      "final_wechat_title": "摩根士丹利：中国汽车共享出行逐步落地与窄化",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_9/0003-48-Morgan-Stanley-China-Autos---Shared-Mobility-Reboot-landed-gradually--an",
+      "generation_decision": {
+        "source_filename": "0003-48-MS-China Autos - Shared Mobility-Reboot landed gradually- and narrow-260721.pdf",
+        "cleaned_source_title": "MS-China Autos -- Mobility-Reboot landed gradually- and narrow",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：中国汽车",
+        "raw_candidates": [
+          "中国汽车共享出行逐步落地与窄化",
+          "中国汽车7月订单回暖集中于新车型",
+          "中国汽车新车型驱动订单脉冲与稳态需求"
+        ],
+        "cleaned_candidates": [
+          "MS：中国汽车共享出行逐步落地与窄化",
+          "MS：中国汽车7月订单回暖集中于新车型",
+          "MS：中国汽车新车型驱动订单脉冲与稳态需求",
+          "MS：中国汽车",
+          "MS：小鹏汽车7月16日开启MONAL03预订"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：中国汽车7月订单回暖集中于新车型",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国汽车新车型驱动订单脉冲与稳态需求",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：中国汽车",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：小鹏汽车7月16日开启MONAL03预订",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：中国汽车共享出行逐步落地与窄化",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：中国汽车共享出行逐步落地与窄化",
+        "body_heading_neutralization_changes": [
+          "3. 鸿蒙智行成为相对少见周环比下滑的主要品牌->研究主题与行业变化观察",
+          "4. 特斯拉中国订单小幅回升，蔚来双品牌订单反弹->4.特斯拉中国业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "49-MS-Internet-Where Are We Trading Now- Entering 2Q Earnings-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：互联网板块进入二季度财报季",
+      "final_wechat_title": "摩根士丹利：互联网板块进入二季度财报季",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_9/0004-49-Morgan-Stanley-Internet-Where-Are-We-Trading-Now--Entering-2Q-Earnings-2",
+      "generation_decision": {
+        "source_filename": "0004-49-MS-Internet-Where Are We Trading Now- Entering 2Q Earnings-260721.pdf",
+        "cleaned_source_title": "MS-Internet-Where Are We Trading Now- Entering 2Q Earnings",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：InternetWhereAreWeTradingNow",
+        "raw_candidates": [
+          "互联网板块进入二季度财报季",
+          "互联网板块估值分化与资金结构变化",
+          "北美互联网板块二季度财报季定价逻辑"
+        ],
+        "cleaned_candidates": [
+          "MS：互联网板块进入二季度财报季",
+          "MS：互联网板块估值分化与资金结构变化",
+          "MS：北美互联网板块二季度财报季定价逻辑",
+          "MS：InternetWhereAreWeTradingNow",
+          "MS：MS在7月20日发布的行业周报中"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：互联网板块估值分化与资金结构变化",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          },
+          {
+            "title": "MS：InternetWhereAreWeTradingNow",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：MS在7月20日发布的行业周报中",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：互联网板块进入二季度财报季",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：互联网板块进入二季度财报季",
+        "body_heading_neutralization_changes": [
+          "2. 短期利率与空头仓位分布指向不同的资金博弈逻辑->研究主题与行业变化观察",
+          "4. 财报季的定价逻辑：估值折价能否被业绩验证->4. 财报季的定价逻辑：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "50-MS-Horizon Robotics-9660.HK- 1H26 results alert -trough priced in- re-rating keyed to customer wins-260722",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：地平线机器人上半年业绩预告",
+      "final_wechat_title": "摩根士丹利：地平线机器人上半年业绩预告",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_9/0005-50-Morgan-Stanley-Horizon-Robotics-9660.HK--1H26-results-alert--trough-pric",
+      "generation_decision": {
+        "source_filename": "0005-50-MS-Horizon Robotics-9660.HK- 1H26 results alert -trough priced in- re-rating keyed to customer wins-260722.pdf",
+        "cleaned_source_title": "MS-Horizon Robotics-9660.HK- 1H26 results alert -trough priced in- re-rating keyed to customer wins",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：HorizonRobotics",
+        "raw_candidates": [
+          "地平线机器人上半年业绩预告",
+          "地平线机器人上半年收入增长25%-35%",
+          "地平线机器人客户订单份额与估值修复"
+        ],
+        "cleaned_candidates": [
+          "MS：地平线机器人上半年业绩预告",
+          "MS：地平线机器人上半年收入增长25%-35%",
+          "MS：地平线机器人客户订单份额与估值修复",
+          "MS：HorizonRobotics",
+          "MS：毛利率方面，公司预计上半年毛利率在60%-66%之间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：地平线机器人上半年收入增长25%-35%",
+            "reasons": [
+              "incomplete_last_segment",
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "MS：地平线机器人客户订单份额与估值修复",
+            "reasons": [
+              "anchor_coverage=0.42"
+            ]
+          },
+          {
+            "title": "MS：HorizonRobotics",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：毛利率方面，公司预计上半年毛利率在60%-66%之间",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：地平线机器人上半年业绩预告",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：地平线机器人上半年业绩预告",
+        "body_heading_neutralization_changes": [
+          "1. 上半年亏损扩大，研发投入集中在J7和HSD->1.业务与近期数据观察",
+          "2. 下半年芯片收入需增长80%以上，客户集中度是关键变量->2.业务与近期数据观察",
+          "3. 当前市场定价已反映最差情景，估值修复依赖订单份额突破->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "51-MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：大中华半导体-2026上海WAIC要点",
+      "final_wechat_title": "摩根士丹利：大中华半导体-2026上海WAIC要点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_10/0001-51-Morgan-Stanley-Greater-China-Semiconductors-2026-Shanghai-WAIC-takeaways",
+      "generation_decision": {
+        "source_filename": "0001-51-MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology-260721.pdf",
+        "cleaned_source_title": "MS-Greater China Semiconductors-2026 Shanghai WAIC takeaways- SuperPods enabled by China-s scale-up technology",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：Greater中国半导体2026Shang",
+        "raw_candidates": [
+          "大中华半导体-2026上海WAIC要点-SuperPods与中国规模扩展技术",
+          "大中华半导体-2026年WAIC：中国AI竞争转向系统级SuperPod",
+          "大中华半导体-2026年WAIC：华为Atlas 950实现1024 NPU互联"
+        ],
+        "cleaned_candidates": [
+          "MS：大中华半导体-2026上海WAIC要点",
+          "MS：大中华半导体-2026年WAIC",
+          "MS：Greater中国半导体2026Shang",
+          "MS：1.Atlas950实现1024NPU互联与统一内存语义"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：大中华半导体-2026年WAIC",
+            "reasons": [
+              "anchor_coverage=0.71"
+            ]
+          },
+          {
+            "title": "MS：Greater中国半导体2026Shang",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.35",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：1.Atlas950实现1024NPU互联与统一内存语义",
+            "reasons": [
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：大中华半导体-2026上海WAIC要点",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：大中华半导体-2026上海WAIC要点",
+        "body_heading_neutralization_changes": [
+          "2. 国产SuperPod生态趋于模块化，差异化转向互联与软件->软件行业数据与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "52-MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：蔚来自研芯片向AI芯片平台演进",
+      "final_wechat_title": "摩根士丹利：蔚来自研芯片向AI芯片平台演进",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_10/0002-52-Morgan-Stanley-NIO-Inc.-9866.HK-Evolving-from-captive-silicon-to-an-AI-c",
+      "generation_decision": {
+        "source_filename": "0002-52-MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform-260721.pdf",
+        "cleaned_source_title": "MS-NIO Inc.-9866.HK-Evolving from captive silicon to an AI chip platform",
+        "institution_name": "MS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "MS：AINIOInc.",
+        "raw_candidates": [
+          "蔚来自研芯片向AI芯片平台演进",
+          "蔚来GeniTech获30亿元融资估值83亿元",
+          "蔚来芯片业务从自用扩展至AI平台化"
+        ],
+        "cleaned_candidates": [
+          "MS：蔚来自研芯片向AI芯片平台演进",
+          "MS：蔚来GeniTech获30亿元融资估值83亿元",
+          "MS：蔚来芯片业务从自用扩展至AI平台化",
+          "MS：AINIOInc.",
+          "MS：蔚来芯片业务从自用走向AI平台化"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：蔚来GeniTech获30亿元融资估值83亿元",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：蔚来芯片业务从自用扩展至AI平台化",
+            "reasons": [
+              "anchor_coverage=0.31"
+            ]
+          },
+          {
+            "title": "MS：AINIOInc.",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：蔚来芯片业务从自用走向AI平台化",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          }
+        ],
+        "selected_title": "MS：蔚来自研芯片向AI芯片平台演进",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：蔚来自研芯片向AI芯片平台演进"
+      }
+    },
+    {
+      "source_report_name": "53-MS-Lululemon Athletica Inc.-LULU.US-报告观点Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU-260722",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：Lululemon美洲业务规模或需调整25%至60%",
+      "final_wechat_title": "摩根士丹利：Lululemon美洲业务规模或需调整25%至60%",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_10/0003-53-Morgan-Stanley-Lululemon-Athletica-Inc.-LULU.US-Underweight-Unpacked--Wh",
+      "generation_decision": {
+        "source_filename": "0003-53-MS-Lululemon Athletica Inc.-LULU.US-Underweight Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU-260722.pdf",
+        "cleaned_source_title": "MS-Lululemon Athletica Inc.-LULU.US-Underweight Unpacked- Why -Shrink to Grow- Is the Next Chapter for LULU",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：LululemonAthleticaInc.报告观点",
+        "raw_candidates": [
+          "MS：Lululemon美洲业务规模或需调整25%至60%",
+          "MS：Lululemon美洲业务可持续收入低于市场预期",
+          "MS：Lululemon美洲业务规模分析指向调整策略",
+          "Lululemon美洲业务规模调整可能性",
+          "Lululemon美洲业务规模或需调整25%至60%",
+          "Lululemon美洲业务规模与盈利预测分析"
+        ],
+        "cleaned_candidates": [
+          "MS：Lululemon美洲业务规模或需调整25%至60%",
+          "MS：Lululemon美洲业务可持续收入低于市场预期",
+          "MS：Lululemon美洲业务规模分析指向调整策略",
+          "MS：Lululemon美洲业务规模调整可能性",
+          "MS：Lululemon美洲业务规模与盈利预测分析",
+          "MS：LululemonAthleticaInc.报告观点",
+          "MS：Lululemon美洲业务规模可能需调整25%至60%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：Lululemon美洲业务可持续收入低于市场预期",
+            "reasons": [
+              "anchor_coverage=0.48"
+            ]
+          },
+          {
+            "title": "MS：Lululemon美洲业务规模分析指向调整策略",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "MS：Lululemon美洲业务规模调整可能性",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "MS：Lululemon美洲业务规模与盈利预测分析",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "MS：LululemonAthleticaInc.报告观点",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：Lululemon美洲业务规模或需调整25%至60%",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "MS：Lululemon美洲业务规模可能需调整25%至60%",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "MS：Lululemon美洲业务规模或需调整25%至60%",
+          "MS：Lululemon美洲业务可持续收入低于市场预期",
+          "MS：Lululemon美洲业务规模分析指向调整策略"
+        ],
+        "final_title_after_wording_guard": "MS：Lululemon美洲业务规模或需调整25%至60%",
+        "body_heading_neutralization_changes": [
+          "2. “调整以求增长”策略的可能性上升->研究主题与行业变化观察",
+          "3. 盈利预测与市场共识的差距->3.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "54-MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to 报告观点-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：核心变化是业务与近期数据观察",
+      "final_wechat_title": "摩根士丹利：核心变化是业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_10/0004-54-Morgan-Stanley-Salesforce--Inc.-CRM.US-When-Does-a-Willingness-to-Disrup",
+      "generation_decision": {
+        "source_filename": "0004-54-MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to Equal-weight-260721.pdf",
+        "cleaned_source_title": "MS-Salesforce- Inc.-CRM.US-When Does a Willingness to Disrupt Itself Pay Off- Downgrade to Equal-weight",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：SalesforceInc.WhenDoe",
+        "raw_candidates": [
+          "Salesforce传统业务抵消AI动能与货币化早期阶段",
+          "Salesforce主动颠覆自身迎接智能体时代但增长拐点未至",
+          "Salesforce AI年化收入突破10亿美元但整体订阅增速未回升",
+          "Salesforce主动颠覆自身迎接智能体时代",
+          "Salesforce AI年化收入突破10亿美元但增长拐点未至",
+          "Salesforce传统业务抵消AI动能与货币化早期阶段"
+        ],
+        "cleaned_candidates": [
+          "MS：Salesforce传统业务抵消AI动能与货币化早期阶段",
+          "MS：Salesforce主动颠覆自身迎接智能体时代但增长拐点未",
+          "MS：SalesforceAI年化收入突破10亿美元但整体订阅增",
+          "MS：Salesforce主动颠覆自身迎接智能体时代",
+          "MS：SalesforceAI年化收入突破10亿美元但增长拐点未",
+          "MS：SalesforceInc.WhenDoe",
+          "MS：核心变化是估值倍数从15倍FCF降至10倍FCF"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "long_untranslated_english"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：Salesforce传统业务抵消AI动能与货币化早期阶段",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：Salesforce主动颠覆自身迎接智能体时代但增长拐点未",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：SalesforceAI年化收入突破10亿美元但整体订阅增",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：Salesforce主动颠覆自身迎接智能体时代",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：SalesforceAI年化收入突破10亿美元但增长拐点未",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：SalesforceInc.WhenDoe",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：核心变化是业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": true,
+        "hook_signals": {
+          "added_numbers": [
+            "10",
+            "15"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "MS：核心变化是估值倍数从15倍FCF降至10倍FCF",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "Salesforce传统业务抵消AI动能与货币化早期阶段",
+          "Salesforce主动颠覆自身迎接智能体时代但增长拐点未至",
+          "Salesforce AI年化收入突破10亿美元但整体订阅增速未回升"
+        ],
+        "pre_neutralization_title": "MS：核心变化是估值倍数从15倍FCF降至10倍FCF",
+        "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "MS：核心变化是业务与近期数据观察",
+        "body_heading_neutralization_changes": [
+          "1. 传统业务影响抵消AI增长动能->1.传统与AI及近期数据观察",
+          "3. 效率提升空间存在但短期研究优先->研究主题与行业变化观察",
+          "4. 估值与不确定性收益比趋于平衡->4.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "55-MS-Tesla Inc - North America The Road to ROI-Patience Required-260723",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：特斯拉北美研究回报路径与资本开支周期",
+      "final_wechat_title": "摩根士丹利：特斯拉北美研究回报路径与资本开支周期",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_10/0005-55-Morgan-Stanley-Tesla-Inc---North-America-The-Road-to-ROI-Patience-Requir",
+      "generation_decision": {
+        "source_filename": "0005-55-MS-Tesla Inc - North America The Road to ROI-Patience Required-260723.pdf",
+        "cleaned_source_title": "MS-Tesla Inc - North America The Road to ROI-Patience Required",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：TeslaIncNorthAmericaT",
+        "raw_candidates": [
+          "特斯拉北美投资回报路径与资本开支周期",
+          "特斯拉2026-2027年资本开支超250亿美元与自由现金流承压",
+          "特斯拉Robotaxi与Optimus量产进展及能源业务毛利率变化"
+        ],
+        "cleaned_candidates": [
+          "MS：特斯拉北美研究回报路径与资本开支周期",
+          "MS：特斯拉2026",
+          "MS：特斯拉Robotaxi与Optimus量产进展及能源业务毛",
+          "MS：TeslaIncNorthAmericaT",
+          "MS：2026年资本开支指引超过250亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：特斯拉2026",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：特斯拉Robotaxi与Optimus量产进展及能源业务毛",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：TeslaIncNorthAmericaT",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：2026年资本开支指引超过250亿美元",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：特斯拉北美研究回报路径与资本开支周期",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "MS：特斯拉北美研究回报路径与资本开支周期",
+        "body_heading_neutralization_changes": [
+          "1. FSD渗透率超预期，但Robotaxi商业化仍需密度与数据验证->机器人行业数据与主题变化观察",
+          "2. Optimus量产在即，但供应链复杂度制约初期爬坡速度->供应链数据与主题变化观察",
+          "3. 能源业务毛利率承压，但“Megapod”概念开辟新需求维度->3.能源业务与近期数据观察",
+          "4. 资本开支周期延长，市场对ROI的耐心将面临考验->4.资本开支业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "56-MS-The Viewpoint- Three Reasons Why Credit Growth is Booming-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：资金结构与相关数据观察",
+      "final_wechat_title": "摩根士丹利：资金结构与相关数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_11/0001-56-Morgan-Stanley-The-Viewpoint--Three-Reasons-Why-Credit-Growth-is-Booming",
+      "generation_decision": {
+        "source_filename": "0001-56-MS-The Viewpoint- Three Reasons Why Credit Growth is Booming-260721.pdf",
+        "cleaned_source_title": "MS-The Viewpoint- Three Reasons Why Credit Growth is Booming",
+        "institution_name": "MS",
+        "required_terms": [],
+        "deterministic_fallback": "MS：TheViewpoint",
+        "raw_candidates": [
+          "亚洲除中国外信贷增速创18年新高",
+          "亚洲除中国外信贷增速升至8.5%-资本支出与通胀驱动",
+          "亚洲除中国外信贷扩张-三大驱动力与区域分化"
+        ],
+        "cleaned_candidates": [
+          "MS：亚洲除中国外信贷增速创18年新高",
+          "MS：亚洲除中国外信贷增速升至8.5%-资本支出与通胀驱动",
+          "MS：亚洲除中国外信贷扩张-三大驱动力与区域分化",
+          "MS：TheViewpoint",
+          "MS：亚洲除中国外的银行信贷增速已升至8.5%（截至2026年5"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：亚洲除中国外信贷增速升至8.5%-资本支出与通胀驱动",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "MS：亚洲除中国外信贷扩张-三大驱动力与区域分化",
+            "reasons": [
+              "anchor_coverage=0.47"
+            ]
+          },
+          {
+            "title": "MS：TheViewpoint",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "MS：亚洲除中国外的银行信贷增速已升至8.5%（截至2026年5",
+            "reasons": [
+              "anchor_coverage=0.53"
+            ]
+          }
+        ],
+        "selected_title": "MS：资金结构与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "MS：亚洲除中国外信贷增速创18年新高",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:china_systemic_topic"
+        ],
+        "final_title_after_wording_guard": "MS：资金结构与相关数据观察",
+        "body_heading_neutralization_changes": [
+          "1. 三大驱动力同时发力：资本支出、通胀与就业传导->1. 三大驱动力同时发力：研究主题与行业变化观察",
+          "2. 企业贷款领跑，家庭贷款跟随但仍有空间->研究主题与行业变化观察",
+          "4. 中国：逆周期去杠杆，信贷增速持续仍在调整->4. 中国：资金结构与相关数据观察",
+          "5. 展望：名义增速可能自然回落，但实际需求仍有支撑->5. 展望：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "57-MS-Workday Inc-WDAY.US-Strong Moat- But AI Journey Will Take Time- Downgrade to 报告观点-260721",
+      "institution_name": "摩根士丹利",
+      "title_before_upload": "MS：Workday与AI及近期数据观察",
+      "final_wechat_title": "摩根士丹利：Workday与AI及近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_11/0002-57-Morgan-Stanley-Workday-Inc-WDAY.US-Strong-Moat--But-AI-Journey-Will-Take",
+      "generation_decision": {
+        "source_filename": "0002-57-MS-Workday Inc-WDAY.US-Strong Moat- But AI Journey Will Take Time- Downgrade to Underweight-260721.pdf",
+        "cleaned_source_title": "MS-Workday Inc-WDAY.US-Strong Moat- But AI Journey Will Take Time- Downgrade to Underweight",
+        "institution_name": "MS",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "MS：AIWorkdayIncStrongMoat",
+        "raw_candidates": [
+          "Workday护城河深厚但AI变现周期长",
+          "Workday护城河深厚-AI变现周期长于同业",
+          "Workday护城河与AI变现周期分析"
+        ],
+        "cleaned_candidates": [
+          "MS：Workday护城河深厚但AI变现周期长",
+          "MS：Workday护城河深厚-AI变现周期长于同业",
+          "MS：Workday护城河与AI变现周期分析",
+          "MS：AIWorkdayIncStrongMoat",
+          "MS：1.HCM增速节奏变化至13%，AI收入尚无法填补缺口"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "MS：AIWorkdayIncStrongMoat",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.37"
+            ]
+          },
+          {
+            "title": "MS：1.HCM增速节奏变化至13%，AI收入尚无法填补缺口",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "MS：Workday与AI及近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "MS：Workday护城河深厚但AI变现周期长",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "MS：Workday与AI及近期数据观察",
+        "body_heading_neutralization_changes": [
+          "1. HCM增速节奏变化至13%，AI收入尚无法填补缺口->AI技术与行业应用观察",
+          "3. 估值溢价缺乏增长支撑->3.业务与近期数据观察",
+          "4. 后端办公自动化机会真实，但合规门槛拉长周期->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "58-UBS-3M Company-MMM.US-Why Consensus is 10- too low- Raising target to -218-260721",
+      "institution_name": "瑞银",
+      "title_before_upload": "UBS：3M公司业务与季度数据观察",
+      "final_wechat_title": "瑞银：3M公司业务与季度数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_11/0003-58-UBS-3M-Company-MMM.US-Why-Consensus-is-10--too-low--Raising-target-to--2",
+      "generation_decision": {
+        "source_filename": "0003-58-UBS-3M Company-MMM.US-Why Consensus is 10- too low- Raising target to -218-260721.pdf",
+        "cleaned_source_title": "UBS-3M Company-MMM.US-Why Consensus is 10- too low- Raising target to -218",
+        "institution_name": "UBS",
+        "required_terms": [],
+        "deterministic_fallback": "UBS：3MCompanyWhyConsensusis10-toolow",
+        "raw_candidates": [
+          "3M公司-市场共识偏低-目标价上调至218美元",
+          "3M公司：二季度有机增长5.4%创近五年新高",
+          "3M公司：新产品周期兑现，2027年EPS预期上调至10.46美元"
+        ],
+        "cleaned_candidates": [
+          "UBS：3MCompanyWhyConsensusis10-toolow",
+          "UBS：3M公司，二季度有机增长5.4%创近五年新高",
+          "UBS：3M公司，新产品周期兑现",
+          "UBS：3M在2026年第二季度交出了一份超出市场预期的成绩单"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "long_untranslated_english",
+          "english_heavy_fragment"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "UBS：3MCompanyWhyConsensusis10-toolow",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "UBS：3M公司，新产品周期兑现",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "UBS：3M在2026年第二季度交出了一份超出市场预期的成绩单",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "UBS：3M公司业务与季度数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "5.4"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "UBS：3M公司，二季度有机增长5.4%创近五年新高",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "UBS：3M公司业务与季度数据观察",
+        "body_heading_neutralization_changes": [
+          "1. 新产品管线进入密集交付期，支撑中期增长加速->1.新业务与近期数据观察",
+          "2. 利润率结构改善：2027 年运营利润增量将较今年弹性较高->2. 利润率结构改善：研究主题与行业变化观察",
+          "3. 估值框架调整：增长加速正在缩小与工业板块的估值差距->3. 估值框架调整：研究主题与行业变化观察",
+          "4. 一个可复用的观察框架：从“新产品管线密度”判断工业企业的增长拐点->4. 一个可复用的观察框架：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "59-NOM-USD CNY fix model -Projection-6.7716-260723",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：货币市场与相关指标观察",
+      "final_wechat_title": "野村：货币市场与相关指标观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_11/0004-59-Nomura-USD-CNY-fix-model--Projection-6.7716-260723",
+      "generation_decision": {
+        "source_filename": "0004-59-NOM-USD CNY fix model -Projection-6.7716-260723.pdf",
+        "cleaned_source_title": "NOM-USD CNY fix model -Projection-6.7716",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：USDCNYfixmodelProjection6.7716",
+        "raw_candidates": [
+          "美元兑人民币中间价模型投影6.7716",
+          "美元兑人民币中间价模型投影6.7716-7月23日",
+          "美元兑人民币中间价模型与定价机制变化"
+        ],
+        "cleaned_candidates": [
+          "NOM：美元兑人民币中间价模型投影6.7716",
+          "NOM：美元兑人民币中间价模型投影6.7716-7月23日",
+          "NOM：美元兑人民币中间价模型与定价机制变化",
+          "NOM：USDCNYfixmodelProjection6.7716",
+          "NOM：但实际中间价6.7933与模型投影之间相差217个基点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：美元兑人民币中间价模型与定价机制变化",
+            "reasons": [
+              "anchor_coverage=0.59"
+            ]
+          },
+          {
+            "title": "NOM：USDCNYfixmodelProjection6.7716",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.24",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "NOM：但实际中间价6.7933与模型投影之间相差217个基点",
+            "reasons": [
+              "anchor_coverage=0.35"
+            ]
+          }
+        ],
+        "selected_title": "NOM：货币市场与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "23",
+            "7"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "NOM：美元兑人民币中间价模型投影6.7716-7月23日",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:china_systemic_topic"
+        ],
+        "final_title_after_wording_guard": "NOM：货币市场与相关指标观察",
+        "body_heading_neutralization_changes": [
+          "1. 模型投影与实际中间价的偏离幅度扩大->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "60-NOM-Akeso-9926.HK-A positive OS update from HARMONi-260723",
+      "institution_name": "野村",
+      "title_before_upload": "NOM：康方生物HARMONi研究OS数据更新",
+      "final_wechat_title": "野村：康方生物HARMONi研究OS数据更新",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_11/0005-60-Nomura-Akeso-9926.HK-A-positive-OS-update-from-HARMONi-260723",
+      "generation_decision": {
+        "source_filename": "0005-60-NOM-Akeso-9926.HK-A positive OS update from HARMONi-260723.pdf",
+        "cleaned_source_title": "NOM-Akeso-9926.HK-A positive OS update from HARMONi",
+        "institution_name": "NOM",
+        "required_terms": [],
+        "deterministic_fallback": "NOM：AkesoApositiveOS更新fromHARMONi",
+        "raw_candidates": [
+          "康方生物HARMONi研究OS数据更新",
+          "康方生物HARMONi研究OS数据更新-HR改善至0.76",
+          "康方生物HARMONi研究OS数据更新-西方患者亚组HR降至0.76"
+        ],
+        "cleaned_candidates": [
+          "NOM：康方生物HARMONi研究OS数据更新",
+          "NOM：康方生物HARMONi研究OS数据更新-HR改善至0.76",
+          "NOM：AkesoApositiveOS更新fromHARMONi",
+          "NOM：2026年7月22日晚间，康方生物（Akeso"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "NOM：康方生物HARMONi研究OS数据更新-HR改善至0.76",
+            "reasons": [
+              "bare_trailing_number"
+            ]
+          },
+          {
+            "title": "NOM：AkesoApositiveOS更新fromHARMONi",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.44"
+            ]
+          },
+          {
+            "title": "NOM：2026年7月22日晚间，康方生物（Akeso",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "NOM：康方生物HARMONi研究OS数据更新",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "NOM：康方生物HARMONi研究OS数据更新",
+        "body_heading_neutralization_changes": [
+          "1. OS数据变化提升获批概率，但完整数据仍需等待->1.OS业务与近期数据观察",
+          "3. 估值框架与不确定性因素维持不变->3.业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "61-UBS-Alphabet Inc. - Class A Revenue Growth Was Already Dialed In-260723",
+      "institution_name": "瑞银",
+      "title_before_upload": "UBS：Alphabet业务与近期数据观察",
+      "final_wechat_title": "瑞银：Alphabet业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_12/0001-61-UBS-Alphabet-Inc.---Class-A-Revenue-Growth-Was-Already-Dialed-In-260723",
+      "generation_decision": {
+        "source_filename": "0001-61-UBS-Alphabet Inc. - Class A Revenue Growth Was Already Dialed In-260723.pdf",
+        "cleaned_source_title": "UBS-Alphabet Inc. - Class A Revenue Growth Was Already Dialed In",
+        "institution_name": "UBS",
+        "required_terms": [],
+        "deterministic_fallback": "UBS：AlphabetInc.",
+        "raw_candidates": [
+          "Alphabet收入增长已被市场定价",
+          "Alphabet二季度营收1198亿美元超预期",
+          "Alphabet云业务积压5100亿美元成本端承压"
+        ],
+        "cleaned_candidates": [
+          "UBS：Alphabet收入增长已被市场定价",
+          "UBS：Alphabet二季度营收1198亿美元超预期",
+          "UBS：Alphabet云业务积压5100亿美元成本端承压",
+          "UBS：AlphabetInc.",
+          "UBS：这份UBS在2026年7月发布的Alphabet财报点评"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "UBS：Alphabet二季度营收1198亿美元超预期",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "UBS：Alphabet云业务积压5100亿美元成本端承压",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "UBS：AlphabetInc.",
+            "reasons": [
+              "long_untranslated_english",
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "UBS：这份UBS在2026年7月发布的Alphabet财报点评",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          }
+        ],
+        "selected_title": "UBS：Alphabet业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "UBS：Alphabet收入增长已被市场定价",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "UBS：Alphabet业务与近期数据观察",
+        "body_heading_neutralization_changes": [
+          "1. 云业务积压订单超预期，但UBS此前已提前上调->1.云业务与近期数据观察",
+          "2. 搜索广告增速节奏变化，YouTube 受益于世界杯和中期选举->区域环境与行业变化观察",
+          "3. 资本支出和人员成本构成 EPS 双重不确定性->研究主题与行业变化观察",
+          "4. 估值框架：盈利下修不确定性大于上修空间->4. 估值框架：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "62-UBS-China Technology-WAIC 2026 Tech Tour takeaways-260721",
+      "institution_name": "瑞银",
+      "title_before_upload": "UBS：中国科技-WAIC2026技术巡礼-超40家机构参与",
+      "final_wechat_title": "瑞银：中国科技-WAIC2026技术巡礼-超40家机构参与",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "xhs_notes/dropbox/260723/shard_12/0002-62-UBS-China-Technology-WAIC-2026-Tech-Tour-takeaways-260721",
+      "generation_decision": {
+        "source_filename": "0002-62-UBS-China Technology-WAIC 2026 Tech Tour takeaways-260721.pdf",
+        "cleaned_source_title": "UBS-China Technology-WAIC 2026 Tech Tour takeaways",
+        "institution_name": "UBS",
+        "required_terms": [],
+        "deterministic_fallback": "UBS：中国科技WAIC2026TechTourtakeaways",
+        "raw_candidates": [
+          "中国科技-WAIC 2026技术巡礼总结",
+          "中国科技-WAIC 2026技术巡礼-超40家机构参与",
+          "中国科技-WAIC 2026技术巡礼-芯片到系统迭代"
+        ],
+        "cleaned_candidates": [
+          "UBS：中国科技-WAIC2026技术巡礼总结",
+          "UBS：中国科技-WAIC2026技术巡礼-超40家机构参与",
+          "UBS：中国科技-WAIC2026技术巡礼-芯片到系统迭代",
+          "UBS：中国科技WAIC2026TechTourtakeaways",
+          "UBS：4内存接口芯片的贡献在2026年持续增长"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "UBS：中国科技WAIC2026TechTourtakeaways",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.65"
+            ]
+          },
+          {
+            "title": "UBS：4内存接口芯片的贡献在2026年持续增长",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "UBS：中国科技-WAIC2026技术巡礼-超40家机构参与",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "40"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "UBS：中国科技-WAIC2026技术巡礼-超40家机构参与",
+        "body_heading_neutralization_changes": [
+          "2. 国产AI芯片公司需求强劲，但供应约束仍是短期瓶颈->2.国产AI芯片公司与AI及近期数据观察",
+          "3. 先进封装研究加速，JCET宣布78亿元上海新厂计划->3.业务与近期数据观察",
+          "4. 大模型公司收入增速超预期，算力租赁成本仍是利润变量->4.大模型公司业务与近期数据观察"
+        ]
+      }
+    }
+  ]
+}
