@@ -196,6 +196,15 @@ jobs:
       effective_shard_count: ${{ steps.shard_matrix.outputs.effective_shard_count }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -299,6 +308,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}
       - name: Download lightweight selection manifest
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/download-artifact@v4
