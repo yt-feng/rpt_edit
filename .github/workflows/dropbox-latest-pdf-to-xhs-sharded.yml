@@ -315,7 +315,7 @@ jobs:
             scripts
             prompts
             requirements.txt
-            xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}
+            xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}
       - name: Download lightweight selection manifest
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/download-artifact@v4
