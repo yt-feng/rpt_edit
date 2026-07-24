@@ -37,7 +37,6 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     WeChatError,
     add_draft,
     article_payload,
-    chunked,
     content_within_limits,
     digest_from_markdown,
     download_pollinations_image,
@@ -729,19 +728,6 @@ def main() -> int:
             log(f"Uploaded trailing image: {trailing_image_path}")
             pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
 
-    built_articles = []
-    for idx, report_dir in enumerate(selected, 1):
-        log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")
-        built_articles.append(
-            build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
-        )
-        if idx < len(selected):
-            pacing_sleep(
-                f"After building WeChat article {idx}/{len(selected)}",
-                args.article_delay_seconds,
-                args.dry_run,
-            )
-
     drafts: list[dict[str, Any]] = []
 
     def create_draft(group: list[dict[str, Any]]) -> None:
@@ -824,8 +810,24 @@ def main() -> int:
         else:
             log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id}")
 
-    for group in chunked(built_articles, args.articles_per_draft):
-        create_draft(group)
+    built_articles: list[dict[str, Any]] = []
+    pending_group: list[dict[str, Any]] = []
+    for idx, report_dir in enumerate(selected, 1):
+        log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")
+        article = build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
+        built_articles.append(article)
+        pending_group.append(article)
+        if len(pending_group) == args.articles_per_draft:
+            create_draft(pending_group)
+            pending_group = []
+        if idx < len(selected):
+            pacing_sleep(
+                f"After building WeChat article {idx}/{len(selected)}",
+                args.article_delay_seconds,
+                args.dry_run,
+            )
+    if pending_group:
+        create_draft(pending_group)
 
     title_log_path = write_wechat_title_log(
         output_dir,
