@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 62,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-DB-China NEV Weekly New Orders Monitor：China NEV demand leading indicator （weekly new orders）~July 3rd week-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0001-16-DB-China NEV Weekly New Orders Monitor-China NEV demand leading indicator -weekly new orders--July 3rd week-260721.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-DB-Airbus（AIR.PA ）A mid~term guidance， a €5bn buyback and a flight plan beyond 2029-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0002-17-DB-Airbus-AIR.PA -A mid-term guidance- a -5bn buyback and a flight plan beyond 2029-260722.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-DB-China IP Retailer：IP Offline Sales（Jun 2026）：Pop Mart Weakens While Peers Hold Up-260721.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0003-18-DB-China IP Retailer-IP Offline Sales-Jun 2026--Pop Mart Weakens While Peers Hold Up-260721.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-DB-Thematic Research：Time billionaires want more risk. Is AI to blame？-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0004-19-DB-Thematic Research-Time billionaires want more risk. Is AI to blame--260722.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-GS-CHINA CRO & CDMO：2Q 1H26 Preview：Resilient Order Momentum to Support Further Earnings Upgrades and Re~rating Sustainability-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0005-20-GS-CHINA CRO - CDMO-2Q 1H26 Preview-Resilient Order Momentum to Support Further Earnings Upgrades and Re-rating Sustainability-260722.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

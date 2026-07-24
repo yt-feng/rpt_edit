@@ -1,0 +1,878 @@
+[
+  {
+    "id": 0,
+    "name": "Bernstein-Comment： Nike cutting online sales to China partners-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/bernstein-comment： nike cutting online sales to china partners-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-comment： nike cutting online sales to china partners-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确提及Nike，为单一公司",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-China CDMO： Primer on Peptide CDMOs Part 1~Supply~side leaders differentiate in scale， cost， and technology breadth-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/bernstein-china cdmo： primer on peptide cdmos part 1~supply~side leaders differentiate in scale， cost， and technology breadth-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china cdmo： primer on peptide cdmos part 1~supply~side leaders differentiate in scale， cost， and technology breadth-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "行业主题报告，分析CDMO行业",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 2,
+    "name": "BARC-IT Hardware and Communications Equipment：Read~through：AT&T Capex and iPhones-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/BARC-it hardware and communications equipment：read~through：at&t capex and iphones-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BARC-it hardware and communications equipment：read~through：at&t capex and iphones-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "行业主题，分析IT硬件和通信设备",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 3,
+    "name": "Bernstein-Texas Instruments Inc（TXN.US）Q226 recap~The world is not enough？-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/bernstein-texas instruments inc（txn.us）q226 recap~the world is not enough？-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-texas instruments inc（txn.us）q226 recap~the world is not enough？-260723.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及德州仪器公司及业绩回顾；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Bernstein-Global Digital Assets Emerging AI Infra： The 'third party capacity' trade has legs ~continue to see strong deal traction and execution-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/bernstein-global digital assets emerging ai infra： the 'third party capacity' trade has legs ~continue to see strong deal traction and execution-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global digital assets emerging ai infra： the 'third party capacity' trade has legs ~continue to see strong deal traction and execution-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.96,
+    "reason": "全球数字资产及AI基础设施主题；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 2,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 5,
+    "name": "Bernstein-Japan Strategy Q326： The bright spot in the region~Ample opportunities for value & growth managers-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/bernstein-japan strategy q326： the bright spot in the region~ample opportunities for value & growth managers-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-japan strategy q326： the bright spot in the region~ample opportunities for value & growth managers-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "日本策略报告，区域市场分析；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 6,
+    "name": "BofA-Midea Group （H A）（ 0300.HK）Improving outlook in 2H26； strong shareholder returns-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/BofA-midea group （h a）（ 0300.hk）improving outlook in 2h26； strong shareholder returns-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-midea group （h a）（ 0300.hk）improving outlook in 2h26； strong shareholder returns-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及美的集团及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "BofA-NVIDIA Corporation（NVDA.OQ）More cores or faster cores？ The NVDA vs AMD agentic CPU debate-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/BofA-nvidia corporation（nvda.oq）more cores or faster cores？ the nvda vs amd agentic cpu debate-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-nvidia corporation（nvda.oq）more cores or faster cores？ the nvda vs amd agentic cpu debate-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及英伟达公司及股票代码；本地规则排除个股/评级/目标价/财报信号：company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "BofA-Global Semiconductors：China Semicap Import Tracker ~June 2026 down 1% yoy-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/BofA-global semiconductors：china semicap import tracker ~june 2026 down 1% yoy-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-global semiconductors：china semicap import tracker ~june 2026 down 1% yoy-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.93,
+    "reason": "全球半导体行业跟踪报告；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 9,
+    "name": "Bofa-Alphabet Capex increase steals the spotlight from strong Cloud acceleration; Buy-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/bofa-alphabet capex increase steals the spotlight from strong cloud acceleration; buy-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bofa-alphabet capex increase steals the spotlight from strong cloud acceleration; buy-260723.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及Alphabet公司及评级；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "CITI-China Healthcare：1H26 Results Preview：BD Deals to alleviate Pharma sales；CDMOs solid-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/citi-china healthcare：1h26 results preview：bd deals to alleviate pharma sales；cdmos solid-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china healthcare：1h26 results preview：bd deals to alleviate pharma sales；cdmos solid-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国医疗健康行业预览",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 11,
+    "name": "CITI-Chagee Holdings （CHA.US） 2Q26E Earnings Preview； Reducing TP & Estimates-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/citi-chagee holdings （cha.us） 2q26e earnings preview； reducing tp & estimates-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-chagee holdings （cha.us） 2q26e earnings preview； reducing tp & estimates-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及茶姬控股及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "CITI-Estun （002747） What's New from Citi's Call~Cost Reduction Drives GPM Expansion， KUKA Could be a Potential Threat-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/citi-estun （002747） what's new from citi's call~cost reduction drives gpm expansion， kuka could be a potential threat-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-estun （002747） what's new from citi's call~cost reduction drives gpm expansion， kuka could be a potential threat-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及埃斯顿及股票代码",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 13,
+    "name": "CITI-China Renewable Energy：Strong PRC Inverter Export Demand Continued in June； Sungrow and Deye Improving Shareholder Returns-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/citi-china renewable energy：strong prc inverter export demand continued in june； sungrow and deye improving shareholder returns-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china renewable energy：strong prc inverter export demand continued in june； sungrow and deye improving shareholder returns-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国可再生能源行业报告",
+    "classifier": "deepseek",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 14,
+    "name": "CITI-Horizon Robotics （9660.HK） Expect -65% 1H GPM； 3 Catalysts on mean re~version-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/citi-horizon robotics （9660.hk） expect -65% 1h gpm； 3 catalysts on mean re~version-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-horizon robotics （9660.hk） expect -65% 1h gpm； 3 catalysts on mean re~version-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及地平线机器人及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "DB-China NEV Weekly New Orders Monitor：China NEV demand leading indicator （weekly new orders）~July 3rd week-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/DB-china nev weekly new orders monitor：china nev demand leading indicator （weekly new orders）~july 3rd week-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-china nev weekly new orders monitor：china nev demand leading indicator （weekly new orders）~july 3rd week-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国新能源汽车行业需求监测",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 16,
+    "name": "DB-Airbus（AIR.PA ）A mid~term guidance， a €5bn buyback and a flight plan beyond 2029-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/DB-airbus（air.pa ）a mid~term guidance， a €5bn buyback and a flight plan beyond 2029-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-airbus（air.pa ）a mid~term guidance， a €5bn buyback and a flight plan beyond 2029-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及空客公司及股票代码",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 17,
+    "name": "DB-China IP Retailer：IP Offline Sales（Jun 2026）：Pop Mart Weakens While Peers Hold Up-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/DB-china ip retailer：ip offline sales（jun 2026）：pop mart weakens while peers hold up-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-china ip retailer：ip offline sales（jun 2026）：pop mart weakens while peers hold up-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国IP零售商行业销售数据",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 18,
+    "name": "DB-Thematic Research：Time billionaires want more risk. Is AI to blame？-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/DB-thematic research：time billionaires want more risk. is ai to blame？-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-thematic research：time billionaires want more risk. is ai to blame？-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "主题研究，探讨AI风险偏好",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 19,
+    "name": "GS-CHINA CRO & CDMO：2Q 1H26 Preview：Resilient Order Momentum to Support Further Earnings Upgrades and Re~rating Sustainability-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-china cro & cdmo：2q 1h26 preview：resilient order momentum to support further earnings upgrades and re~rating sustainability-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china cro & cdmo：2q 1h26 preview：resilient order momentum to support further earnings upgrades and re~rating sustainability-260722.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "中国CRO和CDMO行业预览；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "GS-CHINA SPORTSWEAR：Cutting Topsports Pou Sheng estimates to reflect the termination of Nike online sales from CY2027-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-china sportswear：cutting topsports pou sheng estimates to reflect the termination of nike online sales from cy2027-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china sportswear：cutting topsports pou sheng estimates to reflect the termination of nike online sales from cy2027-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国体育用品行业报告",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 21,
+    "name": "GS-HUAMING （002270） Upgrade to Buy on attractive valuation post correction， while stable overseas growth driven by global grid upgrade remains intact-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-huaming （002270） upgrade to buy on attractive valuation post correction， while stable overseas growth driven by global grid upgrade remains intact-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-huaming （002270） upgrade to buy on attractive valuation post correction， while stable overseas growth driven by global grid upgrade remains intact-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及华明装备及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_rating_or_target_price,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": [
+      "contains_rating_or_target_price",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "GS-EUROPEAN ECONOMICS ANALYST：Euro Area—Higher Energy Prices Undo Recent Inflation Progress-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-european economics analyst：euro area—higher energy prices undo recent inflation progress-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-european economics analyst：euro area—higher energy prices undo recent inflation progress-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "欧洲经济分析，关注通胀；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 4,
+    "macro_priority_score": 3,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 23,
+    "name": "GS-China： Fiscal revenue and expenditure growth both improved in June， while land sales revenue contracted further-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-china： fiscal revenue and expenditure growth both improved in june， while land sales revenue contracted further-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china： fiscal revenue and expenditure growth both improved in june， while land sales revenue contracted further-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国财政收支宏观分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 24,
+    "name": "GS-How China Is Buffering the Global Energy Supply Shock-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-how china is buffering the global energy supply shock-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-how china is buffering the global energy supply shock-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "中国如何缓冲全球能源供应冲击；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 25,
+    "name": "GS-JAPAN TECHNOLOGY： SEMICONDUCTOR CAPITAL EQUIPMENT，June SEAJ data： Front~end equipment leads strong demand； we revise GSe； Buy on Lasertec Ebara Disco Tokyo Electron-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-japan technology： semiconductor capital equipment，june seaj data： front~end equipment leads strong demand； we revise gse； buy on lasertec ebara disco tokyo electron-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan technology： semiconductor capital equipment，june seaj data： front~end equipment leads strong demand； we revise gse； buy on lasertec ebara disco tokyo electron-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "日本半导体设备行业数据",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 26,
+    "name": "GS-Japan Banks： Asia investor feedback： Strong interest amid loan growth， interest rate normalization， and active capital markets-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-japan banks： asia investor feedback： strong interest amid loan growth， interest rate normalization， and active capital markets-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan banks： asia investor feedback： strong interest amid loan growth， interest rate normalization， and active capital markets-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "日本银行业行业分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 3,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 27,
+    "name": "GS-Japan Economic Flash：BOJ July MPM Preview：We Expect Status Quo in July，and Maintain View on Roughly Semi~annual Rate Hikes-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-japan economic flash：boj july mpm preview：we expect status quo in july，and maintain view on roughly semi~annual rate hikes-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan economic flash：boj july mpm preview：we expect status quo in july，and maintain view on roughly semi~annual rate hikes-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "日本央行货币政策预览；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 28,
+    "name": "GS-Japan Technology： Hardware~Industrial Electronics： GEV 2Q read~across： Strong power grid demand positive for Hitachi Energy-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-japan technology： hardware~industrial electronics： gev 2q read~across： strong power grid demand positive for hitachi energy-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan technology： hardware~industrial electronics： gev 2q read~across： strong power grid demand positive for hitachi energy-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "日本科技硬件行业分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 3,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 29,
+    "name": "GS-ServiceNow Inc. （NOW.US） 2Q26 EPS： The AI use cases are becoming more tangible-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-servicenow inc. （now.us） 2q26 eps： the ai use cases are becoming more tangible-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-servicenow inc. （now.us） 2q26 eps： the ai use cases are becoming more tangible-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及ServiceNow公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "HSBC-China Healthcare Marketing takeaways： The best non~AI play-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/hsbc-china healthcare marketing takeaways： the best non~ai play-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china healthcare marketing takeaways： the best non~ai play-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国医疗健康行业营销总结",
+    "classifier": "deepseek",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 31,
+    "name": "GS-Texas Instruments Inc. （TXN.US）： Strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-texas instruments inc. （txn.us）： strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-texas instruments inc. （txn.us）： strong results and guidance suggests continued momentum in the analog recovery-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及德州仪器公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "GS-Tesla Inc. (TSLA)_ Business and technical progress in key markets, and costs of investments, remain in focus; 2Q wrap-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/GS-tesla inc. (tsla)_ business and technical progress in key markets, and costs of investments, remain in focus; 2q wrap-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-tesla inc. (tsla)_ business and technical progress in key markets, and costs of investments, remain in focus; 2q wrap-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及特斯拉公司及股票代码；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 3,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "HSBC-Hanbell Precise Machinery（002158）：Buy： Sustainable growth prospects-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/hsbc-hanbell precise machinery（002158）：buy： sustainable growth prospects-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-hanbell precise machinery（002158）：buy： sustainable growth prospects-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及汉钟精机及股票代码",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 34,
+    "name": "HSBC-China Real Estate：Soft 1H26 earnings priced in： still underwriting the 2027 recovery-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/hsbc-china real estate：soft 1h26 earnings priced in： still underwriting the 2027 recovery-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china real estate：soft 1h26 earnings priced in： still underwriting the 2027 recovery-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 35,
+    "name": "JPM-ASEAN & Taiwan Telcos：Current AI token offerings are unlikely to drive earnings growth at telcos-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/JPM-asean & taiwan telcos：current ai token offerings are unlikely to drive earnings growth at telcos-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-asean & taiwan telcos：current ai token offerings are unlikely to drive earnings growth at telcos-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "东盟及台湾电信行业分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 36,
+    "name": "JPM-ASMPT Ltd （0522.HK） New CEO announced； expect further emphasis on advanced packaging-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/JPM-asmpt ltd （0522.hk） new ceo announced； expect further emphasis on advanced packaging-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-asmpt ltd （0522.hk） new ceo announced； expect further emphasis on advanced packaging-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及ASMPT公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "JPM-China Logistics， Express Parcel and Ecommerce：Incremental quality~led recovery in motion， with YMM and J&T now leading the sector’s next phase； 2Q26 preview-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/JPM-china logistics， express parcel and ecommerce：incremental quality~led recovery in motion， with ymm and j&t now leading the sector’s next phase； 2q26 preview-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china logistics， express parcel and ecommerce：incremental quality~led recovery in motion， with ymm and j&t now leading the sector’s next phase； 2q26 preview-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国物流快递电商行业分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 38,
+    "name": "JPM-China Pharmacy：Same~store recovery accelerated in 2Q26 amid consolidation；future growth driven by three reinforcing structural tailwinds-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/JPM-china pharmacy：same~store recovery accelerated in 2q26 amid consolidation；future growth driven by three reinforcing structural tailwinds-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china pharmacy：same~store recovery accelerated in 2q26 amid consolidation；future growth driven by three reinforcing structural tailwinds-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国药房行业分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 39,
+    "name": "JPM-Japan Quant Strategy：NKY rallies – Sign that worst is over？ AI semiconductors a long way off from recapturing their leading role-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/JPM-japan quant strategy：nky rallies – sign that worst is over？ ai semiconductors a long way off from recapturing their leading role-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-japan quant strategy：nky rallies – sign that worst is over？ ai semiconductors a long way off from recapturing their leading role-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "日本量化策略报告；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 40,
+    "name": "JPM-Shopify（SHOP.US） Expecting Upside to Guidance into 2Q Earnings； Focus on Growth Vectors， Gross Margins， Token Costs， & AI Leadership； Reit OW & Adding to Analyst Focus List-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/JPM-shopify（shop.us） expecting upside to guidance into 2q earnings； focus on growth vectors， gross margins， token costs， & ai leadership； reit ow & adding to analyst focus list-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-shopify（shop.us） expecting upside to guidance into 2q earnings； focus on growth vectors， gross margins， token costs， & ai leadership； reit ow & adding to analyst focus list-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及Shopify公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "JPM-Japan FX topic：Three key questions on GPIF-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/JPM-japan fx topic：three key questions on gpif-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-japan fx topic：three key questions on gpif-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "日本外汇主题分析；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 42,
+    "name": "JEF-Japan - Technology：Semiconductor Back~end Process and Package Trends-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/JEF-japan - technology：semiconductor back~end process and package trends-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JEF-japan - technology：semiconductor back~end process and package trends-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "日本半导体后端工艺行业趋势",
+    "classifier": "deepseek",
+    "macro_hint_score": 3,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 43,
+    "name": "JPM-Retail Radar Jul 22 – Momentum Cooldown, Hyperscaler Earnings-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/jpm-retail radar jul 22 – momentum cooldown, hyperscaler earnings-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/jpm-retail radar jul 22 – momentum cooldown, hyperscaler earnings-260722.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "零售行业雷达报告",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 44,
+    "name": "JEF-YOFC （6869.HK）：China Supply Growth to Rapidly Eliminate Shortage； D G to HOLD-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/JEF-yofc （6869.hk）：china supply growth to rapidly eliminate shortage； d g to hold-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JEF-yofc （6869.hk）：china supply growth to rapidly eliminate shortage； d g to hold-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及长飞光纤及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "MS-General Motors Company（GM.UN）Beat， Raise， Repeat-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-general motors company（gm.un）beat， raise， repeat-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-general motors company（gm.un）beat， raise， repeat-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及通用汽车公司及股票代码",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 46,
+    "name": "MS-Adobe Inc.（ADBE.US）Undergoing Multiple Transitions at Once Creates Heightened Execution Risk； Downgrade to Underweight-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-adobe inc.（adbe.us）undergoing multiple transitions at once creates heightened execution risk； downgrade to underweight-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-adobe inc.（adbe.us）undergoing multiple transitions at once creates heightened execution risk； downgrade to underweight-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及Adobe公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,contains_rating_or_target_price,company_hint_score=4",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "contains_rating_or_target_price",
+      "company_hint_score=4"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "MS-China Autos & Shared Mobility：Reboot landed gradually， and narrow-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-china autos & shared mobility：reboot landed gradually， and narrow-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china autos & shared mobility：reboot landed gradually， and narrow-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国汽车及共享出行行业分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 48,
+    "name": "MS-Internet：Where Are We Trading Now： Entering 2Q Earnings-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-internet：where are we trading now： entering 2q earnings-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-internet：where are we trading now： entering 2q earnings-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "互联网行业交易位置分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 49,
+    "name": "MS-Horizon Robotics（9660.HK） 1H26 results alert ~trough priced in， re~rating keyed to customer wins-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-horizon robotics（9660.hk） 1h26 results alert ~trough priced in， re~rating keyed to customer wins-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-horizon robotics（9660.hk） 1h26 results alert ~trough priced in， re~rating keyed to customer wins-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及地平线机器人及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "MS-Greater China Semiconductors：2026 Shanghai WAIC takeaways： SuperPods enabled by China’s scale~up technology-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-greater china semiconductors：2026 shanghai waic takeaways： superpods enabled by china’s scale~up technology-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-greater china semiconductors：2026 shanghai waic takeaways： superpods enabled by china’s scale~up technology-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "大中华区半导体行业会议总结",
+    "classifier": "deepseek",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 51,
+    "name": "MS-NIO Inc.（9866.HK）Evolving from captive silicon to an AI chip platform-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-nio inc.（9866.hk）evolving from captive silicon to an ai chip platform-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-nio inc.（9866.hk）evolving from captive silicon to an ai chip platform-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及蔚来公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "MS-Lululemon Athletica Inc.（LULU.US）Underweight Unpacked： Why ‘Shrink to Grow’ Is the Next Chapter for LULU-260722.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-lululemon athletica inc.（lulu.us）underweight unpacked： why ‘shrink to grow’ is the next chapter for lulu-260722.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-lululemon athletica inc.（lulu.us）underweight unpacked： why ‘shrink to grow’ is the next chapter for lulu-260722.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及Lululemon公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,contains_rating_or_target_price,company_hint_score=3",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "contains_rating_or_target_price",
+      "company_hint_score=3"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "MS-Salesforce， Inc.（CRM.US）When Does a Willingness to Disrupt Itself Pay Off？ Downgrade to Equal~weight-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-salesforce， inc.（crm.us）when does a willingness to disrupt itself pay off？ downgrade to equal~weight-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-salesforce， inc.（crm.us）when does a willingness to disrupt itself pay off？ downgrade to equal~weight-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及Salesforce公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,contains_rating_or_target_price,company_hint_score=3",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "contains_rating_or_target_price",
+      "company_hint_score=3"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "MS-Tesla Inc - North America The Road to ROI-Patience Required-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-tesla inc - north america the road to roi-patience required-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-tesla inc - north america the road to roi-patience required-260723.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及特斯拉公司；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "MS-The Viewpoint： Three Reasons Why Credit Growth is Booming-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-the viewpoint： three reasons why credit growth is booming-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-the viewpoint： three reasons why credit growth is booming-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "宏观观点，分析信贷增长；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 56,
+    "name": "MS-Workday Inc（WDAY.US）Strong Moat， But AI Journey Will Take Time； Downgrade to Underweight-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/MS-workday inc（wday.us）strong moat， but ai journey will take time； downgrade to underweight-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-workday inc（wday.us）strong moat， but ai journey will take time； downgrade to underweight-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及Workday公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,contains_rating_or_target_price,company_hint_score=4",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "contains_rating_or_target_price",
+      "company_hint_score=4"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "UBS-3M Company（MMM.US）Why Consensus is 10% too low； Raising target to $218-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/ubs-3m company（mmm.us）why consensus is 10% too low； raising target to $218-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-3m company（mmm.us）why consensus is 10% too low； raising target to $218-260721.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及3M公司及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "NOM-USD CNY fix model ：Projection：6.7716-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/NOM-usd cny fix model ：projection：6.7716-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model ：projection：6.7716-260723.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "汇率模型预测，宏观主题",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 59,
+    "name": "NOM-Akeso（9926.HK）A positive OS update from HARMONi-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/NOM-akeso（9926.hk）a positive os update from harmoni-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-akeso（9926.hk）a positive os update from harmoni-260723.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及康方生物及股票代码；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "UBS-Alphabet Inc. - Class A Revenue Growth Was Already Dialed In-260723.pdf",
+    "dropbox_path": "/zip_backup/260723/ubs-alphabet inc. - class a revenue growth was already dialed in-260723.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-alphabet inc. - class a revenue growth was already dialed in-260723.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确提及Alphabet公司；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "UBS-China Technology：WAIC 2026 Tech Tour takeaways-260721.pdf",
+    "dropbox_path": "/zip_backup/260723/ubs-china technology：waic 2026 tech tour takeaways-260721.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-china technology：waic 2026 tech tour takeaways-260721.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国科技行业会议总结",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  }
+]

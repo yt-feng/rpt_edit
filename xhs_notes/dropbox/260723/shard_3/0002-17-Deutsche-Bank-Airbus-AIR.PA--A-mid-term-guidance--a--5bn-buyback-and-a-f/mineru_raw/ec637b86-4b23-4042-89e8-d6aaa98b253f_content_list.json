@@ -1,0 +1,1802 @@
+[
+    {
+        "type": "text",
+        "text": "Rating Buy",
+        "bbox": [
+            70,
+            74,
+            134,
+            121
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Company Airbus",
+        "bbox": [
+            298,
+            74,
+            406,
+            121
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Europe France",
+        "bbox": [
+            70,
+            131,
+            129,
+            161
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Aerospace & Defence\nAerospace & Defence",
+        "bbox": [
+            69,
+            173,
+            227,
+            202
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Reuters AIR.PA",
+        "bbox": [
+            298,
+            152,
+            344,
+            175
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Bloomberg AIR FP",
+        "bbox": [
+            403,
+            152,
+            465,
+            175
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Exchange PAR",
+        "bbox": [
+            490,
+            152,
+            544,
+            175
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ADR EADSY",
+        "bbox": [
+            298,
+            184,
+            342,
+            208
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ticker AIR",
+        "bbox": [
+            559,
+            152,
+            595,
+            175
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ISIN US29875W1009",
+        "bbox": [
+            403,
+            184,
+            494,
+            208
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A mid-term guidance, a €5bn buyback and a flight plan beyond 2029",
+        "text_level": 1,
+        "bbox": [
+            67,
+            215,
+            612,
+            268
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Airbus disclosed a mid-term guidance that aligned well with current market expectations. The positive surprise, however, came from the €5bn three-year share buy-back. The other key message is that commercial growth will not flatten out in 2029, with widebody and service growth on the agenda. As for Defence & Space and Helicopters, they are set to continue on their growth trajectory. Buy, PT raised from €226 to €232.",
+        "bbox": [
+            67,
+            277,
+            642,
+            372
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Buyback seen as positive signal, while mid-term guidance in line",
+        "text_level": 2,
+        "bbox": [
+            67,
+            391,
+            527,
+            405
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "At its business update, Airbus confirmed its 2026 guidance and disclosed a 2029 mid-term guidance, with an adjusted EBIT of €12-13bn in 2029 versus the Bloomberg consensus of €13bn. This disclosure is underpinned by strong demand and unprecedented visibility across all businesses. The company reaffirmed its cash-conversion target of around 1 over a five-year horizon. More importantly, it announced a much-anticipated €5bn share buyback program over three years, in addition to the 30%-50% dividend payout policy disclosed in 2025. This policy to return approximately 60% of FCF to shareholders should be seen as a positive, in our view.",
+        "bbox": [
+            67,
+            405,
+            642,
+            547
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Growth story to continue post 2029, driven by widebody and services",
+        "text_level": 2,
+        "bbox": [
+            69,
+            564,
+            561,
+            580
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Widebody ramp-up is expected to continue beyond 2029, with a decision anticipated in 2026 to further increase the A350 production rate. The current target is 12 per month by 2028, but could reach 14-16 in our view. Bottlenecks are mainly on the cabin side for now. A better mix is also on the agenda: Airbus confirmed it is examining both A220 and A350 stretches, provided more powerful engines are available. Pratt should continue to power the A220. Services are also a growth driver, with Airbus aiming to double service sales between 2025 and 2030 to €10bn through organic growth and M&A. Regarding profitability, the A350 is expected to reach its sweet spot beyond 2029, in the 2030s, with services also anticipated to display double-digit margins in 2030. A focus on reducing non-quality incidents by 50% in 2027 should also contribute to profit. Deliveries are expected to be more evenly split across the year post 2028-2029. Longer term, with the advent of the A320 replacement, Airbus also expects to further rebalance its business model and capture more aftermarket revenues.",
+        "bbox": [
+            67,
+            580,
+            642,
+            799
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Defence & Space and Helicopters continue on their growth trajectory",
+        "text_level": 2,
+        "bbox": [
+            69,
+            816,
+            559,
+            832
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Both divisions continue on the trajectory laid out in June 2025, with the 2029",
+        "bbox": [
+            69,
+            832,
+            640,
+            848
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "DB AG",
+        "text_level": 2,
+        "bbox": [
+            70,
+            883,
+            207,
+            900
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Date 22 July 2026",
+        "bbox": [
+            659,
+            74,
+            763,
+            105
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Company Update",
+        "text_level": 2,
+        "bbox": [
+            659,
+            114,
+            856,
+            136
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/89bed9711caee394653a555f071024e5df6997fbf79fe5e9642d2bf9392d2ef5.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Price at 21 Jul 2026 (EUR)</td><td>194.60</td></tr><tr><td>Price Target</td><td>232.00</td></tr><tr><td>52-week range</td><td>220.20 - 159.18</td></tr></table>",
+        "bbox": [
+            657,
+            153,
+            932,
+            202
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Valuation & Risks",
+        "text_level": 2,
+        "bbox": [
+            657,
+            248,
+            774,
+            263
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Christophe Menard\nResearch Analyst\n+33-1-4495-9315",
+        "bbox": [
+            659,
+            271,
+            770,
+            313
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sriram Krishnan, CFA\nResearch Analyst\n+44-20-7541-0983",
+        "bbox": [
+            659,
+            320,
+            782,
+            363
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Samrudh Agrawal Research Associate",
+        "bbox": [
+            659,
+            369,
+            772,
+            397
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/868dbbe491e1bd87068037c1d70b1e726bb2a8447ffd82c5552a0ee850891c72.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Key changes</td></tr><tr><td>TP</td><td>226.00 to 232.00 ↑</td><td>2.7%</td></tr><tr><td colspan=\"3\">Source: DB</td></tr></table>",
+        "bbox": [
+            659,
+            427,
+            930,
+            489
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "DB",
+        "bbox": [
+            70,
+            11,
+            236,
+            47
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            843,
+            12,
+            929,
+            77
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "IMPORTANT RESEARCH DISCLOSURES AND ANALYST CERTIFICATIONS LOCATED IN APPENDIX 1. DB does and seeks to do business with companies covered in its research reports. Thus, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+        "bbox": [
+            67,
+            901,
+            932,
+            961
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "guidance extending the 2028 targets. In Defence & Space, Space is ahead of its set trajectory, with significant traction from constellations and military space. In Defence, growth continues to be fueled by capacity increases, with MRTT production to double and Eurofighter targeting a rate of 28/30 per year. There are still some uncertainties on what Airbus will replace FCAS with. Helicopters continue to grow, driven by military CAGR close to 6%, civil at 4%, and innovations across the entire product portfolio (of 13 products).",
+        "bbox": [
+            67,
+            86,
+            642,
+            196
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Q2 release on 29 July post market",
+        "text_level": 2,
+        "bbox": [
+            69,
+            214,
+            315,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We enclosed our Q2 estimates. The key driver for Airbus Commercial remains 67 extra deliveries year-on-year in Q2. This drives operational leverage, partially offset by FX hedging (€150m headwind in Q2 due to a 4-cent hedge rate appreciation), higher R&D, and Spirit integration costs, aligned with delivery phasing. Airbus Helicopters expects similar volumes year-on-year, while Defence & Space should continue progressing toward its mid-to-high single-digit EBIT margin target. FCF is expected to be positive, supported by higher deliveries despite inventory buildup ahead of H2 back-end loaded deliveries.",
+        "bbox": [
+            67,
+            229,
+            642,
+            355
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Buy, PT raised to €232 (from €226)",
+        "text_level": 2,
+        "bbox": [
+            69,
+            372,
+            318,
+            388
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We raised pour PT from €226 to €232 mainly as the result of the buyback programme on share count. We assumed the following phasing in the buy back: €800m in 2026, €1.6bn in both 2027 and 2028 and €1bn in 2029. Our price target remains based on the average of three methods: a 2028E EV/EBIT SOTP valuation yielding €290 (from €286), where Airbus Commercial is valued at 20x EV/EBIT 2028 (compared with Boeing above 22x) and Defense, Space, and Helicopters at a 15.3x 3-year forward multiple (peer based); a DCF valuation resulting in €197 per share (from €190); and a 4% FCF yield approach based on 2028E, which yields €208 per share (from €202).",
+        "bbox": [
+            67,
+            388,
+            642,
+            529
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            14,
+            210,
+            62
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "Page 2",
+        "bbox": [
+            70,
+            947,
+            118,
+            962
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            809,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/3e7911883406ed4d179458737b1b618ce5271bb5e8d37af9a91366a8ba539cf3.jpg",
+        "table_caption": [
+            "Figure 1: Details of the 2029 mid-term guidance vs. current consensus expectations"
+        ],
+        "table_footnote": [
+            "Source : DB, Company, Bloomberg LLP for consensus"
+        ],
+        "table_body": "<table><tr><td></td><td>Mid-term guidance (2029) - Farnborough 2026</td><td>Current Consensus</td><td>Mid-term guidance (2028) - Paris Air Show 2025</td></tr><tr><td>Group EBIT</td><td>€12-13bn EBIT in 2029</td><td>13.0</td><td rowspan=\"3\">no guidance because environment considered uncertain in 2025</td></tr><tr><td>Commercial EBIT</td><td>€10bn by 2029</td><td rowspan=\"2\">10.6</td></tr><tr><td>Commercial Service revenues</td><td>€10bn by 2030</td></tr><tr><td>Helicopter EBIT margin</td><td>€1.2bn in 2029</td><td>1.16</td><td>11%+ (2028)</td></tr><tr><td>Defence&amp; Space EBIT or EBIT margin</td><td>€1.3bn in 2029</td><td>1.36</td><td>mid to high single digit margin (1bn+) by 2028</td></tr><tr><td>Dividend pay-out</td><td>30%-50%</td><td rowspan=\"4\">46%</td><td rowspan=\"2\">30-50%</td></tr><tr><td>Share buy back</td><td>€5bn over 3 years</td></tr><tr><td>R&amp;D (€,m)</td><td>mid single digit as a % of sales</td><td>to continue increasing beyond 2025 , in line with revenues</td></tr><tr><td>Capex (€,m)</td><td>moderate increase</td><td>stabilising in absolute value when getting closer to the targeted production rates</td></tr></table>",
+        "bbox": [
+            72,
+            175,
+            925,
+            383
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            15,
+            210,
+            60
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            70,
+            947,
+            193,
+            961
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "Page 3",
+        "bbox": [
+            883,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/eb9be7dce82e3fb2d62c4b48fd4538a2e49c793cc6052e7bdc7995120e7f4ee1.jpg",
+        "table_caption": [
+            "Figure 2: Updated estimates post July 2026 business update"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>2026E (New)</td><td>2026E (Old)</td><td>% change</td><td>2027E (New)</td><td>2027E (Old)</td><td>% change</td><td>2028E (New)</td><td>2028E (Old)</td><td>% change</td><td>2029E (New)</td><td>2029E (Old)</td><td>% change</td></tr><tr><td>Deliveries</td><td>870</td><td>870</td><td>0%</td><td>965</td><td>965</td><td>0%</td><td>1,098</td><td>1098</td><td>0%</td><td>1,198</td><td>1198</td><td>0%</td></tr><tr><td>A220</td><td>106</td><td>106</td><td>0%</td><td>125</td><td>125</td><td>0%</td><td>150</td><td>150</td><td>0%</td><td>162</td><td>162</td><td>0%</td></tr><tr><td>A320 Family</td><td>654</td><td>654</td><td></td><td>714</td><td>714</td><td></td><td>796</td><td>796</td><td></td><td>861</td><td>861</td><td></td></tr><tr><td>A319ceo</td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td></tr><tr><td>A320ceo</td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td></tr><tr><td>A321ceo</td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td></td></tr><tr><td>A319neo</td><td>10</td><td>10</td><td></td><td>10</td><td>10</td><td></td><td>6</td><td>6</td><td></td><td>6</td><td>6</td><td></td></tr><tr><td>A320neo</td><td>226</td><td>226</td><td>0%</td><td>242</td><td>242</td><td>0%</td><td>275</td><td>275</td><td>0%</td><td>300</td><td>300</td><td>0%</td></tr><tr><td>A321neo</td><td>418</td><td>418</td><td>0%</td><td>462</td><td>462</td><td>0%</td><td>515</td><td>515</td><td>0%</td><td>555</td><td>555</td><td>0%</td></tr><tr><td>A330 Family</td><td>38</td><td>38</td><td></td><td>42</td><td>42</td><td></td><td>46</td><td>46</td><td></td><td>50</td><td>50</td><td></td></tr><tr><td>A330ceo</td><td>2</td><td>2</td><td></td><td>2</td><td>2</td><td></td><td>2</td><td>2</td><td></td><td>0</td><td>0</td><td></td></tr><tr><td>A330neo</td><td>36</td><td>36</td><td>0%</td><td>40</td><td>40</td><td>0%</td><td>44</td><td>44</td><td>0%</td><td>50</td><td>50</td><td>0%</td></tr><tr><td>A350</td><td>72</td><td>72</td><td>0%</td><td>84</td><td>84</td><td>0%</td><td>106</td><td>106</td><td>0%</td><td>125</td><td>125</td><td>0%</td></tr><tr><td>A350-900</td><td>57</td><td>57</td><td></td><td>68</td><td>68</td><td></td><td>89</td><td>89</td><td></td><td>110</td><td>110</td><td></td></tr><tr><td>A350-1000</td><td>15</td><td>15</td><td></td><td>16</td><td>16</td><td></td><td>17</td><td>17</td><td></td><td>15</td><td>15</td><td></td></tr></table>",
+        "bbox": [
+            70,
+            102,
+            930,
+            295
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/d63a9ab2099f1d0a083ef6ddcab338bb1a8ad02d24a70e232f039ac14e3aea80.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source : DB"
+        ],
+        "table_body": "<table><tr><td></td><td>2026E (New)</td><td>2026E (Old)</td><td>% change</td><td>2027E (New)</td><td>2027E (Old)</td><td>% change</td><td>2028E (New)</td><td>2028E (Old)</td><td>% change</td><td>2029E (New)</td><td>2029E (Old)</td><td>% change</td></tr><tr><td>Group revenues</td><td>80,438</td><td>80,438</td><td>0.0%</td><td>88,571</td><td>88,571</td><td>0.0%</td><td>101,409</td><td>101,409</td><td>0.0%</td><td>113,478</td><td>113,478</td><td>0.0%</td></tr><tr><td>Airbus</td><td>58,259</td><td>58,259</td><td>0%</td><td>64,966</td><td>64,966</td><td>0%</td><td>76,178</td><td>76,178</td><td>0%</td><td>86,500</td><td>86,500</td><td>0%</td></tr><tr><td>Helicopters</td><td>9,702</td><td>9,702</td><td>0%</td><td>10,493</td><td>10,493</td><td>0%</td><td>11,454</td><td>11,454</td><td>0%</td><td>12,504</td><td>12,504</td><td>0%</td></tr><tr><td>Defence &amp; Space</td><td>14,011</td><td>14,011</td><td>0%</td><td>14,646</td><td>14,646</td><td>0%</td><td>15,311</td><td>15,311</td><td>0%</td><td>16,008</td><td>16,008</td><td>0%</td></tr><tr><td>HQ/ Eliminations</td><td>-1,534</td><td>-1,534</td><td>0%</td><td>-1,534</td><td>-1,534</td><td>0%</td><td>-1,534</td><td>-1,534</td><td>0%</td><td>-1,534</td><td>-1,534</td><td>0%</td></tr><tr><td>Group EBIT Adjusted</td><td>7,746</td><td>7,746</td><td>0%</td><td>8,965</td><td>8,922</td><td>0%</td><td>11,295</td><td>11,234</td><td>1%</td><td>12,990</td><td>12,969</td><td>0%</td></tr><tr><td>% margin</td><td>9.6%</td><td>9.6%</td><td></td><td>10.1%</td><td>10.1%</td><td></td><td>11.1%</td><td>11.1%</td><td></td><td>11.4%</td><td>11.4%</td><td></td></tr><tr><td>Airbus</td><td>5,941</td><td>5,941</td><td>0%</td><td>6,916</td><td>6,873</td><td>1%</td><td>8,939</td><td>8,829</td><td>1%</td><td>10,376</td><td>10,335</td><td>0%</td></tr><tr><td>% margin</td><td>10.2%</td><td>10.2%</td><td></td><td>10.6%</td><td>10.6%</td><td></td><td>11.7%</td><td>11.6%</td><td></td><td>12.0%</td><td>11.9%</td><td></td></tr><tr><td>Helicopters</td><td>1,014</td><td>1,014</td><td>0%</td><td>1,106</td><td>1,106</td><td>0%</td><td>1,257</td><td>1,257</td><td>0%</td><td>1,372</td><td>1,372</td><td>0%</td></tr><tr><td>% margin</td><td>10.5%</td><td>10.5%</td><td></td><td>10.5%</td><td>10.5%</td><td></td><td>11.0%</td><td>11.0%</td><td></td><td>11.0%</td><td>11.0%</td><td></td></tr><tr><td>Defence &amp; Space</td><td>860</td><td>860</td><td>0%</td><td>1,013</td><td>1,013</td><td>0%</td><td>1,169</td><td>1,217</td><td>-4%</td><td>1,313</td><td>1,333</td><td>-2%</td></tr><tr><td>% margin</td><td>6.1%</td><td>6.1%</td><td></td><td>6.9%</td><td>6.9%</td><td></td><td>7.6%</td><td>8.0%</td><td></td><td>8.2%</td><td>8.3%</td><td></td></tr><tr><td>HQ/ Eliminations</td><td>-70</td><td>-70</td><td></td><td>-70</td><td>-70</td><td></td><td>-70</td><td>-70</td><td></td><td>-70</td><td>-70</td><td></td></tr><tr><td>Net income adjusted</td><td>5,919</td><td>5,937</td><td>0%</td><td>6,724</td><td>6,727</td><td>0%</td><td>8,528</td><td>8,517</td><td>0%</td><td>9,826</td><td>9,833</td><td>0%</td></tr><tr><td>EPS adjusted</td><td>7.51</td><td>7.52</td><td>0%</td><td>8.58</td><td>8.52</td><td>1%</td><td>10.92</td><td>10.79</td><td>1%</td><td>12.61</td><td>12.45</td><td>1%</td></tr><tr><td>Dividend per share</td><td>3.50</td><td>3.50</td><td></td><td>4.10</td><td>4.10</td><td></td><td>5.50</td><td>5.40</td><td></td><td>6.30</td><td>6.20</td><td></td></tr><tr><td>Capex</td><td>4,200</td><td>4,200</td><td></td><td>4,500</td><td>4,500</td><td></td><td>4,600</td><td>4,600</td><td></td><td>4,600</td><td>4,600</td><td></td></tr><tr><td>FCF before customer financing</td><td>4,407</td><td>4,427</td><td>0%</td><td>6,059</td><td>6,063</td><td>0%</td><td>7,882</td><td>7,870</td><td>0%</td><td>8,928</td><td>8,936</td><td>0%</td></tr><tr><td>Cash conversion</td><td>74%</td><td>75%</td><td>0%</td><td>90%</td><td>90%</td><td>0%</td><td>92%</td><td>92%</td><td>0%</td><td>91%</td><td>91%</td><td>0%</td></tr><tr><td>Closing net cash/ (net debt)</td><td>13,337</td><td>14,158</td><td>-6%</td><td>15,126</td><td>17,543</td><td>-14%</td><td>18,279</td><td>22,262</td><td>-18%</td><td>21,999</td><td>27,021</td><td>-19%</td></tr></table>",
+        "bbox": [
+            69,
+            294,
+            930,
+            607
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026",
+        "bbox": [
+            70,
+            15,
+            155,
+            28
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Aerospace & Defence",
+        "bbox": [
+            70,
+            32,
+            210,
+            45
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Airbus",
+        "bbox": [
+            70,
+            47,
+            116,
+            60
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            860,
+            14,
+            929,
+            65
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "Page 4",
+        "bbox": [
+            70,
+            947,
+            118,
+            961
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            809,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Figure 3: Q2-26 preview",
+        "bbox": [
+            75,
+            81,
+            247,
+            98
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/8333c130938365dfc2f76773c8d8267bd7f4ee4818e077a2fc4344c143d1d688.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td>Q2-26</td><td>Q2-25</td><td rowspan=\"2\">% change</td></tr><tr><td>est.</td><td>act.</td></tr><tr><td>Group revenues</td><td>20,074</td><td>16,068</td><td>25%</td></tr><tr><td>Airbus</td><td>14,817</td><td>11,308</td><td>31%</td></tr><tr><td>Helicopters</td><td>2,267</td><td>2,093</td><td>8%</td></tr><tr><td>Defence &amp; Space</td><td>3,373</td><td>3,157</td><td>7%</td></tr><tr><td>HQ/ Eliminations</td><td>-384</td><td>-369</td><td>4%</td></tr><tr><td>Group EBIT Adjusted</td><td>2,178</td><td>1,580</td><td>38%</td></tr><tr><td>% margin</td><td>10.8%</td><td>9.8%</td><td></td></tr><tr><td>Airbus</td><td>1,826</td><td>1,220</td><td>50%</td></tr><tr><td>% margin</td><td>12.3%</td><td>10.8%</td><td></td></tr><tr><td>Helicopters</td><td>181</td><td>171</td><td>6%</td></tr><tr><td>% margin</td><td>8.0%</td><td>8.2%</td><td></td></tr><tr><td>Defence &amp; Space</td><td>187</td><td>188</td><td>0%</td></tr><tr><td>% margin</td><td>5.6%</td><td>6.0%</td><td></td></tr><tr><td>HQ/ Eliminations</td><td>-18</td><td>1</td><td></td></tr><tr><td>Group EBIT Reported</td><td>2,140</td><td>1,144</td><td>87%</td></tr><tr><td>% margin</td><td>10.7%</td><td>7.1%</td><td></td></tr><tr><td>Airbus</td><td>1,789</td><td>780</td><td></td></tr><tr><td>% margin</td><td>12.1%</td><td>6.9%</td><td></td></tr><tr><td>Helicopters</td><td>181</td><td>171</td><td></td></tr><tr><td>% margin</td><td>8.0%</td><td>8.2%</td><td></td></tr><tr><td>Defence &amp; Space</td><td>187</td><td>192</td><td></td></tr><tr><td>% margin</td><td>5.6%</td><td>6.1%</td><td></td></tr><tr><td>HQ/ Eliminations</td><td>-18</td><td>1</td><td></td></tr><tr><td>EPS adjusted</td><td>2.04</td><td>1.49</td><td>37%</td></tr><tr><td>FCF before customer financing</td><td>278</td><td>-1,300</td><td>-121%</td></tr></table>",
+        "bbox": [
+            70,
+            100,
+            930,
+            565
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            860,
+            14,
+            927,
+            65
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            70,
+            947,
+            193,
+            961
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "Page 5",
+        "bbox": [
+            883,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Appendix 1",
+        "text_level": 1,
+        "bbox": [
+            69,
+            87,
+            298,
+            122
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "bbox": [
+            69,
+            156,
+            281,
+            174
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\*Other information available upon request",
+        "bbox": [
+            70,
+            180,
+            470,
+            200
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/0cbe518e001ff1327114f6816b9ac9bf9fbd22599c5c7113ca43e01056fd4fbc.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"4\">Disclosure checklist</td></tr><tr><td>Company</td><td>Ticker</td><td>Recent price*</td><td>Disclosure</td></tr><tr><td>Airbus</td><td>AIR.PA</td><td>194.6 (EUR) 21 Jul 2026</td><td>1, 2, 7, 8, 14, 15, 21, 24, 26</td></tr></table>",
+        "bbox": [
+            70,
+            228,
+            929,
+            282
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\*Prices are current as of the end of the previous trading session unless otherwise indicated and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Other information is sourced from DB, subject companies, and other sources. For disclosures pertaining to recommendations or estimates made on securities other than the primary subject of this research, please see the most recently published company report or visit our global disclosure look-up page on our website at https://research.db.com/Research/Disclosures/EquityResearchDisclosures. Aside from within this report, important risk and conflict disclosures can also be found at https://research.db.com/Research/Disclosures/Disclaimer. Investors are strongly encouraged to review this information before investing.",
+        "bbox": [
+            69,
+            282,
+            932,
+            326
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures Required by U.S. Regulators",
+        "text_level": 2,
+        "bbox": [
+            69,
+            333,
+            551,
+            351
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosures marked with an asterisk may also be required by at least one jurisdiction in addition to the United States. See Important Disclosures Required by Non-US Regulators and Explanatory Notes.",
+        "bbox": [
+            67,
+            352,
+            932,
+            381
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "1. Within the past year, DB and/or its affiliate(s) has managed or co-managed a public offering for this company, for which it received fees.",
+        "bbox": [
+            69,
+            383,
+            932,
+            410
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2. DB and/or its affiliate(s) may act as a market maker or liquidity provider in the financial instruments issued by this company.",
+        "bbox": [
+            67,
+            412,
+            932,
+            440
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "7. DB and/or its affiliate(s) has received compensation from this company for the provision of investment banking or financial advisory services within the past year.",
+        "bbox": [
+            67,
+            441,
+            932,
+            470
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "8. DB and/or its affiliate(s) expects to receive, or intends to seek, compensation for investment banking services from this company in the next three months.",
+        "bbox": [
+            67,
+            472,
+            932,
+            500
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "14. DB and/or its affiliate(s) has received compensation from this company within the past year for non-investment banking related services.",
+        "bbox": [
+            69,
+            502,
+            932,
+            529
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "15. This company has been a client of DB Securities Inc. within the past year during which time it received investment banking services.",
+        "bbox": [
+            69,
+            531,
+            932,
+            559
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "21. This company has been a client of DB Securities Inc. within the past year, during which time it received non-investment banking securities-related services.",
+        "bbox": [
+            67,
+            560,
+            932,
+            587
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures Required by Non-U.S. Regulators",
+        "text_level": 2,
+        "bbox": [
+            69,
+            602,
+            598,
+            620
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosures marked with an asterisk may also be required by at least one jurisdiction in addition to the United States. See Important Disclosures Required by Non-US Regulators and Explanatory Notes.",
+        "bbox": [
+            67,
+            622,
+            932,
+            649
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "1. Within the past year, DB and/or its affiliate(s) has managed or co-managed a public offering for this company, for which it received fees.",
+        "bbox": [
+            69,
+            651,
+            932,
+            679
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2. DB and/or its affiliate(s) may act as a market maker or liquidity provider in the financial instruments issued by this company.",
+        "bbox": [
+            67,
+            680,
+            932,
+            709
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "24. DB and/or its affiliate(s) is or has been over the previous 12 months party to an agreement with the company relating to the provision of services set out in Sections A and B of Annex I of Directive 2014/65/EU, or has over the previous 12 months been obliged or entitled (as applicable) to pay or receive compensation relating to the provision of services set out in Sections A and B of Annex I of Directive 2014/65/EU.",
+        "bbox": [
+            67,
+            711,
+            932,
+            760
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "26. Within the preceding 12 months, DB and/or its affiliate(s) has received compensation for the provision of investment banking services or is currently providing or has provided investment banking services to this company.",
+        "bbox": [
+            67,
+            764,
+            932,
+            791
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "For disclosures pertaining to recommendations or estimates made on securities other than the primary subject of this research, please see the most recently published company report or visit our global disclosure look-up page on our website at https://research.db.com/Research/Disclosures/EquityResearchDisclosures. Aside from within this report, important risk and conflict disclosures can also be found at https://research.db.com/Research/Disclosures/Disclaimer. Investors are strongly encouraged to review this information before investing.",
+        "bbox": [
+            67,
+            797,
+            932,
+            859
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            69,
+            865,
+            264,
+            882
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The views expressed in this report accurately reflect the personal views of the undersigned lead analyst(s) about the subject issuer and the securities of the issuer. In addition, the undersigned lead analyst(s) has not and will not receive any compensation for providing a specific recommendation or view in this report. Christophe Menard.",
+        "bbox": [
+            67,
+            886,
+            932,
+            926
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "Page 6",
+        "bbox": [
+            70,
+            947,
+            118,
+            961
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            809,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/142456683cfb817ff70683d66a82fc0bc985f36e93f0b4258a34e9167d276902.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            74,
+            81,
+            750,
+            357
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/9bb6c163bef25b67b217ed10540832854f02428166bc008b133d10941211192c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>1.</td><td>07/27/2023</td><td>Hold, Target Price Change EUR 128.00, Current Price EUR 131.00 Christophe Menard</td><td>9. 02/22/2025</td><td>Buy, Target Price Change EUR 183.00, Current Price EUR 160.00 Christophe Menard</td></tr><tr><td>2.</td><td>11/09/2023</td><td>Hold, Target Price Change EUR 130.00, Current Price EUR 127.86 Christophe Menard</td><td>10. 06/24/2025</td><td>Buy, Target Price Change EUR 185.00, Current Price EUR 170.60 Christophe Menard</td></tr><tr><td>3.</td><td>12/08/2023</td><td>Upgraded to Buy, Target Price Change EUR 152.00, Current Price EUR 141.82 Christophe Menard</td><td>11. 08/07/2025</td><td>Buy, Target Price Change EUR 186.00, Current Price EUR 177.40 Christophe Menard</td></tr><tr><td>4.</td><td>01/24/2024</td><td>Buy, Target Price Change EUR 165.00, Current Price EUR 146.74 Christophe Menard</td><td>12. 09/25/2025</td><td>Buy, Target Price Change EUR 209.00, Current Price EUR 193.86 Christophe Menard</td></tr><tr><td>5.</td><td>03/20/2024</td><td>Buy, Target Price Change EUR 186.00, Current Price EUR 168.06 Christophe Menard</td><td>13. 10/30/2025</td><td>Buy, Target Price Change EUR 228.00, Current Price EUR 212.70 Christophe Menard</td></tr><tr><td>6.</td><td>06/25/2024</td><td>Downgraded to Hold, Target Price Change EUR 155.00, Current Price EUR 134.78 Christophe Menard</td><td>14. 12/03/2025</td><td>Buy, Target Price Change EUR 222.00, Current Price EUR 198.12 Christophe Menard</td></tr><tr><td>7.</td><td>12/17/2024</td><td>Upgraded to Buy, Target Price Change EUR 185.00, Current Price EUR 158.54 Christophe Menard</td><td>15. 01/13/2026</td><td>Buy, Target Price Change EUR 250.00, Current Price EUR 220.20 Christophe Menard</td></tr><tr><td>8.</td><td>01/29/2025</td><td>Buy, Target Price Change EUR 187.00, Current Price EUR 166.62 Christophe Menard</td><td>16. 02/20/2026</td><td>Buy, Target Price Change EUR 226.00, Current Price EUR 189.74 Christophe Menard</td></tr></table>",
+        "bbox": [
+            67,
+            374,
+            915,
+            585
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026  \nAerospace & Defence  \nAirbus",
+        "bbox": [
+            70,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            14,
+            927,
+            65
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            70,
+            947,
+            193,
+            961
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "Page 7",
+        "bbox": [
+            883,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4bc34ac7e05e156fb1986e5f3310849d579f6327d68ae0f65db2de4a40afe393.jpg",
+        "content": "",
+        "chart_caption": [
+            "Equity rating dispersion and banking relationships",
+            "Equity Rating and Dispersion Key",
+            "The Equity Rating Dispersion Chart depicts the following:"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            75,
+            109,
+            480,
+            348
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The proportion of recommendations that are rated \"buy\", \"sell\" and \"hold\" over the previous 12 months. This is shown for securities issued in the stated region e.g. \"Europe Universe\". See rating definitions below. This is represented by the \"Companies Covered\" bars in the chart. The percentage value displayed above the bar is the proportion as a percentage. E.g. $50\\%$ above the \"buy\" / \"Companies Covered\" bar means that $50\\%$ of DB's equity research covered companies over the past 12 months have a \"buy\" rating.",
+        "bbox": [
+            67,
+            428,
+            922,
+            502
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Next to each of the three respective bars showing the proportion of \"buy\", \"sell\" and \"hold\" recommendations we provide two additional bars to show:",
+        "bbox": [
+            67,
+            519,
+            922,
+            550
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- The proportion of \"buy\", \"sell\" or \"hold recommendations where DB and or/Affiliates provided MIFID Investment or Ancillary Services in the past 12 months. This is represented in the \"MIFID Investment and Ancillary Services\" bar. The percentage value displayed above the bar shows the proportion of Companies Covered with the given rating where DB has also provided MIFID Investment and Ancillary Services in the past 12 months. E.g. $50\\%$ above the \"Cos. w/ MIFID Investment and Ancillary Services\" bar means $50\\%$ of the Companies Covered with the rating stated have also received MIFID Investment and Ancillary Services from DB.",
+        "bbox": [
+            67,
+            568,
+            925,
+            656
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- The proportion of \"buy\" (or \"sell\" or \"hold) recommendations where DB and or/Affiliates has provided Investment Banking services in the past 12 months for which it has received compensation. The percentage value displayed above the bar shows the proportion of Companies Covered with the stated rating where DB has also provided Investment Banking services in the past 12 months. E.g. $50\\%$ above the \"Cos. w/ Investment Banking relationship\" bar means $50\\%$ of the Companies Covered with the rating stated also have an Investment Banking Relationship with DB.",
+        "bbox": [
+            67,
+            673,
+            912,
+            746
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Buy: Based on a current 12-month view of TSR, we recommend that investors buy the stock.",
+        "bbox": [
+            69,
+            772,
+            725,
+            789
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Sell: Based on a current 12-month view of TSR, we recommend that investors sell the stock.",
+        "bbox": [
+            69,
+            793,
+            718,
+            810
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Hold: We take a neutral view on the stock 12-months out and, based on this time horizon, do not recommend either a Buy or Sell.",
+        "bbox": [
+            67,
+            815,
+            895,
+            844
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "TSR = Total Shareholder Return. Percentage change in share price from current price to projected target price plus projected dividend yield",
+        "bbox": [
+            69,
+            850,
+            873,
+            881
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Newly issued research recommendations and target prices supersede previously published research.",
+        "bbox": [
+            69,
+            888,
+            780,
+            905
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026  \nAerospace & Defence  \nAirbus",
+        "bbox": [
+            70,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            860,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "Page 8",
+        "bbox": [
+            70,
+            947,
+            118,
+            962
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            809,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Additional Information",
+        "text_level": 2,
+        "bbox": [
+            69,
+            86,
+            286,
+            104
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The information and opinions in this report were prepared by DB AG or one of its affiliates (collectively 'DB'). Though the information herein is believed to be reliable and has been obtained from public sources believed to be reliable, DB makes no representation as to its accuracy or completeness. Hyperlinks to third-party websites in this report are provided for reader convenience only. DB neither endorses the content nor is responsible for the accuracy or security controls of those websites.",
+        "bbox": [
+            67,
+            108,
+            932,
+            171
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "If you use the services of DB in connection with a purchase or sale of a security that is discussed in this report, or is included or discussed in another communication (oral or written) from a DB analyst, DB may act as principal for its own account or as agent for another person.",
+        "bbox": [
+            67,
+            182,
+            932,
+            220
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "DB may consider this report in deciding to trade as principal. It may also engage in transactions, for its own account or with customers, in a manner inconsistent with the views taken in this research report. Others within DB, including strategists, sales staff and other analysts, may take views that are inconsistent with those taken in this research report. DB issues a variety of research products, including fundamental analysis, equity-linked analysis, quantitative analysis and trade ideas. Recommendations contained in one type of communication may differ from recommendations contained in others, whether as a result of differing time horizons, methodologies, perspectives or otherwise. DB and/or its affiliates may also be holding debt or equity securities of the issuers it writes on. Analysts are paid in part based on the profitability of DB AG and its affiliates, which includes investment banking, trading and principal trading revenues.",
+        "bbox": [
+            67,
+            232,
+            932,
+            342
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Opinions, estimates and projections constitute the current judgment of the author as of the date of this report. They do not necessarily reflect the opinions of DB and are subject to change without notice. DB provides liquidity for buyers and sellers of securities issued by the companies it covers. DB analysts sometimes have shorter-term trade ideas that may be inconsistent with DB's existing longer-term ratings. Some trade ideas for equities are listed as Catalyst Calls on the Research Website (https://research.db.com/Research/), and can be found on the general coverage list and also on the covered company's page. A Catalyst Call represents a high-conviction belief by an analyst that a stock will outperform or underperform the market and/or a specified sector over a time frame of no less than two weeks and no more than three months. In addition to Catalyst Calls, analysts may occasionally discuss with our clients, and with DB salespersons and traders, trading strategies or ideas that reference catalysts or events that may have a near-term or medium-term impact on the market price of the securities discussed in this report, which impact may be directionally counter to the analysts' current 12-month view of total return or investment return as described herein. DB has no obligation to update, modify or amend this report or to otherwise notify a recipient thereof if an opinion, forecast or estimate changes or becomes inaccurate. Coverage and the frequency of changes in market conditions and in both general and company-specific economic prospects make it difficult to update research at defined intervals. Updates are at the sole discretion of the coverage analyst or of the Research Department Management, and the majority of reports are published at irregular intervals. This report is provided for informational purposes only and does not take into account the particular investment objectives, financial situations, or needs of individual clients. It is not an offer or a solicitation of an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Target prices are inherently imprecise and a product of the analyst's judgment. The financial instruments discussed in this report may not be suitable for all investors, and investors must make their own informed investment decisions. Prices and availability of financial instruments are subject to change without notice, and investment transactions can lead to losses as a result of price fluctuations and other factors. If a financial instrument is denominated in a currency other than an investor's currency, a change in exchange rates may adversely affect the investment. Past performance is not necessarily indicative of future results. Performance calculations exclude transaction costs, unless otherwise indicated. Unless otherwise indicated, prices are current as of the end of the previous trading session and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Data is also sourced from DB, subject companies, and other parties. Artificial intelligence tools may be used in the preparation of this material, including but not limited to assist in fact-finding, data analysis, pattern recognition, content drafting and editorial corrections pertaining to research material.",
+        "bbox": [
+            67,
+            352,
+            934,
+            683
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The DB Department is independent of other business divisions of the Bank. Details regarding our organizational arrangements and information barriers we have to prevent and avoid conflicts of interest with respect to our research are available on our website (https://research.db.com/Research/) under Disclaimer.",
+        "bbox": [
+            67,
+            693,
+            932,
+            732
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Macroeconomic fluctuations often account for most of the risks associated with exposures to instruments that promise to pay fixed or variable interest rates. For an investor who is long fixed-rate instruments (thus receiving these cash flows), increases in interest rates naturally lift the discount factors applied to the expected cash flows and thus cause a loss. The longer the maturity of a certain cash flow and the higher the move in the discount factor, the higher will be the loss. Upside surprises in inflation, fiscal funding needs, and FX depreciation rates are among the most common adverse macroeconomic shocks to receivers. But counterparty exposure, issuer creditworthiness, client segmentation, regulation (including changes in assets holding limits for different types of investors), changes in tax policies, currency convertibility (which may constrain currency conversion, repatriation of profits and/or liquidation of positions), and settlement issues related to local clearing houses are also important risk factors. The sensitivity of fixed-income instruments to macroeconomic shocks may be mitigated by indexing the contracted cash flows to inflation, to FX depreciation, or to specified interest rates - these are common in emerging markets. The index fixings may - by construction - lag or mis-measure the actual move in the underlying variables they are intended to track. The choice of the proper fixing (or metric) is particularly important in swaps markets, where floating coupon rates (i.e., coupons indexed to a typically short-dated interest rate reference index) are exchanged for fixed coupons. Funding in a currency that differs from the currency in which coupons are denominated carries FX risk. Options on swaps (swaptions) the risks typical to options in addition to the risks related to rates movements.",
+        "bbox": [
+            67,
+            744,
+            934,
+            923
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            70,
+            947,
+            193,
+            961
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "Page 9",
+        "bbox": [
+            883,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Derivative transactions involve numerous risks including market, counterparty default and illiquidity risk. The appropriateness of these products for use by investors depends on the investors' own circumstances, including their tax position, their regulatory environment and the nature of their other assets and liabilities; as such, investors should take expert legal and financial advice before entering into any transaction similar to or inspired by the contents of this publication. The risk of loss in futures trading and options, foreign or domestic, can be substantial. As a result of the high degree of leverage obtainable in futures and options trading, losses may be incurred that are greater than the amount of funds initially deposited - up to theoretically unlimited losses. Trading in options involves risk and is not suitable for all investors. Prior to buying or selling an option, investors must review the 'Characteristics and Risks of Standardized Options\", at https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document. If you are unable to access the website, please contact your DB representative for a copy of this important document.",
+        "bbox": [
+            67,
+            83,
+            932,
+            202
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Participants in foreign exchange transactions may incur risks arising from several factors, including the following: (i) exchange rates can be volatile and are subject to large fluctuations; (ii) the value of currencies may be affected by numerous market factors, including world and national economic, political and regulatory events, events in equity and debt markets and changes in interest rates; and (iii) currencies may be subject to devaluation or government-imposed exchange controls, which could affect the value of the currency. Investors in securities such as ADRs, whose values are affected by the currency of an underlying security, effectively assume currency risk.",
+        "bbox": [
+            67,
+            214,
+            932,
+            288
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Unless governing law provides otherwise, all transactions should be executed through the DB entity in the investor's home jurisdiction. Aside from within this report, important conflict disclosures can also be found at https://research.db.com/Research/ on each company's research page or under the 'Disclosures' tab. Investors are strongly encouraged to review this information before investing.",
+        "bbox": [
+            67,
+            299,
+            932,
+            350
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "DB (which includes DB AG, its branches and affiliated companies) is not acting as a financial adviser, consultant or fiduciary to you or any of your agents (collectively, \"You\" or \"Your\") with respect to any information provided in this report. DB does not provide investment, legal, tax or accounting advice, DB is not acting as your impartial adviser, and does not express any opinion or recommendation whatsoever as to any strategies, products or any other information presented in the materials. Information contained herein is being provided solely on the basis that the recipient will make an independent assessment of the merits of any investment decision, and it does not constitute a recommendation of, or express an opinion on, any product or service or any trading strategy.",
+        "bbox": [
+            67,
+            361,
+            932,
+            448
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The information presented is general in nature and is not directed to retirement accounts or any specific person or account type, and is therefore provided to You on the express basis that it is not advice, and You may not rely upon it in making Your decision. The information we provide is being directed only to persons we believe to be financially sophisticated, who are capable of evaluating investment risks independently, both in general and with regard to particular transactions and investment strategies, and who understand that DB has financial interests in the offering of its products and services. If this is not the case, or if You are an IRA or other retail investor receiving this directly from us, we ask that you inform us immediately.",
+        "bbox": [
+            67,
+            458,
+            932,
+            533
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In July 2018, DB revised its rating system for short term ideas whereby the branding has been changed to Catalyst Calls (\"CC\") from SOLAR ideas; the rating categories for Catalyst Calls originated in the Americas region have been made consistent with the categories used by Analysts globally; and the effective time period for CCs has been reduced from a maximum of 180 days to 90 days.",
+        "bbox": [
+            67,
+            543,
+            932,
+            594
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "United States: Approved and/or distributed by DB Securities Incorporated, a member of FINRA and SIPC. Analysts located outside of the United States are employed by non-US affiliates and are not registered/qualified as research analysts with FINRA.",
+        "bbox": [
+            67,
+            604,
+            932,
+            643
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area (exc. United Kingdom): Approved and/or distributed by DB AG, a joint stock corporation with limited liability incorporated in the Federal Republic of Germany with its principal office in Frankfurt am Main. DB AG is authorized under German Banking Law and is subject to supervision by the European Central Bank and by BaFin, Germany's Federal Financial Supervisory Authority.",
+        "bbox": [
+            67,
+            655,
+            932,
+            706
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "United Kingdom: Approved and/or distributed by DB AG acting through its London Branch at 21 Moorfields, London EC2Y 9DB. DB AG in the United Kingdom is authorised by the Prudential Regulation Authority and is subject to limited regulation by the Prudential Regulation Authority and Financial Conduct Authority. Details about the extent of our authorisation and regulation are available on request.",
+        "bbox": [
+            67,
+            717,
+            932,
+            768
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong SAR: Distributed by DB AG, Hong Kong Branch except for any research content relating to futures contracts within the meaning of the Hong Kong Securities and Futures Ordinance Cap. 571. Research reports on such futures contracts are not intended for access by persons who are located, incorporated, constituted or resident in Hong Kong. The author(s) of a research report, and the entities for which they act and/or are affiliated with, may not be licensed to carry on regulated activities in Hong Kong and, if not licensed, do not hold themselves out as being able to do so. The provisions set out above in the 'Additional Information' section shall apply to the fullest extent permissible by local laws and regulations, including without limitation the Code of Conduct for Persons Licensed or Registered with the Securities and Futures Commission. This report is intended for distribution only to 'professional investors' as defined in Part 1 of Schedule of the SFO. This document must not be acted or relied on by persons who are not professional investors. Any investment or investment activity to which this document relates is only available to professional investors and will be engaged only with professional investors.",
+        "bbox": [
+            67,
+            779,
+            934,
+            910
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "Page 10",
+        "bbox": [
+            70,
+            947,
+            126,
+            961
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            809,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "India: Prepared by Deutsche Equities India Private Limited (DEIPL) having CIN: U65990MH2002PTC137431 and registered office at 14th Floor, The Capital, C-70, G Block, Bandra Kurla Complex, Mumbai (India) 400051. Tel: +91 22 7180 4444. It is registered by the Securities and Exchange Board of India (SEBI) as a Stock broker bearing registration no.: INZ000252437; Merchant Banker bearing SEBI Registration no.: INM000010833 and Research Analyst bearing SEBI Registration no.: INH000001741. DEIPL's Compliance / Grievance officer is Ms. Rashmi Poddar (Tel: +91 22 7180 4929 email ID: complaints.deipl@db.com). Registration granted by SEBI and certification from NISM in no way guarantee performance of DEIPL or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. DEIPL may have received administrative warnings from the SEBI for breaches of Indian regulations. DB and/or its affiliate(s) may have debt holdings or positions in the subject company. With regard to information on associates, please refer to the \"Shareholdings\" section in the Annual Report at: https://www.db.com/ir/en/annual-reports.htm. For latest India research audit report, refer https://country.db.com/india/deutsche-equities-india/index?language\\_id=1.",
+        "bbox": [
+            67,
+            82,
+            932,
+            227
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Japan: Approved and/or distributed by Deutsche Securities Inc.(DSI). Registration number - Registered as a financial instruments dealer by the Head of the Kanto Local Finance Bureau (Kinsho) No. 117. Member of associations: JSDA, Type II Financial Instruments Firms Association and The Financial Futures Association of Japan. Commissions and risks involved in stock transactions - for stock transactions, we charge stock commissions and consumption tax by multiplying the transaction amount by the commission rate agreed with each customer. Stock transactions can lead to losses as a result of share price fluctuations and other factors. Transactions in foreign stocks can lead to additional losses stemming from foreign exchange fluctuations. We may also charge commissions and fees for certain categories of investment advice, products and services. Recommended investment strategies, products and services carry the risk of losses to principal and other losses as a result of changes in market and/or economic trends, and/or fluctuations in market value. Before deciding on the purchase of financial products and/or services, customers should carefully read the relevant disclosures, prospectuses and other documentation. 'Moody's', 'Standard Poor's', and 'Fitch' mentioned in this report are not registered credit rating agencies in Japan unless Japan or 'Nippon' is specifically designated in the name of the entity. Reports on Japanese listed companies not written by analysts of DSI are written by DB Group's analysts with the coverage companies specified by DSI. Some of the foreign securities stated on this report are not disclosed according to the Financial Instruments and Exchange Law of Japan. Target prices set by DB's equity analysts are based on a 12-month forecast period.",
+        "bbox": [
+            67,
+            237,
+            932,
+            417
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Korea: Distributed by Deutsche Securities Korea Co.",
+        "bbox": [
+            67,
+            427,
+            441,
+            441
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "South Africa: DB AG Johannesburg is incorporated in the Federal Republic of Germany (Branch Register Number in South Africa: 1998/003298/10).",
+        "bbox": [
+            67,
+            453,
+            932,
+            481
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This report is issued by DB AG, Singapore Branch (One Raffles Quay #18-00 South Tower Singapore 048583, 65 6423 8001), which may be contacted in respect of any matters arising from, or in connection with, this report. Where this report is issued or promulgated by DB in Singapore to a person who is not an accredited investor, expert investor or institutional investor (as defined in the applicable Singapore laws and regulations), they accept legal responsibility to such person for its contents.",
+        "bbox": [
+            67,
+            492,
+            932,
+            555
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: Information on securities/investments that trade in Taiwan is for your reference only. Readers should independently evaluate investment risks and are solely responsible for their investment decisions. DB may not be distributed to the Taiwan public media or quoted or used by the Taiwan public media without written consent. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation to trade in such securities/instruments.",
+        "bbox": [
+            67,
+            565,
+            932,
+            629
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Qatar: DB AG in the Qatar Financial Centre (registered no. 00032) is regulated by the Qatar Financial Centre Regulatory Authority. DB AG - QFC Branch may undertake only the financial services activities that fall within the scope of its existing QFCRA license. Its principal place of business in the QFC: Qatar Financial Centre, Tower, West Bay, Level 5, PO Box 14928, Doha, Qatar. This information has been distributed by DB AG. Related financial products or services are only available only to Business Customers, as defined by the Qatar Financial Centre Regulatory Authority.",
+        "bbox": [
+            67,
+            640,
+            932,
+            702
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Russia: The information, interpretation and opinions submitted herein are not in the context of, and do not constitute, any appraisal or evaluation activity requiring a license in the Russian Federation.",
+        "bbox": [
+            67,
+            713,
+            932,
+            741
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Kingdom of Saudi Arabia: Deutsche Securities Saudi Arabia (DSSA) is a closed joint stock company authorized by the Capital Market Authority of the Kingdom of Saudi Arabia with a license number (No. 37-07073) to conduct the following business activities: Dealing, Arranging, Advising, and Custody activities. DSSA registered office is Faisaliah Tower, 17th Floor, King Fahad Road - Al Olaya District Riyadh, Kingdom of Saudi Arabia P.O. Box 301806.",
+        "bbox": [
+            67,
+            751,
+            932,
+            803
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "United Arab Emirates: DB AG in the Dubai International Financial Centre (registered no. 00045) is regulated by the Dubai Financial Services Authority. DB AG - DIFC Branch may only undertake the financial services activities that fall within the scope of its existing DFSA license. Principal place of business in the DIFC: Dubai International Financial Centre, The Gate Village, Building 5, PO Box 504902, Dubai, U.A.E. This information has been distributed by DB AG. Related financial products or services are available only to Professional Clients, as defined by the Dubai Financial Services Authority.",
+        "bbox": [
+            67,
+            813,
+            932,
+            888
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Australia and New Zealand: This research is intended only for 'wholesale clients' within the meaning of the Australian Corporations Act and New Zealand Financial Advisors Act, respectively. Please refer to Australia-specific research disclosures and related information at https://www.dbresearch.com/PROD/RPS\\_EN-PROD/PROD0000000000521304.xhtml. Where research refers to any particular financial product recipients of the research should consider any product disclosure statement, prospectus or other applicable disclosure document before making any decision about whether to acquire the product. In preparing this report, the primary analyst or an individual who assisted in the preparation of this report has likely been in contact with the company that is the subject of this research for confirmation/clarification of data, facts, statements, permission to use company-sourced material in the report, and/or site-visit attendance. Without prior approval from Research Management, analysts may not accept from current or potential Banking clients the costs of travel, accommodations, or other expenses incurred by analysts attending site visits, conferences, social events, and the like. Similarly, without prior approval from Research Management and Anti-Bribery and Corruption (\"ABC\") team, analysts may not accept perks or other items of value for their personal use from issuers they cover.",
+        "bbox": [
+            67,
+            899,
+            932,
+            927
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            69,
+            947,
+            193,
+            961
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "Page 11",
+        "bbox": [
+            876,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            67,
+            82,
+            932,
+            202
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Additional information relative to securities, other financial products or issuers discussed in this report is available upon request. This report may not be reproduced, distributed or published without DB's prior written consent.",
+        "bbox": [
+            67,
+            214,
+            932,
+            241
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Backtested, hypothetical or simulated performance results have inherent limitations. Unlike an actual performance record based on trading actual client portfolios, simulated results are achieved by means of the retroactive application of a backtested model itself designed with the benefit of hindsight. Taking into account historical events the backtesting of performance also differs from actual account performance because an actual investment strategy may be adjusted any time, for any reason, including a response to material, economic or market factors. The backtested performance includes hypothetical results that do not reflect the reinvestment of dividends and other earnings or the deduction of advisory fees, brokerage or other commissions, and any other expenses that a client would have paid or actually paid. No representation is made that any trading strategy or account will or is likely to achieve profits or losses similar to those shown. Alternative modeling techniques or assumptions might produce significantly different results and prove to be more appropriate. Past hypothetical backtest results are neither an indicator nor guarantee of future returns. Actual results will vary, perhaps materially, from the analysis.",
+        "bbox": [
+            67,
+            251,
+            932,
+            374
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The method for computing individual E,S,G and composite ESG scores set forth herein is a novel method developed by the Research department within DB AG, computed using a systematic approach without human intervention. Different data providers, market sectors and geographies approach ESG analysis and incorporate the findings in a variety of ways. As such, the ESG scores referred to herein may differ from equivalent ratings developed and implemented by other ESG data providers in the market and may also differ from equivalent ratings developed and implemented by other divisions within the DB Group. Such ESG scores also differ from other ratings and rankings that have historically been applied in research reports published by DB AG. Further, such ESG scores do not represent a formal or official view of DB AG. It should be noted that the decision to incorporate ESG factors into any investment strategy may inhibit the ability to participate in certain investment opportunities that otherwise would be consistent with your investment objective and other principal investment strategies. The returns on a portfolio consisting primarily of sustainable investments may be lower or higher than portfolios where ESG factors, exclusions, or other sustainability issues are not considered, and the investment opportunities available to such portfolios may differ. Companies may not necessarily meet high performance standards on all aspects of ESG or sustainable investing issues; there is also no guarantee that any company will meet expectations in connection with corporate responsibility, sustainability, and/or impact performance.",
+        "bbox": [
+            67,
+            383,
+            932,
+            552
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Copyright © 2026 DB AG",
+        "bbox": [
+            69,
+            562,
+            335,
+            578
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "22 July 2026\nAerospace & Defence\nAirbus",
+        "bbox": [
+            69,
+            14,
+            210,
+            60
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            12,
+            929,
+            65
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "Page 12",
+        "bbox": [
+            70,
+            947,
+            124,
+            961
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "DB AG",
+        "bbox": [
+            809,
+            947,
+            930,
+            961
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/de9c6109ecc9e31797482813d05c39c87fea4265c7d014d03a6468aa5e07c4fd.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"4\">David Folkerts-Landau Group Chief Economist and Global Head of Research</td></tr><tr><td>Pam Finelli COO and Head of Fixed Income Research</td><td>Steve Pollard Global Head of Company Research and Sales</td><td>Jim Reid Global Head of Macro and Thematic Research</td><td>Tim Rokossa Head of European Company Research</td></tr><tr><td>Matthew Barnard Head of Americas Company Research</td><td>Debbie Jones Global Head of Sustainability and Data Innovation, Research</td><td>Robin Winkler Head of German Macro Research</td><td>Sameer Goel Global Head of EM &amp; APAC Research</td></tr><tr><td>Francis Yared Global Head of Rates Research</td><td>George Saravelos Global Head of FX Research</td><td>Peter Hooper Vice-Chair of Research</td><td>Nilendra de-Mel Head of APAC &amp; Middle East Product Development</td></tr></table>",
+        "bbox": [
+            77,
+            82,
+            927,
+            313
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/1e3486ed10a78e21023279300786be9d1a1aba3c2747dd11d02aedaa6dae873d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>DB AG</td><td>DB AG</td><td>DB AG</td><td>Deutsche Securities Inc.</td></tr><tr><td>DB Place</td><td>Equity Research</td><td>Filiale Hongkong</td><td>1-3-1 Azabudai</td></tr><tr><td>Level 16</td><td>Mainzer Landstrasse 11-17</td><td>International Commerce</td><td>Azabudai Hills Mori JP Tower</td></tr><tr><td>Corner of Hunter &amp; Phillip</td><td>60329 Frankfurt am Main</td><td>Centre,</td><td>Minato-ku, Tokyo 106-0041</td></tr><tr><td>Streets</td><td>Germany</td><td>1 Austin Road West,Kowloon,</td><td>Japan</td></tr><tr><td>Sydney, NSW 2000</td><td>Tel: (49) 69 910 00</td><td>Hong Kong</td><td>Tel: (81) 3 6730 1000</td></tr><tr><td>Australia</td><td></td><td>Tel: (852) 2203 8888</td><td></td></tr><tr><td>Tel: (61) 2 8258 1234</td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            69,
+            352,
+            755,
+            445
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "DB AG\n21 Moorfields\nLondon EC2Y 9DB\nUnited Kingdom\nTel: (44) 20 7545 8000\n\nDB Securities Inc.\nThe DB Center\n1 Columbus Circle\nNew York, NY 10019\nTel: (1) 212 250 2500\n\nDB AG\nFiliale Singapur\nOne Raffles Quay, South Tower,\nSingapore 048583\nTel: +65 6423 8001",
+        "bbox": [
+            69,
+            452,
+            554,
+            525
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            858,
+            14,
+            929,
+            65
+        ],
+        "page_idx": 12
+    }
+]

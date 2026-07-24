@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0001-16-DB-China NEV Weekly New Orders Monitor-China NEV demand leading indicator -weekly new orders--July 3rd week-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0002-17-DB-Airbus-AIR.PA -A mid-term guidance- a -5bn buyback and a flight plan beyond 2029-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0003-18-DB-China IP Retailer-IP Offline Sales-Jun 2026--Pop Mart Weakens While Peers Hold Up-260721.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0004-19-DB-Thematic Research-Time billionaires want more risk. Is AI to blame--260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7nthvnuw/pdfs/0005-20-GS-CHINA CRO - CDMO-2Q 1H26 Preview-Resilient Order Momentum to Support Further Earnings Upgrades and Re-rating Sustainability-260722.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
