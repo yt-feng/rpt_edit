@@ -45,7 +45,7 @@ from wechat_article_quality import (
     audit_wechat_article_markdown,
     sanitize_wechat_article_markdown,
 )
-from deepseek_http import request_with_retry
+from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
@@ -91,7 +91,15 @@ def split_secret_tokens(value: str | None) -> list[str]:
 def mineru_tokens_from_env() -> list[tuple[str, str]]:
     tokens: list[tuple[str, str]] = []
     seen: set[str] = set()
-    for env_name in ["MINER_U_KEYS", "MINER_U_2", "MINER_U", "MINERU_API_KEY"]:
+    numbered_names = sorted(
+        (
+            env_name
+            for env_name in os.environ
+            if re.fullmatch(r"MINER_U_\d+", env_name)
+        ),
+        key=lambda name: int(name.rsplit("_", 1)[1]),
+    )
+    for env_name in ["MINER_U_KEYS", "MINER_U", *numbered_names, "MINERU_API_KEY"]:
         parts = split_secret_tokens(os.getenv(env_name))
         for index, token in enumerate(parts, 1):
             if token in seen:
@@ -99,6 +107,12 @@ def mineru_tokens_from_env() -> list[tuple[str, str]]:
             seen.add(token)
             label = env_name if len(parts) == 1 else f"{env_name}_{index}"
             tokens.append((label, token))
+    if tokens:
+        try:
+            offset = int(os.getenv("MINER_U_TOKEN_OFFSET", "0")) % len(tokens)
+        except ValueError:
+            offset = 0
+        tokens = tokens[offset:] + tokens[:offset]
     return tokens
 
 
@@ -589,8 +603,8 @@ def call_deepseek(
     temperature: float = 0.7,
     system_content: str | None = None,
 ) -> str:
-    api_key = os.getenv("DEEPSEEK_API_KEY")
-    if not api_key:
+    api_keys = deepseek_api_keys_from_env()
+    if not api_keys:
         raise RuntimeError(f"Missing DEEPSEEK_API_KEY for {label}")
     url = args.deepseek_base_url.rstrip("/") + "/chat/completions"
     payload = {
@@ -604,11 +618,12 @@ def call_deepseek(
             {"role": "user", "content": prompt},
         ],
     }
-    response = request_with_retry(
+    response = request_with_key_fallback(
         url,
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+        headers={"Content-Type": "application/json"},
         payload=payload,
         label=label,
+        api_keys=api_keys,
         timeout=180,
         max_attempts=getattr(args, "deepseek_max_attempts", 4),
         retry_base_seconds=getattr(args, "deepseek_retry_base_seconds", 4),

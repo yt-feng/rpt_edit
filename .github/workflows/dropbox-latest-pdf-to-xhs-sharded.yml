@@ -216,6 +216,7 @@ jobs:
         id: select_macro
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail
@@ -319,7 +320,11 @@ jobs:
         env:
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          MINER_U_TOKEN_OFFSET: ${{ matrix.shard_index }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail
@@ -352,7 +357,7 @@ jobs:
             --language "${{ needs.resolve-inputs.outputs.language }}" \
             --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
             --poll-timeout 1800 \
-            --mineru-retries 1 \
+            --mineru-retries 0 \
             --mineru-no-progress-timeout 300 \
             --length 1000 \
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
@@ -361,6 +366,7 @@ jobs:
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail
@@ -375,6 +381,7 @@ jobs:
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail
@@ -616,6 +623,7 @@ jobs:
       - name: Build KC translated report PDFs
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail

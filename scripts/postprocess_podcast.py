@@ -24,6 +24,8 @@ from pathlib import Path
 from typing import Any
 
 import requests
+
+from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 VIDEO_SIZE = (1080, 1440)
@@ -53,8 +55,8 @@ def parse_json_response(response: requests.Response, label: str) -> dict[str, An
 
 
 def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
-    api_key = os.getenv("DEEPSEEK_API_KEY")
-    if not api_key:
+    api_keys = deepseek_api_keys_from_env()
+    if not api_keys:
         return f"未检测到 DEEPSEEK_API_KEY。请复制 prompt 手动生成：{label}\n"
     url = args.deepseek_base_url.rstrip("/") + "/chat/completions"
     payload = {
@@ -65,7 +67,14 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
             {"role": "user", "content": prompt},
         ],
     }
-    response = requests.post(url, headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}, json=payload, timeout=180)
+    response = request_with_key_fallback(
+        url,
+        headers={"Content-Type": "application/json"},
+        payload=payload,
+        label=label,
+        api_keys=api_keys,
+        timeout=180,
+    )
     data = parse_json_response(response, f"DeepSeek generate {label}")
     return data["choices"][0]["message"]["content"].strip() + "\n"
 

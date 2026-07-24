@@ -19,6 +19,8 @@ from typing import Any
 
 import requests
 
+from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
+
 try:
     from sensitive_content_guard import (
         build_arg_parser as build_sensitive_arg_parser,
@@ -236,13 +238,13 @@ def parse_json_response(response: requests.Response, label: str) -> dict[str, An
 
 
 def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature: float = 0.62) -> str:
-    api_key = os.getenv("DEEPSEEK_API_KEY")
-    if not api_key:
+    api_keys = deepseek_api_keys_from_env()
+    if not api_keys:
         return f"未检测到 DEEPSEEK_API_KEY。请复制对应 prompt 文件手动生成：{label}\n"
-    response = requests.post(
+    response = request_with_key_fallback(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json={
+        headers={"Content-Type": "application/json"},
+        payload={
             "model": args.model,
             "temperature": temperature,
             "messages": [
@@ -250,6 +252,8 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature
                 {"role": "user", "content": prompt},
             ],
         },
+        label=label,
+        api_keys=api_keys,
         timeout=240,
     )
     data = parse_json_response(response, f"DeepSeek generate {label}")

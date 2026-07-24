@@ -24,7 +24,7 @@ from typing import Any
 
 import requests
 
-from deepseek_http import request_with_retry
+from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 
 try:
     from finalize_outputs import sanitize_text
@@ -742,8 +742,8 @@ def call_deepseek(
     system_content: str | None = None,
     max_attempts: int | None = None,
 ) -> str:
-    api_key = os.getenv("DEEPSEEK_API_KEY")
-    if not api_key:
+    api_keys = deepseek_api_keys_from_env()
+    if not api_keys:
         raise RuntimeError("Missing DEEPSEEK_API_KEY")
 
     payload: dict[str, Any] = {
@@ -760,11 +760,12 @@ def call_deepseek(
             {"role": "user", "content": prompt},
         ],
     }
-    response = request_with_retry(
+    response = request_with_key_fallback(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+        headers={"Content-Type": "application/json"},
         payload=payload,
         label=label,
+        api_keys=api_keys,
         timeout=args.deepseek_timeout,
         max_attempts=max_attempts if max_attempts is not None else max(1, int(args.deepseek_retries)),
         retry_base_seconds=5,

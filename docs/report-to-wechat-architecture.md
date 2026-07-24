@@ -110,9 +110,9 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | 信源 GET / API POST / PDF 下载 | 最多 3 次；只重试连接错误、`408/425/429/5xx`；尊重 `Retry-After`；`401/403/404` 直接返回 |
 | IMF PDF 定位 | Coveo 的系列编号优先推导官方 `/media/files/publications/` PDF；Akamai 落地页只作后备，避免落地页 `403` 造成假空结果 |
 | 单一信源 | 与其他信源隔离；发现未处理的新条目但全部解析或下载失败时记为 `error`，部分失败记为 `degraded`，不能解释为确认零更新 |
-| MinerU | 支持多个 token、分轮重试和无进展超时；已完成 PDF 可继续处理 |
-| DeepSeek 短版文章 | 最多 4 次有界指数退避；连接重置不能直接终止 batch |
-| DeepSeek 精译 | 每个片段最多 3 次完整调用；标题与文章化调用也有 HTTP 重试 |
+| MinerU | `MINER_U` 至 `MINER_U_4` 组成去重 key 池；并发 shard 按编号轮换首选 key，避免所有 shard 同时压到同一队列；每把 key 一次有界尝试，无进展后切下一把，已完成 PDF 可继续处理 |
+| DeepSeek 短版文章 | 主 key 最多 4 次有界指数退避；鉴权、余额、限流或瞬时错误耗尽后自动切到 `DEEPSEEK_API_KEY_BACKUP` |
+| DeepSeek 精译 | 每个片段最多 3 次完整调用；标题与文章化调用也有 HTTP 重试和主备 key 切换 |
 | 单篇报告 | 捕获异常并写 `status.json`；继续同批其他报告 |
 | 空产物 | 一个 shard 有输入但最终没有 publish-ready 报告时返回失败，禁止假绿 |
 | Git 交接 | 最多 8 次同步并推送；微信下游依赖的目录启用 strict handoff，推送失败则 job 失败 |
@@ -136,7 +136,16 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 ### DeepSeek 瞬时失败
 
 查看 `Generate MinerU source text and notes` 日志。如果 MinerU 已 `done`，但 DeepSeek 在重试耗尽后失败，
+先确认日志是否已经从 `DEEPSEEK_API_KEY` 切到 `DEEPSEEK_API_KEY_BACKUP`。两把 key 都不可用时，
 修复或充值后从最新 `main` 重新触发 workflow。失败运行未提交 seen 状态时，不需要 `force_reprocess`。
+
+### MinerU 长时间 pending
+
+先看 `MinerU token slots available` 和各 shard 的首个 `MinerU attempt`。同一批并发 shard 应分别从
+`MINER_U`、`MINER_U_2`、`MINER_U_3`、`MINER_U_4` 开始；若全部从同一 label 开始，说明 workflow
+没有传入 `MINER_U_TOKEN_OFFSET`。任务成功提交但持续 `pending` 是解析队列无进展，不等同于余额或鉴权失败。
+当前策略不会对同一 key 重复提交第二轮；四把 key 均无进展时让 shard 明确失败，修复后从最新 `main`
+重新触发，已有成功目录会由 `skip_existing` 保留。
 
 ### 已提交 seen，但需要重做当天文章
 

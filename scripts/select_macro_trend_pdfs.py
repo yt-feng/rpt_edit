@@ -26,6 +26,8 @@ from typing import Any
 
 import requests
 
+from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
+
 MACRO_HINTS = [
     "macro", "strategy", "outlook", "market", "markets", "economy", "economic", "global", "regional",
     "sector", "industry", "theme", "themes", "trend", "trends", "supply chain", "oil price", "energy",
@@ -127,13 +129,13 @@ def extract_json(text: str) -> Any:
 
 
 def call_deepseek(prompt: str, model: str, base_url: str) -> str:
-    api_key = os.getenv("DEEPSEEK_API_KEY")
-    if not api_key:
+    api_keys = deepseek_api_keys_from_env()
+    if not api_keys:
         raise RuntimeError("Missing DEEPSEEK_API_KEY")
-    response = requests.post(
+    response = request_with_key_fallback(
         base_url.rstrip("/") + "/chat/completions",
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json={
+        headers={"Content-Type": "application/json"},
+        payload={
             "model": model,
             "temperature": 0.15,
             "messages": [
@@ -141,6 +143,8 @@ def call_deepseek(prompt: str, model: str, base_url: str) -> str:
                 {"role": "user", "content": prompt},
             ],
         },
+        label="report classification",
+        api_keys=api_keys,
         timeout=180,
     )
     if response.status_code >= 400:
