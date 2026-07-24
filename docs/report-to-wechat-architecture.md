@@ -116,6 +116,7 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | 单篇报告 | 捕获异常并写 `status.json`；继续同批其他报告 |
 | 空产物 | 一个 shard 有输入但最终没有 publish-ready 报告时返回失败，禁止假绿 |
 | Git 交接 | 最多 8 次同步并推送；微信下游依赖的目录启用 strict handoff，推送失败则 job 失败 |
+| 汇总打包 | 仅当全部 shard 成功时执行；按当天目录稀疏检出，避免历史大文件使 checkout 超过 20 分钟；不完整结果不得进入微信上传 |
 | 微信 API | 网络、`-1 system busy` 和可重试状态最多 5 次；图片和草稿提交有固定 pacing |
 | 微信草稿 | `draft/add` 后等待并执行 `draft/get`；文章数不一致视为失败 |
 
