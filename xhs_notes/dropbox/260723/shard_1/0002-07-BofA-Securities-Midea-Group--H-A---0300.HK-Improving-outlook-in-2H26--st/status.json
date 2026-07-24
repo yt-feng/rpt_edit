@@ -1,0 +1,124 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_0_we0mso/pdfs/0002-07-BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns-260721.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "BofA",
+  "cover_short_title": "美的下半年有戏吗？外",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "BofA：美的集团业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-07-BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns-260721.pdf",
+    "cleaned_source_title": "BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns",
+    "institution_name": "BofA",
+    "required_terms": [],
+    "deterministic_fallback": "BofA：SecuritiesMideaGroupHA",
+    "raw_candidates": [
+      "BofA：美的集团下半年展望改善与股东回报",
+      "BofA：美的集团2026下半年展望改善与股东回报",
+      "BofA：美的集团下半年展望改善与2B业务结构分化"
+    ],
+    "cleaned_candidates": [
+      "BofA：美的集团下半年展望改善与股东回报",
+      "BofA：美的集团2026下半年展望改善与股东回报",
+      "BofA：美的集团下半年展望改善与2B业务结构分化",
+      "BofA：SecuritiesMideaGroupHA",
+      "BofA：美的2B业务（商业及工业解决方案）历史上保持超过10%的增长"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "BofA：SecuritiesMideaGroupHA",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BofA：美的2B业务（商业及工业解决方案）历史上保持超过10%的增长",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "BofA：美的集团业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "BofA：美的集团2026下半年展望改善与股东回报",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "BofA：美的集团业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "495",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

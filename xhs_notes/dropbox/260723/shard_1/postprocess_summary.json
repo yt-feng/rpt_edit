@@ -1,0 +1,564 @@
+[
+  {
+    "item": "0001-06-Bernstein-Japan-Strategy-Q326--The-bright-spot-in-the-region-Ample-oppor",
+    "source_pdf": "/tmp/pdf_batch_001_0_we0mso/pdfs/0001-06-Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "日本股市还能不能看？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "投资者->读者 x1",
+      "股票市场|股市->市场 x1",
+      "股票|个股->公司 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "投资者->读者 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "恶化->出现变化 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-06-Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers-260723.pdf",
+      "cleaned_source_title": "Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：日本策略Q326",
+      "raw_candidates": [
+        "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+        "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+        "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+        "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+        "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好",
+        "Bernstein：日本策略Q326",
+        "Bernstein：进入7月，市场出现约6%的修正"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：日本策略Q326",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：进入7月，市场出现约6%的修正",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-07-BofA-Securities-Midea-Group--H-A---0300.HK-Improving-outlook-in-2H26--st",
+    "source_pdf": "/tmp/pdf_batch_001_0_we0mso/pdfs/0002-07-BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "美的下半年有戏吗？外",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BofA：美的集团业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-07-BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns-260721.pdf",
+      "cleaned_source_title": "BofA-Midea Group -H A-- 0300.HK-Improving outlook in 2H26- strong shareholder returns",
+      "institution_name": "BofA",
+      "required_terms": [],
+      "deterministic_fallback": "BofA：SecuritiesMideaGroupHA",
+      "raw_candidates": [
+        "BofA：美的集团下半年展望改善与股东回报",
+        "BofA：美的集团2026下半年展望改善与股东回报",
+        "BofA：美的集团下半年展望改善与2B业务结构分化"
+      ],
+      "cleaned_candidates": [
+        "BofA：美的集团下半年展望改善与股东回报",
+        "BofA：美的集团2026下半年展望改善与股东回报",
+        "BofA：美的集团下半年展望改善与2B业务结构分化",
+        "BofA：SecuritiesMideaGroupHA",
+        "BofA：美的2B业务（商业及工业解决方案）历史上保持超过10%的增长"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：SecuritiesMideaGroupHA",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：美的2B业务（商业及工业解决方案）历史上保持超过10%的增长",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：美的集团业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BofA：美的集团2026下半年展望改善与股东回报",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BofA：美的集团业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-08-BofA-Securities-NVIDIA-Corporation-NVDA.OQ-More-cores-or-faster-cores--T",
+    "source_pdf": "/tmp/pdf_batch_001_0_we0mso/pdfs/0003-08-BofA-NVIDIA Corporation-NVDA.OQ-More cores or faster cores- The NVDA vs AMD agentic CPU debate-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "NVDA vs AM",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BofA：AI、CPU技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-08-BofA-NVIDIA Corporation-NVDA.OQ-More cores or faster cores- The NVDA vs AMD agentic CPU debate-260722.pdf",
+      "cleaned_source_title": "BofA-NVIDIA Corporation-NVDA.OQ-More cores or faster cores- The NVDA vs AMD agentic CPU debate",
+      "institution_name": "BofA",
+      "required_terms": [
+        "CPU"
+      ],
+      "deterministic_fallback": "BofA：CPUSecuritiesNVIDIACorporat",
+      "raw_candidates": [
+        "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧",
+        "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧-7月22日Vera架构披露",
+        "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧-代理式AI工作负载决定设计哲学"
+      ],
+      "cleaned_candidates": [
+        "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧",
+        "BofA：CPUSecuritiesNVIDIACorporat",
+        "BofA：NVIDIA在7月22日首次详细披露了其VeraCPU架构"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：CPUSecuritiesNVIDIACorporat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：NVIDIA在7月22日首次详细披露了其VeraCPU架构",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：AI、CPU技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BofA：NVIDIA与AMD在AI服务器CPU路径上的分歧",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BofA：AI、CPU技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-09-BofA-Securities-Global-Semiconductors-China-Semicap-Import-Tracker--June",
+    "source_pdf": "/tmp/pdf_batch_001_0_we0mso/pdfs/0004-09-BofA-Global Semiconductors-China Semicap Import Tracker -June 2026 down 1- yoy-260721.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "中国半导体设备进口，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BofA：半导体行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-09-BofA-Global Semiconductors-China Semicap Import Tracker -June 2026 down 1- yoy-260721.pdf",
+      "cleaned_source_title": "BofA-Global Semiconductors-China Semicap Import Tracker -June 2026 down 1- yoy",
+      "institution_name": "BofA",
+      "required_terms": [],
+      "deterministic_fallback": "BofA：Securities全球半导体中国Semicap",
+      "raw_candidates": [
+        "BofA：全球半导体-中国半导体设备进口追踪-2026年6月同比下降1%",
+        "BofA：中国半导体设备进口6月环比增长45%但同比仍下降1%",
+        "BofA：中国半导体设备进口追踪-2026年6月数据与设备商销售关联"
+      ],
+      "cleaned_candidates": [
+        "BofA：全球半导体-中国半导体设备进口追踪-2026年6月同比下降1%",
+        "BofA：中国半导体设备进口6月环比增长45%但同比仍下降1%",
+        "BofA：中国半导体设备进口追踪-2026年6月数据与设备商销售关联",
+        "BofA：Securities全球半导体中国Semicap"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：中国半导体设备进口6月环比增长45%但同比仍下降1%",
+          "reasons": [
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "BofA：中国半导体设备进口追踪-2026年6月数据与设备商销售关联",
+          "reasons": [
+            "anchor_coverage=0.68"
+          ]
+        },
+        {
+          "title": "BofA：Securities全球半导体中国Semicap",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：半导体行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BofA：全球半导体-中国半导体设备进口追踪-2026年6月同比下降1%",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BofA：半导体行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-10-Bofa-Alphabet-Capex-increase-steals-the-spotlight-from-strong-Cloud-acce",
+    "source_pdf": "/tmp/pdf_batch_001_0_we0mso/pdfs/0005-10-Bofa-Alphabet Capex increase steals the spotlight from strong Cloud acceleration- Buy-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "谷歌云爆发，但市场只",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BofA：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-10-Bofa-Alphabet Capex increase steals the spotlight from strong Cloud acceleration- Buy-260723.pdf",
+      "cleaned_source_title": "Bofa-Alphabet Capex increase steals the spotlight from strong Cloud acceleration- Buy",
+      "institution_name": "BofA",
+      "required_terms": [],
+      "deterministic_fallback": "BofA：AlphabetCapexincreaseste",
+      "raw_candidates": [
+        "BofA：Alphabet资本开支上调与云业务加速",
+        "BofA：Alphabet二季度云收入增82%与资本开支上调",
+        "BofA：Alphabet云业务利润率与资本开支扩张"
+      ],
+      "cleaned_candidates": [
+        "BofA：Alphabet资本开支上调与云业务加速",
+        "BofA：Alphabet二季度云收入增82%与资本开支上调",
+        "BofA：Alphabet云业务利润率与资本开支扩张",
+        "BofA：AlphabetCapexincreaseste",
+        "BofA：云收入同比增长82%，超出市场预期的65%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：Alphabet二季度云收入增82%与资本开支上调",
+          "reasons": [
+            "anchor_coverage=0.63"
+          ]
+        },
+        {
+          "title": "BofA：Alphabet云业务利润率与资本开支扩张",
+          "reasons": [
+            "anchor_coverage=0.63"
+          ]
+        },
+        {
+          "title": "BofA：AlphabetCapexincreaseste",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.37"
+          ]
+        },
+        {
+          "title": "BofA：云收入同比增长82%，超出市场预期的65%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BofA：Alphabet资本开支上调与云业务加速",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BofA：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

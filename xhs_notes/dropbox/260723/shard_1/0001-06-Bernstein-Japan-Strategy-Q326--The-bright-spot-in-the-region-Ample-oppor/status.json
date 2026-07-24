@@ -1,0 +1,141 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_0_we0mso/pdfs/0001-06-Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "日本股市还能不能看？",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "买入->观点偏积极 x1",
+    "投资者->读者 x1",
+    "股票市场|股市->市场 x1",
+    "股票|个股->公司 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "卖出->观点偏谨慎 x1",
+    "投资者->读者 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "恶化->出现变化 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Bernstein：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-06-Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers-260723.pdf",
+    "cleaned_source_title": "Bernstein-Japan Strategy Q326- The bright spot in the region-Ample opportunities for value - growth managers",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：日本策略Q326",
+    "raw_candidates": [
+      "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+      "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+      "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+      "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+      "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好",
+      "Bernstein：日本策略Q326",
+      "Bernstein：进入7月，市场出现约6%的修正"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：日本策略Q326-估值回调至14.9倍-盈利上修周期支撑",
+        "reasons": [
+          "anchor_coverage=0.35",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：日本策略Q326-出口与内需分化-资本品与资金看好",
+        "reasons": [
+          "anchor_coverage=0.35",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：日本策略Q326",
+        "reasons": [
+          "anchor_coverage=0.35",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：进入7月，市场出现约6%的修正",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Bernstein：日本策略Q326-区域亮点-价值与成长经理机遇",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "459",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
