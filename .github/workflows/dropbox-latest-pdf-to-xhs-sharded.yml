@@ -293,30 +293,44 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Set up Python
-        if: ${{ steps.gate.outputs.run == 'true' }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: "pip"
-      - name: Install Chinese fonts for cover images
-        if: ${{ steps.gate.outputs.run == 'true' }}
-        timeout-minutes: 5
-        continue-on-error: true
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
-      - name: Install Python dependencies
-        if: ${{ steps.gate.outputs.run == 'true' }}
-        run: pip install -r requirements.txt
       - name: Download selected macro PDFs artifact
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/download-artifact@v4
         with:
           name: selected-macro-pdfs-${{ github.run_id }}
           path: _selected_macro_pdfs
-      - name: Generate shard outputs
+      - name: Check for a matching completed shard
+        id: completed
         if: ${{ steps.gate.outputs.run == 'true' }}
+        run: |
+          python scripts/check_completed_shard.py \
+            --output-dir "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}" \
+            --current-manifest "_selected_macro_pdfs/selected_to_process_manifest.json" \
+            --shard-index "${{ matrix.shard_index }}" \
+            --selected-count "${{ needs.select-macro-reports.outputs.selected_count }}" \
+            --reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}" \
+            --force-reprocess "${{ needs.resolve-inputs.outputs.force_reprocess }}"
+      - name: Reuse completed shard
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete == 'true' }}
+        run: echo "::notice::Shard ${{ matrix.shard_index }} is already complete; ${{ steps.completed.outputs.reason }}."
+      - name: Set up Python
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install Chinese fonts for cover images
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
+      - name: Install Python dependencies
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        run: pip install -r requirements.txt
+      - name: Generate shard outputs
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
@@ -363,7 +377,7 @@ jobs:
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
             --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
       - name: Post-process shard articles and podcast scripts
-        if: ${{ steps.gate.outputs.run == 'true' }}
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
@@ -378,7 +392,7 @@ jobs:
             --generate-audio false \
             --tts-engine edge 2>&1 | tee "$OUTPUT_DIR/postprocess_progress.log"
       - name: Finalize shard outputs
-        if: ${{ steps.gate.outputs.run == 'true' }}
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
@@ -391,7 +405,7 @@ jobs:
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
             --generate-xianyu true 2>&1 | tee "$OUTPUT_DIR/finalize_progress.log"
       - name: Write shard summary
-        if: ${{ steps.gate.outputs.run == 'true' }}
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         run: |
           ENDED_AT=$(date +%s)
           DURATION=$((ENDED_AT - SHARD_STARTED_AT))
@@ -415,11 +429,11 @@ jobs:
           cat "$OUTPUT_DIR/shard_run_summary.md"
           echo "::notice::Shard ${{ matrix.shard_index }} finished in $((DURATION / 60)) minutes with $REPORT_DIRS output directories."
       - name: Commit this shard to repo immediately
-        if: ${{ steps.gate.outputs.run == 'true' && needs.resolve-inputs.outputs.commit_results == 'true' }}
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' && needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
           bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate Dropbox shard ${{ matrix.shard_index }} outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
       - name: Upload shard artifact
-        if: ${{ steps.gate.outputs.run == 'true' && always() }}
+        if: ${{ always() && steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: final-dropbox-macro-shard-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ matrix.shard_index }}
