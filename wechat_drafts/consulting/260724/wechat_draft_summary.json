@@ -26,12 +26,12 @@
   "drafts": [
     {
       "draft_index": 1,
-      "media_id": "avPwUQVH0p7DPpCFFkit89ejbtURMOIcqOPJZWiv-6--bAlhHGA2LcmPU6W6jF7N",
+      "media_id": "avPwUQVH0p7DPpCFFkit87hP_5KPfDD-YL2MmJP1y4SScMuezpbvE0n5hS-1Plzg",
       "publish_id": "",
       "published": false,
       "reused_existing": false,
       "article_count": 2,
-      "payload_bytes": 14524,
+      "payload_bytes": 14548,
       "payload": "wechat_drafts/consulting/260724/draft_payload_01.json",
       "titles": [
         "波士顿咨询：欧洲化工2030-2040，不同细分领域前景分化",
@@ -50,8 +50,8 @@
           "æ³¢å£«é¡¿å¨è¯¢ï¼æ¬§æ´²åå·¥2030-2040ï¼ä¸åç»åé¢ååæ¯åå",
           "æ³¢å£«é¡¿å¨è¯¢ï¼AIææ¯ä¸è¡ä¸åºç¨è§å¯ï¼ç»ç«¯ç¨æ·æ­£ä»åºå®è®¢é è½¬åæéè®¡è´¹"
         ],
-        "create_time": 1784849719,
-        "update_time": 1784849720
+        "create_time": 1784863261,
+        "update_time": 1784863262
       }
     }
   ],
@@ -64,8 +64,8 @@
       "institution_name": "波士顿咨询",
       "source_report_name": "BCG European-Chemicals-2030-2040 7356a686",
       "report_dir": "kc_translated_reports/consulting/260724/01-0001-BCG_European-Chemicals-2030-2040_7356a686",
-      "content_chars": 4679,
-      "content_bytes": 6733,
+      "content_chars": 4688,
+      "content_bytes": 6742,
       "visible_text_chars": 1013,
       "inline_image_count": 3,
       "body_image_count": 3,
@@ -80,8 +80,8 @@
       "institution_name": "波士顿咨询",
       "source_report_name": "BCG Is-AI-Computing-Power-Becoming-a-Commodity 8824dbff",
       "report_dir": "kc_translated_reports/consulting/260724/02-0002-BCG_Is-AI-Computing-Power-Becoming-a-Commodity_8824dbff",
-      "content_chars": 4711,
-      "content_bytes": 6631,
+      "content_chars": 4726,
+      "content_bytes": 6646,
       "visible_text_chars": 1200,
       "inline_image_count": 3,
       "body_image_count": 3,
