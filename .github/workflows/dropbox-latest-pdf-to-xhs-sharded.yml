@@ -800,3 +800,28 @@ jobs:
         if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
           bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Generate KC translated WeChat publish payloads ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+
+  notify-failure:
+    needs:
+      - resolve-inputs
+      - select-macro-reports
+      - process-shard
+      - package-publish-ready
+      - trigger-market-views
+      - push-xhs-notes-wechat-drafts
+      - build-kc-translated-reports
+      - push-kc-translated-wechat-drafts
+    if: ${{ always() && !cancelled() && contains(needs.*.result, 'failure') }}
+    uses: ./.github/workflows/kcdesk-ops-alert.yml
+    with:
+      source_workflow: Final PDF to XHS notes
+      source_results: >-
+        resolve=${{ needs.resolve-inputs.result }},
+        select=${{ needs.select-macro-reports.result }},
+        shards=${{ needs.process-shard.result }},
+        package=${{ needs.package-publish-ready.result }},
+        market_views=${{ needs.trigger-market-views.result }},
+        wechat=${{ needs.push-xhs-notes-wechat-drafts.result }},
+        translated=${{ needs.build-kc-translated-reports.result }},
+        translated_wechat=${{ needs.push-kc-translated-wechat-drafts.result }}
+    secrets: inherit

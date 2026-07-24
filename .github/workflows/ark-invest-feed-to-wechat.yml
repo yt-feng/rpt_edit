@@ -103,6 +103,7 @@ jobs:
         if: ${{ steps.fetch.outputs.article_count != '0' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_BASE_URL: "https://api.deepseek.com"
         run: |
           set -o pipefail
@@ -229,3 +230,14 @@ jobs:
         run: |
           DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
           bash scripts/commit_output_dir.sh "wechat_drafts/ark/$DATE" "Generate ARK Invest WeChat draft payloads $DATE" 8
+
+  notify-failure:
+    needs: [fetch-and-build, upload-wechat-drafts]
+    if: ${{ always() && !cancelled() && contains(needs.*.result, 'failure') }}
+    uses: ./.github/workflows/kcdesk-ops-alert.yml
+    with:
+      source_workflow: ARK Invest feed to WeChat
+      source_results: >-
+        build=${{ needs.fetch-and-build.result }},
+        wechat=${{ needs.upload-wechat-drafts.result }}
+    secrets: inherit

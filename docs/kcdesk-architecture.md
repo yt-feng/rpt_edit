@@ -469,6 +469,9 @@ dashboard：
 | `CLOUDFLARE_ACCOUNT_ID` | secret/var | 部署 Worker / R2。 |
 | `KC_DESK_WORKER_URL` | var | Pages 前端 API base，生产通常为 `/api`。 |
 | `KC_DESK_PAGES_URL` | var | Worker 读取 catalog/search/password 的 Pages URL。 |
+| `OPS_ALERT_EMAIL` | secret/var | 接收微信流水线失败邮件的运营邮箱。 |
+| `OPS_ALERT_SIGNING_KEY` | secret | GitHub Action 到 Worker 告警请求的 HMAC 签名 key。 |
+| `NEWSFEED_EMAIL_PROVIDER` | var | 告警与 Newsfeed 共用的邮件 provider。 |
 
 ## 16. 常见维护入口
 

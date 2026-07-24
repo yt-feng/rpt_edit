@@ -212,6 +212,7 @@ jobs:
           PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment_1.outputs.page_url || steps.deployment_2.outputs.page_url || steps.deployment_3.outputs.page_url || 'https://kcdesk.com' }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
           NEWSFEED_EMAIL_PROVIDER: ${{ vars.NEWSFEED_EMAIL_PROVIDER || 'cloudflare' }}
+          OPS_ALERT_EMAIL: ${{ secrets.OPS_ALERT_EMAIL || vars.OPS_ALERT_EMAIL || '' }}
         run: |
           if [ "$DEPLOY_WORKER" != "true" ]; then
             echo "enabled=false" >> "$GITHUB_OUTPUT"
@@ -245,6 +246,7 @@ jobs:
           ALLOWED_ORIGIN = "$PAGES_ORIGIN"
           GH_REPO = "$GITHUB_REPOSITORY"
           NEWSFEED_EMAIL_PROVIDER = "$NEWSFEED_EMAIL_PROVIDER"
+          OPS_ALERT_EMAIL = "$OPS_ALERT_EMAIL"
 
           [triggers]
           crons = [
@@ -297,6 +299,7 @@ jobs:
           # External-report preparation token. Optional; the fallback keeps wrangler
           # from pushing an empty secret value.
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET || 'unconfigured' }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
@@ -326,3 +329,4 @@ jobs:
             CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
             CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
             GH_DISPATCH_TOKEN
+            OPS_ALERT_SIGNING_KEY

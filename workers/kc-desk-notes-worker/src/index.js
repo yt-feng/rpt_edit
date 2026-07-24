@@ -203,6 +203,9 @@ const ADMIN_ANALYTICS_SNAPSHOT_FRESH_MS = 15 * 60 * 1000;
 const ADMIN_SNAPSHOT_VERSION = 1;
 const OPS_MIRROR_EVENT_TYPE = "kcdesk-ops-files-changed";
 const OPS_MIRROR_RETRY_MS = 5 * 60 * 1000;
+const OPS_ALERT_PREFIX = "_ops/alerts";
+const OPS_ALERT_SIGNATURE_MAX_AGE_SECONDS = 5 * 60;
+const OPS_ALERT_DEDUPE_MS = 24 * 60 * 60 * 1000;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -361,7 +364,7 @@ function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature, Range",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature, Range, X-KC-Timestamp, X-KC-Signature",
     "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges",
     "Vary": "Origin",
   };
@@ -561,6 +564,27 @@ async function sha256Hex(value) {
 async function hmacSha256Hex(secret, message) {
   const digest = await hmacSha256Bytes(secret, message);
   return Array.from(digest).map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+async function verifyOpsAlertSignature(request, env, rawBody) {
+  const secret = cleanEnv(env.OPS_ALERT_SIGNING_KEY);
+  if (!secret) throw new Error("Operations alert signing key is not configured.");
+  const timestamp = String(request.headers.get("X-KC-Timestamp") || "").trim();
+  const supplied = String(request.headers.get("X-KC-Signature") || "")
+    .trim()
+    .replace(/^sha256=/i, "")
+    .toLowerCase();
+  if (!/^\d{10}$/.test(timestamp) || !/^[a-f0-9]{64}$/.test(supplied)) {
+    throw new Error("Operations alert signature is invalid.");
+  }
+  const age = Math.abs(Math.floor(Date.now() / 1000) - Number(timestamp));
+  if (age > OPS_ALERT_SIGNATURE_MAX_AGE_SECONDS) {
+    throw new Error("Operations alert signature has expired.");
+  }
+  const expected = await hmacSha256Hex(secret, `${timestamp}.${rawBody}`);
+  if (!constantTimeEqual(supplied, expected)) {
+    throw new Error("Operations alert signature is invalid.");
+  }
 }
 
 function randomInt(min, max) {
@@ -5101,6 +5125,82 @@ async function sendNewsfeedEmail(env, { to, subject, html, text }) {
   return { sent: false, detail: "Cloudflare Email binding is not configured." };
 }
 
+function opsAlertEmailHtml(subject, text, severity) {
+  const color = severity === "critical" ? "#b42318" : severity === "warning" ? "#b54708" : "#175cd3";
+  const paragraphs = String(text || "")
+    .split(/\n{2,}/)
+    .map((value) => `<p style="margin:0 0 14px;line-height:1.65;">${escapeNewsfeedHtml(value).replace(/\n/g, "<br>")}</p>`)
+    .join("");
+  return `
+    <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#111827;">
+      <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:8px;padding:28px;border-top:4px solid ${color};">
+        <div style="margin:0 0 10px;color:${color};font-size:13px;font-weight:700;text-transform:uppercase;">KC Desk Operations</div>
+        <h1 style="margin:0 0 20px;font-size:22px;line-height:1.35;">${escapeNewsfeedHtml(subject)}</h1>
+        <div style="font-size:15px;color:#344054;">${paragraphs}</div>
+      </div>
+    </div>
+  `;
+}
+
+async function handleOpsAlertEmail(request, env) {
+  const rawBody = await request.text();
+  try {
+    await verifyOpsAlertSignature(request, env, rawBody);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "Unauthorized." });
+  }
+
+  let payload;
+  try {
+    payload = JSON.parse(rawBody);
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Request body must be valid JSON." });
+  }
+
+  const recipient = normalizeEmail(env.OPS_ALERT_EMAIL);
+  const subject = String(payload && payload.subject || "").replace(/\s+/g, " ").trim().slice(0, 160);
+  const text = String(payload && payload.text || "").trim().slice(0, 6000);
+  const dedupeKey = String(payload && payload.dedupe_key || "").trim().slice(0, 240);
+  const severityValue = String(payload && payload.severity || "warning").trim().toLowerCase();
+  const severity = ["info", "warning", "critical"].includes(severityValue) ? severityValue : "warning";
+  if (!recipient) return jsonResponse(request, env, 503, { detail: "Operations alert recipient is not configured." });
+  if (!subject || !text || !dedupeKey) {
+    return jsonResponse(request, env, 400, { detail: "subject, text, and dedupe_key are required." });
+  }
+
+  const stateKey = `${OPS_ALERT_PREFIX}/${await sha256Hex(dedupeKey)}.json`;
+  const previous = await safeR2GetJson(env, stateKey);
+  const previousSentAt = Date.parse(String(previous && previous.sent_at || ""));
+  if (previous && previous.sent && Number.isFinite(previousSentAt) && Date.now() - previousSentAt < OPS_ALERT_DEDUPE_MS) {
+    return jsonResponse(request, env, 200, {
+      sent: true,
+      deduplicated: true,
+      provider: String(previous.provider || ""),
+      sent_at: String(previous.sent_at || ""),
+    });
+  }
+
+  const result = await sendNewsfeedEmail(env, {
+    to: recipient,
+    subject,
+    text,
+    html: opsAlertEmailHtml(subject, text, severity),
+  });
+  const state = {
+    sent: Boolean(result && result.sent),
+    dedupe_key: dedupeKey,
+    severity,
+    subject,
+    provider: String(result && result.provider || newsfeedEmailProvider(env)),
+    message_id: String(result && result.messageId || ""),
+    detail: String(result && result.detail || "").slice(0, 500),
+    attempted_at: new Date().toISOString(),
+    sent_at: result && result.sent ? new Date().toISOString() : "",
+  };
+  await r2PutJson(env, stateKey, state);
+  return jsonResponse(request, env, state.sent ? 200 : 502, state);
+}
+
 async function attemptNewsfeedDigestEmail(env, settings, due, options = {}) {
   const email = normalizeEmail(settings.digest_email);
   if (!email) return { result: { sent: false, detail: "No digest email is configured." }, payload: null };
@@ -8804,6 +8904,10 @@ export default {
 
     if (pathname === "/entitlement" && request.method === "GET") {
       return handleEntitlement(request, env);
+    }
+
+    if (pathname === "/ops/alerts/email" && request.method === "POST") {
+      return handleOpsAlertEmail(request, env);
     }
 
     if (pathname === "/newsfeed/home" && request.method === "GET") {

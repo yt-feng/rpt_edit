@@ -261,3 +261,12 @@ jobs:
         if: ${{ env.SHOULD_BUILD != 'false' && (github.event.inputs.commit_results == 'true' || github.event_name != 'workflow_dispatch') }}
         run: |
           bash scripts/commit_output_dir.sh "market_view_summaries" "Generate market views daily PDF" 8
+
+  notify-failure:
+    needs: [build-market-views-pdf]
+    if: ${{ always() && !cancelled() && needs.build-market-views-pdf.result == 'failure' }}
+    uses: ./.github/workflows/kcdesk-ops-alert.yml
+    with:
+      source_workflow: Market views daily PDF
+      source_results: build=${{ needs.build-market-views-pdf.result }}
+    secrets: inherit

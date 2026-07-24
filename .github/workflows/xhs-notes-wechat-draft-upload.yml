@@ -181,3 +181,12 @@ jobs:
         if: ${{ github.event.inputs.commit_summary == 'true' }}
         run: |
           bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Generate XHS notes WeChat draft payloads ${{ github.event.inputs.date_folder || 'latest' }}" 8
+
+  notify-failure:
+    needs: [upload-xhs-notes-drafts]
+    if: ${{ always() && !cancelled() && needs.upload-xhs-notes-drafts.result == 'failure' }}
+    uses: ./.github/workflows/kcdesk-ops-alert.yml
+    with:
+      source_workflow: Upload XHS notes to WeChat drafts
+      source_results: upload=${{ needs.upload-xhs-notes-drafts.result }}
+    secrets: inherit

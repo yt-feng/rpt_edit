@@ -125,8 +125,13 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | 微信 API | 网络、`-1 system busy` 和可重试状态最多 5 次；KC 精译与 XHS 直传默认均按图片 3 秒、文章 12 秒、草稿 90 秒、回读 8 秒 pacing |
 | 微信草稿 | `draft/add` 后等待并执行 `draft/get`；文章数不一致视为失败 |
 | XHS 草稿批次 | 每完成一组最多 8 篇就立即 `draft/add` 和回读，不等待全天文章全部构建；后续单篇失败不抹掉已验证草稿，重跑按标题组复用 |
+| 失败邮件 | 主要生成、机构、咨询、ARK、Market Views 和微信维护 workflow 失败时调用统一 reusable workflow；请求以 HMAC 签名发送到 KC Desk Worker，再复用 Newsfeed 邮件 provider 发信；同一 run 在 R2 中 24 小时去重 |
 
 永久性认证、余额或参数错误不会被无限重试。所有重试必须有次数上限和最长等待时间。
+
+MinerU 个人 token 接口不提供可查询的未来到期日期，因此不能可靠地在“到期前 N 天”预测。系统会识别
+官方 `A0211 Token 过期`、认证/余额错误和全部 key 无法完成解析，并在 workflow 最终失败时立即发邮件；
+邮件不会替代 key 轮换、分片续跑或微信草稿回读。
 
 ## 7. 批处理成功标准
 
@@ -182,6 +187,7 @@ strict handoff 会让 build job 失败并阻止微信 job。先解决并发 push
 - `translation_summary.json`，含成功、失败和标题中性化数量；旧的 `sensitive_skipped` 字段仅为兼容历史读取，标题不再造成跳过。
 - `wechat_draft_summary.json`，含 payload、`media_id` 和 `draft/get` 文章数。
 - 微信标题日志，记录原始候选、最终标题、`neutralization_changes` 和质量兜底原因，便于连续观察 DeepSeek 标题质量。
+- KC Desk operations alert 记录保存在 R2 `_ops/alerts/`；同一 GitHub run 只确认发送一次。
 
 不要仅依据 workflow 绿色图标判断业务成功；要核对报告数量、草稿文章数量和 `media_id`。
 

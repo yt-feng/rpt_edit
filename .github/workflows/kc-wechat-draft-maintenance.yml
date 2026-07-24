@@ -205,3 +205,12 @@ jobs:
         if: ${{ inputs.commit_results == true }}
         run: |
           bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Repair KC translated WeChat drafts $DATE_FOLDER" 8
+
+  notify-failure:
+    needs: [repair-kc-wechat-drafts]
+    if: ${{ always() && !cancelled() && needs.repair-kc-wechat-drafts.result == 'failure' }}
+    uses: ./.github/workflows/kcdesk-ops-alert.yml
+    with:
+      source_workflow: KC WeChat Draft Maintenance
+      source_results: maintenance=${{ needs.repair-kc-wechat-drafts.result }}
+    secrets: inherit
