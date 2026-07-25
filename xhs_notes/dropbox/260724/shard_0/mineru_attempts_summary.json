@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ii48djo6/pdfs/0001-01-Bernstein-Alphabet Inc-GOOGL.US-Google 2Q26- Should we eat or go to bed--260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ii48djo6/pdfs/0002-02-BARC-China-Overcapacity tracker-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ii48djo6/pdfs/0003-03-BARC-IBM Corp.-IBM.US-2Q26 Recap- Adjusting for Changing Customer Behavior-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ii48djo6/pdfs/0004-04-Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive Farnborough-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ii48djo6/pdfs/0005-05-Bernstein-China Pharma and Biotech Asia Biopharma Summer Teach-in- GLP-1 and new approaches to metabolic management-260723.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

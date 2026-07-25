@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 91,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bernstein-Alphabet Inc（GOOGL.US）Google 2Q26： Should we eat or go to bed？-260723.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ii48djo6/pdfs/0001-01-Bernstein-Alphabet Inc-GOOGL.US-Google 2Q26- Should we eat or go to bed--260723.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-BARC-China：Overcapacity tracker-260722.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ii48djo6/pdfs/0002-02-BARC-China-Overcapacity tracker-260722.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-BARC-IBM Corp.（IBM.US）2Q26 Recap： Adjusting for Changing Customer Behavior-260723.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ii48djo6/pdfs/0003-03-BARC-IBM Corp.-IBM.US-2Q26 Recap- Adjusting for Changing Customer Behavior-260723.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-Bernstein-GE Aerospace（GE.US）GE Aerospace： Strength continues； Another big beat for Q2 ~But， this time also a raise plus a positive Farnborough-260723.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ii48djo6/pdfs/0004-04-Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive Farnborough-260723.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-Bernstein-China Pharma and Biotech Asia Biopharma Summer Teach~in： GLP~1 and new approaches to metabolic management-260723.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ii48djo6/pdfs/0005-05-Bernstein-China Pharma and Biotech Asia Biopharma Summer Teach-in- GLP-1 and new approaches to metabolic management-260723.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

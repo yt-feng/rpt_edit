@@ -1,0 +1,152 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_ii48djo6/pdfs/0004-04-Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive Farnborough-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "GE 这次 Q2 的",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "宏观环境环境->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：调整后收入126亿美元，同样超出共识预期的119亿美元",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-04-Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive Farnborough-260723.pdf",
+    "cleaned_source_title": "Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive Farnborough",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：GEAerospaceGEAerospace",
+    "raw_candidates": [
+      "Bernstein：GE Aerospace二季度商用发动机服务收入增长驱动指引上调",
+      "Bernstein：GE Aerospace二季度每股收益2.02美元超预期",
+      "Bernstein：GE Aerospace二季度宽体发动机维修周期进入更高价值阶段",
+      "GE Aerospace二季度超预期并上调全年指引",
+      "GE Aerospace二季度每股收益2.02美元超预期",
+      "GE Aerospace商用发动机服务收入增长驱动指引上调"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：GEAerospace二季度商用发动机服务收入增长驱动指引上",
+      "Bernstein：GEAerospace二季度每股收益2.02美元超预期",
+      "Bernstein：GEAerospace二季度宽体发动机维修周期进入更高价值阶",
+      "Bernstein：GEAerospace二季度超预期并上调全年指引",
+      "Bernstein：GEAerospace商用发动机服务收入增长驱动指引上调",
+      "Bernstein：GEAerospaceGEAerospace",
+      "Bernstein：调整后收入126亿美元，同样超出共识预期的119亿美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：GEAerospace二季度商用发动机服务收入增长驱动指引上",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：GEAerospace二季度每股收益2.02美元超预期",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：GEAerospace二季度宽体发动机维修周期进入更高价值阶",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：GEAerospace二季度超预期并上调全年指引",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：GEAerospace商用发动机服务收入增长驱动指引上调",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：GEAerospaceGEAerospace",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：调整后收入126亿美元，同样超出共识预期的119亿美元",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "119",
+        "126"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "Bernstein：调整后收入126亿美元，同样超出共识预期的119亿美元",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "Bernstein：GE Aerospace二季度商用发动机服务收入增长驱动指引上调",
+      "Bernstein：GE Aerospace二季度每股收益2.02美元超预期",
+      "Bernstein：GE Aerospace二季度宽体发动机维修周期进入更高价值阶段"
+    ],
+    "final_title_after_wording_guard": "Bernstein：调整后收入126亿美元，同样超出共识预期的119亿美元"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "533",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
