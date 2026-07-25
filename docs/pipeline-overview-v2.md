@@ -71,7 +71,8 @@ KC Desk Notes / Cloudflare R2 额外需要：
 触发方式：
 
 - 手动运行：Actions → **Final PDF to XHS notes** → Run workflow
-- 定时运行：北京时间 05:00，cron 为 `0 21 * * *`
+- 定时运行：北京时间 02:00，cron 为 `0 18 * * *`。Dropbox 报告通常在 00:30
+  到齐，预留 90 分钟缓冲；只提前启动，不改变分片、重试或微信慢速上传参数。
 
 主要步骤：
 
@@ -418,7 +419,8 @@ MinerU → KC 中文精译 → 微信公众号草稿 链路，把它们也加工
 触发方式：
 
 - 手动运行：Actions → **Institution latest PDF to WeChat**
-- 定时运行：北京时间 06:00，cron 为 `0 22 * * *`，排在 Dropbox 主流程（05:00）之后
+- 定时运行：北京时间 06:00，cron 为 `0 22 * * *`，排在 Dropbox 主流程（02:00）
+  的预期完成窗口之后
 
 主要参数（手动运行）：
 

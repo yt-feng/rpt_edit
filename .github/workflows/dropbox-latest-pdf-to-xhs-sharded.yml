@@ -104,8 +104,9 @@ on:
         type: boolean
         default: true
   schedule:
-    # 21:00 UTC = 05:00 Asia/Shanghai.
-    - cron: "0 21 * * *"
+    # 18:00 UTC = 02:00 Asia/Shanghai. Dropbox reports normally arrive by
+    # 00:30, leaving a 90-minute readiness buffer before the long stable run.
+    - cron: "0 18 * * *"
 
 permissions:
   contents: write
@@ -176,7 +177,7 @@ jobs:
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
       - name: Print resolved plan
         run: |
-          echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
+          echo "::notice::Daily schedule is 02:00 Asia/Shanghai, 90 minutes after the usual 00:30 Dropbox readiness time. Audio/video are disabled."
           echo "::notice::Report selection mode=${{ steps.vars.outputs.report_selection_mode }}. Default all mode keeps stock/company reports for long-tail WeChat search."
           echo "::notice::Default plan processes ALL selected candidates, sharded as 40 x 5 = up to 200 reports."
           echo "::notice::WeChat draft upload defaults to xhs_notes, so successful MinerU report articles can enter drafts without waiting for KC translated PDFs."

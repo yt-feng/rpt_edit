@@ -68,10 +68,13 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 
 | Workflow | 来源 | 默认时间（北京时间） |
 | --- | --- | --- |
-| `dropbox-latest-pdf-to-xhs-sharded.yml` | Dropbox 投行报告 | 05:00 |
+| `dropbox-latest-pdf-to-xhs-sharded.yml` | Dropbox 投行报告 | 02:00 |
 | `institution-latest-pdf-to-wechat.yml` | IMF / WB / BIS 等 | 06:00 |
 | `consulting-latest-pdf-to-wechat.yml` | McKinsey / BCG | 06:30 |
 | `ark-invest-feed-to-wechat.yml` | ARK feed | 以 workflow 配置为准 |
+
+投行主流程按 Dropbox 报告通常在 00:30 到齐的节奏预留 90 分钟缓冲。提前到
+02:00 只改变启动时间；分片并发、失败重试、固定 IP runner 和微信慢速上传节奏保持不变。
 
 ## 4. 持久化与幂等
 

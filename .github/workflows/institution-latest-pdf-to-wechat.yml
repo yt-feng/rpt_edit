@@ -50,7 +50,8 @@ on:
         default: false
 
   schedule:
-    # 06:00 Beijing time (UTC+8), after the Dropbox main flow at 05:00.
+    # 06:00 Beijing time (UTC+8), after the expected completion window of the
+    # Dropbox main flow that starts at 02:00.
     - cron: "0 22 * * *"
 
 permissions:
