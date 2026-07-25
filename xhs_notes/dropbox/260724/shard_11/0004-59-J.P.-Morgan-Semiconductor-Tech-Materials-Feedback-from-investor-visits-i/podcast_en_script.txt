@@ -1,0 +1,24 @@
+EN_A: So the semiconductor space has been pretty volatile lately, especially Japanese equipment and materials stocks. I heard a global investment bank just published a note from their Asia investor roadshow. What's the big takeaway?
+EN_B: The core message is that even though the market has corrected, investors are still bullish on the fundamentals. But the conversation has shifted from "will it go up" to "where is the bottom" and "which names are more resilient."
+EN_A: So how does the mood compare to their June trip to the US and Europe?
+EN_B: It's definitely more cautious. Back in June, investors in the US and Europe were more optimistic. This time, Asian investors are still long-term bullish, but they're really focused on why stocks dropped and where they might find a floor. The report highlights a few key names like Kioxia, Tokyo Electron, and Advantest.
+EN_A: Let's start with Kioxia. It took a huge hit during the roadshow. What's the story there?
+EN_B: The stock dropped 32% during that week. The main fears are two-fold. First, can the hyperscalers sustain their aggressive spending? That needs to be confirmed by the April-June earnings. Second, there's concern that the low-cost AI model Kimi K3 could reduce demand for KV cache, which would hurt memory demand.
+EN_A: And what does the report think about that second concern?
+EN_B: It actually thinks the fear might be overblown. They bring up Jevons paradox — when things get more efficient, total consumption can go up. In fact, Kimi K3 was so popular that it had to pause new sign-ups on July 19 because its GPU capacity was almost full. So AI inference demand isn't shrinking; it might explode as costs come down.
+EN_A: So what's the key catalyst for Kioxia beyond the macro story?
+EN_B: There's a big wildcard. Kioxia is pushing a new product called "Super High IOPS" based on SLC technology. It has about one-third the capacity of mainstream TLC, but much higher performance. The report sees this as a potential driver of tighter supply-demand in the medium term, but we'll need to wait for their earnings call for more details.
+EN_A: Moving to front-end equipment. Tokyo Electron is a key name here, right?
+EN_B: Exactly. Investors expect it to benefit from upward revisions to the WFE market. The report flags two important signals. TSMC said on July 16 that rising equipment prices were a factor behind its higher capex. And ASML mentioned "more flexible pricing" on July 15.
+EN_A: So that validates the pricing power story for Tokyo Electron?
+EN_B: Yes. Tokyo Electron has strong positions in etch, deposition, and EUV co-development, plus high exposure to DRAM. The report argues that its yen-denominated sales give it a relative advantage in price negotiations. So the expectation of higher prices got a lot more support.
+EN_A: What about the back-end? Advantest is still a buy despite the market being more focused on front-end?
+EN_B: The market prefers front-end right now, so Advantest's stock has struggled. But the report is bullish because beyond GPU testing, CPU testing opportunities are expanding. Customers who used in-house testers may now outsource as chip designs get more complex. That growth is currently underappreciated by the market.
+EN_A: And what about the materials names? JX Advanced Metals and Nittobo?
+EN_B: Not many investors are short-term bullish, but interest is high. JX Advanced Metals plans to expand InP substrate capacity by 7 to 10 times, and investors expect price increases of 3x or more, which is above the report's base case of 2-3x. For Nittobo, there are concerns about T-glass supply loosening, but the report thinks the TAM is expanding with AI memory and MLC, and Nittobo's lead in cutting-edge T-glass is hard to challenge.
+EN_A: Are there any risks the report hasn't fully explored?
+EN_B: Yes. For JX Advanced Metals, phosphorus procurement is a potential risk that needs watching from the April-June results. And for Nittobo, a major investment announcement could come soon, but the report says the timing and size might only be clear by the July-September earnings.
+EN_A: So for listeners who want to dig deeper, what's in the full report that we didn't cover?
+EN_B: The full report has valuation tables, price performance data, and specific price targets for each company. The details on where Kioxia's bottom might be, how much Tokyo Electron can raise prices, and Advantest's growth path in CPU testing — all of that is in the full analysis.
+EN_A: If you want the full report or to join our community discussion, check the show notes. Thanks for joining.
+EN_B: Thanks for having me.

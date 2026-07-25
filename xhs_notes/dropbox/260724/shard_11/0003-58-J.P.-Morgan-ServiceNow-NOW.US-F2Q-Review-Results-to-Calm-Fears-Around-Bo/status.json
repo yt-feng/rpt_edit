@@ -1,0 +1,176 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_jnl7u_jh/pdfs/0003-58-JPM-ServiceNow-NOW.US-F2Q Review-Results to Calm Fears Around Both Near Term and Long-Term AI Disruptions as AI Control Tower Led Momentum Builds-Reiterate OW-2.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "ServiceNow",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：AI技术与行业应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-58-JPM-ServiceNow-NOW.US-F2Q Review-Results to Calm Fears Around Both Near Term and Long-Term AI Disruptions as AI Control Tower Led Momentum Builds-Reiterate OW-2.pdf",
+    "cleaned_source_title": "JPM-ServiceNow-NOW.US-F2Q Review-Results to Calm Fears Around Both Near Term and Long-Term AI Disruptions as AI Control Tower Led Momentum Builds-Reiterate OW-2",
+    "institution_name": "JPM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "JPM：AIServiceNowF2QReviewRes",
+    "raw_candidates": [
+      "JPM：ServiceNow二季度AI合同价值突破10亿美元",
+      "JPM：ServiceNow二季度cRPO增速超预期达21.5%",
+      "JPM：ServiceNow二季度订阅毛利率下降但运营利润率超预期",
+      "ServiceNow二季度业绩缓解AI冲击担忧",
+      "ServiceNow二季度AI ACV突破10亿美元",
+      "ServiceNow二季度业绩与AI控制塔进展"
+    ],
+    "cleaned_candidates": [
+      "JPM：ServiceNow二季度AI合同价值突破10亿美元",
+      "JPM：ServiceNow二季度cRPO增速超预期达21.5%",
+      "JPM：ServiceNow二季度订阅毛利率下降但运营利润率超预期",
+      "JPM：ServiceNow二季度业绩缓解AI冲击担忧",
+      "JPM：ServiceNow二季度AIACV突破10亿美元",
+      "JPM：ServiceNow二季度业绩与AI控制塔进展",
+      "JPM：AIServiceNowF2QReviewRes",
+      "JPM：1.AI控制塔正在成为企业客户采纳的加速器"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：ServiceNow二季度AI合同价值突破10亿美元",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：ServiceNow二季度cRPO增速超预期达21.5%",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：ServiceNow二季度订阅毛利率下降但运营利润率超预期",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：ServiceNow二季度业绩缓解AI冲击担忧",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：ServiceNow二季度AIACV突破10亿美元",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：ServiceNow二季度业绩与AI控制塔进展",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：AIServiceNowF2QReviewRes",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：AI技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "1"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "JPM：1.AI控制塔正在成为企业客户采纳的加速器",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "JPM：ServiceNow二季度AI合同价值突破10亿美元",
+      "JPM：ServiceNow二季度cRPO增速超预期达21.5%",
+      "JPM：ServiceNow二季度订阅毛利率下降但运营利润率超预期"
+    ],
+    "pre_neutralization_title": "JPM：1.AI控制塔正在成为企业客户采纳的加速器",
+    "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：AI技术与行业应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "455",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

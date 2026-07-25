@@ -1,0 +1,33 @@
+Found 91 total PDFs; shard 11/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jnl7u_jh/pdfs/0001-56-J.P. Morgan-SK Innovation-096770.KS--W0.9tn SK China stake sale to fund growing AI energy demand- ROE on track to reach 9yr high on lubricant refining strength- stay.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jnl7u_jh/pdfs/0002-57-J.P. Morgan-Korea Shipbuilding-Investor Feedback Ahead of 2Q26 Earnings-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jnl7u_jh/pdfs/0003-58-J.P. Morgan-ServiceNow-NOW.US-F2Q Review-Results to Calm Fears Around Both Near Term and Long-Term AI Disruptions as AI Control Tower Led Momentum Builds-Reiterate OW-2.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jnl7u_jh/pdfs/0004-59-J.P. Morgan-Semiconductor Tech Materials-Feedback from investor visits in Asia-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jnl7u_jh/pdfs/0005-60-J.P. Morgan-Soitec-SOIT.PA-Feedback from call- Growing management confidence on Photonics demand and supply- revenue accelerating through the year-260723.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=f63655da-c843-4c9e-b036-14a174404895
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset ae28ef2fee33403540501f5fe0311ff1bf4d9bb61ffa1d9f0f01b1973c1cf87f.jpg: score=-100;too_small:984x165
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset dc82946865c092a8a4c4da090e1d0a113811528509b10236e9fd0330407621b4.jpg: score=0;square_without_chart_hint,edge:0.15,contrast
+Skip non-chart visual asset bba4f5b377e38814858e14faaf6c1ad5ae0f9714b34b0cf768b60ebf59c8f8a3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset 4932800b1bebf180d424c48d69f124cffb9d4c07f7679062951747aab532b46c.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.32
+Skip non-chart visual asset 3670a827f164a34b937843cee321a6481fc2d53dfb381df60ab316ac29b0f973.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.33
+Skip non-chart visual asset 88582564f8df49c20bc7652542d154fe8b5254443863e58f6043b143d79f2581.jpg: score=-100;too_small:982x164
+Skip non-chart visual asset e70093f27663302041b19aa9ebb7efde9f3a2fdcb29ad9ae20387aab9a327bb3.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.29
+Skip non-chart visual asset dda949a8eb21ba636c374c5d1086df6e0e084504bfce6b101f806b5218ec521b.jpg: score=-100;too_small:448x162
+Skip non-chart visual asset 7ed1a95e23b2710cc338b73f878b37fe2d51ebc28b556d4b28858851187d9490.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset dd1282098e221cb2bbd857bb290f61f0af67bdb774c3aad141efa7397d42b2ee.jpg: score=1;square_without_chart_hint,edge:0.39,contrast,large
+Skip non-chart visual asset f95289f07e851a5d007c4308b07300b33da4d5b4f6d4a49f95e10bb73c5f6142.jpg: score=-100;too_small:629x90
+Skip non-chart visual asset 2c36990902da0b053811b3a0b448fd0deb11c86e53f135a45d516bc3b6882d68.jpg: score=-100;too_small:451x118
+Skip non-chart visual asset 618223e2823de60bce32305ad35dff8db27bd155744172fec9ac7a0090685382.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 27aebe7a57e581207fb6766a2f93727d6bfc4b1f927416d16b67b28335672079.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.28
+Neutralized WeChat title while keeping the report: 摩根大通：1.AI控制塔正在成为企业客户采纳的加速器 -> 摩根大通：AI技术与行业应用观察
+Skip non-chart visual asset 95ca8c8dc35a0857e129a4f6df858435a44d03e9a00a0f57423f0e05ebd85223.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset f232a272861b66cef53d46c84b2c59172875dc24bd603f1ae1cd913cf1a8af90.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.24
+Skip non-chart visual asset 1c8700bf49eb967632b050e5ce11ebc588c8dbaa3f2cea9767df526bb893cdd3.jpg: score=-100;too_small:982x167
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260724/shard_11; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

@@ -1,0 +1,108 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_jnl7u_jh/pdfs/0005-60-JPM-Soitec-SOIT.PA-Feedback from call- Growing management confidence on Photonics demand and supply- revenue accelerating through the year-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "光子龙头Soitec",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：Soitec管理层对光子学需求与供应信心增强",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-60-JPM-Soitec-SOIT.PA-Feedback from call- Growing management confidence on Photonics demand and supply- revenue accelerating through the year-260723.pdf",
+    "cleaned_source_title": "JPM-Soitec-SOIT.PA-Feedback from call- Growing management confidence on Photonics demand and supply- revenue accelerating through the year",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：SoitecFeedbackfromcall",
+    "raw_candidates": [
+      "Soitec管理层对光子学需求与供应信心增强",
+      "Soitec光子学收入FY27环比增长-供应产能加速释放",
+      "Soitec光子学业务从远期故事转为可追踪增长曲线"
+    ],
+    "cleaned_candidates": [
+      "JPM：Soitec管理层对光子学需求与供应信心增强",
+      "JPM：Soitec光子学收入FY27环比增长-供应产能加速释放",
+      "JPM：Soitec光子学业务从远期故事转为可追踪增长曲线",
+      "JPM：SoitecFeedbackfromcall",
+      "JPM：Soitec在7月22日预披露第一财季销售数据后召开电话会"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：Soitec光子学收入FY27环比增长-供应产能加速释放",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "JPM：Soitec光子学业务从远期故事转为可追踪增长曲线",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "JPM：SoitecFeedbackfromcall",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：Soitec在7月22日预披露第一财季销售数据后召开电话会",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：Soitec管理层对光子学需求与供应信心增强",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：Soitec管理层对光子学需求与供应信心增强"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "439",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
