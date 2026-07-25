@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "中美都在抢的风光，核",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "波士顿咨询：能源行业数据与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5.pdf",
+    "cleaned_source_title": "0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0004BCGSurprisingLess",
+    "raw_candidates": [
+      "波士顿咨询：中美可再生能源规模化扩张中的土地与电网条件",
+      "波士顿咨询：2014-2024年中美土地与电网对可再生能源的影响",
+      "波士顿咨询：中美可再生能源扩张中的土地成本与电网路径差异"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：中美可再生能源规模化扩张中的土地与电网条件",
+      "波士顿咨询：2014-2024年中美土地与电网对可再生能源的影响",
+      "波士顿咨询：中美可再生能源扩张中的土地成本与电网路径差异",
+      "波士顿咨询：0004BCGSurprisingLess",
+      "波士顿咨询：模型显示，在2014年至2024年的研究周期内"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：2014-2024年中美土地与电网对可再生能源的影响",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "波士顿咨询：中美可再生能源扩张中的土地成本与电网路径差异",
+        "reasons": [
+          "anchor_coverage=0.65"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0004BCGSurprisingLess",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：模型显示，在2014年至2024年的研究周期内",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：能源行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：中美可再生能源规模化扩张中的土地与电网条件",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：能源行业数据与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

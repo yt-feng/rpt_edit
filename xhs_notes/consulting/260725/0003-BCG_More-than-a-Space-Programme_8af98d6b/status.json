@@ -1,0 +1,98 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0003-BCG_More-than-a-Space-Programme_8af98d6b.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "欧洲太空经济，不止是",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：欧洲太空探索研究-2025至2040年500亿欧元计划",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-BCG_More-than-a-Space-Programme_8af98d6b.pdf",
+    "cleaned_source_title": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0003BCGMorethanaSpace",
+    "raw_candidates": [
+      "波士顿咨询：欧洲太空探索研究",
+      "波士顿咨询：欧洲太空探索研究-2025至2040年500亿欧元计划",
+      "波士顿咨询：欧洲太空探索研究-全球太空经济与GDP乘数效应"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：欧洲太空探索研究",
+      "波士顿咨询：欧洲太空探索研究-2025至2040年500亿欧元计划",
+      "波士顿咨询：欧洲太空探索研究-全球太空宏观环境与GDP乘数效应",
+      "波士顿咨询：0003BCGMorethanaSpace",
+      "波士顿咨询：欧洲太空探索研究可产生超过5倍GDP乘数效应"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：0003BCGMorethanaSpace",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：欧洲太空探索研究-2025至2040年500亿欧元计划",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2025",
+        "2040",
+        "500"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：欧洲太空探索研究-2025至2040年500亿欧元计划"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

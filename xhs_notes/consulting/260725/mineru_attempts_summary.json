@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0003-BCG_More-than-a-Space-Programme_8af98d6b.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0005-BCG_The-AI-First-Refiner_07c3fb7f.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

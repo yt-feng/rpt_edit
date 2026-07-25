@@ -1,0 +1,121 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_j337tp5n/pdfs/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "抗风险能力，才是长期",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "危机->扰动 x2",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x2",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x2",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x2",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "危机->扰动 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-BCG_Becoming-an-All-Weather-Company_3d079a3a.pdf",
+    "cleaned_source_title": "0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0001BCGBecominganAllW",
+    "raw_candidates": [
+      "波士顿咨询：企业韧性对长期业绩贡献近三成",
+      "波士顿咨询：扰动期业绩影响力是平稳期三倍",
+      "波士顿咨询：韧性设计六原则与企业长期回报"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：企业韧性对长期业绩贡献近三成",
+      "波士顿咨询：扰动期业绩影响力是平稳期三倍",
+      "波士顿咨询：韧性设计六原则与企业长期回报",
+      "波士顿咨询：0001BCGBecominganAllW",
+      "波士顿咨询：识别出15%的企业具备“通用韧性”——它们在超过80%的扰"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：扰动期业绩影响力是平稳期三倍",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：韧性设计六原则与企业长期回报",
+        "reasons": [
+          "anchor_coverage=0.23",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0001BCGBecominganAllW",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：识别出15%的企业具备“通用韧性”——它们在超过80%的扰",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：企业韧性对长期业绩贡献近三成",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
