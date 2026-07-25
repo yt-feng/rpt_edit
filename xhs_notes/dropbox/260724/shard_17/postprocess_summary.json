@@ -1,0 +1,582 @@
+[
+  {
+    "item": "0001-86-NOM-China-sportswear-Sequentially-weakening-momentum-in-2Q26-260723",
+    "source_pdf": "/tmp/pdf_batch_001_sea6s0u2/pdfs/0001-86-NOM-China sportswear-Sequentially weakening momentum in 2Q26-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "国货运动品牌，二季度",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-86-NOM-China sportswear-Sequentially weakening momentum in 2Q26-260723.pdf",
+      "cleaned_source_title": "NOM-China sportswear-Sequentially weakening momentum in 2Q26",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：中国sportswearSequentially",
+      "raw_candidates": [
+        "中国运动服饰-二季度销售动能放缓",
+        "中国运动服饰-二季度销售增速回落至低个位数",
+        "中国运动服饰-二季度运营数据与品牌调整观察"
+      ],
+      "cleaned_candidates": [
+        "NOM：中国运动服饰-二季度销售动能放缓",
+        "NOM：中国运动服饰-二季度销售增速回落至低个位数",
+        "NOM：中国运动服饰-二季度运营数据与品牌调整观察",
+        "NOM：中国sportswearSequentially",
+        "NOM：安踏主品牌线下折扣约28%，线上略高于50%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：中国运动服饰-二季度销售增速回落至低个位数",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "NOM：中国运动服饰-二季度运营数据与品牌调整观察",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：中国sportswearSequentially",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：安踏主品牌线下折扣约28%，线上略高于50%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：中国运动服饰-二季度销售动能放缓",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-87-NOM-AI-industry-update-Moonshot-AI-releases-Kimi-K3-260722",
+    "source_pdf": "/tmp/pdf_batch_001_sea6s0u2/pdfs/0002-87-NOM-AI industry update-Moonshot AI releases Kimi K3-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "Kimi K3 颠覆",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：KimiK3编码能力接近美国前沿AI实验室水平",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-87-NOM-AI industry update-Moonshot AI releases Kimi K3-260722.pdf",
+      "cleaned_source_title": "NOM-AI industry update-Moonshot AI releases Kimi K3",
+      "institution_name": "NOM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "NOM：AI-MoonshotAIreleasesKimiK3",
+      "raw_candidates": [
+        "NOM：Moonshot AI发布Kimi K3，2.8万亿参数混合专家模型",
+        "NOM：Kimi K3采用Transformer与循环模型混合架构",
+        "NOM：Kimi K3编码能力接近美国前沿AI实验室水平",
+        "AI行业更新-Moonshot AI发布Kimi K3",
+        "AI行业更新-Moonshot AI发布Kimi K3-2.8万亿参数混合专家模型",
+        "AI行业更新-Moonshot AI发布Kimi K3-Transformer与循环模型混合架构"
+      ],
+      "cleaned_candidates": [
+        "NOM：MoonshotAI发布KimiK3，2.8万亿参数混合专家模型",
+        "NOM：KimiK3采用Transformer与循环模型混合架构",
+        "NOM：KimiK3编码能力接近美国前沿AI实验室水平",
+        "NOM：AI行业更新-MoonshotAI发布KimiK3",
+        "NOM：AI-MoonshotAIreleasesKimiK3",
+        "NOM：这一进展为观察中国AI模型开发能力提供了新的样本"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：MoonshotAI发布KimiK3，2.8万亿参数混合专家模型",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：KimiK3采用Transformer与循环模型混合架构",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：AI行业更新-MoonshotAI发布KimiK3",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：AI-MoonshotAIreleasesKimiK3",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：这一进展为观察中国AI模型开发能力提供了新的样本",
+          "reasons": [
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：KimiK3编码能力接近美国前沿AI实验室水平",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "NOM：这一进展为观察中国AI模型开发能力提供了新的样本",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "NOM：Moonshot AI发布Kimi K3，2.8万亿参数混合专家模型",
+        "NOM：Kimi K3采用Transformer与循环模型混合架构",
+        "NOM：Kimi K3编码能力接近美国前沿AI实验室水平"
+      ],
+      "final_title_after_wording_guard": "NOM：KimiK3编码能力接近美国前沿AI实验室水平"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-88-NOM-Policy-Watch-July-FOMC-Preview-260723",
+    "source_pdf": "/tmp/pdf_batch_001_sea6s0u2/pdfs/0003-88-NOM-Policy Watch-July FOMC Preview-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "美联储7月会议前瞻：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "通缩->价格变化 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "通缩->价格变化 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "NOM：行业规则与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-88-NOM-Policy Watch-July FOMC Preview-260723.pdf",
+      "cleaned_source_title": "NOM-Policy Watch-July FOMC Preview",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：政策WatchJulyFOMCPreview",
+      "raw_candidates": [
+        "NOM政策观察：7月FOMC会议前瞻",
+        "NOM：7月FOMC会议预计按兵不动，6月核心PCE月率或降至0.2%",
+        "NOM：7月FOMC会议前瞻-通胀数据走弱支持观望立场"
+      ],
+      "cleaned_candidates": [
+        "NOM：NOM政策观察，7月FOMC会议前瞻",
+        "NOM：7月FOMC会议预计按兵不动，6月核心PCE月率或降至0.2%",
+        "NOM：7月FOMC会议前瞻-通胀数据走弱支持观望立场",
+        "NOM：政策WatchJulyFOMCPreview",
+        "NOM：7月FOMC会议预计按兵不动，但存在两次鹰派异议"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：7月FOMC会议预计按兵不动，6月核心PCE月率或降至0.2%",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：7月FOMC会议前瞻-通胀数据走弱支持观望立场",
+          "reasons": [
+            "anchor_coverage=0.60",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：政策WatchJulyFOMCPreview",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：7月FOMC会议预计按兵不动，但存在两次鹰派异议",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：行业规则与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：NOM政策观察，7月FOMC会议前瞻",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "NOM：行业规则与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-89-NOM-Global-AI-Trend-Tracker-Alphabet-s-2Q26-results-read-through-2607",
+    "source_pdf": "/tmp/pdf_batch_001_sea6s0u2/pdfs/0004-89-NOM-Global AI Trend Tracker-Alphabet-s 2Q26 results read-through-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "谷歌Q2财报：AI投",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "投资->研究 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：全球AI趋势追踪-Alphabet2Q26业绩解读",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-89-NOM-Global AI Trend Tracker-Alphabet-s 2Q26 results read-through-260723.pdf",
+      "cleaned_source_title": "NOM-Global AI Trend Tracker-Alphabet-s 2Q26 results read-through",
+      "institution_name": "NOM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "NOM：全球AITrendTrackerAlphabets2Q26",
+      "raw_candidates": [
+        "NOM：全球AI趋势追踪-Alphabet 2Q26业绩解读",
+        "NOM：Alphabet 2Q26资本支出上调至2000亿美元",
+        "NOM：Alphabet 2Q26云收入增长82% AI供应链受益"
+      ],
+      "cleaned_candidates": [
+        "NOM：全球AI趋势追踪-Alphabet2Q26业绩解读",
+        "NOM：Alphabet2Q26资本支出上调至2000亿美元",
+        "NOM：Alphabet2Q26云收入增长82%AI供应链受益",
+        "NOM：全球AITrendTrackerAlphabets2Q26",
+        "NOM：1.TPU首次交付外部客户，AI芯片收入将在2027年集中体现"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：Alphabet2Q26资本支出上调至2000亿美元",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.48",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：Alphabet2Q26云收入增长82%AI供应链受益",
+          "reasons": [
+            "anchor_coverage=0.52",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：全球AITrendTrackerAlphabets2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "NOM：1.TPU首次交付外部客户，AI芯片收入将在2027年集中体现",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：全球AI趋势追踪-Alphabet2Q26业绩解读",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：全球AI趋势追踪-Alphabet2Q26业绩解读"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-90-NOM-USD-CNY-fix-model-Projection--6.7822-260724",
+    "source_pdf": "/tmp/pdf_batch_001_sea6s0u2/pdfs/0005-90-NOM-USD CNY fix model-Projection- 6.7822-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "人民币中间价，悄悄透",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "NOM：货币市场与相关指标观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-90-NOM-USD CNY fix model-Projection- 6.7822-260724.pdf",
+      "cleaned_source_title": "NOM-USD CNY fix model-Projection- 6.7822",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.7822",
+      "raw_candidates": [
+        "美元兑人民币中间价模型预测值6.7822",
+        "美元兑人民币中间价模型预测值6.7822-隔夜因子与误差",
+        "美元兑人民币中间价模型-定价框架与政策干预边界"
+      ],
+      "cleaned_candidates": [
+        "NOM：美元兑人民币中间价模型预测值6.7822",
+        "NOM：美元兑人民币中间价模型预测值6.7822-隔夜因子与误差",
+        "NOM：美元兑人民币中间价模型-定价框架与政策干预边界",
+        "NOM：USDCNYfixmodelProjection-6.7822",
+        "NOM：从图表看，过去一个月误差多数时间在20-40个基点之间波动"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：美元兑人民币中间价模型-定价框架与政策干预边界",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        },
+        {
+          "title": "NOM：USDCNYfixmodelProjection-6.7822",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：从图表看，过去一个月误差多数时间在20-40个基点之间波动",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：货币市场与相关指标观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：美元兑人民币中间价模型预测值6.7822",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "NOM：货币市场与相关指标观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

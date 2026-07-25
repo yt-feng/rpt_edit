@@ -1,0 +1,130 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_sea6s0u2/pdfs/0002-87-NOM-AI industry update-Moonshot AI releases Kimi K3-260722.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "Kimi K3 颠覆",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：KimiK3编码能力接近美国前沿AI实验室水平",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-87-NOM-AI industry update-Moonshot AI releases Kimi K3-260722.pdf",
+    "cleaned_source_title": "NOM-AI industry update-Moonshot AI releases Kimi K3",
+    "institution_name": "NOM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "NOM：AI-MoonshotAIreleasesKimiK3",
+    "raw_candidates": [
+      "NOM：Moonshot AI发布Kimi K3，2.8万亿参数混合专家模型",
+      "NOM：Kimi K3采用Transformer与循环模型混合架构",
+      "NOM：Kimi K3编码能力接近美国前沿AI实验室水平",
+      "AI行业更新-Moonshot AI发布Kimi K3",
+      "AI行业更新-Moonshot AI发布Kimi K3-2.8万亿参数混合专家模型",
+      "AI行业更新-Moonshot AI发布Kimi K3-Transformer与循环模型混合架构"
+    ],
+    "cleaned_candidates": [
+      "NOM：MoonshotAI发布KimiK3，2.8万亿参数混合专家模型",
+      "NOM：KimiK3采用Transformer与循环模型混合架构",
+      "NOM：KimiK3编码能力接近美国前沿AI实验室水平",
+      "NOM：AI行业更新-MoonshotAI发布KimiK3",
+      "NOM：AI-MoonshotAIreleasesKimiK3",
+      "NOM：这一进展为观察中国AI模型开发能力提供了新的样本"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：MoonshotAI发布KimiK3，2.8万亿参数混合专家模型",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：KimiK3采用Transformer与循环模型混合架构",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.23",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：AI行业更新-MoonshotAI发布KimiK3",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：AI-MoonshotAIreleasesKimiK3",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：这一进展为观察中国AI模型开发能力提供了新的样本",
+        "reasons": [
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：KimiK3编码能力接近美国前沿AI实验室水平",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "NOM：这一进展为观察中国AI模型开发能力提供了新的样本",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "NOM：Moonshot AI发布Kimi K3，2.8万亿参数混合专家模型",
+      "NOM：Kimi K3采用Transformer与循环模型混合架构",
+      "NOM：Kimi K3编码能力接近美国前沿AI实验室水平"
+    ],
+    "final_title_after_wording_guard": "NOM：KimiK3编码能力接近美国前沿AI实验室水平"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "513",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
