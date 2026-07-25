@@ -1,0 +1,57 @@
+Found 91 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hwxlougd/pdfs/0001-21-Goldman Sachs-China Healthcare- ESMO 2026 China datapoints- eyes on sac-TMT Lung06 data and Zoci in 1L SCLC-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hwxlougd/pdfs/0002-22-Goldman Sachs-Chow Tai Fook Jewellery Group -1929.HK- 1QFY27 solid SSSG as expected- Jul decelerates with weather headwinds- confidence on full year guidance- Neutral.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hwxlougd/pdfs/0003-23-Goldman Sachs-DISCO -6146.T- Earnings Review- 2Q shipment guidance beats expectations- growth drivers include generative AI CPO- reiterate Buy-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hwxlougd/pdfs/0004-24-Goldman Sachs-China Retail Chartbook Jun-26- Broad-based volume decline- pricing more resilient- BMW M outperforms-260724.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hwxlougd/pdfs/0005-25-Goldman Sachs-GLOBAL TECHNOLOGY-Global Data Center Capacity update- Increased capacity expectations- but continued tightness-260724.pdf
+MinerU attempt 1 using MINER_U batch_id=70993b48-e4be-4e4a-8259-3e3286edc327
+MinerU states: done, done, done, done, waiting-file
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 30825fffe3d8978c7d772f2bd3af6e7345bdc729849a2d1d9a41107dc6a3bc5f.jpg: score=0;square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset 24f5b7f53dac4e31a1518803fee565f69f82b2d38bbe398641431fb21aa93caf.jpg: score=0;square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset d6fe93096b7ebf7a892dfeffdd8169cf8d223ca37985e6454e88006daeabafd4.jpg: score=-100;too_small:1156x106
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset d3f82ca8d3f3a7827201ace6af7462b59e11a2127453752dcf0954ba9fdc7265.jpg: score=-100;too_small:109x107
+Skip non-chart visual asset 69547a95ee63b5da6baf33e9eb491823e8e810a5c97bbe0e283fa9fd0798137b.jpg: score=0;square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset 6882744ca032fb87ffd5ffde9c224fe0ab4c083a5b07ed1a2cb7a88125b50666.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset e3b02c884ea865d1afed832178c41e2ebf4d9a22d8fce8d1a4f41fe1deb34d1c.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset f97cd3642599b34a96c55ff83f847da50b1c219b747f1367137f441c7e1b5e5d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset 806befb3582a28dde43612488b7e235e9cc7c2100d2555783237f88dbe31cad5.jpg: score=-100;too_small:704x81
+Neutralized WeChat title while keeping the report: 高盛：周大福1QFY27同店增长符合预期，7月受天气因素节奏变化 -> 高盛：周大福1QFY27同店业务与近期数据观察
+Skip non-chart visual asset 0d70be2017b82212e5b5f01376a74d43ec09e940c9a0dc100c1cadabd9a3d3dc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 0881e1414597f9d6289eb90b6f81c344a3ace1fd1c5ee4e36502527a93c22ef0.jpg: score=-100;too_small:1159x112
+Skip non-chart visual asset e7f4368f69dbd3347f3c983ffdeaff1aa7dab07abf76dcf410f1d39d1abd96c6.jpg: score=0;square_without_chart_hint,edge:0.29,large
+Neutralized WeChat title while keeping the report: 高盛：Disco第二季度出货受AI与CPO驱动 -> 高盛：Disco与AI、CPO及季度数据观察
+Skip non-chart visual asset 27fab872504362ee90e33978423dc412db8bc1e9bf558808f01c52c397695ad5.jpg: score=-100;too_small:265x65
+Skip non-chart visual asset be881024fc734036cb24b9ef6f79cb2704ba219fa01ca39477b210efbddb8332.jpg: score=-100;too_small:264x67
+Skip non-chart visual asset cfcab28ee0288f44dbacc91cc8871c0f59c2e3930a55560d3f5b385121217ecf.jpg: score=-100;too_small:267x64
+Skip non-chart visual asset 9b6c8dee75376f7d3e7ee6bad1aee6ad05388f5561e8231d7a3734d9a127a63e.jpg: score=-100;too_small:1159x112
+Skip non-chart visual asset 0772aa9bde2d922815cc510763b0ec8f181991cd4ae3c3e15b73056618e72473.jpg: score=-100;too_small:273x362
+Skip non-chart visual asset b3c60244446bf88530b226315f6e7b21872e36365d35d95d3db5d1c52338c8cb.jpg: score=-100;too_small:262x176
+Skip non-chart visual asset 3899dd4ff607602de4c5bc7e2a5ac2b9252477d6d664fffe0b6876d050a2506a.jpg: score=-100;too_small:262x79
+Skip non-chart visual asset 7fa0f48674564a8039fb966ee3e68fdefe1b6732f60f2f047291c561f7a298f2.jpg: score=-100;too_small:262x81
+Skip non-chart visual asset e2612ebbec1b5bf3de6824c85907561ef9ab0516cefd527cb87dd2c98b1b5058.jpg: score=-100;too_small:262x76
+Skip non-chart visual asset 4a7664e5c2f23e552643858d9e6dd5ba173830e0a13d1877f1c1e42af649cebc.jpg: score=-100;too_small:260x65
+Skip non-chart visual asset 80c906ad632a624fddf62bc507057d930cead77c0e40bbb466ec9f327ba742c1.jpg: score=-100;too_small:265x87
+Skip non-chart visual asset a9165eac07e6f4e197ea02d3f9d2c30ab24ef2b172d3ed51e7e6bf0809166e59.jpg: score=-100;too_small:270x351
+Skip non-chart visual asset 82b83524d85213475f1c425ab48ce4ce6543748e61bbad164fb59f2754a1232e.jpg: score=-100;too_small:267x179
+Skip non-chart visual asset 4032cb4646f3a6585e89ea913dd7517c3338212f335b6812f48ae7f0c69ff829.jpg: score=-100;too_small:265x75
+Skip non-chart visual asset b78dcd918045a2a5e75429983e838d51ea11325bd503aa072c9dea7a1fbf06e7.jpg: score=-100;too_small:264x326
+Neutralized WeChat title while keeping the report: 高盛：中国零售图册6月-德国豪华车量跌价分化-宝马M系列逆势增长 -> 高盛：零售行业数据与主题变化观察
+Skip non-chart visual asset 885298274283bde2c5b8a759ef164cd070964a7eab033a016a16b79e80a62b17.jpg: score=-1;square_without_chart_hint,edge:0.29
+Skip non-chart visual asset dedc86ff5fe3ee5d365be570461f3cb9070751b82c83781497f50fae6c5df54b.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 5068226d095b00bb3c3697e153fad42558d7e8bcb0df0324a4ae0dd0d31ca3f0.jpg: score=-100;too_small:481x106
+Skip non-chart visual asset 16104d5e3e21e89000599116d13b2ae33ebaf997de254fced8bb5634f8ebb151.jpg: score=-100;too_small:481x106
+Skip non-chart visual asset 5d6cacf7ca392b540136ced91667d6d8da349a56cbd68da7df7c40f86d8324a2.jpg: score=-100;too_small:462x193
+Skip non-chart visual asset 58966d55d4bf6b5a6d0031a9a70a94b7e48239af8c5322192185aeeb13171054.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 37c594c6da4252ae636db1a3d0a65f0b3dcf6c8916c09d7438e79c22a50f8724.jpg: score=-100;too_small:462x65
+Skip non-chart visual asset edb3868400b312e06594d37dcf50323b2564c5636d0743ed2e8ab8332181f655.jpg: score=-100;too_small:462x193
+Skip non-chart visual asset d4e0fbc8a707b415898093544b4b993ef2eb8a65a5a32252997e3f9b4782ad65.jpg: score=-1;square_without_chart_hint,edge:0.28
+Neutralized WeChat title while keeping the report: 高盛：全球数据中心容量预期上调至217GW-供需仍偏紧 -> 高盛：数字基础设施数据与主题变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260724/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

@@ -1,0 +1,4526 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GLOBAL TECHNOLOGY"
+                    }
+                ]
+            },
+            "bbox": [
+                107,
+                84,
+                287,
+                101
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Data Center Capacity update: Increased capacity expectations, but continued tightness"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                107,
+                109,
+                841,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We update our global data center capacity forecasts using the latest data from 451 Research's database and now forecast 217GW of global data center supply by 2030 (v. 168GW prior from our last update in February 2026), representing 116GW of additional capacity from 101GW in 2025 (restated higher from 74GW prior). This addition of 116GW would represent $6 tn of capex, assuming a $50B/GW rule-of-thumb while acknowledging that IT infrastructure costs continue to see upward pressure. We see this capex well-covered by current consensus expectations for hyperscale capex (~$1 tn/year on average), which does not include SpaceX AI capex, private company capex, or datacenter platform capex."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                226,
+                700,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We've become more positive on the neocloud segment following several large data center lease announcements in the last 3 months including by TeraWulf (Anthropic), Hut8 (undisclosed IG tenant), and others. We estimate average lease rates were $166/kw/month with base terms in the 15-20 year range."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                396,
+                676,
+                469
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There were also several GPU-as-a-service deals including SpaceX (Google, Anthropic, Reflection AI) and IREN (Nvidia, Perplexity, Figure). Notably, Nvidia announced a new credit support and revenue share model with Sharon AI and Firmus, providing a revenue backstop and thereby reducing the cost of capital for neoclouds to build out capacity for shorter-term leases and smaller deals. Prices ranged from >$50/MW, which demonstrates the current scarcity of compute at scale, to <$10/MW, which represents the Nvidia floor revenue in the Sharon AI deal."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                478,
+                691,
+                603
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the US alone, we forecast 125 GW of IT Power data center supply by the end of 2030, where our Utilities team estimates ~108 GW of data center demand in the US on an annual average basis in 2030. This drives an expectation of a 3.5% power demand CAGR through 2030 with BTM capacity available to serve data center load of ~31 GW and ~22 GW of power delivery by 2030. We highlight select regulated utilities and IPPs as key beneficiaries of the inflection based on their regional exposure, including FE/TLN in PJM, SRE/VST/NRG in ERCOT, XEL in MISO, and DUK in the Southeast. Our GS SUSTAIN team continues to highlight the cross-sector investment theme of Reliability, driven by both AI/data center power growth and global investment to mitigate risks of physical/network/supply chain/power/water outages."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                613,
+                689,
+                809
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Michael Ng, CFA\n+1(212)902-8618 | michael.ng@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                718,
+                228,
+                913,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Brian Singer, CFA\n+1(212)902-8259 | brian.singer@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                718,
+                265,
+                916,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Carly Davenport\n+1(212)357-1914 |\ncarly.davenport@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                303,
+                843,
+                344
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Lindsey Shema\n+1(801)578-2673 |\nlindsey.shema@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                349,
+                844,
+                391
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yash Goenka, CFA\n+1(212)934-6312 |\nyash.goenka@gs.com\nGS India SPL"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                395,
+                844,
+                436
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jaya Patel\n+1(212)357-9901 | jaya.patel@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                441,
+                906,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Xavier Zhang\n+852-2978-6681 | xavier.zhang@gs.com\nGS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                479,
+                918,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Brendan Corbett\n+1(415)249-7440 |\nbrendan.corbett@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                517,
+                844,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Zorayda Montemayor\n+1(212)357-6403 |\nzorayda.montemayor@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                564,
+                870,
+                604
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Goldman Research Sachs"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                297,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research\n24 July 2026 | 5:00AM EDT"
+                    }
+                ]
+            },
+            "bbox": [
+                715,
+                26,
+                918,
+                64
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                880,
+                916,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Increasing global data center capacity to 217GW by 2030E (v. 101GW in 2025)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                59,
+                705,
+                80
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We update our global data center capacity forecasts for the latest updates to 451 Research's data center tracker (through C1Q26). Per 451 Research data center project tracking, we now expect ~217 GW of live global data center capacity by 2030, implying growth from ~101 GW in 2025 at a 17% 2025-2030 CAGR. This +116GW of capacity net addition over the next 5 years would approximate a cumulative $5.8 bn capex assuming $50 bn per GW, which should be covered by the forecast average ~$1 tn hyperscale capex (per annum, using Visible Alpha Consensus Data), which has historically been revised higher and does not include SpaceX's AI capex, private AI lab capex, or datacenter platform capex."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                104,
+                918,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1Q26 451 Research data for 2026-2030 annual global data center capacity was revised upwards by 5% on average v. 4Q25, and by 13% v. 3Q25. Per 451 Research, global data center capacity additions should predominantly be from retail/wholesale providers & hyperscalers (70-90% of total global net capacity additions annually through 2030) and be located in the US (~60-70% of total global net adds through 2030)."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                275,
+                913,
+                364
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/07e654f8119ef6af815b10f558c2664ec99b2aad820f4e86e1fed7edd2801a24.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: Global Data Center Capacity should scale to ~217 MW by 2030 (+116 GW v. 2025)\nGloabl Data Center Capacity (MWs) & year-over-year change (%)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                83,
+                441,
+                483,
+                628
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bf7d2775fd5905b8d43fa9cb86e42360cb343ceef75f5653f21fb5052fbe2df6.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: Global Data Center Capacity forecasts for 2026-2030 have been revised upwards over time (+5% v. 4Q25 forecasts, +13% v. 3Q25 forecasts)\nGlobal Data Center Capacity forecast estimates over time (MW)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                511,
+                441,
+                913,
+                630
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                955,
+                916,
+                965
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/49b9d59c3db30138f76d13d5e4da5843f5ef87b9980d97d12cc4c9ce0bb83434.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: Global data center capacity net adds should predominantly be cloud/crypto/wholesale/retail capacity Share of global data center capacity net adds by vertical (%)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                119,
+                485,
+                305
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d3427b03fc495ad9ef9c3f6c730400097427ac5fd0d71264d9f7d31e11e0a2d7.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 4: Global data center capacity net adds should predominantly be in North America\nShare of global data center capacity net adds by region (%)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                119,
+                911,
+                306
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/98cbd74a0eb44952ca7dcaad9bbe36671eae4f05f5d54984c01f43fae6c2143e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 5: US data center capacity should grow to ~125 GW by 2030 (+76 GW from 2025)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "US data center capacity (MW) & year-over-year change (%); end of period capacity"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                81,
+                417,
+                483,
+                606
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/35ebf39652460e510d5a748db8e00882a895b69b32e3dceb5e1d3275588b2c71.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 6: US data center capacity should be led by Cloud/Wholesale/Retail providers & hyperscale-owned facilities"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Share of US data center capacity (MW) by vertical (%)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                511,
+                417,
+                911,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Increased data center capacity estimates may prove conservative given increasing expectations for data center equipment capex, which 650 Group estimates should now reach ~$2.3 trillion by 2030 (+320% vs. $555 bn in 2025). We continue to view data center supply & demand conditions as extremely tight given continued compression of data center vacancy rates (per CBRE), which should continue to support pricing power for data center operators in releasing existing capacity or leasing newly added capacity, which is in-line with commentary from Flexential during our June 2026 Denver bus tour, where the company stated it expects to see pricing per kilowatt approach $250 later this year (v. ~$70 in 2021)."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                646,
+                908,
+                806
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                955,
+                916,
+                965
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d4d3b9749c6545280a02a7f60af3891f2d0502d05099127dea7e14813fb68add.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 7: US capacity add forecasts have also been revised upwards over time (+6% v. 4Q25; +12% v. 1Q26)\nUS net add forecasts (MW)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                119,
+                485,
+                306
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2628cb8adc8cd22cfb932b5a78bce5e4606431b555f4a1c327348dba2c18b55d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 8: Data center vacancy rates have compressed significantly over time\nData Center Vacancy rates across select US markets"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CBRE"
+                    }
+                ]
+            },
+            "bbox": [
+                511,
+                125,
+                913,
+                299
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6876a802d05b329733fcbdcca4475cc88ee4edc9e85df9e4819206c57d8bc15a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 9: Average Net IT Power (MW) per site should grow over time towards ~67 MW by 2030 (v. ~26 MW in 2025)\nAverage Net IT Power (MW) per site & year-over-year change (%)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 451 Research, Data compiled by GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                416,
+                483,
+                603
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f0a9847de1cb73bc09b8143b4049e289a69c61f394c7fd8dac3f26a7aad1d239.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 10: Data Center equipment spend should more than triple by 2030 to $2.3 trillion (v. $444 bn in 2025)\nCloud Data Center Equipment spend ($, mn) & year-over-year change (%)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: 650 Group, Data compiled by GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                419,
+                910,
+                599
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/704096d9273322d591b30bb6a7f83d8c971763c8d205d02658fab3f2516d78ce.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 11: AI/Cloud player spend should grow to ~$1.2 trillion by 2030 at a 22% 2025-2030 CAGR Consensus capex estimates on select AI players/Cloud players ($, mn)"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Visible Alpha Consensus Data"
+                    }
+                ],
+                "html": "<table><tr><td>Select US cloud</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>AAPL</td><td>10,264</td><td>12,262</td><td>11,394</td><td>13,161</td><td>14,250</td><td>15,114</td><td>15,849</td></tr><tr><td>AMZN</td><td>82,999</td><td>131,819</td><td>203,623</td><td>238,651</td><td>258,537</td><td>262,932</td><td>271,362</td></tr><tr><td>META</td><td>37,256</td><td>69,691</td><td>136,723</td><td>174,523</td><td>189,094</td><td>204,024</td><td>215,239</td></tr><tr><td>GOOGL</td><td>52,535</td><td>91,447</td><td>187,786</td><td>265,836</td><td>292,538</td><td>305,685</td><td>320,552</td></tr><tr><td>MSFT</td><td>54,514</td><td>91,008</td><td>153,736</td><td>200,931</td><td>228,709</td><td>253,712</td><td>261,779</td></tr><tr><td>ORCL</td><td>14,041</td><td>38,439</td><td>74,066</td><td>98,594</td><td>98,727</td><td>89,046</td><td>74,028</td></tr><tr><td>CRWV</td><td>8,702</td><td>10,309</td><td>33,987</td><td>39,769</td><td>36,829</td><td>41,233</td><td>55,367</td></tr><tr><td>Total capex ($, mn)</td><td>260,311</td><td>444,975</td><td>801,314</td><td>1,031,465</td><td>1,118,683</td><td>1,171,747</td><td>1,214,176</td></tr><tr><td>Year-over-year growth</td><td>53%</td><td>71%</td><td>80%</td><td>29%</td><td>8%</td><td>5%</td><td>4%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                102,
+                686,
+                893,
+                859
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Neocloud cost of capital to decline following NVIDIA credit support. Earlier this month, Nvidia announced a new revenue sharing and credit-support model with AI clouds. In this new business model, the neoclouds receive a minimum revenue guarantee on GPU capacity (e.g., revenue per GPU per hour), which reduces the risk for the neocloud as well as its cost of financing to purchase the GPUs. Neoclouds can then provide access to enterprise, startup, and AI native customers that otherwise may have a more difficult time securing short-term capacity, with revenue generated beyond the minimum revenue guarantee being split with Nvidia. This new model was first announced with Firmus (Private) and Sharon AI (SHAZ, Not Covered), which has a 6-year deal with Nvidia for 40,000 GB300 GPUs."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                887,
+                877,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                955,
+                918,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                267,
+                60,
+                918,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agentic workloads to support continued demand tightness as growing end-user demand more than offsetting new capacity and improved compute efficiency. Our channel checks, including an Expert Network Series call with a former Director of AI Transformation at Microsoft, helped us better understand the vision of end-user demand, which should be supported by multi-agent systems: a network of AI agents that can work autonomously but still need a cloud-based AI agent to help orchestrate workloads. Enterprises continue to be in the early stages of the deployment of agents, with many still experimenting, which should be a positive sign for future demand once experimentation transitions into full production."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                212,
+                918,
+                371
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Implications for global data center power demand growth"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                400,
+                553,
+                421
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "This section authored by Brian Singer, GS SUSTAIN"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                271,
+                446,
+                611,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On the back of greater data center capacity, recent increases from our TMT team to their AI server shipments forecasts and our US power team's regional outlook on data center power demand, we raise our global forecasts for data center power demand through 2030. We see  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "170\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " global data center power demand growth in 2030 vs. 2025 levels (117% previously), which also incorporates estimated historical data center power demand following recent reports by the DOE and IEA."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                474,
+                913,
+                580
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "We now see 7 Ps driving data center power demand growth/constraints:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                592,
+                825,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Pervasiveness of AI. Greater industry AI capex has contributed to increased server shipments and data center capacity. Ultimate returns-enhancing AI outcomes will be critical to longevity."
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                621,
+                915,
+                676
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Productivity of chips/servers/models. We continue to assume energy intensity reductions for AI (compute per unit of power) at a faster pace than for non-AI. However, pent-up demand for tokens/compute is likely to continue until there is more corporate/government confidence that reducing budgets will not sacrifice competitive positioning or until demand for tokens/compute has been sufficiently defined. At that point, we believe AI will shift from the Appraisal/Hopes & Dreams Phase to the Execution/Efficiency phase, characterized by downward revisions to budgets in response to productivity gains."
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                684,
+                897,
+                834
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Price of power. This remains a key community concern (in addition to reliability of power/water), though we believe hyperscalers continue to have financial flexibility via strong balance sheets. We do not believe the US Green Reliability Premium will limit hyperscaler willingness to take an all-of-the-above approach to power sourcing."
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                840,
+                898,
+                933
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                916,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                955,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy. Permitting and execution risk continue to be sources of industry frustration, even as there appears to be bipartisan support for speeding up processes. Increased attention to risks of delays driven by US community pushback to data center development is driving greater connectivity between corporates, investors and communities on potential solutions. The key areas of pushback from communities/broader consumers are: risk of power reliability issues, risk of rising power prices, risk of depletion of water supply, noise and warming impact from rejected heat. Broadly, there are solutions (take-or-pay contracting, interruptibility, closed-loop cooling/chillers, waste heat capture) that can mitigate these risks. However, perception and broader NIMBY concerns could supersede innovation/solutions."
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                59,
+                913,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Parts availability. Constraints in the timing/availability of power generation equipment continue to drive how data center power will be sourced as part of an overall all-in strategy — renewables/battery storage/simple cycle natural gas in the shorter term, natural gas combined cycle in the medium term, nuclear in the longer term. Natural gas combined cycle generator manufacturer GE Vernova highlighted on its 2Q26 earnings call on July 22 that it expects to have more than 50% of its capacity contracted for 2031 by the end of 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                273,
+                905,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "People availability. We continue to expect >500K new jobs to meet overall US power demand growth. Of this, we believe more than 200K are needed to meet transmission and distribution needs. We continue to see risks that skilled labor availability constraints — particularly for electricians — represents a key risk to execution. This is also, in our view, helping to drive greater consideration for behind-the-meter power solutions that require less electricity transmission. Time-to-market priorities and long lead times for grid connectivity are driving behind-the-meter solutions — largely natural gas — that our US Utilities team expects will drive ~30% of the data center growth through 2030."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                412,
+                877,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Physical environment. Ambient conditions — heat, humidity and drought — where data centers are being built are increasingly a driver of both stock performance and innovation. Higher heat, humidity and drought risks limit cooling technology selection optionality for data centers and require greater power demand in affected regions where minimizing direct water demand is a priority. Our analysis suggests that 56%/55% of new global/US data centers are set to be built in areas with elevated physical risk to heat, humidity and/or drought. Based on our analysis of data center location and type, we expect that 43% of new data center capacity will deploy white space direct-to-chip or immersion cooling inside the data center. Separately, we expect 56% of new data center capacity will deploy gray space chillers, adiabatic systems or mechanical cooling back-up to transfer heat to the outside. We see this as at least a partial offset to efficiency gains, all else equal putting upward pressure on power usage effectiveness (PUE) and power demand."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                588,
+                913,
+                833
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                26,
+                184,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                916,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                955,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 12: We now see 170% global data center power demand growth in 2030 vs. 2025 levels, more than 60% of which comes from the US"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                71,
+                480,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data center (AI + non-AI) power demand in US and rest of world, TWh"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                113,
+                480,
+                138
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bb6157c52b38a8a430f8f0e4d26d972dd3efaea6fb86ace2a8ece5555a77afad.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Masanet et al. (2020), EIA, EMBER, IEA, Cisco, GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                203,
+                470,
+                357
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 13: Weighting of higher power vs. lower power AI servers, mix within high power AI servers of latest generation (more expensive, higher energy consumption, greater energy efficiency per server) vs. older generations and ultimate pace of AI server spending will be key to AI data center power demand"
+                    }
+                ]
+            },
+            "bbox": [
+                506,
+                71,
+                910,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI servers in operation implied by our global TMT team forecasts (LHS); implied annual AI server revenues (RHS)"
+                    }
+                ]
+            },
+            "bbox": [
+                506,
+                154,
+                911,
+                181
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/82d3bbab3551662efc5fc78e1b77ef4830b0fdee4b5f302b3f6433637300ae1f.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Exhibit 14: We see a swifter pace of energy efficiency per unit of demand for AI, as we did for non-AI\nPower demand per unit of workload for non-AI and per unit of compute speed for AI"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                203,
+                911,
+                369
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7ddedc38a93bc30fd5c087f27d635dc1be3a03d635a601e35a637754be9dfdd1.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Masanet et al. (2020), IEA, Cisco, NVIDIA, GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                503,
+                491,
+                684
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The increase in data center power outlook drives upward revisions to our outlook for data center emissions, even as power purchase agreements from technology companies for low-carbon power have remained strong. As mentioned above, we continue to expect an all-of-the-above approach to power sourcing based on relative economics, parts availability, time-to-market considerations and long-term decarbonization objectives. We assume thermal power (largely natural gas) sources a majority of the data center power growth through 2030. However, power purchase agreements (PPAs) for renewable + nuclear power signed by technology companies has remained strong, rising 17% in 2025 yoy. Our updated forecasts imply carbon dioxide emissions increase by ~370 mn tons (+210%) in 2030 vs. 2023 levels, the equivalent of 1.0% of global energy emissions. The present value social cost of cumulative annual"
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                738,
+                903,
+                933
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                955,
+                916,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "emissions increases in 2024-30 is $140-$170 bn consistent with our prior framework that applies a $190/ton social cost of carbon and a discount rate range of 7%-10%."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                59,
+                890,
+                94
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/33dba7c94b1f3e53ccb84a377022d834eaa9852e7c94a9ff6d447f89d76d78d4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IEA, GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                279,
+                207,
+                684,
+                378
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US Data Center Power Demand Outlook"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                441,
+                408,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We explore the data center demand outlook across regions in the US in our latest power demand update report and now forecast 108 GW/947 TWh of data center demand by 2030. This is based on 121 GW of IT Power, an implied PUE of ~1.3, and weighted average utilization and occupancy rates of 70%/97%, respectively. We take a bottom-up approach to measure demand across key regional power markets, where we find PJM will remain the market with the highest concentration data center demand by 2030 followed by MISO and then ERCOT. Overall, our forecasts imply a 23% data center demand CAGR from 2025-2030, though we recognize risks exist, which we discuss further below. Among covered Buy-rated stocks in Power/Utilities, we highlight FE, XEL, DUK, and SRE as key regulated beneficiaries of the data center demand inflection in the US, and TLN, VST, and NRG as independent power producers that are well positioned to benefit from rising power prices and incremental data center PPAs."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                487,
+                913,
+                700
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                955,
+                916,
+                965
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 16: We forecast ~108 GW of data center demand in 2030"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                71,
+                483,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total US data center demand on an annual average basis"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                99,
+                433,
+                114
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3124f98aedc5b7619a4632357d23276e2c8aeda0a2b109d2d8c9947fbbff84ba.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 17: We assume a 70% utilization rate and 97% occupancy rate on a weighted average basis in our forecast"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global Market Intelligence, GS Global Investment Research"
+                    },
+                    {
+                        "type": "text",
+                        "content": "GSe for utilization and occupancy rates (%) regionally for 2025-2030"
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                148,
+                480,
+                334
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4e8ce377c3b65f386b5131ede6d3a574f63ce7aef64ddd618fea52a8f23b832a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                511,
+                148,
+                910,
+                329
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regional Overview"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                271,
+                386,
+                416,
+                402
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our latest supply forecasts from the 451 database, consistent with the global TMT team, and our regional demand assumptions point to (1) PJM continuing to host the largest amount of data center demand (38 GW) by 2030, (2) MISO overtaking ERCOT as the second largest data center demand market with 17 GW by 2030, and (3) ERCOT following as third largest data center demand market in the US, with 15 GW of demand in 2030. Our utilization and occupancy rate assumptions vary by region and may be impacted by workload (i.e. inference vs. training) and construction/development strategy."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                404,
+                913,
+                546
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ff36316f7d248e33b242b030275d87579a3e3ac8b1112ec182b7f7cbdccd5e4a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 18: We expect to see 108 GW of data center demand in the US in 2030 US data center demand by the end of 2030 by region"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global Market Intelligence, GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                334,
+                601,
+                852,
+                825
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall Power Demand"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                271,
+                892,
+                447,
+                907
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As a result of this update, our overall power demand CAGR comes up from 3.2% to"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                909,
+                875,
+                926
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                955,
+                916,
+                967
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                44
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3.5% and our BTM capacity available to serve data center load increases to ~31 GW of capacity and ~22 GW of power delivery by 2030 (from 20 GW capacity/14 GW power delivery before). We expect BTM data center demand to make up 20% of overall data center demand by 2030, where we continue to view BTM opportunities as a bridge solution in the near-term to address speed to market, and we expect grid connected power solutions to be the preference over the long-term for large scale data centers."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                59,
+                905,
+                166
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 19: Our total power demand CAGR increases to 3.5% through 2030, driven by both BTM and FTM data center demand\nOverall power demand CAGR by driver"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                181,
+                893,
+                224
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/20c348d4df77d2def5377538ba3e9deed3a4e2be538f648119bf78b158256228.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Numbers do not sum to total due to rounding"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                247,
+                861,
+                523
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Risks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                599,
+                346,
+                614
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We see affordability concerns and local level pushback (due to water usage, noise, concerns over AI, etc) as key risks to monitor regarding data center expansion. While we acknowledge this pushback is valid, we believe that through regulation, proper cost allocation, and responsible corporate citizenship, these risks can be mitigated and the expansion can provide benefits to communities."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                616,
+                910,
+                705
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stock views"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                727,
+                364,
+                742
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We highlight Buy-rated stocks within our coverage that we believe will be key beneficiaries of the data center demand inflection in the US attributed to regional differences. We see FE as a regulated beneficiary given its exposure to PJM and upside from generation/transmission opportunities in West Virginia. For exposure to the growing MISO market, which we expect to have a 16% share of total US demand in 2030, we are constructive on XEL. DUK also stands to benefit through its ~15.4 GW high-confidence large load pipeline, and benefits from a favorable regulatory environment in the Southeast, which is the largest non-ISO data center market. We also view SRE as well positioned to capture opportunities in Texas via T&D capital investment, where we expect ERCOT's data center market to grow at a 20% CAGR"
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                744,
+                916,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                918,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "through 2030. Lastly, we view the IPPs, including TLN, VST, and NRG, as among the best positioned to benefit from rising power prices and incremental data center PPAs across both PJM and ERCOT."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                59,
+                913,
+                111
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation and Key Risks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                138,
+                488,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FE. We are Buy rated on FE with a 12-month target price of $54, which is based on an 18x P/E multiple on our Q5-Q8 estimates, reflecting a 1x premium over our baseline. Key downside risks relate to 1) an unfavorable outcome from its Ohio rate case; 2) pension expense and/or interest expense that could come in higher than expected; and 3) mild weather that could weigh on earnings."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                159,
+                916,
+                246
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "XEL. We are Buy rated on XEL. Our 12-month price target is $93. We apply a 20.0x multiple to our Q5-Q8 earnings, representing a 3x premium to our baseline multiple to account for attractive leverage to renewables and transmission, as well as above-average growth versus peers and a strong track record of execution. Key downside risks include 1) negative rate case outcomes, 2) litigation, 3) failure to close the gap between earned vs authorized ROE, and 4) cost management."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                257,
+                918,
+                364
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "DUK. We are Buy rated on DUK and see a 19% total return to our 12-month, $145 price target, which is based on a P/E multiple of 19.5x on our Q5-Q8 estimates to capture the upside opportunities around generation capex and improved regulatory position. Key downside risks include: DUK's balance sheet not improving; regulatory uncertainty from recently filed rate case; and any decline in the strong load growth forecast impacting expected earnings growth."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                375,
+                911,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SRE. We are Buy rated on Sempra with a 12-month SOTP based PT of $109. Key downside risks for SRE include (1) management execution and communication challenges, (2) balance sheet strength weakens, and (3) constructive regulatory outcomes."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                491,
+                852,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TLN. We value Buy rated TLN with a blended EV/EBITDA and FCF yield based valuation; our 12-month price target of $499 reflects a target EV/EBITDA multiple of 10.0x and FCF yield of 7.0% (on our Q5-Q8 estimates). Key downside risks for TLN include 1) regulatory and interconnection risk, 2) lower than anticipated power prices, 3) slowdown in data center demand."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                571,
+                918,
+                660
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "VST. We are Buy rated on VST with a blended EV/EBITDA and FCF yield based valuation; our 12-month price target of $209 is based on a 10.5x EV/EBITDA multiple and a 7.0% FCF yield (on our Q5-Q8 estimates). Key downside risks for VST include: (1) PJM capacity auction uncertainty; (2) lower than anticipated power prices; and (3) future of the power demand theme."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                671,
+                916,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NRG. We are Buy rated on NRG with a blended EV/EBITDA and FCF yield based valuation; our 12-month price target of $197 is based on a 9x EV/EBITDA multiple and an 8.0% FCF yield (on our Q5-Q8 estimates). Key downside risks for NRG include: (1) increased headline risk tied to AI and data center theme; (2) lower-than-anticipated power prices; and (3) PJM capacity auction price uncertainty."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                770,
+                901,
+                859
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Digital Realty Trust Inc (DLR, Buy)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                881,
+                524,
+                898
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our estimates are unchanged."
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                900,
+                493,
+                915
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation. We are Buy rated on DLR with a 12-month target price of $215 (unchanged) based on a 26X (unchanged) NTM+1Y P/AFFO."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                59,
+                915,
+                94
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Digital Realty Trust Inc. (DLR, Buy) is a leading global wholesale provider of data center, colocation, and interconnect solutions for hyperscalers and large enterprises, operating as a Real Estate Investment Trust (REIT) that owns and manages over 300 facilities across over 50 metros globally for nearly 6,000 customers. DLR is strategically positioned to benefit from secular tailwinds from cloud computing, AI investments, and digital transformation that should support structural data center supply & demand tightness, which supports substantial pricing power that can translate to future growth as leases expire and are renewed at current market rates. Additionally, DLR's extensive backlog and use of joint ventures with institutional partners provide visibility into multi-year revenue and profit growth while managing capital requirements and customer concentration risks."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                106,
+                915,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key downside risks include: (-) data center supply exceeding demand, which could lead to pricing pressure and margin compression; (-) demand erosion from hyperscalers; (-) elevation of financing rates, which can negatively impact the company's growth capacity; (-) technology obsolescence if customer requirements shift towards infrastructure configurations that existing facilities cannot support without substantial retrofitting investments."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                311,
+                915,
+                417
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equinix Inc (EQIX, Neutral)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                440,
+                473,
+                455
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our estimates are unchanged."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                458,
+                493,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation. We are Neutral rated on EQIX with a 12-month target price to $1,015 (unchanged), which reflects 21.0X (unchanged) NTM+1Y P/AFFO."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                486,
+                859,
+                521
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equinix is a global leading provider of data center, colocation, and interconnection solutions within the retail colocation market to 10K+ customers across nearly 80 metros. While the company should continue to be a beneficiary of structural tightness in data center supply and demand, its position in serving medium to large enterprises is unlikely to make it a primary beneficiary of the current wave of AI infrastructure spending, which is largely focused on large-scale model training favoring wholesale operators. That said, Equinix should benefit from the eventual shift towards AI inference workloads due to its distributed metro footprint and position in interconnection. Additionally, capital investments needed to support AI workload capacity should constrain near-term AFFO per share growth through higher expenses."
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                532,
+                915,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key risks include: (+) further data center supply tightness driving upside to pricing; (+) greater demand for EQIX's metro-focused footprint to optimize low-latency infrastrucutre; (+) chip and power innovation diminishing the need for facility modernization investments; (+) interest rate reductions allowing EQIX to raise incremental debt & refinance existing debt amidst continued growth investments; (-) data center oversupply could drive pricing weakness and margin compression; (-) customer demand from medium to large enterprises may weaken; (-) escalating power density requirements could render some of EQIX's footprint inadequate for next-gen applications, requiring greater capex for maintenance and retrofits; (-) elevated financing rates could negatively impact EQIX's ability to invest in growth"
+                    }
+                ]
+            },
+            "bbox": [
+                267,
+                719,
+                903,
+                898
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                916,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IREN Ltd (IREN, Neutral)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                59,
+                455,
+                75
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our estimates are unchanged."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                78,
+                493,
+                94
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation. We are Neutral rated on IREN with a 12-month target price of $50 (unchanged) based on a blended valuation methodology using an 85% fundamental value weight at a 7.0X (unchanged) NTM+1Y EV/EBITDA and a 15% M&A value weight at 21X (unchanged) EBITDA."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                106,
+                915,
+                176
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IREN is a Bitcoin miner in the process of converting to an AI cloud operator. Upon this transition, the company should be well positioned to benefit from the growing demand for AI-optimized compute infrastructure and the scarcity of grid-connected power capacity suitable for GPU deployments. IREN's access to secured grid-connected power capacity positions the company to potentially capture additional hyperscaler demand in an environment where power availability is the primary constraint limiting new data center development in primary markets. Execution risk and re-leasing uncertainty are key factors that could impact the durability of this opportunity. The capital intensity of IREN's business model, negative free cash flow expected through at least F2028, and elevated customer concentration remain key considerations for investors evaluating the risk/reward profile."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                186,
+                913,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key risks include: (+) greater-than-expected demand for AI infrastructure could result in stronger pricing power and accelerated contract signings; (+) greater GPU supply constraints could drive premium pricing for IREN's capacity; (+) greater-than-expected Bitcoin pricing appreciation could provide more cash flow to fund AI cloud capex; (+) GPU useful life could extend beyond the initial five-year contract term and potentially improve long-term project IRRs; (+) funding solutions could prove more favorable than expected, including project-level financing at attractive rates and strategic equity investments from hyperscalers; (-) construction delays could prevent the company from delivering data center infrastructure and impact revenue ramp assumptions; (-) GPUs could have a shorter useful life than expected, limiting the company's ability to monetize them in follow-on AI cloud services deals; (-) competitive pressure or technological advancement driving non-renewals or renewals with lower pricing; (-) Bitcoin price volatility could create funding uncertainty; (-) elevated customer concentration from its announced Microsoft deal could create revenue volatility and negotiating leverage concerns."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                392,
+                915,
+                657
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                792,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Appendix"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                60,
+                253,
+                80
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reg AC"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                101,
+                138,
+                116
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We, Michael Ng, CFA, Brian Singer, CFA, Carly Davenport, Lindsey Shema, Yash Goenka, CFA, Jaya Patel, Xavier Zhang, Brendan Corbett and Zorayda Montemayor, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                122,
+                916,
+                169
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                172,
+                885,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contributing Authors: Michael Ng, CFA GS & Co. LLC, Brian Singer, CFA GS & Co. LLC, Carly Davenport GS & Co. LLC, Lindsey Shema GS & Co. LLC, Yash Goenka, CFA GS India SPL, Jaya Patel GS & Co. LLC, Xavier Zhang GS (Asia) L.L.C., Brendan Corbett GS & Co. LLC, Zorayda Montemayor GS & Co. LLC."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                191,
+                913,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                229,
+                897,
+                255
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Factor Profile"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                266,
+                207,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                279,
+                916,
+                335
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile)."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                340,
+                908,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics)."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                412,
+                911,
+                436
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                441,
+                704,
+                454
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "M&A Rank"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                465,
+                163,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                479,
+                911,
+                547
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantum"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                558,
+                155,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                569,
+                890,
+                594
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                604,
+                169,
+                619
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Rating and pricing information"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                625,
+                310,
+                638
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Digital Realty Trust Inc. (Buy, $178.41), Duke Energy Corp. (Buy, $127.95), Equinix Inc. (Neutral, $1,028.74), FirstEnergy Corp. (Buy, $49.33), IREN Ltd. (Neutral, $41.28), NRG Energy Inc. (Buy, $139.98), Sempra (Buy, $93.05), Talen Energy Corp. (Buy, $377.41), Vistra Corp. (Buy, $166.74) and Xcel Energy Inc. (Buy, $80.19)"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                636,
+                915,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The rating(s) for Duke Energy Corp., FirstEnergy Corp., NRG Energy Inc., Sempra, Talen Energy Corp., Vistra Corp. and Xcel Energy Inc. is/are relative to the other companies in its/their coverage universe: Ameren Corp., American Electric Power, Consolidated Edison Inc., Constellation Energy Corp., Duke Energy Corp., Edison International, Eversource Energy, Exelon Corp., FirstEnergy Corp., NRG Energy Inc., PG&E Corp., Public Service Enterprise Group, Sempra, Southern Co., Talen Energy Corp., Vistra Corp., WEC Energy Group, Xcel Energy Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                676,
+                910,
+                723
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The rating(s) for Digital Realty Trust Inc., Equinix Inc. and IREN Ltd. is/are relative to the other companies in its/their coverage universe: AT&T Inc., American Tower Corp., Apple Inc., Arista Networks Inc., Axon Enterprise Inc., Blend Labs, Celestica Inc., Charter Communications Inc., Cisco Systems Inc., Cogent Communications Holdings, Comcast Corp., Compass Inc., Crown Castle Inc., Dell Technologies Inc., Digital Realty Trust Inc., Equinix Inc., F5 Inc., HP Inc., Hewlett Packard Enterprise Co., IREN Ltd., Ingram Micro, Lumen Technologies Inc., NetApp Inc., Opendoor Technologies Inc., Optimum Communications Inc., Penguin Solutions Inc., SBA Communications Corp., Stagwell Inc., Super Micro Computer Inc., T-Mobile US Inc., TD SYNNEX Corp., Verizon Communications, Versant Media Group, Walt Disney Co., Zillow Group"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                726,
+                913,
+                795
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Company-specific regulatory disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                805,
+                387,
+                819
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                818,
+                890,
+                843
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Distribution of ratings/investment banking relationships"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                853,
+                503,
+                867
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Investment Research global Equity coverage universe"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                866,
+                465,
+                878
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                26,
+                184,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                792,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                955,
+                158,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                918,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/16104d5e3e21e89000599116d13b2ae33ebaf997de254fced8bb5634f8ebb151.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"3\">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>50%</td><td>34%</td><td>16%</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                173,
+                61,
+                455,
+                109
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5068226d095b00bb3c3697e153fad42558d7e8bcb0df0324a4ae0dd0d31ca3f0.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>59%</td><td>43%</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                477,
+                61,
+                759,
+                109
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As of July 1, 2026, GS Global Investment Research had investment ratings on 3,104 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                122,
+                913,
+                179
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Price target and rating history chart(s)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                189,
+                367,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                202,
+                888,
+                227
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Target price history table(s)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                237,
+                290,
+                253
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Vistra Corp. (VST)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                255,
+                207,
+                268
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/89edd3bacbdef5f77939d8d0a494515526b6770f936d6692569d77f492f72ac3.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>12-May-26</td><td>209.00</td><td>146.87</td></tr><tr><td>06-Mar-26</td><td>212.00</td><td>158.65</td></tr><tr><td>06-Feb-26</td><td>205.00</td><td>149.65</td></tr><tr><td>19-Nov-25</td><td>200.00</td><td>179.14</td></tr><tr><td>12-Aug-25</td><td>203.00</td><td>209.56</td></tr><tr><td>24-Jul-25</td><td>179.00</td><td>196.24</td></tr><tr><td>23-May-25</td><td>164.00</td><td>158.16</td></tr><tr><td>04-Apr-25</td><td>134.00</td><td>98.07</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                78,
+                268,
+                349,
+                398
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5d6cacf7ca392b540136ced91667d6d8da349a56cbd68da7df7c40f86d8324a2.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "NRG Energy Inc. (NRG)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>18-Jun-26</td><td>184.00</td><td>135.06</td></tr><tr><td>12-May-26</td><td>197.00</td><td>137.34</td></tr><tr><td>27-Apr-26</td><td>198.00</td><td>160.15</td></tr><tr><td>06-Mar-26</td><td>197.00</td><td>154.32</td></tr><tr><td>04-Apr-25</td><td>129.00</td><td>83.61</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                416,
+                268,
+                687,
+                356
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FirstEnergy Corp. (FE)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                415,
+                233,
+                430
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/58966d55d4bf6b5a6d0031a9a70a94b7e48239af8c5322192185aeeb13171054.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>29-Apr-26</td><td>54.00</td><td>48.94</td></tr><tr><td>19-Feb-26</td><td>53.00</td><td>49.57</td></tr><tr><td>28-Oct-25</td><td>50.00</td><td>46.16</td></tr><tr><td>31-Jul-25</td><td>48.00</td><td>42.71</td></tr><tr><td>25-Apr-25</td><td>47.00</td><td>42.34</td></tr><tr><td>28-Feb-25</td><td>45.00</td><td>38.77</td></tr><tr><td>09-Oct-24</td><td>49.00</td><td>42.55</td></tr><tr><td>31-Jul-24</td><td>48.00</td><td>41.91</td></tr><tr><td>02-May-24</td><td>46.00</td><td>39.09</td></tr><tr><td>09-Apr-24</td><td>45.00</td><td>38.47</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                76,
+                429,
+                348,
+                588
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/edb3868400b312e06594d37dcf50323b2564c5636d0743ed2e8ab8332181f655.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "IREN Ltd. (IREN)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>27-May-26</td><td>50.00</td><td>67.84</td></tr><tr><td>08-May-26</td><td>44.00</td><td>61.20</td></tr><tr><td>05-Mar-26</td><td>39.00</td><td>40.13</td></tr><tr><td>06-Feb-26</td><td>37.00</td><td>41.83</td></tr><tr><td>18-Dec-25</td><td>39.00</td><td>35.80</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                416,
+                429,
+                687,
+                516
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d4e0fbc8a707b415898093544b4b993ef2eb8a65a5a32252997e3f9b4782ad65.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Xcel Energy Inc. (XEL)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>16-Jul-26</td><td>93.00</td><td>79.98</td></tr><tr><td>01-May-26</td><td>92.00</td><td>82.58</td></tr><tr><td>20-Mar-26</td><td>91.00</td><td>76.77</td></tr><tr><td>06-Feb-26</td><td>90.00</td><td>75.90</td></tr><tr><td>30-Oct-25</td><td>89.00</td><td>81.59</td></tr><tr><td>24-Sep-25</td><td>87.00</td><td>77.93</td></tr><tr><td>04-Aug-25</td><td>83.00</td><td>74.24</td></tr><tr><td>28-Apr-25</td><td>80.00</td><td>69.58</td></tr><tr><td>07-Feb-25</td><td>79.00</td><td>66.60</td></tr><tr><td>03-Nov-24</td><td>78.00</td><td>66.69</td></tr><tr><td>09-Oct-24</td><td>77.00</td><td>62.58</td></tr><tr><td>05-Aug-24</td><td>73.00</td><td>57.99</td></tr><tr><td>26-Apr-24</td><td>72.00</td><td>53.96</td></tr><tr><td>07-Mar-24</td><td>71.00</td><td>50.04</td></tr><tr><td>29-Jan-24</td><td>75.00</td><td>59.66</td></tr><tr><td>01-Aug-23</td><td>74.00</td><td>62.85</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                76,
+                618,
+                349,
+                863
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/885298274283bde2c5b8a759ef164cd070964a7eab033a016a16b79e80a62b17.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Sempra (SRE)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>08-May-26</td><td>109.00</td><td>91.53</td></tr><tr><td>02-Mar-26</td><td>107.00</td><td>95.67</td></tr><tr><td>21-Dec-25</td><td>105.00</td><td>86.94</td></tr><tr><td>13-Nov-25</td><td>106.00</td><td>92.22</td></tr><tr><td>14-Oct-25</td><td>88.00</td><td>91.33</td></tr><tr><td>12-Aug-25</td><td>83.00</td><td>82.09</td></tr><tr><td>15-Jul-25</td><td>79.00</td><td>74.14</td></tr><tr><td>13-May-25</td><td>78.00</td><td>75.13</td></tr><tr><td>26-Feb-25</td><td>76.00</td><td>72.85</td></tr><tr><td>07-Nov-24</td><td>99.00</td><td>89.76</td></tr><tr><td>09-Oct-24</td><td>96.00</td><td>81.52</td></tr><tr><td>07-Aug-24</td><td>91.00</td><td>77.26</td></tr><tr><td>08-May-24</td><td>89.00</td><td>75.23</td></tr><tr><td>28-Feb-24</td><td>88.00</td><td>70.67</td></tr><tr><td>25-Jan-24</td><td>87.00</td><td>70.73</td></tr><tr><td>07-Aug-23</td><td>178.00</td><td>71.20</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                416,
+                618,
+                687,
+                863
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Talen Energy Corp. (TLN)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                878,
+                254,
+                893
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/37c594c6da4252ae636db1a3d0a65f0b3dcf6c8916c09d7438e79c22a50f8724.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>18-Jun-26</td><td>499.00</td><td>436.29</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                78,
+                893,
+                349,
+                922
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Digital Realty Trust Inc. (DLR)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                419,
+                878,
+                627,
+                893
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Date of report Target price ($) Closing price ($) 24-Jul-26 223.00 179.34"
+                    }
+                ]
+            },
+            "bbox": [
+                418,
+                893,
+                687,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                916,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                954,
+                158,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Talen Energy Corp. (TLN)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                61,
+                254,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Date of report Target price ($) Closing price ($)"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                77,
+                346,
+                90
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/dedc86ff5fe3ee5d365be570461f3cb9070751b82c83781497f50fae6c5df54b.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Duke Energy Corp. (DUK)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Digital Realty Trust Inc. (DLR)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>24-Apr-26</td><td>215.00</td><td>200.00</td></tr><tr><td>06-Feb-26</td><td>190.00</td><td>171.62</td></tr><tr><td>18-Dec-25</td><td>188.00</td><td>147.93</td></tr><tr><td>24-Jul-25</td><td>205.00</td><td>180.02</td></tr><tr><td>03-Apr-25</td><td>195.00</td><td>141.09</td></tr><tr><td>14-Feb-25</td><td>205.00</td><td>164.28</td></tr><tr><td>12-Dec-24</td><td>208.00</td><td>187.13</td></tr><tr><td>25-Oct-24</td><td>190.00</td><td>181.01</td></tr><tr><td>26-Sep-24</td><td>185.00</td><td>162.06</td></tr><tr><td>01-Jul-24</td><td>175.00</td><td>152.13</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                416,
+                75,
+                687,
+                234
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/f235fc98c9e4bfe2c173c21bd4a7e5f865551283456b9217887af5126a6cbc45.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Price targets shown in table(s) are unadjusted for corporate actions."
+                    }
+                ],
+                "html": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>05-May-26</td><td>145.00</td><td>127.58</td><td>30-Apr-26</td><td>1,015.00</td><td>1,082.83</td></tr><tr><td>11-Feb-26</td><td>142.00</td><td>125.20</td><td>12-Feb-26</td><td>894.00</td><td>957.87</td></tr><tr><td>12-Nov-25</td><td>141.00</td><td>123.90</td><td>18-Dec-25</td><td>785.00</td><td>744.08</td></tr><tr><td>05-Aug-25</td><td>138.00</td><td>124.00</td><td>30-Oct-25</td><td>910.00</td><td>833.16</td></tr><tr><td>15-Jul-25</td><td>133.00</td><td>117.10</td><td>01-Jul-25</td><td>880.00</td><td>795.38</td></tr><tr><td>25-Jun-25</td><td>132.00</td><td>115.95</td><td>13-Feb-25</td><td>1,020.00</td><td>923.00</td></tr><tr><td>13-May-25</td><td>125.00</td><td>113.07</td><td>10-Jan-25</td><td>1,060.00</td><td>899.83</td></tr><tr><td>18-Feb-25</td><td>122.00</td><td>110.89</td><td>12-Dec-24</td><td>1,066.00</td><td>975.30</td></tr><tr><td>08-Nov-24</td><td>121.00</td><td>113.23</td><td>26-Sep-24</td><td>980.00</td><td>878.98</td></tr><tr><td>09-Oct-24</td><td>120.00</td><td>111.32</td><td>01-Jul-24</td><td>870.00</td><td>759.68</td></tr><tr><td>09-Aug-24</td><td>113.00</td><td>112.67</td><td>10-Oct-23</td><td>845.00</td><td>738.79</td></tr><tr><td>09-May-24</td><td>102.00</td><td>103.02</td><td>03-Aug-23</td><td>885.00</td><td>759.42</td></tr><tr><td>09-Feb-24</td><td>100.00</td><td>91.69</td><td></td><td></td><td></td></tr><tr><td>18-Jan-24</td><td>101.00</td><td>95.86</td><td></td><td></td><td></td></tr><tr><td>10-Nov-23</td><td>98.00</td><td>88.27</td><td></td><td></td><td></td></tr><tr><td>09-Aug-23</td><td>97.00</td><td>92.82</td><td></td><td></td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                76,
+                263,
+                687,
+                511
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                547,
+                253,
+                561
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures required by United States laws and regulations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                565,
+                516,
+                579
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                578,
+                908,
+                625
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                628,
+                915,
+                709
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                718,
+                875,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                729,
+                915,
+                930
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                25,
+                184,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                916,
+                967
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                955,
+                158,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                76,
+                60,
+                903,
+                171
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                170,
+                915,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                382,
+                910,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                465,
+                915,
+                523
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Ratings, coverage universe and related definitions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                534,
+                452,
+                547
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                546,
+                918,
+                625
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                628,
+                893,
+                665
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                669,
+                779,
+                693
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                698,
+                913,
+                797
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global product; distributing entities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                809,
+                351,
+                823
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                821,
+                916,
+                934
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                26,
+                184,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                792,
+                29,
+                916,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                955,
+                158,
+                967
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                60,
+                137,
+                74
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                78,
+                880,
+                103
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                107,
+                905,
+                152
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "General disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                164,
+                230,
+                176
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                176,
+                915,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org)."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                238,
+                915,
+                273
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                277,
+                916,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                318,
+                916,
+                375
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                378,
+                890,
+                402
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                407,
+                916,
+                433
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                436,
+                913,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                465,
+                916,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                537,
+                906,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                599,
+                903,
+                700
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                704,
+                897,
+                751
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                755,
+                890,
+                777
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 GS."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                784,
+                220,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                801,
+                913,
+                880
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                26,
+                184,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                790,
+                27,
+                918,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                955,
+                916,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                955,
+                158,
+                967
+            ]
+        }
+    ]
+]
