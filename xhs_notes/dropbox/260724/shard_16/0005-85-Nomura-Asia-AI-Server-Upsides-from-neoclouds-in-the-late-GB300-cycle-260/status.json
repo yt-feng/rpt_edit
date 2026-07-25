@@ -1,0 +1,109 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0005-85-NOM-Asia AI Server-Upsides from neoclouds in the late GB300 cycle-260724.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "xAI猛拉订单，英伟",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "NOM：AI技术与行业应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-85-NOM-Asia AI Server-Upsides from neoclouds in the late GB300 cycle-260724.pdf",
+    "cleaned_source_title": "NOM-Asia AI Server-Upsides from neoclouds in the late GB300 cycle",
+    "institution_name": "NOM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "NOM：AsiaAIServerUpsidesfromn",
+    "raw_candidates": [
+      "亚洲AI服务器-Neocloud在GB300周期末的上行空间",
+      "NOM：Neocloud订单上调推动GB300出货预期修正",
+      "亚洲AI服务器-Neocloud订单与GB300出货预测上调"
+    ],
+    "cleaned_candidates": [
+      "NOM：亚洲AI服务器-Neocloud在GB300周期末的上行空间",
+      "NOM：Neocloud订单上调推动GB300出货预期修正",
+      "NOM：亚洲AI服务器-Neocloud订单与GB300出货预测上调",
+      "NOM：AsiaAIServerUpsidesfromn",
+      "NOM：这份NOM在2026年7月发布的亚洲AI半导体与服务器报告"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：Neocloud订单上调推动GB300出货预期修正",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.39",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：AsiaAIServerUpsidesfromn",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：这份NOM在2026年7月发布的亚洲AI半导体与服务器报告",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：AI技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "NOM：亚洲AI服务器-Neocloud在GB300周期末的上行空间",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "NOM：AI技术与行业应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "558",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

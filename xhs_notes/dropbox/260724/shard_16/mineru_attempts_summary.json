@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0001-81-MS-TSMC preview and CoWoS update - CPU- GPU- ASIC- Optical- China AI Compute-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0002-82-NOM-AI Semi-TSMC shares react negatively despite guidance beat-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0003-83-MS-VNET Group Inc-VNET.US-2Q26 preview and our thoughts on recent performance-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0004-84-MS-Yageo Corp.-2327.TW-2Q preview - tightening MLCC narrative is unchanged-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0005-85-NOM-Asia AI Server-Upsides from neoclouds in the late GB300 cycle-260724.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0004-84-MS-Yageo Corp.-2327.TW-2Q preview - tightening MLCC narrative is unchanged-260722.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "MLCC 涨价逻辑还",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "MS：国巨与MLCC及季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-84-MS-Yageo Corp.-2327.TW-2Q preview - tightening MLCC narrative is unchanged-260722.pdf",
+    "cleaned_source_title": "MS-Yageo Corp.-2327.TW-2Q preview - tightening MLCC narrative is unchanged",
+    "institution_name": "MS",
+    "required_terms": [
+      "MLCC"
+    ],
+    "deterministic_fallback": "MS：MLCCYageoCorp.",
+    "raw_candidates": [
+      "国巨二季度预览-MLCC供给紧张格局未变",
+      "国巨二季度营收442亿新台币-MLCC供给紧张未变",
+      "国巨二季度AI高容MLCC需求爬坡-供给紧张未变"
+    ],
+    "cleaned_candidates": [
+      "MS：国巨二季度预览-MLCC供给紧张格局未变",
+      "MS：国巨二季度营收442亿新台币-MLCC供给紧张未变",
+      "MS：国巨二季度AI高容MLCC需求爬坡-供给紧张未变",
+      "MS：MLCCYageoCorp.",
+      "MS：华新科的MLCC加电阻产品组合占总营收的68.6%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：国巨二季度AI高容MLCC需求爬坡-供给紧张未变",
+        "reasons": [
+          "anchor_coverage=0.61"
+        ]
+      },
+      {
+        "title": "MS：MLCCYageoCorp.",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：华新科的MLCC加电阻产品组合占总营收的68.6%",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：国巨与MLCC及季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "MS：国巨二季度预览-MLCC供给紧张格局未变",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "MS：国巨与MLCC及季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "535",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

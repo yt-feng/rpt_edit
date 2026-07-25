@@ -1,0 +1,120 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_700crre6/pdfs/0002-82-NOM-AI Semi-TSMC shares react negatively despite guidance beat-260724.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "台积电法说会超预期，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x2",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "NOM：AI半导体台积电与AI及近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-82-NOM-AI Semi-TSMC shares react negatively despite guidance beat-260724.pdf",
+    "cleaned_source_title": "NOM-AI Semi-TSMC shares react negatively despite guidance beat",
+    "institution_name": "NOM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "NOM：AISemiTSMCsharesreactneg",
+    "raw_candidates": [
+      "NOM：AI半导体台积电业绩超预期后报价下跌",
+      "NOM：台积电2026年7月业绩超预期后报价下跌7.3%",
+      "NOM：AI半导体台积电超预期后报价下跌历史信号"
+    ],
+    "cleaned_candidates": [
+      "NOM：AI半导体台积电业绩超预期后报价下跌",
+      "NOM：台积电2026年7月业绩超预期后报价下跌7.3%",
+      "NOM：AI半导体台积电超预期后报价下跌历史信号",
+      "NOM：AISemiTSMCsharesreactneg",
+      "NOM：自2023年2月黄仁勋提出AI的“iPhone时刻”以来"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：台积电2026年7月业绩超预期后报价下跌7.3%",
+        "reasons": [
+          "missing_required_terms=AI"
+        ]
+      },
+      {
+        "title": "NOM：AISemiTSMCsharesreactneg",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：自2023年2月黄仁勋提出AI的“iPhone时刻”以来",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：AI半导体台积电与AI及近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "NOM：AI半导体台积电业绩超预期后报价下跌",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "NOM：AI半导体台积电与AI及近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "569",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
