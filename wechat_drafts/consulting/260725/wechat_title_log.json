@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "date_folder": "260725",
+  "source": "kc_translated_reports/consulting",
+  "generated_at_utc": "2026-07-25T01:16:50Z",
+  "article_count": 5,
+  "uploaded_count": 5,
+  "articles": [
+    {
+      "source_report_name": "BCG Becoming-an-All-Weather-Company 3d079a3a",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：气候与产业转型数据与主题变化观察",
+      "final_wechat_title": "波士顿咨询：气候与产业转型数据与主题变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260725/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+      "generation_decision": {
+        "source_filename": "0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+        "cleaned_source_title": "0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0001BCGBecominganAllW",
+        "raw_candidates": [
+          "波士顿咨询：全气候公司的韧性价值与构建路径",
+          "波士顿咨询：全气候公司韧性价值与25年数据",
+          "波士顿咨询：全气候公司韧性构建路径与行业差异"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：全气候公司的韧性价值与构建路径",
+          "波士顿咨询：全气候公司韧性价值与25年数据",
+          "波士顿咨询：全气候公司韧性构建路径与行业差异",
+          "波士顿咨询：0001BCGBecominganAllW",
+          "波士顿咨询：研究识别了500多家在1994至2020年间持续跑赢行业"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：全气候公司韧性价值与25年数据",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "波士顿咨询：全气候公司韧性构建路径与行业差异",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0001BCGBecominganAllW",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：研究识别了500多家在1994至2020年间持续跑赢行业",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：气候与产业转型数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：全气候公司的韧性价值与构建路径",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：气候与产业转型数据与主题变化观察",
+        "header_pre_neutralization_title": "韧性价值随扰动深度递增，行业差异显著",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "韧性价值随扰动深度递增，行业差异显著->研究主题与行业变化观察",
+          "长期优胜者中近三分之二具备扰动韧性->研究主题与行业变化观察",
+          "韧性公司的四大优势与六项设计原则->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu b5e4c415",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：低碳航运业务与近期数据观察，北美与欧洲高管对利润率不确定性",
+      "final_wechat_title": "波士顿咨询：低碳航运业务与近期数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260725/02-0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+      "generation_decision": {
+        "source_filename": "0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+        "cleaned_source_title": "0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0002BCGDemandforLowCa",
+        "raw_candidates": [
+          "波士顿咨询：低碳航运需求下降但长期价值评估",
+          "波士顿咨询：2025年企业高管成本管理优先度上升",
+          "波士顿咨询：供应链优化与产品组合简化成核心抓手"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：低碳航运需求下降但长期价值评估",
+          "波士顿咨询：2025年企业高管成本管理优先度上升",
+          "波士顿咨询：供应链优化与产品组合简化成核心抓手",
+          "波士顿咨询：0002BCGDemandforLowCa",
+          "波士顿咨询：波士顿咨询在2024年底对全球超过570名企业高管进行的一"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：2025年企业高管成本管理优先度上升",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：供应链优化与产品组合简化成核心抓手",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0002BCGDemandforLowCa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：波士顿咨询在2024年底对全球超过570名企业高管进行的一",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：低碳航运业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：低碳航运需求下降但长期价值评估",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：低碳航运业务与近期数据观察",
+        "pre_upload_neutralization_title": "波士顿咨询：低碳航运业务与近期数据观察，北美与欧洲高管对利润率不确定性",
+        "header_pre_neutralization_title": "北美与欧洲高管对利润率不确定性担忧加剧",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "北美与欧洲高管对利润率不确定性担忧加剧，亚太地区关注出口节奏变化不确定性->跨境贸易数据与主题变化观察",
+          "成本管理优先于增长，供应链与产品组合成为优化重点->成本管理优先于业务与近期数据观察",
+          "企业成本削减目标达成率偏低，GenAI被视为未来效率提升的关键支柱->AI技术与行业应用观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG More-than-a-Space-Programme 8af98d6b",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：欧洲太空探索计划宏观环境影响",
+      "final_wechat_title": "波士顿咨询：欧洲太空探索计划宏观环境影响",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260725/03-0003-BCG_More-than-a-Space-Programme_8af98d6b",
+      "generation_decision": {
+        "source_filename": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+        "cleaned_source_title": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0003BCGMorethanaSpace",
+        "raw_candidates": [
+          "波士顿咨询：欧洲太空探索计划经济影响",
+          "波士顿咨询：欧洲太空探索500亿欧元投入可产生超5倍GDP乘数效应",
+          "波士顿咨询：欧洲太空探索2025-2040年经济与就业影响研究"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：欧洲太空探索计划宏观环境影响",
+          "波士顿咨询：欧洲太空探索500亿欧元投入可产生超5倍GDP乘数效应",
+          "波士顿咨询：欧洲太空探索2025-2040年宏观环境与就业影响研究",
+          "波士顿咨询：0003BCGMorethanaSpace",
+          "波士顿咨询：欧洲太空探索研究可产生超5倍GDP乘数效应"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：欧洲太空探索500亿欧元投入可产生超5倍GDP乘数效应",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "波士顿咨询：欧洲太空探索2025-2040年宏观环境与就业影响研究",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0003BCGMorethanaSpace",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：欧洲太空探索研究可产生超5倍GDP乘数效应",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：欧洲太空探索计划宏观环境影响",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：欧洲太空探索计划宏观环境影响",
+        "body_heading_neutralization_changes": [
+          "催化效应将额外创造1100亿欧元市场价值->研究主题与行业变化观察",
+          "太空探索对欧洲航天工业生态具有系统性重塑作用->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi a015c7d5",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：能源行业数据与主题变化观察，廉价土地是中美两国可再生能源扩",
+      "final_wechat_title": "波士顿咨询：能源行业数据与主题变化观察，廉价土地是中美两国可再生能源扩",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260725/04-0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+      "generation_decision": {
+        "source_filename": "0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+        "cleaned_source_title": "0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0004BCGSurprisingLess",
+        "raw_candidates": [
+          "波士顿咨询：中美可再生能源规模化扩张关键驱动因素",
+          "波士顿咨询：中美可再生能源扩张-廉价土地与电网基础设施",
+          "波士顿咨询：中美可再生能源规模化-土地成本与装机基础驱动"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：中美可再生能源规模化扩张关键驱动因素",
+          "波士顿咨询：中美可再生能源扩张-廉价土地与电网基础设施",
+          "波士顿咨询：中美可再生能源规模化-土地成本与装机基础驱动",
+          "波士顿咨询：0004BCGSurprisingLess",
+          "波士顿咨询：波士顿咨询公司亨德森研究所基于2014至2024年间美国5"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：中美可再生能源扩张-廉价土地与电网基础设施",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "波士顿咨询：中美可再生能源规模化-土地成本与装机基础驱动",
+            "reasons": [
+              "anchor_coverage=0.59"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0004BCGSurprisingLess",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：波士顿咨询公司亨德森研究所基于2014至2024年间美国5",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：能源行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：中美可再生能源规模化扩张关键驱动因素",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：能源行业数据与主题变化观察",
+        "header_pre_neutralization_title": "廉价土地是中美两国可再生能源扩张的最强关联因素",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "廉价土地是中美两国可再生能源扩张的最强关联因素->能源行业数据与主题变化观察",
+          "既有装机基础与电网基础设施构成第二和第三大驱动因素->研究主题与行业变化观察",
+          "需求增长与政策目标的影响呈现中美差异->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG The-AI-First-Refiner 07c3fb7f",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：AI炼油厂2030年每桶利润提升0.5-1.2美元",
+      "final_wechat_title": "波士顿咨询：AI炼油厂2030年每桶利润提升0.5-1.2美元",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260725/05-0005-BCG_The-AI-First-Refiner_07c3fb7f",
+      "generation_decision": {
+        "source_filename": "0005-BCG_The-AI-First-Refiner_07c3fb7f",
+        "cleaned_source_title": "0005-BCG_The-AI-First-Refiner_07c3fb7f",
+        "institution_name": "波士顿咨询",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+        "raw_candidates": [
+          "波士顿咨询：AI优先炼油厂",
+          "波士顿咨询：AI炼油厂2030年每桶利润提升0.5-1.2美元",
+          "波士顿咨询：AI在炼油计划与运营中的利润改善"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：AI优先炼油厂",
+          "波士顿咨询：AI炼油厂2030年每桶利润提升0.5-1.2美元",
+          "波士顿咨询：AI在炼油计划与运营中的利润改善",
+          "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+          "波士顿咨询：AI优先炼油厂如何在结构性不确定性下提升盈利"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：AI优先炼油厂",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI在炼油计划与运营中的利润改善",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI优先炼油厂如何在结构性不确定性下提升盈利",
+            "reasons": [
+              "anchor_coverage=0.19",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：AI炼油厂2030年每桶利润提升0.5-1.2美元",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "0.5",
+            "1.2",
+            "2030"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：AI炼油厂2030年每桶利润提升0.5-1.2美元",
+        "header_pre_neutralization_title": "炼油产能增长将超过需求，利润率面临持续不确定性",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "炼油产能增长将超过需求，利润率面临持续不确定性->炼油产能业务与近期数据观察",
+          "AI已在炼油价值链多个环节实现可量化的利润改善->AI技术与行业应用观察",
+          "成功转型需要克服组织惯性与技术碎片化->研究主题与行业变化观察"
+        ]
+      }
+    }
+  ]
+}
