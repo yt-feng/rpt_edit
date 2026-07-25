@@ -239,6 +239,7 @@ jobs:
           compatibility_date = "2026-05-01"
 
           [vars]
+          ACCOUNT_STORE_MODE = "supabase"
           R2_OBJECT_PREFIX = "$R2_OBJECT_PREFIX"
           CATALOG_URL = "$PAGES_URL/data/catalog.json"
           SEARCH_INDEX_URL = "$PAGES_URL/data/search_index.json"
