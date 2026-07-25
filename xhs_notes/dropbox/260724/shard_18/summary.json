@@ -1,0 +1,127 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_4ovfgk1j/pdfs/0001-91-UBS-China Equity Strategy Mutual funds- position in tech sector hit a record high in Q226-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "科技仓位创历史新高，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "增持->观点偏积极 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金经理->组合负责人 x1",
+      "基金->产品 x4",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x4",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "UBS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-91-UBS-China Equity Strategy Mutual funds- position in tech sector hit a record high in Q226-260723.pdf",
+      "cleaned_source_title": "UBS-China Equity Strategy Mutual funds- position in tech sector hit a record high in Q226",
+      "institution_name": "UBS",
+      "required_terms": [],
+      "deterministic_fallback": "UBS：中国Equity策略Mutualfunds",
+      "raw_candidates": [
+        "UBS中国权益策略：公募科技板块持仓占比创Q226新高",
+        "UBS中国权益策略：公募科技板块持仓占比Q226达57.3%",
+        "UBS中国权益策略：公募科技板块持仓与超配比例双创新高"
+      ],
+      "cleaned_candidates": [
+        "UBS：UBS中国权益策略，公募科技板块持仓占比创Q226新高",
+        "UBS：UBS中国权益策略，公募科技板块持仓占比Q226达57.3%",
+        "UBS：UBS中国权益策略，公募科技板块持仓与超配比例双创新高",
+        "UBS：中国Equity策略Mutualfunds",
+        "UBS：公募产品科技板块持仓占比在2026年第二季度创历史新高"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "UBS：UBS中国权益策略，公募科技板块持仓与超配比例双创新高",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "UBS：中国Equity策略Mutualfunds",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：公募产品科技板块持仓占比在2026年第二季度创历史新高",
+          "reasons": [
+            "anchor_coverage=0.42",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "UBS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "57.3"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "UBS：UBS中国权益策略，公募科技板块持仓占比Q226达57.3%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "UBS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
