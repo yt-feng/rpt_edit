@@ -1,0 +1,547 @@
+[
+  {
+    "item": "0001-76-Morgan-Stanley-Semiconductor-Capital-Equipment-Thoughts-on-Intel-Capex-2",
+    "source_pdf": "/tmp/pdf_batch_001_gx9zwpzp/pdfs/0001-76-MS-Semiconductor Capital Equipment-Thoughts on Intel Capex-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Intel的资本开支",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：半导体设备-英特尔资本支出",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-76-MS-Semiconductor Capital Equipment-Thoughts on Intel Capex-260724.pdf",
+      "cleaned_source_title": "MS-Semiconductor Capital Equipment-Thoughts on Intel Capex",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：半导体CapitalEquipmentTh",
+      "raw_candidates": [
+        "半导体设备-英特尔资本支出",
+        "英特尔资本支出上调与2027年WFE预测",
+        "英特尔CPU扩产驱动WFE需求增长"
+      ],
+      "cleaned_candidates": [
+        "MS：半导体设备-英特尔资本支出",
+        "MS：英特尔资本支出上调与2027年WFE预测",
+        "MS：英特尔CPU扩产驱动WFE需求增长",
+        "MS：半导体CapitalEquipmentTh",
+        "MS：英特尔资本支出上调将拉动2027年WFE至2020亿美元以"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：英特尔资本支出上调与2027年WFE预测",
+          "reasons": [
+            "anchor_coverage=0.55",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：英特尔CPU扩产驱动WFE需求增长",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：半导体CapitalEquipmentTh",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：英特尔资本支出上调将拉动2027年WFE至2020亿美元以",
+          "reasons": [
+            "anchor_coverage=0.55",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：半导体设备-英特尔资本支出",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：半导体设备-英特尔资本支出"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-77-Morgan-Stanley-Soitec-SA-SOIT.PA-The-confirmation-the-market-needed-2607",
+    "source_pdf": "/tmp/pdf_batch_001_gx9zwpzp/pdfs/0002-77-MS-Soitec SA-SOIT.PA-The confirmation the market needed-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "这家公司，终于给了市",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Soitec光电子SOI营收指引翻倍确认AI数据中心需求",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-77-MS-Soitec SA-SOIT.PA-The confirmation the market needed-260723.pdf",
+      "cleaned_source_title": "MS-Soitec SA-SOIT.PA-The confirmation the market needed",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SoitecSATheconfirmationthe市场",
+      "raw_candidates": [
+        "Soitec光电子SOI营收指引翻倍确认AI数据中心需求",
+        "Soitec F1Q27营收超预期6%光电子SOI指引翻倍",
+        "Soitec光电子SOI营收翻倍确认AI数据中心光学互联需求"
+      ],
+      "cleaned_candidates": [
+        "MS：Soitec光电子SOI营收指引翻倍确认AI数据中心需求",
+        "MS：SoitecF1Q27营收超预期6%光电子SOI指引翻倍",
+        "MS：Soitec光电子SOI营收翻倍确认AI数据中心光学互联需",
+        "MS：SoitecSATheconfirmationthe市场",
+        "MS：Soitec在F1Q27（2026年7月季度）的营收预告中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SoitecF1Q27营收超预期6%光电子SOI指引翻倍",
+          "reasons": [
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "MS：SoitecSATheconfirmationthe市场",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Soitec在F1Q27（2026年7月季度）的营收预告中",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Soitec光电子SOI营收指引翻倍确认AI数据中心需求",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：Soitec光电子SOI营收指引翻倍确认AI数据中心需求"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-78-Morgan-Stanley-SpaceX-SPCX.US-Anomalies-and-Rapid-Unscheduled-Disassembl",
+    "source_pdf": "/tmp/pdf_batch_001_gx9zwpzp/pdfs/0003-78-MS-SpaceX-SPCX.US-Anomalies and Rapid Unscheduled Disassemblies-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Starship又炸",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：价格数据与市场变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-78-MS-SpaceX-SPCX.US-Anomalies and Rapid Unscheduled Disassemblies-260722.pdf",
+      "cleaned_source_title": "MS-SpaceX-SPCX.US-Anomalies and Rapid Unscheduled Disassemblies",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SpaceXAnomalies和Rapid",
+      "raw_candidates": [
+        "SpaceX发射异常与快速迭代构成价格波动来源",
+        "SpaceX Starship 13次飞行测试仅4次完全成功",
+        "SpaceX发射异常与迭代策略对报价影响分析"
+      ],
+      "cleaned_candidates": [
+        "MS：SpaceX发射异常与快速迭代构成价格波动来源",
+        "MS：SpaceXStarship13次飞行测试仅4次完全成功",
+        "MS：SpaceX发射异常与迭代策略对报价影响分析",
+        "MS：SpaceXAnomalies和Rapid",
+        "MS：SpaceX的Starship项目在2023年至2026年"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SpaceXStarship13次飞行测试仅4次完全成功",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SpaceX发射异常与迭代策略对报价影响分析",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：SpaceXAnomalies和Rapid",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SpaceX的Starship项目在2023年至2026年",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：价格数据与市场变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：SpaceX发射异常与快速迭代构成价格波动来源",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：价格数据与市场变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-79-Morgan-Stanley-Topsports-6110.HK-Nike-s-Channel-Reset-Raises-Los-Lose-Ri",
+    "source_pdf": "/tmp/pdf_batch_001_gx9zwpzp/pdfs/0004-79-MS-Topsports-6110.HK-Nike-s Channel Reset Raises Los-Lose Risk- Move to EW-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "耐克收回线上授权，滔",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "增持->观点偏积极 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-79-MS-Topsports-6110.HK-Nike-s Channel Reset Raises Los-Lose Risk- Move to EW-260723.pdf",
+      "cleaned_source_title": "MS-Topsports-6110.HK-Nike-s Channel Reset Raises Los-Lose Risk- Move to EW",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：TopsportsNikesChannel",
+      "raw_candidates": [
+        "滔搏-耐克渠道调整与评级下调",
+        "滔搏：耐克线上授权收回与F27财年收入预估",
+        "滔搏-耐克渠道调整对门店与运营费用的影响"
+      ],
+      "cleaned_candidates": [
+        "MS：滔搏-耐克渠道调整与评级下调",
+        "MS：滔搏，耐克线上授权收回与F27财年收入预估",
+        "MS：滔搏-耐克渠道调整对门店与运营费用的影响",
+        "MS：TopsportsNikesChannel",
+        "MS：预测滔搏平均门店面积在F27和F28财年分别下降11%和9"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：滔搏，耐克线上授权收回与F27财年收入预估",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：滔搏-耐克渠道调整对门店与运营费用的影响",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "MS：TopsportsNikesChannel",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：预测滔搏平均门店面积在F27和F28财年分别下降11%和9",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：滔搏-耐克渠道调整与评级下调",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-80-Morgan-Stanley-Tanker-Shipping-New-Dynamics-and-Implications-260722",
+    "source_pdf": "/tmp/pdf_batch_001_gx9zwpzp/pdfs/0005-80-MS-Tanker Shipping-New Dynamics and Implications-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "油轮市场，正站在拐点",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：油轮航运新动态与影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-80-MS-Tanker Shipping-New Dynamics and Implications-260722.pdf",
+      "cleaned_source_title": "MS-Tanker Shipping-New Dynamics and Implications",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：TankerShippingNewDynamics",
+      "raw_candidates": [
+        "油轮航运新动态与影响",
+        "油轮即期运价接近均衡-地缘扰动与需求节奏",
+        "油轮航运供给收紧与需求正常化时间差"
+      ],
+      "cleaned_candidates": [
+        "MS：油轮航运新动态与影响",
+        "MS：油轮即期运价接近均衡-地缘扰动与需求节奏",
+        "MS：油轮航运供给收紧与需求正常化时间差",
+        "MS：TankerShippingNewDynamics",
+        "MS：1.大西洋市场即期运价已从6月高点明显回落"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：油轮即期运价接近均衡-地缘扰动与需求节奏",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：油轮航运供给收紧与需求正常化时间差",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "MS：TankerShippingNewDynamics",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：1.大西洋市场即期运价已从6月高点明显回落",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：油轮航运新动态与影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：油轮航运新动态与影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
