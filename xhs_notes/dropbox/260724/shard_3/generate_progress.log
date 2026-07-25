@@ -1,0 +1,56 @@
+Found 91 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ii5gd5w/pdfs/0001-16-CITI-MicroPort MedBot -2252.HK- 1H26 Positive Profit Alert Announced- Another Strong Half-year-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ii5gd5w/pdfs/0002-17-CITI-Kingboard Laminates Holdings -1888.HK- Read across from Citi Call with Nanya New Material-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ii5gd5w/pdfs/0003-18-CITI-China Renewable Energy-Solar Product Prices Stayed Low-PRC Solar Installation Fell 66- in 1H26-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ii5gd5w/pdfs/0004-19-Goldman Sachs-Advanced Micro Devices Inc. -AMD.US-- Key takeaways from Advancing AI 2026-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ii5gd5w/pdfs/0005-20-Goldman Sachs-Alphabet Inc. -GOOGL.US- Q2-26 Review- The AI Investment Cycle Proceeds Upward in its Trajectory -as Google Cloud Revenue Estimates Are Revised Higher.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=501f52a2-6115-46fa-b47f-c0111adb911e
+MinerU states: done, done, done, done, waiting-file
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 01d54bb6cf9f072fd5e5e40826e450d79542d4993da8f7d331fad49ffecacc5f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,contrast
+Skip non-chart visual asset b6b8187a5b78bb80cae47217fe5c2b296a62e3af06e0ca70d764bff94f86b5ce.jpg: score=-100;too_small:1431x146
+Neutralized WeChat title while keeping the report: 花旗：微创医疗机器人上半年盈利预告 -> 花旗：微创医疗机器人业务与近期数据观察
+Skip non-chart visual asset bb73f335774a2de2dc6a02309ebb17404dde6d9c53cc38aa8cefcff8b5f9334e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.61,large
+Skip non-chart visual asset dd2f7b479772a94876f7bb7c19ef2d05778ad125071b1f7eaa5342b249b20c5b.jpg: score=-100;too_small:373x184
+Skip non-chart visual asset fec249eb36d94a137bb31905382e7edadfbe504293d66c35ec10baa29dde8ab7.jpg: score=-100;too_small:423x115
+Skip non-chart visual asset dee1c1c90ee16011a7f44078b8bec90809adde0f67ea47c135ca9276b2f8707e.jpg: score=-100;too_small:432x123
+Skip non-chart visual asset 716d214d436a0d73de37768cb013d2aa5b26f67575957910ec01549a38be6589.jpg: score=-100;too_small:365x181
+Skip non-chart visual asset 19afc0d83efaa16e07fb9bc5173483ffc5a4ea96a614a58e0185342241114a00.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.40,large
+Skip non-chart visual asset be379c00597ec413563393e0b698a9744f07e1107ee136b0d6ef4ca88478ddb5.jpg: score=-100;too_small:365x181
+Skip non-chart visual asset 98a9429371ab7fe3c2c37c002f547ec816714a56a3adae9abc2b55027c3eb04f.jpg: score=-100;too_small:1431x145
+Skip non-chart visual asset 7e1a277cfd943aa7fc6c8433f2d4b6a6752625b07d259ae52d42b2c2a71322e1.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 花旗：电子布供应紧张至2027年底CCL利润加速 -> 花旗：电子布与CCL及近期数据观察
+Skip non-chart visual asset 41a1b947ef0f1610c6fc9d4f20e0da6528f55d555f329b984e3b1caed90a05b7.jpg: score=1;chart_ratio
+Skip non-chart visual asset 84126696bfcfe01f1c3476f4c036b3a1cd5db213bccf6802398e2e03d53d976f.jpg: score=-100;too_small:423x146
+Skip non-chart visual asset d4e519a684809b28f793f18be9ccafb5be82926b032567194375684f6eb5a4df.jpg: score=-100;too_small:359x98
+Skip non-chart visual asset 15ec063abe96657a5f6f4910daf074ab47a466d6ae4b83e1e3e719cf7044a1fe.jpg: score=-100;too_small:431x67
+Skip non-chart visual asset 71b1d73b95bdadbc06d196ebcb9ee828e01133452f82153dcdda423102c7adb1.jpg: score=-100;too_small:362x101
+Skip non-chart visual asset de8b9850fe023d1a69d256f6fda968fedc8372da658ebf47ca68a000cd24b409.jpg: score=-100;too_small:362x182
+Skip non-chart visual asset 51a499492001b6e0bdba940deff7344702699a70adee06e73d895fac018ed259.jpg: score=1;chart_ratio
+Skip non-chart visual asset cea2e7ada0ffc4952123f7aeec04ec6c887ea920231512166ea7e54350af6f0e.jpg: score=-100;too_small:428x146
+Skip non-chart visual asset 95970c402bcfdb8b636ce6f84a66b8f33d85e8d31b62a657778166fa0e6d8448.jpg: score=-100;too_small:359x182
+Skip non-chart visual asset 08a1ded4f81c2eeff9d78828ca922d14ba4b37e5ec63abf1205b601394203060.jpg: score=-100;too_small:432x146
+Skip non-chart visual asset a647379cb3a475c0c4defa6d6cd767b413c171ff6436c43870397bba1bab6baf.jpg: score=-100;too_small:1431x154
+Skip non-chart visual asset 14c5a651488a545ddcbec1d6d7e82f6780f72c8966f373130180aea5ae6789c5.jpg: score=-100;too_small:362x107
+Skip non-chart visual asset 1697ead09b3d9a73d298452effae69a0eef5d2afed6922d66e0cf7438708a0c8.jpg: score=-100;too_small:362x179
+Neutralized WeChat title while keeping the report: 花旗：中国可再生能源-光伏产品价格低位与上半年装机下降66% -> 花旗：价格数据与市场变化观察
+Skip non-chart visual asset 997accf61e51c7a7109a6902a707952b9ea17ddca16f8311e78ff7bfd4dd98db.jpg: score=-1;square_without_chart_hint,edge:0.32
+Skip non-chart visual asset e9f4187e7b0096b0f7cced1c4b83361872e93c7bc0f84ffa8a89a86ef2c3f120.jpg: score=-100;too_small:481x106
+Skip non-chart visual asset 84a8782ac8e23b4b044afd6d554d22b477cab57231e571eb7f7788ee4593e2a1.jpg: score=-100;too_small:484x106
+Skip non-chart visual asset 411ea62b3477128d7d63e88174fe910f9ccb5bfcb2d402dd949735cc8ba67ee3.jpg: score=-100;too_small:546x162
+Skip non-chart visual asset 671aed303aadc0b7286f7f6b227b385ad10861f3d8057ebcc4c73118ca343dce.jpg: score=0;square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset f8757f8205fe860eaa38276ed72f7d5205f33328fa3eca7467b00b38a5c1e2fd.jpg: score=2;edge:0.17
+Skip non-chart visual asset dbbe4b29fd1f47294e5bc9de5828126d6e835596f013ee4a9924306c7a57d18e.jpg: score=1;odd_ratio:5.06,edge:0.35,contrast,large
+Skip non-chart visual asset 136022bfce46482a0c672773f06d8ae1bc88cc7cf839625eb8831fe5c2e24a67.jpg: score=-100;too_small:1159x109
+Skip non-chart visual asset c7f3b20cbb3b6918c756b7ce912d7e477568b2d64efe0ae233eb80e96012f0f0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset f4340e42845e6e9f56023c61586c83d80523f8cc4ab19c57d718a3171404f502.jpg: score=-100;too_small:546x59
+Skip non-chart visual asset a3459044ac208a102266fdecbec9173421f802c81978cf3e108678dc050e2f35.jpg: score=2;edge:0.32
+Skip non-chart visual asset 5d6551ead32395bc9d4b1f77927d71c75a2b459db5c7c3dbf016d561b112143e.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.43,contrast,large
+Neutralized WeChat title while keeping the report: 高盛：AlphabetQ2云计算收入同比增82%-AI周期加速 -> 高盛：Alphabet与AI及近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260724/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

@@ -1,0 +1,19 @@
+EN_A: AMD just wrapped up their Advancing AI 2026 event, and I came across a deep-dive report that seems really telling. B, you were at the keynote. What’s your one-sentence takeaway?
+EN_B: The event met the high expectations investors had going in. More importantly, it lays out a much bigger narrative for AMD in AI, one that goes far beyond just selling chips.
+EN_A: Bigger narrative? What’s the core question this report is actually trying to answer?
+EN_B: The question is whether AMD can truly go from a strong challenger to a dominant force in AI compute. And the report argues they are making a very strong case, but there are still key pieces we need to see play out.
+EN_A: Let’s start with the biggest headline. The partnership with Anthropic. This feels like more than just a customer win.
+EN_B: Absolutely. It’s arguably the most important signal from the entire event. Anthropic is committing to deploy 2 gigawatts of AMD’s Helios racks, with the first gigawatt starting in the first half of 2027. And AMD is making a five billion dollar equity investment in them. This is a deep strategic lock-in.
+EN_A: So what does that really mean for AMD?
+EN_B: It means AMD is building the kind of exclusive, symbiotic relationship that Nvidia has with its key partners. Anthropic is a frontier AI lab. Their choice to use AMD’s MI450 GPUs and Helios architecture is a massive endorsement. It also means AMD’s software stack, ROCm, will get real-world optimization from a top-tier customer.
+EN_A: They also expanded their partnership with Microsoft. How is this different from before?
+EN_B: This time, Microsoft isn’t just saying they’ll use AMD. They are committing to deploy Helios racks on Azure, and they are launching new virtual machines powered by AMD’s next-gen 2-nanometer Venice CPUs. This moves AMD from being just an AI accelerator supplier to a core infrastructure partner for Microsoft’s entire cloud.
+EN_A: So the report is basically saying AMD’s growth ceiling has been raised?
+EN_B: Exactly. That’s the most exciting part of the report. AMD dramatically increased their total addressable market, or TAM, estimates. They see the AI accelerator market growing from 200 billion to 1.4 trillion by 2030, and the data center CPU market growing from 26 billion to 220 billion. They also believe they can capture 50% of that CPU market.
+EN_A: Fifty percent of the CPU market? That is an incredibly ambitious target. What gives them that confidence?
+EN_B: The thesis is that agentic AI is driving a step-change in computing demand. It’s not just about more GPUs for training. You need CPUs to orchestrate increasingly complex workflows. AMD already has a strong presence in CPUs, and now they are adding a powerful accelerator story. They want to be the full-stack winner.
+EN_A: It sounds very bullish. But the report must also highlight some risks that aren’t fully resolved.
+EN_B: Definitely, and that’s why I’d encourage listeners to read the full report. For example, the deployment of AMD GPUs related to their deal with Meta could be slower than expected. Also, there is a risk of x86 architecture losing share in enterprise AI. These are all clearly stated downside risks.
+EN_A: One last question. What’s the single most intriguing open question from this report?
+EN_B: It’s the five billion dollar investment in Anthropic. Will that bet pay off? Can AMD’s ROCm software platform really make a leap forward and convince developers to move away from CUDA? We probably won’t have a clear answer until those first Helios racks are deployed in 2027. The full report goes into much more detail on these specific scenarios.
+EN_A: Great analysis. For anyone who wants to understand those open questions in full, and get a deeper look at AMD’s software strategy and competitive landscape, I highly recommend reading the complete report.
