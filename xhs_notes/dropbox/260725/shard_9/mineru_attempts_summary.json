@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_x_mtiggc/pdfs/0001-46-NOM-China Robotics-2026 Shanghai WAIC takeaways-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x_mtiggc/pdfs/0002-47-NOM-BeOne-ONC.OQ-2Q26F preview and FY26F forecast revisions-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x_mtiggc/pdfs/0003-48-NOM-Chroma ATE Inc. -2360.TW-Full power on the bright AI avenue-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x_mtiggc/pdfs/0004-49-NOM-First Tractor-601038-Recovery on bigger tractors and broader markets-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x_mtiggc/pdfs/0005-50-NOM-Hengrui-600276-2Q26F preview and FY26F forecast revisions-260724.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

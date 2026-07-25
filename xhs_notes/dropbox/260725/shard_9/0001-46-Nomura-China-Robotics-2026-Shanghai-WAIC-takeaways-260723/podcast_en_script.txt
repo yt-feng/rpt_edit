@@ -1,0 +1,26 @@
+EN_A: So we just got back from the 2026 World Artificial Intelligence Conference in Shanghai, and there is a lot to unpack from this report. B, what is the single biggest takeaway for you?
+EN_B: I think the biggest takeaway is that humanoid robots have crossed a mass-production inflection point, but the demand side is still very much unproven.
+EN_A: So we are seeing a lot of robots being made, but not necessarily a lot of them being bought for real work?
+EN_B: Exactly. At the conference, nearly 60 humanoids were actually deployed to do real services, and companies like AgiBot reported 15,000 cumulative units built. It looks impressive, but when you dig into the demand mix, the picture is very different.
+EN_A: What does the demand mix actually look like?
+EN_B: Based on our industry survey, for 2026, about 30% of demand is for entertainment and performance, another 30% is consumer, 20% is government procurement, and 15% is education. Industrial and commercial applications? Only about 5%.
+EN_A: That is a huge surprise. So most of these robots are not working in factories. They are doing shows, being bought by consumers, or used in schools.
+EN_B: Right. And that is the core question this report tries to answer. Current shipments validate manufacturability, not demand durability. It is like the 2019 to 2020 electric vehicle playbook all over again. Thematic investing is now entering an order verification stage.
+EN_A: So the next milestone is not about how many units are shipped, but who is buying them and why.
+EN_B: Exactly. The report flags two key metrics to watch: the mix of paying customers versus related-party or government-backed orders, and the per-unit economics. The real signal that demand is real? The first repeat order from a non-related industrial customer, paid out of an operating budget, not a pilot budget.
+EN_A: That is a very clear benchmark. Besides the demand question, what were the key technology shifts at WAIC?
+EN_B: The biggest shift is that the competitive focus is moving from the body to the brain. Hardware specs are no longer the main differentiator. It is all about intelligence and data now.
+EN_A: Can you give me an example of that?
+EN_B: Sure. One clear signal is that wheeled robot forms are becoming the workhorse for industrial tasks. Vendors are trading anthropomorphism for reliability and cost. They are basically deferring the bipedal walking problem. But the real binding constraint is data.
+EN_A: Data? Not computing power or algorithms?
+EN_B: No. Our survey shows the bottleneck is high-quality real-world physical interaction data. The gap is massive. Global demand for this data in 2026 is estimated at 10 million hours, but the existing high-quality stock is only 500,000 hours. That is a 20x gap.
+EN_A: Wow. So how are companies trying to close that gap?
+EN_B: Two main ways. First, data collection is becoming an industry of its own. We are seeing over 20 city-level data factories being built in China. Second, model architectures are converging, with vision-language-action models and world models merging into hybrid systems.
+EN_A: Will cheaper data solve the problem?
+EN_B: Not really. Cheaper data only lowers collection costs. It does not close the data gap or unlock the collect-train-deploy-feedback loop. One leading robotics firm estimates that the ChatGPT moment for embodied AI is still two to three years away, and scaled adoption will come even later.
+EN_A: So the industry is in a strange place. Mass production is happening, but demand is weak, and data is the bottleneck.
+EN_B: That is a perfect summary. WAIC confirmed that humanoids are accelerating on the supply side, but the demand side and the data side are lagging. The future of the industry hinges on whether the ROI for industrial use cases can be proven and whether the data loop can be closed.
+EN_A: Is there one part of this report you think listeners should really dig into for more depth?
+EN_B: Definitely. The section on dexterous hands. The technology is converging on three routes: linkage, tendon, and direct drive. Each has its own trade-offs in cost, lifespan, and force control. The report has a very detailed breakdown of the supply chain and the key players.
+EN_A: Great. We will leave that as a cliffhanger. Thank you, B, for the insights.
+EN_B: Thank you. For anyone who wants to understand the full picture on humanoid robots, including the dexterous hand technology roadmap and the data bottleneck solutions, I highly recommend reading the complete report.

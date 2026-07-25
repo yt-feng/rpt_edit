@@ -1,0 +1,22 @@
+EN_A: Hey everyone, welcome back. Today we are digging into a really interesting report about a company called Chroma. It's a testing equipment maker, and it seems to be riding the AI wave in a pretty unique way. Researcher, what's the big takeaway here?
+EN_B: So a global investment bank just resumed coverage on Chroma with a Buy rating and a target price of 2845 New Taiwan dollars. That implies about 34% upside. The core thesis is that Chroma is benefiting from two major structural trends: the increasing testing needs for AI chips, and the shift in server power architecture.
+EN_A: Two trends at once. That sounds powerful. But what is the real question this report is trying to answer for investors?
+EN_B: The report is essentially asking: How can Chroma monetize the AI boom beyond just the chip itself? And the answer is through two specific product lines. One is system-level test, or SLT, for advanced AI chips. The other is automatic test systems for the new high-voltage power supplies in AI servers.
+EN_A: Let's start with the AI chip testing. What's the insight there?
+EN_B: The insight is that AI chips are getting incredibly complex. Think about Nvidia using GPU-on-GPU packaging. That requires much more stringent thermal control and testing. Chroma's SLT handlers are designed for exactly that. And because AI chip platforms get upgraded regularly, it creates a recurring upgrade cycle for the testing equipment.
+EN_A: So it's like a razor and blade model, but for testing gear. Every new chip generation needs a new test handler.
+EN_B: Exactly. The report projects a 68% revenue compound annual growth rate for Chroma's semiconductor and photonics testing business from 2025 to 2028. That is massive.
+EN_A: 68% is huge. But what's the catch? What if the AI chip expansion slows down?
+EN_B: That is a key risk. If TSMC or the OSATs slow down their CoWoS capacity expansion, or if AI chip customers delay their product refreshes, Chroma's growth could take a hit. But the report believes the long-term trend is intact.
+EN_A: Okay, let's move to the second insight: the server power architecture shift. What does that mean?
+EN_B: AI servers are moving to high-voltage direct current, or HVDC, at 400 or even 800 volts. This is a big change from traditional power systems, and it requires much more sophisticated testing. Chroma makes the automatic test systems, or ATS, for this. There was some market worry about slow adoption, but the report says a major US cloud provider is on track to adopt 400-volt DC starting in the second half of 2026.
+EN_A: So it's not just the chip itself, but the entire power infrastructure around it that creates demand. That is a double tailwind.
+EN_B: Right. The report estimates a 43% revenue CAGR for Chroma's ATS business over the same period.
+EN_A: 68% and 43% for two different businesses. That paints a very optimistic picture. But what are the things the report doesn't fully answer? What should we be skeptical about?
+EN_B: One big area is CPO, or co-packaged optics. The report mentions it as a long-term driver for testing, but CPO is still in the early test phase. When it will become a meaningful revenue contributor is not yet clear. That is a story for later.
+EN_A: So CPO testing is the next catalyst to watch. And what about the valuation? The report uses a 38x price-to-earnings multiple, which is at the high end of the historical range.
+EN_B: That is a fair question. The report argues it is justified by the 39% net earnings CAGR over the next three years. But valuation is always a debate. If growth disappoints, the multiple can compress quickly. The full report has a detailed valuation methodology and risk section that investors should read carefully.
+EN_A: Good point. So to sum up, we have AI chip testing and server power upgrades as the two main drivers, with CPO as a potential future catalyst.
+EN_B: Exactly. If you want to see the full financial model, the risk analysis, and the competitive landscape, you should check out the complete report.
+EN_A: And if you want more deep dives like this, join our community. Thanks for listening.
+EN_B: Thanks, and see you next time.

@@ -1,0 +1,56 @@
+Found 59 total PDFs; shard 9/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_x_mtiggc/pdfs/0001-46-Nomura-China Robotics-2026 Shanghai WAIC takeaways-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_x_mtiggc/pdfs/0002-47-Nomura-BeOne-ONC.OQ-2Q26F preview and FY26F forecast revisions-260724.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_x_mtiggc/pdfs/0003-48-Nomura-Chroma ATE Inc. -2360.TW-Full power on the bright AI avenue-260724.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_x_mtiggc/pdfs/0004-49-Nomura-First Tractor-601038-Recovery on bigger tractors and broader markets-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_x_mtiggc/pdfs/0005-50-Nomura-Hengrui-600276-2Q26F preview and FY26F forecast revisions-260724.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=e5bc8f90-899e-4dff-90ba-0191ffda2bdc
+MinerU states: done, running, running, pending, pending
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset af13e80eb1b00f5f28062b18c87d8fd6b7e32c3607410fa7b33fbced3aa1b6db.jpg: score=1;odd_ratio:5.48,edge:0.44,contrast,large
+Skip non-chart visual asset 1d72a716731d5a365b49c79c5bebb58c03c8efdb9f4d1ab3d24d36203ddf1dba.jpg: score=2;chart_ratio,contrast
+Neutralized WeChat title while keeping the report: 野村：2026年WAIC中国机器人量产拐点与20倍数据缺口 -> 野村：WAIC与机器人行业技术应用观察
+Skip non-chart visual asset 652c391845ca6b0c94eae669917b2846335018d295259a6bb42755d6d1800333.jpg: score=-100;too_small:723x151
+Skip non-chart visual asset 11640cbad06c5b61cb7f6f6584582de3e1525cf6968b21e74b66cf31d954fcde.jpg: score=-100;too_small:1409x84
+Skip non-chart visual asset 966bcc4f1db526773dbd100c24b5d859f58c72e9448ce0058469019e9585f1b3.jpg: score=-100;too_small:434x76
+Skip non-chart visual asset 68a3b65fcab617cf2fa0dac52070c265b9a307fef3b9edeae9dfb93071ac211f.jpg: score=-100;too_small:431x43
+Skip non-chart visual asset e368b9b980bcd608b34a0cc8ad750a0729c87a5a7c0d4e1a60f855ec9cd8b0ed.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,contrast
+Skip non-chart visual asset 3f4c15fee2472569fbab5a5ec243c0372e31554c40d90bdc5d4a532a3c2249e7.jpg: score=0;square_without_chart_hint,edge:0.21,contrast
+Skip non-chart visual asset d9401bd151ae601042396b8b11c8ed72c4d7494167c6c2edec3ff1cc0ad9f588.jpg: score=-100;too_small:1412x145
+Skip non-chart visual asset 4d2e5a7609efb6e8754268d24bb2603ad98defec2265f8ef02d568428eea0a6f.jpg: score=0;square_without_chart_hint,edge:0.39,contrast
+Skip non-chart visual asset 029465cf166ed1ffe37d06d24992a2a5b358e342d42256a442928c11d9e398d8.jpg: score=-100;too_small:723x148
+Skip non-chart visual asset 80fd1d30337c2fee862e7215c11bb241d2c91bdc165361368f6cafd47f4f957b.jpg: score=1;odd_ratio:5.40,edge:0.17,contrast,large
+Skip non-chart visual asset bf31b38697ebb7dc8f511ec808911400e859ac17f8d4a0746a5ff890e194e629.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset ecaeca736c469966839d36ad671d06fafcf5eb02c2ed030ffe4b817a91f574cd.jpg: score=-100;too_small:431x46
+Skip non-chart visual asset 1a0fe151935b1f70a41899b214b042597d0fd330901f112f66c078034da0f971.jpg: score=1;chart_ratio
+Skip non-chart visual asset 88e93e4b475ca4cbf63aa3f66cb8c378c2bacf53febfae20d123a6cab86051d3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.53,large
+Skip non-chart visual asset 8cfc4663adf60ed0bbc7c8cd6cdfbbff11bd9f9d23eb0e5f197a4d50f3d243b9.jpg: score=-100;too_small:434x54
+Skip non-chart visual asset b71228037afcfb88eb781840b9dc097957d0e59949dde8cf690415cc09767d8a.jpg: score=0;square_without_chart_hint,edge:0.52,large
+Skip non-chart visual asset 811687e8e44227a595800543fa9a1abb20d550d8c710bbcaeb5a2c9ec3b4f3dd.jpg: score=1;square_without_chart_hint,edge:0.31,contrast,large
+Skip non-chart visual asset 54f8f966bd22a00ead84454910f0b4faf88f85213c5182078c5dfa8540530600.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset fa3b5da58fe4c75ddce1c1328f3dcab272f7872d164e7fe2e82c273f5144d607.jpg: score=1;square_without_chart_hint,edge:0.24,contrast,large
+Skip non-chart visual asset 7a9cfadafa6bd3d605988830da7c16a82f1cabf51cc39a62966ec09ddf1e588b.jpg: score=1;square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset ba557be65f5fa31a5ffe5ad04d93dfa74d506a66ebb8f56f6ac8f9b219ffdd13.jpg: score=-100;too_small:431x76
+Skip non-chart visual asset 5948e4778e5bc8d69f4dba603848a43cf488747ff88c630ae0c5f546e7a29a84.jpg: score=1;odd_ratio:4.92,edge:0.20,contrast,large
+Skip non-chart visual asset fd546d6a47c2ef012ae5afaed1539a58a9b71b307b5498758f5a606e68e0c09b.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.29,contrast,large
+Skip non-chart visual asset c0620e4c3c248e98a9bd6fd2ec539d5dcf114ba3be9eededdfcf37365715ac0f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.51,large
+Skip non-chart visual asset abc1fe106f163aefedfb601013f53232d6ce4c119165e7a9e0f0e0e226ec44e5.jpg: score=-100;too_small:1459x134
+Skip non-chart visual asset 8ae86ce2d1e8668b63f9bba66f50c6b7839a220a4048e972b079cfc52b766ace.jpg: score=-100;too_small:726x109
+Skip non-chart visual asset 6739bc7d1f8151351df4b123b225d65f4789c6ce1cff610bc03001ad47fa7609.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.51,large
+Skip non-chart visual asset a0b447aaa4b4c8ff9ee0d0382adfbc5d9803c137639f567d070a21454943b6d5.jpg: score=-100;too_small:1412x104
+Skip non-chart visual asset e6bf8fd52aadcc22292d61cff85adad063499effde75d434a491fbb95142e09b.jpg: score=-100;too_small:415x76
+Neutralized WeChat title while keeping the report: 野村：第一拖拉机-大马力产品与海外市场驱动复苏 -> 野村：研究主题与行业变化观察
+Skip non-chart visual asset 6715c92633b3d5b88a311c7ecc53032a354160742621271471a9180761250a00.jpg: score=-100;too_small:723x131
+Skip non-chart visual asset f0458de28b0e7af8783c0aff367c507afba3ace6fc051dac8bca553e12d84dd3.jpg: score=-100;too_small:434x76
+Skip non-chart visual asset 87e3f971884b9283be63456e67a6b9a0ff38acb6d2b25246d6646974b2847b30.jpg: score=-100;too_small:1449x106
+Skip non-chart visual asset a6902f705ee32a7b54a783de46b9f98d5451ced4db1babe66cbbcebf3bc407b5.jpg: score=-100;too_small:431x43
+Skip non-chart visual asset fcba1be7842d8b1c573ace408c1aa66ddb9b9dd0c0c97d629fd077ae48402759.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset 796fb0c07cc452d81fff2bc65a30fdbe100e621a5574d6bdc48bc1fe501a0044.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260725/shard_9; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
