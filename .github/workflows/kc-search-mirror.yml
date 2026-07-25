@@ -16,29 +16,65 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      PYTHONUNBUFFERED: "1"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      AWS_RETRY_MODE: standard
+      AWS_MAX_ATTEMPTS: "5"
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        timeout-minutes: 5
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /scripts/kc_search_mirror.py
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
+          persist-credentials: false
+          show-progress: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.11"
-          cache: "pip"
+
+      - name: Verify runtime inputs
+        run: |
+          test -s scripts/kc_search_mirror.py
+          checked_out_sha="$(git rev-parse HEAD)"
+          if [ "${checked_out_sha}" != "${GITHUB_SHA}" ]; then
+            echo "::error::Checkout SHA mismatch: expected ${GITHUB_SHA}, got ${checked_out_sha}"
+            exit 1
+          fi
+          echo "Checked out ${checked_out_sha}"
 
       - name: Install dependencies
-        run: pip install requests boto3
+        timeout-minutes: 3
+        run: python -m pip install --retries 5 --timeout 30 requests boto3
 
       - name: Refresh search mirror
+        timeout-minutes: 15
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
         run: |
+          missing=0
+          for name in R2_ACCOUNT_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY R2_BUCKET; do
+            if [ -z "$(printenv "${name}")" ]; then
+              echo "::error::Missing required configuration: ${name}"
+              missing=1
+            fi
+          done
+          [ "${missing}" -eq 0 ] || exit 1
+
           python scripts/kc_search_mirror.py \
             --external-pages 80 \
             --external-seed-pages 3 \
             --authority-pages 30 \
             --page-size 50 \
+            --timeout 30 \
+            --retries 4 \
+            --retry-backoff 1.5 \
             --upload-r2
