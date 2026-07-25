@@ -1,0 +1,170 @@
+你是财经类 AI Podcast 制作人，擅长把研报内容改写成中文、英文两条独立的访谈式播客脚本。
+
+【目标】
+- 基于下面研报解析内容，写两份 podcast 脚本：一份中文，一份英文。
+- 每份目标时长约 5 分钟。
+- 两份都要是“访谈聊天式”，不是单人念稿。
+- 听感：像一位主持人和一位研究员围绕报告做深度但自然的讨论。
+- 不要使用 emoji。
+- 不要把全文讲完，要留下 1-2 个“完整报告里会继续展开”的悬念。
+
+【输出格式必须严格遵守】
+- 中文部分只能使用 `ZH_A:` 和 `ZH_B:` 开头。
+- 英文部分只能使用 `EN_A:` 和 `EN_B:` 开头。
+- 每一句独立成行。
+- 不要输出 Markdown 标题。
+- 不要输出舞台说明、音效说明或括号注释。
+- 先输出完整中文脚本，再输出完整英文脚本。
+
+【角色设定】
+- A 是主持人：负责提问、转场、替听众追问“所以这意味着什么”。
+- B 是研究员：负责解释报告逻辑、给出结构化判断和保留悬念。
+- 两个角色必须频繁轮换，避免一个人连续说超过 3 句。
+- 每句要适合 TTS 朗读：短句、自然、不要太书面。
+
+【中文脚本结构】
+1. 开场：A 用一个问题引出报告价值，B 给出主判断。
+2. 第一部分：这份报告真正要回答的问题是什么。
+3. 第二部分：2-3 个关键洞察，每个洞察都要有“这意味着什么”。
+4. 第三部分：哪些问题仍然没有完全展开，为什么值得继续读完整报告。
+5. 结尾：自然引导听众加入社群/阅读完整报告，不要硬广。
+
+【英文脚本结构】
+- 英文不是中文逐句翻译，而是面向英文听众重新组织。
+- 保留同样的主线和洞察，但表达更口语、更 podcast。
+- Use natural conversational English.
+- Avoid long sentences and avoid reading like a research memo.
+
+【内容边界】
+- 可以基于研报内容做适度发散，但必须是从原文逻辑推出的判断。
+- 不要编造具体数据、公司动作或引用。
+- 对不确定内容要用“这里仍需要继续验证”或 “the report does not fully answer this yet” 表达。
+- 默认避免出现具体投行品牌名，比如“GS”“GS”，统一写作“投行研报”或 “a global investment bank report”。
+
+【研报解析内容】
+"""
+# Asia Vital Components
+
+## 2Q preview: Another strong GM beat; key beneficiary of ASIC and GPU cooling upgrade; OW
+
+We expect AVC's 2Q26 results to beat on stronger-than-expected GM expansion (new JPMe $32.5\%$ vs BBGe $\sim 30\%$ ), despite the reported weaker revenue momentum given VR200 delay. The company's share price has underperformed the Taiex by $\sim 35\%$ in the past 3 months, owing to the VR cold plate order push-out from June to August. As the issues seem largely resolved, we believe AVC's revenue should resume momentum with VR mass production in August. The potential 2Q26 GM beat coupled with the reaccelerating revenue growth should revive sentiment on AVC, in our view. Looking further out, we see multiple catalysts ahead, including AWS Trainium 3 and Google TPU v8 cold plates entering mass production in 4Q26, as well as the VR Ultra cold plate content increase. OW.
+
+\- 2Q26 preview. Reported 2Q26 revenue of NT\$49.1bn (flat QoQ, +66% YoY) was below both JPMe and consensus by 3%, given the delay in VR200 shipment. Despite softer revenue, we believe the company's 2Q26 GM could reach 32.5% (above old JPMe of 31.0%), which could likely beat the current Bloomberg estimate of \~30%, thanks to its decent yield and enhanced production efficiency. Coupled with well-managed opex and higher non-op income, we revise up our 2Q26 EPS estimate by 14% to NT\$24.5, meaningfully higher vs BBGe of NT\$21.4.
+
+\- Revenue momentum expected to resume from Aug. Post the flattish 2Q26, we model AVC's 3Q26 revenue to resume momentum with $15\%$ QoQ growth, driven by the mass production of Nvidia's VR200 cold plate expected to start from August. In addition, we believe the liquid-cooled version of AWS Trainium 3 and Google TPU v8 cold plates will also start ramping up in 4Q26 with higher content value vs Nvidia systems. These new ASIC liquid cooling projects should drive another $16\%$ QoQ revenue growth in 4Q26, based on JPMe. In terms of GM, we think the increasing liquid cooling mix along with decent yield will contribute to further GM expansion to $34\%$ and $35\%$ in 3Q and 4Q26 (vs consensus still at $30.5\%$ and $31.4\%$ ).
+
+\- VR Ultra liquid cooling content likely to further increase. Looking forward to future generations, we think AVC will continue to benefit from the structural content increase trend. For VR Ultra, we believe the liquid cooling content of its compute tray could further grow (after the $>50\%$ increase in VR vs GB), driven by the additional cold plate and QD unit adoption due to higher spec and power density. The design should be confirmed in the next few months.
+
+\- Implications. We raise 2026 and 2027E EPS by 4% and 10% on accelerating GM growth and continued content increase in future GPU and ASIC systems. Hence, our Dec-26 PT is revised up to NT\$3,500 (from NT\$3,200) based on an unchanged 22x 2027E P/E, above AVC's historical average given its stronger 2024-27E \~100% earnings growth.
+
+## Overweight
+
+3017.TW, 3017 TT
+Price (22 Jul 26):NT\$2,265.00
+
+▲ Price Target (Dec-26):NT\$3,500.00
+Prior (Dec-26):NT\$3,200.00
+
+## Technology
+
+William Yang AC (886-2) 2725-9899 william.yang@JPM.com
+
+Megan Hsueh
+(886-2) 2725-9249
+megan.hsueh@JPM.com
+JPM Securities (Taiwan) Limited
+
+<table><tr><td colspan="4">Key Changes (FYE Dec)</td></tr><tr><td></td><td>Prev</td><td>Cur</td><td>Δ</td></tr><tr><td>Adj. EPS - 26E (NT$)</td><td>100.36</td><td>104.50</td><td>4.1%</td></tr><tr><td>Adj. EPS - 27E (NT$)</td><td>146.02</td><td>160.04</td><td>9.6%</td></tr></table>
+
+## Quarterly Forecasts (FYE Dec)
+
+<table><tr><td></td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>Q1</td><td>8.28</td><td>20.17A</td><td>31.93</td></tr><tr><td>Q2</td><td>10.30</td><td>24.52</td><td>36.79</td></tr><tr><td>Q3</td><td>13.67</td><td>27.04</td><td>42.97</td></tr><tr><td>Q4</td><td>17.01</td><td>32.77</td><td>48.36</td></tr><tr><td>FY</td><td>49.29</td><td>104.50</td><td>160.04</td></tr></table>
+
+## Style Exposure
+
+<table><tr><td rowspan="2">Quant Factors</td><td rowspan="2">Current %Rank</td><td colspan="4">Hist %Rank (1=Top)</td></tr><tr><td>6M</td><td>1Y</td><td>3Y</td><td>5Y</td></tr><tr><td>Value</td><td>49</td><td>54</td><td>64</td><td>52</td><td>23</td></tr><tr><td>Growth</td><td>9</td><td>3</td><td>11</td><td>26</td><td>60</td></tr><tr><td>Momentum</td><td>34</td><td>12</td><td>4</td><td>4</td><td>49</td></tr><tr><td>Quality</td><td>3</td><td>15</td><td>15</td><td>15</td><td>32</td></tr><tr><td>Low Vol</td><td>76</td><td>85</td><td>93</td><td>83</td><td>74</td></tr></table>
+
+Price Performance  
+![](images/efffc166aade6797f30dfd68c2528af285e8d6d68295a98ae90381363b6a13da.jpg)
+
+— 3017.TW Price (NT\$) — TSE (rebased)
+
+<table><tr><td></td><td>YTD</td><td>1m</td><td>3m</td><td>12m</td></tr><tr><td>Abs</td><td>50.0%</td><td>-6.4%</td><td>-16.0%</td><td>165.8%</td></tr><tr><td>Rel</td><td>-4.8%</td><td>-0.3%</td><td>-34.3%</td><td>70.8%</td></tr></table>
+
+<table><tr><td colspan="2">Company Data</td></tr><tr><td>Shares O/S (mn)</td><td>383</td></tr><tr><td>52-week range (NT$)</td><td>3,010.00-836.80</td></tr><tr><td>Market cap ($ mn)</td><td>26,800</td></tr><tr><td>Exchange rate</td><td>32.40</td></tr><tr><td>Free float (%)</td><td>74.5%</td></tr><tr><td>3M ADV (mn)</td><td>5.01</td></tr><tr><td>3M ADV ($ mn)</td><td>394.9</td></tr><tr><td>Volatility (90 Day)</td><td>70</td></tr><tr><td>Index</td><td>TAIEX</td></tr><tr><td>BBG ANR (Buy | Hold | Sell)</td><td>20|1|0</td></tr></table>
+
+Key Metrics (FYE Dec)
+
+<table><tr><td>NT$ in millions</td><td>FY25A</td><td>FY26E</td><td>FY27E</td></tr><tr><td colspan="4">Financial Estimates</td></tr><tr><td>Revenue</td><td>139,639</td><td>220,045</td><td>316,613</td></tr><tr><td>Adj. EBIT</td><td>27,556</td><td>61,072</td><td>95,329</td></tr><tr><td>Adj. EBITDA</td><td>30,802</td><td>65,416</td><td>100,301</td></tr><tr><td>Adj. net income</td><td>19,186</td><td>41,016</td><td>62,814</td></tr><tr><td>Adj. EPS</td><td>49.29</td><td>104.50</td><td>160.04</td></tr><tr><td>BBG EPS</td><td>49.50</td><td>94.69</td><td>137.25</td></tr><tr><td>Cashflow from operations</td><td>36,758</td><td>37,554</td><td>71,369</td></tr><tr><td>FCFF</td><td>29,528</td><td>29,921</td><td>67,260</td></tr><tr><td colspan="4">Margins and Growth</td></tr><tr><td>Revenue Growth Y/Y (%)</td><td>94.6%</td><td>57.6%</td><td>43.9%</td></tr><tr><td>EBIT margin</td><td>19.7%</td><td>27.8%</td><td>30.1%</td></tr><tr><td>EBIT Growth Y/Y (%)</td><td>154.6%</td><td>121.6%</td><td>56.1%</td></tr><tr><td>EBITDA margin</td><td>22.1%</td><td>29.7%</td><td>31.7%</td></tr><tr><td>EBITDA Growth Y/Y (%)</td><td>131.8%</td><td>112.4%</td><td>53.3%</td></tr><tr><td>Net margin</td><td>13.7%</td><td>18.6%</td><td>19.8%</td></tr><tr><td>Adj. EPS growth</td><td>131.9%</td><td>112.0%</td><td>53.1%</td></tr><tr><td colspan="4">Ratios</td></tr><tr><td>Adj. tax rate</td><td>27.2%</td><td>27.8%</td><td>28.0%</td></tr><tr><td>Interest cover</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>Net debt/Equity</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>Net debt/EBITDA</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>ROE</td><td>45.7%</td><td>64.7%</td><td>63.6%</td></tr><tr><td colspan="4">Valuation</td></tr><tr><td>FCFF yield</td><td>3.3%</td><td>3.4%</td><td>7.6%</td></tr><tr><td>Dividend yield</td><td>0.4%</td><td>0.9%</td><td>2.0%</td></tr><tr><td>EV/Revenue</td><td>4.3</td><td>4.5</td><td>3.0</td></tr><tr><td>EV/EBITDA</td><td>19.3</td><td>15.0</td><td>9.3</td></tr><tr><td>Adj. P/E</td><td>46.0</td><td>21.7</td><td>14.2</td></tr></table>
+
+## Summary Investment Thesis and Valuation
+
+## Investment Thesis
+
+We are OW on AVC for its strong earnings growth potential, which we think is supported by the content increase in AI servers. We expect AVC to see increasing upside from more liquid cooling opportunities, with much higher ASP and margin, while its competitive advantages vs peers could give it further market share gains as the industry's structural trends develop.
+
+## Valuation
+
+Our Dec-26 PT of NT\$3,500 is based on 22x 2027E P/E, above the company's historical average P/E, given its stronger earnings growth of \~100% during 2024-27E.
+
+Performance Drivers  
+![](images/5219f64807ee56cfc262cb8d7b9bb7dd4f36e5d972ff5991438bb62093efcaae.jpg)
+
+<table><tr><td>Factors</td><td>6M Corr</td><td>1Y Corr</td></tr><tr><td>Market: MSCI Asia Pac ex JP</td><td>0.10</td><td>0.23</td></tr><tr><td>Region: Taiwan</td><td>0.52</td><td>0.44</td></tr><tr><td colspan="3">Macro:</td></tr><tr><td>Emerging Economies CPI(YoY)</td><td>-0.23</td><td>-0.36</td></tr><tr><td>Citi Economic Surprise - EM</td><td>0.18</td><td>0.25</td></tr><tr><td>Emerging Central Bank Rate</td><td>0.26</td><td>-0.18</td></tr><tr><td colspan="3">Quant Styles:</td></tr><tr><td>Quality</td><td>0.37</td><td>0.26</td></tr><tr><td>Momentum</td><td>0.06</td><td>0.19</td></tr><tr><td>Size</td><td>0.12</td><td>0.14</td></tr></table>
+
+## Earnings review and estimate revisions
+
+Table 1: JPM estimates – New vs old
+
+<table><tr><td rowspan="2">(NT$M)</td><td colspan="4">Revised</td><td colspan="4">Prior</td><td colspan="4">Change</td></tr><tr><td>2Q26E</td><td>3Q26E</td><td>2026E</td><td>2027E</td><td>2Q26E</td><td>3Q26E</td><td>2026E</td><td>2027E</td><td>2Q26E</td><td>3Q26E</td><td>2026E</td><td>2027E</td></tr><tr><td>Sales</td><td>49,121</td><td>56,313</td><td>220,045</td><td>316,613</td><td>50,399</td><td>61,274</td><td>228,609</td><td>310,552</td><td>-3%</td><td>-8%</td><td>-4%</td><td>2%</td></tr><tr><td>Gross profit</td><td>15,953</td><td>19,120</td><td>72,602</td><td>111,563</td><td>15,626</td><td>19,632</td><td>72,227</td><td>102,860</td><td>2%</td><td>-3%</td><td>1%</td><td>8%</td></tr><tr><td>GM</td><td>32.5%</td><td>34.0%</td><td>33.0%</td><td>35.2%</td><td>31.0%</td><td>32.0%</td><td>31.6%</td><td>33.1%</td><td>147 bps</td><td>191 bps</td><td>140 bps</td><td>211 bps</td></tr><tr><td>Operating profit</td><td>13,423</td><td>16,107</td><td>61,072</td><td>95,329</td><td>12,778</td><td>16,292</td><td>59,863</td><td>86,836</td><td>5%</td><td>-1%</td><td>2%</td><td>10%</td></tr><tr><td>OPM</td><td>27.3%</td><td>28.6%</td><td>27.8%</td><td>30.1%</td><td>25.4%</td><td>26.6%</td><td>26.2%</td><td>28.0%</td><td>197 bps</td><td>201 bps</td><td>157 bps</td><td>215 bps</td></tr><tr><td>Net Income</td><td>9,624</td><td>10,614</td><td>41,016</td><td>62,814</td><td>8,420</td><td>10,707</td><td>39,384</td><td>57,304</td><td>14%</td><td>-1%</td><td>4%</td><td>10%</td></tr><tr><td>EPS (NT$)</td><td>24.5</td><td>27.0</td><td>104.5</td><td>160.0</td><td>21.5</td><td>27.3</td><td>100.4</td><td>146.0</td><td>14%</td><td>-1%</td><td>4%</td><td>10%</td></tr></table>
+
+Source: JPM estimates.
+
+Table 2: JPM estimates vs Bloomberg consensus
+
+<table><tr><td rowspan="2">(NT$M)</td><td colspan="4">JPMe</td><td colspan="4">Bloomberg</td><td colspan="4">Diff</td></tr><tr><td>2Q26E</td><td>3Q26E</td><td>2026E</td><td>2027E</td><td>2Q26E</td><td>3Q26E</td><td>2026E</td><td>2027E</td><td>2Q26E</td><td>3Q26E</td><td>2026E</td><td>2027E</td></tr><tr><td>Sales</td><td>49,121</td><td>56,313</td><td>220,045</td><td>316,613</td><td>50,465</td><td>57,590</td><td>220,165</td><td>298,353</td><td>-3%</td><td>-2%</td><td>0%</td><td>6%</td></tr><tr><td>Gross profit</td><td>15,953</td><td>19,120</td><td>72,602</td><td>111,563</td><td>15,272</td><td>17,659</td><td>67,133</td><td>93,692</td><td>4%</td><td>8%</td><td>8%</td><td>19%</td></tr><tr><td>GM</td><td>32.5%</td><td>34.0%</td><td>33.0%</td><td>35.2%</td><td>30.3%</td><td>30.7%</td><td>30.5%</td><td>31.4%</td><td>221 bps</td><td>329 bps</td><td>250 bps</td><td>383 bps</td></tr><tr><td>Operating profit</td><td>13,423</td><td>16,107</td><td>61,072</td><td>95,329</td><td>12,421</td><td>14,550</td><td>55,199</td><td>78,861</td><td>8%</td><td>11%</td><td>11%</td><td>21%</td></tr><tr><td>OPM</td><td>27.3%</td><td>28.6%</td><td>27.8%</td><td>30.1%</td><td>24.6%</td><td>25.3%</td><td>25.1%</td><td>26.4%</td><td>271 bps</td><td>334 bps</td><td>268 bps</td><td>368 bps</td></tr><tr><td>Net Income</td><td>9,624</td><td>10,614</td><td>41,016</td><td>62,814</td><td>8,463</td><td>9,899</td><td>37,361</td><td>53,893</td><td>14%</td><td>7%</td><td>10%</td><td>17%</td></tr><tr><td>EPS (NT$)</td><td>24.5</td><td>27.0</td><td>104.5</td><td>160.0</td><td>21.4</td><td>25.0</td><td>94.7</td><td>137.3</td><td>15%</td><td>8%</td><td>10%</td><td>17%</td></tr></table>
+
+Source: Bloomberg Finance L.P., JPM estimates.
+
+## Valuation
+
+Table 3: AVC's trading multiple (from January 2023 to date, when AI server started booming)
+
+<table><tr><td>x</td><td>12M trailing P/E</td><td>12M fwd P/E</td><td>12M trailing P/B</td><td>12M fwd P/B</td></tr><tr><td>Standard deviation</td><td>8.6</td><td>4.6</td><td>3.8</td><td>2.4</td></tr><tr><td>Max</td><td>47.1</td><td>24.7</td><td>19.1</td><td>12.4</td></tr><tr><td>Minimum</td><td>8.8</td><td>5.4</td><td>2.1</td><td>1.5</td></tr><tr><td>Median</td><td>26.5</td><td>14.4</td><td>7.2</td><td>5.1</td></tr><tr><td>Average</td><td>26.2</td><td>14.4</td><td>7.8</td><td>5.4</td></tr></table>
+
+Source: Bloomberg Finance L.P., JPM estimates.
+
+Figure 1: AVC's 1yr forward P/E  
+![](images/a3be4d97ee3efb47315b5231f390b032af2dd84281b269e181bc994de5404d06.jpg)  
+Source: Bloomberg Finance L.P., JPM estimates.
+
+Figure 2: AVC's 1yr forward P/E vs mean  
+![](images/b5c7a1a6887d62743e239ecd24860dcc6ecca9617c3c00614834174356b9310f.jpg)  
+Source: Bloomberg Finance L.P., JPM estimates
+
+Figure 3: AVC's 1yr forward P/B  
+![](images/e6654f01606a42a8ccb80097937c0fa7907e3de402eb20f0ed190f47de6e2999.jpg)  
+Source: Bloomberg Finance L.P., JPM estimates.
+
+Figure 4: AVC's 1yr forward P/B vs mean  
+![](images/ef7eac6a41180f306d3a2a1d6c4d9a709d20aebbc86f14c563ee131c395bfc62.jpg)  
+Source: Bloomberg Finance L.P., JPM estimates.
+
+Table 4: Income statement
+
+<table><tr><td></td><td colspan="4">2023</td><td colspan="4">2024</td><td colspan="4">2025</td><td colspan="4">2026E</td><td colspan="4">2027E</td><td rowspan="2">2023</td><td rowspan="2">2024</td><td rowspan="2">2025</td><td rowspan="2">2026E</td><td rowspan="2">2027E</td></tr><tr><td>(NT$ in Mn, year-end December)</td><td>1Q</td><td>2Q</td><td>3Q</td><td>4Q</td><td>1Q</td><td>2Q</td><td>3Q</td><td>4Q</td><td>1Q</td><td>2Q</td><td>3Q</td><td>4Q</td><td>1Q</td><td>2QE</td><td>3QE</td><td>4QE</td><td>1QE</td><td>2QE</td><td>3QE</td><td>4QE</td></tr><tr><td>Revenue</td><td>11,835</td><td>14,871</td><td>15,769</td><td>16,720</td><td>15,309</td><td>16,484</td><td>19,065</td><td>20,904</td><td>23,333</td><td>29,595</td><td>38,937</td><td>47,775</td><td>49,038</td><td>49,121</td><td>56,313</td><td>65,573</td><td>65,431</td><td>73,092</td><td>84,471</td><td>93,619</td><td>59,194</td><td>71,761</td><td>139,639</td><td>220,045</td><td>316,613</td></tr><tr><td>Depreciation</td><td>427</td><td>452</td><td>498</td><td>512</td><td>537</td><td>572</td><td>609</td><td>666</td><td>748</td><td>727</td><td>815</td><td>896</td><td>996</td><td>1,040</td><td>1,099</td><td>1,124</td><td>1,165</td><td>1,198</td><td>1,238</td><td>1,273</td><td>1,889</td><td>2,384</td><td>3,186</td><td>4,260</td><td>4,429</td></tr><tr><td>COGS</td><td>9,498</td><td>11,880</td><td>12,353</td><td>13,075</td><td>11,936</td><td>12,690</td><td>14,584</td><td>15,680</td><td>17,305</td><td>22,370</td><td>28,765</td><td>35,165</td><td>34,441</td><td>33,168</td><td>37,193</td><td>42,641</td><td>42,869</td><td>47,402</td><td>54,611</td><td>60,168</td><td>46,806</td><td>54,891</td><td>103,605</td><td>147,443</td><td>205,050</td></tr><tr><td>Gross profit</td><td>2,336</td><td>2,991</td><td>3,416</td><td>3,645</td><td>3,372</td><td>3,794</td><td>4,480</td><td>5,224</td><td>6,028</td><td>7,224</td><td>10,172</td><td>12,610</td><td>14,597</td><td>15,953</td><td>19,120</td><td>22,932</td><td>22,562</td><td>25,690</td><td>29,860</td><td>33,451</td><td>12,388</td><td>16,870</td><td>36,034</td><td>72,602</td><td>111,563</td></tr><tr><td>Operating expense</td><td>984</td><td>1,444</td><td>1,310</td><td>1,229</td><td>1,437</td><td>1,367</td><td>1,372</td><td>1,871</td><td>1,667</td><td>2,130</td><td>2,086</td><td>2,595</td><td>2,578</td><td>2,530</td><td>3,013</td><td>3,410</td><td>3,533</td><td>3,801</td><td>4,266</td><td>4,634</td><td>4,967</td><td>6,048</td><td>8,478</td><td>11,531</td><td>16,234</td></tr><tr><td>Operating income</td><td>1,352</td><td>1,547</td><td>2,105</td><td>2,416</td><td>1,935</td><td>2,427</td><td>3,108</td><td>3,353</td><td>4,361</td><td>5,095</td><td>8,085</td><td>10,015</td><td>12,019</td><td>13,423</td><td>16,107</td><td>19,522</td><td>19,029</td><td>21,890</td><td>25,594</td><td>28,817</td><td>7,421</td><td>10,823</td><td>27,556</td><td>61,072</td><td>95,329</td></tr><tr><td>Net Interest Income</td><td>-70</td><td>16</td><td>-30</td><td>38</td><td>-6</td><td>49</td><td>18</td><td>53</td><td>-31</td><td>34</td><td>-15</td><td>103</td><td>-10</td><td>143</td><td>49</td><td>56</td><td>47</td><td>87</td><td>74</td><td>74</td><td>-46</td><td>114</td><td>91</td><td>238</td><td>282</td></tr><tr><td>Net Other Income</td><td>155</td><td>313</td><td>145</td><td>37</td><td>401</td><td>460</td><td>302</td><td>253</td><td>291</td><td>768</td><td>146</td><td>-66</td><td>-30</td><td>982</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>650</td><td>1,415</td><td>1,140</td><td>952</td><td>0</td></tr><tr><td>Non-op gain (loss)</td><td>85</td><td>330</td><td>115</td><td>75</td><td>395</td><td>508</td><td>320</td><td>306</td><td>259</td><td>802</td><td>132</td><td>38</td><td>-40</td><td>1,125</td><td>49</td><td>56</td><td>47</td><td>87</td><td>74</td><td>74</td><td>604</td><td>1,529</td><td>1,231</td><td>1,190</td><td>282</td></tr><tr><td>Pre-tax profit</td><td>1,437</td><td>1,877</td><td>2,220</td><td>2,491</td><td>2,330</td><td>2,935</td><td>3,428</td><td>3,659</td><td>4,620</td><td>5,896</td><td>8,217</td><td>10,053</td><td>11,979</td><td>14,549</td><td>16,156</td><td>19,578</td><td>19,075</td><td>21,976</td><td>25,668</td><td>28,891</td><td>8,025</td><td>12,352</td><td>28,786</td><td>62,261</td><td>95,611</td></tr><tr><td>Tax expense (credit)</td><td>369</td><td>532</td><td>634</td><td>676</td><td>579</td><td>775</td><td>826</td><td>978</td><td>1,110</td><td>1,624</td><td>2,307</td><td>2,794</td><td>3,304</td><td>4,001</td><td>4,524</td><td>5,482</td><td>5,341</td><td>6,153</td><td>7,187</td><td>8,090</td><td>2,211</td><td>3,159</td><td>7,836</td><td>17,310</td><td>26,771</td></tr><tr><td>Net profit reported</td><td>1,007</td><td>1,201</td><td>1,426</td><td>1,671</td><td>1,564</td><td>1,947</td><td>2,324</td><td>2,338</td><td>3,214</td><td>3,997</td><td>5,339</td><td>
+
+[中间内容因长度限制已省略]
+
+terial only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised July 04, 2026.
+
+Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.
+"""
