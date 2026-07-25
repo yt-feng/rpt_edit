@@ -1725,7 +1725,7 @@ def main() -> int:
                         help="Comma list of extra output roots to merge for the same date, e.g. xhs_notes/institutions.")
     parser.add_argument("--date-folder", default="latest")
     parser.add_argument("--output-root", default="market_view_summaries")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--deepseek-max-tokens", type=int, default=8192)
     parser.add_argument("--max-reports", type=int, default=0, help="0 means no limit")

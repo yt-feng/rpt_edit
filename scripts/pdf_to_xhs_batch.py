@@ -1014,7 +1014,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-dir", default="xhs_notes")
     parser.add_argument("--prompt-template", default="prompts/xhs_report_note_prompt.md")
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--deepseek-max-attempts", type=int, default=int(os.getenv("DEEPSEEK_MAX_ATTEMPTS", "4")))
     parser.add_argument("--deepseek-retry-base-seconds", type=float, default=float(os.getenv("DEEPSEEK_RETRY_BASE_SECONDS", "4")))

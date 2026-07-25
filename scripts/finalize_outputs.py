@@ -365,7 +365,7 @@ def run_guard_if_enabled(output_dir: Path, args: argparse.Namespace) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", default="xhs_notes")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--generate-xianyu", default="true")
     parser.add_argument("--xianyu-prompt-template", default="prompts/xianyu_report_listing_prompt.md")

@@ -37,7 +37,7 @@ pdfs/
 | --- | --- | --- |
 | `input_dir` | `pdfs` | PDF 所在文件夹 |
 | `output_dir` | `xhs_notes` | 输出文件夹 |
-| `model` | `deepseek-chat` | DeepSeek 文案生成模型 |
+| `model` | `deepseek-v4-flash` | DeepSeek 文案生成模型 |
 | `deepseek_base_url` | `https://api.deepseek.com` | DeepSeek API 地址 |
 | `mineru_model` | `vlm` | MinerU 模型版本 |
 | `language` | `en` | PDF 语言。英文研报用 `en`，中文用 `ch` |
@@ -127,7 +127,7 @@ export DEEPSEEK_BASE_URL="https://api.deepseek.com"
 python scripts/pdf_to_xhs_batch.py \
   --input-dir pdfs \
   --output-dir xhs_notes \
-  --model deepseek-chat \
+  --model deepseek-v4-flash \
   --language en \
   --ocr true \
   --wechat-length 1200 \

@@ -104,7 +104,7 @@ def update_item_status(item_dir: Path, update: dict[str, str]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--zhihu-prompt-template", default="prompts/zhihu_report_article_prompt.md")
     parser.add_argument("--zhihu-prompt-chars", type=int, default=26000)

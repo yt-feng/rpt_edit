@@ -1310,7 +1310,7 @@ def main() -> int:
     parser.add_argument("--dropbox-output-root", default="xhs_notes/dropbox")
     parser.add_argument("--date-folder", default="latest")
     parser.add_argument("--output-root", default="kc_translated_reports")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--max-reports", default="1")
     parser.add_argument("--report-offset", type=int, default=0)

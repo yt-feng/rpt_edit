@@ -10,6 +10,11 @@ from typing import Any
 
 import requests
 
+DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
+LEGACY_DEEPSEEK_MODEL_ALIASES = {
+    "deepseek-chat": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-reasoner": DEFAULT_DEEPSEEK_MODEL,
+}
 RETRYABLE_HTTP_STATUSES = {408, 409, 425, 429, 500, 502, 503, 504}
 KEY_FAILOVER_HTTP_STATUSES = RETRYABLE_HTTP_STATUSES | {401, 402, 403}
 TRANSIENT_REQUEST_ERRORS = (
@@ -17,6 +22,56 @@ TRANSIENT_REQUEST_ERRORS = (
     requests.exceptions.Timeout,
     requests.exceptions.ChunkedEncodingError,
 )
+
+
+def normalize_deepseek_model_name(value: str | None) -> str:
+    """Map retired official model aliases before an API request is sent."""
+    model = str(value or "").strip() or DEFAULT_DEEPSEEK_MODEL
+    return LEGACY_DEEPSEEK_MODEL_ALIASES.get(model.lower(), model)
+
+
+def prepare_deepseek_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Return a request payload with a current model and legacy chat semantics."""
+    prepared = dict(payload)
+    requested_model = str(prepared.get("model") or "").strip().lower()
+    prepared["model"] = normalize_deepseek_model_name(requested_model)
+    if prepared["model"].startswith("deepseek-v4-") and "thinking" not in prepared:
+        prepared["thinking"] = {
+            "type": "enabled" if requested_model == "deepseek-reasoner" else "disabled"
+        }
+    return prepared
+
+
+def _model_replacement_from_response(
+    response: requests.Response,
+    current_model: str,
+) -> str | None:
+    if response.status_code != 400:
+        return None
+    try:
+        text = response.text
+    except Exception:
+        return None
+    if not isinstance(text, str):
+        return None
+    lowered = text.lower()
+    if "model" not in lowered or not any(
+        marker in lowered
+        for marker in ("supported", "unsupported", "not support", "invalid model")
+    ):
+        return None
+    suggested = list(
+        dict.fromkeys(re.findall(r"\bdeepseek-[a-z0-9][a-z0-9._-]*\b", lowered))
+    )
+    configured = normalize_deepseek_model_name(
+        os.getenv("DEEPSEEK_MODEL_FALLBACK", DEFAULT_DEEPSEEK_MODEL)
+    )
+    if configured != current_model and (not suggested or configured in suggested):
+        return configured
+    for candidate in suggested:
+        if candidate != current_model:
+            return candidate
+    return None
 
 
 def deepseek_api_keys_from_env() -> list[tuple[str, str]]:
@@ -70,12 +125,15 @@ def request_with_retry(
 ) -> requests.Response:
     """POST once for permanent failures and retry bounded transient failures."""
     attempts = max(1, int(max_attempts))
-    for attempt in range(1, attempts + 1):
+    request_payload = prepare_deepseek_payload(payload)
+    attempt = 1
+    model_switches = 0
+    while attempt <= attempts:
         try:
             response = requests.post(
                 url,
                 headers=headers,
-                json=payload,
+                json=request_payload,
                 timeout=timeout,
             )
         except TRANSIENT_REQUEST_ERRORS as exc:
@@ -87,6 +145,23 @@ def request_with_retry(
                 f"{attempt}/{attempts}; retrying in {delay:g}s."
             )
             time.sleep(delay)
+            attempt += 1
+            continue
+
+        replacement = _model_replacement_from_response(
+            response,
+            str(request_payload.get("model") or ""),
+        )
+        if replacement and model_switches < 2:
+            previous = str(request_payload.get("model") or "")
+            request_payload = prepare_deepseek_payload(
+                {**request_payload, "model": replacement}
+            )
+            model_switches += 1
+            logger(
+                f"DeepSeek {label}: model {previous} is unsupported; "
+                f"retrying with {replacement}."
+            )
             continue
 
         if response.status_code not in RETRYABLE_HTTP_STATUSES or attempt >= attempts:
@@ -103,6 +178,7 @@ def request_with_retry(
             f"{attempt}/{attempts}; retrying in {delay:g}s."
         )
         time.sleep(delay)
+        attempt += 1
 
     raise RuntimeError(f"DeepSeek {label}: retry loop ended unexpectedly")
 

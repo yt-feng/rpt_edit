@@ -655,7 +655,7 @@ def generate_language(item_dir: Path, lang: str, source_text: str, args: argpars
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--podcast-minutes", type=int, default=5)
     parser.add_argument("--prompt-chars", type=int, default=26000)

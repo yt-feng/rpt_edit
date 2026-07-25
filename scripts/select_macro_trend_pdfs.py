@@ -314,7 +314,7 @@ def main() -> int:
         default=os.getenv("REPORT_SELECTION_MODE", "all"),
         help="all keeps every downloaded PDF; macro keeps only macro/trend reports.",
     )
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     args = parser.parse_args()
 

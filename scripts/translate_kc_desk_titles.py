@@ -133,7 +133,7 @@ def candidate_items(catalog: dict[str, Any], force: bool, limit: int) -> list[di
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--catalog-path", default="kc_desk_notes/data/catalog.json")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
+    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--workers", type=int, default=int(os.getenv("DEEPSEEK_TITLE_WORKERS", "500")))
     parser.add_argument("--timeout", type=int, default=45)

@@ -18,7 +18,7 @@ on:
       model:
         description: "DeepSeek model for translation"
         required: true
-        default: "deepseek-chat"
+        default: "deepseek-v4-flash"
       deepseek_base_url:
         description: "DeepSeek API base URL"
         required: true
@@ -83,7 +83,7 @@ jobs:
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
           MAX_REPORTS="${{ github.event.inputs.max_reports || '1' }}"
           REPORT_OFFSET="${{ github.event.inputs.report_offset || '0' }}"
-          MODEL="${{ github.event.inputs.model || 'deepseek-chat' }}"
+          MODEL="${{ github.event.inputs.model || 'deepseek-v4-flash' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
           echo "::notice::Building $MAX_REPORTS KC translated report PDF(s) from xhs_notes/dropbox/$DATE_FOLDER"
           python scripts/build_kc_translated_reports.py \

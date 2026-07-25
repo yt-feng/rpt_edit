@@ -8,7 +8,9 @@ from unittest.mock import Mock, patch
 import requests
 
 from deepseek_http import (
+    DEFAULT_DEEPSEEK_MODEL,
     deepseek_api_keys_from_env,
+    prepare_deepseek_payload,
     request_with_key_fallback,
     request_with_retry,
 )
@@ -27,6 +29,18 @@ class DeepSeekHttpTests(unittest.TestCase):
         }
         options.update(overrides)
         return request_with_retry("https://api.deepseek.com/chat/completions", **options)
+
+    def test_maps_retired_chat_alias_to_v4_flash(self) -> None:
+        payload = prepare_deepseek_payload({"model": "deepseek-chat", "messages": []})
+
+        self.assertEqual(payload["model"], DEFAULT_DEEPSEEK_MODEL)
+        self.assertEqual(payload["thinking"], {"type": "disabled"})
+
+    def test_preserves_legacy_reasoner_thinking_mode(self) -> None:
+        payload = prepare_deepseek_payload({"model": "deepseek-reasoner", "messages": []})
+
+        self.assertEqual(payload["model"], DEFAULT_DEEPSEEK_MODEL)
+        self.assertEqual(payload["thinking"], {"type": "enabled"})
 
     @patch("deepseek_http.time.sleep")
     @patch("deepseek_http.requests.post")
@@ -123,7 +137,7 @@ class DeepSeekHttpTests(unittest.TestCase):
 
     @patch("deepseek_http.requests.post")
     def test_does_not_switch_keys_for_bad_request(self, post: Mock) -> None:
-        bad_request = Mock(status_code=400, headers={})
+        bad_request = Mock(status_code=400, headers={}, text='{"error":"bad input"}')
         post.return_value = bad_request
 
         response = request_with_key_fallback(
@@ -138,6 +152,37 @@ class DeepSeekHttpTests(unittest.TestCase):
 
         self.assertIs(response, bad_request)
         post.assert_called_once()
+
+    @patch("deepseek_http.requests.post")
+    def test_retries_with_supported_model_after_model_rejection(self, post: Mock) -> None:
+        retired = Mock(
+            status_code=400,
+            headers={},
+            text=(
+                '{"error":{"message":"The supported API model names are '
+                'deepseek-v4-pro or deepseek-v4-flash, but you passed retired-model."}}'
+            ),
+        )
+        success = Mock(status_code=200, headers={}, text="{}")
+        post.side_effect = [retired, success]
+        logger = Mock()
+
+        response = request_with_key_fallback(
+            "https://api.deepseek.com/chat/completions",
+            headers={"Content-Type": "application/json"},
+            payload={"model": "retired-model"},
+            label="test article",
+            api_keys=[("primary", "secret-primary")],
+            max_attempts=1,
+            logger=logger,
+        )
+
+        self.assertIs(response, success)
+        self.assertEqual(post.call_count, 2)
+        self.assertEqual(
+            [call.kwargs["json"]["model"] for call in post.call_args_list],
+            ["retired-model", DEFAULT_DEEPSEEK_MODEL],
+        )
 
 
 if __name__ == "__main__":

@@ -57,7 +57,7 @@ KC Desk Notes / Cloudflare R2 额外需要：
 | 变量 | 默认值 | 用途 |
 | --- | --- | --- |
 | `DEEPSEEK_BASE_URL` | `https://api.deepseek.com` | DeepSeek API base URL |
-| `DEEPSEEK_MODEL` | `deepseek-chat` | DeepSeek 模型名 |
+| `DEEPSEEK_MODEL` | `deepseek-v4-flash` | DeepSeek 模型名 |
 | `SENSITIVE_API_URL` | `https://v.api.aa1.cn/api/api-mgc/index.php` | free-api 敏感词检测接口 |
 
 ## 3. 主要 GitHub Actions

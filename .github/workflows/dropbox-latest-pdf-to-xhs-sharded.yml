@@ -10,7 +10,7 @@ on:
       model:
         description: "DeepSeek model for report classification and content generation"
         required: true
-        default: "deepseek-chat"
+        default: "deepseek-v4-flash"
       deepseek_base_url:
         description: "DeepSeek API base URL"
         required: true
@@ -151,7 +151,7 @@ jobs:
         id: vars
         run: |
           echo "dropbox_root=${{ github.event.inputs.dropbox_root || '/zip_backup' }}" >> "$GITHUB_OUTPUT"
-          echo "model=${{ github.event.inputs.model || 'deepseek-chat' }}" >> "$GITHUB_OUTPUT"
+          echo "model=${{ github.event.inputs.model || 'deepseek-v4-flash' }}" >> "$GITHUB_OUTPUT"
           echo "deepseek_base_url=${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" >> "$GITHUB_OUTPUT"
           echo "mineru_model=${{ github.event.inputs.mineru_model || 'vlm' }}" >> "$GITHUB_OUTPUT"
           echo "language=${{ github.event.inputs.language || 'en' }}" >> "$GITHUB_OUTPUT"

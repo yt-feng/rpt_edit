@@ -4,7 +4,7 @@
 工作流、脚本边界、持久化状态、失败语义或恢复方式发生变化时，必须同步更新本文档和
 `docs/pipeline-overview-v2.md` 的对应入口说明。
 
-最后更新：2026-07-21。
+最后更新：2026-07-25。
 
 ## 1. 目标与范围
 
@@ -57,7 +57,7 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | `scripts/run_pdf_to_xhs_in_batches.py` | 分片、稳定编号、已有产物跳过和 batch 汇总 |
 | `scripts/check_completed_shard.py` | 按日期、分片参数、当前入选 PDF 名单和必需产物校验可复用分片 |
 | `scripts/pdf_to_xhs_batch.py` | MinerU、短版文章、标题候选、图表和逐篇状态 |
-| `scripts/deepseek_http.py` | DeepSeek 瞬时网络错误和可重试 HTTP 状态的有界退避 |
+| `scripts/deepseek_http.py` | DeepSeek 当前模型名、退役别名迁移、模型拒绝恢复、主备 key 和瞬时错误有界退避 |
 | `scripts/sensitive_content_guard.py` | 荐股措辞、严格词语、标题中性化审计和确定性降温 |
 | `scripts/build_kc_translated_reports.py` | 精译、文章化、标题生成与中性化和 KC PDF |
 | `scripts/commit_output_dir.sh` | 并发环境中的 fetch/reset/add/commit/push 重试和关键交接校验 |
@@ -113,7 +113,8 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | IMF PDF 定位 | Coveo 的系列编号优先推导官方 `/media/files/publications/` PDF；Akamai 落地页只作后备，避免落地页 `403` 造成假空结果 |
 | 单一信源 | 与其他信源隔离；发现未处理的新条目但全部解析或下载失败时记为 `error`，部分失败记为 `degraded`，不能解释为确认零更新 |
 | MinerU | `MINER_U` 至 `MINER_U_4` 组成去重 key 池；并发 shard 按编号轮换首选 key，避免所有 shard 同时压到同一队列；每把 key 一次有界尝试，无进展后切下一把，已完成 PDF 可继续处理 |
-| DeepSeek 短版文章 | 主 key 最多 4 次有界指数退避；鉴权、余额、限流或瞬时错误耗尽后自动切到 `DEEPSEEK_API_KEY_BACKUP` |
+| DeepSeek 模型生命周期 | 默认使用 `deepseek-v4-flash` 非思考模式；旧 `deepseek-chat` / `deepseek-reasoner` 在请求前映射到 V4；服务端以 `400` 返回受支持模型时，同一 key 立即切换到受支持模型，且不消耗瞬时错误重试次数 |
+| DeepSeek 短版文章 | 主 key 最多 4 次有界指数退避；只有鉴权、余额、限流或瞬时错误耗尽后才自动切到 `DEEPSEEK_API_KEY_BACKUP`，模型名错误不触发 key 轮换 |
 | DeepSeek 精译 | 每个片段最多 3 次完整调用；标题与文章化调用也有 HTTP 重试和主备 key 切换 |
 | 单篇报告 | 捕获异常并写 `status.json`；继续同批其他报告 |
 | 空产物 | 一个 shard 有输入但最终没有 publish-ready 报告时返回失败，禁止假绿 |
@@ -150,6 +151,13 @@ MinerU 个人 token 接口不提供可查询的未来到期日期，因此不能
 查看 `Generate MinerU source text and notes` 日志。如果 MinerU 已 `done`，但 DeepSeek 在重试耗尽后失败，
 先确认日志是否已经从 `DEEPSEEK_API_KEY` 切到 `DEEPSEEK_API_KEY_BACKUP`。两把 key 都不可用时，
 修复或充值后从最新 `main` 重新触发 workflow。失败运行未提交 seen 状态时，不需要 `force_reprocess`。
+
+### DeepSeek 模型名被拒绝
+
+日志出现 `supported API model names`、`unsupported model` 或 `invalid model` 时，先按模型生命周期问题处理，
+不要轮换或充值 API key。共享 HTTP 层会把历史别名映射为 `deepseek-v4-flash`，并在服务端列出新模型名时
+使用同一 key 自动重试。若日志仍停在旧模型名，说明该运行使用的是修复前 commit；从最新 `main` 重新触发，
+不要直接 rerun 旧 commit。
 
 ### MinerU 长时间 pending
 

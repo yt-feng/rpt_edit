@@ -4502,7 +4502,7 @@ async function deepseekJson(env, messages, options = {}) {
   const apiKey = cleanEnv(env.DEEPSEEK_API_KEY);
   if (!apiKey) return null;
   const baseUrl = cleanEnv(env.DEEPSEEK_BASE_URL) || "https://api.deepseek.com";
-  const model = cleanEnv(env.DEEPSEEK_MODEL) || "deepseek-chat";
+  const model = cleanEnv(env.DEEPSEEK_MODEL) || "deepseek-v4-flash";
   const response = await fetchWithTimeout(`${baseUrl.replace(/\/+$/, "")}/chat/completions`, {
     method: "POST",
     headers: {

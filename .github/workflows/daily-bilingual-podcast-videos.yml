@@ -10,7 +10,7 @@ on:
       model:
         description: "DeepSeek model"
         required: true
-        default: "deepseek-chat"
+        default: "deepseek-v4-flash"
       deepseek_base_url:
         description: "DeepSeek API base URL"
         required: true
@@ -121,7 +121,7 @@ jobs:
             --output-dir "_daily_bilingual_macro_pdfs" \
             --candidate-count "$CANDIDATE_COUNT" \
             --process-count "$CANDIDATE_COUNT" \
-            --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
+            --model "${{ github.event.inputs.model || 'deepseek-v4-flash' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
 
       - name: Select page-qualified macro reports for video generation
@@ -153,7 +153,7 @@ jobs:
             --shard-count 1 \
             --max-reports-per-shard "$COUNT" \
             --skip-existing false \
-            --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
+            --model "${{ github.event.inputs.model || 'deepseek-v4-flash' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
             --mineru-model "${{ github.event.inputs.mineru_model || 'vlm' }}" \
             --language "${{ github.event.inputs.language || 'en' }}" \
@@ -176,7 +176,7 @@ jobs:
             --output-dir "$OUTPUT_DIR" \
             --max-items "${{ github.event.inputs.video_count || '3' }}" \
             --output-mode "${{ github.event.inputs.output_mode || 'bilingual_only' }}" \
-            --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
+            --model "${{ github.event.inputs.model || 'deepseek-v4-flash' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
             --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
 
