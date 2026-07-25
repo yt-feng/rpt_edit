@@ -1,0 +1,144 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0003-43-MS-Software-Cyber Thoughts on Hugging Face Security Incident-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "Hugging Fa",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：1.攻击手法绕过了传统静态规则检测",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-MS-Software-Cyber Thoughts on Hugging Face Security Incident-260723.pdf",
+    "cleaned_source_title": "MS-Software-Cyber Thoughts on Hugging Face Security Incident",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：软件CyberThoughtsonHuggingFace安",
+    "raw_candidates": [
+      "Hugging Face安全事件：LLM攻击绕过传统SIEM检测",
+      "Hugging Face事件：传统SIEM检测能力缺口",
+      "Hugging Face安全事件：下一代安全厂商信号采集优势",
+      "软件与网络安全：Hugging Face安全事件",
+      "Hugging Face安全事件：LLM检测绕过传统SIEM",
+      "Hugging Face事件：传统SIEM检测能力缺口"
+    ],
+    "cleaned_candidates": [
+      "MS：HuggingFace安全事件",
+      "MS：HuggingFace事件，传统SIEM检测能力缺口",
+      "MS：HuggingFace安全事件，下一代安全厂商信号采集优势",
+      "MS：软件与网络安全，HuggingFace安全事件",
+      "MS：HuggingFace安全事件，LLM检测绕过传统SIEM",
+      "MS：软件CyberThoughtsonHuggingFace安",
+      "MS：1.攻击手法绕过了传统静态规则检测"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：HuggingFace安全事件",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：HuggingFace事件，传统SIEM检测能力缺口",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：HuggingFace安全事件，下一代安全厂商信号采集优势",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：软件与网络安全，HuggingFace安全事件",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：HuggingFace安全事件，LLM检测绕过传统SIEM",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：软件CyberThoughtsonHuggingFace安",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：1.攻击手法绕过了传统静态规则检测",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "1"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "MS：1.攻击手法绕过了传统静态规则检测",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "Hugging Face安全事件：LLM攻击绕过传统SIEM检测",
+      "Hugging Face事件：传统SIEM检测能力缺口",
+      "Hugging Face安全事件：下一代安全厂商信号采集优势"
+    ],
+    "final_title_after_wording_guard": "MS：1.攻击手法绕过了传统静态规则检测"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "507",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

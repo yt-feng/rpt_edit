@@ -1,0 +1,588 @@
+[
+  {
+    "item": "0001-41-Morgan-Stanley-ServiceNow-Inc-NOW.US-2Q26-Results-Building-Confidence-in",
+    "source_pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0001-41-MS-ServiceNow Inc-NOW.US-2Q26 Results-Building Confidence into the Second Half-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "ServiceNow",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：1.AI与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-MS-ServiceNow Inc-NOW.US-2Q26 Results-Building Confidence into the Second Half-260723.pdf",
+      "cleaned_source_title": "MS-ServiceNow Inc-NOW.US-2Q26 Results-Building Confidence into the Second Half",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：ServiceNowInc2Q26Resu",
+      "raw_candidates": [
+        "MS：ServiceNow第二季度cRPO增长21.5%超预期",
+        "MS：ServiceNow AI年化合同价值突破10亿美元",
+        "MS：ServiceNow全年订阅收入指引小幅上调",
+        "ServiceNow 2Q26业绩与下半年信心",
+        "ServiceNow 2Q26业绩：cRPO增长21.5%超预期",
+        "ServiceNow 2Q26业绩：AI年化合同价值超10亿美元"
+      ],
+      "cleaned_candidates": [
+        "MS：ServiceNow第二季度cRPO增长21.5%超预期",
+        "MS：ServiceNowAI年化合同价值突破10亿美元",
+        "MS：ServiceNow全年订阅收入指引小幅上调",
+        "MS：ServiceNow2Q26业绩与下半年信心",
+        "MS：ServiceNow2Q26业绩",
+        "MS：ServiceNowInc2Q26Resu",
+        "MS：1.AI业务年化合同价值突破10亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：ServiceNow第二季度cRPO增长21.5%超预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：ServiceNowAI年化合同价值突破10亿美元",
+          "reasons": [
+            "long_untranslated_english"
+          ]
+        },
+        {
+          "title": "MS：ServiceNow全年订阅收入指引小幅上调",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：ServiceNow2Q26业绩与下半年信心",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：ServiceNow2Q26业绩",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：ServiceNowInc2Q26Resu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：1.AI与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "1",
+          "10"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：1.AI业务年化合同价值突破10亿美元",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "MS：ServiceNow第二季度cRPO增长21.5%超预期",
+        "MS：ServiceNow AI年化合同价值突破10亿美元",
+        "MS：ServiceNow全年订阅收入指引小幅上调"
+      ],
+      "pre_neutralization_title": "MS：1.AI业务年化合同价值突破10亿美元",
+      "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：1.AI与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-42-Morgan-Stanley-Greater-China-Materials-China-Steel-and-Iron-Ore-Weekly-U",
+    "source_pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "钢铁周报：需求走弱，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：大中华材料-中国钢铁与铁矿石周度更新",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260723.pdf",
+      "cleaned_source_title": "MS-Greater China Materials-China Steel and Iron Ore Weekly Update",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国Materials中国Steel",
+      "raw_candidates": [
+        "大中华材料-中国钢铁与铁矿石周度更新",
+        "中国钢铁与铁矿石周度更新-截至7月19日当周",
+        "中国钢铁与铁矿石周度更新-供需与库存数据"
+      ],
+      "cleaned_candidates": [
+        "MS：大中华材料-中国钢铁与铁矿石周度更新",
+        "MS：中国钢铁与铁矿石周度更新-截至7月19日当周",
+        "MS：中国钢铁与铁矿石周度更新-供需与库存数据",
+        "MS：Greater中国Materials中国Steel",
+        "MS：这份MS周度报告覆盖截至7月19日当周的中国钢铁与铁"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国钢铁与铁矿石周度更新-截至7月19日当周",
+          "reasons": [
+            "anchor_coverage=0.64",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国钢铁与铁矿石周度更新-供需与库存数据",
+          "reasons": [
+            "anchor_coverage=0.64",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Greater中国Materials中国Steel",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：这份MS周度报告覆盖截至7月19日当周的中国钢铁与铁",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：大中华材料-中国钢铁与铁矿石周度更新",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：大中华材料-中国钢铁与铁矿石周度更新"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-43-Morgan-Stanley-Software-Cyber-Thoughts-on-Hugging-Face-Security-Incident",
+    "source_pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0003-43-MS-Software-Cyber Thoughts on Hugging Face Security Incident-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Hugging Fa",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：1.攻击手法绕过了传统静态规则检测",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-MS-Software-Cyber Thoughts on Hugging Face Security Incident-260723.pdf",
+      "cleaned_source_title": "MS-Software-Cyber Thoughts on Hugging Face Security Incident",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：软件CyberThoughtsonHuggingFace安",
+      "raw_candidates": [
+        "Hugging Face安全事件：LLM攻击绕过传统SIEM检测",
+        "Hugging Face事件：传统SIEM检测能力缺口",
+        "Hugging Face安全事件：下一代安全厂商信号采集优势",
+        "软件与网络安全：Hugging Face安全事件",
+        "Hugging Face安全事件：LLM检测绕过传统SIEM",
+        "Hugging Face事件：传统SIEM检测能力缺口"
+      ],
+      "cleaned_candidates": [
+        "MS：HuggingFace安全事件",
+        "MS：HuggingFace事件，传统SIEM检测能力缺口",
+        "MS：HuggingFace安全事件，下一代安全厂商信号采集优势",
+        "MS：软件与网络安全，HuggingFace安全事件",
+        "MS：HuggingFace安全事件，LLM检测绕过传统SIEM",
+        "MS：软件CyberThoughtsonHuggingFace安",
+        "MS：1.攻击手法绕过了传统静态规则检测"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：HuggingFace安全事件",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：HuggingFace事件，传统SIEM检测能力缺口",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：HuggingFace安全事件，下一代安全厂商信号采集优势",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：软件与网络安全，HuggingFace安全事件",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：HuggingFace安全事件，LLM检测绕过传统SIEM",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：软件CyberThoughtsonHuggingFace安",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：1.攻击手法绕过了传统静态规则检测",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "1"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：1.攻击手法绕过了传统静态规则检测",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Hugging Face安全事件：LLM攻击绕过传统SIEM检测",
+        "Hugging Face事件：传统SIEM检测能力缺口",
+        "Hugging Face安全事件：下一代安全厂商信号采集优势"
+      ],
+      "final_title_after_wording_guard": "MS：1.攻击手法绕过了传统静态规则检测"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-44-NOM-Akeso-9926.HK-1H26F-preview-and-FY26F-forecast-revisions-260724",
+    "source_pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0004-44-NOM-Akeso-9926.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "康方生物要翻身了？半",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：康方生物1H26F预览与FY26F预测调整",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-NOM-Akeso-9926.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+      "cleaned_source_title": "NOM-Akeso-9926.HK-1H26F preview and FY26F forecast revisions",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：Akeso1H26Fpreview和FY26Ff",
+      "raw_candidates": [
+        "康方生物1H26F预览与FY26F预测调整",
+        "康方生物1H26F营收预计增长68%"
+      ],
+      "cleaned_candidates": [
+        "NOM：康方生物1H26F预览与FY26F预测调整",
+        "NOM：康方生物1H26F营收预计增长68%",
+        "NOM：Akeso1H26Fpreview和FY26Ff",
+        "NOM：康方生物1H26F营收预计增长68%，核心产品放量驱动扭亏"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：康方生物1H26F营收预计增长68%",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "NOM：Akeso1H26Fpreview和FY26Ff",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.35"
+          ]
+        },
+        {
+          "title": "NOM：康方生物1H26F营收预计增长68%，核心产品放量驱动扭亏",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        }
+      ],
+      "selected_title": "NOM：康方生物1H26F预览与FY26F预测调整",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：康方生物1H26F预览与FY26F预测调整"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-45-Morgan-Stanley-Texas-Instruments-TXN.US-Holding-Up-260723",
+    "source_pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0005-45-MS-Texas Instruments-TXN.US-Holding Up-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "芯片复苏走到哪一步了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：德州仪器汽车业务回暖与资本强度焦点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-MS-Texas Instruments-TXN.US-Holding Up-260723.pdf",
+      "cleaned_source_title": "MS-Texas Instruments-TXN.US-Holding Up",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：TexasInstrumentsHoldingUp",
+      "raw_candidates": [
+        "德州仪器汽车业务回暖与资本强度焦点",
+        "德州仪器二季度营收54.63亿美元汽车业务双位数增长",
+        "德州仪器汽车与工业需求扩张资本支出上调至28亿美元"
+      ],
+      "cleaned_candidates": [
+        "MS：德州仪器汽车业务回暖与资本强度焦点",
+        "MS：德州仪器二季度营收54.63亿美元汽车业务双位数增长",
+        "MS：德州仪器汽车与工业需求扩张资本支出上调至28亿美元",
+        "MS：TexasInstrumentsHoldingUp",
+        "MS：三季度指引同样高于共识，营收中点59亿美元，环比增长约8%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：德州仪器二季度营收54.63亿美元汽车业务双位数增长",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "MS：德州仪器汽车与工业需求扩张资本支出上调至28亿美元",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "MS：TexasInstrumentsHoldingUp",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：三季度指引同样高于共识，营收中点59亿美元，环比增长约8%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：德州仪器汽车业务回暖与资本强度焦点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：德州仪器汽车业务回暖与资本强度焦点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

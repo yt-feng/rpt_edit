@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0001-41-MS-ServiceNow Inc-NOW.US-2Q26 Results-Building Confidence into the Second Half-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0003-43-MS-Software-Cyber Thoughts on Hugging Face Security Incident-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0004-44-NOM-Akeso-9926.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_z_zuw545/pdfs/0005-45-MS-Texas Instruments-TXN.US-Holding Up-260723.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
