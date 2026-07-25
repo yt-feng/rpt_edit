@@ -1,0 +1,14 @@
+EN_A: I just came across a research note on cloud semiconductors with a pretty bold title: "Unlikely to slow down." What's the main takeaway here?
+EN_B: The core argument is that the cloud semiconductor market will keep expanding into 2027. Both CPU and GPU server total addressable markets are growing. The report highlights two key names, Aspeed and Montage, and says they have upside potential.
+EN_A: So what's the big question this report is trying to answer? Why now?
+EN_B: It's asking whether the AI-driven demand for cloud chips has peaked. And the answer is no, not even close. Based on a recent trip to the World AI Congress in Shanghai, the report finds that CPU servers have more room to run, and GPU servers will see more diverse scaling solutions in 2027.
+EN_A: That sounds promising. But what does that actually mean? Give me a couple of key insights.
+EN_B: First insight: CPU servers, especially in China, are seeing stronger demand than expected. The report notes that AMD, Nvidia, and Hygon solutions are being adopted more widely. High-end x86 CPU prices in China have nearly doubled year over year. The takeaway is that AI needs powerful CPUs as central coordinators, not just GPUs.
+EN_A: And the second insight? What about GPU servers?
+EN_B: Second insight: The way GPU servers are being scaled up is evolving. Almost every domestic Chinese GPU vendor showed 64 or 128-card interconnected systems. The report also hints that Nvidia could introduce more rack varieties in 2027, including "SuperPods" that connect multiple racks using optics. So while chip-level supply is limited, companies are innovating at the system level.
+EN_A: Sounds like a strong outlook. But did the report mention any risks or open questions?
+EN_B: Yes. For example, order visibility is high, with customers giving forecasts seven to eight times Aspeed's monthly revenue. But the report also says shipments are well beyond actual customer needs. Whether there's double ordering is not fully confirmed. Also, while ASIC servers like Google's TPU and Amazon's Trainium are expected to drive big revenue, orders beyond 2026 remain uncertain.
+EN_A: So those are the cliffhangers. If listeners want to know how those uncertainties play out, they need the full report.
+EN_B: Exactly. The report also says gross margins should stay high due to product upgrades like the new AST2700 BMC chip. But whether that fully offsets cost pressures is something to watch. It recommends buying ahead of cloud capex announcements, but the full logic is in the note.
+EN_A: Great. If you want the full report or to join our community for more discussion, just leave a comment or send us a message. Thanks for listening, and see you next time.
+EN_B: See you.

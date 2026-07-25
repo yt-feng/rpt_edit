@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_p0tek5w8/pdfs/0001-66-MS-Apple- Inc. - North America F3Q26 Earnings Preview - The Market Has Pre-Priced in a Solid June Q-Sept Guide-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p0tek5w8/pdfs/0002-67-MS-China Musings-No Pivot Yet-but Watch Closely-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p0tek5w8/pdfs/0003-68-MS-Eyes on the Tide- Swimming Ring in Hand-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p0tek5w8/pdfs/0004-69-MS-Cloud Semis- Unlikely to slow down-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p0tek5w8/pdfs/0005-70-MS-Greater China Technology Semiconductors - Asia Pacific Cloud Semis-Read-across from US results-260723.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

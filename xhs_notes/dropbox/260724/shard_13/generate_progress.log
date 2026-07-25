@@ -1,0 +1,67 @@
+Found 91 total PDFs; shard 13/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0tek5w8/pdfs/0001-66-Morgan Stanley-Apple- Inc. - North America F3Q26 Earnings Preview - The Market Has Pre-Priced in a Solid June Q-Sept Guide-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0tek5w8/pdfs/0002-67-Morgan Stanley-China Musings-No Pivot Yet-but Watch Closely-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0tek5w8/pdfs/0003-68-Morgan Stanley-Eyes on the Tide- Swimming Ring in Hand-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0tek5w8/pdfs/0004-69-Morgan Stanley-Cloud Semis- Unlikely to slow down-260722.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0tek5w8/pdfs/0005-70-Morgan Stanley-Greater China Technology Semiconductors - Asia Pacific Cloud Semis-Read-across from US results-260723.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=3d7b624e-e786-4a97-8227-a167579065f2
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset b0a4f9632dbb2ac51631a196ae03d00b91aaedfb8432d78252bc0037283ebac4.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset 485527d714c9620090e52ada002eba45de637970f411dc387c64ae3b020250f3.jpg: score=-100;too_small:901x109
+Skip non-chart visual asset 8398f6f9a6c32f7792305c5448c2902018b357c60ad82061d796a7547c3f9f91.jpg: score=-100;too_small:379x87
+Skip non-chart visual asset 49ca7bf3f91a2a6a0a751a4db572a984cba140883ec45eb69357798fa0bc9f31.jpg: score=-100;too_small:448x165
+Skip non-chart visual asset ff9c0912978f851d03139834abd5d54a123260053ef58fa24d32ab1008644dc4.jpg: score=-100;too_small:509x112
+Skip non-chart visual asset ad13d548177193d7eef10c22757bbafaf97390e3171015c0742eb8a316658395.jpg: score=-100;too_small:448x71
+Skip non-chart visual asset 89db372e049b07fa70507dcfd8fe11e8c91a7e1629580ea5021529e9d51bd187.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset c0c3e5a51b3597595814aa678d14657b28d2e8a69c11e16370deb45bdbb7b745.jpg: score=1;large
+Skip non-chart visual asset b70beae26e469c9720115e5829e35861867b6b796eff644858931b2833c6e2a5.jpg: score=-100;too_small:435x109
+Skip non-chart visual asset cacc8beb20ef0d7e2b6e6d425b225f9957f239998bb26c08c06447005b176019.jpg: score=-100;too_small:526x162
+Skip non-chart visual asset d1091b52e2dfd265f20c9f92c3d7fb29d7c6f542c76efe2e15621b13a7fb12a9.jpg: score=-100;too_small:123x126
+Skip non-chart visual asset dc196096d7063eed49711219e6c17414e58cee149bf0ba3b6c6c435b879cda02.jpg: score=2;edge:0.10
+Skip non-chart visual asset 5156f2cef77c43c34a933947026b6695571372c50344c07e6dfaca4099d0ac8a.jpg: score=-100;too_small:515x134
+Skip non-chart visual asset cb2692d3172e3d5e945b2915c6376c1427edffcd848d78ae3aed5a50369fc52b.jpg: score=1;chart_ratio
+Skip non-chart visual asset fefde1ebdc123e107bebd899fbf4244a18ab50568053b3f085e35a03b2ab9d91.jpg: score=-100;too_small:506x132
+Neutralized WeChat title while keeping the report: 摩根士丹利：中国宏观观察，尚未转向但需关注 -> 摩根士丹利：近期数据与市场变化观察
+Skip non-chart visual asset 0a194f30dd613584f510753cba4a7e220f91b3cd54e4be5cafb3152037083942.jpg: score=-1;chart_ratio,square_without_chart_hint,large
+Skip non-chart visual asset a344f80c625ffde3f490f9b5c69291c626d931c6f96fe8976cead5ebe9c3109d.jpg: score=0;square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset 782491e8c8912aa7fd7b2ed5f5dadb49daee3739e746580eaf8801ec6ca136a4.jpg: score=0;square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset 82134908b3135ccc59b4f0e50cf4288169c775914f4422e1dc113965c7825075.jpg: score=-100;too_small:531x87
+Skip non-chart visual asset 93f06a92b19c467c15d63a2e578df6233111f71cde8cc2a30c4fa9bdcd2ffc86.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,contrast
+Skip non-chart visual asset c513fe80a32798b3c6e043159f0539e85065a535a413afad67d56c35ca793dd0.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.17
+Skip non-chart visual asset 72d19c490fadb6fe77aba789e78bf1aa7d8bcc62e13a13b999482c70b983e921.jpg: score=-100;too_small:534x87
+Skip non-chart visual asset 79bd8fa3bafef49d7fa6f52da66e42272c52ffd2778e2ae11ee41dd8f04c1099.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.21
+Skip non-chart visual asset 3a2d5b2b222a1c79e6f11de8393507187c81f719b882800680602ee0bf4bb91d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,contrast
+Skip non-chart visual asset 5ee76849e22b6eae36a56e2ba0e6cc2d6cc82e6fad33bf9057ae1f97ef65215b.jpg: score=-100;too_small:531x84
+Skip non-chart visual asset 81ce6edeb2aed3478f8cf59bb69335fc16b8f292f3c4898809b3725e2e4c4d8c.jpg: score=0;square_without_chart_hint,edge:0.14,large
+Skip non-chart visual asset cc4f2d7c62ffa6bc06df75e3ae4b8495d6492b996b96d361e0836a9ac133bdfc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.15,contrast
+Skip non-chart visual asset a42b8929a19841e820efb6c138c524430fdee4bcd48dd492a8a59408f2a0e883.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.19
+Skip non-chart visual asset 6ebdb0819e13465b93de9cac27a993cd4e9ac718077d8db5dda7fc99ccda2936.jpg: score=0;square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset 68e861ae5f5e0d85f8338f86ccd60edbe77929dc9107251d9dde90c4a64244ff.jpg: score=-100;too_small:534x170
+Skip non-chart visual asset d809ebd4beedc95e75f1e523fab53839e5906390c6296a3a61ca7bbaa6f7e2e7.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,contrast
+Skip non-chart visual asset 44c047040043b22ca21ca5e8bbf03ca3e740f7bf289e1670403c019cacd452c2.jpg: score=1;large
+Skip non-chart visual asset 046d23a404a488560fcf7c029effa888f15a841be075272084983ba45d2d6f40.jpg: score=-100;too_small:534x114
+Skip non-chart visual asset c7b867a58b51c5062d7bff47cc326933bd8cb61beef134b91483ffa4611a9d56.jpg: score=-100;too_small:437x40
+Skip non-chart visual asset 6232667ed902baef0c2c80ebb3a2a146cc57eb1c5738e981fdf488ab7f3469d3.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset 9584f6f8230cd7001a18b8c6bdbeb0e1f61b17a5f78426bb7139f7f7e0ab9981.jpg: score=1;chart_ratio
+Skip non-chart visual asset d8598096fd9f2b1eed6058314e829c4b4a8b749b43cf3cf763e48906f3435bc8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset 8b7070e9ed557f3882120198ed7a9d2f3c6206149b32c1957ae119fd84243734.jpg: score=-100;too_small:473x87
+Skip non-chart visual asset 1d1269ea578dd0a587770a12f947961ed67b89471954794a6cff92b206749ce4.jpg: score=-100;too_small:518x137
+Skip non-chart visual asset f0aa939dadefa7ba0db94e97506b5dda75c0144a3dcd00dea543d76ec4cff6b2.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset 4e24ca69f5d680b9a3d5f0b5e71371ae4ab9f6fb357c3afe2187481414349aea.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset ec7b2f81c8a75218897f19d97f99de3a90fc27148a2fed6a2d78b5453b9dcbfb.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 5fc02814f01629bfeb592140cb2cbb1f0f90e71e7e914f594dec70052db73d4a.jpg: score=-100;too_small:529x87
+Skip non-chart visual asset 70ca317d74c5d232de54fd44f5993f73647245f9f1536473ad0ad3b2f64a74fc.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 0ac3593c7c95d69c6813ebe20081ddb84256f5aec8d322f1c0c58977861b376c.jpg: score=-100;too_small:420x210
+Skip non-chart visual asset d94682810862b9bc6e3aea0116430551a3ce50b4f9ef4d642c1c6794ccbccc72.jpg: score=-100;too_small:449x204
+Skip non-chart visual asset a6be339e983e6a77c1541fa1cbaf69f1b10957faa02d0dece0ab82cdbabc5937.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 1d8025a213354761da2476847e003d06cd340b80493bacd45859880ec33eee4c.jpg: score=1;large
+Neutralized WeChat title while keeping the report: 摩根士丹利：云端半导体需求未见放缓迹象 -> 摩根士丹利：云端半导体业务与近期数据观察
+Skip non-chart visual asset 0715f8bb5b96a23c38a5e1cf635b391a4c810ed9dbd45ccfa9060a1a5e985d92.jpg: score=-100;too_small:515x131
+Skip non-chart visual asset 3f817dc9021ffb69cc14009f4d5dd621e9014ca032c73e8d6fe0a80178e66a49.jpg: score=1;large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260724/shard_13; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
