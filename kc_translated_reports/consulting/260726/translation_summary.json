@@ -1,0 +1,432 @@
+{
+  "date_folder": "260726",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "title_neutralized_count": 3,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260726/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+      "title": "波士顿咨询：研究主题与行业变化观察",
+      "source_title": "0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+        "cleaned_source_title": "0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0001BCGBecominganAllW",
+        "raw_candidates": [
+          "波士顿咨询：成为全天候公司",
+          "波士顿咨询：扰动期韧性贡献长期TSR三成",
+          "波士顿咨询：韧性企业超额回报与行业差异"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：成为全天候公司",
+          "波士顿咨询：扰动期韧性贡献长期TSR三成",
+          "波士顿咨询：韧性企业超额回报与行业差异",
+          "波士顿咨询：0001BCGBecominganAllW",
+          "波士顿咨询：一般韧性企业25年间年均超额回报5个百分点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：成为全天候公司",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：韧性企业超额回报与行业差异",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0001BCGBecominganAllW",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：一般韧性企业25年间年均超额回报5个百分点",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [
+            "韧性"
+          ],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：扰动期韧性贡献长期TSR三成",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 5,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260726/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a",
+      "pdf_path": "kc_translated_reports/consulting/260726/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260726/0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+      "title": "波士顿咨询：低碳航运业务与近期数据观察",
+      "source_title": "0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+        "cleaned_source_title": "0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0002BCGDemandforLowCa",
+        "raw_candidates": [
+          "波士顿咨询：低碳航运需求短期回落但长期价值不变",
+          "波士顿咨询：2025年高管调查显示成本管理为首要任务",
+          "波士顿咨询：全球高管成本管理优先级与AI应用趋势"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：低碳航运需求短期回落但长期价值不变",
+          "波士顿咨询：2025年高管调查显示成本管理为首要任务",
+          "波士顿咨询：全球高管成本管理优先级与AI应用趋势",
+          "波士顿咨询：0002BCGDemandforLowCa",
+          "波士顿咨询：波士顿咨询在2024年底对全球超过570名企业高管进行的调"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：2025年高管调查显示成本管理为首要任务",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：全球高管成本管理优先级与AI应用趋势",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0002BCGDemandforLowCa",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：波士顿咨询在2024年底对全球超过570名企业高管进行的调",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：低碳航运业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：低碳航运需求短期回落但长期价值不变",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：低碳航运业务与近期数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 10,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260726/02-0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415",
+      "pdf_path": "kc_translated_reports/consulting/260726/02-0002-BCG_Demand-for-Low-Carbon-Shipping-Has-Fallen-but-Long-Term-Valu_b5e4c415/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260726/0003-BCG_More-than-a-Space-Programme_8af98d6b",
+      "title": "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+      "source_title": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+        "cleaned_source_title": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0003BCGMorethanaSpace",
+        "raw_candidates": [
+          "波士顿咨询：欧洲太空探索计划",
+          "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+          "波士顿咨询：欧洲太空探索计划经济影响研究"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：欧洲太空探索计划",
+          "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+          "波士顿咨询：欧洲太空探索计划宏观环境影响研究",
+          "波士顿咨询：0003BCGMorethanaSpace",
+          "波士顿咨询：欧洲太空探索研究可产生超5倍GDP乘数效应"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0003BCGMorethanaSpace",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：欧洲太空探索研究可产生超5倍GDP乘数效应",
+            "reasons": [
+              "anchor_coverage=0.71"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "5"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：欧洲太空探索计划GDP乘数超5倍"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 28,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260726/03-0003-BCG_More-than-a-Space-Programme_8af98d6b",
+      "pdf_path": "kc_translated_reports/consulting/260726/03-0003-BCG_More-than-a-Space-Programme_8af98d6b/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260726/0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+      "title": "波士顿咨询：能源行业数据与主题变化观察",
+      "source_title": "0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+        "cleaned_source_title": "0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0004BCGSurprisingLess",
+        "raw_candidates": [
+          "波士顿咨询：中美可再生能源规模化扩张中的关键驱动因素",
+          "波士顿咨询：2014-2024中美可再生能源扩张与土地成本关联",
+          "波士顿咨询：中美可再生能源扩张中土地成本与电网因素分析"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：中美可再生能源规模化扩张中的关键驱动因素",
+          "波士顿咨询：2014-2024中美可再生能源扩张与土地成本关联",
+          "波士顿咨询：中美可再生能源扩张中土地成本与电网因素分析",
+          "波士顿咨询：0004BCGSurprisingLess",
+          "波士顿咨询：波士顿咨询公司亨德森研究所基于2014至2024年间美国5"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：2014-2024中美可再生能源扩张与土地成本关联",
+            "reasons": [
+              "anchor_coverage=0.37"
+            ]
+          },
+          {
+            "title": "波士顿咨询：中美可再生能源扩张中土地成本与电网因素分析",
+            "reasons": [
+              "anchor_coverage=0.47"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0004BCGSurprisingLess",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：波士顿咨询公司亨德森研究所基于2014至2024年间美国5",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：能源行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：中美可再生能源规模化扩张中的关键驱动因素",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：能源行业数据与主题变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 3,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260726/04-0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5",
+      "pdf_path": "kc_translated_reports/consulting/260726/04-0004-BCG_Surprising-Lessons-from-Scaling-Renewables-in-the-US-and-Chi_a015c7d5/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260726/0005-BCG_The-AI-First-Refiner_07c3fb7f",
+      "title": "波士顿咨询：AI优先炼油厂-2030年每桶利润提升0.5至1.2美元",
+      "source_title": "0005-BCG_The-AI-First-Refiner_07c3fb7f",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-BCG_The-AI-First-Refiner_07c3fb7f",
+        "cleaned_source_title": "0005-BCG_The-AI-First-Refiner_07c3fb7f",
+        "institution_name": "波士顿咨询",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+        "raw_candidates": [
+          "波士顿咨询：AI优先炼油厂",
+          "波士顿咨询：AI优先炼油厂-2030年每桶利润提升0.5至1.2美元",
+          "波士顿咨询：AI优先炼油厂-运营与维护环节收益"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：AI优先炼油厂",
+          "波士顿咨询：AI优先炼油厂-2030年每桶利润提升0.5至1.2美元",
+          "波士顿咨询：AI优先炼油厂-运营与维护环节收益",
+          "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+          "波士顿咨询：AI优先炼油厂如何在结构性不确定性下提升盈利"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：AI优先炼油厂",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI优先炼油厂-运营与维护环节收益",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI优先炼油厂如何在结构性不确定性下提升盈利",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：AI优先炼油厂-2030年每桶利润提升0.5至1.2美元",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "0.5",
+            "1.2",
+            "2030"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：AI优先炼油厂-2030年每桶利润提升0.5至1.2美元"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 5,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260726/05-0005-BCG_The-AI-First-Refiner_07c3fb7f",
+      "pdf_path": "kc_translated_reports/consulting/260726/05-0005-BCG_The-AI-First-Refiner_07c3fb7f/kc_translated_report_05.pdf"
+    }
+  ]
+}

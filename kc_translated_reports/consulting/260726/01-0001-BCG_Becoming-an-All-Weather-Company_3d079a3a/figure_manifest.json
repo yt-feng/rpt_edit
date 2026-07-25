@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260726/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/mineru_raw/images/7e2adb119b055475b890cce6f0f2be26eaf579dd81d786eadc256000ba478e14.jpg",
+    "path": "kc_translated_reports/consulting/260726/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260726/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/mineru_raw/images/882ab46c3d8ec153b47b6ce7b65bb22414c0e7a1713b5081fadaa4e4d4ed2408.jpg",
+    "path": "kc_translated_reports/consulting/260726/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.11,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260726/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/mineru_raw/images/ee0db15e3cc12844bb71acf9fe573659faad48184e4ac19422cc790d467586e7.jpg",
+    "path": "kc_translated_reports/consulting/260726/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260726/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/mineru_raw/images/b217463f4acbbc481467b9db1d0cb9af4223ce9d9d432118c45657df93e39c4c.jpg",
+    "path": "kc_translated_reports/consulting/260726/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.25,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260726/0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/mineru_raw/images/fb973fe19c53878b4ece98c2c2af2b2e78478498f1da21078d03e4b65783c7ca.jpg",
+    "path": "kc_translated_reports/consulting/260726/01-0001-BCG_Becoming-an-All-Weather-Company_3d079a3a/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  }
+]

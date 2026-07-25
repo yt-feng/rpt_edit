@@ -1,0 +1,66 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260726/0003-BCG_More-than-a-Space-Programme_8af98d6b",
+  "title": "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+  "source_title": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+    "cleaned_source_title": "0003-BCG_More-than-a-Space-Programme_8af98d6b",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0003BCGMorethanaSpace",
+    "raw_candidates": [
+      "波士顿咨询：欧洲太空探索计划",
+      "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+      "波士顿咨询：欧洲太空探索计划经济影响研究"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：欧洲太空探索计划",
+      "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+      "波士顿咨询：欧洲太空探索计划宏观环境影响研究",
+      "波士顿咨询：0003BCGMorethanaSpace",
+      "波士顿咨询：欧洲太空探索研究可产生超5倍GDP乘数效应"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：0003BCGMorethanaSpace",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：欧洲太空探索研究可产生超5倍GDP乘数效应",
+        "reasons": [
+          "anchor_coverage=0.71"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：欧洲太空探索计划GDP乘数超5倍",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "5"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：欧洲太空探索计划GDP乘数超5倍"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 28,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
