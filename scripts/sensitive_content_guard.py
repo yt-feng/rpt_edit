@@ -867,6 +867,7 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
             "model": model,
+            "thinking": {"type": "disabled"},
             "temperature": 0.2,
             "messages": [
                 {"role": "system", "content": "你是严谨的中文内容合规编辑，只做安全、自然、克制的改写。"},

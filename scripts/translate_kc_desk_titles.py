@@ -74,6 +74,7 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
 
     payload: dict[str, Any] = {
         "model": args.model,
+        "thinking": {"type": "disabled"},
         "temperature": 0,
         "max_tokens": 220,
         "messages": [

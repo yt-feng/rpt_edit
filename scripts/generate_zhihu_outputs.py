@@ -48,6 +48,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
             "model": args.model,
+            "thinking": {"type": "disabled"},
             "temperature": 0.55,
             "messages": [
                 {"role": "system", "content": "你是知乎行业研究长文作者，写作克制、有逻辑、有洞察，避免收益承诺和操作建议。"},

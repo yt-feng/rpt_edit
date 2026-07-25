@@ -131,7 +131,7 @@ def deepseek(prompt: str, args: argparse.Namespace, temperature: float = 0.55) -
     data = post_json(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         {"Content-Type": "application/json", "Authorization": f"Bearer {key}"},
-        {"model": args.model, "temperature": temperature, "messages": [
+        {"model": args.model, "thinking": {"type": "disabled"}, "temperature": temperature, "messages": [
             {"role": "system", "content": "You are a careful podcast and short-video producer. Return exactly the requested format."},
             {"role": "user", "content": prompt},
         ]},

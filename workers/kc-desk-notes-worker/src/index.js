@@ -4511,6 +4511,7 @@ async function deepseekJson(env, messages, options = {}) {
     },
     body: JSON.stringify({
       model,
+      thinking: { type: "disabled" },
       messages,
       temperature: options.temperature ?? 0.2,
       stream: false,

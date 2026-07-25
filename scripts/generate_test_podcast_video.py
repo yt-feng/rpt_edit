@@ -64,6 +64,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
             "model": args.model,
+            "thinking": {"type": "disabled"},
             "temperature": temperature,
             "messages": [
                 {"role": "system", "content": "你是中文财经播客制作人，输出可直接朗读的男声双人对话脚本。"},

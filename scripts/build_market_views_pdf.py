@@ -512,6 +512,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
             "model": args.model,
+            "thinking": {"type": "disabled"},
             "temperature": 0.25,
             "max_tokens": getattr(args, "deepseek_max_tokens", 8192),
             "messages": [
