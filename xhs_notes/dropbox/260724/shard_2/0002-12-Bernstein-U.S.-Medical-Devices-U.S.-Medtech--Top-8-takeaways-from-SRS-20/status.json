@@ -1,0 +1,107 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_0f3ckc_5/pdfs/0002-12-Bernstein-U.S. Medical Devices-U.S. Medtech- Top 8 takeaways from SRS 2026- plus thoughts on JNJ Ottava clearance and continued ISRG weakness-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "机器人手术江湖：谁在",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：美国医疗设备SRS2026八大要点与强生Ottava获批及直",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-12-Bernstein-U.S. Medical Devices-U.S. Medtech- Top 8 takeaways from SRS 2026- plus thoughts on JNJ Ottava clearance and continued ISRG weakness-260723.pdf",
+    "cleaned_source_title": "Bernstein-U.S. Medical Devices-U.S. Medtech- Top 8 takeaways from SRS 2026- plus thoughts on JNJ Ottava clearance and continued ISRG weakness",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：.MedicalDevices.Medtech",
+    "raw_candidates": [
+      "Bernstein：美国医疗设备SRS 2026八大要点与强生Ottava获批及直觉外科持续弱势",
+      "Bernstein：SRS 2026首日观察-软组织手术机器人市场仍处早期",
+      "Bernstein：SRS 2026-人工智能提高软组织机器人进入壁垒"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：美国医疗设备SRS2026八大要点与强生Ottava获批及直",
+      "Bernstein：SRS2026首日观察-软组织手术机器人市场仍处早期",
+      "Bernstein：SRS2026-人工智能提高软组织机器人进入壁垒",
+      "Bernstein：.MedicalDevices.Medtech",
+      "Bernstein：1.人工智能正在提高软组织机器人领域的进入壁垒"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：SRS2026首日观察-软组织手术机器人市场仍处早期",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：SRS2026-人工智能提高软组织机器人进入壁垒",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：.MedicalDevices.Medtech",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：1.人工智能正在提高软组织机器人领域的进入壁垒",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：美国医疗设备SRS2026八大要点与强生Ottava获批及直",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：美国医疗设备SRS2026八大要点与强生Ottava获批及直"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "465",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
