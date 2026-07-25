@@ -1,0 +1,82 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260725/0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+  "title": "亚洲开发银行：技术应用与行业运营观察",
+  "source_title": "0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+    "cleaned_source_title": "0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+    "institution_name": "亚洲开发银行",
+    "required_terms": [],
+    "deterministic_fallback": "亚洲开发银行：0001ADBBullets和Budge",
+    "raw_candidates": [
+      "亚洲开发银行：国防支出乘数测算",
+      "亚洲开发银行：1990-2023年新兴地区国防支出乘数",
+      "亚洲开发银行：国防支出对新兴地区产出效应研究"
+    ],
+    "cleaned_candidates": [
+      "亚洲开发银行：国防支出乘数测算",
+      "亚洲开发银行：1990-2023年新兴地区国防支出乘数",
+      "亚洲开发银行：国防支出对新兴地区产出效应研究",
+      "亚洲开发银行：0001ADBBullets和Budge",
+      "亚洲开发银行：2023年全球军事支出达到创纪录的2.4万亿美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "亚洲开发银行：1990-2023年新兴地区国防支出乘数",
+        "reasons": [
+          "anchor_coverage=0.71"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：国防支出对新兴地区产出效应研究",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：0001ADBBullets和Budge",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：2023年全球军事支出达到创纪录的2.4万亿美元",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "亚洲开发银行：技术应用与行业运营观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "亚洲开发银行：国防支出乘数测算",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:military_or_defense"
+    ],
+    "final_title_after_wording_guard": "亚洲开发银行：技术应用与行业运营观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_01.pdf",
+  "figure_count": 25,
+  "institution_name": "亚洲开发银行",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

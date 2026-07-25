@@ -1,0 +1,84 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260725/0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+  "title": "IMF：行业规则与主题变化观察",
+  "source_title": "0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+    "cleaned_source_title": "0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0004IMFIndustrial政策和贸易T",
+    "raw_candidates": [
+      "IMF：战略行业工业政策与贸易紧张",
+      "IMF：2015-2023年战略行业补贴率升至1.8%",
+      "IMF：工业补贴与关税对战略行业贸易格局影响"
+    ],
+    "cleaned_candidates": [
+      "IMF：战略行业工业政策与贸易紧张",
+      "IMF：2015-2023年战略行业补贴率升至1.8%",
+      "IMF：工业补贴与关税对战略行业贸易格局影响",
+      "IMF：0004IMFIndustrial政策和贸易T",
+      "IMF：2015至2023年间"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：2015-2023年战略行业补贴率升至1.8%",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：工业补贴与关税对战略行业贸易格局影响",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "IMF：0004IMFIndustrial政策和贸易T",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：2015至2023年间",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：战略行业工业政策与贸易紧张",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：行业规则与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_04.pdf",
+  "figure_count": 28,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

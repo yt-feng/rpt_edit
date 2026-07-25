@@ -1,0 +1,83 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260725/0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+  "title": "IMF：货币市场与相关指标观察",
+  "source_title": "0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+    "cleaned_source_title": "0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0007IMFSettlementRisk和C",
+    "raw_candidates": [
+      "IMF：结算风险与外汇市场",
+      "IMF：匈牙利福林接入CLS后超额回报下降约10个基点",
+      "IMF：结算基础设施改进与中东欧外汇市场"
+    ],
+    "cleaned_candidates": [
+      "IMF：结算风险与外汇市场",
+      "IMF：匈牙利福林接入CLS后超额回报下降约10个基点",
+      "IMF：结算基础设施改进与中东欧外汇市场",
+      "IMF：0007IMFSettlementRisk和C",
+      "IMF：研究覆盖2015至2016年间匈牙利、克罗地亚、捷克、波兰、罗"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：匈牙利福林接入CLS后超额回报下降约10个基点",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：结算基础设施改进与中东欧外汇市场",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "IMF：0007IMFSettlementRisk和C",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：研究覆盖2015至2016年间匈牙利、克罗地亚、捷克、波兰、罗",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：货币市场与相关指标观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：结算风险与外汇市场",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：货币市场与相关指标观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_07.pdf",
+  "figure_count": 5,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

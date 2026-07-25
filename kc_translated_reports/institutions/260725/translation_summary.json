@@ -1,0 +1,682 @@
+{
+  "date_folder": "260725",
+  "max_reports": "all",
+  "selected_count": 8,
+  "successful_count": 8,
+  "title_neutralized_count": 7,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+      "title": "亚洲开发银行：技术应用与行业运营观察",
+      "source_title": "0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+        "cleaned_source_title": "0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0001ADBBullets和Budge",
+        "raw_candidates": [
+          "亚洲开发银行：国防支出乘数测算",
+          "亚洲开发银行：1990-2023年新兴地区国防支出乘数",
+          "亚洲开发银行：国防支出对新兴地区产出效应研究"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：国防支出乘数测算",
+          "亚洲开发银行：1990-2023年新兴地区国防支出乘数",
+          "亚洲开发银行：国防支出对新兴地区产出效应研究",
+          "亚洲开发银行：0001ADBBullets和Budge",
+          "亚洲开发银行：2023年全球军事支出达到创纪录的2.4万亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：1990-2023年新兴地区国防支出乘数",
+            "reasons": [
+              "anchor_coverage=0.71"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：国防支出对新兴地区产出效应研究",
+            "reasons": [
+              "anchor_coverage=0.43"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0001ADBBullets和Budge",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：2023年全球军事支出达到创纪录的2.4万亿美元",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：技术应用与行业运营观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "亚洲开发银行：国防支出乘数测算",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:military_or_defense"
+        ],
+        "final_title_after_wording_guard": "亚洲开发银行：技术应用与行业运营观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 25,
+      "institution_name": "亚洲开发银行",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/01-0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943",
+      "pdf_path": "kc_translated_reports/institutions/260725/01-0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0002-ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7",
+      "title": "亚洲开发银行：货币市场与相关指标观察",
+      "source_title": "0002-ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7",
+        "cleaned_source_title": "0002-ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0002ADBRenminbiInvoi",
+        "raw_candidates": [
+          "亚洲开发银行：人民币计价贸易扩张与美元主导结构性约束",
+          "亚洲开发银行：2016-2023年70地区数据下人民币计价扩张条件",
+          "亚洲开发银行：人民币计价贸易扩张的制度性因素与结构性约束"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：人民币计价贸易扩张与美元主导结构性约束",
+          "亚洲开发银行：2016-2023年70地区数据下人民币计价扩张条件",
+          "亚洲开发银行：人民币计价贸易扩张的制度性因素与结构性约束",
+          "亚洲开发银行：0002ADBRenminbiInvoi",
+          "亚洲开发银行：2016年至2023年间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：2016-2023年70地区数据下人民币计价扩张条件",
+            "reasons": [
+              "anchor_coverage=0.28",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：人民币计价贸易扩张的制度性因素与结构性约束",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0002ADBRenminbiInvoi",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：2016年至2023年间",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：货币市场与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "亚洲开发银行：人民币计价贸易扩张与美元主导结构性约束",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording",
+          "neutralized:china_systemic_topic"
+        ],
+        "final_title_after_wording_guard": "亚洲开发银行：货币市场与相关指标观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 1,
+      "institution_name": "亚洲开发银行",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/02-0002-ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7",
+      "pdf_path": "kc_translated_reports/institutions/260725/02-0002-ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e",
+      "title": "IMF：行业规则与主题变化观察",
+      "source_title": "0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e",
+        "cleaned_source_title": "0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e",
+        "institution_name": "IMF",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "IMF：0003IMFEstimatingtheImpactsofAI",
+        "raw_candidates": [
+          "IMF：爱尔兰AI、贸易政策与能源转型影响评估",
+          "IMF：爱尔兰AI与贸易政策影响评估-2025年基准模型数据",
+          "IMF：爱尔兰AI生产率与碳定价结构调整路径"
+        ],
+        "cleaned_candidates": [
+          "IMF：爱尔兰AI、贸易政策与能源转型影响评估",
+          "IMF：爱尔兰AI与贸易政策影响评估-2025年基准模型数据",
+          "IMF：爱尔兰AI生产率与碳定价结构调整路径",
+          "IMF：0003IMFEstimatingtheImpactsofAI",
+          "IMF：爱尔兰在AI、贸易政策与能源转型中的结构调整路径"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：爱尔兰AI与贸易政策影响评估-2025年基准模型数据",
+            "reasons": [
+              "anchor_coverage=0.59"
+            ]
+          },
+          {
+            "title": "IMF：爱尔兰AI生产率与碳定价结构调整路径",
+            "reasons": [
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0003IMFEstimatingtheImpactsofAI",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：行业规则与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：爱尔兰AI、贸易政策与能源转型影响评估",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "IMF：行业规则与主题变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 25,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/03-0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e",
+      "pdf_path": "kc_translated_reports/institutions/260725/03-0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+      "title": "IMF：行业规则与主题变化观察",
+      "source_title": "0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+        "cleaned_source_title": "0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0004IMFIndustrial政策和贸易T",
+        "raw_candidates": [
+          "IMF：战略行业工业政策与贸易紧张",
+          "IMF：2015-2023年战略行业补贴率升至1.8%",
+          "IMF：工业补贴与关税对战略行业贸易格局影响"
+        ],
+        "cleaned_candidates": [
+          "IMF：战略行业工业政策与贸易紧张",
+          "IMF：2015-2023年战略行业补贴率升至1.8%",
+          "IMF：工业补贴与关税对战略行业贸易格局影响",
+          "IMF：0004IMFIndustrial政策和贸易T",
+          "IMF：2015至2023年间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：2015-2023年战略行业补贴率升至1.8%",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：工业补贴与关税对战略行业贸易格局影响",
+            "reasons": [
+              "anchor_coverage=0.42"
+            ]
+          },
+          {
+            "title": "IMF：0004IMFIndustrial政策和贸易T",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2015至2023年间",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：行业规则与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：战略行业工业政策与贸易紧张",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：行业规则与主题变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/04-0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b",
+      "pdf_path": "kc_translated_reports/institutions/260725/04-0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0005-IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38",
+      "title": "IMF：蒙古央行近实时预测系统建设与验证",
+      "source_title": "0005-IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38",
+        "cleaned_source_title": "0005-IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0005IMFMongoliaTechnica",
+        "raw_candidates": [
+          "IMF：蒙古央行近实时预测系统建设与验证",
+          "IMF：蒙古央行近实时预测系统-2022至2025年项目",
+          "IMF：蒙古央行近实时预测系统-实体货币外部部门覆盖"
+        ],
+        "cleaned_candidates": [
+          "IMF：蒙古央行近实时预测系统建设与验证",
+          "IMF：蒙古央行近实时预测系统-2022至2025年项目",
+          "IMF：蒙古央行近实时预测系统-实体货币外部部门覆盖",
+          "IMF：0005IMFMongoliaTechnica",
+          "IMF：该项目自2022年7月启动，至2025年10月结束"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：蒙古央行近实时预测系统-2022至2025年项目",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "IMF：蒙古央行近实时预测系统-实体货币外部部门覆盖",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "IMF：0005IMFMongoliaTechnica",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：该项目自2022年7月启动，至2025年10月结束",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：蒙古央行近实时预测系统建设与验证",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：蒙古央行近实时预测系统建设与验证"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 14,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/05-0005-IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38",
+      "pdf_path": "kc_translated_reports/institutions/260725/05-0005-IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5",
+      "title": "IMF：公共部门资金与相关数据观察",
+      "source_title": "0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5",
+        "cleaned_source_title": "0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0006IMFRepublicofAzerba",
+        "raw_candidates": [
+          "IMF：阿塞拜疆政府财政与公共部门债务统计技术援助评估",
+          "IMF：阿塞拜疆2024年GFS数据提交时效改善，季度数据覆盖有限",
+          "IMF：阿塞拜疆财政统计与公共债务数据口径协调评估"
+        ],
+        "cleaned_candidates": [
+          "IMF：阿塞拜疆政府财政与公共部门债务统计技术援助评估",
+          "IMF：阿塞拜疆2024年GFS数据提交时效改善，季度数据覆盖有限",
+          "IMF：阿塞拜疆财政统计与公共债务数据口径协调评估",
+          "IMF：0006IMFRepublicofAzerba",
+          "IMF：国际货币产品组织（IMF）于2025年11月和2026年2月分"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：阿塞拜疆2024年GFS数据提交时效改善，季度数据覆盖有限",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：阿塞拜疆财政统计与公共债务数据口径协调评估",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "IMF：0006IMFRepublicofAzerba",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织（IMF）于2025年11月和2026年2月分",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：公共部门资金与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：阿塞拜疆政府财政与公共部门债务统计技术援助评估",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：公共部门资金与相关数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 0,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/06-0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5",
+      "pdf_path": "kc_translated_reports/institutions/260725/06-0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+      "title": "IMF：货币市场与相关指标观察",
+      "source_title": "0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+        "cleaned_source_title": "0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0007IMFSettlementRisk和C",
+        "raw_candidates": [
+          "IMF：结算风险与外汇市场",
+          "IMF：匈牙利福林接入CLS后超额回报下降约10个基点",
+          "IMF：结算基础设施改进与中东欧外汇市场"
+        ],
+        "cleaned_candidates": [
+          "IMF：结算风险与外汇市场",
+          "IMF：匈牙利福林接入CLS后超额回报下降约10个基点",
+          "IMF：结算基础设施改进与中东欧外汇市场",
+          "IMF：0007IMFSettlementRisk和C",
+          "IMF：研究覆盖2015至2016年间匈牙利、克罗地亚、捷克、波兰、罗"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：匈牙利福林接入CLS后超额回报下降约10个基点",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：结算基础设施改进与中东欧外汇市场",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "IMF：0007IMFSettlementRisk和C",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：研究覆盖2015至2016年间匈牙利、克罗地亚、捷克、波兰、罗",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：货币市场与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：结算风险与外汇市场",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：货币市场与相关指标观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 5,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/07-0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1",
+      "pdf_path": "kc_translated_reports/institutions/260725/07-0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260725/0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8",
+      "title": "IMF：能源行业数据与主题变化观察",
+      "source_title": "0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8",
+        "cleaned_source_title": "0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0008IMFTheGeneralizedJe",
+        "raw_candidates": [
+          "IMF：广义杰文斯悖论与能源消费累积效应",
+          "IMF：广义杰文斯悖论与2023年化石燃料消费持续增长",
+          "IMF：广义杰文斯悖论与全球能源材料累积逻辑"
+        ],
+        "cleaned_candidates": [
+          "IMF：广义杰文斯悖论与能源消费累积效应",
+          "IMF：广义杰文斯悖论与2023年化石燃料消费持续增长",
+          "IMF：广义杰文斯悖论与全球能源材料累积逻辑",
+          "IMF：0008IMFTheGeneralizedJe",
+          "IMF：尽管可再生能源在全球一次能源消费中的占比从2010年的约10%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：广义杰文斯悖论与2023年化石燃料消费持续增长",
+            "reasons": [
+              "anchor_coverage=0.53"
+            ]
+          },
+          {
+            "title": "IMF：广义杰文斯悖论与全球能源材料累积逻辑",
+            "reasons": [
+              "anchor_coverage=0.60"
+            ]
+          },
+          {
+            "title": "IMF：0008IMFTheGeneralizedJe",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：尽管可再生能源在全球一次能源消费中的占比从2010年的约10%",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：能源行业数据与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：广义杰文斯悖论与能源消费累积效应",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：能源行业数据与主题变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260725/08-0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8",
+      "pdf_path": "kc_translated_reports/institutions/260725/08-0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8/kc_translated_report_08.pdf"
+    }
+  ]
+}

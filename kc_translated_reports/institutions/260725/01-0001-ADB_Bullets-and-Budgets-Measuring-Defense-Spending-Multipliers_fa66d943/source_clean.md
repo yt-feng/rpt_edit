@@ -1,0 +1,626 @@
+## BULLETS AND BUDGETS MEASURING DEFENSE SPENDING MULTIPLIERS
+# Bullets and Budgets: Measuring Defense Spending Multipliers
+
+The ADB Economics Working Paper Series presents research in progress to elicit comments and encourage debate on development issues in Asia and the Pacific. The views expressed are those of the authors and do not necessarily reflect the views and policies of ADB or its Board of Governors or the governments they represent. ADB's prohibited investment activities list includes the production of or trade in weapons and munitions, including paramilitary materials.
+
+
+6 ADB Avenue, Mandaluyong City, 1550 Metro Manila, Philippines
+www.adb.org
+
+Some rights reserved. Published in 2026.
+
+
+Publication Stock No. WPS260334-2
+
+DOI: http://dx.doi.org/10.22617/WPS260334-2
+
+The views expressed in this publication are those of the authors and do not necessarily reflect the views and policies of the Asian Development Bank (ADB) or its Board of Governors or the governments they represent.
+
+ADB does not guarantee the accuracy of the data included in this publication and accepts no responsibility for any consequence of their use. The mention of specific companies or products of manufacturers does not imply that they are endorsed or recommended by ADB in preference to others of a similar nature that are not mentioned.
+
+By making any designation of or reference to a particular territory or geographic area in this document, ADB does not intend to make any judgments as to the legal or other status of any territory or area.
+
+This publication is available under the Creative Commons Attribution 3.0 IGO license (CC BY 3.0 IGO) https://creativecommons.org/licenses/by/3.0/igo/. By using the content of this publication, you agree to be bound by the terms of this license. For attribution, translations, adaptations, and permissions, please read the provisions and terms of use at https://www.adb.org/terms-use#openaccess.
+
+
+Corrigenda to ADB publications may be found at http://www.adb.org/publications/corrigenda.
+
+## Note:
+
+In this publication, “\$” refers to United States dollars.
+
+## ABSTRACT
+
+This paper examines the macroeconomic effects of defense spending shocks in emerging markets and developing economies (EMDEs), with a focus on Asia and the Pacific over 1990–2023. Using large cyclically adjusted defense shocks identified through local projections, we find that defense spending generates modest but persistent positive output responses in EMDEs, while effects in advanced economies are weak or negative. Within EMDEs, multipliers are strongest in South Asia and weaker in East Asia, reflecting differences in labor intensity and capital intensity of procurement. Functional decompositions show that core military outlays and defense-related research and development drive the positive effects. State dependence is central: fiscal space, revenue capacity, financial development, institutional quality, and—critically—conflict exposure shape both the size and persistence of multipliers, with much stronger effects in high conflict environments. Regional spillovers are weak, short-lived, and turn negative at longer horizons. Extensive robustness checks confirm the stability of these findings.
+
+Keywords: defense spending shocks, fiscal multipliers, emerging markets, Asia and the Pacific, state dependence, local projections
+
+JEL codes: H50, H56, E62, F41, O23, C33
+
+## 1. INTRODUCTION
+
+Defense spending has long occupied a contested space in economic policy. On one side, Keynesian perspectives emphasize its potential to stimulate demand and output, especially in economies facing cyclical downturns (Ramey, 2011; Batini et al., 2014). On the other, classical and endogenous growth arguments stress the risks of crowding out: military outlays may divert resources away from more productive investments in infrastructure, education, or health, thereby undermining long-term growth prospects (Barro, 1991; Dunne and Tian, 2015). For emerging markets and developing economies (EMDEs), where fiscal space is often constrained and external vulnerabilities high, the trade-offs are particularly acute. These tensions are further amplified in environments exposed to elevated geopolitical risk and active conflict, where security considerations may dominate traditional growth–efficiency trade-offs.
+
+Recent trends highlight the urgency of reassessing these questions. According to the Stockholm International Peace Research Institute (SIPRI), global military expenditure reached a record \$2.4 trillion in 2023, with EMDEs in Asia accounting for over one-third of the increase (SIPRI, 2024). The People's Republic of China (PRC) alone spent \$296 billion—nearly 40% of regional defense outlays. Other EMDEs in Asia and the Pacific, such as Viet Nam and the Philippines, have increased defense budgets by more than 50% over the past decade. Even smaller economies are affected: Indonesia and Malaysia have gradually raised defense burdens to about 1.2%–1.5% of gross domestic product (GDP) while Pacific island countries, though spending less in absolute terms, face mounting security commitments.
+
+These developments stand in contrast to other EMDE regions, where defense spending has remained stable or declined relative to GDP. In Latin America, average military expenditure has hovered around 1.3% of GDP since the 1990s, while in sub-Saharan Africa, spending share fell from 2.3% of GDP in 2000 to 1.6% in 2022 (SIPRI, 2024). Asia and the Pacific thus emerges as an outlier: defense budgets are rising faster and more persistently than in peer EMDEs, reflecting both heightened geopolitical risks and domestic political priorities.
+
+The economic implications are unclear. Some argue that ramping up defense spending can boost output in the short run by mobilizing idle resources (Benoit, 1978; Kollias et al., 2004). Others caution that such spending is capital-intensive, less labor-absorbing, and yields limited spillovers, thereby generating smaller multipliers than investment in infrastructure, education, or health (Gupta et al., 2004; Deger and Sen, 1995). For Asia and the Pacific EMDEs, where developmental needs remain pressing and fiscal buffers uneven, the central policy question is whether higher defense outlays provide macroeconomic stimulus or instead crowd out more productive investment. This trade-off between short-run stimulus and medium-term displacement is therefore at the heart of the policy debate surrounding defense spending in EMDEs. Unlike infrastructure, health, or education outlays, military expenditure is rarely justified on growth grounds alone. Its macroeconomic effects must therefore be evaluated primarily through the lens of opportunity costs—namely, whether defense shocks crowd in private activity through demand spillovers or crowd out more productive forms of public and private investment. This assessment is incomplete without accounting for both conflict exposure and cross-border spillovers from regional military buildups.
+
+This paper addresses that question by estimating defense spending multipliers in EMDEs, with a particular focus on Asia and the Pacific. Using the United Nations' (UN's) Classification of the Functions of Government (COFOG) to identify military expenditure as a share of GDP, we construct cyclically adjusted defense spending shocks following country-specific output elasticities. Exogenous shocks are defined as large increases—exceeding one standard deviation above historical means—thus capturing discretionary policy changes rather than automatic stabilizers. We then employ the local projections framework of Jordà (2005) to estimate impulse responses of output, investment, and external balances. We augment this framework to incorporate both conflict-based geopolitical risk and regional spillover channels.
+
+Our contributions are threefold. First, we provide new causal evidence on the macroeconomic effects of defense spending in EMDEs, a context where empirical work remains limited compared to advanced economies (IMF, 2021; Ramey, 2019). Second, we highlight Asia and the Pacific as a critical regional case where geopolitical pressures have fueled sustained increases in military budgets. Third, we explore nonlinearities: do multipliers depend on debt levels, external balances, or institutional quality? These conditions are especially relevant for EMDEs, where fiscal and external vulnerabilities often constrain policy effectiveness (Auerbach and Gorodnichenko, 2013; Ilzetzki et al., 2013). In addition, we disaggregate defense spending into its main functional components—core military outlays, civil defense, defense-related research and development (R&D), and foreign defense aid—allowing us to assess which categories, if any, generate meaningful growth dividends. $^{1}$
+
+The findings show that defense shocks in EMDEs produce positive and persistent output effects, with multipliers reaching around 0.7%–1% after 8 years, while advanced economies experience weak or even negative responses. Within EMDEs, South Asia displays strong and sustained gains, whereas East Asia exhibits muted effects due to the capital-intensive nature of defense procurement. Functional decomposition reveals that only core military spending and defense-related R&D contribute positively to growth, while civil defense and foreign aid exert no significant effects. State dependent analysis further shows that fiscal space, trade openness, financial development, revenue capacity, and institutional quality strongly shape the size and persistence of multipliers. Crucially, defense spending is substantially more expansionary in high conflict environments, while regional defense shocks generate only weak short-run spillovers and negative medium-run effects. Taken together, the evidence indicates that the macroeconomic impact of defense spending is neither universally expansionary nor contractionary, but highly conditional on country circumstances and spending composition.
+
+The remainder of the paper is organized as follows. Section 2 reviews the literature on defense spending and economic outcomes. Section 3 outlines our identification strategy and empirical methodology. Section 4 presents data and stylized facts for EMDEs and Asia and the Pacific. Section 5 reports baseline and nonlinear results, including decomposition by spending category, and analyzes regional spillovers. Section 6 concludes with policy implications.
+
+## 2. LITERATURE REVIEW
+
+## 2.1. Theoretical Framework
+
+The economic effects of defense spending have long been debated, reflecting the tension between its potential as a short-term stimulus and its risks as a long-term drag on growth. Early contributions emphasized its role in driving aggregate demand and generating technological spillovers (Benoit, 1978; Smith, 1980). From a Keynesian perspective, increases in government expenditure—including military outlays—can support output by mobilizing idle capacity, particularly in downturns or under security threats (Batini et al., 2014). In this view, defense spending may function as a countercyclical tool that stimulates activity in the short run.
+
+By contrast, neoclassical and endogenous growth theories stress the potential costs. Military spending is often capital-intensive, less labor-absorbing, and yields fewer positive externalities compared to education, health, or infrastructure investment (Deger, 1986; Heo and Eger, 2005). Moreover, it may crowd out private investment, reduce the accumulation of human capital, and divert fiscal resources from more productive uses (Barro, 1991; Deger and Sen, 1995). Financing considerations add further risks: debt-financed defense buildups can worsen external balances, raise sovereign risk, and undermine macroeconomic stability (Knight et al., 1996).
+
+Taken together, theory suggests an inherent ambiguity: while defense spending can generate demand-driven growth in the short term, it may impose structural and financing costs that weaken productivity and sustainability in the long term. This tension motivates reduced form empirical strategies, such as local projections, that allow the data to reveal which of these competing mechanisms dominate in practice and under what conditions.
+
+## 2.1. Empirical Evidence
+
+Empirical results mirror this theoretical ambiguity. A large body of work points to small or negative multipliers. Gupta et al. (2004) find that defense outlays in developing countries often displace public investment in infrastructure and social sectors, undermining productivity and inclusiveness. Dunne and Tian (2015), in their survey of more than 3 decades of research, conclude that the average growth effects of defense spending are weak or negative, especially in low- and middle-income countries.
+
+Other studies identify short-term expansionary effects. Ramey (2011) shows that United States defense-driven fiscal shocks yielded positive, though modest, multipliers, while Kollias et al. (2004) argue that military outlays can stimulate output in the North Atlantic Treaty Organization (NATO) countries by mobilizing idle capacity. These results suggest that timing and state conditions—particularly slack and security threats—matter for the short-run impact of defense spending. Related to this, IMF (2026a) note that rising geopolitical tensions are leading to more frequent defense spending booms. Using a global sample of advanced and emerging economies over the period 1946 to 2024, they find that booms in defense spending are associated with higher defense spending of around 2.7 percentage points of GDP on average and last for over two-and-a-half years. Economic activity is found to strengthen in the short-term through higher consumption and investment, notably in defense-related sectors. At the same time, IMF (2026a) finds that defense outlays lead to higher inflation in the short-term and a deterioration in fiscal balances, public debt levels, and external balances. The analysis also finds that while defense spending multipliers are close to 1 on average, this depends on how the spending is allocated and financed. $^{2}$
+
+The broader fiscal multiplier literature reinforces this point. In EMDEs, multipliers are generally smaller than in advanced economies due to higher openness, weaker institutions, and financing constraints (Ilzetzki et al., 2013; IMF, 2014). State dependence further complicates the picture: Auerbach and Gorodnichenko (2013) find that multipliers are larger in recessions, under low debt, and when external balances are strong. While much of this empirical work has focused on public investment or consumption multipliers (Miyamoto et al., 2020), systematic evidence on defense spending multipliers in EMDEs remains scarce. Asia and the Pacific, in particular, has attracted growing attention due to its rising share of global military expenditure and unique geopolitical risks. According to SIPRI (2024), the region now accounts for nearly 30% of global defense outlays. However, earlier studies yield mixed evidence on the macroeconomic effects of such spending (Yildirim et al., 2005; Deger and Sen, 1995).
+
+Despite this rich literature, three gaps remain. First, much evidence is correlational, making it difficult to isolate exogenous defense shocks from endogenous responses to growth or conflict. Second, cross-country studies often pool advanced and developing economies, obscuring the distinct fiscal and institutional contexts of EMDEs. Third, Asia and the Pacific—epicenter of rising defense budgets—remains understudied relative to other EMDE regions. This paper addresses these gaps by identifying cyclically adjusted defense spending shocks using COFOG data and estimating their dynamic effects in a panel local projections framework that explicitly incorporates fiscal, external, and institutional heterogeneity.
+
+## 3. A SIMPLE THEORETICAL FRAMEWORK
+
+We outline a stylized model to illustrate the channels through which defense spending affects output, and to motivate our empirical specification. Consider an economy where output is given by:
+
+$$
+Y _ {t} = C _ {t} + I _ {t} + G _ {t} ^ {c} + G _ {t} ^ {m} + N X _ {t}\tag{1}
+$$
+
+where $C_{t}$ is household consumption, $I_{t}$ is private investment, $G_{t}^{c}$ is civilian government spending, $G_{t}^{m}$ is military (defense) spending, and $NX_{t}$ is net exports.
+
+In the short run, higher military outlays directly raise aggregate demand, consistent with a Keynesian mechanism. If idle resources are present, the multiplier is positive,
+
+$$
+\frac {\partial Y _ {t}}{\partial G _ {t} ^ {m}} > 0\tag{2}
+$$
+
+implying that defense spending can temporarily boost output. At the same time, however, defense expenditures may require higher taxation or additional borrowing. When financed through debt accumulation, the interest rate increases according to
+
+$$
+r _ {t} = r ^ {*} + \varphi D _ {t}\tag{3}
+$$
+
+where $D_{t}$ denotes public debt. This crowds out private investment, since
+
+$$
+\frac {\partial I _ {t}}{\partial r _ {t}} <   0\tag{4}
+$$
+
+Further consideration relates to long-term productivity. Defense spending may generate fewer positive spillovers than civilian public investment. A simple way to capture this is through technology dynamics,
+
+$$
+A _ {t + 1} = A _ {t} (1 + \gamma G _ {t} ^ {c} - \delta G _ {t} ^ {m})\tag{5}
+$$
+
+where $A_{t}$ denotes the technology level, $\gamma>0$ measures the growth enhancing effect of civilian investment, and $\delta\geq0$ captures the potential productivity drag from defense outlays. In this formulation, reallocating spending toward the military reduces the pace of technological progress and long-term growth.
+
+Finally, external balances may also be affected. If procurement is import intensive, higher defense spending worsens the trade balance:
+
+$$
+N X _ {t} = N X _ {t - 1} - \theta G _ {t} ^ {m}\tag{6}
+$$
+
+with $\theta > 0$ .
+
+Taken together, these channels underscore the theoretical ambiguity of defense spending multipliers. While the Keynesian mechanism implies positive short-run effects, crowding out, lower productivity spillovers, and external leakages can offset or even reverse these gains. The net impact therefore depends on fiscal space $(D_{t})$ , openness $(\theta)$ , and the composition of government spending $(\gamma,\delta)$ . This motivates our empirical strategy, which relies on reduced form local projections to let the data determine which effects dominate under different conditions.
+
+## 4. METHODOLOGY AND DATA
+
+## 4.1. Constructing and Identifying Shocks
+
+Accurately identifying exogenous fiscal spending shocks is essential to estimate their causal impact on output and investment. While the broader literature on fiscal multipliers focuses on aggregate growth, employment, and inequality (Batini et al., 2014; Ramey, 2019; Ghassibe and Zanetti, 2022), relatively few studies isolate the effects of defense spending, despite its rising share in government budgets and its potentially distinct transmission channels (Gupta et al., 2004; Dunne and Tian, 2015). This paper fills that gap by applying a novel identification strategy based on the cyclically adjusted shock framework of Adarov et al. (2026) to estimate the effects of defense spending shocks on macroeconomic outcomes in EMDEs and Asia and the Pacific.
+
+We focus on the functional classification of government expenditure, drawing on the UN's COFOG, which identifies defense spending as a distinct category. Within this category, we consider several key components: military defense, which encompasses core expenditures on armed forces and operations; civil defense, which relates to nonmilitary protection such as emergency preparedness and homeland security; research and development in defense, which captures innovation, technology, and investment in military-related R&D; and foreign aid with a defense orientation, reflecting transfers and support with security implications. Unlike categories such as education or health expenditure, defense outlays—particularly in these subcomponents—are often less directly linked to productivity gains and more vulnerable to political cycles, strategic priorities, and external security shocks (Smith, 1980; Heo and Eger, 2005). This granularity underscores the importance of carefully isolating exogenous shifts in defense spending, since shocks to each of these components can differ in origin, magnitude, and macroeconomic impact. We refine the identification of exogenous defense spending shocks by building on Alesina et al. (1998), Alesina and Ardagna (2010), and related work using cyclically adjusted fiscal aggregates. Consistent with arguments that large, discrete increases in government spending—especially in defense—reflect deliberate policy choices rather than automatic stabilizers (Deleidi et al., 2020; Warner, 2014), our approach isolates the causal impact of defense outlays on output and investment, minimizing confounding macroeconomic effects.
+
+Departing from earlier studies that infer shocks from changes in overall fiscal balances (Bergman and Hutchison, 2020), we introduce several key innovations:
+
+1. Focus on defense spending shocks: We exclude tax, interest, or other spending categories to directly assess the causal impact of defense outlays.
+
+2. Cyclically adjusted expenditure: We use country-specific output elasticities to cyclically adjust defense spending, filtering out endogenous responses to GDP fluctuations.
+
+3. Discrete shock definition: We identify large shocks as year-on-year increases exceeding one standard deviation of a country's historical average, capturing salient and plausibly exogenous policy shifts.
+
+4. Allowance for heterogeneity: We allow for nonlinear, state dependent effects across the business cycle, fiscal space, and institutional quality—capturing the conditions under which defense multipliers vary.
+
+By integrating these refinements, our approach advances the literature methodologically and provides a robust framework for estimating the causal impact of defense spending. The identification strategy not only addresses concerns of endogeneity and fiscal foresight but also enables a systematic cross-country comparison of multipliers in EMDEs and Asia and the Pacific.
+
+What is new in this approach is the way we identify shocks. For a generic fiscal variable, the shock identification framework involves several steps. First, we estimate output elasticities of defense spending for each country by regressing the log of real defense spending on the log of real GDP. Estimates are obtained by ordinary least squares (OLS) for all countries with at least 15 continuous observations. $^{3}$ Second, we obtain measures of potential output $GDP^{pot}$ via a Hodrick–Prescott (HP) filter as the baseline estimate. $^{4}$ Third, we compute cyclically adjusted real defense spending (CAD):
+
+$$
+C A D = F \left(\frac {G D P ^ {p o t}}{r e a l G D P}\right) ^ {\varepsilon_ {M}}\tag{7}
+$$
+
+where $F$ is the real defense spending variable, $\varepsilon_{M}$ denotes the output elasticities of the real military spending variable. Fourth, we determine whether or not a change in the military spending variable of interest—whether overall military expenditure or one of its components—stripped of business cycle influences is large enough to be included in the sample used for the econometric analysis, and to this end define defense spending shocks (DS) as a measure taking the value of one when a country's first difference of CAD exceeds its country-specific mean by one standard deviation for each country $i$ :
+
+$$
+D S = 1 i f \Delta C A D _ {i t} > \overline {{\Delta C A D}} _ {i} + S D C A D _ {i}, 0 \mathrm{otherwise}\tag{8}
+$$
+
+For interpretability, we normalize each binary shock using the average size of the defense spending increase—expressed as a percent of GDP—observed in historical episodes when a shock equals one. This allows the resulting impulse responses to be interpreted directly in terms of the average percent-of-GDP increase associated with discrete defense buildups. For instance, the mean defense spending increase during shock years in our EMDE sample is around 0.4%–0.6% of GDP, with somewhat larger values in Asia and the Pacific economies such as the PRC, India, and Viet Nam. Following Alesina and Ardagna (2010), we concentrate on large fiscal adjustments, which are more likely to reflect deliberate policy choices—such as sustained defense modernization programs or abrupt responses to security crises—rather than automatic stabilizers. This approach, consistent with Warner (2014) and Deleidi et al. (2020), has been widely used to identify structural spending shocks in cross-country settings where detailed narrative accounts are unavailable.
+
+Targeting large, discrete increases in cyclically adjusted defense spending offers several advantages. It reduces endogeneity concerns by filtering out small, cyclical adjustments to defense budgets and avoids the limitations of alternative approaches requiring real-time forecasts or archival policy records. Our transparent and scalable method enables the estimation of defense multipliers across a broad panel of EMDEs using annual data. Importantly, large defense spending episodes typically reflect strategic policy decisions or geopolitical shocks—for example, the PRC’s defense modernization in the 2000s—making them more plausibly exogenous to short-term macroeconomic fluctuations.
+
+To account for country heterogeneity, we define shocks relative to each country's historical volatility in defense spending—a particularly relevant adjustment for EMDEs, where fiscal patterns are shaped by commodity cycles, regime changes, or security events. Alongside the binary shock indicator, we test two continuous measures: (i) the growth rate of the CAD series, and (ii) annual changes in CAD as a share of GDP (winsorized at the 1st and 99th percentiles). We also assess robustness to alternative thresholds (e.g., two standard deviations), confirming the stability of our results.
+
+While this method addresses key identification challenges, some limitations remain. Estimates depend on measures of potential output, which may be imprecise; binary shocks capture discrete defense buildups but not their intensity; and in rare cases, fiscal foresight may still be present if defense expansions are anticipated. Nonetheless, the approach provides a credible, policy relevant measure of exogenous defense spending shocks, supporting rigorous analysis of their dynamic effects on growth, investment, and external balances in EMDEs and Asia and the Pacific.
+
+## 4.2. Methodological Framework
+
+We examine whether exogenous shocks to defense spending influence macroeconomic performance, focusing on outcomes such as real GDP growth, private investment, and external balances. To trace these dynamic effects, we employ the local projections (LP) framework introduced by Jordà (2005). The LP approach estimates impulse responses directly through a sequence of regressions, offering flexibility in horizon-specific estimation and avoiding the restrictions inherent in traditional vector autoregression (VAR) models. As emphasized in Auerbach and Gorodnichenko (2013) and further applied in Romer and Romer (2019), this method provides a credible and transparent alternative for assessing fiscal policy effects, particularly in a heterogeneous cross-country context such as EMDEs and Asia and the Pacific. $^{5}$
+
+We adopt the local projections framework rather than relying on VAR models for several reasons. First, our defense spending shocks are constructed to be exogenous, already netting out cyclical influences and expectations, which alleviates concerns about contemporaneous endogeneity. Second, local projections allow us to estimate impulse responses without the need to model the joint dynamics of a wide set of variables, thereby reducing parameter proliferation—a useful property when working with panels of EMDEs and relatively short time horizons. Finally, the LP approach lends itself naturally to examining state dependence, as nonlinear specifications can be implemented more transparently than with nonlinear VAR techniques such as Markov switching or threshold VARs. $^{6}$ The local projections framework is well suited to a multi-country panel because it accommodates cross-sectional dependence in a straightforward way. We rely on robust error structures—such as country clustered or Driscoll–Kraay (1998) standard errors—to allow for arbitrary correlation across units and over time. In line with recent applications to fiscal policy (e.g., Herbst and Johannesen, 2024), we also include lags of both the outcome variable and the shock to capture dynamic adjustment and mitigate omitted variable bias. The Jordà (2005) approach requires estimating a separate regression for each forecast horizon h and for each dependent variable of interest. Our baseline linear specification can be expressed as:
+
+$$
+\begin{array}{r l} & {\Delta y _ {i, t + h} = \alpha_ {i, h} + \delta_ {t, h} + \sum_ {j = 0} ^ {4} \beta_ {j, h} d _ {i, t - j} + \sum_ {l = 0} ^ {3} \beta_ {l, h} (y _ {i, t - l} - y _ {i, t - 1 - l}) + \sum_ {h = 1} ^ {h} \beta_ {h} d _ {i, t + h} +} \\ & {\sum_ {c = 0} ^ {4} \beta_ {c, h} ^ {\prime} X _ {i, t - c} + u _ {i, t + h}} \end{array}\tag{9}
+$$
+
+where $h=1,\ldots,8$ is the forecast horizon, and $\Delta y_{i,t+h}=y_{i,t+h}-y_{i,t}$ denotes the cumulative change in the dependent variable over the forecast horizon. $y_{i,t}$ is the log of real GDP. $\alpha_{i}$ denotes country fixed effects to capture unobserved heterogeneity across countries, such as time invariant institutional and geographical variables, while $\delta_{t}$ are time fixed effects to control for global shocks such as the great recession or the Covid-19 pandemic. $^{7}$ $d_{i,t}$ denotes military spending shocks. Therefore, $\beta_{0,h}$ measures the conditional mean of defense spending shocks for each forecast horizon h on $\Delta y_{i,t+h}$ , and is used to construct the impulse response functions (IRFs) and their associated confidence intervals. When we forecast 1 year ahead, we have for instance 2,814 observations in the estimation sample. For each additional year-ahead forecast, we lose observations equal to the number of cross-sectional units, i, in the sample, namely 134 (in this case).
+
+Treatment lags are included to capture the effect that previous defense spending shocks may have on the outcome variable. We use the Akaike information criterion (AIC) to determine the lag length which tells us to use four lags of the treatment variable. We also include yearly lags of $\Delta y_{i,t}$ to control for serial correlation in the error term, $u_{i,t+h}$ . The number of lags (three) is also determined by the AIC. The data are stationary as $\left|\sum_{l=0}^{3}\beta_{l,h}\right|<1$ in all our specifications. $^{8}$ In fact, $\sum_{l=0}^{3}\beta_{l,h}$ is between small for all h, which means that the persistence in the estimated models is low. Therefore, the estimated IRFs from the LPs are unlikely to be severely affected by the bias that can result from a relatively short time dimension, t=31 for most of our cross-sectional units, if combined with a situation of high persistence, as shown by Herbst and Johanssen (2024). $^{9}$ The term $\sum_{h=1}^{h}\beta_{h}d_{i,t+h}$ captures the Teulings and Zubanov (2014) correction. Leads of the spending shocks are included to avoid the bias that results from overlapping forecast horizons. $^{10}$ The leads of the defense spending shocks are statistically significant for most combinations of $y_{i,t}$ and h, signifying the need to control for overlapping forecast horizons. $X_{i,t}$ is a vector of control variables including the inflation rate, the gross fixed capital formation as a share of GDP, public debt-to-GDP ratio, the private credit-to-GDP ratio, and the current account balance as a share of GDP. In the robustness section, to address potential omitted variable bias, we add additional variables. $^{11}$ In all our LPs, we use spatial correlation consistent (SCC) standard errors as proposed by Driscoll and Kraay (1998). We test whether spatial dependence is present in the disturbances between the cross-sectional units when using standard errors clustered at the country level as often applied in LP literature. For this purpose, we use the Pesaran (2015) test, which is standard normally distributed.
+
+Other variables used in the analysis come from the International Monetary Fund's (IMF's) World Economic Outlook (WEO) and the World Bank's World Development Indicators (WDI) databases.
+
+## 4.3. Stylized Facts
+
+In this section, we briefly review major trends in defense spending as a share of GDP across advanced economies (AEs) and EMDEs. $^{12}$ Cross-country patterns in military outlays, displayed in Figure 1, reveal both a secular decline and notable differences across income groups. At the global level, the median defense burden fell sharply during the 1990s, from nearly 3% of GDP to below 2%, and has since stabilized at historically low levels. The narrowing interquartile range over the past two decades indicates broad convergence across countries, with fewer extreme outliers compared to the immediate post-Cold War period. AEs drove much of this adjustment, with the median defense share dropping from above 3% of GDP in 1990 to roughly 1.5% of GDP by the mid-2000s. Since then, defense spending has remained subdued, and the interquartile range has compressed significantly, suggesting that consolidation pressures and common security arrangements have produced a relatively uniform fiscal stance. By contrast, EMDEs exhibit more volatility and dispersion. While the median defense share also declined, from close to 3% of GDP in the early 1990s to around 1.5% in recent years, the interquartile range has remained wide, reflecting heterogeneity in security needs, fiscal capacity, and exposure to geopolitical risks. Episodes of sharp increases at the upper end of the distribution highlight the vulnerability of EMDE defense budgets to regional conflicts and political shocks. Overall, these patterns point to a structural downshift in the fiscal weight of defense across both advanced and developing economies, though AEs have converged toward a stable and low share, while EMDEs continue to display greater variation and sensitivity to country specific shocks.
+
+Figure 2 shows that government defense budgets are overwhelmingly dominated by core military outlays, which account for close to 90% or more of total defense spending in both AEs and EMDEs. Nevertheless, some shifts in the relative weight of other components—civil defense, defense-related R&D, and foreign aid—are visible over time. In the early 1990s, EMDEs devoted a comparatively larger share of their defense budgets to civil defense, while AEs emphasized foreign aid with security implications. By the 2000s and 2010s, however, both groups had converged toward a more military-centered composition. AEs maintained modest but stable allocations to R&D and foreign aid, reflecting both fiscal capacity and broader international security strategies, whereas EMDEs showed only small contributions from these categories but continued to allocate a minor share to civil defense. By the 2020s, the structure of defense spending remains highly concentrated, with military expenditure dominating across all groups. Nonmilitary components play only a marginal role, though AEs allocate slightly more to foreign aid and R&D than EMDEs. Overall, Figure 2 underscores a structural pattern of defense budgets heavily weighted toward military activities, with limited resources directed to areas such as innovation (R&D) or security-related foreign aid that could generate broader spillovers.
+
+Figure 1. Defense Spending as a Share of Gross Domestic Product: Median and Interquartile Range Across Country Groups (1990–2023)
+
+[[KC_IMAGE_001]]
+
+
+[[KC_IMAGE_002]]
+
+
+[[KC_IMAGE_003]]
+
+EMDE = emerging markets and developing economies, GDP = gross domestic product. Note: Median is the solid black line. 25 $^{th}$ and 75 $^{th}$ percentiles denoted by the grey bands. Source: Authors' calculations using World Bank World Development Indicators data.
+
+Figure 2. Composition of Government Defense Spending by Function (Share of Total Defense), 1990–2020
+
+[[KC_IMAGE_004]]
+
+AE = advanced economies, EMDE = emerging markets and developing economies.
+Note: Bars report the share of each component in total defense expenditure. Blue = military, red = civil, green = R&D, yellow = foreign aid. Figures shown for advanced economies and emerging markets and developing economies in benchmark years 1990, 2000, 2010, and 2020.
+Source: Authors' calculations using the International Monetary Fund Classification of the Functions of Government data.
+
+Figure 3 plots the unconditional correlation between average real GDP growth and changes in defense spending (as a percent of GDP). The relationship is essentially flat, with the fitted line indicating no systematic association between the two variables. This near-0 correlation highlights that raw cross-country averages do not reveal a clear growth impact of defense spending. Instead, it underscores the need for a more structured empirical approach—such as the local projection framework adopted below—that can account for dynamics, endogeneity, and heterogeneous country experiences.
+
+Figure 3. Unconditional Correlation Between Growth and Changes in Defense Spending
+
+[[KC_IMAGE_005]]
+
+GDP = gross domestic product, p.a. = per annum.
+Source: Authors' calculations using the International Monetary Fund Classification of the Functions of Government data.
+
+Appendix Figure A1 shows that most country-specific elasticities cluster near 0, indicating that defense spending is only weakly responsive to output fluctuations. The histogram highlights a concentration between -1 and 2, with few extreme values. Kernel densities reveal sharper clustering around 0 in AEs, while EMDEs display wider dispersion and fatter tails, consistent with greater sensitivity to cyclical and security shocks.
+
+Appendix Figures A2 and A3 present illustrative examples of the construction of government defense spending series and the identification of shocks. Figure A2 shows the raw and adjusted series for the United States and Mexico, highlighting the close alignment between actual expenditure and its filtered counterparts (HP and Hamilton trends). Figure A3 then plots the corresponding shocks, defined as large deviations in cyclically adjusted defense spending. For the United States, we identify three distinct defense shocks over the sample period, while for Mexico we observe a more frequent pattern of spikes, consistent with the higher volatility of defense spending in EMDEs. Similar exercises for other countries (e.g., the United Kingdom and India, representative of each income group) yield comparable patterns: relatively few but identifiable shocks for advanced economies, and a higher incidence of shocks for emerging markets.
+
+Together, these figures illustrate both the methodology used to isolate exogenous changes in defense spending and the contrasting dynamics across advanced and developing economies.
+
+A complete list of countries included in the sample is provided in Appendix Table A1. The coverage of variables varies across countries due to data availability.
+
+## 5. EMPIRICAL RESULTS
+
+## 5.1. Baseline Estimation Results
+
+We analyze the macroeconomic effects of defense spending shocks using a global sample over 1990–2021. Our baseline estimation computes IRFs derived from local projections. Shocks are identified as large deviations in cyclically adjusted defense expenditure and are traced over an 8-year horizon. Figure 4 presents the global IRF of real GDP to a defense spending shock. The results show a positive and persistent output response. Real GDP rises by about 0.5 percentage points after 3 years and stabilizes at gains of roughly 0.7–0.8 percentage points by Year 8. The effect is statistically significant at conventional confidence levels, with confidence bands narrowing over time. These findings indicate that defense expenditure shocks have nontrivial growth multipliers, broadly comparable to those of conventional fiscal shocks in the literature. Unlike capital-intensive investment shocks that can exclude certain groups, defense spending operates primarily through aggregate demand, procurement, and employment effects, generating a broad-based expansionary impact. The persistence of the response suggests that spillovers—through defense-related industries, technology transfer, and supply chain linkages—help sustain growth beyond the short run.
+
+Figure 4. Unconditional Local Projection: Effects of Government Defense Shocks on Real Gross Domestic Product Growth
+
+[[KC_IMAGE_006]]
+
+CI = confidence interval, GDP = gross domestic product.
+Note: Defense spending shocks are binary events, identified using the Hodrick–Prescott filter to cyclically adjust military expenditure. The solid black line plots the impulse response of real GDP to a defense shock. Year = 1 marks the first year after the shock (occurring at year = 0). For example, the line at year = 8 shows the cumulative change in real GDP (percent) 8 years after the shock. Dark grey shaded areas denote 90% spatial correlation consistent (SCC) confidence bands, while light grey shaded areas denote 95% SCC confidence bands.
+
+Source: Authors' calculations.
+
+The contrast between the two groups underscores the heterogeneous role of defense spending in shaping growth outcomes, with EMDEs reaping more expansionary benefits than AEs. These contrasting responses are also consistent with a displacement interpretation. In advanced economies, where fiscal space is constrained and public investment efficiency is high, additional defense spending appears more likely to crowd out alternative public uses or private investment, resulting in weak or negative multipliers. In EMDEs, by contrast, defense shocks operate more as a net demand impulse, suggesting that displacement effects are weaker or delayed.
+
+Figure 5. Effect of Defense Spending Shocks on Gross Domestic Product by Income Group
+
+[[KC_IMAGE_007]]
+
+
+[[KC_IMAGE_008]]
+
+AE = advanced economies, CI = confidence interval, DEV = emerging markets and developing economies, GDP = gross domestic product.
+Note: Defense spending shocks are identified as binary events using the Hodrick–Prescott filter to cyclically adjust expenditure. The solid black lines plot the impulse responses of real GDP to defense shocks, with year = 1 denoting the first year after the shock. Results are shown separately for advanced economies (AE, left panel) and emerging markets and developing economies (DEV, right panel). Dark grey shaded areas denote 90% spatial correlation consistent (SCC) confidence bands; light grey shaded areas denote 95% SCC confidence bands.
+Source: Authors' calculations.
+
+While the paper is motivated by rising defense spending in Asia and the Pacific, the regional estimates reveal substantial within-region heterogeneity. South Asia exhibits one of the strongest and most persistent growth responses to defense shocks, consistent with labor-intensive procurement structures and dense domestic supply chains. In contrast, East Asia and the Pacific display weak and statistically insignificant multipliers, despite rising military budgets. This apparent disconnect reflects the capital-intensive nature of defense modernization in countries such as the PRC, the Republic of Korea, and parts of Southeast Asia, where procurement is concentrated in high technology sectors with limited short-run employment spillovers. Appendix Figure A4 disaggregates the EMDE results by region, highlighting substantial heterogeneity in the growth effects of defense spending shocks. Latin America and the Caribbean, sub-Saharan Africa, and South Asia (SAR) show clear and persistent positive effects, with GDP gains approaching or exceeding 1% after 8 years. These regions appear to benefit most strongly from demand spillovers and domestic industry linkages. By contrast, the results for Asia are more nuanced. SAR displays one of the most robust positive responses, consistent with the region's relatively high labor intensity and domestic production linkages in defense-related procurement. In East Asia and the Pacific, however, the output response is weak and statistically insignificant. This muted effect may reflect two factors: first, defense budgets in several East Asian economies (e.g., Indonesia, Thailand, the Philippines) remain modest relative to GDP, limiting the scale of stimulus; and second, in countries like the PRC, a large share of defense spending is channeled into capital-intensive sectors with limited short-run spillovers to broad domestic demand. These dynamics help explain the fragile or uncertain growth response captured in the wide confidence bands. Finally, Europe and Central Asia and the Middle East and North Africa show close to 0 or negative responses, consistent with fiscal crowding out, external dependency on imports of military equipment, and more limited local multiplier effects. Overall, Appendix Figure A4 suggests that defense shocks in Asia generate highly divergent outcomes: strong and persistent gains in South Asia, where spending tends to mobilize labor and domestic industries, versus muted and uncertain responses in East Asia and the Pacific, where defense budgets are either too small to matter or concentrated in capital-intensive sectors with weaker multipliers. Figure 6 disaggregates the effects of defense spending shocks into their main functional components. The results highlight a strong asymmetry: only defense spending and defense-related R&D generate positive and statistically significant effects on GDP. Defense shocks raise output by up to 0.15% after 3 to 4 years, while R&D shocks yield even larger gains—approaching 1% of GDP over the medium run—consistent with technology spillovers and productivity enhancing effects. By contrast, civil defense spending and foreign defense aid show no significant growth effects. Point estimates are either flat or negative, with wide confidence bands, suggesting that these categories are either fiscally neutral or associated with crowding out effects. Taken together, the evidence suggests that the aggregate positive multipliers documented earlier are primarily driven by core defense operations and R&D investment, while other defense components exert little or no measurable impact on output. This underlines the importance of distinguishing between different types of defense spending when evaluating their macroeconomic consequences. Taken together, the limited response of both private and public investment, combined with the deterioration in net exports, suggests that the positive output effects of defense shocks largely reflect short-run demand expansion rather than crowding in of productive capital accumulation.
+
+Figure 6. Effect of Defense Spending Shocks on Gross Domestic Product by Component
+
+[[KC_IMAGE_009]]
+
+
+[[KC_IMAGE_010]]
+
+
+[[KC_IMAGE_011]]
+
+
+[[KC_IMAGE_012]]
+
+CI = confidence interval, GDP = gross domestic product, R&D = research and development.
+Note: Defense spending shocks by component are identified as binary events using the Hodrick–Prescott filter to cyclically adjust expenditure. The solid black lines plot the impulse responses of real GDP to shocks in military defense, civil defense, defense-related R&D, and foreign military aid, with year = 1 denoting the first year after the shock. Dark grey shaded areas denote 90% spatial correlation consistent (SCC) confidence bands; light grey shaded areas denote 95% SCC confidence bands.
+Source: Authors' calculations.
+
+## 5.2. Transmission Channels: Alternative Dependent Variables
+
+To better understand the mechanisms through which defense expenditure shocks affect the economy, we extend the baseline local projection framework to a range of alternative dependent variables. Our approach maintains consistency with the baseline specification, where the dependent variable is expressed as cumulative log differences of real GDP. Accordingly, we use log differences of real, constant price variables to trace expenditure and sectoral responses, while variables naturally expressed as ratios to GDP (such as the current account or net exports) are retained in percent of GDP form, and labor market indicators are measured in percentage points. This choice follows the logic of Blanchard and Perotti (2002), Ramey (2011), and Ilsetzki et al. (2013), who emphasize the use of real, deflated series for activity components and ratios for flow balances.
+
+We consider several propagation channels. Private investment may respond positively through demand accelerator effects but can also be crowded out by fiscal pressures; we proxy this with gross fixed capital formation by the private sector in constant prices, echoing evidence from Ramey (2011). Public investment may be affected through compositional shifts between capital and current spending; we measure this with gross fixed capital formation by general government, in line with Devarajan et al. (1996). Household consumption may rise via income and confidence effects, captured by household final consumption expenditure, consistent with Blanchard and Perotti (2002). On the external side, net exports may fall if import-intensive defense procurement generates leakages abroad; we track this with net exports of goods and services as a share of GDP, following Ilzetzki et al. (2013). We also consider sectoral value added, as defense outlays may shift resources between tradable and nontradable activities; we examine manufacturing and services value added as shares of GDP, drawing on insights from Acemoglu et al. (2016). Turning to the labor market, we assess effects on employment by using the employment-to-population ratio (15+) in percentage point changes, as emphasized by Fatás and Mihov (2001). Finally, we examine the current account balance as a share of GDP, recognizing that higher defense spending may raise external financing needs, in line with Corsetti et al. (2012).
+
+Figure 7 explores the transmission channels of defence spending shocks across a broad set of macroeconomic outcomes. The results point to a limited set of significant effects. The employment-to-population ratio responds positively and significantly, rising by roughly 0.2 percentage points within 5 years of the shock. This suggests that defense outlays stimulate labor demand, likely through direct hiring and indirect demand spillovers. By contrast, net exports exhibit a negative and borderline significant response, consistent with crowding in of domestic demand and deterioration of external balances following a defense shock. For all other outcomes—including private consumption, private and public investment, manufacturing and services value added, and the current account balance—the effects are small, statistically insignificant, and imprecisely estimated. Overall, these results imply that while defense spending shocks have modest but significant employment effects, they do not systematically translate into broader improvements in investment, consumption, or sectoral value added, and may even weigh on external balances.
+
+Appendix Figure A5 explores heterogeneity in transmission channels across income groups, with results shown for AEs (top panel) and EMDEs (bottom panel). In AEs, the only significant response appears in manufacturing value added, which rises in the medium term following a defence spending shock. This suggests that advanced economies channel part of the fiscal impulse into capital- and technology-intensive manufacturing sectors, where defense procurement and supply chain linkages are strong. At the same time, services value added declines significantly in the medium term, indicating possible crowding out as fiscal and labor resources are reallocated away from services toward manufacturing. In EMDEs, the picture is different. The employment-to-population ratio shows a robust and positive response, rising significantly in the years after the shock. This is consistent with more labor-intensive spillovers of defence outlays in EMDEs, where increases in government demand translate more directly to job creation. However, net exports decline significantly, reflecting higher domestic absorption and import dependence, which erode external balances. For all other variables—including private consumption, investment, and current account balances—the responses are statistically insignificant.
+
+
+[[KC_IMAGE_013]]
+
+GDP = gross domestic product, pp = percentage point, VA = value added.
+Note: Defense spending shocks are binary events, identified using the Hodrick–Prescott filter to cyclically adjust defense expenditure. The solid black line plots the impulse response of real GDP to a defense shock. Year = 1 marks the first year after the shock (occurring at year = 0). For example, the line at year = 8 shows the cumulative change in real GDP (percent) 8 years after the shock. Dark grey shaded areas denote 90% spatial correlation consistent (SCC) confidence bands, while light grey shaded areas denote 95% SCC confidence bands.
+Source: Authors' calculations.
+
+## 5.3. State Dependence and Interaction Variables
+
+While the analysis of alternative dependent variables sheds light on the propagation channels of defense expenditure shocks, their aggregate effect may itself be state dependent. In other words, the macroeconomic impact of defense shocks is unlikely to be uniform, but rather conditioned by prevailing macroeconomic circumstances, fiscal constraints, external exposure, and institutional strength. To investigate this possibility, we extend the local projection framework with interaction terms and threshold or smooth transition specifications, following Auerbach and Gorodnichenko (2012) and Jordà and Taylor (2016). This approach allows us to examine whether output responses differ systematically across regimes.
+
+We consider seven conditioning variables, all drawn from WDI or closely related global databases and chosen to be nonoverlapping with the dependent variables used in the channel analysis.
+
+(i) Business cycle: Fiscal multipliers are known to depend on economic slack, which we proxy using the output gap obtained from an HP filter of real GDP, consistent with
+
+Auerbach and Gorodnichenko (2012), who document systematically higher multipliers during recessions.
+
+(ii) Fiscal space: High public debt may constrain the effectiveness of fiscal shocks by raising sovereign risk premia and intensifying crowding out pressures. We measure fiscal space using general government gross debt as a share of GDP, sourced from the IMF's Global Debt Database and harmonized with WDI coverage, following Ilzetzki et al. (2013) and IMF (2015).
+
+(iii) Trade openness: Defense spending may leak abroad through higher imports, particularly in open economies. We capture this channel with trade openness (% of GDP), defined as the ratio of exports plus imports to GDP (Ilzetzki et al., 2013).
+
+(iv) Financial development: The depth of domestic credit markets may influence the size of multipliers by relaxing financing constraints and fostering private sector crowding in. We proxy financial development using domestic credit to the private sector (% of GDP), consistent with Corsetti et al. (2012) and Ramey and Zubairy (2018).
+
+(v) Revenue capacity: The ability to sustain additional public spending without triggering macroeconomic stress is proxied by general government revenue excluding grants (as a share of GDP). This measure captures the government's structural capacity to mobilize domestic fiscal resources and is consistent with Alesina et al. (2019), who emphasize fiscal capacity as a key determinant of shock absorption.
+
+(vi) Institutional quality: The effectiveness with which defense spending translates into real economic activity depends on state capacity. We proxy institutional quality using government effectiveness from the Worldwide Governance Indicators, which reflect the quality of public services, bureaucratic competence, and the credibility of policy implementation, in line with Acemoglu et al. (2001).
+
+(vii) Geopolitical risk (conflict exposure): Finally, to capture the security environment in which defense spending occurs, we condition on a conflict-based measure of geopolitical risk constructed from the Uppsala Conflict Data Program/Peace Research Institute Oslo (UCDP/PRIO) dataset. High-risk states are defined by the occurrence of high-intensity armed conflict (at least 1,000 battle-related deaths). This variable allows us to distinguish between defense spending driven by binding security threats and defense spending undertaken in relatively stable environments, which is essential for interpreting heterogeneous multipliers and separating stabilization effects from potential displacement mechanisms.
+
+We estimate these nonlinear effects using a smooth transition autoregressive (STAR) function within the LP framework. As shown by Auerbach and Gorodnichenko (2012), this is equivalent to the STAR model of Granger and Teräsvirta (1993). $^{13}$ State dependent LPs have been widely applied (Ramey and Zubairy, 2018; Alpanda et al., 2021). Plagborg-Møller and Wolf (2020) demonstrate that LPs and VARs yield the same IRFs in linear settings. However, LPs offer two advantages for our context: they easily accommodate state dependence in panels and do not require assumptions about regime duration or transition mechanisms. We estimate the following model:
+
+$$
+\begin{array}{r l} & {\Delta \log y _ {i, t + h} = \alpha_ {i, h} + \delta_ {t, h} + \sum_ {j = 0} ^ {4} \beta_ {j, h} F (z _ {i, t}) d _ {i, t - j} + \sum_ {j = 0} ^ {4} \beta_ {j, h} ^ {H} F (1 - (z _ {i, t})) d _ {i, t - j} +} \\ & {\sum_ {l = 0} ^ {3} \beta_ {l, h} \big (l o g y _ {i, t - l} - l o g y _ {i, t - 1 - l} \big) + \sum_ {h = 1} ^ {h} \beta_ {h} d _ {i, t + h} + \sum_ {c = 0} ^ {4} \beta_ {c, h} ^ {\prime} X _ {i, t - c} + u _ {i, t + h}} \end{array}\tag{10}
+$$
+
+where,
+
+$$
+F (z _ {i t}) = \frac {\exp (- \gamma z _ {i t})}{1 + \exp (- \gamma z _ {i t})}, \quad \gamma > 0
+$$
+
+with $z_{it}$ being an indicator proxied by one of the variables mentioned above normalized to have 0 mean and unit variance. The weights assigned to each regime vary between 0 and 1 according to the weighting function $F(\cdot)$ , so that $F(z_{it})$ . The coefficients $\beta_{0,h}^{L}$ and $\beta_{0,h}^{H}$ are used to construct the IRFs and the associated confidence interval for high versus low states. They respectively capture the impact of defense spending shocks at each horizon h in cases of low state $(F(z_{it})\approx1$ when z goes to minus infinity) and high state $(1-F(z_{it}))\approx1$ when z goes to plus infinity). The smoothness parameter ( $\gamma$ ) governs the speed and steepness of transitions between regimes. Higher values of $\gamma$ imply more abrupt, threshold-like shifts, while lower values generate smoother, gradual transitions. In our baseline specification, we calibrate $\gamma=1.5$ in line with prior empirical work (e.g., Auerbach and Gorodnichenko, 2012). To assess the robustness of our findings, we re-estimate the model using alternative values of $\gamma=1.0$ and $\gamma=2.0$ . The resulting impulse responses remain stable across these values, confirming that our main results are not sensitive to this parameter choice. These robustness checks are available upon request.
+
+The results in Figure 8 Panel A highlight a strong state dependence in the effects of defense spending shocks. When conditioning on the business cycle using the output gap, the estimated response of real GDP in low growth or recessionary states is statistically indistinguishable from 0. In other words, defense shocks fail to stimulate output when the economy is weak. By contrast, in high growth or boom states, the response is positive and becomes statistically significant at medium horizons, indicating that defense spending shocks amplify economic momentum when conditions are favorable. The unconditional baseline response lies between these two extremes, reflecting an average over heterogeneous states. This pattern is consistent with the broader evidence on state dependent fiscal multipliers (Auerbach and Gorodnichenko, 2012, 2013), which tend to be larger in expansions, and suggests that defense spending may be more effective as a procyclical amplifier rather than a countercyclical stabilizer.
+
+Panel B conditions the responses on fiscal space. Here, the contrast is stark: in low debt states, defense shocks deliver a sizable and persistent boost to GDP, while in high debt states the response is muted and statistically insignificant throughout the horizon. This finding aligns with the debt-dependent multipliers literature (Ilsetzki et al., 2013; IMF, 2015), suggesting that high public debt constrains fiscal effectiveness, possibly through expectations of future consolidation or tighter financial conditions.
+
+Panel C turns to trade openness. In relatively closed economies, defense shocks are associated with a mild but positive output response, whereas in highly open economies the effect is weak and mostly indistinguishable from 0. This supports the leakage channel emphasized by Ilzetzki et al. (2013), whereby part of the demand stimulus spills abroad through higher imports, dampening the domestic impact.
+
+Panel D introduces financial development as a conditioning factor. In financially shallow economies, multipliers are small and uncertain, but in financially developed states, defense spending shocks yield stronger and more sustained GDP gains. This pattern is consistent with theories stressing the role of financial frictions in shaping fiscal transmission (Corsetti et al., 2012; Ramey and Zubairy, 2018), suggesting that well-functioning credit markets help amplify fiscal demand effects.
+
+Panel E examines revenue capacity. Economies with low revenue-to-GDP ratios display weak and statistically insignificant responses to defense shocks, whereas high revenue states experience more pronounced and persistent output increases. This underscores the importance of fiscal capacity (Alesina et al., 2019), as governments with stronger revenue bases are better positioned to finance additional spending without triggering destabilizing expectations.
+
+Panel F considers institutional quality, proxied by government effectiveness. In low governance states, defense shocks appear to yield stronger short-run multipliers, whereas in high governance states the effects are weaker and less persistent. This pattern is consistent with dual interpretations. On the one hand, weaker institutional environments amplify Keynesian demand effects due to looser procurement controls and faster disbursement. On the other hand, they are also more vulnerable to inefficiencies, cost overruns, and corruption in weapons procurement, which may inflate short-run measured output without generating durable productivity gains. In contrast, stronger institutional frameworks impose tighter oversight and procurement discipline, dampening headline multipliers but likely improving allocative efficiency.
+
+Finally, Panel G introduces the new geopolitical risk (conflict) conditioning, based on high intensity armed conflict from the UCDP/PRIO dataset. The results reveal a clear and economically meaningful asymmetry. In low conflict environments, defense shocks generate muted and often statistically insignificant output responses, consistent with a displacement interpretation whereby additional military spending largely reallocates resources across already utilized sectors. By contrast, in high conflict states, defense spending produces substantially larger and more persistent output gains, indicating that when security threats are binding, military outlays operate as a net demand impulse. In these settings, defense spending mobilizes underutilized labor, activates domestic supply chains, and relaxes binding security constraints that otherwise suppress private investment. These findings provide direct empirical support for the view that the macroeconomic effectiveness of defense spending depends critically on the surrounding security environment, and rationalize why multipliers are systematically larger in fragile and conflict-affected economies.
+
+Figure 8. Conditional Local Projections: Effects of Defense Spending Shocks and the Role of Initial Conditions
+
+Panel A
+
+Conditional Impact of Military Shock (90% bands)
+
+Conditional Impact of Military Shock (90% bands)
+
+Panel B
+Conditional Impact of Military Shock (90% bands)
+
+
+Panel C
+
+
+Panel D
+
+Panel F
+
+Panel E
+Conditional Impact of Military Shock (90% bands)
+
+
+Conditional Impact of Military Shock (90% bands)
+
+
+[[KC_IMAGE_014]]
+
+
+FD = financial development, GDP = gross domestic product, GEE = government effectiveness
+
+Note: Binary-created shocks using the Hodrick–Prescott filter to cyclically adjust the respective variables. Year = 1 is the first year after a shock took place at year = 0. The solid blue lines plot the conditional impulse responses of military shocks on real GDP, while the dashed red line represents the unconditional baseline response. The dark grey shaded areas correspond to 90% spatial correlation consistent (SCC) confidence bands around the conditional responses, and the yellow shaded areas depict 90% SCC confidence bands around the unconditional response.
+
+Source: Authors' calculations.
+
+## 5.4. Regional Spillovers from Defense Shocks
+
+Beyond domestic effects, changes in defense spending may generate cross-border spillovers through trade, production linkages in the defense industry, and security externalities. To quantify these effects, we augment the baseline local projection equation with a measure of regional defense shocks. For each country i and year t, we construct the average defense shock in the rest of its region as
+
+$$
+\bar {D S} _ {- i, r (i), t} = \frac {1}{N _ {r (i) , t} - 1} \sum_ {j \in r (i), j \neq i} D S _ {j, t},\tag{11}
+$$
+
+where $DS_{j,t}$ is the binary military shock in country j, $r(i)$ denotes the region to which country i belongs (using the ADB/IMF regional classification), and $N_{r(i),t}$ is the number of countries in that region–year cell. This “leave one out” mean ensures that the spillover term captures only foreign defense shocks, excluding country i’s own shock.
+
+We then estimate, for each horizon h,
+
+$$
+\Delta y _ {i, t + h} = \alpha_ {i} + \delta_ {t} + \beta_ {h} ^ {\mathrm{dom}} D S _ {i, t} + \beta_ {h} ^ {\mathrm{spill}} \bar {D S} _ {- i, r (i), t} + \Gamma_ {h} X _ {i, t} + u _ {i, t + h},\tag{12}
+$$
+
+where $\Delta y_{i,t+h}$ is the cumulative change in log real GDP over horizon h, $\alpha_{i}$ and $\delta_{t}$ are country and time fixed effects, $X_{i,t}$ denotes the same macroeconomic controls as in the baseline specification, and $u_{i,t+h}$ is the horizon-specific error term. The coefficient $\beta_{h}^{dom}$ measures the domestic multiplier, while $\beta_{h}^{spill}$ captures the regional spillover effect of defense shocks originating in other economies of the same region. Year fixed effects absorb global shocks (such as the global financial crisis or the Covid-19 pandemic), so $\beta_{h}^{spill}$ is identified from within-region, cross-country variation in defense shocks.
+
+Figure 9. Domestic and Regional Spillovers from Military Spending Shocks
+
+[[KC_IMAGE_015]]
+
+GDP = gross domestic product.
+Note: Binary military spending shocks are constructed using the Hodrick–Prescott filter to cyclically adjust defense expenditures. Year 1 denotes the first year after a shock occurring at Year 0. The solid grey line plots the impulse response of real GDP to a domestic military spending shock, while the dashed black line represents the response to a regional spillover shock, defined as the average defense shock in other countries within the same region. Dark grey shaded areas correspond to 90% Driscoll–Kraay confidence bands around the domestic response, and the light yellow shaded areas depict 90% confidence bands around the regional spillover response. All specifications include country and year fixed effects and the full set of baseline macroeconomic controls.
+
+Source: Authors' calculations
+
+Source: Authors' calculations.
+
+The resulting impulse responses, reported in Figure 9, indicate that regional defense shocks matter for domestic activity, but their impact is weaker and less stable than the effect of domestic shocks. The point estimates for $\beta_{h}^{spill}$ are positive at short horizons, with a borderline effect at h=1 and a peak of around 1.9 percentage points at h=3, where the 90% confidence interval lies entirely above 0. From h=4 to h=6, the spillover coefficients become smaller and statistically insignificant. At longer horizons, however, the spillover effects turn clearly negative and significant: at h=7 and h=8, regional defense buildups are associated with output losses of roughly -3.75% and -5.5%, respectively. This medium- to long-run reversal is consistent with crowding out forces, heightened geopolitical risk, or competitive reallocation across neighboring economies. Overall, while short-run regional spillovers from defense spending may generate modest positive effects, they are transitory and eventually dominated by adverse external impacts, reinforcing the conclusion that the bulk of the macroeconomic effect of defense spending remains domestically driven.
+
+## 5.5. Robustness and Sensitivity
+
+We assess the credibility of our defense spending shock identification and the stability of the estimated macroeconomic effects using a broad battery of robustness and sensitivity checks. Selected estimates at short and medium horizons confirm that the magnitude and persistence of defense multipliers are highly stable across alternative empirical designs. For brevity, we summarize the main exercises here, while full implementation details, auxiliary tables, and additional figures are provided in the online appendix and are available from the authors upon request.
+
+Exogeneity and fiscal foresight: We conduct panel Granger noncausality tests and regress the incidence of defense shocks on lagged macroeconomic conditions (GDP growth, inflation, public debt, and the current account). Across specifications, lagged macro variables do not systematically predict defense shock realizations. Reverse local-projection “pre-trend” tests—regressing shock incidence on future growth—also show no anticipatory dynamics. Finally, including leads of the shock in the LP specifications does not alter the impulse responses, corroborating the absence of fiscal foresight.
+
+Sample selection and weighting: To address potential selection into defense shock episodes, we implement a doubly robust augmented inverse probability weighted estimator that combines outcome regressions with propensity score weights for shock incidence. The resulting impulse responses are nearly identical to the baseline LP estimates, indicating that selection does not drive the results.
+
+Continuous shock definitions and alternative identification: Replacing the binary defense shock with continuous measures based on cyclically adjusted defense spending—either the growth rate or the change in defense outlays as a share of GDP—yields highly similar output responses. Larger defense impulses generate systematically larger output effects, confirming the monotonicity of the multiplier. We also re-estimate the baseline models using alternative cyclicality corrections and continuous shock constructions, with no material change in the dynamics.
+
+Sensitivity to thresholds and statistical filters: Tightening the shock definition to a two standard deviation cutoff and recomputing cyclically adjusted defense spending using Baxter–King, Christiano–Fitzgerald, and Hamilton filters leaves the results essentially unchanged. Output responses remain positive and persistent in EMDEs and weak in advanced economies.
+
+Alternative model specifications and estimators: The estimated multipliers are robust to including or excluding country fixed effects, augmenting the set of conditioning variables (inflation, trade openness, real exchange rates), dropping the lagged dependent variable, and using alternative dynamic panel estimators. Alternative measures of fiscal space, financial development, and institutional quality also produce state dependent multipliers closely aligned with the baseline.
+
+Sample sensitivity: Restricting the estimation to the pre-2007 period, employing balanced panel samples, or re-estimating the models after excluding the PRC, selected BRICS economies (Brazil, the PRC, India, the Russian Federation, and South Africa), or conflict-affected states does not alter the qualitative conclusions, although precision naturally declines with reduced sample size.
+
+Geopolitical risk and conflict sensitivity: We explicitly examine robustness to alternative constructions of the geopolitical risk variable, including lower intensity conflict thresholds. The main result remains: defense multipliers are significantly larger in high conflict environments than in peaceful settings.
+
+Asymmetric defense spending shocks: We estimate separate local projections for positive and negative defense spending shocks. Expansionary defense shocks generate statistically significant and persistent increases in output, while contractionary shocks exhibit much smaller and short-lived effects that become insignificant after 4 to 5 years. This asymmetry is consistent with demand amplification during military buildups and partial private sector offset during retrenchments.
+
+Overall, these robustness exercises strongly support the validity of our identification strategy and confirm that the main findings—modest but persistent domestic multipliers, strong state dependence, and limited long-run spillovers—are not artifacts of any single specification, filter, or shock definition.
+
+## 6. CONCLUSIONS AND POLICY IMPLICATIONS
+
+This paper has examined the macroeconomic effects of defense spending shocks in emerging markets and developing economies, with a particular focus on Asia and the Pacific. Using cyclically adjusted defense shocks and a local projections framework, we provide new causal evidence on how military outlays shape output, investment, and external balances. Three key findings emerge. First, defense shocks in EMDEs yield modest but persistent output gains, with multipliers of roughly 0.7%–1% after 8 years, while advanced economies exhibit weak or even negative responses. Second, heterogeneity within EMDEs is substantial: South Asia experiences strong, labor-intensive spillovers, whereas East Asia displays muted effects reflecting capital-intensive procurement. Third, decomposition shows that only core military spending and defense-related R&D generate positive and durable growth effects, while civil defense and foreign defense aid do not. Importantly, multipliers are highly state dependent, rising in countries with low debt, strong revenue bases, deeper financial systems, lower openness, and weaker governance capacity. They are also substantially larger in high conflict environments, where security constraints are binding and defense spending has stronger short-run demand effects.
+
+These results have several policy implications. Defense spending should not be regarded as a blanket tool for macroeconomic stabilization. Where fiscal space is ample and credit markets deep, defense outlays can deliver temporary stimulus, particularly when directed toward innovation and R&D. In contrast, countries with high debt, fragile revenue capacity, or open economies see little return from additional defense spending. Policymakers in EMDEs must therefore weigh the opportunity costs: reallocating resources toward infrastructure, health, or education may yield larger and more inclusive long-term gains. Still, in environments where security pressures necessitate higher defense budgets, governments could design them to maximize economic spillovers, for example by prioritizing defense-linked innovation. At the same time, our spillover results caution that regional defense buildups offer little sustained stimulus and may generate negative medium-run effects through crowding out and competitive reallocation across neighboring economies.
+
+The paper has limitations. Our analysis focuses on macroeconomic aggregates and short-to medium-term dynamics, leaving aside distributional impacts, sectoral reallocation, and geopolitical spillovers. Defense data remain imperfect, and our reliance on annual series constrains the identification of short-run dynamics. Moreover, while robustness checks confirm the validity of our baseline results, caution is warranted when extrapolating to contexts with fundamentally different institutional or geopolitical conditions. Although we explicitly incorporate conflict exposure and regional spillovers, more granular measures of geopolitical risk could further refine the analysis.
+
+Future research could build on our work in several directions. First, microlevel data on procurement contracts and defense–industrial linkages could shed light on sectoral spillovers and employment effects. Second, integrating geopolitical risk indices or conflict exposure would allow for a richer understanding of the trade-offs between security and development. Third, exploring interactions between defense spending, taxation, and inequality could clarify the broader welfare consequences. Finally, political economy perspectives on defense budgeting in EMDEs would help explain the persistence of military spending even when economic returns are modest. Further work could also examine cross-country propagation through trade, finance, and security alliances using network-based spillover frameworks.
+
+Overall, our findings suggest that the macroeconomic impact of defense spending in EMDEs is neither universally expansionary nor contractionary, but conditional on fiscal, financial, and institutional environments. For policymakers, the central lesson is that context matters: under the right circumstances, defense outlays can provide a short-term boost, but absent favorable conditions they risk straining scarce resources, crowding out more productive investments, and generating adverse spillovers at the regional level over the medium run.
+
+## APPENDIX
+
+## Table A1. Country List
+
+Albania; Algeria; Angola; Argentina; Armenia; Australia; Austria; Azerbaijan; Bahrain; Bangladesh; Belarus; Belgium; Belize; Benin; Bolivia; Bosnia and Herzegovina; Botswana; Brazil; Brunei Darussalam; Bulgaria; Burkina Faso; Burundi; Cameroon; Canada; Central African Republic; Chad; Chile; Colombia; Congo, Rep.; Cote d'Ivoire; Croatia; Cyprus; Czechia; Denmark; Dominican Republic; Ecuador; El Salvador; Estonia; Eswatini; Fiji; Finland; France; Gabon; The Gambia; Germany; Ghana; Greece; Guatemala; Guinea; Guinea-Bissau; Guyana; Haiti; Honduras; Hungary; India; Indonesia; Iran, Islamic Republic; Iraq; Ireland; Israel; Italy; Jamaica; Japan; Jordan; Kazakhstan; Kenya; Republic of Korea; Kosovo; Kuwait; Kyrgyz Republic; Lao PDR; Latvia; Lebanon; Lesotho; Libya; Lithuania; Luxembourg; Madagascar; Malaysia; Mali; Malta; Mauritania; Mexico; Moldova; Mongolia; Montenegro; Morocco; Namibia; Nepal; New Zealand; Nicaragua; Niger; North Macedonia; Norway; Oman; Pakistan; Paraguay; Peru; Poland; Portugal; Romania; Russian Federation; Rwanda; Saudi Arabia; Senegal; Serbia; Seychelles; Sierra Leone; Singapore; Slovak Republic; Slovenia; South Africa; Spain; Sri Lanka; Sudan; Sweden; Switzerland; Syrian Arab Republic; Thailand, Timor-Leste; Togo; Trinidad and Tobago; Tunisia; Türkiye; Uganda; Ukraine; United Kingdom; United States; Uruguay; Venezuela, RB; Viet Nam, Yemen, Rep.; Zambia; and Zimbabwe.
+
+Table A2. Summary Statistics
+
+
+Note: The table reports summary statistics for the baseline local projections (LP) estimation sample. The cumulative change in real GDP refers to the 1-year-ahead horizon. The binary military shock is based on HP-filtered cyclically adjusted military expenditure. All variables are measured at the annual frequency. Source: Authors' calculations.
+GDP = gross domestic product, HP = Hodrick–Prescott, SD = standard deviation.
+
+Figure A1. Distribution of Country-Specific Elasticities of Government Defense Expenditure to Real Gross Domestic Product
+
+[[KC_IMAGE_016]]
+
+
+[[KC_IMAGE_017]]
+
+AE = advanced economies, EMDE = emerging markets and developing countries. Source: Authors' calculations.
+
+Figure A2. Government Defense Spending Adjusted Series, Illustrative Examples for the United States and Mexico
+
+[[KC_IMAGE_018]]
+
+HP = Hodrick–Prescott.
+Source: Authors' calculations.
+
+GDP = gross domestic product, HP = Hodrick–Prescott.
+Source: Authors' calculations.
+
+Figure A3. Government Defense Shocks, Illustrative Examples for the United States and Mexico
+
+[[KC_IMAGE_019]]
+
+
+## Figure A4. Effect of Defense Spending Shocks on Gross Domestic Product by Region
+
+
+[[KC_IMAGE_020]]
+
+
+[[KC_IMAGE_021]]
+
+
+[[KC_IMAGE_022]]
+
+
+[[KC_IMAGE_023]]
+
+
+CI = confidence interval, EAP = East Asia and the Pacific, ECA = Europe and Central Asia, GDP = gross domestic product, LAC = Latin America and the Caribbean, MNA = Middle East and North Africa, SAR = South Asia, SSA = sub-Saharan Africa.
+
+Note: Defense spending shocks are binary events, identified using the Hodrick–Prescott filter to cyclically adjust military expenditure. The solid black line plots the impulse response of real GDP to a defense shock. Year = 1 marks the first year after the shock (occurring at year = 0). For example, the line at year = 8 shows the cumulative change in real GDP (percent) 8 years after the shock. Dark grey shaded areas denote 90% spatial correlation consistent (SCC) confidence bands, while light grey shaded areas denote 95% SCC confidence bands.
+
+Source: Authors' calculations.
+
+## Figure A5. Effect of Defense Spending Shocks on Alternative Dependent Variables by Income Group
+
+
+[[KC_IMAGE_024]]
+
+
+GDP = gross domestic product, VA = value added.
+
+Note: Defense spending shocks are binary events, identified using the Hodrick–Prescott filter to cyclically adjust military expenditure. The solid black line plots the impulse response of real GDP to a defense shock. Year = 1 marks the first year after the shock (occurring at year = 0). For example, the line at year = 8 shows the cumulative change in real GDP (percent) 8 years after the shock. Dark grey shaded areas denote 90% spatial correlation consistent (SCC) confidence bands, while light grey shaded areas denote 95% SCC confidence bands.
+
+Source: Authors' calculations.
+
+Figure A6. Robustness of Impulse Response Function Point Estimates to Alternative Control Variable Specifications
+
+[[KC_IMAGE_025]]
+
+GDP = gross domestic product.
+
+Note: This figure reports the distribution of impulse response function point estimates of real GDP to defense spending shocks across alternative model specifications with different sets of control variables. Box plots display the interquartile range (box), median (horizontal line), and the range excluding outliers (whiskers). Results indicate that while magnitudes vary somewhat with specification, the estimated responses are consistently positive and increase over the horizon, confirming the robustness of the baseline findings.
+
+Source: Authors' calculations.
+
+## REFERENCES
+
+Acemoglu, Daron, Simon Johnson, and James A. Robinson. 2001. “The Colonial Origins of Comparative Development: An Empirical Investigation.” American Economic Review 91(5): 1369–1401.
+
+Acemoglu, Daron, David Autor, David Dorn, Gordon H. Hanson, and Brendan Price. 2016. “Import Competition and the Great US Employment Sag of the 2000s.” Journal of Labor Economics 34 (S1): S141–S198.
+
+Adarov, Amat, Benedict Clements, and Joao Jalles. 2026. “Macroeconomic Effects of Public Investment in EMDEs: Nonlinear Effects of the Business Cycle, Fiscal Space, Capital Stock and Efficiency”, Oxford Bulletin of Economics and Statistics, (forthcoming)
+
+Alesina, Alberto, and Silvia Ardagna. 2010. “Large Changes in Fiscal Policy: Taxes Versus Spending.” In Tax Policy and the Economy, Vol. 24, edited by Jeffrey R. Brown, 35–68. Chicago: University of Chicago Press.
+
+Alesina, Alberto, Roberto Perotti, and José Tavares. 1998. “The Political Economy of Fiscal Adjustments.” Brookings Papers on Economic Activity 1: 197–266.
+
+Alesina, Alberto, Carlo Favero, and Francesco Giavazzi. 2019. Austerity: When It Works and When It Doesn't. Princeton, NJ: Princeton University Press.
+
+Alpanda, Sami, Jesús Fernández-Villaverde, and Lee Ohanian. 2021. “Fiscal Policy in a Liquidity Trap.” Review of Economic Dynamics 39: 42–59.
+
+Auerbach, Alan J., and Yuriy Gorodnichenko. 2012. “Measuring the Output Responses to Fiscal Policy.” American Economic Journal: Economic Policy 4 (2): 1–27.
+
+Auerbach, Alan J., and Yuriy Gorodnichenko. 2013. “Fiscal Multipliers in Recession and Expansion.” In Fiscal Policy after the Financial Crisis, edited by Alberto Alesina and Francesco Giavazzi, 63–98. Chicago: University of Chicago Press.
+
+Barro, Robert J. 1991. “Economic Growth in a Cross Section of Countries.” Quarterly Journal of Economics 106 (2): 407–443.
+
+Batini, Nicoletta, Giovanni Callegari, and Giovanni Melina. 2014. “Successful Austerity in the United States, Europe, and Japan.” IMF Working Paper No. 14/56.
+
+Benoit, Emile. 1978. “Growth and Defense in Developing Countries.” Economic Development and Cultural Change 26 (2): 271–280.
+
+Bergman, Michael, and Michael Hutchison. 2020. “Fiscal Procyclicality in Emerging Markets: The Role of Institutions and Economic Conditions.” International Finance 23 (2): 196–214.
+
+Blanchard, Olivier, and Roberto Perotti. 2002. “An Empirical Characterization of the Dynamic Effects of Changes in Government Spending and Taxes on Output.” Quarterly Journal of Economics 117 (4): 1329–1368.
+
+Choi, Sangyup, and Junhyeok Shin. 2023. “Household Indebtedness and the Macroeconomic Effects of Tax Changes.” Journal of Economic Behavior and Organization 209: 22–52.
+
+Corsetti, Giancarlo, André Meier, and Gernot J. Müller. 2012. “What Determines Government Spending Multipliers?” Economic Policy 27 (72): 521–565.
+
+Deger, Saadet. 1986. “Economic Development and Defense Expenditure.” Economic Development and Cultural Change 35 (1): 179–196.
+
+Deger, Saadet, and Somnath Sen. 1995. “Military Expenditure and Developing Countries.” In Handbook of Defense Economics, Vol. 1, edited by Keith Hartley and Todd Sandler, 275–307. Amsterdam: Elsevier.
+
+Deleidi, Matteo, Francesca Iafrate, and Enrico Levrero. 2020. “Public Investment Fiscal Multipliers: An Empirical Assessment for European Countries”, Structural Change and Economic Dynamics, 52, 354–365.
+
+Devarajan, Shantayanan, Vinaya Swaroop, and Heng-fu Zou. 1996. “The Composition of Public Expenditure and Economic Growth.” Journal of Monetary Economics 37 (2–3): 313–344.
+
+Driscoll, John C., and Aart C. Kraay. 1998. “Consistent Covariance Matrix Estimation with Spatially Dependent Panel Data.” Review of Economics and Statistics 80 (4): 549–560.
+
+Dunne, J. Paul, and Nan Tian. 2015. “Military Expenditure and Economic Growth: A Survey.” Economics of Peace and Security Journal 10 (1): 15–30.
+
+Fatás, Antonio, and Ilian Mihov. 2001. “The Effects of Fiscal Policy on Consumption and Employment.” Journal of Political Economy 109 (4): 995–1015.
+
+Ghassibe, Mishel and Francesco Zanetti. 2022. “State Dependence of Fiscal Multipliers: The Source of Fluctuations Matters,” Journal of Monetary Economics, 132(C), 1–23.
+
+Granger, Clive W. J., and Timo Teräsvirta. 1993. Modelling Nonlinear Economic Relationships. Oxford: Oxford University Press.
+
+Gupta, Sanjeev, Benedict Clements, Rina Bhattacharya, and Shamit Chakravarti. 2004. “Fiscal Consequences of Armed Conflict and Terrorism in Low- and Middle-Income Countries.” European Journal of Political Economy 20 (2): 403–421.
+
+Heo, Uk, and Robert J. Eger. 2005. “Paying the Price for ‘Big Eyes’: Defense Spending and Economic Growth in East Asian Countries.” Journal of Asian Economics 16 (6): 737–754.
+
+Herbst, Edward P., and Niels Johannesen. 2024. “Bias in Local Projections.” Journal of Econometrics 240: 105655.
+
+Ilzetzki, Ethan, Enrique G. Mendoza, and Carlos A. Végh. 2013. “How Big (Small?) Are Fiscal Multipliers?” Journal of Monetary Economics 60 (2): 239–254.
+
+IMF. 2014. Fiscal Multipliers: Size, Determinants, and Use in Macroeconomic Projections. Washington, DC: International Monetary Fund.
+
+IMF. 2015. Fiscal Policy and Long-Term Growth. Washington, DC: International Monetary Fund.
+
+IMF. 2021. World Economic Outlook. Washington, DC: International Monetary Fund.
+
+IMF. 2026a. “Defense Spending: Macroeconomic Consequences and Trade-offs.” World Economic Outlook April 2026 Chapter 2. Washington, DC: International Monetary Fund.
+
+IMF. 2026b. “The Macroeconomics of Conflicts and Recovery.” World Economic Outlook April 2026 Chapter 3. Washington, DC: International Monetary Fund.
+
+Jordà, Óscar. 2005. “Estimation and Inference of Impulse Responses by Local Projections.” American Economic Review 95 (1): 161–182.
+
+Jordà, Óscar, and Alan M. Taylor. 2016. “The Time for Austerity: Estimating the Average Treatment Effect of Fiscal Policy.” Economic Journal 126 (590): 219–255.
+
+Knight, Malcolm, Norman Loayza, and Delano Villanueva. 1996. “The Peace Dividend: Military Spending Cuts and Economic Growth.” IMF Staff Papers 43 (1): 1–37.
+
+Kollias, Christos, George Manolas, and Suzanna-Maria Paleologou. 2004. “Defense Spending and Economic Growth in the European Union.” Journal of Development Economics 74 (1): 211–231.
+
+Miyamoto, Wataru, Minh Le, and Daniel R. Murphy. 2020. “Fiscal Stimulus and the Role of Public Investment.” Journal of International Economics 124: 103–116.
+
+Pesaran, M. Hashem. 2015. “Testing Weak Cross-Sectional Dependence in Large Panels.” Econometric Reviews 34 (6–10): 1089–1117.
+
+Pesaran, M. Hashem, and Ron Smith. 1995. “Estimating Long-run Relationships from Dynamic Heterogeneous Panels.” Journal of Econometrics 68 (1): 79–113.
+
+Plagborg-Møller, Mikkel, and Christian Wolf. 2020. “Local Projections and VARs Estimate the Same Impulse Responses.” Econometrica 88 (2): 955–980.
+
+Ramey, Valerie A. 2011. “Identifying Government Spending Shocks: It’s All in the Timing.” Quarterly Journal of Economics 126 (1): 1–50.
+
+Ramey, Valerie A. 2019. “Ten Years after the Financial Crisis: What Have We Learned from the Renaissance in Fiscal Research?” Journal of Economic Perspectives 33 (2): 89–114.
+
+Ramey, Valerie A., and Sarah Zubairy. 2018. “Government Spending Multipliers in Good Times and in Bad.” Journal of Political Economy 126 (2): 850–901.
+
+Romer, Christina D., and David H. Romer. 2019. “Fiscal Space and the Aftermath of Financial Crises: How It Matters and Why.” Brookings Papers on Economic Activity 2019 (1): 239–331.
+
+SIPRI. 2024. Trends in World Military Expenditure 2023. Stockholm: Stockholm International Peace Research Institute.
+
+Smith, Ron. 1980. “Military Expenditure and Investment in OECD Countries, 1954–1973.” Journal of Comparative Economics 4 (1): 19–32.
+
+Teulings, Coen, and Nick Zubanov. 2014. “Is Economic Recovery a Myth? Robust Estimation of Impulse Responses.” Journal of Applied Econometrics 29 (3): 497–514.
+
+Warner, Andrew M. 2014. “Public Investment as an Engine of Growth.” IMF Working Paper No. 14/148.
+
+Yildirim, Jülide, Nadir Özdemir, and Fuat Sezgin. 2005. “Military Expenditure and Economic Growth in Middle Eastern Countries: A Dynamic Panel Data Analysis.” Defence and Peace Economics 16 (4): 283–295.
+
+## Bullets and Budgets Measuring Defense Spending Multipliers
+
+This study shows that defense spending in emerging economies yields modest yet lasting boosts to output, while effects in advanced economies are more muted. The impact magnitudes depend on initial conditions across fiscal space, revenue capacity, financial development, institutional quality, and conflict exposure. Although defense spending can provide stimulus to growth, it should not be regarded as a blanket tool for macroeconomic stabilization. Resource allocation to infrastructure, health, or education could lead to larger and more inclusive long-term gains.
+
+## About the Asian Development Bank
+
+ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Working with its members and partners to solve complex challenges together, ADB harnesses innovative financial tools and strategic partnerships to transform lives, build quality infrastructure, and safeguard our planet. Founded in 1966, ADB is owned by 69 members—50 from the region.
