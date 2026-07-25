@@ -1,0 +1,112 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_558ffhrq/pdfs/0003-58-NOM-Wuxi XDC-2268.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "药明合联半年报前瞻：",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：药明合联1H26预览与FY26F预测修订",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-58-NOM-Wuxi XDC-2268.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+    "cleaned_source_title": "NOM-Wuxi XDC-2268.HK-1H26F preview and FY26F forecast revisions",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：WuxiXDC1H26Fpreview和FY26",
+    "raw_candidates": [
+      "药明合联1H26预览与FY26F预测修订",
+      "药明合联1H26收入增41%利润承压",
+      "药明合联1H26业绩与FY26F预测调整"
+    ],
+    "cleaned_candidates": [
+      "NOM：药明合联1H26预览与FY26F预测修订",
+      "NOM：药明合联1H26收入增41%利润承压",
+      "NOM：药明合联1H26业绩与FY26F预测调整",
+      "NOM：WuxiXDC1H26Fpreview和FY26",
+      "NOM：药明合联1H26收入增速41%，汇率与并购费用影响利润表现"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：药明合联1H26收入增41%利润承压",
+        "reasons": [
+          "anchor_coverage=0.39"
+        ]
+      },
+      {
+        "title": "NOM：WuxiXDC1H26Fpreview和FY26",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "NOM：药明合联1H26收入增速41%，汇率与并购费用影响利润表现",
+        "reasons": [
+          "anchor_coverage=0.39"
+        ]
+      }
+    ],
+    "selected_title": "NOM：药明合联1H26预览与FY26F预测修订",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "NOM：药明合联1H26预览与FY26F预测修订"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "514",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,494 @@
+[
+  {
+    "item": "0001-56-NOM-WinWay-Technology-6515.TW-Attractive-valuation--initiate-coverage",
+    "source_pdf": "/tmp/pdf_batch_001_558ffhrq/pdfs/0001-56-NOM-WinWay Technology-6515.TW-Attractive valuation- initiate coverage at Buy-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "芯片测试龙头，AI时",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：AI与半导体行业技术应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-56-NOM-WinWay Technology-6515.TW-Attractive valuation- initiate coverage at Buy-260724.pdf",
+      "cleaned_source_title": "NOM-WinWay Technology-6515.TW-Attractive valuation- initiate coverage at Buy",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：WinWay科技Attractivevaluation",
+      "raw_candidates": [
+        "NOM：AI芯片测试工序增加驱动探针卡与插座业务增长",
+        "NOM：探针卡与同轴插座2026至2028年复合增长率67%和86%",
+        "NOM：系统级测试与老化测试成为AI芯片新增测试环节",
+        "WinWay Technology：探针卡与插座业务覆盖",
+        "WinWay Technology：2026-2028年探针卡与插座复合增长率67%和86%",
+        "WinWay Technology：AI芯片测试需求驱动探针卡与插座业务增长"
+      ],
+      "cleaned_candidates": [
+        "NOM：AI芯片测试工序增加驱动探针卡与插座业务增长",
+        "NOM：探针卡与同轴插座2026至2028年复合增长率67%和86%",
+        "NOM：系统级测试与老化测试成为AI芯片新增测试环节",
+        "NOM：WinWayTechnology，探针卡与插座业务覆盖",
+        "NOM：WinWayTechnology，2026",
+        "NOM：WinWayTechnology",
+        "NOM：WinWay科技Attractivevaluation",
+        "NOM：1.探针卡与同轴插座业务预计录得67%和86%的年复合增长率"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：探针卡与同轴插座2026至2028年复合增长率67%和86%",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：系统级测试与老化测试成为AI芯片新增测试环节",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：WinWayTechnology，探针卡与插座业务覆盖",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "NOM：WinWayTechnology，2026",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：WinWayTechnology",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：WinWay科技Attractivevaluation",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：1.探针卡与同轴插座业务预计录得67%和86%的年复合增长率",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        }
+      ],
+      "selected_title": "NOM：AI与半导体行业技术应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "NOM：1.探针卡与同轴插座业务预计录得67%和86%的年复合增长率",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "NOM：AI芯片测试工序增加驱动探针卡与插座业务增长",
+        "NOM：探针卡与同轴插座2026至2028年复合增长率67%和86%",
+        "NOM：系统级测试与老化测试成为AI芯片新增测试环节"
+      ],
+      "pre_neutralization_title": "NOM：AI芯片测试工序增加驱动探针卡与插座业务增长",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：AI与半导体行业技术应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-57-NOM-US-Economic-Weekly-Hike-Tension-260724",
+    "source_pdf": "/tmp/pdf_batch_001_558ffhrq/pdfs/0002-57-NOM-US Economic Weekly-Hike Tension-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "美联储7月按兵不动，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x2",
+      "证券->标的 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x5",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：美国宏观环境周报-7月FOMC料维持利率不变",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-57-NOM-US Economic Weekly-Hike Tension-260724.pdf",
+      "cleaned_source_title": "NOM-US Economic Weekly-Hike Tension",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：USEconomicWeeklyHikeTension",
+      "raw_candidates": [
+        "美国经济周报-加息紧张",
+        "美国经济周报-7月FOMC料维持利率不变",
+        "美国经济周报-6月核心PCE通胀节奏变化"
+      ],
+      "cleaned_candidates": [
+        "NOM：美国宏观环境周报-加息紧张",
+        "NOM：美国宏观环境周报-7月FOMC料维持利率不变",
+        "NOM：美国宏观环境周报-6月核心PCE通胀节奏变化",
+        "NOM：USEconomicWeeklyHikeTension",
+        "NOM：NOM标的在7月24日发布的北美宏观环境研报中判断"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "generic_series_title"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：美国宏观环境周报-加息紧张",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：美国宏观环境周报-6月核心PCE通胀节奏变化",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：USEconomicWeeklyHikeTension",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：NOM标的在7月24日发布的北美宏观环境研报中判断",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：美国宏观环境周报-7月FOMC料维持利率不变",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：美国宏观环境周报-7月FOMC料维持利率不变"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-58-NOM-Wuxi-XDC-2268.HK-1H26F-preview-and-FY26F-forecast-revisions-26072",
+    "source_pdf": "/tmp/pdf_batch_001_558ffhrq/pdfs/0003-58-NOM-Wuxi XDC-2268.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "药明合联半年报前瞻：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：药明合联1H26预览与FY26F预测修订",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-58-NOM-Wuxi XDC-2268.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+      "cleaned_source_title": "NOM-Wuxi XDC-2268.HK-1H26F preview and FY26F forecast revisions",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：WuxiXDC1H26Fpreview和FY26",
+      "raw_candidates": [
+        "药明合联1H26预览与FY26F预测修订",
+        "药明合联1H26收入增41%利润承压",
+        "药明合联1H26业绩与FY26F预测调整"
+      ],
+      "cleaned_candidates": [
+        "NOM：药明合联1H26预览与FY26F预测修订",
+        "NOM：药明合联1H26收入增41%利润承压",
+        "NOM：药明合联1H26业绩与FY26F预测调整",
+        "NOM：WuxiXDC1H26Fpreview和FY26",
+        "NOM：药明合联1H26收入增速41%，汇率与并购费用影响利润表现"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：药明合联1H26收入增41%利润承压",
+          "reasons": [
+            "anchor_coverage=0.39"
+          ]
+        },
+        {
+          "title": "NOM：WuxiXDC1H26Fpreview和FY26",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "NOM：药明合联1H26收入增速41%，汇率与并购费用影响利润表现",
+          "reasons": [
+            "anchor_coverage=0.39"
+          ]
+        }
+      ],
+      "selected_title": "NOM：药明合联1H26预览与FY26F预测修订",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：药明合联1H26预览与FY26F预测修订"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-59-NOM-Wuxi-Bio-2269.HK-1H26F-preview-and-FY26F-forecast-revisions-26072",
+    "source_pdf": "/tmp/pdf_batch_001_558ffhrq/pdfs/0004-59-NOM-Wuxi Bio-2269.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "药明生物1H26前瞻",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：药明生物1H26预览与FY26预测修订",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-59-NOM-Wuxi Bio-2269.HK-1H26F preview and FY26F forecast revisions-260724.pdf",
+      "cleaned_source_title": "NOM-Wuxi Bio-2269.HK-1H26F preview and FY26F forecast revisions",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：WuxiBio1H26Fpreview和FY26",
+      "raw_candidates": [
+        "药明生物1H26预览与FY26预测修订",
+        "药明生物1H26收入增长15.5%利润下降15.3%"
+      ],
+      "cleaned_candidates": [
+        "NOM：药明生物1H26预览与FY26预测修订",
+        "NOM：药明生物1H26收入增长15.5%利润下降15.3%",
+        "NOM：WuxiBio1H26Fpreview和FY26",
+        "NOM：药明生物1H26收入增长15.5%，汇率与研究损失影响利润"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：药明生物1H26收入增长15.5%利润下降15.3%",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        },
+        {
+          "title": "NOM：WuxiBio1H26Fpreview和FY26",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "NOM：药明生物1H26收入增长15.5%，汇率与研究损失影响利润",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        }
+      ],
+      "selected_title": "NOM：药明生物1H26预览与FY26预测修订",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：药明生物1H26预览与FY26预测修订"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
